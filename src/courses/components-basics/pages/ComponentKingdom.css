@@ -1,0 +1,602 @@
+/* Kingdom Illustration Styles */
+.kingdom-illustration {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.castle {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.castle-tower {
+  width: 100px;
+  height: 150px;
+  background-color: #e67e22;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.castle-tower:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #e67e22;
+}
+
+.castle-body {
+  width: 100%;
+  background-color: #f5cca0;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.workshop {
+  width: 120px;
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.workshop:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.workshop:after {
+  content: "Hover me!";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.workshop:hover:after {
+  opacity: 1;
+}
+
+.button-workshop {
+  background-color: #e74c3c;
+}
+
+.button-workshop:hover {
+  background-color: #c0392b;
+}
+
+.card-workshop {
+  background-color: #3498db;
+}
+
+.card-workshop:hover {
+  background-color: #2980b9;
+}
+
+.form-workshop {
+  background-color: #2ecc71;
+}
+
+.form-workshop:hover {
+  background-color: #27ae60;
+}
+
+/* Component Showcase Styles */
+.component-showcase {
+  margin: 30px 0;
+  min-height: 200px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.showcase-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.showcase-item h4 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+}
+
+.showcase-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-details {
+  background-color: #f4f6f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.showcase-details p {
+  margin-bottom: 10px;
+}
+
+.showcase-details code {
+  background-color: #e8f0fe;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  color: #e74c3c;
+}
+
+/* Preview Component Styles */
+.preview-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.preview-button:hover {
+  background-color: #c0392b;
+}
+
+.preview-card {
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.preview-card h4 {
+  color: #3498db;
+  margin-bottom: 10px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.preview-form {
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Instructions */
+.instruction-box {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.instruction-box p {
+  color: #856404;
+  margin: 0;
+}
+
+.workshop.highlight {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+/* Chapter 2 - Props Messenger Styles */
+.messenger-illustration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.app-messenger, .button-receiver {
+  width: 45%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.messenger-label, .receiver-label {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.messenger-label {
+  background-color: #e67e22;
+  color: white;
+}
+
+.receiver-label {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.messenger-bag {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.prop-item {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  background-color: #e8f0fe;
+  border-radius: 4px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.prop-item:hover {
+  background-color: #d0e0fd;
+}
+
+.prop-item:last-child {
+  margin-bottom: 0;
+}
+
+.messenger-arrow {
+  font-size: 36px;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.receiver-output {
+  min-height: 150px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prop-effect {
+  text-align: center;
+}
+
+.prop-name, .prop-value {
+  margin-bottom: 15px;
+}
+
+.prop-value code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.prop-result {
+  margin-top: 20px;
+}
+
+.instruction-hint {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.prop-customizer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.prop-form {
+  margin-bottom: 20px;
+}
+
+.prop-input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.prop-input-group label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.prop-input-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.apply-button {
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #2980b9;
+}
+
+.prop-result-preview {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Chapter 3 - Component Composition Styles */
+.composition-illustration {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.component-library, .dashboard-preview {
+  width: 48%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.component-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.palette-item {
+  padding: 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  width: calc(33% - 10px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.palette-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.palette-item.active {
+  box-shadow: 0 0 0 3px #f39c12;
+}
+
+.header-component {
+  background-color: #9b59b6;
+}
+
+.nav-component {
+  background-color: #3498db;
+}
+
+.card-component {
+  background-color: #2ecc71;
+}
+
+.button-component {
+  background-color: #e74c3c;
+}
+
+.footer-component {
+  background-color: #f39c12;
+}
+
+.dashboard-container {
+  min-height: 400px;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.empty-dashboard {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.composite-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.composite-header, .composite-nav, .composite-card, 
+.composite-button-container, .composite-footer {
+  position: relative;
+  padding: 15px;
+  border-radius: 6px;
+  animation: fadeIn 0.3s ease;
+}
+
+.composite-header {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.composite-header h3 {
+  margin: 0;
+}
+
+.composite-nav {
+  background-color: #3498db;
+  color: white;
+}
+
+.composite-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.composite-card {
+  background-color: white;
+  border: 1px solid #2ecc71;
+  padding: 15px;
+}
+
+.composite-card h4 {
+  color: #2ecc71;
+  margin-top: 0;
+}
+
+.composite-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.composite-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.composite-footer {
+  background-color: #f39c12;
+  color: white;
+  text-align: center;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.remove-btn:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}

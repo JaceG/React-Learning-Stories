@@ -1,0 +1,233 @@
+.learning-style-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Common styles for all learning components */
+.learning-style-container h2 {
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  color: #2c3e50;
+}
+
+.intro-text {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Button styles for selectors */
+.style-buttons,
+.metaphor-selector,
+.exercise-selector,
+.project-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.style-buttons button,
+.metaphor-selector button,
+.exercise-selector button,
+.project-selector button {
+  padding: 10px 20px;
+  background-color: #ecf0f1;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.style-buttons button:hover,
+.metaphor-selector button:hover,
+.exercise-selector button:hover,
+.project-selector button:hover {
+  background-color: #e1e7eb;
+}
+
+.style-buttons button.active,
+.metaphor-selector button.active,
+.exercise-selector button.active,
+.project-selector button.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+
+/* Story-Based Learning Styles */
+.story-based {
+  background-color: #f9f8f6;
+  border-left: 4px solid #e67e22;
+}
+
+.story-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fcf3ea;
+  border-radius: 6px;
+}
+
+.story-nav-button {
+  padding: 8px 16px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.story-nav-button:disabled {
+  background-color: #d5c4b3;
+  cursor: not-allowed;
+}
+
+.chapter-indicator {
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+.story-chapter {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.story-chapter h3 {
+  color: #e67e22;
+  border-bottom: 2px solid #f5cca0;
+  padding-bottom: 10px;
+}
+
+.story-paragraph {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.story-code-example {
+  background-color: #f8f8f8;
+  border-left: 4px solid #e67e22;
+  padding: 15px;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.story-code-example pre {
+  margin: 0;
+  font-family: monospace;
+}
+
+.story-insight {
+  background-color: #fef5e7;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 25px;
+}
+
+.story-insight h4 {
+  color: #e67e22;
+  margin-top: 0;
+}
+
+.story-reflection {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f5f6fa;
+  border-radius: 8px;
+  border-left: 4px solid #9b59b6;
+}
+
+/* Kinesthetic Learning Styles */
+.kinesthetic {
+  background-color: #f5faff;
+  border-left: 4px solid #3498db;
+}
+
+.drag-drop-exercise {
+  margin: 25px 0;
+}
+
+.drag-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.drag-item {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.drag-item.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.component-structure {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.drop-zone {
+  width: 80%;
+  max-width: 400px;
+  min-height: 60px;
+  border: 2px dashed #3498db;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  color: #7f8c8d;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  transition: all 0.2s;
+}
+
+.drop-zone.filled {
+  background-color: #d4f0fd;
+  border-style: solid;
+  color: #2980b9;
+}
+
+.drop-zone.internal {
+  width: 100%;
+  margin: 10px 0;
+  min-height: 40px;
+}
+
+.reset-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .control-buttons,
+  .style-buttons,
+  .metaphor-selector,
+  .exercise-selector,
+  .project-selector {
+    flex-direction: column;
+  }
+}

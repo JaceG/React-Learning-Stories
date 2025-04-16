@@ -1,0 +1,771 @@
+.combined-learning-container {
+  padding: 20px;
+  background-color: #fcf9f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e67e22;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.subtitle {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Navigation */
+.story-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f3e8;
+  border-radius: 6px;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #d35400;
+}
+
+.nav-button:disabled {
+  background-color: #d5c4b3;
+  cursor: not-allowed;
+}
+
+.chapter-indicator {
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+/* Chapter styling */
+.story-chapter {
+  margin: 20px 0;
+}
+
+.story-chapter h3 {
+  color: #e67e22;
+  border-bottom: 2px solid #f5cca0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.story-content {
+  line-height: 1.7;
+}
+
+.story-content p {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.story-content strong {
+  color: #d35400;
+}
+
+/* Kingdom illustration for Chapter 1 */
+.kingdom-illustration {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.castle {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.castle-tower {
+  width: 100px;
+  height: 150px;
+  background-color: #e67e22;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.castle-tower:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #e67e22;
+}
+
+.castle-body {
+  width: 100%;
+  background-color: #f5cca0;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.workshop {
+  width: 120px;
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.workshop:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.workshop:after {
+  content: "Hover me!";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.workshop:hover:after {
+  opacity: 1;
+}
+
+.button-workshop {
+  background-color: #e74c3c;
+}
+
+.button-workshop:hover {
+  background-color: #c0392b;
+}
+
+.card-workshop {
+  background-color: #3498db;
+}
+
+.card-workshop:hover {
+  background-color: #2980b9;
+}
+
+.navbar-workshop {
+  background-color: #2ecc71;
+}
+
+.navbar-workshop:hover {
+  background-color: #27ae60;
+}
+
+/* Props cards for Chapter 1 */
+.craftsmen-props {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.craftsman-card {
+  width: 250px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Colored highlights for each craftsman card */
+.craftsman-card:nth-child(1).highlight {
+  border-color: #e74c3c; /* Button - Red */
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+}
+
+.craftsman-card:nth-child(2).highlight {
+  border-color: #3498db; /* Card - Blue */
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+.craftsman-card:nth-child(3).highlight {
+  border-color: #2ecc71; /* Navbar - Green */
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+.craftsman-card h5 {
+  color: #e67e22;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.craftsman-card:nth-child(1).highlight h5 {
+  color: #e74c3c;
+}
+
+.craftsman-card:nth-child(2).highlight h5 {
+  color: #3498db;
+}
+
+.craftsman-card:nth-child(3).highlight h5 {
+  color: #2ecc71;
+}
+
+.prop-list {
+  margin-top: 10px;
+}
+
+.prop-item {
+  background-color: #f8f9fa;
+  border-left: 3px solid #e67e22;
+  padding: 8px;
+  margin-bottom: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.craftsman-card:nth-child(1).highlight .prop-item {
+  border-left: 3px solid #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.craftsman-card:nth-child(2).highlight .prop-item {
+  border-left: 3px solid #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.craftsman-card:nth-child(3).highlight .prop-item {
+  border-left: 3px solid #2ecc71;
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+/* Hover instructions */
+.hover-instruction {
+  background-color: #ffe9cc;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px dashed #e67e22;
+}
+
+.hover-instruction p {
+  color: #d35400;
+  margin: 0;
+}
+
+/* Kingdom roads for Chapter 2 */
+.kingdom-roads {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-castle {
+  width: 100px;
+  height: 60px;
+  background-color: #e67e22;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.roads {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+}
+
+.road {
+  width: 20px;
+  height: 100px;
+  background-color: #8c7357;
+  position: relative;
+  margin: 0 50px;
+}
+
+.road:before {
+  content: "↓";
+  position: absolute;
+  top: 40px;
+  left: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.road-left {
+  transform: rotate(-15deg);
+}
+
+.road-right {
+  transform: rotate(15deg);
+}
+
+.workshops {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.road-workshop {
+  width: 100px;
+  height: 50px;
+  background-color: #95a5a6;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* Interactive props delivery game */
+.props-delivery-game {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prop-bags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.prop-bag {
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: grab;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.prop-color {
+  background-color: #e74c3c;
+}
+
+.prop-text {
+  background-color: #3498db;
+}
+
+.prop-action {
+  background-color: #9b59b6;
+}
+
+.prop-title {
+  background-color: #f39c12;
+}
+
+.prop-content {
+  background-color: #2ecc71;
+}
+
+.prop-image {
+  background-color: #1abc9c;
+}
+
+.prop-menuItems {
+  background-color: #d35400;
+}
+
+.prop-logo {
+  background-color: #27ae60;
+}
+
+.prop-theme {
+  background-color: #8e44ad;
+}
+
+.target-craftsmen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.target-craftsman {
+  width: 180px;
+  height: 120px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 2px dashed #bdc3c7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.target-craftsman.connected {
+  background-color: #d5f5e3;
+  border: 2px solid #27ae60;
+}
+
+.target-craftsman h5 {
+  margin: 0 0 10px 0;
+  color: #e67e22;
+}
+
+.message-board {
+  background-color: #fdf2e9;
+  border-left: 4px solid #e67e22;
+  padding: 10px 15px;
+  margin: 20px 0;
+  min-height: 20px;
+}
+
+.message-board p {
+  color: #d35400;
+  font-weight: bold;
+  margin: 0;
+}
+
+.reset-button {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reset-button:hover {
+  background-color: #7f8c8d;
+}
+
+/* Code example */
+.code-example {
+  background-color: #2c3e50;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 30px 0;
+  overflow-x: auto;
+}
+
+.code-example pre {
+  color: #ecf0f1;
+  font-family: monospace;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Button workshop game */
+.button-workshop-game {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button-creation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button-options, .created-buttons {
+  width: 45%;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
+.option-group {
+  margin-bottom: 20px;
+}
+
+.option-group h5 {
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.red {
+  background-color: #e74c3c;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.blue {
+  background-color: #3498db;
+}
+
+.purple {
+  background-color: #9b59b6;
+}
+
+.orange {
+  background-color: #f39c12;
+}
+
+.button-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.showcase-button {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+  background-color: #d5f5e3;
+  border-left: 4px solid #27ae60;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.success-message p {
+  color: #27ae60;
+  margin: 5px 0;
+}
+
+/* Palace building game */
+.palace-building-game {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.palace-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.palace-item {
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: grab;
+  font-size: 14px;
+}
+
+.palace-title {
+  background-color: #e74c3c;
+}
+
+.palace-message {
+  background-color: #3498db;
+}
+
+.palace-decree {
+  background-color: #f39c12;
+}
+
+.palace-layout {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  border: 2px solid #95a5a6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.palace-header, .palace-footer {
+  padding: 15px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.palace-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.palace-footer {
+  border-top: 1px solid #e5e5e5;
+}
+
+.palace-content {
+  min-height: 150px;
+  padding: 20px;
+  background-color: white;
+}
+
+.palace-header.filled, .palace-footer.filled, .palace-content.filled {
+  background-color: #d5f5e3;
+}
+
+/* Reflection sections */
+.reflection-question {
+  margin: 30px 0;
+  padding: 15px;
+  background-color: #e8f4fd;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.reflection-question h4 {
+  color: #3498db;
+  margin-top: 0;
+}
+
+.reflection-question p {
+  color: #2980b9;
+}
+
+.reflection-question code {
+  background-color: #f8f9fa;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* Chapter summary */
+.chapter-summary {
+  margin: 30px 0;
+  padding: 15px;
+  background-color: #fef5e7;
+  border-radius: 8px;
+  border-left: 4px solid #f39c12;
+}
+
+.chapter-summary h4 {
+  color: #f39c12;
+  margin-top: 0;
+}
+
+.chapter-summary p {
+  color: #e67e22;
+}
+
+/* Interactive section */
+.interactive-section {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.interactive-section h4 {
+  color: #e67e22;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .craftsmen-props, .button-creation, .target-craftsmen {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .craftsman-card, .button-options, .created-buttons, .target-craftsman {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  
+  .roads {
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .road {
+    height: 50px;
+    width: 100px;
+    margin: 10px 0;
+  }
+  
+  .road:before {
+    top: 15px;
+    left: 45px;
+  }
+  
+  .road-left, .road-middle, .road-right {
+    transform: none;
+  }
+  
+  .workshops {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .road-workshop {
+    margin-bottom: 10px;
+  }
+}

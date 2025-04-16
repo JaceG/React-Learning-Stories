@@ -1,25 +1,64 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate,
+} from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import CourseIndex from './courses/CourseIndex';
+import ComponentsBasicsOverview from './courses/components-basics/ComponentsBasicsOverview';
+import ComponentKingdom from './courses/components-basics/pages/ComponentKingdom';
+import PropsMessengers from './courses/components-basics/pages/PropsMessengers';
+import JsxMagic from './courses/components-basics/pages/JsxMagic';
+import ComponentLifecycle from './courses/components-basics/pages/ComponentLifecycle';
+import StateManagementOverview from './courses/state-management/StateManagementOverview';
+import StateSorcerers from './courses/state-management/pages/StateSorcerers';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [activePath, setActivePath] = useState('components-basics');
+
+	return (
+		<div className='App'>
+			<Router>
+				<Layout activePath={activePath} onPathChange={setActivePath}>
+					<Routes>
+						<Route path='/' element={<CourseIndex />} />
+						<Route
+							path='/courses/components-basics'
+							element={<ComponentsBasicsOverview />}
+						/>
+						<Route
+							path='/courses/components-basics/component-kingdom'
+							element={<ComponentKingdom />}
+						/>
+						<Route
+							path='/courses/components-basics/props-messengers'
+							element={<PropsMessengers />}
+						/>
+						<Route
+							path='/courses/components-basics/jsx-magic'
+							element={<JsxMagic />}
+						/>
+						<Route
+							path='/courses/components-basics/component-lifecycle'
+							element={<ComponentLifecycle />}
+						/>
+						<Route
+							path='/courses/state-management'
+							element={<StateManagementOverview />}
+						/>
+						<Route
+							path='/courses/state-management/state-sorcerers'
+							element={<StateSorcerers />}
+						/>
+						<Route path='*' element={<Navigate replace to='/' />} />
+					</Routes>
+				</Layout>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
