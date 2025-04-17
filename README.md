@@ -60,3 +60,11 @@ Contributions, issues, and feature requests are welcome!
 ## License
 
 This project is MIT licensed.
+
+## Questions
+
+For any questions, please contact us on GitHub at [JaceG](https://github.com/JaceG), [ElBoyTM](https://github.com/ElBoyTM), [Apgash](https://github.com/Apgash), or [nate236](https://github.com/nate236).
+
+## Preview
+
+![Main Page](/assets/screenshot.png)
