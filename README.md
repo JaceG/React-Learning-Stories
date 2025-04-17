@@ -16,19 +16,42 @@ An interactive learning platform for mastering React fundamentals through storyt
 3. **JSX Magic**: Master the syntax that combines HTML and JavaScript
 4. **Component Lifecycle**: Explore how components are born, live, and retire
 
+## Project Structure
+
+```
+react-learning-stories/
+├── public/           # Static files and index.html
+├── src/             # Source code
+├── .env             # Environment variables
+├── package.json     # Project dependencies and scripts
+└── README.md        # Project documentation
+```
+
 ## Getting Started
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 1. Clone this repository
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Navigate to `http://localhost:3000` to view the app
 
+Available Scripts:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run serve` - Serves the production build locally
+
 ## Technology Stack
 
-- React
-- JavaScript
+- React with Create React App
+- React Router for navigation
+- JavaScript/ES6+
 - CSS3
 - HTML5
+- Testing Libraries:
+  - Jest
+  - React Testing Library
 
 ## Contributing
 
