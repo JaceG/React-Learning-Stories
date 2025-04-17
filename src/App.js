@@ -10,10 +10,10 @@ import CourseIndex from './courses/CourseIndex';
 import ComponentsBasicsOverview from './courses/components-basics/ComponentsBasicsOverview';
 import ComponentKingdom from './courses/components-basics/pages/ComponentKingdom';
 import PropsMessengers from './courses/components-basics/pages/PropsMessengers';
-import JsxMagic from './courses/components-basics/pages/JsxMagic';
 import ComponentLifecycle from './courses/components-basics/pages/ComponentLifecycle';
 import StateManagementOverview from './courses/state-management/StateManagementOverview';
 import StateSorcerers from './courses/state-management/pages/StateSorcerers';
+import JsxMagic from './courses/components-basics/pages/JsxMagic';
 import './App.css';
 
 function App() {

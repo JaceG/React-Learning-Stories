@@ -21,8 +21,8 @@ function Sidebar({ activePath, onPathChange }) {
 	const componentBasicsLessons = [
 		{ id: 'component-kingdom', title: 'The Component Kingdom' },
 		{ id: 'props-messengers', title: 'The Props Messengers' },
-		{ id: 'component-lifecycle', title: 'The Lifecycle Chronicles' },
 		{ id: 'jsx-magic', title: 'The JSX Magic Scrolls' },
+		{ id: 'component-lifecycle', title: 'The Lifecycle Chronicles' },
 	];
 
 	const stateManagementLessons = [
