@@ -6,8 +6,8 @@
 }
 
 .castle {
-  width: 80%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,8 +45,9 @@
   border-radius: 0 0 10px 10px;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .workshop {
@@ -60,42 +61,21 @@
   font-weight: bold;
   text-align: center;
   border-radius: 6px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
   position: relative;
   cursor: pointer;
 }
 
-.workshop:hover {
+.workshop:hover, .workshop.highlight {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.workshop:after {
-  content: "Hover me!";
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-.workshop:hover:after {
-  opacity: 1;
 }
 
 .button-workshop {
   background-color: #e74c3c;
 }
 
-.button-workshop:hover {
+.button-workshop:hover, .button-workshop.highlight {
   background-color: #c0392b;
 }
 
@@ -103,7 +83,7 @@
   background-color: #3498db;
 }
 
-.card-workshop:hover {
+.card-workshop:hover, .card-workshop.highlight {
   background-color: #2980b9;
 }
 
@@ -111,7 +91,7 @@
   background-color: #2ecc71;
 }
 
-.form-workshop:hover {
+.form-workshop:hover, .form-workshop.highlight {
   background-color: #27ae60;
 }
 
@@ -179,6 +159,106 @@
   border-radius: 3px;
   font-family: monospace;
   color: #e74c3c;
+  cursor: help;
+  position: relative;
+  border-bottom: 1px dashed #e74c3c;
+}
+
+.code-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: max-content;
+  min-width: 300px;
+  max-width: 550px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 100;
+}
+
+.code-tooltip:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
+}
+
+.showcase-details code:hover .code-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.code-tooltip pre {
+  margin: 8px 0;
+  padding: 12px;
+  background-color: #34495e;
+  border-radius: 4px;
+  white-space: pre;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.4;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.code-tooltip pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-tooltip pre::-webkit-scrollbar-track {
+  background: #2c3e50;
+  border-radius: 4px;
+}
+
+.code-tooltip pre::-webkit-scrollbar-thumb {
+  background: #95a5a6;
+  border-radius: 4px;
+}
+
+.code-tooltip pre::-webkit-scrollbar-thumb:hover {
+  background: #7f8c8d;
+}
+
+.code-tooltip .explanation {
+  margin-top: 8px;
+  font-style: italic;
+  color: #bdc3c7;
+  line-height: 1.4;
+}
+
+/* Adjust tooltip position when it might go off-screen */
+.showcase-details code:last-child .code-tooltip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.showcase-details code:last-child .code-tooltip:after {
+  left: auto;
+  right: 20px;
+  transform: none;
+}
+
+.showcase-details code:first-child .code-tooltip {
+  left: 0;
+  transform: none;
+}
+
+.showcase-details code:first-child .code-tooltip:after {
+  left: 20px;
+  transform: none;
 }
 
 /* Preview Component Styles */
@@ -253,26 +333,40 @@
 /* Instructions */
 .instruction-box {
   background-color: #fff3cd;
-  border: 1px solid #ffeeba;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px auto;
   text-align: center;
+  max-width: 600px;
+  position: relative;
+  animation: gentle-pulse 2s infinite;
+}
+
+.instruction-box:before {
+  content: "👆";
+  font-size: 24px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .instruction-box p {
   color: #856404;
   margin: 0;
+  font-size: 1.1em;
+  line-height: 1.4;
 }
 
-.workshop.highlight {
-  animation: pulse 1.5s infinite;
+.instruction-box strong {
+  color: #533f03;
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
-  70% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+@keyframes gentle-pulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
 }
 
 /* Chapter 2 - Props Messenger Styles */
@@ -599,4 +693,9 @@
 
 .remove-btn:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.workshop.highlight {
+  animation: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }

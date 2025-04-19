@@ -31,10 +31,6 @@ function ComponentKingdom() {
 		setHighlightedCard(index);
 	};
 
-	const handleWorkshopLeave = () => {
-		setHighlightedCard(null);
-	};
-
 	// Props handling for Chapter 2
 	const handlePropClick = (name, value) => {
 		setSelectedProp({ name, value });
@@ -85,7 +81,6 @@ function ComponentKingdom() {
 			{currentChapter === 1 && (
 				<ChapterOne
 					handleWorkshopHover={handleWorkshopHover}
-					handleWorkshopLeave={handleWorkshopLeave}
 					highlightedCard={highlightedCard}
 				/>
 			)}
