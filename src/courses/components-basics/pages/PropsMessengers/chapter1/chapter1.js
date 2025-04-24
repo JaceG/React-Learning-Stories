@@ -143,7 +143,7 @@ const ChapterOne = ({
 
 					<div className='workshops-container'>
 						<div
-							className={`workshop button-workshop ${
+							className={`workshop props-button-workshop ${
 								selectedComponent === 'button' ? 'active' : ''
 							}`}>
 							<h4>Button Workshop</h4>
@@ -168,7 +168,7 @@ const ChapterOne = ({
 							)}
 						</div>
 						<div
-							className={`workshop card-workshop ${
+							className={`workshop props-card-workshop ${
 								selectedComponent === 'card' ? 'active' : ''
 							}`}>
 							<h4>Card Workshop</h4>

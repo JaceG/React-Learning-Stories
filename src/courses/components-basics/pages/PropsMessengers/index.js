@@ -181,7 +181,11 @@ function PropsMessengers() {
 
 		if (propTypeComponent === 'button') {
 			// Validate color
-			if (typeof propInputs.color !== 'string') {
+			if (
+				typeof propInputs.color !== 'string' ||
+				propInputs.color.trim() === '' ||
+				!isNaN(propInputs.color)
+			) {
 				newErrors.push({
 					prop: 'color',
 					expected: 'string',
@@ -190,7 +194,11 @@ function PropsMessengers() {
 			}
 
 			// Validate text
-			if (typeof propInputs.text !== 'string') {
+			if (
+				typeof propInputs.text !== 'string' ||
+				propInputs.text.trim() === '' ||
+				!isNaN(propInputs.text)
+			) {
 				newErrors.push({
 					prop: 'text',
 					expected: 'string',
@@ -204,6 +212,16 @@ function PropsMessengers() {
 					prop: 'onClick',
 					expected: 'function',
 					received: 'not a function',
+				});
+			}
+
+			// Validate size (oneOf)
+			const allowedSizes = ['small', 'medium', 'large'];
+			if (propInputs.size && !allowedSizes.includes(propInputs.size)) {
+				newErrors.push({
+					prop: 'size',
+					expected: "one of ['small', 'medium', 'large']",
+					received: propInputs.size,
 				});
 			}
 
@@ -222,7 +240,11 @@ function PropsMessengers() {
 			}
 		} else if (propTypeComponent === 'card') {
 			// Validate title
-			if (typeof propInputs.title !== 'string') {
+			if (
+				typeof propInputs.title !== 'string' ||
+				propInputs.title.trim() === '' ||
+				!isNaN(propInputs.title)
+			) {
 				newErrors.push({
 					prop: 'title',
 					expected: 'string',
@@ -231,11 +253,54 @@ function PropsMessengers() {
 			}
 
 			// Validate content
-			if (typeof propInputs.content !== 'string') {
+			if (
+				typeof propInputs.content !== 'string' ||
+				propInputs.content.trim() === '' ||
+				!isNaN(propInputs.content)
+			) {
 				newErrors.push({
 					prop: 'content',
 					expected: 'string',
 					received: typeof propInputs.content,
+				});
+			}
+
+			// Validate image (optional, but if present must be string and not a number)
+			if (
+				propInputs.image &&
+				(typeof propInputs.image !== 'string' ||
+					!isNaN(propInputs.image))
+			) {
+				newErrors.push({
+					prop: 'image',
+					expected: 'string',
+					received: typeof propInputs.image,
+				});
+			}
+
+			// Validate isActive (optional, but if present must be boolean)
+			if (
+				propInputs.isActive !== undefined &&
+				typeof propInputs.isActive !== 'boolean'
+			) {
+				newErrors.push({
+					prop: 'isActive',
+					expected: 'boolean',
+					received: typeof propInputs.isActive,
+				});
+			}
+
+			// Check for missing required props
+			if (!propInputs.title) {
+				newErrors.push({
+					prop: 'title',
+					error: 'Required prop missing',
+				});
+			}
+			if (!propInputs.content) {
+				newErrors.push({
+					prop: 'content',
+					error: 'Required prop missing',
 				});
 			}
 		}

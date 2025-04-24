@@ -7,6 +7,42 @@ const ChapterThree = ({
 	handlePropInputChange,
 	validateProps,
 }) => {
+	function parseOnClickFunction(onClickInput) {
+		if (typeof onClickInput === 'function') return onClickInput;
+		if (typeof onClickInput === 'string') {
+			try {
+				// Remove surrounding whitespace
+				onClickInput = onClickInput.trim();
+				// If it looks like an arrow function, use Function constructor
+				if (
+					onClickInput.startsWith('(') ||
+					onClickInput.startsWith('()=>') ||
+					onClickInput.startsWith('()')
+				) {
+					// Remove possible leading '() =>' or '() =>'
+					const arrowIdx = onClickInput.indexOf('=>');
+					if (arrowIdx !== -1) {
+						const body = onClickInput.slice(arrowIdx + 2).trim();
+						if (body.startsWith('{')) {
+							return new Function(body.slice(1, -1));
+						} else {
+							return new Function(body);
+						}
+					}
+				}
+				// If it looks like a function declaration
+				if (onClickInput.startsWith('function')) {
+					// eslint-disable-next-line no-eval
+					return eval('(' + onClickInput + ')');
+				}
+			} catch (e) {
+				// Fallback to no-op
+				return () => {};
+			}
+		}
+		return () => {};
+	}
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>
@@ -164,20 +200,17 @@ isActive: true
 											size (oneOf['small', 'medium',
 											'large']):
 										</label>
-										<select
+										<input
+											type='text'
 											value={propInputs.size}
 											onChange={(e) =>
 												handlePropInputChange(
 													'size',
 													e.target.value
 												)
-											}>
-											<option value='small'>small</option>
-											<option value='medium'>
-												medium
-											</option>
-											<option value='large'>large</option>
-										</select>
+											}
+											placeholder='e.g. small, medium, large'
+										/>
 									</div>
 								</>
 							) : (
@@ -297,7 +330,10 @@ isActive: true
 													  'large'
 													? '18px'
 													: '14px',
-										}}>
+										}}
+										onClick={parseOnClickFunction(
+											propInputs.onClick
+										)}>
 										{propInputs.text || 'Default Text'}
 									</button>
 								</div>
@@ -357,17 +393,38 @@ isActive: true
 
 				<div className='tips-section'>
 					<h4>Try These Experiments:</h4>
-					<ul>
-						<li>Delete the text for a required prop</li>
-						<li>
-							Try entering a number (like 42) instead of a string
-							for 'color'
-						</li>
-						<li>
-							Remove the parentheses from the onClick function
-						</li>
-						<li>Try entering "extraLarge" for the size prop</li>
-					</ul>
+					{propTypeComponent === 'card' ? (
+						<ul>
+							<li>
+								Delete the text for a required prop (title or
+								content)
+							</li>
+							<li>
+								Try entering a number (like 42) instead of a
+								string for 'title' or 'content'
+							</li>
+							<li>
+								Enter a non-string value (like 123) for the
+								'image' prop
+							</li>
+							<li>
+								Try entering something other than 'true' or
+								'false' for isActive (like 'maybe')
+							</li>
+						</ul>
+					) : (
+						<ul>
+							<li>Delete the text for a required prop</li>
+							<li>
+								Try entering a number (like 42) instead of a
+								string for 'color'
+							</li>
+							<li>
+								Remove the parentheses from the onClick function
+							</li>
+							<li>Try entering "extraLarge" for the size prop</li>
+						</ul>
+					)}
 				</div>
 			</div>
 

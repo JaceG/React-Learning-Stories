@@ -102,12 +102,29 @@ const ChapterTwo = ({
 					</button>
 				</div>
 
-				<div className='reflection-section'>
-					<h3>Reflection:</h3>
+				<div className='lesson-insight'>
+					<h3>The One-Way Road Lesson:</h3>
 					<p>
-						Why is it important that props only flow in one
-						direction? Think about how this creates a predictable
-						data flow in your application.
+						Props in React always flow in a single direction: from
+						parent to child. This one-way data flow makes your
+						application easier to understand and debug, because
+						changes always come from above and components never
+						modify the props they receive. If a child needs to
+						communicate back, it does so by calling a callback
+						function provided by its parent.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does the one-way road metaphor help you understand
+						how data flows in React?
+					</p>
+					<p>
+						Why do you think callbacks are used for child-to-parent
+						communication instead of letting children change props
+						directly?
 					</p>
 				</div>
 			</div>

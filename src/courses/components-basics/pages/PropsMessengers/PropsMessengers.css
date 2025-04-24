@@ -765,3 +765,21 @@
     padding: 15px 10px;
   }
 }
+
+.props-button-workshop {
+  color: white;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+  position: relative;
+}
+.props-button-workshop.active {
+  border: 2px solid #1abc9c;
+}
+
+.props-card-workshop {
+  color: white;
+  box-shadow: 0 2px 8px rgba(155, 89, 182, 0.08);
+  position: relative;
+}
+.props-card-workshop.active {
+  border: 2px solid #f39c12;
+}
