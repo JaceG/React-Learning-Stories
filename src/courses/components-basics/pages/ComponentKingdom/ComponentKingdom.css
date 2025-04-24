@@ -73,26 +73,32 @@
 
 .button-workshop {
   background-color: #e74c3c;
+  color: black;
 }
 
 .button-workshop:hover, .button-workshop.highlight {
   background-color: #c0392b;
+  color: white;
 }
 
 .card-workshop {
   background-color: #3498db;
+  color: black;
 }
 
 .card-workshop:hover, .card-workshop.highlight {
   background-color: #2980b9;
+  color: white;
 }
 
 .form-workshop {
   background-color: #2ecc71;
+  color: black;
 }
 
 .form-workshop:hover, .form-workshop.highlight {
   background-color: #27ae60;
+  color: white;
 }
 
 /* Component Showcase Styles */
@@ -568,6 +574,16 @@
 
 .palette-item.active {
   box-shadow: 0 0 0 3px #f39c12;
+}
+
+.palette-item.card-component {
+  background-color: #2ecc71;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+}
+
+.palette-item.card-component.active {
+  box-shadow: 0 0 0 3px #f39c12, 0 2px 8px rgba(44, 62, 80, 0.12);
+  border: 2px solid #f39c12;
 }
 
 .header-component {
