@@ -1,4 +1,6 @@
 # React Learning Stories
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 An interactive learning platform for mastering React fundamentals through storytelling and hands-on exercises.
 
@@ -56,14 +58,6 @@ Available Scripts:
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-## License
-
-This project is MIT licensed.
-
-## Questions
-
-For any questions, please contact us on GitHub at [JaceG](https://github.com/JaceG), [ElBoyTM](https://github.com/ElBoyTM), [Apgash](https://github.com/Apgash), or [nate236](https://github.com/nate236).
 
 ## Preview
 
