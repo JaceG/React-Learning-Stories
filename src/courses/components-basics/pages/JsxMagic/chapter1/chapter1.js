@@ -174,6 +174,18 @@ return (
 					the UI structure in a familiar HTML-like format.
 				</p>
 			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How does writing UI in JSX compare to writing it in plain
+					JavaScript or HTML?
+				</p>
+				<p>
+					Why do you think React uses JSX instead of just JavaScript
+					or HTML?
+				</p>
+			</div>
 		</div>
 	);
 };

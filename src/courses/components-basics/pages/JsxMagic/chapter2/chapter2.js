@@ -811,6 +811,28 @@ function getCurrentGreeting() {
 					</button>
 				</div>
 			</div>
+
+			<div className='lesson-insight'>
+				<h3>The Expressions Lesson:</h3>
+				<p>
+					You can embed any valid JavaScript expression inside JSX
+					using curly braces. This allows you to display dynamic
+					content, compute values, and call functions directly within
+					your UI code. Mastering expressions in JSX is key to
+					building interactive and data-driven React components.
+				</p>
+			</div>
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How does embedding JavaScript expressions in JSX help you
+					create more dynamic UIs?
+				</p>
+				<p>
+					What are some creative ways you could use expressions in
+					your own components?
+				</p>
+			</div>
 		</div>
 	);
 };

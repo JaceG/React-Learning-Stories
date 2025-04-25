@@ -10,34 +10,9 @@ const ChapterThree = ({
 	function parseOnClickFunction(onClickInput) {
 		if (typeof onClickInput === 'function') return onClickInput;
 		if (typeof onClickInput === 'string') {
-			try {
-				// Remove surrounding whitespace
-				onClickInput = onClickInput.trim();
-				// If it looks like an arrow function, use Function constructor
-				if (
-					onClickInput.startsWith('(') ||
-					onClickInput.startsWith('()=>') ||
-					onClickInput.startsWith('()')
-				) {
-					// Remove possible leading '() =>' or '() =>'
-					const arrowIdx = onClickInput.indexOf('=>');
-					if (arrowIdx !== -1) {
-						const body = onClickInput.slice(arrowIdx + 2).trim();
-						if (body.startsWith('{')) {
-							return new Function(body.slice(1, -1));
-						} else {
-							return new Function(body);
-						}
-					}
-				}
-				// If it looks like a function declaration
-				if (onClickInput.startsWith('function')) {
-					// eslint-disable-next-line no-eval
-					return eval('(' + onClickInput + ')');
-				}
-			} catch (e) {
-				// Fallback to no-op
-				return () => {};
+			// Only allow a simple alert for demo purposes
+			if (onClickInput.includes('alert')) {
+				return () => alert('This is the onClick function in action!');
 			}
 		}
 		return () => {};
@@ -260,17 +235,17 @@ isActive: true
 									</div>
 									<div className='prop-input-group'>
 										<label>isActive (bool):</label>
-										<select
+										<input
+											type='text'
 											value={propInputs.isActive}
 											onChange={(e) =>
 												handlePropInputChange(
 													'isActive',
-													e.target.value === 'true'
+													e.target.value
 												)
-											}>
-											<option value='true'>true</option>
-											<option value='false'>false</option>
-										</select>
+											}
+											placeholder='e.g. true, false, maybe'
+										/>
 									</div>
 								</>
 							)}

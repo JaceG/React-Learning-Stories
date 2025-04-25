@@ -178,27 +178,40 @@ const ChapterThree = ({
 							<div
 								className='code-editor'
 								style={{ minHeight: '320px' }}>
-								<textarea
-									className='jsx-code-editor'
-									value={userCode}
-									onChange={(e) =>
-										setUserCode(e.target.value)
-									}
-									disabled={fixedCode}
-									style={{
-										width: '100%',
-										height: '300px',
-										minHeight:
-											'300px' /* Added this property */,
-										fontFamily: 'monospace',
-										padding: '10px',
-										border: '1px solid #ccc',
-										borderRadius: '4px',
-										resize: 'none',
-										whiteSpace: 'pre',
-										overflowY: 'auto',
-									}}
-								/>
+								{fixedCode ? (
+									<pre
+										className='jsx-code'
+										style={{
+											height: '300px',
+											overflowY: 'auto',
+											background: '#2c3e50',
+											color: '#ecf0f1',
+											padding: '10px',
+											borderRadius: '4px',
+										}}>
+										{userCode}
+									</pre>
+								) : (
+									<textarea
+										className='jsx-code-editor'
+										value={userCode}
+										onChange={(e) =>
+											setUserCode(e.target.value)
+										}
+										style={{
+											width: '100%',
+											height: '300px',
+											minHeight: '300px',
+											fontFamily: 'monospace',
+											padding: '10px',
+											border: '1px solid #ccc',
+											borderRadius: '4px',
+											resize: 'none',
+											whiteSpace: 'pre',
+											overflowY: 'auto',
+										}}
+									/>
+								)}
 							</div>
 							<div className='challenge-controls'>
 								<button
@@ -244,6 +257,18 @@ const ChapterThree = ({
 					components. These constraints ensure that your JSX can be
 					correctly transformed into the function calls that React
 					uses to create elements.
+				</p>
+			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					Which JSX rule do you find most surprising or different from
+					HTML?
+				</p>
+				<p>
+					How can following these rules help prevent bugs in your
+					React components?
 				</p>
 			</div>
 		</div>
