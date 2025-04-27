@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -14,10 +14,18 @@ import ComponentLifecycle from './courses/components-basics/pages/ComponentLifec
 import StateManagementOverview from './courses/state-management/StateManagementOverview';
 import StateSorcerers from './courses/state-management/pages/StateSorcerers';
 import JsxMagic from './courses/components-basics/pages/JsxMagic';
+import Hotjar from '@hotjar/browser';
 import './App.css';
+
+const siteId = 6384868;
+const hotjarVersion = 6;
 
 function App() {
 	const [activePath, setActivePath] = useState('components-basics');
+
+	useEffect(() => {
+		Hotjar.init(siteId, hotjarVersion);
+	}, []);
 
 	return (
 		<div className='App'>
