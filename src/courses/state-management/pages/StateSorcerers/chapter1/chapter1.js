@@ -120,7 +120,7 @@ Increment Count
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The State Insight:</h3>
+				<h3>The State Lesson:</h3>
 				<p>
 					State in React is like a component's memory. It allows
 					components to remember information and change over time in
@@ -129,6 +129,18 @@ Increment Count
 					to reflect those changes. The useState hook provides a way
 					to add state to functional components, returning a pair: the
 					current state value and a function to update it.
+				</p>
+			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How does the idea of state as magical memory help you
+					understand how React components remember things?
+				</p>
+				<p>
+					Why is it important that state changes cause the UI to
+					update automatically?
 				</p>
 			</div>
 		</div>

@@ -134,7 +134,7 @@ placeholder="Sorcerer Name"
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The State Transformation Insight:</h3>
+				<h3>The State Transformation Lesson:</h3>
 				<p>
 					When working with complex state like objects and arrays,
 					it's crucial to treat state as immutable. Instead of
@@ -143,6 +143,15 @@ placeholder="Sorcerer Name"
 					map(), filter(), and concat(). This approach ensures that
 					React can properly detect state changes and re-render
 					components efficiently.
+				</p>
+			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>Why is it important to treat state as immutable in React?</p>
+				<p>
+					How does using the spread operator or array methods help you
+					update state safely?
 				</p>
 			</div>
 		</div>

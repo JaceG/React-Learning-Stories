@@ -133,37 +133,6 @@ function StateSorcerers() {
 				</button>
 			</div>
 
-			<div className='chapter-summary'>
-				<h4>Chapter Summary:</h4>
-				{currentChapter === 1 && (
-					<p>
-						In Chapter 1, we learned that State allows components to
-						remember information between renders and change over
-						time. The useState hook gives components a memory that
-						persists across re-renders, along with a function to
-						update that memory and trigger UI changes.
-					</p>
-				)}
-				{currentChapter === 2 && (
-					<p>
-						In Chapter 2, we discovered how to work with complex
-						state like objects and arrays. We learned the importance
-						of treating state as immutable, creating new state
-						objects rather than modifying existing ones directly,
-						using techniques like the spread operator.
-					</p>
-				)}
-				{currentChapter === 3 && (
-					<p>
-						In Chapter 3, we explored how state changes can trigger
-						side effects using the useEffect hook. We learned how to
-						synchronize component state with external systems, and
-						how to control when effects run by specifying
-						dependencies.
-					</p>
-				)}
-			</div>
-
 			<LessonNavigation
 				courseId='state-management'
 				lessonId='state-sorcerers'

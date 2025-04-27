@@ -116,7 +116,7 @@ return (
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Side Effects Insight:</h3>
+				<h3>The Side Effects Lesson:</h3>
 				<p>
 					The useEffect hook lets you perform side effects in your
 					components, such as fetching data, updating the DOM, or
@@ -125,6 +125,18 @@ return (
 					or props change. Effects let you synchronize your component
 					with external systems and handle operations that shouldn't
 					happen during rendering.
+				</p>
+			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How does useEffect help you connect your component to the
+					outside world?
+				</p>
+				<p>
+					Why is it important to control when side effects run in a
+					React component?
 				</p>
 			</div>
 		</div>
