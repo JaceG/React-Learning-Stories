@@ -397,7 +397,7 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 									addLifecycleMessage(
 										'Component unmounting without cleanup...this will cause memory leaks!'
 									);
-									retireComponent();
+									retireComponent(true);
 								}
 							}}
 							disabled={!isComponentBorn || isComponentRetired}
@@ -513,6 +513,14 @@ this.abortController.abort();
 					subscriptions. Proper cleanup prevents memory leaks and
 					ensures your app runs smoothly even as components come and
 					go.
+				</p>
+			</div>
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>Why is cleanup important when a component unmounts?</p>
+				<p>
+					What could happen if you forget to clean up resources in
+					componentWillUnmount?
 				</p>
 			</div>
 		</div>

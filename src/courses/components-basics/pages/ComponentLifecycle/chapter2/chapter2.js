@@ -544,6 +544,16 @@ this.fetchUserData(this.props.userId);
 					time in a component's lifecycle.
 				</p>
 			</div>
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How do mounting and updating methods differ in their
+					purpose?
+				</p>
+				<p>
+					When would you use componentDidMount vs. componentDidUpdate?
+				</p>
+			</div>
 		</div>
 	);
 };

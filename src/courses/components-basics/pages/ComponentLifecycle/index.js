@@ -135,7 +135,7 @@ function ComponentLifecycle() {
 	};
 
 	// Function to simulate component retirement (unmounting)
-	const retireComponent = () => {
+	const retireComponent = (withoutCleanup = false) => {
 		if (isComponentBorn && !isComponentRetired) {
 			setIsComponentRetired(true);
 
@@ -149,8 +149,11 @@ function ComponentLifecycle() {
 				);
 				addLifecycleMessage('Component has been removed from the DOM.');
 			} else if (currentChapter === 3) {
-				// Only add these messages if we haven't already added a custom unmount message
-				if (
+				if (withoutCleanup) {
+					addLifecycleMessage(
+						'Component has been removed from the DOM without cleanup.'
+					);
+				} else if (
 					!lifecycleMessages.some((msg) =>
 						msg.text.includes('without cleanup')
 					)

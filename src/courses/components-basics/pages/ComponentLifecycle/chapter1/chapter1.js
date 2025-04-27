@@ -165,6 +165,17 @@ const ChapterOne = ({
 					fetching or cleanup) should occur.
 				</p>
 			</div>
+			<div className='reflection-section'>
+				<h3>Reflect on the Story</h3>
+				<p>
+					How does the component lifecycle metaphor help you
+					understand React's component stages?
+				</p>
+				<p>
+					When might you need to use lifecycle methods in your own
+					components?
+				</p>
+			</div>
 		</div>
 	);
 };
