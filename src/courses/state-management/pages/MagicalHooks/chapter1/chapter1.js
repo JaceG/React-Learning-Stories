@@ -1,4 +1,12 @@
-const ChapterOne = ({ currentState, handleStateChange }) => {
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [currentState, setCurrentState] = useState(5);
+
+	const handleStateChange = (newValue) => {
+		setCurrentState(newValue);
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

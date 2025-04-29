@@ -1,14 +1,150 @@
-const ChapterThree = ({
-	jsxChallenges,
-	activeChallengeId,
-	selectChallenge,
-	userCode,
-	setUserCode,
-	checkSolution,
-	codeResult,
-	showSolution,
-	fixedCode,
-}) => {
+import { useState } from 'react';
+
+const ChapterThree = () => {
+	const [jsxChallenges, setJsxChallenges] = useState([
+		{
+			id: 1,
+			title: 'Single Root Element',
+			solved: false,
+			code: `function Profile() {
+  return (
+    <h1>User Profile</h1>
+    <p>Username: adventurer123</p>
+    <p>Level: 42</p>
+  );
+}`,
+			solution: `function Profile() {
+  return (
+    <div>
+      <h1>User Profile</h1>
+      <p>Username: adventurer123</p>
+      <p>Level: 42</p>
+    </div>
+  );
+}`,
+		},
+		{
+			id: 2,
+			title: 'Self-Closing Tags',
+			solved: false,
+			code: `function Inventory() {
+  return (
+    <div>
+      <h2>Inventory</h2>
+      <input type="text" placeholder="Search items">
+      <img src="sword.png" alt="Legendary Sword">
+    </div>
+  );
+}`,
+			solution: `function Inventory() {
+  return (
+    <div>
+      <h2>Inventory</h2>
+      <input type="text" placeholder="Search items" />
+      <img src="sword.png" alt="Legendary Sword" />
+    </div>
+  );
+}`,
+		},
+		{
+			id: 3,
+			title: 'camelCase Properties',
+			solved: false,
+			code: `function Button() {
+  return (
+    <button 
+      class="magic-button"
+      onclick={handleClick}
+      tabindex="1"
+    >
+      Cast Spell
+    </button>
+  );
+}`,
+			solution: `function Button() {
+  return (
+    <button 
+      className="magic-button"
+      onClick={handleClick}
+      tabIndex="1"
+    >
+      Cast Spell
+    </button>
+  );
+}`,
+		},
+	]);
+	const [activeChallengeId, setActiveChallengeId] = useState(null);
+	const [userCode, setUserCode] = useState('');
+	const [codeResult, setCodeResult] = useState(null);
+	const [fixedCode, setFixedCode] = useState(false);
+
+	const selectChallenge = (id) => {
+		const challenge = jsxChallenges.find((c) => c.id === id);
+		setActiveChallengeId(id);
+		setUserCode(challenge.code);
+		setCodeResult(null);
+		setFixedCode(false);
+	};
+
+	const checkSolution = () => {
+		const challenge = jsxChallenges.find((c) => c.id === activeChallengeId);
+		if (!challenge) return;
+		let isCorrect = false;
+		let feedback = '';
+		switch (activeChallengeId) {
+			case 1:
+				isCorrect =
+					/<div>[\s\S]*<h1>[\s\S]*<\/h1>[\s\S]*<p>[\s\S]*<\/p>[\s\S]*<\/div>/.test(
+						userCode
+					);
+				feedback = isCorrect
+					? 'Correct! You wrapped everything in a single root element.'
+					: 'Remember: JSX must have a single root element.';
+				break;
+			case 2:
+				isCorrect = /<input[\s\S]*\/>[\s\S]*<img[\s\S]*\/>/.test(
+					userCode
+				);
+				feedback = isCorrect
+					? 'Correct! All tags are self-closed.'
+					: 'Remember: All tags in JSX must be closed.';
+				break;
+			case 3:
+				isCorrect =
+					/className=/.test(userCode) &&
+					/onClick=/.test(userCode) &&
+					/tabIndex=/.test(userCode);
+				feedback = isCorrect
+					? 'Correct! You used camelCase for all properties.'
+					: 'Remember: Use camelCase for JSX properties.';
+				break;
+			default:
+				feedback = '';
+		}
+		setCodeResult({ isCorrect, feedback });
+		if (isCorrect) {
+			setJsxChallenges((prev) =>
+				prev.map((c) =>
+					c.id === activeChallengeId ? { ...c, solved: true } : c
+				)
+			);
+			setFixedCode(true);
+		}
+	};
+
+	const showSolution = () => {
+		const challenge = jsxChallenges.find((c) => c.id === activeChallengeId);
+		if (challenge) {
+			setUserCode(challenge.solution);
+			setFixedCode(true);
+			setCodeResult({
+				isCorrect: true,
+				feedback: 'Here is the correct solution!',
+			});
+		}
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

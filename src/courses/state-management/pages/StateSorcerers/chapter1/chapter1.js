@@ -1,9 +1,11 @@
-const ChapterOne = ({
-	count,
-	incrementCount,
-	showCounterCode,
-	setShowCounterCode,
-}) => {
+import React, { useState } from 'react';
+
+const ChapterOne = () => {
+	const [count, setCount] = useState(0);
+	const [showCounterCode, setShowCounterCode] = useState(false);
+
+	const incrementCount = () => setCount(count + 1);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Memory Keepers</h2>

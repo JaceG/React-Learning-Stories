@@ -1,9 +1,13 @@
-const ChapterThree = ({
-	consumerCount,
-	toggleConsumer,
-	optimizationEnabled,
-	toggleOptimization,
-}) => {
+import { useState } from 'react';
+
+const ChapterThree = () => {
+	const [consumerCount, setConsumerCount] = useState(0);
+	const [optimizationEnabled, setOptimizationEnabled] = useState(false);
+
+	const toggleConsumer = () =>
+		setConsumerCount((count) => (count === 0 ? 3 : 0));
+	const toggleOptimization = () => setOptimizationEnabled((prev) => !prev);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

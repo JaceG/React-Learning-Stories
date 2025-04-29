@@ -1,11 +1,31 @@
-const ChapterOne = ({
-	selectedComponent,
-	handleComponentSelect,
-	handlePropSelect,
-	activeProp,
-	handlePropValueChange,
-	currentPropValues,
-}) => {
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [selectedComponent, setSelectedComponent] = useState(null);
+	const [activeProp, setActiveProp] = useState(null);
+	const [currentPropValues, setCurrentPropValues] = useState({
+		buttonColor: 'blue',
+		buttonText: 'Click Me',
+		cardTitle: 'Welcome',
+		cardContent: 'This is a card component',
+	});
+
+	const handleComponentSelect = (component) => {
+		setSelectedComponent(component);
+		setActiveProp(null);
+	};
+
+	const handlePropSelect = (prop) => {
+		setActiveProp(prop);
+	};
+
+	const handlePropValueChange = (propName, value) => {
+		setCurrentPropValues({
+			...currentPropValues,
+			[propName]: value,
+		});
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Royal Messengers</h2>

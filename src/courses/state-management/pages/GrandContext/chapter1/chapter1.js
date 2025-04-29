@@ -1,4 +1,9 @@
-const ChapterOne = ({ theme, toggleTheme }) => {
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [theme, setTheme] = useState('light');
+	const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+
 	return (
 		<div className={`chapter ${theme}`}>
 			<h2 className='chapter-title'>

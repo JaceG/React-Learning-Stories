@@ -1,4 +1,66 @@
-const ChapterOne = ({ state, dispatch }) => {
+import React, { useReducer } from 'react';
+
+// Initial state for our adventure
+const initialState = {
+	gold: 10,
+	items: {
+		potions: 2,
+		weapons: [{ name: 'Wooden Sword', power: 5 }],
+	},
+	status: 'Ready for adventure',
+};
+
+// Our reducer function
+function inventoryReducer(state, action) {
+	switch (action.type) {
+		case 'ADD_GOLD':
+			return {
+				...state,
+				gold: state.gold + action.payload,
+			};
+		case 'BUY_POTION':
+			if (state.gold < action.payload.cost) {
+				return state;
+			}
+			return {
+				...state,
+				gold: state.gold - action.payload.cost,
+				items: {
+					...state.items,
+					potions: state.items.potions + 1,
+				},
+				status: 'Ready for adventure!',
+			};
+		case 'ADD_WEAPON':
+			return {
+				...state,
+				items: {
+					...state.items,
+					weapons: [...state.items.weapons, action.payload],
+				},
+			};
+		case 'USE_POTION':
+			if (state.items.potions <= 0) {
+				return state;
+			}
+			return {
+				...state,
+				items: {
+					...state.items,
+					potions: state.items.potions - 1,
+				},
+				status: 'Feeling healthy!',
+			};
+		case 'RESET':
+			return initialState;
+		default:
+			return state;
+	}
+}
+
+const ChapterOne = () => {
+	const [state, dispatch] = useReducer(inventoryReducer, initialState);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Reducer's Quest</h2>

@@ -1,12 +1,145 @@
-const ChapterThree = ({
-	propTypeComponent,
-	propInputs,
-	propTypeErrors,
-	showPropTypeErrors,
-	handlePropTypeComponentChange,
-	handlePropInputChange,
-	validateProps,
-}) => {
+import { useState } from 'react';
+
+const ChapterThree = () => {
+	const [propTypeComponent, setPropTypeComponent] = useState('button');
+	const [propTypeErrors, setPropTypeErrors] = useState([]);
+	const [showPropTypeErrors, setShowPropTypeErrors] = useState(false);
+	const [propInputs, setPropInputs] = useState({
+		color: 'blue',
+		text: 'Click Me',
+		onClick: '() => alert("Clicked!")',
+		size: 'medium',
+		title: '',
+		content: '',
+		image: '',
+		isActive: true,
+	});
+
+	const handlePropTypeComponentChange = (component) => {
+		setPropTypeComponent(component);
+		setShowPropTypeErrors(false);
+		setPropTypeErrors([]);
+	};
+
+	const handlePropInputChange = (propName, value) => {
+		setPropInputs({
+			...propInputs,
+			[propName]: value,
+		});
+	};
+
+	const validateProps = () => {
+		const newErrors = [];
+
+		if (propTypeComponent === 'button') {
+			if (
+				typeof propInputs.color !== 'string' ||
+				propInputs.color.trim() === '' ||
+				!isNaN(propInputs.color)
+			) {
+				newErrors.push({
+					prop: 'color',
+					expected: 'string',
+					received: typeof propInputs.color,
+				});
+			}
+			if (
+				typeof propInputs.text !== 'string' ||
+				propInputs.text.trim() === '' ||
+				!isNaN(propInputs.text)
+			) {
+				newErrors.push({
+					prop: 'text',
+					expected: 'string',
+					received: typeof propInputs.text,
+				});
+			}
+			if (!propInputs.onClick.includes('()')) {
+				newErrors.push({
+					prop: 'onClick',
+					expected: 'function',
+					received: 'not a function',
+				});
+			}
+			const allowedSizes = ['small', 'medium', 'large'];
+			if (propInputs.size && !allowedSizes.includes(propInputs.size)) {
+				newErrors.push({
+					prop: 'size',
+					expected: "one of ['small', 'medium', 'large']",
+					received: propInputs.size,
+				});
+			}
+			if (!propInputs.color) {
+				newErrors.push({
+					prop: 'color',
+					error: 'Required prop missing',
+				});
+			}
+			if (!propInputs.text) {
+				newErrors.push({
+					prop: 'text',
+					error: 'Required prop missing',
+				});
+			}
+		}
+		if (
+			typeof propInputs.title !== 'string' ||
+			propInputs.title.trim() === '' ||
+			!isNaN(propInputs.title)
+		) {
+			newErrors.push({
+				prop: 'title',
+				expected: 'string',
+				received: typeof propInputs.title,
+			});
+		}
+		if (
+			typeof propInputs.content !== 'string' ||
+			propInputs.content.trim() === '' ||
+			!isNaN(propInputs.content)
+		) {
+			newErrors.push({
+				prop: 'content',
+				expected: 'string',
+				received: typeof propInputs.content,
+			});
+		}
+		if (
+			propInputs.image &&
+			(typeof propInputs.image !== 'string' || !isNaN(propInputs.image))
+		) {
+			newErrors.push({
+				prop: 'image',
+				expected: 'string',
+				received: typeof propInputs.image,
+			});
+		}
+		if (
+			propInputs.isActive !== undefined &&
+			typeof propInputs.isActive !== 'boolean'
+		) {
+			newErrors.push({
+				prop: 'isActive',
+				expected: 'boolean',
+				received: typeof propInputs.isActive,
+			});
+		}
+		if (!propInputs.title) {
+			newErrors.push({
+				prop: 'title',
+				error: 'Required prop missing',
+			});
+		}
+		if (!propInputs.content) {
+			newErrors.push({
+				prop: 'content',
+				error: 'Required prop missing',
+			});
+		}
+		setPropTypeErrors(newErrors);
+		setShowPropTypeErrors(true);
+	};
+
 	function parseOnClickFunction(onClickInput) {
 		if (typeof onClickInput === 'function') return onClickInput;
 		if (typeof onClickInput === 'string') {

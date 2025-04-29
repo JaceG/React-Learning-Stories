@@ -1,4 +1,84 @@
-const ChapterTwo = ({ storeState, dispatchAction }) => {
+import React, { useState } from 'react';
+
+const initialStoreState = {
+	game: { score: 0, level: 1, lives: 3 },
+	player: { name: 'Hero', powerUps: [] },
+	ui: { theme: 'light', soundEnabled: true },
+};
+
+const ChapterTwo = () => {
+	const [storeState, setStoreState] = useState(initialStoreState);
+
+	const dispatchAction = (action) => {
+		switch (action.type) {
+			case 'game/scorePoints':
+				setStoreState((prev) => ({
+					...prev,
+					game: {
+						...prev.game,
+						score: prev.game.score + action.payload,
+					},
+				}));
+				break;
+			case 'game/levelUp':
+				setStoreState((prev) => ({
+					...prev,
+					game: {
+						...prev.game,
+						level: prev.game.level + 1,
+					},
+				}));
+				break;
+			case 'game/loseLife':
+				setStoreState((prev) => ({
+					...prev,
+					game: {
+						...prev.game,
+						lives: Math.max(0, prev.game.lives - 1),
+					},
+				}));
+				break;
+			case 'player/changeName':
+				setStoreState((prev) => ({
+					...prev,
+					player: {
+						...prev.player,
+						name: action.payload,
+					},
+				}));
+				break;
+			case 'player/addPowerUp':
+				setStoreState((prev) => ({
+					...prev,
+					player: {
+						...prev.player,
+						powerUps: [...prev.player.powerUps, action.payload],
+					},
+				}));
+				break;
+			case 'ui/toggleTheme':
+				setStoreState((prev) => ({
+					...prev,
+					ui: {
+						...prev.ui,
+						theme: prev.ui.theme === 'light' ? 'dark' : 'light',
+					},
+				}));
+				break;
+			case 'ui/toggleSound':
+				setStoreState((prev) => ({
+					...prev,
+					ui: {
+						...prev.ui,
+						soundEnabled: !prev.ui.soundEnabled,
+					},
+				}));
+				break;
+			default:
+				break;
+		}
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

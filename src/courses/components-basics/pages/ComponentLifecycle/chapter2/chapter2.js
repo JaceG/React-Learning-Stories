@@ -1,13 +1,85 @@
-const ChapterTwo = ({
-	birthComponent,
-	updateComponent,
-	retireComponent,
-	resetDemo,
-	isComponentBorn,
-	isComponentRetired,
-	componentAge,
-	lifecycleMessages,
-}) => {
+import { useState } from 'react';
+
+const ChapterTwo = () => {
+	const [isComponentBorn, setIsComponentBorn] = useState(false);
+	const [componentAge, setComponentAge] = useState(0);
+	const [isComponentRetired, setIsComponentRetired] = useState(false);
+	const [lifecycleMessages, setLifecycleMessages] = useState([]);
+
+	const birthComponent = () => {
+		if (!isComponentBorn && !isComponentRetired) {
+			setIsComponentBorn(true);
+			addLifecycleMessage(
+				'constructor() is called: initializing state and binding methods.'
+			);
+			addLifecycleMessage(
+				'render() is called: component describes its UI.'
+			);
+			addLifecycleMessage(
+				'componentDidMount() is called: component is now in the DOM.'
+			);
+			addLifecycleMessage(
+				'Initial API request sent to fetch user data...'
+			);
+		}
+	};
+
+	const updateComponent = () => {
+		if (isComponentBorn && !isComponentRetired) {
+			setComponentAge((prevAge) => {
+				const newAge = prevAge + 1;
+				addLifecycleMessage(
+					'shouldComponentUpdate() is called: checking if update is needed.'
+				);
+				addLifecycleMessage(
+					'render() is called during update: component re-renders.'
+				);
+				addLifecycleMessage(
+					'componentDidUpdate() is called: handling side effects after update.'
+				);
+				if (prevAge === 0) {
+					addLifecycleMessage(
+						'User data loaded successfully! Profile now displaying.'
+					);
+				} else {
+					addLifecycleMessage(
+						`Profile updated with new user data (update #${
+							newAge - 1
+						}).`
+					);
+				}
+				return newAge;
+			});
+		}
+	};
+
+	const retireComponent = () => {
+		if (isComponentBorn && !isComponentRetired) {
+			setIsComponentRetired(true);
+			addLifecycleMessage(
+				'componentWillUnmount() is called: preparing to unmount...'
+			);
+			addLifecycleMessage(
+				'Cleanup tasks performed: canceling network requests, removing event listeners.'
+			);
+			addLifecycleMessage('Component has been removed from the DOM.');
+		}
+	};
+
+	const resetDemo = () => {
+		setIsComponentBorn(false);
+		setComponentAge(0);
+		setIsComponentRetired(false);
+		setLifecycleMessages([]);
+	};
+
+	const addLifecycleMessage = (message) => {
+		setLifecycleMessages((prev) => [
+			...prev,
+			{ id: Date.now() + Math.random(), text: message },
+		]);
+	};
+
 	// Define the sequence of lifecycle methods
 	const mountingMethods = [
 		{

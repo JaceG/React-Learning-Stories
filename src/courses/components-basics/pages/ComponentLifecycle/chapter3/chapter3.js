@@ -1,14 +1,111 @@
-const ChapterThree = ({
-	birthComponent,
-	updateComponent,
-	retireComponent,
-	resetDemo,
-	isComponentBorn,
-	isComponentRetired,
-	componentAge,
-	lifecycleMessages,
-	addLifecycleMessage,
-}) => {
+import { useState } from 'react';
+
+const ChapterThree = () => {
+	const [isComponentBorn, setIsComponentBorn] = useState(false);
+	const [componentAge, setComponentAge] = useState(0);
+	const [isComponentRetired, setIsComponentRetired] = useState(false);
+	const [lifecycleMessages, setLifecycleMessages] = useState([]);
+
+	const addLifecycleMessage = (message) => {
+		setLifecycleMessages((prev) => [
+			...prev,
+			{ id: Date.now() + Math.random(), text: message },
+		]);
+	};
+
+	const birthComponent = () => {
+		if (!isComponentBorn && !isComponentRetired) {
+			setIsComponentBorn(true);
+			addLifecycleMessage(
+				'constructor() is called: initializing component state.'
+			);
+			addLifecycleMessage(
+				'render() is called: component describes its UI.'
+			);
+			addLifecycleMessage(
+				'componentDidMount() is called: ResourceComponent is now in the DOM.'
+			);
+			addLifecycleMessage('ResourceComponent starts timer interval.');
+			addLifecycleMessage(
+				'ResourceComponent adds window resize listener.'
+			);
+			addLifecycleMessage('ResourceComponent subscribes to data stream.');
+			addLifecycleMessage(
+				'ResourceComponent initiates network requests.'
+			);
+		}
+	};
+
+	const updateComponent = () => {
+		if (isComponentBorn && !isComponentRetired) {
+			setComponentAge((prevAge) => {
+				const newAge = prevAge + 1;
+				addLifecycleMessage(
+					'shouldComponentUpdate() is called: checking if update is needed.'
+				);
+				addLifecycleMessage(
+					'render() is called during update: component re-renders.'
+				);
+				addLifecycleMessage(
+					`componentDidUpdate() is called: resources active for ${newAge} seconds.`
+				);
+				if (newAge % 3 === 0) {
+					addLifecycleMessage(
+						'Timer interval fires, updating component state.'
+					);
+				}
+				if (newAge % 4 === 0) {
+					addLifecycleMessage(
+						'Data subscription receives new data packet.'
+					);
+				}
+				if (newAge % 5 === 0) {
+					addLifecycleMessage(
+						'New network request initiated to refresh data.'
+					);
+				}
+				return newAge;
+			});
+		}
+	};
+
+	const retireComponent = (withoutCleanup = false) => {
+		if (isComponentBorn && !isComponentRetired) {
+			if (withoutCleanup) {
+				addLifecycleMessage(
+					'Component has been removed from the DOM without cleanup.'
+				);
+				setIsComponentRetired(true);
+			} else {
+				addLifecycleMessage(
+					'componentWillUnmount() is called: preparing for cleanup...'
+				);
+				addLifecycleMessage(
+					'Canceling timer interval with clearInterval()'
+				);
+				addLifecycleMessage(
+					'Removing window event listeners with removeEventListener()'
+				);
+				addLifecycleMessage(
+					'Unsubscribing from data sources with unsubscribe()'
+				);
+				addLifecycleMessage(
+					'Aborting network requests with abortController.abort()'
+				);
+				addLifecycleMessage('All resources properly cleaned up.');
+				addLifecycleMessage('Component has been removed from the DOM.');
+				setIsComponentRetired(true);
+			}
+		}
+	};
+
+	const resetDemo = () => {
+		setIsComponentBorn(false);
+		setComponentAge(0);
+		setIsComponentRetired(false);
+		setLifecycleMessages([]);
+	};
+
 	// Define cleanup tasks that will be visualized in the interactive exercise
 	const cleanupTasks = [
 		{
@@ -41,6 +138,23 @@ const ChapterThree = ({
 			icon: '🌐',
 		},
 	];
+
+	// Helper to determine cleanup status based on the last relevant message
+	const lastCleanupStatus = (() => {
+		const reversed = [...lifecycleMessages].reverse();
+		return reversed.find(
+			(msg) =>
+				msg.text.includes('All resources properly cleaned up.') ||
+				msg.text.includes('without cleanup')
+		);
+	})();
+	const cleanupStatus = lastCleanupStatus
+		? lastCleanupStatus.text.includes('All resources properly cleaned up.')
+			? 'cleaned'
+			: lastCleanupStatus.text.includes('without cleanup')
+			? 'not_cleaned'
+			: null
+		: null;
 
 	return (
 		<div className='chapter'>
@@ -185,18 +299,23 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 								</div>
 							</div>
 						) : (
-							<div className='component-retired'>
+							<div
+								className={`component-retired${
+									cleanupStatus === 'cleaned'
+										? ' cleaned'
+										: ''
+								}`}>
 								<p>ResourceComponent has been unmounted.</p>
 								<p
 									style={{
 										fontSize: '0.9em',
 										marginTop: '10px',
 									}}>
-									{lifecycleMessages.some((msg) =>
-										msg.text.includes('without cleanup')
-									)
+									{cleanupStatus === 'not_cleaned'
 										? '⚠️ Warning: Resources were not properly cleaned up!'
-										: '✅ All resources were properly cleaned up.'}
+										: cleanupStatus === 'cleaned'
+										? '✅ All resources were properly cleaned up.'
+										: ''}
 								</p>
 							</div>
 						)}
@@ -234,17 +353,11 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 											isComponentBorn &&
 											!isComponentRetired
 												? '#e6f7ff'
-												: isComponentRetired &&
-												  lifecycleMessages.some(
-														(msg) =>
-															msg.text.includes(
-																'componentWillUnmount'
-															) &&
-															!msg.text.includes(
-																'without cleanup'
-															)
-												  )
+												: cleanupStatus === 'cleaned'
 												? '#e6ffe6'
+												: cleanupStatus ===
+												  'not_cleaned'
+												? '#ffe6e6'
 												: '#f9f9f9',
 										transition: 'all 0.3s ease',
 									}}>
@@ -297,34 +410,24 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 													isComponentBorn &&
 													!isComponentRetired
 														? '100%'
-														: isComponentRetired &&
-														  lifecycleMessages.some(
-																(msg) =>
-																	msg.text.includes(
-																		'componentWillUnmount'
-																	) &&
-																	!msg.text.includes(
-																		'without cleanup'
-																	)
-														  )
+														: cleanupStatus ===
+														  'cleaned'
 														? '0%'
+														: cleanupStatus ===
+														  'not_cleaned'
+														? '100%'
 														: '100%',
 												height: '100%',
 												backgroundColor:
 													isComponentBorn &&
 													!isComponentRetired
 														? '#3498db'
-														: isComponentRetired &&
-														  lifecycleMessages.some(
-																(msg) =>
-																	msg.text.includes(
-																		'componentWillUnmount'
-																	) &&
-																	!msg.text.includes(
-																		'without cleanup'
-																	)
-														  )
+														: cleanupStatus ===
+														  'cleaned'
 														? 'transparent'
+														: cleanupStatus ===
+														  'not_cleaned'
+														? '#e74c3c'
 														: '#e74c3c',
 												transition: 'width 1s ease',
 											}}
@@ -334,16 +437,7 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 										style={{
 											fontSize: '0.75em',
 											color:
-												isComponentRetired &&
-												lifecycleMessages.some(
-													(msg) =>
-														msg.text.includes(
-															'componentWillUnmount'
-														) &&
-														msg.text.includes(
-															'without cleanup'
-														)
-												)
+												cleanupStatus === 'not_cleaned'
 													? '#e74c3c'
 													: '#666',
 											marginTop: '5px',
@@ -353,18 +447,11 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 											: isComponentBorn &&
 											  !isComponentRetired
 											? 'Active and consuming resources'
-											: isComponentRetired &&
-											  lifecycleMessages.some(
-													(msg) =>
-														msg.text.includes(
-															'componentWillUnmount'
-														) &&
-														!msg.text.includes(
-															'without cleanup'
-														)
-											  )
+											: cleanupStatus === 'cleaned'
 											? 'Properly cleaned up'
-											: 'Still running in background! Memory leak!'}
+											: cleanupStatus === 'not_cleaned'
+											? 'Still running in background! Memory leak!'
+											: ''}
 									</div>
 								</div>
 							))}
@@ -385,7 +472,7 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 							Simulate Resource Activity
 						</button>
 						<button
-							onClick={retireComponent}
+							onClick={() => retireComponent()}
 							disabled={!isComponentBorn || isComponentRetired}
 							className='lifecycle-button unmount-button'>
 							Unmount Component
@@ -393,10 +480,6 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 						<button
 							onClick={() => {
 								if (isComponentBorn && !isComponentRetired) {
-									// Add a custom message before retiring the component
-									addLifecycleMessage(
-										'Component unmounting without cleanup...this will cause memory leaks!'
-									);
 									retireComponent(true);
 								}
 							}}

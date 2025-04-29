@@ -1,22 +1,39 @@
-const ChapterTwo = ({
-	expressionType,
-	setExpressionType,
-	visitorName,
-	setVisitorName,
-	userRole,
-	setUserRole,
-	messageCount,
-	setMessageCount,
-	items,
-	newItemName,
-	setNewItemName,
-	newItemQuantity,
-	setNewItemQuantity,
-	addItem,
-	removeItem,
-	buttonStyle,
-	setButtonStyle,
-}) => {
+import { useState } from 'react';
+
+const ChapterTwo = () => {
+	const [expressionType, setExpressionType] = useState('text');
+	const [visitorName, setVisitorName] = useState('Traveler');
+	const [userRole, setUserRole] = useState('guest');
+	const [messageCount, setMessageCount] = useState(3);
+	const [items, setItems] = useState([
+		{ id: 1, name: 'Potion', quantity: 5 },
+		{ id: 2, name: 'Sword', quantity: 1 },
+		{ id: 3, name: 'Shield', quantity: 1 },
+	]);
+	const [newItemName, setNewItemName] = useState('');
+	const [newItemQuantity, setNewItemQuantity] = useState(1);
+	const [buttonStyle, setButtonStyle] = useState('primary');
+
+	const addItem = () => {
+		if (newItemName.trim() !== '') {
+			const newItem = {
+				id:
+					items.length > 0
+						? Math.max(...items.map((item) => item.id)) + 1
+						: 1,
+				name: newItemName,
+				quantity: newItemQuantity,
+			};
+			setItems([...items, newItem]);
+			setNewItemName('');
+			setNewItemQuantity(1);
+		}
+	};
+
+	const removeItem = (id) => {
+		setItems(items.filter((item) => item.id !== id));
+	};
+
 	// Generate the current time greeting
 	const getCurrentGreeting = () => {
 		const currentTime = new Date().getHours();

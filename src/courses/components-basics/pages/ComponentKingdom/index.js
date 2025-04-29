@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
 import './ComponentKingdom.css';
-import ChapterOne from './chapter1/chapter1';
-import ChapterTwo from './chapter2/chapter2';
-import ChapterThree from './chapter3/chapter3';
+// import ChapterOne from './chapter1/chapter1';
+// import ChapterTwo from './chapter2/chapter2';
+// import ChapterThree from './chapter3/chapter3';
 
 function ComponentKingdom() {
-	const [currentChapter, setCurrentChapter] = useState(1);
 	const [highlightedCard, setHighlightedCard] = useState(null);
 	const [selectedProp, setSelectedProp] = useState(null);
 	const [customLabel, setCustomLabel] = useState('');
 	const [activeComponent, setActiveComponent] = useState(null);
 	const [compositePreview, setCompositePreview] = useState([]);
 
-	const nextChapter = () => {
-		if (currentChapter < 3) {
-			setCurrentChapter(currentChapter + 1);
-		}
-	};
+	const navigate = useNavigate();
+	const location = useLocation();
 
-	const prevChapter = () => {
-		if (currentChapter > 1) {
-			setCurrentChapter(currentChapter - 1);
-		}
+	// Determine current chapter from URL
+	const chapterMatch = location.pathname.match(/chapter(\d)/);
+	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
+
+	const goToChapter = (chapter) => {
+		navigate(`chapter${chapter}`);
 	};
 
 	// Hover effects for workshop cards
@@ -61,7 +60,7 @@ function ComponentKingdom() {
 
 			<div className='chapter-navigation'>
 				<button
-					onClick={prevChapter}
+					onClick={() => goToChapter(currentChapter - 1)}
 					disabled={currentChapter === 1}
 					className='chapter-nav-button'>
 					← Previous Chapter
@@ -70,59 +69,28 @@ function ComponentKingdom() {
 					Chapter {currentChapter} of 3
 				</span>
 				<button
-					onClick={nextChapter}
+					onClick={() => goToChapter(currentChapter + 1)}
 					disabled={currentChapter === 3}
 					className='chapter-nav-button'>
 					Next Chapter →
 				</button>
 			</div>
 
-			{/* Chapter 1: Introduction to Components */}
-			{currentChapter === 1 && (
-				<ChapterOne
-					handleWorkshopHover={handleWorkshopHover}
-					highlightedCard={highlightedCard}
-				/>
-			)}
-
-			{/* Chapter 2: Component Props */}
-			{currentChapter === 2 && (
-				<ChapterTwo
-					selectedProp={selectedProp}
-					customLabel={customLabel}
-					setCustomLabel={setCustomLabel}
-					handlePropClick={handlePropClick}
-				/>
-			)}
-
-			{/* Chapter 3: Component Composition */}
-			{currentChapter === 3 && (
-				<ChapterThree
-					activeComponent={activeComponent}
-					compositePreview={compositePreview}
-					handleComponentClick={handleComponentClick}
-					removeComponent={removeComponent}
-				/>
-			)}
-
-			{/* Add chapter-navigation at the bottom, just above LessonNavigation */}
-			<div className='chapter-navigation'>
-				<button
-					onClick={prevChapter}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={nextChapter}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			{/* Render the current chapter */}
+			<Outlet
+				context={{
+					highlightedCard,
+					handleWorkshopHover,
+					selectedProp,
+					customLabel,
+					setCustomLabel,
+					handlePropClick,
+					activeComponent,
+					compositePreview,
+					handleComponentClick,
+					removeComponent,
+				}}
+			/>
 
 			<LessonNavigation
 				courseId='components-basics'

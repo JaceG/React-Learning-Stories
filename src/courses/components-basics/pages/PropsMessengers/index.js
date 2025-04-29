@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
 import './PropsMessengers.css';
-import ChapterOne from './chapter1/chapter1';
-import ChapterTwo from './chapter2/chapter2';
-import ChapterThree from './chapter3/chapter3';
+// import ChapterOne from './chapter1/chapter1';
+// import ChapterTwo from './chapter2/chapter2';
+// import ChapterThree from './chapter3/chapter3';
 
 function PropsMessengers() {
-	const [currentChapter, setCurrentChapter] = useState(1);
 	const [messageBoard, setMessageBoard] = useState('');
 	const [selectedComponent, setSelectedComponent] = useState(null);
 	const [activeProp, setActiveProp] = useState(null);
@@ -309,31 +309,25 @@ function PropsMessengers() {
 		setShowPropTypeErrors(true);
 	};
 
-	// Navigation functions
-	const nextChapter = () => {
-		if (currentChapter < 3) {
-			setCurrentChapter(currentChapter + 1);
-			setMessageBoard('');
-		}
-	};
+	const navigate = useNavigate();
+	const location = useLocation();
+	const chapterMatch = location.pathname.match(/chapter(\d)/);
+	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
 
-	const prevChapter = () => {
-		if (currentChapter > 1) {
-			setCurrentChapter(currentChapter - 1);
-			setMessageBoard('');
-		}
+	const goToChapter = (chapter) => {
+		navigate(`chapter${chapter}`);
 	};
 
 	return (
 		<div className='lesson-container'>
 			<h1 className='lesson-title'>The Props Messengers</h1>
 			<p className='lesson-subtitle'>
-				A tale of communication between components
+				A story about how information travels in React
 			</p>
 
 			<div className='chapter-navigation'>
 				<button
-					onClick={prevChapter}
+					onClick={() => goToChapter(currentChapter - 1)}
 					disabled={currentChapter === 1}
 					className='chapter-nav-button'>
 					← Previous Chapter
@@ -342,71 +336,37 @@ function PropsMessengers() {
 					Chapter {currentChapter} of 3
 				</span>
 				<button
-					onClick={nextChapter}
+					onClick={() => goToChapter(currentChapter + 1)}
 					disabled={currentChapter === 3}
 					className='chapter-nav-button'>
 					Next Chapter →
 				</button>
 			</div>
 
-			{/* Chapter 1: Introduction to Props */}
-			{currentChapter === 1 && (
-				<ChapterOne
-					selectedComponent={selectedComponent}
-					handleComponentSelect={handleComponentSelect}
-					handlePropSelect={handlePropSelect}
-					activeProp={activeProp}
-					handlePropValueChange={handlePropValueChange}
-					currentPropValues={currentPropValues}
-				/>
-			)}
-
-			{/* Chapter 2: The One-Way Road */}
-			{currentChapter === 2 && (
-				<ChapterTwo
-					messageBoard={messageBoard}
-					handlePropDragStart={handlePropDragStart}
-					handleCraftsmanDrop={handleCraftsmanDrop}
-					handleDragOver={handleDragOver}
-					resetCraftsmenAndProps={resetCraftsmenAndProps}
-					craftsmen={craftsmen}
-					propBags={propBags}
-				/>
-			)}
-
-			{/* Chapter 3: The Props Types Guardians */}
-			{currentChapter === 3 && (
-				<ChapterThree
-					propTypeComponent={propTypeComponent}
-					handlePropTypeComponentChange={
-						handlePropTypeComponentChange
-					}
-					propInputs={propInputs}
-					handlePropInputChange={handlePropInputChange}
-					validateProps={validateProps}
-					propTypeErrors={propTypeErrors}
-					showPropTypeErrors={showPropTypeErrors}
-				/>
-			)}
-
-			{/* Add chapter-navigation at the bottom, just above LessonNavigation */}
-			<div className='chapter-navigation'>
-				<button
-					onClick={prevChapter}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={nextChapter}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<Outlet
+				context={{
+					selectedComponent,
+					handleComponentSelect,
+					handlePropSelect,
+					activeProp,
+					handlePropValueChange,
+					currentPropValues,
+					handlePropDragStart,
+					handleCraftsmanDrop,
+					handleDragOver,
+					resetCraftsmenAndProps,
+					messageBoard,
+					propBags,
+					craftsmen,
+					propTypeComponent,
+					propInputs,
+					propTypeErrors,
+					showPropTypeErrors,
+					handlePropTypeComponentChange,
+					handlePropInputChange,
+					validateProps,
+				}}
+			/>
 
 			<LessonNavigation
 				courseId='components-basics'

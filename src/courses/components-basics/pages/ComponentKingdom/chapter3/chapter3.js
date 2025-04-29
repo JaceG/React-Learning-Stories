@@ -1,9 +1,23 @@
-const ChapterThree = ({
-	activeComponent,
-	compositePreview,
-	handleComponentClick,
-	removeComponent,
-}) => {
+import { useState } from 'react';
+
+const ChapterThree = () => {
+	const [activeComponent, setActiveComponent] = useState(null);
+	const [compositePreview, setCompositePreview] = useState([]);
+
+	const handleComponentClick = (component) => {
+		setActiveComponent(component);
+		setCompositePreview((prev) =>
+			prev.includes(component) ? prev : [...prev, component]
+		);
+	};
+
+	const removeComponent = (component) => {
+		setCompositePreview((prev) => prev.filter((c) => c !== component));
+		if (activeComponent === component) {
+			setActiveComponent(null);
+		}
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

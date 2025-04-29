@@ -1,4 +1,17 @@
-const ChapterTwo = ({ effectCount, effectDependency, toggleDependency }) => {
+import { useState, useEffect } from 'react';
+
+const ChapterTwo = () => {
+	const [effectCount, setEffectCount] = useState(0);
+	const [effectDependency, setEffectDependency] = useState(false);
+
+	const toggleDependency = () => {
+		setEffectDependency((prev) => !prev);
+	};
+
+	useEffect(() => {
+		setEffectCount((prev) => prev + 1);
+	}, [effectDependency]);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

@@ -1,4 +1,10 @@
-const ChapterTwo = ({ user, login, logout }) => {
+import { useState } from 'react';
+
+const ChapterTwo = () => {
+	const [user, setUser] = useState(null);
+	const login = (username, role) => setUser({ username, role });
+	const logout = () => setUser(null);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

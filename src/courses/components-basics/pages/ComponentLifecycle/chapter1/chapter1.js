@@ -1,13 +1,63 @@
-const ChapterOne = ({
-	birthComponent,
-	updateComponent,
-	retireComponent,
-	resetDemo,
-	isComponentBorn,
-	isComponentRetired,
-	componentAge,
-	lifecycleMessages,
-}) => {
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [isComponentBorn, setIsComponentBorn] = useState(false);
+	const [componentAge, setComponentAge] = useState(0);
+	const [isComponentRetired, setIsComponentRetired] = useState(false);
+	const [lifecycleMessages, setLifecycleMessages] = useState([]);
+
+	const birthComponent = () => {
+		if (!isComponentBorn && !isComponentRetired) {
+			setIsComponentBorn(true);
+			addLifecycleMessage(
+				'Component is born (mounted)! Constructor called.'
+			);
+			addLifecycleMessage(
+				'Component runs setup code in componentDidMount.'
+			);
+		}
+	};
+
+	const updateComponent = () => {
+		if (isComponentBorn && !isComponentRetired) {
+			setComponentAge((prevAge) => {
+				const newAge = prevAge + 1;
+				addLifecycleMessage(
+					`Component is updated! Age is now ${newAge}.`
+				);
+				addLifecycleMessage(
+					'Component runs componentDidUpdate after changes.'
+				);
+				return newAge;
+			});
+		}
+	};
+
+	const retireComponent = () => {
+		if (isComponentBorn && !isComponentRetired) {
+			setIsComponentRetired(true);
+			addLifecycleMessage('Component is retiring...');
+			addLifecycleMessage(
+				'Component runs cleanup in componentWillUnmount.'
+			);
+			addLifecycleMessage('Component has been removed from the DOM.');
+		}
+	};
+
+	const resetDemo = () => {
+		setIsComponentBorn(false);
+		setComponentAge(0);
+		setIsComponentRetired(false);
+		setLifecycleMessages([]);
+	};
+
+	const addLifecycleMessage = (message) => {
+		setLifecycleMessages((prev) => [
+			...prev,
+			{ id: Date.now() + Math.random(), text: message },
+		]);
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

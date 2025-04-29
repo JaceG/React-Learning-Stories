@@ -1,4 +1,22 @@
-const ChapterThree = ({ items, toggleCollectItem }) => {
+import React, { useState } from 'react';
+
+const ChapterThree = () => {
+	const [items, setItems] = useState([
+		{ id: 1, name: 'Scroll of Knowledge', collected: false },
+		{ id: 2, name: 'Crystal of Memory', collected: false },
+		{ id: 3, name: 'Quill of Truth', collected: false },
+	]);
+
+	const toggleCollectItem = (itemId) => {
+		setItems((prevItems) =>
+			prevItems.map((item) =>
+				item.id === itemId
+					? { ...item, collected: !item.collected }
+					: item
+			)
+		);
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

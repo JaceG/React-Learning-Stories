@@ -1,4 +1,12 @@
-const ChapterOne = ({ highlightedCard, handleWorkshopHover }) => {
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [highlightedCard, setHighlightedCard] = useState(null);
+
+	const handleWorkshopHover = (index) => {
+		setHighlightedCard(index);
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

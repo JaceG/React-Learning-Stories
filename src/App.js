@@ -7,18 +7,10 @@ import {
 } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import CourseIndex from './courses/CourseIndex';
-import ComponentsBasicsOverview from './courses/components-basics/ComponentsBasicsOverview';
-import ComponentKingdom from './courses/components-basics/pages/ComponentKingdom';
-import PropsMessengers from './courses/components-basics/pages/PropsMessengers';
-import ComponentLifecycle from './courses/components-basics/pages/ComponentLifecycle';
-import StateManagementOverview from './courses/state-management/StateManagementOverview';
-import StateSorcerers from './courses/state-management/pages/StateSorcerers';
-import JsxMagic from './courses/components-basics/pages/JsxMagic';
-import MagicalHooks from './courses/state-management/pages/MagicalHooks';
-import GrandContext from './courses/state-management/pages/GrandContext';
-import StateManagementAdventures from './courses/state-management/pages/StateManagementAdventures';
 import Hotjar from '@hotjar/browser';
 import './App.css';
+import CourseList from './courses/CourseList';
+import LessonList from './courses/LessonList';
 
 const siteId = 6384868;
 const hotjarVersion = 6;
@@ -37,44 +29,12 @@ function App() {
 					<Routes>
 						<Route path='/' element={<CourseIndex />} />
 						<Route
-							path='/courses/components-basics'
-							element={<ComponentsBasicsOverview />}
+							path='/courses/:courseId'
+							element={<CourseList />}
 						/>
 						<Route
-							path='/courses/components-basics/component-kingdom'
-							element={<ComponentKingdom />}
-						/>
-						<Route
-							path='/courses/components-basics/props-messengers'
-							element={<PropsMessengers />}
-						/>
-						<Route
-							path='/courses/components-basics/jsx-magic'
-							element={<JsxMagic />}
-						/>
-						<Route
-							path='/courses/components-basics/component-lifecycle'
-							element={<ComponentLifecycle />}
-						/>
-						<Route
-							path='/courses/state-management'
-							element={<StateManagementOverview />}
-						/>
-						<Route
-							path='/courses/state-management/state-sorcerers'
-							element={<StateSorcerers />}
-						/>
-						<Route
-							path='/courses/state-management/magical-hooks'
-							element={<MagicalHooks />}
-						/>
-						<Route
-							path='/courses/state-management/grand-context'
-							element={<GrandContext />}
-						/>
-						<Route
-							path='/courses/state-management/state-management-adventures'
-							element={<StateManagementAdventures />}
+							path='/courses/:courseId/:lessonId/*'
+							element={<LessonList />}
 						/>
 						<Route path='*' element={<Navigate replace to='/' />} />
 					</Routes>

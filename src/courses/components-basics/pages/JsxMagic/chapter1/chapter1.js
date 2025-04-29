@@ -1,14 +1,49 @@
-const ChapterOne = ({
-	showJsxOutput,
-	jsxOutput,
-	jsxExample,
-	setJsxExample,
-	showTranspiledJsx,
-	showOriginalJsx,
-}) => {
-	// Handle JSX code changes
+import { useState } from 'react';
+
+const ChapterOne = () => {
+	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
+  <h1>Hello, Adventurer!</h1>
+  <p>Welcome to the Component Kingdom.</p>
+</div>`);
+	const [jsxOutput, setJsxOutput] = useState('');
+	const [showJsxOutput, setShowJsxOutput] = useState(false);
+
 	const handleJsxChange = (e) => {
 		setJsxExample(e.target.value);
+	};
+
+	const showTranspiledJsx = () => {
+		const lines = jsxExample.trim().split('\n');
+		let jsOutput = '';
+		if (lines.length >= 3) {
+			const rootMatch = lines[0].match(/<(\w+)([^>]*)>/);
+			if (rootMatch) {
+				const element = rootMatch[1];
+				const props = rootMatch[2].includes('className')
+					? '{ className: "greeting" }'
+					: 'null';
+				jsOutput = `React.createElement(\n  "${element}", \n  ${props}`;
+				const childLines = lines.slice(1, -1);
+				for (const line of childLines) {
+					const childMatch = line
+						.trim()
+						.match(/<(\w+)([^>]*)>(.*?)<\/\w+>/);
+					if (childMatch) {
+						const childElement = childMatch[1];
+						const childProps = 'null';
+						const childContent = childMatch[3].trim();
+						jsOutput += `,\n  React.createElement("${childElement}", ${childProps}, "${childContent}")`;
+					}
+				}
+				jsOutput += '\n);';
+			}
+		}
+		setJsxOutput(jsOutput);
+		setShowJsxOutput(true);
+	};
+
+	const showOriginalJsx = () => {
+		setShowJsxOutput(false);
 	};
 
 	return (

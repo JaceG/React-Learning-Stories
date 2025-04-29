@@ -132,7 +132,7 @@
 
 .component-active {
   width: 100%;
-  height: 100%;
+  height: 115%;
   background-color: #fff;
   border: 2px solid #3498db;
   border-radius: 8px;
@@ -156,6 +156,15 @@
 .component-retired p {
   color: #e74c3c;
   font-style: italic;
+}
+
+.component-retired.cleaned {
+  background-color: #e6ffe6;
+  border-color: #27ae60;
+}
+
+.component-retired.cleaned p {
+  color: #27ae60;
 }
 
 @keyframes componentMount {

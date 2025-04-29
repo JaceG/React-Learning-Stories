@@ -1,4 +1,17 @@
-const ChapterThree = ({ memoizedValue, toggleRender, renderCount }) => {
+import { useState, useMemo } from 'react';
+
+const ChapterThree = () => {
+	const [renderCount, setRenderCount] = useState(0);
+	const [baseNumber, setBaseNumber] = useState(42);
+
+	const memoizedValue = useMemo(() => {
+		return `Computed: ${baseNumber * 2}`;
+	}, [baseNumber]);
+
+	const toggleRender = () => {
+		setRenderCount((prev) => prev + 1);
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

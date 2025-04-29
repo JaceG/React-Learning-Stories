@@ -1,9 +1,12 @@
-const ChapterThree = ({
-	activeLibrary,
-	switchLibrary,
-	stateCount,
-	updateState,
-}) => {
+import React, { useState } from 'react';
+
+const ChapterThree = () => {
+	const [activeLibrary, setActiveLibrary] = useState('zustand');
+	const [stateCount, setStateCount] = useState(5);
+
+	const switchLibrary = (library) => setActiveLibrary(library);
+	const updateState = (value) => setStateCount(value);
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>

@@ -1,4 +1,20 @@
-const ChapterTwo = ({ formData, handleInputChange }) => {
+import React, { useState } from 'react';
+
+const ChapterTwo = () => {
+	const [formData, setFormData] = useState({
+		name: '',
+		title: '',
+		power: 'transformation',
+	});
+
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prevData) => ({
+			...prevData,
+			[name]: value,
+		}));
+	};
+
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>
