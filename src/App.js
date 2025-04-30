@@ -11,7 +11,7 @@ import Hotjar from '@hotjar/browser';
 import './App.css';
 import CourseList from './courses/CourseList';
 import LessonList from './courses/LessonList';
-
+import ChapterInnerList from './courses/ChapterInnerList';
 const siteId = 6384868;
 const hotjarVersion = 6;
 
@@ -33,9 +33,17 @@ function App() {
 							element={<CourseList />}
 						/>
 						<Route
-							path='/courses/:courseId/:lessonId/*'
-							element={<LessonList />}
-						/>
+							path='/courses/:courseId/:lessonId'
+							element={<LessonList />}>
+							<Route
+								index
+								element={<Navigate to='chapter1' replace />}
+							/>
+							<Route
+								path=':chapterId'
+								element={<ChapterInnerList />}
+							/>
+						</Route>
 						<Route path='*' element={<Navigate replace to='/' />} />
 					</Routes>
 				</Layout>
