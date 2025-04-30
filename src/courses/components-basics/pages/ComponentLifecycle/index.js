@@ -245,6 +245,24 @@ function ComponentLifecycle() {
 				}}
 			/>
 
+			<div className='chapter-navigation'>
+				<button
+					onClick={() => goToChapter(currentChapter - 1)}
+					disabled={currentChapter === 1}
+					className='chapter-nav-button'>
+					← Previous Chapter
+				</button>
+				<span className='chapter-indicator'>
+					Chapter {currentChapter} of 3
+				</span>
+				<button
+					onClick={() => goToChapter(currentChapter + 1)}
+					disabled={currentChapter === 3}
+					className='chapter-nav-button'>
+					Next Chapter →
+				</button>
+			</div>
+
 			<LessonNavigation
 				courseId='components-basics'
 				lessonId='component-lifecycle'
