@@ -97,7 +97,10 @@ const ChapterTwo = () => {
 				</div>
 
 				<div className='kingdom-components'>
-					<div className='comp-tree'>
+					<div
+						className={`comp-tree ${
+							user ? 'user-logged-in' : 'user-logged-out'
+						}`}>
 						<div className='comp-node provider'>
 							App (UserProvider)
 							<span className='context-value'>

@@ -999,10 +999,6 @@ input:checked + .toggle-slider:before {
   background-color: #ecf0f1;
 }
 
-.castle.dark .castle-tower {
-  /* Tower inherits from unified background */
-}
-
 .castle.dark .castle-body {
   color: #ecf0f1;
 }
@@ -1213,7 +1209,29 @@ input:checked + .toggle-slider:before {
   background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.05) 100%);
 }
 
+/* Green consumer nodes when logged in */
+.comp-tree.user-logged-in .comp-node.consumer {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(34, 153, 84, 0.05) 100%);
+}
+
+/* Red consumer nodes when logged out (default) */
+.comp-tree.user-logged-out .comp-node.consumer {
+  border-color: #e74c3c;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.05) 100%);
+}
+
 .comp-tree.dark .comp-node.consumer {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(192, 57, 43, 0.1) 100%);
+}
+
+/* Green consumer nodes when logged in (dark mode) */
+.comp-tree.dark.user-logged-in .comp-node.consumer {
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.2) 0%, rgba(34, 153, 84, 0.1) 100%);
+}
+
+/* Red consumer nodes when logged out (dark mode) */
+.comp-tree.dark.user-logged-out .comp-node.consumer {
   background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(192, 57, 43, 0.1) 100%);
 }
 
@@ -1247,13 +1265,55 @@ input:checked + .toggle-slider:before {
   border-radius: 6px;
   font-family: monospace;
   font-size: 13px;
-  color: #c0392b;
+  color: #e74c3c;
   border-left: 3px solid #e74c3c;
+}
+
+/* Green context usage when logged in */
+.comp-tree.user-logged-in .using-context {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border-left-color: #27ae60;
+}
+
+/* Red context usage when logged out */
+.comp-tree.user-logged-out .using-context {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #c0392b;
+  border-left-color: #e74c3c;
 }
 
 .comp-tree.dark .using-context {
   background-color: rgba(231, 76, 60, 0.2);
   color: #ff7979;
+}
+
+/* Green context usage when logged in (dark mode) */
+.comp-tree.dark.user-logged-in .using-context {
+  background-color: rgba(39, 174, 96, 0.2);
+  color: #2ecc71;
+  border-left-color: rgba(39, 174, 96, 0.3);
+}
+
+/* Red context usage when logged out (dark mode) */
+.comp-tree.dark.user-logged-out .using-context {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ff7979;
+  border-left-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Green context usage when logged in for kingdom-components */
+.kingdom-components .comp-tree.user-logged-in .comp-node span.using-context {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border-color: rgba(39, 174, 96, 0.2);
+}
+
+/* Red context usage when logged out for kingdom-components */
+.kingdom-components .comp-tree.user-logged-out .comp-node span.using-context {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border-color: rgba(231, 76, 60, 0.2);
 }
 
 .comp-children {
@@ -1764,4 +1824,506 @@ input:checked + .toggle-slider:before {
 
 .chapter.dark .pattern h4 {
   color: #dfe6e9;
+}
+
+/* ===== CHAPTER 2 SPECIFIC STYLES ===== */
+
+/* Royal Palace Structure */
+.royal-palace {
+  max-width: 600px;
+  margin: 40px auto;
+  background: linear-gradient(to bottom, #8b6914 0%, #daa520 50%, #f4e4bc 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  animation: palace-entrance 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes palace-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.palace-banner {
+  background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.palace-banner::before,
+.palace-banner::after {
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+.palace-banner::before {
+  left: 20px;
+}
+
+.palace-banner::after {
+  right: 20px;
+}
+
+.throne-room {
+  background: radial-gradient(ellipse at center, #fff9e6 0%, #ffeaa7 100%);
+  padding: 40px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.throne-room::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #daa520,
+    #daa520 10px,
+    #b8860b 10px,
+    #b8860b 20px
+  );
+  opacity: 0.3;
+}
+
+.throne {
+  background: linear-gradient(to bottom, #fff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  border: 3px solid #daa520;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.throne:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.user-avatar::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 2px solid #daa520;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.throne:hover .user-avatar::after {
+  opacity: 1;
+}
+
+.user-info {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.user-role {
+  display: inline-block;
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0 3px 10px rgba(243, 156, 18, 0.3);
+}
+
+.no-user {
+  color: #95a5a6;
+  font-style: italic;
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* Castle Gates */
+.castle-gates {
+  background: linear-gradient(to bottom, #34495e 0%, #2c3e50 100%);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.castle-gates::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+.gate-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.gate-button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gate-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.gate-button.login {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.gate-button.login::before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gate-button.login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.gate-button.login:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.gate-button.logout {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.gate-button.logout::before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gate-button.logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.gate-button.logout:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.gate-button:active {
+  transform: translateY(0);
+}
+
+/* Enhanced Component Tree for Chapter 2 */
+.kingdom-components .comp-node span.context-value {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 8px;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #2980b9;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  vertical-align: middle;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kingdom-components .comp-node span.using-context {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 8px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  vertical-align: middle;
+}
+
+/* Performance Tips Section */
+.performance-tips {
+  background-color: #e8f5e9;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  border-left: 5px solid #4caf50;
+  box-shadow: 0 3px 15px rgba(76, 175, 80, 0.1);
+}
+
+.performance-tips h3 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.performance-tips h3::before {
+  content: '⚡';
+  font-size: 28px;
+}
+
+.performance-tips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.performance-tips li {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+  position: relative;
+  padding-left: 35px;
+}
+
+.performance-tips li:last-child {
+  border-bottom: none;
+}
+
+.performance-tips li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.performance-tips li strong {
+  color: #1b5e20;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.tip-code {
+  background-color: #263238;
+  color: #aed581;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Support for Chapter 2 */
+.chapter.dark .royal-palace {
+  background: linear-gradient(to bottom, #5a4a00 0%, #8b6914 50%, #3a3a3a 100%);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.chapter.dark .palace-banner {
+  background: linear-gradient(135deg, #4a3a7d 0%, #3a2a5d 100%);
+}
+
+.chapter.dark .throne-room {
+  background: radial-gradient(ellipse at center, #2c3e50 0%, #34495e 100%);
+}
+
+.chapter.dark .throne {
+  background: linear-gradient(to bottom, #34495e 0%, #2c3e50 100%);
+  border-color: #8b6914;
+  color: #ecf0f1;
+}
+
+.chapter.dark .user-avatar {
+  background: linear-gradient(135deg, #4a5f8a 0%, #5a4a7a 100%);
+}
+
+.chapter.dark .user-name {
+  color: #ecf0f1;
+}
+
+.chapter.dark .user-role {
+  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+}
+
+.chapter.dark .no-user {
+  color: #7f8c8d;
+}
+
+.chapter.dark .castle-gates {
+  background: linear-gradient(to bottom, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.chapter.dark .performance-tips {
+  background-color: #1b3a1b;
+  border-left-color: #2e7d32;
+}
+
+.chapter.dark .performance-tips h3 {
+  color: #81c784;
+}
+
+.chapter.dark .performance-tips li {
+  color: #c8e6c9;
+  border-bottom-color: rgba(129, 199, 132, 0.1);
+}
+
+.chapter.dark .performance-tips li strong {
+  color: #a5d6a7;
+}
+
+.chapter.dark .tip-code {
+  background-color: #1a1a1a;
+  color: #81c784;
+}
+
+.chapter.dark .kingdom-components .comp-node span.context-value {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: #74b9ff;
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.chapter.dark .kingdom-components .comp-node span.using-context {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ff7979;
+  border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Green context usage when logged in for kingdom-components (dark mode) */
+.chapter.dark .kingdom-components .comp-tree.user-logged-in .comp-node span.using-context {
+  background-color: rgba(39, 174, 96, 0.2);
+  color: #2ecc71;
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+/* Red context usage when logged out for kingdom-components (dark mode) */
+.chapter.dark .kingdom-components .comp-tree.user-logged-out .comp-node span.using-context {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ff7979;
+  border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Responsive Design for Chapter 2 */
+@media (max-width: 768px) {
+  .royal-palace {
+    margin: 20px 10px;
+  }
+  
+  .throne-room {
+    padding: 20px;
+  }
+  
+  .throne {
+    min-width: auto;
+    padding: 20px;
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+  
+  .user-name {
+    font-size: 20px;
+  }
+  
+  .gate-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .gate-button {
+    width: 100%;
+  }
+  
+  .performance-tips {
+    padding: 20px;
+  }
+  
+  .kingdom-components .comp-node span.context-value {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+    max-width: 100%;
+  }
 } 
