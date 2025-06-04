@@ -21,7 +21,7 @@ const ChapterThree = () => {
 			<div className='story-section'>
 				<p className='story-paragraph'>
 					After mastering the basics of state sorcery and effect
-					enchantments, <strong>Hooker</strong> was ready for more
+					enchantments, <strong>Hookie</strong> was ready for more
 					advanced artifacts. His mentor opened an ancient chest
 					containing three powerful tools: <strong>useRef</strong>, a
 					crystal that could remember values without triggering

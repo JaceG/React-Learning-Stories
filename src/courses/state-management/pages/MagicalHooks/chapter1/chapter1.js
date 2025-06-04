@@ -16,7 +16,7 @@ const ChapterOne = () => {
 			<div className='story-section'>
 				<p className='story-paragraph'>
 					In the mystical land of React, there lived a young wizard
-					named <strong>Hooker</strong> who was learning the art of
+					named <strong>Hookie</strong> who was learning the art of
 					state sorcery. His mentor, an ancient sage named{' '}
 					<strong>useState</strong>, had shown him a magical potion
 					that could remember values and trigger re-renders when those

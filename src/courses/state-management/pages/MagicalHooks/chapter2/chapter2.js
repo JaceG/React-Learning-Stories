@@ -20,7 +20,7 @@ const ChapterTwo = () => {
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					As young wizard <strong>Hooker</strong> continued his
+					As young wizard <strong>Hookie</strong> continued his
 					training, his mentor introduced him to a more advanced spell
 					known as <strong>useEffect</strong>. This powerful
 					incantation allowed wizards to perform side effects in their
