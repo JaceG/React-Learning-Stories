@@ -23,6 +23,30 @@ const lessonSequences = {
     { id: 'use-effect-enchantments', title: 'The useEffect Enchantments' },
     { id: 'custom-hook-crafting', title: 'Custom Hook Crafting' },
     { id: 'hook-pattern-mastery', title: 'Hook Pattern Mastery' }
+  ],
+  'forms-events': [
+    { id: 'form-alchemy', title: 'Form Alchemy' },
+    { id: 'event-symphony', title: 'Event Symphony' },
+    { id: 'validation-guardians', title: 'Validation Guardians' },
+    { id: 'submission-portals', title: 'Submission Portals' }
+  ],
+  'routing-navigation': [
+    { id: 'navigation-compass', title: 'The Navigation Compass' },
+    { id: 'guardian-gates', title: 'Guardian Gates' },
+    { id: 'waypoint-wizardry', title: 'Waypoint Wizardry' },
+    { id: 'portal-passages', title: 'Portal Passages' }
+  ],
+  'performance-optimization': [
+    { id: 'speed-sanctum', title: 'The Speed Sanctum' },
+    { id: 'memory-monastery', title: 'Memory Monastery' },
+    { id: 'lazy-library', title: 'The Lazy Library' },
+    { id: 'virtualization-vault', title: 'Virtualization Vault' }
+  ],
+  'testing-debugging': [
+    { id: 'testing-tower', title: 'The Testing Tower' },
+    { id: 'debug-dungeon', title: 'Debug Dungeon' },
+    { id: 'integration-inn', title: 'Integration Inn' },
+    { id: 'error-enchantments', title: 'Error Enchantments' }
   ]
 };
 

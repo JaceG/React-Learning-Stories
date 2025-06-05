@@ -49,6 +49,33 @@ function CourseIndex() {
 			icon: '📝', // Form icon
 			level: 'Intermediate',
 		},
+		{
+			id: 'routing-navigation',
+			title: 'Routing & Navigation',
+			description:
+				'Navigate through React applications with routing, guards, and dynamic paths.',
+			lessons: 4,
+			icon: '🧭', // Compass icon
+			level: 'Intermediate',
+		},
+		{
+			id: 'performance-optimization',
+			title: 'Performance & Optimization',
+			description:
+				'Optimize React applications for speed with memoization, lazy loading, and more.',
+			lessons: 4,
+			icon: '⚡', // Lightning icon
+			level: 'Advanced',
+		},
+		{
+			id: 'testing-debugging',
+			title: 'Testing & Debugging',
+			description:
+				'Master testing strategies and debugging techniques for bulletproof React apps.',
+			lessons: 4,
+			icon: '🔍', // Magnifying glass icon
+			level: 'Advanced',
+		},
 	];
 
 	return (
