@@ -15,7 +15,7 @@ function StateManagementAdventures() {
 	};
 
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container state-management-adventures'>
 			<h1 className='lesson-title'>State Management Adventures</h1>
 			<p className='lesson-subtitle'>
 				Master advanced techniques for managing complex application

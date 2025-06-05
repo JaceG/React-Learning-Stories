@@ -1,0 +1,229 @@
+/* Props Caravans specific styles - inherits from CourseStyles.css */
+
+.caravan-builder {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.caravan-display {
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.caravan-wagon {
+  display: inline-block;
+  background: #17a2b8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 5px;
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+  transition: all 0.3s ease;
+}
+
+.caravan-wagon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+}
+
+.caravan-wagon .cargo {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+  display: block;
+}
+
+.cargo-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cargo-item {
+  background: white;
+  border: 2px solid #17a2b8;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cargo-item:hover {
+  background: #17a2b8;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+.cargo-item.selected {
+  background: #138496;
+  color: white;
+}
+
+.trade-route-map {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+  min-height: 300px;
+}
+
+.component-workshop {
+  position: absolute;
+  background: white;
+  border: 2px solid #17a2b8;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.component-workshop:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+.component-workshop.parent {
+  background: #17a2b8;
+  color: white;
+}
+
+.trade-route {
+  position: absolute;
+  height: 2px;
+  background: #17a2b8;
+  transform-origin: left center;
+  opacity: 0.5;
+}
+
+.trade-route::after {
+  content: '→';
+  position: absolute;
+  right: -10px;
+  top: -8px;
+  font-size: 16px;
+  color: #17a2b8;
+}
+
+/* Code example styles are inherited from CourseStyles.css */
+
+/* Old class names .lesson-insights and .reflection-questions are no longer used */
+/* These styles have been removed - use .lesson-insight and .reflection-section from CourseStyles.css instead */
+
+/* Custom button styles for this lesson - keeping teal theme for Props Caravans */
+.action-button {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+  margin: 10px 5px;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.prop-flow-visualizer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.flow-component {
+  background: white;
+  border: 2px solid #17a2b8;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  min-width: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.flow-component.parent {
+  background: #17a2b8;
+  color: white;
+}
+
+.flow-arrow {
+  font-size: 30px;
+  color: #17a2b8;
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .cargo-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .prop-flow-visualizer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}

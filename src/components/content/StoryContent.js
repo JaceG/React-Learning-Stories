@@ -1,10 +1,13 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import './Content.css';
 
-// This component now just redirects to the new structure
-function StoryContent() {
-	return <Navigate to='/courses/components-basics' replace />;
+// Component to display story content
+function StoryContent({ content }) {
+	return (
+		<div className="story-content">
+			{content}
+		</div>
+	);
 }
 
 export default StoryContent;

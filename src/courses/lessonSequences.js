@@ -11,6 +11,12 @@ const lessonSequences = {
     { id: 'magical-hooks', title: 'The Magical Hooks' },
     { id: 'grand-context', title: 'The Grand Context' },
     { id: 'state-management-adventures', title: 'State Management Adventures' }
+  ],
+  'props-data-flow': [
+    { id: 'props-caravans', title: 'The Props Caravans' },
+    { id: 'data-rivers', title: 'The Data Rivers' },
+    { id: 'prop-forge', title: 'The Prop Forge' },
+    { id: 'event-echoes', title: 'The Event Echoes' }
   ]
 };
 

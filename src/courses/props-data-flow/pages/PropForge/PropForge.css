@@ -1,0 +1,270 @@
+/* Prop Forge specific styles - inherits from CourseStyles.css */
+
+/* Forge workshop specific styles */
+.forge-workshop {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px 0;
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(201, 42, 42, 0.3);
+}
+
+.forge-workshop::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: forge-glow 4s ease-in-out infinite;
+}
+
+.anvil {
+  background: #495057;
+  border: 3px solid #343a40;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hammer {
+  display: inline-block;
+  font-size: 40px;
+  animation: hammer-strike 2s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prop-material {
+  background: #ffd43b;
+  border: 2px solid #fab005;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(250, 176, 5, 0.3);
+}
+
+.prop-material:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(250, 176, 5, 0.5);
+}
+
+.prop-material.selected {
+  background: #fab005;
+  transform: scale(1.05);
+}
+
+.forged-prop {
+  background: linear-gradient(135deg, #20c997 0%, #12b886 100%);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+  animation: forge-complete 0.5s ease-out;
+}
+
+.forge-controls {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.blueprint {
+  background: #364fc7;
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(54, 79, 199, 0.3);
+}
+
+.spread-operator-visual {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.spread-dots {
+  display: inline-block;
+  font-size: 30px;
+  color: #ff6b6b;
+  letter-spacing: 5px;
+  animation: spread-animation 2s ease-in-out infinite;
+}
+
+.validation-panel {
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.validation-result {
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.validation-result.valid {
+  background: #d3f9d8;
+  color: #2b8a3e;
+  border: 1px solid #8ce99a;
+}
+
+.validation-result.invalid {
+  background: #ffe3e3;
+  color: #c92a2a;
+  border: 1px solid #ffa8a8;
+}
+
+.prop-inspector {
+  background: #343a40;
+  color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.transform-arrow {
+  text-align: center;
+  font-size: 30px;
+  color: #ff6b6b;
+  margin: 20px 0;
+  animation: pulse 2s infinite;
+}
+
+/* Code example styles are inherited from CourseStyles.css */
+
+/* Custom button styles for this lesson - keeping red theme for Prop Forge */
+.forge-button,
+.action-button {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  margin: 10px 5px;
+}
+
+.forge-button:hover,
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.forge-button:active,
+.action-button:active {
+  transform: translateY(0);
+}
+
+.forge-button:disabled {
+  background: #dee2e6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes forge-glow {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes hammer-strike {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(30deg) scale(1.1);
+  }
+}
+
+@keyframes forge-complete {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spread-animation {
+  0%, 100% {
+    letter-spacing: 5px;
+  }
+  50% {
+    letter-spacing: 15px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .material-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .forge-workshop {
+    padding: 20px;
+  }
+}

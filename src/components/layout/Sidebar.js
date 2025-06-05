@@ -17,6 +17,7 @@ function Sidebar({ activePath, onPathChange }) {
 	// If we're in a specific course, add the course lessons submenu
 	const isInComponentsBasics = currentPath.includes('components-basics');
 	const isInStateManagement = currentPath.includes('state-management');
+	const isInPropsDataFlow = currentPath.includes('props-data-flow');
 
 	const componentBasicsLessons = [
 		{ id: 'component-kingdom', title: 'The Component Kingdom' },
@@ -33,6 +34,13 @@ function Sidebar({ activePath, onPathChange }) {
 			id: 'state-management-adventures',
 			title: 'State Management Adventures',
 		},
+	];
+
+	const propsDataFlowLessons = [
+		{ id: 'props-caravans', title: 'The Props Caravans' },
+		{ id: 'data-rivers', title: 'The Data Rivers' },
+		{ id: 'prop-forge', title: 'The Prop Forge' },
+		{ id: 'event-echoes', title: 'The Event Echoes' },
 	];
 
 	return (
@@ -84,6 +92,28 @@ function Sidebar({ activePath, onPathChange }) {
 								className={`sidebar-nav-item ${
 									currentPath.includes(
 										`/courses/state-management/${lesson.id}`
+									)
+										? 'active'
+										: ''
+								}`}>
+								{lesson.title}
+							</Link>
+						))}
+					</nav>
+				</>
+			)}
+
+			{isInPropsDataFlow && (
+				<>
+					<h3 className='sidebar-title'>Lessons</h3>
+					<nav className='sidebar-nav lessons-nav'>
+						{propsDataFlowLessons.map((lesson) => (
+							<Link
+								key={lesson.id}
+								to={`/courses/props-data-flow/${lesson.id}`}
+								className={`sidebar-nav-item ${
+									currentPath.includes(
+										`/courses/props-data-flow/${lesson.id}`
 									)
 										? 'active'
 										: ''
