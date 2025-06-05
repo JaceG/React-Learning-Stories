@@ -35,6 +35,18 @@ import PropForgeChapterThree from '../props-data-flow/pages/PropForge/chapter3/c
 import EventEchoesChapterOne from '../props-data-flow/pages/EventEchoes/chapter1/chapter1';
 import EventEchoesChapterTwo from '../props-data-flow/pages/EventEchoes/chapter2/chapter2';
 import EventEchoesChapterThree from '../props-data-flow/pages/EventEchoes/chapter3/chapter3';
+import UseStateSpellsChapterOne from '../hooks-in-action/pages/UseStateSpells/chapter1/chapter1';
+import UseStateSpellsChapterTwo from '../hooks-in-action/pages/UseStateSpells/chapter2/chapter2';
+import UseStateSpellsChapterThree from '../hooks-in-action/pages/UseStateSpells/chapter3/chapter3';
+import UseEffectEnchantmentsChapterOne from '../hooks-in-action/pages/UseEffectEnchantments/chapter1/chapter1';
+import UseEffectEnchantmentsChapterTwo from '../hooks-in-action/pages/UseEffectEnchantments/chapter2/chapter2';
+import UseEffectEnchantmentsChapterThree from '../hooks-in-action/pages/UseEffectEnchantments/chapter3/chapter3';
+import CustomHookCraftingChapterOne from '../hooks-in-action/pages/CustomHookCrafting/chapter1/chapter1';
+import CustomHookCraftingChapterTwo from '../hooks-in-action/pages/CustomHookCrafting/chapter2/chapter2';
+import CustomHookCraftingChapterThree from '../hooks-in-action/pages/CustomHookCrafting/chapter3/chapter3';
+import HookPatternMasteryChapterOne from '../hooks-in-action/pages/HookPatternMastery/chapter1/chapter1';
+import HookPatternMasteryChapterTwo from '../hooks-in-action/pages/HookPatternMastery/chapter2/chapter2';
+import HookPatternMasteryChapterThree from '../hooks-in-action/pages/HookPatternMastery/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -113,6 +125,32 @@ const courseListMap = {
 			chapter1: <EventEchoesChapterOne />,
 			chapter2: <EventEchoesChapterTwo />,
 			chapter3: <EventEchoesChapterThree />,
+		},
+	},
+	'hooks-in-action': {
+		'use-state-spells': {
+			'/': <UseStateSpellsChapterOne />,
+			chapter1: <UseStateSpellsChapterOne />,
+			chapter2: <UseStateSpellsChapterTwo />,
+			chapter3: <UseStateSpellsChapterThree />,
+		},
+		'use-effect-enchantments': {
+			'/': <UseEffectEnchantmentsChapterOne />,
+			chapter1: <UseEffectEnchantmentsChapterOne />,
+			chapter2: <UseEffectEnchantmentsChapterTwo />,
+			chapter3: <UseEffectEnchantmentsChapterThree />,
+		},
+		'custom-hook-crafting': {
+			'/': <CustomHookCraftingChapterOne />,
+			chapter1: <CustomHookCraftingChapterOne />,
+			chapter2: <CustomHookCraftingChapterTwo />,
+			chapter3: <CustomHookCraftingChapterThree />,
+		},
+		'hook-pattern-mastery': {
+			'/': <HookPatternMasteryChapterOne />,
+			chapter1: <HookPatternMasteryChapterOne />,
+			chapter2: <HookPatternMasteryChapterTwo />,
+			chapter3: <HookPatternMasteryChapterThree />,
 		},
 	},
 };

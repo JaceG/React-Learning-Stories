@@ -11,6 +11,10 @@ import PropsCaravans from '../props-data-flow/pages/PropsCaravans';
 import DataRivers from '../props-data-flow/pages/DataRivers';
 import PropForge from '../props-data-flow/pages/PropForge';
 import EventEchoes from '../props-data-flow/pages/EventEchoes';
+import UseStateSpells from '../hooks-in-action/pages/UseStateSpells';
+import UseEffectEnchantments from '../hooks-in-action/pages/UseEffectEnchantments';
+import CustomHookCrafting from '../hooks-in-action/pages/CustomHookCrafting';
+import HookPatternMastery from '../hooks-in-action/pages/HookPatternMastery';
 
 const courseListMap = {
 	'components-basics': {
@@ -30,6 +34,12 @@ const courseListMap = {
 		'data-rivers': <DataRivers />,
 		'prop-forge': <PropForge />,
 		'event-echoes': <EventEchoes />,
+	},
+	'hooks-in-action': {
+		'use-state-spells': <UseStateSpells />,
+		'use-effect-enchantments': <UseEffectEnchantments />,
+		'custom-hook-crafting': <CustomHookCrafting />,
+		'hook-pattern-mastery': <HookPatternMastery />,
 	},
 };
 const LessonList = () => {

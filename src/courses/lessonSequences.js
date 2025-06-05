@@ -17,6 +17,12 @@ const lessonSequences = {
     { id: 'data-rivers', title: 'The Data Rivers' },
     { id: 'prop-forge', title: 'The Prop Forge' },
     { id: 'event-echoes', title: 'The Event Echoes' }
+  ],
+  'hooks-in-action': [
+    { id: 'use-state-spells', title: 'The useState Spells' },
+    { id: 'use-effect-enchantments', title: 'The useEffect Enchantments' },
+    { id: 'custom-hook-crafting', title: 'Custom Hook Crafting' },
+    { id: 'hook-pattern-mastery', title: 'Hook Pattern Mastery' }
   ]
 };
 
