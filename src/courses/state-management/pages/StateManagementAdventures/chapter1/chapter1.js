@@ -60,6 +60,44 @@ function inventoryReducer(state, action) {
 
 const ChapterOne = () => {
 	const [state, dispatch] = useReducer(inventoryReducer, initialState);
+	const [isUpdating, setIsUpdating] = React.useState(false);
+	const [loadingAction, setLoadingAction] = React.useState(null);
+
+	// Handle actions with visual feedback
+	const handleAction = async (action, actionName = null) => {
+		if (actionName) {
+			setLoadingAction(actionName);
+		}
+		setIsUpdating(true);
+
+		// Simulate async action
+		await new Promise((resolve) => setTimeout(resolve, 300));
+
+		dispatch(action);
+
+		// Show update animation
+		setTimeout(() => {
+			setIsUpdating(false);
+			setLoadingAction(null);
+
+			// Show success animation for certain actions
+			if (action.type === 'ADD_GOLD' || action.type === 'ADD_WEAPON') {
+				const button = document.querySelector(
+					`.action-button:nth-child(${
+						actionName === 'gold'
+							? 1
+							: actionName === 'weapon'
+							? 3
+							: 0
+					})`
+				);
+				if (button) {
+					button.classList.add('success');
+					setTimeout(() => button.classList.remove('success'), 1000);
+				}
+			}
+		}, 500);
+	};
 
 	return (
 		<div className='chapter'>
@@ -78,7 +116,10 @@ const ChapterOne = () => {
 				<div className='realm-illustration'>
 					<div className='state-castle'>
 						<div className='castle-banner'>Current State</div>
-						<div className='state-display'>
+						<div
+							className={`state-display ${
+								isUpdating ? 'updating' : ''
+							}`}>
 							<pre>{`${JSON.stringify(state, null, 2)}`}</pre>
 						</div>
 					</div>
@@ -119,61 +160,96 @@ const ChapterOne = () => {
 					<div className='inventory-display'>
 						<h4>Adventurer's Inventory</h4>
 						<div className='inventory-stats'>
-							<div className='stat'>Gold: {state.gold}</div>
-							<div className='stat'>
+							<div className={`stat ${isUpdating && 'updating'}`}>
+								Gold: {state.gold}
+							</div>
+							<div className={`stat ${isUpdating && 'updating'}`}>
 								Health Potions: {state.items.potions}
 							</div>
-							<div className='stat'>
+							<div className={`stat ${isUpdating && 'updating'}`}>
 								Weapons: {state.items.weapons.length}
 							</div>
-							<div className='stat'>Status: {state.status}</div>
+							<div className={`stat ${isUpdating && 'updating'}`}>
+								Status: {state.status}
+							</div>
 						</div>
 					</div>
 
 					<div className='action-buttons'>
 						<button
-							className='action-button'
+							className={`action-button ${
+								loadingAction === 'gold' ? 'loading' : ''
+							}`}
 							onClick={() =>
-								dispatch({ type: 'ADD_GOLD', payload: 10 })
-							}>
+								handleAction(
+									{ type: 'ADD_GOLD', payload: 10 },
+									'gold'
+								)
+							}
+							disabled={loadingAction !== null}>
 							Find Gold (+10)
 						</button>
 						<button
-							className='action-button'
+							className={`action-button ${
+								loadingAction === 'potion' ? 'loading' : ''
+							}`}
 							onClick={() =>
-								dispatch({
-									type: 'BUY_POTION',
-									payload: { cost: 5 },
-								})
+								handleAction(
+									{
+										type: 'BUY_POTION',
+										payload: { cost: 5 },
+									},
+									'potion'
+								)
 							}
-							disabled={state.gold < 5}>
+							disabled={state.gold < 5 || loadingAction !== null}>
 							Buy Potion (Cost: 5 Gold)
 						</button>
 						<button
-							className='action-button'
+							className={`action-button ${
+								loadingAction === 'weapon' ? 'loading' : ''
+							}`}
 							onClick={() =>
-								dispatch({
-									type: 'ADD_WEAPON',
-									payload: { name: 'Magic Sword', power: 15 },
-								})
-							}>
+								handleAction(
+									{
+										type: 'ADD_WEAPON',
+										payload: {
+											name: 'Magic Sword',
+											power: 15,
+										},
+									},
+									'weapon'
+								)
+							}
+							disabled={loadingAction !== null}>
 							Find Magic Sword
 						</button>
 						<button
-							className='action-button'
-							onClick={() => dispatch({ type: 'USE_POTION' })}
-							disabled={state.items.potions <= 0}>
+							className={`action-button ${
+								loadingAction === 'use' ? 'loading' : ''
+							}`}
+							onClick={() =>
+								handleAction({ type: 'USE_POTION' }, 'use')
+							}
+							disabled={
+								state.items.potions <= 0 ||
+								loadingAction !== null
+							}>
 							Use Health Potion
 						</button>
 						<button
-							className='action-button danger'
-							onClick={() => dispatch({ type: 'RESET' })}>
+							className={`action-button danger ${
+								loadingAction === 'reset' ? 'loading' : ''
+							}`}
+							onClick={() =>
+								handleAction({ type: 'RESET' }, 'reset')
+							}>
 							Reset Adventure
 						</button>
 					</div>
 				</div>
 
-				<div className='action-log'>
+				<div className='action-log fade-in'>
 					<h4>Reducer in Action</h4>
 					<pre className='reducer-code'>
 						{`// This is our reducer function
@@ -224,14 +300,7 @@ function inventoryReducer(state, action) {
       };
       
     case 'RESET':
-      return {
-        gold: 0,
-        items: {
-          potions: 0,
-          weapons: []
-        },
-        status: 'Beginning new adventure'
-      };
+      return initialState;
       
     default:
       return state;
@@ -243,7 +312,7 @@ function inventoryReducer(state, action) {
 
 			<div className='code-example'>
 				<h3>Using useReducer in a Component:</h3>
-				<pre className='component-code'>
+				<pre>
 					{`import React, { useReducer } from 'react';
 
 // Initial state for our adventure
