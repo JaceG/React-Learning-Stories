@@ -76,6 +76,69 @@ function CourseIndex() {
 			icon: '🔍', // Magnifying glass icon
 			level: 'Advanced',
 		},
+		{
+			id: 'advanced-patterns',
+			title: 'Advanced Patterns',
+			description:
+				'Learn sophisticated React patterns like compound components, render props, and HOCs.',
+			lessons: 4,
+			icon: '🏗️', // Building icon
+			level: 'Advanced',
+		},
+		{
+			id: 'react-ecosystem',
+			title: 'React Ecosystem',
+			description:
+				'Explore popular libraries for state management, styling, forms, and animations.',
+			lessons: 4,
+			icon: '🌐', // Globe icon
+			level: 'Intermediate',
+		},
+		{
+			id: 'server-data',
+			title: 'Server & Data',
+			description:
+				'Master data fetching, server components, and real-time updates in React.',
+			lessons: 4,
+			icon: '🖥️', // Server icon
+			level: 'Advanced',
+		},
+		{
+			id: 'typescript-react',
+			title: 'TypeScript with React',
+			description:
+				'Build type-safe React applications with TypeScript for better developer experience.',
+			lessons: 4,
+			icon: '📘', // Blue book icon
+			level: 'Intermediate',
+		},
+		{
+			id: 'build-deploy',
+			title: 'Build & Deploy',
+			description:
+				'Learn build optimization, environment configuration, and deployment strategies.',
+			lessons: 4,
+			icon: '🚀', // Rocket icon
+			level: 'Intermediate',
+		},
+		{
+			id: 'react-native',
+			title: 'React Native Fundamentals',
+			description:
+				'Build native mobile applications for iOS and Android using React Native.',
+			lessons: 4,
+			icon: '📱', // Mobile phone icon
+			level: 'Advanced',
+		},
+		{
+			id: 'accessibility',
+			title: 'Accessibility (a11y)',
+			description:
+				'Create inclusive React applications that work for users of all abilities.',
+			lessons: 4,
+			icon: '♿', // Accessibility icon
+			level: 'Intermediate',
+		},
 	];
 
 	return (

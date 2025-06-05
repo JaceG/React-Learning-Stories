@@ -7,6 +7,13 @@ import FormsEventsOverview from '../forms-events/FormsEventsOverview';
 import RoutingNavigationOverview from '../routing-navigation/RoutingNavigationOverview';
 import PerformanceOptimizationOverview from '../performance-optimization/PerformanceOptimizationOverview';
 import TestingDebuggingOverview from '../testing-debugging/TestingDebuggingOverview';
+import AdvancedPatternsOverview from '../advanced-patterns/AdvancedPatternsOverview';
+import ReactEcosystemOverview from '../react-ecosystem/ReactEcosystemOverview';
+import ServerDataOverview from '../server-data/ServerDataOverview';
+import TypeScriptReactOverview from '../typescript-react/TypeScriptReactOverview';
+import BuildDeployOverview from '../build-deploy/BuildDeployOverview';
+import ReactNativeOverview from '../react-native/ReactNativeOverview';
+import AccessibilityOverview from '../accessibility/AccessibilityOverview';
 
 const courseListMap = {
 	'components-basics': <ComponentsBasicsOverview />,
@@ -17,6 +24,13 @@ const courseListMap = {
 	'routing-navigation': <RoutingNavigationOverview />,
 	'performance-optimization': <PerformanceOptimizationOverview />,
 	'testing-debugging': <TestingDebuggingOverview />,
+	'advanced-patterns': <AdvancedPatternsOverview />,
+	'react-ecosystem': <ReactEcosystemOverview />,
+	'server-data': <ServerDataOverview />,
+	'typescript-react': <TypeScriptReactOverview />,
+	'build-deploy': <BuildDeployOverview />,
+	'react-native': <ReactNativeOverview />,
+	'accessibility': <AccessibilityOverview />,
 };
 const CourseList = () => {
 	const { courseId } = useParams();

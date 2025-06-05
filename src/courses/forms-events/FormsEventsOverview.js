@@ -68,7 +68,7 @@ function FormsEventsOverview() {
             <p className='lesson-description'>{lesson.description}</p>
             <div className='lesson-progress'>
               <span>3 chapters</span>
-              <span className='progress-indicator'>Not Started</span>
+              <span className='progress-indicator coming-soon'>Coming Soon</span>
             </div>
           </Link>
         ))}
