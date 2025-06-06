@@ -47,6 +47,18 @@ import CustomHookCraftingChapterThree from '../hooks-in-action/pages/CustomHookC
 import HookPatternMasteryChapterOne from '../hooks-in-action/pages/HookPatternMastery/chapter1/chapter1';
 import HookPatternMasteryChapterTwo from '../hooks-in-action/pages/HookPatternMastery/chapter2/chapter2';
 import HookPatternMasteryChapterThree from '../hooks-in-action/pages/HookPatternMastery/chapter3/chapter3';
+import FormAlchemyChapterOne from '../forms-events/pages/FormAlchemy/chapter1/chapter1';
+import FormAlchemyChapterTwo from '../forms-events/pages/FormAlchemy/chapter2/chapter2';
+import FormAlchemyChapterThree from '../forms-events/pages/FormAlchemy/chapter3/chapter3';
+import EventSymphonyChapterOne from '../forms-events/pages/EventSymphony/chapter1/chapter1';
+import EventSymphonyChapterTwo from '../forms-events/pages/EventSymphony/chapter2/chapter2';
+import EventSymphonyChapterThree from '../forms-events/pages/EventSymphony/chapter3/chapter3';
+import ValidationGuardiansChapterOne from '../forms-events/pages/ValidationGuardians/chapter1/chapter1';
+import ValidationGuardiansChapterTwo from '../forms-events/pages/ValidationGuardians/chapter2/chapter2';
+import ValidationGuardiansChapterThree from '../forms-events/pages/ValidationGuardians/chapter3/chapter3';
+import SubmissionPortalsChapterOne from '../forms-events/pages/SubmissionPortals/chapter1/chapter1';
+import SubmissionPortalsChapterTwo from '../forms-events/pages/SubmissionPortals/chapter2/chapter2';
+import SubmissionPortalsChapterThree from '../forms-events/pages/SubmissionPortals/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -151,6 +163,32 @@ const courseListMap = {
 			chapter1: <HookPatternMasteryChapterOne />,
 			chapter2: <HookPatternMasteryChapterTwo />,
 			chapter3: <HookPatternMasteryChapterThree />,
+		},
+	},
+	'forms-events': {
+		'form-alchemy': {
+			'/': <FormAlchemyChapterOne />,
+			chapter1: <FormAlchemyChapterOne />,
+			chapter2: <FormAlchemyChapterTwo />,
+			chapter3: <FormAlchemyChapterThree />,
+		},
+		'event-symphony': {
+			'/': <EventSymphonyChapterOne />,
+			chapter1: <EventSymphonyChapterOne />,
+			chapter2: <EventSymphonyChapterTwo />,
+			chapter3: <EventSymphonyChapterThree />,
+		},
+		'validation-guardians': {
+			'/': <ValidationGuardiansChapterOne />,
+			chapter1: <ValidationGuardiansChapterOne />,
+			chapter2: <ValidationGuardiansChapterTwo />,
+			chapter3: <ValidationGuardiansChapterThree />,
+		},
+		'submission-portals': {
+			'/': <SubmissionPortalsChapterOne />,
+			chapter1: <SubmissionPortalsChapterOne />,
+			chapter2: <SubmissionPortalsChapterTwo />,
+			chapter3: <SubmissionPortalsChapterThree />,
 		},
 	},
 };

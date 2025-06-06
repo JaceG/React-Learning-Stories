@@ -15,6 +15,10 @@ import UseStateSpells from '../hooks-in-action/pages/UseStateSpells';
 import UseEffectEnchantments from '../hooks-in-action/pages/UseEffectEnchantments';
 import CustomHookCrafting from '../hooks-in-action/pages/CustomHookCrafting';
 import HookPatternMastery from '../hooks-in-action/pages/HookPatternMastery';
+import FormAlchemy from '../forms-events/pages/FormAlchemy';
+import EventSymphony from '../forms-events/pages/EventSymphony';
+import ValidationGuardians from '../forms-events/pages/ValidationGuardians';
+import SubmissionPortals from '../forms-events/pages/SubmissionPortals';
 
 const courseListMap = {
 	'components-basics': {
@@ -40,6 +44,12 @@ const courseListMap = {
 		'use-effect-enchantments': <UseEffectEnchantments />,
 		'custom-hook-crafting': <CustomHookCrafting />,
 		'hook-pattern-mastery': <HookPatternMastery />,
+	},
+	'forms-events': {
+		'form-alchemy': <FormAlchemy />,
+		'event-symphony': <EventSymphony />,
+		'validation-guardians': <ValidationGuardians />,
+		'submission-portals': <SubmissionPortals />,
 	},
 };
 const LessonList = () => {

@@ -1,0 +1,467 @@
+.portal-chamber {
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #0f0f1e 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-chamber h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.portal-chamber::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+  transform: translate(-50%, -50%);
+  animation: portalPulse 4s ease-in-out infinite;
+}
+
+@keyframes portalPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.submission-portal {
+  width: 250px;
+  height: 250px;
+  margin: 2rem auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  animation: rotate 3s linear infinite;
+}
+
+.portal-ring:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  animation-duration: 3s;
+}
+
+.portal-ring:nth-child(2) {
+  width: 80%;
+  height: 80%;
+  animation-duration: 2.5s;
+  animation-direction: reverse;
+}
+
+.portal-ring:nth-child(3) {
+  width: 60%;
+  height: 60%;
+  animation-duration: 2s;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.portal-core {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #667eea 0%, #764ba2 50%, transparent 70%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.portal-core.active {
+  transform: scale(1.2);
+  background: radial-gradient(circle, #48bb78 0%, #38a169 50%, transparent 70%);
+}
+
+.portal-core.loading {
+  animation: portalSpin 1s linear infinite;
+}
+
+@keyframes portalSpin {
+  from { transform: rotate(0deg) scale(1.2); }
+  to { transform: rotate(360deg) scale(1.2); }
+}
+
+.submission-states {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.state-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.state-card h4 {
+  color: #ffffff;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.state-card p {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.state-card.active {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-5px);
+}
+
+.state-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.async-timeline {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.async-timeline h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.timeline-marker span {
+  color: #cbd5e0;
+  font-size: 0.875rem;
+}
+
+.timeline-track {
+  position: relative;
+  height: 4px;
+  background: #4a5568;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.timeline-markers {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: -1.5rem;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.marker-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4a5568;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.marker-dot.completed {
+  background: #48bb78;
+  transform: scale(1.2);
+}
+
+.marker-dot.active {
+  background: #667eea;
+  animation: pulse 1s infinite;
+}
+
+.error-dimension {
+  background: rgba(231, 76, 60, 0.1);
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-dimension::before {
+  content: '⚠️';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.retry-mechanism {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.retry-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: #c0392b;
+}
+
+.success-realm {
+  background: rgba(46, 204, 113, 0.1);
+  border: 2px solid #2ecc71;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.portal-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #667eea;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 3s ease-out infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+.feedback-orb {
+  width: 150px;
+  height: 150px;
+  margin: 1.5rem auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.feedback-orb.success {
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.3) 0%, transparent 70%);
+}
+
+.feedback-orb.error {
+  background: radial-gradient(circle, rgba(231, 76, 60, 0.3) 0%, transparent 70%);
+}
+
+.feedback-orb.loading {
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+}
+
+.submission-form {
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.submission-log {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-family: monospace;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.log-entry {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.log-entry.info { color: #3498db; }
+.log-entry.success { color: #2ecc71; }
+.log-entry.error { color: #e74c3c; }
+.log-entry.warning { color: #f39c12; }
+
+.optimization-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.optimization-panel h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.optimization-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.optimization-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.optimization-toggle span {
+  color: #ffffff;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.optimization-toggle.active {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.response-preview {
+  background: #f8f9fa;
+  color: #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Chapter 1 specific text colors */
+.portal-chamber .state-card h4,
+.portal-chamber .state-card p {
+  color: #ffffff;
+}
+
+.portal-chamber .async-timeline h4 {
+  color: #ffffff;
+}
+
+/* Chapter 2 specific - Error dimension text */
+.error-dimension h4 {
+  color: #ffffff;
+}
+
+.error-dimension p {
+  color: #f5c6cb;
+}
+
+/* Success realm has light background, so dark text */
+.success-realm h4 {
+  color: #155724;
+}
+
+.success-realm p {
+  color: #155724;
+}
+
+/* Submission log text */
+.submission-log h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Portal Optimizations - light background, dark text */
+.optimization-panel h4 {
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.optimization-toggle span {
+  color: #333333;
+  display: block;
+  margin-top: 0.5rem;
+}
