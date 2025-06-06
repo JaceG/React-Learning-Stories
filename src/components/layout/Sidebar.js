@@ -15,7 +15,12 @@ function Sidebar({ activePath, onPathChange }) {
 		if (pathSegments[1] === 'courses' && pathSegments[2]) {
 			setSelectedPath(pathSegments[2]);
 			// Check if this path has lessons
-			const hasLessons = ['components-basics', 'state-management', 'props-data-flow', 'hooks-in-action'].includes(pathSegments[2]);
+			const hasLessons = [
+			'components-basics', 'state-management', 'props-data-flow', 'hooks-in-action', 
+			'forms-events', 'routing-navigation', 'performance-optimization', 'testing-debugging',
+			'advanced-patterns', 'react-ecosystem', 'server-data', 'typescript-react',
+			'build-deploy', 'react-native', 'accessibility'
+		].includes(pathSegments[2]);
 			if (hasLessons) {
 				setShowLessons(true);
 			}
@@ -81,6 +86,72 @@ function Sidebar({ activePath, onPathChange }) {
 			{ id: 'use-effect-enchantments', title: 'The useEffect Enchantments' },
 			{ id: 'custom-hook-crafting', title: 'Custom Hook Crafting' },
 			{ id: 'hook-pattern-mastery', title: 'Hook Pattern Mastery' },
+		],
+		'forms-events': [
+			{ id: 'form-alchemy', title: 'Form Alchemy' },
+			{ id: 'event-symphony', title: 'Event Symphony' },
+			{ id: 'validation-guardians', title: 'Validation Guardians' },
+			{ id: 'submission-portals', title: 'Submission Portals' },
+		],
+		'routing-navigation': [
+			{ id: 'navigation-compass', title: 'The Navigation Compass' },
+			{ id: 'guardian-gates', title: 'Guardian Gates' },
+			{ id: 'waypoint-wizardry', title: 'Waypoint Wizardry' },
+			{ id: 'portal-passages', title: 'Portal Passages' },
+		],
+		'performance-optimization': [
+			{ id: 'speed-sanctum', title: 'The Speed Sanctum' },
+			{ id: 'memory-monastery', title: 'Memory Monastery' },
+			{ id: 'lazy-library', title: 'The Lazy Library' },
+			{ id: 'virtualization-vault', title: 'Virtualization Vault' },
+		],
+		'testing-debugging': [
+			{ id: 'testing-tower', title: 'The Testing Tower' },
+			{ id: 'debug-dungeon', title: 'Debug Dungeon' },
+			{ id: 'integration-inn', title: 'Integration Inn' },
+			{ id: 'error-enchantments', title: 'Error Enchantments' },
+		],
+		'advanced-patterns': [
+			{ id: 'compound-components', title: 'Compound Components' },
+			{ id: 'render-props', title: 'Render Props' },
+			{ id: 'higher-order-components', title: 'Higher-Order Components' },
+			{ id: 'portals-refs', title: 'Portals & Refs' },
+		],
+		'react-ecosystem': [
+			{ id: 'state-libraries', title: 'State Management Libraries' },
+			{ id: 'styling-solutions', title: 'Styling Solutions' },
+			{ id: 'form-libraries', title: 'Form Libraries' },
+			{ id: 'animation-libraries', title: 'Animation Libraries' },
+		],
+		'server-data': [
+			{ id: 'data-fetching', title: 'Data Fetching Patterns' },
+			{ id: 'server-components', title: 'Server Components' },
+			{ id: 'suspense-concurrent', title: 'Suspense & Concurrent Features' },
+			{ id: 'realtime-updates', title: 'Real-time Updates' },
+		],
+		'typescript-react': [
+			{ id: 'component-typing', title: 'Component Typing' },
+			{ id: 'hook-typing', title: 'Hook Typing' },
+			{ id: 'generic-components', title: 'Generic Components' },
+			{ id: 'type-safe-patterns', title: 'Type-Safe Patterns' },
+		],
+		'build-deploy': [
+			{ id: 'build-optimization', title: 'Build Optimization' },
+			{ id: 'environment-config', title: 'Environment Configuration' },
+			{ id: 'deployment-strategies', title: 'Deployment Strategies' },
+			{ id: 'ci-cd-react', title: 'CI/CD for React' },
+		],
+		'react-native': [
+			{ id: 'mobile-components', title: 'Mobile-Specific Components' },
+			{ id: 'navigation-mobile', title: 'Navigation in React Native' },
+			{ id: 'platform-specific', title: 'Platform-Specific Code' },
+			{ id: 'mobile-gestures', title: 'Mobile Gestures & Animations' },
+		],
+		'accessibility': [
+			{ id: 'aria-attributes', title: 'ARIA Attributes' },
+			{ id: 'keyboard-navigation', title: 'Keyboard Navigation' },
+			{ id: 'screen-reader-support', title: 'Screen Reader Support' },
+			{ id: 'accessible-forms-modals', title: 'Accessible Forms & Modals' },
 		],
 	};
 
