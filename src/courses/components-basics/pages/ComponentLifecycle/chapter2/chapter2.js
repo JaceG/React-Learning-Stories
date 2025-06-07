@@ -129,25 +129,40 @@ const ChapterTwo = () => {
 				Chapter 2: The Mount and Update Chronicles
 			</h2>
 
+			<div className='chapter-bridge'>
+				<p>Chronos led Aria deeper into the Lifecycle Sanctum, where 
+				glowing murals depicted the two most active phases of a component's 
+				life - the moments of birth and change.</p>
+			</div>
+
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					The Royal Component Library contained ancient scrolls
-					detailing the most important moments in a component's life.
-					The two most active phases were the Mounting and Updating
-					phases, where components would establish themselves and
-					adapt to changes.
+					"These murals," Chronos explained, gesturing to the luminous 
+					walls, "chronicle the <strong>Mounting</strong> and 
+					<strong>Updating</strong> phases - the most crucial moments in 
+					a component's existence. Watch how they come to life!"
 				</p>
 
 				<p className='story-paragraph'>
-					The Mounting phase was like the birth of a component. First,
-					the constructor would prepare the initial state and bind
-					event handlers. Then the render method would describe how
-					the component should appear. Finally, componentDidMount
-					would run after the component was fully born, ready to fetch
-					data or interact with the DOM.
+					The first mural began to glow, showing a component's birth ritual. 
+					"The Mounting phase," Chronos intoned, "follows a sacred sequence. 
+					First, the <strong>constructor</strong> awakens, preparing the 
+					component's initial state. Then <strong>render</strong> paints its 
+					form into existence. Finally, <strong>componentDidMount</strong> 
+					brings it fully to life, ready to interact with the world."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary bounced excitedly. "It's like watching a flower bloom! 
+					First the seed (constructor), then the bud (render), then the 
+					full bloom (componentDidMount)!"
 				</p>
 
 				<div className='code-example'>
+					<div className='scroll-header'>
+						<span>The Mounting Ritual</span>
+						<span className='discovered-by'>From Chronos's Sacred Murals</span>
+					</div>
 					<pre>{`class MountingComponent extends React.Component {
 constructor(props) {
 super(props);
@@ -174,14 +189,30 @@ this.setState({ isLoading: false });
 				</div>
 
 				<p className='story-paragraph'>
-					The Updating phase would occur whenever props changed or
-					state was updated. The component would first decide if it
-					needed to re-render using shouldComponentUpdate. If so, it
-					would render again, and then componentDidUpdate would run to
-					handle any side effects of the change.
+					The second mural shimmered to life, showing components in motion. 
+					"The <strong>Updating</strong> phase," Chronos continued, "occurs 
+					whenever change flows through a component. First, 
+					<strong>shouldComponentUpdate</strong> asks 'Do I need to change?' 
+					If yes, <strong>render</strong> repaints the component, and 
+					<strong>componentDidUpdate</strong> handles any ripple effects."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria watched in fascination as the mural showed components 
+					gracefully adapting to new data. "So components can evolve 
+					without being destroyed and recreated?"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Precisely!" Chronos beamed. "That's the beauty of React's 
+					lifecycle - efficient transformation without waste."
 				</p>
 
 				<div className='code-example'>
+					<div className='scroll-header'>
+						<span>The Update Transformation</span>
+						<span className='discovered-by'>Aria's Study Notes</span>
+					</div>
 					<pre>{`componentDidUpdate(prevProps, prevState) {
 // This runs after a re-render from state or prop changes
 console.log("ComponentDidUpdate: Component was just updated");
@@ -193,16 +224,27 @@ this.fetchUserData(this.props.userId);
 }
 }`}</pre>
 				</div>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 7 (Afternoon)</h4>
+					<p>I'm starting to see the pattern! Mounting is like a component 
+					being born with a purpose (constructor), showing itself (render), 
+					and then taking its first actions (componentDidMount). Updating is 
+					like growing and adapting - the component can decide if it needs to 
+					change and then react to those changes. It's beautiful how organized 
+					it all is!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Lifecycle Method Sequence
+					Interactive Exercise: The Lifecycle Observatory
 				</h3>
 				<p className='instruction'>
-					Witness the lifecycle methods in action. As you mount and
-					update the component, observe the sequence of lifecycle
-					methods being called in real-time.
+					<strong>👉 Chronos activates a magical observatory.</strong>
+					"This device will let you witness the lifecycle methods in action. 
+					Watch carefully as components move through their mounting and updating 
+					phases in real-time!"
 				</p>
 
 				<div

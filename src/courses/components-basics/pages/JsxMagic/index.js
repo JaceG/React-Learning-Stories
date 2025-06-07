@@ -243,6 +243,13 @@ function JsxMagic() {
 			<p className='lesson-subtitle'>
 				A story about the magical syntax that powers React
 			</p>
+			
+			<div className='lesson-opener'>
+				<p>After her success at the Props Messenger Guild, Aria was directed 
+				northward to the JSX Magic Academy. "You'll find Professor Syntaxis there," 
+				Hermes had said with a knowing smile. "He'll teach you the ancient language 
+				that makes all our component spells possible."</p>
+			</div>
 
 			<div className='chapter-navigation'>
 				<button

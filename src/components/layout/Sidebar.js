@@ -14,16 +14,8 @@ function Sidebar({ activePath, onPathChange }) {
 		const pathSegments = currentPath.split('/');
 		if (pathSegments[1] === 'courses' && pathSegments[2]) {
 			setSelectedPath(pathSegments[2]);
-			// Check if this path has lessons
-			const hasLessons = [
-			'components-basics', 'state-management', 'props-data-flow', 'hooks-in-action', 
-			'forms-events', 'routing-navigation', 'performance-optimization', 'testing-debugging',
-			'advanced-patterns', 'react-ecosystem', 'server-data', 'typescript-react',
-			'build-deploy', 'react-native', 'accessibility'
-		].includes(pathSegments[2]);
-			if (hasLessons) {
-				setShowLessons(true);
-			}
+			// Don't automatically show lessons when navigating between chapters
+			// Only show when explicitly clicked via handlePathClick
 		}
 	}, [currentPath]);
 

@@ -158,20 +158,34 @@ const ChapterThree = () => {
 			</h2>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					As the Component Kingdom grew, occasionally messengers would
-					deliver the wrong type of props to a workshop. A Button
-					might receive a number where it expected text, or a Card
-					might receive a string where it expected an object. These
-					mismatches caused chaos in the kingdom.
+				<p className='chapter-bridge'>
+					Having learned about the one-way flow of props, Aria was ready 
+					for the final lesson at the Props Messenger Guild. Hermes had 
+					one more important concept to share.
 				</p>
-
+				
 				<p className='story-paragraph'>
-					To solve this problem, the kingdom established the PropTypes
-					Guardians - specialized sentinels that inspected the props
-					at each workshop to ensure they were of the correct type. If
-					an improper prop was detected, the Guardians would raise a
-					warning.
+					"As our kingdom grew," Hermes began, "we encountered a new problem. 
+					Sometimes messengers would deliver the wrong type of props to a workshop. 
+					A Button might receive a number where it expected text, or a Card 
+					might receive a string where it expected an object."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria winced. "That must have caused chaos!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Indeed it did," Hermes nodded. "Until we established the 
+					<strong>PropTypes Guardians</strong> - specialized sentinels that 
+					inspect the props at each workshop to ensure they are of the correct 
+					type. If an improper prop is detected, the Guardians raise a warning."
+				</p>
+				
+				<p className='story-paragraph'>
+					A stern-looking guardian appeared, wearing robes adorned with type 
+					symbols. "I am Guardian TypeCheck," she announced. "I ensure that 
+					workshops receive exactly what they expect. Watch and learn!"
 				</p>
 
 				<div className='proptype-guardians-illustration'>
@@ -209,24 +223,24 @@ const ChapterThree = () => {
 							<pre>
 								{propTypeComponent === 'button'
 									? `Button.propTypes = {
-color: PropTypes.string.isRequired,
-text: PropTypes.string.isRequired,
-onClick: PropTypes.func.isRequired,
-size: PropTypes.oneOf(['small', 'medium', 'large'])
+  color: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 Button.defaultProps = {
-size: 'medium'
+  size: 'medium'
 };`
 									: `Card.propTypes = {
-title: PropTypes.string.isRequired,
-content: PropTypes.string.isRequired,
-image: PropTypes.string,
-isActive: PropTypes.bool
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  isActive: PropTypes.bool
 };
 
 Card.defaultProps = {
-isActive: true
+  isActive: true
 };`}
 							</pre>
 						</div>
@@ -473,13 +487,28 @@ isActive: true
 				</div>
 
 				<p className='story-paragraph'>
-					The PropTypes Guardians didn't prevent a component from
-					rendering with incorrect props, but they provided valuable
-					warnings during development, making it easier to track down
-					bugs. Some workshops also established DefaultProps as
-					fallback values if a messenger failed to deliver a
-					particular prop.
+					"The PropTypes Guardians don't prevent a component from rendering 
+					with incorrect props," Guardian TypeCheck explained, "but they 
+					provide valuable warnings during development, making it easier to 
+					track down bugs."
 				</p>
+				
+				<p className='story-paragraph'>
+					"And notice," Hermes added, "how some workshops establish 
+					<strong>DefaultProps</strong> as fallback values if a messenger 
+					fails to deliver a particular prop. It's like having spare parts 
+					ready just in case!"
+				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 5</h4>
+					<p>The PropTypes Guardians are brilliant! They're like quality 
+					control inspectors, catching mistakes before they cause problems. 
+					I've learned so much at the Props Messenger Guild - how props flow 
+					from parent to child, how they must never be modified, and how 
+					PropTypes ensure we receive the right data. Tomorrow I head to 
+					the JSX Magic Academy!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -537,36 +566,41 @@ isActive: true
 			</div>
 
 			<div className='code-example'>
+				<div className='scroll-header'>
+					<span>Guardian TypeCheck's Protection Spell</span>
+					<span className='discovered-by'>Learned by Aria at the Guild</span>
+				</div>
 				<pre>{`import PropTypes from 'prop-types';
 
+// Aria's final lesson: Type safety for components
 function Button({ color, text, onClick, size }) {
-return (
-<button 
-style={{ 
-backgroundColor: color,
-padding: size === 'small' ? '4px 8px' : 
-    size === 'large' ? '12px 24px' : '8px 16px',
-fontSize: size === 'small' ? '12px' : 
-     size === 'large' ? '18px' : '14px'
-}}
-onClick={onClick}
->
-{text}
-</button>
-);
+  return (
+    <button 
+      style={{ 
+        backgroundColor: color,
+        padding: size === 'small' ? '4px 8px' : 
+            size === 'large' ? '12px 24px' : '8px 16px',
+        fontSize: size === 'small' ? '12px' : 
+             size === 'large' ? '18px' : '14px'
+      }}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
 }
 
 // The PropTypes Guardians ensure props are correct
 Button.propTypes = {
-color: PropTypes.string.isRequired,
-text: PropTypes.string.isRequired,
-onClick: PropTypes.func.isRequired,
-size: PropTypes.oneOf(['small', 'medium', 'large'])
+  color: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
-// Default values for props
+// Default values for props - "spare parts" as Hermes calls them
 Button.defaultProps = {
-size: 'medium'
+  size: 'medium'
 };`}</pre>
 			</div>
 
@@ -578,7 +612,8 @@ size: 'medium'
 					especially useful in larger applications where components
 					may be reused in different contexts. Default props provide
 					fallback values to ensure components can render even if
-					certain props are omitted.
+					certain props are omitted. Guardian TypeCheck reminds us: 
+					"An ounce of type checking is worth a pound of debugging!"
 				</p>
 			</div>
 
@@ -592,6 +627,19 @@ size: 'medium'
 					How might PropTypes and defaultProps work together to create
 					more robust components?
 				</p>
+			</div>
+			
+			<div className='chapter-ending'>
+				<p>As Aria prepared to leave the Props Messenger Guild, Hermes 
+				handed her a special badge. "You've earned this - the Messenger's 
+				Seal. You now understand how components communicate in our kingdom."</p>
+				
+				<p>"Thank you, Hermes," Aria said gratefully. "I feel like I truly 
+				understand props now - their flow, their immutability, and their types."</p>
+				
+				<p>"Your next destination is the JSX Magic Academy," Hermes pointed 
+				northward. "There you'll learn the ancient art of JSX - the magical 
+				syntax that makes React components possible. Safe travels!"</p>
 			</div>
 		</div>
 	);

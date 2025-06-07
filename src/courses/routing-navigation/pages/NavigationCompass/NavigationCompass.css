@@ -1,0 +1,201 @@
+.compass-chamber {
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.compass-display {
+  width: 250px;
+  height: 250px;
+  margin: 2rem auto;
+  position: relative;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  border: 3px solid #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compass-needle {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background: linear-gradient(to top, #ef4444 50%, #3b82f6 50%);
+  transition: transform 0.5s ease;
+  transform-origin: center bottom;
+}
+
+.compass-directions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.direction {
+  position: absolute;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.direction.north { top: 10px; left: 50%; transform: translateX(-50%); }
+.direction.south { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.direction.east { right: 10px; top: 50%; transform: translateY(-50%); }
+.direction.west { left: 10px; top: 50%; transform: translateY(-50%); }
+
+.route-map {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.route-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.route-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #60a5fa;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-3px);
+  background: rgba(96, 165, 250, 0.2);
+}
+
+.route-card.active {
+  background: rgba(96, 165, 250, 0.3);
+  border-color: #3b82f6;
+}
+
+.route-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.navigation-demo {
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.demo-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #4b5563;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.nav-link.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.route-content {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  min-height: 150px;
+}
+
+.path-visualization {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.path-node {
+  background: #60a5fa;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.path-arrow {
+  color: #60a5fa;
+  font-size: 1.5rem;
+}
+
+.router-setup {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.setup-step {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #60a5fa;
+}
+
+.code-snippet {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow-x: auto;
+}
+
+/* Text color fixes for dark backgrounds */
+.compass-chamber h3,
+.compass-chamber h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.route-map h4 {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+.route-card h5 {
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+.route-card p {
+  color: #cbd5e0;
+  font-size: 0.875rem;
+  margin: 0;
+}

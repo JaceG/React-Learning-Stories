@@ -317,7 +317,7 @@ function useSubmit(submitFn) {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Async Portal Master's Secret:</h3>
+				<h3>The Async Portal Master's Lesson:</h3>
 				<p>
 					Async form submission is like guiding data through a multi-dimensional 
 					portal. The journey isn't instant - it involves validation, network 

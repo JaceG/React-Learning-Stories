@@ -160,23 +160,45 @@ const ChapterThree = () => {
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 3: The Farewell Ceremony</h2>
 
+			<div className='chapter-bridge'>
+				<p>As twilight fell over the Lifecycle Sanctum, Chronos led Aria 
+				to a quieter chamber where components came to complete their final 
+				ritual - the graceful art of saying goodbye.</p>
+			</div>
+
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					Not all components lived forever in the Component Kingdom.
-					When a component was no longer needed, it would go through
-					an Unmounting phase – a graceful farewell ceremony where it
-					could clean up after itself before departing.
+					"Not all components live forever," Chronos said solemnly. "When 
+					their purpose is fulfilled or they're no longer needed, they must 
+					depart through the <strong>Unmounting</strong> phase. But a component's 
+					true character is revealed in how it says farewell."
 				</p>
 
 				<p className='story-paragraph'>
-					"The mark of a truly noble component," said the Elder, "is
-					how it behaves when it's time to leave. A well-crafted
-					component cleans up all its connections, cancels any pending
-					operations, and says goodbye without leaving a mess behind."
+					Binary's usual bouncing slowed to a gentle float. "This is the 
+					important part, Aria. Components that don't clean up after themselves 
+					leave behind ghost timers, phantom listeners, and memory leaks that 
+					haunt the kingdom!"
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria shuddered. "Ghost timers? That sounds terrible!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Indeed," Chronos nodded gravely. "That's why we have 
+					<strong>componentWillUnmount</strong> - a component's last chance 
+					to clean up its affairs, cancel subscriptions, clear timers, and 
+					remove event listeners before departing."
 				</p>
 
 				<div className='code-example'>
-					<pre>{`class TimerComponent extends React.Component {
+					<div className='scroll-header'>
+						<span>The Farewell Protocol</span>
+						<span className='discovered-by'>A cautionary tale from Chronos</span>
+					</div>
+					<pre>{`// Aria learns the importance of cleanup
+class TimerComponent extends React.Component {
 constructor(props) {
 super(props);
 this.state = { seconds: 0 };
@@ -206,24 +228,32 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 				</div>
 
 				<p className='story-paragraph'>
-					In this example, the TimerComponent started an interval when
-					it mounted, which would continue to run even if the
-					component was removed from the DOM. By implementing
-					componentWillUnmount, the component ensured that the timer
-					was properly cleaned up, preventing memory leaks and
-					unexpected behavior.
+					"See how the TimerComponent remembers to clear its interval?" 
+					Chronos pointed to the code. "Without this cleanup, the timer 
+					would continue ticking forever, even after the component is gone - 
+					a ghost in the machine!"
 				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 7 (Evening)</h4>
+					<p>Today's final lesson was sobering but crucial. Components 
+					must be responsible citizens of the React Kingdom! When they 
+					leave, they must clean up after themselves - cancel timers, 
+					remove listeners, abort requests. Chronos showed me what happens 
+					when components don't clean up... it wasn't pretty. Ghost timers 
+					everywhere!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: The Unmounting Cleanup Ceremony
+					Interactive Exercise: The Cleanup Crystal
 				</h3>
 				<p className='instruction'>
-					Witness the importance of proper cleanup during the
-					unmounting phase. Create a component with active resources,
-					then unmount it to see what happens when cleanup is
-					performed correctly versus incorrectly.
+					<strong>👉 Chronos presents a special crystal that glows with active resources.</strong>
+					"This crystal will show you what happens when components leave 
+					responsibly versus carelessly. Watch the difference between proper 
+					cleanup and... the alternative."
 				</p>
 
 				<div className='lifecycle-demo'>
@@ -586,7 +616,7 @@ this.abortController.abort();
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Unmounting Lesson:</h3>
+				<h3>The Farewell Ceremony Lesson:</h3>
 				<p>
 					The unmounting phase gives components a chance to clean up
 					before they're removed from the DOM. The
@@ -595,16 +625,39 @@ this.abortController.abort();
 					remove event listeners, clear timers, and cancel
 					subscriptions. Proper cleanup prevents memory leaks and
 					ensures your app runs smoothly even as components come and
-					go.
+					go. As Chronos warns: "A component that doesn't clean up 
+					after itself is like a guest who never leaves the party!"
 				</p>
 			</div>
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
-				<p>Why is cleanup important when a component unmounts?</p>
 				<p>
-					What could happen if you forget to clean up resources in
-					componentWillUnmount?
+					How does the "ghost timer" metaphor help you remember the 
+					importance of cleanup?
 				</p>
+				<p>
+					What types of resources might a component need to clean up 
+					in a real application?
+				</p>
+			</div>
+			
+			<div className='chapter-ending'>
+				<p>As the stars appeared above the Lifecycle Sanctum, Chronos placed 
+				a gentle hand on Aria's shoulder. "You've learned well today, young 
+				apprentice. You now understand the sacred rhythm of component life - 
+				from birth through growth to graceful departure."</p>
+				
+				<p>Binary spun in a happy circle. "You did it, Aria! You've completed 
+				your training in the fundamental arts of React!"</p>
+				
+				<p>"But this is just the beginning," Chronos smiled mysteriously. 
+				"Tomorrow, you'll journey to the Eastern Quarter to meet the State 
+				Sorcerers. They'll teach you how to give your components memory and 
+				the power to change over time."</p>
+				
+				<p>Aria clutched her journal tightly, excited for the adventures ahead. 
+				She had mastered components, props, JSX, and lifecycles. She was ready 
+				for the next chapter of her journey!</p>
 			</div>
 		</div>
 	);

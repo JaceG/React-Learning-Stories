@@ -293,7 +293,7 @@ function MasterForm() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Master's Secret:</h3>
+				<h3>The Master's Lesson:</h3>
 				<p>
 					A complete form combines controlled components for predictability, 
 					comprehensive state management for organization, real-time validation 

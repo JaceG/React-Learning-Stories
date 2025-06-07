@@ -36,10 +36,10 @@ function StateManagementOverview() {
         <Link to='/courses' className='back-link'>← Back to Courses</Link>
         <h1 className="course-title">State Management</h1>
         <p className="course-description">
-          Welcome to the mystical world of State Sorcery! In this course, you'll discover how React 
-          components can remember information and change over time. Through enchanting stories and 
-          hands-on spells, you'll master the arts of component state, hooks, context, and more advanced 
-          state management techniques.
+          After mastering the fundamentals of React components, Aria journeys to the Eastern Quarter 
+          of the React Kingdom, where the legendary State Sorcerers dwell. Here, she'll learn the 
+          ancient arts of giving components memory and the power to change over time. Join her as she 
+          discovers useState spells, useEffect enchantments, and the grand Context that connects all things!
         </p>
       </div>
 
@@ -55,7 +55,7 @@ function StateManagementOverview() {
           <li>Event handling in React</li>
         </ul>
         <p className='prerequisite-note'>
-          💡 Recommended: Complete <Link to='/courses/components-basics' className='prerequisite-link'>Components Basics</Link> first
+          💡 Aria's Journey: This is Part 2 of her adventures. Complete <Link to='/courses/components-basics' className='prerequisite-link'>Components Basics</Link> first
         </p>
       </div>
       

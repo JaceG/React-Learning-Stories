@@ -30,20 +30,37 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Royal Messengers</h2>
 
+			<div className='lesson-opener'>
+				<p>The next morning, Aria followed the cobblestone path from the Component 
+				Workshops to the bustling Eastern Quarter, where the Props Messenger Guild 
+				operated day and night. Master Aurelius had given her a letter of introduction 
+				to present to the guild master.</p>
+			</div>
+
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the Component Kingdom, communication was vital. The
-					master builder <strong>App</strong> needed a way to tell
-					each workshop exactly what to create. For this purpose, the
-					kingdom employed special messengers, known as{' '}
-					<strong>Props</strong>.
+					The Props Messenger Guild was a hive of activity. Messengers rushed in 
+					all directions, carrying satchels filled with important information. 
+					<strong>Hermes</strong>, the Head Messenger, greeted Aria warmly.
+				</p>
+				
+				<p className='story-paragraph'>
+					"Welcome, apprentice Aria! Master Aurelius told me about your progress 
+					with components. Now you'll learn how we enable communication in the kingdom." 
+					Hermes gestured to the busy messengers. "These are our <strong>Props</strong> - 
+					special messengers who carry instructions from parent components to their children."
 				</p>
 
 				<p className='story-paragraph'>
-					These messengers carried satchels filled with specific
-					instructions from App to each workshop. A Button workshop
-					might receive props telling it what color to be, what text
-					to display, and what action to perform when clicked.
+					"I see!" Aria exclaimed, remembering her lessons. "So the master builder 
+					<strong>App</strong> uses these messengers to tell each workshop exactly 
+					what to create?"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Precisely!" Hermes smiled. "Watch how a Button workshop might receive 
+					props telling it what color to be, what text to display, and what action 
+					to perform when clicked."
 				</p>
 
 				<div className='props-kingdom-illustration'>
@@ -205,11 +222,19 @@ const ChapterOne = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					Props could contain various types of information: text
-					strings, numbers, boolean flags, functions, arrays, objects,
-					and even other components. This flexibility allowed for rich
-					communication between components.
+					"Props can contain various types of information," Hermes explained 
+					as Aria experimented with the messengers. "Text strings, numbers, 
+					boolean flags, functions, arrays, objects, and even other components! 
+					This flexibility allows for rich communication between components."
 				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 4</h4>
+					<p>The Props Messenger Guild is amazing! I now understand how components 
+					communicate - parent components send props to their children like messengers 
+					delivering instructions. Hermes showed me how changing a prop instantly 
+					updates the component. It's like magic, but it's just React's data flow!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -322,29 +347,35 @@ const ChapterOne = () => {
 			</div>
 
 			<div className='code-example'>
-				<pre>{`// The App component sending Props to a Button
+				<div className='scroll-header'>
+					<span>Guild Master's Prop Patterns</span>
+					<span className='discovered-by'>Studied by Aria with Hermes</span>
+				</div>
+				<pre>{`// Hermes demonstrates: "Watch how App sends Props to Button"
 function App() {
-return (
-<div>
-<Button 
-color="${currentPropValues.buttonColor}" 
-text="${currentPropValues.buttonText}" 
-onClick={() => alert('Button clicked!')}
-/>
-</div>
-);
+  return (
+    <div>
+      {/* The messenger carries these props to Button */}
+      <Button 
+        color="${currentPropValues.buttonColor}" 
+        text="${currentPropValues.buttonText}" 
+        onClick={() => alert('Button clicked!')}
+      />
+    </div>
+  );
 }
 
-// The Button component receiving Props
+// Aria learns: "Button receives props from its messenger"
 function Button(props) {
-return (
-<button 
-style={{ backgroundColor: props.color }}
-onClick={props.onClick}
->
-{props.text}
-</button>
-);
+  // props contains all the messages from the parent
+  return (
+    <button 
+      style={{ backgroundColor: props.color }}
+      onClick={props.onClick}
+    >
+      {props.text}
+    </button>
+  );
 }`}</pre>
 			</div>
 
@@ -354,7 +385,9 @@ onClick={props.onClick}
 					Props are the primary way for parent components to pass data
 					to child components in React. They are read-only and flow
 					downward through the component tree, allowing parent
-					components to control and configure their children.
+					components to control and configure their children. Hermes 
+					teaches that props are like sealed letters - children can 
+					read them but never modify them.
 				</p>
 			</div>
 

@@ -791,3 +791,15 @@
 .props-card-workshop.active {
   border: 2px solid #f39c12;
 }
+
+/* Lesson Opener - Bridge from previous lesson */
+.lesson-opener {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #2e7d32;
+  line-height: 1.6;
+}

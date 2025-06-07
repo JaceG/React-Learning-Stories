@@ -449,7 +449,7 @@ const conditionalValidation = {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Master Guardian's Ultimate Wisdom:</h3>
+				<h3>The Master Guardian's Lesson:</h3>
 				<p>
 					The ultimate defense combines multiple validation strategies: 
 					schema-based validation for consistency, step-by-step validation 

@@ -352,7 +352,7 @@ const useFormValidation = () => {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Advanced Guardian's Secret:</h3>
+				<h3>The Advanced Guardian's Lesson:</h3>
 				<p>
 					Advanced validation goes beyond simple rules. It includes field 
 					dependencies (password matching), async checks (email availability), 

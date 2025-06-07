@@ -25,13 +25,29 @@ const ChapterThree = () => {
 			</h2>
 
 			<div className='story-section'>
+				<p className='chapter-bridge'>
+					After learning how components communicate through props, Aria was 
+					ready for her final lesson in the Component Kingdom. Master Aurelius 
+					led her to the Grand Assembly Hall.
+				</p>
+				
 				<p className='story-paragraph'>
-					The true power of the Component Kingdom became evident when
-					workshops began to collaborate. Larger workshops could use
-					the creations of smaller workshops, combining them into more
-					complex structures. This practice, known as{' '}
-					<strong>Component Composition</strong>, allowed the kingdom
-					to build incredible things.
+					"Now comes the true power of our kingdom," Aurelius announced with pride. 
+					"Watch how workshops collaborate. Larger workshops can use the creations 
+					of smaller workshops, combining them into more complex structures. This 
+					practice, known as <strong>Component Composition</strong>, allows us to 
+					build incredible things."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria watched as components began assembling themselves like magical 
+					building blocks. "It's like... each component is a piece of a larger puzzle!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece 
+					focuses on doing one thing well, delegating other responsibilities to 
+					specialized components."
 				</p>
 
 				<div className='composition-illustration'>
@@ -170,11 +186,19 @@ const ChapterThree = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					In this way, simple components could be assembled into
-					increasingly sophisticated interfaces, each component
-					focusing on doing one thing well and delegating other
-					responsibilities to specialized components.
+					Aria experimented with different combinations, marveling at how 
+					simple components could be assembled into increasingly sophisticated 
+					interfaces. "I can build anything now!" she exclaimed.
 				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 3</h4>
+					<p>Today I learned the most important lesson yet - components are meant 
+					to work together! By combining simple, focused components, I can build 
+					complex applications. Each component does one thing well, making them 
+					easy to understand, test, and reuse. I feel like I truly understand 
+					the Component Kingdom now!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -196,26 +220,37 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='code-example'>
+				<div className='scroll-header'>
+					<span>Master Blueprint: Component Composition</span>
+					<span className='discovered-by'>Aria's Final Component Lesson</span>
+				</div>
 				<pre>{`// The Dashboard workshop combines other components
 function Dashboard() {
-return (
-<div className="dashboard">
-<Header title="Kingdom Dashboard" />
+  // Master Aurelius: "Notice how Dashboard delegates to specialized components"
+  return (
+    <div className="dashboard">
+      {/* Header knows how to display titles */}
+      <Header title="Kingdom Dashboard" />
+      
+      {/* Card can contain other components! */}
+      <Card 
+        title="Royal Tasks" 
+        content={<TaskList tasks={royalTasks} />} 
+      />
+      
+      {/* Multiple buttons working together */}
+      <div className="dashboard-actions">
+        <Button label="New Task" onClick={createTask} />
+        <Button label="Send Message" onClick={sendMessage} />
+      </div>
+      
+      {/* Footer handles copyright display */}
+      <Footer copyright="Component Kingdom, 2025" />
+    </div>
+  );
+}
 
-<Card 
-title="Royal Tasks" 
-content={<TaskList tasks={royalTasks} />} 
-/>
-
-<div className="dashboard-actions">
-<Button label="New Task" onClick={createTask} />
-<Button label="Send Message" onClick={sendMessage} />
-</div>
-
-<Footer copyright="Component Kingdom, 2025" />
-</div>
-);
-}`}</pre>
+// Aria's insight: "Each component has a single responsibility!"`}</pre>
 			</div>
 
 			<div className='lesson-insight'>
@@ -224,7 +259,9 @@ content={<TaskList tasks={royalTasks} />}
 					React encourages building UIs through composition rather
 					than inheritance. Complex interfaces are created by
 					combining simpler components together, creating a hierarchy
-					that's both flexible and maintainable.
+					that's both flexible and maintainable. Master Aurelius's final 
+					teaching: "A kingdom is strongest when each citizen excels at 
+					their craft and works in harmony with others."
 				</p>
 			</div>
 
@@ -238,6 +275,18 @@ content={<TaskList tasks={royalTasks} />}
 					Why is it beneficial for larger components to delegate
 					responsibilities to smaller, specialized components?
 				</p>
+			</div>
+			
+			<div className='chapter-ending'>
+				<p>As the sun set over the Component Workshop District, Master Aurelius 
+				handed Aria a sealed scroll. "Tomorrow, you'll journey to the Eastern 
+				Quarter to meet the Props Messengers Guild. They hold deeper secrets 
+				about component communication."</p>
+				
+				<p>Aria clutched the scroll, excited for her next adventure. She had 
+				learned to create components, make them communicate, and compose them 
+				into complex structures. But she sensed there was so much more to discover 
+				in the React Kingdom.</p>
 			</div>
 		</div>
 	);

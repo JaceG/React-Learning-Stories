@@ -895,3 +895,59 @@
   margin-bottom: 8px;
   margin-top: 8px;
 }
+
+/* Narrative elements for Aria's journey */
+.chapter-bridge {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #2e7d32;
+  line-height: 1.6;
+}
+
+.character-intro {
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.character-intro h4 {
+  margin-top: 0;
+  color: #495057;
+  font-style: italic;
+}
+
+.scroll-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  font-size: 14px;
+}
+
+.discovered-by {
+  font-style: italic;
+  color: #aaa;
+}
+
+.chapter-ending {
+  background-color: #f0f4f8;
+  border: 2px dashed #3498db;
+  padding: 25px;
+  margin-top: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.chapter-ending p {
+  margin: 15px 0;
+  color: #2c3e50;
+  line-height: 1.6;
+}

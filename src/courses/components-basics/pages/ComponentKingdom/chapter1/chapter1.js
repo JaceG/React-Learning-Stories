@@ -15,11 +15,17 @@ const ChapterOne = () => {
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the digital realm of Weblandia, there existed a kingdom
-					called React where everything was built from magical
-					building blocks known as <strong>Components</strong>. Unlike
-					the static structures in neighboring kingdoms, these
-					Components were alive and responsive.
+					The morning mist parted as <strong>Aria</strong> approached the gates of the React Kingdom. 
+					After months of studying ancient JavaScript scrolls, she had finally been accepted as an 
+					apprentice. <strong>Master Aurelius</strong>, the Grand Architect, awaited her at the entrance 
+					to the Northern Quarter's Component Workshop District.
+				</p>
+				
+				<p className='story-paragraph'>
+					"Welcome, young apprentice," Aurelius said, his beard sparkling with fragments of code. 
+					"In our kingdom, everything you see is built from magical building blocks called 
+					<strong>Components</strong>. Unlike the static structures in your homeland, these 
+					Components are alive and responsive."
 				</p>
 
 				<div className='kingdom-illustration'>
@@ -52,12 +58,17 @@ const ChapterOne = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					The master builder, <strong>App</strong>, lived in the
-					tallest tower and was responsible for organizing all the
-					craftsmen to work together. Every component in the kingdom
-					had its own special purpose and design, but they all shared
-					the ability to be reused throughout the realm.
+					Aurelius pointed to the tallest tower. "The master builder, <strong>App</strong>, lives there 
+					and organizes all the craftsmen to work together. Every component in our kingdom
+					has its own special purpose and design, but they all share
+					the ability to be reused throughout the realm."
 				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 1</h4>
+					<p>Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. 
+					He mentioned something about workshops that create living components. Can't wait to explore!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -560,46 +571,53 @@ const user = {
 			</div>
 
 			<div className='code-example'>
-				<pre>{`// The Button Workshop creates buttons for the kingdom
+				<div className='scroll-header'>
+					<span>Ancient Scroll of Component Creation</span>
+					<span className='discovered-by'>Discovered by Aria in the Button Workshop</span>
+				</div>
+				<pre>{`// Aria's First Component Spell
 function Button(props) {
-return (
-<button className="kingdom-button" onClick={props.onClick}>
-{props.label}
-</button>
-);
+  // Master Aurelius: "props are the messages components receive"
+  return (
+    <button className="kingdom-button" onClick={props.onClick}>
+      {props.label}
+    </button>
+  );
 }
 
-// The Card Workshop builds display cards
+// The Card Workshop's Secret Formula
 function Card(props) {
-return (
-<div className="kingdom-card">
-<h3>{props.title}</h3>
-<p>{props.content}</p>
-</div>
-);
+  // "Each component returns what it wants to display" - Aurelius
+  return (
+    <div className="kingdom-card">
+      <h3>{props.title}</h3>
+      <p>{props.content}</p>
+    </div>
+  );
 }
 
-// The Form Workshop creates interactive forms
+// The Form Workshop's Interactive Magic
 function Form(props) {
-return (
-<form className="kingdom-form" onSubmit={props.onSubmit}>
-{props.fields.map((field, index) => (
-<div key={index} className="form-field">
-<label>{field.label}</label>
-<input
-type={field.type}
-name={field.name}
-placeholder={field.placeholder}
-value={field.value}
-onChange={field.onChange}
-/>
-</div>
-))}
-<button type="submit" className="form-button">
-{props.submitLabel || 'Submit'}
-</button>
-</form>
-);
+  // "Forms collect wisdom from users" - noted in Aria's journal
+  return (
+    <form className="kingdom-form" onSubmit={props.onSubmit}>
+      {props.fields.map((field, index) => (
+        <div key={index} className="form-field">
+          <label>{field.label}</label>
+          <input
+            type={field.type}
+            name={field.name}
+            placeholder={field.placeholder}
+            value={field.value}
+            onChange={field.onChange}
+          />
+        </div>
+      ))}
+      <button type="submit" className="form-button">
+        {props.submitLabel || 'Submit'}
+      </button>
+    </form>
+  );
 }`}</pre>
 			</div>
 
@@ -609,7 +627,8 @@ onChange={field.onChange}
 					In React, everything you see is a Component – a reusable
 					piece of code that returns JSX elements describing what
 					should appear on the screen. Components can be as simple as
-					a button or as complex as an entire page.
+					a button or as complex as an entire page. Master Aurelius teaches 
+					that each component should have a single, clear purpose.
 				</p>
 			</div>
 

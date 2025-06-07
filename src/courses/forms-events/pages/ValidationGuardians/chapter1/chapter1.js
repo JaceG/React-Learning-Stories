@@ -283,7 +283,7 @@ function ValidatedForm() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Guardian's Wisdom:</h3>
+				<h3>The Guardian's Lesson:</h3>
 				<p>
 					Validation gates are your first line of defense against bad data. 
 					Each gate serves a specific purpose - some check format (email), 

@@ -218,7 +218,7 @@ function AlchemyForm() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Transmutation Secret:</h3>
+				<h3>The Transmutation Lesson:</h3>
 				<p>
 					Form state management is like maintaining a perfect alchemical 
 					balance. Use a single state object for related fields, and 

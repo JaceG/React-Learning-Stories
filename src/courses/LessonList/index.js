@@ -19,6 +19,10 @@ import FormAlchemy from '../forms-events/pages/FormAlchemy';
 import EventSymphony from '../forms-events/pages/EventSymphony';
 import ValidationGuardians from '../forms-events/pages/ValidationGuardians';
 import SubmissionPortals from '../forms-events/pages/SubmissionPortals';
+import NavigationCompass from '../routing-navigation/pages/NavigationCompass';
+import GuardianGates from '../routing-navigation/pages/GuardianGates';
+import WaypointWizardry from '../routing-navigation/pages/WaypointWizardry';
+import PortalPassages from '../routing-navigation/pages/PortalPassages';
 
 const courseListMap = {
 	'components-basics': {
@@ -50,6 +54,12 @@ const courseListMap = {
 		'event-symphony': <EventSymphony />,
 		'validation-guardians': <ValidationGuardians />,
 		'submission-portals': <SubmissionPortals />,
+	},
+	'routing-navigation': {
+		'navigation-compass': <NavigationCompass />,
+		'guardian-gates': <GuardianGates />,
+		'waypoint-wizardry': <WaypointWizardry />,
+		'portal-passages': <PortalPassages />,
 	},
 };
 const LessonList = () => {

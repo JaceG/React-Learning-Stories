@@ -59,6 +59,18 @@ import ValidationGuardiansChapterThree from '../forms-events/pages/ValidationGua
 import SubmissionPortalsChapterOne from '../forms-events/pages/SubmissionPortals/chapter1/chapter1';
 import SubmissionPortalsChapterTwo from '../forms-events/pages/SubmissionPortals/chapter2/chapter2';
 import SubmissionPortalsChapterThree from '../forms-events/pages/SubmissionPortals/chapter3/chapter3';
+import NavigationCompassChapterOne from '../routing-navigation/pages/NavigationCompass/chapter1/chapter1';
+import NavigationCompassChapterTwo from '../routing-navigation/pages/NavigationCompass/chapter2/chapter2';
+import NavigationCompassChapterThree from '../routing-navigation/pages/NavigationCompass/chapter3/chapter3';
+import GuardianGatesChapterOne from '../routing-navigation/pages/GuardianGates/chapter1/chapter1';
+import GuardianGatesChapterTwo from '../routing-navigation/pages/GuardianGates/chapter2/chapter2';
+import GuardianGatesChapterThree from '../routing-navigation/pages/GuardianGates/chapter3/chapter3';
+import WaypointWizardryChapterOne from '../routing-navigation/pages/WaypointWizardry/chapter1/chapter1';
+import WaypointWizardryChapterTwo from '../routing-navigation/pages/WaypointWizardry/chapter2/chapter2';
+import WaypointWizardryChapterThree from '../routing-navigation/pages/WaypointWizardry/chapter3/chapter3';
+import PortalPassagesChapterOne from '../routing-navigation/pages/PortalPassages/chapter1/chapter1';
+import PortalPassagesChapterTwo from '../routing-navigation/pages/PortalPassages/chapter2/chapter2';
+import PortalPassagesChapterThree from '../routing-navigation/pages/PortalPassages/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -189,6 +201,32 @@ const courseListMap = {
 			chapter1: <SubmissionPortalsChapterOne />,
 			chapter2: <SubmissionPortalsChapterTwo />,
 			chapter3: <SubmissionPortalsChapterThree />,
+		},
+	},
+	'routing-navigation': {
+		'navigation-compass': {
+			'/': <NavigationCompassChapterOne />,
+			chapter1: <NavigationCompassChapterOne />,
+			chapter2: <NavigationCompassChapterTwo />,
+			chapter3: <NavigationCompassChapterThree />,
+		},
+		'guardian-gates': {
+			'/': <GuardianGatesChapterOne />,
+			chapter1: <GuardianGatesChapterOne />,
+			chapter2: <GuardianGatesChapterTwo />,
+			chapter3: <GuardianGatesChapterThree />,
+		},
+		'waypoint-wizardry': {
+			'/': <WaypointWizardryChapterOne />,
+			chapter1: <WaypointWizardryChapterOne />,
+			chapter2: <WaypointWizardryChapterTwo />,
+			chapter3: <WaypointWizardryChapterThree />,
+		},
+		'portal-passages': {
+			'/': <PortalPassagesChapterOne />,
+			chapter1: <PortalPassagesChapterOne />,
+			chapter2: <PortalPassagesChapterTwo />,
+			chapter3: <PortalPassagesChapterThree />,
 		},
 	},
 };

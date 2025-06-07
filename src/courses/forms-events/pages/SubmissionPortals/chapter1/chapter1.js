@@ -230,7 +230,7 @@ const FormEventTypes = {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Portal Keeper's Wisdom:</h3>
+				<h3>The Portal Keeper's Lesson:</h3>
 				<p>
 					Form submission is like opening a portal between your application 
 					and a server. The key insight is that React gives you complete 

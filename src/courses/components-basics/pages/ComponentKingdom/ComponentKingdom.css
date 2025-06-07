@@ -715,3 +715,88 @@
   animation: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Character Introduction Box */
+.character-intro {
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.character-intro h4 {
+  color: #495057;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.character-intro p {
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Ancient Scroll Code Example */
+.scroll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 10px 15px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -1px;
+  font-size: 0.9em;
+}
+
+.scroll-header span {
+  font-weight: bold;
+}
+
+.discovered-by {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #bdc3c7;
+}
+
+.code-example pre {
+  border-radius: 0 0 8px 8px;
+  margin-top: 0;
+}
+
+/* Chapter Bridge - Continuity between chapters */
+.chapter-bridge {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #1565c0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Chapter Ending - Leading to next lesson */
+.chapter-ending {
+  background-color: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-ending p {
+  color: #e65100;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.chapter-ending p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+}

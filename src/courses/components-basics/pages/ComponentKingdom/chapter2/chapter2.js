@@ -15,13 +15,18 @@ const ChapterTwo = () => {
 			</h2>
 
 			<div className='story-section'>
+				<p className='chapter-bridge'>
+					After mastering individual workshops, Aria discovered that components 
+					could work together. Master Aurelius led her to a bustling communication 
+					hub where messengers rushed between workshops.
+				</p>
+				
 				<p className='story-paragraph'>
-					For the Component Kingdom to function properly, workshops
-					needed to communicate with each other. The master builder
-					App would send special messengers carrying bags called{' '}
-					<strong>Props</strong> to each workshop. These props
-					contained all the specifications a workshop needed to create
-					its piece.
+					"For the Component Kingdom to function properly," Aurelius explained, 
+					"workshops must communicate with each other. Watch how the master builder 
+					App sends special messengers carrying bags called <strong>Props</strong> 
+					to each workshop. These props contain all the specifications a workshop 
+					needs to create its piece."
 				</p>
 
 				<div className='messenger-illustration'>
@@ -86,11 +91,23 @@ const ChapterTwo = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					Each workshop would receive these props and use them to
-					determine exactly what to build and how it should behave.
-					Props could contain any type of information - text, numbers,
-					functions, or even other components!
+					Aria watched in fascination. "So each workshop receives these props 
+					and uses them to determine exactly what to build and how it should behave?"
 				</p>
+				
+				<p className='story-paragraph'>
+					"Precisely!" Aurelius confirmed. "Props can contain any type of 
+					information - text, numbers, functions, or even other components! 
+					It's how we create harmony in the kingdom."
+				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 2</h4>
+					<p>The props system is genius! Instead of each workshop guessing what to make, 
+					they receive clear instructions. I tried sending different props to the Button 
+					workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I'll 
+					learn about component families working together!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -136,21 +153,38 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='code-example'>
-				<pre>{`// The App sends props to different workshops
+				<div className='scroll-header'>
+					<span>Messenger Communication Patterns</span>
+					<span className='discovered-by'>Transcribed by Aria at the Hub</span>
+				</div>
+				<pre>{`// Aria's Second Discovery: Props Flow
 function App() {
-return (
-<div className="app-container">
-<Button 
-label="Royal Decree" 
-onClick={() => alert('Hear ye, hear ye!')} 
-/>
+  // Master Aurelius: "The App component orchestrates all communication"
+  return (
+    <div className="app-container">
+      {/* Sending specific instructions to Button workshop */}
+      <Button 
+        label="Royal Decree" 
+        onClick={() => alert('Hear ye, hear ye!')} 
+      />
+      
+      {/* Different props for different purposes */}
+      <Card 
+        title="Kingdom News" 
+        content="The annual Component Festival begins tomorrow!" 
+      />
+    </div>
+  );
+}
 
-<Card 
-title="Kingdom News" 
-content="The annual Component Festival begins tomorrow!" 
-/>
-</div>
-);
+// The Button workshop receives and uses props
+function Button(props) {
+  // "props" is the messenger bag containing all instructions
+  return (
+    <button onClick={props.onClick}>
+      {props.label}
+    </button>
+  );
 }`}</pre>
 			</div>
 
@@ -160,7 +194,9 @@ content="The annual Component Festival begins tomorrow!"
 					Props are how components talk to each other. They're passed
 					from parent to child, like arguments to a function. Props
 					allow components to be flexible and reusable with different
-					data and behaviors.
+					data and behaviors. Master Aurelius emphasizes that props flow 
+					in one direction - from parent to child - maintaining order in 
+					the component hierarchy.
 				</p>
 			</div>
 

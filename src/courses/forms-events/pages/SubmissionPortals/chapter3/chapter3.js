@@ -446,7 +446,7 @@ async function deduplicatedSubmit(key, submitFn) {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Portal Master's Ultimate Wisdom:</h3>
+				<h3>The Portal Master's Lesson:</h3>
 				<p>
 					Master-level form submission goes beyond basic async handling. 
 					Implement retry mechanisms with exponential backoff to handle 

@@ -110,12 +110,28 @@ const ChapterTwo = () => {
 			<h2 className='chapter-title'>Chapter 2: The One-Way Road</h2>
 
 			<div className='story-section'>
+				<p className='chapter-bridge'>
+					After understanding how messengers deliver props, Aria was ready to 
+					learn about the sacred rule that governed all communication in the 
+					React Kingdom.
+				</p>
+				
 				<p className='story-paragraph'>
-					An important rule in Component Kingdom was that Props could
-					only travel in one direction—from parent to child. No
-					craftsman could modify the contents of the Props bag they
-					received; they could only read the instructions and create
-					their piece accordingly.
+					Hermes led Aria to the Grand Thoroughfare - a magnificent road system 
+					that connected the App castle to all workshops. "Observe carefully," 
+					he said. "Notice how all roads lead downward from App to the workshops?"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Yes," Aria replied, studying the paths. "But I don't see any roads 
+					going back up!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Exactly!" Hermes smiled. "This is the most important rule in our kingdom: 
+					<strong>Props can only travel in one direction—from parent to child</strong>. 
+					No craftsman can modify the contents of the Props bag they receive; they 
+					can only read the instructions and create their piece accordingly."
 				</p>
 
 				<div className='kingdom-roads'>
@@ -133,13 +149,30 @@ const ChapterTwo = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					This one-way flow of data created a predictable system. When
-					something needed to change, the instructions always came
-					from above. Workshops never modified their instructions;
-					they simply followed them. If a workshop needed to
-					communicate back up to App, it would use special callback
-					messengers provided by App itself.
+					"This one-way flow creates a predictable system," Hermes explained. 
+					"When something needs to change, the instructions always come from above. 
+					Workshops never modify their instructions; they simply follow them."
 				</p>
+				
+				<p className='story-paragraph'>
+					Aria pondered this. "But what if a Button workshop needs to tell App 
+					that it was clicked?"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Ah, excellent question!" Hermes beamed. "For that, App sends special 
+					callback messengers - functions that the workshop can invoke to send 
+					messages back up. The workshop doesn't change the prop; it simply 
+					calls the function App provided."
+				</p>
+				
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 4 (Evening)</h4>
+					<p>The one-way road rule makes so much sense now! It's like a chain 
+					of command - orders flow down, reports flow up through official channels 
+					(callbacks). This keeps everything organized and predictable. No workshop 
+					can accidentally change instructions meant for another!</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -203,6 +236,39 @@ const ChapterTwo = () => {
 					</button>
 				</div>
 
+				<div className='code-example'>
+					<div className='scroll-header'>
+						<span>The Sacred One-Way Rule</span>
+						<span className='discovered-by'>Inscribed by Aria in the Guild Hall</span>
+					</div>
+					<pre>{`// Hermes demonstrates the one-way flow
+function App() {
+  const [count, setCount] = useState(0);
+  
+  // App can send data down via props
+  // AND send functions for communication back up
+  return (
+    <Button 
+      count={count}
+      onIncrement={() => setCount(count + 1)}
+    />
+  );
+}
+
+function Button(props) {
+  // ❌ FORBIDDEN: props.count = 10; // Cannot modify props!
+  
+  // ✅ ALLOWED: Read props and call callbacks
+  return (
+    <button onClick={props.onIncrement}>
+      Clicked {props.count} times
+    </button>
+  );
+}
+
+// Aria's note: "The button tells App about clicks through the callback!"`}</pre>
+				</div>
+
 				<div className='lesson-insight'>
 					<h3>The One-Way Road Lesson:</h3>
 					<p>
@@ -212,7 +278,8 @@ const ChapterTwo = () => {
 						changes always come from above and components never
 						modify the props they receive. If a child needs to
 						communicate back, it does so by calling a callback
-						function provided by its parent.
+						function provided by its parent. Hermes emphasizes: 
+						"Predictability through unidirectional flow!"
 					</p>
 				</div>
 
