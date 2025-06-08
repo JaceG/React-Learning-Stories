@@ -1,0 +1,374 @@
+/* Render Props Styles */
+
+/* Render Delegation Chamber */
+.render-delegation-chamber {
+  background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(253, 121, 168, 0.3);
+}
+
+.render-delegation-chamber::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(50px, -50px);
+}
+
+/* Delegation Visualizer */
+.delegation-visualizer {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.delegation-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  position: relative;
+}
+
+.logic-provider {
+  background: #6c5ce7;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+.render-delegate {
+  width: 100px;
+  height: 2px;
+  background: #fd79a8;
+  position: relative;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.render-delegate::after {
+  content: "render=>";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fd79a8;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.presentation-consumer {
+  background: #00b894;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Pattern Cards */
+.pattern-showcase {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.render-patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.render-pattern-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.render-pattern-card:hover {
+  border-color: #fd79a8;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(253, 121, 168, 0.2);
+}
+
+.render-pattern-card.selected {
+  background: #fd79a8;
+  color: white;
+  border-color: #fd79a8;
+}
+
+.pattern-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pattern-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.pattern-complexity {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.render-pattern-card.selected .pattern-complexity {
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Logic vs Presentation Separator */
+.separation-workshop {
+  background: #2d3436;
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.workshop-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.logic-panel,
+.presentation-panel {
+  background: #34495e;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 200px;
+}
+
+.logic-panel h4,
+.presentation-panel h4 {
+  color: #74b9ff;
+  margin-bottom: 15px;
+}
+
+.logic-item,
+.presentation-item {
+  background: #2c3e50;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: move;
+  transition: transform 0.2s ease;
+}
+
+.logic-item:hover,
+.presentation-item:hover {
+  transform: translateX(5px);
+}
+
+/* Flexibility Meter */
+.flexibility-meter {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.flexibility-bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.flexibility-fill {
+  background: linear-gradient(90deg, #e74c3c 0%, #f39c12 33%, #f1c40f 66%, #2ecc71 100%);
+  height: 100%;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+/* Tradeoff Balance */
+.tradeoff-balance {
+  background: #ecf0f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.balance-visualization {
+  display: flex;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flexibility-side {
+  background: #fd79a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease;
+}
+
+.simplicity-side {
+  background: #74b9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease;
+}
+
+/* Interactive Demo */
+.render-prop-demo {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.demo-code {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.demo-result {
+  background: #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  min-height: 100px;
+}
+
+/* Character Cards */
+.character-intro-card {
+  background: linear-gradient(135deg, #e17055, #d63031);
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 5px 20px rgba(225, 112, 85, 0.3);
+}
+
+.character-intro-card h4 {
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+/* Prop Getters Visualization */
+.prop-getters-demo {
+  background: #dfe6e9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.getter-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.getter-step {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #fd79a8;
+  position: relative;
+}
+
+.getter-step::after {
+  content: "↓";
+  position: absolute;
+  bottom: -25px;
+  left: 20px;
+  font-size: 20px;
+  color: #fd79a8;
+}
+
+.getter-step:last-child::after {
+  display: none;
+}
+
+/* State Reducer Pattern */
+.state-reducer-demo {
+  background: #ffeaa7;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #fdcb6e;
+}
+
+.reducer-controls {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.reducer-button {
+  background: #fdcb6e;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.reducer-button:hover {
+  background: #f39c12;
+  transform: translateY(-2px);
+}
+
+/* Achievement Banner */
+.achievement-banner {
+  background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+  color: white;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(253, 121, 168, 0.3);
+}
+
+.achievement-banner h4 {
+  margin-top: 0;
+  font-size: 1.5em;
+}

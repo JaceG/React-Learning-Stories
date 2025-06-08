@@ -31,6 +31,10 @@ import TestingTower from '../../../learning-paths/testing-debugging/pages/Testin
 import DebugDungeon from '../../../learning-paths/testing-debugging/pages/DebugDungeon';
 import IntegrationInn from '../../../learning-paths/testing-debugging/pages/IntegrationInn';
 import ErrorEnchantments from '../../../learning-paths/testing-debugging/pages/ErrorEnchantments';
+import CompoundComponents from '../../../learning-paths/advanced-patterns/pages/CompoundComponents';
+import RenderProps from '../../../learning-paths/advanced-patterns/pages/RenderProps';
+import HigherOrderComponents from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents';
+import PortalsRefs from '../../../learning-paths/advanced-patterns/pages/PortalsRefs';
 
 const courseListMap = {
 	'components-basics': {
@@ -80,6 +84,12 @@ const courseListMap = {
 		'debug-dungeon': <DebugDungeon />,
 		'integration-inn': <IntegrationInn />,
 		'error-enchantments': <ErrorEnchantments />,
+	},
+	'advanced-patterns': {
+		'compound-components': <CompoundComponents />,
+		'render-props': <RenderProps />,
+		'higher-order-components': <HigherOrderComponents />,
+		'portals-refs': <PortalsRefs />,
 	},
 };
 const LessonList = () => {

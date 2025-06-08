@@ -95,6 +95,18 @@ import IntegrationInnChapterThree from '../../../learning-paths/testing-debuggin
 import ErrorEnchantmentsChapterOne from '../../../learning-paths/testing-debugging/pages/ErrorEnchantments/chapter1/chapter1';
 import ErrorEnchantmentsChapterTwo from '../../../learning-paths/testing-debugging/pages/ErrorEnchantments/chapter2/chapter2';
 import ErrorEnchantmentsChapterThree from '../../../learning-paths/testing-debugging/pages/ErrorEnchantments/chapter3/chapter3';
+import CompoundComponentsChapterOne from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter1/chapter1';
+import CompoundComponentsChapterTwo from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter2/chapter2';
+import CompoundComponentsChapterThree from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter3/chapter3';
+import RenderPropsChapterOne from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter1/chapter1';
+import RenderPropsChapterTwo from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter2/chapter2';
+import RenderPropsChapterThree from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter3/chapter3';
+import HigherOrderComponentsChapterOne from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter1/chapter1';
+import HigherOrderComponentsChapterTwo from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter2/chapter2';
+import HigherOrderComponentsChapterThree from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter3/chapter3';
+import PortalsRefsChapterOne from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter1/chapter1';
+import PortalsRefsChapterTwo from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter2/chapter2';
+import PortalsRefsChapterThree from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -303,6 +315,32 @@ const courseListMap = {
 			chapter1: <ErrorEnchantmentsChapterOne />,
 			chapter2: <ErrorEnchantmentsChapterTwo />,
 			chapter3: <ErrorEnchantmentsChapterThree />,
+		},
+	},
+	'advanced-patterns': {
+		'compound-components': {
+			'/': <CompoundComponentsChapterOne />,
+			chapter1: <CompoundComponentsChapterOne />,
+			chapter2: <CompoundComponentsChapterTwo />,
+			chapter3: <CompoundComponentsChapterThree />,
+		},
+		'render-props': {
+			'/': <RenderPropsChapterOne />,
+			chapter1: <RenderPropsChapterOne />,
+			chapter2: <RenderPropsChapterTwo />,
+			chapter3: <RenderPropsChapterThree />,
+		},
+		'higher-order-components': {
+			'/': <HigherOrderComponentsChapterOne />,
+			chapter1: <HigherOrderComponentsChapterOne />,
+			chapter2: <HigherOrderComponentsChapterTwo />,
+			chapter3: <HigherOrderComponentsChapterThree />,
+		},
+		'portals-refs': {
+			'/': <PortalsRefsChapterOne />,
+			chapter1: <PortalsRefsChapterOne />,
+			chapter2: <PortalsRefsChapterTwo />,
+			chapter3: <PortalsRefsChapterThree />,
 		},
 	},
 };
