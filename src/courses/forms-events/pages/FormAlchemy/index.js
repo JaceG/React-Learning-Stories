@@ -47,10 +47,18 @@ function FormAlchemy() {
 	};
 
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container form-alchemy-container'>
+			<div className='lesson-opener'>
+				<p>The Western Quarter hummed with a different energy than the rest of the kingdom. 
+				Here, the abstract magic of components, state, and hooks transformed into tangible 
+				interfaces. Aria paused at the entrance to the Form Alchemy Lab, Binary adjusting 
+				his sensors for the new environment. The air shimmered with the promise of transmutation - 
+				where user intent would become application state.</p>
+			</div>
+			
 			<h1 className='lesson-title'>Form Alchemy</h1>
 			<p className='lesson-subtitle'>
-				Master the ancient art of transforming user input into React gold
+				Transform user input into React gold with Master Alchemist Formeus
 			</p>
 
 			<div className='chapter-navigation'>

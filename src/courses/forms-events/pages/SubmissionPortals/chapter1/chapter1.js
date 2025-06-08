@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterOne = () => {
+function ChapterOne() {
 	const { 
 		portalState,
 		activatePortal,
@@ -60,31 +61,68 @@ const ChapterOne = () => {
 		setSubmissionMethod('native');
 	};
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: Opening the Portal
-			</h2>
+			<h2 className='chapter-title'>Chapter 1: Opening the Portal</h2>
+			
+			<div className='chapter-bridge'>
+				<p>The Submission Portal Gateway pulsed with ethereal energy. Here, all form data 
+				from across the Western Quarter converged before making the perilous journey to 
+				distant servers. Portal Keeper Sage, ancient and wise, stood before the swirling 
+				vortex.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the mystical realm of Form Submission, a portal keeper named 
-					Sage discovered ancient gateways that could transport data across 
-					dimensions. Each portal had different states and behaviors, and 
-					understanding them was key to successful data transmission.
+					"<strong>Aria the Hook Craftmaster, Form Architect, Event Conductor, and Validation 
+					Commander!</strong>" Sage's voice echoed with reverence. "<strong>Portal Keeper Sage</strong> 
+					at your service. Your achievements across the Western Quarter are legendary. But here, 
+					at the gateway between client and server, lies your greatest challenge."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary's sensors detected massive energy fluctuations. "Portal instability detected! 
+					Multiple failed submissions, synchronization errors, and data loss events recorded."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria studied the chaotic portal. "I see the problem. You're fighting the browser's 
+					natural submission behavior instead of harnessing it. Let me show you the patterns 
+					I've learned across my entire journey."
+				</p>
+				
+				<p className='story-paragraph'>
+					"Please!" Sage gestured urgently. "Every failed submission costs us valuable data. 
+					The traditional methods cause page reloads, lost state, and poor user experience."
 				</p>
 
+				<div className='aria-portal-mastery'>
+					<h3>Aria's Portal Control Theory</h3>
+					<p className='story-paragraph'>
+						"First, understand that form submission is the culmination of everything," 
+						Aria explained. "It combines state management, event handling, validation, 
+						and async operations. The key is preventing the browser's default behavior 
+						and taking full control."
+					</p>
+				</div>
+
 				<div className='portal-chamber'>
-					<h3>The Submission Portal</h3>
+					<h3>The Submission Portal States</h3>
+					<p className='sage-explanation'>
+						Sage: "Observe how the portal transitions through different states..."
+					</p>
 					<div className='submission-portal'>
-						<div className='portal-ring'></div>
-						<div className='portal-ring'></div>
-						<div className='portal-ring'></div>
+						<div className='portal-ring outer'></div>
+						<div className='portal-ring middle'></div>
+						<div className='portal-ring inner'></div>
 						<div className={`portal-core ${portalState}`}>
-							{portalState === 'idle' && '🌀'}
-							{portalState === 'active' && '✨'}
-							{portalState === 'success' && '✅'}
-							{portalState === 'error' && '❌'}
+							<span className='portal-icon'>
+								{portalState === 'idle' && '🌀'}
+								{portalState === 'active' && '✨'}
+								{portalState === 'success' && '✅'}
+								{portalState === 'error' && '❌'}
+							</span>
 						</div>
 					</div>
 					
@@ -95,20 +133,82 @@ const ChapterOne = () => {
 								className={`state-card ${portalState === state.name ? 'active' : ''}`}>
 								<div className='state-icon'>{state.icon}</div>
 								<h4>{state.name.charAt(0).toUpperCase() + state.name.slice(1)}</h4>
-								<p>{state.description}</p>
+								<p className='state-desc'>{state.description}</p>
 							</div>
 						))}
 					</div>
 				</div>
 			</div>
 
+			<div className='aria-fundamental-pattern'>
+				<h3>The Foundation of Portal Control</h3>
+				<pre className='magical-code'>{`// Aria's Portal Control Pattern
+function SubmissionPortal() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  
+  const [portalState, setPortalState] = useState('idle');
+
+  // The crucial pattern - prevent default!
+  const handleSubmit = async (e) => {
+    // CRITICAL: Stop the browser's natural behavior
+    e.preventDefault();
+    
+    // Now we control the portal completely
+    setPortalState('validating');
+    
+    try {
+      // Validate (using patterns from Validation Fortress)
+      const isValid = await validateForm(formData);
+      if (!isValid) throw new Error('Validation failed');
+      
+      setPortalState('submitting');
+      
+      // Submit (the actual portal opening)
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) throw new Error('Submission failed');
+      
+      setPortalState('success');
+      // Handle success...
+      
+    } catch (error) {
+      setPortalState('error');
+      // Handle error...
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Form fields */}
+      <button type="submit">Open Portal</button>
+    </form>
+  );
+}`}</pre>
+			</div>
+
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Basic Portal Activation
+					Interactive Exercise: Mastering Portal Control
 				</h3>
+				<div className='instruction-box'>
+					<p>
+						<strong>
+							Help Aria demonstrate proper portal control! Submit the form and observe 
+							how preventing default behavior gives us complete control over the submission process.
+						</strong>
+					</p>
+				</div>
 
 				<div className='submission-form'>
-					<h4>Portal Control Panel</h4>
+					<h4>🌀 Portal Control Interface</h4>
 					
 					<form onSubmit={handleBasicSubmit}>
 						<div className='form-field'>
@@ -118,6 +218,7 @@ const ChapterOne = () => {
 								value={formData.name}
 								onChange={(e) => handleFieldChange('name', e.target.value)}
 								placeholder='Enter your name'
+								className='portal-input'
 								required
 							/>
 						</div>
@@ -128,132 +229,151 @@ const ChapterOne = () => {
 								type='email'
 								value={formData.email}
 								onChange={(e) => handleFieldChange('email', e.target.value)}
-								placeholder='your@email.com'
+								placeholder='your@dimension.portal'
+								className='portal-input'
 								required
 							/>
 						</div>
 
 						<div className='form-field'>
-							<label>Message to Send:</label>
+							<label>Transmission Message:</label>
 							<textarea
 								value={formData.message}
 								onChange={(e) => handleFieldChange('message', e.target.value)}
-								placeholder='Your message...'
+								placeholder='Your message to transmit...'
 								rows='4'
+								className='portal-textarea'
 								required
 							/>
 						</div>
 
-						<div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
-							<button type='submit'>
-								Activate Portal (Submit)
+						<div className='submission-controls'>
+							<button type='submit' className='submit-button'>
+								🌀 Activate Portal (Submit)
 							</button>
-							<button type='button' onClick={demonstratePreventDefault}>
-								Prevent Default
+							<button type='button' onClick={demonstratePreventDefault} className='prevent-button'>
+								🛡️ Prevent Default
 							</button>
-							<button type='button' onClick={demonstrateNativeSubmit}>
-								Native Submit (Demo)
+							<button type='button' onClick={demonstrateNativeSubmit} className='native-button'>
+								⚠️ Native Submit (Demo)
 							</button>
 						</div>
 					</form>
 
 					{submissionMethod && (
-						<div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-							<h5>Submission Method: {submissionMethod}</h5>
+						<div className='method-display'>
+							<h5>Submission Method Analysis</h5>
 							{submissionMethod === 'prevented' && (
-								<p>✅ Form submission prevented - custom logic executed instead</p>
+								<div className='method-success'>
+									<p>✅ Default behavior prevented successfully!</p>
+									<p>React now has full control over the submission process.</p>
+								</div>
 							)}
 							{submissionMethod === 'native' && (
-								<p>⚠️ Native submission would cause a page reload/redirect</p>
+								<div className='method-warning'>
+									<p>⚠️ Native submission would cause:</p>
+									<ul>
+										<li>Page reload/redirect</li>
+										<li>Lost application state</li>
+										<li>Poor user experience</li>
+									</ul>
+								</div>
 							)}
 						</div>
 					)}
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<pre>{`// Basic Form Submission in React
-function SubmissionPortal() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+			<div className='sage-enlightenment'>
+				<p className='story-paragraph'>
+					Sage watched in amazement as Aria effortlessly controlled the portal. "Incredible! 
+					You've shown that the secret isn't in complex magic, but in understanding and 
+					preventing the browser's default behavior!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"Exactly," Aria confirmed. "Every form submission starts with e.preventDefault(). 
+					This simple incantation gives us complete control over the portal, allowing us 
+					to validate, transform, and transmit data however we choose."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary added excitedly, "Portal stability increased to 100%! No more page reloads 
+					detected. User experience optimization achieved!"
+				</p>
+			</div>
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    // CRITICAL: Prevent default browser submission
-    e.preventDefault();
-    
-    // Your custom submission logic
-    console.log('Form submitted:', formData);
-    
-    // You can now:
-    // - Validate the data
-    // - Send to an API
-    // - Show loading states
-    // - Handle responses
-  };
+			<div className='submission-triggers'>
+				<h3>Portal Activation Methods</h3>
+				<div className='trigger-grid'>
+					<div className='trigger-card'>
+						<h4>📱 Submit Button</h4>
+						<pre className='mini-code'>{`<button type="submit">
+  Open Portal
+</button>`}</pre>
+						<p>Most common trigger</p>
+					</div>
+					<div className='trigger-card'>
+						<h4>⌨️ Enter Key</h4>
+						<pre className='mini-code'>{`// Automatic in text inputs
+<input type="text" />
+// Press Enter to submit`}</pre>
+						<p>Natural user behavior</p>
+					</div>
+					<div className='trigger-card'>
+						<h4>🎯 Programmatic</h4>
+						<pre className='mini-code'>{`// Manual submission
+formRef.current.submit();
+// Or dispatch event
+formRef.current.dispatchEvent(
+  new Event('submit')
+);`}</pre>
+						<p>Code-triggered</p>
+					</div>
+				</div>
+			</div>
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={formData.name}
-        onChange={(e) => setFormData({
-          ...formData,
-          name: e.target.value
-        })}
-      />
-      
-      <button type="submit">
-        Submit Form
-      </button>
-    </form>
-  );
-}
-
-// Understanding Form Events
-const FormEventTypes = {
-  onSubmit: "Fired when form is submitted",
-  onChange: "Fired when input value changes",
-  onBlur: "Fired when input loses focus",
-  onFocus: "Fired when input gains focus",
-  onReset: "Fired when form is reset"
-};
-
-// Different Submit Triggers
-// 1. Button with type="submit" (default)
-// 2. Input with type="submit"
-// 3. Pressing Enter in a text input
-// 4. form.submit() JavaScript method`}</pre>
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Character Introduction</h4>
+					<p><strong>Portal Keeper Sage</strong> - The Western Quarter's master of 
+					interdimensional data transmission. Ancient beyond measure, Sage has witnessed 
+					countless failed submissions and data losses. The swirling energies of the portal 
+					have given them unique insights into the flow of information between client and 
+					server. They seek someone who can finally bring stability to the chaotic portal 
+					system.</p>
+				</div>
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Portal Keeper's Lesson:</h3>
+				<h3>The Portal Keeper's First Law:</h3>
 				<p>
-					Form submission is like opening a portal between your application 
-					and a server. The key insight is that React gives you complete 
-					control over this portal through the onSubmit event and preventDefault(). 
-					This allows you to intercept the browser's default behavior (page reload) 
-					and instead handle the submission with JavaScript, maintaining your 
-					application's state and providing a smooth user experience.
+					Form submission is the gateway between your React application and the outside world. 
+					The fundamental pattern is preventDefault() - this single method transforms chaotic 
+					browser behavior into controlled data transmission. By preventing the default submission, 
+					you maintain complete control over validation, error handling, loading states, and 
+					success feedback. Remember: every portal begins with prevention. Master this, and 
+					you master the flow of data from client to server.
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					Why is preventing the default form submission behavior crucial 
-					in single-page React applications?
+					Why is preventDefault() the foundation of modern form submission in React?
 				</p>
-				<p>
-					How does thinking of form submission as a "portal" help you 
-					understand the flow of data from client to server?
+				<p className='story-paragraph'>
+					How does controlling the submission "portal" improve user experience?
+				</p>
+				<p className='story-paragraph'>
+					What happens to your application state without proper portal control?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterOne;

@@ -1,296 +1,394 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterThree = () => {
-	const { navigationHistory, handleNavigation } = useOutletContext();
+function ChapterThree() {
+	const { 
+		navigationHistory, 
+		handleNavigation,
+		masterStatus,
+		achieveMastery
+	} = useOutletContext();
 
 	const [activeNav, setActiveNav] = useState('dashboard');
 	const [breadcrumbs, setBreadcrumbs] = useState(['Home', 'Dashboard']);
+	const [synthesisComplete, setSynthesisComplete] = useState(false);
 
-	const navigationPatterns = [
+	const unifiedPatterns = [
 		{
-			name: 'Nested Routes',
+			name: 'Stateful Nested Routes',
 			icon: '🏰',
-			description: 'Districts within districts',
-			code: 'Route > Route > Route',
+			description: 'Component hierarchies with preserved state',
+			ariaIntegration: 'Context + Effects for seamless data flow',
+			code: 'StateProvider > Route > Route > Route',
 		},
 		{
-			name: 'Protected Routes',
+			name: 'Intelligent Protected Routes',
 			icon: '🔒',
-			description: 'Guarded pathways',
-			code: 'RequireAuth > Route',
+			description: 'Multi-layer authentication with validation',
+			ariaIntegration: 'Form validation before route access',
+			code: 'ValidateAuth > RequirePermissions > Route',
 		},
 		{
-			name: 'Layout Routes',
+			name: 'Dynamic Layout Routes',
 			icon: '📐',
-			description: 'Shared kingdom structures',
-			code: 'Layout > Outlet',
+			description: 'Adaptive layouts based on user context',
+			ariaIntegration: 'Hooks for responsive route structures',
+			code: 'useLayout() > ConditionalOutlet',
 		},
 		{
-			name: 'Programmatic Navigation',
+			name: 'Predictive Navigation',
 			icon: '🎯',
-			description: 'Teleportation spells',
-			code: 'useNavigate()',
+			description: 'AI-assisted route prefetching',
+			ariaIntegration: 'Effects + Memoization for performance',
+			code: 'usePredictiveNav() > preloadRoute()',
 		},
 	];
 
-	return (
+	const completeSynthesis = () => {
+		setSynthesisComplete(true);
+		achieveMastery();
+	};
+
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Master Navigator's Secrets
-			</h2>
+			<h2 className='chapter-title'>Chapter 3: The Ultimate Navigation Synthesis</h2>
+			
+			<div className='chapter-bridge'>
+				<p>The entire Navigation Corps assembled in the Grand Synthesis Chamber. Word had 
+				spread throughout the kingdom - Marina and Aria were about to unveil something 
+				revolutionary. Masters from every quarter had gathered to witness this historic moment.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					Marina led her most dedicated students to the Tower of
-					Navigation, where the most advanced techniques were kept.
-					"You've learned to travel between workshops and carry
-					messages," she said, "but the kingdom's structure is more
-					complex than simple paths."
+					Marina addressed the assembly. "Fellow navigators, what Aria and I have created 
+					goes beyond traditional routing. By combining her mastery of components, state, 
+					hooks, and forms with our navigation expertise, we've developed patterns that 
+					will transform how we build React applications."
 				</p>
-
+				
 				<p className='story-paragraph'>
-					She unveiled a grand map showing the kingdom's true layout.
-					"Look closely," she pointed. "The Component Kingdom has{' '}
-					<strong>districts within districts</strong>. The Market
-					District contains the Potion Quarter, which houses
-					individual shops. These are <strong>nested routes</strong>."
+					Aria stepped forward, Binary projecting a complex hologram above them. "Navigation 
+					isn't just about moving between views. It's about maintaining application state, 
+					preserving user context, validating transitions, and creating intelligent systems 
+					that anticipate user needs."
 				</p>
-
+				
 				<p className='story-paragraph'>
-					Young Param, now more experienced, noticed something.
-					"Captain, some areas on the map are marked with locks. Are
-					those forbidden zones?"
+					The hologram displayed interconnected patterns, each glowing with the colors of 
+					different quarters. "Watch," Aria said, "as we demonstrate the ultimate synthesis 
+					of all React knowledge."
 				</p>
 
-				<p className='story-paragraph'>
-					"Ah, you've discovered the <strong>Protected Routes</strong>
-					!" Marina smiled. "These pathways require special permission
-					- perhaps a royal seal or merchant license. Only those with
-					proper credentials may enter."
-				</p>
-
-				<div className='route-map'>
-					<h4>Advanced Navigation Patterns</h4>
-					<div className='route-list'>
-						{navigationPatterns.map((pattern) => (
-							<div key={pattern.name} className='route-card'>
+				<div className='ultimate-patterns-showcase'>
+					<h3>The Unified Navigation Architecture</h3>
+					<div className='route-list unified'>
+						{unifiedPatterns.map((pattern) => (
+							<div key={pattern.name} className='route-card mastery'>
 								<div className='route-icon'>{pattern.icon}</div>
 								<h5>{pattern.name}</h5>
-								<p>{pattern.description}</p>
+								<p className='pattern-desc'>{pattern.description}</p>
+								<div className='aria-touch'>
+									<strong>Aria's Enhancement:</strong>
+									<p>{pattern.ariaIntegration}</p>
+								</div>
 								<code>{pattern.code}</code>
 							</div>
 						))}
 					</div>
 				</div>
+
+				<div className='collaborative-demonstration'>
+					<p className='story-paragraph'>
+						"Let me show you what we mean," Aria said, her hands moving confidently across 
+						the interface. Marina watched with pride as her colleague demonstrated their 
+						combined creation.
+					</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Nested Routes - Districts Within Districts
+					The Complete Navigation System
 				</h3>
+				<p className='synthesis-note'>
+					Marina and Aria present their masterwork...
+				</p>
 
-				<div className='code-example'>
-					<pre>{`// Creating Nested Route Structure
-function App() {
+				<div className='code-example ultimate'>
+					<h3>The Marina-Aria Navigation Framework</h3>
+					<pre>{`// The Ultimate Navigation Architecture
+import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { createContext, useContext, useState, useEffect, useMemo } from 'react';
+
+// Aria's contribution: Stateful Route Provider
+const RouteStateContext = createContext();
+
+export function RouteStateProvider({ children }) {
+  const location = useLocation();
+  const [routeStates, setRouteStates] = useState({});
+  
+  // Preserve component state across navigation
+  const preserveState = (path, state) => {
+    setRouteStates(prev => ({ ...prev, [path]: state }));
+  };
+  
+  // Restore state when returning to route
+  const restoreState = (path) => {
+    return routeStates[path] || null;
+  };
+  
   return (
-    <Routes>
-      <Route path="/" element={<Kingdom />}>
-        <Route index element={<CastleGates />} />
-        <Route path="market" element={<MarketDistrict />}>
-          <Route index element={<MarketSquare />} />
-          <Route path="potions" element={<PotionShops />} />
-          <Route path="armory" element={<WeaponSmith />} />
-        </Route>
-        <Route path="academy" element={<MagicAcademy />}>
-          <Route path="hooks" element={<HookClassroom />} />
-          <Route path="state" element={<StateLibrary />} />
-        </Route>
-      </Route>
-    </Routes>
+    <RouteStateContext.Provider value={{ preserveState, restoreState }}>
+      {children}
+    </RouteStateContext.Provider>
   );
 }
 
-// The Market District layout
-function MarketDistrict() {
+// Marina's expertise + Aria's patterns: Intelligent Protected Route
+function IntelligentProtectedRoute({ children, permissions = [] }) {
+  const { user } = useAuth(); // Aria's auth context
+  const { validate } = useFormValidation(); // From Western Quarter
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Multi-layer protection
+  const canAccess = useMemo(() => {
+    if (!user) return false;
+    if (permissions.length === 0) return true;
+    
+    return permissions.every(permission => 
+      user.permissions.includes(permission)
+    );
+  }, [user, permissions]);
+  
+  // Aria's addition: Validate before allowing access
+  useEffect(() => {
+    const checkAccess = async () => {
+      if (!canAccess) {
+        // Save attempted destination
+        navigate('/login', { 
+          state: { 
+            from: location,
+            requiredPermissions: permissions 
+          }
+        });
+        return;
+      }
+      
+      // Additional validation for sensitive routes
+      if (location.state?.requiresValidation) {
+        const isValid = await validate(location.state.validationData);
+        if (!isValid) {
+          navigate('/validation-required');
+        }
+      }
+    };
+    
+    checkAccess();
+  }, [canAccess, location]);
+  
+  return canAccess ? children : null;
+}
+
+// The Complete Route Structure
+function AppRoutes() {
   return (
-    <div className="district">
-      <h2>Welcome to the Market District</h2>
-      <nav>
-        <Link to="/market">Main Square</Link>
-        <Link to="/market/potions">Potion Quarter</Link>
-        <Link to="/market/armory">Weapon Smith</Link>
-      </nav>
-      <Outlet /> {/* Child routes render here */}
-    </div>
+    <RouteStateProvider>
+      <Routes>
+        <Route path="/" element={<KingdomLayout />}>
+          {/* Public routes with state preservation */}
+          <Route index element={<CentralCitadel />} />
+          <Route path="quarters" element={<QuartersLayout />}>
+            <Route path="northern" element={<ComponentsQuarter />} />
+            <Route path="eastern" element={<StateQuarter />} />
+            <Route path="southern" element={<PropsQuarter />} />
+            <Route path="western" element={<FormsQuarter />} />
+          </Route>
+          
+          {/* Protected routes with validation */}
+          <Route path="masters" element={
+            <IntelligentProtectedRoute permissions={['master']}>
+              <MastersLayout />
+            </IntelligentProtectedRoute>
+          }>
+            <Route path="council" element={<MastersCouncil />} />
+            <Route path="archives" element={<SecretArchives />} />
+          </Route>
+          
+          {/* Dynamic routes with prefetching */}
+          <Route path="apprentice/:id" element={<ApprenticeProfile />} 
+            loader={({ params }) => prefetchApprenticeData(params.id)}
+          />
+          
+          {/* Multi-step forms across routes */}
+          <Route path="certification" element={<CertificationWizard />}>
+            <Route path="step/:stepId" element={<WizardStep />} />
+          </Route>
+        </Route>
+      </Routes>
+    </RouteStateProvider>
   );
 }`}</pre>
 				</div>
 
-				<div className='router-setup'>
-					<div className='setup-step'>
-						<h4>Protected Routes - The Guardian Gates</h4>
-						<div className='code-snippet'>
-							{`// Creating a route guard
-function RequireAuth({ children }) {
+				<div className='advanced-integration'>
+					<h3>Navigation with Complete React Integration</h3>
+					<div className='integration-examples'>
+						<div className='example-card'>
+							<h4>Predictive Navigation Hook</h4>
+							<pre>{`// Aria's pattern: Anticipate user navigation
+const usePredictiveNavigation = () => {
+  const location = useLocation();
   const { user } = useAuth();
-  const location = useLocation();
+  const analytics = useAnalytics();
   
-  if (!user) {
-    // Redirect to login, but save the location
-    return <Navigate to="/login" state={{ from: location }} />;
-  }
+  useEffect(() => {
+    // Analyze user patterns
+    const likelyNextRoute = analytics.predictNextRoute(
+      location.pathname,
+      user.history
+    );
+    
+    // Prefetch likely destination
+    if (likelyNextRoute) {
+      prefetchRouteData(likelyNextRoute);
+    }
+  }, [location]);
   
-  return children;
-}
-
-// Using protected routes
-<Route path="/royal-chamber" element={
-  <RequireAuth>
-    <RoyalChamber />
-  </RequireAuth>
-} />
-
-// After login, return to intended destination
-function Login() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-  
-  const handleLogin = () => {
-    // ... login logic
-    navigate(from, { replace: true });
+  return { 
+    preload: prefetchRouteData,
+    likelihood: analytics.getRouteLikelihood
   };
-}`}
+};`}</pre>
+						</div>
+						
+						<div className='example-card'>
+							<h4>Form-Aware Navigation</h4>
+							<pre>{`// Prevent data loss during navigation
+const useFormAwareNavigation = () => {
+  const navigate = useNavigate();
+  const { formState, saveForm } = useFormContext();
+  
+  const safeNavigate = useCallback(async (to, options) => {
+    if (formState.isDirty) {
+      const shouldSave = await confirmDialog(
+        'Save your changes?'
+      );
+      
+      if (shouldSave) {
+        await saveForm();
+      } else if (!confirm('Discard changes?')) {
+        return; // Cancel navigation
+      }
+    }
+    
+    navigate(to, options);
+  }, [formState, navigate, saveForm]);
+  
+  return safeNavigate;
+};`}</pre>
 						</div>
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Programmatic Navigation - Teleportation Spells
-import { useNavigate } from 'react-router-dom';
+				{!synthesisComplete && (
+					<div className='synthesis-activation'>
+						<h3>Activate the Complete System</h3>
+						<p>Marina and Aria stand ready to demonstrate the full power of their creation...</p>
+						<button 
+							className='synthesis-button'
+							onClick={completeSynthesis}>
+							⚡ Initiate Navigation Synthesis
+						</button>
+					</div>
+				)}
 
-function QuestComplete() {
-  const navigate = useNavigate();
-  
-  const handleVictory = async () => {
-    // Save quest progress
-    await saveProgress();
-    
-    // Different navigation options
-    navigate('/rewards');              // Go to rewards
-    navigate(-1);                     // Go back one step
-    navigate('/home', { replace: true }); // Replace history
-    
-    // Navigate with data
-    navigate('/hall-of-fame', {
-      state: { achievement: 'Dragon Slayer' }
-    });
-  };
-}
-
-// Advanced: Navigation with Loading States
-function SmartNavigation() {
-  const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
-  
-  const navigateWithLoading = async (path) => {
-    setIsLoading(true);
-    // Prepare data, verify permissions, etc.
-    await prepareDestination(path);
-    navigate(path);
-    setIsLoading(false);
-  };
-}`}</pre>
-				</div>
-
-				<div className='path-visualization'>
-					<span className='path-node'>Kingdom</span>
-					<span className='path-arrow'>→</span>
-					<span className='path-node'>District</span>
-					<span className='path-arrow'>→</span>
-					<span className='path-node'>Quarter</span>
-					<span className='path-arrow'>→</span>
-					<span className='path-node'>Shop</span>
-				</div>
-			</div>
-
-			<div className='code-example'>
-				<pre>{`// Layout Routes - Shared Kingdom Architecture
-function KingdomLayout() {
-  return (
-    <div className="kingdom">
-      <Header />
-      <Navigation />
-      <main>
-        <Outlet /> {/* Different districts render here */}
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-// Breadcrumb Navigation
-function Breadcrumbs() {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter(x => x);
-  
-  return (
-    <nav aria-label="breadcrumb">
-      <Link to="/">Home</Link>
-      {pathnames.map((name, index) => {
-        const to = '/' + pathnames.slice(0, index + 1).join('/');
-        const isLast = index === pathnames.length - 1;
-        
-        return isLast ? (
-          <span key={to}> / {name}</span>
-        ) : (
-          <span key={to}> / <Link to={to}>{name}</Link></span>
-        );
-      })}
-    </nav>
-  );
-}`}</pre>
+				{synthesisComplete && (
+					<div className='synthesis-complete'>
+						<h3>🎉 The Ultimate Synthesis Achieved!</h3>
+						<div className='achievement-display'>
+							<p>The room erupted in applause as the demonstration concluded. The synthesis 
+							of all React patterns into a unified navigation system was complete.</p>
+							
+							<div className='master-recognition'>
+								<h4>Master Status Achieved</h4>
+								{Object.entries(masterStatus).map(([skill, achieved]) => (
+									<div key={skill} className='skill-status'>
+										<span>{skill}:</span>
+										<span className={achieved ? 'mastered' : 'pending'}>
+											{achieved ? '✓ Mastered' : '○ Learning'}
+										</span>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				)}
 			</div>
 
 			<div className='lesson-insight'>
-					<h3>The Navigation Lesson:</h3>
-					<p>
-						"A master navigator," Marina explained, "understands
-						that the kingdom is not just a collection of separate
-						workshops, but an interconnected realm. Nested routes
-						reflect the natural hierarchy of your application."
-					</p>
-					<p>
-						"Protected routes ensure that sensitive areas remain
-						secure. Just as the Royal Treasury requires proof of
-						authorization, your application's private sections need
-						authentication."
-					</p>
-				</div>
+				<h3>The Ultimate Navigation Wisdom:</h3>
+				<p>
+					Marina and Aria's collaboration revealed the deepest truth about React navigation: 
+					it's not a separate system, but the orchestration of all React patterns. Every 
+					route is a component. Every navigation is a state change. Every transition can 
+					be guarded by validation. Every journey can be enhanced with effects and context.
+				</p>
+				<p>
+					"This is what mastery looks like," Marina announced to the assembly. "Not just 
+					knowing individual patterns, but understanding how they create something greater 
+					together. Aria has shown us that true expertise comes from synthesis."
+				</p>
+				<p>
+					Binary projected a final message: "All systems integrated. Navigation framework 
+					efficiency: 99.9%. React mastery: COMPLETE. Aria's journey: LEGENDARY."
+				</p>
+			</div>
+
+			<div className='marina-tribute'>
+				<h3>Marina's Recognition</h3>
+				<p className='story-paragraph'>
+					Marina stepped forward, her voice carrying across the chamber. "When I first 
+					heard of Aria's arrival in our kingdom, I knew she was special. But witnessing 
+					her journey - from uncertain apprentice to innovative master - has been truly 
+					inspiring."
+				</p>
+				
+				<p className='story-paragraph'>
+					"You didn't just learn our patterns," Marina continued, addressing Aria directly. 
+					"You transformed them. You showed us connections we never saw. You elevated our 
+					entire understanding of what React can be."
+				</p>
+				
+				<p className='story-paragraph'>
+					The assembled masters nodded in agreement. From every quarter of the kingdom, 
+					they had watched Aria grow, and now they witnessed her triumph.
+				</p>
+			</div>
 
 			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
+				<h3>Reflect on the Journey</h3>
 				<p>
-					How do nested routes help organize complex applications?
-					Think about how a kingdom's districts mirror your app's
-					feature areas.
+					How has understanding navigation as the synthesis of all React patterns changed 
+					your perspective on building applications?
 				</p>
-				<p>
-					When would you choose programmatic navigation over
-					declarative links? Consider scenarios where navigation
-					depends on user actions or async operations.
+				<p className='story-paragraph'>
+					What possibilities open up when you treat routing as stateful, validated, and 
+					intelligent rather than just URL changes?
 				</p>
-				<p>
-					Marina's final wisdom: "The Navigation Compass is not just
-					about moving between places - it's about creating intuitive
-					journeys that guide citizens naturally through your kingdom.
-					Master these patterns, and your application will feel like a
-					well-designed city where no one ever gets lost."
+				<p className='story-paragraph'>
+					As Aria's journey through the React Kingdom concludes, what patterns will you 
+					take forward in your own development adventure?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterThree;

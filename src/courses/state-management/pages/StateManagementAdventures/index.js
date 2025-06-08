@@ -16,10 +16,18 @@ function StateManagementAdventures() {
 
 	return (
 		<div className='lesson-container state-management-adventures'>
+			<div className='lesson-opener'>
+				<p>The morning sun cast long shadows across React Kingdom as Aria 
+				stood before the State Management Citadel - a towering structure 
+				where all the state management disciplines converged. Here, she would 
+				face her final challenge: combining everything she'd learned into a 
+				unified understanding of state management.</p>
+			</div>
+
 			<h1 className='lesson-title'>State Management Adventures</h1>
 			<p className='lesson-subtitle'>
-				Master advanced techniques for managing complex application
-				state
+				Join Aria as she masters the art of combining all state management 
+				techniques into powerful applications
 			</p>
 
 			<div className='chapter-navigation'>

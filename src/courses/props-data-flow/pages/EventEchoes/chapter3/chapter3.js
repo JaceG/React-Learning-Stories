@@ -1,198 +1,316 @@
 import React, { useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
 
-function Chapter3() {
-  const [symphony, setSymphony] = useState([]);
-  const [activeInstruments, setActiveInstruments] = useState(new Set());
-  const [propagationPath, setPropagationPath] = useState([]);
-  // Removed unused noteRefs
+function ChapterThree() {
+	const [symphony, setSymphony] = useState([]);
+	const [activeInstruments, setActiveInstruments] = useState(new Set());
+	const [propagationPath, setPropagationPath] = useState([]);
+	// Removed unused noteRefs
 
-  const instruments = [
-    { id: 'drums', name: 'Drums', note: '🥁', sound: 'boom' },
-    { id: 'flute', name: 'Flute', note: '🎵', sound: 'tweet' },
-    { id: 'harp', name: 'Harp', note: '🎶', sound: 'pling' },
-    { id: 'bell', name: 'Bell', note: '🔔', sound: 'ding' }
-  ];
+	const instruments = [
+		{ id: 'drums', name: 'Drums', note: '🥁', sound: 'boom' },
+		{ id: 'flute', name: 'Flute', note: '🎵', sound: 'tweet' },
+		{ id: 'harp', name: 'Harp', note: '🎶', sound: 'pling' },
+		{ id: 'bell', name: 'Bell', note: '🔔', sound: 'ding' },
+	];
 
-  const playInstrument = (instrument) => {
-    // Add to symphony
-    const newNote = {
-      id: Date.now(),
-      instrument: instrument.id,
-      note: instrument.note,
-      sound: instrument.sound,
-      timestamp: new Date().toLocaleTimeString()
-    };
-    setSymphony([...symphony, newNote]);
+	const playInstrument = (instrument) => {
+		// Add to symphony
+		const newNote = {
+			id: Date.now(),
+			instrument: instrument.id,
+			note: instrument.note,
+			sound: instrument.sound,
+			timestamp: new Date().toLocaleTimeString(),
+		};
+		setSymphony([...symphony, newNote]);
 
-    // Animate instrument
-    const newActive = new Set(activeInstruments);
-    newActive.add(instrument.id);
-    setActiveInstruments(newActive);
-    
-    setTimeout(() => {
-      const updated = new Set(activeInstruments);
-      updated.delete(instrument.id);
-      setActiveInstruments(updated);
-    }, 500);
+		// Animate instrument
+		const newActive = new Set(activeInstruments);
+		newActive.add(instrument.id);
+		setActiveInstruments(newActive);
 
-    // Create floating note
-    createFloatingNote(instrument.note);
-  };
+		setTimeout(() => {
+			const updated = new Set(activeInstruments);
+			updated.delete(instrument.id);
+			setActiveInstruments(updated);
+		}, 500);
 
-  const createFloatingNote = (note) => {
-    const stage = document.querySelector('.symphony-stage');
-    if (stage) {
-      const noteEl = document.createElement('div');
-      noteEl.className = 'note';
-      noteEl.textContent = note;
-      noteEl.style.left = `${Math.random() * 80 + 10}%`;
-      noteEl.style.bottom = '20px';
-      stage.appendChild(noteEl);
-      setTimeout(() => noteEl.remove(), 2000);
-    }
-  };
+		// Create floating note
+		createFloatingNote(instrument.note);
+	};
 
-  const demonstratePropagation = () => {
-    const nodes = ['child', 'parent', 'grandparent'];
-    setPropagationPath([]);
-    
-    nodes.forEach((node, index) => {
-      setTimeout(() => {
-        setPropagationPath(prev => [...prev, node]);
-      }, index * 500);
-    });
+	const createFloatingNote = (note) => {
+		const stage = document.querySelector('.symphony-stage');
+		if (stage) {
+			const noteEl = document.createElement('div');
+			noteEl.className = 'note';
+			noteEl.textContent = note;
+			noteEl.style.left = `${Math.random() * 80 + 10}%`;
+			noteEl.style.bottom = '20px';
+			stage.appendChild(noteEl);
+			setTimeout(() => noteEl.remove(), 2000);
+		}
+	};
 
-    setTimeout(() => {
-      setPropagationPath([]);
-    }, 2000);
-  };
+	const demonstratePropagation = () => {
+		const nodes = ['child', 'parent', 'grandparent'];
+		setPropagationPath([]);
 
-  const resetSymphony = () => {
-    setSymphony([]);
-    setActiveInstruments(new Set());
-    setPropagationPath([]);
-  };
+		nodes.forEach((node, index) => {
+			setTimeout(() => {
+				setPropagationPath((prev) => [...prev, node]);
+			}, index * 500);
+		});
 
-  const content = (
-    <>
-      <div className='chapter'>
-        <h2 className='chapter-title'>Chapter 3: Symphony of Events</h2>
+		setTimeout(() => {
+			setPropagationPath([]);
+		}, 2000);
+	};
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          Your final lesson brought you to the Grand Symphony Hall, where the Echo Keeper conducted 
-          a magnificent orchestra of components. "Welcome to the pinnacle of event coordination," 
-          she announced, her conductor's baton gleaming.
-        </p>
-        <p className='story-paragraph'>
-          "In complex applications," she explained, "events don't just echo between parent and child. 
-          They create symphonies—coordinated patterns where multiple components work in harmony, 
-          responding to each other's signals through their shared conductor: the parent component."
-        </p>
-        <p className='story-paragraph'>
-          She raised her baton. "Watch as individual instruments (components) play their parts, 
-          but the conductor (parent) orchestrates the entire performance, ensuring every note 
-          reaches its intended audience."
-        </p>
-      </div>
+	const resetSymphony = () => {
+		setSymphony([]);
+		setActiveInstruments(new Set());
+		setPropagationPath([]);
+	};
 
-      <div className="interactive-section">
-        <h3>The Component Orchestra</h3>
-        <p>Click instruments to add notes to the symphony:</p>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>Chapter 3: Symphony of Events</h2>
 
-        <div className="symphony-stage">
-          <h4 style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-            Symphony Stage
-          </h4>
-          
-          <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
-            {instruments.map(instrument => (
-              <div 
-                key={instrument.id}
-                className={`instrument ${activeInstruments.has(instrument.id) ? 'playing' : ''}`}
-                onClick={() => playInstrument(instrument)}
-              >
-                <div style={{fontSize: '30px'}}>{instrument.note}</div>
-                <div>{instrument.name}</div>
-                <small>{instrument.sound}</small>
-              </div>
-            ))}
-          </div>
+				<div className='chapter-bridge'>
+					<p>
+						At the heart of the Echo Caves lay the Grand Symphony
+						Hall, a natural amphitheater where thousands of
+						stalactites formed a stone organ. The acoustics were
+						perfect - every sound resonated with crystalline
+						clarity. Aria and Binary entered to find Callback
+						standing at a conductor's podium.
+					</p>
+				</div>
 
-          {symphony.length > 0 && (
-            <div style={{marginTop: '30px', padding: '20px', background: 'rgba(255,255,255,0.1)', borderRadius: '8px'}}>
-              <h5 style={{color: 'white', marginBottom: '10px'}}>Symphony Score:</h5>
-              <div style={{display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
-                {symphony.slice(-20).map(note => (
-                  <span key={note.id} className="sound-signal" style={{background: '#a29bfe'}}>
-                    {note.note} {note.sound}
-                  </span>
-                ))}
-              </div>
-              <div style={{display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '15px'}}>
-                <button 
-                  className="reset-button"
-                  onClick={resetSymphony}
-                  disabled={symphony.length === 0}
-                >
-                  Reset Symphony
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Welcome to your final lesson!" Callback announced,
+						raising a baton that sparkled with captured echoes.
+						"You've learned how individual components communicate,
+						but real applications require orchestration!"
+					</p>
+					<p className='story-paragraph'>
+						Binary's eyes widened as it scanned the cavern,
+						detecting complex acoustic patterns bouncing between
+						formations.
+					</p>
+					<p className='story-paragraph'>
+						"In complex applications," Callback explained, "events
+						don't just echo between parent and child. They create
+						symphonies - coordinated patterns where multiple
+						components work in harmony, all conducted by their
+						shared parent."
+					</p>
+					<p className='story-paragraph'>
+						She gestured to the stone formations. "Each stalactite
+						is like a component. Alone, they make simple sounds. But
+						when coordinated..." She tapped her baton, and the
+						entire cavern rang with harmonious tones.
+					</p>
+					<p className='story-paragraph'>
+						"The parent component becomes the conductor," Aria
+						realized. "Receiving signals from multiple children and
+						orchestrating their interactions!"
+					</p>
+					<p className='story-paragraph'>
+						"Exactly! Watch as I demonstrate the Symphony Pattern -
+						the ultimate expression of event coordination in React!"
+					</p>
+				</div>
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          The Echo Keeper demonstrated how events could propagate through component hierarchies. 
-          "In the DOM," she explained, "events bubble upward naturally. But in React, we control 
-          the flow explicitly through our callback chains."
-        </p>
-        <p className='story-paragraph'>
-          "Sometimes," she continued, "a single action must trigger cascading effects across 
-          multiple components. The parent becomes the central hub, receiving events from one 
-          child and dispatching updates to others—like a conductor ensuring every section of 
-          the orchestra stays in sync."
-        </p>
-      </div>
+				<div className='interactive-section'>
+					<h3>The Component Orchestra</h3>
+					<p>Click instruments to add notes to the symphony:</p>
 
-      <div className="interactive-section">
-        <h3>Propagation Visualizer</h3>
-        <p>See how events propagate through component trees:</p>
+					<div className='symphony-stage'>
+						<h4
+							style={{
+								color: 'white',
+								textAlign: 'center',
+								marginBottom: '20px',
+							}}>
+							Symphony Stage
+						</h4>
 
-        <div style={{display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '20px'}}>
-          <button className="echo-button" onClick={demonstratePropagation}>
-            Demonstrate Event Propagation
-          </button>
-          <button 
-            className="reset-button"
-            onClick={() => setPropagationPath([])}
-            disabled={propagationPath.length === 0}
-          >
-            Reset Propagation
-          </button>
-        </div>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								flexWrap: 'wrap',
+							}}>
+							{instruments.map((instrument) => (
+								<div
+									key={instrument.id}
+									className={`instrument ${
+										activeInstruments.has(instrument.id)
+											? 'playing'
+											: ''
+									}`}
+									onClick={() => playInstrument(instrument)}>
+									<div style={{ fontSize: '30px' }}>
+										{instrument.note}
+									</div>
+									<div>{instrument.name}</div>
+									<small>{instrument.sound}</small>
+								</div>
+							))}
+						</div>
 
-        <div className="propagation-visualizer">
-          <div className={`propagation-node ${propagationPath.includes('child') ? 'active' : ''}`}>
-            <h5>Child</h5>
-            <p>Initiates Event</p>
-          </div>
-          <div className={`propagation-node ${propagationPath.includes('parent') ? 'active' : ''}`}>
-            <h5>Parent</h5>
-            <p>Processes Event</p>
-          </div>
-          <div className={`propagation-node ${propagationPath.includes('grandparent') ? 'active' : ''}`}>
-            <h5>Grandparent</h5>
-            <p>Final Handler</p>
-          </div>
-        </div>
-      </div>
+						{symphony.length > 0 && (
+							<div
+								style={{
+									marginTop: '30px',
+									padding: '20px',
+									background: 'rgba(255,255,255,0.1)',
+									borderRadius: '8px',
+								}}>
+								<h5
+									style={{
+										color: 'white',
+										marginBottom: '10px',
+									}}>
+									Symphony Score:
+								</h5>
+								<div
+									style={{
+										display: 'flex',
+										flexWrap: 'wrap',
+										gap: '5px',
+									}}>
+									{symphony.slice(-20).map((note) => (
+										<span
+											key={note.id}
+											className='sound-signal'
+											style={{ background: '#a29bfe' }}>
+											{note.note} {note.sound}
+										</span>
+									))}
+								</div>
+								<div
+									style={{
+										display: 'flex',
+										gap: '10px',
+										justifyContent: 'center',
+										marginTop: '15px',
+									}}>
+									<button
+										className='reset-button'
+										onClick={resetSymphony}
+										disabled={symphony.length === 0}>
+										Reset Symphony
+									</button>
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
 
-      <div className="code-example">
-        <pre>{`// Complex event coordination - Symphony pattern
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Beautiful!" Aria exclaimed as the symphony grew. "Each
+						component plays its part, but they're all synchronized
+						through the parent!"
+					</p>
+					<p className='story-paragraph'>
+						Callback nodded approvingly. "Now observe event
+						propagation." She traced glowing paths in the air. "In
+						the DOM, events bubble naturally upward. But in React,
+						we control the flow explicitly through our callback
+						chains."
+					</p>
+					<p className='story-paragraph'>
+						Binary projected a visualization showing events flowing
+						through component trees, each callback creating a
+						deliberate path for information to travel.
+					</p>
+					<p className='story-paragraph'>
+						"Sometimes," Callback continued, "a single action
+						triggers cascading effects. A drum beat might cue the
+						strings, which signal the brass. The parent conductor
+						receives each event and orchestrates the response,
+						maintaining perfect harmony."
+					</p>
+					<p className='story-paragraph'>
+						"It's like a living system," Aria marveled. "Each part
+						aware of its role, all coordinated through careful event
+						management."
+					</p>
+					<p className='story-paragraph'>
+						"You've grasped the essence!" Callback smiled. "But
+						remember - as symphonies grow complex, so do the
+						callback patterns. When coordination becomes
+						overwhelming, consider advanced patterns like Context or
+						state management libraries. They're like hiring
+						assistant conductors for different sections of your
+						orchestra."
+					</p>
+				</div>
+
+				<div className='interactive-section'>
+					<h3>Propagation Visualizer</h3>
+					<p>See how events propagate through component trees:</p>
+
+					<div
+						style={{
+							display: 'flex',
+							gap: '10px',
+							justifyContent: 'center',
+							marginBottom: '20px',
+						}}>
+						<button
+							className='echo-button'
+							onClick={demonstratePropagation}>
+							Demonstrate Event Propagation
+						</button>
+						<button
+							className='reset-button'
+							onClick={() => setPropagationPath([])}
+							disabled={propagationPath.length === 0}>
+							Reset Propagation
+						</button>
+					</div>
+
+					<div className='propagation-visualizer'>
+						<div
+							className={`propagation-node ${
+								propagationPath.includes('child')
+									? 'active'
+									: ''
+							}`}>
+							<h5>Child</h5>
+							<p>Initiates Event</p>
+						</div>
+						<div
+							className={`propagation-node ${
+								propagationPath.includes('parent')
+									? 'active'
+									: ''
+							}`}>
+							<h5>Parent</h5>
+							<p>Processes Event</p>
+						</div>
+						<div
+							className={`propagation-node ${
+								propagationPath.includes('grandparent')
+									? 'active'
+									: ''
+							}`}>
+							<h5>Grandparent</h5>
+							<p>Final Handler</p>
+						</div>
+					</div>
+				</div>
+
+				<div className='code-example'>
+					<pre>{`// Complex event coordination - Symphony pattern
 function Orchestra() {
   const [performance, setPerformance] = useState({
     tempo: 120,
@@ -306,35 +424,109 @@ function ListWithDelegation({ items, onItemAction }) {
     </ul>
   );
 }`}</pre>
-      </div>
+				</div>
 
-      <div className="lesson-insight">
-        <h3>The Event Coordination Lesson:</h3>
-        <p>
-          Complex applications require sophisticated event coordination, where parent components act as conductors 
-          orchestrating communication between sibling components. Event delegation patterns reduce callback proliferation 
-          by handling multiple related events through a single handler. Clear event flow patterns and well-structured 
-          coordination improve maintainability as applications scale, creating harmonious component symphonies.
-        </p>
-      </div>
+				<div className='story-section'>
+					<div className='character-intro'>
+						<h4>Aria's Journal - Day 15 (Evening)</h4>
+						<p>
+							The Symphony Hall revealed the ultimate event
+							pattern! Parent components are conductors,
+							orchestrating complex interactions between their
+							children. Events from one child can trigger
+							cascading updates across siblings, all coordinated
+							through the parent's callbacks. The Symphony Pattern
+							shows how individual components create harmony when
+							properly conducted. Event delegation reduces
+							callback proliferation by handling related events
+							through single handlers. As complexity grows,
+							patterns like Context become assistant conductors.
+							The complete cycle is now clear: props flow down
+							like sheet music, events echo up like performed
+							notes, creating React's beautiful symphony!
+						</p>
+					</div>
+				</div>
 
-      <div className="reflection-section">
-        <h3>Reflect on the Story</h3>
-        <p>
-          How can event coordination patterns scale with app complexity?
-        </p>
-        <p className='story-paragraph'>
-          When does event handling benefit from state management libraries?
-        </p>
-        <p className='story-paragraph'>
-          What strategies prevent callback prop drilling in deep hierarchies?
-        </p>
-      </div>
-      </div>
-    </>
-  );
+				<div className='lesson-insight'>
+					<h3>Symphony Master's Final Wisdom:</h3>
+					<p>
+						Master event coordination by thinking of parent
+						components as conductors orchestrating their children's
+						interactions. The Symphony Pattern coordinates complex
+						multi-component behaviors through centralized event
+						handling. Use event delegation to reduce callback
+						proliferation, handling multiple related actions through
+						single handlers. As complexity grows, recognize when to
+						introduce Context or state management - they're
+						assistant conductors for your growing orchestra.
+						Remember: harmony emerges from well-structured event
+						flow.
+					</p>
+				</div>
 
-  return <StoryContent content={content} />;
+				<div className='chapter-finale'>
+					<p className='story-paragraph'>
+						As the final echoes faded, Callback lowered her baton
+						with a satisfied smile. "You've completed your journey
+						through Props and Data Flow, Aria. From caravans to
+						rivers, from forges to echoes - you understand the
+						complete cycle."
+					</p>
+					<p className='story-paragraph'>
+						Aria felt the weight of knowledge settling into place.
+						"Props descend like gifts from parents to children,
+						while events ascend like messages back up. It's a
+						continuous conversation!"
+					</p>
+					<p className='story-paragraph'>
+						"And you've mastered both directions," Callback said
+						proudly. "The Echo Caves have revealed their secrets to
+						you."
+					</p>
+					<p className='story-paragraph'>
+						Binary displayed a holographic summary of their journey
+						- props flowing down, events echoing up, creating
+						endless cycles of communication.
+					</p>
+					<p className='story-paragraph'>
+						"Where will your journey take you next?" Callback asked.
+					</p>
+					<p className='story-paragraph'>
+						Aria consulted her map, eyes bright with anticipation.
+						"The Hooks Academy awaits. After mastering state and
+						data flow, it's time to learn React's most powerful
+						spells!"
+					</p>
+					<p className='story-paragraph'>
+						"Then may your callbacks always find their targets, and
+						your events echo true!" Callback called as they
+						departed. The Echo Caves rang with a final, harmonious
+						chord - a symphony of components bidding farewell to
+						their newest master.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does the symphony metaphor illuminate complex event
+						coordination?
+					</p>
+					<p className='story-paragraph'>
+						What signs indicate you need "assistant conductors"
+						(Context/state management)?
+					</p>
+					<p className='story-paragraph'>
+						How do props (sheet music) and events (performed notes)
+						create React's harmony?
+					</p>
+				</div>
+			</div>
+		</>
+	);
+
+	return <StoryContent content={content} />;
 }
 
-export default Chapter3;
+export default ChapterThree;

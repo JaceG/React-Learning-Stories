@@ -9,6 +9,14 @@ function NavigationCompass() {
 	const [compassDirection, setCompassDirection] = useState(0);
 	const [navigationHistory, setNavigationHistory] = useState(['/']);
 	const [currentView, setCurrentView] = useState('home');
+	const [masterStatus, setMasterStatus] = useState({
+		components: true,
+		state: true,
+		props: true,
+		hooks: true,
+		forms: true,
+		navigation: false
+	});
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -36,11 +44,23 @@ function NavigationCompass() {
 		handleNavigation(`/${view === 'home' ? '' : view}`);
 	};
 
+	// Mark navigation mastery
+	const achieveMastery = () => {
+		setMasterStatus({ ...masterStatus, navigation: true });
+	};
+
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container navigation-compass-container'>
+			<div className='lesson-opener'>
+				<p>The Central Citadel rose before Aria, its crystalline spires reaching toward 
+				the clouds. This architectural marvel served as the nexus where all quarters of 
+				the React Kingdom connected. Captain Marina awaited at the Navigation Command Center, 
+				having specifically requested Aria's expertise for a revolutionary new system.</p>
+			</div>
+			
 			<h1 className='lesson-title'>The Navigation Compass</h1>
 			<p className='lesson-subtitle'>
-				Chart your course through React applications with React Router
+				Where masters meet as equals to chart the future of React applications
 			</p>
 
 			<div className='chapter-navigation'>
@@ -68,7 +88,9 @@ function NavigationCompass() {
 					compassDirection,
 					navigationHistory,
 					currentView,
-					switchView
+					switchView,
+					masterStatus,
+					achieveMastery
 				}}
 			/>
 

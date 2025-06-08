@@ -7,25 +7,25 @@ function PropsDataFlowOverview() {
     {
       id: 'props-caravans',
       title: 'The Props Caravans',
-      description: 'Journey with the caravan traders to learn how props transport data between components',
+      description: 'Join Aria as she meets the Caravan Masters and learns how props transport data like merchant caravans',
       icon: '🐪'
     },
     {
       id: 'data-rivers',
       title: 'The Data Rivers',
-      description: 'Follow the flow of data through the React Kingdom\'s mighty rivers',
+      description: 'Navigate the data rivers with Aria and understand the one-way flow of information',
       icon: '🌊'
     },
     {
       id: 'prop-forge',
       title: 'The Prop Forge',
-      description: 'Master the ancient arts of destructuring and transforming props',
+      description: 'Discover the ancient arts of destructuring and transforming props at the legendary forge',
       icon: '🔨'
     },
     {
       id: 'event-echoes',
       title: 'The Event Echoes',
-      description: 'Learn how events echo upward through callback functions',
+      description: 'Master the echo caves where Aria learns how events travel back up the component tree',
       icon: '🔔'
     }
   ];
@@ -36,8 +36,9 @@ function PropsDataFlowOverview() {
         <Link to='/courses' className='back-link'>← Back to Courses</Link>
         <h1 className="course-title">Props & Data Flow</h1>
         <p className="course-description">
-          Master the flow of data through your React applications. Learn how props carry information 
-          like merchant caravans, flow like rivers, and how events echo back up the component tree.
+          Fresh from her state management victories, Aria ventures into the bustling trade routes of React Kingdom. 
+          Here, she'll discover how data flows through components like merchant caravans, navigate the one-way rivers 
+          of information, and learn the ancient arts of prop transformation.
         </p>
       </div>
       

@@ -1,7 +1,8 @@
-import { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterThree = () => {
+function ChapterThree() {
 	const { 
 		performanceMetrics,
 		updateMetric,
@@ -104,50 +105,137 @@ const ChapterThree = () => {
 		});
 	};
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Grand Performance
-			</h2>
+			<h2 className='chapter-title'>Chapter 3: The Grand Performance</h2>
+			
+			<div className='chapter-bridge'>
+				<p>The finale approached. Conductor Eventus gathered all the musicians for the grand 
+				performance, but something was wrong. The symphony stuttered, handlers fired too 
+				rapidly, and memory consumption spiraled out of control.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					For the grand finale, Eva had to conduct a flawless performance. 
-					She learned advanced techniques - memoizing her gestures for 
-					efficiency, throttling rapid movements, and debouncing the 
-					finale for perfect timing. Every optimization made the 
-					symphony more beautiful and responsive.
+					"This is exactly what I feared," Eventus said, his baton trembling. "Without 
+					optimization, even the most beautiful symphony becomes chaos."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria stepped forward confidently. "I've seen this before. You need performance 
+					optimization techniques I learned in the Hook Mastery realm. Let me show you 
+					throttling, debouncing, and memoization."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary's processors whirred excitedly. "Optimization protocols ready! Current 
+					performance metrics: {performanceMetrics.clicks} clicks, {performanceMetrics.keyPresses} key 
+					presses, {performanceMetrics.mouseMoves} mouse moves. Let's improve these numbers!"
 				</p>
 
+				<div className='aria-teaches-optimization'>
+					<h3>Aria's Performance Optimization Masterclass</h3>
+					<p className='story-paragraph'>
+						"Think of it like this," Aria explained, drawing patterns in the air. "Throttling 
+						is like a metronome - it ensures events fire at a steady rate. Debouncing is like 
+						waiting for the audience to stop applauding before continuing. And memoization? 
+						That's like having your sheet music memorized instead of reading it every time."
+					</p>
+				</div>
+
 				<div className='performance-metrics'>
-					<div className='metric-card'>
-						<h4>Total Clicks</h4>
-						<div className='metric-value'>{performanceMetrics.clicks}</div>
-					</div>
-					<div className='metric-card'>
-						<h4>Key Presses</h4>
-						<div className='metric-value'>{performanceMetrics.keyPresses}</div>
-					</div>
-					<div className='metric-card'>
-						<h4>Mouse Moves</h4>
-						<div className='metric-value'>{performanceMetrics.mouseMoves}</div>
-					</div>
-					<div className='metric-card'>
-						<h4>Optimized Clicks</h4>
-						<div className='metric-value'>{optimizedClicks}</div>
+					<h3>Symphony Performance Metrics</h3>
+					<div className='metrics-grid'>
+						<div className='metric-card'>
+							<h4>Total Clicks</h4>
+							<div className='metric-value'>{performanceMetrics.clicks}</div>
+							<div className='metric-label'>Raw Events</div>
+						</div>
+						<div className='metric-card'>
+							<h4>Key Presses</h4>
+							<div className='metric-value'>{performanceMetrics.keyPresses}</div>
+							<div className='metric-label'>Keyboard Events</div>
+						</div>
+						<div className='metric-card'>
+							<h4>Mouse Moves</h4>
+							<div className='metric-value'>{performanceMetrics.mouseMoves}</div>
+							<div className='metric-label'>Movement Events</div>
+						</div>
+						<div className='metric-card optimized'>
+							<h4>Optimized Clicks</h4>
+							<div className='metric-value'>{optimizedClicks}</div>
+							<div className='metric-label'>Memoized Handlers</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
+			<div className='aria-advanced-patterns'>
+				<h3>The Three Pillars of Event Optimization</h3>
+				<pre className='magical-code'>{`// Aria's Event Optimization Patterns
+
+// 1. Memoization - Remember the handler
+const MemoizedOrchestra = () => {
+  // This handler is created once and reused
+  const handleInstrumentClick = useCallback((instrument) => {
+    playSound(instrument);
+    logPerformance(instrument);
+  }, []); // Empty deps = stable reference
+
+  return instruments.map(inst => (
+    <Instrument 
+      key={inst.id}
+      onClick={() => handleInstrumentClick(inst)}
+    />
+  ));
+};
+
+// 2. Throttling - Control the tempo
+const useThrottle = (callback, delay) => {
+  const lastRun = useRef(Date.now());
+  
+  return useCallback((...args) => {
+    if (Date.now() - lastRun.current >= delay) {
+      callback(...args);
+      lastRun.current = Date.now();
+    }
+  }, [callback, delay]);
+};
+
+// 3. Debouncing - Wait for silence
+const useDebounce = (callback, delay) => {
+  const timeoutRef = useRef(null);
+  
+  return useCallback((...args) => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  }, [callback, delay]);
+};`}</pre>
+			</div>
+
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Performance Optimization
+					Interactive Exercise: The Grand Performance
 				</h3>
+				<div className='instruction-box'>
+					<p>
+						<strong>
+							Help Aria optimize the Event Symphony Hall's grand performance 
+							using advanced event handling techniques!
+						</strong>
+					</p>
+				</div>
 
 				<div className='event-composition'>
 					<h4>🎼 Event Composition Studio</h4>
+					<p className='studio-description'>
+						Record a sequence of events and play them back at different speeds!
+					</p>
 					
-					<div style={{ marginBottom: '2rem' }}>
+					<div className='composition-controls'>
 						<button
 							onClick={() => {
 								setIsRecording(!isRecording);
@@ -155,33 +243,19 @@ const ChapterThree = () => {
 									setComposition([]);
 								}
 							}}
-							style={{
-								background: isRecording ? '#e74c3c' : '#2ecc71',
-								color: 'white',
-								border: 'none',
-								padding: '0.75rem 1.5rem',
-								borderRadius: '4px',
-								marginRight: '1rem'
-							}}>
+							className={`record-button ${isRecording ? 'recording' : ''}`}>
 							{isRecording ? '⏹ Stop Recording' : '⏺ Start Recording'}
 						</button>
 						
 						<button
 							onClick={playbackComposition}
 							disabled={composition.length === 0}
-							style={{
-								background: '#3498db',
-								color: 'white',
-								border: 'none',
-								padding: '0.75rem 1.5rem',
-								borderRadius: '4px',
-								opacity: composition.length === 0 ? 0.5 : 1
-							}}>
+							className='playback-button'>
 							▶ Play Composition ({composition.length} events)
 						</button>
 					</div>
 
-					<div style={{ marginBottom: '2rem' }}>
+					<div className='speed-control'>
 						<label>Playback Speed: {playbackSpeed}x</label>
 						<input
 							type='range'
@@ -190,161 +264,197 @@ const ChapterThree = () => {
 							step='0.1'
 							value={playbackSpeed}
 							onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
-							style={{ width: '100%', marginTop: '0.5rem' }}
+							className='speed-slider'
 						/>
 					</div>
 
 					{isRecording && (
-						<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-							{['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Ti'].map(note => (
-								<button
-									key={note}
-									onClick={() => {
-										handleOptimizedClick(note);
-										recordEvent('Note', note);
-										updateMetric('clicks');
-									}}
-									className='musical-note'>
-									{note}
-								</button>
-							))}
+						<div className='recording-interface'>
+							<p className='recording-hint'>Click notes to record your symphony!</p>
+							<div className='note-buttons'>
+								{['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Ti'].map(note => (
+									<button
+										key={note}
+										onClick={() => {
+											handleOptimizedClick(note);
+											recordEvent('Note', note);
+											updateMetric('clicks');
+										}}
+										className='musical-note recorded'>
+										{note}
+									</button>
+								))}
+							</div>
 						</div>
 					)}
 				</div>
 
-				<div className='synthetic-event-demo'>
-					<h4>🎛️ Event Handler Optimization</h4>
+				<div className='optimization-demos'>
+					<h4>🎛️ Event Handler Optimization Lab</h4>
 					
-					<div style={{ marginBottom: '2rem' }}>
-						<h5>Throttled Input (500ms)</h5>
+					<div className='throttle-demo'>
+						<h5>⏱️ Throttled Input (500ms intervals)</h5>
+						<p className='demo-explanation'>
+							"Like a metronome," Aria explained, "throttling ensures consistent timing."
+						</p>
 						<input
 							type='text'
-							placeholder='Type rapidly - updates throttled'
+							placeholder='Type rapidly - updates every 500ms'
 							onChange={(e) => handleThrottledInput(e.target.value)}
-							style={{
-								width: '100%',
-								padding: '0.5rem',
-								marginBottom: '0.5rem'
-							}}
+							className='optimization-input'
 						/>
-						<p>Throttled Value: {throttledValue}</p>
+						<div className='value-display'>
+							<span>Throttled Value:</span>
+							<span className='value'>{throttledValue || '...'}</span>
+						</div>
 					</div>
 
-					<div>
-						<h5>Debounced Input (1000ms)</h5>
+					<div className='debounce-demo'>
+						<h5>⏸️ Debounced Input (1000ms delay)</h5>
+						<p className='demo-explanation'>
+							"Like waiting for applause to end," Aria noted, "debouncing waits for quiet."
+						</p>
 						<input
 							type='text'
-							placeholder='Type and pause - updates after you stop'
+							placeholder='Type and pause - updates after 1s of silence'
 							onChange={(e) => handleDebouncedInput(e.target.value)}
-							style={{
-								width: '100%',
-								padding: '0.5rem',
-								marginBottom: '0.5rem'
-							}}
+							className='optimization-input'
 						/>
-						<p>Debounced Value: {debouncedValue}</p>
+						<div className='value-display'>
+							<span>Debounced Value:</span>
+							<span className='value'>{debouncedValue || '...'}</span>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<pre>{`// Advanced Event Handling Patterns
+			<div className='eventus-revelation'>
+				<p className='story-paragraph'>
+					Conductor Eventus watched in awe as the performance transformed. "The stuttering 
+					is gone! The memory usage is stable! How did you achieve this miracle?"
+				</p>
+				
+				<p className='story-paragraph'>
+					"By combining all my React knowledge," Aria replied. "Memoization from the Hook 
+					Council prevents handler recreation. Throttling and debouncing control event flow. 
+					Event delegation reduces handler count. It's all connected!"
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary projected the results: "Performance optimization complete! Handler recreation 
+					reduced by 95%. Event processing efficiency increased by 78%. Memory usage stable. 
+					The symphony is perfect!"
+				</p>
+			</div>
 
-// 1. Memoized Event Handlers
-function OptimizedComponent() {
-  // Handler is only recreated if dependencies change
-  const handleClick = useCallback((id) => {
-    console.log('Clicked:', id);
-  }, []); // Empty deps = never recreates
-
-  return items.map(item => (
-    <Item 
-      key={item.id} 
-      onClick={() => handleClick(item.id)} 
-    />
-  ));
-}
-
-// 2. Event Delegation for Dynamic Lists
-function DynamicList() {
-  const handleListClick = (e) => {
-    // Only one handler for entire list
-    const li = e.target.closest('li');
-    if (li) {
-      const id = li.dataset.id;
-      handleItemClick(id);
-    }
-  };
-
-  return (
-    <ul onClick={handleListClick}>
-      {items.map(item => (
-        <li key={item.id} data-id={item.id}>
-          {item.name}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-// 3. Throttling for Performance
-const throttledScroll = throttle((scrollY) => {
-  console.log('Scroll position:', scrollY);
-}, 100);
-
-window.addEventListener('scroll', () => {
-  throttledScroll(window.scrollY);
-});
-
-// 4. Debouncing for User Input
-const SearchInput = () => {
-  const [query, setQuery] = useState('');
+			<div className='advanced-patterns'>
+				<h3>Advanced Performance Patterns</h3>
+				<div className='pattern-grid'>
+					<div className='pattern-card'>
+						<h4>🎯 Smart Event Delegation</h4>
+						<pre className='mini-code'>{`// Delegate with data attributes
+<div onClick={(e) => {
+  const action = e.target.dataset.action;
+  const id = e.target.dataset.id;
   
-  const debouncedSearch = useCallback(
-    debounce((searchTerm) => {
-      performSearch(searchTerm);
-    }, 500),
-    []
-  );
+  if (action) {
+    handlers[action](id);
+  }
+}}>
+  <button data-action="play" data-id="1">▶️</button>
+  <button data-action="pause" data-id="1">⏸️</button>
+</div>`}</pre>
+					</div>
+					<div className='pattern-card'>
+						<h4>🔄 Async Event Handling</h4>
+						<pre className='mini-code'>{`// Handle async operations properly
+const handleAsync = useCallback(async (e) => {
+  e.persist(); // Keep synthetic event
+  setLoading(true);
+  
+  try {
+    await performAction(e.target.value);
+  } finally {
+    setLoading(false);
+  }
+}, []);`}</pre>
+					</div>
+					<div className='pattern-card'>
+						<h4>📊 Event Batching</h4>
+						<pre className='mini-code'>{`// Batch multiple events
+const batchedUpdate = unstable_batchedUpdates(() => {
+  setCount(c => c + 1);
+  setTotal(t => t + 1);
+  logEvent('batched');
+});`}</pre>
+					</div>
+				</div>
+			</div>
 
-  return (
-    <input
-      value={query}
-      onChange={(e) => {
-        setQuery(e.target.value);
-        debouncedSearch(e.target.value);
-      }}
-    />
-  );
-};`}</pre>
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 20 (Evening)</h4>
+					<p>What a finale! Combined everything I've learned into a performance optimization 
+					masterpiece. Showed Eventus how memoization (from Hook Council) prevents handler 
+					recreation, how throttling/debouncing (like Pattern Weaver's techniques) control 
+					event flow, and how delegation (from form alchemy) reduces overhead. Binary tracked 
+					a 95% reduction in unnecessary renders! The Event Symphony Hall is now a model of 
+					efficiency. Eventus said orchestras from across the kingdom will study our patterns. 
+					Tomorrow we visit the Validation Fortress - I hear Guardian Commander Validus has 
+					some interesting challenges...</p>
+				</div>
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Performance Lesson:</h3>
+				<h3>The Grand Performance Mastery:</h3>
 				<p>
-					A masterful event symphony requires optimization. Use memoization 
-					to prevent unnecessary handler recreations, throttling to limit 
-					rapid-fire events, and debouncing to wait for user input to 
-					settle. Event delegation lets one conductor (handler) manage an 
-					entire section, rather than having individual handlers for each 
-					musician. These patterns create a smooth, responsive performance 
-					that delights your audience (users).
+					Event optimization transforms chaotic interactions into smooth symphonies. Memoize 
+					handlers with useCallback to prevent recreation on every render. Throttle rapidly-firing 
+					events (scroll, resize) to control frequency. Debounce user input to wait for typing 
+					to finish. Combine with event delegation for ultimate efficiency. These patterns, 
+					learned across Aria's journey, unite to create performant, responsive applications. 
+					Remember: optimization isn't premature when it enhances user experience. Conduct 
+					your events wisely, and your application will sing.
+				</p>
+			</div>
+			
+			<div className='chapter-finale'>
+				<p className='story-paragraph'>
+					As the final notes of the optimized symphony faded, the entire Event Symphony Hall 
+					erupted in applause. Musicians who had struggled with performance issues now played 
+					in perfect harmony.
+				</p>
+				<p className='story-paragraph'>
+					Conductor Eventus bowed deeply to Aria. "You've transformed our understanding of 
+					event handling. The Western Quarter will never forget this performance."
+				</p>
+				<p className='story-paragraph'>
+					"The next challenge awaits," Aria said, looking toward the distant Validation Fortress. 
+					"I hear Commander Validus needs help with defensive strategies."
+				</p>
+				<p className='story-paragraph'>
+					Binary displayed a map route. "Validation patterns detected. Shall we proceed to 
+					the fortress?"
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How do optimization techniques like throttling and debouncing 
-					relate to a conductor controlling the tempo of a performance?
+					How do optimization techniques mirror a conductor's role in managing tempo and timing?
 				</p>
-				<p>
-					Why is it important to "rehearse" (optimize) event handlers 
-					before the grand performance (production)?
+				<p className='story-paragraph'>
+					Why is combining multiple optimization strategies more powerful than using them individually?
+				</p>
+				<p className='story-paragraph'>
+					What performance issues in your own applications could benefit from these patterns?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterThree;

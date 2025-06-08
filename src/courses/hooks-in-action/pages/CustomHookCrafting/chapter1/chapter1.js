@@ -1,135 +1,171 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterOne = () => {
+function ChapterOne() {
 	// Custom hook: useCounter
 	const useCounter = (initialValue = 0) => {
 		const [count, setCount] = useState(initialValue);
-		
+
 		const increment = () => setCount(count + 1);
 		const decrement = () => setCount(count - 1);
 		const reset = () => setCount(initialValue);
-		
+
 		return { count, increment, decrement, reset };
 	};
-	
+
 	// Custom hook: useToggle
 	const useToggle = (initialValue = false) => {
 		const [value, setValue] = useState(initialValue);
-		
+
 		const toggle = () => setValue(!value);
 		const setTrue = () => setValue(true);
 		const setFalse = () => setValue(false);
-		
+
 		return [value, { toggle, setTrue, setFalse }];
 	};
-	
+
 	// Using our custom hooks
 	const counter = useCounter(0);
 	const [isForgeOpen, forgeControls] = useToggle(false);
 
-	return (
-		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Hook Forge Basics
-			</h2>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>
+					Chapter 1: The Hook Forge Basics
+				</h2>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Deep in the <strong>Valley of Code</strong>, there stood an ancient forge
-					where Master Craftsman <strong>Reginald</strong> taught the sacred art of 
-					hook creation. Unlike regular functions, custom hooks possessed the magical 
-					ability to use other hooks within them, creating powerful abstractions 
-					that could be reused across the kingdom.
-				</p>
-
-				<div className='forge-illustration'>
-					<div className={`forge ${isForgeOpen ? 'forge-active' : ''}`}>
-						<div className='forge-fire'>🔥</div>
-						<div className='forge-anvil'>
-							<div className='hook-being-forged'>
-								{isForgeOpen ? 'useCustomHook' : 'Closed'}
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					"Remember, young apprentice," said Master Reginald, hammering away at 
-					his anvil, "A custom hook is just a JavaScript function whose name starts 
-					with 'use'. This naming convention tells React that this function follows 
-					the <em>Rules of Hooks</em>. Within these hooks, we can use other hooks 
-					like useState, useEffect, and even other custom hooks!"
-				</p>
-			</div>
-
-			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Interactive Exercise: Forge Your First Hooks
-				</h3>
-				<div className='instruction-box'>
+				<div className='chapter-bridge'>
 					<p>
-						<strong>
-							Experience the power of custom hooks by interacting with 
-							useCounter and useToggle below!
-						</strong>
+						Aria entered the Synthesis Workshop to find a massive
+						space filled with the sound of hammering and the glow of
+						magical forges. At the central anvil stood a figure
+						whose hands moved with practiced precision, assembling
+						hooks from pure energy.
 					</p>
 				</div>
 
-				<div className='hook-demonstrations'>
-					<div className='demo-section'>
-						<h4>useCounter Hook in Action</h4>
-						<div className='counter-demo'>
-							<div className='counter-display'>
-								<span className='counter-value'>{counter.count}</span>
-							</div>
-							<div className='counter-controls'>
-								<button 
-									className='magic-button' 
-									onClick={counter.decrement}>
-									Decrement
-								</button>
-								<button 
-									className='magic-button reset' 
-									onClick={counter.reset}>
-									Reset
-								</button>
-								<button 
-									className='magic-button' 
-									onClick={counter.increment}>
-									Increment
-								</button>
-							</div>
-						</div>
-					</div>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Welcome, Aria!" The figure turned, revealing a woman
+						whose apron sparkled with embedded hook patterns. "I am{' '}
+						<strong>Master Artificer Compose</strong>, and this is
+						where we transcend from hook users to hook creators!"
+					</p>
 
-					<div className='demo-section'>
-						<h4>useToggle Hook in Action</h4>
-						<div className='toggle-demo'>
-							<button 
-								className='forge-toggle-button'
-								onClick={forgeControls.toggle}>
-								{isForgeOpen ? '🔥 Forge is Open' : '❄️ Forge is Closed'}
-							</button>
-							<div className='toggle-controls'>
-								<button 
-									className='mini-button' 
-									onClick={forgeControls.setTrue}>
-									Open Forge
-								</button>
-								<button 
-									className='mini-button' 
-									onClick={forgeControls.setFalse}>
-									Close Forge
-								</button>
+					<p className='story-paragraph'>
+						Binary scanned the workshop, projecting amazement at the
+						complex hook blueprints floating everywhere.
+					</p>
+
+					<p className='story-paragraph'>
+						"You've mastered useState and useEffect," Compose
+						continued, gesturing to her workbench. "But what if you
+						need the same pattern repeatedly? What if you want to
+						share stateful logic between components? This is where
+						custom hooks shine!"
+					</p>
+
+					<p className='story-paragraph'>
+						"So we can create our own hooks?" Aria asked, examining
+						a glowing blueprint.
+					</p>
+
+					<p className='story-paragraph'>
+						"Exactly! The secret is simple yet profound," Compose
+						explained, beginning to forge a new hook. "Any function
+						starting with 'use' can contain other hooks. This naming
+						convention tells React to apply the Rules of Hooks.
+						Watch as I forge two fundamental patterns!"
+					</p>
+
+					<div className='forge-illustration'>
+						<div
+							className={`forge ${
+								isForgeOpen ? 'forge-active' : ''
+							}`}>
+							<div className='forge-fire'>🔥</div>
+							<div className='forge-anvil'>
+								<div className='hook-being-forged'>
+									{isForgeOpen ? 'useCustomHook' : 'Closed'}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='code-visualization'>
-					<h4>The useCounter Hook Blueprint</h4>
-					<pre className='magical-code'>
-						{`// Custom Hook: useCounter
+				<div className='interactive-section'>
+					<h3 className='section-title'>
+						Interactive Exercise: Forge Your First Hooks
+					</h3>
+					<div className='instruction-box'>
+						<p>
+							<strong>
+								Experience the power of custom hooks by
+								interacting with useCounter and useToggle below!
+							</strong>
+						</p>
+					</div>
+
+					<div className='hook-demonstrations'>
+						<div className='demo-section'>
+							<h4>useCounter Hook in Action</h4>
+							<div className='counter-demo'>
+								<div className='counter-display'>
+									<span className='counter-value'>
+										{counter.count}
+									</span>
+								</div>
+								<div className='counter-controls'>
+									<button
+										className='magic-button'
+										onClick={counter.decrement}>
+										Decrement
+									</button>
+									<button
+										className='magic-button reset'
+										onClick={counter.reset}>
+										Reset
+									</button>
+									<button
+										className='magic-button'
+										onClick={counter.increment}>
+										Increment
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div className='demo-section'>
+							<h4>useToggle Hook in Action</h4>
+							<div className='toggle-demo'>
+								<button
+									className='forge-toggle-button'
+									onClick={forgeControls.toggle}>
+									{isForgeOpen
+										? '🔥 Forge is Open'
+										: '❄️ Forge is Closed'}
+								</button>
+								<div className='toggle-controls'>
+									<button
+										className='mini-button'
+										onClick={forgeControls.setTrue}>
+										Open Forge
+									</button>
+									<button
+										className='mini-button'
+										onClick={forgeControls.setFalse}>
+										Close Forge
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className='code-visualization'>
+						<h4>The useCounter Hook Blueprint</h4>
+						<pre className='magical-code'>
+							{`// Custom Hook: useCounter
 function useCounter(initialValue = 0) {
   const [count, setCount] = useState(initialValue);
   
@@ -154,11 +190,11 @@ function CounterComponent() {
     </div>
   );
 }`}
-					</pre>
+						</pre>
 
-					<h4>The useToggle Hook Blueprint</h4>
-					<pre className='magical-code'>
-						{`// Custom Hook: useToggle
+						<h4>The useToggle Hook Blueprint</h4>
+						<pre className='magical-code'>
+							{`// Custom Hook: useToggle
 function useToggle(initialValue = false) {
   const [value, setValue] = useState(initialValue);
   
@@ -183,58 +219,115 @@ function ToggleComponent() {
     </div>
   );
 }`}
-					</pre>
-				</div>
-			</div>
-
-			<div className='practical-application'>
-				<h3>Why Create Custom Hooks?</h3>
-				<div className='benefits-grid'>
-					<div className='benefit-card'>
-						<h4>1. Reusability</h4>
-						<p>Share logic between multiple components without copy-pasting code</p>
-					</div>
-					<div className='benefit-card'>
-						<h4>2. Separation of Concerns</h4>
-						<p>Keep your components clean by extracting complex logic</p>
-					</div>
-					<div className='benefit-card'>
-						<h4>3. Testability</h4>
-						<p>Test your logic independently from your components</p>
-					</div>
-					<div className='benefit-card'>
-						<h4>4. Composition</h4>
-						<p>Combine hooks to create more powerful abstractions</p>
+						</pre>
 					</div>
 				</div>
-			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Custom Hook Lesson:</h3>
-				<p>
-					Custom hooks are the ultimate tool for code reuse in React. They allow 
-					you to extract component logic into reusable functions. By convention, 
-					custom hooks start with "use" and can call other hooks. This pattern 
-					enables you to share stateful logic between components without changing 
-					their structure. Think of custom hooks as your personal collection of 
-					React superpowers that you can apply anywhere in your application.
-				</p>
-			</div>
+				<div className='practical-application'>
+					<h3>Why Create Custom Hooks?</h3>
+					<div className='benefits-grid'>
+						<div className='benefit-card'>
+							<h4>1. Reusability</h4>
+							<p>
+								Share logic between multiple components without
+								copy-pasting code
+							</p>
+						</div>
+						<div className='benefit-card'>
+							<h4>2. Separation of Concerns</h4>
+							<p>
+								Keep your components clean by extracting complex
+								logic
+							</p>
+						</div>
+						<div className='benefit-card'>
+							<h4>3. Testability</h4>
+							<p>
+								Test your logic independently from your
+								components
+							</p>
+						</div>
+						<div className='benefit-card'>
+							<h4>4. Composition</h4>
+							<p>
+								Combine hooks to create more powerful
+								abstractions
+							</p>
+						</div>
+					</div>
+				</div>
 
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the forge metaphor help you understand the process of creating 
-					custom hooks? Why is it important that hooks can "forge" new tools from 
-					existing ones?
-				</p>
-				<p>
-					What kind of repetitive logic in your components could benefit from 
-					being extracted into a custom hook?
-				</p>
+				<div className='story-section'>
+					<div className='character-intro'>
+						<h4>Aria's Journal - Day 18 (Morning)</h4>
+						<p>
+							The Synthesis Workshop opened my eyes to the true
+							power of React! Master Artificer Compose showed me
+							how to forge my own hooks. The secret: any function
+							starting with "use" can contain other hooks! I
+							created useCounter (encapsulating
+							increment/decrement logic) and useToggle (managing
+							boolean states with helper methods). Custom hooks
+							extract stateful logic into reusable functions - I
+							can share complex patterns between components
+							without copy-pasting! It's like creating my own
+							toolkit of React superpowers. The forge metaphor is
+							perfect - we're literally crafting new tools from
+							existing hooks!
+						</p>
+					</div>
+				</div>
+
+				<div className='lesson-insight'>
+					<h3>Hook Forging Fundamentals:</h3>
+					<p>
+						Master custom hooks to become a true React artificer.
+						Start function names with "use" to enable hook
+						composition - this convention activates React's Rules of
+						Hooks. Extract repetitive stateful logic into reusable
+						functions that return state and methods. Popular
+						patterns include useCounter, useToggle, useFetch, and
+						useLocalStorage. Custom hooks share logic, not state -
+						each component gets its own instance. Think of them as
+						your personal React toolkit, crafted for your specific
+						needs.
+					</p>
+				</div>
+
+				<div className='character-intro'>
+					<h4>Character Introduction</h4>
+					<p>
+						<strong>Master Artificer Compose</strong> - The
+						Academy's master of hook synthesis, Compose teaches
+						students to transcend from hook users to hook creators.
+						Her workshop sparkles with floating blueprints and
+						magical forges where custom hooks are crafted. Known for
+						her philosophy that "the best abstractions are
+						discovered, not invented," she guides students in
+						recognizing patterns worth extracting into reusable
+						hooks.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does the workshop setting reflect the creative
+						nature of custom hooks?
+					</p>
+					<p className='story-paragraph'>
+						What patterns in your own code are begging to be
+						extracted into custom hooks?
+					</p>
+					<p className='story-paragraph'>
+						Why is "use" more than just a naming convention?
+					</p>
+				</div>
 			</div>
-		</div>
+		</>
 	);
-};
+
+	return <StoryContent content={content} />;
+}
 
 export default ChapterOne;

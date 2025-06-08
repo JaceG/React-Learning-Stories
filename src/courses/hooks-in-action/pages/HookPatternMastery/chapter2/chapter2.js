@@ -1,4 +1,5 @@
-import { useReducer, createContext, useContext, useState } from 'react';
+import React, { useReducer, createContext, useContext, useState } from 'react';
+import StoryContent from '../../../../../components/content/StoryContent';
 
 // Create contexts
 const StateContext = createContext();
@@ -152,7 +153,7 @@ const useKingdom = () => {
 	return { ...state, ...actions };
 };
 
-const ChapterTwo = () => {
+function ChapterTwo() {
 	const [newKnightName, setNewKnightName] = useState('');
 
 	// Component that uses the kingdom state
@@ -287,54 +288,74 @@ const ChapterTwo = () => {
 		);
 	};
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: State Management Patterns - The Kingdom's Grand Registry
-			</h2>
+			<h2 className='chapter-title'>Chapter 2: The Symphony Conductor - Advanced State Orchestration</h2>
+			
+			<div className='chapter-bridge'>
+				<p>Pattern Weaver Synthesis led Aria deeper into the Integration Sanctum, where 
+				the energy streams formed even more intricate patterns. Here, massive crystalline 
+				structures pulsed with synchronized data flows, each one representing a different 
+				state management pattern.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the heart of React Kingdom stood the <strong>Grand Registry</strong>, 
-					a magical tower where all the kingdom's state was managed. The wise 
-					<strong>Chancellor Redux</strong> had long overseen this registry, but 
-					recently, two new advisors had arrived: <strong>useReducer</strong> and 
-					<strong>Context</strong>, bringing new patterns of state management that 
-					were both powerful and elegant.
+					"You've mastered individual hook orchestration," Synthesis began, gesturing 
+					to a particularly complex crystal formation. "Now witness how we manage 
+					state across entire applications. This is the <strong>Grand Symphony 
+					Pattern</strong>!"
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary's processors whirred with anticipation, detecting the familiar patterns 
+					of useReducer combined with Context in ways it had never seen before.
+				</p>
+				
+				<p className='story-paragraph'>
+					"When your application grows beyond simple state," Synthesis explained, 
+					weaving energy streams together, "you need patterns that scale. UseReducer 
+					brings predictable state updates through actions, while Context distributes 
+					that state throughout your component tree."
+				</p>
+				
+				<p className='story-paragraph'>
+					"Like a conductor managing an entire orchestra?" Aria suggested, seeing 
+					the pattern emerge.
+				</p>
+				
+				<p className='story-paragraph'>
+					"Exactly! Each section plays its part," Synthesis smiled, "but they all 
+					follow the conductor's lead. Let me show you the Kingdom Management System - 
+					a perfect demonstration of this pattern!"
 				</p>
 
-				<div className='registry-visualization'>
-					<div className='registry-tower'>
-						<div className='tower-level'>Context Provider</div>
-						<div className='tower-level'>useReducer</div>
-						<div className='tower-level'>State & Dispatch</div>
-						<div className='tower-level'>Components</div>
-					</div>
-					<div className='data-flow'>
-						<span className='flow-arrow'>↓</span>
-						<span className='flow-label'>State flows down</span>
-						<span className='flow-arrow'>↑</span>
-						<span className='flow-label'>Actions flow up</span>
+				<div className='symphony-visualization'>
+					<div className='orchestra-layout'>
+						<div className='conductor-podium'>
+							<div className='conductor'>🎼 useReducer</div>
+							<div className='baton'>Actions & Dispatch</div>
+						</div>
+						<div className='orchestra-sections'>
+							<div className='section'>🎻 State Context</div>
+							<div className='section'>🎺 Dispatch Context</div>
+							<div className='section'>🥁 Components</div>
+						</div>
 					</div>
 				</div>
 
-				<p className='story-paragraph'>
-					"Behold," proclaimed Chancellor Redux, "with useReducer, we can manage 
-					complex state transitions through actions and reducers. When combined with 
-					Context, this pattern allows any component in the kingdom to access and 
-					modify the state, creating a unified system of governance!"
-				</p>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: The Kingdom Management System
+					Interactive Exercise: The Kingdom Management Symphony
 				</h3>
 				<div className='instruction-box'>
 					<p>
 						<strong>
-							Experience a mini state management system using useReducer and Context 
-							to manage the kingdom's knights, quests, and treasury!
+							Experience how useReducer and Context work together to orchestrate 
+							complex state management across an entire kingdom!
 						</strong>
 					</p>
 				</div>
@@ -421,62 +442,101 @@ function useKingdom() {
 			</div>
 
 			<div className='practical-application'>
-				<h3>Advanced State Patterns:</h3>
-				<div className='pattern-examples'>
-					<div className='pattern-card'>
-						<h4>1. Split Contexts Pattern</h4>
-						<p>Separate state and dispatch contexts to optimize re-renders</p>
-						<pre className='example-code'>
-							{`// Components that only dispatch don't re-render
-const Button = () => {
-  const dispatch = useDispatch();
-  return <button onClick={() => dispatch(action)}>Click</button>;
+				<h3>Symphony Patterns in Practice:</h3>
+				<div className='pattern-showcase'>
+					<div className='pattern-example'>
+						<h4>1. Split Context Pattern</h4>
+						<p>Optimize performance by separating state and dispatch</p>
+						<pre className='mini-code'>
+							{`// State Context for reading
+const StateContext = createContext();
+// Dispatch Context for updating
+const DispatchContext = createContext();
+
+// Components using only dispatch don't re-render
+const ActionButton = () => {
+  const dispatch = useContext(DispatchContext);
+  return <button onClick={() => dispatch(action)}>Act</button>;
 };`}
 						</pre>
 					</div>
-					<div className='pattern-card'>
+					<div className='pattern-example'>
 						<h4>2. Action Creators Pattern</h4>
-						<p>Encapsulate action creation logic</p>
-						<pre className='example-code'>
-							{`const useActions = () => {
-  const dispatch = useDispatch();
+						<p>Encapsulate complex action logic</p>
+						<pre className='mini-code'>
+							{`const useKingdomActions = () => {
+  const dispatch = useContext(DispatchContext);
+  
   return {
-    addItem: (item) => dispatch({ type: 'ADD', payload: item }),
-    removeItem: (id) => dispatch({ type: 'REMOVE', payload: id })
+    addKnight: (knight) => 
+      dispatch({ type: 'ADD_KNIGHT', payload: knight }),
+    levelUp: (id) => 
+      dispatch({ type: 'LEVEL_UP', payload: id })
   };
+};`}
+						</pre>
+					</div>
+					<div className='pattern-example'>
+						<h4>3. Middleware Pattern</h4>
+						<p>Add logging, async handling, or validation</p>
+						<pre className='mini-code'>
+							{`const enhancedDispatch = (action) => {
+  console.log('Action:', action);
+  const newState = reducer(state, action);
+  console.log('New State:', newState);
+  return dispatch(action);
 };`}
 						</pre>
 					</div>
 				</div>
 			</div>
 
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 19 (Afternoon)</h4>
+					<p>The Symphony Pattern revealed how to manage complex state at scale! Synthesis 
+					showed me the Kingdom Management System - useReducer acts as the conductor, processing 
+					actions into state changes with perfect predictability. Context distributes this 
+					state throughout the component tree like sheet music to orchestra sections. The 
+					split context pattern was brilliant: separate contexts for state and dispatch 
+					prevent unnecessary re-renders. Components that only dispatch actions don't 
+					re-render when state changes! This pattern scales beautifully - from managing 
+					a few knights to entire kingdoms. The key: think in actions, not setState calls!</p>
+				</div>
+			</div>
+
 			<div className='lesson-insight'>
-				<h3>The State Management Lesson:</h3>
+				<h3>Symphony Pattern Mastery:</h3>
 				<p>
-					The combination of useReducer and Context provides a powerful pattern 
-					for managing complex application state without external libraries. 
-					useReducer excels at handling state with multiple sub-values and complex 
-					update logic, while Context makes this state accessible throughout your 
-					component tree. This pattern scales well for medium-sized applications 
-					and provides predictable state updates through actions, making debugging 
-					easier and state changes more traceable.
+					Master complex state orchestration with useReducer + Context. This pattern 
+					excels when state has multiple sub-values, complex update logic, or when 
+					many components need access. UseReducer provides predictable updates through 
+					actions (like Redux but built-in), while Context eliminates prop drilling. 
+					Split contexts optimize performance - components reading state use StateContext, 
+					those dispatching use DispatchContext. Action creators encapsulate business 
+					logic. This scales to medium-large apps without external dependencies. Remember: 
+					actions describe "what happened," reducers determine "how state changes."
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How does the Grand Registry metaphor help you understand centralized 
-					state management? Consider how actions flow up and state flows down 
-					in this pattern.
+					How does the orchestra metaphor illuminate the relationship between 
+					useReducer and Context?
 				</p>
-				<p>
-					When would you choose this pattern over simpler state management 
-					solutions? Think about the trade-offs between complexity and power.
+				<p className='story-paragraph'>
+					What makes actions more predictable than direct state mutations?
+				</p>
+				<p className='story-paragraph'>
+					When would this pattern be overkill versus necessary?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterTwo;

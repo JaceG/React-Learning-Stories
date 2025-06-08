@@ -88,10 +88,17 @@ function SubmissionPortals() {
 	};
 
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container submission-portals-container'>
+			<div className='lesson-opener'>
+				<p>At the heart of the Western Quarter stood the Submission Portal Gateway, a 
+				magnificent structure where all form data converged before traveling to distant 
+				servers. Aria and Binary approached the swirling vortex of energy, where Portal 
+				Keeper Sage awaited - the final master of the Forms & Events journey.</p>
+			</div>
+			
 			<h1 className='lesson-title'>Submission Portals</h1>
 			<p className='lesson-subtitle'>
-				Open gateways to handle form submissions and async operations
+				Master the final synthesis with Portal Keeper Sage
 			</p>
 
 			<div className='chapter-navigation'>

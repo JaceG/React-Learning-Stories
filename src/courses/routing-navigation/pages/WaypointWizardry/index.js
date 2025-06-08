@@ -9,6 +9,15 @@ function WaypointWizardry() {
 	const [waypointHistory, setWaypointHistory] = useState(['home']);
 	const [customWaypoints, setCustomWaypoints] = useState([]);
 	const [routeTransitions, setRouteTransitions] = useState({});
+	const [masterMode, setMasterMode] = useState(false);
+	const [ariaPatterns, setAriaPatterns] = useState({
+		components: true,
+		state: true,
+		props: true,
+		hooks: true,
+		forms: true,
+		navigation: true
+	});
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -42,10 +51,17 @@ function WaypointWizardry() {
 	};
 
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container waypoint-wizardry-container'>
+			<div className='lesson-opener'>
+				<p>The Waypoint Sanctum materialized before them - a vast chamber where 
+				glowing orbs of light traced paths through the air. Marina and Aria stood 
+				side by side, ready to share their most advanced navigation patterns with 
+				the assembled masters and future architects of the React Kingdom.</p>
+			</div>
+			
 			<h1 className='lesson-title'>Waypoint Wizardry</h1>
 			<p className='lesson-subtitle'>
-				Craft magical navigation waypoints and dynamic route configurations
+				Where masters architect the future of React navigation
 			</p>
 
 			<div className='chapter-navigation'>
@@ -75,7 +91,10 @@ function WaypointWizardry() {
 					navigateToWaypoint,
 					customWaypoints,
 					routeTransitions,
-					addRouteTransition
+					addRouteTransition,
+					masterMode,
+					setMasterMode,
+					ariaPatterns
 				}}
 			/>
 

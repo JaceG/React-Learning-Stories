@@ -18,9 +18,16 @@ function EventEchoes() {
 
   return (
     <div className='lesson-container event-echoes-container'>
+      <div className='lesson-opener'>
+        <p>Leaving the industrial heat of the Prop Forge behind, Aria and Binary followed a winding 
+        path into the mountains. The air grew cool and thin, and soon they heard it - a haunting 
+        symphony of echoes bouncing off cavern walls. The Echo Caves lay ahead, where the final 
+        secret of data flow awaited.</p>
+      </div>
+      
       <h1 className='lesson-title'>The Event Echoes</h1>
       <p className='lesson-subtitle'>
-        Learn how events echo upward through callback functions
+        Master the art of upward communication through callback functions
       </p>
 
       <div className='chapter-navigation'>

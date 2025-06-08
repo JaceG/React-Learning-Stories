@@ -18,9 +18,16 @@ function CustomHookCrafting() {
 
   return (
     <div className='lesson-container custom-hook-crafting-container'>
+      <div className='lesson-opener'>
+        <p>The Synthesis Workshop occupied an entire floor of the Hooks Academy, filled with 
+        workbenches where students crafted their own magical artifacts. Glowing blueprints 
+        floated above each station, showing hook patterns being assembled and tested. This was 
+        where React developers transcended from users to creators of hooks.</p>
+      </div>
+      
       <h1 className='lesson-title'>Custom Hook Crafting</h1>
       <p className='lesson-subtitle'>
-        Learn the ancient art of crafting your own custom hooks for reusable magic
+        Forge your own hooks with Master Artificer Compose
       </p>
 
       <div className='chapter-navigation'>

@@ -18,9 +18,16 @@ function PropsCaravans() {
 
   return (
     <div className='lesson-container props-caravans-container'>
+      <div className='lesson-opener'>
+        <p>After mastering the complexities of state management, Aria found herself at the bustling 
+        Trade Quarter of React Kingdom. Here, colorful caravans lined the streets, loaded with 
+        precious cargo destined for workshops throughout the realm. The air buzzed with the energy 
+        of commerce and data exchange.</p>
+      </div>
+      
       <h1 className='lesson-title'>The Props Caravans</h1>
       <p className='lesson-subtitle'>
-        Journey with the caravan traders to learn how props transport data between components
+        Join Aria as she learns the art of transporting data through React Kingdom's component network
       </p>
 
       <div className='chapter-navigation'>

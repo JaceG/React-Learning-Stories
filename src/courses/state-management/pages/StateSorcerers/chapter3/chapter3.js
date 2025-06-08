@@ -87,12 +87,13 @@ return (
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Enchanted Items Collection
+					Interactive Exercise: The Artifact Collection Trial
 				</h3>
 				<p className='instruction'>
-					Collect the enchanted items below by clicking the buttons.
-					Watch how the collected count updates as you collect or
-					return items!
+					<strong>👉 Memnon presents three glowing artifacts.</strong>
+					"Your final test today, Aria. Collect these enchanted items and 
+					watch how the collection status updates automatically. This demonstrates 
+					state and effects working in harmony!"
 				</p>
 
 				<div className='enchanted-items'>
@@ -134,28 +135,45 @@ return (
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Side Effects Lesson:</h3>
+				<h3>Memnon's Final Wisdom:</h3>
 				<p>
-					The useEffect hook lets you perform side effects in your
-					components, such as fetching data, updating the DOM, or
-					setting up subscriptions. By specifying a dependency array,
-					you control when the effect runs - only when specific state
-					or props change. Effects let you synchronize your component
-					with external systems and handle operations that shouldn't
-					happen during rendering.
+					The useEffect hook is the gateway between your component's inner world 
+					and the vast kingdom beyond. It lets you reach out - to fetch data from 
+					distant servers, update the browser's title, or synchronize with external 
+					systems. The dependency array is your control mechanism: it determines 
+					when your effects activate. Master this, and you master the art of keeping 
+					your components in harmony with the ever-changing world around them.
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How does useEffect help you connect your component to the
-					outside world?
+					How does Memnon's teaching about "consequences" help you understand 
+					the purpose of useEffect?
 				</p>
 				<p>
-					Why is it important to control when side effects run in a
-					React component?
+					Why do you think the dependency array is so important in controlling 
+					when effects run?
 				</p>
+			</div>
+			
+			<div className='chapter-ending'>
+				<p>As the stars began to appear over the Eastern Quarter, Memnon placed 
+				his hand on Aria's shoulder. "You've done exceptionally well today, young 
+				sorcerer. You've grasped the fundamentals of state magic far quicker than 
+				most."</p>
+				
+				<p>Binary twirled happily. "Tomorrow you'll learn about hooks - special 
+				spells that give functional components even more power!"</p>
+				
+				<p>"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, 
+				where you'll discover useState and useEffect have many magical siblings. 
+				Each one grants unique powers to those wise enough to wield them."</p>
+				
+				<p>Aria left the crystal spire with her mind buzzing with new knowledge. 
+				State, immutability, effects - the building blocks of dynamic components. 
+				She couldn't wait to see what tomorrow would bring!</p>
 			</div>
 		</div>
 	);

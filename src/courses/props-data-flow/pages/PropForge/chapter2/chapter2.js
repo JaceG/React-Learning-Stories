@@ -1,116 +1,196 @@
 import React, { useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
 
-function Chapter2() {
-  const baseProps = {
-    name: 'Flame Blade',
-    damage: 50,
-    element: 'fire'
-  };
-  
-  const additionalProps = {
-    rarity: 'legendary',
-    enchantment: 'burning',
-    damage: 75  // This will override the base damage
-  };
-  
-  const [spreadResult, setSpreadResult] = useState({});
-  const [showSpread, setShowSpread] = useState(false);
+function ChapterTwo() {
+	const baseProps = {
+		name: 'Flame Blade',
+		damage: 50,
+		element: 'fire',
+	};
 
-  const performSpread = () => {
-    setShowSpread(true);
-    const result = { ...baseProps, ...additionalProps };
-    setSpreadResult(result);
-  };
+	const additionalProps = {
+		rarity: 'legendary',
+		enchantment: 'burning',
+		damage: 75, // This will override the base damage
+	};
 
-  const resetSpread = () => {
-    setShowSpread(false);
-    setSpreadResult({});
-  };
+	const [spreadResult, setSpreadResult] = useState({});
+	const [showSpread, setShowSpread] = useState(false);
 
-  const content = (
-    <>
-      <div className='chapter'>
-        <h2 className='chapter-title'>Chapter 2: Advanced Forging</h2>
+	const performSpread = () => {
+		setShowSpread(true);
+		const result = { ...baseProps, ...additionalProps };
+		setSpreadResult(result);
+	};
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          The next day, Master Destruct revealed a more advanced technique. "You've learned to forge 
-          and destructure individual props," he said, "but what if you need to combine multiple prop 
-          objects or transform them?"
-        </p>
-        <p className='story-paragraph'>
-          He showed you three glowing dots arranged in a triangle. "Behold the Spread Operator—three 
-          dots of immense power! With this enchantment, you can spread one object's properties into 
-          another, merge prop objects, and even transform them as they pass through components."
-        </p>
-        <p className='story-paragraph'>
-          "Watch carefully," he continued, placing two prop crystals on the anvil. "When I apply the 
-          spread enchantment, their properties merge, with later values overwriting earlier ones. It's 
-          like pouring molten metals together—they blend but the last one poured determines the final color."
-        </p>
-      </div>
+	const resetSpread = () => {
+		setShowSpread(false);
+		setSpreadResult({});
+	};
 
-      <div className="interactive-section">
-        <h3>The Spread Forge</h3>
-        <p>Witness the power of the spread operator:</p>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>
+					Chapter 2: The Spread Enchantment
+				</h2>
 
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px'}}>
-          <div className="blueprint">
-            <h4>Base Props Crystal</h4>
-            <pre>{JSON.stringify(baseProps, null, 2)}</pre>
-          </div>
-          <div className="blueprint" style={{background: '#c92a2a'}}>
-            <h4>Enhancement Crystal</h4>
-            <pre>{JSON.stringify(additionalProps, null, 2)}</pre>
-          </div>
-        </div>
+				<div className='chapter-bridge'>
+					<p>
+						The next morning, Aria found Destructo working with
+						multiple glowing crystals, each pulsing with different
+						data properties. The forge's heat seemed even more
+						intense as he prepared for advanced techniques.
+					</p>
+				</div>
 
-        <div className="spread-operator-visual">
-          <div style={{display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '20px'}}>
-            <button className="forge-button" onClick={performSpread}>
-              Apply Spread Enchantment
-            </button>
-            <button 
-              className="reset-button"
-              onClick={resetSpread}
-              disabled={!showSpread}
-            >
-              Reset Spread
-            </button>
-          </div>
-          
-          {showSpread && (
-            <>
-              <div className="spread-dots">...</div>
-              <div className="transform-arrow">↓</div>
-              <div className="forged-prop" style={{display: 'block', maxWidth: '300px', margin: '0 auto'}}>
-                <h4>Merged Result:</h4>
-                <pre style={{textAlign: 'left'}}>{JSON.stringify(spreadResult, null, 2)}</pre>
-              </div>
-              <p style={{fontSize: '14px', color: '#6c757d', marginTop: '10px'}}>
-                Notice: damage was overwritten from 50 → 75
-              </p>
-            </>
-          )}
-        </div>
-      </div>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Ah, right on time!" Destructo called out. "Today, we
+						move beyond simple destructuring to the art of
+						combination and transformation!"
+					</p>
+					<p className='story-paragraph'>
+						He held up three glowing dots that floated in formation.
+						"These three dots are the
+						<strong>Spread Operator</strong> - one of the most
+						powerful enchantments in our forge. They can merge
+						objects, copy properties, and transform data as it
+						flows!"
+					</p>
+					<p className='story-paragraph'>
+						Binary's processors whirred. "Three dots? That seems...
+						simple?"
+					</p>
+					<p className='story-paragraph'>
+						Destructo laughed heartily. "Simple in form, profound in
+						power! Watch this." He placed two prop crystals on the
+						anvil. "When I spread these together, their properties
+						merge. But here's the key - later properties override
+						earlier ones, like pouring different metals into the
+						same mold."
+					</p>
+					<p className='story-paragraph'>
+						Aria leaned in, fascinated. "So you can combine multiple
+						prop sources?"
+					</p>
+					<p className='story-paragraph'>
+						"Combine, override, extend!" Destructo's eyes gleamed.
+						"The spread operator is the ultimate tool for prop
+						manipulation. Let me show you!"
+					</p>
+				</div>
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          Master Destruct led you to a series of transformation chambers. "Props often need to be 
-          reshaped as they travel through components," he explained. "A parent might send raw ore, 
-          but the child needs refined metal. This is where prop transformation comes in."
-        </p>
-        <p className='story-paragraph'>
-          "The spread operator," he demonstrated, "allows us to keep most properties while selectively 
-          transforming others. It's like taking a sword, keeping its blade and handle, but replacing 
-          just the pommel."
-        </p>
-      </div>
+				<div className='interactive-section'>
+					<h3>The Spread Forge</h3>
+					<p>Witness the power of the spread operator:</p>
 
-      <div className="code-example">
-        <pre>{`// The Spread Operator in action
+					<div
+						style={{
+							display: 'grid',
+							gridTemplateColumns: '1fr 1fr',
+							gap: '20px',
+							marginBottom: '20px',
+						}}>
+						<div className='blueprint'>
+							<h4>Base Props Crystal</h4>
+							<pre>{JSON.stringify(baseProps, null, 2)}</pre>
+						</div>
+						<div
+							className='blueprint'
+							style={{ background: '#c92a2a' }}>
+							<h4>Enhancement Crystal</h4>
+							<pre>
+								{JSON.stringify(additionalProps, null, 2)}
+							</pre>
+						</div>
+					</div>
+
+					<div className='spread-operator-visual'>
+						<div
+							style={{
+								display: 'flex',
+								gap: '10px',
+								justifyContent: 'center',
+								marginBottom: '20px',
+							}}>
+							<button
+								className='forge-button'
+								onClick={performSpread}>
+								Apply Spread Enchantment
+							</button>
+							<button
+								className='reset-button'
+								onClick={resetSpread}
+								disabled={!showSpread}>
+								Reset Spread
+							</button>
+						</div>
+
+						{showSpread && (
+							<>
+								<div className='spread-dots'>...</div>
+								<div className='transform-arrow'>↓</div>
+								<div
+									className='forged-prop'
+									style={{
+										display: 'block',
+										maxWidth: '300px',
+										margin: '0 auto',
+									}}>
+									<h4>Merged Result:</h4>
+									<pre style={{ textAlign: 'left' }}>
+										{JSON.stringify(spreadResult, null, 2)}
+									</pre>
+								</div>
+								<p
+									style={{
+										fontSize: '14px',
+										color: '#6c757d',
+										marginTop: '10px',
+									}}>
+									Notice: damage was overwritten from 50 → 75
+								</p>
+							</>
+						)}
+					</div>
+				</div>
+
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						After the merging demonstration, Destructo led them to a
+						series of transformation chambers, each glowing with
+						different energies. "Now for the real magic -
+						transformation!"
+					</p>
+					<p className='story-paragraph'>
+						"Sometimes," he explained, "a parent component sends raw
+						materials, but the child needs refined props. The spread
+						operator lets us transform on the fly."
+					</p>
+					<p className='story-paragraph'>
+						He demonstrated with a weapon prop. "Watch - I spread
+						all the original properties, then override just the ones
+						I want to change. It's like keeping a sword's blade and
+						handle while swapping the pommel!"
+					</p>
+					<p className='story-paragraph'>
+						Aria practiced the technique, spreading props and
+						selectively transforming them. "This is incredible! I
+						can forward most props unchanged while customizing
+						specific ones!"
+					</p>
+					<p className='story-paragraph'>
+						"Exactly!" Destructo beamed. "And here's a smith's
+						secret - you can use destructuring with spread to
+						exclude certain props before passing them on. Perfect
+						for removing props that shouldn't travel further
+						downstream!"
+					</p>
+				</div>
+
+				<div className='code-example'>
+					<pre>{`// The Spread Operator in action
 const weaponProps = {
   name: 'Flame Blade',
   damage: 50,
@@ -163,64 +243,129 @@ function ItemTransformer({ item, userLevel }) {
   
   return <ItemCard {...transformedItem} />;
 }`}</pre>
-      </div>
+				</div>
 
-      <div className="interactive-section">
-        <h3>Transformation Workshop</h3>
-        <div className="forge-controls">
-          <h4>Common Spread Patterns:</h4>
-          
-          <div style={{marginTop: '20px', padding: '15px', background: '#f8f9fa', borderRadius: '8px'}}>
-            <strong>1. Prop Forwarding with Extras:</strong>
-            <pre style={{background: '#e9ecef', padding: '10px', borderRadius: '4px', marginTop: '5px'}}>
-{`<Component {...props} extraProp="value" />`}
-            </pre>
-          </div>
-          
-          <div style={{marginTop: '20px', padding: '15px', background: '#f8f9fa', borderRadius: '8px'}}>
-            <strong>2. Selective Prop Passing:</strong>
-            <pre style={{background: '#e9ecef', padding: '10px', borderRadius: '4px', marginTop: '5px'}}>
-{`const { unwanted, ...restProps } = props;
+				<div className='interactive-section'>
+					<h3>Transformation Workshop</h3>
+					<div className='forge-controls'>
+						<h4>Common Spread Patterns:</h4>
+
+						<div
+							style={{
+								marginTop: '20px',
+								padding: '15px',
+								background: '#f8f9fa',
+								borderRadius: '8px',
+							}}>
+							<strong>1. Prop Forwarding with Extras:</strong>
+							<pre
+								style={{
+									background: '#e9ecef',
+									padding: '10px',
+									borderRadius: '4px',
+									marginTop: '5px',
+								}}>
+								{`<Component {...props} extraProp="value" />`}
+							</pre>
+						</div>
+
+						<div
+							style={{
+								marginTop: '20px',
+								padding: '15px',
+								background: '#f8f9fa',
+								borderRadius: '8px',
+							}}>
+							<strong>2. Selective Prop Passing:</strong>
+							<pre
+								style={{
+									background: '#e9ecef',
+									padding: '10px',
+									borderRadius: '4px',
+									marginTop: '5px',
+								}}>
+								{`const { unwanted, ...restProps } = props;
 <Component {...restProps} />`}
-            </pre>
-          </div>
-          
-          <div style={{marginTop: '20px', padding: '15px', background: '#f8f9fa', borderRadius: '8px'}}>
-            <strong>3. Prop Merging:</strong>
-            <pre style={{background: '#e9ecef', padding: '10px', borderRadius: '4px', marginTop: '5px'}}>
-{`const merged = { ...defaultProps, ...userProps, ...overrides };`}
-            </pre>
-          </div>
-        </div>
-      </div>
+							</pre>
+						</div>
 
-      <div className="lesson-insight">
-        <h3>The Spread Operator Lesson:</h3>
-        <p>
-          The spread operator (...) is a powerful enchantment that copies all enumerable properties from one object to 
-          another, with later spreads overriding earlier ones. This technique enables efficient prop forwarding, merging, 
-          and transformation. By combining spread with destructuring, you can selectively pass props, add new ones, or 
-          transform existing properties as they flow through your component hierarchy.
-        </p>
-      </div>
+						<div
+							style={{
+								marginTop: '20px',
+								padding: '15px',
+								background: '#f8f9fa',
+								borderRadius: '8px',
+							}}>
+							<strong>3. Prop Merging:</strong>
+							<pre
+								style={{
+									background: '#e9ecef',
+									padding: '10px',
+									borderRadius: '4px',
+									marginTop: '5px',
+								}}>
+								{`const merged = { ...defaultProps, ...userProps, ...overrides };`}
+							</pre>
+						</div>
+					</div>
+				</div>
 
-      <div className="reflection-section">
-        <h3>Reflect on the Story</h3>
-        <p>
-          When is prop transformation preferable to passing raw data?
-        </p>
-        <p className='story-paragraph'>
-          How can spread operator help with prop forwarding?
-        </p>
-        <p className='story-paragraph'>
-          What are the performance implications of spreading large objects?
-        </p>
-      </div>
-      </div>
-    </>
-  );
+				<div className='story-section'>
+					<div className='character-intro'>
+						<h4>Aria's Journal - Day 14 (Afternoon)</h4>
+						<p>
+							The spread operator is like magical metalworking!
+							Three dots (...) that can merge objects, with later
+							properties overriding earlier ones - perfect for
+							combining default props with user props. Destructo
+							showed me how to spread props when passing them to
+							children, adding or transforming properties along
+							the way. The real power comes from combining spread
+							with destructuring - I can extract props I don't
+							want to pass, then spread the rest! It's elegant
+							prop forwarding that keeps components flexible. This
+							isn't just copying - it's intelligent prop
+							transformation!
+						</p>
+					</div>
+				</div>
 
-  return <StoryContent content={content} />;
+				<div className='lesson-insight'>
+					<h3>Master Destructo's Spread Wisdom:</h3>
+					<p>
+						The spread operator (...) merges objects with surgical
+						precision - later spreads override earlier ones,
+						enabling powerful patterns. Master prop forwarding by
+						spreading incoming props while adding new ones.
+						Transform selectively by spreading most properties
+						unchanged while overriding specific values. Combine with
+						destructuring to filter unwanted props before spreading
+						the rest. Remember: spread is shallow - nested objects
+						need special handling. This enchantment turns rigid prop
+						passing into flexible, maintainable data flow.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does the metal-merging metaphor help you understand
+						spread operator behavior?
+					</p>
+					<p className='story-paragraph'>
+						When might you combine destructuring with spread for
+						selective prop passing?
+					</p>
+					<p className='story-paragraph'>
+						What are the advantages of transforming props as they
+						flow versus at their source?
+					</p>
+				</div>
+			</div>
+		</>
+	);
+
+	return <StoryContent content={content} />;
 }
 
-export default Chapter2;
+export default ChapterTwo;

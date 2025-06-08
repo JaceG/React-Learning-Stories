@@ -1,187 +1,291 @@
 import React, { useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
 
-function Chapter2() {
-  const [events, setEvents] = useState([]);
-  const [formData, setFormData] = useState({
-    name: '',
-    element: 'fire',
-    power: 50
-  });
+function ChapterTwo() {
+	const [events, setEvents] = useState([]);
+	const [formData, setFormData] = useState({
+		name: '',
+		element: 'fire',
+		power: 50,
+	});
 
-  const logEvent = (eventType, detail) => {
-    const newEvent = {
-      id: Date.now(),
-      type: eventType,
-      detail,
-      timestamp: new Date().toLocaleTimeString()
-    };
-    setEvents([newEvent, ...events.slice(0, 9)]);
-  };
+	const logEvent = (eventType, detail) => {
+		const newEvent = {
+			id: Date.now(),
+			type: eventType,
+			detail,
+			timestamp: new Date().toLocaleTimeString(),
+		};
+		setEvents([newEvent, ...events.slice(0, 9)]);
+	};
 
-  const handleInputChange = (field, value) => {
-    setFormData({ ...formData, [field]: value });
-    logEvent('Change', `${field}: ${value}`);
-  };
+	const handleInputChange = (field, value) => {
+		setFormData({ ...formData, [field]: value });
+		logEvent('Change', `${field}: ${value}`);
+	};
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    logEvent('Submit', JSON.stringify(formData));
-  };
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+		logEvent('Submit', JSON.stringify(formData));
+	};
 
-  const resetEventLog = () => {
-    setEvents([]);
-    setFormData({
-      name: '',
-      element: 'fire',
-      power: 50
-    });
-  };
+	const resetEventLog = () => {
+		setEvents([]);
+		setFormData({
+			name: '',
+			element: 'fire',
+			power: 50,
+		});
+	};
 
-  const content = (
-    <>
-      <div className='chapter'>
-        <h2 className='chapter-title'>Chapter 2: Echo Chambers</h2>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>Chapter 2: Echo Chambers</h2>
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          The Echo Keeper led you deeper into the tower to a magnificent chamber where sounds 
-          bounced and amplified. "This," she announced, "is where we master the art of complex 
-          communication between components."
-        </p>
-        <p className='story-paragraph'>
-          "Simple clicks are just the beginning," she explained, gesturing to intricate sound 
-          patterns on the walls. "Real applications need rich communication—forms sending data, 
-          lists notifying of selections, and complex interactions flowing upward through the 
-          component tree."
-        </p>
-        <p className='story-paragraph'>
-          She handed you a resonance crystal. "With callback props, children can send not just 
-          signals, but entire messages filled with data. The parent component becomes a listener, 
-          ready to respond to any echo from its children."
-        </p>
-      </div>
+				<div className='chapter-bridge'>
+					<p>
+						Deeper in the Echo Caves, the passages opened into a
+						vast chamber where sounds seemed to multiply and layer
+						upon themselves. Each whisper became a chorus, each
+						footstep a rhythmic pattern. Aria felt like she was
+						inside a living instrument.
+					</p>
+				</div>
 
-      <div className="interactive-section">
-        <h3>The Communication Form</h3>
-        <p>Fill out the form and watch events echo to the parent:</p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Welcome to the Echo Chamber!" Callback announced, her
+						voice creating harmonious layers. "Here, we move beyond
+						simple signals to orchestrate complex communication
+						symphonies."
+					</p>
+					<p className='story-paragraph'>
+						Aria watched as Binary sent out a chirp that transformed
+						into multiple tones, each carrying different
+						information. "How does it carry so much data?" she
+						asked.
+					</p>
+					<p className='story-paragraph'>
+						"Ah, you've discovered the secret!" Callback smiled.
+						"Simple clicks were just the beginning. Real
+						applications need rich communication - forms sending
+						complete datasets, lists notifying of selections,
+						complex interactions flowing upward like multi-voiced
+						songs."
+					</p>
+					<p className='story-paragraph'>
+						She handed Aria a resonance crystal that pulsed with
+						captured sounds. "With callback props, children don't
+						just ping their parents - they can send entire messages,
+						complete with context, data, and intent. The parent
+						becomes a conductor, orchestrating responses from
+						multiple children."
+					</p>
+					<p className='story-paragraph'>
+						"So callbacks can carry parameters?" Aria asked,
+						examining the crystal.
+					</p>
+					<p className='story-paragraph'>
+						"Exactly! Just as an echo can carry the nuance of the
+						original sound, callbacks can transport rich data
+						structures upward. Watch and learn!"
+					</p>
+				</div>
 
-        <div className="callback-visual">
-          <div className="tower-level" style={{flex: 1}}>
-            <h4>Child: Magic Item Form</h4>
-            <form onSubmit={handleFormSubmit}>
-              <div style={{marginBottom: '15px'}}>
-                <label style={{display: 'block', marginBottom: '5px'}}>
-                  Item Name:
-                  <input 
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      padding: '8px',
-                      marginTop: '5px',
-                      borderRadius: '4px',
-                      border: '1px solid #ddd'
-                    }}
-                  />
-                </label>
-              </div>
+				<div className='interactive-section'>
+					<h3>The Communication Form</h3>
+					<p>
+						Fill out the form and watch events echo to the parent:
+					</p>
 
-              <div style={{marginBottom: '15px'}}>
-                <label style={{display: 'block', marginBottom: '5px'}}>
-                  Element Type:
-                  <select 
-                    value={formData.element}
-                    onChange={(e) => handleInputChange('element', e.target.value)}
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      padding: '8px',
-                      marginTop: '5px',
-                      borderRadius: '4px',
-                      border: '1px solid #ddd'
-                    }}
-                  >
-                    <option value="fire">Fire</option>
-                    <option value="water">Water</option>
-                    <option value="earth">Earth</option>
-                    <option value="air">Air</option>
-                  </select>
-                </label>
-              </div>
+					<div className='callback-visual'>
+						<div className='tower-level' style={{ flex: 1 }}>
+							<h4>Child: Magic Item Form</h4>
+							<form onSubmit={handleFormSubmit}>
+								<div style={{ marginBottom: '15px' }}>
+									<label
+										style={{
+											display: 'block',
+											marginBottom: '5px',
+										}}>
+										Item Name:
+										<input
+											type='text'
+											value={formData.name}
+											onChange={(e) =>
+												handleInputChange(
+													'name',
+													e.target.value
+												)
+											}
+											style={{
+												display: 'block',
+												width: '100%',
+												padding: '8px',
+												marginTop: '5px',
+												borderRadius: '4px',
+												border: '1px solid #ddd',
+											}}
+										/>
+									</label>
+								</div>
 
-              <div style={{marginBottom: '15px'}}>
-                <label style={{display: 'block', marginBottom: '5px'}}>
-                  Power Level: {formData.power}
-                  <input 
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={formData.power}
-                    onChange={(e) => handleInputChange('power', e.target.value)}
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      marginTop: '5px'
-                    }}
-                  />
-                </label>
-              </div>
+								<div style={{ marginBottom: '15px' }}>
+									<label
+										style={{
+											display: 'block',
+											marginBottom: '5px',
+										}}>
+										Element Type:
+										<select
+											value={formData.element}
+											onChange={(e) =>
+												handleInputChange(
+													'element',
+													e.target.value
+												)
+											}
+											style={{
+												display: 'block',
+												width: '100%',
+												padding: '8px',
+												marginTop: '5px',
+												borderRadius: '4px',
+												border: '1px solid #ddd',
+											}}>
+											<option value='fire'>Fire</option>
+											<option value='water'>Water</option>
+											<option value='earth'>Earth</option>
+											<option value='air'>Air</option>
+										</select>
+									</label>
+								</div>
 
-              <div style={{display: 'flex', gap: '10px', justifyContent: 'center'}}>
-                <button type="submit" className="echo-button">
-                  Submit Item
-                </button>
-                <button 
-                  type="button"
-                  className="reset-button"
-                  onClick={resetEventLog}
-                  disabled={events.length === 0 && formData.name === '' && formData.power === 50}
-                >
-                  Reset Log
-                </button>
-              </div>
-            </form>
-          </div>
+								<div style={{ marginBottom: '15px' }}>
+									<label
+										style={{
+											display: 'block',
+											marginBottom: '5px',
+										}}>
+										Power Level: {formData.power}
+										<input
+											type='range'
+											min='0'
+											max='100'
+											value={formData.power}
+											onChange={(e) =>
+												handleInputChange(
+													'power',
+													e.target.value
+												)
+											}
+											style={{
+												display: 'block',
+												width: '100%',
+												marginTop: '5px',
+											}}
+										/>
+									</label>
+								</div>
 
-          <div className="callback-arrow">↑</div>
+								<div
+									style={{
+										display: 'flex',
+										gap: '10px',
+										justifyContent: 'center',
+									}}>
+									<button
+										type='submit'
+										className='echo-button'>
+										Submit Item
+									</button>
+									<button
+										type='button'
+										className='reset-button'
+										onClick={resetEventLog}
+										disabled={
+											events.length === 0 &&
+											formData.name === '' &&
+											formData.power === 50
+										}>
+										Reset Log
+									</button>
+								</div>
+							</form>
+						</div>
 
-          <div className="tower-level parent" style={{flex: 1}}>
-            <h4>Parent: Event Listener</h4>
-            <div className="event-log" style={{maxHeight: '250px'}}>
-              {events.length === 0 ? (
-                <div style={{color: '#74b9ff'}}>Waiting for events...</div>
-              ) : (
-                events.map(event => (
-                  <div key={event.id} className="event-entry">
-                    <span className="event-timestamp">{event.timestamp}</span>
-                    <span className="event-type">{event.type}:</span>
-                    <span className="event-detail">{event.detail}</span>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+						<div className='callback-arrow'>↑</div>
 
-      <div className='story-section'>
-        <p className='story-paragraph'>
-          "See how rich the communication can be?" the Echo Keeper asked. "The child component 
-          doesn't just say 'something happened'—it sends detailed information about what changed, 
-          what was selected, or what was submitted."
-        </p>
-        <p className='story-paragraph'>
-          She showed you a scroll of patterns. "Callback props can handle any type of upward 
-          communication: updating parent state, triggering side effects, or even controlling 
-          sibling components through the parent's orchestration."
-        </p>
-      </div>
+						<div className='tower-level parent' style={{ flex: 1 }}>
+							<h4>Parent: Event Listener</h4>
+							<div
+								className='event-log'
+								style={{ maxHeight: '250px' }}>
+								{events.length === 0 ? (
+									<div style={{ color: '#74b9ff' }}>
+										Waiting for events...
+									</div>
+								) : (
+									events.map((event) => (
+										<div
+											key={event.id}
+											className='event-entry'>
+											<span className='event-timestamp'>
+												{event.timestamp}
+											</span>
+											<span className='event-type'>
+												{event.type}:
+											</span>
+											<span className='event-detail'>
+												{event.detail}
+											</span>
+										</div>
+									))
+								)}
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <div className="code-example">
-        <pre>{`// Parent component with multiple callback handlers
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Magnificent!" Aria exclaimed, watching the event log
+						fill with detailed information. "The child isn't just
+						saying 'something happened' - it's sending complete
+						reports!"
+					</p>
+					<p className='story-paragraph'>
+						"Now you understand!" Callback's eyes sparkled. "This is
+						how complex applications communicate. Forms send entire
+						data objects, lists report which item was selected with
+						full context, and interactive components share their
+						complete state changes."
+					</p>
+					<p className='story-paragraph'>
+						She unrolled a glowing scroll covered in callback
+						patterns. "Through these echoes, parent components
+						become orchestrators. They can update their own state,
+						coordinate between siblings, trigger side effects, or
+						even cascade changes throughout the entire component
+						tree."
+					</p>
+					<p className='story-paragraph'>
+						Binary projected examples of callback chains, showing
+						how events could ripple upward through multiple
+						component layers.
+					</p>
+					<p className='story-paragraph'>
+						"But be cautious," Callback warned. "Too many echo
+						layers create confusion. If callbacks must travel
+						through many components, consider other patterns like
+						Context or state management libraries. The echo should
+						reach its intended listener directly when possible."
+					</p>
+				</div>
+
+				<div className='code-example'>
+					<pre>{`// Parent component with multiple callback handlers
 function ItemManager() {
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -252,51 +356,98 @@ function ItemForm({ onSubmit }) {
     </form>
   );
 }`}</pre>
-      </div>
+				</div>
 
-      <div className="interactive-section">
-        <h3>Callback Best Practices</h3>
-        <div className="echo-chamber">
-          <h4>Echo Chamber Guidelines:</h4>
-          
-          <ol style={{lineHeight: '1.8', paddingLeft: '20px'}}>
-            <li><strong>Name callbacks clearly:</strong> Use <code>onAction</code> pattern (onClick, onSubmit, onChange)</li>
-            <li><strong>Pass relevant data:</strong> Send only necessary information upward</li>
-            <li><strong>Handle events early:</strong> Process in child when possible, echo results</li>
-            <li><strong>Avoid callback chains:</strong> Don't pass callbacks through many levels</li>
-            <li><strong>Memoize callbacks:</strong> Use useCallback for performance when needed</li>
-            <li><strong>Document expectations:</strong> Clear prop types for callbacks</li>
-          </ol>
-        </div>
-      </div>
+				<div className='interactive-section'>
+					<h3>Callback Best Practices</h3>
+					<div className='echo-chamber'>
+						<h4>Echo Chamber Guidelines:</h4>
 
-      <div className="lesson-insight">
-        <h3>The Callback Communication Lesson:</h3>
-        <p>
-          Callback props enable rich communication from children to parents, allowing complex data to flow upward through 
-          callback arguments. Parents become orchestrators, coordinating multiple children through different callbacks for 
-          adding, selecting, or deleting items. This pattern is especially common in form handling, where children collect 
-          user input and send complete data objects to parent components for processing.
-        </p>
-      </div>
+						<ol style={{ lineHeight: '1.8', paddingLeft: '20px' }}>
+							<li>
+								<strong>Name callbacks clearly:</strong> Use{' '}
+								<code>onAction</code> pattern (onClick,
+								onSubmit, onChange)
+							</li>
+							<li>
+								<strong>Pass relevant data:</strong> Send only
+								necessary information upward
+							</li>
+							<li>
+								<strong>Handle events early:</strong> Process in
+								child when possible, echo results
+							</li>
+							<li>
+								<strong>Avoid callback chains:</strong> Don't
+								pass callbacks through many levels
+							</li>
+							<li>
+								<strong>Memoize callbacks:</strong> Use
+								useCallback for performance when needed
+							</li>
+							<li>
+								<strong>Document expectations:</strong> Clear
+								prop types for callbacks
+							</li>
+						</ol>
+					</div>
+				</div>
 
-      <div className="reflection-section">
-        <h3>Reflect on the Story</h3>
-        <p>
-          How do callbacks enable component composition?
-        </p>
-        <p className='story-paragraph'>
-          When should data be managed in parent vs child components?
-        </p>
-        <p className='story-paragraph'>
-          What patterns help organize complex callback relationships?
-        </p>
-      </div>
-      </div>
-    </>
-  );
+				<div className='story-section'>
+					<div className='character-intro'>
+						<h4>Aria's Journal - Day 15 (Afternoon)</h4>
+						<p>
+							The Echo Chamber revealed the true power of
+							callbacks! They're not just simple signals - they
+							can carry rich data upward. Forms can send entire
+							objects, lists can report selections with full
+							context, and components can share detailed state
+							changes. Parents become orchestrators, managing
+							multiple children through different callbacks. The
+							key insight: callbacks with parameters enable
+							sophisticated upward communication while maintaining
+							one-way data flow. But Callback warned against deep
+							callback chains - echoes should reach their
+							listeners directly!
+						</p>
+					</div>
+				</div>
 
-  return <StoryContent content={content} />;
+				<div className='lesson-insight'>
+					<h3>Echo Chamber Wisdom:</h3>
+					<p>
+						Callbacks transport more than signals - they carry rich
+						data structures upward through arguments. Master
+						components orchestrate children by providing specific
+						callbacks for different actions: onAdd, onDelete,
+						onSelect. This pattern shines in forms where children
+						collect complex input and send complete objects to
+						parents. Remember: name callbacks clearly, pass only
+						necessary data, and avoid deep callback chains that echo
+						through too many layers.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does the orchestrator metaphor help you think about
+						parent components?
+					</p>
+					<p className='story-paragraph'>
+						When might callback chains become problematic, and what
+						alternatives exist?
+					</p>
+					<p className='story-paragraph'>
+						What benefits do you see in sending complete data
+						objects versus simple signals?
+					</p>
+				</div>
+			</div>
+		</>
+	);
+
+	return <StoryContent content={content} />;
 }
 
-export default Chapter2;
+export default ChapterTwo;

@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterTwo = () => {
+function ChapterTwo() {
 	const { 
 		wardRunes,
 		activateWardRune,
@@ -151,232 +152,360 @@ const ChapterTwo = () => {
 		}
 	};
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: Advanced Protection Spells
-			</h2>
+			<h2 className='chapter-title'>Chapter 2: Advanced Protection Spells</h2>
+			
+			<div className='chapter-bridge'>
+				<p>Commander Validus led Aria deeper into the fortress, past the basic training grounds 
+				to an advanced tactical center. Here, elite guardians practiced complex validation 
+				maneuvers - cross-field dependencies, asynchronous checks, and multi-layered defenses.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					Vera discovered that simple gates weren't enough. The fortress 
-					needed advanced protection spells - validations that could check 
-					multiple conditions, compare fields, and even consult the ancient 
-					records (async validation) to ensure complete protection.
+					"The real threats," Validus explained, "aren't simple invalid entries. They're 
+					sophisticated attacks that require coordinated defenses. Watch our elite guard's 
+					struggles."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria observed guardians attempting to validate password confirmations, check 
+					email availability against distant servers, and verify complex business rules. 
+					Their efforts were valiant but uncoordinated.
+				</p>
+				
+				<p className='story-paragraph'>
+					"I see multiple issues," Aria diagnosed. "Async validation without debouncing, 
+					no memoization of expensive checks, and validation timing that frustrates users. 
+					Let me demonstrate advanced patterns from my journey."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary projected analysis: "Current validation efficiency: 43%. Response time: 
+					2.3 seconds average. User frustration index: HIGH."
 				</p>
 
+				<div className='aria-advanced-strategy'>
+					<h3>Aria's Multi-Layered Defense System</h3>
+					<p className='story-paragraph'>
+						"First, we need different stances for different situations," Aria began, 
+						addressing the elite guardians. "Just like I learned in the State Sanctuaries - 
+						timing is everything."
+					</p>
+				</div>
+
 				<div className='guardian-stance'>
+					<h3>Guardian Validation Stances</h3>
+					<p className='stance-instruction'>
+						Commander Validus: "Choose your stance based on the threat level!"
+					</p>
 					{stances.map((stance) => (
 						<div
 							key={stance.name}
 							className={`stance-option ${guardianStance === stance.name ? 'active' : ''}`}
 							onClick={() => changeStance(stance.name)}>
-							<div style={{ fontSize: '2rem' }}>{stance.icon}</div>
-							<h4>{stance.name.charAt(0).toUpperCase() + stance.name.slice(1)}</h4>
-							<p>{stance.description}</p>
+							<div className='stance-icon'>{stance.icon}</div>
+							<h4>{stance.name.charAt(0).toUpperCase() + stance.name.slice(1)} Stance</h4>
+							<p className='stance-desc'>{stance.description}</p>
 						</div>
 					))}
 				</div>
 
 				<div className='ward-circle'>
-					<div className={`ward-rune ${wardRunes.Ultimate ? 'activated' : ''}`}>U</div>
-					<div className={`ward-rune ${wardRunes.Strong ? 'activated' : ''}`}>S</div>
-					<div className={`ward-rune ${wardRunes.Match ? 'activated' : ''}`}>M</div>
-					<div className={`ward-rune ${wardRunes.Age ? 'activated' : ''}`}>A</div>
-					<div style={{ textAlign: 'center' }}>
-						<h4>Protection Wards</h4>
-						<p>Activate all wards for ultimate protection</p>
+					<h3>Protection Ward Activation</h3>
+					<p className='ward-description'>
+						Each successful validation activates a protective ward
+					</p>
+					<div className='ward-runes-display'>
+						<div className={`ward-rune ${wardRunes.Ultimate ? 'activated' : ''}`}>
+							<span className='rune-symbol'>U</span>
+							<span className='rune-name'>Ultimate</span>
+						</div>
+						<div className={`ward-rune ${wardRunes.Strong ? 'activated' : ''}`}>
+							<span className='rune-symbol'>S</span>
+							<span className='rune-name'>Strong</span>
+						</div>
+						<div className={`ward-rune ${wardRunes.Match ? 'activated' : ''}`}>
+							<span className='rune-symbol'>M</span>
+							<span className='rune-name'>Match</span>
+						</div>
+						<div className={`ward-rune ${wardRunes.Age ? 'activated' : ''}`}>
+							<span className='rune-symbol'>A</span>
+							<span className='rune-name'>Age</span>
+						</div>
+						<div className={`ward-rune ${wardRunes.Unique ? 'activated' : ''}`}>
+							<span className='rune-symbol'>✓</span>
+							<span className='rune-name'>Unique</span>
+						</div>
 					</div>
 				</div>
 			</div>
 
+			<div className='aria-advanced-patterns'>
+				<h3>Aria's Advanced Validation Architecture</h3>
+				<pre className='magical-code'>{`// Aria's Multi-Layer Validation System
+const useAdvancedValidation = () => {
+  const [errors, setErrors] = useState({});
+  const [pending, setPending] = useState({});
+  const validationCache = useRef({});
+  
+  // Debounced async validation
+  const validateAsync = useCallback(
+    debounce(async (field, value, validator) => {
+      // Check cache first
+      const cacheKey = \`\${field}:\${value}\`;
+      if (validationCache.current[cacheKey]) {
+        return validationCache.current[cacheKey];
+      }
+      
+      setPending(prev => ({ ...prev, [field]: true }));
+      
+      try {
+        const result = await validator(value);
+        validationCache.current[cacheKey] = result;
+        
+        if (result.valid) {
+          clearError(field);
+        } else {
+          setError(field, result.message);
+        }
+      } finally {
+        setPending(prev => ({ ...prev, [field]: false }));
+      }
+    }, 500),
+    []
+  );
+  
+  // Cross-field validation with memoization
+  const validateDependent = useMemo(() => {
+    return (field1, field2, validator) => {
+      const result = validator(field1.value, field2.value);
+      if (!result.valid) {
+        setError(field2.name, result.message);
+      } else {
+        clearError(field2.name);
+      }
+    };
+  }, []);
+  
+  return { errors, pending, validateAsync, validateDependent };
+};`}</pre>
+			</div>
+
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Complex Validations
+					Interactive Exercise: Elite Guardian Training
 				</h3>
+				<div className='instruction-box'>
+					<p>
+						<strong>
+							Master advanced validation techniques! Test different stances and watch 
+							how they affect validation timing. Activate all ward runes for ultimate protection!
+						</strong>
+					</p>
+				</div>
 
-				<div className='guardian-form'>
-					<h4>Advanced Protection Training</h4>
+				<div className='guardian-form advanced'>
+					<h4>🏰 Advanced Defense Training Ground</h4>
 
 					<div className='validation-field'>
-						<label>Email (Async Validation):</label>
+						<label>Email Fortress (Async Validation):</label>
 						<input
 							type='email'
 							value={formData.email}
 							onChange={(e) => handleFieldChange('email', e.target.value)}
 							onBlur={() => handleFieldBlur('email')}
 							placeholder='Check availability in real-time'
+							className='advanced-input'
 						/>
-						<p style={{ fontSize: '0.875rem', color: '#7f8c8d' }}>
-							Try: admin@test.com (taken) or your@email.com (available)
+						<p className='field-hint'>
+							💡 Try: admin@test.com (taken) or aria@hook.master (available)
 						</p>
 					</div>
 
 					<div className='validation-field'>
-						<label>Password (Strength Check):</label>
+						<label>Password Stronghold (Multi-Layer Check):</label>
 						<input
 							type='password'
 							value={formData.password}
 							onChange={(e) => handleFieldChange('password', e.target.value)}
 							onBlur={() => handleFieldBlur('password')}
 							placeholder='Mix upper, lower, numbers, symbols'
+							className='advanced-input'
 						/>
 						<div className='validation-rules'>
 							<span className={`rule ${/[A-Z]/.test(formData.password) ? 'passed' : ''}`}>
-								Uppercase
+								⚔️ Uppercase
 							</span>
 							<span className={`rule ${/[a-z]/.test(formData.password) ? 'passed' : ''}`}>
-								Lowercase
+								🛡️ Lowercase
 							</span>
 							<span className={`rule ${/\d/.test(formData.password) ? 'passed' : ''}`}>
-								Number
+								🏹 Number
 							</span>
 							<span className={`rule ${/[!@#$%^&*]/.test(formData.password) ? 'passed' : ''}`}>
-								Symbol
+								🗡️ Symbol
 							</span>
 							<span className={`rule ${formData.password.length >= 8 ? 'passed' : ''}`}>
-								8+ chars
+								🏰 8+ chars
 							</span>
 						</div>
 					</div>
 
 					<div className='validation-field'>
-						<label>Confirm Password (Match Check):</label>
+						<label>Confirm Password (Cross-Field Validation):</label>
 						<input
 							type='password'
 							value={formData.confirmPassword}
 							onChange={(e) => handleFieldChange('confirmPassword', e.target.value)}
 							onBlur={() => handleFieldBlur('confirmPassword')}
 							placeholder='Must match password above'
+							className='advanced-input'
 						/>
 						{formData.confirmPassword && (
 							<p className={formData.password === formData.confirmPassword ? 'success-message' : 'error-message'}>
-								{formData.password === formData.confirmPassword ? '✅ Passwords match!' : '❌ Passwords do not match'}
+								{formData.password === formData.confirmPassword ? '✅ Passwords synchronized!' : '❌ Passwords out of sync'}
 							</p>
 						)}
 					</div>
 
 					<div className='validation-field'>
-						<label>Birth Date (Age Verification):</label>
+						<label>Birth Date (Complex Logic):</label>
 						<input
 							type='date'
 							value={formData.birthDate}
 							onChange={(e) => handleFieldChange('birthDate', e.target.value)}
 							onBlur={() => handleFieldBlur('birthDate')}
+							className='advanced-input'
 						/>
+						<p className='field-hint'>
+							🎂 Must be 18+ years old to enter the fortress
+						</p>
 					</div>
 				</div>
 
 				<div className='defense-log'>
-					<h4>Defense Log</h4>
-					{defenseLog.map((entry, index) => (
-						<div key={index} className={`defense-entry ${entry.success ? 'success' : 'failure'}`}>
-							[{entry.timestamp}] {entry.message}
-						</div>
-					))}
+					<h4>🗂️ Fortress Defense Log</h4>
+					<div className='log-entries'>
+						{defenseLog.length === 0 ? (
+							<p className='empty-log'>Awaiting validation attempts...</p>
+						) : (
+							defenseLog.map((entry, index) => (
+								<div key={index} className={`defense-entry ${entry.success ? 'success' : 'failure'}`}>
+									<span className='log-time'>[{entry.timestamp}]</span>
+									<span className='log-message'>{entry.message}</span>
+									<span className='log-icon'>{entry.success ? '✅' : '⚠️'}</span>
+								</div>
+							))
+						)}
+					</div>
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<pre>{`// Advanced Validation Patterns
+			<div className='validus-enlightenment'>
+				<p className='story-paragraph'>
+					Commander Validus watched in amazement as Aria's patterns transformed the chaotic 
+					validation attempts into smooth, coordinated defenses. "This is incredible! You've 
+					shown us how to validate asynchronously without overwhelming our servers!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"The key," Aria explained, "is combining patterns. Debouncing from my event handling 
+					knowledge, caching from performance optimization, and memoization from hook mastery. 
+					It all connects."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary displayed updated metrics: "Validation efficiency: 94%. Response time: 0.3 
+					seconds. User satisfaction: OPTIMAL. Cache hit rate: 78%!"
+				</p>
+			</div>
 
-// 1. Multi-field Validation
-const validatePasswordMatch = (password, confirmPassword) => {
-  if (!confirmPassword) return { valid: false, message: 'Please confirm password' };
-  if (password !== confirmPassword) return { valid: false, message: 'Passwords do not match' };
-  return { valid: true };
-};
-
-// 2. Async Validation with Debouncing
-const checkEmailAvailability = debounce(async (email) => {
-  try {
-    const response = await fetch(\`/api/check-email?email=\${email}\`);
-    const { available } = await response.json();
-    return available 
-      ? { valid: true } 
-      : { valid: false, message: 'Email already taken' };
-  } catch (error) {
-    return { valid: false, message: 'Could not verify email' };
+			<div className='advanced-techniques'>
+				<h3>Elite Guardian Techniques</h3>
+				<div className='technique-grid'>
+					<div className='technique-card'>
+						<h4>🔄 Async Validation</h4>
+						<pre className='mini-code'>{`// Debounced server check
+const checkUnique = debounce(
+  async (value) => {
+    const res = await api.check(value);
+    return res.available;
+  }, 
+  300
+);`}</pre>
+					</div>
+					<div className='technique-card'>
+						<h4>🔗 Dependent Fields</h4>
+						<pre className='mini-code'>{`// Validate related fields
+useEffect(() => {
+  if (password && confirmPassword) {
+    validateMatch(password, confirmPassword);
   }
-}, 500);
+}, [password, confirmPassword]);`}</pre>
+					</div>
+					<div className='technique-card'>
+						<h4>💾 Validation Cache</h4>
+						<pre className='mini-code'>{`// Cache expensive checks
+const cache = useRef(new Map());
 
-// 3. Complex Field Dependencies
-const useFormValidation = () => {
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
-
-  const validators = {
-    password: [
-      required('Password is required'),
-      minLength(8, 'At least 8 characters'),
-      pattern(/[A-Z]/, 'Need one uppercase letter'),
-      pattern(/[a-z]/, 'Need one lowercase letter'),
-      pattern(/\\d/, 'Need one number'),
-      pattern(/[!@#$%^&*]/, 'Need one special character')
-    ],
-    confirmPassword: [
-      required('Please confirm password'),
-      (value, allValues) => 
-        value === allValues.password 
-          ? null 
-          : 'Passwords must match'
-    ],
-    age: [
-      required('Age is required'),
-      (value) => value >= 18 ? null : 'Must be 18 or older'
-    ]
-  };
-
-  const validateField = async (name, value) => {
-    const fieldValidators = validators[name] || [];
-    
-    for (const validator of fieldValidators) {
-      const error = await validator(value, values);
-      if (error) {
-        setErrors(prev => ({ ...prev, [name]: error }));
-        return false;
-      }
-    }
-    
-    setErrors(prev => {
-      const newErrors = { ...prev };
-      delete newErrors[name];
-      return newErrors;
-    });
-    return true;
-  };
-
-  return { values, errors, touched, validateField };
+const validate = (value) => {
+  if (cache.current.has(value)) {
+    return cache.current.get(value);
+  }
+  // ... perform validation
+  cache.current.set(value, result);
 };`}</pre>
+					</div>
+				</div>
+			</div>
+
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 21 (Morning)</h4>
+					<p>Advanced validation is where all my React knowledge converges! Showed Commander 
+					Validus how to combine debouncing (from event optimization), caching (from performance 
+					patterns), and dependent validation (like Context dependencies). The guardians were 
+					struggling with async validation causing server overload - fixed with debouncing. 
+					Cross-field validation was causing infinite loops - fixed with proper dependencies. 
+					Binary tracked a 94% improvement in validation efficiency. The ward runes lighting 
+					up as validations pass is oddly satisfying. Validus mentioned the Ultimate Defense 
+					Strategy awaits...</p>
+				</div>
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Advanced Guardian's Lesson:</h3>
+				<h3>The Elite Guardian's Wisdom:</h3>
 				<p>
-					Advanced validation goes beyond simple rules. It includes field 
-					dependencies (password matching), async checks (email availability), 
-					and complex patterns (password strength). The key is choosing the 
-					right validation strategy - immediate feedback for critical fields, 
-					blur validation for less intrusive UX, or submit-time validation 
-					for performance. Like a skilled guardian adjusting their stance, 
-					adapt your validation approach to the situation.
+					Advanced validation requires orchestrating multiple techniques. Use debouncing for 
+					async checks to prevent server overload. Implement caching to avoid redundant 
+					validations. Handle cross-field dependencies carefully to prevent circular validation. 
+					Choose validation timing (onChange, onBlur, onSubmit) based on user experience needs. 
+					Remember: the best validation is invisible to users when they're doing things right, 
+					but immediately helpful when they need guidance. Master these patterns, and your 
+					forms become impenetrable fortresses with welcoming gates.
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How do different guardian stances (validation timings) affect 
-					the user's experience navigating your form?
+					How do different validation stances affect the user's journey through your form?
 				</p>
-				<p>
-					Why might complex validations like password strength be more 
-					valuable than simple length checks?
+				<p className='story-paragraph'>
+					Why is caching validation results important for both performance and user experience?
+				</p>
+				<p className='story-paragraph'>
+					What validation patterns from Aria's previous learning enhanced the fortress defenses?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterTwo;

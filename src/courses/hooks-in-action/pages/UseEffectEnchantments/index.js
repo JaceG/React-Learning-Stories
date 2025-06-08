@@ -18,9 +18,16 @@ function UseEffectEnchantments() {
 
   return (
     <div className='lesson-container use-effect-enchantments-container'>
+      <div className='lesson-opener'>
+        <p>The Temporal Tower loomed before Aria - a spiraling structure where time seemed to flow 
+        differently at each level. Clock faces of various sizes ticked at different speeds along 
+        its walls. This was where the Academy taught its most mysterious hook: useEffect, the 
+        bridge between React's pure world and the chaotic realm of side effects.</p>
+      </div>
+      
       <h1 className='lesson-title'>The useEffect Enchantments</h1>
       <p className='lesson-subtitle'>
-        Master the enchantments of side effects and component lifecycle in the React realm
+        Master the art of side effects with the enigmatic Effect Sage
       </p>
 
       <div className='chapter-navigation'>

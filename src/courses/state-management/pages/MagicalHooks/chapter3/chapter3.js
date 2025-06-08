@@ -15,20 +15,28 @@ const ChapterThree = () => {
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>
-				Chapter 3: The Advanced Magical Artifacts
+				Chapter 3: The Specialized Tools
 			</h2>
+
+			<div className='chapter-bridge'>
+				<p>As the afternoon sun filtered through the forge's crystalline 
+				windows, Master Hooke led Aria to a special vault containing the 
+				most specialized hooks - tools designed for specific challenges 
+				that React developers face.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					After mastering the basics of state sorcery and effect
-					enchantments, <strong>Hookie</strong> was ready for more
-					advanced artifacts. His mentor opened an ancient chest
-					containing three powerful tools: <strong>useRef</strong>, a
-					crystal that could remember values without triggering
-					re-renders; <strong>useMemo</strong>, a potion that could
-					cache expensive calculations; and{' '}
-					<strong>useCallback</strong>, a scroll that preserved
-					function references.
+					"These are our precision instruments," Master Hooke said, opening 
+					an ornate chest. "Not every component needs them, but when you do, 
+					they're invaluable. Meet <strong>useRef</strong>, the memory crystal; 
+					<strong>useMemo</strong>, the calculation cache; and <strong>useCallback</strong>, 
+					the function preserver."
+				</p>
+
+				<p className='story-paragraph'>
+					Aria examined each tool carefully. "They look powerful, but when 
+					would I need them instead of useState or useEffect?"
 				</p>
 
 				<div className='artifacts-illustration'>
@@ -36,7 +44,7 @@ const ChapterThree = () => {
 						<div className='artifact ref-crystal'>
 							<div className='artifact-label'>useRef</div>
 							<div className='artifact-text'>
-								Persists Between Renders
+								Persists Without Re-renders
 							</div>
 						</div>
 						<div className='artifact memo-potion'>
@@ -46,7 +54,7 @@ const ChapterThree = () => {
 						<div className='artifact callback-scroll'>
 							<div className='artifact-label'>useCallback</div>
 							<div className='artifact-text'>
-								Stable Function References
+								Stable Function Identity
 							</div>
 						</div>
 					</div>
@@ -57,248 +65,237 @@ const ChapterThree = () => {
 				</div>
 
 				<p className='story-paragraph'>
-					"These artifacts," explained the mentor, "will help you
-					optimize your spells. <strong>useRef</strong> lets you
-					maintain values that won't cause re-renders when changed.{' '}
-					<strong>useMemo</strong> remembers results of complex
-					calculations. And <strong>useCallback</strong> preserves
-					function identity across re-renders."
+					"Excellent question!" Master Hooke beamed. "useRef is like a secret 
+					pocket - it holds values that persist between renders but <em>don't</em> 
+					trigger re-renders when changed. Perfect for DOM references or storing 
+					previous values."
 				</p>
+
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 9 (Afternoon)</h4>
+					<p>The specialized hooks are fascinating! useRef is like having a 
+					notebook that React doesn't watch - I can write in it without causing 
+					updates. useMemo and useCallback are about efficiency - they prevent 
+					unnecessary work by remembering results and function references. Master 
+					Hooke says they're powerful but warns against overusing them.</p>
+				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Performance Optimization
+					Interactive Exercise: Performance Workshop
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Click the button below to trigger a re-render.
-							Notice how the memoized calculation doesn't run
-							again unless its dependencies change!
-						</strong>
-					</p>
-				</div>
+				<p className='instruction'>
+					<strong>👉 Master Hooke activates a demonstration.</strong>
+					"Click the button to force a re-render. Notice how the memoized 
+					value doesn't recalculate unless its dependency (baseNumber) changes. 
+					This saves computation time!"
+				</p>
 
 				<div className='optimization-controls'>
 					<button className='render-button' onClick={toggleRender}>
-						Force Re-render
+						Force Re-render (No Recalculation)
+					</button>
+					<button 
+						className='render-button' 
+						onClick={() => setBaseNumber(prev => prev + 1)}>
+						Change Base Number (Triggers Recalculation)
 					</button>
 				</div>
 
-				<div className='optimization-insights'>
-					<div className='optimization-card'>
-						<h4>useRef</h4>
-						<pre className='optimization-code'>
-							{`// useRef creates a mutable reference that persists across renders
-function Timer() {
-  // Create a ref to store the interval ID
-  const intervalRef = useRef(null);
+				<div className='code-example'>
+					<div className='scroll-header'>
+						<span>The Three Specialized Hooks</span>
+						<span className='discovered-by'>Master Hooke's Vault</span>
+					</div>
+					<pre className='optimization-code'>
+						{`// useRef - The Memory Crystal
+function TimerComponent() {
+  const intervalRef = useRef(null);  // Persists without re-renders
+  const [seconds, setSeconds] = useState(0);
   
-  // Start the timer
   const startTimer = () => {
-    // We can store values in .current without causing re-renders
     intervalRef.current = setInterval(() => {
-      console.log('Tick');
+      setSeconds(s => s + 1);
     }, 1000);
   };
   
-  // Stop the timer
   const stopTimer = () => {
-    // We can access the value later when needed
-    clearInterval(intervalRef.current);
+    clearInterval(intervalRef.current);  // Access stored value
   };
   
-  // The ref persists even when the component re-renders
   return (
     <div>
+      <p>Time: {seconds}s</p>
       <button onClick={startTimer}>Start</button>
       <button onClick={stopTimer}>Stop</button>
     </div>
   );
-}`}
-						</pre>
-					</div>
-					<div className='optimization-card'>
-						<h4>useMemo</h4>
-						<pre className='optimization-code'>
-							{`// useMemo caches expensive calculations
-function ExpensiveComponent({ data, filter }) {
-  // This calculation only runs when data or filter changes
-  const filteredData = useMemo(() => {
-    console.log('Filtering data - expensive operation!');
-    
-    return data.filter(item => {
-      // Imagine this is a complex calculation
-      return item.name.includes(filter);
-    });
-  }, [data, filter]); // Dependencies array
+}
+
+// useMemo - The Calculation Cache
+function DataProcessor({ data, filter }) {
+  // Only recalculates when data or filter changes
+  const processedData = useMemo(() => {
+    console.log('Processing data...');
+    return data.filter(item => item.includes(filter))
+                .map(item => item.toUpperCase());
+  }, [data, filter]);
   
-  return (
-    <ul>
-      {filteredData.map(item => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
-  );
-}`}
-						</pre>
-					</div>
-					<div className='optimization-card'>
-						<h4>useCallback</h4>
-						<pre className='optimization-code'>
-							{`// useCallback preserves function references
-function ParentComponent() {
-  const [count, setCount] = useState(0);
+  return <div>{processedData.join(', ')}</div>;
+}
+
+// useCallback - The Function Preserver
+function SearchComponent({ onSearch }) {
+  const [query, setQuery] = useState('');
   
-  // Without useCallback, this function would be recreated
-  // on every render, causing unnecessary re-renders in ChildComponent
-  const handleClick = useCallback(() => {
-    console.log('Button clicked');
-  }, []); // Empty dependencies - never recreated
+  // Preserves function identity unless query changes
+  const handleSearch = useCallback(() => {
+    onSearch(query);
+  }, [query, onSearch]);
   
   return (
     <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      
-      {/* ChildComponent only re-renders when handleClick changes */}
-      <ChildComponent onClick={handleClick} />
+      <input value={query} onChange={e => setQuery(e.target.value)} />
+      <OptimizedButton onClick={handleSearch} />
     </div>
   );
-}
-
-// This component uses React.memo to skip renders when props haven't changed
-const ChildComponent = React.memo(({ onClick }) => {
-  console.log('Child rendered');
-  return <button onClick={onClick}>Click me</button>;
-});`}
-						</pre>
-					</div>
+}`}
+					</pre>
 				</div>
 			</div>
 
+			<div className='story-section'>
+				<p className='story-paragraph'>
+					Binary projected a holographic comparison chart. "Look, Aria! Each 
+					hook solves a specific problem. useRef for mutable values that 
+					shouldn't cause renders, useMemo for expensive calculations, and 
+					useCallback for stable function references."
+				</p>
+
+				<p className='story-paragraph'>
+					"But remember," Master Hooke cautioned, "these are optimization tools. 
+					Don't use them everywhere - only when you've identified an actual 
+					performance issue. Premature optimization can make your code harder 
+					to understand without providing real benefits."
+				</p>
+			</div>
+
 			<div className='comparison-section'>
-				<h3>When to Use Each Hook:</h3>
+				<h3>When to Use Each Specialized Hook:</h3>
 				<div className='comparison-table'>
 					<div className='comparison-row header'>
 						<div className='comparison-cell'>Hook</div>
 						<div className='comparison-cell'>Purpose</div>
 						<div className='comparison-cell'>Use When</div>
-						<div className='comparison-cell'>Example Use Case</div>
+						<div className='comparison-cell'>Hook Forge Example</div>
 					</div>
 					<div className='comparison-row'>
 						<div className='comparison-cell'>useRef</div>
 						<div className='comparison-cell'>
-							Persist mutable values without causing re-renders
+							Store mutable values that persist without re-renders
 						</div>
 						<div className='comparison-cell'>
-							You need to access DOM elements directly, store
-							previous values, or track mutable values that
-							shouldn't trigger re-renders
+							Accessing DOM elements, storing timer IDs, keeping 
+							previous values, or any mutable value that shouldn't 
+							trigger updates
 						</div>
 						<div className='comparison-cell'>
-							Form input focus, storing interval IDs, previous
-							state values
+							Storing forge temperature readings without re-rendering 
+							the entire workshop display
 						</div>
 					</div>
 					<div className='comparison-row'>
 						<div className='comparison-cell'>useMemo</div>
 						<div className='comparison-cell'>
-							Cache computation results between renders
+							Cache expensive computation results
 						</div>
 						<div className='comparison-cell'>
-							You have expensive calculations that don't need to
-							be re-computed unless specific dependencies change
+							Complex calculations, data transformations, or any 
+							computation that's expensive and has clear dependencies
 						</div>
 						<div className='comparison-cell'>
-							Data filtering/sorting, complex calculations,
-							derived state
+							Calculating optimal forge temperatures based on metal 
+							type and desired hook properties
 						</div>
 					</div>
 					<div className='comparison-row'>
 						<div className='comparison-cell'>useCallback</div>
 						<div className='comparison-cell'>
-							Cache function instances between renders
+							Preserve function identity across renders
 						</div>
 						<div className='comparison-cell'>
-							You're passing callbacks to optimized child
-							components that rely on reference equality to
-							prevent unnecessary renders
+							Passing callbacks to optimized child components or 
+							including functions in dependency arrays
 						</div>
 						<div className='comparison-cell'>
-							Event handlers passed to pure components, callbacks
-							in dependency arrays
+							Hammer strike functions passed to apprentice components 
+							that shouldn't re-render unnecessarily
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div className='best-practices'>
-				<h3>Best Practices:</h3>
+				<h3>Master Hooke's Best Practices:</h3>
 				<ul>
 					<li>
-						<strong>Don't overuse these hooks</strong> - they add
-						complexity and should only be used when there's a clear
-						performance benefit.
+						<strong>Profile First:</strong> Use React DevTools to identify 
+						real performance issues before reaching for these hooks.
 					</li>
 					<li>
-						<strong>Measure performance before optimizing</strong> -
-						use React DevTools Profiler to identify actual
-						bottlenecks.
+						<strong>Dependencies Matter:</strong> Always include all dependencies 
+						in useMemo and useCallback arrays to avoid stale closures.
 					</li>
 					<li>
-						<strong>Dependency arrays matter</strong> - missing
-						dependencies in useMemo and useCallback can cause subtle
-						bugs.
+						<strong>useRef is Versatile:</strong> It's not just for DOM refs - 
+						use it for any value that needs to persist without causing renders.
 					</li>
 					<li>
-						<strong>useRef is not just for DOM references</strong> -
-						it's useful anytime you need a mutable value that
-						persists across renders.
+						<strong>Avoid Overuse:</strong> These hooks add complexity. Use them 
+						only when there's a measurable benefit.
 					</li>
 				</ul>
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Performance Optimization Lesson:</h3>
+				<h3>Master Hooke's Final Wisdom:</h3>
 				<p>
-					These three hooks are primarily used for performance
-					optimization and handling specific edge cases in React:
-				</p>
-				<ul>
-					<li>
-						<strong>useRef</strong> creates a mutable object with a
-						.current property that persists across renders
-					</li>
-					<li>
-						<strong>useMemo</strong> memoizes the result of a
-						computation, only recomputing when dependencies change
-					</li>
-					<li>
-						<strong>useCallback</strong> memoizes a function
-						definition, preventing it from being recreated on each
-						render
-					</li>
-				</ul>
-				<p>
-					It's important to remember that premature optimization can
-					lead to more complex code. Use these hooks when you have
-					identified actual performance issues, not preemptively.
+					These specialized hooks are like precision tools in a master craftsman's 
+					workshop. You won't need them for every project, but when you do, they're 
+					essential. useRef gives you a way to step outside React's render cycle, 
+					useMemo and useCallback help you optimize performance by preventing 
+					unnecessary work. Master these, and you'll have the complete toolkit 
+					for building efficient React applications. But remember - clarity and 
+					simplicity often trump premature optimization!
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How do the metaphors of the crystal (useRef), potion
-					(useMemo), and scroll (useCallback) help you understand the
-					purposes of these hooks?
+					How does thinking of useRef as a "secret pocket" help you 
+					understand when to use it instead of useState?
 				</p>
 				<p>
-					Can you think of a scenario in your own applications where
-					each of these hooks would be beneficial?
+					Why is it important to measure performance before applying 
+					optimization hooks like useMemo and useCallback?
 				</p>
+			</div>
+
+			<div className='chapter-ending'>
+				<p>As the forge's closing bell rang, Master Hooke handed Aria a small 
+				leather pouch. "These are hook samples for practice. Tomorrow, you'll 
+				meet the Context Keepers in the Grand Hall. They'll teach you how to 
+				share state across your entire component kingdom."</p>
+				
+				<p>Binary's lights danced with excitement. "The Grand Context! That's 
+				where components can share memories without passing them hand-to-hand!"</p>
+				
+				<p>Aria carefully tucked the pouch into her satchel, her mind buzzing 
+				with new knowledge. useState, useEffect, useRef, useMemo, useCallback - 
+				each hook a tool with its own purpose. She was beginning to see how they 
+				all fit together in the grand tapestry of React development.</p>
 			</div>
 		</div>
 	);

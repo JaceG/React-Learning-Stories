@@ -18,9 +18,17 @@ function StateSorcerers() {
 		<div className='lesson-container'>
 			<h1 className='lesson-title'>The State Sorcerers</h1>
 			<p className='lesson-subtitle'>
-				Enter the world of State Sorcerers and learn how components can
-				remember information and change over time.
+				Aria journeys to the Eastern Quarter to meet the legendary State Sorcerers, 
+				who will teach her how to give components memory and the power to change over time.
 			</p>
+			
+			<div className='lesson-opener'>
+				<p>The morning after her training with Chronos, Aria set out eastward as 
+				the sun painted the React Kingdom in golden hues. The Eastern Quarter was 
+				known for its towering crystal spires, each one pulsing with stored memories 
+				and dynamic energy. This was where the State Sorcerers practiced their ancient 
+				craft - giving components the ability to remember and respond.</p>
+			</div>
 
 			<div className='chapter-navigation'>
 				<button

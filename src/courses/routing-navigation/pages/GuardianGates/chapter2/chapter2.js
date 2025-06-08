@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterTwo = () => {
+function ChapterTwo() {
 	const { authState, handleLogin, handleLogout, redirectPath } =
 		useOutletContext();
 
@@ -10,21 +11,39 @@ const ChapterTwo = () => {
 		username: '',
 		role: 'visitor',
 	});
+	const [demonstrationMode, setDemonstrationMode] = useState(false);
 
 	const authFlowSteps = [
 		{
 			id: 1,
 			status: 'pending',
 			label: 'User attempts to access protected route',
+			ariaNote: 'Component tries to render',
 		},
-		{ id: 2, status: 'pending', label: 'Guardian checks authentication' },
+		{
+			id: 2,
+			status: 'pending',
+			label: 'Guardian checks authentication',
+			ariaNote: 'Hook validates state',
+		},
 		{
 			id: 3,
 			status: 'pending',
 			label: 'Redirect to login with return path',
+			ariaNote: 'State preserved in context',
 		},
-		{ id: 4, status: 'pending', label: 'User provides credentials' },
-		{ id: 5, status: 'pending', label: 'Return to original destination' },
+		{
+			id: 4,
+			status: 'pending',
+			label: 'User provides credentials',
+			ariaNote: 'Form validation applied',
+		},
+		{
+			id: 5,
+			status: 'pending',
+			label: 'Return to original destination',
+			ariaNote: 'Navigation with preserved state',
+		},
 	];
 
 	const getStepStatus = (stepId) => {
@@ -33,341 +52,597 @@ const ChapterTwo = () => {
 		return 'pending';
 	};
 
-	return (
-		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Memory of Stone</h2>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>
+					Chapter 2: Advanced Authentication Flows
+				</h2>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Marina led Param to the ancient Guardian Archives, where the
-					secrets of the stone guardians were kept. "There's something
-					remarkable about these guardians," she said, her voice
-					echoing in the stone chamber. "They have perfect memory."
-				</p>
+				<div className='chapter-bridge'>
+					<p>
+						The training continued in the Guardian Archives, where
+						ancient memory crystals lined the walls. Marina and Aria
+						prepared to demonstrate the most sophisticated
+						authentication patterns to their eager students.
+					</p>
+				</div>
 
-				<p className='story-paragraph'>
-					"Perfect memory?" Param asked, puzzled. "What do they need
-					to remember?"
-				</p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Authentication isn't just about checking credentials,"
+						Aria began, activating a memory crystal that began to
+						glow. "It's about preserving the entire user journey.
+						Let me show you what I learned across the kingdom."
+					</p>
 
-				<p className='story-paragraph'>
-					Marina smiled. "Imagine a visitor arrives at the Royal
-					Treasury but lacks credentials. The guardian turns them
-					away, directing them to get proper authorization. But here's
-					the magic - the guardian{' '}
-					<strong>remembers where they wanted to go</strong>."
-				</p>
+					<p className='story-paragraph'>
+						Marina nodded approvingly. "Aria's right. Modern
+						guardians don't just turn people away - they remember
+						intentions, preserve state, and create seamless
+						experiences."
+					</p>
 
-				<p className='story-paragraph'>
-					She demonstrated with a glowing crystal that recorded paths.
-					"When the visitor returns with credentials, the guardian
-					doesn't just let them in - it
-					<strong>escorts them to their original destination</strong>.
-					No need to navigate again. This is what we call{' '}
-					<strong>
-						authentication flow with redirect preservation
-					</strong>
-					."
-				</p>
+					<p className='story-paragraph'>
+						A trainee raised her hand. "Master Aria, how do you
+						combine authentication with all the patterns you've
+						learned?"
+					</p>
 
-				<div className='auth-flow-demo'>
-					<h3>The Guardian's Memory Crystal</h3>
+					<p className='story-paragraph'>
+						Aria smiled, remembering her journey. "In the Eastern
+						Quarter, I learned that authentication is state. In the
+						Western Quarter, that login forms need validation. In
+						the South, how user data flows through protected routes.
+						Watch as Marina and I demonstrate the{' '}
+						<strong>Complete Authentication Flow</strong>."
+					</p>
 
-					<div className='auth-status'>
-						<p>
-							Current Status:{' '}
-							{authState.isAuthenticated ? (
-								<span className='status-badge authenticated'>
-									Authenticated as {authState.user?.role}
-								</span>
-							) : (
-								<span className='status-badge unauthenticated'>
-									Not Authenticated
-								</span>
-							)}
-						</p>
-						{redirectPath && (
+					<p className='story-paragraph'>
+						Binary projected an intricate diagram. "Authentication
+						system online! Integrating: State Management ✓, Form
+						Validation ✓, Context Preservation ✓, Intelligent
+						Redirection ✓!"
+					</p>
+					<div className='auth-flow-demo advanced'>
+						<h3>The Integrated Authentication System</h3>
+
+						{!demonstrationMode && (
+							<button
+								className='demo-toggle'
+								onClick={() => setDemonstrationMode(true)}>
+								🎭 Begin Live Demonstration
+							</button>
+						)}
+
+						<div className='auth-status enhanced'>
 							<p>
-								Intended Destination:{' '}
-								<code>{redirectPath}</code>
-							</p>
-						)}
-					</div>
-
-					<div className='auth-controls'>
-						{!authState.isAuthenticated ? (
-							<div className='login-form'>
-								<h4>Present Your Credentials</h4>
-								<input
-									type='text'
-									placeholder='Your name'
-									value={credentials.username}
-									onChange={(e) =>
-										setCredentials({
-											...credentials,
-											username: e.target.value,
-										})
-									}
-								/>
-								<select
-									value={credentials.role}
-									onChange={(e) =>
-										setCredentials({
-											...credentials,
-											role: e.target.value,
-										})
-									}>
-									<option value='visitor'>Visitor</option>
-									<option value='merchant'>Merchant</option>
-									<option value='student'>Student</option>
-									<option value='royal'>Royal</option>
-								</select>
-								<button
-									onClick={() => {
-										handleLogin(credentials);
-										setShowLoginFlow(true);
-									}}>
-									Authenticate
-								</button>
-							</div>
-						) : (
-							<div className='logout-section'>
-								<p>Welcome, {authState.user?.username}!</p>
-								<button onClick={handleLogout}>
-									Leave Kingdom
-								</button>
-							</div>
-						)}
-					</div>
-
-					<div className='flow-visualization'>
-						<h4>Authentication Flow</h4>
-						{authFlowSteps.map((step) => (
-							<div
-								key={step.id}
-								className={`flow-step ${getStepStatus(
-									step.id
-								)}`}>
-								<span className='step-number'>{step.id}</span>
-								<span className='step-label'>{step.label}</span>
-								{getStepStatus(step.id) === 'complete' && (
-									<span className='checkmark'>✓</span>
+								Current Status:{' '}
+								{authState.isAuthenticated ? (
+									<span className='status-badge authenticated'>
+										Authenticated as {authState.user?.role}
+									</span>
+								) : (
+									<span className='status-badge unauthenticated'>
+										Not Authenticated
+									</span>
 								)}
-							</div>
-						))}
+							</p>
+							{redirectPath && (
+								<p>
+									Intended Destination:{' '}
+									<code>{redirectPath}</code>
+								</p>
+							)}
+							{demonstrationMode && (
+								<div className='aria-insight'>
+									<p>
+										"Notice how we preserve the user's
+										intention even when redirecting..."
+									</p>
+								</div>
+							)}
+						</div>
+
+						<div className='auth-controls'>
+							{!authState.isAuthenticated ? (
+								<div className='login-form'>
+									<h4>Present Your Credentials</h4>
+									<input
+										type='text'
+										placeholder='Your name'
+										value={credentials.username}
+										onChange={(e) =>
+											setCredentials({
+												...credentials,
+												username: e.target.value,
+											})
+										}
+									/>
+									<select
+										value={credentials.role}
+										onChange={(e) =>
+											setCredentials({
+												...credentials,
+												role: e.target.value,
+											})
+										}>
+										<option value='visitor'>Visitor</option>
+										<option value='merchant'>
+											Merchant
+										</option>
+										<option value='student'>Student</option>
+										<option value='royal'>Royal</option>
+									</select>
+									<button
+										onClick={() => {
+											handleLogin(credentials);
+											setShowLoginFlow(true);
+										}}>
+										Authenticate
+									</button>
+								</div>
+							) : (
+								<div className='logout-section'>
+									<p>Welcome, {authState.user?.username}!</p>
+									<button onClick={handleLogout}>
+										Leave Kingdom
+									</button>
+								</div>
+							)}
+						</div>
+
+						<div className='flow-visualization enhanced'>
+							<h4>Marina & Aria's Authentication Flow</h4>
+							{authFlowSteps.map((step) => (
+								<div
+									key={step.id}
+									className={`flow-step ${getStepStatus(
+										step.id
+									)}`}>
+									<span className='step-number'>
+										{step.id}
+									</span>
+									<div className='step-content'>
+										<span className='step-label'>
+											{step.label}
+										</span>
+										{demonstrationMode && (
+											<span className='aria-note'>
+												{step.ariaNote}
+											</span>
+										)}
+									</div>
+									{getStepStatus(step.id) === 'complete' && (
+										<span className='checkmark'>✓</span>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+
+					<div className='collaborative-explanation'>
+						<p className='story-paragraph'>
+							"Each step integrates patterns from across the
+							kingdom," Aria explained. "Authentication isn't
+							isolated - it touches every system we've built."
+						</p>
 					</div>
 				</div>
-			</div>
 
-			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Implementing Authentication Flow
-				</h3>
+				<div className='interactive-section'>
+					<h3 className='section-title'>
+						The Complete Authentication Architecture
+					</h3>
+					<p className='collaboration-note'>
+						Marina and Aria present their unified authentication
+						system...
+					</p>
 
-				<div className='code-example'>
-					<pre>{`// Protected Route with Redirect Memory
+					<div className='code-example collaborative'>
+						<h3>Intelligent Protected Routes</h3>
+						<pre>{`// Marina's Foundation + Aria's Complete Integration
 import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth, useFormState, useJourneyTracking } from './hooks';
 
-function ProtectedRoute({ children }) {
-  const { user } = useAuth();
+function IntelligentProtectedRoute({ 
+  children, 
+  requiredRole,
+  validateBeforeAccess 
+}) {
+  // Marina's authentication check
+  const { user, isLoading } = useAuth();
   const location = useLocation();
   
+  // Aria's state preservation from Eastern Quarter
+  const { preserveFormState } = useFormState();
+  const { trackJourney } = useJourneyTracking();
+  
+  // Track user's journey for analytics
+  useEffect(() => {
+    trackJourney({
+      attempted: location.pathname,
+      authenticated: !!user,
+      timestamp: Date.now()
+    });
+  }, [location, user]);
+  
+  if (isLoading) {
+    return (
+      <div className="guardian-thinking">
+        <LoadingCrystal />
+        <p>Guardian verifying credentials...</p>
+      </div>
+    );
+  }
+  
   if (!user) {
-    // Save the attempted destination
-    return <Navigate 
-      to="/login" 
-      state={{ from: location }} 
-      replace 
-    />;
+    // Aria's pattern: Preserve ALL state before redirect
+    preserveFormState();
+    
+    return (
+      <Navigate 
+        to="/login" 
+        state={{ 
+          from: location,
+          message: "Authentication required",
+          preservedState: true
+        }} 
+        replace 
+      />
+    );
+  }
+  
+  // Aria's multi-layer validation
+  if (requiredRole && user.role !== requiredRole) {
+    return (
+      <Navigate 
+        to="/upgrade-access" 
+        state={{ 
+          currentRole: user.role,
+          requiredRole,
+          from: location 
+        }}
+      />
+    );
+  }
+  
+  // Additional validation if needed
+  if (validateBeforeAccess && !validateBeforeAccess(user)) {
+    return <AdditionalVerification user={user} />;
   }
   
   return children;
-}
-
-// Login Component with Return Navigation
-function Login() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { login } = useAuth();
-  
-  // Extract the return path
-  const from = location.state?.from?.pathname || "/";
-  
-  const handleSubmit = async (credentials) => {
-    try {
-      await login(credentials);
-      // Return to original destination
-      navigate(from, { replace: true });
-    } catch (error) {
-      setError('Invalid credentials');
-    }
-  };
-  
-  return (
-    <div className="login-portal">
-      <h2>Guardian's Challenge</h2>
-      <p>You were trying to reach: {from}</p>
-      {/* Login form */}
-    </div>
-  );
 }`}</pre>
-				</div>
+					</div>
 
-				<div className='code-example'>
-					<pre>{`// Complete Auth Context with Redirect Handling
-import { createContext, useState, useContext } from 'react';
+					<div className='code-example'>
+						<h3>Enhanced Auth Context with Journey Memory</h3>
+						<pre>{`// The Marina-Aria Auth Context Pattern
+import { createContext, useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+export function IntelligentAuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [journey, setJourney] = useState([]);
+  const navigate = useNavigate();
   
-  // Check for existing session on mount
+  // Aria's pattern: Track complete user journey
+  const trackUserJourney = (action) => {
+    setJourney(prev => [...prev, {
+      action,
+      timestamp: Date.now(),
+      user: user?.id
+    }]);
+  };
+  
+  // Check for existing session with state restoration
   useEffect(() => {
-    const checkAuth = async () => {
+    const initializeAuth = async () => {
       try {
+        // Check for saved session
         const savedUser = await getStoredAuth();
+        
+        // Aria's addition: Restore preserved state
+        if (savedUser) {
+          const preservedState = await getPreservedState(savedUser.id);
+          if (preservedState) {
+            restoreUserState(preservedState);
+          }
+        }
+        
         setUser(savedUser);
+        trackUserJourney('session_restored');
       } finally {
         setLoading(false);
       }
     };
-    checkAuth();
+    
+    initializeAuth();
   }, []);
   
-  const login = async (credentials) => {
+  const login = async (credentials, returnTo) => {
+    // Marina's secure authentication
     const userData = await authenticateUser(credentials);
+    
+    // Aria's enhancements
+    trackUserJourney('login_success');
+    
+    // Restore any preserved form data
+    const savedForms = await getSavedForms(userData.id);
+    if (savedForms) {
+      restoreFormData(savedForms);
+    }
+    
     setUser(userData);
-    // Store auth token/session
-    localStorage.setItem('authToken', userData.token);
+    
+    // Intelligent navigation
+    if (returnTo) {
+      navigate(returnTo, { replace: true, state: { justAuthenticated: true } });
+    }
+    
     return userData;
   };
   
-  const logout = () => {
+  const logout = async () => {
+    // Aria's pattern: Save state before logout
+    if (user) {
+      await preserveUserState(user.id, getCurrentState());
+    }
+    
+    trackUserJourney('logout');
     setUser(null);
-    localStorage.removeItem('authToken');
+    clearStoredAuth();
+    
+    // Navigate to home with logout message
+    navigate('/', { state: { message: 'Successfully logged out' } });
+  };
+  
+  const contextValue = {
+    user,
+    loading,
+    journey,
+    login,
+    logout,
+    trackUserJourney,
+    // Aria's additions
+    hasRole: (role) => user?.roles?.includes(role),
+    hasPermission: (permission) => user?.permissions?.includes(permission),
+    isAuthenticated: !!user
   };
   
   return (
-    <AuthContext.Provider value={{ 
-      user, 
-      login, 
-      logout, 
-      loading 
-    }}>
+    <AuthContext.Provider value={contextValue}>
       {children}
     </AuthContext.Provider>
   );
-}
-
-// Loading State Handler
-function App() {
-  const { loading } = useAuth();
-  
-  if (loading) {
-    return <div className="loading-crystal">Awakening guardians...</div>;
-  }
-  
-  return <Routes>...</Routes>;
 }`}</pre>
-				</div>
+					</div>
 
-				<div className='auth-patterns'>
-					<h3>Common Authentication Patterns</h3>
-					<div className='pattern-grid'>
-						<div className='pattern-card'>
-							<h4>Session-Based</h4>
-							<p>
-								Guardian remembers you with a royal seal
-								(cookie)
+					<div className='auth-patterns enhanced'>
+						<h3>Marina & Aria's Authentication Patterns</h3>
+						<div className='pattern-grid masters-edition'>
+							<div className='pattern-card'>
+								<h4>Stateful Sessions</h4>
+								<p className='marina'>Marina: Secure cookies</p>
+								<p className='aria'>
+									Aria: + State preservation
+								</p>
+								<code>httpOnly + state cache</code>
+							</div>
+							<div className='pattern-card'>
+								<h4>Smart Tokens</h4>
+								<p className='marina'>Marina: JWT validation</p>
+								<p className='aria'>Aria: + Journey tracking</p>
+								<code>JWT + context memory</code>
+							</div>
+							<div className='pattern-card'>
+								<h4>Federated Auth</h4>
+								<p className='marina'>Marina: OAuth flow</p>
+								<p className='aria'>Aria: + Form recovery</p>
+								<code>OAuth + state restore</code>
+							</div>
+						</div>
+						<div className='pattern-explanation'>
+							<p className='story-paragraph'>
+								"Notice how each pattern combines security with
+								user experience," Aria explained. "We're not
+								just checking if someone can enter - we're
+								making their journey smooth and memorable."
 							</p>
-							<code>httpOnly cookies</code>
-						</div>
-						<div className='pattern-card'>
-							<h4>Token-Based</h4>
-							<p>Carry a magic token that proves identity</p>
-							<code>JWT in localStorage</code>
-						</div>
-						<div className='pattern-card'>
-							<h4>OAuth/Social</h4>
-							<p>Another kingdom vouches for you</p>
-							<code>Google, GitHub login</code>
 						</div>
 					</div>
-				</div>
 
-				<div className='code-example'>
-					<pre>{`// Handling Different Auth States
-function ProtectedArea() {
-  const { user, loading } = useAuth();
+					<div className='code-example'>
+						<h3>The Ultimate Authentication Flow</h3>
+						<pre>{`// Marina & Aria's Complete Auth System
+import { useState, useEffect, useCallback } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+// The Master Authentication Hook
+function useMasterAuth() {
+  const navigate = useNavigate();
   const location = useLocation();
+  const { preserveState, restoreState } = useStatePreservation();
+  const { validateForm } = useFormValidation();
   
-  // Still checking credentials
-  if (loading) {
-    return <LoadingGuardian />;
-  }
-  
-  // Not authenticated
-  if (!user) {
-    return <Navigate to="/login" state={{ from: location }} />;
-  }
-  
-  // Wrong role/permissions
-  if (!hasRequiredRole(user, 'admin')) {
-    return <AccessDenied role={user.role} required="admin" />;
-  }
-  
-  // All checks passed!
-  return <AdminDashboard />;
-}
-
-// Persisting Auth Across Reloads
-function usePersistedAuth() {
-  const [user, setUser] = useState(() => {
-    // Check for saved session
-    const saved = localStorage.getItem('user');
-    return saved ? JSON.parse(saved) : null;
+  const [authState, setAuthState] = useState({
+    user: null,
+    loading: true,
+    journey: [],
+    lastActivity: null
   });
   
-  // Update storage when user changes
+  // Initialize with intelligence
   useEffect(() => {
-    if (user) {
-      localStorage.setItem('user', JSON.stringify(user));
-    } else {
-      localStorage.removeItem('user');
-    }
-  }, [user]);
+    const initAuth = async () => {
+      try {
+        // Check multiple auth sources
+        const sessionUser = await checkSessionAuth();
+        const tokenUser = await checkTokenAuth();
+        const user = sessionUser || tokenUser;
+        
+        if (user) {
+          // Aria's pattern: Restore complete state
+          const savedState = await restoreState(user.id);
+          if (savedState?.returnPath) {
+            navigate(savedState.returnPath);
+          }
+        }
+        
+        setAuthState(prev => ({
+          ...prev,
+          user,
+          loading: false
+        }));
+      } catch (error) {
+        console.error('Auth initialization failed:', error);
+        setAuthState(prev => ({ ...prev, loading: false }));
+      }
+    };
+    
+    initAuth();
+  }, []);
   
-  return [user, setUser];
+  // Intelligent login with full context
+  const login = useCallback(async (credentials) => {
+    try {
+      // Validate credentials (Western Quarter pattern)
+      const isValid = await validateForm(credentials);
+      if (!isValid) throw new Error('Invalid credentials format');
+      
+      // Authenticate
+      const user = await authenticateUser(credentials);
+      
+      // Track journey
+      const journey = [...authState.journey, {
+        action: 'login',
+        timestamp: Date.now(),
+        from: location.pathname
+      }];
+      
+      setAuthState({
+        user,
+        loading: false,
+        journey,
+        lastActivity: Date.now()
+      });
+      
+      // Navigate to intended destination or dashboard
+      const from = location.state?.from?.pathname || '/dashboard';
+      navigate(from, { replace: true });
+      
+      return { success: true, user };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  }, [authState.journey, location, navigate]);
+  
+  // Graceful logout with state preservation
+  const logout = useCallback(async () => {
+    if (authState.user) {
+      // Aria's pattern: Save state before logout
+      await preserveState(authState.user.id, {
+        lastRoute: location.pathname,
+        journey: authState.journey,
+        preferences: getUserPreferences()
+      });
+    }
+    
+    // Clear auth
+    await clearAllAuth();
+    setAuthState({
+      user: null,
+      loading: false,
+      journey: [],
+      lastActivity: null
+    });
+    
+    navigate('/goodbye', { 
+      state: { message: 'Thank you for visiting!' } 
+    });
+  }, [authState, location, navigate]);
+  
+  return {
+    ...authState,
+    login,
+    logout,
+    isAuthenticated: !!authState.user,
+    checkPermission: (permission) => 
+      authState.user?.permissions?.includes(permission),
+    trackActivity: () => 
+      setAuthState(prev => ({ ...prev, lastActivity: Date.now() }))
+  };
 }`}</pre>
+					</div>
+
+					<div className='masters-insight'>
+						<p className='story-paragraph'>
+							"This is the power of synthesis," Marina said
+							proudly. "Aria has taken every pattern she learned
+							and woven them into our authentication system."
+						</p>
+
+						<p className='story-paragraph'>
+							Aria nodded. "Authentication touches everything -
+							components render based on auth state, forms
+							validate credentials, effects track sessions, and
+							context provides access throughout the app. It's all
+							connected."
+						</p>
+					</div>
+				</div>
+				<div className='lesson-insight'>
+					<h3>The Masters' Lesson:</h3>
+					<p>
+						The trainees watched in awe as Marina and Aria
+						demonstrated the complete system. "Authentication isn't
+						just about security," Marina began.
+					</p>
+					<p>
+						"It's about creating intelligent, stateful experiences,"
+						Aria continued. "Every pattern I learned - from
+						component lifecycle to form validation - enhances how
+						users authenticate and navigate."
+					</p>
+					<p>
+						"Together," they concluded, "we've created
+						authentication that remembers, adapts, and guides users
+						seamlessly through their journey."
+					</p>
+					<p className='story-paragraph'>
+						Binary displayed the results: "Authentication system
+						optimized! State preservation: ACTIVE. Journey tracking:
+						ENABLED. User experience: EXCEPTIONAL!"
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does integrating state preservation, form
+						validation, and journey tracking enhance traditional
+						authentication flows?
+					</p>
+					<p className='story-paragraph'>
+						What advantages come from treating authentication as
+						part of the overall user journey rather than an isolated
+						security checkpoint?
+					</p>
+					<p className='story-paragraph'>
+						How has Aria's complete mastery of React patterns
+						transformed simple login/logout into an intelligent
+						authentication system?
+					</p>
 				</div>
 			</div>
-			<div className='lesson-insight'>
-				<h3>The Guardian Lesson:</h3>
-				<p>
-					"The beauty of the guardian's memory," Marina explained, "is
-					that it creates a seamless experience. Visitors don't lose
-					their way when asked to authenticate. They're simply taking
-					a detour to get their papers in order."
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why is preserving the intended destination important for
-					user experience? How would users feel if they had to
-					navigate again after logging in?
-				</p>
-				<p>
-					Consider the security implications: What information should
-					you store about a user's session? What should remain on the
-					server?
-				</p>
-			</div>
-		</div>
+		</>
 	);
-};
+
+	return <StoryContent content={content} />;
+}
 
 export default ChapterTwo;

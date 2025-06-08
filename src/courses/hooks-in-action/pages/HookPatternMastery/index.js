@@ -18,9 +18,16 @@ function HookPatternMastery() {
 
   return (
     <div className='lesson-container hook-pattern-mastery-container'>
+      <div className='lesson-opener'>
+        <p>At the apex of the Hooks Academy stood the Integration Sanctum - a spherical chamber 
+        where all hook knowledge converged. Energy streams from every workshop and tower flowed 
+        here, creating intricate patterns in the air. This was where students learned to weave 
+        individual hooks into masterful patterns that could handle any challenge.</p>
+      </div>
+      
       <h1 className='lesson-title'>Hook Pattern Mastery</h1>
       <p className='lesson-subtitle'>
-        Master the ultimate patterns of combining hooks for powerful and complex applications
+        Weave hooks into powerful patterns with Pattern Weaver Synthesis
       </p>
 
       <div className='chapter-navigation'>

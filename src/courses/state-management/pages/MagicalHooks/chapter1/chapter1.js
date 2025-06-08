@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const ChapterOne = () => {
 	const [currentState, setCurrentState] = useState(5);
+	const [showAdvanced, setShowAdvanced] = useState(false);
 
 	const handleStateChange = (newValue) => {
 		setCurrentState(newValue);
@@ -10,17 +11,41 @@ const ChapterOne = () => {
 	return (
 		<div className='chapter'>
 			<h2 className='chapter-title'>
-				Chapter 1: The Enchanted Potion of useState
+				Chapter 1: The Hook Forge Masters
 			</h2>
+
+			<div className='chapter-bridge'>
+				<p>The Hook Forge was unlike anything Aria had seen before. 
+				Glowing anvils rang with the sound of hooks being shaped, 
+				while crystalline tubes carried pure React energy to each 
+				workstation.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the mystical land of React, there lived a young wizard
-					named <strong>Hookie</strong> who was learning the art of
-					state sorcery. His mentor, an ancient sage named{' '}
-					<strong>useState</strong>, had shown him a magical potion
-					that could remember values and trigger re-renders when those
-					values changed.
+					"Welcome to the Hook Forge!" called out a sturdy figure in a 
+					leather apron, sparks flying from the hook she was crafting. 
+					"I'm <strong>Forge Master Hooke</strong>. Memnon sent word of 
+					your arrival."
+				</p>
+
+				<p className='story-paragraph'>
+					Binary chirped excitedly. "Master Hooke makes the most powerful 
+					hooks in all of React Kingdom! Each one grants unique abilities 
+					to functional components!"
+				</p>
+
+				<div className='character-intro'>
+					<h4>Forge Master Hooke</h4>
+					<p>Chief architect of React's hook system. Her workshop produces 
+					the magical tools that give functional components powers once 
+					reserved only for class components.</p>
+				</div>
+
+				<p className='story-paragraph'>
+					"You've already met my most popular creation," Hooke said with 
+					pride, holding up a gleaming hook. "The <strong>useState</strong> 
+					hook! But let me show you its full potential..."
 				</p>
 
 				<div className='potion-illustration'>
@@ -30,73 +55,74 @@ const ChapterOne = () => {
 							style={{ height: `${currentState * 10}%` }}>
 							<span className='potion-value'>{currentState}</span>
 						</div>
-						<div className='potion-label'>State Potion</div>
+						<div className='potion-label'>Hook Energy Level</div>
 					</div>
 				</div>
 
 				<p className='story-paragraph'>
-					"Remember, young wizard," said <strong>useState</strong>,
-					"this potion has two magical properties. First, it{' '}
-					<em>preserves</em> information between renders. Second, when
-					you change its contents using the setter function, it{' '}
-					<em>triggers</em> a re-render of your component."
+					She led Aria to a workbench where a crystalline apparatus 
+					glowed softly. "useState can hold any type of value - numbers, 
+					strings, objects, arrays. Watch how it preserves the value 
+					between renders and triggers updates when changed!"
 				</p>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: The Potion of Change
+					Interactive Exercise: The Energy Calibrator
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Adjust the state value using the buttons below to
-							see how the component re-renders when state changes!
-						</strong>
-					</p>
-				</div>
+				<p className='instruction'>
+					<strong>👉 Master Hooke points to a glowing energy meter.</strong>
+					"Every hook needs the right amount of React energy to function. 
+					Try calibrating this meter - notice how useState remembers the 
+					value and triggers updates!"
+				</p>
 
 				<div className='magic-controls'>
 					<button
 						className='magic-button decrease'
 						onClick={() => handleStateChange(currentState - 1)}
 						disabled={currentState <= 0}>
-						Decrease Value
+						Decrease Energy
 					</button>
 					<div className='current-state'>
-						Current state:{' '}
+						Current Energy:{' '}
 						<span className='state-value'>{currentState}</span>
 					</div>
 					<button
 						className='magic-button increase'
 						onClick={() => handleStateChange(currentState + 1)}
 						disabled={currentState >= 10}>
-						Increase Value
+						Increase Energy
 					</button>
 				</div>
 
-				<div className='code-visualization'>
+				<div className='code-example'>
+					<div className='scroll-header'>
+						<span>Energy Calibrator Implementation</span>
+						<span className='discovered-by'>Hook Forge Blueprint</span>
+					</div>
 					<pre className='magical-code'>
-						{`// This is how useState works
-function PotionComponent() {
-  // Declare a state variable named "potionLevel" with initial value of ${currentState}
-  const [potionLevel, setPotionLevel] = useState(${currentState});
+						{`// This is how the energy calibrator works
+function EnergyCalibrator() {
+  // Declare state with initial energy level of ${currentState}
+  const [energy, setEnergy] = useState(${currentState});
 
-  // Functions to update the state
-  const addIngredient = () => {
-    setPotionLevel(potionLevel + 1);  // This causes a re-render!
+  // Functions to adjust energy
+  const increaseEnergy = () => {
+    setEnergy(energy + 1);  // Triggers re-render!
   };
 
-  const removeIngredient = () => {
-    setPotionLevel(potionLevel - 1);  // This also causes a re-render!
+  const decreaseEnergy = () => {
+    setEnergy(energy - 1);  // Also triggers re-render!
   };
 
-  // The component re-renders when state changes
+  // Component re-renders when energy changes
   return (
     <div>
-      <h2>Potion Level: {potionLevel}</h2>
-      <button onClick={removeIngredient}>Remove</button>
-      <button onClick={addIngredient}>Add</button>
+      <h2>Energy Level: {energy}</h2>
+      <button onClick={decreaseEnergy}>Decrease</button>
+      <button onClick={increaseEnergy}>Increase</button>
     </div>
   );
 }`}
@@ -104,33 +130,85 @@ function PotionComponent() {
 				</div>
 			</div>
 
+			<div className='story-section'>
+				<p className='story-paragraph'>
+					"The beauty of useState," Master Hooke explained, "is its 
+					simplicity. It gives functional components memory - something 
+					only class components could do before hooks were invented!"
+				</p>
+
+				<button 
+					className='toggle-code-button'
+					onClick={() => setShowAdvanced(!showAdvanced)}>
+					{showAdvanced ? 'Hide' : 'Show'} Advanced Patterns
+				</button>
+
+				{showAdvanced && (
+					<div className='code-example'>
+						<div className='scroll-header'>
+							<span>Advanced useState Patterns</span>
+							<span className='discovered-by'>Master Hooke's Collection</span>
+						</div>
+						<pre>{`// Multiple state values
+function ComponentForge() {
+  const [temperature, setTemperature] = useState(0);
+  const [metal, setMetal] = useState('iron');
+  const [isForging, setIsForging] = useState(false);
+  
+  // State with object
+  const [forgeStatus, setForgeStatus] = useState({
+    itemsCreated: 0,
+    currentProject: 'hook',
+    efficiency: 100
+  });
+  
+  // Functional updates for complex logic
+  const increaseTemp = () => {
+    setTemperature(prev => Math.min(prev + 10, 100));
+  };
+}`}</pre>
+					</div>
+				)}
+
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 9 (Morning)</h4>
+					<p>The Hook Forge is incredible! I'm starting to understand that 
+					hooks are like magical tools - each one designed for a specific 
+					purpose. useState isn't just for simple values; it can handle 
+					complex data structures too. Master Hooke showed me how to use 
+					functional updates when the new state depends on the previous 
+					state. So much more to learn!</p>
+				</div>
+			</div>
+
 			<div className='practical-application'>
-				<h3>Practical Usage Patterns:</h3>
+				<h3>Common useState Applications in the Forge:</h3>
 				<div className='usage-pattern'>
-					<h4>1. Form Input State</h4>
+					<h4>1. Toggle Forge Furnace</h4>
 					<pre className='example-code'>
-						{`function MagicForm() {
-  const [name, setName] = useState("");
+						{`function ForgeFurnace() {
+  const [isOn, setIsOn] = useState(false);
   
   return (
-    <input 
-      value={name} 
-      onChange={e => setName(e.target.value)} 
-    />
+    <button onClick={() => setIsOn(!isOn)}>
+      Furnace: {isOn ? "ACTIVE 🔥" : "IDLE"}
+    </button>
   );
 }`}
 					</pre>
 				</div>
 				<div className='usage-pattern'>
-					<h4>2. Toggle State</h4>
+					<h4>2. Track Crafter's Name</h4>
 					<pre className='example-code'>
-						{`function MagicSwitch() {
-  const [isOn, setIsOn] = useState(false);
+						{`function CrafterRegistry() {
+  const [name, setName] = useState("");
   
   return (
-    <button onClick={() => setIsOn(!isOn)}>
-      {isOn ? "ON" : "OFF"}
-    </button>
+    <input 
+      value={name} 
+      onChange={e => setName(e.target.value)}
+      placeholder="Enter crafter name" 
+    />
   );
 }`}
 					</pre>
@@ -138,29 +216,27 @@ function PotionComponent() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The useState Lesson:</h3>
+				<h3>Master Hooke's Wisdom:</h3>
 				<p>
-					The useState hook is your spell for component memory. It
-					returns two values: the current state and a function to
-					update it. Every time this update function is called, React
-					will re-render the component with the new state value. The
-					useState hook can store any type of data: numbers, strings,
-					booleans, objects, arrays, or even functions. This powerful
-					yet simple hook forms the foundation of React's state
-					management capabilities and is essential for creating
-					dynamic, interactive applications.
+					The useState hook is the foundation of interactive components. 
+					It's simple yet powerful - give it an initial value, and it 
+					returns the current value and a setter function. Every time 
+					you call the setter, React knows to re-render with the new 
+					value. Remember: always use functional updates when the new 
+					state depends on the previous state! This ensures your updates 
+					work correctly even when multiple updates happen quickly.
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How does the potion metaphor help you understand the concept
-					of state in React?
+					How does the Hook Forge metaphor help you understand the 
+					purpose of React hooks?
 				</p>
 				<p>
-					Why is it important that state changes trigger re-renders?
-					What would happen if they didn't?
+					Why do you think functional updates (using the previous state) 
+					are important when multiple updates might happen quickly?
 				</p>
 			</div>
 		</div>

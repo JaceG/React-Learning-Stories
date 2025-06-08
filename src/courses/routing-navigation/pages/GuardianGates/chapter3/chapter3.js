@@ -1,16 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterThree = () => {
-	const { 
-		authState,
-		roleGates,
-		checkPermission,
-		gateStatuses 
-	} = useOutletContext();
+function ChapterThree() {
+	const { authState, roleGates, checkPermission, gateStatuses } =
+		useOutletContext();
 
 	const [selectedGate, setSelectedGate] = useState(null);
 	const [testingRole, setTestingRole] = useState('visitor');
+	const [masterDemonstration, setMasterDemonstration] = useState(false);
 
 	const kingdomAreas = [
 		{
@@ -18,24 +16,27 @@ const ChapterThree = () => {
 			name: 'Royal Treasury',
 			requiredRole: 'royal',
 			requiredPermissions: ['financial.read', 'treasury.access'],
-			description: 'Where the kingdom\'s wealth is stored',
-			icon: '👑'
+			description: "Where the kingdom's wealth is stored",
+			icon: '👑',
+			ariaIntegration: 'State-managed access tokens',
 		},
 		{
 			id: 'armory',
-			name: 'Knight\'s Armory',
+			name: "Knight's Armory",
 			requiredRole: 'knight',
 			requiredPermissions: ['weapons.access', 'armor.equip'],
-			description: 'Equipment for the kingdom\'s defenders',
-			icon: '⚔️'
+			description: "Equipment for the kingdom's defenders",
+			icon: '⚔️',
+			ariaIntegration: 'Component-based permission checks',
 		},
 		{
 			id: 'library',
-			name: 'Scholar\'s Library',
+			name: "Scholar's Library",
 			requiredRole: 'scholar',
 			requiredPermissions: ['books.read', 'scrolls.access'],
 			description: 'Ancient knowledge and wisdom',
-			icon: '📚'
+			icon: '📚',
+			ariaIntegration: 'Context-provided access levels',
 		},
 		{
 			id: 'market',
@@ -43,7 +44,8 @@ const ChapterThree = () => {
 			requiredRole: 'merchant',
 			requiredPermissions: ['trade.conduct', 'goods.sell'],
 			description: 'The bustling center of commerce',
-			icon: '🏪'
+			icon: '🏪',
+			ariaIntegration: 'Form-validated transactions',
 		},
 		{
 			id: 'workshop',
@@ -51,8 +53,9 @@ const ChapterThree = () => {
 			requiredRole: 'artisan',
 			requiredPermissions: ['tools.use', 'craft.create'],
 			description: 'Where master crafters work their magic',
-			icon: '🔨'
-		}
+			icon: '🔨',
+			ariaIntegration: 'Hook-managed tool access',
+		},
 	];
 
 	const roleHierarchy = {
@@ -62,451 +65,887 @@ const ChapterThree = () => {
 		artisan: { level: 2, inherits: ['visitor'] },
 		scholar: { level: 3, inherits: ['student', 'visitor'] },
 		knight: { level: 4, inherits: ['visitor'] },
-		royal: { level: 5, inherits: ['scholar', 'knight', 'merchant', 'artisan', 'student', 'visitor'] }
+		royal: {
+			level: 5,
+			inherits: [
+				'scholar',
+				'knight',
+				'merchant',
+				'artisan',
+				'student',
+				'visitor',
+			],
+		},
 	};
 
 	const checkAccess = (area, role) => {
 		// Check direct role match
 		if (area.requiredRole === role) return true;
-		
+
 		// Check role hierarchy
 		const roleData = roleHierarchy[role];
 		if (roleData && roleData.inherits.includes(area.requiredRole)) {
 			return true;
 		}
-		
+
 		// Royal can access everything
 		if (role === 'royal') return true;
-		
+
 		return false;
 	};
 
-	return (
-		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Hierarchy of Authority
-			</h2>
+	const content = (
+		<>
+			<div className='chapter'>
+				<h2 className='chapter-title'>
+					Chapter 3: The Ultimate Guardian Synthesis
+				</h2>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Master Param," Marina announced as they entered the grand Hall of 
-					Authority, "today you'll learn the most sophisticated aspect of the 
-					Guardian Gates - the <strong>hierarchy of permissions</strong>."
-				</p>
-
-				<p className='story-paragraph'>
-					The hall was magnificent, with gates of different materials lining the 
-					walls: bronze for merchants, silver for scholars, gold for knights, and 
-					diamond for royalty. Each gate shimmered with magical runes that could 
-					read not just identity, but <strong>authority levels</strong>.
-				</p>
-
-				<p className='story-paragraph'>
-					"You see," Marina explained, waving her hand to illuminate the intricate 
-					patterns, "not all authenticated citizens are equal. A merchant can enter 
-					the market but not the armory. A scholar can access the library but not 
-					the treasury. This is what we call <strong>role-based access control</strong>."
-				</p>
-
-				<p className='story-paragraph'>
-					She produced a set of crystal badges, each glowing with different colors. 
-					"These represent different roles in our kingdom. But here's the clever 
-					part - some roles <strong>inherit permissions</strong> from others. A 
-					royal, for instance, has all the permissions of every other role combined."
-				</p>
-
-				<div className='role-visualization'>
-					<h3>Kingdom Authority Hierarchy</h3>
-					<div className='hierarchy-pyramid'>
-						{Object.entries(roleHierarchy)
-							.sort((a, b) => b[1].level - a[1].level)
-							.map(([role, data]) => (
-								<div 
-									key={role}
-									className={`hierarchy-level level-${data.level} ${testingRole === role ? 'active' : ''}`}
-									onClick={() => setTestingRole(role)}>
-									<div className='role-badge'>
-										<h4>{role.charAt(0).toUpperCase() + role.slice(1)}</h4>
-										<span className='level-indicator'>Level {data.level}</span>
-									</div>
-									{data.inherits.length > 0 && (
-										<div className='inheritance-info'>
-											Inherits from: {data.inherits.join(', ')}
-										</div>
-									)}
-								</div>
-							))}
-					</div>
-				</div>
-
-				<div className='gates-chamber'>
-					<h3>Test the Guardian Gates</h3>
-					<p className='current-role'>
-						Testing as: <strong>{testingRole.charAt(0).toUpperCase() + testingRole.slice(1)}</strong>
+				<div className='chapter-bridge'>
+					<p>
+						The grand Hall of Authority buzzed with anticipation.
+						Marina and Aria stood before the assembled masters from
+						every quarter of the kingdom, ready to unveil their
+						masterwork - a guardian system that integrated every
+						pattern Aria had learned on her journey.
 					</p>
-					
-					<div className='kingdom-areas'>
-						{kingdomAreas.map(area => {
-							const hasAccess = checkAccess(area, testingRole);
-							return (
-								<div 
-									key={area.id}
-									className={`area-gate ${hasAccess ? 'accessible' : 'locked'} ${selectedGate?.id === area.id ? 'selected' : ''}`}
-									onClick={() => setSelectedGate(area)}>
-									<div className='gate-icon'>{area.icon}</div>
-									<h4>{area.name}</h4>
-									<p className='required-role'>Requires: {area.requiredRole}</p>
-									<div className='access-indicator'>
-										{hasAccess ? '✓ Access Granted' : '✗ Access Denied'}
+				</div>
+
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"Welcome, masters," Marina began, her voice carrying
+						authority and warmth. "Today, Master Aria and I will
+						demonstrate how authentication and authorization can
+						become truly intelligent when combined with all React
+						patterns."
+					</p>
+
+					<p className='story-paragraph'>
+						Aria stepped forward, Binary projecting a complex
+						authorization matrix. "In the Northern Quarter, I
+						learned that routes are components. In the Eastern, that
+						permissions are state. In the Southern, how authority
+						flows through props. In the Western, how validation
+						guards access. Watch as we unite them all."
+					</p>
+
+					<p className='story-paragraph'>
+						Master Aurelius nodded approvingly from the audience.
+						"Show us this synthesis, Aria. How have you transformed
+						our simple permission checks?"
+					</p>
+
+					<p className='story-paragraph'>
+						"It's not just about roles anymore," Aria explained,
+						activating the demonstration. "It's about creating an
+						intelligent system that understands context, preserves
+						state, validates dynamically, and adapts to user
+						behavior. Marina and I call it the{' '}
+						<strong>Hierarchical Intelligence Pattern</strong>."
+					</p>
+
+					<p className='story-paragraph'>
+						Binary displayed the integration: "System online!
+						Components: INTEGRATED. State: MANAGED. Props: FLOWING.
+						Hooks: ACTIVE. Forms: VALIDATED. Authorization:
+						REVOLUTIONARY!"
+					</p>
+					<div className='role-visualization master-demonstration'>
+						<h3>The Intelligent Authority System</h3>
+
+						{!masterDemonstration && (
+							<button
+								className='master-demo-button'
+								onClick={() => setMasterDemonstration(true)}>
+								✨ Activate Master Demonstration
+							</button>
+						)}
+
+						<div className='hierarchy-pyramid enhanced'>
+							{Object.entries(roleHierarchy)
+								.sort((a, b) => b[1].level - a[1].level)
+								.map(([role, data]) => (
+									<div
+										key={role}
+										className={`hierarchy-level level-${
+											data.level
+										} ${
+											testingRole === role ? 'active' : ''
+										}`}
+										onClick={() => setTestingRole(role)}>
+										<div className='role-badge'>
+											<h4>
+												{role.charAt(0).toUpperCase() +
+													role.slice(1)}
+											</h4>
+											<span className='level-indicator'>
+												Level {data.level}
+											</span>
+										</div>
+										{data.inherits.length > 0 && (
+											<div className='inheritance-info'>
+												Inherits from:{' '}
+												{data.inherits.join(', ')}
+											</div>
+										)}
+										{masterDemonstration && (
+											<div className='aria-enhancement'>
+												<p>
+													Aria's Pattern:{' '}
+													{role === 'royal'
+														? 'Context + All Patterns'
+														: role === 'knight'
+														? 'State-managed combat access'
+														: role === 'scholar'
+														? 'Hook-based knowledge gates'
+														: role === 'merchant'
+														? 'Form-validated commerce'
+														: role === 'artisan'
+														? 'Component tool access'
+														: 'Basic prop flow'}
+												</p>
+											</div>
+										)}
 									</div>
-								</div>
-							);
-						})}
+								))}
+						</div>
 					</div>
 
-					{selectedGate && (
-						<div className='permission-details'>
-							<h4>{selectedGate.name} Requirements</h4>
-							<p>{selectedGate.description}</p>
-							<div className='permission-list'>
-								<h5>Required Permissions:</h5>
-								<ul>
-									{selectedGate.requiredPermissions.map(perm => (
-										<li key={perm}>{perm}</li>
-									))}
-								</ul>
-							</div>
+					<div className='gates-chamber master-system'>
+						<h3>The Marina-Aria Guardian System</h3>
+						<p className='current-role enhanced'>
+							Testing as:{' '}
+							<strong>
+								{testingRole.charAt(0).toUpperCase() +
+									testingRole.slice(1)}
+							</strong>
+							{masterDemonstration && (
+								<span className='master-note'>
+									{' '}
+									- with Aria's integrated patterns
+								</span>
+							)}
+						</p>
+
+						<div className='kingdom-areas intelligent'>
+							{kingdomAreas.map((area) => {
+								const hasAccess = checkAccess(
+									area,
+									testingRole
+								);
+								return (
+									<div
+										key={area.id}
+										className={`area-gate ${
+											hasAccess ? 'accessible' : 'locked'
+										} ${
+											selectedGate?.id === area.id
+												? 'selected'
+												: ''
+										}`}
+										onClick={() => setSelectedGate(area)}>
+										<div className='gate-icon'>
+											{area.icon}
+										</div>
+										<h4>{area.name}</h4>
+										<p className='required-role'>
+											Requires: {area.requiredRole}
+										</p>
+										{masterDemonstration && (
+											<p className='aria-integration'>
+												{area.ariaIntegration}
+											</p>
+										)}
+										<div className='access-indicator'>
+											{hasAccess
+												? '✓ Access Granted'
+												: '✗ Access Denied'}
+										</div>
+									</div>
+								);
+							})}
 						</div>
-					)}
-				</div>
-			</div>
 
-			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Implementing Role-Based Authorization
-				</h3>
+						{selectedGate && (
+							<div className='permission-details enhanced'>
+								<h4>{selectedGate.name} Requirements</h4>
+								<p>{selectedGate.description}</p>
+								<div className='permission-list'>
+									<h5>Marina's Security Requirements:</h5>
+									<ul>
+										{selectedGate.requiredPermissions.map(
+											(perm) => (
+												<li key={perm}>{perm}</li>
+											)
+										)}
+									</ul>
+								</div>
+								{masterDemonstration && (
+									<div className='aria-additions'>
+										<h5>Aria's Pattern Integration:</h5>
+										<p>{selectedGate.ariaIntegration}</p>
+									</div>
+								)}
+							</div>
+						)}
+					</div>
 
-				<div className='code-example'>
-					<pre>{`// Role-Based Route Protection
-import { Navigate } from 'react-router-dom';
+					<div className='masters-collaboration'>
+						<p className='story-paragraph'>
+							"Watch carefully," Aria said to the assembled
+							masters. "Each gate doesn't just check roles - it
+							integrates patterns from every quarter. The Treasury
+							uses state-managed tokens. The Library leverages
+							context providers. The Market validates with forms."
+						</p>
 
-function RequireRole({ children, allowedRoles }) {
-  const { user } = useAuth();
-  
-  // Check if user has any of the allowed roles
-  const hasRequiredRole = user && allowedRoles.includes(user.role);
-  
-  if (!user) {
-    // Not authenticated at all
-    return <Navigate to="/login" />;
-  }
-  
-  if (!hasRequiredRole) {
-    // Authenticated but wrong role
-    return <Navigate to="/unauthorized" />;
-  }
-  
-  return children;
-}
-
-// Usage in Routes
-<Route 
-  path="/admin" 
-  element={
-    <RequireRole allowedRoles={['admin', 'super-admin']}>
-      <AdminDashboard />
-    </RequireRole>
-  } 
-/>
-
-<Route 
-  path="/moderator" 
-  element={
-    <RequireRole allowedRoles={['moderator', 'admin']}>
-      <ModeratorPanel />
-    </RequireRole>
-  } 
-/>`}</pre>
+						<p className='story-paragraph'>
+							Marina added, "This is the future of authorization -
+							not just checking permissions, but creating
+							intelligent systems that understand context,
+							preserve state, and adapt to user behavior."
+						</p>
+					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Advanced Permission System
-const permissions = {
-  // Resource: Actions
-  posts: ['create', 'read', 'update', 'delete'],
-  users: ['read', 'update', 'ban'],
-  comments: ['create', 'read', 'delete'],
-  settings: ['read', 'update']
-};
+				<div className='interactive-section'>
+					<h3 className='section-title'>
+						The Marina-Aria Authorization Architecture
+					</h3>
+					<p className='collaboration-note'>
+						The masters demonstrate their complete authorization
+						system...
+					</p>
 
-const rolePermissions = {
-  guest: {
-    posts: ['read'],
-    comments: ['read']
-  },
-  user: {
-    posts: ['create', 'read'],
-    comments: ['create', 'read', 'delete'], // own comments only
-    users: ['read'] // own profile only
-  },
-  moderator: {
-    posts: ['read', 'update', 'delete'],
-    comments: ['read', 'delete'],
-    users: ['read', 'ban']
-  },
-  admin: {
-    posts: ['create', 'read', 'update', 'delete'],
-    users: ['read', 'update', 'ban'],
-    comments: ['create', 'read', 'delete'],
-    settings: ['read', 'update']
-  }
-};
+					<div className='code-example collaborative'>
+						<h3>Intelligent Role-Based Protection</h3>
+						<pre>{`// Marina's Security + Aria's Intelligence
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth, usePermissions, useStateTracking } from './master-hooks';
 
-// Permission Checking Hook
-function usePermission() {
-  const { user } = useAuth();
+// The Complete Guardian Pattern
+function IntelligentRoleGuard({ 
+  children, 
+  allowedRoles,
+  requiredPermissions = [],
+  validateContext = null,
+  preserveOnRedirect = true 
+}) {
+  // Marina's authentication
+  const { user, isLoading } = useAuth();
+  const location = useLocation();
   
-  const can = (resource, action) => {
+  // Aria's state management
+  const { preserveCurrentState } = useStateTracking();
+  const { checkPermissions } = usePermissions();
+  
+  // Aria's context validation
+  const contextValid = validateContext ? validateContext(user) : true;
+  
+  // Check role with hierarchy
+  const hasRequiredRole = useMemo(() => {
     if (!user) return false;
     
-    const userPermissions = rolePermissions[user.role];
-    if (!userPermissions) return false;
+    // Direct role match
+    if (allowedRoles.includes(user.role)) return true;
     
-    const resourcePermissions = userPermissions[resource];
-    if (!resourcePermissions) return false;
+    // Check inherited roles (Aria's pattern)
+    return user.inheritedRoles?.some(role => 
+      allowedRoles.includes(role)
+    );
+  }, [user, allowedRoles]);
+  
+  // Check granular permissions
+  const hasRequiredPermissions = useMemo(() => {
+    if (requiredPermissions.length === 0) return true;
+    return checkPermissions(user, requiredPermissions);
+  }, [user, requiredPermissions]);
+  
+  // Loading state (Eastern Quarter pattern)
+  if (isLoading) {
+    return (
+      <div className="guardian-loading">
+        <LoadingCrystal />
+        <p>Verifying authorization...</p>
+      </div>
+    );
+  }
+  
+  // Not authenticated
+  if (!user) {
+    if (preserveOnRedirect) {
+      preserveCurrentState();
+    }
+    return (
+      <Navigate 
+        to="/login" 
+        state={{ 
+          from: location,
+          requiredRoles: allowedRoles 
+        }} 
+      />
+    );
+  }
+  
+  // Wrong role
+  if (!hasRequiredRole) {
+    return (
+      <Navigate 
+        to="/upgrade-access" 
+        state={{ 
+          currentRole: user.role,
+          requiredRoles: allowedRoles,
+          from: location 
+        }}
+      />
+    );
+  }
+  
+  // Missing permissions
+  if (!hasRequiredPermissions) {
+    return (
+      <Navigate 
+        to="/insufficient-permissions" 
+        state={{ 
+          missing: requiredPermissions.filter(
+            p => !user.permissions?.includes(p)
+          )
+        }}
+      />
+    );
+  }
+  
+  // Context validation failed
+  if (!contextValid) {
+    return (
+      <Navigate 
+        to="/context-required" 
+        state={{ from: location }}
+      />
+    );
+  }
+  
+  // All checks passed!
+  return children;
+}`}</pre>
+					</div>
+
+					<div className='code-example'>
+						<h3>The Complete Permission System</h3>
+						<pre>{`// Aria's Intelligent Permission Architecture
+import { createContext, useContext, useState, useEffect } from 'react';
+
+// Permission Context (Southern Quarter pattern)
+const PermissionContext = createContext();
+
+export function IntelligentPermissionProvider({ children }) {
+  const { user } = useAuth();
+  const [permissions, setPermissions] = useState({});
+  const [permissionCache, setPermissionCache] = useState({});
+  
+  // Aria's pattern: Dynamic permission loading
+  useEffect(() => {
+    if (user) {
+      loadUserPermissions(user).then(perms => {
+        setPermissions(perms);
+      });
+    }
+  }, [user]);
+  
+  // Marina's security + Aria's intelligence
+  const can = (resource, action, context = {}) => {
+    // Check cache first (performance optimization)
+    const cacheKey = \`\${resource}:\${action}:\${JSON.stringify(context)}\`;
+    if (permissionCache[cacheKey] !== undefined) {
+      return permissionCache[cacheKey];
+    }
+    // Hierarchical permission check
+    const hasPermission = checkHierarchicalPermission(
+      user,
+      permissions,
+      resource,
+      action,
+      context
+    );
     
-    return resourcePermissions.includes(action);
+    // Cache result
+    setPermissionCache(prev => ({
+      ...prev,
+      [cacheKey]: hasPermission
+    }));
+    
+    return hasPermission;
   };
   
-  return { can };
-}
-
-// Usage in Components
-function PostActions({ post }) {
-  const { can } = usePermission();
-  const { user } = useAuth();
+  // Aria's addition: Contextual permissions
+  const canWithContext = (resource, action, entityContext) => {
+    // Check basic permission
+    if (!can(resource, action)) return false;
+    
+    // Check ownership
+    if (entityContext.ownerId && user.id === entityContext.ownerId) {
+      return true;
+    }
+    
+    // Check department/team access
+    if (entityContext.departmentId && 
+        user.departments?.includes(entityContext.departmentId)) {
+      return true;
+    }
+    
+    // Check temporal permissions
+    if (entityContext.timeRestricted) {
+      return checkTimeBasedAccess(user, entityContext);
+    }
+    
+    return can(resource, action);
+  };
+  
+  // Bulk permission checking (for UI rendering)
+  const canMany = (checks) => {
+    return checks.map(({ resource, action, context }) => 
+      can(resource, action, context)
+    );
+  };
   
   return (
-    <div className="post-actions">
-      {can('posts', 'update') && (
-        <button>Edit Post</button>
-      )}
-      
-      {can('posts', 'delete') && (
-        <button>Delete Post</button>
-      )}
-      
-      {/* Ownership check */}
-      {user?.id === post.authorId && (
-        <button>Edit My Post</button>
-      )}
-    </div>
+    <PermissionContext.Provider value={{
+      can,
+      canWithContext,
+      canMany,
+      permissions,
+      refreshPermissions: () => loadUserPermissions(user)
+    }}>
+      {children}
+    </PermissionContext.Provider>
   );
-}`}</pre>
-				</div>
+}
 
-				<div className='authorization-patterns'>
-					<h3>Common Authorization Patterns</h3>
-					<div className='pattern-cards'>
-						<div className='pattern-card'>
-							<h4>Role-Based (RBAC)</h4>
-							<p>Users have roles, roles have permissions</p>
-							<code>user → role → permissions</code>
+// The Master Permission Hook
+export function useIntelligentPermissions() {
+  const context = useContext(PermissionContext);
+  const { trackAction } = useAnalytics();
+  
+  // Track permission checks for security auditing
+  const canWithAudit = (resource, action, context) => {
+    const result = context.can(resource, action, context);
+    
+    trackAction('permission_check', {
+      resource,
+      action,
+      granted: result,
+      timestamp: Date.now()
+    });
+    
+    return result;
+  };
+  
+  return {
+    ...context,
+    can: canWithAudit
+  };
+}`}</pre>
+					</div>
+
+					<div className='authorization-patterns enhanced'>
+						<h3>Marina & Aria's Authorization Patterns</h3>
+						<div className='pattern-cards master-edition'>
+							<div className='pattern-card'>
+								<h4>Intelligent RBAC</h4>
+								<p className='marina'>
+									Marina: Role hierarchies
+								</p>
+								<p className='aria'>
+									Aria: + State preservation
+								</p>
+								<code>user → role → context → permissions</code>
+							</div>
+							<div className='pattern-card'>
+								<h4>Dynamic ABAC</h4>
+								<p className='marina'>
+									Marina: Attribute checks
+								</p>
+								<p className='aria'>Aria: + Hook-based logic</p>
+								<code>useAttributeAuth(user, resource)</code>
+							</div>
+							<div className='pattern-card'>
+								<h4>Stateful Ownership</h4>
+								<p className='marina'>
+									Marina: Owner validation
+								</p>
+								<p className='aria'>Aria: + Context tracking</p>
+								<code>useOwnership(resource, context)</code>
+							</div>
+							<div className='pattern-card'>
+								<h4>Reactive Time-Based</h4>
+								<p className='marina'>Marina: Time windows</p>
+								<p className='aria'>Aria: + Effect updates</p>
+								<code>useTimeBasedAccess(schedule)</code>
+							</div>
 						</div>
-						<div className='pattern-card'>
-							<h4>Attribute-Based (ABAC)</h4>
-							<p>Decisions based on attributes</p>
-							<code>if (user.department === resource.department)</code>
-						</div>
-						<div className='pattern-card'>
-							<h4>Ownership-Based</h4>
-							<p>Users can only modify their own resources</p>
-							<code>if (user.id === resource.ownerId)</code>
-						</div>
-						<div className='pattern-card'>
-							<h4>Time-Based</h4>
-							<p>Access varies by time or context</p>
-							<code>if (isBusinessHours() && user.shift === 'day')</code>
+						<div className='pattern-explanation'>
+							<p className='story-paragraph'>
+								"Each pattern builds on traditional
+								authorization," Aria explained. "We're not just
+								checking permissions - we're creating reactive,
+								intelligent systems that adapt to context and
+								user behavior."
+							</p>
 						</div>
 					</div>
-				</div>
 
-				<div className='code-example'>
-					<pre>{`// Creating a Flexible Authorization System
-class AuthorizationService {
+					<div className='code-example'>
+						<h3>The Ultimate Authorization System</h3>
+						<pre>{`// Marina & Aria's Complete Authorization Architecture
+import { useState, useEffect, useCallback, useMemo } from 'react';
+
+// The Master Authorization Service
+class IntelligentAuthorizationService {
   constructor() {
     this.policies = new Map();
+    this.cache = new Map();
+    this.subscribers = new Set();
   }
   
-  // Register authorization policies
-  register(resource, action, policy) {
+  // Register intelligent policies
+  register(resource, action, policy, options = {}) {
     const key = \`\${resource}:\${action}\`;
-    this.policies.set(key, policy);
+    
+    // Aria's enhancement: Policy metadata
+    this.policies.set(key, {
+      policy,
+      cacheable: options.cacheable ?? true,
+      ttl: options.ttl ?? 300000, // 5 min default
+      dependencies: options.dependencies ?? [],
+      description: options.description
+    });
+    
+    // Notify subscribers of policy change
+    this.notifySubscribers(key);
   }
   
-  // Check authorization
+  // Check authorization with intelligence
   async authorize(user, resource, action, context = {}) {
     const key = \`\${resource}:\${action}\`;
-    const policy = this.policies.get(key);
+    const policyData = this.policies.get(key);
     
-    if (!policy) {
+    // Check wildcard policies first
+    const wildcardPolicy = this.policies.get('*:*');
+    if (wildcardPolicy) {
+      const wildcardResult = await wildcardPolicy.policy(user, context);
+      if (wildcardResult) return true;
+    }
+    
+    if (!policyData) {
       return false; // No policy = no access
     }
     
-    return await policy(user, context);
-  }
-}
-
-// Define policies
-const authService = new AuthorizationService();
-
-// Admin can do anything
-authService.register('*', '*', (user) => 
-  user.role === 'admin'
-);
-
-// Users can edit their own posts
-authService.register('post', 'edit', (user, { post }) => 
-  user.id === post.authorId || user.role === 'moderator'
-);
-
-// Time-based access to reports
-authService.register('report', 'view', (user) => {
-  const hour = new Date().getHours();
-  const isBusinessHours = hour >= 9 && hour < 17;
-  return user.role === 'analyst' && isBusinessHours;
-});
-
-// Component using authorization
-function SecureComponent({ resource, action, children }) {
-  const { user } = useAuth();
-  const [authorized, setAuthorized] = useState(false);
-  
-  useEffect(() => {
-    authService.authorize(user, resource, action)
-      .then(setAuthorized);
-  }, [user, resource, action]);
-  
-  if (!authorized) return null;
-  return children;
-}`}</pre>
-				</div>
-
-				<div className='hierarchical-roles'>
-					<h3>Implementing Role Hierarchy</h3>
-					<div className='code-example'>
-						<pre>{`// Role Hierarchy Implementation
-const roleHierarchy = {
-  superAdmin: {
-    level: 100,
-    inherits: ['admin', 'moderator', 'user']
-  },
-  admin: {
-    level: 80,
-    inherits: ['moderator', 'user']
-  },
-  moderator: {
-    level: 50,
-    inherits: ['user']
-  },
-  user: {
-    level: 10,
-    inherits: []
-  },
-  guest: {
-    level: 0,
-    inherits: []
-  }
-};
-
-function hasRole(userRole, requiredRole) {
-  // Direct match
-  if (userRole === requiredRole) return true;
-  
-  // Check inherited roles
-  const userRoleData = roleHierarchy[userRole];
-  if (!userRoleData) return false;
-  
-  return userRoleData.inherits.includes(requiredRole);
-}
-
-// Enhanced Route Guard
-function RouteGuard({ 
-  children, 
-  requiredRole, 
-  requiredPermissions = [],
-  fallback = "/unauthorized" 
-}) {
-  const { user } = useAuth();
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    if (!user) {
-      navigate('/login');
-      return;
+    // Check cache (Aria's optimization)
+    if (policyData.cacheable) {
+      const cacheKey = \`\${key}:\${user.id}:\${JSON.stringify(context)}\`;
+      const cached = this.cache.get(cacheKey);
+      
+      if (cached && Date.now() - cached.timestamp < policyData.ttl) {
+        return cached.result;
+      }
     }
     
-    const hasRequiredRole = hasRole(user.role, requiredRole);
-    const hasPermissions = requiredPermissions.every(
-      perm => user.permissions?.includes(perm)
+    // Execute policy with dependency injection
+    const deps = await this.resolveDependencies(policyData.dependencies);
+    const result = await policyData.policy(user, context, deps);
+    
+    // Cache result
+    if (policyData.cacheable) {
+      const cacheKey = \`\${key}:\${user.id}:\${JSON.stringify(context)}\`;
+      this.cache.set(cacheKey, {
+        result,
+        timestamp: Date.now()
+      });
+    }
+    
+    return result;
+  }
+  
+  // Aria's addition: Reactive authorization
+  subscribe(callback) {
+    this.subscribers.add(callback);
+    return () => this.subscribers.delete(callback);
+  }
+  
+  notifySubscribers(key) {
+    this.subscribers.forEach(cb => cb(key));
+  }
+}
+
+// Initialize the service
+const authService = new IntelligentAuthorizationService();
+
+// Register intelligent policies
+
+// Marina's base: Admin can do anything
+authService.register('*', '*', 
+  (user) => user.role === 'admin',
+  { description: 'Global admin access' }
+);
+
+// Aria's pattern: Contextual post editing
+authService.register('post', 'edit', 
+  async (user, { post }, { permissionService }) => {
+    // Owner can always edit
+    if (user.id === post.authorId) return true;
+    
+    // Check temporal permissions
+    if (post.locked && !user.canUnlock) return false;
+    
+    // Check department permissions
+    if (post.departmentId && 
+        await permissionService.canAccessDepartment(user, post.departmentId)) {
+      return true;
+    }
+    
+    // Moderators can edit public posts
+    return user.role === 'moderator' && post.visibility === 'public';
+  },
+  { 
+    cacheable: true,
+    ttl: 60000,
+    dependencies: ['permissionService'],
+    description: 'Intelligent post editing policy'
+  }
+);
+
+// Time and context aware reporting
+authService.register('report', 'view',
+  async (user, { reportType }, { timeService, analyticsService }) => {
+    // Check basic role
+    if (!['analyst', 'manager', 'admin'].includes(user.role)) {
+      return false;
+    }
+    
+    // Time-based access
+    const currentTime = timeService.getCurrentTime();
+    const isBusinessHours = currentTime.hour >= 9 && currentTime.hour < 17;
+    
+    // Analysts only during business hours
+    if (user.role === 'analyst' && !isBusinessHours) {
+      return false;
+    }
+    
+    // Check report-specific permissions
+    const hasReportAccess = await analyticsService.checkReportAccess(
+      user,
+      reportType
     );
     
-    if (!hasRequiredRole || !hasPermissions) {
-      navigate(fallback);
-    }
-  }, [user, requiredRole, requiredPermissions]);
+    return hasReportAccess;
+  },
+  {
+    cacheable: false, // Time-sensitive, don't cache
+    description: 'Time and role based report access'
+  }
+);
+
+// The Master Authorization Hook
+export function useMasterAuthorization() {
+  const { user } = useAuth();
+  const [policies, setPolicies] = useState([]);
   
-  return children;
+  // Subscribe to policy changes
+  useEffect(() => {
+    const unsubscribe = authService.subscribe((changedKey) => {
+      // Re-evaluate permissions when policies change
+      setPolicies(prev => [...prev, changedKey]);
+    });
+    
+    return unsubscribe;
+  }, []);
+  
+  const can = useCallback(async (resource, action, context = {}) => {
+    if (!user) return false;
+    
+    try {
+      return await authService.authorize(user, resource, action, context);
+    } catch (error) {
+      console.error('Authorization error:', error);
+      return false;
+    }
+  }, [user]);
+  
+  // Bulk permission checking
+  const canMany = useCallback(async (checks) => {
+    const results = await Promise.all(
+      checks.map(({ resource, action, context }) => 
+        can(resource, action, context)
+      )
+    );
+    
+    return checks.map((check, index) => ({
+      ...check,
+      allowed: results[index]
+    }));
+  }, [can]);
+  
+  // UI helper: Hide/show based on permissions
+  const PermissionGate = useCallback(({ 
+    resource, 
+    action, 
+    context = {},
+    children,
+    fallback = null 
+  }) => {
+    const [allowed, setAllowed] = useState(false);
+    const [checking, setChecking] = useState(true);
+    
+    useEffect(() => {
+      can(resource, action, context).then(result => {
+        setAllowed(result);
+        setChecking(false);
+      });
+    }, [resource, action, context]);
+    
+    if (checking) return null;
+    return allowed ? children : fallback;
+  }, [can]);
+  
+  return {
+    can,
+    canMany,
+    PermissionGate,
+    refreshPolicies: () => authService.clearCache()
+  };
 }`}</pre>
 					</div>
+
+					<div className='masters-finale'>
+						<h3>The Grand Authorization Synthesis</h3>
+						<p className='story-paragraph'>
+							The assembled masters watched in awe as Marina and
+							Aria demonstrated the complete system. Master
+							Aurelius stood and applauded. "Incredible! You've
+							taken our simple role checks and transformed them
+							into an intelligent, reactive authorization system."
+						</p>
+
+						<p className='story-paragraph'>
+							The Council of Hooks leader added, "The way you've
+							integrated hooks for permission checking, state for
+							caching, context for distribution, and effects for
+							reactivity... it's masterful."
+						</p>
+
+						<p className='story-paragraph'>
+							Marina smiled at Aria. "This is what true
+							collaboration looks like. By combining your
+							comprehensive React knowledge with navigation
+							security, we've created something neither of us
+							could have built alone."
+						</p>
+
+						<p className='story-paragraph'>
+							Aria addressed the room. "Every pattern has its
+							place. Components render based on permissions. State
+							tracks authorization. Props pass access rights.
+							Hooks manage permission logic. Forms validate before
+							granting access. And routes orchestrate it all. This
+							is the true power of React - everything connects."
+						</p>
+					</div>
+				</div>
+
+				<div className='best-practices enhanced'>
+					<h3>Marina & Aria's Authorization Principles</h3>
+					<div className='practice-list master-edition'>
+						<div className='practice-item'>
+							<h4>Intelligent Least Privilege</h4>
+							<p className='marina'>
+								Marina: Minimal necessary permissions
+							</p>
+							<p className='aria'>
+								Aria: + Context-aware adjustments
+							</p>
+						</div>
+						<div className='practice-item'>
+							<h4>Full-Stack Validation</h4>
+							<p className='marina'>
+								Marina: Server verification required
+							</p>
+							<p className='aria'>
+								Aria: + Client optimization for UX
+							</p>
+						</div>
+						<div className='practice-item'>
+							<h4>Reactive Audit System</h4>
+							<p className='marina'>Marina: Log all decisions</p>
+							<p className='aria'>
+								Aria: + Real-time monitoring hooks
+							</p>
+						</div>
+						<div className='practice-item'>
+							<h4>Progressive Enhancement</h4>
+							<p className='marina'>
+								Marina: Hide unauthorized elements
+							</p>
+							<p className='aria'>
+								Aria: + Predictive permission loading
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div className='lesson-insight'>
+					<h3>The Ultimate Guardian Wisdom:</h3>
+					<p>
+						Marina and Aria stood together, their combined wisdom
+						resonating through the hall. "Authentication asks 'Who
+						are you?'" Marina began.
+					</p>
+					<p>
+						"Authorization asks 'What can you do?'" Aria continued.
+					</p>
+					<p>
+						"But intelligent authorization," they said in unison,
+						"asks 'What should you be able to do in this context, at
+						this time, with your history, considering the current
+						state of the application?'"
+					</p>
+					<p className='story-paragraph'>
+						Binary's final projection lit up the chamber: "Guardian
+						Gates evolution complete! Basic checks: TRANSCENDED.
+						Intelligent authorization: ACHIEVED. Marina + Aria
+						collaboration: LEGENDARY. Future apprentices will study
+						this system for generations!"
+					</p>
+					<p className='story-paragraph'>
+						The assembled masters rose in applause. Aria had not
+						just learned to protect routes - she had revolutionized
+						how the entire kingdom thought about authorization.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How does integrating all React patterns (components,
+						state, props, hooks, forms, and routing) create a more
+						intelligent authorization system than traditional role
+						checks?
+					</p>
+					<p className='story-paragraph'>
+						What benefits come from treating authorization as a
+						reactive, contextual system rather than static
+						permission lists?
+					</p>
+					<p className='story-paragraph'>
+						How has Aria's journey through every quarter of the
+						React Kingdom prepared her to create this revolutionary
+						authorization architecture with Marina?
+					</p>
 				</div>
 			</div>
-
-			<div className='best-practices'>
-				<h3>Guardian Gate Best Practices</h3>
-				<div className='practice-list'>
-					<div className='practice-item'>
-						<h4>Principle of Least Privilege</h4>
-						<p>Grant only the minimum permissions necessary for each role</p>
-					</div>
-					<div className='practice-item'>
-						<h4>Server-Side Validation</h4>
-						<p>Never trust client-side authorization alone - always verify on the server</p>
-					</div>
-					<div className='practice-item'>
-						<h4>Audit Trails</h4>
-						<p>Log authorization decisions for security monitoring</p>
-					</div>
-					<div className='practice-item'>
-						<h4>Graceful Degradation</h4>
-						<p>Hide or disable UI elements users can't access rather than showing errors</p>
-					</div>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Guardian Lesson:</h3>
-				<p>
-					"Remember, Param - authentication asks 'Who are you?' while authorization 
-					asks 'What can you do?' Both are essential for a secure kingdom. Never 
-					confuse identity with permission!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How would you design an authorization system that balances security with 
-					user experience? Consider how overly restrictive permissions might frustrate 
-					users, while overly permissive ones could compromise security.
-				</p>
-				<p>
-					What strategies would you use to manage complex permission hierarchies in 
-					a large application with many different user types and resources?
-				</p>
-			</div>
-		</div>
+		</>
 	);
-};
+
+	return <StoryContent content={content} />;
+}
 
 export default ChapterThree;

@@ -18,9 +18,16 @@ function DataRivers() {
 
   return (
     <div className='lesson-container data-rivers-container'>
+      <div className='lesson-opener'>
+        <p>Following Propius's directions, Aria and Binary made their way to the Cascade District, 
+        where the sound of rushing water grew louder with each step. Here, crystal-clear rivers 
+        flowed through the kingdom, carrying not water, but streams of pure data between the 
+        component settlements.</p>
+      </div>
+      
       <h1 className='lesson-title'>The Data Rivers</h1>
       <p className='lesson-subtitle'>
-        Follow the flow of data through the React Kingdom's mighty rivers
+        Navigate the one-way flow of information with Aria and River Master Flux
       </p>
 
       <div className='chapter-navigation'>

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterThree = () => {
+function ChapterThree() {
 	// State for the interactive demo
 	const [searchTerm, setSearchTerm] = useState('');
 	const [sortBy, setSortBy] = useState('name');
@@ -138,55 +139,81 @@ const ChapterThree = () => {
 			   prevProps.isSelected === nextProps.isSelected;
 	});
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Performance Mastery - The Art of Optimization
-			</h2>
+			<h2 className='chapter-title'>Chapter 3: The Performance Sanctuary - Mastering Optimization</h2>
+			
+			<div className='chapter-bridge'>
+				<p>The final chamber of the Integration Sanctum was different - calmer, more 
+				refined. Here, the energy streams moved with perfect efficiency, each one 
+				following optimal paths that wasted no motion, no power.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the ancient <strong>Library of Efficient Spells</strong>, the Grand 
-					Wizard <strong>Optimus</strong> taught the most sacred art of all: 
-					performance optimization. "Young mages," he said, his voice echoing through 
-					the halls, "raw power means nothing without efficiency. Today, you will 
-					learn the twin arts of <strong>useMemo</strong> and <strong>useCallback</strong> - 
-					spells that prevent wasteful recalculations and preserve the essence of 
-					your magic across renders."
+					"Welcome to the Performance Sanctuary," Synthesis said, their voice taking on 
+					a more serious tone. "Here, we address the final challenge of hook mastery - 
+					<strong>optimization</strong>. All the patterns you've learned mean nothing if 
+					they consume too much power."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary's efficiency processors lit up, immediately analyzing the streamlined 
+					energy flows. It projected calculations showing wasted cycles versus optimized 
+					patterns.
+				</p>
+				
+				<p className='story-paragraph'>
+					"In React, every render has a cost," Synthesis explained, gesturing to a 
+					visualization of component renders cascading like waterfalls. "Without proper 
+					optimization, even simple changes can trigger expensive recalculations throughout 
+					your entire application tree."
+				</p>
+				
+				<p className='story-paragraph'>
+					"So we need to be selective about what recalculates?" Aria asked, studying the 
+					patterns.
+				</p>
+				
+				<p className='story-paragraph'>
+					"Exactly! Meet your optimization allies," Synthesis waved their hand, and three 
+					glowing symbols appeared: "<strong>useMemo</strong> preserves calculation results, 
+					<strong>useCallback</strong> preserves function references, and <strong>React.memo</strong> 
+					preserves entire components. Together, they form the Trinity of Performance!"
 				</p>
 
 				<div className='optimization-visualization'>
-					<div className='performance-meters'>
-						<div className='meter unoptimized'>
-							<div className='meter-label'>Without Optimization</div>
-							<div className='meter-bar high-usage'></div>
-							<span>High CPU Usage</span>
+					<div className='performance-trinity'>
+						<div className='trinity-member'>
+							<div className='member-icon'>🧠</div>
+							<div className='member-name'>useMemo</div>
+							<div className='member-role'>Calculation Memory</div>
 						</div>
-						<div className='meter optimized'>
-							<div className='meter-label'>With useMemo/useCallback</div>
-							<div className='meter-bar low-usage'></div>
-							<span>Low CPU Usage</span>
+						<div className='trinity-member'>
+							<div className='member-icon'>🔄</div>
+							<div className='member-name'>useCallback</div>
+							<div className='member-role'>Function Stability</div>
+						</div>
+						<div className='trinity-member'>
+							<div className='member-icon'>⚡</div>
+							<div className='member-name'>React.memo</div>
+							<div className='member-role'>Component Shield</div>
 						</div>
 					</div>
 				</div>
 
-				<p className='story-paragraph'>
-					"Watch closely," Optimus continued, waving his staff over a crystal orb. 
-					"Without memoization, every small change forces all spells to recalculate 
-					their power. But with these optimization enchantments, calculations happen 
-					only when truly necessary, preserving your magical energy for what matters most!"
-				</p>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: The Spell Optimization Chamber
+					Interactive Exercise: The Optimization Laboratory
 				</h3>
 				<div className='instruction-box'>
 					<p>
 						<strong>
-							Compare optimized and unoptimized performance. Notice the render 
-							counts and enable expensive calculations to see the difference!
+							Compare optimized and unoptimized performance in real-time. Watch how 
+							memoization prevents unnecessary recalculations and re-renders!
 						</strong>
 					</p>
 				</div>
@@ -279,7 +306,7 @@ const ChapterThree = () => {
 				</div>
 
 				<div className='code-visualization'>
-					<h4>Optimization Patterns</h4>
+					<h4>The Performance Trinity in Action</h4>
 					<pre className='magical-code'>
 						{`// useMemo - Memoize expensive calculations
 const expensiveResult = useMemo(() => {
@@ -334,66 +361,132 @@ function PerformantList({ items }) {
 			</div>
 
 			<div className='practical-application'>
-				<h3>When to Use Each Optimization:</h3>
-				<div className='optimization-guide'>
-					<div className='guide-card'>
-						<h4>useMemo</h4>
+				<h3>The Optimization Decision Tree:</h3>
+				<div className='pattern-showcase'>
+					<div className='pattern-example'>
+						<h4>When to use useMemo</h4>
 						<ul>
-							<li>Expensive calculations</li>
-							<li>Complex object transformations</li>
-							<li>Filtering/sorting large lists</li>
+							<li>Expensive calculations (sorting, filtering large arrays)</li>
 							<li>Creating new objects/arrays that cause child re-renders</li>
+							<li>Complex data transformations</li>
+							<li>Computed values used in multiple places</li>
 						</ul>
+						<pre className='mini-code'>
+							{`const expensiveValue = useMemo(() => {
+  return data.filter(item => item.active)
+    .reduce((sum, item) => sum + item.value, 0);
+}, [data]);`}
+						</pre>
 					</div>
-					<div className='guide-card'>
-						<h4>useCallback</h4>
+					<div className='pattern-example'>
+						<h4>When to use useCallback</h4>
 						<ul>
 							<li>Event handlers passed to memoized children</li>
-							<li>Functions used in useEffect dependencies</li>
-							<li>Callbacks that create closures over state</li>
+							<li>Functions in useEffect dependencies</li>
+							<li>Callbacks creating closures over state</li>
 							<li>Functions passed to multiple children</li>
 						</ul>
+						<pre className='mini-code'>
+							{`const handleUpdate = useCallback((id, value) => {
+  setItems(prev => prev.map(item => 
+    item.id === id ? {...item, value} : item
+  ));
+}, []); // Stable reference`}
+						</pre>
 					</div>
-					<div className='guide-card'>
-						<h4>React.memo</h4>
+					<div className='pattern-example'>
+						<h4>When to use React.memo</h4>
 						<ul>
 							<li>Pure components with expensive renders</li>
-							<li>Components that receive same props frequently</li>
+							<li>Components receiving same props frequently</li>
 							<li>List items in large lists</li>
 							<li>Components with complex UI calculations</li>
 						</ul>
+						<pre className='mini-code'>
+							{`const ExpensiveChild = React.memo(
+  ({ data, onUpdate }) => {
+    // Complex rendering logic
+    return <ComplexUI data={data} />;
+  },
+  (prev, next) => prev.data.id === next.data.id
+);`}
+						</pre>
 					</div>
 				</div>
 			</div>
 
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Aria's Journal - Day 19 (Evening)</h4>
+					<p>The Performance Sanctuary completed my hook pattern education! Synthesis revealed 
+					the Trinity of Performance: useMemo (preserves expensive calculations), useCallback 
+					(maintains stable function references), and React.memo (shields components from 
+					unnecessary re-renders). The key insight: optimization is about being strategic, 
+					not obsessive. I watched render counts drop dramatically when using these tools 
+					correctly. The spell example was perfect - without memoization, every keystroke 
+					recalculated everything! But with proper optimization, only what changed was 
+					recalculated. Remember: measure first, optimize second. Not every calculation 
+					needs memoization - sometimes the cure is worse than the disease!</p>
+				</div>
+			</div>
+
 			<div className='lesson-insight'>
-				<h3>The Performance Lesson:</h3>
+				<h3>Performance Pattern Mastery:</h3>
 				<p>
-					Performance optimization in React is about being strategic, not premature. 
-					useMemo and useCallback are powerful tools that prevent unnecessary 
-					recalculations and maintain referential equality. However, they come with 
-					their own overhead, so use them when you have actual performance problems 
-					or when preventing re-renders of expensive child components. Remember: 
-					measure first, optimize second. The React DevTools Profiler is your best 
-					friend for identifying performance bottlenecks.
+					Master the art of strategic optimization with the Performance Trinity. UseMemo 
+					caches expensive calculations, preventing redundant work when inputs haven't 
+					changed. UseCallback preserves function identity across renders, crucial for 
+					preventing child re-renders and maintaining referential equality. React.memo 
+					wraps components in a shallow prop comparison shield. Use these tools when you 
+					have measured performance issues, not preemptively. Common scenarios: large lists, 
+					expensive calculations, frequently re-rendering trees. Remember: premature 
+					optimization is the root of all evil - profile first with React DevTools!
+				</p>
+			</div>
+			
+			<div className='chapter-finale'>
+				<p className='story-paragraph'>
+					As the demonstration concluded, Synthesis led Aria and Binary to the center of 
+					the Integration Sanctum. All the patterns they'd learned - orchestration, state 
+					management, and optimization - swirled around them in perfect harmony.
+				</p>
+				<p className='story-paragraph'>
+					"You've completed your training," Synthesis announced proudly. "You now understand 
+					not just individual hooks, but how to weave them into powerful, efficient patterns. 
+					You are ready for any React challenge!"
+				</p>
+				<p className='story-paragraph'>
+					Aria looked at the swirling patterns with new understanding. "It's all connected - 
+					from basic hooks to complex systems, everything builds on everything else."
+				</p>
+				<p className='story-paragraph'>
+					Binary projected a beautiful visualization of all their learned patterns, from 
+					useState to performance optimization. Its display showed: "HOOK MASTERY: COMPLETE"
+				</p>
+				<p className='story-paragraph'>
+					"Your next destination awaits," Synthesis smiled, pointing toward a distant tower. 
+					"The Form Citadel, where you'll learn to capture and validate user input with the 
+					same mastery you've shown here. May your hooks always be optimized!"
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How does the wizard's library metaphor help you understand the importance 
-					of caching and memoization? Think about how preserving calculations is 
-					like storing spell formulas for reuse.
+					How does the Performance Trinity work together to create efficient applications?
 				</p>
-				<p>
-					When have you encountered performance issues in React applications? 
-					How might these optimization techniques have helped? Consider the 
-					balance between code complexity and performance gains.
+				<p className='story-paragraph'>
+					When have you encountered performance issues that these patterns could solve?
+				</p>
+				<p className='story-paragraph'>
+					Why is it important to measure before optimizing?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterThree;

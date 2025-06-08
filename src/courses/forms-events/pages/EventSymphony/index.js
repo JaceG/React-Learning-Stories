@@ -58,10 +58,17 @@ function EventSymphony() {
 	};
 
 	return (
-		<div className='lesson-container'>
+		<div className='lesson-container event-symphony-container'>
+			<div className='lesson-opener'>
+				<p>Word of Aria's form alchemy innovations spread quickly through the Western Quarter. 
+				As she and Binary made their way through the bustling streets, a messenger in flowing 
+				robes intercepted them with an ornate scroll. "From Conductor Eventus of the Event 
+				Symphony Hall," the messenger announced. "Your expertise is urgently requested."</p>
+			</div>
+			
 			<h1 className='lesson-title'>Event Symphony</h1>
 			<p className='lesson-subtitle'>
-				Orchestrate browser events with React's synthetic event system
+				Compose complex event orchestrations with Conductor Eventus
 			</p>
 
 			<div className='chapter-navigation'>

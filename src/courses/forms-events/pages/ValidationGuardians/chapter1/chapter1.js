@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 
-const ChapterOne = () => {
+function ChapterOne() {
 	const { 
 		activeGates,
 		secureGate,
@@ -86,22 +87,58 @@ const ChapterOne = () => {
 		}
 	};
 
-	return (
+	const content = (
+		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Guardian Gates
-			</h2>
+			<h2 className='chapter-title'>Chapter 1: The Guardian Gates</h2>
+			
+			<div className='chapter-bridge'>
+				<p>Inside the fortress, crimson banners displayed validation patterns that had protected 
+				the kingdom's data for centuries. Aria was led to a vast hall where Guardian Commander 
+				Validus stood before ranks of trainee guardians, all struggling with complex validation 
+				scenarios.</p>
+			</div>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					In the digital fortress of FormLand, a young guardian named 
-					Vera stood watch over the gates. Each gate represented a 
-					different validation rule, protecting the realm from invalid 
-					data that could corrupt the kingdom's records.
+					"<strong>Hook Craftmaster Aria!</strong>" Commander Validus's voice boomed across the 
+					hall. A warrior in gleaming red armor strode forward, each piece inscribed with validation 
+					runes. "Your reputation precedes you. We've studied your useForm hook from the Alchemy 
+					Lab. Revolutionary!"
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary's sensors immediately began analyzing the fortress's defensive systems. "Detecting 
+					multiple validation layers, but inefficient implementation. Validation logic scattered, 
+					no central command structure."
+				</p>
+				
+				<p className='story-paragraph'>
+					Aria surveyed the training grounds where guardians practiced on isolated validation 
+					gates. "I see the problem, Commander. Your guardians are defending individual gates 
+					when they should be coordinating defenses. Let me show them patterns I've developed."
+				</p>
+				
+				<p className='story-paragraph'>
+					"Please!" Validus gestured to the assembled recruits. "These are our finest, but they 
+					struggle with complex, multi-field validation. Traditional methods fail against modern 
+					attack vectors."
 				</p>
 
+				<div className='aria-teaches-guardians'>
+					<h3>Aria's Guardian Training Session</h3>
+					<p className='story-paragraph'>
+						"Think of validation as layered defense," Aria began, projecting holographic 
+						patterns. "Each gate is strong alone, but when coordinated through a central 
+						validation system - like the hooks I've mastered - they become impenetrable."
+					</p>
+				</div>
+
 				<div className='fortress'>
-					<h3>The Fortress Gates</h3>
+					<h3>The Fortress Validation Gates</h3>
+					<p className='commander-instruction'>
+						Commander Validus points to the gates: "Test your defenses against Aria's patterns!"
+					</p>
 					<div className='guardian-gates'>
 						{validationGates.map((gate) => (
 							<div
@@ -117,30 +154,104 @@ const ChapterOne = () => {
 								}`}>
 								<div className='gate-icon'>{gate.icon}</div>
 								<h4>{gate.name} Gate</h4>
-								<p>{gate.message}</p>
+								<p className='gate-description'>{gate.message}</p>
+								<div className='gate-status'>
+									{Object.entries(activeGates).some(
+										([key, value]) => key.includes(gate.name) && value
+									) ? '🟢 Secured' : 
+									Object.entries(activeGates).some(
+										([key, value]) => key.includes(gate.name) && !value
+									) ? '🔴 Breached' : '⚪ Waiting'}
+								</div>
 							</div>
 						))}
 					</div>
 				</div>
+			</div>
 
+			<div className='aria-validation-patterns'>
+				<h3>Aria's Unified Validation Strategy</h3>
 				<p className='story-paragraph'>
-					"Each gate," Vera explained to the new recruits, "tests 
-					incoming data against specific rules. Only when data passes 
-					through the appropriate gates can it enter our kingdom's 
-					sacred databases."
+					"Watch how I combine validation rules into a reusable system," Aria explained, 
+					her fingers dancing across Binary's projection interface.
 				</p>
+				
+				<pre className='magical-code'>{`// Aria's Guardian Validation System
+const useValidation = (rules) => {
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  
+  // Validation command center
+  const validate = useCallback((field, value) => {
+    const fieldRules = rules[field] || [];
+    
+    for (const rule of fieldRules) {
+      const result = rule(value);
+      if (!result.valid) {
+        setErrors(prev => ({ ...prev, [field]: result.message }));
+        return false;
+      }
+    }
+    
+    // Clear error if all gates passed
+    setErrors(prev => {
+      const next = { ...prev };
+      delete next[field];
+      return next;
+    });
+    return true;
+  }, [rules]);
+  
+  // Mark field as touched
+  const touch = useCallback((field) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+  }, []);
+  
+  return { errors, touched, validate, touch };
+};
+
+// Composable validation rules
+const validationRules = {
+  required: (msg = 'Required') => (value) => ({
+    valid: value.trim().length > 0,
+    message: msg
+  }),
+  
+  email: (msg = 'Invalid email') => (value) => ({
+    valid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    message: msg
+  }),
+  
+  minLength: (min, msg) => (value) => ({
+    valid: value.length >= min,
+    message: msg || \`Minimum \${min} characters\`
+  }),
+  
+  pattern: (regex, msg) => (value) => ({
+    valid: regex.test(value),
+    message: msg
+  })
+};`}</pre>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
-					Interactive Exercise: Test the Gates
+					Interactive Exercise: Guardian Training Ground
 				</h3>
+				<div className='instruction-box'>
+					<p>
+						<strong>
+							Help train the guardian recruits by testing different validation gates. 
+							Watch how each field activates its specific defensive measures!
+						</strong>
+					</p>
+				</div>
 
 				<div className='guardian-form'>
-					<h4>Guardian Training Ground</h4>
+					<h4>🛡️ Multi-Gate Defense System</h4>
 					
 					<div className='validation-field'>
-						<label>Email Address (Email Gate):</label>
+						<label>Email Fortress (Email Gate):</label>
 						<input
 							type='text'
 							value={fieldValues.email}
@@ -149,15 +260,16 @@ const ChapterOne = () => {
 							placeholder='guardian@fortress.com'
 						/>
 						{fieldErrors.email && (
-							<p className='error-message'>{fieldErrors.email}</p>
+							<p className='error-message'>⚔️ {fieldErrors.email}</p>
 						)}
 						<div className='field-shield'>
-							{activeGates['email-Email'] ? '✅' : fieldErrors.email ? '❌' : '🛡️'}
+							<span className='shield-label'>Defense Status:</span>
+							{activeGates['email-Email'] ? '✅ Secured' : fieldErrors.email ? '❌ Breached' : '🛡️ Ready'}
 						</div>
 					</div>
 
 					<div className='validation-field'>
-						<label>Password (Length Gate - 8+ chars):</label>
+						<label>Password Stronghold (Length Gate - 8+ chars):</label>
 						<input
 							type='password'
 							value={fieldValues.password}
@@ -166,15 +278,16 @@ const ChapterOne = () => {
 							placeholder='Enter secure password'
 						/>
 						{fieldErrors.password && (
-							<p className='error-message'>{fieldErrors.password}</p>
+							<p className='error-message'>⚔️ {fieldErrors.password}</p>
 						)}
 						<div className='field-shield'>
-							{activeGates['password-Length'] ? '✅' : fieldErrors.password ? '❌' : '🛡️'}
+							<span className='shield-label'>Defense Status:</span>
+							{activeGates['password-Length'] ? '✅ Secured' : fieldErrors.password ? '❌ Breached' : '🛡️ Ready'}
 						</div>
 					</div>
 
 					<div className='validation-field'>
-						<label>Age (Number Gate):</label>
+						<label>Age Verification (Number Gate):</label>
 						<input
 							type='text'
 							value={fieldValues.age}
@@ -183,15 +296,16 @@ const ChapterOne = () => {
 							placeholder='Enter your age'
 						/>
 						{fieldErrors.age && (
-							<p className='error-message'>{fieldErrors.age}</p>
+							<p className='error-message'>⚔️ {fieldErrors.age}</p>
 						)}
 						<div className='field-shield'>
-							{activeGates['age-Number'] ? '✅' : fieldErrors.age ? '❌' : '🛡️'}
+							<span className='shield-label'>Defense Status:</span>
+							{activeGates['age-Number'] ? '✅ Secured' : fieldErrors.age ? '❌ Breached' : '🛡️ Ready'}
 						</div>
 					</div>
 
 					<div className='validation-field'>
-						<label>Username (Required Gate):</label>
+						<label>Identity Gate (Required Gate):</label>
 						<input
 							type='text'
 							value={fieldValues.username}
@@ -200,112 +314,115 @@ const ChapterOne = () => {
 							placeholder='Choose a username'
 						/>
 						{fieldErrors.username && (
-							<p className='error-message'>{fieldErrors.username}</p>
+							<p className='error-message'>⚔️ {fieldErrors.username}</p>
 						)}
 						<div className='field-shield'>
-							{activeGates['username-Required'] ? '✅' : fieldErrors.username ? '❌' : '🛡️'}
+							<span className='shield-label'>Defense Status:</span>
+							{activeGates['username-Required'] ? '✅ Secured' : fieldErrors.username ? '❌ Breached' : '🛡️ Ready'}
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<pre>{`// Basic Validation Gates Pattern
-const validationRules = {
-  required: (value) => {
-    return value.trim().length > 0 
-      ? { valid: true } 
-      : { valid: false, message: 'This field is required' };
-  },
-  
-  email: (value) => {
-    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-    return emailRegex.test(value)
-      ? { valid: true }
-      : { valid: false, message: 'Invalid email format' };
-  },
-  
-  minLength: (min) => (value) => {
-    return value.length >= min
-      ? { valid: true }
-      : { valid: false, message: \`Minimum \${min} characters\` };
-  },
-  
-  pattern: (regex, message) => (value) => {
-    return regex.test(value)
-      ? { valid: true }
-      : { valid: false, message };
-  }
-};
+			<div className='validus-amazement'>
+				<p className='story-paragraph'>
+					Commander Validus watched as his recruits began understanding the coordinated 
+					defense patterns. "Remarkable! You've shown them how to unify individual gates 
+					into a cohesive defensive system!"
+				</p>
+				
+				<p className='story-paragraph'>
+					"It's the same principle I used in form alchemy," Aria explained. "Individual 
+					validations are like solo defenders. But when orchestrated through a central 
+					hook, they become an elite guard unit."
+				</p>
+				
+				<p className='story-paragraph'>
+					Binary displayed tactical analysis: "Defense coordination improved by 82%. 
+					Validation response time decreased by 67%. Error detection accuracy: 99.7%!"
+				</p>
+			</div>
 
-// Using validation in a form
-function ValidatedForm() {
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
+			<div className='advanced-defense-patterns'>
+				<h3>Guardian Defense Patterns</h3>
+				<div className='pattern-showcase'>
+					<div className='defense-pattern'>
+						<h4>🛡️ Layered Defense</h4>
+						<pre className='mini-code'>{`// Multiple validation layers
+const passwordRules = [
+  required('Password required'),
+  minLength(8, 'Too short'),
+  hasUpperCase('Need uppercase'),
+  hasNumber('Need number'),
+  hasSpecialChar('Need symbol')
+];`}</pre>
+					</div>
+					<div className='defense-pattern'>
+						<h4>⚔️ Cross-Field Defense</h4>
+						<pre className='mini-code'>{`// Validate related fields
+const matchField = (field) => (value, form) => ({
+  valid: value === form[field],
+  message: 'Fields must match'
+});
 
-  const validate = (name, value) => {
-    const rules = {
-      email: [validationRules.required, validationRules.email],
-      password: [validationRules.required, validationRules.minLength(8)],
-      phone: [validationRules.pattern(/^\\d{10}$/, 'Must be 10 digits')]
-    };
-
-    const fieldRules = rules[name] || [];
-    
-    for (const rule of fieldRules) {
-      const result = rule(value);
-      if (!result.valid) {
-        setErrors({ ...errors, [name]: result.message });
-        return false;
-      }
-    }
-    
-    // Clear error if validation passes
-    const newErrors = { ...errors };
-    delete newErrors[name];
-    setErrors(newErrors);
-    return true;
+// Usage
+confirmPassword: [matchField('password')]`}</pre>
+					</div>
+					<div className='defense-pattern'>
+						<h4>🏰 Async Fortress</h4>
+						<pre className='mini-code'>{`// Check against server
+const uniqueUsername = async (value) => {
+  const exists = await checkUsername(value);
+  return {
+    valid: !exists,
+    message: 'Username taken'
   };
+};`}</pre>
+					</div>
+				</div>
+			</div>
 
-  return (
-    <form>
-      <input
-        name="email"
-        onChange={(e) => {
-          setValues({ ...values, email: e.target.value });
-          validate('email', e.target.value);
-        }}
-      />
-      {errors.email && <span>{errors.email}</span>}
-    </form>
-  );
-}`}</pre>
+			<div className='story-section'>
+				<div className='character-intro'>
+					<h4>Character Introduction</h4>
+					<p><strong>Guardian Commander Validus</strong> - The Western Quarter's supreme 
+					defender of data integrity. A veteran of countless validation campaigns, his armor 
+					bears runes for every validation pattern ever devised. Despite his imposing presence, 
+					he's eager to learn new techniques and quickly recognizes Aria's innovative approaches. 
+					His mission: train the next generation of validation guardians to protect the kingdom's 
+					data from corruption and invalid entries.</p>
+				</div>
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Guardian's Lesson:</h3>
+				<h3>The Guardian's First Law:</h3>
 				<p>
-					Validation gates are your first line of defense against bad data. 
-					Each gate serves a specific purpose - some check format (email), 
-					others check constraints (length), and some ensure presence (required). 
-					By combining multiple gates, you create a robust defense system that 
-					ensures only valid data enters your application's state.
+					Validation gates are your fortress's first line of defense. Each gate serves a 
+					specific purpose - format validation (email), constraint checking (length), presence 
+					verification (required), and type validation (number). By combining gates through a 
+					unified validation system, you create impenetrable defenses. Remember: validate early, 
+					validate often, and coordinate your defenses. A fortress with scattered guards is 
+					weaker than one with organized defenders working in harmony.
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Reflect on the Story</h3>
 				<p>
-					How do validation gates protect your application like guards 
-					protect a fortress?
+					How does Aria's hook expertise enhance traditional validation patterns?
 				</p>
-				<p>
-					Why is it important to validate data at the point of entry 
-					rather than waiting until form submission?
+				<p className='story-paragraph'>
+					Why is coordinated validation more effective than isolated checks?
+				</p>
+				<p className='story-paragraph'>
+					What validation challenges in your forms could benefit from unified defense?
 				</p>
 			</div>
 		</div>
+		</>
 	);
-};
+	
+	return <StoryContent content={content} />;
+}
 
 export default ChapterOne;

@@ -7,25 +7,25 @@ function HooksInActionOverview() {
     {
       id: 'use-state-spells',
       title: 'The useState Spells',
-      description: 'Master the fundamental spell of state management and learn advanced useState patterns',
+      description: 'Join Aria at the Hooks Academy as she learns the fundamental spell of state management from Professor Hooksworth',
       icon: '✨'
     },
     {
       id: 'use-effect-enchantments',
       title: 'The useEffect Enchantments',
-      description: 'Discover the magic of side effects and lifecycle management in functional components',
+      description: 'Master the art of side effects and lifecycle magic with the mysterious Effect Sage',
       icon: '🌟'
     },
     {
       id: 'custom-hook-crafting',
       title: 'Custom Hook Crafting',
-      description: 'Forge your own magical hooks to encapsulate and share component logic',
+      description: 'Learn to forge your own magical hooks with Master Artificer Compose',
       icon: '⚒️'
     },
     {
       id: 'hook-pattern-mastery',
       title: 'Hook Pattern Mastery',
-      description: 'Combine multiple hooks to create powerful patterns and solve complex problems',
+      description: 'Combine hooks into powerful patterns under the guidance of Pattern Weaver Synthesis',
       icon: '🎭'
     }
   ];
@@ -36,8 +36,9 @@ function HooksInActionOverview() {
         <Link to='/courses' className='back-link'>← Back to Courses</Link>
         <h1 className="course-title">Hooks in Action</h1>
         <p className="course-description">
-          Delve deep into the magical world of React Hooks. From the fundamental spells of useState 
-          to the complex enchantments of custom hooks, master the modern way of building React components.
+          After mastering state and data flow, Aria arrives at the prestigious Hooks Academy. Here, 
+          she'll learn React's most powerful spells - from fundamental useState incantations to 
+          advanced custom hook crafting. Join her as she becomes a true Hook Mage!
         </p>
       </div>
       
