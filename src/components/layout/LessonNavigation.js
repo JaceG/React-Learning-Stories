@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getAdjacentLessons } from '../../courses/lessonSequences';
+import { getAdjacentLessons } from '../../config/lessonSequences';
 import './Layout.css';
 
 function LessonNavigation({ courseId, lessonId }) {

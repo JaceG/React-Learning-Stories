@@ -6,12 +6,12 @@ import {
 	Navigate,
 } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import CourseIndex from './courses/CourseIndex';
+import CourseIndex from './routes/CourseRoutes/CourseIndex';
 import Hotjar from '@hotjar/browser';
 import './App.css';
-import CourseList from './courses/CourseList';
-import LessonList from './courses/LessonList';
-import ChapterInnerList from './courses/ChapterInnerList';
+import CourseList from './routes/CourseRoutes/CourseList';
+import LessonList from './routes/CourseRoutes/LessonList';
+import ChapterInnerList from './routes/CourseRoutes/ChapterInnerList';
 const siteId = 6384868;
 const hotjarVersion = 6;
 

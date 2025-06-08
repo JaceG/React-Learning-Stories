@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './CourseStyles.css';
+import '../../learning-paths/CourseStyles.css';
 
 function CourseIndex() {
 	const courses = [
