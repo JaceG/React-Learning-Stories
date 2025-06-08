@@ -23,6 +23,10 @@ import NavigationCompass from '../routing-navigation/pages/NavigationCompass';
 import GuardianGates from '../routing-navigation/pages/GuardianGates';
 import WaypointWizardry from '../routing-navigation/pages/WaypointWizardry';
 import PortalPassages from '../routing-navigation/pages/PortalPassages';
+import SpeedSanctum from '../performance-optimization/pages/SpeedSanctum';
+import MemoryMonastery from '../performance-optimization/pages/MemoryMonastery';
+import LazyLibrary from '../performance-optimization/pages/LazyLibrary';
+import VirtualizationVault from '../performance-optimization/pages/VirtualizationVault';
 
 const courseListMap = {
 	'components-basics': {
@@ -61,12 +65,22 @@ const courseListMap = {
 		'waypoint-wizardry': <WaypointWizardry />,
 		'portal-passages': <PortalPassages />,
 	},
+	'performance-optimization': {
+		'speed-sanctum': <SpeedSanctum />,
+		'memory-monastery': <MemoryMonastery />,
+		'lazy-library': <LazyLibrary />,
+		'virtualization-vault': <VirtualizationVault />,
+	},
 };
 const LessonList = () => {
 	const { lessonId, courseId } = useParams();
 
 	if (!courseListMap[courseId] || !courseListMap[courseId][lessonId]) {
-		return <div>Lesson not found - Course: {courseId}, Lesson: {lessonId}</div>;
+		return (
+			<div>
+				Lesson not found - Course: {courseId}, Lesson: {lessonId}
+			</div>
+		);
 	}
 
 	return <>{courseListMap[courseId][lessonId]}</>;

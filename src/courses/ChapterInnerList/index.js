@@ -71,6 +71,18 @@ import WaypointWizardryChapterThree from '../routing-navigation/pages/WaypointWi
 import PortalPassagesChapterOne from '../routing-navigation/pages/PortalPassages/chapter1/chapter1';
 import PortalPassagesChapterTwo from '../routing-navigation/pages/PortalPassages/chapter2/chapter2';
 import PortalPassagesChapterThree from '../routing-navigation/pages/PortalPassages/chapter3/chapter3';
+import SpeedSanctumChapterOne from '../performance-optimization/pages/SpeedSanctum/chapter1/chapter1';
+import SpeedSanctumChapterTwo from '../performance-optimization/pages/SpeedSanctum/chapter2/chapter2';
+import SpeedSanctumChapterThree from '../performance-optimization/pages/SpeedSanctum/chapter3/chapter3';
+import MemoryMonasteryChapterOne from '../performance-optimization/pages/MemoryMonastery/chapter1/chapter1';
+import MemoryMonasteryChapterTwo from '../performance-optimization/pages/MemoryMonastery/chapter2/chapter2';
+import MemoryMonasteryChapterThree from '../performance-optimization/pages/MemoryMonastery/chapter3/chapter3';
+import LazyLibraryChapterOne from '../performance-optimization/pages/LazyLibrary/chapter1/chapter1';
+import LazyLibraryChapterTwo from '../performance-optimization/pages/LazyLibrary/chapter2/chapter2';
+import LazyLibraryChapterThree from '../performance-optimization/pages/LazyLibrary/chapter3/chapter3';
+import VirtualizationVaultChapterOne from '../performance-optimization/pages/VirtualizationVault/chapter1/chapter1';
+import VirtualizationVaultChapterTwo from '../performance-optimization/pages/VirtualizationVault/chapter2/chapter2';
+import VirtualizationVaultChapterThree from '../performance-optimization/pages/VirtualizationVault/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -229,17 +241,48 @@ const courseListMap = {
 			chapter3: <PortalPassagesChapterThree />,
 		},
 	},
+	'performance-optimization': {
+		'speed-sanctum': {
+			'/': <SpeedSanctumChapterOne />,
+			chapter1: <SpeedSanctumChapterOne />,
+			chapter2: <SpeedSanctumChapterTwo />,
+			chapter3: <SpeedSanctumChapterThree />,
+		},
+		'memory-monastery': {
+			'/': <MemoryMonasteryChapterOne />,
+			chapter1: <MemoryMonasteryChapterOne />,
+			chapter2: <MemoryMonasteryChapterTwo />,
+			chapter3: <MemoryMonasteryChapterThree />,
+		},
+		'lazy-library': {
+			'/': <LazyLibraryChapterOne />,
+			chapter1: <LazyLibraryChapterOne />,
+			chapter2: <LazyLibraryChapterTwo />,
+			chapter3: <LazyLibraryChapterThree />,
+		},
+		'virtualization-vault': {
+			'/': <VirtualizationVaultChapterOne />,
+			chapter1: <VirtualizationVaultChapterOne />,
+			chapter2: <VirtualizationVaultChapterTwo />,
+			chapter3: <VirtualizationVaultChapterThree />,
+		},
+	},
 };
 const ChapterInnerList = () => {
 	const { lessonId, courseId, chapterId } = useParams();
 
 	if (!courseListMap[courseId] || !courseListMap[courseId][lessonId]) {
-		return <div>Course or lesson not found - Course: {courseId}, Lesson: {lessonId}</div>;
+		return (
+			<div>
+				Course or lesson not found - Course: {courseId}, Lesson:{' '}
+				{lessonId}
+			</div>
+		);
 	}
 
 	const chapterKey = chapterId || 'chapter1';
 	const chapter = courseListMap[courseId][lessonId][chapterKey];
-	
+
 	if (!chapter) {
 		return <div>Chapter not found - Chapter: {chapterKey}</div>;
 	}
