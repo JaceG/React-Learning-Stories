@@ -1,0 +1,660 @@
+import { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
+
+const ChapterTwo = () => {
+	const {
+		formSolutions,
+		implementedForms,
+		implementForm,
+		performanceMetrics,
+		recordMetric,
+		validationStrategies,
+		addValidationStrategy,
+		currentLibrary,
+		focusLibrary,
+		evolve
+	} = useOutletContext();
+
+	const [activeDemo, setActiveDemo] = useState('react-hook-form');
+	const [formMode, setFormMode] = useState('simple');
+	const [showMetrics, setShowMetrics] = useState(false);
+
+	// Complex form scenarios
+	const formScenarios = {
+		simple: {
+			name: 'User Registration',
+			fields: ['username', 'email', 'password'],
+			validation: 'Basic required fields'
+		},
+		dynamic: {
+			name: 'Dynamic Survey',
+			fields: ['questions[]', 'conditional fields'],
+			validation: 'Dynamic validation rules'
+		},
+		wizard: {
+			name: 'Multi-Step Wizard',
+			fields: ['personal info', 'address', 'preferences'],
+			validation: 'Cross-step validation'
+		},
+		complex: {
+			name: 'Order Form',
+			fields: ['items[]', 'shipping', 'payment'],
+			validation: 'Async validation, calculations'
+		}
+	};
+
+	// Validation strategies
+	const validationPatterns = [
+		{
+			id: 'schema',
+			name: 'Schema Validation',
+			description: 'Using Yup, Zod, or Joi for declarative validation',
+			example: 'Yup.string().email().required()'
+		},
+		{
+			id: 'custom',
+			name: 'Custom Validators',
+			description: 'Writing custom validation functions',
+			example: 'value => value.length > 8 || "Too short"'
+		},
+		{
+			id: 'async',
+			name: 'Async Validation',
+			description: 'Server-side validation (username availability)',
+			example: 'await checkUsername(value)'
+		},
+		{
+			id: 'dependent',
+			name: 'Dependent Fields',
+			description: 'Validation based on other field values',
+			example: 'if (country === "US") validateZipCode(zip)'
+		}
+	];
+
+	// Implement a form pattern
+	const implementPattern = (library, scenario) => {
+		implementForm(library, scenario);
+		recordMetric(library, 'rerenders', Math.floor(Math.random() * 50) + 10);
+		recordMetric(library, 'bundleSize', Math.floor(Math.random() * 30) + 20);
+		recordMetric(library, 'setupTime', Math.floor(Math.random() * 20) + 5);
+		
+		if (implementedForms.length >= 4) {
+			evolve('experienced');
+		}
+	};
+
+	// Add validation strategy
+	const learnValidation = (strategy) => {
+		addValidationStrategy(strategy);
+		if (validationStrategies.length >= 3) {
+			evolve('master');
+		}
+	};
+
+	// Switch active demo
+	const switchDemo = (library) => {
+		setActiveDemo(library);
+		focusLibrary(library);
+	};
+
+	return (
+		<div className='chapter'>
+			<h2 className='chapter-title'>
+				Chapter 2: Form Library Deep Dive
+			</h2>
+
+			<div className='story-section'>
+				<p className='story-paragraph'>
+					<strong>Aria</strong> entered the Form Workshop, where each library 
+					had set up demonstration stations. Complex forms floated in the air, 
+					transforming as different libraries handled them.
+				</p>
+
+				<p className='story-paragraph'>
+					"Time for hands-on learning," announced the <strong>React Hook Form 
+					Ambassador</strong>. "Watch how each library handles the same form 
+					differently."
+				</p>
+
+				<p className='story-paragraph'>
+					<strong>Binary</strong> activated his performance monitors. "I'll 
+					track re-renders, bundle sizes, and execution time!"
+				</p>
+
+				<p className='story-paragraph'>
+					<strong>Debuggora</strong> perched between the stations. "Notice how 
+					each approach affects debugging and developer experience."
+				</p>
+			</div>
+
+			<div className='interactive-section'>
+				<h3 className='section-title'>Form Library Workshop</h3>
+				
+				<div className='form-workshop'>
+					<div className='implementation-tabs'>
+						{['react-hook-form', 'formik', 'react-final-form', 'tanstack-form'].map(lib => (
+							<button
+								key={lib}
+								className={`implementation-tab ${activeDemo === lib ? 'active' : ''}`}
+								onClick={() => switchDemo(lib)}>
+								{lib.split('-').map(word => 
+									word.charAt(0).toUpperCase() + word.slice(1)
+								).join(' ')}
+							</button>
+						))}
+					</div>
+
+					<div className='form-mode-selector' style={{ marginTop: '20px' }}>
+						<label style={{ marginRight: '10px' }}>Form Complexity:</label>
+						<select
+							value={formMode}
+							onChange={(e) => setFormMode(e.target.value)}
+							style={{
+								padding: '8px',
+								background: 'rgba(255, 255, 255, 0.1)',
+								border: '1px solid #f39c12',
+								borderRadius: '5px',
+								color: '#ecf0f1'
+							}}>
+							{Object.keys(formScenarios).map(mode => (
+								<option key={mode} value={mode}>
+									{formScenarios[mode].name}
+								</option>
+							))}
+						</select>
+					</div>
+
+					<div className='form-demos'>
+						<h4>{formScenarios[formMode].name} Implementation</h4>
+						<p style={{ marginBottom: '20px' }}>
+							Fields: {formScenarios[formMode].fields.join(', ')}
+						</p>
+
+						{activeDemo === 'react-hook-form' && (
+							<div className='demo-form'>
+								<h5 style={{ color: '#ec5990' }}>React Hook Form</h5>
+								<div className='form-field'>
+									<label>Username</label>
+									<input type="text" placeholder="Uncontrolled input" />
+								</div>
+								<div className='form-field'>
+									<label>Email</label>
+									<input type="email" placeholder="Minimal re-renders" />
+								</div>
+								{formMode === 'dynamic' && (
+									<div className='form-field'>
+										<label>Dynamic Field</label>
+										<input type="text" placeholder="Added dynamically" />
+									</div>
+								)}
+								<button 
+									className='submit-button'
+									onClick={() => implementPattern('react-hook-form', formMode)}>
+									Implement with React Hook Form
+								</button>
+							</div>
+						)}
+
+						{activeDemo === 'formik' && (
+							<div className='demo-form'>
+								<h5 style={{ color: '#4a90e2' }}>Formik</h5>
+								<div className='form-field'>
+									<label>Username</label>
+									<input type="text" placeholder="Controlled input" />
+								</div>
+								<div className='form-field'>
+									<label>Email</label>
+									<input type="email" placeholder="Familiar React patterns" />
+								</div>
+								{formMode === 'wizard' && (
+									<div style={{ marginTop: '20px' }}>
+										<p>Step 1 of 3: Personal Info</p>
+										<div style={{
+											display: 'flex',
+											gap: '10px',
+											marginTop: '10px'
+										}}>
+											<div style={{
+												flex: 1,
+												height: '4px',
+												background: '#4a90e2'
+											}} />
+											<div style={{
+												flex: 1,
+												height: '4px',
+												background: 'rgba(255,255,255,0.2)'
+											}} />
+											<div style={{
+												flex: 1,
+												height: '4px',
+												background: 'rgba(255,255,255,0.2)'
+											}} />
+										</div>
+									</div>
+								)}
+								<button 
+									className='submit-button'
+									onClick={() => implementPattern('formik', formMode)}>
+									Implement with Formik
+								</button>
+							</div>
+						)}
+
+						{/* Additional library demos would go here */}
+					</div>
+
+					<div className='implementation-showcase'>
+						<h4>Your Implementations</h4>
+						<div className='implementations-grid' style={{
+							display: 'grid',
+							gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+							gap: '15px',
+							marginTop: '20px'
+						}}>
+							{implementedForms.map((impl, index) => (
+								<div key={impl.id} className='implementation-card' style={{
+									background: 'rgba(255, 255, 255, 0.1)',
+									padding: '15px',
+									borderRadius: '8px',
+									border: '1px solid rgba(243, 156, 18, 0.3)'
+								}}>
+									<strong>{impl.library}</strong>
+									<div style={{ fontSize: '0.9em', color: '#bdc3c7' }}>
+										Pattern: {impl.pattern}
+									</div>
+								</div>
+							))}
+							{implementedForms.length === 0 && (
+								<p style={{ color: '#7f8c8d' }}>
+									Implement forms to see them here
+								</p>
+							)}
+						</div>
+					</div>
+				</div>
+
+				<div className='validation-section' style={{ marginTop: '40px' }}>
+					<h3>Validation Strategies</h3>
+					<div className='validation-patterns'>
+						{validationPatterns.map(pattern => (
+							<div
+								key={pattern.id}
+								className={`validation-card ${
+									validationStrategies.find(v => v.id === pattern.id) ? 'mastered' : ''
+								}`}
+								onClick={() => learnValidation(pattern)}>
+								<div className='validation-title'>{pattern.name}</div>
+								<div className='validation-description'>
+									{pattern.description}
+								</div>
+								<code style={{
+									display: 'block',
+									marginTop: '10px',
+									padding: '10px',
+									background: 'rgba(0, 0, 0, 0.3)',
+									borderRadius: '5px',
+									fontSize: '0.9em'
+								}}>
+									{pattern.example}
+								</code>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div className='performance-comparison'>
+					<h4>Performance Metrics</h4>
+					<button
+						onClick={() => setShowMetrics(!showMetrics)}
+						style={{
+							padding: '10px 20px',
+							background: '#e74c3c',
+							color: 'white',
+							border: 'none',
+							borderRadius: '5px',
+							cursor: 'pointer',
+							marginBottom: '20px'
+						}}>
+						{showMetrics ? 'Hide' : 'Show'} Performance Data
+					</button>
+
+					{showMetrics && (
+						<div className='metrics-grid'>
+							{Object.entries(performanceMetrics).map(([library, metrics]) => (
+								<div key={library} className='metric-card'>
+									<div className='metric-label'>{library.toUpperCase()}</div>
+									<div className='metric-value'>
+										{metrics.rerenders || 0}
+									</div>
+									<span style={{ fontSize: '0.8em' }}>re-renders</span>
+									<div className='metric-bar'>
+										<div 
+											className='metric-fill'
+											style={{ width: `${100 - (metrics.rerenders || 0)}%` }}
+										/>
+									</div>
+									<div style={{ fontSize: '0.8em', marginTop: '10px' }}>
+										Bundle: {metrics.bundleSize || 0}kb
+									</div>
+								</div>
+							))}
+						</div>
+					)}
+				</div>
+			</div>
+
+			<div className='code-section'>
+				<div className='code-header'>
+					<span className='code-title'>Advanced Form Patterns</span>
+				</div>
+				<div className='code-example'>
+					<pre>{`// Advanced Form Implementation Patterns
+
+// 1. Dynamic Form Fields
+// React Hook Form
+import { useForm, useFieldArray } from 'react-hook-form';
+
+function DynamicForm() {
+  const { register, control, handleSubmit } = useForm({
+    defaultValues: {
+      users: [{ name: '', email: '' }]
+    }
+  });
+  
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'users'
+  });
+  
+  return (
+    <form onSubmit={handleSubmit(console.log)}>
+      {fields.map((field, index) => (
+        <div key={field.id}>
+          <input {...register(\`users.\${index}.name\`)} />
+          <input {...register(\`users.\${index}.email\`)} />
+          <button type="button" onClick={() => remove(index)}>
+            Remove
+          </button>
+        </div>
+      ))}
+      <button type="button" onClick={() => append({ name: '', email: '' })}>
+        Add User
+      </button>
+    </form>
+  );
+}
+
+// Formik Dynamic Fields
+import { FieldArray } from 'formik';
+
+<FieldArray name="users">
+  {({ push, remove }) => (
+    <>
+      {values.users.map((user, index) => (
+        <div key={index}>
+          <Field name={\`users[\${index}].name\`} />
+          <Field name={\`users[\${index}].email\`} />
+          <button onClick={() => remove(index)}>Remove</button>
+        </div>
+      ))}
+      <button onClick={() => push({ name: '', email: '' })}>
+        Add User
+      </button>
+    </>
+  )}
+</FieldArray>
+
+// 2. Conditional Fields & Dependencies
+// React Hook Form with watch
+function ConditionalForm() {
+  const { register, watch, formState: { errors } } = useForm();
+  const watchCountry = watch('country');
+  
+  return (
+    <form>
+      <select {...register('country')}>
+        <option value="">Select Country</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+      </select>
+      
+      {watchCountry === 'US' && (
+        <input
+          {...register('zipCode', {
+            required: 'ZIP code required for US',
+            pattern: {
+              value: /^[0-9]{5}$/,
+              message: 'Invalid ZIP code'
+            }
+          })}
+          placeholder="ZIP Code"
+        />
+      )}
+      
+      {watchCountry === 'CA' && (
+        <input
+          {...register('postalCode', {
+            required: 'Postal code required for Canada',
+            pattern: {
+              value: /^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$/,
+              message: 'Invalid postal code'
+            }
+          })}
+          placeholder="Postal Code"
+        />
+      )}
+    </form>
+  );
+}
+
+// 3. Multi-Step Wizard Forms
+// React Hook Form with form state persistence
+function WizardForm() {
+  const [step, setStep] = useState(1);
+  const methods = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      // Persist across steps
+      personal: {},
+      address: {},
+      preferences: {}
+    }
+  });
+  
+  const { trigger, getValues } = methods;
+  
+  const nextStep = async () => {
+    const isValid = await trigger(\`step\${step}\`);
+    if (isValid) setStep(step + 1);
+  };
+  
+  const prevStep = () => setStep(step - 1);
+  
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(console.log)}>
+        {step === 1 && <PersonalInfoStep />}
+        {step === 2 && <AddressStep />}
+        {step === 3 && <PreferencesStep />}
+        
+        <div>
+          {step > 1 && (
+            <button type="button" onClick={prevStep}>
+              Previous
+            </button>
+          )}
+          {step < 3 ? (
+            <button type="button" onClick={nextStep}>
+              Next
+            </button>
+          ) : (
+            <button type="submit">Submit</button>
+          )}
+        </div>
+      </form>
+    </FormProvider>
+  );
+}
+
+// 4. Async Validation
+// React Hook Form
+const validateUsername = async (value) => {
+  const response = await fetch(\`/api/check-username?username=\${value}\`);
+  const data = await response.json();
+  return data.available || 'Username already taken';
+};
+
+<input
+  {...register('username', {
+    validate: validateUsername
+  })}
+/>
+
+// Formik Async Validation
+const validate = async (values) => {
+  const errors = {};
+  
+  try {
+    const response = await fetch(\`/api/check-username?username=\${values.username}\`);
+    const data = await response.json();
+    if (!data.available) {
+      errors.username = 'Username already taken';
+    }
+  } catch (error) {
+    errors.username = 'Could not validate username';
+  }
+  
+  return errors;
+};
+
+// 5. Complex Validation with Yup
+import * as Yup from 'yup';
+
+const orderSchema = Yup.object({
+  items: Yup.array()
+    .of(
+      Yup.object({
+        product: Yup.string().required('Product required'),
+        quantity: Yup.number()
+          .min(1, 'At least 1')
+          .required('Quantity required'),
+        price: Yup.number()
+          .positive('Must be positive')
+          .required('Price required')
+      })
+    )
+    .min(1, 'At least one item required'),
+  
+  shipping: Yup.object({
+    method: Yup.string()
+      .oneOf(['standard', 'express', 'overnight'])
+      .required('Shipping method required'),
+    address: Yup.string()
+      .when('method', {
+        is: (method) => method !== 'pickup',
+        then: Yup.string().required('Address required for delivery'),
+        otherwise: Yup.string()
+      })
+  }),
+  
+  total: Yup.number()
+    .test('minimum-order', 'Minimum order $10', function(value) {
+      return value >= 10;
+    })
+});
+
+// 6. Performance Optimization
+// React Hook Form - Isolated re-renders
+function OptimizedForm() {
+  const { register, control } = useForm();
+  
+  return (
+    <form>
+      {/* This component only re-renders when its field changes */}
+      <Controller
+        name="expensiveField"
+        control={control}
+        render={({ field }) => (
+          <ExpensiveComponent {...field} />
+        )}
+      />
+      
+      {/* Regular fields don't trigger re-renders */}
+      <input {...register('cheapField')} />
+    </form>
+  );
+}
+
+// React Final Form - Field-level subscriptions
+<Field
+  name="specificField"
+  subscription={{ value: true, error: true }}
+  render={({ input, meta }) => (
+    // Only re-renders when this field's value or error changes
+    <input {...input} />
+  )}
+/>`}</pre>
+				</div>
+				<div className='code-tooltip'>
+					<strong>Workshop Wisdom:</strong> "Each library excels at different 
+					patterns. React Hook Form minimizes re-renders in large forms. Formik 
+					provides the most React-like experience. Final Form offers granular 
+					subscription control. Choose based on your form's complexity and 
+					performance requirements."
+				</div>
+			</div>
+
+			<div className='lesson-insight'>
+				<h3>The Implementation Insight:</h3>
+				<p>
+					Complex forms reveal each library's strengths. React Hook Form's 
+					uncontrolled approach shines in large forms with many fields. Formik's 
+					controlled components feel natural to React developers. Final Form's 
+					subscription model provides ultimate performance control.
+				</p>
+				<p>
+					Beyond basic forms, consider: dynamic fields, conditional logic, 
+					multi-step wizards, async validation, and complex dependencies. Each 
+					library handles these differently, affecting both developer experience 
+					and runtime performance.
+				</p>
+			</div>
+
+			<div className='reflection-section'>
+				<h3>Reflect on Implementation</h3>
+				<p>
+					<strong>How does form complexity affect library choice?</strong> Consider 
+					how different patterns (dynamic fields, validation, performance) influence 
+					which library serves best.
+				</p>
+				<p>
+					<strong>What role does team experience play?</strong> Think about how 
+					familiar patterns versus optimal performance create trade-offs in 
+					library selection.
+				</p>
+			</div>
+
+			<div className='chapter-ending'>
+				<p>
+					After hours of implementation, <strong>Aria</strong> stepped back from 
+					the workshops. "Each library has its own elegance. React Hook Form for 
+					performance, Formik for familiarity, Final Form for control."
+				</p>
+				<p>
+					<strong>Binary</strong> compiled the metrics. "The performance differences 
+					are significant in complex forms. But developer experience varies too."
+				</p>
+				<p>
+					<strong>Debuggora</strong> observed, "The best choice depends on your 
+					specific needs. There's no universal answer."
+				</p>
+				<p>
+					The Federal Form Chancellor nodded approvingly. "You begin to understand. 
+					Now, let's discuss when to use each approach..."
+				</p>
+			</div>
+		</div>
+	);
+};
+
+export default ChapterTwo;

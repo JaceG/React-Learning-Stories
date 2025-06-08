@@ -35,6 +35,10 @@ import CompoundComponents from '../../../learning-paths/advanced-patterns/pages/
 import RenderProps from '../../../learning-paths/advanced-patterns/pages/RenderProps';
 import HigherOrderComponents from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents';
 import PortalsRefs from '../../../learning-paths/advanced-patterns/pages/PortalsRefs';
+import StateManagementLibraries from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries';
+import StylingSolutions from '../../../learning-paths/react-ecosystem/pages/StylingSolutions';
+import FormLibraries from '../../../learning-paths/react-ecosystem/pages/FormLibraries';
+import AnimationLibraries from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries';
 
 const courseListMap = {
 	'components-basics': {
@@ -90,6 +94,12 @@ const courseListMap = {
 		'render-props': <RenderProps />,
 		'higher-order-components': <HigherOrderComponents />,
 		'portals-refs': <PortalsRefs />,
+	},
+	'react-ecosystem': {
+		'state-management-libraries': <StateManagementLibraries />,
+		'styling-solutions': <StylingSolutions />,
+		'form-libraries': <FormLibraries />,
+		'animation-libraries': <AnimationLibraries />,
 	},
 };
 const LessonList = () => {

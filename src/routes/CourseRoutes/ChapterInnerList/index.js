@@ -107,6 +107,18 @@ import HigherOrderComponentsChapterThree from '../../../learning-paths/advanced-
 import PortalsRefsChapterOne from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter1/chapter1';
 import PortalsRefsChapterTwo from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter2/chapter2';
 import PortalsRefsChapterThree from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter3/chapter3';
+import StateManagementLibrariesChapterOne from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter1/chapter1';
+import StateManagementLibrariesChapterTwo from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter2/chapter2';
+import StateManagementLibrariesChapterThree from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter3/chapter3';
+import StylingSolutionsChapterOne from '../../../learning-paths/react-ecosystem/pages/StylingSolutions/chapter1/chapter1';
+import StylingSolutionsChapterTwo from '../../../learning-paths/react-ecosystem/pages/StylingSolutions/chapter2/chapter2';
+import StylingSolutionsChapterThree from '../../../learning-paths/react-ecosystem/pages/StylingSolutions/chapter3/chapter3';
+import FormLibrariesChapterOne from '../../../learning-paths/react-ecosystem/pages/FormLibraries/chapter1/chapter1';
+import FormLibrariesChapterTwo from '../../../learning-paths/react-ecosystem/pages/FormLibraries/chapter2/chapter2';
+import FormLibrariesChapterThree from '../../../learning-paths/react-ecosystem/pages/FormLibraries/chapter3/chapter3';
+import AnimationLibrariesChapterOne from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter1/chapter1';
+import AnimationLibrariesChapterTwo from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter2/chapter2';
+import AnimationLibrariesChapterThree from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -341,6 +353,32 @@ const courseListMap = {
 			chapter1: <PortalsRefsChapterOne />,
 			chapter2: <PortalsRefsChapterTwo />,
 			chapter3: <PortalsRefsChapterThree />,
+		},
+	},
+	'react-ecosystem': {
+		'state-management-libraries': {
+			'/': <StateManagementLibrariesChapterOne />,
+			chapter1: <StateManagementLibrariesChapterOne />,
+			chapter2: <StateManagementLibrariesChapterTwo />,
+			chapter3: <StateManagementLibrariesChapterThree />,
+		},
+		'styling-solutions': {
+			'/': <StylingSolutionsChapterOne />,
+			chapter1: <StylingSolutionsChapterOne />,
+			chapter2: <StylingSolutionsChapterTwo />,
+			chapter3: <StylingSolutionsChapterThree />,
+		},
+		'form-libraries': {
+			'/': <FormLibrariesChapterOne />,
+			chapter1: <FormLibrariesChapterOne />,
+			chapter2: <FormLibrariesChapterTwo />,
+			chapter3: <FormLibrariesChapterThree />,
+		},
+		'animation-libraries': {
+			'/': <AnimationLibrariesChapterOne />,
+			chapter1: <AnimationLibrariesChapterOne />,
+			chapter2: <AnimationLibrariesChapterTwo />,
+			chapter3: <AnimationLibrariesChapterThree />,
 		},
 	},
 };
