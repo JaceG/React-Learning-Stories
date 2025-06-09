@@ -137,6 +137,31 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Generic Patterns</h3>
 				
+				<div style={{ 
+					background: 'rgba(230, 126, 34, 0.1)', 
+					padding: '15px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center'
+				}}>
+					<div style={{ display: 'flex', gap: '30px' }}>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Forge Level: </span>
+							<span style={{ color: '#e67e22', fontWeight: 'bold' }}>{forgeLevel}</span>
+						</div>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Generics Forged: </span>
+							<span style={{ color: '#e67e22', fontWeight: 'bold' }}>{forgedGenerics.length}</span>
+						</div>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Mastery: </span>
+							<span style={{ color: '#d35400', fontWeight: 'bold' }}>{genericMastery}%</span>
+						</div>
+					</div>
+				</div>
+				
 				<div className='forge-workshop'>
 					{basicPatterns.map(pattern => (
 						<div

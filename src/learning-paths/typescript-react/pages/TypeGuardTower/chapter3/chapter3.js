@@ -16,6 +16,7 @@ const ChapterThree = () => {
 	const [migrationStrategies, setMigrationStrategies] = useState([]);
 	const [selectedStrategy, setSelectedStrategy] = useState(null);
 	const [towerComplete, setTowerComplete] = useState(false);
+	const [migrationProgress, setMigrationProgress] = useState(0);
 
 	// Migration patterns
 	const migrationPatterns = [
@@ -91,9 +92,10 @@ const ChapterThree = () => {
 			setMigrationStrategies([...migrationStrategies, strategy]);
 			setSelectedStrategy(strategy);
 			setGuardStrength(100);
+			setMigrationProgress(prev => Math.min(100, prev + 25));
 			
 			if (migrationStrategies.length >= 2) {
-				levelUp('master');
+				levelUp('commander');
 			}
 		}
 	};
@@ -150,6 +152,46 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Migration Strategies</h3>
+				
+				<div style={{ 
+					background: 'linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1))', 
+					padding: '20px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					border: '1px solid rgba(155, 89, 182, 0.3)',
+					textAlign: 'center'
+				}}>
+					{towerLevel === 'commander' ? (
+						<div>
+							<div style={{ fontSize: '1.5em', marginBottom: '10px' }}>
+								🏰 <strong style={{ color: '#9b59b6' }}>Master Guardian</strong> 🏰
+							</div>
+							<p style={{ color: '#8e44ad' }}>
+								You've reached the tower's pinnacle! Lead the migration of JavaScript realms to TypeScript safety.
+							</p>
+							<div style={{ marginTop: '15px', display: 'flex', justifyContent: 'center', gap: '30px' }}>
+								<div>
+									<span style={{ color: '#7f8c8d' }}>Total Guards: </span>
+									<span style={{ color: '#9b59b6', fontWeight: 'bold' }}>{guardedTypes.length}</span>
+								</div>
+								<div>
+									<span style={{ color: '#7f8c8d' }}>Defense: </span>
+									<span style={{ color: '#8e44ad', fontWeight: 'bold' }}>{guardStrength}%</span>
+								</div>
+							</div>
+						</div>
+					) : (
+						<div>
+							<p style={{ color: '#9b59b6' }}>
+								Master the migration patterns to achieve Commander rank!
+							</p>
+							<div style={{ marginTop: '10px' }}>
+								<span style={{ color: '#7f8c8d' }}>Progress: </span>
+								<span style={{ color: '#8e44ad', fontWeight: 'bold' }}>{migrationProgress}% Complete</span>
+							</div>
+						</div>
+					)}
+				</div>
 				
 				<div className='migration-tools'>
 					{migrationPatterns.map(pattern => (

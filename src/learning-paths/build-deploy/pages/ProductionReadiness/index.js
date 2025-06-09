@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
-import './GenericForge.css';
+import './ProductionReadiness.css';
 
-function GenericForge() {
-	const [forgedGenerics, setForgedGenerics] = useState([]);
-	const [selectedGeneric, setSelectedGeneric] = useState(null);
-	const [forgeLevel, setForgeLevel] = useState('apprentice');
-	const [genericMastery, setGenericMastery] = useState(0);
+function ProductionReadiness() {
+	const [battleReadiness, setBattleReadiness] = useState(0);
+	const [monitoringSystems, setMonitoringSystems] = useState([]);
+	const [commanderRank, setCommanderRank] = useState('Recruit');
+	const [productionMetrics, setProductionMetrics] = useState({
+		uptime: 95,
+		errorRate: 5,
+		performance: 70,
+		userSatisfaction: 80
+	});
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -21,31 +26,35 @@ function GenericForge() {
 		navigate(`chapter${chapter}`);
 	};
 
-	// Forge a new generic
-	const forgeGeneric = (generic) => {
-		setForgedGenerics([...forgedGenerics, generic]);
-		setGenericMastery(prev => Math.min(100, prev + 10));
+	// Add monitoring system
+	const addMonitoringSystem = (system) => {
+		if (!monitoringSystems.find(s => s.id === system.id)) {
+			setMonitoringSystems([...monitoringSystems, system]);
+			setBattleReadiness(prev => Math.min(100, prev + 20));
+		}
 	};
 
-	// Select a generic pattern
-	const selectGeneric = (generic) => {
-		setSelectedGeneric(generic);
+	// Improve production metrics
+	const improveMetric = (metric, value) => {
+		setProductionMetrics(prev => ({
+			...prev,
+			[metric]: Math.min(100, prev[metric] + value)
+		}));
 	};
 
-	// Level up the forge
-	const levelUp = (newLevel) => {
-		setForgeLevel(newLevel);
+	// Promote rank
+	const promoteRank = (newRank) => {
+		setCommanderRank(newRank);
 	};
 
 	return (
 		<div className='lesson-container'>
 			<div className='lesson-header'>
-				<h1>The Generic Forge</h1>
+				<h1>Production Readiness</h1>
 				<p className='lesson-subtitle'>
-					Master the art of flexible, reusable types with TypeScript generics
+					Prepare for battle in the Production War Room with monitoring, performance, and reliability
 				</p>
 			</div>
-
 
 			<div className='chapter-navigation'>
 				<button
@@ -67,14 +76,14 @@ function GenericForge() {
 
 			<Outlet
 				context={{
-					forgedGenerics,
-					forgeGeneric,
-					selectedGeneric,
-					selectGeneric,
-					forgeLevel,
-					levelUp,
-					genericMastery,
-					setGenericMastery
+					battleReadiness,
+					setBattleReadiness,
+					monitoringSystems,
+					addMonitoringSystem,
+					commanderRank,
+					promoteRank,
+					productionMetrics,
+					improveMetric
 				}}
 			/>
 
@@ -97,11 +106,11 @@ function GenericForge() {
 			</div>
 
 			<LessonNavigation
-				courseId='typescript-react'
-				lessonId='generic-forge'
+				courseId='build-deploy'
+				lessonId='production-readiness'
 			/>
 		</div>
 	);
 }
 
-export default GenericForge;
+export default ProductionReadiness;

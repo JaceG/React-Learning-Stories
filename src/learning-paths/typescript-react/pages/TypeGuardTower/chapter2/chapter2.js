@@ -15,6 +15,7 @@ const ChapterTwo = () => {
 
 	const [selectedAdvancedGuard, setSelectedAdvancedGuard] = useState(null);
 	const [complexPatternsMastered, setComplexPatternsMastered] = useState([]);
+	const [complexGuardMastery, setComplexGuardMastery] = useState(0);
 
 	// Advanced guard patterns
 	const advancedGuards = [
@@ -80,6 +81,7 @@ const ChapterTwo = () => {
 		if (!complexPatternsMastered.includes(guard.id)) {
 			setComplexPatternsMastered([...complexPatternsMastered, guard.id]);
 			setGuardStrength(prev => Math.min(100, prev + 15));
+			setComplexGuardMastery(prev => Math.min(100, prev + 25));
 		}
 		
 		if (complexPatternsMastered.length >= 2 && towerLevel === 'sentinel') {
@@ -134,6 +136,34 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Guard Patterns</h3>
+				
+				<div className="progress-tracker" style={{ 
+					background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1))', 
+					padding: '15px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					border: '1px solid rgba(52, 152, 219, 0.3)',
+					position: 'relative',
+					overflow: 'hidden'
+				}}>
+					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+						<div style={{ display: 'flex', gap: '30px' }}>
+							<div>
+								<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Current Level: </span>
+								<span style={{ color: '#3498db', fontWeight: 'bold' }}>{towerLevel}</span>
+							</div>
+							<div>
+								<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Complex Guards: </span>
+								<span style={{ color: '#2980b9', fontWeight: 'bold' }}>{complexPatternsMastered.length}/4</span>
+							</div>
+						</div>
+						{complexGuardMastery >= 75 && (
+							<div style={{ color: '#27ae60', fontWeight: 'bold' }}>
+								🛡️ Advanced Guardian Status
+							</div>
+						)}
+					</div>
+				</div>
 				
 				<div className='guard-workshop'>
 					{advancedGuards.map(guard => (

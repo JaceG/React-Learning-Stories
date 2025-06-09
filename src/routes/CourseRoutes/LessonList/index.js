@@ -47,6 +47,10 @@ import TypeForge from '../../../learning-paths/typescript-react/pages/TypeForge'
 import ComponentArmory from '../../../learning-paths/typescript-react/pages/ComponentArmory';
 import GenericForge from '../../../learning-paths/typescript-react/pages/GenericForge';
 import TypeGuardTower from '../../../learning-paths/typescript-react/pages/TypeGuardTower';
+import BuildSystems from '../../../learning-paths/build-deploy/pages/BuildSystems';
+import CiCdPipeline from '../../../learning-paths/build-deploy/pages/CiCdPipeline';
+import HostingHorizons from '../../../learning-paths/build-deploy/pages/HostingHorizons';
+import ProductionReadiness from '../../../learning-paths/build-deploy/pages/ProductionReadiness';
 
 const courseListMap = {
 	'components-basics': {
@@ -120,6 +124,12 @@ const courseListMap = {
 		'component-armory': <ComponentArmory />,
 		'generic-forge': <GenericForge />,
 		'type-guard-tower': <TypeGuardTower />,
+	},
+	'build-deploy': {
+		'build-systems': <BuildSystems />,
+		'ci-cd-pipeline': <CiCdPipeline />,
+		'hosting-horizons': <HostingHorizons />,
+		'production-readiness': <ProductionReadiness />,
 	},
 };
 const LessonList = () => {

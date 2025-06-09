@@ -46,29 +46,6 @@ function TypeGuardTower() {
 				</p>
 			</div>
 
-			<div className='tower-status'>
-				<h3>🏰 Tower Status</h3>
-				<div className='tower-stats'>
-					<div className='stat'>
-						<span className='stat-label'>Tower Level:</span>
-						<span className='stat-value'>{towerLevel}</span>
-					</div>
-					<div className='stat'>
-						<span className='stat-label'>Guards Created:</span>
-						<span className='stat-value'>{guardedTypes.length}</span>
-					</div>
-					<div className='stat'>
-						<span className='stat-label'>Defense Strength:</span>
-						<div className='defense-bar'>
-							<div 
-								className='defense-fill'
-								style={{ width: `${guardStrength}%` }}>
-								{guardStrength}%
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div className='chapter-navigation'>
 				<button

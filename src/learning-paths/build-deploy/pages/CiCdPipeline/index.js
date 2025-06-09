@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
-import './GenericForge.css';
+import './CiCdPipeline.css';
 
-function GenericForge() {
-	const [forgedGenerics, setForgedGenerics] = useState([]);
-	const [selectedGeneric, setSelectedGeneric] = useState(null);
-	const [forgeLevel, setForgeLevel] = useState('apprentice');
-	const [genericMastery, setGenericMastery] = useState(0);
+function CiCdPipeline() {
+	const [automatedFlows, setAutomatedFlows] = useState([]);
+	const [selectedPipeline, setSelectedPipeline] = useState(null);
+	const [pipelineStatus, setPipelineStatus] = useState('idle');
+	const [automationLevel, setAutomationLevel] = useState(0);
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -21,31 +21,30 @@ function GenericForge() {
 		navigate(`chapter${chapter}`);
 	};
 
-	// Forge a new generic
-	const forgeGeneric = (generic) => {
-		setForgedGenerics([...forgedGenerics, generic]);
-		setGenericMastery(prev => Math.min(100, prev + 10));
+	// Create automated flow
+	const createFlow = (flow) => {
+		setAutomatedFlows([...automatedFlows, flow]);
+		setAutomationLevel(prev => Math.min(100, prev + 20));
 	};
 
-	// Select a generic pattern
-	const selectGeneric = (generic) => {
-		setSelectedGeneric(generic);
+	// Select pipeline
+	const selectPipeline = (pipeline) => {
+		setSelectedPipeline(pipeline);
 	};
 
-	// Level up the forge
-	const levelUp = (newLevel) => {
-		setForgeLevel(newLevel);
+	// Update pipeline status
+	const updateStatus = (status) => {
+		setPipelineStatus(status);
 	};
 
 	return (
 		<div className='lesson-container'>
 			<div className='lesson-header'>
-				<h1>The Generic Forge</h1>
+				<h1>CI/CD Pipeline</h1>
 				<p className='lesson-subtitle'>
-					Master the art of flexible, reusable types with TypeScript generics
+					Navigate the Automation Harbor where code flows through automated gates to production
 				</p>
 			</div>
-
 
 			<div className='chapter-navigation'>
 				<button
@@ -67,14 +66,14 @@ function GenericForge() {
 
 			<Outlet
 				context={{
-					forgedGenerics,
-					forgeGeneric,
-					selectedGeneric,
-					selectGeneric,
-					forgeLevel,
-					levelUp,
-					genericMastery,
-					setGenericMastery
+					automatedFlows,
+					createFlow,
+					selectedPipeline,
+					selectPipeline,
+					pipelineStatus,
+					updateStatus,
+					automationLevel,
+					setAutomationLevel
 				}}
 			/>
 
@@ -97,11 +96,11 @@ function GenericForge() {
 			</div>
 
 			<LessonNavigation
-				courseId='typescript-react'
-				lessonId='generic-forge'
+				courseId='build-deploy'
+				lessonId='ci-cd-pipeline'
 			/>
 		</div>
 	);
 }
 
-export default GenericForge;
+export default CiCdPipeline;

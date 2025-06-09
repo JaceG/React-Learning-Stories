@@ -73,10 +73,10 @@ const lessonSequences = {
     { id: 'type-guard-tower', title: 'Type Guard Tower' }
   ],
   'build-deploy': [
-    { id: 'build-optimization', title: 'Build Optimization' },
-    { id: 'environment-config', title: 'Environment Configuration' },
-    { id: 'deployment-strategies', title: 'Deployment Strategies' },
-    { id: 'ci-cd-react', title: 'CI/CD for React' }
+    { id: 'build-systems', title: 'Build Systems' },
+    { id: 'ci-cd-pipeline', title: 'CI/CD Pipeline' },
+    { id: 'hosting-horizons', title: 'Hosting Horizons' },
+    { id: 'production-readiness', title: 'Production Readiness' }
   ],
   'react-native': [
     { id: 'mobile-components', title: 'Mobile-Specific Components' },

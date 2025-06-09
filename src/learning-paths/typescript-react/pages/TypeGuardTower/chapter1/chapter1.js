@@ -143,6 +143,32 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Guard Patterns</h3>
 				
+				<div style={{ 
+					background: 'rgba(52, 152, 219, 0.1)', 
+					padding: '15px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+					border: '1px solid rgba(52, 152, 219, 0.3)'
+				}}>
+					<div style={{ display: 'flex', gap: '30px' }}>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Tower Level: </span>
+							<span style={{ color: '#3498db', fontWeight: 'bold' }}>{towerLevel}</span>
+						</div>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Guards Created: </span>
+							<span style={{ color: '#3498db', fontWeight: 'bold' }}>{guardedTypes.length}</span>
+						</div>
+						<div>
+							<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Defense Strength: </span>
+							<span style={{ color: '#2980b9', fontWeight: 'bold' }}>{guardStrength}%</span>
+						</div>
+					</div>
+				</div>
+				
 				<div className='guard-workshop'>
 					{basicGuards.map(guard => (
 						<div

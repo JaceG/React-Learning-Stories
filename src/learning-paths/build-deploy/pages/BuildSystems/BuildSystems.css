@@ -1,0 +1,289 @@
+/* Build Systems - Deployment Armada Theme */
+
+/* Ship Cards */
+.ship-card {
+	background: rgba(41, 128, 185, 0.05);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 15px 0;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.ship-card:hover {
+	background: rgba(41, 128, 185, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(41, 128, 185, 0.2);
+}
+
+.ship-card.optimized {
+	background: rgba(39, 174, 96, 0.1);
+	border-color: rgba(39, 174, 96, 0.5);
+}
+
+.ship-header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.ship-icon {
+	font-size: 2em;
+}
+
+.ship-name {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #3498db;
+}
+
+.ship-class {
+	padding: 5px 10px;
+	background: rgba(41, 128, 185, 0.2);
+	color: #3498db;
+	border-radius: 15px;
+	font-size: 0.85em;
+}
+
+/* Build Process Visualization */
+.build-pipeline {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 12px;
+	padding: 30px;
+	margin: 30px 0;
+}
+
+.pipeline-stages {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.pipeline-stage {
+	flex: 1;
+	text-align: center;
+	padding: 20px;
+	background: rgba(41, 128, 185, 0.1);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.pipeline-stage.active {
+	background: rgba(41, 128, 185, 0.3);
+	transform: scale(1.05);
+}
+
+.stage-icon {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.stage-name {
+	font-weight: bold;
+	color: #3498db;
+	margin-bottom: 5px;
+}
+
+.stage-arrow {
+	color: #3498db;
+	font-size: 1.5em;
+}
+
+/* Bundle Analyzer */
+.bundle-analyzer {
+	background: rgba(41, 128, 185, 0.05);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.bundle-chart {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 15px;
+	margin-top: 20px;
+}
+
+.bundle-item {
+	background: rgba(0, 0, 0, 0.3);
+	padding: 15px;
+	border-radius: 8px;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.bundle-item:hover {
+	transform: scale(1.05);
+	background: rgba(41, 128, 185, 0.2);
+}
+
+.bundle-size {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #3498db;
+	margin-bottom: 5px;
+}
+
+.bundle-name {
+	font-size: 0.9em;
+	color: #bdc3c7;
+}
+
+/* Optimization Techniques */
+.optimization-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+	margin: 30px 0;
+}
+
+.optimization-card {
+	background: rgba(41, 128, 185, 0.08);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.optimization-card:hover {
+	background: rgba(41, 128, 185, 0.15);
+	transform: translateY(-2px);
+}
+
+.optimization-card.selected {
+	background: rgba(41, 128, 185, 0.2);
+	border-color: #3498db;
+}
+
+.optimization-icon {
+	font-size: 2.5em;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.optimization-title {
+	font-weight: bold;
+	color: #3498db;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.optimization-description {
+	color: #bdc3c7;
+	font-size: 0.9em;
+}
+
+/* Fleet Ranks */
+.fleet-ranks {
+	display: flex;
+	justify-content: space-around;
+	margin: 30px 0;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+}
+
+.rank-badge {
+	text-align: center;
+	padding: 15px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.rank-badge.active {
+	background: rgba(41, 128, 185, 0.3);
+	transform: scale(1.1);
+}
+
+.rank-icon {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.rank-name {
+	font-weight: bold;
+	color: #3498db;
+}
+
+/* Build Metrics */
+.build-metrics {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+	margin: 30px 0;
+}
+
+.metric-card {
+	background: rgba(41, 128, 185, 0.05);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+}
+
+.metric-value {
+	font-size: 2em;
+	font-weight: bold;
+	color: #3498db;
+	margin-bottom: 10px;
+}
+
+.metric-label {
+	color: #bdc3c7;
+	font-size: 0.9em;
+}
+
+.metric-trend {
+	margin-top: 10px;
+	font-size: 0.85em;
+}
+
+.metric-trend.positive {
+	color: #27ae60;
+}
+
+.metric-trend.negative {
+	color: #e74c3c;
+}
+
+/* Ship Manifest */
+.ship-manifest {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(41, 128, 185, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+	font-family: 'Courier New', monospace;
+}
+
+.manifest-header {
+	color: #3498db;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.pipeline-stages {
+		flex-direction: column;
+	}
+	
+	.stage-arrow {
+		transform: rotate(90deg);
+	}
+	
+	.fleet-ranks {
+		flex-direction: column;
+		gap: 20px;
+	}
+}

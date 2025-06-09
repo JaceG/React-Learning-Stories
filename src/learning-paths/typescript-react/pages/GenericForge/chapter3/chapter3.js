@@ -147,6 +147,46 @@ const ChapterThree = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Master Generic Patterns</h3>
 				
+				<div style={{ 
+					background: 'linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1))', 
+					padding: '20px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					border: '1px solid rgba(231, 76, 60, 0.3)',
+					textAlign: 'center'
+				}}>
+					{forgeLevel === 'master' ? (
+						<div>
+							<div style={{ fontSize: '1.5em', marginBottom: '10px' }}>
+								🔥 <strong style={{ color: '#e74c3c' }}>Master Forger</strong> 🔥
+							</div>
+							<p style={{ color: '#c0392b' }}>
+								You've achieved the highest rank! Complete the challenges below to solidify your mastery.
+							</p>
+							<div style={{ marginTop: '15px', display: 'flex', justifyContent: 'center', gap: '30px' }}>
+								<div>
+									<span style={{ color: '#7f8c8d' }}>Total Forged: </span>
+									<span style={{ color: '#e74c3c', fontWeight: 'bold' }}>{forgedGenerics.length}</span>
+								</div>
+								<div>
+									<span style={{ color: '#7f8c8d' }}>Mastery: </span>
+									<span style={{ color: '#c0392b', fontWeight: 'bold' }}>{genericMastery}%</span>
+								</div>
+							</div>
+						</div>
+					) : (
+						<div>
+							<p style={{ color: '#e74c3c' }}>
+								Complete the advanced patterns to unlock Master rank!
+							</p>
+							<div style={{ marginTop: '10px' }}>
+								<span style={{ color: '#7f8c8d' }}>Current Level: </span>
+								<span style={{ color: '#e67e22', fontWeight: 'bold' }}>{forgeLevel}</span>
+							</div>
+						</div>
+					)}
+				</div>
+				
 				<div className='composition-patterns'>
 					<h4>Advanced Compositions</h4>
 					<div className='pattern-grid'>

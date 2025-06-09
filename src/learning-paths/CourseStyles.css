@@ -392,6 +392,8 @@
   background-color: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #e1e1e1;
+  position: relative;
+  overflow: visible;
 }
 
 .section-title {

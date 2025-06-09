@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
-import './GenericForge.css';
+import './HostingHorizons.css';
 
-function GenericForge() {
-	const [forgedGenerics, setForgedGenerics] = useState([]);
-	const [selectedGeneric, setSelectedGeneric] = useState(null);
-	const [forgeLevel, setForgeLevel] = useState('apprentice');
-	const [genericMastery, setGenericMastery] = useState(0);
+function HostingHorizons() {
+	const [visitedPlatforms, setVisitedPlatforms] = useState([]);
+	const [selectedPlatform, setSelectedPlatform] = useState(null);
+	const [navigationSkill, setNavigationSkill] = useState('Explorer');
+	const [globalReach, setGlobalReach] = useState(0);
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -21,31 +21,28 @@ function GenericForge() {
 		navigate(`chapter${chapter}`);
 	};
 
-	// Forge a new generic
-	const forgeGeneric = (generic) => {
-		setForgedGenerics([...forgedGenerics, generic]);
-		setGenericMastery(prev => Math.min(100, prev + 10));
+	// Visit a platform
+	const visitPlatform = (platform) => {
+		if (!visitedPlatforms.find(p => p.id === platform.id)) {
+			setVisitedPlatforms([...visitedPlatforms, platform]);
+			setGlobalReach(prev => Math.min(100, prev + 25));
+		}
+		setSelectedPlatform(platform);
 	};
 
-	// Select a generic pattern
-	const selectGeneric = (generic) => {
-		setSelectedGeneric(generic);
-	};
-
-	// Level up the forge
-	const levelUp = (newLevel) => {
-		setForgeLevel(newLevel);
+	// Level up navigation skill
+	const levelUpSkill = (newSkill) => {
+		setNavigationSkill(newSkill);
 	};
 
 	return (
 		<div className='lesson-container'>
 			<div className='lesson-header'>
-				<h1>The Generic Forge</h1>
+				<h1>Hosting Horizons</h1>
 				<p className='lesson-subtitle'>
-					Master the art of flexible, reusable types with TypeScript generics
+					Explore the Platform Archipelago and choose the perfect destination for your applications
 				</p>
 			</div>
-
 
 			<div className='chapter-navigation'>
 				<button
@@ -67,14 +64,14 @@ function GenericForge() {
 
 			<Outlet
 				context={{
-					forgedGenerics,
-					forgeGeneric,
-					selectedGeneric,
-					selectGeneric,
-					forgeLevel,
-					levelUp,
-					genericMastery,
-					setGenericMastery
+					visitedPlatforms,
+					visitPlatform,
+					selectedPlatform,
+					setSelectedPlatform,
+					navigationSkill,
+					levelUpSkill,
+					globalReach,
+					setGlobalReach
 				}}
 			/>
 
@@ -97,11 +94,11 @@ function GenericForge() {
 			</div>
 
 			<LessonNavigation
-				courseId='typescript-react'
-				lessonId='generic-forge'
+				courseId='build-deploy'
+				lessonId='hosting-horizons'
 			/>
 		</div>
 	);
 }
 
-export default GenericForge;
+export default HostingHorizons;

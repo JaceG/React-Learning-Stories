@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
-import './GenericForge.css';
+import './BuildSystems.css';
 
-function GenericForge() {
-	const [forgedGenerics, setForgedGenerics] = useState([]);
-	const [selectedGeneric, setSelectedGeneric] = useState(null);
-	const [forgeLevel, setForgeLevel] = useState('apprentice');
-	const [genericMastery, setGenericMastery] = useState(0);
+function BuildSystems() {
+	const [deploymentShips, setDeploymentShips] = useState([]);
+	const [selectedVessel, setSelectedVessel] = useState(null);
+	const [captainRank, setCaptainRank] = useState('Apprentice');
+	const [fleetReadiness, setFleetReadiness] = useState(0);
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -21,31 +21,30 @@ function GenericForge() {
 		navigate(`chapter${chapter}`);
 	};
 
-	// Forge a new generic
-	const forgeGeneric = (generic) => {
-		setForgedGenerics([...forgedGenerics, generic]);
-		setGenericMastery(prev => Math.min(100, prev + 10));
+	// Prepare a deployment ship
+	const prepareShip = (ship) => {
+		setDeploymentShips([...deploymentShips, ship]);
+		setFleetReadiness(prev => Math.min(100, prev + 15));
 	};
 
-	// Select a generic pattern
-	const selectGeneric = (generic) => {
-		setSelectedGeneric(generic);
+	// Select a vessel for deployment
+	const selectVessel = (vessel) => {
+		setSelectedVessel(vessel);
 	};
 
-	// Level up the forge
-	const levelUp = (newLevel) => {
-		setForgeLevel(newLevel);
+	// Promote captain rank
+	const promoteRank = (newRank) => {
+		setCaptainRank(newRank);
 	};
 
 	return (
 		<div className='lesson-container'>
 			<div className='lesson-header'>
-				<h1>The Generic Forge</h1>
+				<h1>Build Systems</h1>
 				<p className='lesson-subtitle'>
-					Master the art of flexible, reusable types with TypeScript generics
+					Command the Deployment Armada and transform your code into production-ready vessels
 				</p>
 			</div>
-
 
 			<div className='chapter-navigation'>
 				<button
@@ -67,14 +66,14 @@ function GenericForge() {
 
 			<Outlet
 				context={{
-					forgedGenerics,
-					forgeGeneric,
-					selectedGeneric,
-					selectGeneric,
-					forgeLevel,
-					levelUp,
-					genericMastery,
-					setGenericMastery
+					deploymentShips,
+					prepareShip,
+					selectedVessel,
+					selectVessel,
+					captainRank,
+					promoteRank,
+					fleetReadiness,
+					setFleetReadiness
 				}}
 			/>
 
@@ -97,11 +96,11 @@ function GenericForge() {
 			</div>
 
 			<LessonNavigation
-				courseId='typescript-react'
-				lessonId='generic-forge'
+				courseId='build-deploy'
+				lessonId='build-systems'
 			/>
 		</div>
 	);
 }
 
-export default GenericForge;
+export default BuildSystems;

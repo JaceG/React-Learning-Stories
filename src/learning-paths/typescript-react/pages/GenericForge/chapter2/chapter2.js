@@ -138,6 +138,32 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Constraint Patterns</h3>
 				
+				<div style={{ 
+					background: 'linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1))', 
+					padding: '15px', 
+					borderRadius: '8px',
+					marginBottom: '20px',
+					border: '1px solid rgba(230, 126, 34, 0.3)'
+				}}>
+					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+						<div style={{ display: 'flex', gap: '30px' }}>
+							<div>
+								<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Current Level: </span>
+								<span style={{ color: '#e67e22', fontWeight: 'bold' }}>{forgeLevel}</span>
+							</div>
+							<div>
+								<span style={{ color: '#7f8c8d', fontSize: '0.9em' }}>Mastery Progress: </span>
+								<span style={{ color: '#d35400', fontWeight: 'bold' }}>{genericMastery}%</span>
+							</div>
+						</div>
+						{constraintMastery >= 80 && (
+							<div style={{ color: '#27ae60', fontWeight: 'bold' }}>
+								🏆 Master Level Unlocked!
+							</div>
+						)}
+					</div>
+				</div>
+				
 				<div className='constraint-builder'>
 					<h4>Master Type Constraints</h4>
 					<div className='pattern-grid'>

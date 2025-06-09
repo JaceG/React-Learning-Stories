@@ -143,6 +143,18 @@ import GenericForgeChapterThree from '../../../learning-paths/typescript-react/p
 import TypeGuardTowerChapterOne from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter1/chapter1';
 import TypeGuardTowerChapterTwo from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter2/chapter2';
 import TypeGuardTowerChapterThree from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter3/chapter3';
+import BuildSystemsChapterOne from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter1/chapter1';
+import BuildSystemsChapterTwo from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter2/chapter2';
+import BuildSystemsChapterThree from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter3/chapter3';
+import CiCdPipelineChapterOne from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter1/chapter1';
+import CiCdPipelineChapterTwo from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter2/chapter2';
+import CiCdPipelineChapterThree from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter3/chapter3';
+import HostingHorizonsChapterOne from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter1/chapter1';
+import HostingHorizonsChapterTwo from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter2/chapter2';
+import HostingHorizonsChapterThree from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter3/chapter3';
+import ProductionReadinessChapterOne from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter1/chapter1';
+import ProductionReadinessChapterTwo from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter2/chapter2';
+import ProductionReadinessChapterThree from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -455,6 +467,32 @@ const courseListMap = {
 			chapter1: <TypeGuardTowerChapterOne />,
 			chapter2: <TypeGuardTowerChapterTwo />,
 			chapter3: <TypeGuardTowerChapterThree />,
+		},
+	},
+	'build-deploy': {
+		'build-systems': {
+			'/': <BuildSystemsChapterOne />,
+			chapter1: <BuildSystemsChapterOne />,
+			chapter2: <BuildSystemsChapterTwo />,
+			chapter3: <BuildSystemsChapterThree />,
+		},
+		'ci-cd-pipeline': {
+			'/': <CiCdPipelineChapterOne />,
+			chapter1: <CiCdPipelineChapterOne />,
+			chapter2: <CiCdPipelineChapterTwo />,
+			chapter3: <CiCdPipelineChapterThree />,
+		},
+		'hosting-horizons': {
+			'/': <HostingHorizonsChapterOne />,
+			chapter1: <HostingHorizonsChapterOne />,
+			chapter2: <HostingHorizonsChapterTwo />,
+			chapter3: <HostingHorizonsChapterThree />,
+		},
+		'production-readiness': {
+			'/': <ProductionReadinessChapterOne />,
+			chapter1: <ProductionReadinessChapterOne />,
+			chapter2: <ProductionReadinessChapterTwo />,
+			chapter3: <ProductionReadinessChapterThree />,
 		},
 	},
 };

@@ -172,6 +172,15 @@
 	padding: 15px;
 	border-radius: 8px;
 	transition: all 0.3s ease;
+	position: relative;
+	z-index: 1;
+}
+
+/* Ensure progress tracker stays in place */
+.progress-tracker {
+	position: relative;
+	z-index: 1;
+	contain: layout;
 }
 
 .level-indicator.active {
