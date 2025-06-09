@@ -4,14 +4,24 @@ import { useOutletContext } from 'react-router-dom';
 const ChapterThree = () => {
 	const {
 		animationTechniques,
+		learnTechnique,
+		currentDojo,
+		focusDojo,
 		masteredAnimations,
-		gesturePatterns,
-		fluidityLevel,
+		masterAnimation,
+		monasteryStage,
 		evolve
 	} = useOutletContext();
 
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [kingdomAchieved, setKingdomAchieved] = useState(false);
+	const [gesturePatterns, setGesturePatterns] = useState([]);
+	
+	// Calculate fluidity level based on progress
+	const fluidityLevel = Math.min(100, 
+		(animationTechniques.length * 20) + 
+		(masteredAnimations.length * 15)
+	);
 
 	// Animation project scenarios
 	const animationProjects = [

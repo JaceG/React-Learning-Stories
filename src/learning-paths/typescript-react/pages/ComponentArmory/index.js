@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import LessonNavigation from '../../../../components/layout/LessonNavigation';
 import '../../../CourseStyles.css';
-import './FormLibraries.css';
+import './ComponentArmory.css';
 
-function FormLibraries() {
-	const [selectedLibrary, setSelectedLibrary] = useState(null);
-	const [comparisonMode, setComparisonMode] = useState(false);
-	const [implementedForms, setImplementedForms] = useState([]);
-	const [federationProgress, setFederationProgress] = useState(0);
+function ComponentArmory() {
+	const [forgedComponents, setForgedComponents] = useState([]);
+	const [selectedArmor, setSelectedArmor] = useState(null);
+	const [armoryLevel, setArmoryLevel] = useState('apprentice');
+	const [typeStrength, setTypeStrength] = useState(0);
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -21,29 +21,27 @@ function FormLibraries() {
 		navigate(`chapter${chapter}`);
 	};
 
-	// Library selection
-	const selectLibrary = (library) => {
-		setSelectedLibrary(library);
-		setFederationProgress(federationProgress + 25);
+	// Forge a new component
+	const forgeComponent = (component) => {
+		setForgedComponents([...forgedComponents, component]);
+		setTypeStrength(prev => Math.min(100, prev + 20));
 	};
 
-	// Add implemented form
-	const addImplementedForm = (formType) => {
-		if (!implementedForms.includes(formType)) {
-			setImplementedForms([...implementedForms, formType]);
-		}
+	// Select armor type
+	const selectArmor = (armor) => {
+		setSelectedArmor(armor);
 	};
 
-	// Toggle comparison mode
-	const toggleComparison = () => {
-		setComparisonMode(!comparisonMode);
+	// Level up armory
+	const levelUp = (newLevel) => {
+		setArmoryLevel(newLevel);
 	};
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Form Libraries</h1>
+			<h1 className='lesson-title'>Component Armory</h1>
 			<p className='lesson-subtitle'>
-				Join the Form Federation and master advanced form solutions
+				Forge type-safe components with the power of TypeScript
 			</p>
 
 			<div className='chapter-navigation'>
@@ -66,14 +64,14 @@ function FormLibraries() {
 
 			<Outlet
 				context={{
-					selectedLibrary,
-					selectLibrary,
-					comparisonMode,
-					toggleComparison,
-					implementedForms,
-					addImplementedForm,
-					federationProgress,
-					setFederationProgress
+					forgedComponents,
+					forgeComponent,
+					selectedArmor,
+					selectArmor,
+					armoryLevel,
+					levelUp,
+					typeStrength,
+					setTypeStrength
 				}}
 			/>
 
@@ -96,11 +94,11 @@ function FormLibraries() {
 			</div>
 
 			<LessonNavigation
-				courseId='react-ecosystem'
-				lessonId='form-libraries'
+				courseId='typescript-react'
+				lessonId='component-armory'
 			/>
 		</div>
 	);
 }
 
-export default FormLibraries;
+export default ComponentArmory;

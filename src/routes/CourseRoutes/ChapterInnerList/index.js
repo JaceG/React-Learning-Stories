@@ -131,6 +131,18 @@ import CachingCastleChapterThree from '../../../learning-paths/server-data/pages
 import GraphQLGatewayChapterOne from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter1/chapter1';
 import GraphQLGatewayChapterTwo from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter2/chapter2';
 import GraphQLGatewayChapterThree from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter3/chapter3';
+import TypeForgeChapterOne from '../../../learning-paths/typescript-react/pages/TypeForge/chapter1/chapter1';
+import TypeForgeChapterTwo from '../../../learning-paths/typescript-react/pages/TypeForge/chapter2/chapter2';
+import TypeForgeChapterThree from '../../../learning-paths/typescript-react/pages/TypeForge/chapter3/chapter3';
+import ComponentArmoryChapterOne from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter1/chapter1';
+import ComponentArmoryChapterTwo from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter2/chapter2';
+import ComponentArmoryChapterThree from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter3/chapter3';
+import GenericForgeChapterOne from '../../../learning-paths/typescript-react/pages/GenericForge/chapter1/chapter1';
+import GenericForgeChapterTwo from '../../../learning-paths/typescript-react/pages/GenericForge/chapter2/chapter2';
+import GenericForgeChapterThree from '../../../learning-paths/typescript-react/pages/GenericForge/chapter3/chapter3';
+import TypeGuardTowerChapterOne from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter1/chapter1';
+import TypeGuardTowerChapterTwo from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter2/chapter2';
+import TypeGuardTowerChapterThree from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -368,7 +380,7 @@ const courseListMap = {
 		},
 	},
 	'react-ecosystem': {
-		'state-management-libraries': {
+		'state-libraries': {
 			'/': <StateManagementLibrariesChapterOne />,
 			chapter1: <StateManagementLibrariesChapterOne />,
 			chapter2: <StateManagementLibrariesChapterTwo />,
@@ -417,6 +429,32 @@ const courseListMap = {
 			chapter1: <GraphQLGatewayChapterOne />,
 			chapter2: <GraphQLGatewayChapterTwo />,
 			chapter3: <GraphQLGatewayChapterThree />,
+		},
+	},
+	'typescript-react': {
+		'type-forge': {
+			'/': <TypeForgeChapterOne />,
+			chapter1: <TypeForgeChapterOne />,
+			chapter2: <TypeForgeChapterTwo />,
+			chapter3: <TypeForgeChapterThree />,
+		},
+		'component-armory': {
+			'/': <ComponentArmoryChapterOne />,
+			chapter1: <ComponentArmoryChapterOne />,
+			chapter2: <ComponentArmoryChapterTwo />,
+			chapter3: <ComponentArmoryChapterThree />,
+		},
+		'generic-forge': {
+			'/': <GenericForgeChapterOne />,
+			chapter1: <GenericForgeChapterOne />,
+			chapter2: <GenericForgeChapterTwo />,
+			chapter3: <GenericForgeChapterThree />,
+		},
+		'type-guard-tower': {
+			'/': <TypeGuardTowerChapterOne />,
+			chapter1: <TypeGuardTowerChapterOne />,
+			chapter2: <TypeGuardTowerChapterTwo />,
+			chapter3: <TypeGuardTowerChapterThree />,
 		},
 	},
 };

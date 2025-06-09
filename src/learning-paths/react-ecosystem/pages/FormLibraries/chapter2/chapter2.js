@@ -3,21 +3,21 @@ import { useOutletContext } from 'react-router-dom';
 
 const ChapterTwo = () => {
 	const {
-		formSolutions,
+		selectedLibrary,
+		selectLibrary,
+		comparisonMode,
+		toggleComparison,
 		implementedForms,
-		implementForm,
-		performanceMetrics,
-		recordMetric,
-		validationStrategies,
-		addValidationStrategy,
-		currentLibrary,
-		focusLibrary,
-		evolve
+		addImplementedForm,
+		federationProgress,
+		setFederationProgress
 	} = useOutletContext();
 
 	const [activeDemo, setActiveDemo] = useState('react-hook-form');
 	const [formMode, setFormMode] = useState('simple');
 	const [showMetrics, setShowMetrics] = useState(false);
+	const [performanceMetrics, setPerformanceMetrics] = useState({});
+	const [validationStrategies, setValidationStrategies] = useState([]);
 
 	// Complex form scenarios
 	const formScenarios = {
@@ -73,28 +73,35 @@ const ChapterTwo = () => {
 
 	// Implement a form pattern
 	const implementPattern = (library, scenario) => {
-		implementForm(library, scenario);
-		recordMetric(library, 'rerenders', Math.floor(Math.random() * 50) + 10);
-		recordMetric(library, 'bundleSize', Math.floor(Math.random() * 30) + 20);
-		recordMetric(library, 'setupTime', Math.floor(Math.random() * 20) + 5);
+		addImplementedForm(`${library}-${scenario}`);
 		
-		if (implementedForms.length >= 4) {
-			evolve('experienced');
-		}
+		// Generate performance metrics
+		const newMetrics = {
+			rerenders: Math.floor(Math.random() * 50) + 10,
+			bundleSize: Math.floor(Math.random() * 30) + 20,
+			setupTime: Math.floor(Math.random() * 20) + 5
+		};
+		
+		setPerformanceMetrics(prev => ({
+			...prev,
+			[library]: newMetrics
+		}));
+		
+		setFederationProgress(prev => Math.min(100, prev + 15));
 	};
 
 	// Add validation strategy
 	const learnValidation = (strategy) => {
-		addValidationStrategy(strategy);
-		if (validationStrategies.length >= 3) {
-			evolve('master');
+		if (!validationStrategies.find(v => v.id === strategy.id)) {
+			setValidationStrategies([...validationStrategies, strategy]);
+			setFederationProgress(prev => Math.min(100, prev + 10));
 		}
 	};
 
 	// Switch active demo
 	const switchDemo = (library) => {
 		setActiveDemo(library);
-		focusLibrary(library);
+		selectLibrary({ id: library });
 	};
 
 	return (
@@ -251,19 +258,25 @@ const ChapterTwo = () => {
 							gap: '15px',
 							marginTop: '20px'
 						}}>
-							{implementedForms.map((impl, index) => (
-								<div key={impl.id} className='implementation-card' style={{
-									background: 'rgba(255, 255, 255, 0.1)',
-									padding: '15px',
-									borderRadius: '8px',
-									border: '1px solid rgba(243, 156, 18, 0.3)'
-								}}>
-									<strong>{impl.library}</strong>
-									<div style={{ fontSize: '0.9em', color: '#bdc3c7' }}>
-										Pattern: {impl.pattern}
+							{implementedForms.map((impl, index) => {
+								const parts = impl.split('-');
+								const library = parts[0] + (parts[1] === 'hook' || parts[1] === 'final' ? '-' + parts[1] + '-' + parts[2] : '');
+								const scenario = parts[parts.length - 1];
+								
+								return (
+									<div key={index} className='implementation-card' style={{
+										background: 'rgba(255, 255, 255, 0.1)',
+										padding: '15px',
+										borderRadius: '8px',
+										border: '1px solid rgba(243, 156, 18, 0.3)'
+									}}>
+										<strong>{library}</strong>
+										<div style={{ fontSize: '0.9em', color: '#bdc3c7' }}>
+											Scenario: {formScenarios[scenario]?.name || scenario}
+										</div>
 									</div>
-								</div>
-							))}
+								);
+							})}
 							{implementedForms.length === 0 && (
 								<p style={{ color: '#7f8c8d' }}>
 									Implement forms to see them here
@@ -605,7 +618,7 @@ function OptimizedForm() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Implementation Insight:</h3>
+				<h3>The Workshop Insight:</h3>
 				<p>
 					Complex forms reveal each library's strengths. React Hook Form's 
 					uncontrolled approach shines in large forms with many fields. Formik's 

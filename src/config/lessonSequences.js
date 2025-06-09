@@ -67,10 +67,10 @@ const lessonSequences = {
     { id: 'graphql-gateway', title: 'GraphQL Gateway' }
   ],
   'typescript-react': [
-    { id: 'component-typing', title: 'Component Typing' },
-    { id: 'hook-typing', title: 'Hook Typing' },
-    { id: 'generic-components', title: 'Generic Components' },
-    { id: 'type-safe-patterns', title: 'Type-Safe Patterns' }
+    { id: 'type-forge', title: 'Type Forge' },
+    { id: 'component-armory', title: 'Component Armory' },
+    { id: 'generic-forge', title: 'Generic Forge' },
+    { id: 'type-guard-tower', title: 'Type Guard Tower' }
   ],
   'build-deploy': [
     { id: 'build-optimization', title: 'Build Optimization' },

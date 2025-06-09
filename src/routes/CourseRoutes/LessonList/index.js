@@ -43,6 +43,10 @@ import ApiIntegration from '../../../learning-paths/server-data/pages/ApiIntegra
 import RealtimeConnections from '../../../learning-paths/server-data/pages/RealtimeConnections';
 import CachingCastle from '../../../learning-paths/server-data/pages/CachingCastle';
 import GraphQLGateway from '../../../learning-paths/server-data/pages/GraphQLGateway';
+import TypeForge from '../../../learning-paths/typescript-react/pages/TypeForge';
+import ComponentArmory from '../../../learning-paths/typescript-react/pages/ComponentArmory';
+import GenericForge from '../../../learning-paths/typescript-react/pages/GenericForge';
+import TypeGuardTower from '../../../learning-paths/typescript-react/pages/TypeGuardTower';
 
 const courseListMap = {
 	'components-basics': {
@@ -100,7 +104,7 @@ const courseListMap = {
 		'portals-refs': <PortalsRefs />,
 	},
 	'react-ecosystem': {
-		'state-management-libraries': <StateManagementLibraries />,
+		'state-libraries': <StateManagementLibraries />,
 		'styling-solutions': <StylingSolutions />,
 		'form-libraries': <FormLibraries />,
 		'animation-libraries': <AnimationLibraries />,
@@ -110,6 +114,12 @@ const courseListMap = {
 		'realtime-connections': <RealtimeConnections />,
 		'caching-castle': <CachingCastle />,
 		'graphql-gateway': <GraphQLGateway />,
+	},
+	'typescript-react': {
+		'type-forge': <TypeForge />,
+		'component-armory': <ComponentArmory />,
+		'generic-forge': <GenericForge />,
+		'type-guard-tower': <TypeGuardTower />,
 	},
 };
 const LessonList = () => {

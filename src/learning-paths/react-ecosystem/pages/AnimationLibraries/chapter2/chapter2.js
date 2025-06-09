@@ -4,20 +4,20 @@ import { useOutletContext } from 'react-router-dom';
 const ChapterTwo = () => {
 	const {
 		animationTechniques,
-		masteredAnimations,
-		masterAnimation,
-		performanceMetrics,
-		recordMetric,
-		gesturePatterns,
-		addGesturePattern,
+		learnTechnique,
 		currentDojo,
 		focusDojo,
+		masteredAnimations,
+		masterAnimation,
+		monasteryStage,
 		evolve
 	} = useOutletContext();
 
 	const [activeDojo, setActiveDojo] = useState('framer-motion');
 	const [demoAnimation, setDemoAnimation] = useState('fade');
 	const [showPerformance, setShowPerformance] = useState(false);
+	const [gesturePatterns, setGesturePatterns] = useState([]);
+	const [performanceMetrics, setPerformanceMetrics] = useState({});
 
 	// Animation dojos (libraries)
 	const animationDojos = [
@@ -89,8 +89,17 @@ const ChapterTwo = () => {
 	const visitDojo = (dojo) => {
 		setActiveDojo(dojo.id);
 		focusDojo(dojo.id);
-		recordMetric(dojo.id, 'bundleSize', Math.floor(Math.random() * 50) + 20);
-		recordMetric(dojo.id, 'performance', Math.floor(Math.random() * 30) + 70);
+		
+		// Generate performance metrics
+		const newMetrics = {
+			bundleSize: Math.floor(Math.random() * 50) + 20,
+			performance: Math.floor(Math.random() * 30) + 70
+		};
+		
+		setPerformanceMetrics(prev => ({
+			...prev,
+			[dojo.id]: newMetrics
+		}));
 		
 		if (masteredAnimations.length >= 3) {
 			evolve('master');
@@ -105,8 +114,10 @@ const ChapterTwo = () => {
 
 	// Learn a gesture
 	const learnGesture = (gesture) => {
-		addGesturePattern(gesture);
-		if (gesturePatterns.length >= 4) {
+		if (!gesturePatterns.find(g => g.id === gesture.id)) {
+			setGesturePatterns([...gesturePatterns, gesture]);
+		}
+		if (gesturePatterns.length >= 3) {
 			evolve('fluid');
 		}
 	};

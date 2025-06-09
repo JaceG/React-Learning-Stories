@@ -3,94 +3,108 @@ import { Link } from 'react-router-dom';
 import '../CourseStyles.css';
 
 function TypeScriptReactOverview() {
-  const lessons = [
-    {
-      id: 'component-typing',
-      title: 'Component Typing',
-      description: 'Learn to type functional and class components, props, and children effectively.',
-      icon: '📝'
-    },
-    {
-      id: 'hook-typing',
-      title: 'Hook Typing',
-      description: 'Master TypeScript with React hooks, custom hooks, and advanced hook patterns.',
-      icon: '🎣'
-    },
-    {
-      id: 'generic-components',
-      title: 'Generic Components',
-      description: 'Build flexible, reusable components with TypeScript generics.',
-      icon: '🧬'
-    },
-    {
-      id: 'type-safe-patterns',
-      title: 'Type-Safe Patterns',
-      description: 'Implement advanced patterns with complete type safety and IntelliSense.',
-      icon: '🛡️'
-    }
-  ];
+	const lessons = [
+		{
+			id: 'type-forge',
+			title: 'Type Forge',
+			description:
+				'Enter the ancient Type Forge where code contracts are hammered into unbreakable forms.',
+			icon: '⚒️',
+		},
+		{
+			id: 'component-armory',
+			title: 'Component Armory',
+			description:
+				'Master typing every React pattern in the Component Armory with Armorer Genericus.',
+			icon: '🛡️',
+		},
+		{
+			id: 'generic-forge',
+			title: 'Generic Forge',
+			description:
+				'Learn to create flexible types using generics, the master forging technique.',
+			icon: '🔧',
+		},
+		{
+			id: 'type-guard-tower',
+			title: 'Type Guard Tower',
+			description:
+				'Bridge runtime and compile-time with type guards and migration strategies.',
+			icon: '🏰',
+		},
+	];
 
-  return (
-    <div className='course-overview'>
-      <div className='course-header'>
-        <Link to='/courses' className='back-link'>← Back to Courses</Link>
-        <h1 className='course-title'>TypeScript with React</h1>
-        <p className='course-description'>
-          Enter the Type Forge where code is tempered with the strength of static types. 
-          Learn to combine TypeScript's powerful type system with React to build robust, 
-          self-documenting applications with confidence.
-        </p>
-      </div>
+	return (
+		<div className='course-overview'>
+			<div className='course-header'>
+				<Link to='/courses' className='back-link'>
+					← Back to Courses
+				</Link>
+				<h1 className='course-title'>TypeScript with React</h1>
+				<p className='course-description'>
+					Deep beneath the React Kingdom lies the Type Forge, where
+					Master Typus teaches the ancient art of forging unbreakable
+					code contracts. Learn to transform your React applications
+					with TypeScript's powerful type system, making
+					impossibilities impossible and turning hope into guarantees.
+				</p>
+			</div>
 
-      <div className='course-prerequisites'>
-        <h3>Prerequisites</h3>
-        <p>
-          This course requires knowledge of:
-        </p>
-        <ul>
-          <li>React components and hooks</li>
-          <li>Basic TypeScript syntax</li>
-          <li>JavaScript ES6+ features</li>
-          <li>Type annotations and interfaces</li>
-        </ul>
-        <p className='prerequisite-note'>
-          💡 Recommended: Complete React fundamentals and basic TypeScript tutorials first
-        </p>
-      </div>
+			<div className='course-prerequisites'>
+				<h3>Prerequisites</h3>
+				<p>
+					Before entering the Type Forge, you should have completed:
+				</p>
+				<ul>
+					<li>
+						Components & Basics - Understanding React components
+					</li>
+					<li>State Management - Working with state and hooks</li>
+					<li>JavaScript ES6+ features</li>
+					<li>Basic programming concepts</li>
+				</ul>
+				<p className='prerequisite-note'>
+					💡 Master Typus will teach TypeScript from the ground up,
+					but React knowledge is essential
+				</p>
+			</div>
 
-      <div className='lessons-grid'>
-        {lessons.map((lesson) => (
-          <Link 
-            key={lesson.id} 
-            to={`/courses/typescript-react/${lesson.id}`} 
-            className='lesson-card'
-          >
-            <div className='lesson-icon'>{lesson.icon}</div>
-            <h3 className='lesson-title'>{lesson.title}</h3>
-            <p className='lesson-description'>{lesson.description}</p>
-            <div className='lesson-progress'>
-              <span>3 chapters</span>
-              <span className='progress-indicator coming-soon'>Coming Soon</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+			<div className='lessons-grid'>
+				{lessons.map((lesson) => (
+					<Link
+						key={lesson.id}
+						to={`/courses/typescript-react/${lesson.id}`}
+						className='lesson-card'>
+						<div className='lesson-icon'>{lesson.icon}</div>
+						<h3 className='lesson-title'>{lesson.title}</h3>
+						<p className='lesson-description'>
+							{lesson.description}
+						</p>
+						<div className='lesson-progress'>
+							<span>3 chapters</span>
+							<span className='progress-indicator'>
+								Start Learning
+							</span>
+						</div>
+					</Link>
+				))}
+			</div>
 
-      <div className='learning-objectives'>
-        <h3>What You'll Learn</h3>
-        <ul>
-          <li>🎯 Typing props, state, and events</li>
-          <li>🎯 Function component type patterns</li>
-          <li>🎯 useState and useReducer with TypeScript</li>
-          <li>🎯 Custom hook type patterns</li>
-          <li>🎯 Generic component patterns</li>
-          <li>🎯 Discriminated unions in React</li>
-          <li>🎯 Type-safe context patterns</li>
-          <li>🎯 Third-party library types</li>
-        </ul>
-      </div>
-    </div>
-  );
+			<div className='learning-objectives'>
+				<h3>What You'll Learn</h3>
+				<ul>
+					<li>🎯 Basic type annotations and interfaces</li>
+					<li>🎯Component typing with props and state</li>
+					<li>🎯 Union and intersection types</li>
+					<li>🎯 Conditional and mapped types</li>
+					<li>🎯 Generic components and hooks</li>
+					<li>🎯 Type guards and type inference</li>
+					<li>🎯 Strict mode and compiler options</li>
+					<li>🎯 Migration strategies from JavaScript</li>
+				</ul>
+			</div>
+		</div>
+	);
 }
 
 export default TypeScriptReactOverview;

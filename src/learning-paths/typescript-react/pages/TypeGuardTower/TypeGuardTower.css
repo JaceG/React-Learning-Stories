@@ -1,0 +1,361 @@
+/* Type Guard Tower Styles - Medieval Tower Theme */
+.tower-status {
+	background: linear-gradient(135deg, rgba(52, 73, 94, 0.1), rgba(44, 62, 80, 0.1));
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 12px;
+	padding: 25px;
+	margin: 30px 0;
+	position: relative;
+}
+
+.tower-status::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	background: #34495e;
+	border-radius: 50%;
+}
+
+.tower-status h3 {
+	color: #5d6d7e;
+	margin-bottom: 20px;
+	font-size: 1.5em;
+}
+
+.tower-stats {
+	display: grid;
+	gap: 20px;
+}
+
+.stat {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(52, 73, 94, 0.2);
+}
+
+.stat:last-child {
+	border-bottom: none;
+}
+
+.stat-label {
+	color: #bdc3c7;
+	font-size: 0.95em;
+}
+
+.stat-value {
+	color: #5d6d7e;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.defense-bar {
+	flex: 1;
+	max-width: 200px;
+	height: 20px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	overflow: hidden;
+	margin-left: 20px;
+	border: 1px solid rgba(52, 73, 94, 0.3);
+}
+
+.defense-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #34495e, #5d6d7e);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 0.85em;
+	font-weight: bold;
+	transition: width 0.5s ease;
+}
+
+/* Guard Patterns */
+.guard-pattern {
+	background: rgba(52, 73, 94, 0.05);
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 15px 0;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.guard-pattern:hover {
+	background: rgba(52, 73, 94, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(52, 73, 94, 0.2);
+}
+
+.guard-pattern.selected {
+	background: rgba(52, 73, 94, 0.2);
+	border-color: #34495e;
+}
+
+.guard-pattern.guarded {
+	background: rgba(39, 174, 96, 0.1);
+	border-color: rgba(39, 174, 96, 0.5);
+}
+
+.pattern-header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.pattern-icon {
+	font-size: 2em;
+}
+
+.pattern-name {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #5d6d7e;
+}
+
+.pattern-type {
+	padding: 5px 10px;
+	background: rgba(52, 73, 94, 0.2);
+	color: #5d6d7e;
+	border-radius: 15px;
+	font-size: 0.85em;
+}
+
+/* Guard Workshop */
+.guard-workshop {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+	margin: 30px 0;
+}
+
+.guard-item {
+	background: rgba(52, 73, 94, 0.08);
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.guard-item:hover {
+	background: rgba(52, 73, 94, 0.15);
+	transform: scale(1.05);
+}
+
+.guard-item.active {
+	background: rgba(39, 174, 96, 0.1);
+	border-color: rgba(39, 174, 96, 0.5);
+}
+
+/* Tower Levels */
+.tower-levels {
+	display: flex;
+	justify-content: space-around;
+	margin: 30px 0;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+}
+
+.level-indicator {
+	text-align: center;
+	padding: 15px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.level-indicator.active {
+	background: rgba(52, 73, 94, 0.3);
+	transform: scale(1.1);
+}
+
+.level-icon {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.level-name {
+	font-weight: bold;
+	color: #5d6d7e;
+}
+
+/* Guard Visualization */
+.guard-visualization {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 12px;
+	padding: 30px;
+	margin: 30px 0;
+	text-align: center;
+}
+
+.guard-flow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.flow-item {
+	background: rgba(52, 73, 94, 0.1);
+	padding: 15px 25px;
+	border-radius: 8px;
+	border: 1px solid rgba(52, 73, 94, 0.3);
+}
+
+.flow-arrow {
+	color: #5d6d7e;
+	font-size: 1.5em;
+}
+
+/* Type Narrowing Display */
+.type-narrowing {
+	background: rgba(52, 73, 94, 0.05);
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.narrowing-step {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin: 10px 0;
+}
+
+.step-number {
+	background: #34495e;
+	color: white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+/* Migration Tools */
+.migration-tools {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	margin: 30px 0;
+}
+
+.migration-tool {
+	background: rgba(52, 73, 94, 0.08);
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	transition: all 0.3s ease;
+}
+
+.migration-tool:hover {
+	background: rgba(52, 73, 94, 0.15);
+	transform: translateY(-2px);
+}
+
+.tool-icon {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.tool-name {
+	font-weight: bold;
+	color: #5d6d7e;
+	margin-bottom: 10px;
+}
+
+/* Achievement System */
+.guard-achievements {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 15px;
+	margin: 30px 0;
+}
+
+.achievement-badge {
+	background: rgba(52, 73, 94, 0.1);
+	border: 2px solid rgba(52, 73, 94, 0.3);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	transition: all 0.3s ease;
+}
+
+.achievement-badge.earned {
+	background: rgba(39, 174, 96, 0.1);
+	border-color: #27ae60;
+	transform: scale(1.1);
+}
+
+.achievement-icon {
+	font-size: 2.5em;
+	margin-bottom: 5px;
+}
+
+.achievement-name {
+	font-size: 0.85em;
+	text-align: center;
+	color: #bdc3c7;
+}
+
+/* Guard Code Examples */
+.guard-code-example {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(52, 73, 94, 0.3);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+	position: relative;
+}
+
+.guard-code-example::before {
+	content: 'Type Guard';
+	position: absolute;
+	top: -10px;
+	left: 20px;
+	background: #1a1a1a;
+	color: #5d6d7e;
+	padding: 0 10px;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.guard-workshop {
+		grid-template-columns: 1fr;
+	}
+	
+	.guard-flow {
+		flex-direction: column;
+	}
+	
+	.flow-arrow {
+		transform: rotate(90deg);
+	}
+	
+	.tower-levels {
+		flex-direction: column;
+		gap: 20px;
+	}
+}

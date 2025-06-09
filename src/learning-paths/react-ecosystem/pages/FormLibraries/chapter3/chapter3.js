@@ -3,16 +3,21 @@ import { useOutletContext } from 'react-router-dom';
 
 const ChapterThree = () => {
 	const {
-		formSolutions,
+		selectedLibrary,
+		selectLibrary,
+		comparisonMode,
+		toggleComparison,
 		implementedForms,
-		performanceMetrics,
-		validationStrategies,
-		understandingLevel,
-		evolve
+		addImplementedForm,
+		federationProgress,
+		setFederationProgress
 	} = useOutletContext();
 
 	const [selectedScenario, setSelectedScenario] = useState(null);
 	const [consensusAchieved, setConsensusAchieved] = useState(false);
+	const [formSolutions, setFormSolutions] = useState([]);
+	const [validationStrategies, setValidationStrategies] = useState([]);
+	const [performanceMetrics, setPerformanceMetrics] = useState({});
 
 	// Real-world form scenarios
 	const realWorldScenarios = [
@@ -120,7 +125,7 @@ const ChapterThree = () => {
 	const checkConsensus = () => {
 		if (formSolutions.length >= 3 && implementedForms.length >= 4 && validationStrategies.length >= 2) {
 			setConsensusAchieved(true);
-			evolve('consensus');
+			setFederationProgress(100);
 		}
 	};
 
