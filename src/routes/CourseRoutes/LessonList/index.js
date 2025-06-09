@@ -39,6 +39,10 @@ import StateManagementLibraries from '../../../learning-paths/react-ecosystem/pa
 import StylingSolutions from '../../../learning-paths/react-ecosystem/pages/StylingSolutions';
 import FormLibraries from '../../../learning-paths/react-ecosystem/pages/FormLibraries';
 import AnimationLibraries from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries';
+import ApiIntegration from '../../../learning-paths/server-data/pages/ApiIntegration';
+import RealtimeConnections from '../../../learning-paths/server-data/pages/RealtimeConnections';
+import CachingCastle from '../../../learning-paths/server-data/pages/CachingCastle';
+import GraphQLGateway from '../../../learning-paths/server-data/pages/GraphQLGateway';
 
 const courseListMap = {
 	'components-basics': {
@@ -100,6 +104,12 @@ const courseListMap = {
 		'styling-solutions': <StylingSolutions />,
 		'form-libraries': <FormLibraries />,
 		'animation-libraries': <AnimationLibraries />,
+	},
+	'server-data': {
+		'api-integration': <ApiIntegration />,
+		'realtime-connections': <RealtimeConnections />,
+		'caching-castle': <CachingCastle />,
+		'graphql-gateway': <GraphQLGateway />,
 	},
 };
 const LessonList = () => {

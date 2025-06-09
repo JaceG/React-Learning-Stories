@@ -61,10 +61,10 @@ const lessonSequences = {
     { id: 'animation-libraries', title: 'Animation Libraries' }
   ],
   'server-data': [
-    { id: 'data-fetching', title: 'Data Fetching Patterns' },
-    { id: 'server-components', title: 'Server Components' },
-    { id: 'suspense-concurrent', title: 'Suspense & Concurrent Features' },
-    { id: 'realtime-updates', title: 'Real-time Updates' }
+    { id: 'api-integration', title: 'API Integration' },
+    { id: 'realtime-connections', title: 'Real-time Connections' },
+    { id: 'caching-castle', title: 'Caching Castle' },
+    { id: 'graphql-gateway', title: 'GraphQL Gateway' }
   ],
   'typescript-react': [
     { id: 'component-typing', title: 'Component Typing' },

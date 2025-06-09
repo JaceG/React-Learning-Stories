@@ -119,6 +119,18 @@ import FormLibrariesChapterThree from '../../../learning-paths/react-ecosystem/p
 import AnimationLibrariesChapterOne from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter1/chapter1';
 import AnimationLibrariesChapterTwo from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter2/chapter2';
 import AnimationLibrariesChapterThree from '../../../learning-paths/react-ecosystem/pages/AnimationLibraries/chapter3/chapter3';
+import ApiIntegrationChapterOne from '../../../learning-paths/server-data/pages/ApiIntegration/chapter1/chapter1';
+import ApiIntegrationChapterTwo from '../../../learning-paths/server-data/pages/ApiIntegration/chapter2/chapter2';
+import ApiIntegrationChapterThree from '../../../learning-paths/server-data/pages/ApiIntegration/chapter3/chapter3';
+import RealtimeConnectionsChapterOne from '../../../learning-paths/server-data/pages/RealtimeConnections/chapter1/chapter1';
+import RealtimeConnectionsChapterTwo from '../../../learning-paths/server-data/pages/RealtimeConnections/chapter2/chapter2';
+import RealtimeConnectionsChapterThree from '../../../learning-paths/server-data/pages/RealtimeConnections/chapter3/chapter3';
+import CachingCastleChapterOne from '../../../learning-paths/server-data/pages/CachingCastle/chapter1/chapter1';
+import CachingCastleChapterTwo from '../../../learning-paths/server-data/pages/CachingCastle/chapter2/chapter2';
+import CachingCastleChapterThree from '../../../learning-paths/server-data/pages/CachingCastle/chapter3/chapter3';
+import GraphQLGatewayChapterOne from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter1/chapter1';
+import GraphQLGatewayChapterTwo from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter2/chapter2';
+import GraphQLGatewayChapterThree from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -379,6 +391,32 @@ const courseListMap = {
 			chapter1: <AnimationLibrariesChapterOne />,
 			chapter2: <AnimationLibrariesChapterTwo />,
 			chapter3: <AnimationLibrariesChapterThree />,
+		},
+	},
+	'server-data': {
+		'api-integration': {
+			'/': <ApiIntegrationChapterOne />,
+			chapter1: <ApiIntegrationChapterOne />,
+			chapter2: <ApiIntegrationChapterTwo />,
+			chapter3: <ApiIntegrationChapterThree />,
+		},
+		'realtime-connections': {
+			'/': <RealtimeConnectionsChapterOne />,
+			chapter1: <RealtimeConnectionsChapterOne />,
+			chapter2: <RealtimeConnectionsChapterTwo />,
+			chapter3: <RealtimeConnectionsChapterThree />,
+		},
+		'caching-castle': {
+			'/': <CachingCastleChapterOne />,
+			chapter1: <CachingCastleChapterOne />,
+			chapter2: <CachingCastleChapterTwo />,
+			chapter3: <CachingCastleChapterThree />,
+		},
+		'graphql-gateway': {
+			'/': <GraphQLGatewayChapterOne />,
+			chapter1: <GraphQLGatewayChapterOne />,
+			chapter2: <GraphQLGatewayChapterTwo />,
+			chapter3: <GraphQLGatewayChapterThree />,
 		},
 	},
 };

@@ -1,0 +1,560 @@
+/* API Integration - Cloud Citadel Specific Styles */
+
+/* Cloud Citadel Illustration */
+.cloud-citadel-illustration {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.citadel {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.citadel-clouds {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(135,206,250,0.6) 100%);
+  border-radius: 50% 50% 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.citadel-clouds::before,
+.citadel-clouds::after {
+  content: "☁️";
+  position: absolute;
+  font-size: 2em;
+  opacity: 0.7;
+}
+
+.citadel-clouds::before {
+  left: 20%;
+  animation: drift-left 20s ease-in-out infinite;
+}
+
+.citadel-clouds::after {
+  right: 20%;
+  animation: drift-right 25s ease-in-out infinite;
+}
+
+@keyframes drift-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+}
+
+@keyframes drift-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+.citadel-tower {
+  width: 200px;
+  height: 250px;
+  background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.citadel-bridge {
+  width: 300px;
+  height: 60px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%);
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.data-stream {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-stream:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.data-stream.active {
+  background: #3498db;
+  color: white;
+}
+
+/* API Request Builder */
+.api-request-builder {
+  margin-top: 20px;
+}
+
+.request-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.method-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.method-button {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.method-button:hover {
+  border-color: #3498db;
+  transform: translateY(-2px);
+}
+
+.method-button.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.method-button.GET { border-left: 4px solid #27ae60; }
+.method-button.POST { border-left: 4px solid #f39c12; }
+.method-button.PUT { border-left: 4px solid #3498db; }
+.method-button.DELETE { border-left: 4px solid #e74c3c; }
+
+.endpoint-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.endpoint-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.send-request-button {
+  padding: 12px 24px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.send-request-button:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.send-request-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Response Display */
+.response-display {
+  background: #2c3e50;
+  color: #ecf0f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #34495e;
+}
+
+.status-code {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-code.success { background: #27ae60; }
+.status-code.error { background: #e74c3c; }
+
+.response-body {
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Protocol Rooms */
+.protocol-chambers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.protocol-room {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.protocol-room:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.protocol-room.active {
+  border-color: #3498db;
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.protocol-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.protocol-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.protocol-description {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+/* Headers Workshop */
+.headers-workshop {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.header-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.header-input {
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.add-header-button,
+.remove-header-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-header-button {
+  background: #27ae60;
+  color: white;
+}
+
+.remove-header-button {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Auth Methods */
+.auth-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.auth-badge {
+  background: rgba(52, 152, 219, 0.1);
+  border: 2px solid #3498db;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #3498db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-badge:hover {
+  background: #3498db;
+  color: white;
+  transform: scale(1.05);
+}
+
+.auth-badge.active {
+  background: #3498db;
+  color: white;
+}
+
+/* Interceptor Chain */
+.interceptor-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.interceptor-node {
+  background: white;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.interceptor-node::after {
+  content: "→";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3498db;
+  font-size: 1.5em;
+}
+
+.interceptor-node:last-child::after {
+  display: none;
+}
+
+/* Embassy Features */
+.embassy-features {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.feature-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.feature-status:last-child {
+  border-bottom: none;
+}
+
+.feature-status span:first-child {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.feature-status .active {
+  color: #27ae60;
+}
+
+.feature-status .inactive {
+  color: #95a5a6;
+}
+
+/* Loading Demo */
+.loading-demo {
+  margin: 20px 0;
+}
+
+.loading-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.component-loader {
+  padding: 15px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.component-loader.loading {
+  border-color: #3498db;
+  background: rgba(52, 152, 219, 0.05);
+}
+
+/* Embassy Controls */
+.embassy-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.cache-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: none;
+  background: #27ae60;
+  color: white;
+}
+
+.cache-indicator.disabled {
+  background: #95a5a6;
+}
+
+.retry-counter {
+  text-align: center;
+}
+
+.retry-count {
+  font-size: 2em;
+  font-weight: bold;
+  color: #3498db;
+  display: block;
+  margin: 10px 0;
+}
+
+/* Embassy Achievement */
+.embassy-achievement {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 40px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.embassy-achievement h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+/* Error Display */
+.error-display {
+  background: #fee;
+  border: 2px solid #e74c3c;
+  color: #c0392b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .citadel-bridge {
+    width: 100%;
+  }
+  
+  .protocol-chambers {
+    grid-template-columns: 1fr;
+  }
+  
+  .interceptor-chain {
+    flex-direction: column;
+  }
+  
+  .interceptor-node::after {
+    content: "↓";
+    right: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .embassy-controls {
+    flex-direction: column;
+  }
+}
