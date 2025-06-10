@@ -51,6 +51,10 @@ import BuildSystems from '../../../learning-paths/build-deploy/pages/BuildSystem
 import CiCdPipeline from '../../../learning-paths/build-deploy/pages/CiCdPipeline';
 import HostingHorizons from '../../../learning-paths/build-deploy/pages/HostingHorizons';
 import ProductionReadiness from '../../../learning-paths/build-deploy/pages/ProductionReadiness';
+import MobileFoundations from '../../../learning-paths/react-native/pages/MobileFoundations';
+import NavigationTrails from '../../../learning-paths/react-native/pages/NavigationTrails';
+import NativePowers from '../../../learning-paths/react-native/pages/NativePowers';
+import AppDistribution from '../../../learning-paths/react-native/pages/AppDistribution';
 
 const courseListMap = {
 	'components-basics': {
@@ -130,6 +134,12 @@ const courseListMap = {
 		'ci-cd-pipeline': <CiCdPipeline />,
 		'hosting-horizons': <HostingHorizons />,
 		'production-readiness': <ProductionReadiness />,
+	},
+	'react-native': {
+		'mobile-foundations': <MobileFoundations />,
+		'navigation-trails': <NavigationTrails />,
+		'native-powers': <NativePowers />,
+		'app-distribution': <AppDistribution />,
 	},
 };
 const LessonList = () => {

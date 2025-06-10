@@ -1,0 +1,452 @@
+/* Navigation Trails Theme */
+.navigation-trails {
+  --primary-color: #5C6BC0;
+  --secondary-color: #3F51B5;
+  --accent-color: #FF7043;
+  --stack-color: #7986CB;
+  --tab-color: #64B5F6;
+  --drawer-color: #4DB6AC;
+  --trail-gradient: linear-gradient(135deg, rgba(92, 107, 192, 0.1), rgba(255, 112, 67, 0.1));
+}
+
+/* Navigation Outpost */
+.navigation-outpost {
+  background: var(--trail-gradient);
+  border: 2px solid rgba(92, 107, 192, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.navigator-selector {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.navigator-type {
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.navigator-type.stack {
+  border-color: var(--stack-color);
+}
+
+.navigator-type.tab {
+  border-color: var(--tab-color);
+}
+
+.navigator-type.drawer {
+  border-color: var(--drawer-color);
+}
+
+.navigator-type.active {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(92, 107, 192, 0.3);
+}
+
+.navigator-type.active.stack {
+  background: rgba(121, 134, 203, 0.2);
+}
+
+.navigator-type.active.tab {
+  background: rgba(100, 181, 246, 0.2);
+}
+
+.navigator-type.active.drawer {
+  background: rgba(77, 182, 172, 0.2);
+}
+
+/* Stack Navigator Demo */
+.stack-demo {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--stack-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 300px;
+}
+
+.stack-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(121, 134, 203, 0.2);
+  border-radius: 8px 8px 0 0;
+  margin: -20px -20px 20px -20px;
+}
+
+.back-button {
+  padding: 8px 15px;
+  background: var(--stack-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover:not(:disabled) {
+  background: var(--secondary-color);
+  transform: translateX(-3px);
+}
+
+.back-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.screen-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--stack-color);
+}
+
+.screen-content {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  min-height: 150px;
+}
+
+.navigation-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.navigation-demo-button {
+  padding: 15px;
+  background: rgba(92, 107, 192, 0.2);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.navigation-demo-button:hover {
+  background: rgba(92, 107, 192, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(92, 107, 192, 0.3);
+}
+
+/* Tab Navigator Demo */
+.tab-demo {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--tab-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.tab-bar {
+  display: flex;
+  background: rgba(100, 181, 246, 0.2);
+  border-bottom: 2px solid var(--tab-color);
+}
+
+.tab-item {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(100, 181, 246, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.tab-item:last-child {
+  border-right: none;
+}
+
+.tab-item.active {
+  background: rgba(100, 181, 246, 0.4);
+  box-shadow: inset 0 -3px 0 var(--tab-color);
+}
+
+.tab-icon {
+  font-size: 1.5em;
+}
+
+.tab-label {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.tab-content {
+  padding: 30px;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Drawer Navigator Demo */
+.drawer-demo {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--drawer-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+  position: relative;
+  min-height: 300px;
+}
+
+.drawer-container {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.drawer-panel {
+  width: 250px;
+  background: rgba(77, 182, 172, 0.2);
+  padding: 20px;
+  border-right: 2px solid var(--drawer-color);
+  transition: transform 0.3s ease;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.drawer-panel.closed {
+  transform: translateX(-100%);
+}
+
+.drawer-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background: var(--drawer-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 11;
+  font-size: 1.2em;
+}
+
+.drawer-item {
+  padding: 15px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.drawer-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.drawer-item.active {
+  background: rgba(77, 182, 172, 0.4);
+  border-left: 4px solid var(--drawer-color);
+}
+
+.drawer-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0;
+}
+
+/* Navigation Patterns */
+.pattern-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pattern-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(92, 107, 192, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pattern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(92, 107, 192, 0.2);
+}
+
+.pattern-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.pattern-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.pattern-description {
+  font-size: 0.9em;
+  color: #bdc3c7;
+  line-height: 1.5;
+}
+
+/* Platform Paths */
+.platform-paths {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(92, 107, 192, 0.3);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.platform-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.platform-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid rgba(92, 107, 192, 0.2);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.platform-features {
+  list-style: none;
+  padding: 0;
+}
+
+.platform-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(92, 107, 192, 0.1);
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.platform-features li:last-child {
+  border-bottom: none;
+}
+
+/* Routes Discovered */
+.routes-discovered {
+  background: linear-gradient(135deg, rgba(92, 107, 192, 0.2), rgba(255, 112, 67, 0.2));
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.route-count {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+.trail-badge {
+  display: inline-block;
+  padding: 10px 25px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 5px 15px rgba(92, 107, 192, 0.3);
+  margin-top: 15px;
+}
+
+/* Navigation Flow Diagram */
+.navigation-flow {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(92, 107, 192, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: max-content;
+  padding: 20px;
+}
+
+.flow-screen {
+  padding: 15px 25px;
+  background: rgba(92, 107, 192, 0.2);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.flow-arrow {
+  font-size: 1.5em;
+  color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navigator-selector {
+    flex-direction: column;
+  }
+  
+  .navigation-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .platform-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .pattern-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .drawer-panel {
+    width: 200px;
+  }
+}

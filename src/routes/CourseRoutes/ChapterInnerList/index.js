@@ -155,6 +155,18 @@ import HostingHorizonsChapterThree from '../../../learning-paths/build-deploy/pa
 import ProductionReadinessChapterOne from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter1/chapter1';
 import ProductionReadinessChapterTwo from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter2/chapter2';
 import ProductionReadinessChapterThree from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter3/chapter3';
+import MobileFoundationsChapterOne from '../../../learning-paths/react-native/pages/MobileFoundations/chapter1/chapter1';
+import MobileFoundationsChapterTwo from '../../../learning-paths/react-native/pages/MobileFoundations/chapter2/chapter2';
+import MobileFoundationsChapterThree from '../../../learning-paths/react-native/pages/MobileFoundations/chapter3/chapter3';
+import NavigationTrailsChapterOne from '../../../learning-paths/react-native/pages/NavigationTrails/chapter1/chapter1';
+import NavigationTrailsChapterTwo from '../../../learning-paths/react-native/pages/NavigationTrails/chapter2/chapter2';
+import NavigationTrailsChapterThree from '../../../learning-paths/react-native/pages/NavigationTrails/chapter3/chapter3';
+import NativePowersChapterOne from '../../../learning-paths/react-native/pages/NativePowers/chapter1/chapter1';
+import NativePowersChapterTwo from '../../../learning-paths/react-native/pages/NativePowers/chapter2/chapter2';
+import NativePowersChapterThree from '../../../learning-paths/react-native/pages/NativePowers/chapter3/chapter3';
+import AppDistributionChapterOne from '../../../learning-paths/react-native/pages/AppDistribution/chapter1/chapter1';
+import AppDistributionChapterTwo from '../../../learning-paths/react-native/pages/AppDistribution/chapter2/chapter2';
+import AppDistributionChapterThree from '../../../learning-paths/react-native/pages/AppDistribution/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -493,6 +505,32 @@ const courseListMap = {
 			chapter1: <ProductionReadinessChapterOne />,
 			chapter2: <ProductionReadinessChapterTwo />,
 			chapter3: <ProductionReadinessChapterThree />,
+		},
+	},
+	'react-native': {
+		'mobile-foundations': {
+			'/': <MobileFoundationsChapterOne />,
+			chapter1: <MobileFoundationsChapterOne />,
+			chapter2: <MobileFoundationsChapterTwo />,
+			chapter3: <MobileFoundationsChapterThree />,
+		},
+		'navigation-trails': {
+			'/': <NavigationTrailsChapterOne />,
+			chapter1: <NavigationTrailsChapterOne />,
+			chapter2: <NavigationTrailsChapterTwo />,
+			chapter3: <NavigationTrailsChapterThree />,
+		},
+		'native-powers': {
+			'/': <NativePowersChapterOne />,
+			chapter1: <NativePowersChapterOne />,
+			chapter2: <NativePowersChapterTwo />,
+			chapter3: <NativePowersChapterThree />,
+		},
+		'app-distribution': {
+			'/': <AppDistributionChapterOne />,
+			chapter1: <AppDistributionChapterOne />,
+			chapter2: <AppDistributionChapterTwo />,
+			chapter3: <AppDistributionChapterThree />,
 		},
 	},
 };

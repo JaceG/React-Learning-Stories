@@ -1,0 +1,532 @@
+/* App Distribution - Publishing Port Theme */
+.app-distribution {
+  --primary-color: #00BCD4;
+  --secondary-color: #0097A7;
+  --accent-color: #FFC107;
+  --appstore-blue: #0D7DF2;
+  --playstore-green: #34A853;
+  --review-orange: #FF9800;
+  --success-green: #4CAF50;
+  --port-gradient: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(255, 193, 7, 0.1));
+}
+
+/* Publishing Port - Main hub */
+.publishing-port {
+  background: var(--port-gradient);
+  border: 2px solid rgba(0, 188, 212, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.publishing-port::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.1) 0%, transparent 70%);
+  animation: portWave 20s linear infinite;
+}
+
+@keyframes portWave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* App Status Pipeline */
+.app-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  position: relative;
+}
+
+.pipeline-stage {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.stage-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  background: rgba(0, 188, 212, 0.2);
+  border: 3px solid rgba(0, 188, 212, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  transition: all 0.3s ease;
+}
+
+.stage-icon.active {
+  background: var(--primary-color);
+  border-color: var(--accent-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.6);
+}
+
+.stage-icon.completed {
+  background: var(--success-green);
+  border-color: var(--success-green);
+}
+
+.pipeline-connector {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 188, 212, 0.2);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.pipeline-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transition: width 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pipeline-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: pipelineShine 2s linear infinite;
+}
+
+@keyframes pipelineShine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* Store Submission Cards */
+.store-submissions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.store-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.store-card.appstore {
+  border: 2px solid var(--appstore-blue);
+}
+
+.store-card.playstore {
+  border: 2px solid var(--playstore-green);
+}
+
+.store-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.store-logo {
+  font-size: 4em;
+  margin-bottom: 20px;
+  filter: grayscale(0.5);
+  transition: filter 0.3s ease;
+}
+
+.store-card:hover .store-logo {
+  filter: grayscale(0);
+}
+
+.store-status {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.store-status.pending {
+  background: rgba(255, 152, 0, 0.2);
+  color: var(--review-orange);
+}
+
+.store-status.reviewing {
+  background: rgba(255, 193, 7, 0.2);
+  color: var(--accent-color);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.store-status.approved {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--success-green);
+}
+
+.store-status.rejected {
+  background: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Review Checklist */
+.review-checklist {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 188, 212, 0.1);
+  transition: all 0.3s ease;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(0, 188, 212, 0.5);
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checklist-checkbox.checked {
+  background: var(--success-green);
+  border-color: var(--success-green);
+}
+
+.checklist-checkbox.checked::after {
+  content: '✓';
+  color: white;
+  font-weight: bold;
+}
+
+.checklist-label {
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.checklist-item.completed .checklist-label {
+  color: #7e8c8d;
+  text-decoration: line-through;
+}
+
+/* Global Launch Map */
+.global-launch-map {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 188, 212, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.world-map {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  margin: 20px auto;
+  background: rgba(0, 188, 212, 0.05);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8em;
+  color: rgba(0, 188, 212, 0.3);
+}
+
+.launch-regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.region-tile {
+  padding: 15px;
+  background: rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.region-tile:hover {
+  background: rgba(0, 188, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+.region-tile.active {
+  background: rgba(0, 188, 212, 0.3);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+}
+
+/* App Metrics Dashboard */
+.metrics-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.metric-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.metric-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 10px 0;
+}
+
+.metric-label {
+  font-size: 0.9em;
+  color: #bdc3c7;
+}
+
+/* Publishing Tools */
+.publishing-tools {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tool-item {
+  padding: 20px;
+  background: rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  background: rgba(0, 188, 212, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 188, 212, 0.3);
+}
+
+.tool-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Certificate Viewer */
+.certificate-viewer {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.certificate-seal {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background: radial-gradient(circle, var(--accent-color), var(--primary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+  animation: sealRotate 20s linear infinite;
+}
+
+@keyframes sealRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Beta Testing Board */
+.beta-testing-board {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.tester-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tester-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(0, 188, 212, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tester-item:hover {
+  background: rgba(0, 188, 212, 0.1);
+}
+
+.tester-avatar {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 188, 212, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.tester-info {
+  flex: 1;
+}
+
+.tester-status {
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.tester-status.active {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--success-green);
+}
+
+.tester-status.pending {
+  background: rgba(255, 193, 7, 0.2);
+  color: var(--accent-color);
+}
+
+/* Achievement Banner */
+.achievement-banner {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 188, 212, 0.4);
+}
+
+.achievement-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: achievementGlow 15s linear infinite;
+}
+
+@keyframes achievementGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.publisher-badge {
+  font-size: 5em;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .store-submissions {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-pipeline {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .pipeline-connector {
+    display: none;
+  }
+  
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .metrics-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
