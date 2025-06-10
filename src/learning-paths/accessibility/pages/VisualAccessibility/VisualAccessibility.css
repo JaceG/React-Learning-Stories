@@ -1,0 +1,536 @@
+/* Visual Accessibility - Color Conservatory Theme */
+.visual-accessibility {
+  --primary-color: #7B68EE;
+  --secondary-color: #6A5ACD;
+  --accent-color: #FFD700;
+  --success-color: #32CD32;
+  --warning-color: #FF6347;
+  --error-color: #DC143C;
+  --contrast-color: #4B0082;
+  --visual-gradient: linear-gradient(135deg, rgba(123, 104, 238, 0.1), rgba(255, 215, 0, 0.1));
+}
+
+/* Color Conservatory */
+.color-conservatory {
+  background: var(--visual-gradient);
+  border: 2px solid rgba(123, 104, 238, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.color-conservatory::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(123, 104, 238, 0.1) 0%, transparent 70%);
+  animation: colorShift 20s linear infinite;
+}
+
+@keyframes colorShift {
+  from { 
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Color Vision Simulator */
+.color-vision-simulator {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(123, 104, 238, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.vision-modes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.vision-mode-button {
+  padding: 10px 20px;
+  background: rgba(123, 104, 238, 0.2);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vision-mode-button.active {
+  background: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.color-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.color-sample {
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.color-sample-label {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+/* Color Blind Filters */
+.protanopia {
+  filter: url('#protanopia-filter');
+}
+
+.deuteranopia {
+  filter: url('#deuteranopia-filter');
+}
+
+.tritanopia {
+  filter: url('#tritanopia-filter');
+}
+
+.achromatopsia {
+  filter: grayscale(100%);
+}
+
+/* Non-Color Indicators */
+.non-color-indicators {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.indicator-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.indicator-card {
+  background: rgba(123, 104, 238, 0.1);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.indicator-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.indicator-card.implemented {
+  background: rgba(50, 205, 50, 0.1);
+  border-color: var(--success-color);
+}
+
+.indicator-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.indicator-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Contrast Citadel */
+.contrast-citadel {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(75, 0, 130, 0.5);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.contrast-checker {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.color-picker-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.color-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.color-input-group label {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker input[type="color"] {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.color-picker input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: white;
+  font-family: monospace;
+}
+
+.contrast-preview {
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.contrast-ratio-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.ratio-value {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.compliance-badges {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.compliance-badge {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.compliance-badge.pass {
+  background: var(--success-color);
+  color: white;
+}
+
+.compliance-badge.fail {
+  background: var(--error-color);
+  color: white;
+  opacity: 0.5;
+}
+
+/* Text Size Examples */
+.text-size-examples {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.text-example {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.text-example.normal {
+  font-size: 16px;
+}
+
+.text-example.large {
+  font-size: 24px;
+}
+
+.text-example.bold {
+  font-weight: bold;
+}
+
+/* Motion Manor */
+.motion-manor {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(123, 104, 238, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.motion-control-button {
+  padding: 10px 25px;
+  background: rgba(123, 104, 238, 0.2);
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.motion-control-button.active {
+  background: var(--primary-color);
+}
+
+/* Motion Examples */
+.motion-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.motion-example-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-element {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-color);
+  border-radius: 10px;
+  margin: 20px auto;
+  transition: all 0.5s ease;
+}
+
+/* Animations with reduced motion support */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-element.bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  .motion-element.spin {
+    animation: spin 3s linear infinite;
+  }
+  
+  .motion-element.pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Reduced motion alternatives */
+@media (prefers-reduced-motion: reduce) {
+  .motion-element.bounce {
+    opacity: 0.8;
+  }
+  
+  .motion-element.spin {
+    opacity: 0.8;
+  }
+  
+  .motion-element.pulse {
+    opacity: 0.8;
+  }
+}
+
+/* Dark Mode Support */
+.dark-mode-toggle {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.theme-option {
+  padding: 20px 30px;
+  background: rgba(123, 104, 238, 0.1);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-option.active {
+  border-color: var(--primary-color);
+  background: rgba(123, 104, 238, 0.3);
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  filter: contrast(2);
+}
+
+.high-contrast * {
+  border-color: white !important;
+  outline-color: white !important;
+}
+
+/* Focus Indicators for Visual Accessibility */
+.visual-focus:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Pattern Overlays */
+.pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pattern-overlay.stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+}
+
+.pattern-overlay.dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.pattern-overlay.active {
+  opacity: 1;
+}
+
+/* Accessibility Status Dashboard */
+.accessibility-dashboard {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-item {
+  background: rgba(123, 104, 238, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.dashboard-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(123, 104, 238, 0.3);
+}
+
+.dashboard-value {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dashboard-label {
+  font-size: 0.9em;
+  color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .color-picker-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .contrast-ratio-display {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .motion-examples {
+    grid-template-columns: 1fr;
+  }
+  
+  .theme-switcher {
+    flex-direction: column;
+  }
+}

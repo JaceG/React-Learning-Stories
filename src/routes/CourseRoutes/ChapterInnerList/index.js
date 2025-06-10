@@ -167,6 +167,18 @@ import NativePowersChapterThree from '../../../learning-paths/react-native/pages
 import AppDistributionChapterOne from '../../../learning-paths/react-native/pages/AppDistribution/chapter1/chapter1';
 import AppDistributionChapterTwo from '../../../learning-paths/react-native/pages/AppDistribution/chapter2/chapter2';
 import AppDistributionChapterThree from '../../../learning-paths/react-native/pages/AppDistribution/chapter3/chapter3';
+import InclusiveFoundationsChapterOne from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter1/chapter1';
+import InclusiveFoundationsChapterTwo from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter2/chapter2';
+import InclusiveFoundationsChapterThree from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter3/chapter3';
+import InteractionPatternsChapterOne from '../../../learning-paths/accessibility/pages/InteractionPatterns/chapter1/chapter1';
+import InteractionPatternsChapterTwo from '../../../learning-paths/accessibility/pages/InteractionPatterns/chapter2/chapter2';
+import InteractionPatternsChapterThree from '../../../learning-paths/accessibility/pages/InteractionPatterns/chapter3/chapter3';
+import VisualAccessibilityChapterOne from '../../../learning-paths/accessibility/pages/VisualAccessibility/chapter1/chapter1';
+import VisualAccessibilityChapterTwo from '../../../learning-paths/accessibility/pages/VisualAccessibility/chapter2/chapter2';
+import VisualAccessibilityChapterThree from '../../../learning-paths/accessibility/pages/VisualAccessibility/chapter3/chapter3';
+import TestingToolsChapterOne from '../../../learning-paths/accessibility/pages/TestingTools/chapter1/chapter1';
+import TestingToolsChapterTwo from '../../../learning-paths/accessibility/pages/TestingTools/chapter2/chapter2';
+import TestingToolsChapterThree from '../../../learning-paths/accessibility/pages/TestingTools/chapter3/chapter3';
 
 const courseListMap = {
 	'components-basics': {
@@ -404,7 +416,7 @@ const courseListMap = {
 		},
 	},
 	'react-ecosystem': {
-		'state-libraries': {
+		'state-management-libraries': {
 			'/': <StateManagementLibrariesChapterOne />,
 			chapter1: <StateManagementLibrariesChapterOne />,
 			chapter2: <StateManagementLibrariesChapterTwo />,
@@ -531,6 +543,32 @@ const courseListMap = {
 			chapter1: <AppDistributionChapterOne />,
 			chapter2: <AppDistributionChapterTwo />,
 			chapter3: <AppDistributionChapterThree />,
+		},
+	},
+	'accessibility': {
+		'inclusive-foundations': {
+			'/': <InclusiveFoundationsChapterOne />,
+			chapter1: <InclusiveFoundationsChapterOne />,
+			chapter2: <InclusiveFoundationsChapterTwo />,
+			chapter3: <InclusiveFoundationsChapterThree />,
+		},
+		'interaction-patterns': {
+			'/': <InteractionPatternsChapterOne />,
+			chapter1: <InteractionPatternsChapterOne />,
+			chapter2: <InteractionPatternsChapterTwo />,
+			chapter3: <InteractionPatternsChapterThree />,
+		},
+		'visual-accessibility': {
+			'/': <VisualAccessibilityChapterOne />,
+			chapter1: <VisualAccessibilityChapterOne />,
+			chapter2: <VisualAccessibilityChapterTwo />,
+			chapter3: <VisualAccessibilityChapterThree />,
+		},
+		'testing-tools': {
+			'/': <TestingToolsChapterOne />,
+			chapter1: <TestingToolsChapterOne />,
+			chapter2: <TestingToolsChapterTwo />,
+			chapter3: <TestingToolsChapterThree />,
 		},
 	},
 };

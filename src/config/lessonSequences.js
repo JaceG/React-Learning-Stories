@@ -55,7 +55,7 @@ const lessonSequences = {
     { id: 'portals-refs', title: 'Portals & Refs' }
   ],
   'react-ecosystem': [
-    { id: 'state-libraries', title: 'State Management Libraries' },
+    { id: 'state-management-libraries', title: 'State Management Libraries' },
     { id: 'styling-solutions', title: 'Styling Solutions' },
     { id: 'form-libraries', title: 'Form Libraries' },
     { id: 'animation-libraries', title: 'Animation Libraries' }
@@ -79,16 +79,16 @@ const lessonSequences = {
     { id: 'production-readiness', title: 'Production Readiness' }
   ],
   'react-native': [
-    { id: 'mobile-components', title: 'Mobile-Specific Components' },
-    { id: 'navigation-mobile', title: 'Navigation in React Native' },
-    { id: 'platform-specific', title: 'Platform-Specific Code' },
-    { id: 'mobile-gestures', title: 'Mobile Gestures & Animations' }
+    { id: 'mobile-foundations', title: 'Mobile Foundations' },
+    { id: 'navigation-trails', title: 'Navigation Trails' },
+    { id: 'native-powers', title: 'Native Powers' },
+    { id: 'app-distribution', title: 'App Distribution' }
   ],
   'accessibility': [
-    { id: 'aria-attributes', title: 'ARIA Attributes' },
-    { id: 'keyboard-navigation', title: 'Keyboard Navigation' },
-    { id: 'screen-reader-support', title: 'Screen Reader Support' },
-    { id: 'accessible-forms-modals', title: 'Accessible Forms & Modals' }
+    { id: 'inclusive-foundations', title: 'Inclusive Foundations' },
+    { id: 'interaction-patterns', title: 'Interaction Patterns' },
+    { id: 'visual-accessibility', title: 'Visual Accessibility' },
+    { id: 'testing-tools', title: 'Testing & Tools' }
   ]
 };
 

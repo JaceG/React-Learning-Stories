@@ -5,7 +5,7 @@ import '../CourseStyles.css';
 function ReactEcosystemOverview() {
 	const lessons = [
 		{
-			id: 'state-libraries',
+			id: 'state-management-libraries',
 			title: 'State Management Libraries',
 			description:
 				'Explore Redux, Zustand, MobX and other powerful state management solutions.',

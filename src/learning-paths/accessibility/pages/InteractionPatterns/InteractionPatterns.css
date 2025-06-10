@@ -1,0 +1,476 @@
+/* Interaction Patterns - Keyboard Kingdom Theme */
+.interaction-patterns {
+  --primary-color: #3498DB;
+  --secondary-color: #2980B9;
+  --accent-color: #F39C12;
+  --success-color: #27AE60;
+  --warning-color: #E74C3C;
+  --keyboard-color: #34495E;
+  --focus-color: #FCD34D;
+  --interaction-gradient: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(243, 156, 18, 0.1));
+}
+
+/* Keyboard Kingdom */
+.keyboard-kingdom {
+  background: var(--interaction-gradient);
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.keyboard-kingdom::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+  animation: keyboardPulse 15s linear infinite;
+}
+
+@keyframes keyboardPulse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Focus Path Visualizer */
+.focus-path-visualizer {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.focus-path {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.focus-node {
+  position: relative;
+  padding: 15px 25px;
+  background: rgba(52, 152, 219, 0.2);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.focus-node.active {
+  background: rgba(52, 152, 219, 0.4);
+  border-color: var(--focus-color);
+  box-shadow: 0 0 20px rgba(252, 211, 77, 0.5);
+  transform: scale(1.05);
+}
+
+.focus-arrow {
+  font-size: 1.5em;
+  color: var(--accent-color);
+  animation: arrowPulse 1s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.5; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(5px); }
+}
+
+/* Keyboard Shortcut Trainer */
+.keyboard-trainer {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.keyboard-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.keyboard-key {
+  padding: 15px;
+  background: rgba(52, 73, 94, 0.3);
+  border: 2px solid rgba(52, 73, 94, 0.5);
+  border-radius: 8px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.1em;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.keyboard-key:hover {
+  background: rgba(52, 73, 94, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.keyboard-key.mastered {
+  background: rgba(39, 174, 96, 0.3);
+  border-color: var(--success-color);
+}
+
+.keyboard-key.active {
+  background: var(--primary-color);
+  border-color: var(--focus-color);
+  transform: scale(0.95);
+}
+
+.key-label {
+  font-size: 0.8em;
+  color: #bdc3c7;
+  margin-top: 5px;
+}
+
+/* Skip Links Demo */
+.skip-links-demo {
+  position: relative;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Screen Reader Sanctuary */
+.screen-reader-sanctuary {
+  background: #1a1a1a;
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.sr-announcement-log {
+  background: #000;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  color: #0f0;
+  min-height: 200px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.sr-announcement {
+  margin: 5px 0;
+  opacity: 0;
+  animation: typeIn 0.5s forwards;
+}
+
+@keyframes typeIn {
+  to { opacity: 1; }
+}
+
+.sr-timestamp {
+  color: #080;
+  font-size: 0.85em;
+  margin-right: 10px;
+}
+
+/* Focus Indicator Styles */
+.focus-indicator-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.focus-style-example {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.focus-button {
+  padding: 12px 24px;
+  margin: 10px;
+  background: rgba(52, 152, 219, 0.2);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Different focus styles */
+.focus-button.outline-style:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.focus-button.glow-style:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.5);
+}
+
+.focus-button.border-style:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  background: rgba(52, 152, 219, 0.4);
+}
+
+.focus-button.custom-style:focus {
+  outline: none;
+  position: relative;
+}
+
+.focus-button.custom-style:focus::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px dashed var(--focus-color);
+  border-radius: 10px;
+  animation: focusDash 1s linear infinite;
+}
+
+@keyframes focusDash {
+  to { transform: rotate(360deg); }
+}
+
+/* Tab Order Visualization */
+.tab-order-demo {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.tab-order-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.tab-stop {
+  padding: 20px;
+  background: rgba(52, 152, 219, 0.1);
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-stop:focus {
+  background: rgba(52, 152, 219, 0.3);
+  border-color: var(--focus-color);
+  transform: scale(1.05);
+}
+
+.tab-order-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Interaction Methods Grid */
+.interaction-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.interaction-method {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interaction-method:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+}
+
+.interaction-method.active {
+  background: rgba(39, 174, 96, 0.2);
+  border-color: var(--success-color);
+}
+
+.method-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+
+.interaction-method.active .method-icon {
+  filter: grayscale(0);
+}
+
+.method-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.method-description {
+  font-size: 0.85em;
+  color: #bdc3c7;
+}
+
+/* Universal Design Principles */
+.universal-principles {
+  display: grid;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.principle-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.principle-card:hover {
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateX(5px);
+}
+
+.principle-title {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.principle-example {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Keyboard Navigation Map */
+.keyboard-nav-map {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.nav-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 10px;
+}
+
+.nav-keys {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-key {
+  padding: 8px 16px;
+  background: var(--keyboard-color);
+  color: white;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Voice Control Simulator */
+.voice-control-sim {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.voice-commands {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.voice-command {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.voice-command:hover {
+  background: rgba(52, 152, 219, 0.2);
+}
+
+.command-text {
+  flex: 1;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.command-action {
+  color: #bdc3c7;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .keyboard-layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .tab-order-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .interaction-methods {
+    grid-template-columns: 1fr;
+  }
+}

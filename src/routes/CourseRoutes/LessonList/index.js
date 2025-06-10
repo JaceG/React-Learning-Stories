@@ -55,6 +55,10 @@ import MobileFoundations from '../../../learning-paths/react-native/pages/Mobile
 import NavigationTrails from '../../../learning-paths/react-native/pages/NavigationTrails';
 import NativePowers from '../../../learning-paths/react-native/pages/NativePowers';
 import AppDistribution from '../../../learning-paths/react-native/pages/AppDistribution';
+import InclusiveFoundations from '../../../learning-paths/accessibility/pages/InclusiveFoundations';
+import InteractionPatterns from '../../../learning-paths/accessibility/pages/InteractionPatterns';
+import VisualAccessibility from '../../../learning-paths/accessibility/pages/VisualAccessibility';
+import TestingTools from '../../../learning-paths/accessibility/pages/TestingTools';
 
 const courseListMap = {
 	'components-basics': {
@@ -112,7 +116,7 @@ const courseListMap = {
 		'portals-refs': <PortalsRefs />,
 	},
 	'react-ecosystem': {
-		'state-libraries': <StateManagementLibraries />,
+		'state-management-libraries': <StateManagementLibraries />,
 		'styling-solutions': <StylingSolutions />,
 		'form-libraries': <FormLibraries />,
 		'animation-libraries': <AnimationLibraries />,
@@ -140,6 +144,12 @@ const courseListMap = {
 		'navigation-trails': <NavigationTrails />,
 		'native-powers': <NativePowers />,
 		'app-distribution': <AppDistribution />,
+	},
+	'accessibility': {
+		'inclusive-foundations': <InclusiveFoundations />,
+		'interaction-patterns': <InteractionPatterns />,
+		'visual-accessibility': <VisualAccessibility />,
+		'testing-tools': <TestingTools />,
 	},
 };
 const LessonList = () => {
