@@ -1,3 +1,8 @@
+# ⚠️ NOTICE: THIS SCRIPT IS OUTDATED ⚠️
+# Please use NARRATIVE_REWRITE.md instead for the current lesson content.
+# This file is kept for historical reference only.
+
+
 # State Management Learning Path - Complete Narrative Script
 
 ## 2.1 The State Sorcerers

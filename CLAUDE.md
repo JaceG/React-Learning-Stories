@@ -8,17 +8,20 @@ This guide helps maintain a uniform chapter format across all learning paths in 
 The lesson structure is split between two types of files:
 
 ### 1. index.js (Lesson Container)
-Contains the wrapper structure with navigation elements:
+Contains the wrapper structure with navigation elements and optional lesson-opener:
 ```javascript
 function LessonName() {
     return (
         <div className='lesson-container'>
-            <div className='lesson-header'>
-                <h1>[Lesson Title]</h1>
-                <p className='lesson-subtitle'>
-                    [Lesson subtitle description]
-                </p>
+            {/* OPTIONAL: Bridge narrative from previous lesson */}
+            <div className='lesson-opener'>
+                <p>[Bridge narrative connecting from previous lesson]</p>
             </div>
+            
+            <h1 className='lesson-title'>[Lesson Title]</h1>
+            <p className='lesson-subtitle'>
+                [Lesson subtitle description]
+            </p>
             
             <div className='chapter-navigation'>
                 {/* Top navigation buttons */}
@@ -39,6 +42,13 @@ function LessonName() {
 }
 ```
 
+#### Lesson-Opener Rules:
+- **Placement**: ONLY in index.js files, never in chapter files
+- **Purpose**: Bridges the narrative gap between lessons within a learning path
+- **Content**: Should reference the journey from the previous lesson and set context
+- **Optional**: Not required for the first lesson in a learning path
+- **Style**: Use the `.lesson-opener` class from CourseStyles.css
+
 ### 2. chapterX.js (Chapter Content)
 Contains only the chapter-specific content:
 ```javascript
@@ -57,7 +67,12 @@ const ChapterX = () => {
                 Chapter X: [Descriptive Title]
             </h2>
             
-            {/* 5. Story Section - REQUIRED */}
+            {/* 2. Chapter Bridge - REQUIRED for chapters 2 & 3 */}
+            <div className='chapter-bridge'>
+                <p>[Bridge narrative from previous chapter within the same lesson]</p>
+            </div>
+            
+            {/* 3. Story Section - REQUIRED */}
             {/* Note: Can contain interactive elements mixed with narrative */}
             <div className='story-section'>
                 <p className='story-paragraph'>
@@ -92,7 +107,7 @@ const ChapterX = () => {
                 </div>
             </div>
             
-            {/* 6. Code Examples - REQUIRED (multiple allowed) */}
+            {/* 7. Code Examples - REQUIRED (multiple allowed) */}
             {/* Note: Can be placed throughout the chapter as needed */}
             <div className='code-example'>
                 <div className='scroll-header'>
@@ -105,31 +120,31 @@ const ChapterX = () => {
             
             {/* Additional story/interactive/code sections as needed... */}
             
-            {/* 7. Chapter Ending - REQUIRED for chapter 3 only */}
+            {/* 8. Chapter Ending - REQUIRED for chapter 3 only */}
             <div className='chapter-ending'>
                 <p>[Setup for next lesson]</p>
                 <p>[Final narrative closure]</p>
             </div>
             
-            {/* 8. Lesson Insight - REQUIRED (always second to last) */}
+            {/* 9. Lesson Insight - REQUIRED (always second to last) */}
             <div className='lesson-insight'>
                 <h3>The [Something] Lesson:</h3>
                 <p>[Key learning points explained clearly]</p>
             </div>
             
-            {/* 9. Reflection Section - REQUIRED (always last before navigation) */}
+            {/* 10. Reflection Section - REQUIRED (always last before navigation) */}
             <div className='reflection-section'>
                 <h3>Reflect on the Story</h3>
                 <p>[Thought-provoking question 1]</p>
                 <p>[Thought-provoking question 2]</p>
             </div>
             
-            {/* 10. Chapter Navigation (Bottom) - REQUIRED */}
+            {/* 11. Chapter Navigation (Bottom) - REQUIRED */}
             <div className='chapter-navigation'>
                 {/* Navigation buttons */}
             </div>
             
-            {/* 11. Lesson Navigation - REQUIRED */}
+            {/* 12. Lesson Navigation - REQUIRED */}
             <div className='lesson-navigation'>
                 {/* Lesson navigation elements */}
             </div>
@@ -139,6 +154,13 @@ const ChapterX = () => {
 
 export default ChapterX;
 ```
+
+#### Chapter-Bridge Rules:
+- **Placement**: Only in chapter files (chapter2.js and chapter3.js), never in index.js
+- **Purpose**: Bridges the narrative gap between chapters within the same lesson
+- **Content**: Should reference what happened in the previous chapter and set up the current chapter
+- **Required**: Only for chapters 2 and 3 (chapter 1 doesn't need a bridge)
+- **Style**: Use the `.chapter-bridge` class from CourseStyles.css
 
 ## Key Structural Notes
 
@@ -157,10 +179,16 @@ export default ChapterX;
 
 ## Standardization Checklist
 
+### For index.js Files:
+- [ ] Optional lesson-opener (for lessons 2+ in a learning path)
+- [ ] Has lesson-title and lesson-subtitle
+- [ ] Has chapter-navigation at top and bottom
+- [ ] Includes Outlet with context
+- [ ] Ends with LessonNavigation component
+
 ### For Each Chapter File:
-- [ ] Starts with lesson-title and lesson-subtitle (in index.js)
-- [ ] Has chapter-navigation at top and bottom (in index.js)
-- [ ] Includes chapter-title after top navigation
+- [ ] Starts with chapter-title
+- [ ] Has chapter-bridge (chapters 2 & 3 only)
 - [ ] Story section contains narrative with possible interactive elements
 - [ ] Strong tags on technical terms in narrative
 - [ ] Code examples have consistent scroll-header structure
@@ -169,14 +197,15 @@ export default ChapterX;
 - [ ] Lesson insight is second to last element
 - [ ] Reflection section uses "Reflect on the Story" heading
 - [ ] Reflection section is last element before navigation
-- [ ] Ends with chapter-navigation and lesson-navigation (in index.js)
 
 ### CSS Classes to Use:
 - `.lesson-container` - Main container
+- `.lesson-opener` - Bridge narrative from previous lesson (index.js only)
 - `.lesson-title` - Main lesson heading (h1)
 - `.lesson-subtitle` - Lesson description
 - `.chapter-navigation` - Navigation buttons (top and bottom)
 - `.chapter-title` - Chapter heading (h2)
+- `.chapter-bridge` - Bridge narrative from previous chapter (chapters 2 & 3 only)
 - `.story-section` - Narrative and interactive container
 - `.story-paragraph` - Individual narrative blocks
 - `.character-intro` - Character/journal boxes
@@ -201,12 +230,18 @@ export default ChapterX;
 - Missing strong tags on technical terms in narrative
 - Check that React concepts, component names, and technical vocabulary are wrapped in `<strong>` tags
 
-### 3. Interactive Elements
+### 3. Text Contrast & Readability
+- Check for poor contrast (dark text on dark backgrounds, light text on light backgrounds)
+- Ensure all text meets WCAG contrast requirements
+- Interactive elements should have clear visual states
+
+### 4. Interactive Elements
 - Missing or unclear instructions
 - No visual feedback for interactions
 - Broken state management
+- Incomplete CSS for interactive features
 
-### 4. Code Examples
+### 5. Code Examples
 - Missing contextual comments
 - No scroll-header with discovery context
 - Examples don't match narrative
@@ -272,8 +307,13 @@ Lesson CSS files should only contain:
    - Animation and transition effects
    - Custom component variations
 
+### CSS Redundancy Rules
+1. **Never duplicate functionality** - If CourseStyles.css has `.code-example`, don't create `.magical-code` that does the same thing
+2. **Extend, don't replace** - Use additional classes for variations (e.g., `.code-example.animated`)
+3. **Check before creating** - Always verify a similar class doesn't already exist in CourseStyles.css
+
 ### CSS Analysis Tools
-Two scripts are available to check CSS consistency:
+Three scripts are available to check CSS quality:
 
 1. **analyze-css-conflicts.js** (requires postcss dependencies)
    ```bash
@@ -285,11 +325,42 @@ Two scripts are available to check CSS consistency:
    ```bash
    node analyze-css-simple.js
    ```
+   Both tools will:
+   - Identify conflicts between CourseStyles.css and lesson CSS
+   - Find redundant declarations that can be removed
+   - Generate recommendations for cleanup
 
-Both tools will:
-- Identify conflicts between CourseStyles.css and lesson CSS
-- Find redundant declarations that can be removed
-- Generate recommendations for cleanup
+3. **check-contrast-issues.js** (no dependencies)
+   ```bash
+   node check-contrast-issues.js
+   ```
+   This tool will:
+   - Flag potential contrast issues (dark on dark, light on light)
+   - Check for missing interactive states (hover, active, focus)
+   - Suggest adding transitions for smooth interactions
+
+## Important Script File Information
+
+### Narrative Scripts
+- **Early lessons** (components-basics, props-data-flow, state-management, forms-events, hooks-in-action, routing-navigation):
+  - Have both NARRATIVE_SCRIPT.md (outdated) and NARRATIVE_REWRITE.md (current)
+  - **Use NARRATIVE_REWRITE.md** for the actual content
+  - NARRATIVE_SCRIPT.md files have been marked as outdated
+  
+- **Later lessons** (accessibility onwards):
+  - Only have NARRATIVE_SCRIPT.md which is the current version
+  - These are the correct scripts to follow
+
+### Bridge Elements
+- **Lesson-Opener**: 
+  - Found in index.js files only
+  - Bridges from the previous lesson in the learning path
+  - Optional for lessons 2+ in a path
+  - Based on NARRATIVE_REWRITE.md scripts where available
+- **Chapter-Bridge**: 
+  - Found in chapter files (chapters 2 & 3 only)
+  - Bridges from the previous chapter within the same lesson
+  - Required for chapters 2 and 3
 
 ## Notes for Claude
 
@@ -299,5 +370,22 @@ When reformatting chapters:
 3. Maintain the lesson's educational goals
 4. Test interactive features after changes
 5. Check for CSS conflicts and remove redundant styles
+6. Place lesson-opener elements in index.js files only (not in chapter files)
+7. Add chapter-bridge elements to chapters 2 & 3 (not in index.js or chapter 1)
+8. Verify bridge element placement follows the rules above
 
 Remember: The goal is structural uniformity while preserving each lesson's unique teaching approach.
+
+## Related Documentation
+
+### Narrative Consistency & Future Development
+For guidance on character continuity, world-building consistency, and narrative development for future content, refer to **CONSISTENCY_IMPROVEMENTS.md**. This document contains:
+
+- Character progression map and recurring character guidelines
+- React Kingdom geography and location consistency
+- Narrative bridge templates between lessons
+- Guidelines for writing new learning paths (7-15)
+- Strategy for maintaining Aria's character arc across all paths
+- Interactive element patterns and visual metaphor standards
+
+While this CLAUDE.md focuses on structural formatting consistency, CONSISTENCY_IMPROVEMENTS.md addresses narrative and content consistency across the entire learning journey.

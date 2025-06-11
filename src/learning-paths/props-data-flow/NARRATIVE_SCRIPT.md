@@ -1,3 +1,8 @@
+# ⚠️ NOTICE: THIS SCRIPT IS OUTDATED ⚠️
+# Please use NARRATIVE_REWRITE.md instead for the current lesson content.
+# This file is kept for historical reference only.
+
+
 # Props & Data Flow - Complete Narrative Script
 
 ## 3.1 The Props Caravans

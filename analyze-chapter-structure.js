@@ -51,7 +51,7 @@ function analyzeLessonIndex(filePath) {
   // Check for required index elements
   const indexElements = [
     { name: 'lesson-container', required: true },
-    { name: 'lesson-header', required: true },
+    { name: 'lesson-title', required: true },
     { name: 'lesson-subtitle', required: true },
     { name: 'chapter-navigation', required: true },
     { name: 'LessonNavigation', required: true }
@@ -65,6 +65,16 @@ function analyzeLessonIndex(filePath) {
       issues.push(`Missing required element: ${element.name}`);
     }
   });
+  
+  // Check for lesson-opener (should be in index.js)
+  const hasLessonOpener = content.includes('lesson-opener');
+  findings.elements['lesson-opener'] = hasLessonOpener;
+  
+  // Check for chapter-bridge (should NOT be in index.js)
+  const hasChapterBridge = content.includes('chapter-bridge');
+  if (hasChapterBridge) {
+    issues.push('chapter-bridge should only be in chapter files, not in index.js');
+  }
   
   findings.issues = issues;
   return findings;
@@ -83,6 +93,10 @@ function analyzeChapter(filePath) {
     issues: []
   };
   
+  // Extract chapter number from filename
+  const chapterMatch = fileName.match(/chapter(\d)/);
+  const chapterNumber = chapterMatch ? parseInt(chapterMatch[1]) : null;
+  
   // Check for required chapter elements
   CHAPTER_STRUCTURE.requiredElements.forEach(element => {
     const classPattern = new RegExp(`className=['"\`]${element.name}['"\`]`);
@@ -93,6 +107,22 @@ function analyzeChapter(filePath) {
       issues.push(`Missing required element: ${element.name}`);
     }
   });
+  
+  // Check for lesson-opener (should NOT be in chapter files)
+  const hasLessonOpener = content.includes('lesson-opener');
+  if (hasLessonOpener) {
+    issues.push('lesson-opener should only be in index.js files, not in chapter files');
+  }
+  
+  // Check for chapter-bridge (required for chapters 2 & 3)
+  const hasChapterBridge = content.includes('chapter-bridge');
+  findings.elements['chapter-bridge'] = hasChapterBridge;
+  
+  if (chapterNumber && chapterNumber > 1 && !hasChapterBridge) {
+    issues.push(`Chapter ${chapterNumber} should have a chapter-bridge element`);
+  } else if (chapterNumber === 1 && hasChapterBridge) {
+    issues.push('Chapter 1 should not have a chapter-bridge element');
+  }
   
   // Check lesson insight format
   if (content.includes('lesson-insight')) {
@@ -225,7 +255,10 @@ function analyzeAllChapters() {
   // Analyze index files
   lessonFiles.indexes.forEach(file => {
     const analysis = analyzeLessonIndex(file);
-    const learningPath = file.split(path.sep).find(part => part.includes('-'));
+    // Extract learning path name from file path
+    const pathParts = file.split(path.sep);
+    const learningPathIndex = pathParts.indexOf('learning-paths');
+    const learningPath = learningPathIndex !== -1 ? pathParts[learningPathIndex + 1] : 'unknown';
     
     if (!results.byLearningPath[learningPath]) {
       results.byLearningPath[learningPath] = {
@@ -248,7 +281,10 @@ function analyzeAllChapters() {
   // Analyze chapter files
   lessonFiles.chapters.forEach(file => {
     const analysis = analyzeChapter(file);
-    const learningPath = file.split(path.sep).find(part => part.includes('-'));
+    // Extract learning path name from file path
+    const pathParts = file.split(path.sep);
+    const learningPathIndex = pathParts.indexOf('learning-paths');
+    const learningPath = learningPathIndex !== -1 ? pathParts[learningPathIndex + 1] : 'unknown';
     
     if (!results.byLearningPath[learningPath]) {
       results.byLearningPath[learningPath] = {
@@ -268,17 +304,42 @@ function analyzeAllChapters() {
     }
   });
   
+  // Count lesson-opener and chapter-bridge usage
+  let lessonOpenerCount = 0;
+  let chapterBridgeCount = 0;
+  let incorrectBridgePlacement = 0;
+  
+  results.compliantIndexes.concat(results.nonCompliantIndexes).forEach(index => {
+    if (index.elements['lesson-opener']) lessonOpenerCount++;
+  });
+  
+  results.compliantChapters.concat(results.nonCompliantChapters).forEach(chapter => {
+    if (chapter.elements['chapter-bridge']) chapterBridgeCount++;
+    chapter.issues.forEach(issue => {
+      if (issue.includes('lesson-opener should only be in index.js') || 
+          issue.includes('chapter-bridge should only be in chapter files')) {
+        incorrectBridgePlacement++;
+      }
+    });
+  });
+  
   // Generate report
   console.log('=== Chapter Structure Analysis Report ===\n');
   console.log('Index Files:');
   console.log(`  Total: ${results.totalIndexes}`);
   console.log(`  Compliant: ${results.compliantIndexes.length}`);
-  console.log(`  Non-Compliant: ${results.nonCompliantIndexes.length}\n`);
+  console.log(`  Non-Compliant: ${results.nonCompliantIndexes.length}`);
+  console.log(`  With lesson-opener: ${lessonOpenerCount}\n`);
   
   console.log('Chapter Files:');
   console.log(`  Total: ${results.totalChapters}`);
   console.log(`  Compliant: ${results.compliantChapters.length}`);
-  console.log(`  Non-Compliant: ${results.nonCompliantChapters.length}\n`);
+  console.log(`  Non-Compliant: ${results.nonCompliantChapters.length}`);
+  console.log(`  With chapter-bridge: ${chapterBridgeCount}\n`);
+  
+  if (incorrectBridgePlacement > 0) {
+    console.log(`⚠️  Bridge Element Placement Issues: ${incorrectBridgePlacement}\n`);
+  }
   
   // Report by learning path
   Object.keys(results.byLearningPath).sort().forEach(path => {

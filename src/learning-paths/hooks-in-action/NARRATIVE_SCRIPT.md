@@ -1,3 +1,8 @@
+# ⚠️ NOTICE: THIS SCRIPT IS OUTDATED ⚠️
+# Please use NARRATIVE_REWRITE.md instead for the current lesson content.
+# This file is kept for historical reference only.
+
+
 # Hooks in Action - Complete Narrative Script
 
 ## Learning Path 4: Hooks in Action

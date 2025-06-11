@@ -1,3 +1,8 @@
+# ⚠️ NOTICE: THIS SCRIPT IS OUTDATED ⚠️
+# Please use NARRATIVE_REWRITE.md instead for the current lesson content.
+# This file is kept for historical reference only.
+
+
 # Forms & Events - Complete Narrative Script
 
 ## 5.1 Form Alchemy
