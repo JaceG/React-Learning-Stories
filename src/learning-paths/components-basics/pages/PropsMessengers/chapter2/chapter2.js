@@ -270,7 +270,7 @@ function Button(props) {
 				</div>
 
 				<div className='lesson-insight'>
-					<h3>The One-Way Road Lesson:</h3>
+					<h3>The Flow Lesson:</h3>
 					<p>
 						Props in React always flow in a single direction: from
 						parent to child. This one-way data flow makes your

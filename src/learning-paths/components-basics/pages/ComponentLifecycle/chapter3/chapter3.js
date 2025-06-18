@@ -616,7 +616,7 @@ this.abortController.abort();
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Farewell Ceremony Lesson:</h3>
+				<h3>The Unmounting Lesson:</h3>
 				<p>
 					The unmounting phase gives components a chance to clean up
 					before they're removed from the DOM. The

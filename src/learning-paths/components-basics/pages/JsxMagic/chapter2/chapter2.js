@@ -862,7 +862,7 @@ function getCurrentGreeting() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Expression Magic Lesson:</h3>
+				<h3>The Expression Lesson:</h3>
 				<p>
 					You can embed any valid JavaScript expression inside JSX
 					using curly braces. This allows you to display dynamic

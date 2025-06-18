@@ -64,13 +64,6 @@ const ChapterOne = () => {
 				Chapter 1: The Component Life Stages
 			</h2>
 
-			<div className='chapter-bridge'>
-				<p>As the sun rose on her second week in the React Kingdom, Aria 
-				received word that she was to visit the Lifecycle Sanctum - a 
-				mystical place where the Time Keepers tracked the birth, life, 
-				and passing of every component in the kingdom.</p>
-			</div>
-
 			<div className='story-section'>
 				<p className='story-paragraph'>
 					The Lifecycle Sanctum was unlike anything Aria had seen. 
@@ -229,7 +222,7 @@ const ChapterOne = () => {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Time Keeper's Lesson:</h3>
+				<h3>The Lifecycle Lesson:</h3>
 				<p>
 					Every React component goes through a series of lifecycle
 					stages: mounting (birth), updating (growth), and unmounting

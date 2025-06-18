@@ -396,7 +396,7 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Sacred Rules Lesson:</h3>
+				<h3>The Rules Lesson:</h3>
 				<p>
 					JSX has specific syntax rules that differ from standard HTML
 					because it's ultimately converted to JavaScript.

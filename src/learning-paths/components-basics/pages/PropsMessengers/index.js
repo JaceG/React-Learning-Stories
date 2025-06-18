@@ -320,6 +320,14 @@ function PropsMessengers() {
 
 	return (
 		<div className='lesson-container'>
+			<div className='lesson-opener'>
+				<p>Empowered by the magical syntax of JSX, Aria's confidence grew. She could 
+				now create components with elegance and clarity. But Professor Syntaxis had 
+				hinted at something more - components needed to communicate, to share 
+				information and work together. The Props Messenger Guild held the secrets 
+				to this vital knowledge, and Aria's next destination was clear.</p>
+			</div>
+			
 			<h1 className='lesson-title'>The Props Messengers</h1>
 			<p className='lesson-subtitle'>
 				A story about how information travels in React

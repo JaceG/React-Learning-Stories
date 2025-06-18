@@ -647,7 +647,7 @@ this.fetchUserData(this.props.userId);
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The Mount and Update Lesson:</h3>
+				<h3>The Update Lesson:</h3>
 				<p>
 					The mounting and updating phases are where most of a
 					component's work happens. Mounting methods like constructor

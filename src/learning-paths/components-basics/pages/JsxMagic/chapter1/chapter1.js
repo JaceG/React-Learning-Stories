@@ -50,13 +50,6 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Magic Language</h2>
 
-			<div className='chapter-bridge'>
-				<p>After mastering the art of component communication at the Props 
-				Messenger Guild, Aria's journey brought her to the northern reaches 
-				of the React Kingdom, where the JSX Magic Academy stood tall among 
-				clouds of swirling code.</p>
-			</div>
-
 			<div className='story-section'>
 				<p className='story-paragraph'>
 					"Welcome, Aria!" called out <strong>Professor Syntaxis</strong>, 
@@ -243,7 +236,7 @@ function Greeting() {
 			</div>
 
 			<div className='lesson-insight'>
-				<h3>The JSX Language Lesson:</h3>
+				<h3>The JSX Lesson:</h3>
 				<p>
 					JSX is a syntax extension for JavaScript that looks similar
 					to HTML but allows you to write React elements in a more

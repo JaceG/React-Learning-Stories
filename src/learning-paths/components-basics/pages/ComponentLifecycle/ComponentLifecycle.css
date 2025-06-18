@@ -55,21 +55,6 @@
 }
 
 
-.chapter-ending {
-  background-color: #f0f4f8;
-  border-left: 4px solid #667eea;
-  padding: 30px;
-  margin-top: 40px;
-  border-radius: 0 8px 8px 0;
-  position: relative;
-}
-
-.chapter-ending p {
-  margin: 15px 0;
-  line-height: 1.7;
-  color: #4a5568;
-  font-style: italic;
-}
 
 /* Lifecycle Diagram */
 .lifecycle-diagram {
@@ -326,14 +311,7 @@
   background-color: #c0392b;
 }
 
-.reset-button {
-  background-color: #95a5a6;
-  color: white;
-}
-
-.reset-button:hover {
-  background-color: #7f8c8d;
-}
+/* Reset button styles inherited from CourseStyles.css */
 
 .lifecycle-button:disabled {
   background-color: #ecf0f1;

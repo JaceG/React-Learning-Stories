@@ -122,8 +122,9 @@ const ChapterX = () => {
             
             {/* 8. Chapter Ending - REQUIRED for chapter 3 only */}
             <div className='chapter-ending'>
-                <p>[Setup for next lesson]</p>
-                <p>[Final narrative closure]</p>
+                <p>[Narrative bridge setting up the next lesson]</p>
+                <p>[Character reactions and journey continuation]</p>
+                <p>[Final inspirational or anticipatory note]</p>
             </div>
             
             {/* 9. Lesson Insight - REQUIRED (always second to last) */}
@@ -215,6 +216,7 @@ export default ChapterX;
 - `.code-example` - Code block container
 - `.scroll-header` - Code block header
 - `.discovered-by` - Code discovery context
+- `.chapter-ending` - Narrative closure and next lesson setup (chapter 3 only)
 - `.lesson-insight` - Key learning box (always "The [X] Lesson:")
 - `.reflection-section` - Reflection questions (always "Reflect on the Story")
 - `.lesson-navigation` - Lesson navigation at bottom
@@ -292,6 +294,7 @@ The following selectors are defined in CourseStyles.css and should NOT be overri
 - `.story-section`, `.story-paragraph` - Narrative elements
 - `.interactive-section`, `.section-title` - Interactive containers
 - `.code-example`, `.scroll-header` - Code display
+- `.chapter-ending` - Chapter 3 narrative closure
 - `.lesson-insight`, `.reflection-section` - Learning elements
 - `.lesson-navigation` - Bottom navigation
 

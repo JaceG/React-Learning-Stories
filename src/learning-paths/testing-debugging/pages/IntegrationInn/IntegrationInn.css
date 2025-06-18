@@ -420,24 +420,3 @@
   box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
 }
 
-/* Chapter Ending */
-.chapter-ending {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: white;
-  border-radius: 10px;
-  padding: 30px;
-  margin: 30px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.chapter-ending::before {
-  content: "→";
-  position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 48px;
-  opacity: 0.2;
-}

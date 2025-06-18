@@ -554,3 +554,31 @@
     margin-bottom: 10px;
   }
 }
+
+/* Chapter Ending Styles */
+.chapter-ending {
+  background-color: #f0f1ff;
+  border-left: 4px solid #667eea;
+  padding: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.chapter-ending p {
+  margin: 15px 0;
+  line-height: 1.7;
+  color: #4a5568;
+  font-style: italic;
+}
+
+.chapter-ending p:first-child {
+  margin-top: 0;
+}
+
+.chapter-ending p:last-child {
+  margin-bottom: 0;
+}

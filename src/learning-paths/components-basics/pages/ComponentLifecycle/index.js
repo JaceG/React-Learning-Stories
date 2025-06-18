@@ -208,6 +208,14 @@ function ComponentLifecycle() {
 
 	return (
 		<div className='lesson-container'>
+			<div className='lesson-opener'>
+				<p>With the fundamentals of component creation fresh in her mind, Aria 
+				ventured deeper into the Component Kingdom. The workshops had shown her 
+				how to build components, but now she needed to understand their journey 
+				through time - from birth to retirement. The ancient Lifecycle Observatory 
+				beckoned, promising to reveal the secrets of component existence.</p>
+			</div>
+			
 			<h1 className='lesson-title'>The Lifecycle Chronicles</h1>
 			<p className='lesson-subtitle'>
 				A story about the journey of a React component

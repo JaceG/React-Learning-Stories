@@ -186,17 +186,7 @@
 }
 
 .reset-button {
-  background-color: #95a5a6;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
   margin-top: 10px;
-}
-
-.reset-button:hover {
-  background-color: #7f8c8d;
 }
 
 /* Chapter 1 - Props Kingdom Illustration */
@@ -458,19 +448,7 @@
 
 /* Reflection Section */
 .reflection-section {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
   margin-top: 30px;
-}
-
-.reflection-section h3 {
-  color: #2c3e50;
-  margin-top: 0;
-}
-
-.reflection-section p {
-  color: #7f8c8d;
 }
 
 /* Chapter 3 - PropTypes Guardians Styles */

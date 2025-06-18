@@ -30,13 +30,6 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<h2 className='chapter-title'>Chapter 1: The Royal Messengers</h2>
 
-			<div className='lesson-opener'>
-				<p>The next morning, Aria followed the cobblestone path from the Component 
-				Workshops to the bustling Eastern Quarter, where the Props Messenger Guild 
-				operated day and night. Master Aurelius had given her a letter of introduction 
-				to present to the guild master.</p>
-			</div>
-
 			<div className='story-section'>
 				<p className='story-paragraph'>
 					The Props Messenger Guild was a hive of activity. Messengers rushed in 

@@ -775,24 +775,3 @@
   border-radius: 0 8px 8px 0;
 }
 
-/* Chapter Ending - Leading to next lesson */
-.chapter-ending {
-  background-color: #fff3e0;
-  border: 2px solid #ff9800;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.chapter-ending p {
-  color: #e65100;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.chapter-ending p:last-child {
-  margin-bottom: 0;
-  font-weight: 500;
-}
