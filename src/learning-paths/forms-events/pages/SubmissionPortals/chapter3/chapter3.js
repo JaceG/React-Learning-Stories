@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
 
 function ChapterThree() {
-	const { 
+	const {
 		errorState,
 		handleError,
 		retryCount,
@@ -17,7 +17,7 @@ function ChapterThree() {
 		resetPortal,
 		portalState,
 		activatePortal,
-		updateProgress
+		updateProgress,
 	} = useOutletContext();
 
 	const [ultimateForm, setUltimateForm] = useState({
@@ -25,33 +25,33 @@ function ChapterThree() {
 		customerInfo: {
 			name: '',
 			email: '',
-			company: ''
+			company: '',
 		},
 		// Event handling from Event Symphony
 		projectDetails: {
 			title: '',
 			description: '',
 			priority: 'medium',
-			technologies: []
+			technologies: [],
 		},
 		// Validation rules from Validation Guardians
 		requirements: {
 			budget: '',
 			timeline: '',
-			teamSize: ''
+			teamSize: '',
 		},
 		// Submission config from Portals
 		submissionConfig: {
 			retryEnabled: true,
 			optimisticUpdate: true,
-			backgroundSync: true
-		}
+			backgroundSync: true,
+		},
 	});
 
 	const [validationStatus, setValidationStatus] = useState({
 		customerInfo: false,
 		projectDetails: false,
-		requirements: false
+		requirements: false,
 	});
 
 	const [synthesisActive, setSynthesisActive] = useState(false);
@@ -64,91 +64,108 @@ function ChapterThree() {
 			case 'customerInfo':
 				return data.name && data.email.includes('@') && data.company;
 			case 'projectDetails':
-				return data.title && data.description && data.technologies.length > 0;
+				return (
+					data.title &&
+					data.description &&
+					data.technologies.length > 0
+				);
 			case 'requirements':
-				return data.budget && !isNaN(data.budget) && data.timeline && data.teamSize;
+				return (
+					data.budget &&
+					!isNaN(data.budget) &&
+					data.timeline &&
+					data.teamSize
+				);
 			default:
 				return false;
 		}
 	}, []);
 
 	// Event orchestration from Event Symphony
-	const handleFieldChange = useCallback((section, field, value) => {
-		setUltimateForm(prev => ({
-			...prev,
-			[section]: {
-				...prev[section],
-				[field]: value
-			}
-		}));
+	const handleFieldChange = useCallback(
+		(section, field, value) => {
+			setUltimateForm((prev) => ({
+				...prev,
+				[section]: {
+					...prev[section],
+					[field]: value,
+				},
+			}));
 
-		// Real-time validation
-		const newData = {
-			...ultimateForm[section],
-			[field]: value
-		};
-		const isValid = validateSection(section, newData);
-		setValidationStatus(prev => ({
-			...prev,
-			[section]: isValid
-		}));
+			// Real-time validation
+			const newData = {
+				...ultimateForm[section],
+				[field]: value,
+			};
+			const isValid = validateSection(section, newData);
+			setValidationStatus((prev) => ({
+				...prev,
+				[section]: isValid,
+			}));
 
-		// Log the event
-		addLog(`Field updated: ${section}.${field}`, 'info');
-	}, [ultimateForm, validateSection, addLog]);
+			// Log the event
+			addLog(`Field updated: ${section}.${field}`, 'info');
+		},
+		[ultimateForm, validateSection, addLog]
+	);
 
 	// The Grand Synthesis submission
 	const handleGrandSynthesis = async (e) => {
 		e.preventDefault();
-		
+
 		setSynthesisActive(true);
 		activatePortal();
-		
+
 		// Phase 1: Form State Collection (Form Alchemy)
 		updateProgress(20, 'Collecting Form State');
 		addLog('Gathering form data using Alchemy patterns...', 'info');
-		await new Promise(resolve => setTimeout(resolve, 800));
-		
+		await new Promise((resolve) => setTimeout(resolve, 800));
+
 		// Phase 2: Event Processing (Event Symphony)
 		updateProgress(40, 'Processing Events');
 		addLog('Orchestrating event flows with Symphony patterns...', 'info');
-		await new Promise(resolve => setTimeout(resolve, 800));
-		
+		await new Promise((resolve) => setTimeout(resolve, 800));
+
 		// Phase 3: Validation (Validation Guardians)
 		updateProgress(60, 'Validating Data');
 		addLog('Applying Guardian validation patterns...', 'info');
-		const allValid = Object.values(validationStatus).every(v => v);
+		const allValid = Object.values(validationStatus).every((v) => v);
 		if (!allValid) {
 			handleError('Validation failed - incomplete data');
 			setSynthesisActive(false);
 			return;
 		}
-		await new Promise(resolve => setTimeout(resolve, 800));
-		
+		await new Promise((resolve) => setTimeout(resolve, 800));
+
 		// Phase 4: Submission (Portal Transmission)
 		updateProgress(80, 'Portal Transmission');
 		addLog('Opening portal with advanced patterns...', 'info');
-		
+
 		try {
 			// Simulate the ultimate submission
 			const response = await simulateUltimateSubmission(ultimateForm);
-			
+
 			updateProgress(100, 'Complete');
 			completeSubmission(response);
-			addLog('🎉 Grand Synthesis successful! All patterns unified!', 'success');
-			
+			addLog(
+				'🎉 Grand Synthesis successful! All patterns unified!',
+				'success'
+			);
+
 			// Demonstrate pattern mastery
 			setMasterPatterns([
 				'Form State Management ✓',
 				'Event Orchestration ✓',
 				'Validation Defense ✓',
-				'Portal Transmission ✓'
+				'Portal Transmission ✓',
 			]);
-			
 		} catch (error) {
 			handleError(error.message);
 			if (ultimateForm.submissionConfig.retryEnabled) {
-				addLog('Initiating retry with exponential backoff...', 'warning');
+				addLog(
+					'Initiating retry with exponential backoff...',
+					'warning'
+				);
 			}
 		} finally {
 			setSynthesisActive(false);
@@ -160,109 +177,156 @@ function ChapterThree() {
 		if (Math.random() > 0.8) {
 			throw new Error('Portal temporarily unstable');
 		}
-		
+
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve({
 					id: 'synthesis-' + Date.now(),
 					...data,
 					timestamp: new Date().toISOString(),
-					message: 'The Grand Synthesis is complete!'
+					message: 'The Grand Synthesis is complete!',
 				});
 			}, 1500);
 		});
 	};
 
-	const technologies = ['React', 'TypeScript', 'GraphQL', 'Node.js', 'PostgreSQL', 'Docker'];
+	const technologies = [
+		'React',
+		'TypeScript',
+		'GraphQL',
+		'Node.js',
+		'PostgreSQL',
+		'Docker',
+	];
 
 	const content = (
 		<>
-		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Grand Portal Synthesis</h2>
-			
-			<div className='chapter-bridge'>
-				<p>The Grand Synthesis Chamber pulsed with the combined energy of every form 
-				pattern in the Western Quarter. Here, Sage had brought together masters from 
-				each domain - Alchemist Formicus, Conductor Eventus, and Commander Validus - 
-				all struggling to create the ultimate submission system.</p>
-			</div>
+			<div className='chapter'>
+				<h2 className='chapter-title'>
+					Chapter 3: The Grand Portal Synthesis
+				</h2>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"<strong>Aria!</strong>" Sage's voice echoed with urgency. "The masters have 
-					been trying to combine their knowledge for days. The portal destabilizes with 
-					each attempt. We need someone who understands how all the patterns connect."
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary's sensors detected massive energy fluctuations. "Critical instability 
-					detected! Form state management conflicting with event handlers. Validation 
-					logic creating submission loops. System efficiency: 12%."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria surveyed the chaos - each master working in isolation. "I see the problem. 
-					You're treating each pattern as separate when they're meant to work as one. Let 
-					me show you the synthesis I've discovered across my entire journey."
-				</p>
-				
-				<p className='story-paragraph'>
-					The assembled masters watched as Aria stepped forward. "Form Alchemy for state, 
-					Event Symphony for interaction, Validation Guardians for defense, and Portal 
-					Submission for transmission - they're all movements in the same composition."
-				</p>
-
-				<div className='aria-grand-synthesis'>
-					<h3>Aria's Ultimate Form System</h3>
-					<p className='story-paragraph'>
-						"Watch as I unify all the patterns you've taught me into one seamless system..."
+				<div className='chapter-bridge'>
+					<p>
+						The Grand Synthesis Chamber pulsed with the combined
+						energy of every form pattern in the Western Quarter.
+						Here, Sage had brought together masters from each domain
+						- Alchemist Formicus, Conductor Eventus, and Commander
+						Validus - all struggling to create the ultimate
+						submission system.
 					</p>
 				</div>
-			</div>
 
-			<div className='grand-synthesis-chamber'>
-				<h3>The Grand Synthesis Interface</h3>
-				<p className='sage-amazement'>
-					Sage: "Witness the unification of all Forms & Events mastery!"
-				</p>
-				
-				{masterPatterns.length > 0 && (
-					<div className='master-patterns-display'>
-						<h4>✨ Unified Patterns</h4>
-						<div className='pattern-list'>
-							{masterPatterns.map((pattern, idx) => (
-								<div key={idx} className='pattern-achievement'>
-									{pattern}
-								</div>
-							))}
-						</div>
+				<div className='story-section'>
+					<p className='story-paragraph'>
+						"<strong>Aria!</strong>" Sage's voice echoed with
+						urgency. "The masters have been trying to combine their
+						knowledge for days. The portal destabilizes with each
+						attempt. We need someone who understands how to make all
+						these patterns work together."
+					</p>
+
+					<p className='story-paragraph'>
+						Binary's sensors detected massive energy fluctuations.
+						"Critical instability detected! Form state management
+						conflicting with event handlers. Validation logic
+						creating submission loops. System efficiency: 12%."
+					</p>
+
+					<p className='story-paragraph'>
+						Aria surveyed the chaos - each master working in
+						isolation. "I see the problem. You're treating each
+						pattern as separate when they're meant to work as one.
+						Let me show you how these patterns can work together
+						systematically."
+					</p>
+
+					<p className='story-paragraph'>
+						The assembled masters watched as Aria stepped forward.
+						"Form Alchemy for state, Event Symphony for interaction,
+						Validation Guardians for defense, and Portal Submission
+						for transmission - they're all movements in the same
+						composition."
+					</p>
+
+					<div className='aria-grand-synthesis'>
+						<h3>Aria's Ultimate Form System</h3>
+						<p className='story-paragraph'>
+							"Watch as I unify all the patterns you've taught me
+							into one seamless system..."
+						</p>
 					</div>
-				)}
+				</div>
 
-				<div className='synthesis-status'>
-					<div className='status-grid'>
-						<div className={`status-card ${validationStatus.customerInfo ? 'valid' : ''}`}>
-							<h4>🧪 Form Alchemy</h4>
-							<p>Customer Info State</p>
-							<span>{validationStatus.customerInfo ? '✓ Ready' : '○ Incomplete'}</span>
+				<div className='grand-synthesis-chamber'>
+					<h3>The Grand Synthesis Interface</h3>
+					<p className='sage-amazement'>
+						Sage: "Witness the unification of all Forms & Events
+						mastery!"
+					</p>
+
+					{masterPatterns.length > 0 && (
+						<div className='master-patterns-display'>
+							<h4>✨ Unified Patterns</h4>
+							<div className='pattern-list'>
+								{masterPatterns.map((pattern, idx) => (
+									<div
+										key={idx}
+										className='pattern-achievement'>
+										{pattern}
+									</div>
+								))}
+							</div>
 						</div>
-						<div className={`status-card ${validationStatus.projectDetails ? 'valid' : ''}`}>
-							<h4>🎵 Event Symphony</h4>
-							<p>Project Details Flow</p>
-							<span>{validationStatus.projectDetails ? '✓ Ready' : '○ Incomplete'}</span>
-						</div>
-						<div className={`status-card ${validationStatus.requirements ? 'valid' : ''}`}>
-							<h4>🛡️ Validation Guard</h4>
-							<p>Requirements Defense</p>
-							<span>{validationStatus.requirements ? '✓ Ready' : '○ Incomplete'}</span>
+					)}
+
+					<div className='synthesis-status'>
+						<div className='status-grid'>
+							<div
+								className={`status-card ${
+									validationStatus.customerInfo ? 'valid' : ''
+								}`}>
+								<h4>🧪 Form Alchemy</h4>
+								<p>Customer Info State</p>
+								<span>
+									{validationStatus.customerInfo
+										? '✓ Ready'
+										: '○ Incomplete'}
+								</span>
+							</div>
+							<div
+								className={`status-card ${
+									validationStatus.projectDetails
+										? 'valid'
+										: ''
+								}`}>
+								<h4>🎵 Event Symphony</h4>
+								<p>Project Details Flow</p>
+								<span>
+									{validationStatus.projectDetails
+										? '✓ Ready'
+										: '○ Incomplete'}
+								</span>
+							</div>
+							<div
+								className={`status-card ${
+									validationStatus.requirements ? 'valid' : ''
+								}`}>
+								<h4>🛡️ Validation Guard</h4>
+								<p>Requirements Defense</p>
+								<span>
+									{validationStatus.requirements
+										? '✓ Ready'
+										: '○ Incomplete'}
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div className='aria-ultimate-code'>
-				<h3>The Master Synthesis Pattern</h3>
-				<pre className='magical-code'>{`// Aria's Grand Synthesis - All Patterns United
+				<div className='aria-ultimate-code'>
+					<h3>The Master Synthesis Pattern</h3>
+					<pre className='magical-code'>{`// Aria's Grand Synthesis - All Patterns United
 const useUltimateForm = () => {
   // Form Alchemy: State Management
   const [formState, setFormState] = useState(initialState);
@@ -354,340 +418,494 @@ const useUltimateForm = () => {
     isValid: Object.keys(validationState).length === 0
   };
 };`}</pre>
-			</div>
+				</div>
 
-			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Interactive Exercise: The Grand Synthesis
-				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Help Aria demonstrate the ultimate form pattern synthesis! Complete all 
-							sections to witness the unified power of Forms & Events mastery.
-						</strong>
+				<div className='interactive-section'>
+					<h3 className='section-title'>
+						Interactive Exercise: The Grand Synthesis
+					</h3>
+					<div className='instruction-box'>
+						<p>
+							<strong>
+								Help Aria demonstrate the ultimate form pattern
+								synthesis! Complete all sections to witness the
+								unified power of Forms & Events mastery.
+							</strong>
+						</p>
+					</div>
+
+					<form
+						onSubmit={handleGrandSynthesis}
+						className='ultimate-form'>
+						<div className='form-section alchemy'>
+							<h4>🧪 Form Alchemy Section</h4>
+							<p className='section-desc'>
+								State management patterns from the Alchemy Lab
+							</p>
+
+							<div className='form-field'>
+								<label>Alchemist Name:</label>
+								<input
+									type='text'
+									value={ultimateForm.customerInfo.name}
+									onChange={(e) =>
+										handleFieldChange(
+											'customerInfo',
+											'name',
+											e.target.value
+										)
+									}
+									placeholder='Your name'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+
+							<div className='form-field'>
+								<label>Contact Dimension:</label>
+								<input
+									type='email'
+									value={ultimateForm.customerInfo.email}
+									onChange={(e) =>
+										handleFieldChange(
+											'customerInfo',
+											'email',
+											e.target.value
+										)
+									}
+									placeholder='your@email.com'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+
+							<div className='form-field'>
+								<label>Guild Affiliation:</label>
+								<input
+									type='text'
+									value={ultimateForm.customerInfo.company}
+									onChange={(e) =>
+										handleFieldChange(
+											'customerInfo',
+											'company',
+											e.target.value
+										)
+									}
+									placeholder='Your company/guild'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+						</div>
+
+						<div className='form-section symphony'>
+							<h4>🎵 Event Symphony Section</h4>
+							<p className='section-desc'>
+								Event orchestration from the Concert Hall
+							</p>
+
+							<div className='form-field'>
+								<label>Project Composition:</label>
+								<input
+									type='text'
+									value={ultimateForm.projectDetails.title}
+									onChange={(e) =>
+										handleFieldChange(
+											'projectDetails',
+											'title',
+											e.target.value
+										)
+									}
+									placeholder='Project title'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+
+							<div className='form-field'>
+								<label>Symphony Description:</label>
+								<textarea
+									value={
+										ultimateForm.projectDetails.description
+									}
+									onChange={(e) =>
+										handleFieldChange(
+											'projectDetails',
+											'description',
+											e.target.value
+										)
+									}
+									placeholder='Describe your project vision...'
+									rows='3'
+									disabled={synthesisActive}
+									className='synthesis-textarea'
+								/>
+							</div>
+
+							<div className='form-field'>
+								<label>Technology Instruments:</label>
+								<div className='tech-selector'>
+									{technologies.map((tech) => (
+										<label
+											key={tech}
+											className='tech-option'>
+											<input
+												type='checkbox'
+												checked={ultimateForm.projectDetails.technologies.includes(
+													tech
+												)}
+												onChange={(e) => {
+													const techs = e.target
+														.checked
+														? [
+																...ultimateForm
+																	.projectDetails
+																	.technologies,
+																tech,
+														  ]
+														: ultimateForm.projectDetails.technologies.filter(
+																(t) =>
+																	t !== tech
+														  );
+													handleFieldChange(
+														'projectDetails',
+														'technologies',
+														techs
+													);
+												}}
+												disabled={synthesisActive}
+											/>
+											<span>{tech}</span>
+										</label>
+									))}
+								</div>
+							</div>
+						</div>
+
+						<div className='form-section guardians'>
+							<h4>🛡️ Validation Guardian Section</h4>
+							<p className='section-desc'>
+								Defense patterns from the Fortress
+							</p>
+
+							<div className='form-field'>
+								<label>Budget Allocation:</label>
+								<input
+									type='number'
+									value={ultimateForm.requirements.budget}
+									onChange={(e) =>
+										handleFieldChange(
+											'requirements',
+											'budget',
+											e.target.value
+										)
+									}
+									placeholder='Project budget'
+									min='0'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+
+							<div className='form-field'>
+								<label>Timeline Defense:</label>
+								<select
+									value={ultimateForm.requirements.timeline}
+									onChange={(e) =>
+										handleFieldChange(
+											'requirements',
+											'timeline',
+											e.target.value
+										)
+									}
+									disabled={synthesisActive}
+									className='synthesis-select'>
+									<option value=''>Select timeline...</option>
+									<option value='1-month'>
+										1 Moon Cycle
+									</option>
+									<option value='3-months'>
+										3 Moon Cycles
+									</option>
+									<option value='6-months'>
+										6 Moon Cycles
+									</option>
+									<option value='1-year'>
+										Full Solar Cycle
+									</option>
+								</select>
+							</div>
+
+							<div className='form-field'>
+								<label>Guardian Team Size:</label>
+								<input
+									type='number'
+									value={ultimateForm.requirements.teamSize}
+									onChange={(e) =>
+										handleFieldChange(
+											'requirements',
+											'teamSize',
+											e.target.value
+										)
+									}
+									placeholder='Team members needed'
+									min='1'
+									max='100'
+									disabled={synthesisActive}
+									className='synthesis-input'
+								/>
+							</div>
+						</div>
+
+						<div className='form-section portal'>
+							<h4>🌀 Portal Configuration</h4>
+							<p className='section-desc'>
+								Submission patterns from the Gateway
+							</p>
+
+							<div className='config-options'>
+								<label className='config-option'>
+									<input
+										type='checkbox'
+										checked={
+											ultimateForm.submissionConfig
+												.retryEnabled
+										}
+										onChange={(e) =>
+											handleFieldChange(
+												'submissionConfig',
+												'retryEnabled',
+												e.target.checked
+											)
+										}
+										disabled={synthesisActive}
+									/>
+									<span>Enable Retry Logic</span>
+								</label>
+								<label className='config-option'>
+									<input
+										type='checkbox'
+										checked={
+											ultimateForm.submissionConfig
+												.optimisticUpdate
+										}
+										onChange={(e) =>
+											handleFieldChange(
+												'submissionConfig',
+												'optimisticUpdate',
+												e.target.checked
+											)
+										}
+										disabled={synthesisActive}
+									/>
+									<span>Optimistic Updates</span>
+								</label>
+								<label className='config-option'>
+									<input
+										type='checkbox'
+										checked={
+											ultimateForm.submissionConfig
+												.backgroundSync
+										}
+										onChange={(e) =>
+											handleFieldChange(
+												'submissionConfig',
+												'backgroundSync',
+												e.target.checked
+											)
+										}
+										disabled={synthesisActive}
+									/>
+									<span>Background Sync</span>
+								</label>
+							</div>
+						</div>
+
+						<div className='synthesis-controls'>
+							<button
+								type='submit'
+								disabled={
+									synthesisActive ||
+									!Object.values(validationStatus).every(
+										(v) => v
+									)
+								}
+								className='synthesis-button'>
+								{synthesisActive
+									? '🌟 Synthesis Active...'
+									: '⚡ Initiate Grand Synthesis'}
+							</button>
+
+							{errorState && (
+								<button
+									type='button'
+									onClick={retrySubmission}
+									className='retry-button'>
+									🔄 Retry Synthesis
+								</button>
+							)}
+						</div>
+					</form>
+
+					{responseData && (
+						<div className='synthesis-success'>
+							<h4>🎉 Grand Synthesis Complete!</h4>
+							<p>Portal ID: {responseData.id}</p>
+							<p className='success-message'>
+								{responseData.message}
+							</p>
+						</div>
+					)}
+				</div>
+
+				<div className='masters-recognition'>
+					<p className='story-paragraph'>
+						The assembled masters watched in awe as Aria's synthesis
+						stabilized the portal. Each pattern flowed seamlessly
+						into the next - form state managed by alchemy, events
+						orchestrated like a symphony, validation standing guard,
+						and submission flowing through a perfect portal.
+					</p>
+
+					<p className='story-paragraph'>
+						"Incredible!" Formicus exclaimed. "She's using my
+						controlled components with Eventus's delegation
+						patterns!"
+					</p>
+
+					<p className='story-paragraph'>
+						"And my validation gates are perfectly timed with Sage's
+						async submission!" Validus added, his armor glowing with
+						approval.
+					</p>
+
+					<p className='story-paragraph'>
+						Binary's final analysis appeared: "System efficiency:
+						99.7%! All patterns unified. Zero conflicts detected.
+						Aria has achieved true Forms & Events mastery!"
 					</p>
 				</div>
 
-				<form onSubmit={handleGrandSynthesis} className='ultimate-form'>
-					<div className='form-section alchemy'>
-						<h4>🧪 Form Alchemy Section</h4>
-						<p className='section-desc'>State management patterns from the Alchemy Lab</p>
-						
-						<div className='form-field'>
-							<label>Alchemist Name:</label>
-							<input
-								type='text'
-								value={ultimateForm.customerInfo.name}
-								onChange={(e) => handleFieldChange('customerInfo', 'name', e.target.value)}
-								placeholder='Your name'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
+				<div className='ultimate-wisdom'>
+					<h3>The Unified Patterns</h3>
+					<div className='wisdom-grid'>
+						<div className='wisdom-card'>
+							<h4>🧪 State Unity</h4>
+							<p>
+								Form state, validation state, and submission
+								state work as one unified system
+							</p>
 						</div>
-						
-						<div className='form-field'>
-							<label>Contact Dimension:</label>
-							<input
-								type='email'
-								value={ultimateForm.customerInfo.email}
-								onChange={(e) => handleFieldChange('customerInfo', 'email', e.target.value)}
-								placeholder='your@email.com'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
+						<div className='wisdom-card'>
+							<h4>🎵 Event Harmony</h4>
+							<p>
+								Changes flow through validation to submission in
+								perfect orchestration
+							</p>
 						</div>
-						
-						<div className='form-field'>
-							<label>Guild Affiliation:</label>
-							<input
-								type='text'
-								value={ultimateForm.customerInfo.company}
-								onChange={(e) => handleFieldChange('customerInfo', 'company', e.target.value)}
-								placeholder='Your company/guild'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
+						<div className='wisdom-card'>
+							<h4>🛡️ Defense Depth</h4>
+							<p>
+								Validation at every layer ensures data integrity
+								throughout the journey
+							</p>
 						</div>
-					</div>
-
-					<div className='form-section symphony'>
-						<h4>🎵 Event Symphony Section</h4>
-						<p className='section-desc'>Event orchestration from the Concert Hall</p>
-						
-						<div className='form-field'>
-							<label>Project Composition:</label>
-							<input
-								type='text'
-								value={ultimateForm.projectDetails.title}
-								onChange={(e) => handleFieldChange('projectDetails', 'title', e.target.value)}
-								placeholder='Project title'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
+						<div className='wisdom-card'>
+							<h4>🌀 Portal Power</h4>
+							<p>
+								Submission handles all scenarios with retry,
+								optimization, and sync
+							</p>
 						</div>
-						
-						<div className='form-field'>
-							<label>Symphony Description:</label>
-							<textarea
-								value={ultimateForm.projectDetails.description}
-								onChange={(e) => handleFieldChange('projectDetails', 'description', e.target.value)}
-								placeholder='Describe your project vision...'
-								rows='3'
-								disabled={synthesisActive}
-								className='synthesis-textarea'
-							/>
-						</div>
-						
-						<div className='form-field'>
-							<label>Technology Instruments:</label>
-							<div className='tech-selector'>
-								{technologies.map(tech => (
-									<label key={tech} className='tech-option'>
-										<input
-											type='checkbox'
-											checked={ultimateForm.projectDetails.technologies.includes(tech)}
-											onChange={(e) => {
-												const techs = e.target.checked
-													? [...ultimateForm.projectDetails.technologies, tech]
-													: ultimateForm.projectDetails.technologies.filter(t => t !== tech);
-												handleFieldChange('projectDetails', 'technologies', techs);
-											}}
-											disabled={synthesisActive}
-										/>
-										<span>{tech}</span>
-									</label>
-								))}
-							</div>
-						</div>
-					</div>
-
-					<div className='form-section guardians'>
-						<h4>🛡️ Validation Guardian Section</h4>
-						<p className='section-desc'>Defense patterns from the Fortress</p>
-						
-						<div className='form-field'>
-							<label>Budget Allocation:</label>
-							<input
-								type='number'
-								value={ultimateForm.requirements.budget}
-								onChange={(e) => handleFieldChange('requirements', 'budget', e.target.value)}
-								placeholder='Project budget'
-								min='0'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
-						</div>
-						
-						<div className='form-field'>
-							<label>Timeline Defense:</label>
-							<select
-								value={ultimateForm.requirements.timeline}
-								onChange={(e) => handleFieldChange('requirements', 'timeline', e.target.value)}
-								disabled={synthesisActive}
-								className='synthesis-select'>
-								<option value=''>Select timeline...</option>
-								<option value='1-month'>1 Moon Cycle</option>
-								<option value='3-months'>3 Moon Cycles</option>
-								<option value='6-months'>6 Moon Cycles</option>
-								<option value='1-year'>Full Solar Cycle</option>
-							</select>
-						</div>
-						
-						<div className='form-field'>
-							<label>Guardian Team Size:</label>
-							<input
-								type='number'
-								value={ultimateForm.requirements.teamSize}
-								onChange={(e) => handleFieldChange('requirements', 'teamSize', e.target.value)}
-								placeholder='Team members needed'
-								min='1'
-								max='100'
-								disabled={synthesisActive}
-								className='synthesis-input'
-							/>
-						</div>
-					</div>
-
-					<div className='form-section portal'>
-						<h4>🌀 Portal Configuration</h4>
-						<p className='section-desc'>Submission patterns from the Gateway</p>
-						
-						<div className='config-options'>
-							<label className='config-option'>
-								<input
-									type='checkbox'
-									checked={ultimateForm.submissionConfig.retryEnabled}
-									onChange={(e) => handleFieldChange('submissionConfig', 'retryEnabled', e.target.checked)}
-									disabled={synthesisActive}
-								/>
-								<span>Enable Retry Logic</span>
-							</label>
-							<label className='config-option'>
-								<input
-									type='checkbox'
-									checked={ultimateForm.submissionConfig.optimisticUpdate}
-									onChange={(e) => handleFieldChange('submissionConfig', 'optimisticUpdate', e.target.checked)}
-									disabled={synthesisActive}
-								/>
-								<span>Optimistic Updates</span>
-							</label>
-							<label className='config-option'>
-								<input
-									type='checkbox'
-									checked={ultimateForm.submissionConfig.backgroundSync}
-									onChange={(e) => handleFieldChange('submissionConfig', 'backgroundSync', e.target.checked)}
-									disabled={synthesisActive}
-								/>
-								<span>Background Sync</span>
-							</label>
-						</div>
-					</div>
-
-					<div className='synthesis-controls'>
-						<button 
-							type='submit' 
-							disabled={synthesisActive || !Object.values(validationStatus).every(v => v)}
-							className='synthesis-button'>
-							{synthesisActive ? '🌟 Synthesis Active...' : '⚡ Initiate Grand Synthesis'}
-						</button>
-						
-						{errorState && (
-							<button 
-								type='button'
-								onClick={retrySubmission}
-								className='retry-button'>
-								🔄 Retry Synthesis
-							</button>
-						)}
-					</div>
-				</form>
-
-				{responseData && (
-					<div className='synthesis-success'>
-						<h4>🎉 Grand Synthesis Complete!</h4>
-						<p>Portal ID: {responseData.id}</p>
-						<p className='success-message'>{responseData.message}</p>
-					</div>
-				)}
-			</div>
-
-			<div className='masters-recognition'>
-				<p className='story-paragraph'>
-					The assembled masters watched in awe as Aria's synthesis stabilized the portal. 
-					Each pattern flowed seamlessly into the next - form state managed by alchemy, 
-					events orchestrated like a symphony, validation standing guard, and submission 
-					flowing through a perfect portal.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Incredible!" Formicus exclaimed. "She's using my controlled components with 
-					Eventus's delegation patterns!"
-				</p>
-				
-				<p className='story-paragraph'>
-					"And my validation gates are perfectly timed with Sage's async submission!" 
-					Validus added, his armor glowing with approval.
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary's final analysis appeared: "System efficiency: 99.7%! All patterns 
-					unified. Zero conflicts detected. Aria has achieved true Forms & Events mastery!"
-				</p>
-			</div>
-
-			<div className='ultimate-wisdom'>
-				<h3>The Unified Patterns</h3>
-				<div className='wisdom-grid'>
-					<div className='wisdom-card'>
-						<h4>🧪 State Unity</h4>
-						<p>Form state, validation state, and submission state work as one unified system</p>
-					</div>
-					<div className='wisdom-card'>
-						<h4>🎵 Event Harmony</h4>
-						<p>Changes flow through validation to submission in perfect orchestration</p>
-					</div>
-					<div className='wisdom-card'>
-						<h4>🛡️ Defense Depth</h4>
-						<p>Validation at every layer ensures data integrity throughout the journey</p>
-					</div>
-					<div className='wisdom-card'>
-						<h4>🌀 Portal Power</h4>
-						<p>Submission handles all scenarios with retry, optimization, and sync</p>
 					</div>
 				</div>
-			</div>
 
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 22 (Evening)</h4>
-					<p>The Grand Synthesis complete! Today I showed the Western Quarter masters how 
-					all their patterns unite into one seamless system. Form Alchemy provides the 
-					foundation of state. Event Symphony orchestrates user interaction. Validation 
-					Guardians ensure data integrity. Portal Submission handles the final transmission. 
-					But the true magic is how they work together - state changes trigger events, 
-					events trigger validation, validation enables submission, and submission completes 
-					the cycle. Binary recorded 99.7% efficiency when all patterns unified. The masters 
-					declared me a true Forms & Events Master. Tomorrow, we journey to the Routing 
-					Crossroads for the final challenge of my React mastery!</p>
+				<div className='story-section'>
+					<div className='character-intro'>
+						<h4>Aria's Journal - Day 22 (Evening)</h4>
+						<p>
+							The Grand Synthesis complete! Today I showed the
+							Western Quarter masters how all their patterns unite
+							into one seamless system. Form Alchemy provides the
+							foundation of state. Event Symphony orchestrates
+							user interaction. Validation Guardians ensure data
+							integrity. Portal Submission handles the final
+							transmission. But the true magic is how they work
+							together - state changes trigger events, events
+							trigger validation, validation enables submission,
+							and submission completes the cycle. Binary recorded
+							99.7% efficiency when all patterns unified. The
+							masters declared me a true Forms & Events Master.
+							Tomorrow, we journey to the Routing Crossroads for
+							the final challenge of my React mastery!
+						</p>
+					</div>
+				</div>
+
+				<div className='lesson-insight'>
+					<h3>The Grand Synthesis Master's Ultimate Wisdom:</h3>
+					<p>
+						True mastery of Forms & Events isn't about individual
+						patterns - it's about understanding how they create a
+						unified whole. Form state management provides the data
+						foundation. Event handling creates the interaction
+						layer. Validation ensures data integrity at every step.
+						Submission patterns handle the journey to the server.
+						When combined, they create a seamless experience where
+						users feel guided, protected, and empowered. Remember:
+						in React, every form is a complete application in
+						miniature. Master the synthesis of these patterns, and
+						you master the essence of interactive web applications.
+					</p>
+				</div>
+
+				<div className='chapter-finale'>
+					<p className='story-paragraph'>
+						As the Grand Synthesis Chamber's energy stabilized, Sage
+						approached Aria with deep respect. "You've done what
+						none of us could achieve alone. You've shown that true
+						mastery comes not from perfecting individual patterns,
+						but from understanding how they dance together."
+					</p>
+					<p className='story-paragraph'>
+						"Every pattern has its purpose," Aria reflected, "but
+						their true power emerges when unified. This synthesis
+						will serve the Western Quarter for generations."
+					</p>
+					<p className='story-paragraph'>
+						Binary displayed a new map marker. "Routing Crossroads
+						detected ahead. The final challenge of your React
+						journey awaits."
+					</p>
+					<p className='story-paragraph'>
+						Aria looked at the assembled masters one last time. Each
+						nodded with respect and gratitude. She had not only
+						learned from them but elevated their teachings to new
+						heights. With Binary at her side, she set off toward the
+						Routing Crossroads, ready for the culmination of her
+						epic journey.
+					</p>
+				</div>
+
+				<div className='reflection-section'>
+					<h3>Reflect on the Story</h3>
+					<p>
+						How did combining all Forms & Events patterns create
+						something greater than the sum of its parts?
+					</p>
+					<p className='story-paragraph'>
+						What patterns from Aria's entire React journey came
+						together in this Grand Synthesis?
+					</p>
+					<p className='story-paragraph'>
+						How can you apply this unified approach to forms in your
+						own React applications?
+					</p>
 				</div>
 			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Grand Synthesis Master's Ultimate Wisdom:</h3>
-				<p>
-					True mastery of Forms & Events isn't about individual patterns - it's about 
-					understanding how they create a unified whole. Form state management provides 
-					the data foundation. Event handling creates the interaction layer. Validation 
-					ensures data integrity at every step. Submission patterns handle the journey 
-					to the server. When combined, they create a seamless experience where users 
-					feel guided, protected, and empowered. Remember: in React, every form is a 
-					complete application in miniature. Master the synthesis of these patterns, 
-					and you master the essence of interactive web applications.
-				</p>
-			</div>
-			
-			<div className='chapter-finale'>
-				<p className='story-paragraph'>
-					As the Grand Synthesis Chamber's energy stabilized, Sage approached Aria with 
-					deep respect. "You've done what none of us could achieve alone. You've shown 
-					that true mastery comes not from perfecting individual patterns, but from 
-					understanding how they dance together."
-				</p>
-				<p className='story-paragraph'>
-					"Every pattern has its purpose," Aria reflected, "but their true power emerges 
-					when unified. This synthesis will serve the Western Quarter for generations."
-				</p>
-				<p className='story-paragraph'>
-					Binary displayed a new map marker. "Routing Crossroads detected ahead. The 
-					final challenge of your React journey awaits."
-				</p>
-				<p className='story-paragraph'>
-					Aria looked at the assembled masters one last time. Each nodded with respect 
-					and gratitude. She had not only learned from them but elevated their teachings 
-					to new heights. With Binary at her side, she set off toward the Routing 
-					Crossroads, ready for the culmination of her epic journey.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How did combining all Forms & Events patterns create something greater than 
-					the sum of its parts?
-				</p>
-				<p className='story-paragraph'>
-					What patterns from Aria's entire React journey came together in this 
-					Grand Synthesis?
-				</p>
-				<p className='story-paragraph'>
-					How can you apply this unified approach to forms in your own React applications?
-				</p>
-			</div>
-		</div>
 		</>
 	);
-	
+
 	return <StoryContent content={content} />;
 }
 

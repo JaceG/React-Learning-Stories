@@ -24,7 +24,10 @@ function ValidationGuardians() {
 
 	const secureGate = (gateName, isSecure) => {
 		setActiveGates({ ...activeGates, [gateName]: isSecure });
-		logDefense(`Gate ${gateName}: ${isSecure ? 'Secured' : 'Breached'}`, isSecure);
+		logDefense(
+			`Gate ${gateName}: ${isSecure ? 'Secured' : 'Breached'}`,
+			isSecure
+		);
 	};
 
 	const activateWardRune = (runeName) => {
@@ -36,9 +39,9 @@ function ValidationGuardians() {
 		const entry = {
 			message,
 			success,
-			timestamp: new Date().toLocaleTimeString()
+			timestamp: new Date().toLocaleTimeString(),
 		};
-		setDefenseLog(prev => [...prev.slice(-9), entry]);
+		setDefenseLog((prev) => [...prev.slice(-9), entry]);
 	};
 
 	const changeStance = (stance) => {
@@ -54,7 +57,9 @@ function ValidationGuardians() {
 	};
 
 	const checkFortressSecurity = () => {
-		const allGatesSecure = Object.values(activeGates).every(gate => gate === true);
+		const allGatesSecure = Object.values(activeGates).every(
+			(gate) => gate === true
+		);
 		const hasWards = Object.keys(wardRunes).length >= 3;
 		setFortressSecured(allGatesSecure && hasWards);
 	};
@@ -62,13 +67,16 @@ function ValidationGuardians() {
 	return (
 		<div className='lesson-container validation-guardians-container'>
 			<div className='lesson-opener'>
-				<p>The Validation Fortress stood imposingly at the Western Quarter's edge, its walls 
-				shimmering with protective runes. Aria and Binary approached the massive gates where 
-				guards in crimson armor stood watch. "Hook Craftmaster Aria," one announced, "Commander 
-				Validus has been expecting you. Your form validation innovations have reached even our 
-				fortified walls."</p>
+				<p>
+					The Validation Fortress stood imposingly at the Western
+					Quarter's edge, its walls shimmering with protective runes.
+					Aria and Binary approached the massive gates where guards in
+					crimson armor stood watch. "Aria," one announced, "Commander
+					Validus has been expecting you. Your systematic approach to
+					optimization has reached even our fortified walls."
+				</p>
 			</div>
-			
+
 			<h1 className='lesson-title'>Validation Guardians</h1>
 			<p className='lesson-subtitle'>
 				Command validation forces with Guardian Commander Validus
@@ -105,7 +113,7 @@ function ValidationGuardians() {
 					changeStance,
 					validationStrategies,
 					addStrategy,
-					checkFortressSecurity
+					checkFortressSecurity,
 				}}
 			/>
 

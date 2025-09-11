@@ -8,7 +8,8 @@ function FormAlchemy() {
 	const [selectedPotion, setSelectedPotion] = useState(null);
 	const [mixedIngredients, setMixedIngredients] = useState([]);
 	const [cauldronContents, setCauldronContents] = useState('');
-	const [transmutationState, setTransmutationState] = useState('uncontrolled');
+	const [transmutationState, setTransmutationState] =
+		useState('uncontrolled');
 	const [validationRunes, setValidationRunes] = useState({});
 	const [portalActive, setPortalActive] = useState(false);
 
@@ -49,16 +50,22 @@ function FormAlchemy() {
 	return (
 		<div className='lesson-container form-alchemy-container'>
 			<div className='lesson-opener'>
-				<p>The Western Quarter hummed with a different energy than the rest of the kingdom. 
-				Here, the abstract magic of components, state, and hooks transformed into tangible 
-				interfaces. Aria paused at the entrance to the Form Alchemy Lab, Binary adjusting 
-				his sensors for the new environment. The air shimmered with the promise of transmutation - 
-				where user intent would become application state.</p>
+				<p>
+					The Western Quarter hummed with a different energy than the
+					rest of the kingdom. Here, the abstract mastery of hooks and
+					patterns transformed into tangible user interfaces. Aria
+					paused at the entrance to the Form Alchemy Lab, Binary
+					adjusting his sensors for the new environment. After her
+					triumphs at the Hooks Academy, she was ready to apply her
+					knowledge to the practical art of capturing user input and
+					transforming it into application state.
+				</p>
 			</div>
-			
+
 			<h1 className='lesson-title'>Form Alchemy</h1>
 			<p className='lesson-subtitle'>
-				Transform user input into React gold with Master Alchemist Formeus
+				Transform user input into React gold with Master Alchemist
+				Formeus
 			</p>
 
 			<div className='chapter-navigation'>
@@ -115,10 +122,7 @@ function FormAlchemy() {
 				</button>
 			</div>
 
-			<LessonNavigation
-				courseId='forms-events'
-				lessonId='form-alchemy'
-			/>
+			<LessonNavigation courseId='forms-events' lessonId='form-alchemy' />
 		</div>
 	);
 }

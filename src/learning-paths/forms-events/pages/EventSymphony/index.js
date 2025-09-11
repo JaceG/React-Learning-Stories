@@ -13,7 +13,7 @@ function EventSymphony() {
 	const [performanceMetrics, setPerformanceMetrics] = useState({
 		clicks: 0,
 		keyPresses: 0,
-		mouseMoves: 0
+		mouseMoves: 0,
 	});
 
 	const navigate = useNavigate();
@@ -29,43 +29,53 @@ function EventSymphony() {
 	const playInstrument = (instrument) => {
 		setPlayingInstruments([...playingInstruments, instrument]);
 		setTimeout(() => {
-			setPlayingInstruments(prev => prev.filter(i => i !== instrument));
+			setPlayingInstruments((prev) =>
+				prev.filter((i) => i !== instrument)
+			);
 		}, 500);
 	};
 
 	const logEvent = (eventInfo) => {
 		const timestamp = new Date().toLocaleTimeString();
-		setEventLog(prev => [...prev.slice(-4), { ...eventInfo, timestamp }]);
+		setEventLog((prev) => [...prev.slice(-4), { ...eventInfo, timestamp }]);
 	};
 
 	const handleCellCapture = (index) => {
-		setCapturedCells(prev => 
-			prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+		setCapturedCells((prev) =>
+			prev.includes(index)
+				? prev.filter((i) => i !== index)
+				: [...prev, index]
 		);
 	};
 
 	const handleCellBubble = (index) => {
-		setBubbledCells(prev => 
-			prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+		setBubbledCells((prev) =>
+			prev.includes(index)
+				? prev.filter((i) => i !== index)
+				: [...prev, index]
 		);
 	};
 
 	const updateMetric = (metric) => {
-		setPerformanceMetrics(prev => ({
+		setPerformanceMetrics((prev) => ({
 			...prev,
-			[metric]: prev[metric] + 1
+			[metric]: prev[metric] + 1,
 		}));
 	};
 
 	return (
 		<div className='lesson-container event-symphony-container'>
 			<div className='lesson-opener'>
-				<p>Word of Aria's form alchemy innovations spread quickly through the Western Quarter. 
-				As she and Binary made their way through the bustling streets, a messenger in flowing 
-				robes intercepted them with an ornate scroll. "From Conductor Eventus of the Event 
-				Symphony Hall," the messenger announced. "Your expertise is urgently requested."</p>
+				<p>
+					Word of Aria's form alchemy innovations spread quickly
+					through the Western Quarter. As she and Binary made their
+					way through the bustling streets, a messenger in flowing
+					robes intercepted them with an ornate scroll. "From
+					Conductor Eventus of the Event Symphony Hall," the messenger
+					announced. "Your Academy training is urgently needed."
+				</p>
 			</div>
-			
+
 			<h1 className='lesson-title'>Event Symphony</h1>
 			<p className='lesson-subtitle'>
 				Compose complex event orchestrations with Conductor Eventus
@@ -102,7 +112,7 @@ function EventSymphony() {
 					bubbledCells,
 					handleCellBubble,
 					performanceMetrics,
-					updateMetric
+					updateMetric,
 				}}
 			/>
 

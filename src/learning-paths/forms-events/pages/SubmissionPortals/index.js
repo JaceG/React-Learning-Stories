@@ -15,7 +15,7 @@ function SubmissionPortals() {
 		debounce: false,
 		throttle: false,
 		optimisticUI: false,
-		backgroundSync: false
+		backgroundSync: false,
 	});
 	const [responseData, setResponseData] = useState(null);
 
@@ -44,9 +44,9 @@ function SubmissionPortals() {
 		const entry = {
 			message,
 			type,
-			timestamp: new Date().toLocaleTimeString()
+			timestamp: new Date().toLocaleTimeString(),
 		};
-		setSubmissionLog(prev => [...prev.slice(-19), entry]);
+		setSubmissionLog((prev) => [...prev.slice(-19), entry]);
 	};
 
 	const handleError = (error) => {
@@ -56,7 +56,7 @@ function SubmissionPortals() {
 	};
 
 	const retrySubmission = () => {
-		setRetryCount(prev => prev + 1);
+		setRetryCount((prev) => prev + 1);
 		setErrorState(null);
 		setPortalState('active');
 		addLog(`Retry attempt #${retryCount + 1}`, 'warning');
@@ -80,9 +80,9 @@ function SubmissionPortals() {
 	};
 
 	const toggleOptimization = (key) => {
-		setOptimizations(prev => ({
+		setOptimizations((prev) => ({
 			...prev,
-			[key]: !prev[key]
+			[key]: !prev[key],
 		}));
 		addLog(`${key} ${optimizations[key] ? 'disabled' : 'enabled'}`, 'info');
 	};
@@ -90,12 +90,16 @@ function SubmissionPortals() {
 	return (
 		<div className='lesson-container submission-portals-container'>
 			<div className='lesson-opener'>
-				<p>At the heart of the Western Quarter stood the Submission Portal Gateway, a 
-				magnificent structure where all form data converged before traveling to distant 
-				servers. Aria and Binary approached the swirling vortex of energy, where Portal 
-				Keeper Sage awaited - the final master of the Forms & Events journey.</p>
+				<p>
+					At the heart of the Western Quarter stood the Submission
+					Portal Gateway, a magnificent structure where all form data
+					converged before traveling to distant servers. Aria and
+					Binary approached the swirling vortex of energy, where
+					Portal Keeper Sage awaited - ready to teach the final
+					synthesis of the Forms & Events journey.
+				</p>
 			</div>
-			
+
 			<h1 className='lesson-title'>Submission Portals</h1>
 			<p className='lesson-subtitle'>
 				Master the final synthesis with Portal Keeper Sage
@@ -136,7 +140,7 @@ function SubmissionPortals() {
 					resetPortal,
 					optimizations,
 					toggleOptimization,
-					responseData
+					responseData,
 				}}
 			/>
 
