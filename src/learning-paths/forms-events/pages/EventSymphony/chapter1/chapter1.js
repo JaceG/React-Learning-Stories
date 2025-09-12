@@ -64,10 +64,9 @@ function ChapterOne() {
 						distinguished figure in a conductor's coat rushed
 						forward, his baton crackling with event energy. "
 						<strong>Conductor Eventus</strong>
-						at your service. Master Formeus wrote of your hook
-						mastery and form innovations. Perfect timing - we need
-						someone who understands both state management and
-						optimization patterns!"
+						at your service. Master Formeus wrote of your progress
+						in form alchemy. Welcome to the Symphony Hall - I'm
+						excited to teach you about React's event system!"
 					</p>
 
 					<p className='story-paragraph'>
@@ -87,11 +86,11 @@ function ChapterOne() {
 					</p>
 
 					<p className='story-paragraph'>
-						Eventus's eyes lit up with excitement. "Excellent! Your
-						fresh Academy perspective is exactly what we need. Most
-						developers just attach handlers without understanding
-						React's synthetic event system. Let me show you how
-						events should flow - like a well-conducted symphony."
+						Eventus's eyes lit up with excitement. "Excellent! I can
+						see your Academy training will help you understand these
+						concepts quickly. Let me show you how React's event
+						system works - it's like a well-conducted symphony where
+						every interaction is orchestrated."
 					</p>
 
 					<div className='aria-demonstrates'>

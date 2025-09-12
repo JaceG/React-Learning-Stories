@@ -207,27 +207,34 @@ function ChapterThree() {
 					</p>
 
 					<p className='story-paragraph'>
-						Aria stepped forward confidently. "I see it now. Forms
-						aren't just about inputs and validation - they're
-						complete systems that need orchestration. Let me show
-						you what I learned from combining all my Academy
-						knowledge."
+						Aria studied the complex setup with curiosity. "This
+						looks incredibly advanced! I can see patterns from my
+						Academy training, but I'm not sure how they all fit
+						together."
+					</p>
+
+					<p className='story-paragraph'>
+						"Precisely the challenge!" Formeus beamed. "The Grand
+						Transmutation requires combining everything you've
+						learned with new form-specific patterns. Let me guide
+						you through creating an advanced form management
+						system."
 					</p>
 
 					<p className='story-paragraph'>
 						Binary's processors hummed at maximum capacity, ready to
-						assist with the most complex form pattern yet. "All
-						Academy training protocols ready for Grand
-						Transmutation!"
+						assist with the learning process. "Academy patterns
+						detected! Ready to apply previous training to new
+						concepts!"
 					</p>
 
 					<p className='story-paragraph'>
-						"I'll create a form management system," Aria declared,
-						"that combines everything: memoized validation for
-						performance (like the Performance Sanctuary), proper
-						submission handling with effects, field-level error
-						display, and even validation runes that light up as
-						fields become valid!"
+						"We'll create a form management system together,"
+						Formeus explained, "that combines everything: memoized
+						validation for performance (like the Performance
+						Sanctuary), proper submission handling with effects,
+						field-level error display, and even validation runes
+						that light up as fields become valid!"
 					</p>
 
 					<div className='validation-runes'>
@@ -515,27 +522,34 @@ const useAdvancedForm = (initialValues, validationSchema) => {
 
 				<div className='formeus-finale'>
 					<p className='story-paragraph'>
-						Formeus watched in awe as Aria's Academy-enhanced form
-						system handled every edge case flawlessly. "This is...
-						this is beyond anything in our ancient texts! You've
-						applied Academy hook mastery to create something
-						revolutionary!"
+						As they worked together, Formeus guided Aria through
+						each step. "Excellent! You're quickly grasping how
+						Academy patterns apply to form systems. Your hook
+						training gives you a strong foundation for understanding
+						these concepts."
 					</p>
 
 					<p className='story-paragraph'>
-						"It's the synthesis of everything I learned," Aria
-						explained. "useState for values, useCallback for handler
+						"It's amazing how everything connects," Aria marveled.
+						"useState for values, useCallback for handler
 						optimization (Performance Sanctuary), useMemo for
 						expensive computations, useEffect for reactive
-						validation (Temporal Tower). Every Academy pattern has
-						its role in the grand transmutation."
+						validation (Temporal Tower). Every Academy pattern has a
+						role in form alchemy!"
+					</p>
+
+					<p className='story-paragraph'>
+						"Precisely!" Formeus beamed. "You're learning faster
+						than most because you already understand the underlying
+						hook patterns. Now you see how they apply to practical
+						form handling."
 					</p>
 
 					<p className='story-paragraph'>
 						Binary projected statistics: "Form validation
 						efficiency: 95%. User experience score: 98%. Code
-						reusability: 100%. Academy training has revolutionized
-						form handling!"
+						reusability: 100%. Academy training patterns
+						successfully applied to form handling!"
 					</p>
 				</div>
 
@@ -591,20 +605,19 @@ try {
 					<div className='character-intro'>
 						<h4>Aria's Journal - Day 20 (Evening)</h4>
 						<p>
-							What a day! Created the Grand Transmutation - a
-							complete form system using every Academy pattern
-							I've learned. The validation runes were inspired by
-							the Hook Council chambers, lighting up as each field
-							becomes valid. Used memoization from the Performance
-							Sanctuary to optimize validation checks, callbacks
-							from Academy training for stable handlers, and
-							effects from the Temporal Tower for reactive
-							validation. Formeus declared it revolutionary! The
-							best part: the entire system is reusable. Any form
-							in the kingdom can now use this Academy-enhanced
-							pattern. Binary is already compiling optimization
-							metrics. Tomorrow we move to the Event Symphony
-							Hall!
+							What a day! Formeus guided me through the Grand
+							Transmutation - a complete form system that uses
+							every Academy pattern I've learned. The validation
+							runes were inspired by the Hook Council chambers,
+							lighting up as each field becomes valid. We used
+							memoization from the Performance Sanctuary to
+							optimize validation checks, callbacks from Academy
+							training for stable handlers, and effects from the
+							Temporal Tower for reactive validation. Formeus was
+							excited to see how Academy patterns applied to form
+							handling! The best part: now I understand how to
+							build reusable form systems. Tomorrow we move to the
+							Event Symphony Hall!
 						</p>
 					</div>
 				</div>

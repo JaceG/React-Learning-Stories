@@ -89,19 +89,20 @@ function ChapterTwo() {
 					</p>
 
 					<p className='story-paragraph'>
-						"Show me your most complex propagation challenge," Aria
-						requested, already seeing potential solutions from her
-						useCallback and memoization training at the Academy.
+						"This is fascinating!" Aria exclaimed, studying the
+						patterns. "I can see connections to the optimization
+						patterns I learned at the Academy. Could you show me how
+						event delegation works?"
 					</p>
 
 					<div className='aria-applies-training'>
 						<h3>Aria Applies Academy Event Patterns</h3>
 						<p className='story-paragraph'>
-							"The issue isn't the events themselves," Aria
-							analyzed, drawing on her Academy training. "It's
-							understanding when to intercept them efficiently.
-							Let me show you a pattern I learned at the Academy -
-							combining useCallback with event delegation..."
+							"Excellent observation!" Eventus praised. "Your
+							Academy training in optimization helps you see the
+							potential. Let me demonstrate event delegation -
+							it's a powerful pattern that combines useCallback
+							with smart event handling..."
 						</p>
 					</div>
 
@@ -359,8 +360,8 @@ function OptimizedKeyboard() {
 						Conductor Eventus watched as Aria applied Academy
 						optimization patterns to event handling. "Your
 						Academy-trained approach to event delegation is
-						revolutionary! We've been creating individual handlers
-						when one optimized handler could manage them all!"
+						excellent! You've learned how one optimized handler can
+						manage many elements efficiently!"
 					</p>
 
 					<p className='story-paragraph'>
@@ -418,19 +419,18 @@ onClick={(e) => {
 						<h4>Aria's Journal - Day 20 (Late Afternoon)</h4>
 						<p>
 							Event propagation is fascinating when viewed through
-							Academy optimization training! Showed Conductor
-							Eventus how event delegation reduces handler
+							Academy optimization training! Conductor Eventus
+							taught me how event delegation reduces handler
 							overhead using the efficiency patterns I learned -
 							instead of n handlers for n elements, use one
 							intelligent handler optimized with useCallback. The
 							capture/bubble phases are like the data flow
 							patterns I learned in Props & Data Flow, but
-							bidirectional. Binary calculated massive performance
-							improvements using Academy techniques. The Symphony
-							Hall students were amazed when I demonstrated how
-							one optimized handler could manage an entire
-							keyboard of notes. Eventus mentioned something about
-							async event patterns next...
+							bidirectional. Binary calculated how Academy
+							patterns apply to event optimization. I'm starting
+							to see how one optimized handler could manage an
+							entire keyboard of notes. Eventus mentioned
+							something about async event patterns next...
 						</p>
 					</div>
 				</div>

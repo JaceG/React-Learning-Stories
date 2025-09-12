@@ -37,7 +37,7 @@ function ChapterOne() {
 						workshop she had seen before - instead of forges and
 						energy streams, it contained rows of bubbling cauldrons,
 						crystalline vials, and transmutation circles etched into
-						the floor.
+						the floor
 					</p>
 				</div>
 
@@ -47,11 +47,10 @@ function ChapterOne() {
 						stained laboratory coat emerged from behind a
 						particularly vigorous cauldron. "
 						<strong>Master Alchemist Formeus</strong>
-						at your service. The Academy sent word that you've been
-						mastering advanced hook patterns. Perfect timing - we
-						need someone who truly understands{' '}
-						<strong>useState</strong>
-						and <strong>useRef</strong>."
+						at your service. I've heard of your accomplishments at
+						the Academy - quite impressive for someone so young! I'm
+						excited to teach you how your hook knowledge applies to
+						the practical art of form handling."
 					</p>
 
 					<p className='story-paragraph'>
@@ -264,17 +263,18 @@ function AlchemicalForm() {
 
 				<div className='formeus-reaction'>
 					<p className='story-paragraph'>
-						Formeus watched in amazement as Aria quickly sketched
-						out the custom hook pattern. "Remarkable! You're
-						applying your Academy training beautifully - turning
-						form control into reusable hook patterns!"
+						Formeus watched with satisfaction as Aria connected the
+						concepts. "Excellent! You're grasping how Academy
+						training applies to form handling. Your hook foundation
+						makes these concepts much clearer."
 					</p>
 
 					<p className='story-paragraph'>
-						"It's just what I learned from Pattern Weaver
-						Synthesis," Aria replied modestly. "Custom hooks can
-						encapsulate any stateful logic - including form
-						controls."
+						"It's amazing how it all connects," Aria replied
+						thoughtfully. "The patterns I learned from Pattern
+						Weaver Synthesis really do apply here. Custom hooks can
+						encapsulate form logic just like any other stateful
+						behavior."
 					</p>
 				</div>
 

@@ -210,11 +210,10 @@ function ChapterTwo() {
 					</p>
 
 					<p className='story-paragraph'>
-						"I see multiple issues," Aria diagnosed. "Async
-						validation without debouncing, no memoization of
-						expensive checks, and validation timing that frustrates
-						users. Let me apply some optimization patterns I've
-						learned."
+						Aria observed the struggles with growing understanding.
+						"I can see some patterns from my Academy training that
+						might apply here. The performance issues remind me of
+						what I learned about debouncing and memoization."
 					</p>
 
 					<p className='story-paragraph'>
@@ -223,13 +222,20 @@ function ChapterTwo() {
 						User frustration index: HIGH."
 					</p>
 
+					<p className='story-paragraph'>
+						"Excellent observation!" Validus praised. "Your Academy
+						training helps you spot the performance issues. Let me
+						teach you how we handle complex validation scenarios."
+					</p>
+
 					<div className='aria-advanced-strategy'>
 						<h3>Aria's Multi-Layered Defense System</h3>
 						<p className='story-paragraph'>
 							"First, we need different stances for different
-							situations," Aria began, addressing the elite
-							guardians. "Just like I learned in the State
-							Sanctuaries - timing is everything."
+							situations," Validus explained, addressing the elite
+							guardians and Aria. "Just like you learned about
+							timing at the Academy - timing is everything in
+							validation."
 						</p>
 					</div>
 
@@ -544,18 +550,18 @@ const useAdvancedValidation = () => {
 
 				<div className='validus-enlightenment'>
 					<p className='story-paragraph'>
-						Commander Validus watched in amazement as Aria's
-						patterns transformed the chaotic validation attempts
-						into smooth, coordinated defenses. "This is incredible!
-						You've shown us how to validate asynchronously without
-						overwhelming our servers!"
+						Commander Validus watched with satisfaction as Aria
+						grasped the patterns and the validation attempts became
+						smooth, coordinated defenses. "Excellent! You're
+						understanding how to apply Academy training to
+						validation scenarios without overwhelming our servers!"
 					</p>
 
 					<p className='story-paragraph'>
-						"The key," Aria explained, "is combining patterns.
-						Debouncing from my event handling knowledge, caching
-						from performance optimization, and memoization from hook
-						mastery. It all connects."
+						"The key," Validus explained, "is combining patterns.
+						Debouncing from event handling knowledge, caching from
+						performance optimization, and memoization from hook
+						mastery. Everything connects in validation work."
 					</p>
 
 					<p className='story-paragraph'>
@@ -609,18 +615,19 @@ const validate = (value) => {
 						<h4>Aria's Journal - Day 21 (Morning)</h4>
 						<p>
 							Advanced validation is where all my React knowledge
-							converges! Showed Commander Validus how to combine
-							debouncing (from event optimization), caching (from
-							performance patterns), and dependent validation
-							(like Context dependencies). The guardians were
-							struggling with async validation causing server
-							overload - fixed with debouncing. Cross-field
-							validation was causing infinite loops - fixed with
-							proper dependencies. Binary tracked a 94%
-							improvement in validation efficiency. The ward runes
-							lighting up as validations pass is oddly satisfying.
-							Validus mentioned the Ultimate Defense Strategy
-							awaits...
+							converges! Commander Validus taught me how to
+							combine debouncing (from event optimization),
+							caching (from performance patterns), and dependent
+							validation (like Context dependencies). The
+							guardians were struggling with async validation
+							causing server overload - Validus showed me how
+							debouncing fixes this. Cross-field validation was
+							causing infinite loops - he taught me how proper
+							dependencies solve this. Binary tracked a 94%
+							improvement in validation efficiency as I learned
+							these patterns. The ward runes lighting up as
+							validations pass is oddly satisfying. Validus
+							mentioned the Ultimate Defense Strategy awaits...
 						</p>
 					</div>
 				</div>

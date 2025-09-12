@@ -629,26 +629,27 @@ const useUltimateValidation = (schemas, conditionalRules) => {
 
 				<div className='validus-final-lesson'>
 					<p className='story-paragraph'>
-						Commander Validus watched in awe as Aria's system
-						effortlessly handled every validation scenario. "This is
-						beyond anything in our ancient texts! You've created a
-						defense system that's both impenetrable and
+						Commander Validus watched with satisfaction as Aria
+						grasped the validation concepts and the system handled
+						every scenario. "Excellent! You've learned how to create
+						a defense system that's both impenetrable and
 						user-friendly!"
 					</p>
 
 					<p className='story-paragraph'>
-						"The secret," Aria explained, "is treating validation as
-						a journey, not a barrier. Guide users through each step,
-						provide clear feedback, and use all the patterns we've
-						learned - memoization for performance, conditional logic
-						for flexibility, and schema validation for consistency."
+						"The secret," Validus explained, "is treating validation
+						as a journey, not a barrier. Guide users through each
+						step, provide clear feedback, and use all the patterns
+						you've learned - memoization for performance,
+						conditional logic for flexibility, and schema validation
+						for consistency."
 					</p>
 
 					<p className='story-paragraph'>
 						Binary displayed final metrics: "Defense system
 						efficiency: 99.8%. User success rate: 96%. Invalid data
-						blocked: 100%. Aria has created the ultimate validation
-						fortress!"
+						blocked: 100%. Academy training successfully applied to
+						validation fortress design!"
 					</p>
 				</div>
 
@@ -694,18 +695,19 @@ const suggest = (field, value) => {
 						<h4>Aria's Journal - Day 21 (Evening)</h4>
 						<p>
 							What a journey through the Validation Fortress!
-							Created the ultimate defense system by combining
-							everything: schema validation (like Context
-							patterns), multi-step management (state machines
-							from Eastern Quarter), conditional logic (props
-							patterns), and performance optimization (hook
-							mastery). Commander Validus declared it
-							revolutionary. The fortress is now impenetrable yet
-							welcoming to legitimate users. Binary's analysis
-							shows 99.8% efficiency! The guardians will teach
-							this system for generations. Tomorrow we head to the
-							final challenge at the Submission Portal Gateway.
-							Portal Keeper Sage awaits...
+							Validus taught me how to create the ultimate defense
+							system by combining everything: schema validation
+							(like Context patterns), multi-step management
+							(state machines from Eastern Quarter), conditional
+							logic (props patterns), and performance optimization
+							(hook mastery). He was impressed with how quickly I
+							grasped the concepts! The fortress is now
+							impenetrable yet welcoming to legitimate users.
+							Binary's analysis shows 99.8% efficiency! The
+							guardians will use this system for generations.
+							Tomorrow we head to the final challenge at the
+							Submission Portal Gateway. Portal Keeper Sage
+							awaits...
 						</p>
 					</div>
 				</div>
@@ -731,9 +733,11 @@ const suggest = (field, value) => {
 				<div className='chapter-finale'>
 					<p className='story-paragraph'>
 						As the fortress walls glowed with the light of activated
-						defenses, Commander Validus saluted Aria. "You've
-						revolutionized our understanding of validation. The
-						Western Quarter's data will be secure for generations!"
+						defenses, Commander Validus smiled with pride. "You've
+						learned exceptionally well, Aria! Your understanding of
+						validation patterns will serve you well in your React
+						journey. The Western Quarter's data security knowledge
+						is now yours!"
 					</p>
 					<p className='story-paragraph'>
 						"Every pattern has its place," Aria reflected. "From

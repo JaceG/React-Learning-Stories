@@ -105,8 +105,9 @@ function ChapterOne() {
 						boomed across the hall. A warrior in gleaming red armor
 						strode forward, each piece inscribed with validation
 						runes. "Word from the Event Symphony Hall speaks of your
-						systematic approach to optimization. We need someone who
-						understands how to coordinate complex systems!"
+						progress with Conductor Eventus. Welcome to the
+						Validation Fortress - I'm eager to teach you about
+						defensive data patterns!"
 					</p>
 
 					<p className='story-paragraph'>
@@ -126,20 +127,25 @@ function ChapterOne() {
 					</p>
 
 					<p className='story-paragraph'>
-						"Exactly what we hoped you'd ask!" Validus gestured to
-						the assembled recruits. "These are our finest, but they
-						struggle with complex, multi-field validation. Your
-						systematic thinking could revolutionize our methods."
+						"Excellent question!" Validus gestured to the assembled
+						recruits. "These are our finest, but they struggle with
+						complex, multi-field validation. Your Academy training
+						in systematic thinking should help you understand these
+						patterns quickly."
 					</p>
 
 					<div className='aria-applies-training'>
 						<h3>Aria Applies Systematic Thinking</h3>
 						<p className='story-paragraph'>
-							"I've learned about systematic approaches," Aria
-							began, drawing on her training. "Each gate is strong
-							alone, but when coordinated through a central system
-							- like orchestration patterns - they could become
-							much more effective."
+							"I see the connections," Aria said, drawing on her
+							training. "Each gate is strong alone, but I imagine
+							when coordinated through a central system - like the
+							orchestration patterns I learned - they could become
+							much more effective?"
+						</p>
+						<p className='story-paragraph'>
+							"Precisely!" Validus beamed. "Let me show you how
+							validation coordination works..."
 						</p>
 					</div>
 

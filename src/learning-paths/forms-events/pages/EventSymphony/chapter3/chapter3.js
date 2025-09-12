@@ -128,31 +128,36 @@ function ChapterThree() {
 				</p>
 
 				<p className='story-paragraph'>
-					Aria stepped forward confidently. "I've seen this pattern at
-					the Academy's Performance Sanctuary. You need the
-					optimization techniques I learned - throttling, debouncing,
-					and memoization applied to event handling."
+					Aria studied the chaotic performance with concern. "This
+					reminds me of performance issues I learned about at the
+					Academy's Performance Sanctuary. Could the optimization
+					techniques I learned help here?"
 				</p>
 
 				<p className='story-paragraph'>
-					Binary's processors whirred excitedly, applying Academy
-					analysis protocols. "Academy optimization patterns ready!
-					Current performance metrics: {performanceMetrics.clicks}{' '}
-					clicks, {performanceMetrics.keyPresses} key presses,{' '}
-					{performanceMetrics.mouseMoves} mouse moves. Let's apply
-					Academy training to improve these numbers!"
+					"Precisely what I was hoping you'd ask!" Eventus exclaimed.
+					"Your Academy training in optimization is exactly what we
+					need. Let me teach you how to apply those patterns to event
+					handling."
+				</p>
+
+				<p className='story-paragraph'>
+					Binary's processors whirred excitedly, ready to learn new
+					applications. "Academy patterns detected! Ready to learn how
+					they apply to event optimization!"
 				</p>
 
 				<div className='aria-teaches-optimization'>
 					<h3>Aria's Academy Performance Masterclass</h3>
 					<p className='story-paragraph'>
-						"Think of it like this," Aria explained, drawing on her
-						Academy training. "Throttling is like a metronome - it
-						ensures events fire at a steady rate, just like the
-						Performance Sanctuary taught. Debouncing is like waiting
-						for the audience to stop applauding before continuing.
-						And memoization? That's like having your sheet music
-						memorized instead of reading it every time."
+						"Think of it like this," Eventus explained, drawing on
+						Aria's Academy knowledge. "Throttling is like a
+						metronome - it ensures events fire at a steady rate,
+						just like you learned at the Performance Sanctuary.
+						Debouncing is like waiting for the audience to stop
+						applauding before continuing. And memoization? That's
+						like having your sheet music memorized instead of
+						reading it every time."
 					</p>
 				</div>
 
@@ -380,25 +385,27 @@ const useDebounce = (callback, delay) => {
 
 			<div className='eventus-revelation'>
 				<p className='story-paragraph'>
-					Conductor Eventus watched in awe as Aria's Academy training
-					transformed the performance. "The stuttering is gone! The
-					memory usage is stable! How did you achieve this miracle?"
+					Conductor Eventus watched with satisfaction as the Academy
+					patterns transformed the performance. "The stuttering is
+					gone! The memory usage is stable! You've learned these
+					optimization concepts very well!"
 				</p>
 
 				<p className='story-paragraph'>
-					"By applying all my Academy training," Aria replied.
-					"Memoization from the Performance Sanctuary prevents handler
-					recreation. Throttling and debouncing patterns control event
-					flow. Event delegation reduces handler count. It's all the
-					optimization patterns I learned, applied to events!"
+					"By learning how to apply Academy training to events," Aria
+					replied. "Eventus taught me how memoization from the
+					Performance Sanctuary prevents handler recreation.
+					Throttling and debouncing patterns control event flow. Event
+					delegation reduces handler count. It's amazing how the
+					optimization patterns I learned apply to events!"
 				</p>
 
 				<p className='story-paragraph'>
-					Binary projected the results: "Academy optimization
-					complete! Handler recreation reduced by 95% using
-					useCallback patterns. Event processing efficiency increased
-					by 78% using Performance Sanctuary techniques. Memory usage
-					stable. The symphony is perfect!"
+					Binary projected the results: "Academy patterns successfully
+					applied to event optimization! Handler recreation reduced by
+					95% using useCallback patterns. Event processing efficiency
+					increased by 78% using Performance Sanctuary techniques.
+					Memory usage stable. The symphony is perfect!"
 				</p>
 			</div>
 
@@ -450,20 +457,19 @@ const batchedUpdate = unstable_batchedUpdates(() => {
 				<div className='character-intro'>
 					<h4>Aria's Journal - Day 20 (Evening)</h4>
 					<p>
-						What a finale! Applied everything I learned at the
-						Academy to create an event performance optimization
-						masterpiece. Showed Eventus how memoization (from
-						Performance Sanctuary) prevents handler recreation, how
-						throttling/debouncing (Academy efficiency patterns)
-						control event flow, and how delegation reduces overhead
-						using the optimization techniques Pattern Weaver taught
-						me. Binary tracked a 95% reduction in unnecessary
-						renders using Academy methods! The Event Symphony Hall
-						is now a model of efficiency. Eventus said orchestras
-						from across the kingdom will study our Academy-enhanced
-						patterns. Tomorrow we visit the Validation Fortress - I
-						hear Guardian Commander Validus has some interesting
-						challenges that might benefit from Academy training...
+						What a finale! Eventus taught me how to apply Academy
+						patterns to event optimization. I learned how
+						memoization (from Performance Sanctuary) prevents
+						handler recreation, how throttling/debouncing (Academy
+						efficiency patterns) control event flow, and how
+						delegation reduces overhead using the optimization
+						techniques Pattern Weaver taught me. Binary tracked the
+						improvements as we applied Academy methods to event
+						handling! The Event Symphony Hall now runs so much
+						smoother. Eventus says the patterns we explored will be
+						valuable for orchestras throughout the kingdom. Tomorrow
+						we visit the Validation Fortress - I'm curious what
+						Guardian Commander Validus will teach me!
 					</p>
 				</div>
 			</div>

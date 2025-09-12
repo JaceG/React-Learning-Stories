@@ -109,9 +109,8 @@ function ChapterTwo() {
 					</p>
 
 					<p className='story-paragraph'>
-						"Show me!" Formeus interrupted eagerly. "Your Academy
-						perspective might revolutionize our traditional
-						methods!"
+						"Show me!" Formeus interrupted eagerly. "I'm curious to
+						see how Academy training approaches this challenge!"
 					</p>
 
 					<p className='story-paragraph'>
@@ -158,10 +157,16 @@ function ChapterTwo() {
 				<div className='aria-creates-solution'>
 					<h3>Aria's Academy-Trained Form Hook</h3>
 					<p className='story-paragraph'>
-						"Watch this," Aria said, her fingers dancing across
-						Binary's projection. "I'll apply what Pattern Weaver
-						Synthesis taught me about hook orchestration to create a
-						comprehensive form management system..."
+						"I think I understand," Aria said thoughtfully. "Could I
+						try applying what Pattern Weaver Synthesis taught me
+						about hook orchestration? Maybe I could create a form
+						management system that combines these concepts..."
+					</p>
+
+					<p className='story-paragraph'>
+						"Please, show me!" Formeus encouraged eagerly. "I'm
+						curious to see how Academy training approaches this
+						challenge."
 					</p>
 
 					<pre className='magical-code'>{`// Aria applies Academy training to form management
@@ -355,23 +360,22 @@ const useForm = (initialValues, validate) => {
 				<div className='formeus-amazement'>
 					<p className='story-paragraph'>
 						Formeus watched the demonstration with growing
-						excitement. "Incredible! You've applied Academy patterns
-						to create a unified form management solution. This
-						orchestration approach is exactly what we needed!"
+						excitement. "Incredible! You're grasping how Academy
+						patterns apply to form management. This orchestration
+						approach is exactly what I hoped you'd understand!"
 					</p>
 
 					<p className='story-paragraph'>
-						"The key," Aria explained, "is thinking of forms as
-						systems, like Pattern Weaver taught me. Each piece -
+						"The key," Formeus explained, "is thinking of forms as
+						systems, like Pattern Weaver taught you. Each piece -
 						values, errors, touched states - they're all part of the
 						same orchestrated pattern."
 					</p>
 
 					<p className='story-paragraph'>
-						Binary added proudly, "Pattern efficiency increased by
-						73%! This Academy-trained approach eliminates redundant
-						state updates and provides optimal user feedback
-						timing."
+						Binary added excitedly, "Pattern efficiency increased by
+						73%! Academy training helps understand these
+						optimization concepts!"
 					</p>
 				</div>
 
@@ -420,19 +424,18 @@ const handleArrayField = (index, value) => {
 						<h4>Aria's Journal - Day 20 (Afternoon)</h4>
 						<p>
 							Form state management is fascinating when viewed
-							through Academy patterns! Created a comprehensive
-							useForm hook that handles values, validation, and
-							touch tracking using everything I learned. Formeus
-							was amazed - apparently their apprentices usually
-							learn these concepts separately. But why separate
-							what works together? The validation runs
-							automatically when values change (using useEffect
-							patterns from the Temporal Tower), touch tracking
-							prevents premature error display, and useCallback
-							optimizes the handlers like Professor Hooksworth
-							taught. It's all connected! Binary calculated we
-							reduced form boilerplate by 80%. Tomorrow we tackle
-							different input types and their quirks.
+							through Academy patterns! Formeus guided me through
+							creating a comprehensive useForm hook that handles
+							values, validation, and touch tracking. He was
+							impressed with how I connected Academy concepts to
+							form handling. The validation runs automatically
+							when values change (using useEffect patterns from
+							the Temporal Tower), touch tracking prevents
+							premature error display, and useCallback optimizes
+							the handlers like Professor Hooksworth taught. It's
+							amazing how Academy training helps me understand
+							these new concepts! Formeus says tomorrow we'll
+							tackle different input types and their quirks.
 						</p>
 					</div>
 				</div>
