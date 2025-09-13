@@ -8,14 +8,14 @@ const ChapterTwo = () => {
 		setRouteAnimations,
 		saveScrollPosition,
 		restoreScrollPosition,
-		scrollPositions
+		scrollPositions,
 	} = useOutletContext();
 
 	const [activeTransition, setActiveTransition] = useState('slide-right');
 	const [scrollBehavior, setScrollBehavior] = useState('smooth');
 	const [transitionDemo, setTransitionDemo] = useState({
 		current: 'page1',
-		isTransitioning: false
+		isTransitioning: false,
 	});
 
 	const transitionStyles = [
@@ -24,40 +24,51 @@ const ChapterTwo = () => {
 			name: 'Slide Right',
 			icon: '➡️',
 			enter: 'translateX(100%)',
-			exit: 'translateX(-100%)'
+			exit: 'translateX(-100%)',
 		},
 		{
 			id: 'slide-up',
 			name: 'Slide Up',
 			icon: '⬆️',
 			enter: 'translateY(100%)',
-			exit: 'translateY(-100%)'
+			exit: 'translateY(-100%)',
 		},
 		{
 			id: 'fade-scale',
 			name: 'Fade & Scale',
 			icon: '💫',
 			enter: 'scale(0.8) opacity(0)',
-			exit: 'scale(1.2) opacity(0)'
+			exit: 'scale(1.2) opacity(0)',
 		},
 		{
 			id: 'rotate-3d',
 			name: '3D Rotate',
 			icon: '🎯',
 			enter: 'rotateY(90deg)',
-			exit: 'rotateY(-90deg)'
-		}
+			exit: 'rotateY(-90deg)',
+		},
 	];
 
 	const scrollBehaviors = [
-		{ id: 'instant', name: 'Instant', description: 'Jump to top immediately' },
+		{
+			id: 'instant',
+			name: 'Instant',
+			description: 'Jump to top immediately',
+		},
 		{ id: 'smooth', name: 'Smooth', description: 'Smooth scroll to top' },
-		{ id: 'preserve', name: 'Preserve', description: 'Remember scroll position' }
+		{
+			id: 'preserve',
+			name: 'Preserve',
+			description: 'Remember scroll position',
+		},
 	];
 
 	const simulateTransition = (newPage) => {
-		setTransitionDemo({ current: transitionDemo.current, isTransitioning: true });
-		
+		setTransitionDemo({
+			current: transitionDemo.current,
+			isTransitioning: true,
+		});
+
 		setTimeout(() => {
 			setTransitionDemo({ current: newPage, isTransitioning: false });
 		}, 400);
@@ -70,50 +81,65 @@ const ChapterTwo = () => {
 			</h2>
 
 			<div className='story-section'>
-				<div className='aria-demonstrates-transitions'>
+				<div className='marina-demonstrates-transitions'>
 					<p className='story-paragraph'>
-						<strong>Aria</strong> continued her masterclass, moving to the topic of 
-						transitions. "Portal transitions aren't just about visual effects," she 
-						explained, as <strong>Binary</strong> created smooth animations between 
-						holographic interfaces. "They're about maintaining user context and 
-						creating meaningful connections."
+						Marina continued the lesson, moving to the topic of
+						transitions. "Portal transitions aren't just about
+						visual effects," she explained, as{' '}
+						<strong>Binary</strong> created smooth animations
+						between holographic interfaces. "They're about
+						maintaining user context and creating meaningful
+						connections."
 					</p>
 
 					<p className='story-paragraph'>
-						She demonstrated with a complex gesture, combining techniques from multiple 
-						quarters. "Watch how I blend <strong>useEffect</strong> for timing, 
-						<strong>useState</strong> for transition states, and <strong>useCallback</strong> 
-						for performance. Each transition tells a story about the relationship between 
-						where users are and where they're going."
+						She demonstrated with a complex gesture, combining
+						techniques from multiple quarters. "Watch how I blend{' '}
+						<strong>useEffect</strong> for timing,
+						<strong>useState</strong> for transition states, and{' '}
+						<strong>useCallback</strong>
+						for performance. Each transition tells a story about the
+						relationship between where users are and where they're
+						going."
 					</p>
 
 					<p className='story-paragraph'>
-						<strong>Captain Thunk</strong> from the Eastern Quarter leaned forward, 
-						impressed. "You've unified animation with state management in ways we 
-						never considered!"
+						<strong>Captain Thunk</strong> from the Eastern Quarter
+						leaned forward, impressed. "You've unified animation
+						with state management in ways we never considered!"
 					</p>
 
 					<p className='story-paragraph'>
-						"That's because transitions aren't isolated," Aria replied. "They must 
-						consider <strong>scroll restoration</strong>, form state persistence, and 
-						even authentication status. Everything we've learned applies here." Marina 
-						watched proudly as her colleague transformed portal transitions into a 
+						"That's because transitions aren't isolated," Aria
+						replied. "They must consider{' '}
+						<strong>scroll restoration</strong>, form state
+						persistence, and even authentication status. Everything
+						we've learned applies here." Marina watched proudly as
+						her colleague transformed portal transitions into a
 						comprehensive system.
 					</p>
 				</div>
 
 				<div className='transition-laboratory'>
 					<h3>Transition Effects Laboratory</h3>
-					
+
 					<div className='transition-selector'>
 						<h4>Choose Your Transition:</h4>
 						<div className='transition-options'>
-							{transitionStyles.map(style => (
+							{transitionStyles.map((style) => (
 								<div
 									key={style.id}
-									className={`transition-card ${activeTransition === style.id ? 'selected' : ''}`}
-									onClick={() => setActiveTransition(style.id)}>
-									<span className='transition-icon'>{style.icon}</span>
+									className={`transition-card ${
+										activeTransition === style.id
+											? 'selected'
+											: ''
+									}`}
+									onClick={() =>
+										setActiveTransition(style.id)
+									}>
+									<span className='transition-icon'>
+										{style.icon}
+									</span>
 									<h5>{style.name}</h5>
 								</div>
 							))}
@@ -123,16 +149,35 @@ const ChapterTwo = () => {
 					<div className='transition-demo'>
 						<h4>Live Transition Preview</h4>
 						<div className='demo-container'>
-							<div className={`demo-page ${transitionDemo.isTransitioning ? `transitioning-${activeTransition}` : ''}`}>
-								<h5>{transitionDemo.current === 'page1' ? 'Origin Portal' : 'Destination Portal'}</h5>
+							<div
+								className={`demo-page ${
+									transitionDemo.isTransitioning
+										? `transitioning-${activeTransition}`
+										: ''
+								}`}>
+								<h5>
+									{transitionDemo.current === 'page1'
+										? 'Origin Portal'
+										: 'Destination Portal'}
+								</h5>
 								<p>Current Page: {transitionDemo.current}</p>
 							</div>
 						</div>
 						<div className='demo-controls'>
-							<button 
-								onClick={() => simulateTransition(transitionDemo.current === 'page1' ? 'page2' : 'page1')}
+							<button
+								onClick={() =>
+									simulateTransition(
+										transitionDemo.current === 'page1'
+											? 'page2'
+											: 'page1'
+									)
+								}
 								disabled={transitionDemo.isTransitioning}>
-								Travel to {transitionDemo.current === 'page1' ? 'Destination' : 'Origin'} ✨
+								Travel to{' '}
+								{transitionDemo.current === 'page1'
+									? 'Destination'
+									: 'Origin'}{' '}
+								✨
 							</button>
 						</div>
 					</div>
@@ -140,11 +185,17 @@ const ChapterTwo = () => {
 					<div className='scroll-behavior-selector'>
 						<h4>Scroll Behavior Magic:</h4>
 						<div className='behavior-options'>
-							{scrollBehaviors.map(behavior => (
+							{scrollBehaviors.map((behavior) => (
 								<div
 									key={behavior.id}
-									className={`behavior-card ${scrollBehavior === behavior.id ? 'selected' : ''}`}
-									onClick={() => setScrollBehavior(behavior.id)}>
+									className={`behavior-card ${
+										scrollBehavior === behavior.id
+											? 'selected'
+											: ''
+									}`}
+									onClick={() =>
+										setScrollBehavior(behavior.id)
+									}>
 									<h5>{behavior.name}</h5>
 									<p>{behavior.description}</p>
 								</div>
@@ -338,7 +389,7 @@ function SmartScroll({ children }) {
 							<h4>Shared Element Transitions</h4>
 							<p>Elements that persist across routes</p>
 							<div className='code-snippet'>
-{`// FLIP animation for shared elements
+								{`// FLIP animation for shared elements
 <motion.div
   layoutId="shared-hero"
   className="hero-image"
@@ -350,7 +401,7 @@ function SmartScroll({ children }) {
 							<h4>Staggered Transitions</h4>
 							<p>Sequential element animations</p>
 							<div className='code-snippet'>
-{`{items.map((item, i) => (
+								{`{items.map((item, i) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -363,7 +414,7 @@ function SmartScroll({ children }) {
 							<h4>Loading Transitions</h4>
 							<p>Smooth loading states</p>
 							<div className='code-snippet'>
-{`<AnimatePresence>
+								{`<AnimatePresence>
   {loading ? (
     <LoadingSpinner />
   ) : (
@@ -376,7 +427,7 @@ function SmartScroll({ children }) {
 							<h4>Exit Animations</h4>
 							<p>Graceful component removal</p>
 							<div className='code-snippet'>
-{`<motion.div
+								{`<motion.div
   exit={{ 
     opacity: 0,
     scale: 0.8,
@@ -477,7 +528,10 @@ function TransitionRouter() {
 					<div className='tips-grid'>
 						<div className='tip-card'>
 							<h4>Use CSS Transforms</h4>
-							<p>Prefer transform and opacity for smooth 60fps animations</p>
+							<p>
+								Prefer transform and opacity for smooth 60fps
+								animations
+							</p>
 						</div>
 						<div className='tip-card'>
 							<h4>Will-Change Property</h4>
@@ -489,7 +543,10 @@ function TransitionRouter() {
 						</div>
 						<div className='tip-card'>
 							<h4>GPU Acceleration</h4>
-							<p>Use 3D transforms to trigger hardware acceleration</p>
+							<p>
+								Use 3D transforms to trigger hardware
+								acceleration
+							</p>
 						</div>
 					</div>
 				</div>
@@ -567,22 +624,26 @@ function useViewTransition() {
 				</div>
 			</div>
 
-			<div className='aria-transition-wisdom'>
+			<div className='marina-transition-wisdom'>
 				<h3>The Complete Transition System</h3>
 				<div className='integrated-approach'>
-					<p className='aria-teaching'>
-						"Transitions combine everything," Aria explained to a Navigation Corps trainee 
-						who asked about complexity. "Component lifecycle from the Northern Quarter tells 
-						us when to trigger animations. State management from the Eastern Quarter tracks 
-						transition progress. Effect hooks synchronize with the browser's animation frame. 
-						And forms must gracefully handle transitions without losing user input."
+					<p className='marina-teaching'>
+						"Transitions combine everything," Marina explained.
+						"Component lifecycle from the Northern Quarter tells us
+						when to trigger animations. State management from the
+						Eastern Quarter tracks transition progress. Effect hooks
+						synchronize with the browser's animation frame. And
+						forms must gracefully handle transitions without losing
+						user input."
 					</p>
-					
+
 					<p className='example-integration'>
-						She demonstrated: "When a user submits a form in a modal, we validate first 
-						(Western Quarter), show loading state (Eastern Quarter), transition smoothly 
-						(current lesson), and update the route if needed (Navigation Compass). It's 
-						one fluid experience built from all our knowledge."
+						Marina demonstrated: "When a user submits a form in a
+						modal, we validate first (Western Quarter), show loading
+						state (Eastern Quarter), transition smoothly (current
+						lesson), and update the route if needed (Navigation
+						Compass). It's one fluid experience built from all the
+						concepts you've learned."
 					</p>
 				</div>
 			</div>
@@ -590,15 +651,17 @@ function useViewTransition() {
 			<div className='reflection-section'>
 				<h3>Orchestrating Complete Experiences</h3>
 				<p>
-					Marina poses a challenge: "Aria has shown how transitions connect to everything. 
-					How would you design a checkout flow that uses smooth transitions between steps, 
-					maintains form state across route changes, validates before allowing progression, 
-					and gracefully handles errors?"
+					Marina poses a challenge: "You've learned how transitions
+					connect to everything. How would you design a checkout flow
+					that uses smooth transitions between steps, maintains form
+					state across route changes, validates before allowing
+					progression, and gracefully handles errors?"
 				</p>
 				<p>
-					Consider how the motion design principles you've learned could enhance the form 
-					systems you built earlier. How might transitions communicate validation states 
-					or guide users through complex multi-step processes?
+					Consider how the motion design principles you've learned
+					could enhance the form systems you built earlier. How might
+					transitions communicate validation states or guide users
+					through complex multi-step processes?
 				</p>
 			</div>
 		</div>

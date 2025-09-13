@@ -10,7 +10,7 @@ function ChapterOne() {
 		navigateToWaypoint,
 		masterMode,
 		setMasterMode,
-		ariaPatterns,
+		reactPatterns,
 	} = useOutletContext();
 
 	const [showCreationProcess, setShowCreationProcess] = useState(false);
@@ -19,7 +19,7 @@ function ChapterOne() {
 		path: '',
 		icon: '📍',
 		description: '',
-		ariaEnhancement: '',
+		reactEnhancement: '',
 	});
 
 	const predefinedWaypoints = [
@@ -30,7 +30,7 @@ function ChapterOne() {
 			icon: '🏰',
 			description: 'The heart of the kingdom',
 			coordinates: { x: 50, y: 50 },
-			ariaPattern: 'Component-based navigation hub',
+			reactPattern: 'Component-based navigation hub',
 		},
 		{
 			id: 'market',
@@ -39,7 +39,7 @@ function ChapterOne() {
 			icon: '🏪',
 			description: 'Where merchants gather',
 			coordinates: { x: 20, y: 30 },
-			ariaPattern: 'State-managed product catalog',
+			reactPattern: 'State-managed product catalog',
 		},
 		{
 			id: 'academy',
@@ -48,7 +48,7 @@ function ChapterOne() {
 			icon: '🎓',
 			description: 'Center of knowledge',
 			coordinates: { x: 80, y: 20 },
-			ariaPattern: 'Hook-powered learning paths',
+			reactPattern: 'Hook-powered learning paths',
 		},
 		{
 			id: 'forge',
@@ -57,7 +57,7 @@ function ChapterOne() {
 			icon: '🔥',
 			description: 'Where magic items are made',
 			coordinates: { x: 30, y: 70 },
-			ariaPattern: 'Form-validated crafting system',
+			reactPattern: 'Form-validated crafting system',
 		},
 	];
 
@@ -67,56 +67,56 @@ function ChapterOne() {
 		<>
 			<div className='chapter'>
 				<h2 className='chapter-title'>
-					Chapter 1: Architecting the Future
+					Chapter 1: Advanced Waypoint Patterns
 				</h2>
 
 				<div className='chapter-bridge'>
 					<p>
-						The Waypoint Sanctum's crystal dome refracted light into
-						countless rainbows. Marina and Aria stood at the center,
-						surrounded by floating navigation orbs. The kingdom's
-						brightest minds had gathered to witness the unveiling of
-						revolutionary navigation architecture.
+						Marina guided Aria into the Waypoint Sanctum's crystal
+						dome, where light refracted into countless rainbows.
+						Here, surrounded by floating navigation orbs, she would
+						learn the most advanced routing patterns that could
+						adapt and respond to user behavior.
 					</p>
 				</div>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
-						"Welcome, architects of the future," Marina began, her
-						voice resonating through the chamber. "Today, Master
-						Aria and I will show you how waypoints become more than
-						destinations - they become intelligent navigation
-						nodes."
+						"Welcome to advanced waypoint training," Marina began,
+						her voice resonating through the chamber. "Today, I'll
+						teach you how waypoints become more than destinations -
+						they become intelligent navigation nodes."
 					</p>
 
 					<p className='story-paragraph'>
-						Aria stepped forward, Binary projecting a complex
-						navigation matrix. "In my journey through every quarter,
-						I discovered that routes are living entities. They
-						breathe with state, pulse with effects, communicate
-						through props, and transform through hooks."
+						Marina activated a complex navigation matrix. "In your
+						journey through every quarter, you've learned that
+						routes are living entities. They breathe with state,
+						pulse with effects, communicate through props, and
+						transform through hooks."
 					</p>
 
 					<p className='story-paragraph'>
-						A young architect raised her hand. "Master Aria, how do
-						you make routes intelligent?"
+						Aria watched with growing understanding. "So routes can
+						be intelligent? How do we make them respond to user
+						context and behavior?"
 					</p>
 					<p className='story-paragraph'>
-						"By integrating every pattern," Aria replied, activating
-						the sanctum's holographic display. "Watch as Marina and
-						I demonstrate the{' '}
+						"By integrating every pattern you've learned," Marina
+						replied, activating the sanctum's holographic display.
+						"Watch as I demonstrate the{' '}
 						<strong>Waypoint Architecture Pattern</strong> - where
 						navigation becomes a symphony of all React knowledge."
 					</p>
 
 					<p className='story-paragraph'>
 						Binary chirped excitedly: "System initialization!
-						Marina's routing: LOADED. Aria's patterns: INTEGRATED.
+						Marina's routing: LOADED. Aria's foundation: READY.
 						Waypoint intelligence: ACTIVATING!"
 					</p>
 
 					<div className='waypoint-map master-architecture'>
-						<h3>The Marina-Aria Navigation Architecture</h3>
+						<h3>Marina's Advanced Navigation Architecture</h3>
 
 						{!masterMode && (
 							<button
@@ -244,9 +244,9 @@ function ChapterOne() {
 										<p>{waypoint.description}</p>
 										<code>{waypoint.path}</code>
 										{masterMode && (
-											<div className='aria-pattern'>
-												<strong>Aria's Pattern:</strong>
-												<p>{waypoint.ariaPattern}</p>
+											<div className='react-pattern'>
+												<strong>React Pattern:</strong>
+												<p>{waypoint.reactPattern}</p>
 											</div>
 										)}
 									</div>
@@ -258,49 +258,48 @@ function ChapterOne() {
 					<div className='masters-dialogue'>
 						<p className='story-paragraph'>
 							"Notice how each waypoint isn't just a destination,"
-							Aria explained to the assembled architects. "The
-							Castle Keep uses component composition. The Grand
-							Bazaar manages product state. The Academy leverages
-							custom hooks. The Forge validates with forms."
+							Marina explained. "The Castle Keep uses component
+							composition. The Grand Bazaar manages product state.
+							The Academy leverages custom hooks. The Forge
+							validates with forms."
 						</p>
 
 						<p className='story-paragraph'>
-							Marina added, "And they all communicate through our
-							unified navigation system. This is the future -
-							routes that understand context, preserve state, and
-							adapt to user needs."
+							Aria studied the patterns with fascination. "I can
+							see how they all communicate through the navigation
+							system! This is incredible - routes that understand
+							context, preserve state, and adapt to user needs."
 						</p>
 					</div>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
-						The Marina-Aria Waypoint Architecture
+						Marina's Waypoint Architecture
 					</h3>
 					<p className='collaboration-note'>
-						The masters demonstrate their revolutionary routing
-						patterns...
+						Marina demonstrates advanced routing patterns...
 					</p>
 
 					<div className='code-example collaborative'>
 						<h3>Intelligent Route Configuration</h3>
-						<pre>{`// Marina's Foundation + Aria's Intelligence
+						<pre>{`// Marina's Advanced Routing with React Integration
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { StateProvider, useAppState } from './aria-patterns';
+import { StateProvider, useAppState } from './react-patterns';
 
 // The Master Router Architecture
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      // Aria's pattern: Wrap routes with state management
+      // React pattern: Wrap routes with state management
       <StateProvider>
         <IntelligentLayout />
       </StateProvider>
     ),
     // Marina's error boundaries
     errorElement: <SmartErrorBoundary />,
-    // Aria's pattern: Root data prefetching
+    // React pattern: Root data prefetching
     loader: async () => {
       const [user, preferences, notifications] = await Promise.all([
         fetchUser(),
@@ -318,7 +317,7 @@ const router = createBrowserRouter([
           title: "Kingdom Central",
           icon: "🏰",
           breadcrumb: "Home",
-          // Aria's additions
+          // React integrations
           preload: ['user', 'preferences'],
           stateKey: 'home',
           effects: ['trackVisit', 'prefetchCommon']
@@ -329,7 +328,7 @@ const router = createBrowserRouter([
         // Lazy loading with intelligence
         lazy: async () => {
           const module = await import("./routes/Dashboard");
-          // Aria's pattern: Prepare state before render
+          // React pattern: Prepare state before render
           await prepareRouteState('dashboard');
           return module;
         },
@@ -349,7 +348,7 @@ const router = createBrowserRouter([
         element: <JourneyTracker />,
         // Dynamic loader with validation
         loader: async ({ params }) => {
-          // Aria's pattern: Validate before loading
+          // React pattern: Validate before loading
           const isValidStage = await validateStage(params.stage);
           if (!isValidStage) {
             throw new Response("Invalid journey stage", { status: 404 });
@@ -361,7 +360,7 @@ const router = createBrowserRouter([
         action: async ({ request, params }) => {
           const formData = await request.formData();
           
-          // Aria's validation integration
+          // React validation integration
           const validation = await validateStageProgress(formData);
           if (!validation.isValid) {
             return { errors: validation.errors };
@@ -491,14 +490,15 @@ export function useRouteIntelligence() {
 								/>
 							</div>
 							{masterMode && (
-								<div className='form-group aria-enhancement'>
-									<label>Aria's Pattern Integration</label>
+								<div className='form-group react-enhancement'>
+									<label>React Pattern Integration</label>
 									<select
-										value={customWaypoint.ariaEnhancement}
+										value={customWaypoint.reactEnhancement}
 										onChange={(e) =>
 											setCustomWaypoint({
 												...customWaypoint,
-												ariaEnhancement: e.target.value,
+												reactEnhancement:
+													e.target.value,
 											})
 										}>
 										<option value=''>
@@ -539,22 +539,22 @@ export function useRouteIntelligence() {
   loader: async () => {
     // Marina's data loading
     const data = await fetchRouteData();
-    ${
-		customWaypoint.ariaEnhancement
-			? `
-    // Aria's ${customWaypoint.ariaEnhancement} integration
-    await prepare${customWaypoint.ariaEnhancement}State(data);`
-			: ''
-	}
+									${
+										customWaypoint.reactEnhancement
+											? `
+    // React ${customWaypoint.reactEnhancement} integration
+    await prepare${customWaypoint.reactEnhancement}State(data);`
+											: ''
+									}
     return data;
   },
   handle: {
     title: "${customWaypoint.name}",
     icon: "${customWaypoint.icon}",
     description: "${customWaypoint.description}"${
-										customWaypoint.ariaEnhancement
+										customWaypoint.reactEnhancement
 											? `,
-    pattern: "${customWaypoint.ariaEnhancement}",
+    pattern: "${customWaypoint.reactEnhancement}",
     stateKey: "${customWaypoint.path.slice(1)}"`
 											: ''
 									}
@@ -564,8 +564,8 @@ export function useRouteIntelligence() {
 								<p className='creation-note'>
 									Marina: "Excellent route structure!"
 									<br />
-									Aria: "And beautifully integrated with React
-									patterns!"
+									Student: "And beautifully integrated with
+									React patterns!"
 								</p>
 							</div>
 						)}
@@ -573,9 +573,9 @@ export function useRouteIntelligence() {
 
 					<div className='code-example'>
 						<h3>The Complete Waypoint System</h3>
-						<pre>{`// Marina & Aria's Advanced Route Architecture
+						<pre>{`// Marina's Advanced Route Architecture
 import { createBrowserRouter, useNavigation, useMatches } from 'react-router-dom';
-import { useRouteState, useRouteEffects, useRouteValidation } from './aria-hooks';
+import { useRouteState, useRouteEffects, useRouteValidation } from './react-hooks';
 
 // Intelligent Route Factory
 class WaypointArchitect {
@@ -596,7 +596,7 @@ class WaypointArchitect {
       handle: this.buildMetadata(config)
     };
     
-    // Aria's enhancements
+    // React enhancements
     if (config.stateManagement) {
       route.element = <StateWrapper config={config}>{route.element}</StateWrapper>;
     }
@@ -609,7 +609,7 @@ class WaypointArchitect {
     return route;
   }
   
-  // Aria's intelligent wrapper
+  // React intelligent wrapper
   wrapWithIntelligence(element, config) {
     return (
       <RouteIntelligence config={config}>
@@ -624,7 +624,7 @@ class WaypointArchitect {
       // Marina's base loading
       const data = loader ? await loader(args) : {};
       
-      // Aria's prefetching
+      // React prefetching
       if (config.prefetch) {
         await Promise.all(
           config.prefetch.map(key => prefetchData(key))
@@ -649,7 +649,7 @@ class WaypointArchitect {
       breadcrumb: config.breadcrumb || config.title,
       requiresAuth: config.requiresAuth,
       permissions: config.permissions,
-      // Aria's additions
+      // React additions
       stateKey: config.stateKey,
       effects: config.effects || [],
       validators: config.validators || [],
@@ -671,7 +671,7 @@ architect.createWaypoint({
   // Marina's features
   loader: marketplaceLoader,
   requiresAuth: true,
-  // Aria's enhancements
+  // React enhancements
   stateManagement: true,
   preserveState: true,
   prefetch: ['products', 'categories'],
@@ -729,39 +729,45 @@ function IntelligentNavigation() {
 					</div>
 
 					<div className='waypoint-features master-features'>
-						<h3>Marina & Aria's Waypoint Enhancements</h3>
+						<h3>Marina's Waypoint Enhancements</h3>
 						<div className='feature-grid master-grid'>
 							<div className='feature-card'>
 								<h4>Intelligent Loaders</h4>
 								<p className='marina'>Marina: Data fetching</p>
-								<p className='aria'>
-									Aria: + State prefetching
+								<p className='integration'>
+									Integration: + State prefetching
 								</p>
 								<code>{`loader: intelligentLoader()`}</code>
 							</div>
 							<div className='feature-card'>
 								<h4>Smart Actions</h4>
 								<p className='marina'>Marina: Form handling</p>
-								<p className='aria'>Aria: + Validation flow</p>
+								<p className='integration'>
+									Integration: + Validation flow
+								</p>
 								<code>{`action: validatedAction()`}</code>
 							</div>
 							<div className='feature-card'>
 								<h4>Reactive Boundaries</h4>
 								<p className='marina'>Marina: Error catching</p>
-								<p className='aria'>Aria: + State recovery</p>
+								<p className='integration'>
+									Integration: + State recovery
+								</p>
 								<code>{`errorElement: <SmartError />`}</code>
 							</div>
 							<div className='feature-card'>
 								<h4>Predictive Loading</h4>
 								<p className='marina'>Marina: Lazy loading</p>
-								<p className='aria'>Aria: + Preload hints</p>
+								<p className='integration'>
+									Integration: + Preload hints
+								</p>
 								<code>{`lazy: predictiveImport()`}</code>
 							</div>
 						</div>
 						<div className='feature-explanation'>
 							<p className='story-paragraph'>
 								"Each enhancement builds on the foundation,"
-								Aria explained. "We're not just loading data -
+								Marina explained. "We're not just loading data -
 								we're orchestrating entire user experiences."
 							</p>
 						</div>
@@ -770,32 +776,31 @@ function IntelligentNavigation() {
 					<div className='masters-demonstration'>
 						<h3>Live Architecture Demonstration</h3>
 						<p className='story-paragraph'>
-							The assembled architects watched in awe as Marina
-							and Aria demonstrated their complete waypoint
-							system. Master Aurelius from the Northern Quarter
-							stood up. "This is remarkable! You've transformed
+							Marina demonstrated the complete waypoint system to
+							the learning group. "This shows how we can transform
 							simple routing into an intelligent navigation
-							ecosystem!"
+							ecosystem," she explained.
 						</p>
 
 						<p className='story-paragraph'>
-							The State Sorcerer added, "The way state flows
-							through your routes... it's like watching a river
+							Aria watched with amazement. "The way state flows
+							through the routes... it's like watching a river
 							system that knows where it needs to go!"
 						</p>
 
 						<p className='story-paragraph'>
-							Marina smiled at Aria. "This is what true mastery
-							looks like - not just knowing patterns, but weaving
-							them into something greater."
+							Marina smiled with teaching satisfaction. "This is
+							what learning looks like - not just knowing
+							patterns, but understanding how they weave together
+							into something greater."
 						</p>
 
 						<p className='story-paragraph'>
 							Binary projected the final statistics: "Waypoint
 							intelligence: MAXIMUM! Pattern integration:
-							COMPLETE! Marina + Aria collaboration: LEGENDARY!
-							Future architects will study this system for
-							generations!"
+							COMPLETE! Marina's teaching + Aria's learning:
+							EXCELLENT! Future students will study this system
+							for generations!"
 						</p>
 					</div>
 				</div>
@@ -827,31 +832,30 @@ function IntelligentNavigation() {
 				</div>
 
 				<div className='lesson-insight'>
-					<h3>The Masters' Wisdom:</h3>
+					<h3>Marina's Wisdom:</h3>
 					<p>
-						Marina and Aria stood together, their combined knowledge
-						radiating through the chamber. "Waypoints are living
-						entities," Marina began.
+						Marina addressed the chamber, her teaching knowledge
+						radiating through the space. "Waypoints are living
+						entities," she began.
 					</p>
 					<p>
 						"They breathe with state, pulse with effects,
 						communicate through context, and evolve through user
-						interaction," Aria continued.
+						interaction," Marina continued.
 					</p>
 					<p>
-						"Together," they said in unison, "we've shown you that
+						"This is what I've shown you," Marina concluded, "that
 						navigation isn't just about moving between pages - it's
 						about orchestrating entire application experiences."
 					</p>
 					<p className='story-paragraph'>
-						The young architect who had asked the first question
-						stood up. "I understand now! Every route is a complete
-						React application in miniature, with all the patterns
-						working in harmony!"
+						Aria's understanding crystallized. "I see it now! Every
+						route is a complete React application in miniature, with
+						all the patterns I've learned working in harmony!"
 					</p>
 					<p className='story-paragraph'>
-						"Exactly!" Aria beamed with pride. "You're ready to
-						architect the future."
+						"Exactly!" Marina beamed with teaching pride. "You're
+						ready to understand even more advanced patterns."
 					</p>
 				</div>
 
@@ -868,9 +872,9 @@ function IntelligentNavigation() {
 						to user behavior?
 					</p>
 					<p className='story-paragraph'>
-						How has Aria's complete journey through the React
-						Kingdom prepared her to architect these revolutionary
-						navigation systems with Marina?
+						How does Aria's journey through the React Kingdom help
+						her understand Marina's advanced navigation architecture
+						concepts?
 					</p>
 				</div>
 			</div>

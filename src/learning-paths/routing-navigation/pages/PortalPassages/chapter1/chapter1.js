@@ -8,14 +8,14 @@ const ChapterOne = () => {
 		closePortal,
 		createModalPortal,
 		closeModalPortal,
-		modalPortals
+		modalPortals,
 	} = useOutletContext();
 
 	const [selectedPortalType, setSelectedPortalType] = useState('modal');
 	const [demoPortalOpen, setDemoPortalOpen] = useState(false);
 	const [portalContent, setPortalContent] = useState({
 		title: 'Welcome Traveler',
-		message: 'You have discovered a magical portal!'
+		message: 'You have discovered a magical portal!',
 	});
 
 	const portalTypes = [
@@ -23,35 +23,35 @@ const ChapterOne = () => {
 			id: 'modal',
 			name: 'Modal Portal',
 			icon: '🪟',
-			description: 'Opens in a layer above the current view'
+			description: 'Opens in a layer above the current view',
 		},
 		{
 			id: 'drawer',
 			name: 'Drawer Portal',
 			icon: '📤',
-			description: 'Slides in from the edge of the screen'
+			description: 'Slides in from the edge of the screen',
 		},
 		{
 			id: 'full',
 			name: 'Full Screen Portal',
 			icon: '🖥️',
-			description: 'Takes over the entire viewport'
+			description: 'Takes over the entire viewport',
 		},
 		{
 			id: 'popup',
 			name: 'Popup Portal',
 			icon: '💬',
-			description: 'Small contextual portal'
-		}
+			description: 'Small contextual portal',
+		},
 	];
 
 	const handleCreatePortal = () => {
 		const modalId = createModalPortal({
 			type: selectedPortalType,
-			content: portalContent
+			content: portalContent,
 		});
 		setDemoPortalOpen(true);
-		
+
 		// Auto-close after 5 seconds for demo
 		setTimeout(() => {
 			closeModalPortal(modalId);
@@ -68,42 +68,51 @@ const ChapterOne = () => {
 			<div className='story-section'>
 				<div className='portal-passages-opening'>
 					<p className='story-paragraph'>
-						The Portal Passages represented the most advanced navigation concepts - modals, 
-						overlays, and parallel routes. <strong>Marina</strong> gathered the entire 
-						Navigation Corps in the Grand Chamber.
+						Marina led Aria to the Portal Passages chamber, where
+						the most advanced navigation concepts awaited - modals,
+						overlays, and parallel routes. Here, she would learn the
+						final navigation patterns.
 					</p>
 
 					<p className='story-paragraph'>
-						"Today, we witness something special," Marina announced. "<strong>Aria</strong> 
-						will demonstrate how to create portal-based navigation that maintains state, 
-						handles forms, and provides seamless transitions. Her mastery of all React 
-						concepts makes her uniquely qualified to teach us."
+						"Today, you'll learn something special," Marina
+						announced. "I'll teach you how to create portal-based
+						navigation that maintains state, handles forms, and
+						provides seamless transitions. Your React foundation
+						will help you understand these advanced portal
+						techniques."
 					</p>
 
 					<p className='story-paragraph'>
-						<strong>Aria</strong> stepped forward confidently, <strong>Binary</strong> 
-						projecting holographic portals around the room. "Portal Passages combine 
-						every concept in our kingdom," she began. "Components provide structure, 
-						state manages portal visibility, effects handle focus management, and 
-						forms can span across portals."
+						Marina activated holographic portals around the room,{' '}
+						<strong>Binary</strong>
+						assisting with the projections. "Portal Passages combine
+						every concept in our kingdom," she explained.
+						"Components provide structure, state manages portal
+						visibility, effects handle focus management, and forms
+						can span across portals."
 					</p>
 
 					<p className='story-paragraph'>
-						The audience - including <strong>Master Aurelius</strong>, 
-						<strong>Elder useState</strong>, and representatives from all quarters - 
-						watched intently as Aria demonstrated how her comprehensive understanding 
-						created something entirely new.
+						Aria watched with fascination as the portal patterns
+						unfolded before her. "This is amazing! I can see how
+						every concept I've learned contributes to these advanced
+						navigation patterns."
 					</p>
 				</div>
 
 				<div className='portal-demonstration'>
 					<h3>Portal Types Exhibition</h3>
-					
+
 					<div className='portal-type-selector'>
-						{portalTypes.map(type => (
+						{portalTypes.map((type) => (
 							<div
 								key={type.id}
-								className={`portal-type-card ${selectedPortalType === type.id ? 'selected' : ''}`}
+								className={`portal-type-card ${
+									selectedPortalType === type.id
+										? 'selected'
+										: ''
+								}`}
 								onClick={() => setSelectedPortalType(type.id)}>
 								<span className='portal-icon'>{type.icon}</span>
 								<h4>{type.name}</h4>
@@ -120,34 +129,51 @@ const ChapterOne = () => {
 								<input
 									type='text'
 									value={portalContent.title}
-									onChange={(e) => setPortalContent({...portalContent, title: e.target.value})}
+									onChange={(e) =>
+										setPortalContent({
+											...portalContent,
+											title: e.target.value,
+										})
+									}
 								/>
 							</label>
 							<label>
 								Portal Message:
 								<textarea
 									value={portalContent.message}
-									onChange={(e) => setPortalContent({...portalContent, message: e.target.value})}
+									onChange={(e) =>
+										setPortalContent({
+											...portalContent,
+											message: e.target.value,
+										})
+									}
 								/>
 							</label>
 						</div>
-						<button 
+						<button
 							className='create-portal-btn'
 							onClick={handleCreatePortal}
 							disabled={demoPortalOpen}>
-							Open {portalTypes.find(t => t.id === selectedPortalType)?.name} ✨
+							Open{' '}
+							{
+								portalTypes.find(
+									(t) => t.id === selectedPortalType
+								)?.name
+							}{' '}
+							✨
 						</button>
 						{demoPortalOpen && (
-							<p className='portal-status'>Portal is active! It will close automatically in 5 seconds...</p>
+							<p className='portal-status'>
+								Portal is active! It will close automatically in
+								5 seconds...
+							</p>
 						)}
 					</div>
 				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Creating Your First Portals
-				</h3>
+				<h3 className='section-title'>Creating Your First Portals</h3>
 
 				<div className='code-example'>
 					<pre>{`// Basic Modal Portal Implementation
@@ -292,7 +318,7 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
 							<h4>Confirmation Portal</h4>
 							<p>Verify important actions</p>
 							<div className='code-snippet'>
-{`<ConfirmDialog
+								{`<ConfirmDialog
   isOpen={showConfirm}
   title="Delete Item?"
   message="This cannot be undone."
@@ -305,7 +331,7 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
 							<h4>Form Portal</h4>
 							<p>Collect data without leaving the page</p>
 							<div className='code-snippet'>
-{`<FormModal
+								{`<FormModal
   isOpen={showForm}
   title="Add New Item"
   onSubmit={handleSubmit}
@@ -319,7 +345,7 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
 							<h4>Gallery Portal</h4>
 							<p>Full-screen media viewing</p>
 							<div className='code-snippet'>
-{`<ImageViewer
+								{`<ImageViewer
   images={galleryImages}
   currentIndex={selectedImage}
   onClose={() => setSelectedImage(null)}
@@ -330,7 +356,7 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
 							<h4>Toast Portal</h4>
 							<p>Non-blocking notifications</p>
 							<div className='code-snippet'>
-{`<ToastContainer>
+								{`<ToastContainer>
   {toasts.map(toast => (
     <Toast
       key={toast.id}
@@ -426,7 +452,10 @@ function ProductList() {
 					<div className='practice-item'>
 						<span className='practice-icon'>🎯</span>
 						<h4>Focus Management</h4>
-						<p>Always return focus to the trigger element when closing</p>
+						<p>
+							Always return focus to the trigger element when
+							closing
+						</p>
 					</div>
 					<div className='practice-item'>
 						<span className='practice-icon'>⌨️</span>
@@ -446,21 +475,22 @@ function ProductList() {
 				</div>
 			</div>
 
-			<div className='aria-teaching-moment'>
-				<h3>Aria's Integrated Portal Wisdom</h3>
+			<div className='marina-teaching-moment'>
+				<h3>Marina's Integrated Portal Wisdom</h3>
 				<div className='teaching-dialogue'>
-					<p className='aria-insight'>
-						"Notice how portals use everything we've learned," Aria explained to the 
-						audience. "The modal component structure from the Northern Quarter, state 
-						management for visibility from the Eastern Quarter, form handling that 
-						persists across portal boundaries from the Western Quarter, and now 
-						navigation integration. It all connects!"
+					<p className='marina-insight'>
+						"Notice how portals use everything you've learned,"
+						Marina explained. "The modal component structure from
+						the Northern Quarter, state management for visibility
+						from the Eastern Quarter, form handling that persists
+						across portal boundaries from the Western Quarter, and
+						now navigation integration. It all connects!"
 					</p>
-					
-					<p className='marina-addition'>
-						Marina nodded approvingly. "This is why I requested Aria. She doesn't just 
-						know the techniques - she understands how they work together to create 
-						seamless experiences."
+
+					<p className='student-response'>
+						Aria watched with understanding. "This is incredible!
+						You've shown me how all the techniques work together to
+						create seamless experiences."
 					</p>
 				</div>
 			</div>
@@ -468,15 +498,17 @@ function ProductList() {
 			<div className='reflection-section'>
 				<h3>Building on Your Complete Journey</h3>
 				<p>
-					Aria turns to you: "You've seen how every concept we've learned comes together 
-					in portal navigation. How might you combine the validation patterns from forms 
-					with portal-based wizards? What about maintaining context state across nested 
-					modal interactions?"
+					Marina turns to you: "You've seen how every concept connects
+					together in portal navigation. How might you combine the
+					validation patterns from forms with portal-based wizards?
+					What about maintaining context state across nested modal
+					interactions?"
 				</p>
 				<p>
-					Consider creating a portal system that remembers user progress, validates input 
-					before allowing portal closure, and gracefully handles errors - all while 
-					maintaining accessibility and performance.
+					Consider creating a portal system that remembers user
+					progress, validates input before allowing portal closure,
+					and gracefully handles errors - all while maintaining
+					accessibility and performance.
 				</p>
 			</div>
 		</div>

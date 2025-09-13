@@ -53,15 +53,15 @@ function WaypointWizardry() {
 	return (
 		<div className='lesson-container waypoint-wizardry-container'>
 			<div className='lesson-opener'>
-				<p>The Waypoint Sanctum materialized before them - a vast chamber where 
-				glowing orbs of light traced paths through the air. Marina and Aria stood 
-				side by side, ready to share their most advanced navigation patterns with 
-				the assembled masters and future architects of the React Kingdom.</p>
+				<p>Marina led Aria to the Waypoint Sanctum - a vast chamber where 
+				glowing orbs of light traced paths through the air. Here, she would teach 
+				Aria the most advanced navigation patterns, showing how routing could become 
+				truly intelligent and adaptive.</p>
 			</div>
 			
 			<h1 className='lesson-title'>Waypoint Wizardry</h1>
 			<p className='lesson-subtitle'>
-				Where masters architect the future of React navigation
+				Learn advanced routing techniques and dynamic navigation patterns
 			</p>
 
 			<div className='chapter-navigation'>

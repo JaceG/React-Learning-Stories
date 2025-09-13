@@ -18,7 +18,7 @@ function ChapterThree() {
 			requiredPermissions: ['financial.read', 'treasury.access'],
 			description: "Where the kingdom's wealth is stored",
 			icon: '👑',
-			ariaIntegration: 'State-managed access tokens',
+			reactIntegration: 'State-managed access tokens',
 		},
 		{
 			id: 'armory',
@@ -27,7 +27,7 @@ function ChapterThree() {
 			requiredPermissions: ['weapons.access', 'armor.equip'],
 			description: "Equipment for the kingdom's defenders",
 			icon: '⚔️',
-			ariaIntegration: 'Component-based permission checks',
+			reactIntegration: 'Component-based permission checks',
 		},
 		{
 			id: 'library',
@@ -36,7 +36,7 @@ function ChapterThree() {
 			requiredPermissions: ['books.read', 'scrolls.access'],
 			description: 'Ancient knowledge and wisdom',
 			icon: '📚',
-			ariaIntegration: 'Context-provided access levels',
+			reactIntegration: 'Context-provided access levels',
 		},
 		{
 			id: 'market',
@@ -45,7 +45,7 @@ function ChapterThree() {
 			requiredPermissions: ['trade.conduct', 'goods.sell'],
 			description: 'The bustling center of commerce',
 			icon: '🏪',
-			ariaIntegration: 'Form-validated transactions',
+			reactIntegration: 'Form-validated transactions',
 		},
 		{
 			id: 'workshop',
@@ -54,7 +54,7 @@ function ChapterThree() {
 			requiredPermissions: ['tools.use', 'craft.create'],
 			description: 'Where master crafters work their magic',
 			icon: '🔨',
-			ariaIntegration: 'Hook-managed tool access',
+			reactIntegration: 'Hook-managed tool access',
 		},
 	];
 
@@ -103,44 +103,43 @@ function ChapterThree() {
 
 				<div className='chapter-bridge'>
 					<p>
-						The grand Hall of Authority buzzed with anticipation.
-						Marina and Aria stood before the assembled masters from
-						every quarter of the kingdom, ready to unveil their
-						masterwork - a guardian system that integrated every
-						pattern Aria had learned on her journey.
+						Marina led Aria to the grand Hall of Authority for the
+						final lesson in route protection. Here, she would learn
+						the ultimate guardian patterns - systems that integrated
+						every React concept she had studied across her journey.
 					</p>
 				</div>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
-						"Welcome, masters," Marina began, her voice carrying
-						authority and warmth. "Today, Master Aria and I will
-						demonstrate how authentication and authorization can
+						"Welcome to the advanced guardian training," Marina
+						began, her voice carrying authority and warmth. "Today,
+						I'll teach you how authentication and authorization can
 						become truly intelligent when combined with all React
-						patterns."
+						patterns you've learned."
 					</p>
 
 					<p className='story-paragraph'>
-						Aria stepped forward, Binary projecting a complex
-						authorization matrix. "In the Northern Quarter, I
-						learned that routes are components. In the Eastern, that
-						permissions are state. In the Southern, how authority
-						flows through props. In the Western, how validation
-						guards access. Watch as we unite them all."
+						Marina activated a complex authorization matrix. "Let me
+						show you how everything connects. In the Northern
+						Quarter, you learned that routes are components. In the
+						Eastern, that permissions are state. In the Southern,
+						how authority flows through props. In the Western, how
+						validation guards access. Watch as we unite them all."
 					</p>
 
 					<p className='story-paragraph'>
-						Master Aurelius nodded approvingly from the audience.
-						"Show us this synthesis, Aria. How have you transformed
-						our simple permission checks?"
+						Aria watched with fascination as the patterns connected.
+						"This is incredible! I can see how all my learning comes
+						together in route protection!"
 					</p>
 
 					<p className='story-paragraph'>
-						"It's not just about roles anymore," Aria explained,
+						"It's not just about roles anymore," Marina explained,
 						activating the demonstration. "It's about creating an
 						intelligent system that understands context, preserves
 						state, validates dynamically, and adapts to user
-						behavior. Marina and I call it the{' '}
+						behavior. I call it the{' '}
 						<strong>Hierarchical Intelligence Pattern</strong>."
 					</p>
 
@@ -189,9 +188,9 @@ function ChapterThree() {
 											</div>
 										)}
 										{masterDemonstration && (
-											<div className='aria-enhancement'>
+											<div className='react-enhancement'>
 												<p>
-													Aria's Pattern:{' '}
+													React Pattern:{' '}
 													{role === 'royal'
 														? 'Context + All Patterns'
 														: role === 'knight'
@@ -212,7 +211,7 @@ function ChapterThree() {
 					</div>
 
 					<div className='gates-chamber master-system'>
-						<h3>The Marina-Aria Guardian System</h3>
+						<h3>Marina's Guardian System</h3>
 						<p className='current-role enhanced'>
 							Testing as:{' '}
 							<strong>
@@ -222,7 +221,7 @@ function ChapterThree() {
 							{masterDemonstration && (
 								<span className='master-note'>
 									{' '}
-									- with Aria's integrated patterns
+									- with React integrated patterns
 								</span>
 							)}
 						</p>
@@ -252,8 +251,8 @@ function ChapterThree() {
 											Requires: {area.requiredRole}
 										</p>
 										{masterDemonstration && (
-											<p className='aria-integration'>
-												{area.ariaIntegration}
+											<p className='react-integration'>
+												{area.reactIntegration}
 											</p>
 										)}
 										<div className='access-indicator'>
@@ -281,9 +280,9 @@ function ChapterThree() {
 									</ul>
 								</div>
 								{masterDemonstration && (
-									<div className='aria-additions'>
-										<h5>Aria's Pattern Integration:</h5>
-										<p>{selectedGate.ariaIntegration}</p>
+									<div className='react-additions'>
+										<h5>React Pattern Integration:</h5>
+										<p>{selectedGate.reactIntegration}</p>
 									</div>
 								)}
 							</div>
@@ -292,34 +291,35 @@ function ChapterThree() {
 
 					<div className='masters-collaboration'>
 						<p className='story-paragraph'>
-							"Watch carefully," Aria said to the assembled
-							masters. "Each gate doesn't just check roles - it
-							integrates patterns from every quarter. The Treasury
-							uses state-managed tokens. The Library leverages
-							context providers. The Market validates with forms."
+							"Watch carefully," Marina demonstrated to the
+							learning group. "Each gate doesn't just check roles
+							- it integrates patterns from every quarter. The
+							Treasury uses state-managed tokens. The Library
+							leverages context providers. The Market validates
+							with forms."
 						</p>
 
 						<p className='story-paragraph'>
-							Marina added, "This is the future of authorization -
-							not just checking permissions, but creating
-							intelligent systems that understand context,
-							preserve state, and adapt to user behavior."
+							Aria watched with fascination. "This is amazing!
+							Authorization isn't just checking permissions, but
+							creating intelligent systems that understand
+							context, preserve state, and adapt to user
+							behavior."
 						</p>
 					</div>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
-						The Marina-Aria Authorization Architecture
+						Marina's Authorization Architecture
 					</h3>
 					<p className='collaboration-note'>
-						The masters demonstrate their complete authorization
-						system...
+						Marina demonstrates the complete authorization system...
 					</p>
 
 					<div className='code-example collaborative'>
 						<h3>Intelligent Role-Based Protection</h3>
-						<pre>{`// Marina's Security + Aria's Intelligence
+						<pre>{`// Marina's Security with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, usePermissions, useStateTracking } from './master-hooks';
 
@@ -432,7 +432,7 @@ function IntelligentRoleGuard({
 
 					<div className='code-example'>
 						<h3>The Complete Permission System</h3>
-						<pre>{`// Aria's Intelligent Permission Architecture
+						<pre>{`// Marina's Intelligent Permission Architecture
 import { createContext, useContext, useState, useEffect } from 'react';
 
 // Permission Context (Southern Quarter pattern)
@@ -548,7 +548,7 @@ export function useIntelligentPermissions() {
 					</div>
 
 					<div className='authorization-patterns enhanced'>
-						<h3>Marina & Aria's Authorization Patterns</h3>
+						<h3>Marina's Authorization Patterns</h3>
 						<div className='pattern-cards master-edition'>
 							<div className='pattern-card'>
 								<h4>Intelligent RBAC</h4>
@@ -556,7 +556,7 @@ export function useIntelligentPermissions() {
 									Marina: Role hierarchies
 								</p>
 								<p className='aria'>
-									Aria: + State preservation
+									Integration: + State preservation
 								</p>
 								<code>user → role → context → permissions</code>
 							</div>
@@ -565,7 +565,9 @@ export function useIntelligentPermissions() {
 								<p className='marina'>
 									Marina: Attribute checks
 								</p>
-								<p className='aria'>Aria: + Hook-based logic</p>
+								<p className='aria'>
+									Integration: + Hook-based logic
+								</p>
 								<code>useAttributeAuth(user, resource)</code>
 							</div>
 							<div className='pattern-card'>
@@ -573,30 +575,34 @@ export function useIntelligentPermissions() {
 								<p className='marina'>
 									Marina: Owner validation
 								</p>
-								<p className='aria'>Aria: + Context tracking</p>
+								<p className='aria'>
+									Integration: + Context tracking
+								</p>
 								<code>useOwnership(resource, context)</code>
 							</div>
 							<div className='pattern-card'>
 								<h4>Reactive Time-Based</h4>
 								<p className='marina'>Marina: Time windows</p>
-								<p className='aria'>Aria: + Effect updates</p>
+								<p className='aria'>
+									Integration: + Effect updates
+								</p>
 								<code>useTimeBasedAccess(schedule)</code>
 							</div>
 						</div>
 						<div className='pattern-explanation'>
 							<p className='story-paragraph'>
 								"Each pattern builds on traditional
-								authorization," Aria explained. "We're not just
-								checking permissions - we're creating reactive,
-								intelligent systems that adapt to context and
-								user behavior."
+								authorization," Marina explained. "We're not
+								just checking permissions - we're creating
+								reactive, intelligent systems that adapt to
+								context and user behavior."
 							</p>
 						</div>
 					</div>
 
 					<div className='code-example'>
 						<h3>The Ultimate Authorization System</h3>
-						<pre>{`// Marina & Aria's Complete Authorization Architecture
+						<pre>{`// Marina's Complete Authorization Architecture
 import { useState, useEffect, useCallback, useMemo } from 'react';
 
 // The Master Authorization Service
@@ -819,41 +825,42 @@ export function useMasterAuthorization() {
 					<div className='masters-finale'>
 						<h3>The Grand Authorization Synthesis</h3>
 						<p className='story-paragraph'>
-							The assembled masters watched in awe as Marina and
-							Aria demonstrated the complete system. Master
-							Aurelius stood and applauded. "Incredible! You've
-							taken our simple role checks and transformed them
-							into an intelligent, reactive authorization system."
+							Marina demonstrated the complete system to the
+							learning group. "This shows how we can take simple
+							role checks and transform them into an intelligent,
+							reactive authorization system," she explained.
 						</p>
 
 						<p className='story-paragraph'>
-							The Council of Hooks leader added, "The way you've
-							integrated hooks for permission checking, state for
-							caching, context for distribution, and effects for
-							reactivity... it's masterful."
+							Aria studied the patterns with growing
+							understanding. "I can see how hooks enable
+							permission checking, state handles caching, context
+							manages distribution, and effects provide
+							reactivity. It all works together!"
 						</p>
 
 						<p className='story-paragraph'>
-							Marina smiled at Aria. "This is what true
-							collaboration looks like. By combining your
-							comprehensive React knowledge with navigation
-							security, we've created something neither of us
-							could have built alone."
+							Marina smiled with teaching satisfaction. "This is
+							what learning looks like. By applying your
+							comprehensive React foundation to navigation
+							security concepts, you've understood something
+							profound."
 						</p>
 
 						<p className='story-paragraph'>
-							Aria addressed the room. "Every pattern has its
-							place. Components render based on permissions. State
-							tracks authorization. Props pass access rights.
-							Hooks manage permission logic. Forms validate before
-							granting access. And routes orchestrate it all. This
-							is the true power of React - everything connects."
+							"I can see how every pattern has its place!" Aria
+							marveled. "Components render based on permissions.
+							State tracks authorization. Props pass access
+							rights. Hooks manage permission logic. Forms
+							validate before granting access. And routes
+							orchestrate it all. This is the true power of React
+							- everything connects."
 						</p>
 					</div>
 				</div>
 
 				<div className='best-practices enhanced'>
-					<h3>Marina & Aria's Authorization Principles</h3>
+					<h3>Marina's Authorization Principles</h3>
 					<div className='practice-list master-edition'>
 						<div className='practice-item'>
 							<h4>Intelligent Least Privilege</h4>
@@ -861,7 +868,7 @@ export function useMasterAuthorization() {
 								Marina: Minimal necessary permissions
 							</p>
 							<p className='aria'>
-								Aria: + Context-aware adjustments
+								Integration: + Context-aware adjustments
 							</p>
 						</div>
 						<div className='practice-item'>
@@ -870,14 +877,14 @@ export function useMasterAuthorization() {
 								Marina: Server verification required
 							</p>
 							<p className='aria'>
-								Aria: + Client optimization for UX
+								Integration: + Client optimization for UX
 							</p>
 						</div>
 						<div className='practice-item'>
 							<h4>Reactive Audit System</h4>
 							<p className='marina'>Marina: Log all decisions</p>
 							<p className='aria'>
-								Aria: + Real-time monitoring hooks
+								Integration: + Real-time monitoring hooks
 							</p>
 						</div>
 						<div className='practice-item'>
@@ -886,39 +893,42 @@ export function useMasterAuthorization() {
 								Marina: Hide unauthorized elements
 							</p>
 							<p className='aria'>
-								Aria: + Predictive permission loading
+								Integration: Predictive permission loading
 							</p>
 						</div>
 					</div>
 				</div>
 
 				<div className='lesson-insight'>
-					<h3>The Ultimate Guardian Wisdom:</h3>
+					<h3>Marina's Ultimate Guardian Wisdom:</h3>
 					<p>
-						Marina and Aria stood together, their combined wisdom
-						resonating through the hall. "Authentication asks 'Who
-						are you?'" Marina began.
+						Marina addressed the chamber, her teaching resonating
+						through the hall. "Authentication asks 'Who are you?'"
+						she began.
 					</p>
 					<p>
-						"Authorization asks 'What can you do?'" Aria continued.
+						"Authorization asks 'What can you do?'" Marina
+						continued.
 					</p>
 					<p>
-						"But intelligent authorization," they said in unison,
-						"asks 'What should you be able to do in this context, at
-						this time, with your history, considering the current
-						state of the application?'"
+						"But intelligent authorization," Marina concluded, "asks
+						'What should you be able to do in this context, at this
+						time, with your history, considering the current state
+						of the application?'"
 					</p>
 					<p className='story-paragraph'>
 						Binary's final projection lit up the chamber: "Guardian
 						Gates evolution complete! Basic checks: TRANSCENDED.
-						Intelligent authorization: ACHIEVED. Marina + Aria
-						collaboration: LEGENDARY. Future apprentices will study
+						Intelligent authorization: ACHIEVED. Marina's teaching +
+						Aria's learning: EXCELLENT. Future students will study
 						this system for generations!"
 					</p>
 					<p className='story-paragraph'>
-						The assembled masters rose in applause. Aria had not
-						just learned to protect routes - she had revolutionized
-						how the entire kingdom thought about authorization.
+						Marina smiled with the satisfaction of a teacher whose
+						student had grasped complex concepts. Aria had learned
+						to protect routes using advanced patterns that
+						integrated everything she'd studied across the React
+						Kingdom.
 					</p>
 				</div>
 
@@ -936,9 +946,9 @@ export function useMasterAuthorization() {
 						permission lists?
 					</p>
 					<p className='story-paragraph'>
-						How has Aria's journey through every quarter of the
-						React Kingdom prepared her to create this revolutionary
-						authorization architecture with Marina?
+						How does Aria's journey through every quarter of the
+						React Kingdom help her understand Marina's authorization
+						architecture concepts?
 					</p>
 				</div>
 			</div>

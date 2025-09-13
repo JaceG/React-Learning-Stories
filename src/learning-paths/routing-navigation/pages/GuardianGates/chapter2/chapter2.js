@@ -18,31 +18,31 @@ function ChapterTwo() {
 			id: 1,
 			status: 'pending',
 			label: 'User attempts to access protected route',
-			ariaNote: 'Component tries to render',
+			reactNote: 'Component tries to render',
 		},
 		{
 			id: 2,
 			status: 'pending',
 			label: 'Guardian checks authentication',
-			ariaNote: 'Hook validates state',
+			reactNote: 'Hook validates state',
 		},
 		{
 			id: 3,
 			status: 'pending',
 			label: 'Redirect to login with return path',
-			ariaNote: 'State preserved in context',
+			reactNote: 'State preserved in context',
 		},
 		{
 			id: 4,
 			status: 'pending',
 			label: 'User provides credentials',
-			ariaNote: 'Form validation applied',
+			reactNote: 'Form validation applied',
 		},
 		{
 			id: 5,
 			status: 'pending',
 			label: 'Return to original destination',
-			ariaNote: 'Navigation with preserved state',
+			reactNote: 'Navigation with preserved state',
 		},
 	];
 
@@ -61,41 +61,48 @@ function ChapterTwo() {
 
 				<div className='chapter-bridge'>
 					<p>
-						The training continued in the Guardian Archives, where
-						ancient memory crystals lined the walls. Marina and Aria
-						prepared to demonstrate the most sophisticated
-						authentication patterns to their eager students.
+						Marina led Aria deeper into the Guardian Archives, where
+						ancient memory crystals lined the walls. Here, she would
+						teach the most sophisticated authentication patterns,
+						building on Aria's React foundation.
 					</p>
 				</div>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
 						"Authentication isn't just about checking credentials,"
-						Aria began, activating a memory crystal that began to
+						Marina began, activating a memory crystal that began to
 						glow. "It's about preserving the entire user journey.
-						Let me show you what I learned across the kingdom."
+						Let me show you advanced patterns that integrate with
+						everything you've learned."
 					</p>
 
 					<p className='story-paragraph'>
-						Marina nodded approvingly. "Aria's right. Modern
-						guardians don't just turn people away - they remember
-						intentions, preserve state, and create seamless
-						experiences."
+						Aria studied the glowing patterns with fascination. "I
+						can see connections to my journey! State management for
+						user data, form validation for credentials, and context
+						patterns for sharing authentication across the app."
 					</p>
 
 					<p className='story-paragraph'>
-						A trainee raised her hand. "Master Aria, how do you
-						combine authentication with all the patterns you've
-						learned?"
+						"Exactly!" Marina praised. "Your React foundation makes
+						these concepts much clearer. Modern guardians don't just
+						turn people away - they remember intentions, preserve
+						state, and create seamless experiences."
 					</p>
 
 					<p className='story-paragraph'>
-						Aria smiled, remembering her journey. "In the Eastern
-						Quarter, I learned that authentication is state. In the
-						Western Quarter, that login forms need validation. In
-						the South, how user data flows through protected routes.
-						Watch as Marina and I demonstrate the{' '}
-						<strong>Complete Authentication Flow</strong>."
+						"I can see how everything connects!" Aria exclaimed.
+						"Authentication uses state patterns from the Eastern
+						Quarter, login forms use validation from the Western
+						Quarter, and user data flows through protected routes.
+						Could you show me how these integrate into the{' '}
+						<strong>Complete Authentication Flow</strong>?"
+					</p>
+
+					<p className='story-paragraph'>
+						"Absolutely!" Marina replied. "Let me demonstrate how
+						all these patterns work together in authentication."
 					</p>
 
 					<p className='story-paragraph'>
@@ -135,7 +142,7 @@ function ChapterTwo() {
 								</p>
 							)}
 							{demonstrationMode && (
-								<div className='aria-insight'>
+								<div className='react-insight'>
 									<p>
 										"Notice how we preserve the user's
 										intention even when redirecting..."
@@ -193,7 +200,7 @@ function ChapterTwo() {
 						</div>
 
 						<div className='flow-visualization enhanced'>
-							<h4>Marina & Aria's Authentication Flow</h4>
+							<h4>Marina's Authentication Flow</h4>
 							{authFlowSteps.map((step) => (
 								<div
 									key={step.id}
@@ -208,8 +215,8 @@ function ChapterTwo() {
 											{step.label}
 										</span>
 										{demonstrationMode && (
-											<span className='aria-note'>
-												{step.ariaNote}
+											<span className='react-note'>
+												{step.reactNote}
 											</span>
 										)}
 									</div>
@@ -224,8 +231,9 @@ function ChapterTwo() {
 					<div className='collaborative-explanation'>
 						<p className='story-paragraph'>
 							"Each step integrates patterns from across the
-							kingdom," Aria explained. "Authentication isn't
-							isolated - it touches every system we've built."
+							kingdom," Marina explained. "Authentication isn't
+							isolated - it touches every system you've learned
+							about."
 						</p>
 					</div>
 				</div>
@@ -235,13 +243,12 @@ function ChapterTwo() {
 						The Complete Authentication Architecture
 					</h3>
 					<p className='collaboration-note'>
-						Marina and Aria present their unified authentication
-						system...
+						Marina teaches the unified authentication system...
 					</p>
 
 					<div className='code-example collaborative'>
 						<h3>Intelligent Protected Routes</h3>
-						<pre>{`// Marina's Foundation + Aria's Complete Integration
+						<pre>{`// Marina's Authentication System with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, useFormState, useJourneyTracking } from './hooks';
 
@@ -254,7 +261,7 @@ function IntelligentProtectedRoute({
   const { user, isLoading } = useAuth();
   const location = useLocation();
   
-  // Aria's state preservation from Eastern Quarter
+  // React state preservation from Eastern Quarter
   const { preserveFormState } = useFormState();
   const { trackJourney } = useJourneyTracking();
   
@@ -277,7 +284,7 @@ function IntelligentProtectedRoute({
   }
   
   if (!user) {
-    // Aria's pattern: Preserve ALL state before redirect
+    // React pattern: Preserve ALL state before redirect
     preserveFormState();
     
     return (
@@ -293,7 +300,7 @@ function IntelligentProtectedRoute({
     );
   }
   
-  // Aria's multi-layer validation
+  // React multi-layer validation
   if (requiredRole && user.role !== requiredRole) {
     return (
       <Navigate 
@@ -318,7 +325,7 @@ function IntelligentProtectedRoute({
 
 					<div className='code-example'>
 						<h3>Enhanced Auth Context with Journey Memory</h3>
-						<pre>{`// The Marina-Aria Auth Context Pattern
+						<pre>{`// Marina's Auth Context Pattern
 import { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -330,7 +337,7 @@ export function IntelligentAuthProvider({ children }) {
   const [journey, setJourney] = useState([]);
   const navigate = useNavigate();
   
-  // Aria's pattern: Track complete user journey
+  // React pattern: Track complete user journey
   const trackUserJourney = (action) => {
     setJourney(prev => [...prev, {
       action,
@@ -346,7 +353,7 @@ export function IntelligentAuthProvider({ children }) {
         // Check for saved session
         const savedUser = await getStoredAuth();
         
-        // Aria's addition: Restore preserved state
+        // React addition: Restore preserved state
         if (savedUser) {
           const preservedState = await getPreservedState(savedUser.id);
           if (preservedState) {
@@ -368,7 +375,7 @@ export function IntelligentAuthProvider({ children }) {
     // Marina's secure authentication
     const userData = await authenticateUser(credentials);
     
-    // Aria's enhancements
+    // React enhancements
     trackUserJourney('login_success');
     
     // Restore any preserved form data
@@ -388,7 +395,7 @@ export function IntelligentAuthProvider({ children }) {
   };
   
   const logout = async () => {
-    // Aria's pattern: Save state before logout
+    // React pattern: Save state before logout
     if (user) {
       await preserveUserState(user.id, getCurrentState());
     }
@@ -408,7 +415,7 @@ export function IntelligentAuthProvider({ children }) {
     login,
     logout,
     trackUserJourney,
-    // Aria's additions
+    // React additions
     hasRole: (role) => user?.roles?.includes(role),
     hasPermission: (permission) => user?.permissions?.includes(permission),
     isAuthenticated: !!user
@@ -423,33 +430,37 @@ export function IntelligentAuthProvider({ children }) {
 					</div>
 
 					<div className='auth-patterns enhanced'>
-						<h3>Marina & Aria's Authentication Patterns</h3>
+						<h3>Marina's Authentication Patterns</h3>
 						<div className='pattern-grid masters-edition'>
 							<div className='pattern-card'>
 								<h4>Stateful Sessions</h4>
 								<p className='marina'>Marina: Secure cookies</p>
 								<p className='aria'>
-									Aria: + State preservation
+									Integration: + State preservation
 								</p>
 								<code>httpOnly + state cache</code>
 							</div>
 							<div className='pattern-card'>
 								<h4>Smart Tokens</h4>
 								<p className='marina'>Marina: JWT validation</p>
-								<p className='aria'>Aria: + Journey tracking</p>
+								<p className='aria'>
+									Integration: + Journey tracking
+								</p>
 								<code>JWT + context memory</code>
 							</div>
 							<div className='pattern-card'>
 								<h4>Federated Auth</h4>
 								<p className='marina'>Marina: OAuth flow</p>
-								<p className='aria'>Aria: + Form recovery</p>
+								<p className='aria'>
+									Integration: + Form recovery
+								</p>
 								<code>OAuth + state restore</code>
 							</div>
 						</div>
 						<div className='pattern-explanation'>
 							<p className='story-paragraph'>
 								"Notice how each pattern combines security with
-								user experience," Aria explained. "We're not
+								user experience," Marina explained. "We're not
 								just checking if someone can enter - we're
 								making their journey smooth and memorable."
 							</p>
@@ -458,7 +469,7 @@ export function IntelligentAuthProvider({ children }) {
 
 					<div className='code-example'>
 						<h3>The Ultimate Authentication Flow</h3>
-						<pre>{`// Marina & Aria's Complete Auth System
+						<pre>{`// Marina's Complete Auth System
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -544,7 +555,7 @@ function useMasterAuth() {
   // Graceful logout with state preservation
   const logout = useCallback(async () => {
     if (authState.user) {
-      // Aria's pattern: Save state before logout
+      // React pattern: Save state before logout
       await preserveState(authState.user.id, {
         lastRoute: location.pathname,
         journey: authState.journey,
@@ -581,37 +592,38 @@ function useMasterAuth() {
 
 					<div className='masters-insight'>
 						<p className='story-paragraph'>
-							"This is the power of synthesis," Marina said
-							proudly. "Aria has taken every pattern she learned
-							and woven them into our authentication system."
+							"This is the power of synthesis," Marina explained
+							proudly. "You can see how every pattern you've
+							learned integrates into authentication systems."
 						</p>
 
 						<p className='story-paragraph'>
-							Aria nodded. "Authentication touches everything -
-							components render based on auth state, forms
-							validate credentials, effects track sessions, and
-							context provides access throughout the app. It's all
-							connected."
+							"It's amazing!" Aria marveled. "Authentication
+							touches everything - components render based on auth
+							state, forms validate credentials, effects track
+							sessions, and context provides access throughout the
+							app. It's all connected, just like you're teaching
+							me!"
 						</p>
 					</div>
 				</div>
 				<div className='lesson-insight'>
-					<h3>The Masters' Lesson:</h3>
+					<h3>Marina's Lesson:</h3>
 					<p>
-						The trainees watched in awe as Marina and Aria
-						demonstrated the complete system. "Authentication isn't
-						just about security," Marina began.
+						Aria learned how authentication systems work in React.
+						"Authentication isn't just about security," Marina
+						taught.
 					</p>
 					<p>
 						"It's about creating intelligent, stateful experiences,"
-						Aria continued. "Every pattern I learned - from
+						Marina continued. "Every pattern you've learned - from
 						component lifecycle to form validation - enhances how
 						users authenticate and navigate."
 					</p>
 					<p>
-						"Together," they concluded, "we've created
-						authentication that remembers, adapts, and guides users
-						seamlessly through their journey."
+						"This way," Marina concluded, "we create authentication
+						that remembers, adapts, and guides users seamlessly
+						through their journey."
 					</p>
 					<p className='story-paragraph'>
 						Binary displayed the results: "Authentication system
@@ -633,9 +645,9 @@ function useMasterAuth() {
 						security checkpoint?
 					</p>
 					<p className='story-paragraph'>
-						How has Aria's complete mastery of React patterns
-						transformed simple login/logout into an intelligent
-						authentication system?
+						How does Aria's React foundation help her understand how
+						authentication integrates with all the patterns she's
+						learned?
 					</p>
 				</div>
 			</div>

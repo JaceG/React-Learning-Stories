@@ -2,12 +2,8 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const ChapterThree = () => {
-	const {
-		portalState,
-		modalPortals,
-		createModalPortal,
-		closeModalPortal
-	} = useOutletContext();
+	const { portalState, modalPortals, createModalPortal, closeModalPortal } =
+		useOutletContext();
 
 	const [portalStack, setPortalStack] = useState([]);
 	const [advancedPattern, setAdvancedPattern] = useState('wizard');
@@ -19,54 +15,54 @@ const ChapterThree = () => {
 			id: 'wizard',
 			name: 'Multi-Step Wizard',
 			icon: '🧙',
-			description: 'Sequential navigation through portal steps'
+			description: 'Sequential navigation through portal steps',
 		},
 		{
 			id: 'split',
 			name: 'Split View',
 			icon: '✂️',
-			description: 'Multiple portals side by side'
+			description: 'Multiple portals side by side',
 		},
 		{
 			id: 'nested',
 			name: 'Nested Portals',
 			icon: '🪆',
-			description: 'Portals within portals'
+			description: 'Portals within portals',
 		},
 		{
 			id: 'contextual',
 			name: 'Contextual Portals',
 			icon: '💭',
-			description: 'Position-aware tooltips and popovers'
-		}
+			description: 'Position-aware tooltips and popovers',
+		},
 	];
 
 	const navigationMasteryConcepts = [
 		{
 			concept: 'URL State Sync',
 			mastered: true,
-			description: 'Keep URL and UI in perfect harmony'
+			description: 'Keep URL and UI in perfect harmony',
 		},
 		{
 			concept: 'Deep Linking',
 			mastered: true,
-			description: 'Direct access to any application state'
+			description: 'Direct access to any application state',
 		},
 		{
 			concept: 'Navigation Guards',
 			mastered: true,
-			description: 'Protect routes with validation'
+			description: 'Protect routes with validation',
 		},
 		{
 			concept: 'Transition Choreography',
 			mastered: true,
-			description: 'Smooth, meaningful animations'
+			description: 'Smooth, meaningful animations',
 		},
 		{
 			concept: 'Portal Management',
 			mastered: true,
-			description: 'Complex overlay systems'
-		}
+			description: 'Complex overlay systems',
+		},
 	];
 
 	const handleWizardNavigation = (direction) => {
@@ -81,13 +77,13 @@ const ChapterThree = () => {
 		const newPortal = {
 			id: Date.now(),
 			level: portalStack.length + 1,
-			title: `Portal Level ${portalStack.length + 1}`
+			title: `Portal Level ${portalStack.length + 1}`,
 		};
 		setPortalStack([...portalStack, newPortal]);
 	};
 
 	const removePortalFromStack = (id) => {
-		setPortalStack(portalStack.filter(p => p.id !== id));
+		setPortalStack(portalStack.filter((p) => p.id !== id));
 	};
 
 	return (
@@ -99,45 +95,60 @@ const ChapterThree = () => {
 			<div className='story-section'>
 				<div className='journey-culmination'>
 					<p className='story-paragraph'>
-						The demonstration reached its climax as <strong>Aria</strong> prepared to 
-						showcase the most advanced portal patterns. The entire React Kingdom had 
-						gathered - this was more than a lesson, it was a celebration of mastery.
+						Marina led Aria to the final demonstration chamber where
+						the most advanced portal patterns would be taught. Here,
+						she would learn how all the navigation concepts came
+						together in sophisticated portal systems.
 					</p>
 
 					<p className='story-paragraph'>
-						"You've seen individual techniques," Aria addressed the assembly, her voice 
-						carrying the confidence of true understanding. "Now witness how they 
-						<strong>orchestrate together</strong>. Advanced patterns like <strong>wizard 
-						flows</strong>, <strong>split views</strong>, and <strong>contextual portals</strong> 
-						aren't just navigation - they're the culmination of everything React offers."
+						"You've learned individual techniques," Marina addressed
+						Aria. "Now I'll show you how they
+						<strong>orchestrate together</strong>. Advanced patterns
+						like <strong>wizard flows</strong>,{' '}
+						<strong>split views</strong>, and{' '}
+						<strong>contextual portals</strong>
+						aren't just navigation - they're the culmination of
+						everything React offers."
 					</p>
 
 					<p className='story-paragraph'>
-						She created a complex demonstration with <strong>Binary</strong>'s help - a 
-						multi-step wizard with form validation, nested modals with shared context, 
-						and smooth transitions that preserved state. Every master in attendance saw 
-						their teachings reflected in her work.
+						Marina created a complex demonstration with{' '}
+						<strong>Binary</strong>'s help - a multi-step wizard
+						with form validation, nested modals with shared context,
+						and smooth transitions that preserved state. Aria
+						watched with fascination as all her learning came
+						together in these advanced patterns.
 					</p>
 
 					<p className='story-paragraph'>
-						<strong>Master Aurelius</strong> stood. "Citizens of the React Kingdom, we 
-						witness not just technical mastery, but true understanding. Aria has shown us 
-						that navigation is not just about moving through space - it's about 
-						<strong>guiding users on meaningful journeys</strong> using every tool in our 
-						kingdom."
+						<strong>Master Aurelius</strong> observed with
+						satisfaction. "Marina has taught exceptionally well.
+						Aria's understanding shows that navigation is not just
+						about moving through space - it's about
+						<strong>
+							guiding users on meaningful journeys
+						</strong>{' '}
+						using every tool in our kingdom."
 					</p>
 				</div>
 
 				<div className='advanced-patterns-showcase'>
 					<h3>Advanced Portal Patterns</h3>
-					
+
 					<div className='pattern-selector'>
-						{advancedPatterns.map(pattern => (
+						{advancedPatterns.map((pattern) => (
 							<div
 								key={pattern.id}
-								className={`pattern-card ${advancedPattern === pattern.id ? 'selected' : ''}`}
+								className={`pattern-card ${
+									advancedPattern === pattern.id
+										? 'selected'
+										: ''
+								}`}
 								onClick={() => setAdvancedPattern(pattern.id)}>
-								<span className='pattern-icon'>{pattern.icon}</span>
+								<span className='pattern-icon'>
+									{pattern.icon}
+								</span>
 								<h4>{pattern.name}</h4>
 								<p>{pattern.description}</p>
 							</div>
@@ -149,12 +160,24 @@ const ChapterThree = () => {
 							<div className='wizard-demo'>
 								<h4>Multi-Step Portal Wizard</h4>
 								<div className='wizard-progress'>
-									{[1, 2, 3, 4].map(step => (
+									{[1, 2, 3, 4].map((step) => (
 										<div
 											key={step}
-											className={`progress-step ${wizardStep >= step ? 'completed' : ''} ${wizardStep === step ? 'active' : ''}`}>
-											<span className='step-number'>{step}</span>
-											<span className='step-label'>Step {step}</span>
+											className={`progress-step ${
+												wizardStep >= step
+													? 'completed'
+													: ''
+											} ${
+												wizardStep === step
+													? 'active'
+													: ''
+											}`}>
+											<span className='step-number'>
+												{step}
+											</span>
+											<span className='step-label'>
+												Step {step}
+											</span>
 										</div>
 									))}
 								</div>
@@ -162,13 +185,17 @@ const ChapterThree = () => {
 									<h5>Current Step: {wizardStep}</h5>
 									<p>Wizard content for step {wizardStep}</p>
 									<div className='wizard-navigation'>
-										<button 
-											onClick={() => handleWizardNavigation('prev')}
+										<button
+											onClick={() =>
+												handleWizardNavigation('prev')
+											}
 											disabled={wizardStep === 1}>
 											← Previous
 										</button>
-										<button 
-											onClick={() => handleWizardNavigation('next')}
+										<button
+											onClick={() =>
+												handleWizardNavigation('next')
+											}
 											disabled={wizardStep === 4}>
 											Next →
 										</button>
@@ -185,12 +212,19 @@ const ChapterThree = () => {
 										<div
 											key={portal.id}
 											className='stacked-portal'
-											style={{ 
+											style={{
 												zIndex: index + 1,
-												transform: `scale(${1 - index * 0.05}) translateY(${index * 10}px)`
+												transform: `scale(${
+													1 - index * 0.05
+												}) translateY(${index * 10}px)`,
 											}}>
 											<h5>{portal.title}</h5>
-											<button onClick={() => removePortalFromStack(portal.id)}>
+											<button
+												onClick={() =>
+													removePortalFromStack(
+														portal.id
+													)
+												}>
 												Close
 											</button>
 										</div>
@@ -206,9 +240,7 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>
-					Advanced Navigation Patterns
-				</h3>
+				<h3 className='section-title'>Advanced Navigation Patterns</h3>
 
 				<div className='code-example'>
 					<pre>{`// Multi-Step Wizard with Route Persistence
@@ -532,7 +564,7 @@ function useNavigation() {
 			<div className='navigation-mastery'>
 				<h3>Your Navigation Mastery</h3>
 				<div className='mastery-summary'>
-					{navigationMasteryConcepts.map(item => (
+					{navigationMasteryConcepts.map((item) => (
 						<div key={item.concept} className='mastery-item'>
 							<span className='mastery-icon'>⭐</span>
 							<div className='mastery-details'>
@@ -549,54 +581,69 @@ function useNavigation() {
 				<h3>The Navigation Master Ceremony</h3>
 				<div className='grand-finale'>
 					<p className='story-paragraph'>
-						As Aria's demonstration concluded, the Great Hall erupted in appreciation. 
-						<strong>Marina</strong> stepped forward, tears of pride in her eyes.
+						As Marina's demonstration concluded, Aria watched with
+						deep understanding.
+						<strong>Marina</strong> smiled with the satisfaction of
+						a teacher whose student had grasped the deepest
+						concepts.
 					</p>
-					
+
 					<p className='story-paragraph'>
-						"When I requested Aria for the Navigation Corps," Marina announced, "I knew 
-						her comprehensive knowledge would bring new insights. But she has exceeded 
-						every expectation. She hasn't just learned our ways - she has revolutionized 
-						them."
+						"When I began teaching Aria navigation," Marina
+						reflected, "I knew her comprehensive React foundation
+						would help her learn quickly. She has exceeded every
+						expectation. She hasn't just learned the techniques -
+						she understands how they all connect."
 					</p>
-					
+
 					<div className='testimonials-section'>
 						<div className='master-testimonial'>
-							<p><strong>Elder useState:</strong> "Her state management in portals shows 
-							mastery beyond her years."</p>
+							<p>
+								<strong>Elder useState:</strong> "Her
+								understanding of state management in portals
+								shows excellent learning."
+							</p>
 						</div>
 						<div className='master-testimonial'>
-							<p><strong>Captain Thunk:</strong> "The way she orchestrates effects with 
-							navigation is simply brilliant."</p>
+							<p>
+								<strong>Captain Thunk:</strong> "The way she
+								grasps how effects work with navigation is
+								impressive."
+							</p>
 						</div>
 						<div className='master-testimonial'>
-							<p><strong>Commander Validus:</strong> "Form validation across portal 
-							boundaries - we never imagined it possible!"</p>
+							<p>
+								<strong>Commander Validus:</strong> "She
+								understands form validation across portal
+								boundaries perfectly!"
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className='aria-final-address'>
-				<h3>Aria's Vision for the Future</h3>
+			<div className='completion-ceremony'>
+				<h3>The Learning Journey Complete</h3>
 				<div className='final-speech'>
-					<p className='aria-words'>
-						"My journey through the React Kingdom taught me that no concept exists in 
-						isolation," Aria addressed the assembly. "Components need state, state needs 
-						effects, forms need validation, and navigation ties it all together. But most 
-						importantly, I learned that true mastery comes from teaching others."
+					<p className='aria-reflection'>
+						"My journey through the React Kingdom taught me that no
+						concept exists in isolation," Aria reflected.
+						"Components need state, state needs effects, forms need
+						validation, and navigation ties it all together. Marina
+						has shown me how everything connects."
 					</p>
-					
-					<p className='aria-words'>
-						"I choose to stay and guide future apprentices. Not just in navigation, but 
-						in seeing React as one unified system. Every apprentice deserves to discover 
-						these connections, to feel the joy of understanding how it all works together."
+
+					<p className='aria-gratitude'>
+						"Thank you for teaching me to see React as one unified
+						system. I understand now how every concept I've learned
+						builds on the others to create something beautiful."
 					</p>
-					
+
 					<p className='binary-moment'>
-						<strong>Binary</strong> projected a holographic map of the React Kingdom, 
-						showing how every quarter connected through the Central Citadel. "We did it, 
-						Aria! From uncertain apprentice to Kingdom Guide!"
+						<strong>Binary</strong> projected a holographic map of
+						the React Kingdom, showing how every quarter connected
+						through the Central Citadel. "We did it, Aria! From
+						uncertain apprentice to knowledgeable practitioner!"
 					</p>
 				</div>
 			</div>
@@ -604,35 +651,39 @@ function useNavigation() {
 			<div className='new-role-announcement'>
 				<h3>A New Chapter Begins</h3>
 				<p className='story-paragraph'>
-					<strong>Master Aurelius</strong> placed a ceremonial medallion around Aria's 
-					neck. "By unanimous decision of all Quarter Masters, we hereby appoint 
-					<strong>Aria</strong> as the first <strong>React Kingdom Integration Guide</strong>. 
-					She will help future apprentices see not just the parts, but the whole."
+					<strong>Master Aurelius</strong> smiled with pride. "Aria
+					has completed her foundational training in React. She now
+					understands how components, state, props, hooks, forms, and
+					navigation all work together."
 				</p>
-				
+
 				<p className='story-paragraph'>
-					The crowd cheered as Aria stood with the masters - no longer a student, but 
-					a teacher, mentor, and guide. Her journey through components, state, props, 
-					hooks, forms, and navigation had transformed her into something greater: 
-					someone who could show others the beauty of how it all connects.
+					Marina placed a hand on Aria's shoulder. "Your journey
+					through the React Kingdom has given you a solid foundation.
+					You understand not just the individual concepts, but how
+					they connect to create powerful applications. You're ready
+					for whatever challenges await in your development career."
 				</p>
 			</div>
 
 			<div className='reflection-section'>
 				<h3>Your Journey Continues</h3>
 				<p>
-					Like Aria, you've traveled through the entire React Kingdom. You've seen how 
-					components provide structure, state brings life, props enable communication, 
-					hooks add power, forms connect users, and navigation creates experiences.
+					Like Aria, you've traveled through the entire React Kingdom.
+					You've seen how components provide structure, state brings
+					life, props enable communication, hooks add power, forms
+					connect users, and navigation creates experiences.
 				</p>
 				<p>
-					But your journey doesn't end here. What will you build with this complete 
-					understanding? How will you combine these concepts in new and innovative ways? 
-					Most importantly, who will you teach along the way?
+					But your journey doesn't end here. What will you build with
+					this complete understanding? How will you combine these
+					concepts in new and innovative ways? Most importantly, who
+					will you teach along the way?
 				</p>
 				<p className='final-thought'>
-					Remember Aria's greatest lesson: React isn't a collection of separate concepts - 
-					it's one beautiful, interconnected system. And now, you understand it all.
+					Remember Aria's greatest lesson: React isn't a collection of
+					separate concepts - it's one beautiful, interconnected
+					system. And now, you understand it all.
 				</p>
 			</div>
 		</div>

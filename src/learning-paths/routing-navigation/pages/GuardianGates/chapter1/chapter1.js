@@ -17,7 +17,7 @@ function ChapterOne() {
 			icon: '🏪',
 			required: 'none',
 			description: 'Open to all citizens',
-			ariaPattern: 'Basic component access',
+			reactPattern: 'Basic component access',
 		},
 		{
 			id: 'merchant',
@@ -25,7 +25,7 @@ function ChapterOne() {
 			icon: '💰',
 			required: 'merchant',
 			description: 'Requires merchant license',
-			ariaPattern: 'State-based permissions',
+			reactPattern: 'State-based permissions',
 		},
 		{
 			id: 'academy',
@@ -33,7 +33,7 @@ function ChapterOne() {
 			icon: '🎓',
 			required: 'student',
 			description: 'Students and teachers only',
-			ariaPattern: 'Hook-verified access',
+			reactPattern: 'Hook-verified access',
 		},
 		{
 			id: 'royal',
@@ -41,63 +41,66 @@ function ChapterOne() {
 			icon: '👑',
 			required: 'royal',
 			description: 'Royal family and advisors',
-			ariaPattern: 'Form-validated entry',
+			reactPattern: 'Form-validated entry',
 		},
 	];
 
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 1: Shared Leadership</h2>
+				<h2 className='chapter-title'>
+					Chapter 1: The Guardian Training
+				</h2>
 
 				<div className='chapter-bridge'>
 					<p>
-						The Navigation Corps training grounds buzzed with
-						activity. Marina and Aria stood before a group of eager
-						trainees, preparing to unveil the next evolution of
-						navigation - secure, intelligent route protection that
-						would safeguard the most sensitive areas of the React
-						Kingdom.
+						Marina led Aria to the Navigation Corps training
+						grounds, where advanced security patterns were taught.
+						Here, she would learn how to protect routes with
+						authentication and authorization - securing the most
+						sensitive areas of React applications.
 					</p>
 				</div>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
 						"Welcome to Guardian Gates training," Marina announced,
-						her voice carrying authority and warmth. "Today, Master
-						Aria and I will teach you patterns that combine
-						navigation security with everything she's mastered
-						across the kingdom."
+						her voice carrying authority and warmth. "Today, I'll
+						teach you how to protect routes using authentication and
+						authorization. Aria will be learning these patterns
+						alongside you."
 					</p>
 
 					<p className='story-paragraph'>
-						Aria stepped forward, Binary projecting a complex
-						security diagram. "Protected routes aren't just about
-						checking if someone's logged in," she explained.
-						"They're about integrating authentication with state
-						management, form validation, and intelligent user
-						flows."
+						Marina activated a complex security diagram. "Protected
+						routes aren't just about checking if someone's logged
+						in," she explained. "They're about integrating
+						authentication with state management, form validation,
+						and intelligent user flows."
 					</p>
 
 					<p className='story-paragraph'>
-						A young trainee raised her hand. "Master Aria, how did
-						you learn to combine all these patterns so seamlessly?"
+						Aria studied the patterns with fascination. "I can see
+						connections to everything I've learned! Authentication
+						is like state management, route protection uses
+						validation patterns, and user flows connect to the form
+						handling I studied in the Western Quarter."
 					</p>
 
 					<p className='story-paragraph'>
-						Aria smiled, remembering her own journey. "By visiting
-						every quarter of our kingdom. In the Northern Quarter, I
-						learned that routes are components. In the Eastern
-						Quarter, that navigation is state. In the Southern
-						Quarter, how data flows through protected paths. And in
-						the Western Quarter, how forms and validation create
-						secure gateways."
+						"Excellent observations!" Marina praised. "Your journey
+						through the React Kingdom gives you the perfect
+						foundation for understanding route security. You've
+						learned components, state, hooks, and forms - now you'll
+						see how they all work together in navigation
+						protection."
 					</p>
 
 					<p className='story-paragraph'>
-						"And now," Marina added with pride, "she brings all that
-						knowledge here. Watch as we demonstrate the Guardian
-						Gates system we've created together."
+						"And now," Marina continued, "you'll learn how to apply
+						all that knowledge here. Watch as I demonstrate the
+						Guardian Gates system and how it integrates with React
+						patterns."
 					</p>
 					<div className='gate-visualization enhanced'>
 						<h3>The Integrated Guardian System</h3>
@@ -105,15 +108,16 @@ function ChapterOne() {
 							<button
 								className='teaching-toggle'
 								onClick={() => setTeachingMode(true)}>
-								🎓 Enter Teaching Mode
+								🎓 Enter Learning Mode
 							</button>
 						)}
 
 						{teachingMode && (
 							<div className='teaching-intro'>
-								<p className='aria-teaching'>
-									"Let me show you how each gate integrates
-									patterns from across the kingdom..."
+								<p className='marina-teaching'>
+									Marina explains: "Watch how each gate
+									integrates patterns from across the
+									kingdom..."
 								</p>
 							</div>
 						)}
@@ -141,9 +145,9 @@ function ChapterOne() {
 										{gate.description}
 									</p>
 									{teachingMode && (
-										<div className='aria-insight'>
-											<strong>Aria's Pattern:</strong>
-											<p>{gate.ariaPattern}</p>
+										<div className='react-insight'>
+											<strong>React Pattern:</strong>
+											<p>{gate.reactPattern}</p>
 										</div>
 									)}
 									{guardianState[gate.id] ? (
@@ -162,7 +166,7 @@ function ChapterOne() {
 						{selectedGate && (
 							<div className='gate-attempt master-demonstration'>
 								<h4>
-									Marina & Aria's Authentication Flow:{' '}
+									Marina's Authentication Flow:{' '}
 									{selectedGate.name}
 								</h4>
 								<div className='demonstration-flow'>
@@ -170,8 +174,8 @@ function ChapterOne() {
 										<strong>Marina's Check:</strong>
 										<p>Route authentication</p>
 									</div>
-									<div className='aria-part'>
-										<strong>Aria's Enhancement:</strong>
+									<div className='react-part'>
+										<strong>React Integration:</strong>
 										<p>Integrated validation</p>
 									</div>
 								</div>
@@ -201,33 +205,31 @@ function ChapterOne() {
 					<div className='collaborative-teaching'>
 						<p className='story-paragraph'>
 							"Notice how each gate type requires different
-							patterns," Aria explained to the trainees. "The
-							Public Market uses basic component rendering -
-							anyone can enter. But the Royal Chambers? That
-							requires form validation, state checks, and
-							multi-factor authentication."
+							patterns," Marina explained. "The Public Market uses
+							basic component rendering - anyone can enter. But
+							the Royal Chambers? That requires form validation,
+							state checks, and multi-factor authentication."
 						</p>
 
 						<p className='story-paragraph'>
-							Marina nodded approvingly. "And watch how Aria
-							integrates all her knowledge. She's not just
-							checking if someone's logged in - she's validating
-							their entire journey through the application."
+							Aria studied the examples with growing
+							understanding. "I can see how my React foundation
+							applies here! Authentication isn't just checking if
+							someone's logged in - it's validating their entire
+							journey through the application."
 						</p>
 					</div>
 				</div>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>
-						The Marina-Aria Guardian Pattern
-					</h3>
+					<h3 className='section-title'>Marina's Guardian Pattern</h3>
 					<p className='collaboration-note'>
-						The masters demonstrate their integrated approach...
+						Marina demonstrates the integrated approach...
 					</p>
 
 					<div className='code-example collaborative'>
 						<h3>Basic Protection with Intelligence</h3>
-						<pre>{`// Marina's Foundation + Aria's Enhancements
+						<pre>{`// Marina's Guardian System with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, useFormValidation, useStatePreservation } from './hooks';
 
@@ -237,10 +239,10 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
   const { user, isLoading } = useAuth();
   const location = useLocation();
   
-  // Aria's state preservation
+  // React state preservation
   const { preserveCurrentState } = useStatePreservation();
   
-  // Aria's form validation integration
+  // React form validation integration
   const { hasUnsavedChanges, validateBeforeLeaving } = useFormValidation();
   
   // Show loading while checking auth
@@ -250,7 +252,7 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
   
   // No user? Preserve state and redirect
   if (!user) {
-    // Aria's pattern: Save where they wanted to go
+    // React pattern: Save where they wanted to go
     preserveCurrentState();
     return (
       <Navigate 
@@ -263,7 +265,7 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
     );
   }
   
-  // Check additional requirements (Aria's multi-layer validation)
+  // Check additional requirements (React multi-layer validation)
   if (requirements.role && user.role !== requirements.role) {
     return <Navigate to="/unauthorized" />;
   }
@@ -297,8 +299,8 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
 								Marina: Route Check
 							</span>
 							<span className='flow-arrow'>→</span>
-							<span className='flow-step aria'>
-								Aria: State Preservation
+							<span className='flow-step react'>
+								React: State Preservation
 							</span>
 							<span className='flow-arrow'>→</span>
 							<span className='flow-decision'>
@@ -329,9 +331,9 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
 
 					<div className='code-example'>
 						<h3>Advanced Guardian Patterns</h3>
-						<pre>{`// The Complete Guardian System by Marina & Aria
+						<pre>{`// Marina's Complete Guardian System
 
-// 1. Form-Aware Protection (Aria's Western Quarter Knowledge)
+// 1. Form-Aware Protection (Western Quarter Knowledge)
 function FormAwareGuardian({ children }) {
   const { user } = useAuth();
   const { formState, saveFormState } = useFormContext();
@@ -406,14 +408,14 @@ function UltimateGuardian({
   fallback = '/login',
   children 
 }) {
-  // Combine all of Aria's patterns
+  // Combine all React patterns
   const { hasPermissions } = usePermissionGuard(
     requirements.permissions || []
   );
   const { validateAccess } = useAccessValidation();
   const { preserveJourney } = useJourneyTracking();
   
-  // Marina's routing + Aria's validation
+  // Marina's routing + React validation
   const canAccess = useMemo(() => {
     return validateAccess({
       ...requirements,
@@ -447,32 +449,30 @@ function UltimateGuardian({
 						</p>
 
 						<p className='story-paragraph'>
-							Marina smiled. "That's where experience comes in.
-							Aria has journeyed through every quarter, mastered
-							every pattern. She knows that the best guardian
+							Marina smiled. "That's where learning comes in. Aria
+							has studied through every quarter, learned every
+							pattern. She understands that the best guardian
 							isn't the strongest lock, but the smartest system."
 						</p>
 					</div>
 				</div>
 
 				<div className='lesson-insight'>
-					<h3>The Masters' Wisdom:</h3>
+					<h3>Marina's Wisdom:</h3>
 					<p>
-						Marina and Aria stood together before the trainees.
-						"Guardian Gates aren't just security checkpoints,"
-						Marina began.
+						Marina addressed the learning group. "Guardian Gates
+						aren't just security checkpoints," she explained.
 					</p>
 					<p>
 						"They're intelligent systems that understand context,"
-						Aria continued. "They preserve user state, validate
+						Marina continued. "They preserve user state, validate
 						forms, track journeys, and provide graceful fallbacks.
-						Every pattern I learned across the kingdom makes these
-						guards smarter."
+						Every React pattern you learn makes these guards
+						smarter."
 					</p>
 					<p>
-						"Together," they said in unison, "we've created
-						protection that enhances rather than hinders the user
-						experience."
+						"This way," Marina concluded, "we create protection that
+						enhances rather than hinders the user experience."
 					</p>
 					<p>Guardian attempts tracked: {attemptedEntries.length}</p>
 					<p className='story-paragraph'>
@@ -494,8 +494,8 @@ function UltimateGuardian({
 						redirecting for authentication?
 					</p>
 					<p className='story-paragraph'>
-						How has Aria's complete journey through the React
-						Kingdom prepared her to teach these advanced patterns?
+						How does Aria's journey through the React Kingdom help
+						her understand these advanced route protection patterns?
 					</p>
 				</div>
 			</div>

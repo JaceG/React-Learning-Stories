@@ -15,7 +15,7 @@ function NavigationCompass() {
 		props: true,
 		hooks: true,
 		forms: true,
-		navigation: false
+		navigation: false,
 	});
 
 	const navigate = useNavigate();
@@ -32,9 +32,14 @@ function NavigationCompass() {
 	const handleNavigation = (path) => {
 		setActiveRoute(path);
 		setNavigationHistory([...navigationHistory, path]);
-		
+
 		// Update compass based on navigation
-		const directions = { '/': 0, '/about': 90, '/products': 180, '/contact': 270 };
+		const directions = {
+			'/': 0,
+			'/about': 90,
+			'/products': 180,
+			'/contact': 270,
+		};
 		setCompassDirection(directions[path] || 0);
 	};
 
@@ -52,15 +57,20 @@ function NavigationCompass() {
 	return (
 		<div className='lesson-container navigation-compass-container'>
 			<div className='lesson-opener'>
-				<p>The Central Citadel rose before Aria, its crystalline spires reaching toward 
-				the clouds. This architectural marvel served as the nexus where all quarters of 
-				the React Kingdom connected. Captain Marina awaited at the Navigation Command Center, 
-				having specifically requested Aria's expertise for a revolutionary new system.</p>
+				<p>
+					The Central Citadel rose before Aria, its crystalline spires
+					reaching toward the clouds. This architectural marvel served
+					as the nexus where all quarters of the React Kingdom
+					connected. Captain Marina awaited at the Navigation Command
+					Center, ready to teach Aria the final fundamental skill -
+					routing and navigation through React applications.
+				</p>
 			</div>
-			
+
 			<h1 className='lesson-title'>The Navigation Compass</h1>
 			<p className='lesson-subtitle'>
-				Where masters meet as equals to chart the future of React applications
+				Learn navigation fundamentals from Captain Marina at the Central
+				Citadel
 			</p>
 
 			<div className='chapter-navigation'>
@@ -90,7 +100,7 @@ function NavigationCompass() {
 					currentView,
 					switchView,
 					masterStatus,
-					achieveMastery
+					achieveMastery,
 				}}
 			/>
 
