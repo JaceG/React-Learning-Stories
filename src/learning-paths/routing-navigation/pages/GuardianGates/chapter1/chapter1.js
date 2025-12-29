@@ -67,8 +67,7 @@ function ChapterOne() {
 						"Welcome to Guardian Gates training," Marina announced,
 						her voice carrying authority and warmth. "Today, I'll
 						teach you how to protect routes using authentication and
-						authorization. Aria will be learning these patterns
-						alongside you."
+						authorization."
 					</p>
 
 					<p className='story-paragraph'>
@@ -444,15 +443,15 @@ function UltimateGuardian({
 						</p>
 
 						<p className='story-paragraph'>
-							A trainee asked, "But how do we know which pattern
-							to use?"
+							Aria asked, "But how do we know which pattern to
+							use?"
 						</p>
 
 						<p className='story-paragraph'>
-							Marina smiled. "That's where learning comes in. Aria
-							has studied through every quarter, learned every
-							pattern. She understands that the best guardian
-							isn't the strongest lock, but the smartest system."
+							Marina smiled. "That's where learning comes in. You
+							have studied through every quarter, learned every
+							pattern. You understand that the best guardian isn't
+							the strongest lock, but the smartest system."
 						</p>
 					</div>
 				</div>

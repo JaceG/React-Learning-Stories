@@ -825,10 +825,10 @@ export function useMasterAuthorization() {
 					<div className='masters-finale'>
 						<h3>The Grand Authorization Synthesis</h3>
 						<p className='story-paragraph'>
-							Marina demonstrated the complete system to the
-							learning group. "This shows how we can take simple
-							role checks and transform them into an intelligent,
-							reactive authorization system," she explained.
+							Marina demonstrated the complete system. "This shows
+							how we can take simple role checks and transform
+							them into an intelligent, reactive authorization
+							system," she explained.
 						</p>
 
 						<p className='story-paragraph'>
@@ -902,9 +902,8 @@ export function useMasterAuthorization() {
 				<div className='lesson-insight'>
 					<h3>Marina's Ultimate Guardian Wisdom:</h3>
 					<p>
-						Marina addressed the chamber, her teaching resonating
-						through the hall. "Authentication asks 'Who are you?'"
-						she began.
+						Marina addressed Aria directly. "Authentication asks
+						'Who are you?'" she began.
 					</p>
 					<p>
 						"Authorization asks 'What can you do?'" Marina
