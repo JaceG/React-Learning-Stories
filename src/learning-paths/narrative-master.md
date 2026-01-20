@@ -2969,4 +2969,451 @@ Aria felt the completion of her foundational education. From every quarter of th
 
 ---
 
-*[Continue with next learning path...]*
+## Learning Path 7: Performance & Optimization
+
+Enter the Temple of Speed where every millisecond matters. Learn the ancient arts of optimization to create React applications that run at the speed of thought, delighting users with instantaneous responses and smooth interactions.
+
+---
+
+### Lesson 7.1: The Speed Sanctum
+
+A story about mastering the ancient arts of React performance optimization
+
+---
+
+#### Chapter 7.1.1: The Slowing Kingdom
+
+**Lesson Opener:**
+
+Aria, now a React Kingdom Guide, stood at the edge of the Northern Mountains. The summons had been urgent - applications throughout the kingdom were slowing to a crawl. Citizens complained of stuttering interfaces and frozen forms.
+
+**Story Section:**
+
+Master Velocity emerged from the mist, his robes shimmering with optimization symbols. "Welcome, Aria. Your reputation precedes you. The kingdom faces a threat unlike any before - the Lag Monster has awakened."
+
+He gestured toward the valley below where components flickered erratically. "The monster feeds on inefficiency - unnecessary re-renders, memory leaks, and bloated bundles. Before we can fight it, we must learn to see its influence."
+
+"These crystals," Master Velocity explained, "represent the vital signs of our applications. When they glow red, the Lag Monster grows stronger. Our first weapon is the React DevTools Profiler."
+
+**Character Development:**
+
+*Master Velocity*
+Guardian of the Speed Sanctum and keeper of optimization secrets. His motto: "Measure twice, optimize once. Performance is not about speed alone, but about the perception of speed."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+The first step in optimization is observation. The React DevTools Profiler is your lens into the performance realm. It reveals which components render frequently, how long they take, and why they re-render. Remember: you cannot optimize what you cannot measure. Always profile before making optimization decisions.
+
+**Reflection Questions:**
+- As Aria learns to see the Lag Monster's influence, think about your own applications. Have you noticed components that seem slow? Do certain interactions cause the UI to freeze? The Profiler can reveal these hidden performance dragons.
+- What performance issues might be lurking in your code? How would you use the Profiler to hunt them down?
+
+---
+
+#### Chapter 7.1.2: The Art of Memoization
+
+**Story Bridge:**
+
+Master Velocity led Aria deeper into the sanctum, where ancient optimization crystals lined the walls. "Now that you can see the Lag Monster's attacks, it's time to learn our first defense: Memoization."
+
+**Story Section:**
+
+He pulled out two glowing scrolls. "These are React's memoization spells - React.memo for components and useMemo for expensive calculations. They create a shield of memory around your work."
+
+Aria studied the scrolls intently. "So instead of repeating the same calculations or renders, we remember the results?"
+
+"Precisely!" Master Velocity smiled. "But beware - memoization itself has a cost. Use it wisely, only where the benefit outweighs the overhead."
+
+**Character Development:**
+
+*Aria's Memoization Insight*
+"I see now! It's like keeping a journal of calculations. If someone asks the same question, I don't need to figure it out again - I just check my notes! But keeping too many notes could slow me down too..."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Memoization is selective memory. React.memo prevents component re-renders when props haven't changed, while useMemo caches the results of expensive calculations. But remember: memoization has its own cost. Profile first, then memoize only the components and calculations that truly benefit from it.
+
+**Reflection Questions:**
+- Master Velocity has shown Aria the power of memoization. In your own applications, where might you have components that re-render unnecessarily? What expensive calculations run on every render that could be memoized?
+- Consider the trade-off: Is the cost of checking the memoization cache worth avoiding the re-render or recalculation? How would you decide?
+
+---
+
+#### Chapter 7.1.3: The Sanctum's Secret Techniques
+
+**Story Bridge:**
+
+"You've mastered component and computation memoization," Master Velocity said, leading Aria to the inner sanctum. "But there's one more crucial technique: useCallback."
+
+**Story Section:**
+
+He pointed to a wall of interconnected crystals. "Watch what happens when I touch one." As he touched a crystal, all the others flickered and re-rendered. "Without stable function references, every parent update cascades to all children."
+
+Aria understood immediately. "Even if we memoize child components, passing new function instances as props defeats the optimization!"
+
+"Exactly!" Master Velocity beamed. "useCallback ensures function stability across renders. Combined with React.memo and useMemo, it forms the Trinity of Optimization."
+
+**Character Development:**
+
+*The Trinity of Optimization*
+⚛️ React.memo: Guards components from unnecessary renders
+🧮 useMemo: Caches expensive computations
+📞 useCallback: Stabilizes function references
+
+*Aria's Mastery Moment*
+"I understand now! Performance optimization isn't about using these tools everywhere - it's about identifying bottlenecks with the Profiler, then applying the right optimization technique. The Trinity works together: memo prevents renders, useMemo caches calculations, and useCallback stabilizes functions."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+The Trinity of Optimization - React.memo, useMemo, and useCallback - work in harmony to defeat performance problems. But remember: premature optimization is the root of all evil. Always profile first, identify real bottlenecks, then apply these techniques strategically. The goal is not to optimize everything, but to optimize what matters.
+
+**Reflection Questions:**
+- Aria has learned all three optimization techniques and defeated the Lag Monster. But Master Velocity's final wisdom rings true: "The greatest optimization is often better architecture."
+- In your applications, how might you restructure components to avoid performance problems in the first place? When is optimization necessary, and when is it better to rethink your approach?
+
+**Chapter Ending:**
+
+With the Lag Monster defeated, the React Kingdom's performance was restored. Aria had mastered the optimization arts, but her journey was far from over. The Memory Monastery awaited, where even deeper performance secrets lay hidden...
+
+---
+
+### Lesson 7.2: Memory Monastery
+
+A story about mastering the sacred arts of memory management and preventing the dreaded leaks
+
+---
+
+#### Chapter 7.2.1: The Memory Plague
+
+**Story Bridge:**
+
+Aria arrived at the Memory Monastery, an ancient structure floating in the clouds above the React Kingdom. Applications below were suffering from a mysterious plague - they would start fast but gradually slow to a crawl, eventually crashing entirely.
+
+**Story Section:**
+
+Brother Binary, the monastery's eldest monk, greeted her with concern. "The Memory Plague has returned, Aria. Applications are holding onto memories they should release, creating memory leaks that grow until nothing can function."
+
+He led her to the Observatory, where ethereal representations of memory usage floated like ghosts. "Before we can heal the plague, you must understand its three primary forms: Event Listener Leaks, Detached DOM Nodes, and Closure Captures."
+
+**Character Development:**
+
+*Brother Binary*
+Keeper of the Memory Monastery and guardian against the Memory Plague. His wisdom: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Memory leaks are silent killers of application performance. They occur when your application holds references to objects that are no longer needed, preventing the garbage collector from freeing that memory. Common sources include forgotten event listeners, detached DOM nodes, and closures that capture large objects. The key to prevention is disciplined cleanup.
+
+**Reflection Questions:**
+- Brother Binary has shown Aria the three forms of the Memory Plague. In your own applications, have you noticed performance degrading over time? Do you always clean up event listeners and timers?
+- Consider how a small leak, multiplied by thousands of users and hours of usage, can bring even the mightiest application to its knees.
+
+---
+
+#### Chapter 7.2.2: The Sacred Tools of Memory
+
+**Story Bridge:**
+
+Brother Binary led Aria deeper into the monastery to a chamber filled with glowing instruments. "To heal the Memory Plague, you must master our sacred tools - the Chrome DevTools Memory Profiler."
+
+**Story Section:**
+
+He activated a mystical viewing portal that revealed the inner workings of memory. "This is how we see what others cannot - the hidden allocations, the retained objects, the paths that prevent garbage collection."
+
+"Three sacred techniques will serve you well," he continued. "Heap Snapshots to see memory at a moment in time, Allocation Timeline to track growth over time, and Manual Garbage Collection to force cleanup."
+
+**Character Development:**
+
+*Brother Binary's Teaching*
+"The tools reveal what the eyes cannot see. Use them wisely to hunt down every leak, trace every reference, and understand every allocation."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Chrome DevTools Memory Profiler is your window into the application's memory usage. Heap snapshots capture the state at a moment, allocation timelines show growth over time, and the retainers view reveals why objects can't be garbage collected. Master these tools, and no memory leak can hide from you.
+
+**Reflection Questions:**
+- Brother Binary has revealed the sacred tools of memory profiling. How often do you profile your applications? Do you wait until users complain about performance, or do you proactively hunt for leaks?
+- Consider making memory profiling part of your regular development workflow, especially before major releases.
+
+---
+
+#### Chapter 7.2.3: The Healing Rituals
+
+**Story Bridge:**
+
+"Now comes the most important knowledge," Brother Binary said, leading Aria to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently."
+
+**Story Section:**
+
+The sanctuary walls glowed with ancient inscriptions, each describing a different healing technique. "These rituals have been refined over generations of monks. Apply them faithfully, and your applications will remain healthy for eternity."
+
+Brother Binary handed Aria a sacred scroll. "The time has come to put your knowledge into practice. Demonstrate each ritual, and the monastery will grant you the title of Memory Guardian."
+
+"You have mastered all four healing rituals!" Brother Binary proclaimed. "The Memory Plague retreats before your knowledge. You are now a Memory Guardian, protector of application health!"
+
+**Character Development:**
+
+*The Four Healing Rituals*
+🎯 Event Cleanup Ritual: Always return cleanup functions
+🔮 WeakMap Wisdom: Prevent reference leaks
+📍 Reference Discipline: Clear refs on unmount
+💎 Memoization Mastery: Prevent recreation
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Memory management is not about complex algorithms or clever tricks. It's about discipline and consistency. Always clean up what you create, use weak references when appropriate, manage refs carefully, and memoize wisely. These four rituals, applied consistently, will keep your applications healthy and performant throughout their lifetime.
+
+**Reflection Questions:**
+- Aria has become a Memory Guardian, mastering the ancient rituals of memory management. But Brother Binary's final lesson is most important: "Knowledge without practice is worthless. Apply these rituals in every component you write."
+- Will you take the Memory Guardian oath? Will you commit to always cleaning up your effects, managing your references, and keeping your applications healthy?
+
+**Chapter Ending:**
+
+With the Memory Plague defeated, the React Kingdom's applications ran smoothly once more. Aria had not only learned to identify and fix memory leaks but had become a guardian of memory health. Yet her journey continued, for the Lazy Library awaited, promising secrets of code splitting and lazy loading...
+
+---
+
+### Lesson 7.3: The Lazy Library
+
+A story about mastering the ancient art of code splitting and lazy loading
+
+---
+
+#### Chapter 7.3.1: The Burden of Knowledge
+
+**Story Bridge:**
+
+Aria arrived at the Lazy Library, a mystical repository where all React knowledge was stored. But something was wrong - the main entrance was blocked by an enormous bundle of books, too heavy for anyone to move.
+
+**Story Section:**
+
+Keeper Chronos, the ancient librarian, appeared from the shadows. "Ah, another victim of the Bundle Burden. Young developers pack every possible library into their applications, not realizing that users must carry this weight with every page load."
+
+He gestured to the towering shelves. "Each book represents a library or component. Some are essential for every visitor, but many are needed only by a few. Yet we force everyone to carry them all. This is the curse of eager loading."
+
+**Character Development:**
+
+*Keeper Chronos*
+Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Modern JavaScript applications often ship massive bundles containing code that many users will never execute. Every kilobyte increases download time, parse time, and execution time. The first step to optimization is understanding what's in your bundle and why. Tools like webpack-bundle-analyzer reveal the true cost of your dependencies.
+
+**Reflection Questions:**
+- Keeper Chronos has revealed the burden that eager loading places on users. Think about your own applications - do you import large libraries that are only used in specific features? Do your users download code for admin panels they'll never see?
+- The journey to performance begins with awareness. What heavy books are your users forced to carry?
+
+---
+
+#### Chapter 7.3.2: The Art of Lazy Loading
+
+**Story Bridge:**
+
+Keeper Chronos led Aria to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the Lazy Wing, where we practice the art of temporal loading."
+
+**Story Section:**
+
+"Watch this," he said, waving his hand. A book materialized just as he grasped for it. "With React.lazy() and Suspense, we can summon components only when they're needed, not before."
+
+"The magic has two parts," Chronos explained. "First, code splitting breaks your bundle into smaller chunks. Then, dynamic imports load these chunks on demand. Your users download only what they use."
+
+**Character Development:**
+
+*Keeper Chronos's Wisdom*
+"See how the bundle shrinks as we defer loading? Users get a faster initial experience, and bandwidth is conserved. But remember - lazy loading has overhead. Use it for heavy components, not tiny ones."
+- Split at route boundaries first
+- Lazy load heavy third-party libraries
+- Consider preloading on user interaction hints
+- Always provide meaningful loading states
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+React.lazy() and Suspense enable code splitting at the component level. By breaking your application into chunks and loading them on demand, you can significantly reduce initial bundle size and improve Time to Interactive (TTI). The key is finding the right split points - usually routes, modals, and feature-specific components.
+
+**Reflection Questions:**
+- Keeper Chronos has shown you the power of lazy loading. Consider your own applications - which components are used by all users, and which are accessed by only a few?
+- Every lazy-loaded component is a gift to your users - faster loads, less data usage, and better performance. Where will you apply this magic?
+
+---
+
+#### Chapter 7.3.3: The Grand Library Architecture
+
+**Story Bridge:**
+
+"Now for the final lesson," Keeper Chronos said, leading Aria to the Library's architectural plans. "Lazy loading is powerful, but without proper strategy, it becomes chaos."
+
+**Story Section:**
+
+The plans revealed intricate pathways and loading patterns. "The secret is in the splitting strategy. Route-based splitting for major sections, vendor chunking for libraries, and intelligent preloading for predicted paths."
+
+"Master these four strategies," Chronos continued, "and you'll achieve the perfect balance between performance and user experience. The Library will recognize you as a Performance Architect."
+
+"Magnificent!" Keeper Chronos exclaimed. "You have mastered all four optimization strategies. The Lazy Library recognizes you as a Performance Architect!"
+
+**Character Development:**
+
+*The Four Optimization Strategies*
+🛤️ Route-Based Splitting: Split code by routes - the most effective strategy
+📚 Vendor Chunking: Separate third-party libraries for better caching
+🔮 Smart Preloading: Load components when users are likely to need them
+🎯 Resource Prefetching: Fetch resources during idle time
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+True performance optimization requires a comprehensive strategy. Route-based splitting provides the foundation, vendor chunking improves caching, smart preloading anticipates user needs, and prefetching utilizes idle time. Together, these strategies create applications that are not just fast, but intelligently fast - loading the right code at the right time.
+
+**Reflection Questions:**
+- Aria has become a Performance Architect, mastering the art of strategic code splitting. But Keeper Chronos's final wisdom resonates: "Performance is not a feature, it's a fundamental requirement. Every millisecond counts."
+- As you build your applications, remember the Lazy Library's teachings. Split wisely, load intelligently, and always measure the impact. Your users will thank you with their engagement.
+
+**Chapter Ending:**
+
+With the secrets of the Lazy Library mastered, applications across the React Kingdom loaded with unprecedented speed. Aria had transformed from a student to an architect of performance. But one final challenge remained - the Virtualization Vault, where the secrets of handling infinite data awaited...
+
+---
+
+### Lesson 7.4: Virtualization Vault
+
+A story about mastering the art of rendering infinite lists with finite resources
+
+---
+
+#### Chapter 7.4.1: The Infinite Archive
+
+**Story Bridge:**
+
+Deep beneath the React Kingdom lay the Virtualization Vault, an endless archive containing millions of scrolls. Aria descended into its depths, only to find the entrance blocked by a crowd of exhausted messengers.
+
+**Story Section:**
+
+Vault Guardian Zephyr appeared, floating effortlessly above the chaos. "They try to carry every scroll at once," he explained. "The human eye can only read a few at a time, yet they burden themselves with thousands. This is the Rendering Paradox."
+
+He gestured to the infinite shelves stretching into darkness. "When rendering lists of thousands of items, React creates DOM nodes for each one. The browser struggles, memory explodes, and scrolling becomes torture. We must teach you the art of virtual scrolling."
+
+**Character Development:**
+
+*Vault Guardian Zephyr*
+Master of the infinite scroll and keeper of the Virtualization Vault. His wisdom: "Render only what the eye can see. The rest exists in potential, not in the DOM."
+
+*Aria's Journal - Day X*
+[section not found]
+
+*Guardian Zephyr's Warning* [section not supposed to be here]
+"You see the problem now! Each scroll they carry weighs down the entire kingdom. But fear not - in the next chamber, I will teach you to render only what the eye can see, creating the illusion of infinity with finite resources."
+
+**Lesson Insight:**
+
+Large lists are one of the most common performance bottlenecks in web applications. Whether it's a social feed, data table, or search results, rendering thousands of items destroys performance. The browser must calculate layout, paint, and composite for every single item, even those far outside the viewport. This is why virtual scrolling exists - to create the illusion of a complete list while only rendering what's necessary.
+
+**Reflection Questions:**
+- Guardian Zephyr has revealed the burden of infinite rendering. Think about your own applications - do you have lists that grow without bound? Product searches that return thousands of results? Chat histories that never end?
+- Every unnecessary DOM node is a weight your users must carry. The path to performance begins with recognizing this burden.
+
+---
+
+#### Chapter 7.4.2: The Window of Perception
+
+**Story Bridge:**
+
+Guardian Zephyr led Aria to a mystical viewing chamber. "Watch closely," he said, waving his hand. The infinite archive transformed - instead of all scrolls being visible, only a small window showed a handful at a time.
+
+**Story Section:**
+
+"This is the secret of virtualization," Zephyr explained. "We create a window that shows only what fits in the viewport, plus a small buffer. As you scroll, we swap the contents seamlessly. The user perceives infinity, but we render only necessity."
+
+He demonstrated with a gesture. "The virtual spacer maintains the scrollbar's truth - showing the full height. But the actual scrolls? They materialize only when needed, then vanish when passed. This is the art of windowing."
+
+**Character Development:**
+
+*Guardian Zephyr's Teaching*
+"See how we maintain the illusion? The scrollbar shows truth - 10,000 items exist. But the DOM holds only what's needed. This is the balance between perception and performance."
+
+Key Principles:
+- Render only visible items plus buffer
+- Reuse DOM nodes as content changes
+- Maintain accurate scrollbar with spacer
+- Calculate positions absolutely
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Virtual scrolling (windowing) renders only the items currently visible in the viewport, plus a small buffer for smooth scrolling. By maintaining a virtual spacer element that represents the total height, we preserve natural scrolling behavior while dramatically reducing DOM nodes. Libraries like react-window and react-virtualized make this technique accessible, handling edge cases and optimizations automatically.
+
+**Reflection Questions:**
+- Guardian Zephyr has shown you the power of rendering only what's necessary. This technique transforms impossible lists into smooth experiences. Where in your applications could virtual scrolling unlock new possibilities?
+- Remember: users don't need to see everything at once - they need to access everything smoothly. Virtualization provides that illusion perfectly.
+
+---
+
+#### Chapter 7.4.3: Mastering the Infinite
+
+**Story Bridge:**
+
+"You've learned the basics," Guardian Zephyr said, "but the Vault holds deeper secrets. Aria, to become a true Virtualization Master, you must conquer four advanced challenges."
+
+**Story Section:**
+
+He revealed four mystical portals, each glowing with different energy. "Dynamic heights for content that varies. Horizontal realms for sideways scrolling. Infinite loading for endless data. And the ultimate challenge - grid virtualization for two-dimensional infinity."
+
+"Master all four," Zephyr proclaimed, "and the Vault will grant you the title of Keeper of the Infinite. Your applications will handle any amount of data with grace and speed."
+
+"Magnificent!" Guardian Zephyr's voice echoed through the Vault. "You have mastered all four advanced techniques. The Virtualization Vault recognizes you as its Keeper!"
+
+**Character Development:**
+
+*The Four Advanced Techniques*
+📏 Dynamic Heights: Items with varying heights require special handling - measuring and caching sizes
+↔️ Horizontal Virtualization: Scroll horizontally with the same efficiency
+♾️ Infinite Loading: New data loads automatically as users approach the end
+⚡ Grid Virtualization: Virtualizing both rows AND columns for massive grids
+
+*Aria's Journal - Day X*
+[section not found]
+
+**Lesson Insight:**
+
+Virtualization is not just about lists - it's a philosophy of rendering only what's necessary. From dynamic heights to infinite grids, the principles remain: measure, calculate, render efficiently, and reuse aggressively. Master these techniques, and no amount of data will overwhelm your applications. The key is choosing the right tool for each challenge.
+
+**Reflection Questions:**
+- Aria has become the Keeper of the Infinite, mastering every virtualization technique. But Guardian Zephyr's final lesson resonates: "True mastery isn't using these techniques everywhere - it's knowing when they're needed."
+- As you build your applications, remember the Vault's teachings. Not every list needs virtualization, but when you face truly massive data, these techniques transform the impossible into the effortless.
+
+**Chapter Ending:**
+
+With the secrets of the Virtualization Vault mastered, Aria had completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive, she had learned to make React applications not just functional, but blazingly fast.
+
+The React Kingdom celebrated as applications everywhere became smoother, faster, and more responsive. Aria's journey through Act III had transformed her into a true Performance Master, ready for whatever challenges lay ahead...
+
+---
+
+*[End of Learning Path 7: Performance & Optimization]*
