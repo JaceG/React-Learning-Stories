@@ -468,6 +468,30 @@
   margin-bottom: 10px;
 }
 
+/* Character Introduction / Journal Entry */
+.character-intro {
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.character-intro h4 {
+  color: #495057;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.character-intro p {
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
 .lesson-navigation {
   display: flex;
   justify-content: space-between;
@@ -553,6 +577,23 @@
     width: 100%;
     margin-bottom: 10px;
   }
+}
+
+/* Chapter Summary Container */
+.chapter-summary {
+  margin-top: 40px;
+}
+
+.chapter-summary .lesson-insight,
+.chapter-summary .reflection-section,
+.chapter-summary .character-intro,
+.chapter-summary .chapter-ending {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.chapter-summary .chapter-ending {
+  margin-bottom: 0;
 }
 
 /* Chapter Ending Styles */

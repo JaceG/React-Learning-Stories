@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
 	const [selectedProp, setSelectedProp] = useState(null);
@@ -101,13 +102,6 @@ const ChapterTwo = () => {
 					It's how we create harmony in the kingdom."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 2</h4>
-					<p>The props system is genius! Instead of each workshop guessing what to make, 
-					they receive clear instructions. I tried sending different props to the Button 
-					workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I'll 
-					learn about component families working together!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -188,29 +182,22 @@ function Button(props) {
 }`}</pre>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Props Lesson:</h3>
-				<p>
-					Props are how components talk to each other. They're passed
-					from parent to child, like arguments to a function. Props
-					allow components to be flexible and reusable with different
-					data and behaviors. Master Aurelius emphasizes that props flow 
-					in one direction - from parent to child - maintaining order in 
-					the component hierarchy.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the messenger metaphor help you understand how
-					props work in React?
-				</p>
-				<p>
-					Why is it important that props can carry different types of
-					data (strings, numbers, functions)?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Props Lesson:',
+					content:
+						'Props are how components talk to each other. They\'re passed from parent to child, like arguments to a function. Props allow components to be flexible and reusable with different data and behaviors. Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.',
+				}}
+				reflectionQuestions={[
+					'How does the messenger metaphor help you understand how props work in React?',
+					'Why is it important that props can carry different types of data (strings, numbers, functions)?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 2",
+					content:
+						'The props system is genius! Instead of each workshop guessing what to make, they receive clear instructions. I tried sending different props to the Button workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I\'ll learn about component families working together!',
+				}}
+			/>
 		</div>
 	);
 };

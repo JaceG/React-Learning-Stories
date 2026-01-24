@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
 	const [activeComponent, setActiveComponent] = useState(null);
@@ -191,14 +192,6 @@ const ChapterThree = () => {
 					interfaces. "I can build anything now!" she exclaimed.
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 3</h4>
-					<p>Today I learned the most important lesson yet - components are meant 
-					to work together! By combining simple, focused components, I can build 
-					complex applications. Each component does one thing well, making them 
-					easy to understand, test, and reuse. I feel like I truly understand 
-					the Component Kingdom now!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -253,41 +246,26 @@ function Dashboard() {
 // Aria's insight: "Each component has a single responsibility!"`}</pre>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Composition Lesson:</h3>
-				<p>
-					React encourages building UIs through composition rather
-					than inheritance. Complex interfaces are created by
-					combining simpler components together, creating a hierarchy
-					that's both flexible and maintainable. Master Aurelius's final 
-					teaching: "A kingdom is strongest when each citizen excels at 
-					their craft and works in harmony with others."
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does component composition help you build more complex
-					interfaces?
-				</p>
-				<p>
-					Why is it beneficial for larger components to delegate
-					responsibilities to smaller, specialized components?
-				</p>
-			</div>
-			
-			<div className='chapter-ending'>
-				<p>As the sun set over the Component Workshop District, Master Aurelius 
-				handed Aria a sealed scroll. "Tomorrow, you'll journey to the Eastern 
-				Quarter to meet the Props Messengers Guild. They hold deeper secrets 
-				about component communication."</p>
-				
-				<p>Aria clutched the scroll, excited for her next adventure. She had 
-				learned to create components, make them communicate, and compose them 
-				into complex structures. But she sensed there was so much more to discover 
-				in the React Kingdom.</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Composition Lesson:',
+					content:
+						'React encourages building UIs through composition rather than inheritance. Complex interfaces are created by combining simpler components together, creating a hierarchy that\'s both flexible and maintainable. Master Aurelius\'s final teaching: "A kingdom is strongest when each citizen excels at their craft and works in harmony with others."',
+				}}
+				reflectionQuestions={[
+					'How does component composition help you build more complex interfaces?',
+					'Why is it beneficial for larger components to delegate responsibilities to smaller, specialized components?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 3",
+					content:
+						'Today I learned the most important lesson yet - components are meant to work together! By combining simple, focused components, I can build complex applications. Each component does one thing well, making them easy to understand, test, and reuse. I feel like I truly understand the Component Kingdom now!',
+				}}
+				chapterEnding={[
+					'As the sun set over the Component Workshop District, Master Aurelius handed Aria a sealed scroll. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the Props Messengers Guild. They hold deeper secrets about component communication."',
+					'Aria clutched the scroll, excited for her next adventure. She had learned to create components, make them communicate, and compose them into complex structures. But she sensed there was so much more to discover in the React Kingdom.',
+				]}
+			/>
 		</div>
 	);
 };

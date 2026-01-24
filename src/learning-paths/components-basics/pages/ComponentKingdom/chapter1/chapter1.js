@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterOne = () => {
 	const [highlightedCard, setHighlightedCard] = useState(null);
@@ -23,7 +24,7 @@ const ChapterOne = () => {
 				
 				<p className='story-paragraph'>
 					"Welcome, young apprentice," Aurelius said, his beard sparkling with fragments of code. 
-					"In our kingdom, everything you see is built from magical building blocks called 
+					"In our kingdom, everything you see is built from magical building blocks called{' '}
 					<strong>Components</strong>. Unlike the static structures in your homeland, these 
 					Components are alive and responsive."
 				</p>
@@ -64,11 +65,6 @@ const ChapterOne = () => {
 					the ability to be reused throughout the realm."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 1</h4>
-					<p>Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. 
-					He mentioned something about workshops that create living components. Can't wait to explore!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -621,28 +617,22 @@ function Form(props) {
 }`}</pre>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Component Lesson:</h3>
-				<p>
-					In React, everything you see is a Component – a reusable
-					piece of code that returns JSX elements describing what
-					should appear on the screen. Components can be as simple as
-					a button or as complex as an entire page. Master Aurelius teaches 
-					that each component should have a single, clear purpose.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of components as specialized workshops
-					help you understand their purpose in React?
-				</p>
-				<p>
-					Why is it useful to have many small, focused components
-					rather than a few large ones?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Component Lesson:',
+					content:
+						'In React, everything you see is a Component – a reusable piece of code that returns JSX elements describing what should appear on the screen. Components can be as simple as a button or as complex as an entire page. Master Aurelius teaches that each component should have a single, clear purpose.',
+				}}
+				reflectionQuestions={[
+					'How does thinking of components as specialized workshops help you understand their purpose in React?',
+					'Why is it useful to have many small, focused components rather than a few large ones?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 1",
+					content:
+						'Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. He mentioned something about workshops that create living components. Can\'t wait to explore!',
+				}}
+			/>
 		</div>
 	);
 };
