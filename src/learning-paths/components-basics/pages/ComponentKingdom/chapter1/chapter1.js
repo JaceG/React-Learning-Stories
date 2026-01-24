@@ -618,6 +618,13 @@ function Form(props) {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Master Aurelius',
+						description:
+							'The Grand Architect of the React Kingdom. His beard sparkles with fragments of code, and he oversees the Component Workshop District. He guides apprentices in mastering the art of building reusable, purposeful components.',
+					},
+				]}
 				lessonInsight={{
 					title: 'The Component Lesson:',
 					content:

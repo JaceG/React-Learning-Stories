@@ -468,25 +468,49 @@
   margin-bottom: 10px;
 }
 
-/* Character Introduction / Journal Entry */
+/* Character Introduction - New character profiles */
 .character-intro {
-  background-color: #f8f9fa;
-  border-left: 4px solid #6c757d;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  border-left: 4px solid #9333ea;
   padding: 20px;
   margin: 20px 0;
   border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.1);
 }
 
 .character-intro h4 {
-  color: #495057;
+  color: #7c3aed;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.character-intro p {
+  color: #5b21b6;
+  font-style: normal;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Journal Entry - Aria's Journal */
+.journal-entry {
+  background-color: #fef4e7;
+  border: 2px solid #f9d18a;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.journal-entry h4 {
+  color: #9a6e3a;
   margin-top: 0;
   margin-bottom: 10px;
   font-style: italic;
 }
 
-.character-intro p {
-  color: #6c757d;
+.journal-entry p {
+  color: #6b4c28;
   font-style: italic;
   margin: 0;
   line-height: 1.6;
@@ -587,6 +611,7 @@
 .chapter-summary .lesson-insight,
 .chapter-summary .reflection-section,
 .chapter-summary .character-intro,
+.chapter-summary .journal-entry,
 .chapter-summary .chapter-ending {
   margin-top: 0;
   margin-bottom: 25px;

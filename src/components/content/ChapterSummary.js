@@ -82,7 +82,7 @@ const ChapterSummary = ({
 
 			{/* Journal Entry - Aria's journal (optional) */}
 			{journalEntry && (
-				<div className='character-intro'>
+				<div className='journal-entry'>
 					<h4>{journalEntry.title}</h4>
 					{typeof journalEntry.content === 'string' ? (
 						<p>{journalEntry.content}</p>
