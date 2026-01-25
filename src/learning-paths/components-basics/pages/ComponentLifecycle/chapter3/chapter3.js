@@ -553,6 +553,10 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 				<h3 className='section-title'>
 					Common Cleanup Tasks in componentWillUnmount
 				</h3>
+				<p className='instruction'>
+					<strong>👉 Chronos reveals the essential cleanup patterns.</strong>{' '}
+					These are the most common resources that need to be cleaned up when a component unmounts.
+				</p>
 
 				<div className='cleanup-tasks-grid'>
 					<div className='cleanup-card'>

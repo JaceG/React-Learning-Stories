@@ -68,30 +68,33 @@ const ChapterTwo = () => {
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					"The real magic of JSX," Professor Syntaxis explained, "comes 
-					from its ability to embed JavaScript expressions directly within 
-					the markup. Watch as I demonstrate the <strong>Curly Brace 
-					Incantation</strong>!"
+					"The real magic of JSX," Professor Syntaxis explained,
+					"comes from its ability to embed JavaScript expressions
+					directly within the markup. Watch as I demonstrate the{' '}
+					<strong>Curly Brace Incantation</strong>!"
 				</p>
 
 				<p className='story-paragraph'>
-					The professor waved his wand, and curly braces began to glow 
-					around various parts of a component spell. "These braces act as 
-					portals between the markup realm and the JavaScript realm. 
-					Anything inside them is evaluated as pure JavaScript!"
+					The professor waved his wand, and curly braces began to glow
+					around various parts of a component spell. "These braces act
+					as portals between the markup realm and the JavaScript
+					realm. Anything inside them is evaluated as pure
+					JavaScript!"
 				</p>
-				
+
 				<p className='story-paragraph'>
-					Aria watched in fascination as a small sprite named 
-					<strong>Binary</strong> appeared. "I help evaluate expressions!" 
-					Binary chirped. "When I see curly braces, I know it's time to 
-					run JavaScript calculations!"
+					Aria watched in fascination as a small sprite named
+					<strong>Binary</strong> appeared. "I help evaluate
+					expressions!" Binary chirped. "When I see curly braces, I
+					know it's time to run JavaScript calculations!"
 				</p>
 
 				<div className='code-example'>
 					<div className='scroll-header'>
 						<span>Expression Magic Demonstration</span>
-						<span className='discovered-by'>Binary's favorite example</span>
+						<span className='discovered-by'>
+							Binary's favorite example
+						</span>
 					</div>
 					<pre>{`// Aria practices embedding expressions
 function Greeter(props) {
@@ -120,21 +123,30 @@ return (
 				</div>
 
 				<p className='story-paragraph'>
-					"By the scrolls!" Aria gasped. "We can put any JavaScript 
-					expression inside those curly braces - variables, function calls, 
-					even conditional logic!"
+					"By the scrolls!" Aria gasped. "We can put any JavaScript
+					expression inside those curly braces - variables, function
+					calls, even conditional logic!"
 				</p>
-				
+
 				<p className='story-paragraph'>
-					"Indeed," Syntaxis nodded. "This fusion of markup and logic is 
-					what makes React components so powerful. Now, let Binary guide 
-					you through the Expression Playground..."
+					"Indeed," Syntaxis nodded. "This fusion of markup and logic
+					is what makes React components so powerful. Now, let Binary
+					guide you through the Expression Playground..."
 				</p>
-				
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Interactive Exercise: Binary's Expression Playground</h3>
+				<h3 className='section-title'>
+					Interactive Exercise: Binary's Expression Playground
+				</h3>
+				<p className='instruction'>
+					<strong>
+						👉 Binary invites you to explore the Expression
+						Playground.
+					</strong>{' '}
+					Select different expression types from the dropdown to see
+					how JavaScript expressions work inside JSX curly braces.
+				</p>
 
 				<div className='expression-selector'>
 					<label>Try different JSX expression types: </label>
@@ -265,13 +277,15 @@ return (
 												buttonStyle === 'primary'
 													? '#0066cc'
 													: buttonStyle ===
-													  'secondary'
-													? '#6c757d'
-													: buttonStyle === 'danger'
-													? '#dc3545'
-													: buttonStyle === 'success'
-													? '#28a745'
-													: '#0066cc',
+														  'secondary'
+														? '#6c757d'
+														: buttonStyle ===
+															  'danger'
+															? '#dc3545'
+															: buttonStyle ===
+																  'success'
+																? '#28a745'
+																: '#0066cc',
 											color: 'white',
 											padding: '10px 15px',
 											border: 'none',

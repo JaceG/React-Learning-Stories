@@ -172,10 +172,9 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Deliver Props to Craftsmen
 				</h3>
-				<p>
-					Drag each prop bag to the appropriate craftsman who needs
-					it. Remember, props can only travel down from App to
-					Components!
+				<p className='instruction'>
+					<strong>👉 Drag each prop bag to the appropriate craftsman who needs it.</strong>{' '}
+					Remember, props can only travel down from App to Components!
 				</p>
 
 				<div

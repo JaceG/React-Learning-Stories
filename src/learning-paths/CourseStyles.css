@@ -415,7 +415,39 @@
   font-size: 20px;
 }
 
-/* Instruction Box - global style for interactive exercise instructions */
+/* Instruction styles - global style for interactive exercise instructions */
+.instruction {
+  background: #e8f4fd;
+  border: 2px solid #ffd700;
+  border-left: 4px solid #3498db;
+  border-radius: 0 8px 8px 0;
+  padding: 30px 25px 20px;
+  margin: 30px auto 20px;
+  position: relative;
+  box-shadow: 0 3px 15px rgba(253, 203, 110, 0.3);
+  max-width: 700px;
+  text-align: center;
+  color: #856404;
+  line-height: 1.6;
+}
+
+.instruction::before {
+  content: '💡';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 30px;
+  background-color: white;
+  padding: 0 10px;
+  border-radius: 50%;
+}
+
+.instruction strong {
+  color: #e17055;
+  font-weight: 600;
+}
+
+/* Instruction Box - same styling, for div wrapper pattern */
 .instruction-box {
   background: #e8f4fd;
   border: 2px solid #ffd700;

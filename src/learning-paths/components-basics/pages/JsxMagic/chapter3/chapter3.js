@@ -179,6 +179,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The JSX Rulebook</h3>
+				<p className='instruction'>
+					<strong>👉 Professor Syntaxis presents the Sacred Rules of JSX.</strong>{' '}
+					Study each rule carefully - these are the foundations of writing valid JSX code.
+				</p>
 
 				<div className='jsx-rules'>
 					<div className='rule-card'>
