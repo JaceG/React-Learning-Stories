@@ -381,19 +381,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.instruction-box {
-  background: #e8f4fd;
-  border-left: 4px solid #3498db;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 0 8px 8px 0;
-}
-
-.instruction-box p {
-  margin: 0;
-  color: #2c5282;
-}
-
 .hook-demonstrations {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

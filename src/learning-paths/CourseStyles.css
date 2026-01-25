@@ -415,6 +415,46 @@
   font-size: 20px;
 }
 
+/* Instruction Box - global style for interactive exercise instructions */
+.instruction-box {
+  background: #e8f4fd;
+  border: 2px solid #ffd700;
+  border-left: 4px solid #3498db;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 25px;
+  margin: 20px auto;
+  position: relative;
+  box-shadow: 0 3px 15px rgba(253, 203, 110, 0.3);
+  max-width: 700px;
+  text-align: center;
+}
+
+.instruction-box::before {
+  content: '💡';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 30px;
+  background-color: white;
+  padding: 0 10px;
+  border-radius: 50%;
+}
+
+.instruction-box p {
+  margin: 0;
+  color: #856404;
+  line-height: 1.6;
+}
+
+.instruction-box p + p {
+  margin-top: 10px;
+}
+
+.instruction-box strong {
+  color: #e17055;
+  font-weight: 600;
+}
+
 .code-example {
   background-color: #2d3436;
   border-radius: 6px;

@@ -406,19 +406,6 @@
   font-size: 14px;
 }
 
-.instruction-box {
-  background: #e8f4fd;
-  border-left: 4px solid #3498db;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 0 8px 8px 0;
-}
-
-.instruction-box p {
-  margin: 0;
-  color: #2c5282;
-}
-
 .form-orchestra {
   background: #f8f9ff;
   border-radius: 12px;

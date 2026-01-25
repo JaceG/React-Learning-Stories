@@ -582,19 +582,6 @@
   margin-bottom: 0;
 }
 
-.instruction-box {
-  background-color: #e8f4fd;
-  border-left: 4px solid #3498db;
-  padding: 15px;
-  border-radius: 0 5px 5px 0;
-  margin-bottom: 20px;
-}
-
-.instruction-box p {
-  margin: 0;
-  color: #34495e;
-}
-
 /* JSX Rules */
 .jsx-rules {
   display: flex;

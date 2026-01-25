@@ -1519,54 +1519,6 @@ input:checked + .toggle-slider:before {
   margin: 0;
 }
 
-/* Instruction Box */
-.instruction-box {
-  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-  border-radius: 12px;
-  padding: 20px 25px;
-  margin: 20px auto;
-  position: relative;
-  box-shadow: 0 3px 15px rgba(253, 203, 110, 0.3);
-  max-width: 700px;
-  text-align: center;
-}
-
-.instruction-box::before {
-  content: '💡';
-  position: absolute;
-  top: -15px;
-  left: 20px;
-  font-size: 30px;
-  background-color: white;
-  padding: 0 10px;
-  border-radius: 50%;
-}
-
-.instruction-box p {
-  margin: 0;
-  color: #2d3436;
-  line-height: 1.6;
-}
-
-.instruction-box strong {
-  color: #e17055;
-  font-weight: 600;
-}
-
-/* Dark mode for instruction box */
-.chapter.dark .instruction-box {
-  background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-  box-shadow: 0 3px 15px rgba(211, 84, 0, 0.2);
-}
-
-.chapter.dark .instruction-box p {
-  color: #ecf0f1;
-}
-
-.chapter.dark .instruction-box strong {
-  color: #ffeaa7;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .kingdom-illustration {

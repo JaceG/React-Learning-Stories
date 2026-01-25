@@ -336,45 +336,6 @@
   margin-top: 10px;
 }
 
-/* Instructions */
-.instruction-box {
-  background-color: #fff3cd;
-  border: 2px solid #ffd700;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 30px auto;
-  text-align: center;
-  max-width: 600px;
-  position: relative;
-  animation: gentle-pulse 2s infinite;
-}
-
-.instruction-box:before {
-  content: "👆";
-  font-size: 24px;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.instruction-box p {
-  color: #856404;
-  margin: 0;
-  font-size: 1.1em;
-  line-height: 1.4;
-}
-
-.instruction-box strong {
-  color: #533f03;
-}
-
-@keyframes gentle-pulse {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-  100% { transform: translateY(0); }
-}
-
 /* Chapter 2 - Props Messenger Styles */
 .messenger-illustration {
   display: flex;
