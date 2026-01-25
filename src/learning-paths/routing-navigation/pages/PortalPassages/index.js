@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './PortalPassages.css';
 
@@ -13,17 +14,6 @@ function PortalPassages() {
 	const [modalPortals, setModalPortals] = useState([]);
 	const [scrollPositions, setScrollPositions] = useState({});
 	const [routeAnimations, setRouteAnimations] = useState({});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Portal functions
 	const openPortal = (portalConfig) => {
@@ -70,28 +60,12 @@ function PortalPassages() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Portal Passages</h1>
-			<p className='lesson-subtitle'>
-				Master advanced navigation patterns and route transitions
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Portal Passages'
+				subtitle='Master advanced navigation patterns and route transitions'
+				opener='Marina led Aria to the Portal Passages chamber, where the most advanced navigation concepts awaited - modals, overlays, and parallel routes. Here, she would learn how React portals create parallel dimensions for UI elements that need to escape the normal DOM hierarchy.'
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -111,27 +85,10 @@ function PortalPassages() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='routing-navigation'
 				lessonId='portal-passages'
+				totalChapters={3}
 			/>
 		</div>
 	);

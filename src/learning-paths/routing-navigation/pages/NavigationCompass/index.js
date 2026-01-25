@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './NavigationCompass.css';
 
@@ -17,16 +18,6 @@ function NavigationCompass() {
 		forms: true,
 		navigation: false,
 	});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Navigation handling
 	const handleNavigation = (path) => {
@@ -56,40 +47,12 @@ function NavigationCompass() {
 
 	return (
 		<div className='lesson-container navigation-compass-container'>
-			<div className='lesson-opener'>
-				<p>
-					The Central Citadel rose before Aria, its crystalline spires
-					reaching toward the clouds. This architectural marvel served
-					as the nexus where all quarters of the React Kingdom
-					connected. Captain Marina awaited at the Navigation Command
-					Center, ready to teach Aria the final fundamental skill -
-					routing and navigation through React applications.
-				</p>
-			</div>
-
-			<h1 className='lesson-title'>The Navigation Compass</h1>
-			<p className='lesson-subtitle'>
-				Learn navigation fundamentals from Captain Marina at the Central
-				Citadel
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='The Navigation Compass'
+				subtitle='Learn navigation fundamentals from Captain Marina at the Central Citadel'
+				opener={`The Central Citadel rose before Aria, its crystalline spires reaching toward the clouds. This architectural marvel served as the nexus where all quarters of the React Kingdom connected. Captain Marina awaited at the Navigation Command Center, ready to teach Aria the final fundamental skill - routing and navigation through React applications.`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -104,27 +67,10 @@ function NavigationCompass() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='routing-navigation'
 				lessonId='navigation-compass'
+				totalChapters={3}
 			/>
 		</div>
 	);

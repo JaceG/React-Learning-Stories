@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const { authState, roleGates, checkPermission, gateStatuses } =
@@ -97,18 +101,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: The Ultimate Guardian Synthesis
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Marina led Aria to the grand Hall of Authority for the
-						final lesson in route protection. Here, she would learn
-						the ultimate guardian patterns - systems that integrated
-						every React concept she had studied across her journey.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='The Ultimate Guardian Synthesis'
+					bridge='Marina led Aria to the grand Hall of Authority for the final lesson in route protection. Here, she would learn the ultimate guardian patterns - systems that integrated every React concept she had studied across her journey.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -313,13 +310,13 @@ function ChapterThree() {
 					<h3 className='section-title'>
 						Marina's Authorization Architecture
 					</h3>
-					<p className='collaboration-note'>
-						Marina demonstrates the complete authorization system...
-					</p>
+					<InstructionBox character='Click "Activate Master Demonstration" to see the complete role hierarchy in action!'>
+						Select different roles in the pyramid to see what areas of the kingdom they can access.
+					</InstructionBox>
 
-					<div className='code-example collaborative'>
-						<h3>Intelligent Role-Based Protection</h3>
-						<pre>{`// Marina's Security with React Integration
+					<CodeExample
+						title="Intelligent Role-Based Protection"
+						code={`// Marina's Security with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, usePermissions, useStateTracking } from './master-hooks';
 
@@ -427,12 +424,12 @@ function IntelligentRoleGuard({
   
   // All checks passed!
   return children;
-}`}</pre>
-					</div>
+}`}
+					/>
 
-					<div className='code-example'>
-						<h3>The Complete Permission System</h3>
-						<pre>{`// Marina's Intelligent Permission Architecture
+					<CodeExample
+						title="The Complete Permission System"
+						code={`// Marina's Intelligent Permission Architecture
 import { createContext, useContext, useState, useEffect } from 'react';
 
 // Permission Context (Southern Quarter pattern)
@@ -544,8 +541,8 @@ export function useIntelligentPermissions() {
     ...context,
     can: canWithAudit
   };
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='authorization-patterns enhanced'>
 						<h3>Marina's Authorization Patterns</h3>
@@ -600,9 +597,9 @@ export function useIntelligentPermissions() {
 						</div>
 					</div>
 
-					<div className='code-example'>
-						<h3>The Ultimate Authorization System</h3>
-						<pre>{`// Marina's Complete Authorization Architecture
+					<CodeExample
+						title="The Ultimate Authorization System"
+						code={`// Marina's Complete Authorization Architecture
 import { useState, useEffect, useCallback, useMemo } from 'react';
 
 // The Master Authorization Service
@@ -819,8 +816,8 @@ export function useMasterAuthorization() {
     PermissionGate,
     refreshPolicies: () => authService.clearCache()
   };
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='masters-finale'>
 						<h3>The Grand Authorization Synthesis</h3>
@@ -899,57 +896,20 @@ export function useMasterAuthorization() {
 					</div>
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>Marina's Ultimate Guardian Wisdom:</h3>
-					<p>
-						Marina addressed Aria directly. "Authentication asks
-						'Who are you?'" she began.
-					</p>
-					<p>
-						"Authorization asks 'What can you do?'" Marina
-						continued.
-					</p>
-					<p>
-						"But intelligent authorization," Marina concluded, "asks
-						'What should you be able to do in this context, at this
-						time, with your history, considering the current state
-						of the application?'"
-					</p>
-					<p className='story-paragraph'>
-						Binary's final projection lit up the chamber: "Guardian
-						Gates evolution complete! Basic checks: TRANSCENDED.
-						Intelligent authorization: ACHIEVED. Marina's teaching +
-						Aria's learning: EXCELLENT. Future students will study
-						this system for generations!"
-					</p>
-					<p className='story-paragraph'>
-						Marina smiled with the satisfaction of a teacher whose
-						student had grasped complex concepts. Aria had learned
-						to protect routes using advanced patterns that
-						integrated everything she'd studied across the React
-						Kingdom.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does integrating all React patterns (components,
-						state, props, hooks, forms, and routing) create a more
-						intelligent authorization system than traditional role
-						checks?
-					</p>
-					<p className='story-paragraph'>
-						What benefits come from treating authorization as a
-						reactive, contextual system rather than static
-						permission lists?
-					</p>
-					<p className='story-paragraph'>
-						How does Aria's journey through every quarter of the
-						React Kingdom help her understand Marina's authorization
-						architecture concepts?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Marina's Ultimate Guardian Wisdom:",
+						content: "Authentication asks 'Who are you?' Authorization asks 'What can you do?' But intelligent authorization asks 'What should you be able to do in this context, at this time, with your history, considering the current state of the application?' Marina smiled with the satisfaction of a teacher whose student had grasped complex concepts. Aria had learned to protect routes using advanced patterns that integrated everything she'd studied across the React Kingdom."
+					}}
+					reflectionQuestions={[
+						'How does integrating all React patterns (components, state, props, hooks, forms, and routing) create a more intelligent authorization system than traditional role checks?',
+						'What benefits come from treating authorization as a reactive, contextual system rather than static permission lists?',
+						"How does Aria's journey through every quarter of the React Kingdom help her understand Marina's authorization architecture concepts?"
+					]}
+					chapterEnding={[
+						"Binary's final projection lit up the chamber: \"Guardian Gates evolution complete! Basic checks: TRANSCENDED. Intelligent authorization: ACHIEVED. Marina's teaching + Aria's learning: EXCELLENT. Future students will study this system for generations!\""
+					]}
+				/>
 			</div>
 		</>
 	);

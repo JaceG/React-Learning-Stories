@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const { guardianState, handleGateCheck, attemptedEntries } =
@@ -48,19 +52,10 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Guardian Training
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Marina led Aria to the Navigation Corps training
-						grounds, where advanced security patterns were taught.
-						Here, she would learn how to protect routes with
-						authentication and authorization - securing the most
-						sensitive areas of React applications.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='The Guardian Training'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -222,13 +217,13 @@ function ChapterOne() {
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Marina's Guardian Pattern</h3>
-					<p className='collaboration-note'>
-						Marina demonstrates the integrated approach...
-					</p>
+					<InstructionBox character='Click on different gates above to test access levels!'>
+						Select your access level and present your credentials to see how guardian gates protect routes.
+					</InstructionBox>
 
-					<div className='code-example collaborative'>
-						<h3>Basic Protection with Intelligence</h3>
-						<pre>{`// Marina's Guardian System with React Integration
+					<CodeExample
+						title="Basic Protection with Intelligence"
+						code={`// Marina's Guardian System with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, useFormValidation, useStatePreservation } from './hooks';
 
@@ -286,8 +281,8 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
   
   // All checks passed - render protected content
   return children;
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='guardian-flow enhanced'>
 						<h4>The Complete Authentication Flow</h4>
@@ -328,9 +323,9 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
 						</div>
 					</div>
 
-					<div className='code-example'>
-						<h3>Advanced Guardian Patterns</h3>
-						<pre>{`// Marina's Complete Guardian System
+					<CodeExample
+						title="Advanced Guardian Patterns"
+						code={`// Marina's Complete Guardian System
 
 // 1. Form-Aware Protection (Western Quarter Knowledge)
 function FormAwareGuardian({ children }) {
@@ -429,8 +424,8 @@ function UltimateGuardian({
   }
   
   return children;
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='pattern-integration'>
 						<h3>Teaching the Trainees</h3>
@@ -456,47 +451,17 @@ function UltimateGuardian({
 					</div>
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>Marina's Wisdom:</h3>
-					<p>
-						Marina addressed the learning group. "Guardian Gates
-						aren't just security checkpoints," she explained.
-					</p>
-					<p>
-						"They're intelligent systems that understand context,"
-						Marina continued. "They preserve user state, validate
-						forms, track journeys, and provide graceful fallbacks.
-						Every React pattern you learn makes these guards
-						smarter."
-					</p>
-					<p>
-						"This way," Marina concluded, "we create protection that
-						enhances rather than hinders the user experience."
-					</p>
-					<p>Guardian attempts tracked: {attemptedEntries.length}</p>
-					<p className='story-paragraph'>
-						Binary projected a summary: "Authentication patterns
-						integrated. State preservation active. Validation layers
-						configured. Guardian system efficiency: OPTIMAL!"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does integrating state management, form validation,
-						and user journey tracking enhance basic route
-						protection?
-					</p>
-					<p className='story-paragraph'>
-						What benefits come from preserving user context when
-						redirecting for authentication?
-					</p>
-					<p className='story-paragraph'>
-						How does Aria's journey through the React Kingdom help
-						her understand these advanced route protection patterns?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Marina's Wisdom:",
+						content: `Guardian Gates aren't just security checkpoints - they're intelligent systems that understand context. They preserve user state, validate forms, track journeys, and provide graceful fallbacks. Every React pattern you learn makes these guards smarter. This way, we create protection that enhances rather than hinders the user experience. Guardian attempts tracked: ${attemptedEntries.length}`
+					}}
+					reflectionQuestions={[
+						'How does integrating state management, form validation, and user journey tracking enhance basic route protection?',
+						'What benefits come from preserving user context when redirecting for authentication?',
+						"How does Aria's journey through the React Kingdom help her understand these advanced route protection patterns?"
+					]}
+				/>
 			</div>
 		</>
 	);

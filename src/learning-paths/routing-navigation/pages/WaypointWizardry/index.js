@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './WaypointWizardry.css';
 
@@ -18,17 +19,6 @@ function WaypointWizardry() {
 		forms: true,
 		navigation: true
 	});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Waypoint functions
 	const createWaypoint = (waypoint) => {
@@ -52,35 +42,12 @@ function WaypointWizardry() {
 
 	return (
 		<div className='lesson-container waypoint-wizardry-container'>
-			<div className='lesson-opener'>
-				<p>Marina led Aria to the Waypoint Sanctum - a vast chamber where 
-				glowing orbs of light traced paths through the air. Here, she would teach 
-				Aria the most advanced navigation patterns, showing how routing could become 
-				truly intelligent and adaptive.</p>
-			</div>
-			
-			<h1 className='lesson-title'>Waypoint Wizardry</h1>
-			<p className='lesson-subtitle'>
-				Learn advanced routing techniques and dynamic navigation patterns
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Waypoint Wizardry'
+				subtitle='Learn advanced routing techniques and dynamic navigation patterns'
+				opener='Marina led Aria to the Waypoint Sanctum - a vast chamber where glowing orbs of light traced paths through the air. Here, she would teach Aria the most advanced navigation patterns, showing how routing could become truly intelligent and adaptive.'
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -98,27 +65,10 @@ function WaypointWizardry() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='routing-navigation'
 				lessonId='waypoint-wizardry'
+				totalChapters={3}
 			/>
 		</div>
 	);

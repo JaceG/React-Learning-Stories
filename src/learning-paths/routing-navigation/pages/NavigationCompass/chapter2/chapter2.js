@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const {
@@ -68,18 +72,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Advanced Navigation Patterns
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The Navigation Command Center transformed into an
-						advanced learning space. Marina guided Aria to a massive
-						holographic display, ready to teach her the next level
-						of React navigation patterns.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Advanced Navigation Patterns'
+					bridge='The Navigation Command Center transformed into an advanced learning space. Marina guided Aria to a massive holographic display, ready to teach her the next level of React navigation patterns.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -195,9 +192,9 @@ function ChapterTwo() {
 					<h3 className='section-title'>
 						Advanced Dynamic Routing Patterns
 					</h3>
-					<p className='collaboration-note'>
-						Marina teaches Aria advanced navigation patterns...
-					</p>
+					<InstructionBox character='Marina teaches Aria advanced navigation patterns.'>
+						Click on different views to see state preservation in action across route changes.
+					</InstructionBox>
 
 					<div className='route-map advanced'>
 						<h4>Intelligent Route Patterns</h4>
@@ -229,9 +226,9 @@ function ChapterTwo() {
 						))}
 					</div>
 
-					<div className='code-example collaborative'>
-						<h3>Marina's Dynamic Route Pattern</h3>
-						<pre>{`// Intelligent Dynamic Routes with State Preservation
+					<CodeExample
+						title="Marina's Dynamic Route Pattern"
+						code={`// Intelligent Dynamic Routes with State Preservation
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
 import { useFormPersistence } from './react-patterns'; // From Forms & Events
@@ -292,22 +289,22 @@ function UserEditForm() {
       {/* Form with state preservation across navigation */}
     </div>
   );
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='advanced-patterns'>
 						<h3>Query Parameters with Intelligence</h3>
 						<div className='pattern-showcase'>
-							<div className='pattern-card marina-style'>
-								<h4>Marina's Foundation</h4>
-								<pre>{`// Basic query params
+							<CodeExample
+								title="Marina's Foundation"
+								code={`// Basic query params
 const [searchParams, setSearchParams] = useSearchParams();
-const filter = searchParams.get('filter');`}</pre>
-							</div>
+const filter = searchParams.get('filter');`}
+							/>
 
-							<div className='pattern-card react-enhancement'>
-								<h4>React Learning</h4>
-								<pre>{`// Synchronized with app state
+							<CodeExample
+								title="React Learning"
+								code={`// Synchronized with app state
 const useSyncedSearchParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { filters } = useFilterContext();
@@ -322,12 +319,12 @@ const useSyncedSearchParams = () => {
   }, [filters]);
   
   return { searchParams, filters };
-};`}</pre>
-							</div>
+};`}
+							/>
 
-							<div className='pattern-card combined'>
-								<h4>Combined Power</h4>
-								<pre>{`// Stateful navigation with history
+							<CodeExample
+								title="Combined Power"
+								code={`// Stateful navigation with history
 const useStatefulNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -349,51 +346,23 @@ const useStatefulNavigation = () => {
   };
   
   return navigateWithState;
-};`}</pre>
-							</div>
+};`}
+							/>
 						</div>
 					</div>
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>The Collaborative Discovery:</h3>
-					<p>
-						Marina taught Aria that true navigation mastery comes
-						from understanding routes not as isolated paths, but as
-						state transitions in your application. By learning
-						Marina's routing expertise and applying her React
-						foundation, Aria discovered patterns that:
-					</p>
-					<ul>
-						<li>Preserve form state across navigation</li>
-						<li>Validate before allowing route changes</li>
-						<li>Sync URL parameters with application state</li>
-						<li>Provide intelligent back/forward navigation</li>
-						<li>Create truly stateful single-page applications</li>
-					</ul>
-					<p>
-						"Your React foundation makes these concepts so much
-						clearer," Marina observed with satisfaction. "Routing
-						alone is powerful, but routing integrated with
-						everything you've learned? That's the real magic."
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does treating navigation as state transitions change
-						your approach to routing in React applications?
-					</p>
-					<p className='story-paragraph'>
-						What benefits come from preserving component state
-						across route changes?
-					</p>
-					<p className='story-paragraph'>
-						How can validation and navigation work together to
-						create better user experiences?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'The Collaborative Discovery:',
+						content: "Marina taught Aria that true navigation mastery comes from understanding routes not as isolated paths, but as state transitions in your application. By learning Marina's routing expertise and applying her React foundation, Aria discovered patterns that preserve form state across navigation, validate before allowing route changes, sync URL parameters with application state, provide intelligent back/forward navigation, and create truly stateful single-page applications. \"Your React foundation makes these concepts so much clearer,\" Marina observed with satisfaction. \"Routing alone is powerful, but routing integrated with everything you've learned? That's the real magic.\""
+					}}
+					reflectionQuestions={[
+						'How does treating navigation as state transitions change your approach to routing in React applications?',
+						'What benefits come from preserving component state across route changes?',
+						'How can validation and navigation work together to create better user experiences?'
+					]}
+				/>
 			</div>
 		</>
 	);

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const { customWaypoints, routeTransitions, addRouteTransition } =
@@ -42,9 +46,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Nested Waypoint Realms
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Nested Waypoint Realms'
+				bridge="Marina led Aria to the Waypoint Observatory's upper level, where the most sophisticated navigation systems were taught. Here, she would learn advanced routing architecture for complex applications."
+			/>
 
 			<div className='story-section'>
 				<div className='marina-teaching'>
@@ -151,8 +157,13 @@ const ChapterThree = () => {
 					Mastering Nested Route Architecture
 				</h3>
 
-				<div className='code-example'>
-					<pre>{`// Nested Routes with Shared Layouts
+				<InstructionBox character='Click on different layout tabs to explore nested route architectures!'>
+					Select a transition style and watch how smooth animations enhance the navigation experience.
+				</InstructionBox>
+
+				<CodeExample
+					title="Nested Routes with Shared Layouts"
+					code={`// Nested Routes with Shared Layouts
 const router = createBrowserRouter([
   {
     path: "/",
@@ -226,11 +237,12 @@ function SettingsLayout() {
       <Outlet />
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Advanced Outlet Patterns
+				<CodeExample
+					title="Advanced Outlet Patterns"
+					code={`// Advanced Outlet Patterns
 // 1. Named Outlets for Multiple UI Regions
 function AppLayout() {
   return (
@@ -280,8 +292,8 @@ function DataLayout() {
       <Outlet context={{ parentData: data }} />
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='transition-workshop'>
 					<h3>Route Transition Magic</h3>
@@ -319,8 +331,9 @@ function DataLayout() {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Implementing Route Transitions
+				<CodeExample
+					title="Implementing Route Transitions"
+					code={`// Implementing Route Transitions
 import { useLocation, useOutlet } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
@@ -364,11 +377,12 @@ function AnimatedOutlet() {
   opacity: 0;
   transform: translateX(-100%);
   transition: opacity 300ms, transform 300ms;
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Building Dynamic Breadcrumbs
+				<CodeExample
+					title="Building Dynamic Breadcrumbs"
+					code={`// Building Dynamic Breadcrumbs
 function Breadcrumbs() {
   const matches = useMatches();
   
@@ -419,8 +433,8 @@ function RouteAwareTitle() {
   }, [location, matches]);
   
   return null;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='nested-patterns'>
 					<h3>Nested Route Patterns</h3>
@@ -462,8 +476,9 @@ function RouteAwareTitle() {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Complex Nested Route Example
+				<CodeExample
+					title="Complex Nested Route Example"
+					code={`// Complex Nested Route Example
 const router = createBrowserRouter([
   {
     path: "/",
@@ -531,8 +546,8 @@ function TaskDetail() {
       <p>Workspace: {workspace.name}</p>
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 			</div>
 
 			<div className='marina-innovation'>
@@ -543,9 +558,9 @@ function TaskDetail() {
 					integrated all aspects of React.
 				</p>
 
-				<div className='collaborative-code'>
-					<h4>Marina's Innovation:</h4>
-					<pre>{`// Marina's navigation expertise with React integration
+				<CodeExample
+					title="Marina's Innovation"
+					code={`// Marina's navigation expertise with React integration
 const useSmartNavigation = () => {
   // React state management patterns
   const { user, permissions } = useAuth();
@@ -577,8 +592,8 @@ const useSmartNavigation = () => {
   }, [navigate, isDirty, formData, user]);
   
   return { smartNavigate, canNavigate: !isDirty };
-};`}</pre>
-				</div>
+};`}
+				/>
 			</div>
 
 			<div className='mastery-recognition'>
@@ -610,29 +625,21 @@ const useSmartNavigation = () => {
 				</div>
 			</div>
 
-			<div className='lesson-culmination'>
-				<h3>The Complete Picture</h3>
-				<p>
-					Marina addressed the learning group. "Nested routes aren't
-					just about organization," she explained. "They're about
-					creating intuitive user journeys that maintain context and
-					state at every level."
-				</p>
-				<p>
-					"I can see how every concept I've learned builds on the
-					others!" Aria marveled. "Components give us structure, hooks
-					give us behavior, forms give us interaction, and navigation
-					gives us the architecture to connect it all. React isn't
-					separate pieces - it's one unified system."
-				</p>
-				<p>
-					Binary projected a holographic map showing how every quarter
-					of the React Kingdom connected through the Central Citadel's
-					navigation systems. The student who had arrived eager to
-					learn now understood how all the concepts connected through
-					navigation.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Complete Picture:',
+					content: "\"Nested routes aren't just about organization,\" Marina explained. \"They're about creating intuitive user journeys that maintain context and state at every level.\" Aria marveled: \"I can see how every concept I've learned builds on the others! Components give us structure, hooks give us behavior, forms give us interaction, and navigation gives us the architecture to connect it all. React isn't separate pieces - it's one unified system.\""
+				}}
+				reflectionQuestions={[
+					'How do nested routes help maintain context and state at every level of your application?',
+					'What patterns would you use to create a complex workspace with multiple levels of nested navigation?',
+					'How has your understanding of React as one unified system changed through this journey?'
+				]}
+				chapterEnding={[
+					"Binary projected a holographic map showing how every quarter of the React Kingdom connected through the Central Citadel's navigation systems.",
+					"The student who had arrived eager to learn now understood how all the concepts connected through navigation."
+				]}
+			/>
 		</div>
 	);
 };

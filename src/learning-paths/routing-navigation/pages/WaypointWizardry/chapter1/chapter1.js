@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const {
@@ -66,19 +70,11 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: Advanced Waypoint Patterns
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Marina guided Aria into the Waypoint Sanctum's crystal
-						dome, where light refracted into countless rainbows.
-						Here, surrounded by floating navigation orbs, she would
-						learn the most advanced routing patterns that could
-						adapt and respond to user behavior.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='Advanced Waypoint Patterns'
+					bridge="Marina guided Aria into the Waypoint Sanctum's crystal dome, where light refracted into countless rainbows. Here, surrounded by floating navigation orbs, she would learn the most advanced routing patterns that could adapt and respond to user behavior."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -277,13 +273,13 @@ function ChapterOne() {
 					<h3 className='section-title'>
 						Marina's Waypoint Architecture
 					</h3>
-					<p className='collaboration-note'>
-						Marina demonstrates advanced routing patterns...
-					</p>
+					<InstructionBox character='Click "Activate Master Vision" to see how React patterns integrate with each waypoint!'>
+						Click on different waypoints to navigate and watch the compass track your journey.
+					</InstructionBox>
 
-					<div className='code-example collaborative'>
-						<h3>Intelligent Route Configuration</h3>
-						<pre>{`// Marina's Advanced Routing with React Integration
+					<CodeExample
+						title="Intelligent Route Configuration"
+						code={`// Marina's Advanced Routing with React Integration
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { StateProvider, useAppState } from './react-patterns';
 
@@ -420,8 +416,8 @@ export function useRouteIntelligence() {
   }, [routeInfo]);
   
   return routeInfo;
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='waypoint-creation master-workshop'>
 						<h3>Architect an Intelligent Waypoint</h3>
@@ -571,9 +567,9 @@ export function useRouteIntelligence() {
 						)}
 					</div>
 
-					<div className='code-example'>
-						<h3>The Complete Waypoint System</h3>
-						<pre>{`// Marina's Advanced Route Architecture
+					<CodeExample
+						title="The Complete Waypoint System"
+						code={`// Marina's Advanced Route Architecture
 import { createBrowserRouter, useNavigation, useMatches } from 'react-router-dom';
 import { useRouteState, useRouteEffects, useRouteValidation } from './react-hooks';
 
@@ -725,8 +721,8 @@ function IntelligentNavigation() {
       {/* Navigation UI */}
     </nav>
   );
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='waypoint-features master-features'>
 						<h3>Marina's Waypoint Enhancements</h3>
@@ -831,52 +827,17 @@ function IntelligentNavigation() {
 					</div>
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>Marina's Wisdom:</h3>
-					<p>
-						Marina addressed the chamber, her teaching knowledge
-						radiating through the space. "Waypoints are living
-						entities," she began.
-					</p>
-					<p>
-						"They breathe with state, pulse with effects,
-						communicate through context, and evolve through user
-						interaction," Marina continued.
-					</p>
-					<p>
-						"This is what I've shown you," Marina concluded, "that
-						navigation isn't just about moving between pages - it's
-						about orchestrating entire application experiences."
-					</p>
-					<p className='story-paragraph'>
-						Aria's understanding crystallized. "I see it now! Every
-						route is a complete React application in miniature, with
-						all the patterns I've learned working in harmony!"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly!" Marina beamed with teaching pride. "You're
-						ready to understand even more advanced patterns."
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does treating routes as intelligent entities that
-						integrate all React patterns change your approach to
-						application architecture?
-					</p>
-					<p className='story-paragraph'>
-						What possibilities open up when waypoints can preserve
-						state, execute effects, validate transitions, and adapt
-						to user behavior?
-					</p>
-					<p className='story-paragraph'>
-						How does Aria's journey through the React Kingdom help
-						her understand Marina's advanced navigation architecture
-						concepts?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Marina's Wisdom:",
+						content: "Waypoints are living entities. They breathe with state, pulse with effects, communicate through context, and evolve through user interaction. Navigation isn't just about moving between pages - it's about orchestrating entire application experiences. Every route is a complete React application in miniature, with all the patterns working in harmony!"
+					}}
+					reflectionQuestions={[
+						'How does treating routes as intelligent entities that integrate all React patterns change your approach to application architecture?',
+						'What possibilities open up when waypoints can preserve state, execute effects, validate transitions, and adapt to user behavior?',
+						"How does Aria's journey through the React Kingdom help her understand Marina's advanced navigation architecture concepts?"
+					]}
+				/>
 			</div>
 		</>
 	);

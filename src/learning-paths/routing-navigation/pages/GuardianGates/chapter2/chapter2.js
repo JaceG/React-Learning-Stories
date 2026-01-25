@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const { authState, handleLogin, handleLogout, redirectPath } =
@@ -55,18 +59,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Advanced Authentication Flows
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Marina led Aria deeper into the Guardian Archives, where
-						ancient memory crystals lined the walls. Here, she would
-						teach the most sophisticated authentication patterns,
-						building on Aria's React foundation.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Advanced Authentication Flows'
+					bridge="Marina led Aria deeper into the Guardian Archives, where ancient memory crystals lined the walls. Here, she would teach the most sophisticated authentication patterns, building on Aria's React foundation."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -242,13 +239,13 @@ function ChapterTwo() {
 					<h3 className='section-title'>
 						The Complete Authentication Architecture
 					</h3>
-					<p className='collaboration-note'>
-						Marina teaches the unified authentication system...
-					</p>
+					<InstructionBox character='Click "Begin Live Demonstration" to see the complete authentication flow in action!'>
+						Enter your credentials and watch each step of the authentication process complete.
+					</InstructionBox>
 
-					<div className='code-example collaborative'>
-						<h3>Intelligent Protected Routes</h3>
-						<pre>{`// Marina's Authentication System with React Integration
+					<CodeExample
+						title="Intelligent Protected Routes"
+						code={`// Marina's Authentication System with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, useFormState, useJourneyTracking } from './hooks';
 
@@ -320,12 +317,12 @@ function IntelligentProtectedRoute({
   }
   
   return children;
-}`}</pre>
-					</div>
+}`}
+					/>
 
-					<div className='code-example'>
-						<h3>Enhanced Auth Context with Journey Memory</h3>
-						<pre>{`// Marina's Auth Context Pattern
+					<CodeExample
+						title="Enhanced Auth Context with Journey Memory"
+						code={`// Marina's Auth Context Pattern
 import { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -426,8 +423,8 @@ export function IntelligentAuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='auth-patterns enhanced'>
 						<h3>Marina's Authentication Patterns</h3>
@@ -467,9 +464,9 @@ export function IntelligentAuthProvider({ children }) {
 						</div>
 					</div>
 
-					<div className='code-example'>
-						<h3>The Ultimate Authentication Flow</h3>
-						<pre>{`// Marina's Complete Auth System
+					<CodeExample
+						title="The Ultimate Authentication Flow"
+						code={`// Marina's Complete Auth System
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -587,8 +584,8 @@ function useMasterAuth() {
     trackActivity: () => 
       setAuthState(prev => ({ ...prev, lastActivity: Date.now() }))
   };
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='masters-insight'>
 						<p className='story-paragraph'>
@@ -607,49 +604,17 @@ function useMasterAuth() {
 						</p>
 					</div>
 				</div>
-				<div className='lesson-insight'>
-					<h3>Marina's Lesson:</h3>
-					<p>
-						Aria learned how authentication systems work in React.
-						"Authentication isn't just about security," Marina
-						taught.
-					</p>
-					<p>
-						"It's about creating intelligent, stateful experiences,"
-						Marina continued. "Every pattern you've learned - from
-						component lifecycle to form validation - enhances how
-						users authenticate and navigate."
-					</p>
-					<p>
-						"This way," Marina concluded, "we create authentication
-						that remembers, adapts, and guides users seamlessly
-						through their journey."
-					</p>
-					<p className='story-paragraph'>
-						Binary displayed the results: "Authentication system
-						optimized! State preservation: ACTIVE. Journey tracking:
-						ENABLED. User experience: EXCEPTIONAL!"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does integrating state preservation, form
-						validation, and journey tracking enhance traditional
-						authentication flows?
-					</p>
-					<p className='story-paragraph'>
-						What advantages come from treating authentication as
-						part of the overall user journey rather than an isolated
-						security checkpoint?
-					</p>
-					<p className='story-paragraph'>
-						How does Aria's React foundation help her understand how
-						authentication integrates with all the patterns she's
-						learned?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Marina's Lesson:",
+						content: "Authentication isn't just about security - it's about creating intelligent, stateful experiences. Every pattern you've learned - from component lifecycle to form validation - enhances how users authenticate and navigate. This way, we create authentication that remembers, adapts, and guides users seamlessly through their journey."
+					}}
+					reflectionQuestions={[
+						'How does integrating state preservation, form validation, and journey tracking enhance traditional authentication flows?',
+						'What advantages come from treating authentication as part of the overall user journey rather than an isolated security checkpoint?',
+						"How does Aria's React foundation help her understand how authentication integrates with all the patterns she's learned?"
+					]}
+				/>
 			</div>
 		</>
 	);

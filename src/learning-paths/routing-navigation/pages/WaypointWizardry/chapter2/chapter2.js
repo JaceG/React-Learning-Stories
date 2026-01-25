@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -36,7 +40,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: Dynamic Waypoint Magic</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='Dynamic Waypoint Magic'
+				bridge={`Marina and Aria stood together at the Waypoint Control Center, examining a complex navigation map. "I've been wanting to implement dynamic parameters in our waypoint system," Marina explained, gesturing to the floating route structures.`}
+			/>
 
 			<div className='story-section'>
 				<div className='collaborative-discussion'>
@@ -188,8 +196,13 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Mastering Dynamic Routes</h3>
 
-				<div className='code-example'>
-					<pre>{`// Dynamic Route Parameters
+				<InstructionBox character='Click on different users and products above to see how dynamic routes work!'>
+					Change the sort and filter options to see how query parameters update the URL.
+				</InstructionBox>
+
+				<CodeExample
+					title="Dynamic Route Parameters"
+					code={`// Dynamic Route Parameters
 import { useParams, useSearchParams } from 'react-router-dom';
 
 // Route definition with parameters
@@ -231,11 +244,12 @@ function UserProfile() {
   path: "posts/:postId/:commentId?",
   element: <PostView />,
   // commentId is optional
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Working with Query Parameters
+				<CodeExample
+					title="Working with Query Parameters"
+					code={`// Working with Query Parameters
 function ProductList() {
   const [searchParams, setSearchParams] = useSearchParams();
   
@@ -282,8 +296,8 @@ function NavigationLink({ to, preserveQuery, children }) {
     : to;
     
   return <Link to={href}>{children}</Link>;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='state-navigation'>
 					<h3>Waypoint State Transfer</h3>
@@ -326,8 +340,9 @@ const { cart, from } = location.state || {};`}
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Advanced Dynamic Routing Patterns
+				<CodeExample
+					title="Advanced Dynamic Routing Patterns"
+					code={`// Advanced Dynamic Routing Patterns
 // 1. Catch-all routes (splat routes)
 {
   path: "files/*",
@@ -383,8 +398,8 @@ function QuestBoard() {
       element: <GuildQuest />
     }
   ]
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='waypoint-patterns'>
 					<h3>Dynamic Waypoint Patterns</h3>
@@ -412,8 +427,9 @@ function QuestBoard() {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Building a Dynamic Navigation Menu
+				<CodeExample
+					title="Building a Dynamic Navigation Menu"
+					code={`// Building a Dynamic Navigation Menu
 function DynamicNavMenu() {
   const { guildId } = useParams();
   const location = useLocation();
@@ -453,8 +469,8 @@ function DynamicNavMenu() {
       ))}
     </nav>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 			</div>
 
 			<div className='parameter-playground'>
@@ -525,7 +541,9 @@ function DynamicNavMenu() {
 						a single source of truth that updates your UI."
 					</p>
 
-					<pre>{`// Marina's integrated example
+					<CodeExample
+						title="Marina's Integrated Example"
+						code={`// Marina's integrated example
 // Form state (from Western Quarter)
 const [filters, setFilters] = useState({ category: 'all' });
 
@@ -533,24 +551,21 @@ const [filters, setFilters] = useState({ category: 'all' });
 const [searchParams, setSearchParams] = useSearchParams();
 const category = searchParams.get('category') || 'all';
 
-// They work the same way!`}</pre>
+// They work the same way!`}
+					/>
 				</div>
 			</div>
 
-			<div className='reflection-section'>
-				<h3>Building on Your Journey</h3>
-				<p>
-					Consider how the dynamic routing patterns you've learned
-					here could enhance the form systems you built in the Western
-					Quarter. How might you create a multi-step form wizard that
-					uses route parameters to track progress?
-				</p>
-				<p>
-					Marina turns to you: "With your comprehensive understanding
-					of React, how would you architect a system where form state
-					persists across route changes?"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'Collaborative Discovery:',
+					content: "\"Dynamic parameters are like the component props of navigation - they make routes reusable and flexible,\" Marina explained. Aria connected the concepts: \"Route parameters are for identity (:id), query parameters are for state (?filter=active), and navigation state is for temporary data that shouldn't be in the URL. It all connects to what I learned about state management!\""
+				}}
+				reflectionQuestions={[
+					'How might you create a multi-step form wizard that uses route parameters to track progress?',
+					'How would you architect a system where form state persists across route changes?'
+				]}
+			/>
 		</div>
 	);
 };

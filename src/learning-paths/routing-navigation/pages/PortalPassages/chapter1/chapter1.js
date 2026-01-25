@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -61,9 +65,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Discovery of Portal Magic
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title='The Discovery of Portal Magic'
+			/>
 
 			<div className='story-section'>
 				<div className='portal-passages-opening'>
@@ -175,8 +180,14 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Creating Your First Portals</h3>
 
-				<div className='code-example'>
-					<pre>{`// Basic Modal Portal Implementation
+				<InstructionBox character='Select a portal type above and customize the content, then click Open to create your first portal!'>
+					Watch how portals render outside the normal component tree while maintaining React state.
+				</InstructionBox>
+
+				<CodeExample
+					title='Basic Modal Portal Implementation'
+					discoveredBy='Transcribed by Aria'
+					code={`// Basic Modal Portal Implementation
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -229,12 +240,12 @@ function App() {
       </Modal>
     </>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Advanced Portal with Focus Management
-function AccessibleModal({ isOpen, onClose, title, children }) {
+				<CodeExample
+					title='Advanced Portal with Focus Management'
+					code={`function AccessibleModal({ isOpen, onClose, title, children }) {
   const modalRef = useRef(null);
   const previousActiveElement = useRef(null);
   
@@ -308,8 +319,8 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
     </div>,
     document.body
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='portal-patterns'>
 					<h3>Common Portal Patterns</h3>
@@ -370,9 +381,9 @@ function AccessibleModal({ isOpen, onClose, title, children }) {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Route-Aware Modal System
-import { useNavigate, useLocation } from 'react-router-dom';
+				<CodeExample
+					title='Route-Aware Modal System'
+					code={`import { useNavigate, useLocation } from 'react-router-dom';
 
 function RouteModal({ children }) {
   const navigate = useNavigate();
@@ -424,8 +435,8 @@ function ProductList() {
       <Outlet />
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='portal-architecture'>
 					<h3>Portal Architecture</h3>
@@ -495,22 +506,17 @@ function ProductList() {
 				</div>
 			</div>
 
-			<div className='reflection-section'>
-				<h3>Building on Your Complete Journey</h3>
-				<p>
-					Marina turns to you: "You've seen how every concept connects
-					together in portal navigation. How might you combine the
-					validation patterns from forms with portal-based wizards?
-					What about maintaining context state across nested modal
-					interactions?"
-				</p>
-				<p>
-					Consider creating a portal system that remembers user
-					progress, validates input before allowing portal closure,
-					and gracefully handles errors - all while maintaining
-					accessibility and performance.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Marina's Integrated Portal Wisdom:",
+					content: "\"Notice how portals use everything you've learned,\" Marina explained. \"The modal component structure from the Northern Quarter, state management for visibility from the Eastern Quarter, form handling that persists across portal boundaries from the Western Quarter, and now navigation integration. It all connects!\""
+				}}
+				reflectionQuestions={[
+					'How might you combine the validation patterns from forms with portal-based wizards?',
+					'What about maintaining context state across nested modal interactions?',
+					'Consider creating a portal system that remembers user progress, validates input before allowing portal closure, and gracefully handles errors - all while maintaining accessibility and performance.'
+				]}
+			/>
 		</div>
 	);
 };

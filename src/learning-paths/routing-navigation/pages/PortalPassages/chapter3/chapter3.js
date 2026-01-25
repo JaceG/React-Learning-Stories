@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const { portalState, modalPortals, createModalPortal, closeModalPortal } =
@@ -88,9 +92,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Mastery of the Portal Realms
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='Mastery of the Portal Realms'
+				bridge='Marina led Aria to the final demonstration chamber where the most advanced portal patterns would be taught. Here, she would learn how all the navigation concepts came together in sophisticated portal systems.'
+			/>
 
 			<div className='story-section'>
 				<div className='journey-culmination'>
@@ -242,8 +248,14 @@ const ChapterThree = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Navigation Patterns</h3>
 
-				<div className='code-example'>
-					<pre>{`// Multi-Step Wizard with Route Persistence
+				<InstructionBox character='Try the wizard flow above - navigate through steps and watch state persist across route changes!'>
+					Explore nested portals and see how they stack while maintaining React state.
+				</InstructionBox>
+
+				<CodeExample
+					title='Multi-Step Wizard with Route Persistence'
+					discoveredBy='Transcribed by Aria'
+					code={`// Multi-Step Wizard with Route Persistence
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -319,11 +331,12 @@ const wizardRoutes = {
       element: <WizardComplete />
     }
   ]
-};`}</pre>
-				</div>
+};`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Split View Portal System
+				<CodeExample
+					title='Split View Portal System'
+					code={`// Split View Portal System
 function SplitViewManager() {
   const [leftPanel, setLeftPanel] = useState(null);
   const [rightPanel, setRightPanel] = useState(null);
@@ -417,13 +430,14 @@ function ContextualPortal({
     </div>,
     document.body
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='navigation-orchestration'>
 					<h3>Complete Navigation System</h3>
-					<div className='code-example'>
-						<pre>{`// Unified Navigation Architecture
+					<CodeExample
+						title='Unified Navigation Architecture'
+						code={`// Unified Navigation Architecture
 const NavigationSystem = {
   // Route configuration
   routes: createBrowserRouter([
@@ -514,8 +528,8 @@ function useNavigation() {
     navigateWithTransition: useTransitionNavigate(navigate),
     preload: NavigationSystem.utils.preloadRoute
   };
-}`}</pre>
-					</div>
+}`}
+					/>
 				</div>
 
 				<div className='best-practices-summary'>
@@ -666,26 +680,21 @@ function useNavigation() {
 				</p>
 			</div>
 
-			<div className='reflection-section'>
-				<h3>Your Journey Continues</h3>
-				<p>
-					Like Aria, you've traveled through the entire React Kingdom.
-					You've seen how components provide structure, state brings
-					life, props enable communication, hooks add power, forms
-					connect users, and navigation creates experiences.
-				</p>
-				<p>
-					But your journey doesn't end here. What will you build with
-					this complete understanding? How will you combine these
-					concepts in new and innovative ways? Most importantly, who
-					will you teach along the way?
-				</p>
-				<p className='final-thought'>
-					Remember Aria's greatest lesson: React isn't a collection of
-					separate concepts - it's one beautiful, interconnected
-					system. And now, you understand it all.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Learning Journey Complete:',
+					content: "\"My journey through the React Kingdom taught me that no concept exists in isolation,\" Aria reflected. \"Components need state, state needs effects, forms need validation, and navigation ties it all together. Marina has shown me how everything connects.\""
+				}}
+				reflectionQuestions={[
+					'What will you build with this complete understanding?',
+					'How will you combine these concepts in new and innovative ways?',
+					'Most importantly, who will you teach along the way?'
+				]}
+				chapterEnding={[
+					"Like Aria, you've traveled through the entire React Kingdom. You've seen how components provide structure, state brings life, props enable communication, hooks add power, forms connect users, and navigation creates experiences.",
+					"But your journey doesn't end here. Remember Aria's greatest lesson: React isn't a collection of separate concepts - it's one beautiful, interconnected system. And now, you understand it all."
+				]}
+			/>
 		</div>
 	);
 };

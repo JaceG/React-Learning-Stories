@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './GuardianGates.css';
 
@@ -20,17 +21,6 @@ function GuardianGates() {
 		royal: false
 	});
 	const [attemptedEntries, setAttemptedEntries] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Authentication functions
 	const handleLogin = (credentials) => {
@@ -90,28 +80,12 @@ function GuardianGates() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Guardian Gates</h1>
-			<p className='lesson-subtitle'>
-				Master the art of protecting routes with authentication and authorization
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Guardian Gates'
+				subtitle='Master the art of protecting routes with authentication and authorization'
+				opener='Marina led Aria to the Navigation Corps training grounds, where advanced security patterns were taught. Here, she would learn how to protect routes with authentication and authorization - securing the most sensitive areas of React applications.'
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -134,27 +108,10 @@ function GuardianGates() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='routing-navigation'
 				lessonId='guardian-gates'
+				totalChapters={3}
 			/>
 		</div>
 	);

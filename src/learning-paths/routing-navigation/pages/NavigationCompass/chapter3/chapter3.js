@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const {
@@ -53,18 +57,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: Advanced Navigation Mastery
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Marina led Aria to the advanced Navigation Laboratory.
-						Here, she would learn the most sophisticated routing
-						patterns - techniques that integrate everything she'd
-						studied across her React journey.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='Advanced Navigation Mastery'
+					bridge="Marina led Aria to the advanced Navigation Laboratory. Here, she would learn the most sophisticated routing patterns - techniques that integrate everything she'd studied across her React journey."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -128,13 +125,13 @@ function ChapterThree() {
 					<h3 className='section-title'>
 						The Complete Navigation System
 					</h3>
-					<p className='synthesis-note'>
-						Marina teaches Aria the complete navigation system...
-					</p>
+					<InstructionBox character='Marina teaches Aria the complete navigation system.'>
+						Click the synthesis button below to see all navigation patterns working together.
+					</InstructionBox>
 
-					<div className='code-example ultimate'>
-						<h3>Marina's Advanced Navigation Framework</h3>
-						<pre>{`// The Ultimate Navigation Architecture
+					<CodeExample
+						title="Marina's Advanced Navigation Framework"
+						code={`// The Ultimate Navigation Architecture
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 
@@ -246,15 +243,15 @@ function AppRoutes() {
       </Routes>
     </RouteStateProvider>
   );
-}`}</pre>
-					</div>
+}`}
+					/>
 
 					<div className='advanced-integration'>
 						<h3>Navigation with Complete React Integration</h3>
 						<div className='integration-examples'>
-							<div className='example-card'>
-								<h4>Predictive Navigation Hook</h4>
-								<pre>{`// React pattern: Anticipate user navigation
+							<CodeExample
+								title="Predictive Navigation Hook"
+								code={`// React pattern: Anticipate user navigation
 const usePredictiveNavigation = () => {
   const location = useLocation();
   const { user } = useAuth();
@@ -277,12 +274,12 @@ const usePredictiveNavigation = () => {
     preload: prefetchRouteData,
     likelihood: analytics.getRouteLikelihood
   };
-};`}</pre>
-							</div>
+};`}
+							/>
 
-							<div className='example-card'>
-								<h4>Form-Aware Navigation</h4>
-								<pre>{`// Prevent data loss during navigation
+							<CodeExample
+								title="Form-Aware Navigation"
+								code={`// Prevent data loss during navigation
 const useFormAwareNavigation = () => {
   const navigate = useNavigate();
   const { formState, saveForm } = useFormContext();
@@ -304,8 +301,8 @@ const useFormAwareNavigation = () => {
   }, [formState, navigate, saveForm]);
   
   return safeNavigate;
-};`}</pre>
-							</div>
+};`}
+							/>
 						</div>
 					</div>
 
@@ -362,75 +359,22 @@ const useFormAwareNavigation = () => {
 					)}
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>The Ultimate Navigation Wisdom:</h3>
-					<p>
-						Marina's teaching revealed the deepest truth about React
-						navigation: it's not a separate system, but the
-						orchestration of all React patterns. Every route is a
-						component. Every navigation is a state change. Every
-						transition can be guarded by validation. Every journey
-						can be enhanced with effects and context.
-					</p>
-					<p>
-						"This is what understanding looks like," Marina observed
-						with satisfaction. "Not just knowing individual
-						patterns, but seeing how they create something greater
-						together. You've learned that true knowledge comes from
-						synthesis."
-					</p>
-					<p>
-						Binary projected a final message: "All systems
-						integrated. Navigation framework understanding: 99.9%.
-						React foundation: SOLID. Aria's learning: EXCELLENT."
-					</p>
-				</div>
-
-				<div className='marina-tribute'>
-					<h3>Marina's Recognition</h3>
-					<p className='story-paragraph'>
-						Marina smiled with the satisfaction of a teacher whose
-						student had grasped the deepest concepts. "When I first
-						heard of Aria's arrival in our kingdom, I knew she would
-						be a dedicated learner. Witnessing her journey - from
-						curious apprentice to knowledgeable practitioner - has
-						been truly rewarding."
-					</p>
-
-					<p className='story-paragraph'>
-						"You've learned our patterns beautifully," Marina
-						continued, addressing Aria directly. "You've connected
-						concepts across domains. You've shown how a strong React
-						foundation makes advanced navigation concepts
-						accessible."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria felt the weight of knowledge settling into place.
-						From every quarter of the kingdom, she had learned from
-						dedicated teachers, and now she understood how it all
-						connected.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Journey</h3>
-					<p>
-						How has understanding navigation as the synthesis of all
-						React patterns changed your perspective on building
-						applications?
-					</p>
-					<p className='story-paragraph'>
-						What possibilities open up when you treat routing as
-						stateful, validated, and intelligent rather than just
-						URL changes?
-					</p>
-					<p className='story-paragraph'>
-						As Aria's journey through the React Kingdom concludes,
-						what patterns will you take forward in your own
-						development adventure?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'The Ultimate Navigation Wisdom:',
+						content: "Marina's teaching revealed the deepest truth about React navigation: it's not a separate system, but the orchestration of all React patterns. Every route is a component. Every navigation is a state change. Every transition can be guarded by validation. Every journey can be enhanced with effects and context. \"This is what understanding looks like,\" Marina observed with satisfaction. \"Not just knowing individual patterns, but seeing how they create something greater together. You've learned that true knowledge comes from synthesis.\" Binary projected a final message: \"All systems integrated. Navigation framework understanding: 99.9%. React foundation: SOLID. Aria's learning: EXCELLENT.\""
+					}}
+					reflectionQuestions={[
+						'How has understanding navigation as the synthesis of all React patterns changed your perspective on building applications?',
+						'What possibilities open up when you treat routing as stateful, validated, and intelligent rather than just URL changes?',
+						"As Aria's journey through the React Kingdom concludes, what patterns will you take forward in your own development adventure?"
+					]}
+					chapterEnding={[
+						"Marina smiled with the satisfaction of a teacher whose student had grasped the deepest concepts. \"When I first heard of Aria's arrival in our kingdom, I knew she would be a dedicated learner. Witnessing her journey - from curious apprentice to knowledgeable practitioner - has been truly rewarding.\"",
+						"\"You've learned our patterns beautifully,\" Marina continued, addressing Aria directly. \"You've connected concepts across domains. You've shown how a strong React foundation makes advanced navigation concepts accessible.\"",
+						"Aria felt the weight of knowledge settling into place. From every quarter of the kingdom, she had learned from dedicated teachers, and now she understood how it all connected."
+					]}
+				/>
 			</div>
 		</>
 	);

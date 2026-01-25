@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -76,9 +80,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Art of Portal Transitions
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Art of Portal Transitions'
+				bridge={`Marina continued the lesson, moving to the topic of transitions. "Portal transitions aren't just about visual effects," she explained. "They're about maintaining user context and creating meaningful connections between views."`}
+			/>
 
 			<div className='story-section'>
 				<div className='marina-demonstrates-transitions'>
@@ -210,8 +216,14 @@ const ChapterTwo = () => {
 					Implementing Smooth Transitions
 				</h3>
 
-				<div className='code-example'>
-					<pre>{`// Page Transition Component
+				<InstructionBox character='Select a transition type and scroll behavior, then travel between portals to see the effects!'>
+					Watch how different transitions create different user experiences.
+				</InstructionBox>
+
+				<CodeExample
+					title='Page Transition Component'
+					discoveredBy='Transcribed by Aria'
+					code={`// Page Transition Component
 import { useLocation, useOutlet } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -299,11 +311,12 @@ function DirectionalTransition({ children }) {
       {children}
     </motion.div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='code-example'>
-					<pre>{`// Scroll Position Management
+				<CodeExample
+					title='Scroll Position Management'
+					code={`// Scroll Position Management
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -379,8 +392,8 @@ function SmartScroll({ children }) {
   }, [location]);
   
   return children;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='transition-patterns'>
 					<h3>Transition Patterns</h3>
@@ -439,9 +452,9 @@ function SmartScroll({ children }) {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Advanced Route Transition System
-class TransitionManager {
+				<CodeExample
+					title='Advanced Route Transition System'
+					code={`class TransitionManager {
   constructor() {
     this.transitions = new Map();
     this.defaultTransition = 'fade';
@@ -520,8 +533,8 @@ function TransitionRouter() {
   return (
     <AnimatedOutlet transition={transition} />
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='performance-tips'>
 					<h3>Transition Performance</h3>
@@ -551,9 +564,9 @@ function TransitionRouter() {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// View Transitions API (Experimental)
-// Native browser transitions between pages
+				<CodeExample
+					title='View Transitions API (Experimental)'
+					code={`// Native browser transitions between pages
 async function navigateWithTransition(url) {
   if (!document.startViewTransition) {
     // Fallback for browsers without support
@@ -598,8 +611,8 @@ function useViewTransition() {
   }, [navigate]);
   
   return navigateWithTransition;
-}`}</pre>
-				</div>
+}`}
+				/>
 			</div>
 
 			<div className='transition-choreography'>
@@ -648,22 +661,16 @@ function useViewTransition() {
 				</div>
 			</div>
 
-			<div className='reflection-section'>
-				<h3>Orchestrating Complete Experiences</h3>
-				<p>
-					Marina poses a challenge: "You've learned how transitions
-					connect to everything. How would you design a checkout flow
-					that uses smooth transitions between steps, maintains form
-					state across route changes, validates before allowing
-					progression, and gracefully handles errors?"
-				</p>
-				<p>
-					Consider how the motion design principles you've learned
-					could enhance the form systems you built earlier. How might
-					transitions communicate validation states or guide users
-					through complex multi-step processes?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Complete Transition System:',
+					content: "\"Transitions combine everything,\" Marina explained. \"Component lifecycle tells us when to trigger animations. State management tracks transition progress. Effect hooks synchronize with the browser's animation frame. And forms must gracefully handle transitions without losing user input.\""
+				}}
+				reflectionQuestions={[
+					'How would you design a checkout flow that uses smooth transitions between steps, maintains form state across route changes, validates before allowing progression, and gracefully handles errors?',
+					'How might transitions communicate validation states or guide users through complex multi-step processes?'
+				]}
+			/>
 		</div>
 	);
 };
