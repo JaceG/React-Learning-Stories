@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -84,9 +87,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Error Sanctuary
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Error Sanctuary`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -113,12 +117,6 @@ const ChapterOne = () => {
 					plague React applications. Learn their nature, and you can protect against them."
 				</p>
 
-				<div className='character-intro-card'>
-					<h4>Guardian Safiya</h4>
-					<p>Master of Error Boundaries and graceful failure. Her philosophy: 
-					"A well-handled error is better than a hidden bug. Errors tell stories - 
-					listen to them, learn from them, then protect against them."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -183,8 +181,10 @@ const ChapterOne = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Common React Error Patterns
+				<CodeExample
+					title={`Understanding React Error Types`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Common React Error Patterns
 
 // 1. Component Lifecycle Errors
 class BuggyComponent extends React.Component {
@@ -250,8 +250,8 @@ function ConditionalHookComponent({ condition }) {
 // - ReferenceError: Using undefined variables
 // - TypeError: Wrong data type operations
 // - RangeError: Values outside allowed range
-// - Runtime Errors: Logic errors during execution`}</pre>
-				</div>
+// - Runtime Errors: Logic errors during execution`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Safiya's Teaching:</strong> "Each error type requires different handling. 
 					Syntax errors prevent compilation, runtime errors crash components, and async 
@@ -259,41 +259,42 @@ function ConditionalHookComponent({ condition }) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Error Nature Lesson:</h3>
-				<p>
-					Understanding error types is the first step to handling them gracefully. In React, 
-					errors can occur at different stages: during rendering, in lifecycle methods, in 
-					event handlers, or in asynchronous code. Each requires different defensive strategies.
-				</p>
-				<p>
-					The key insight: Errors are inevitable, but crashes are preventable. By understanding 
-					where and why errors occur, you can build defensive barriers that keep your 
-					application running even when individual components fail.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Error Types</h3>
-				<p>
-					<strong>Why do some errors crash the entire app while others don't?</strong> Consider 
-					how React's error propagation works. Errors in render methods and lifecycle methods 
-					bubble up the component tree, while errors in event handlers don't.
-				</p>
-				<p>
-					<strong>What's the difference between compile-time and runtime errors?</strong> Think 
-					about when each type is caught and how they affect your development workflow. Which 
-					are easier to prevent?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As Aria captured each error type, she began to understand their patterns. Safiya 
-					nodded approvingly. "You've learned to recognize errors. Tomorrow, I'll teach you 
-					Error Boundaries - magical barriers that contain errors before they can spread..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Guardian Safiya`,
+						description: `Master of Error Boundaries and graceful failure. Her philosophy: "A well-handled error is better than a hidden bug. Errors tell stories - listen to them, learn from them, then protect against them."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Error Nature Lesson:`,
+					content: (
+						<>
+							<p>
+								Understanding error types is the first step to handling them gracefully. In React, 
+								errors can occur at different stages: during rendering, in lifecycle methods, in 
+								event handlers, or in asynchronous code. Each requires different defensive strategies.
+							</p>
+							<p>
+								The key insight: Errors are inevitable, but crashes are preventable. By understanding 
+								where and why errors occur, you can build defensive barriers that keep your 
+								application running even when individual components fail.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`Why do some errors crash the entire app while others don't? Consider how React's error propagation works. Errors in render methods and lifecycle methods bubble up the component tree, while errors in event handlers don't.`,
+					`What's the difference between compile-time and runtime errors? Think about when each type is caught and how they affect your development workflow. Which are easier to prevent?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 32 (Morning)`,
+					content: `The Error Enchantments sanctuary - errors float in the air like glowing orbs! Guardian Safiya welcomed me: "Here, errors aren't enemies - they're teachers." I captured five error types: Syntax (⚡ code structure), Reference (❓ undefined variables), Type (🔀 wrong data types), Runtime (💥 execution errors), and Async (⏱️ unhandled promises). Each captured error increases the sanctuary's Protection Level! In React, errors can occur during rendering, in lifecycle methods, in event handlers, or in async code - each needs different strategies. Safiya's wisdom: "Errors are inevitable, but crashes are preventable. A well-handled error is better than a hidden bug."`
+				}}
+				chapterEnding={[
+					`As Aria captured each error type, she began to understand their patterns. Safiya nodded approvingly. "You've learned to recognize errors. Tomorrow, I'll teach you Error Boundaries - magical barriers that contain errors before they can spread..."`
+				]}
+			/>
 		</div>
 	);
 };

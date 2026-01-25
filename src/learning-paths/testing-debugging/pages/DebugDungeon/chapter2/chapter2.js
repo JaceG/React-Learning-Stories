@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -74,14 +77,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Stack Trace Labyrinth
-			</h2>
-
-			<div className='chapter-bridge'>
-				Having learned to spot bugs in the darkness, Aria was ready to trace them 
-				to their source...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Stack Trace Labyrinth`}
+				bridge={`The party navigated through a labyrinth of stack traces. The walls were covered in glowing error messages, each one a path leading deeper into the code. "Each line tells you where you've been," Logsworth pointed with his staff, "leading back to the bug's origin. But beware - some traces are red herrings."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -180,8 +180,10 @@ const ChapterTwo = () => {
 						<button onClick={() => activateTool('devtools')}>Analyze Stack</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Source Map Navigation
+				<CodeExample
+					title={`Advanced Stack Trace Analysis`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Source Map Navigation
 // Enable source maps in production for better debugging
 // webpack.config.js
 module.exports = {
@@ -266,8 +268,8 @@ function parseStackTrace(stack) {
     }
     return { raw: line };
   }).filter(item => item.isAppCode);
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Binary's Analysis:</strong> "I've highlighted your application code 
 					in blue and framework code in gray. Focus on the blue lines - that's where 
@@ -275,46 +277,38 @@ function parseStackTrace(stack) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Stack Trace Navigation Lesson:</h3>
-				<p>
-					Stack traces are like breadcrumb trails through your code. Each line shows 
-					a function call, building a path from where the error was thrown back to 
-					where it originated. The art is learning which breadcrumbs matter and which 
-					are just noise.
-				</p>
-				<p>
-					Three critical skills: First, distinguish your code from framework code. 
-					Second, identify the actual error versus its symptoms. Third, understand 
-					async stack traces, where cause and effect may be separated by time and 
-					multiple event loops.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Stack Trace Mastery</h3>
-				<p>
-					<strong>Why are async bugs harder to trace?</strong> Consider how JavaScript's 
-					event loop breaks the direct connection between cause and effect. An error 
-					in a promise might only surface when the promise resolves, far from where 
-					the problem began.
-				</p>
-				<p>
-					<strong>How do source maps change debugging?</strong> Think about the 
-					transformation from minified production code to readable source code. Source 
-					maps are the bridge that lets you debug the code you wrote, not the code 
-					that runs.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the labyrinth's patterns became clear, Logsworth smiled grimly. "You've 
-					learned to read the signs, but the deepest chamber awaits. There lurks the 
-					Production Bug Boss - a shape-shifter that defies all debugging logic. 
-					Prepare yourself for the ultimate test..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Stack Trace Navigation Lesson:`,
+					content: (
+						<>
+							<p>
+								Stack traces are like breadcrumb trails through your code. Each line shows 
+								a function call, building a path from where the error was thrown back to 
+								where it originated. The art is learning which breadcrumbs matter and which 
+								are just noise.
+							</p>
+							<p>
+								Three critical skills: First, distinguish your code from framework code. 
+								Second, identify the actual error versus its symptoms. Third, understand 
+								async stack traces, where cause and effect may be separated by time and 
+								multiple event loops.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`Why are async bugs harder to trace? Consider how JavaScript's event loop breaks the direct connection between cause and effect. An error in a promise might only surface when the promise resolves, far from where the problem began.`,
+					`How do source maps change debugging? Think about the transformation from minified production code to readable source code. Source maps are the bridge that lets you debug the code you wrote, not the code that runs.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 30 (Afternoon)`,
+					content: `The Stack Trace Labyrinth! Walls covered in glowing error messages, each a path leading deeper into the code. Binary projected holographic traces, color-coding framework code (grey) from my application code (blue). Debuggora translated: "This 'Cannot read property of undefined' means async data hasn't loaded - the real bug is three levels up!" I learned three async bug patterns: Unhandled Promises (missing .catch()), Stale Closures (capturing old values), and Memory Leaks (subscriptions not cleaned up). Source maps are crucial - enable 'source-map' in webpack to debug readable code. The art: distinguishing symptoms from root causes!`
+				}}
+				chapterEnding={[
+					`As the labyrinth's patterns became clear, Logsworth smiled grimly. "You've learned to read the signs, but the deepest chamber awaits. There lurks the Production Bug Boss - a shape-shifter that defies all debugging logic. Prepare yourself for the ultimate test..."`
+				]}
+			/>
 		</div>
 	);
 };

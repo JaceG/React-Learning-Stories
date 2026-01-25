@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -75,14 +78,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Integration Feast
-			</h2>
-
-			<div className='chapter-bridge'>
-				With mocks in place and components connected, it was time for the grand 
-				celebration...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Integration Feast`}
+				bridge={`The inn hosted an integration feast - a celebration where all components worked together in perfect harmony. Innkeeper Cypress raised his glass high. "Tonight, we witness true integration! Every component knows its role, every service is accounted for, and every interaction is tested!"`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -196,8 +196,10 @@ const ChapterThree = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// The Complete Integration Test Pattern
+				<CodeExample
+					title={`Complete Integration Test Suite`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// The Complete Integration Test Pattern
 // Bringing it all together
 
 import { render, screen, waitFor } from '@testing-library/react';
@@ -351,8 +353,8 @@ test('registration completes within performance budget', async () => {
   
   // Should complete within 3 seconds
   expect(totalTime).toBeLessThan(3000);
-});`}</pre>
-				</div>
+});`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Integration Feast Wisdom:</strong> "A great integration test tells 
 					a story - the user's story. It should read like a journey through your 
@@ -361,46 +363,38 @@ test('registration completes within performance budget', async () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Integration Mastery Lesson:</h3>
-				<p>
-					True integration testing is about confidence. When all your components work 
-					together seamlessly, when external dependencies are properly mocked, and 
-					when user flows are thoroughly tested, you can deploy with confidence. It's 
-					the bridge between "it works on my machine" and "it works for everyone."
-				</p>
-				<p>
-					The Integration Inn teaches us that software, like society, is built on 
-					relationships. Components must communicate, cooperate, and handle conflicts 
-					gracefully. Integration tests ensure these relationships remain healthy as 
-					your application grows.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Integration Mastery</h3>
-				<p>
-					<strong>How do integration tests give you deployment confidence?</strong> 
-					Consider the difference between knowing individual parts work versus knowing 
-					the whole system works. What scenarios do integration tests catch that unit 
-					tests miss?
-				</p>
-				<p>
-					<strong>What's the ideal balance between unit, integration, and E2E tests?</strong> 
-					Think about the testing pyramid and your specific application needs. How do 
-					you decide what to test at each level?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the Integration Feast concluded, Cypress placed a hand on Aria's shoulder. 
-					"You've mastered the art of bringing components together. But even the best 
-					tests can't prevent all errors. At the Error Enchantments sanctuary, you'll 
-					learn the final piece - handling failures gracefully when they inevitably 
-					occur..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Integration Mastery Lesson:`,
+					content: (
+						<>
+							<p>
+								True integration testing is about confidence. When all your components work 
+								together seamlessly, when external dependencies are properly mocked, and 
+								when user flows are thoroughly tested, you can deploy with confidence. It's 
+								the bridge between "it works on my machine" and "it works for everyone."
+							</p>
+							<p>
+								The Integration Inn teaches us that software, like society, is built on 
+								relationships. Components must communicate, cooperate, and handle conflicts 
+								gracefully. Integration tests ensure these relationships remain healthy as 
+								your application grows.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How do integration tests give you deployment confidence? Consider the difference between knowing individual parts work versus knowing the whole system works. What scenarios do integration tests catch that unit tests miss?`,
+					`What's the ideal balance between unit, integration, and E2E tests? Think about the testing pyramid and your specific application needs. How do you decide what to test at each level?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 31 (Evening)`,
+					content: `The Integration Feast! Cypress raised his glass: "Tonight, we witness true integration!" Components that once conflicted now danced together seamlessly. I ran the complete flow: User Input → Form Validation → API Call (mocked) → State Update → UI Render → Analytics Track. All 6 steps passed! The Grand Integration Test tells a user's story - navigate to signup, fill form, accept terms, submit, wait for async, verify success, check analytics. I also wrote error handling tests: 409 status returns "username exists", user can fix and retry. Final stats: 245 unit tests, 67 integration tests, 4 mocked services, Inn Harmony at 100%!`
+				}}
+				chapterEnding={[
+					`As the Integration Feast concluded, Cypress placed a hand on Aria's shoulder. "You've mastered the art of bringing components together. But even the best tests can't prevent all errors. At the Error Enchantments sanctuary, you'll learn the final piece - handling failures gracefully when they inevitably occur..."`
+				]}
+			/>
 		</div>
 	);
 };

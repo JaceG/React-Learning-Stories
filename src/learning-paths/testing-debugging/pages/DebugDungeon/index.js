@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './DebugDungeon.css';
 
@@ -10,17 +10,6 @@ function DebugDungeon() {
 	const [debugDepth, setDebugDepth] = useState(0);
 	const [foundBugs, setFoundBugs] = useState([]);
 	const [stackTrace, setStackTrace] = useState(null);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Debug tool handlers
 	const activateTool = (tool) => {
@@ -61,28 +50,12 @@ function DebugDungeon() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Debug Dungeon</h1>
-			<p className='lesson-subtitle'>
-				Navigate the dark passages where bugs hide in production shadows
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Debug Dungeon`}
+				subtitle={`Navigate the dark passages where bugs hide in production shadows`}
+				opener={`Below the Testing Tower lay the Debug Dungeon, where the most elusive bugs hid. These weren't ordinary bugs - they were production bugs, shape-shifters that behaved differently than in development. Dungeon Keeper Logsworth met Aria at the entrance, his beard grey from years of debugging. "Even with tests, some bugs slip through. Here, we hunt them in production."`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -98,27 +71,10 @@ function DebugDungeon() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='testing-debugging'
-				lessonId='debug-dungeon'
+			<LessonFooter
+				courseId={`testing-debugging`}
+				lessonId={`debug-dungeon`}
+				totalChapters={3}
 			/>
 		</div>
 	);

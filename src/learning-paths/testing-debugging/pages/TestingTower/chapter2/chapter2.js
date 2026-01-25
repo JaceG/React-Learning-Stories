@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -59,14 +62,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Test Incantations
-			</h2>
-
-			<div className='chapter-bridge'>
-				Having learned to see and catch individual bugs, Aria was ready for more 
-				powerful magic...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Test Incantations`}
+				bridge={`Jasmine led Aria deeper into the Testing Tower, through a circular chamber with three glowing portals. "Individual bug catching is useful," she explained, "but we need systematic protection. I will teach you the three levels of testing spells - each more powerful than the last."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -158,8 +158,10 @@ const ChapterTwo = () => {
 						<button onClick={() => runTest('Testing Pyramid Suite')}>Cast All Spells</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Level 1: Unit Test Incantation
+				<CodeExample
+					title={`The Three Testing Incantations`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Level 1: Unit Test Incantation
 describe('Button Component', () => {
   test('renders with correct text', () => {
     render(<Button>Click Me</Button>);
@@ -210,8 +212,8 @@ describe('User Registration Journey', () => {
     await expect(page).toHaveURL('/welcome');
     await expect(page.locator('h1')).toContainText('Welcome, AriaTheGuide!');
   });
-});`}</pre>
-				</div>
+});`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Jasmine's Wisdom:</strong> "The Testing Pyramid guides us - many unit 
 					tests at the base, fewer integration tests in the middle, and selected E2E 
@@ -242,43 +244,37 @@ describe('User Registration Journey', () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Test Levels Lesson:</h3>
-				<p>
-					The three levels of testing work together like layers of armor. Unit tests 
-					are your chainmail - numerous small rings that catch most attacks. Integration 
-					tests are your plate armor - fewer pieces but covering critical joints. E2E 
-					tests are your shield - selective protection for the most important battles.
-				</p>
-				<p>
-					Remember the testing pyramid: A strong base of unit tests, a solid middle of 
-					integration tests, and a carefully chosen peak of E2E tests. This structure 
-					gives you fast feedback, comprehensive coverage, and maintainable test suites.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Testing Levels</h3>
-				<p>
-					<strong>How do the three levels of testing complement each other?</strong> 
-					Consider how unit tests provide fast feedback, integration tests catch 
-					component interaction issues, and E2E tests verify complete user workflows.
-				</p>
-				<p>
-					<strong>Why is the testing pyramid shape important?</strong> Think about test 
-					execution time, maintenance cost, and debugging difficulty at each level. How 
-					does this shape optimize for developer productivity?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the three portals glowed with activated test spells, Jasmine nodded 
-					approvingly. "You've learned to cast individual test spells, but true mastery 
-					comes from automation. Tomorrow, we'll build an army of tests that guard the 
-					kingdom day and night..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Test Levels Lesson:`,
+					content: (
+						<>
+							<p>
+								The three levels of testing work together like layers of armor. Unit tests 
+								are your chainmail - numerous small rings that catch most attacks. Integration 
+								tests are your plate armor - fewer pieces but covering critical joints. E2E 
+								tests are your shield - selective protection for the most important battles.
+							</p>
+							<p>
+								Remember the testing pyramid: A strong base of unit tests, a solid middle of 
+								integration tests, and a carefully chosen peak of E2E tests. This structure 
+								gives you fast feedback, comprehensive coverage, and maintainable test suites.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How do the three levels of testing complement each other? Consider how unit tests provide fast feedback, integration tests catch component interaction issues, and E2E tests verify complete user workflows.`,
+					`Why is the testing pyramid shape important? Think about test execution time, maintenance cost, and debugging difficulty at each level. How does this shape optimize for developer productivity?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 29 (Afternoon)`,
+					content: `Jasmine showed me a circular chamber with three glowing portals - each representing a level of testing magic! Blue for Unit Tests (individual components, catches 60% of bugs), Green for Integration Tests (component cooperation, catches 30%), and Gold for End-to-End Tests (complete user journeys, catches 10%). Binary showed me his bug prediction algorithm that highlights high-risk areas with low coverage! The Testing Pyramid is key: many unit tests at the base for fast feedback, fewer integration tests in the middle, and selective E2E tests at the peak. Like layers of armor - chainmail, plate armor, and shield working together!`
+				}}
+				chapterEnding={[
+					`As the three portals glowed with activated test spells, Jasmine nodded approvingly. "You've learned to cast individual test spells, but true mastery comes from automation. Tomorrow, we'll build an army of tests that guard the kingdom day and night..."`
+				]}
+			/>
 		</div>
 	);
 };

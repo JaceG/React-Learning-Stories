@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -45,9 +48,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: Descent into Darkness
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`Descent into Darkness`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -69,12 +73,6 @@ const ChapterOne = () => {
 					on timing."
 				</p>
 
-				<div className='character-intro-card'>
-					<h4>Dungeon Keeper Logsworth</h4>
-					<p>Master of production debugging and keeper of the error logs. His philosophy: 
-					"In production, bugs reveal their true nature. Here we learn to read the signs 
-					they leave behind - stack traces are maps, logs are clues, and timing is everything."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -180,8 +178,10 @@ const ChapterOne = () => {
 						<button onClick={() => activateTool('console')}>Activate Debug Mode</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// React DevTools Exploration
+				<CodeExample
+					title={`Deep Debugging Techniques`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// React DevTools Exploration
 // 1. Open React DevTools in production
 // 2. Navigate to problematic component
 // 3. Check these common issues:
@@ -249,8 +249,8 @@ const ProfiledComponent = () => {
       }
     };
   }, []);
-};`}</pre>
-				</div>
+};`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Logsworth's Tip:</strong> "Production debugging requires different tools. 
 					DevTools shows you the present, console logs show you the past, and performance 
@@ -258,46 +258,44 @@ const ProfiledComponent = () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Deep Debugging Lesson:</h3>
-				<p>
-					Debugging in production is like archaeology - you're reconstructing what 
-					happened from the artifacts left behind. Unlike development debugging where 
-					you can pause and inspect, production debugging requires you to be a 
-					detective, following clues through logs, metrics, and user reports.
-				</p>
-				<p>
-					The key insight: Production bugs often involve timing, load, or environment 
-					differences. A race condition that never appears in development might happen 
-					constantly under real user load. This is why defensive programming and 
-					comprehensive logging are essential.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Production Debugging</h3>
-				<p>
-					<strong>Why do bugs behave differently in production?</strong> Consider how 
-					factors like network latency, concurrent users, different data sets, and 
-					various device capabilities create conditions you can't fully replicate in 
-					development.
-				</p>
-				<p>
-					<strong>How is debugging like solving a mystery?</strong> Think about the 
-					process of gathering clues (logs), forming hypotheses (potential causes), 
-					testing theories (reproduction attempts), and eliminating possibilities 
-					until you find the truth.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As Aria captured her first production bug, Logsworth nodded approvingly. 
-					"You're learning to see in the dark. But these surface bugs are just the 
-					beginning. Tomorrow, we'll navigate the Stack Trace Labyrinth, where the 
-					real mysteries hide..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Dungeon Keeper Logsworth`,
+						description: `Master of production debugging and keeper of the error logs. His philosophy: "In production, bugs reveal their true nature. Here we learn to read the signs they leave behind - stack traces are maps, logs are clues, and timing is everything."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Deep Debugging Lesson:`,
+					content: (
+						<>
+							<p>
+								Debugging in production is like archaeology - you're reconstructing what 
+								happened from the artifacts left behind. Unlike development debugging where 
+								you can pause and inspect, production debugging requires you to be a 
+								detective, following clues through logs, metrics, and user reports.
+							</p>
+							<p>
+								The key insight: Production bugs often involve timing, load, or environment 
+								differences. A race condition that never appears in development might happen 
+								constantly under real user load. This is why defensive programming and 
+								comprehensive logging are essential.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`Why do bugs behave differently in production? Consider how factors like network latency, concurrent users, different data sets, and various device capabilities create conditions you can't fully replicate in development.`,
+					`How is debugging like solving a mystery? Think about the process of gathering clues (logs), forming hypotheses (potential causes), testing theories (reproduction attempts), and eliminating possibilities until you find the truth.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 30 (Morning)`,
+					content: `Below the Testing Tower lies the Debug Dungeon - where production bugs hide! These shape-shifters behave differently than in development. Dungeon Keeper Logsworth met me at the entrance, his beard grey from years of debugging. I encountered three dungeon bugs: the race-condition (🏃 fast, flickering), memory-leak (💧 slow, growing), and null-reference (👻 medium, vanishing). Three debugging tools: React DevTools for component inspection, Console for error tracking, and Network Inspector for API monitoring. Logsworth's wisdom: "Production debugging is archaeology - reconstructing what happened from artifacts left behind." DevTools shows the present, logs show the past!`
+				}}
+				chapterEnding={[
+					`As Aria captured her first production bug, Logsworth nodded approvingly. "You're learning to see in the dark. But these surface bugs are just the beginning. Tomorrow, we'll navigate the Stack Trace Labyrinth, where the real mysteries hide..."`
+				]}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -72,14 +75,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Automated Guardians
-			</h2>
-
-			<div className='chapter-bridge'>
-				With the three testing levels mastered, Aria was ready for the ultimate 
-				protection system...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Automated Guardians`}
+				bridge={`"Individual tests are powerful," Jasmine explained as they climbed to the tower's highest chamber, "but automated test suites are an army." The chamber contained a massive crystalline structure - the Continuous Integration Engine that runs every test automatically whenever code changes.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -198,8 +198,10 @@ const ChapterThree = () => {
 						<button onClick={() => runTest('CI Configuration Test')}>Test Configuration</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// The Continuous Integration Incantation
+				<CodeExample
+					title={`The Automation Spell`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// The Continuous Integration Incantation
 // .github/workflows/guardian-tests.yml
 
 name: Guardian Test Army
@@ -247,8 +249,8 @@ jobs:
     "coverage:check": "jest --coverage --coverageThreshold='{ global: { branches: 80, functions: 80, lines: 80, statements: 80 } }'",
     "precommit": "lint-staged && npm test:ci"
   }
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Jasmine's Final Teaching:</strong> "Automation multiplies your 
 					testing power. What once took hours now happens in minutes. The CI/CD pipeline 
@@ -282,44 +284,38 @@ jobs:
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Automation Lesson:</h3>
-				<p>
-					Automated testing transforms good developers into great ones. It's not about 
-					replacing human judgment - it's about freeing humans to focus on creative 
-					problems while machines handle repetitive verification. A strong CI/CD pipeline 
-					gives you confidence to refactor fearlessly, deploy frequently, and sleep 
-					peacefully.
-				</p>
-				<p>
-					The true power of automation isn't just catching bugs - it's creating a culture 
-					of quality. When every commit is tested, every merge is verified, and every 
-					deployment is validated, excellence becomes automatic.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Your Journey</h3>
-				<p>
-					<strong>How has your perspective on testing changed?</strong> From seeing tests 
-					as extra work to understanding them as guardian spells, consider how this shift 
-					in mindset affects your development process.
-				</p>
-				<p>
-					<strong>What would a codebase without tests look like?</strong> Imagine trying 
-					to refactor a large application with no test coverage. How would automated 
-					testing change your confidence and productivity?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Standing in the Underground Realms, Aria looked at her assembled allies - 
-					Jasmine, Debuggora, and the army of automated tests. "We've built a quality 
-					fortress," she said. "But even the best tests can't catch every bug. Some 
-					hide deeper, in the production shadows. The Debug Dungeon awaits..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Automation Lesson:`,
+					content: (
+						<>
+							<p>
+								Automated testing transforms good developers into great ones. It's not about 
+								replacing human judgment - it's about freeing humans to focus on creative 
+								problems while machines handle repetitive verification. A strong CI/CD pipeline 
+								gives you confidence to refactor fearlessly, deploy frequently, and sleep 
+								peacefully.
+							</p>
+							<p>
+								The true power of automation isn't just catching bugs - it's creating a culture 
+								of quality. When every commit is tested, every merge is verified, and every 
+								deployment is validated, excellence becomes automatic.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How has your perspective on testing changed? From seeing tests as extra work to understanding them as guardian spells, consider how this shift in mindset affects your development process.`,
+					`What would a codebase without tests look like? Imagine trying to refactor a large application with no test coverage. How would automated testing change your confidence and productivity?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 29 (Evening)`,
+					content: `The tower's highest chamber holds the Continuous Integration Engine - a massive crystalline structure! Phantom test runners materialized, each executing hundreds of tests in seconds. They never tire, never miss a test! I learned to configure GitHub Actions: checkout code, setup Node, run linters, deploy the test army, verify coverage (80% minimum!), E2E patrol, then build. The CI/CD pipeline provides instant feedback, 24/7 protection, and quality metrics. Jasmine's final teaching: "Automated testing transforms good developers into great ones." I now have an army of 324 guardian tests protecting the kingdom day and night!`
+				}}
+				chapterEnding={[
+					`Standing in the Underground Realms, Aria looked at her assembled allies - Jasmine, Debuggora, and the army of automated tests. "We've built a quality fortress," she said. "But even the best tests can't catch every bug. Some hide deeper, in the production shadows. The Debug Dungeon awaits..."`
+				]}
+			/>
 		</div>
 	);
 };

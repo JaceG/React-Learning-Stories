@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './IntegrationInn.css';
 
@@ -10,17 +10,6 @@ function IntegrationInn() {
 	const [componentConflicts, setComponentConflicts] = useState([]);
 	const [mockServices, setMockServices] = useState({});
 	const [harmonyLevel, setHarmonyLevel] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Integration handlers
 	const connectComponents = (comp1, comp2) => {
@@ -56,28 +45,12 @@ function IntegrationInn() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Integration Inn</h1>
-			<p className='lesson-subtitle'>
-				Where components meet and learn to work together harmoniously
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Integration Inn`}
+				subtitle={`Where components meet and learn to work together harmoniously`}
+				opener={`The Integration Inn was where components from different parts of the kingdom came together. A warm, welcoming place where formerly isolated components learned to work in harmony. Innkeeper Cypress welcomed Aria warmly, his weathered face showing years of experience. "Individual components may work perfectly alone, but put them together..." He gestured to the bar where two components were already in conflict.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -94,27 +67,10 @@ function IntegrationInn() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='testing-debugging'
-				lessonId='integration-inn'
+			<LessonFooter
+				courseId={`testing-debugging`}
+				lessonId={`integration-inn`}
+				totalChapters={3}
 			/>
 		</div>
 	);

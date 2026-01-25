@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -63,13 +66,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Mock Service
-			</h2>
-
-			<div className='chapter-bridge'>
-				With components now cooperating, it was time to handle external dependencies...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Mock Service`}
+				bridge={`Cypress led Aria to a special room in the inn - the Mock Service Chamber. "Real services are unreliable guests," he explained, gesturing to magical mirrors lining the walls. "They arrive late, speak different languages, or don't show up at all. These mock services look and act like the real thing, but they're completely under our control."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -189,8 +190,10 @@ const ChapterTwo = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Creating Test Doubles - The Art of Mocking
+				<CodeExample
+					title={`Mock Service Mastery`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Creating Test Doubles - The Art of Mocking
 
 // 1. API Mocking Strategies
 // Mock at the function level
@@ -324,8 +327,8 @@ test('integration with mocked services', async () => {
   expect(mockAnalytics.identify).toHaveBeenCalledBefore(
     mockAnalytics.track
   );
-});`}</pre>
-				</div>
+});`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Mock Creation Wisdom:</strong> "Mocks should be simple and focused. 
 					Don't try to replicate the entire service - just the parts your test needs. 
@@ -333,44 +336,38 @@ test('integration with mocked services', async () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Mocking Lesson:</h3>
-				<p>
-					Mocking is about control and isolation. By replacing external dependencies 
-					with predictable doubles, you can test your code's behavior without worrying 
-					about network issues, rate limits, or service downtime. It's like practicing 
-					a play with understudies - you know exactly what they'll say and when.
-				</p>
-				<p>
-					The art of mocking lies in balance. Mock too little, and your tests become 
-					flaky and slow. Mock too much, and your tests might pass while real 
-					integration fails. The key is mocking at the right boundaries - typically 
-					external services, not your own code.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Mock Services</h3>
-				<p>
-					<strong>When should you use mocks versus real services?</strong> Consider 
-					the trade-offs: speed vs realism, control vs authenticity. How do you 
-					ensure your mocks stay in sync with real service behavior?
-				</p>
-				<p>
-					<strong>What are the dangers of over-mocking?</strong> Think about tests 
-					that pass with mocks but fail in production. How can you balance isolation 
-					with integration confidence?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the mock services hummed with activity, Cypress nodded approvingly. 
-					"You've learned to create controlled environments for testing. Tomorrow, 
-					we celebrate with the Integration Feast - where all components work together 
-					in perfect harmony. The ultimate integration test awaits..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Mocking Lesson:`,
+					content: (
+						<>
+							<p>
+								Mocking is about control and isolation. By replacing external dependencies 
+								with predictable doubles, you can test your code's behavior without worrying 
+								about network issues, rate limits, or service downtime. It's like practicing 
+								a play with understudies - you know exactly what they'll say and when.
+							</p>
+							<p>
+								The art of mocking lies in balance. Mock too little, and your tests become 
+								flaky and slow. Mock too much, and your tests might pass while real 
+								integration fails. The key is mocking at the right boundaries - typically 
+								external services, not your own code.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`When should you use mocks versus real services? Consider the trade-offs: speed vs realism, control vs authenticity. How do you ensure your mocks stay in sync with real service behavior?`,
+					`What are the dangers of over-mocking? Think about tests that pass with mocks but fail in production. How can you balance isolation with integration confidence?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 31 (Afternoon)`,
+					content: `The Mock Service Chamber - filled with magical mirrors! Cypress explained: "Real services are unreliable guests - they arrive late, speak different languages, or don't show up at all." I mocked four services: User API (👤), Payment Gateway (💳 - was timing out!), Email Service (📧 - rate limited), and Analytics Tracker (📊 - blocked by adblockers). Mock Service Worker (MSW) intercepts network requests: rest.get('/api/users/:id') returns controlled responses. I learned jest.fn() for function mocking, jest.mock() for modules, and jest.useFakeTimers() for time control. Debuggora: "If the test fails with a mock, you know it's YOUR code, not the service!"`
+				}}
+				chapterEnding={[
+					`As the mock services hummed with activity, Cypress nodded approvingly. "You've learned to create controlled environments for testing. Tomorrow, we celebrate with the Integration Feast - where all components work together in perfect harmony. The ultimate integration test awaits..."`
+				]}
+			/>
 		</div>
 	);
 };

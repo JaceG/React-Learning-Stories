@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -42,9 +46,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Bug Manifestation
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Bug Manifestation`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -72,31 +77,14 @@ const ChapterOne = () => {
 					untested edge case."
 				</p>
 
-				<div className='character-intro-card'>
-					<h4>Test Master Jasmine</h4>
-					<p>Guardian of the Testing Tower and master of preventive magic. She believes 
-					that every bug caught before production is a victory for the kingdom. Her 
-					testing philosophy: "A test written today saves ten bugs tomorrow."</p>
-				</div>
-
-				<div className='character-intro-card'>
-					<h4>Debuggora the Owl</h4>
-					<p>A mystical owl with the power to see code's true behavior. Her keen eyes 
-					can spot bugs hiding in the shadows of untested code. She speaks in riddles 
-					but her insights are always valuable.</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Bug Hunter Training Ground</h3>
 				
-				<div className='instruction-box'>
-					<p>
-						<strong>Exercise:</strong> Help Aria catch the manifested bugs! Click on 
-						each bug creature to write a test that captures it. Watch as your test 
-						coverage grows with each successful catch.
-					</p>
-				</div>
+				<InstructionBox character={`Debuggora guides you through the Bug Hunter Training Ground.`}>
+					{`Help Aria catch the manifested bugs! Click on each bug creature to write a test that captures it. Watch as your test coverage grows with each successful catch.`}
+				</InstructionBox>
 
 				<div className='bug-hunter-ground'>
 					{visibleBugs.map(bug => (
@@ -176,8 +164,10 @@ function handleUserInput(value) {
 						<button onClick={() => runTest('Basic Component Test')}>Run Test</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// The First Testing Incantation
+				<CodeExample
+					title={`The First Testing Incantation`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// The First Testing Incantation
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -197,8 +187,8 @@ test('validates input types before processing', () => {
   // Jasmine's technique: Simulate real user behavior
   fireEvent.change(input, { target: { value: '123' } });
   expect(input.value).toBe('123');
-});`}</pre>
-				</div>
+});`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Jasmine explains:</strong> "Each test is a protective ward. The 
 					more tests you write, the stronger your defenses become. Start with the most 
@@ -218,43 +208,47 @@ test('validates input types before processing', () => {
 				</div>
 			)}
 
-			<div className='lesson-insight'>
-				<h3>The Testing Lesson:</h3>
-				<p>
-					Testing isn't about proving your code works - it's about proving it continues 
-					to work as you change it. Test Master Jasmine teaches that every test is a 
-					guardian spell, protecting against future bugs. The Testing Tower stands not 
-					to catch bugs after they appear, but to prevent them from manifesting at all.
-				</p>
-				<p>
-					Remember: A bug caught in testing costs minutes to fix. A bug caught in 
-					production costs hours, days, or even your users' trust. Choose your battles 
-					wisely by testing early and often.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					<strong>How does visualizing bugs as creatures help understand the importance 
-					of testing?</strong> Consider how each bug type represents a different kind 
-					of error that can creep into your code without proper testing coverage.
-				</p>
-				<p>
-					<strong>Why is preventive testing more powerful than reactive debugging?</strong> 
-					Think about the cost of finding and fixing bugs at different stages of 
-					development. How does systematic testing change your development workflow?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As Aria mastered the art of bug detection, Jasmine smiled. "You've learned 
-					to see the bugs, but catching them one by one isn't enough. Tomorrow, I'll 
-					teach you the three levels of testing spells - each more powerful than the 
-					last..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Test Master Jasmine`,
+						description: `Guardian of the Testing Tower and master of preventive magic. She believes that every bug caught before production is a victory for the kingdom. Her testing philosophy: "A test written today saves ten bugs tomorrow."`
+					},
+					{
+						name: `Debuggora the Owl`,
+						description: `A mystical owl with the power to see code's true behavior. Her keen eyes can spot bugs hiding in the shadows of untested code. She speaks in riddles but her insights are always valuable.`
+					}
+				]}
+				lessonInsight={{
+					title: `The Testing Lesson:`,
+					content: (
+						<>
+							<p>
+								Testing isn't about proving your code works - it's about proving it continues 
+								to work as you change it. Test Master Jasmine teaches that every test is a 
+								guardian spell, protecting against future bugs. The Testing Tower stands not 
+								to catch bugs after they appear, but to prevent them from manifesting at all.
+							</p>
+							<p>
+								Remember: A bug caught in testing costs minutes to fix. A bug caught in 
+								production costs hours, days, or even your users' trust. Choose your battles 
+								wisely by testing early and often.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How does visualizing bugs as creatures help understand the importance of testing? Consider how each bug type represents a different kind of error that can creep into your code without proper testing coverage.`,
+					`Why is preventive testing more powerful than reactive debugging? Think about the cost of finding and fixing bugs at different stages of development. How does systematic testing change your development workflow?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 29 (Morning)`,
+					content: `The optimized kingdom faces a new threat - bugs have begun manifesting as actual creatures! I descended into the Underground Realms where Test Master Jasmine guards the Testing Tower. Her companion Debuggora, a mystical owl, can see code's true behavior. I learned to identify bug types: null-pointer bugs (🐛), type-error bugs (🦗), and logic-error bugs (🕷️). Debuggora's vision revealed untested code paths glowing with potential bugs! Jasmine's wisdom: "Testing isn't about proving your code works - it's about proving it continues to work as you change it." A bug caught in testing costs minutes; in production, it costs trust.`
+				}}
+				chapterEnding={[
+					`As Aria mastered the art of bug detection, Jasmine smiled. "You've learned to see the bugs, but catching them one by one isn't enough. Tomorrow, I'll teach you the three levels of testing spells - each more powerful than the last..."`
+				]}
+			/>
 		</div>
 	);
 };

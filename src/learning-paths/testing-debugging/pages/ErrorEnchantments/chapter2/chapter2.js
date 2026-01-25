@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -87,13 +90,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: Error Boundaries
-			</h2>
-
-			<div className='chapter-bridge'>
-				With error types understood, it was time to build defenses...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`Error Boundaries`}
+				bridge={`Safiya led Aria to the Boundary Workshop. "Error Boundaries are React's built-in protection spell," she explained. "They catch errors in component trees and display fallback UI instead of crashing." She deliberately triggered an error to demonstrate - the unprotected component crashed everything, while the protected one displayed a gentle message.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -235,8 +236,10 @@ const ChapterTwo = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Creating Error Boundaries in React
+				<CodeExample
+					title={`Error Boundary Implementation`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Creating Error Boundaries in React
 
 // 1. Basic Error Boundary Class
 class ErrorBoundary extends React.Component {
@@ -397,8 +400,8 @@ function useErrorHandler() {
   }, []);
   
   return { error, resetError, captureError };
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Boundary Wisdom:</strong> "Error Boundaries don't catch errors in event 
 					handlers, async code, SSR, or in the boundary itself. Place them strategically - 
@@ -406,41 +409,36 @@ function useErrorHandler() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Error Boundary Lesson:</h3>
-				<p>
-					Error Boundaries are React's way of containing component failures. They work like 
-					try-catch blocks but for component trees. When an error occurs in a child component, 
-					the boundary catches it and renders fallback UI instead of crashing the entire app.
-				</p>
-				<p>
-					The strategic placement of Error Boundaries is crucial. Too granular, and you 
-					fragment the user experience. Too broad, and large sections fail together. The 
-					sweet spot is usually around feature boundaries or major UI sections.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Error Boundaries</h3>
-				<p>
-					<strong>What errors can't Error Boundaries catch?</strong> Consider why event 
-					handlers and async code need different error handling strategies. How would you 
-					handle errors in these cases?
-				</p>
-				<p>
-					<strong>How do you decide where to place Error Boundaries?</strong> Think about 
-					user experience - which parts of your app can fail independently? What's the 
-					impact of showing fallback UI in different locations?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As boundaries shimmered into place around vulnerable components, Safiya smiled. 
-					"You've learned to contain errors. Tomorrow, we'll explore production error 
-					handling - monitoring, logging, and recovering gracefully from the unexpected..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Error Boundary Lesson:`,
+					content: (
+						<>
+							<p>
+								Error Boundaries are React's way of containing component failures. They work like 
+								try-catch blocks but for component trees. When an error occurs in a child component, 
+								the boundary catches it and renders fallback UI instead of crashing the entire app.
+							</p>
+							<p>
+								The strategic placement of Error Boundaries is crucial. Too granular, and you 
+								fragment the user experience. Too broad, and large sections fail together. The 
+								sweet spot is usually around feature boundaries or major UI sections.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`What errors can't Error Boundaries catch? Consider why event handlers and async code need different error handling strategies. How would you handle errors in these cases?`,
+					`How do you decide where to place Error Boundaries? Think about user experience - which parts of your app can fail independently? What's the impact of showing fallback UI in different locations?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 32 (Afternoon)`,
+					content: `The Boundary Workshop! Safiya demonstrated: an unprotected component error crashed everything, but a protected one showed a gentle fallback message. Error Boundaries are React's try-catch for component trees! Class components with getDerivedStateFromError() and componentDidCatch(). I protected four vulnerable components: User Profile (async loading), Data Grid (complex rendering), Payment Form (third-party integration), and Chat Widget (real-time updates). Each boundary logs errors and shows retry options. Critical: Error Boundaries don't catch errors in event handlers, async code, SSR, or in themselves! Strategic placement is key - around feature boundaries, not every component.`
+				}}
+				chapterEnding={[
+					`As boundaries shimmered into place around vulnerable components, Safiya smiled. "You've learned to contain errors. Tomorrow, we'll explore production error handling - monitoring, logging, and recovering gracefully from the unexpected..."`
+				]}
+			/>
 		</div>
 	);
 };

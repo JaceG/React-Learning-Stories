@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './ErrorEnchantments.css';
 
@@ -11,17 +11,6 @@ function ErrorEnchantments() {
 	const [fallbackStrategies, setFallbackStrategies] = useState({});
 	const [errorLogbook, setErrorLogbook] = useState([]);
 	const [protectionLevel, setProtectionLevel] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Error handling functions
 	const captureError = (error) => {
@@ -81,28 +70,12 @@ function ErrorEnchantments() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Error Enchantments</h1>
-			<p className='lesson-subtitle'>
-				Master the art of error handling and graceful failure recovery
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Error Enchantments`}
+				subtitle={`Master the art of error handling and graceful failure recovery`}
+				opener={`After mastering integration testing at the Inn, Aria arrived at the Error Enchantments sanctuary. This mystical place was unlike anything she'd seen - errors floated in the air like glowing orbs, each containing dangerous power. Guardian Safiya welcomed her with a knowing smile. "Welcome to where we turn chaos into control. Here, errors aren't enemies - they're teachers."`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -122,27 +95,10 @@ function ErrorEnchantments() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='testing-debugging'
-				lessonId='error-enchantments'
+			<LessonFooter
+				courseId={`testing-debugging`}
+				lessonId={`error-enchantments`}
+				totalChapters={3}
 			/>
 		</div>
 	);

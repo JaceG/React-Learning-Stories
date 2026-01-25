@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -69,13 +72,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Production Bug Boss
-			</h2>
-
-			<div className='chapter-bridge'>
-				With stack trace mastery achieved, Aria faced the ultimate challenge...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Production Bug Boss`}
+				bridge={`In the deepest chamber of the Debug Dungeon, they encountered the Production Bug - a massive, shape-shifting creature that behaved differently than any bug in development. "This is why we need more than just debugging skills," Logsworth declared, raising his staff. "We need error boundaries, monitoring, and logging!"`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -193,8 +194,10 @@ const ChapterThree = () => {
 						<button onClick={() => attackBoss('monitoring')}>Deploy All Defenses</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Error Boundary Implementation
+				<CodeExample
+					title={`Production Defense Systems`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Error Boundary Implementation
 class ProductionErrorBoundary extends React.Component {
   state = { hasError: false, error: null, errorInfo: null };
   
@@ -325,8 +328,8 @@ const UserErrorReport = () => {
       )}
     </>
   );
-};`}</pre>
-				</div>
+};`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Strategy:</strong> "The Production Bug Boss cannot be defeated 
 					by debugging alone. You need a complete defense system: boundaries to contain, 
@@ -348,46 +351,39 @@ const UserErrorReport = () => {
 				</div>
 			)}
 
-			<div className='lesson-insight'>
-				<h3>The Production Debugging Lesson:</h3>
-				<p>
-					Production debugging isn't about finding and fixing individual bugs - it's 
-					about building systems that make bugs visible, contained, and understood. 
-					Error boundaries prevent cascading failures, logging creates an audit trail, 
-					monitoring provides real-time health metrics, and user reporting closes the 
-					feedback loop.
-				</p>
-				<p>
-					The ultimate insight: In production, you can't attach a debugger and step 
-					through code. Instead, you must be proactive - instrument your code with 
-					the tools that will help you when things go wrong. The best time to add 
-					debugging capabilities is before you need them.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Production Resilience</h3>
-				<p>
-					<strong>How do error boundaries change user experience?</strong> Consider 
-					the difference between an entire app crashing versus a single component 
-					showing an error message. How does graceful degradation build user trust?
-				</p>
-				<p>
-					<strong>Why is proactive monitoring better than reactive debugging?</strong> 
-					Think about discovering issues before users report them versus scrambling 
-					to fix problems after complaints. How does this change your development 
-					approach?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the Production Bug Boss dissolved into error logs, Logsworth placed a 
-					hand on Aria's shoulder. "You've conquered the Debug Dungeon, but debugging 
-					is only half of quality. At the Integration Inn, you'll learn how components 
-					must work together. Innkeeper Cypress awaits with new challenges..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Production Debugging Lesson:`,
+					content: (
+						<>
+							<p>
+								Production debugging isn't about finding and fixing individual bugs - it's 
+								about building systems that make bugs visible, contained, and understood. 
+								Error boundaries prevent cascading failures, logging creates an audit trail, 
+								monitoring provides real-time health metrics, and user reporting closes the 
+								feedback loop.
+							</p>
+							<p>
+								The ultimate insight: In production, you can't attach a debugger and step 
+								through code. Instead, you must be proactive - instrument your code with 
+								the tools that will help you when things go wrong. The best time to add 
+								debugging capabilities is before you need them.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How do error boundaries change user experience? Consider the difference between an entire app crashing versus a single component showing an error message. How does graceful degradation build user trust?`,
+					`Why is proactive monitoring better than reactive debugging? Think about discovering issues before users report them versus scrambling to fix problems after complaints. How does this change your development approach?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 30 (Evening)`,
+					content: `The Production Bug Boss - a massive shape-shifter in the deepest chamber! It shifted between memory-leak, race-condition, and state-corruption forms. Four debugging strategies to defeat it: Error Boundaries (contain the damage), Strategic Logging (track behavior), Real-time Monitoring (observe patterns), and User Error Reports (gather intelligence). I implemented comprehensive error monitoring with global handlers for uncaught errors and unhandled rejections, enriching logs with context (timestamp, userAgent, userId, sessionId). The boss dissolved at 0% health! Logsworth's wisdom: "Production debugging isn't finding bugs - it's building systems that make bugs visible and contained."`
+				}}
+				chapterEnding={[
+					`As the Production Bug Boss dissolved into error logs, Logsworth placed a hand on Aria's shoulder. "You've conquered the Debug Dungeon, but debugging is only half of quality. At the Integration Inn, you'll learn how components must work together. Innkeeper Cypress awaits with new challenges..."`
+				]}
+			/>
 		</div>
 	);
 };

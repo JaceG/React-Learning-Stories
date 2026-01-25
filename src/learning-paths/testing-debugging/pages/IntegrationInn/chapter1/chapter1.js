@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -49,9 +52,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: Where Components Meet
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`Where Components Meet`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -78,13 +82,6 @@ const ChapterOne = () => {
 					debugging, but this is different. These components work fine in isolation!"
 				</p>
 
-				<div className='character-intro-card'>
-					<h4>Innkeeper Cypress</h4>
-					<p>Master of component harmony and integration testing. His philosophy: 
-					"A component alone is like a musician practicing scales. Put them in an 
-					orchestra, and suddenly you need a conductor. Integration tests are that 
-					conductor."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -168,8 +165,10 @@ const ChapterOne = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Component Integration Testing
+				<CodeExample
+					title={`Integration Testing Fundamentals`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Component Integration Testing
 // Test how components work together, not in isolation
 
 import { render, screen, waitFor } from '@testing-library/react';
@@ -259,8 +258,8 @@ describe('Component Message Passing', () => {
       displayed: true
     });
   });
-});`}</pre>
-				</div>
+});`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Cypress's Wisdom:</strong> "See how integration tests verify the 
 					entire flow? Unit tests check if a wheel spins. Integration tests check 
@@ -268,45 +267,44 @@ describe('Component Message Passing', () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Integration Lesson:</h3>
-				<p>
-					Integration testing bridges the gap between unit tests and end-to-end tests. 
-					While unit tests verify components in isolation, integration tests ensure 
-					they play nicely together. Like musicians in an orchestra, each component 
-					might sound perfect alone, but the real magic happens when they harmonize.
-				</p>
-				<p>
-					The key insight: Integration bugs often arise from assumptions. Component A 
-					assumes Component B will send data in a certain format. Component B assumes 
-					Component A will handle errors. Integration tests verify these assumptions 
-					hold true.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Component Integration</h3>
-				<p>
-					<strong>Why do components that work perfectly in unit tests fail when 
-					integrated?</strong> Consider how isolation removes complexity but also 
-					removes real-world interactions. What assumptions might your components 
-					be making about each other?
-				</p>
-				<p>
-					<strong>How is integration testing different from end-to-end testing?</strong> 
-					Think about the scope and speed trade-offs. Integration tests are faster 
-					than E2E but test more than units. Where's the sweet spot for your application?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As components began working together harmoniously, Cypress smiled. "You've 
-					seen how components can conflict. Tomorrow, I'll teach you the art of mock 
-					services - creating fake versions of external dependencies so you can test 
-					without the chaos of the real world..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Innkeeper Cypress`,
+						description: `Master of component harmony and integration testing. His philosophy: "A component alone is like a musician practicing scales. Put them in an orchestra, and suddenly you need a conductor. Integration tests are that conductor."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Integration Lesson:`,
+					content: (
+						<>
+							<p>
+								Integration testing bridges the gap between unit tests and end-to-end tests. 
+								While unit tests verify components in isolation, integration tests ensure 
+								they play nicely together. Like musicians in an orchestra, each component 
+								might sound perfect alone, but the real magic happens when they harmonize.
+							</p>
+							<p>
+								The key insight: Integration bugs often arise from assumptions. Component A 
+								assumes Component B will send data in a certain format. Component B assumes 
+								Component A will handle errors. Integration tests verify these assumptions 
+								hold true.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`Why do components that work perfectly in unit tests fail when integrated? Consider how isolation removes complexity but also removes real-world interactions. What assumptions might your components be making about each other?`,
+					`How is integration testing different from end-to-end testing? Think about the scope and speed trade-offs. Integration tests are faster than E2E but test more than units. Where's the sweet spot for your application?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 31 (Morning)`,
+					content: `The Integration Inn - where components learn to work in harmony! Innkeeper Cypress welcomed me warmly. At the bar, a Form component and Validation service were already spawning integration bugs - miscommunication errors flying between them! I learned that components work fine in isolation but conflict when integrated. The Inn has five component types: User Form (📝 input), Validation Service (⚙️ service), API Client (🌐 network), State Manager (💾 state), and Error Handler (🛡️ error). The Harmony Meter tracks successful connections. Cypress's wisdom: "A component alone is like a musician practicing scales. Put them in an orchestra, and suddenly you need a conductor."`
+				}}
+				chapterEnding={[
+					`As components began working together harmoniously, Cypress smiled. "You've seen how components can conflict. Tomorrow, I'll teach you the art of mock services - creating fake versions of external dependencies so you can test without the chaos of the real world..."`
+				]}
+			/>
 		</div>
 	);
 };

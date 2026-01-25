@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -106,13 +109,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Production Error Mastery
-			</h2>
-
-			<div className='chapter-bridge'>
-				With boundaries in place, it was time to face real-world challenges...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`Production Error Mastery`}
+				bridge={`The final chamber of the Error Enchantments sanctuary glowed with monitors showing live production data. "This is where theory meets reality," Safiya gestured to the displays. "Production errors are different beasts - unpredictable, varied, and often silent. The key is not preventing all errors, but graceful degradation and quick recovery."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -252,8 +253,10 @@ const ChapterThree = () => {
 						</button>
 					</div>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Production-Ready Error Handling
+				<CodeExample
+					title={`Production Error Handling Strategies`}
+					discoveredBy={`Transcribed by Aria`}
+					code={`// Production-Ready Error Handling
 
 // 1. Comprehensive Error Monitoring
 class ErrorMonitor {
@@ -519,41 +522,13 @@ class ProductionErrorRecovery {
     // Default to fallback
     return this.strategies.FALLBACK;
   }
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Production Wisdom:</strong> "In production, expect the unexpected. Monitor 
 					everything, batch error reports, implement smart retries, and always have a fallback. 
 					Remember: users don't care about perfect code - they care about working features."
 				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Production Mastery Lesson:</h3>
-				<p>
-					Production error handling is about resilience, not perfection. It's impossible to 
-					prevent all errors, but you can control how your application responds to them. The 
-					goal is to maintain functionality and user trust even when things go wrong.
-				</p>
-				<p>
-					Effective production error handling combines proactive monitoring, intelligent recovery 
-					strategies, and graceful degradation. By expecting failures and planning for them, 
-					you create applications that users can rely on, even in imperfect conditions.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Production Resilience</h3>
-				<p>
-					<strong>How do you balance error reporting with performance?</strong> Consider the 
-					trade-offs between detailed error tracking and application speed. What information 
-					is essential versus nice-to-have?
-				</p>
-				<p>
-					<strong>What makes a good error recovery strategy?</strong> Think about user experience - 
-					when should you retry automatically versus asking the user? How do you communicate 
-					errors without causing panic?
-				</p>
 			</div>
 
 			{protectionLevel >= 80 && (
@@ -570,14 +545,36 @@ class ProductionErrorRecovery {
 				</div>
 			)}
 
-			<div className='chapter-ending'>
-				<p>
-					As the sanctuary's protection reached full strength, Safiya placed a hand on 
-					Aria's shoulder. "You've completed your training in Testing & Debugging. From 
-					unit tests in the Tower to production errors here, you now possess the knowledge 
-					to build truly resilient React applications. Your journey in Act III continues..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Production Mastery Lesson:`,
+					content: (
+						<>
+							<p>
+								Production error handling is about resilience, not perfection. It's impossible to 
+								prevent all errors, but you can control how your application responds to them. The 
+								goal is to maintain functionality and user trust even when things go wrong.
+							</p>
+							<p>
+								Effective production error handling combines proactive monitoring, intelligent recovery 
+								strategies, and graceful degradation. By expecting failures and planning for them, 
+								you create applications that users can rely on, even in imperfect conditions.
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					`How do you balance error reporting with performance? Consider the trade-offs between detailed error tracking and application speed. What information is essential versus nice-to-have?`,
+					`What makes a good error recovery strategy? Think about user experience - when should you retry automatically versus asking the user? How do you communicate errors without causing panic?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 32 (Evening)`,
+					content: `Production Error Mastery! The final chamber glowed with live monitoring displays. Safiya: "Production errors are different beasts - unpredictable and often silent." Four production error types: NetworkError (45/day, high severity), ChunkLoadError (12/day, critical!), StateError (78/day, medium), ThirdPartyError (156/day, low). Four recovery strategies: Automatic Retry (🔄), Fallback Mode (🔀 cached data), Graceful Degradation (⚡ disable non-critical features), User Notification (📢). I built an ErrorMonitor class with global handlers, error queuing, and periodic flush. Sanctuary Protection reached 80%! My Testing & Debugging training is complete - from unit tests to production errors, I can build truly resilient applications!`
+				}}
+				chapterEnding={[
+					`As the sanctuary's protection reached full strength, Safiya placed a hand on Aria's shoulder. "You've completed your training in Testing & Debugging. From unit tests in the Tower to production errors here, you now possess the knowledge to build truly resilient React applications. Your journey in Act III continues..."`
+				]}
+			/>
 		</div>
 	);
 };

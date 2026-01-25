@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './TestingTower.css';
 
@@ -10,17 +10,6 @@ function TestingTower() {
 	const [bugsCaught, setBugsCaught] = useState(0);
 	const [testCoverage, setTestCoverage] = useState(0);
 	const [protectedComponents, setProtectedComponents] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Test execution handlers
 	const runTest = (testName) => {
@@ -54,28 +43,12 @@ function TestingTower() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>The Testing Tower</h1>
-			<p className='lesson-subtitle'>
-				Build an impenetrable fortress of tests to protect your kingdom
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`The Testing Tower`}
+				subtitle={`Build an impenetrable fortress of tests to protect your kingdom`}
+				opener={`The optimized kingdom ran swiftly, but strange reports emerged. Components behaved unexpectedly, features broke without warning, and worst of all - bugs had begun manifesting as actual creatures throughout the realm. Aria descended into the Underground Realms, where the Testing Tower stood as the first line of defense against the chaos.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -91,27 +64,10 @@ function TestingTower() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='testing-debugging'
-				lessonId='testing-tower'
+			<LessonFooter
+				courseId={`testing-debugging`}
+				lessonId={`testing-tower`}
+				totalChapters={3}
 			/>
 		</div>
 	);
