@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
@@ -126,15 +127,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Mount and Update Chronicles
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>Chronos led Aria deeper into the Lifecycle Sanctum, where 
-				glowing murals depicted the two most active phases of a component's 
-				life - the moments of birth and change.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Mount and Update Chronicles'
+				bridge="Chronos led Aria deeper into the Lifecycle Sanctum, where glowing murals depicted the two most active phases of a component's life - the moments of birth and change."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>

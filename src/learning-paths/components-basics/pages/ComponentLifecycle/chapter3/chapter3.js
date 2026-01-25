@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
@@ -159,13 +160,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Farewell Ceremony</h2>
-
-			<div className='chapter-bridge'>
-				<p>As twilight fell over the Lifecycle Sanctum, Chronos led Aria 
-				to a quieter chamber where components came to complete their final 
-				ritual - the graceful art of saying goodbye.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Farewell Ceremony'
+				bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>

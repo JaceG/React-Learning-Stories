@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
@@ -21,17 +22,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Building Complex Structures
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='Building Complex Structures'
+				bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
+			/>
 
 			<div className='story-section'>
-				<p className='chapter-bridge'>
-					After learning how components communicate through props, Aria was 
-					ready for her final lesson in the Component Kingdom. Master Aurelius 
-					led her to the Grand Assembly Hall.
-				</p>
-				
 				<p className='story-paragraph'>
 					"Now comes the true power of our kingdom," Aurelius announced with pride. 
 					"Watch how workshops collaborate. Larger workshops can use the creations 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
@@ -59,13 +60,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: Embedding Magic Spells</h2>
-
-			<div className='chapter-bridge'>
-				<p>Having learned the basics of JSX syntax, Aria was eager to 
-				discover its true power. Professor Syntaxis led her deeper into 
-				the academy to the Expression Chamber.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title='Embedding Magic Spells'
+				bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>

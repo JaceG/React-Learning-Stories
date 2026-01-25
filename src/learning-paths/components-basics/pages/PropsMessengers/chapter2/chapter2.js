@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
@@ -108,15 +109,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The One-Way Road</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The One-Way Road'
+				bridge='After understanding how messengers deliver props, Aria was ready to learn about the sacred rule that governed all communication in the React Kingdom.'
+			/>
 
 			<div className='story-section'>
-				<p className='chapter-bridge'>
-					After understanding how messengers deliver props, Aria was ready to 
-					learn about the sacred rule that governed all communication in the 
-					React Kingdom.
-				</p>
-				
 				<p className='story-paragraph'>
 					Hermes led Aria to the Grand Thoroughfare - a magnificent road system 
 					that connected the App castle to all workshops. "Observe carefully," 

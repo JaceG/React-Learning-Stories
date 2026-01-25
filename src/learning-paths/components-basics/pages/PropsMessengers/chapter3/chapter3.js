@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
@@ -154,17 +155,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The PropTypes Guardians
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The PropTypes Guardians'
+				bridge='Having learned about the one-way flow of props, Aria was ready for the final lesson at the Props Messenger Guild. Hermes had one more important concept to share.'
+			/>
 
 			<div className='story-section'>
-				<p className='chapter-bridge'>
-					Having learned about the one-way flow of props, Aria was ready 
-					for the final lesson at the Props Messenger Guild. Hermes had 
-					one more important concept to share.
-				</p>
-				
 				<p className='story-paragraph'>
 					"As our kingdom grew," Hermes began, "we encountered a new problem. 
 					Sometimes messengers would deliver the wrong type of props to a workshop. 

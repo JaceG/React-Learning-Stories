@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterOne = () => {
@@ -10,9 +11,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Village of Components
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title='The Village of Components'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>

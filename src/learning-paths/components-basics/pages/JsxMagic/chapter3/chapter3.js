@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
@@ -148,15 +149,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Rules of the Scrolls
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>As the afternoon sun cast long shadows through the academy's 
-				stained glass windows, Professor Syntaxis led Aria to the Hall 
-				of Sacred Rules, where ancient tablets glowed with ethereal light.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Rules of the Scrolls'
+				bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
