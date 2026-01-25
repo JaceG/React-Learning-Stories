@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const [selectedMaterials, setSelectedMaterials] = useState([]);
@@ -45,12 +47,13 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Art of Destructuring
-				</h2>
+				<ChapterIntro
+					chapterNumber={1}
+					title="The Art of Destructuring"
+				/>
 
-				<div className='chapter-bridge'>
-					<p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
 						The heat hit Aria like a wall as she entered the Prop
 						Forge. Molten data flowed in channels carved into the
 						floor, and the air shimmered with the energy of
@@ -198,8 +201,9 @@ function ChapterOne() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// The old way - accessing props repeatedly
+				<CodeExample
+					title="The Art of Destructuring Props"
+					code={`// The old way - accessing props repeatedly
 function WeaponCard(props) {
   return (
     <div className="weapon">
@@ -238,8 +242,8 @@ function WeaponCard({
       <p>Durability: {durability}/{100}</p>
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
@@ -269,74 +273,32 @@ console.log(element);   // "fire"`}</pre>
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 14 (Morning)</h4>
-						<p>
-							The Prop Forge is incredible! Master Destructo
-							showed me how destructuring transforms clumsy prop
-							access into elegant extraction. Instead of writing
-							props.this and props.that everywhere, we can extract
-							all needed properties in one line! Even better - we
-							can provide default values, so our components never
-							break from missing props. It's like having a safety
-							net built into the code. Destructuring in function
-							parameters is especially powerful - it immediately
-							shows which props a component expects. This isn't
-							just about writing less code; it's about writing
-							clearer, more intentional code!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Master Destructo's Forging Wisdom:</h3>
-					<p>
-						Destructuring extracts properties from props objects
-						with surgical precision, transforming verbose prop
-						access into clean, readable code. Master this art by
-						destructuring in function parameters, providing default
-						values for optional props, and extracting only what you
-						need. This technique not only reduces repetition but
-						also documents your component's expectations clearly.
-						Remember: a component that destructures its props is a
-						component that knows exactly what it needs.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>Master Smith Destructo</strong> - The legendary
-						prop smith of React Kingdom. His forge transforms raw
-						data into refined props, but his true mastery lies in
-						destructuring - the art of elegantly extracting exactly
-						what's needed from complex prop objects. His singed
-						beard tells tales of countless hours perfecting the
-						craft.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the forging metaphor help you understand prop
-						transformation?
-					</p>
-					<p className='story-paragraph'>
-						Why might destructuring with defaults be like having a
-						"backup plan"?
-					</p>
-					<p className='story-paragraph'>
-						What advantages does parameter destructuring provide
-						over accessing props directly?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Master Destructo's Forging Wisdom:",
+						content: "Destructuring extracts properties from props objects with surgical precision, transforming verbose prop access into clean, readable code. Master this art by destructuring in function parameters, providing default values for optional props, and extracting only what you need. This technique not only reduces repetition but also documents your component's expectations clearly. Remember: a component that destructures its props is a component that knows exactly what it needs."
+					}}
+					reflectionQuestions={[
+						"How does the forging metaphor help you understand prop transformation?",
+						"Why might destructuring with defaults be like having a \"backup plan\"?",
+						"What advantages does parameter destructuring provide over accessing props directly?"
+					]}
+					characterIntros={[
+						{
+							name: "Master Smith Destructo",
+							description: "The legendary prop smith of React Kingdom. His forge transforms raw data into refined props, but his true mastery lies in destructuring - the art of elegantly extracting exactly what's needed from complex prop objects. His singed beard tells tales of countless hours perfecting the craft."
+						}
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 14 (Morning)",
+						content: "The Prop Forge is incredible! Master Destructo showed me how destructuring transforms clumsy prop access into elegant extraction. Instead of writing props.this and props.that everywhere, we can extract all needed properties in one line! Even better - we can provide default values, so our components never break from missing props. It's like having a safety net built into the code. Destructuring in function parameters is especially powerful - it immediately shows which props a component expects. This isn't just about writing less code; it's about writing clearer, more intentional code!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterOne;

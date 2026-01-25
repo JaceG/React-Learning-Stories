@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const cargoManifest = {
@@ -35,16 +37,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 2: Loading the Cargo</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Dawn broke over the Trade Quarter as Aria arrived at the
-						Grand Loading Dock. Massive wagons lined up in neat
-						rows, each being carefully loaded with diverse cargo
-						under Propius's watchful eye.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title="Loading the Cargo"
+					bridge="Dawn broke over the Trade Quarter as Aria arrived at the Grand Loading Dock. Massive wagons lined up in neat rows, each being carefully loaded with diverse cargo under Propius's watchful eye."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -178,8 +175,9 @@ function ChapterTwo() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Sending a fully loaded caravan
+				<CodeExample
+					title="Sending a Fully Loaded Caravan"
+					code={`// Sending a fully loaded caravan
 <ProductCard
   title="Magic Potion"           // string
   price={99.99}                  // number
@@ -204,8 +202,8 @@ function ProductCard(props) {
       <button onClick={onPurchase}>Purchase</button>
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Props Flow Visualization</h3>
@@ -224,60 +222,26 @@ function ProductCard(props) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 12 (Afternoon)</h4>
-						<p>
-							The Loading Dock taught me that props are incredibly
-							versatile! A single caravan (component) can carry
-							strings, numbers, booleans, arrays, objects, and
-							even functions. Propius showed me how destructuring
-							lets workshops unpack cargo efficiently - much
-							cleaner than accessing props.text, props.price, etc.
-							The most magical discovery: function props! They're
-							like return addresses that let child components send
-							messages back to their parents. This two-way
-							communication (props down, callbacks up) creates
-							truly interactive applications!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Propius's Cargo Management Wisdom:</h3>
-					<p>
-						React props accept any JavaScript type as cargo - from
-						simple strings and numbers to complex objects and
-						powerful function callbacks. Destructuring allows clean
-						unpacking of multiple props, while descriptive naming
-						ensures clarity. Function props are particularly
-						special, enabling upward communication from child to
-						parent. Remember: props flow down, events bubble up
-						through callbacks, creating a complete communication
-						cycle in your component hierarchy.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the cargo manifest metaphor help you understand
-						prop typing?
-					</p>
-					<p>
-						Why are function props like "return addresses" for
-						component communication?
-					</p>
-					<p>
-						What benefits do you see in destructuring props versus
-						accessing them directly?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Propius's Cargo Management Wisdom:",
+						content: "React props accept any JavaScript type as cargo - from simple strings and numbers to complex objects and powerful function callbacks. Destructuring allows clean unpacking of multiple props, while descriptive naming ensures clarity. Function props are particularly special, enabling upward communication from child to parent. Remember: props flow down, events bubble up through callbacks, creating a complete communication cycle in your component hierarchy."
+					}}
+					reflectionQuestions={[
+						"How does the cargo manifest metaphor help you understand prop typing?",
+						"Why are function props like \"return addresses\" for component communication?",
+						"What benefits do you see in destructuring props versus accessing them directly?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 12 (Afternoon)",
+						content: "The Loading Dock taught me that props are incredibly versatile! A single caravan (component) can carry strings, numbers, booleans, arrays, objects, and even functions. Propius showed me how destructuring lets workshops unpack cargo efficiently - much cleaner than accessing props.text, props.price, etc. The most magical discovery: function props! They're like return addresses that let child components send messages back to their parents. This two-way communication (props down, callbacks up) creates truly interactive applications!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterTwo;

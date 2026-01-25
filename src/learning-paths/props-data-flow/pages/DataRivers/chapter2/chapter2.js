@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const [damGates, setDamGates] = useState({
@@ -32,17 +34,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 2: Dams and Bridges</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Flux led Aria upstream to where the data rivers
-						converged at a massive dam complex. The sound of
-						controlled waterfalls filled the air as data streams
-						were carefully managed through an intricate system of
-						gates and channels.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title="Dams and Bridges"
+					bridge="Flux led Aria upstream to where the data rivers converged at a massive dam complex. The sound of controlled waterfalls filled the air as data streams were carefully managed through an intricate system of gates and channels."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -194,8 +190,9 @@ function ChapterTwo() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Controlling data flow with conditional rendering
+				<CodeExample
+					title="Controlling Data Flow with Conditional Rendering"
+					code={`// Controlling data flow with conditional rendering
 function DataDam({ userData, settings, permissions, userRole }) {
   // Gate 1: Filter user data based on permissions
   const filteredUserData = permissions.canViewUsers 
@@ -236,8 +233,8 @@ function DataTransformer({ rawData }) {
   };
   
   return <DisplayComponent data={processedData} />;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
@@ -287,61 +284,26 @@ function DataTransformer({ rawData }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 13 (Afternoon)</h4>
-						<p>
-							The dam complex taught me crucial flow control!
-							Gatekeeper showed how conditional rendering acts
-							like dam gates - controlling which data reaches
-							which components. We can filter sensitive
-							information, transform raw data into useful formats,
-							and use bridges (shared parents) to distribute data
-							efficiently. The key insight: place data sources at
-							the lowest common ancestor of components that need
-							them. This prevents prop drilling while maintaining
-							the sacred one-way flow. Data management is as much
-							about what you don't pass as what you do!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Gatekeeper's Flow Control Wisdom:</h3>
-					<p>
-						Master data flow through three techniques: conditional
-						rendering (gates that control which components receive
-						data), prop transformation (processing data into the
-						exact shape children need), and strategic placement
-						(positioning data sources high enough to serve all
-						consumers). Like a well-designed dam system, your
-						components should filter sensitive data, transform raw
-						information into useful formats, and distribute
-						efficiently without prop drilling. Remember: the best
-						data flow is both secure and maintainable.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How do dams and bridges help you visualize data flow
-						control?
-					</p>
-					<p>
-						When might filtering data early (upstream) be better
-						than filtering late?
-					</p>
-					<p>
-						What signs indicate that your data source needs to be
-						"lifted" higher?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Gatekeeper's Flow Control Wisdom:",
+						content: "Master data flow through three techniques: conditional rendering (gates that control which components receive data), prop transformation (processing data into the exact shape children need), and strategic placement (positioning data sources high enough to serve all consumers). Like a well-designed dam system, your components should filter sensitive data, transform raw information into useful formats, and distribute efficiently without prop drilling. Remember: the best data flow is both secure and maintainable."
+					}}
+					reflectionQuestions={[
+						"How do dams and bridges help you visualize data flow control?",
+						"When might filtering data early (upstream) be better than filtering late?",
+						"What signs indicate that your data source needs to be \"lifted\" higher?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 13 (Afternoon)",
+						content: "The dam complex taught me crucial flow control! Gatekeeper showed how conditional rendering acts like dam gates - controlling which data reaches which components. We can filter sensitive information, transform raw data into useful formats, and use bridges (shared parents) to distribute data efficiently. The key insight: place data sources at the lowest common ancestor of components that need them. This prevents prop drilling while maintaining the sacred one-way flow. Data management is as much about what you don't pass as what you do!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterTwo;

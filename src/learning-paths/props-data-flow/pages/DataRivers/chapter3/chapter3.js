@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	// Removed unused state - waterfallData was not being used in this component
@@ -19,18 +21,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: Waterfalls and Cascades
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						On the final morning at the Cascade District, Flux led
-						Aria to a breathtaking sight - the Great Data Waterfall,
-						where information cascaded through seven majestic tiers,
-						each pool glowing with transmitted data.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title="Waterfalls and Cascades"
+					bridge="On the final morning at the Cascade District, Flux led Aria to a breathtaking sight - the Great Data Waterfall, where information cascaded through seven majestic tiers, each pool glowing with transmitted data."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -205,8 +200,9 @@ function ChapterThree() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// The waterfall cascade pattern
+				<CodeExample
+					title="The Waterfall Cascade Pattern"
+					code={`// The waterfall cascade pattern
 function App() {
   const userData = { name: 'River Master', role: 'guide', id: 123 };
   const theme = { primary: 'blue', mode: 'light' };
@@ -255,8 +251,8 @@ function Avatar({ userName }) {
   // The bottom of our waterfall - receiving filtered data
   const initial = userName.charAt(0).toUpperCase();
   return <div className="avatar">{initial}</div>;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Cascade Patterns</h3>
@@ -294,94 +290,34 @@ function Avatar({ userName }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 13 (Evening)</h4>
-						<p>
-							The Great Waterfall was both inspiring and
-							cautionary! I saw how data cascades through nested
-							components, splitting and filtering at each level.
-							But Flux warned about the dangers of deep waterfalls
-							- beyond 3-4 levels, they become hard to maintain.
-							The key patterns: filter data at each tier (pass
-							only what's needed), split streams for different
-							children, and know when to use Context or state
-							management instead of endless cascading. Sometimes
-							the most elegant solution isn't the most beautiful
-							waterfall, but a simple, direct aqueduct!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>River Master Flux's Cascade Wisdom:</h3>
-					<p>
-						Data cascades through component trees like waterfalls,
-						with each level receiving from above and choosing what
-						to pass below. Master four patterns: Full Cascade
-						(everything flows through), Filtered Cascade (each level
-						extracts what it needs), Transformed Cascade (data
-						reshapes at each tier), and Split Cascade (different
-						streams for different children). While beautiful,
-						cascades beyond 3-4 levels signal the need for Context
-						or state management. Remember: the most maintainable
-						waterfall is often the shortest one.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As they prepared to leave the Cascade District, Flux
-						placed a hand on Aria's shoulder. "You've learned well.
-						You understand not just how data flows, but when flows
-						become floods."
-					</p>
-					<p className='story-paragraph'>
-						"The rivers taught me so much," Aria reflected. "One-way
-						flow, controlled gates, and the perils of deep cascades.
-						But where do I go next?"
-					</p>
-					<p className='story-paragraph'>
-						Flux pointed toward smoke rising from distant chimneys.
-						"The Prop Forge awaits. Master Smith Destructo will
-						teach you the art of transforming props - breaking them
-						apart and reshaping them for maximum efficiency."
-					</p>
-					<p className='story-paragraph'>
-						Binary beeped excitedly. "From water to fire! This
-						journey keeps getting more interesting!"
-					</p>
-					<p className='story-paragraph'>
-						"Thank you, River Master Flux," Aria bowed. "I'll never
-						look at data flow the same way again."
-					</p>
-					<p className='story-paragraph'>
-						"May your data streams run clear and your cascades stay
-						shallow," Flux blessed them as they departed. "And
-						remember - respect the flow!"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the waterfall metaphor help you recognize when
-						components are too deeply nested?
-					</p>
-					<p className='story-paragraph'>
-						What signs in your code indicate that a cascade has
-						become unmaintainable?
-					</p>
-					<p className='story-paragraph'>
-						When might you choose to let data cascade versus using
-						Context or state management?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "River Master Flux's Cascade Wisdom:",
+						content: "Data cascades through component trees like waterfalls, with each level receiving from above and choosing what to pass below. Master four patterns: Full Cascade (everything flows through), Filtered Cascade (each level extracts what it needs), Transformed Cascade (data reshapes at each tier), and Split Cascade (different streams for different children). While beautiful, cascades beyond 3-4 levels signal the need for Context or state management. Remember: the most maintainable waterfall is often the shortest one."
+					}}
+					reflectionQuestions={[
+						"How does the waterfall metaphor help you recognize when components are too deeply nested?",
+						"What signs in your code indicate that a cascade has become unmaintainable?",
+						"When might you choose to let data cascade versus using Context or state management?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 13 (Evening)",
+						content: "The Great Waterfall was both inspiring and cautionary! I saw how data cascades through nested components, splitting and filtering at each level. But Flux warned about the dangers of deep waterfalls - beyond 3-4 levels, they become hard to maintain. The key patterns: filter data at each tier (pass only what's needed), split streams for different children, and know when to use Context or state management instead of endless cascading. Sometimes the most elegant solution isn't the most beautiful waterfall, but a simple, direct aqueduct!"
+					}}
+					chapterEnding={[
+						"As they prepared to leave the Cascade District, Flux placed a hand on Aria's shoulder. \"You've learned well. You understand not just how data flows, but when flows become floods.\"",
+						"\"The rivers taught me so much,\" Aria reflected. \"One-way flow, controlled gates, and the perils of deep cascades. But where do I go next?\"",
+						"Flux pointed toward smoke rising from distant chimneys. \"The Prop Forge awaits. Master Smith Destructo will teach you the art of transforming props - breaking them apart and reshaping them for maximum efficiency.\"",
+						"Binary beeped excitedly. \"From water to fire! This journey keeps getting more interesting!\"",
+						"\"Thank you, River Master Flux,\" Aria bowed. \"I'll never look at data flow the same way again.\"",
+						"\"May your data streams run clear and your cascades stay shallow,\" Flux blessed them as they departed. \"And remember - respect the flow!\""
+					]}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterThree;

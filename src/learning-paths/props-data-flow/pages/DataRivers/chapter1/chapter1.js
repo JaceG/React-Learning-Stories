@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const [riverFlowing, setRiverFlowing] = useState(false);
@@ -24,18 +26,18 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 1: The River's Law</h2>
+				<ChapterIntro
+					chapterNumber={1}
+					title="The River's Law"
+				/>
 
-				<div className='chapter-bridge'>
-					<p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
 						The Cascade District was breathtaking. Data rivers
 						cascaded down terraced waterfalls, each stream glowing
 						with the soft blue light of information flowing from
 						higher to lower components.
 					</p>
-				</div>
-
-				<div className='story-section'>
 					<p className='story-paragraph'>
 						"Magnificent, isn't it?" A voice called from the
 						observation platform. Aria turned to see a figure in
@@ -172,8 +174,9 @@ function ChapterOne() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Data flows downward like a river
+				<CodeExample
+					title="Data Flows Downward Like a River"
+					code={`// Data flows downward like a river
 function MountainSource() {
   // The source of our data river
   const [waterLevel, setWaterLevel] = useState(100);
@@ -207,8 +210,8 @@ function ValleyComponent({ waterLevel, temperature }) {
 function PondComponent({ waterLevel }) {
   // Even further downstream
   return <p>Pond depth: {waterLevel / 10}m</p>;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Flow Direction Visualizer</h3>
@@ -268,73 +271,32 @@ function PondComponent({ waterLevel }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 13 (Morning)</h4>
-						<p>
-							The Data Rivers have revealed a fundamental truth
-							about React! Data flows like water - always
-							downward, never up. River Master Flux showed me how
-							this unidirectional flow creates order and
-							predictability. When a parent component (the source)
-							changes, every child downstream automatically
-							receives the update. No confusion, no conflicts, no
-							circular dependencies. The elegance is in the
-							simplicity - by restricting flow to one direction,
-							React ensures our applications remain understandable
-							and debuggable. Props truly are read-only for a
-							reason!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>River Master Flux's Wisdom:</h3>
-					<p>
-						React enforces unidirectional data flow - data moves
-						exclusively from parent to child through props, never
-						the reverse. This one-way river ensures predictability,
-						prevents circular dependencies, and makes debugging
-						straightforward. When state changes at the source, all
-						downstream components re-render with fresh data
-						automatically. Props are read-only at each level,
-						maintaining data integrity throughout the component
-						tree. Remember: data flows down, events bubble up.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>River Master Flux</strong> - Guardian of the
-						Data Rivers and keeper of the flow. Her robes shift like
-						water, and she understands the deepest principles of
-						data movement in React Kingdom. She teaches that
-						respecting the natural flow of data leads to harmony in
-						applications.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the river metaphor help you understand React's
-						data flow principles?
-					</p>
-					<p>
-						Why might two-way data binding (water flowing uphill)
-						cause problems?
-					</p>
-					<p>
-						What advantages does unidirectional flow provide when
-						tracking down bugs?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "River Master Flux's Wisdom:",
+						content: "React enforces unidirectional data flow - data moves exclusively from parent to child through props, never the reverse. This one-way river ensures predictability, prevents circular dependencies, and makes debugging straightforward. When state changes at the source, all downstream components re-render with fresh data automatically. Props are read-only at each level, maintaining data integrity throughout the component tree. Remember: data flows down, events bubble up."
+					}}
+					reflectionQuestions={[
+						"How does the river metaphor help you understand React's data flow principles?",
+						"Why might two-way data binding (water flowing uphill) cause problems?",
+						"What advantages does unidirectional flow provide when tracking down bugs?"
+					]}
+					characterIntros={[
+						{
+							name: "River Master Flux",
+							description: "Guardian of the Data Rivers and keeper of the flow. Her robes shift like water, and she understands the deepest principles of data movement in React Kingdom. She teaches that respecting the natural flow of data leads to harmony in applications."
+						}
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 13 (Morning)",
+						content: "The Data Rivers have revealed a fundamental truth about React! Data flows like water - always downward, never up. River Master Flux showed me how this unidirectional flow creates order and predictability. When a parent component (the source) changes, every child downstream automatically receives the update. No confusion, no conflicts, no circular dependencies. The elegance is in the simplicity - by restricting flow to one direction, React ensures our applications remain understandable and debuggable. Props truly are read-only for a reason!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterOne;

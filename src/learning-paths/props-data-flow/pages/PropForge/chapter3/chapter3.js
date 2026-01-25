@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const [testProps, setTestProps] = useState({
@@ -55,18 +57,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: The Validation Vault
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						On the final day at the Prop Forge, Destructo led Aria
-						and Binary deep underground to a chamber that hummed
-						with protective energy. Glowing runes covered every
-						surface, pulsing with validation magic.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title="The Validation Vault"
+					bridge="On the final day at the Prop Forge, Destructo led Aria and Binary deep underground to a chamber that hummed with protective energy. Glowing runes covered every surface, pulsing with validation magic."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -274,8 +269,9 @@ function ChapterThree() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// PropTypes validation (classic approach)
+				<CodeExample
+					title="PropTypes and TypeScript Validation"
+					code={`// PropTypes validation (classic approach)
 import PropTypes from 'prop-types';
 
 function MagicalItem({ name, level, element, onUse }) {
@@ -344,8 +340,8 @@ function validateProps(props, schema) {
   });
   
   return errors;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3>Master Smith's Best Practices</h3>
@@ -389,99 +385,34 @@ function validateProps(props, schema) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 14 (Evening)</h4>
-						<p>
-							The Validation Vault revealed the final secrets of
-							prop mastery! Props are contracts between
-							components, and validation ensures those contracts
-							are honored. PropTypes provide runtime warnings,
-							while TypeScript catches errors before code even
-							runs. Default values act as safety nets for optional
-							props. Destructo's sacred rules: never mutate props,
-							validate everything, provide defaults, use clear
-							names, and document thoroughly. The forge taught me
-							that prop handling isn't just about passing data -
-							it's about creating reliable, maintainable component
-							relationships. Quality props make quality
-							applications!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Master Destructo's Final Wisdom:</h3>
-					<p>
-						Prop validation transforms fragile components into
-						reliable systems. Use PropTypes for runtime warnings or
-						TypeScript for compile-time safety. Always provide
-						default values for optional props, creating robust
-						components that handle edge cases gracefully.
-						Well-validated props serve as living documentation,
-						showing exactly what each component expects. Remember:
-						props are immutable contracts - validate them
-						thoroughly, document them clearly, and never mutate them
-						directly. Quality validation prevents bugs before they
-						happen.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As they prepared to leave the Prop Forge, Destructo
-						presented Aria with a small hammer pendant. "This
-						symbolizes your mastery of prop transformation. You've
-						learned to destructure, spread, and validate - the three
-						pillars of prop craftsmanship."
-					</p>
-					<p className='story-paragraph'>
-						"Thank you, Master Destructo," Aria said, fastening the
-						pendant. "I'll never look at props the same way. They're
-						not just data - they're carefully crafted artifacts that
-						need respect and proper handling."
-					</p>
-					<p className='story-paragraph'>
-						Binary displayed a holographic forge in miniature.
-						"Props forged with care!"
-					</p>
-					<p className='story-paragraph'>
-						"Indeed!" Destructo laughed. "Now, I believe you have
-						one more destination? The Echo Caves await, where you'll
-						learn how events travel back up the component tree."
-					</p>
-					<p className='story-paragraph'>
-						"From props flowing down to events echoing up," Aria
-						mused. "The cycle completes!"
-					</p>
-					<p className='story-paragraph'>
-						"May your props be well-typed and your components
-						unbreakable!" Destructo called as they departed. The
-						forge's heat faded behind them as they headed toward
-						their final lesson.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the forging metaphor help you think about prop
-						quality and validation?
-					</p>
-					<p className='story-paragraph'>
-						What benefits do you see in treating props as
-						"contracts" between components?
-					</p>
-					<p className='story-paragraph'>
-						How might validation patterns change as your application
-						scales?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Master Destructo's Final Wisdom:",
+						content: "Prop validation transforms fragile components into reliable systems. Use PropTypes for runtime warnings or TypeScript for compile-time safety. Always provide default values for optional props, creating robust components that handle edge cases gracefully. Well-validated props serve as living documentation, showing exactly what each component expects. Remember: props are immutable contracts - validate them thoroughly, document them clearly, and never mutate them directly. Quality validation prevents bugs before they happen."
+					}}
+					reflectionQuestions={[
+						"How does the forging metaphor help you think about prop quality and validation?",
+						"What benefits do you see in treating props as \"contracts\" between components?",
+						"How might validation patterns change as your application scales?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 14 (Evening)",
+						content: "The Validation Vault revealed the final secrets of prop mastery! Props are contracts between components, and validation ensures those contracts are honored. PropTypes provide runtime warnings, while TypeScript catches errors before code even runs. Default values act as safety nets for optional props. Destructo's sacred rules: never mutate props, validate everything, provide defaults, use clear names, and document thoroughly. The forge taught me that prop handling isn't just about passing data - it's about creating reliable, maintainable component relationships. Quality props make quality applications!"
+					}}
+					chapterEnding={[
+						"As they prepared to leave the Prop Forge, Destructo presented Aria with a small hammer pendant. \"This symbolizes your mastery of prop transformation. You've learned to destructure, spread, and validate - the three pillars of prop craftsmanship.\"",
+						"\"Thank you, Master Destructo,\" Aria said, fastening the pendant. \"I'll never look at props the same way. They're not just data - they're carefully crafted artifacts that need respect and proper handling.\"",
+						"Binary displayed a holographic forge in miniature. \"Props forged with care!\"",
+						"\"Indeed!\" Destructo laughed. \"Now, I believe you have one more destination? The Echo Caves await, where you'll learn how events travel back up the component tree.\"",
+						"\"From props flowing down to events echoing up,\" Aria mused. \"The cycle completes!\"",
+						"\"May your props be well-typed and your components unbreakable!\" Destructo called as they departed. The forge's heat faded behind them as they headed toward their final lesson."
+					]}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterThree;

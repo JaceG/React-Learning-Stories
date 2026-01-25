@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const [echoCount, setEchoCount] = useState(0);
@@ -34,10 +36,13 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 1: The Echo Tower</h2>
+				<ChapterIntro
+					chapterNumber={1}
+					title="The Echo Tower"
+				/>
 
-				<div className='chapter-bridge'>
-					<p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
 						The entrance to the Echo Caves revealed itself as a
 						massive archway carved into the mountainside. Strange
 						sounds emanated from within - clicks, chimes, and
@@ -199,8 +204,9 @@ function ChapterOne() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Parent component provides the echo chamber
+				<CodeExample
+					title="Parent Component Provides the Echo Chamber"
+					code={`// Parent component provides the echo chamber
 function EchoTower() {
   const [signalCount, setSignalCount] = useState(0);
   const [lastSignal, setLastSignal] = useState('');
@@ -244,8 +250,8 @@ function SignalStation({ onSignal }) {
       />
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3>Event Handler Patterns</h3>
@@ -326,74 +332,32 @@ function SignalStation({ onSignal }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 15 (Morning)</h4>
-						<p>
-							The Echo Caves revealed the missing piece of the
-							data flow puzzle! While props flow downward like
-							water, events echo upward through callbacks. Echo
-							Keeper Callback showed me how parents pass functions
-							down as props - like handing children magical
-							communication devices. When children need to report
-							something, they call these functions, sending echoes
-							up the component tree. The parent receives the echo
-							and decides how to respond, maintaining the one-way
-							data flow. It's brilliant - data down, events up,
-							creating a complete communication cycle!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Echo Keeper's Wisdom:</h3>
-					<p>
-						Events in React create echoes that travel upward through
-						callback functions passed as props. Child components
-						call these callbacks to communicate with parents,
-						sending information against the natural downward flow.
-						This maintains unidirectional data flow - data descends
-						through props while events ascend through callbacks.
-						Master this pattern to create interactive components
-						that communicate without breaking React's core
-						principles. Remember: children speak only when given a
-						voice (callback) by their parents.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>Echo Keeper Callback</strong> - Guardian of the
-						Echo Caves and master of upward communication. Her robes
-						shimmer with sound waves, and her voice creates visible
-						ripples in the air. She teaches the art of callback
-						functions, showing how child components can send
-						messages to their parents without violating the sacred
-						one-way data flow.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the echo metaphor help you understand callback
-						functions?
-					</p>
-					<p className='story-paragraph'>
-						Why is it important that children can't directly modify
-						parent state?
-					</p>
-					<p className='story-paragraph'>
-						What parallels do you see between the waterfall (props)
-						and echo (events) metaphors?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Echo Keeper's Wisdom:",
+						content: "Events in React create echoes that travel upward through callback functions passed as props. Child components call these callbacks to communicate with parents, sending information against the natural downward flow. This maintains unidirectional data flow - data descends through props while events ascend through callbacks. Master this pattern to create interactive components that communicate without breaking React's core principles. Remember: children speak only when given a voice (callback) by their parents."
+					}}
+					reflectionQuestions={[
+						"How does the echo metaphor help you understand callback functions?",
+						"Why is it important that children can't directly modify parent state?",
+						"What parallels do you see between the waterfall (props) and echo (events) metaphors?"
+					]}
+					characterIntros={[
+						{
+							name: "Echo Keeper Callback",
+							description: "Guardian of the Echo Caves and master of upward communication. Her robes shimmer with sound waves, and her voice creates visible ripples in the air. She teaches the art of callback functions, showing how child components can send messages to their parents without violating the sacred one-way data flow."
+						}
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 15 (Morning)",
+						content: "The Echo Caves revealed the missing piece of the data flow puzzle! While props flow downward like water, events echo upward through callbacks. Echo Keeper Callback showed me how parents pass functions down as props - like handing children magical communication devices. When children need to report something, they call these functions, sending echoes up the component tree. The parent receives the echo and decides how to respond, maintaining the one-way data flow. It's brilliant - data down, events up, creating a complete communication cycle!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterOne;

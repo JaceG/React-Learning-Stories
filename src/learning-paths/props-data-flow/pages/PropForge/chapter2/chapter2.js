@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const baseProps = {
@@ -31,18 +33,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: The Spread Enchantment
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The next morning, Aria found Destructo working with
-						multiple glowing crystals, each pulsing with different
-						data properties. The forge's heat seemed even more
-						intense as he prepared for advanced techniques.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title="The Spread Enchantment"
+					bridge="The next morning, Aria found Destructo working with multiple glowing crystals, each pulsing with different data properties. The forge's heat seemed even more intense as he prepared for advanced techniques."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -189,8 +184,9 @@ function ChapterTwo() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// The Spread Operator in action
+				<CodeExample
+					title="The Spread Operator in Action"
+					code={`// The Spread Operator in action
 const weaponProps = {
   name: 'Flame Blade',
   damage: 50,
@@ -242,8 +238,8 @@ function ItemTransformer({ item, userLevel }) {
   };
   
   return <ItemCard {...transformedItem} />;
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3>Transformation Workshop</h3>
@@ -310,62 +306,26 @@ function ItemTransformer({ item, userLevel }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 14 (Afternoon)</h4>
-						<p>
-							The spread operator is like magical metalworking!
-							Three dots (...) that can merge objects, with later
-							properties overriding earlier ones - perfect for
-							combining default props with user props. Destructo
-							showed me how to spread props when passing them to
-							children, adding or transforming properties along
-							the way. The real power comes from combining spread
-							with destructuring - I can extract props I don't
-							want to pass, then spread the rest! It's elegant
-							prop forwarding that keeps components flexible. This
-							isn't just copying - it's intelligent prop
-							transformation!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Master Destructo's Spread Wisdom:</h3>
-					<p>
-						The spread operator (...) merges objects with surgical
-						precision - later spreads override earlier ones,
-						enabling powerful patterns. Master prop forwarding by
-						spreading incoming props while adding new ones.
-						Transform selectively by spreading most properties
-						unchanged while overriding specific values. Combine with
-						destructuring to filter unwanted props before spreading
-						the rest. Remember: spread is shallow - nested objects
-						need special handling. This enchantment turns rigid prop
-						passing into flexible, maintainable data flow.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the metal-merging metaphor help you understand
-						spread operator behavior?
-					</p>
-					<p className='story-paragraph'>
-						When might you combine destructuring with spread for
-						selective prop passing?
-					</p>
-					<p className='story-paragraph'>
-						What are the advantages of transforming props as they
-						flow versus at their source?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Master Destructo's Spread Wisdom:",
+						content: "The spread operator (...) merges objects with surgical precision - later spreads override earlier ones, enabling powerful patterns. Master prop forwarding by spreading incoming props while adding new ones. Transform selectively by spreading most properties unchanged while overriding specific values. Combine with destructuring to filter unwanted props before spreading the rest. Remember: spread is shallow - nested objects need special handling. This enchantment turns rigid prop passing into flexible, maintainable data flow."
+					}}
+					reflectionQuestions={[
+						"How does the metal-merging metaphor help you understand spread operator behavior?",
+						"When might you combine destructuring with spread for selective prop passing?",
+						"What are the advantages of transforming props as they flow versus at their source?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 14 (Afternoon)",
+						content: "The spread operator is like magical metalworking! Three dots (...) that can merge objects, with later properties overriding earlier ones - perfect for combining default props with user props. Destructo showed me how to spread props when passing them to children, adding or transforming properties along the way. The real power comes from combining spread with destructuring - I can extract props I don't want to pass, then spread the rest! It's elegant prop forwarding that keeps components flexible. This isn't just copying - it's intelligent prop transformation!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterTwo;

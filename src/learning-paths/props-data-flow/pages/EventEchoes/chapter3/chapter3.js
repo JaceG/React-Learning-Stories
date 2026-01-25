@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const [symphony, setSymphony] = useState([]);
@@ -77,18 +79,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 3: Symphony of Events</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						At the heart of the Echo Caves lay the Grand Symphony
-						Hall, a natural amphitheater where thousands of
-						stalactites formed a stone organ. The acoustics were
-						perfect - every sound resonated with crystalline
-						clarity. Aria and Binary entered to find Callback
-						standing at a conductor's podium.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title="Symphony of Events"
+					bridge="At the heart of the Echo Caves lay the Grand Symphony Hall, a natural amphitheater where thousands of stalactites formed a stone organ. The acoustics were perfect - every sound resonated with crystalline clarity. Aria and Binary entered to find Callback standing at a conductor's podium."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -309,8 +304,9 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Complex event coordination - Symphony pattern
+				<CodeExample
+					title="Complex Event Coordination - Symphony Pattern"
+					code={`// Complex event coordination - Symphony pattern
 function Orchestra() {
   const [performance, setPerformance] = useState({
     tempo: 120,
@@ -423,110 +419,38 @@ function ListWithDelegation({ items, onItemAction }) {
       ))}
     </ul>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 15 (Evening)</h4>
-						<p>
-							The Symphony Hall revealed the ultimate event
-							pattern! Parent components are conductors,
-							orchestrating complex interactions between their
-							children. Events from one child can trigger
-							cascading updates across siblings, all coordinated
-							through the parent's callbacks. The Symphony Pattern
-							shows how individual components create harmony when
-							properly conducted. Event delegation reduces
-							callback proliferation by handling related events
-							through single handlers. As complexity grows,
-							patterns like Context become assistant conductors.
-							The complete cycle is now clear: props flow down
-							like sheet music, events echo up like performed
-							notes, creating React's beautiful symphony!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Symphony Master's Final Wisdom:</h3>
-					<p>
-						Master event coordination by thinking of parent
-						components as conductors orchestrating their children's
-						interactions. The Symphony Pattern coordinates complex
-						multi-component behaviors through centralized event
-						handling. Use event delegation to reduce callback
-						proliferation, handling multiple related actions through
-						single handlers. As complexity grows, recognize when to
-						introduce Context or state management - they're
-						assistant conductors for your growing orchestra.
-						Remember: harmony emerges from well-structured event
-						flow.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the final echoes faded, Callback lowered her baton
-						with a satisfied smile. "You've completed your journey
-						through Props and Data Flow, Aria. From caravans to
-						rivers, from forges to echoes - you understand the
-						complete cycle."
-					</p>
-					<p className='story-paragraph'>
-						Aria felt the weight of knowledge settling into place.
-						"Props descend like gifts from parents to children,
-						while events ascend like messages back up. It's a
-						continuous conversation!"
-					</p>
-					<p className='story-paragraph'>
-						"And you've mastered both directions," Callback said
-						proudly. "The Echo Caves have revealed their secrets to
-						you."
-					</p>
-					<p className='story-paragraph'>
-						Binary displayed a holographic summary of their journey
-						- props flowing down, events echoing up, creating
-						endless cycles of communication.
-					</p>
-					<p className='story-paragraph'>
-						"Where will your journey take you next?" Callback asked.
-					</p>
-					<p className='story-paragraph'>
-						Aria consulted her map, eyes bright with anticipation.
-						"The Hooks Academy awaits. After mastering state and
-						data flow, it's time to learn React's most powerful
-						spells!"
-					</p>
-					<p className='story-paragraph'>
-						"Then may your callbacks always find their targets, and
-						your events echo true!" Callback called as they
-						departed. The Echo Caves rang with a final, harmonious
-						chord - a symphony of components bidding farewell to
-						their newest master.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the symphony metaphor illuminate complex event
-						coordination?
-					</p>
-					<p className='story-paragraph'>
-						What signs indicate you need "assistant conductors"
-						(Context/state management)?
-					</p>
-					<p className='story-paragraph'>
-						How do props (sheet music) and events (performed notes)
-						create React's harmony?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Symphony Master's Final Wisdom:",
+						content: "Master event coordination by thinking of parent components as conductors orchestrating their children's interactions. The Symphony Pattern coordinates complex multi-component behaviors through centralized event handling. Use event delegation to reduce callback proliferation, handling multiple related actions through single handlers. As complexity grows, recognize when to introduce Context or state management - they're assistant conductors for your growing orchestra. Remember: harmony emerges from well-structured event flow."
+					}}
+					reflectionQuestions={[
+						"How does the symphony metaphor illuminate complex event coordination?",
+						"What signs indicate you need \"assistant conductors\" (Context/state management)?",
+						"How do props (sheet music) and events (performed notes) create React's harmony?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 15 (Evening)",
+						content: "The Symphony Hall revealed the ultimate event pattern! Parent components are conductors, orchestrating complex interactions between their children. Events from one child can trigger cascading updates across siblings, all coordinated through the parent's callbacks. The Symphony Pattern shows how individual components create harmony when properly conducted. Event delegation reduces callback proliferation by handling related events through single handlers. As complexity grows, patterns like Context become assistant conductors. The complete cycle is now clear: props flow down like sheet music, events echo up like performed notes, creating React's beautiful symphony!"
+					}}
+					chapterEnding={[
+						"As the final echoes faded, Callback lowered her baton with a satisfied smile. \"You've completed your journey through Props and Data Flow, Aria. From caravans to rivers, from forges to echoes - you understand the complete cycle.\"",
+						"Aria felt the weight of knowledge settling into place. \"Props descend like gifts from parents to children, while events ascend like messages back up. It's a continuous conversation!\"",
+						"\"And you've mastered both directions,\" Callback said proudly. \"The Echo Caves have revealed their secrets to you.\"",
+						"Binary displayed a holographic summary of their journey - props flowing down, events echoing up, creating endless cycles of communication.",
+						"\"Where will your journey take you next?\" Callback asked.",
+						"Aria consulted her map, eyes bright with anticipation. \"The Hooks Academy awaits. After mastering state and data flow, it's time to learn React's most powerful spells!\"",
+						"\"Then may your callbacks always find their targets, and your events echo true!\" Callback called as they departed. The Echo Caves rang with a final, harmonious chord - a symphony of components bidding farewell to their newest master."
+					]}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterThree;

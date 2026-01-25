@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const [caravans, setCaravans] = useState([]);
@@ -25,12 +27,13 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Caravan Masters
-				</h2>
+				<ChapterIntro
+					chapterNumber={1}
+					title="The Caravan Masters"
+				/>
 
-				<div className='chapter-bridge'>
-					<p>
+				<div className='story-section'>
+					<p className='story-paragraph'>
 						The Trade Quarter's morning market was unlike anything
 						Aria had seen. Merchants called out their wares while
 						caravans rolled through cobblestone streets, each wagon
@@ -161,8 +164,9 @@ function ChapterOne() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// The parent component loads the caravan
+				<CodeExample
+					title="Props as Cargo"
+					code={`// The parent component loads the caravan
 <Button 
   text="Click Me"        // Text cargo
   color="blue"          // Color cargo
@@ -179,66 +183,29 @@ function Button(props) {
       {props.text}
     </button>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 12 (Morning)</h4>
-						<p>
-							The Trade Quarter has opened my eyes to a whole new
-							aspect of React! Props aren't just simple messages -
-							they're complete cargo shipments that can carry any
-							type of data. Propius showed me how a single Button
-							Workshop can create thousands of unique buttons,
-							each crafted according to the props it receives. The
-							key insight: props make components reusable by
-							separating what a component does (its logic) from
-							what it displays (its data). And since props are
-							read-only, the receiving component can't
-							accidentally modify the sender's data - maintaining
-							order in the kingdom!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Propius's Trading Wisdom:</h3>
-					<p>
-						Props in React are the cargo that flows from parent
-						components to their children, carrying any JavaScript
-						value - strings, numbers, arrays, objects, even
-						functions. Like merchant caravans, props travel in one
-						direction only (parent to child) and their contents are
-						read-only, ensuring data integrity. This system enables
-						the same component to render differently based on the
-						props it receives, making your components as versatile
-						as a workshop that can craft countless unique items from
-						different materials.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the caravan metaphor help you understand the
-						one-way flow of props?
-					</p>
-					<p>
-						Why is it important that props are read-only, like
-						sealed cargo?
-					</p>
-					<p>
-						What advantages does a workshop (component) gain by
-						accepting different cargo (props) rather than always
-						building the same thing?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Propius's Trading Wisdom:",
+						content: "Props in React are the cargo that flows from parent components to their children, carrying any JavaScript value - strings, numbers, arrays, objects, even functions. Like merchant caravans, props travel in one direction only (parent to child) and their contents are read-only, ensuring data integrity. This system enables the same component to render differently based on the props it receives, making your components as versatile as a workshop that can craft countless unique items from different materials."
+					}}
+					reflectionQuestions={[
+						"How does the caravan metaphor help you understand the one-way flow of props?",
+						"Why is it important that props are read-only, like sealed cargo?",
+						"What advantages does a workshop (component) gain by accepting different cargo (props) rather than always building the same thing?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 12 (Morning)",
+						content: "The Trade Quarter has opened my eyes to a whole new aspect of React! Props aren't just simple messages - they're complete cargo shipments that can carry any type of data. Propius showed me how a single Button Workshop can create thousands of unique buttons, each crafted according to the props it receives. The key insight: props make components reusable by separating what a component does (its logic) from what it displays (its data). And since props are read-only, the receiving component can't accidentally modify the sender's data - maintaining order in the kingdom!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterOne;

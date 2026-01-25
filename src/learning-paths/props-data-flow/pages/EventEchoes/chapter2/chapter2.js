@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const [events, setEvents] = useState([]);
@@ -41,17 +43,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 2: Echo Chambers</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Deeper in the Echo Caves, the passages opened into a
-						vast chamber where sounds seemed to multiply and layer
-						upon themselves. Each whisper became a chorus, each
-						footstep a rhythmic pattern. Aria felt like she was
-						inside a living instrument.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title="Echo Chambers"
+					bridge="Deeper in the Echo Caves, the passages opened into a vast chamber where sounds seemed to multiply and layer upon themselves. Each whisper became a chorus, each footstep a rhythmic pattern. Aria felt like she was inside a living instrument."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -284,8 +280,9 @@ function ChapterTwo() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Parent component with multiple callback handlers
+				<CodeExample
+					title="Parent Component with Multiple Callback Handlers"
+					code={`// Parent component with multiple callback handlers
 function ItemManager() {
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -355,8 +352,8 @@ function ItemForm({ onSubmit }) {
       <button type="submit">Add Item</button>
     </form>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3>Callback Best Practices</h3>
@@ -393,61 +390,26 @@ function ItemForm({ onSubmit }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 15 (Afternoon)</h4>
-						<p>
-							The Echo Chamber revealed the true power of
-							callbacks! They're not just simple signals - they
-							can carry rich data upward. Forms can send entire
-							objects, lists can report selections with full
-							context, and components can share detailed state
-							changes. Parents become orchestrators, managing
-							multiple children through different callbacks. The
-							key insight: callbacks with parameters enable
-							sophisticated upward communication while maintaining
-							one-way data flow. But Callback warned against deep
-							callback chains - echoes should reach their
-							listeners directly!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Echo Chamber Wisdom:</h3>
-					<p>
-						Callbacks transport more than signals - they carry rich
-						data structures upward through arguments. Master
-						components orchestrate children by providing specific
-						callbacks for different actions: onAdd, onDelete,
-						onSelect. This pattern shines in forms where children
-						collect complex input and send complete objects to
-						parents. Remember: name callbacks clearly, pass only
-						necessary data, and avoid deep callback chains that echo
-						through too many layers.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the orchestrator metaphor help you think about
-						parent components?
-					</p>
-					<p className='story-paragraph'>
-						When might callback chains become problematic, and what
-						alternatives exist?
-					</p>
-					<p className='story-paragraph'>
-						What benefits do you see in sending complete data
-						objects versus simple signals?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Echo Chamber Wisdom:",
+						content: "Callbacks transport more than signals - they carry rich data structures upward through arguments. Master components orchestrate children by providing specific callbacks for different actions: onAdd, onDelete, onSelect. This pattern shines in forms where children collect complex input and send complete objects to parents. Remember: name callbacks clearly, pass only necessary data, and avoid deep callback chains that echo through too many layers."
+					}}
+					reflectionQuestions={[
+						"How does the orchestrator metaphor help you think about parent components?",
+						"When might callback chains become problematic, and what alternatives exist?",
+						"What benefits do you see in sending complete data objects versus simple signals?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 15 (Afternoon)",
+						content: "The Echo Chamber revealed the true power of callbacks! They're not just simple signals - they can carry rich data upward. Forms can send entire objects, lists can report selections with full context, and components can share detailed state changes. Parents become orchestrators, managing multiple children through different callbacks. The key insight: callbacks with parameters enable sophisticated upward communication while maintaining one-way data flow. But Callback warned against deep callback chains - echoes should reach their listeners directly!"
+					}}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterTwo;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const [activeRoute, setActiveRoute] = useState(0);
@@ -92,16 +94,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 3: The Trade Routes</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						On Aria's final day at the Trade Quarter, Propius led
-						her to the Map Room - a circular chamber with walls
-						covered in intricate route diagrams showing every
-						caravan path in React Kingdom.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title="The Trade Routes"
+					bridge="On Aria's final day at the Trade Quarter, Propius led her to the Map Room - a circular chamber with walls covered in intricate route diagrams showing every caravan path in React Kingdom."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -216,8 +213,9 @@ function ChapterThree() {
 					</p>
 				</div>
 
-				<div className='code-example'>
-					<pre>{`// Prop drilling example - data passes through multiple levels
+				<CodeExample
+					title="Prop Drilling Example"
+					code={`// Prop drilling example - data passes through multiple levels
 // App (has the data)
 function App() {
   const [user, setUser] = useState({ name: 'Wizard', gold: 100 });
@@ -256,8 +254,8 @@ function ProductCard({ product, user, onPurchase }) {
       <button onClick={() => onPurchase(product)}>Buy</button>
     </div>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
@@ -287,91 +285,33 @@ function ProductCard({ product, user, onPurchase }) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 12 (Evening)</h4>
-						<p>
-							Today's lesson was eye-opening! Prop drilling -
-							passing data through components that don't need it -
-							is like forcing caravans through unnecessary
-							checkpoints. While it's fine for short routes (2-3
-							levels), deeper drilling creates fragile,
-							inefficient systems. Propius showed me how Context
-							(which I already know!) can teleport data directly
-							where needed. The Trade Quarter has taught me that
-							props are powerful, but knowing their limitations is
-							equally important. Sometimes the simplest path isn't
-							a straight line!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Propius's Route Planning Wisdom:</h3>
-					<p>
-						Prop drilling - passing data through components that
-						don't use it - becomes problematic beyond 2-3 levels. It
-						creates fragile dependencies, maintenance headaches, and
-						unclear data flow. While acceptable for shallow
-						hierarchies, deep drilling signals the need for
-						alternative patterns. Component composition, Context
-						API, or state management libraries can eliminate
-						unnecessary prop forwarding. Remember: good architecture
-						minimizes the distance data must travel to reach its
-						destination.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the sun set over the Trade Quarter, Aria felt she
-						truly understood the caravan system. Props were more
-						than simple messages - they were the lifeblood of React
-						Kingdom's commerce, flowing through carefully planned
-						routes.
-					</p>
-					<p className='story-paragraph'>
-						"You've learned well," Propius said proudly. "You
-						understand not just how to send cargo, but when routes
-						become too complex. This wisdom will serve you well in
-						your future adventures."
-					</p>
-					<p className='story-paragraph'>
-						Binary chimed happily. "From simple props to complex
-						routes to the perils of drilling - we've seen it all!"
-					</p>
-					<p className='story-paragraph'>
-						"Indeed," Aria smiled. "Now I'm curious about these data
-						rivers you mentioned. Where do they flow?"
-					</p>
-					<p className='story-paragraph'>
-						Propius pointed toward the sound of rushing water in the
-						distance. "Follow that sound tomorrow, and you'll find
-						River Master Flux. He'll teach you about the one-way
-						flow of data through React Kingdom. Safe travels, Aria!"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the trade route metaphor help you visualize
-						prop drilling?
-					</p>
-					<p>
-						What strategies could you use to identify when prop
-						drilling has gone too deep?
-					</p>
-					<p>
-						In what scenarios might prop drilling be preferable to
-						more complex solutions?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "Propius's Route Planning Wisdom:",
+						content: "Prop drilling - passing data through components that don't use it - becomes problematic beyond 2-3 levels. It creates fragile dependencies, maintenance headaches, and unclear data flow. While acceptable for shallow hierarchies, deep drilling signals the need for alternative patterns. Component composition, Context API, or state management libraries can eliminate unnecessary prop forwarding. Remember: good architecture minimizes the distance data must travel to reach its destination."
+					}}
+					reflectionQuestions={[
+						"How does the trade route metaphor help you visualize prop drilling?",
+						"What strategies could you use to identify when prop drilling has gone too deep?",
+						"In what scenarios might prop drilling be preferable to more complex solutions?"
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 12 (Evening)",
+						content: "Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. Propius showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!"
+					}}
+					chapterEnding={[
+						"As the sun set over the Trade Quarter, Aria felt she truly understood the caravan system. Props were more than simple messages - they were the lifeblood of React Kingdom's commerce, flowing through carefully planned routes.",
+						"\"You've learned well,\" Propius said proudly. \"You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures.\"",
+						"Binary chimed happily. \"From simple props to complex routes to the perils of drilling - we've seen it all!\"",
+						"\"Indeed,\" Aria smiled. \"Now I'm curious about these data rivers you mentioned. Where do they flow?\"",
+						"Propius pointed toward the sound of rushing water in the distance. \"Follow that sound tomorrow, and you'll find River Master Flux. He'll teach you about the one-way flow of data through React Kingdom. Safe travels, Aria!\""
+					]}
+				/>
 			</div>
 		</>
 	);
 
-	return <StoryContent content={content} />;
+	return content;
 }
 
 export default ChapterThree;
