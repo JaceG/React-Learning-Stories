@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [theme, setTheme] = useState('light');
@@ -6,18 +10,19 @@ const ChapterOne = () => {
 
 	return (
 		<div className={`chapter ${theme}`}>
-			<h2 className='chapter-title'>
-				Chapter 1: The Context Keepers' Hall
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>The Grand Hall was breathtaking - a vast circular chamber with a 
-				domed ceiling covered in constellations of glowing threads. Each thread 
-				connected different points throughout the hall, creating an intricate 
-				web of light that pulsed with data.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={1}
+				title="The Context Keepers' Hall"
+			/>
 
 			<div className='story-section'>
+				<p className='story-paragraph'>
+					The Grand Hall was breathtaking - a vast circular chamber with a 
+					domed ceiling covered in constellations of glowing threads. Each thread 
+					connected different points throughout the hall, creating an intricate 
+					web of light that pulsed with data.
+				</p>
+
 				<p className='story-paragraph'>
 					"Welcome, young Aria," came a gentle voice from the center of the hall. 
 					A tall figure in flowing robes approached, her hands gracefully tracing 
@@ -29,13 +34,6 @@ const ChapterOne = () => {
 					Binary whistled in awe. "Look at all those connections! They bypass 
 					the normal prop chains entirely!"
 				</p>
-
-				<div className='character-intro'>
-					<h4>Contextia, Keeper of the Grand Context</h4>
-					<p>Master of the invisible threads that connect components across 
-					vast distances. She maintains the Context network that allows data 
-					to flow directly from providers to consumers without prop drilling.</p>
-				</div>
 
 				<div className='kingdom-illustration'>
 					<div className={`castle ${theme}`}>
@@ -84,12 +82,11 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Theme Network
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Contextia gestures to a control panel.</strong>
+				<InstructionBox character="Contextia gestures to a control panel.">
 					"This controls the theme for the entire hall. Notice how changing 
 					it here instantly affects all connected components, without passing 
 					the theme through every level!"
-				</p>
+				</InstructionBox>
 
 				<div className='royal-controls'>
 					<button className='royal-button' onClick={toggleTheme}>
@@ -144,13 +141,10 @@ const ChapterOne = () => {
 				</p>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>The Context Creation Ritual</span>
-					<span className='discovered-by'>Grand Hall Archives</span>
-				</div>
-				<pre className='context-code'>
-					{`// 1. Create a Context - the magical thread
+			<CodeExample
+				title="The Context Creation Ritual"
+				discoveredBy="Grand Hall Archives"
+				code={`// 1. Create a Context - the magical thread
 const ThemeContext = React.createContext({
   theme: 'light',
   toggleTheme: () => {},
@@ -197,20 +191,7 @@ function App() {
     </ThemeProvider>
   );
 }`}
-				</pre>
-			</div>
-
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 10 (Morning)</h4>
-					<p>Context is incredible! It's like having a network of magical 
-					portals that can transport data directly to where it's needed. 
-					No more passing props through components that don't need them. 
-					Contextia showed me how a Provider broadcasts values and any 
-					Consumer can tap into that broadcast. It reminds me of how 
-					Binary can instantly share data with any component!</p>
-				</div>
-			</div>
+			/>
 
 			<div className='when-to-use'>
 				<h3>Contextia's Guidelines for Context Usage:</h3>
@@ -277,30 +258,26 @@ function AppProvider({ children }) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Contextia's Wisdom:</h3>
-				<p>
-					Context is like creating a network of invisible threads throughout 
-					your component tree. Any component can tap into these threads to 
-					access shared data without prop drilling. But remember - Context 
-					is powerful but not always the answer. Use it for truly global 
-					data that many components need. For localized state, props are 
-					still your best friend. The key is knowing when each tool is 
-					most appropriate.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the metaphor of "magical threads" help you visualize 
-					how Context connects providers and consumers?
-				</p>
-				<p>
-					Can you think of data in your applications that would benefit 
-					from Context instead of prop drilling?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Contextia, Keeper of the Grand Context',
+						description: 'Master of the invisible threads that connect components across vast distances. She maintains the Context network that allows data to flow directly from providers to consumers without prop drilling.'
+					}
+				]}
+				lessonInsight={{
+					title: "Contextia's Wisdom:",
+					content: "Context is like creating a network of invisible threads throughout your component tree. Any component can tap into these threads to access shared data without prop drilling. But remember - Context is powerful but not always the answer. Use it for truly global data that many components need. For localized state, props are still your best friend. The key is knowing when each tool is most appropriate."
+				}}
+				reflectionQuestions={[
+					'How does the metaphor of "magical threads" help you visualize how Context connects providers and consumers?',
+					'Can you think of data in your applications that would benefit from Context instead of prop drilling?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 10 (Morning)",
+					content: "Context is incredible! It's like having a network of magical portals that can transport data directly to where it's needed. No more passing props through components that don't need them. Contextia showed me how a Provider broadcasts values and any Consumer can tap into that broadcast. It reminds me of how Binary can instantly share data with any component!"
+				}}
+			/>
 		</div>
 	);
 };

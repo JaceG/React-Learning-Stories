@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [activeLibrary, setActiveLibrary] = useState('zustand');
@@ -9,16 +12,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The New State Management Frontiers
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>As the afternoon sun filtered through the Citadel's crystalline 
-				windows, Grand Reducer led Aria to a chamber filled with glowing 
-				portals. Each shimmered with different colors and patterns, pulsing 
-				with the energy of innovation.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title="The New State Management Frontiers"
+				bridge="As the afternoon sun filtered through the Citadel's crystalline windows, Grand Reducer led Aria to a chamber filled with glowing portals. Each shimmered with different colors and patterns, pulsing with the energy of innovation."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -116,13 +114,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Interactive Portal: The Modern State Libraries
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>👉 Grand Reducer waves his hand, activating the portals.</strong>
-						"Step through each portal to experience how different libraries 
-						handle the same state challenge. Notice their unique approaches!"
-					</p>
-				</div>
+				<InstructionBox character="Grand Reducer waves his hand, activating the portals.">
+					"Step through each portal to experience how different libraries 
+					handle the same state challenge. Notice their unique approaches!"
+				</InstructionBox>
 
 				{activeLibrary === 'zustand' && (
 					<div className='library-example'>
@@ -557,77 +552,47 @@ const Counter = observer(() => {
 				</ol>
 			</div>
 
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 11 (Evening)</h4>
-					<p>My mind is expanding! Each modern library solves state 
-					differently. Zustand's simplicity reminds me of useState but 
-					with global reach. Jotai's atoms compose like building blocks. 
-					Recoil brings Facebook's expertise. MobX feels magical with its 
-					automatic tracking. The key lesson: choose based on your needs, 
-					not trends. Sometimes mixing approaches - useState for UI, 
-					Context for themes, specialized libraries for complex state - 
-					creates the perfect solution!</p>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>Grand Reducer's Final Wisdom:</h3>
-				<p>
-					"You've witnessed the evolution of state management," Grand 
-					Reducer proclaimed. "From simple useState to complex Redux, 
-					from Context's sharing to modern libraries' innovations. Each 
-					tool has its place in React Kingdom."
-				</p>
-				<p>
-					"Remember, Aria - the greatest developers don't chase the newest 
-					library. They understand the principles, evaluate tradeoffs, and 
-					choose wisely. Your journey through the State Management Citadel 
-					has given you this wisdom."
-				</p>
-				<p>
-					"Now go forth! Apply these patterns where they serve best. Mix 
-					approaches when needed. Most importantly, always consider your 
-					application's actual needs over popular opinion. May your state 
-					flow predictably and your components render efficiently!"
-				</p>
-			</div>
-
-			<div className='chapter-finale'>
-				<p className='story-paragraph'>
-					As the sun set behind the State Management Citadel, Aria stood 
-					transformed. She had entered as a student of basic state, but 
-					now understood the full spectrum - from component state to global 
-					patterns, from classical Redux to modern innovations.
-				</p>
-				<p className='story-paragraph'>
-					"You've completed your training here," Grand Reducer said, his 
-					form beginning to fade back into the Citadel's architecture. 
-					"But remember - mastery comes from practice. Use these tools 
-					wisely, and React Kingdom will flourish under your care."
-				</p>
-				<p className='story-paragraph'>
-					Binary chirped proudly. "We did it, Aria! We understand all the 
-					state patterns!"
-				</p>
-				<p className='story-paragraph'>
-					Aria smiled, feeling the weight of knowledge and responsibility. 
-					"Yes, Binary. But this is just the beginning. Let's see what 
-					other mysteries React Kingdom holds for us!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does understanding multiple state management approaches 
-					make you a more versatile React developer?
-				</p>
-				<p>
-					What criteria would you use to choose between Redux, Context, 
-					or one of the modern libraries for your next project?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Grand Reducer's Final Wisdom:",
+					content: (
+						<>
+							<p>
+								"You've witnessed the evolution of state management," Grand 
+								Reducer proclaimed. "From simple useState to complex Redux, 
+								from Context's sharing to modern libraries' innovations. Each 
+								tool has its place in React Kingdom."
+							</p>
+							<p>
+								"Remember, Aria - the greatest developers don't chase the newest 
+								library. They understand the principles, evaluate tradeoffs, and 
+								choose wisely. Your journey through the State Management Citadel 
+								has given you this wisdom."
+							</p>
+							<p>
+								"Now go forth! Apply these patterns where they serve best. Mix 
+								approaches when needed. Most importantly, always consider your 
+								application's actual needs over popular opinion. May your state 
+								flow predictably and your components render efficiently!"
+							</p>
+						</>
+					)
+				}}
+				reflectionQuestions={[
+					'How does understanding multiple state management approaches make you a more versatile React developer?',
+					'What criteria would you use to choose between Redux, Context, or one of the modern libraries for your next project?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 11 (Evening)",
+					content: "My mind is expanding! Each modern library solves state differently. Zustand's simplicity reminds me of useState but with global reach. Jotai's atoms compose like building blocks. Recoil brings Facebook's expertise. MobX feels magical with its automatic tracking. The key lesson: choose based on your needs, not trends. Sometimes mixing approaches - useState for UI, Context for themes, specialized libraries for complex state - creates the perfect solution!"
+				}}
+				chapterEnding={[
+					"As the sun set behind the State Management Citadel, Aria stood transformed. She had entered as a student of basic state, but now understood the full spectrum - from component state to global patterns, from classical Redux to modern innovations.",
+					"\"You've completed your training here,\" Grand Reducer said, his form beginning to fade back into the Citadel's architecture. \"But remember - mastery comes from practice. Use these tools wisely, and React Kingdom will flourish under your care.\"",
+					"Binary chirped proudly. \"We did it, Aria! We understand all the state patterns!\"",
+					"Aria smiled, feeling the weight of knowledge and responsibility. \"Yes, Binary. But this is just the beginning. Let's see what other mysteries React Kingdom holds for us!\""
+				]}
+			/>
 		</div>
 	);
 };

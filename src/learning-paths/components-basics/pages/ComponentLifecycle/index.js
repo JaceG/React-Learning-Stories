@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './ComponentLifecycle.css';
-import LessonHeader from '../../../../components/layout/LessonHeader';
-import LessonFooter from '../../../../components/layout/LessonFooter';
 // import ChapterOne from './chapter1/chapter1';
 // import ChapterTwo from './chapter2/chapter2';
 // import ChapterThree from './chapter3/chapter3';

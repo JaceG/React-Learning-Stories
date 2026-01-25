@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [count, setCount] = useState(0);
@@ -8,15 +12,18 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Memory Keepers</h2>
-
-			<div className='chapter-bridge'>
-				<p>As Aria entered the Eastern Quarter, she marveled at the crystal 
-				spires that seemed to pulse with living energy. Each tower contained 
-				countless glowing orbs - the stored memories of a thousand components.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={1}
+				title="The Memory Keepers"
+			/>
 
 			<div className='story-section'>
+				<p className='story-paragraph'>
+					As Aria entered the Eastern Quarter, she marveled at the crystal 
+					spires that seemed to pulse with living energy. Each tower contained 
+					countless glowing orbs - the stored memories of a thousand components.
+				</p>
+
 				<p className='story-paragraph'>
 					At the entrance to the tallest spire stood a figure in flowing 
 					robes, his staff topped with a constantly shifting orb of light. 
@@ -29,13 +36,6 @@ const ChapterOne = () => {
 					can remember things between renders! Regular components forget 
 					everything each time they re-render, but not these magical beings!"
 				</p>
-
-				<div className='character-intro'>
-					<h4>Memnon, Chief State Sorcerer</h4>
-					<p>Guardian of memories and master of the useState spell. His crystal 
-					orb contains the collective wisdom of component state management, passed 
-					down through generations of React sorcerers.</p>
-				</div>
 
 				<div className='sorcerer-illustration'>
 					<div className='sorcerer'>
@@ -71,25 +71,23 @@ const ChapterOne = () => {
 					fundamental spell in our arsenal. Let me show you..."
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The useState Incantation</span>
-						<span className='discovered-by'>Memnon's First Lesson</span>
-					</div>
-					<pre>{`function Counter() {
-// The useState spell creates a magical memory
-const [count, setCount] = useState(0);
+				<CodeExample
+					title="The useState Incantation"
+					discoveredBy="Memnon's First Lesson"
+					code={`function Counter() {
+  // The useState spell creates a magical memory
+  const [count, setCount] = useState(0);
 
-return (
-<div>
-<p>You clicked {count} times</p>
-<button onClick={() => setCount(count + 1)}>
-Click me
-</button>
-</div>
-);
-}`}</pre>
-				</div>
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}`}
+				/>
 
 				<p className='story-paragraph'>
 					"Observe carefully," Memnon explained, tracing the spell in the air. 
@@ -99,25 +97,16 @@ Click me
 					component with the new memory!"
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 8</h4>
-					<p>My first day in the Eastern Quarter! Memnon is wise but kind, and 
-					the useState hook seems like the key to everything. It's so simple yet 
-					so powerful - just call useState with an initial value, and you get back 
-					the current value and a way to update it. When I update it, the component 
-					re-renders automatically! It's like giving components a brain!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Your First Memory Spell
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Memnon hands you a practice wand.</strong>
+				<InstructionBox character="Memnon hands you a practice wand.">
 					"Now it's your turn, Aria. This counter will remember how many 
 					times you've cast the increment spell. Try it!"
-				</p>
+				</InstructionBox>
 
 				<div className='counter-demo'>
 					<div className='counter-display'>
@@ -160,31 +149,26 @@ Increment Count
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Memnon's Wisdom:</h3>
-				<p>
-					State is the soul of interactive components. It's what separates 
-					a static painting from a living, breathing entity. When you give 
-					a component state, you give it the power to remember, to learn, 
-					and to respond. The useState hook is your gateway to this power - 
-					it returns both the current memory and the spell to change it. 
-					And the most magical part? React automatically re-renders your 
-					component whenever the state changes, keeping your UI in perfect 
-					sync with your data.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does Memnon's metaphor of memory orbs help you visualize 
-					what state does in a React component?
-				</p>
-				<p>
-					Why do you think React automatically re-renders components when 
-					their state changes? What would happen if it didn't?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Memnon, Chief State Sorcerer',
+						description: 'Guardian of memories and master of the useState spell. His crystal orb contains the collective wisdom of component state management, passed down through generations of React sorcerers.'
+					}
+				]}
+				lessonInsight={{
+					title: "Memnon's Wisdom:",
+					content: "State is the soul of interactive components. It's what separates a static painting from a living, breathing entity. When you give a component state, you give it the power to remember, to learn, and to respond. The useState hook is your gateway to this power - it returns both the current memory and the spell to change it. And the most magical part? React automatically re-renders your component whenever the state changes, keeping your UI in perfect sync with your data."
+				}}
+				reflectionQuestions={[
+					"How does Memnon's metaphor of memory orbs help you visualize what state does in a React component?",
+					"Why do you think React automatically re-renders components when their state changes? What would happen if it didn't?"
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 8",
+					content: "My first day in the Eastern Quarter! Memnon is wise but kind, and the useState hook seems like the key to everything. It's so simple yet so powerful - just call useState with an initial value, and you get back the current value and a way to update it. When I update it, the component re-renders automatically! It's like giving components a brain!"
+				}}
+			/>
 		</div>
 	);
 };

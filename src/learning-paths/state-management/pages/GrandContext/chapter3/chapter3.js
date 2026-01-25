@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [consumerCount, setConsumerCount] = useState(0);
@@ -10,15 +13,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Thread Optimization
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>As Aria mastered the basics of Context, Contextia led her to 
-				the highest tower of the Grand Hall, where ancient scrolls contained 
-				the secrets of Context optimization.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title="The Thread Optimization"
+				bridge="As Aria mastered the basics of Context, Contextia led her to the highest tower of the Grand Hall, where ancient scrolls contained the secrets of Context optimization."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -97,12 +96,11 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Optimization Techniques
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Contextia reveals two scrolls.</strong>
+				<InstructionBox character="Contextia reveals two scrolls.">
 					"Toggle the optimization orb above to see the difference. Add 
 					consumers to observe how optimization prevents the cascade of 
 					unnecessary re-renders!"
-				</p>
+				</InstructionBox>
 
 				<div className='optimization-comparison'>
 					<div className='comparison-item'>
@@ -182,18 +180,6 @@ function AppProviders({ children }) {
 							their specific context changes!
 						</div>
 					</div>
-				</div>
-			</div>
-
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 10 (Evening)</h4>
-					<p>Context optimization is crucial for large applications! The key 
-					insights: split contexts by how often they change, memoize context 
-					values to prevent recreation, and use React.memo on consumer components. 
-					It's like organizing the thread network into separate channels - each 
-					carrying only related data to interested consumers. No more wasteful 
-					re-renders!</p>
 				</div>
 			</div>
 
@@ -306,48 +292,25 @@ function App() {
 				</p>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Contextia's Final Wisdom:</h3>
-				<p>
-					Context is powerful, but with great power comes the need for 
-					wisdom. In small applications, a single Context might suffice. 
-					But as your application grows, optimization becomes crucial. 
-					Split contexts by domain and update frequency, memoize values, 
-					and use React.memo strategically. Most importantly, measure 
-					before optimizing - React DevTools Profiler is your friend. 
-					Remember, the goal is not just performance, but also maintainable, 
-					understandable code.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the metaphor of organizing threads into separate 
-					channels help you understand Context optimization?
-				</p>
-				<p>
-					What signals would tell you it's time to split a Context 
-					in your own applications?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>As the day drew to a close, Contextia handed Aria a crystal 
-				containing all the Context patterns they'd studied. "You've learned 
-				well, young developer. Context is now yours to wield wisely."</p>
-				
-				<p>Binary buzzed with excitement. "Tomorrow we explore the final 
-				frontier of state management - the grand unification of all these 
-				techniques!"</p>
-				
-				<p>Aria carefully stored the crystal in her satchel, her mind racing 
-				with possibilities. She had learned to create threads that connected 
-				components across vast distances, to make those threads carry living 
-				state, and to optimize them for performance. Tomorrow would bring the 
-				ultimate challenge - combining everything into a complete state 
-				management strategy.</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Contextia's Final Wisdom:",
+					content: "Context is powerful, but with great power comes the need for wisdom. In small applications, a single Context might suffice. But as your application grows, optimization becomes crucial. Split contexts by domain and update frequency, memoize values, and use React.memo strategically. Most importantly, measure before optimizing - React DevTools Profiler is your friend. Remember, the goal is not just performance, but also maintainable, understandable code."
+				}}
+				reflectionQuestions={[
+					'How does the metaphor of organizing threads into separate channels help you understand Context optimization?',
+					'What signals would tell you it\'s time to split a Context in your own applications?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 10 (Evening)",
+					content: "Context optimization is crucial for large applications! The key insights: split contexts by how often they change, memoize context values to prevent recreation, and use React.memo on consumer components. It's like organizing the thread network into separate channels - each carrying only related data to interested consumers. No more wasteful re-renders!"
+				}}
+				chapterEnding={[
+					"As the day drew to a close, Contextia handed Aria a crystal containing all the Context patterns they'd studied. \"You've learned well, young developer. Context is now yours to wield wisely.\"",
+					"Binary buzzed with excitement. \"Tomorrow we explore the final frontier of state management - the grand unification of all these techniques!\"",
+					"Aria carefully stored the crystal in her satchel, her mind racing with possibilities. She had learned to create threads that connected components across vast distances, to make those threads carry living state, and to optimize them for performance. Tomorrow would bring the ultimate challenge - combining everything into a complete state management strategy."
+				]}
+			/>
 		</div>
 	);
 };

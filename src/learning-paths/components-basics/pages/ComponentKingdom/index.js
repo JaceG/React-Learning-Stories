@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import LessonHeader from '../../../../components/layout/LessonHeader';
-import LessonFooter from '../../../../components/layout/LessonFooter';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './ComponentKingdom.css';
 // import ChapterOne from './chapter1/chapter1';

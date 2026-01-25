@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [currentState, setCurrentState] = useState(5);
@@ -10,18 +14,19 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Hook Forge Masters
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>The Hook Forge was unlike anything Aria had seen before. 
-				Glowing anvils rang with the sound of hooks being shaped, 
-				while crystalline tubes carried pure React energy to each 
-				workstation.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={1}
+				title="The Hook Forge Masters"
+			/>
 
 			<div className='story-section'>
+				<p className='story-paragraph'>
+					The Hook Forge was unlike anything Aria had seen before. 
+					Glowing anvils rang with the sound of hooks being shaped, 
+					while crystalline tubes carried pure React energy to each 
+					workstation.
+				</p>
+
 				<p className='story-paragraph'>
 					"Welcome to the Hook Forge!" called out a sturdy figure in a 
 					leather apron, sparks flying from the hook she was crafting. 
@@ -34,13 +39,6 @@ const ChapterOne = () => {
 					hooks in all of React Kingdom! Each one grants unique abilities 
 					to functional components!"
 				</p>
-
-				<div className='character-intro'>
-					<h4>Forge Master Hooke</h4>
-					<p>Chief architect of React's hook system. Her workshop produces 
-					the magical tools that give functional components powers once 
-					reserved only for class components.</p>
-				</div>
 
 				<p className='story-paragraph'>
 					"You've already met my most popular creation," Hooke said with 
@@ -71,12 +69,11 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Energy Calibrator
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Master Hooke points to a glowing energy meter.</strong>
+				<InstructionBox character="Master Hooke points to a glowing energy meter.">
 					"Every hook needs the right amount of React energy to function. 
 					Try calibrating this meter - notice how useState remembers the 
 					value and triggers updates!"
-				</p>
+				</InstructionBox>
 
 				<div className='magic-controls'>
 					<button
@@ -97,13 +94,10 @@ const ChapterOne = () => {
 					</button>
 				</div>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>Energy Calibrator Implementation</span>
-						<span className='discovered-by'>Hook Forge Blueprint</span>
-					</div>
-					<pre className='magical-code'>
-						{`// This is how the energy calibrator works
+				<CodeExample
+					title="Energy Calibrator Implementation"
+					discoveredBy="Hook Forge Blueprint"
+					code={`// This is how the energy calibrator works
 function EnergyCalibrator() {
   // Declare state with initial energy level of ${currentState}
   const [energy, setEnergy] = useState(${currentState});
@@ -126,8 +120,7 @@ function EnergyCalibrator() {
     </div>
   );
 }`}
-					</pre>
-				</div>
+				/>
 			</div>
 
 			<div className='story-section'>
@@ -144,12 +137,10 @@ function EnergyCalibrator() {
 				</button>
 
 				{showAdvanced && (
-					<div className='code-example'>
-						<div className='scroll-header'>
-							<span>Advanced useState Patterns</span>
-							<span className='discovered-by'>Master Hooke's Collection</span>
-						</div>
-						<pre>{`// Multiple state values
+					<CodeExample
+						title="Advanced useState Patterns"
+						discoveredBy="Master Hooke's Collection"
+						code={`// Multiple state values
 function ComponentForge() {
   const [temperature, setTemperature] = useState(0);
   const [metal, setMetal] = useState('iron');
@@ -166,19 +157,10 @@ function ComponentForge() {
   const increaseTemp = () => {
     setTemperature(prev => Math.min(prev + 10, 100));
   };
-}`}</pre>
-					</div>
+}`}
+					/>
 				)}
 
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 9 (Morning)</h4>
-					<p>The Hook Forge is incredible! I'm starting to understand that 
-					hooks are like magical tools - each one designed for a specific 
-					purpose. useState isn't just for simple values; it can handle 
-					complex data structures too. Master Hooke showed me how to use 
-					functional updates when the new state depends on the previous 
-					state. So much more to learn!</p>
-				</div>
 			</div>
 
 			<div className='practical-application'>
@@ -215,30 +197,26 @@ function ComponentForge() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Master Hooke's Wisdom:</h3>
-				<p>
-					The useState hook is the foundation of interactive components. 
-					It's simple yet powerful - give it an initial value, and it 
-					returns the current value and a setter function. Every time 
-					you call the setter, React knows to re-render with the new 
-					value. Remember: always use functional updates when the new 
-					state depends on the previous state! This ensures your updates 
-					work correctly even when multiple updates happen quickly.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the Hook Forge metaphor help you understand the 
-					purpose of React hooks?
-				</p>
-				<p>
-					Why do you think functional updates (using the previous state) 
-					are important when multiple updates might happen quickly?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Forge Master Hooke',
+						description: 'Chief architect of React\'s hook system. Her workshop produces the magical tools that give functional components powers once reserved only for class components.'
+					}
+				]}
+				lessonInsight={{
+					title: "Master Hooke's Wisdom:",
+					content: "The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly."
+				}}
+				reflectionQuestions={[
+					'How does the Hook Forge metaphor help you understand the purpose of React hooks?',
+					'Why do you think functional updates (using the previous state) are important when multiple updates might happen quickly?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 9 (Morning)",
+					content: "The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. useState isn't just for simple values; it can handle complex data structures too. Master Hooke showed me how to use functional updates when the new state depends on the previous state. So much more to learn!"
+				}}
+			/>
 		</div>
 	);
 };

@@ -593,7 +593,7 @@
   border-left: 4px solid #9333ea;
   padding: 20px;
   margin: 20px 0;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(147, 51, 234, 0.1);
 }
 

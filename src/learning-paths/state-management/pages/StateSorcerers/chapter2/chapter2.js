@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [formData, setFormData] = useState({
@@ -17,15 +21,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Transformation Spells
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>After mastering simple state with numbers, Memnon led Aria deeper 
-				into the crystal spire. The walls here pulsed with more complex patterns - 
-				orbs containing entire collections of memories swirling together.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title="The Transformation Spells"
+				bridge="After mastering simple state with numbers, Memnon led Aria deeper into the crystal spire. The walls here pulsed with more complex patterns - orbs containing entire collections of memories swirling together."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -52,41 +52,39 @@ const ChapterTwo = () => {
 					memory, React sees the change and updates everything accordingly!"
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>Complex State Transformation</span>
-						<span className='discovered-by'>The Immutability Principle</span>
-					</div>
-					<pre>{`function SorcererForm() {
-// Complex state example: an object with multiple properties
-const [formData, setFormData] = useState({
-name: '',
-title: '',
-power: 'transformation'
-});
+				<CodeExample
+					title="Complex State Transformation"
+					discoveredBy="The Immutability Principle"
+					code={`function SorcererForm() {
+  // Complex state example: an object with multiple properties
+  const [formData, setFormData] = useState({
+    name: '',
+    title: '',
+    power: 'transformation'
+  });
 
-// Handler to update a specific field while preserving others
-const handleInputChange = (e) => {
-const { name, value } = e.target;
-setFormData(prevData => ({
-...prevData,  // Spread operator preserves existing fields
-[name]: value // Updates only the changed field
-}));
-};
+  // Handler to update a specific field while preserving others
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,  // Spread operator preserves existing fields
+      [name]: value // Updates only the changed field
+    }));
+  };
 
-return (
-<form>
-<input
-name="name"
-value={formData.name}
-onChange={handleInputChange}
-placeholder="Sorcerer Name"
-/>
-{/* Other fields */}
-</form>
-);
-}`}</pre>
-				</div>
+  return (
+    <form>
+      <input
+        name="name"
+        value={formData.name}
+        onChange={handleInputChange}
+        placeholder="Sorcerer Name"
+      />
+      {/* Other fields */}
+    </form>
+  );
+}`}
+				/>
 
 				<p className='story-paragraph'>
 					"Watch closely," Memnon demonstrated, tracing glowing patterns in the air. 
@@ -94,26 +92,17 @@ placeholder="Sorcerer Name"
 					of existing memories while allowing you to change specific parts!"
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 8 (Afternoon)</h4>
-					<p>Complex state is trickier than I thought! The key is the spread operator - 
-					those three dots that copy everything. When updating objects, I spread the old 
-					state first, then override specific fields. It's like making a magical copy of 
-					a scroll, changing one line, and replacing the original. React needs this to 
-					know something changed!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Sorcerer Registry Crystal
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Memnon gestures to a glowing registration crystal.</strong>
+				<InstructionBox character="Memnon gestures to a glowing registration crystal.">
 					"Every State Sorcerer must register their powers in our crystal archives. 
 					Try filling out your registration form - watch how the state updates 
 					immutably with each change!"
-				</p>
+				</InstructionBox>
 
 				<div className='sorcerer-form'>
 					<div className='form-preview'>
@@ -181,30 +170,20 @@ placeholder="Sorcerer Name"
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Memnon's Wisdom:</h3>
-				<p>
-					The principle of immutability is sacred in the React Kingdom. When you 
-					modify state directly, you're performing forbidden magic - React cannot 
-					see what changed. But when you create new state objects using the spread 
-					operator (...) or array methods like map() and filter(), you're following 
-					the ancient laws. React sees the new memory, compares it to the old, and 
-					updates precisely what needs to change. This is the foundation of React's 
-					incredible efficiency!
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the metaphor of "creating new memories" help you understand 
-					immutability in React?
-				</p>
-				<p>
-					Why do you think React was designed to require immutable state updates 
-					rather than detecting deep changes in objects?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Memnon's Wisdom:",
+					content: "The principle of immutability is sacred in the React Kingdom. When you modify state directly, you're performing forbidden magic - React cannot see what changed. But when you create new state objects using the spread operator (...) or array methods like map() and filter(), you're following the ancient laws. React sees the new memory, compares it to the old, and updates precisely what needs to change. This is the foundation of React's incredible efficiency!"
+				}}
+				reflectionQuestions={[
+					'How does the metaphor of "creating new memories" help you understand immutability in React?',
+					'Why do you think React was designed to require immutable state updates rather than detecting deep changes in objects?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 8 (Afternoon)",
+					content: "Complex state is trickier than I thought! The key is the spread operator - those three dots that copy everything. When updating objects, I spread the old state first, then override specific fields. It's like making a magical copy of a scroll, changing one line, and replacing the original. React needs this to know something changed!"
+				}}
+			/>
 		</div>
 	);
 };

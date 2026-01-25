@@ -1,4 +1,8 @@
 import React, { useReducer } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 // Initial state for our adventure
 const initialState = {
@@ -101,16 +105,19 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Reducer's Challenge</h2>
-
-			<div className='chapter-bridge'>
-				<p>The State Management Citadel's grand entrance led to a vast chamber 
-				where an elderly figure sat meditating. His robes bore patterns that 
-				shifted like flowing data, and his eyes held the wisdom of countless 
-				state transformations.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={1}
+				title="The Reducer's Challenge"
+			/>
 
 			<div className='story-section'>
+				<p className='story-paragraph'>
+					The State Management Citadel's grand entrance led to a vast chamber 
+					where an elderly figure sat meditating. His robes bore patterns that 
+					shifted like flowing data, and his eyes held the wisdom of countless 
+					state transformations.
+				</p>
+
 				<p className='story-paragraph'>
 					"Welcome, Aria," the figure spoke without opening his eyes. "I am 
 					<strong>Grand Reducer</strong>, keeper of predictable state transformations. 
@@ -128,13 +135,6 @@ const ChapterOne = () => {
 					Instead of many separate state updates, we channel all changes through a 
 					single, pure function. Watch and learn."
 				</p>
-
-				<div className='character-intro'>
-					<h4>Grand Reducer</h4>
-					<p>Master of predictable state transformations. He teaches that complex 
-					state changes should flow through a single, pure function that takes the 
-					current state and an action, always returning a new state.</p>
-				</div>
 
 				<div className='realm-illustration'>
 					<div className='state-castle'>
@@ -167,12 +167,11 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Challenge: The Inventory Management Trial
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Grand Reducer gestures to a glowing interface.</strong>
+				<InstructionBox character="Grand Reducer gestures to a glowing interface.">
 					"Manage this inventory using different actions. Notice how the reducer 
 					maintains consistency and predictability, no matter how complex the 
 					state becomes!"
-				</p>
+				</InstructionBox>
 
 				<div className='inventory-controls'>
 					<div className='inventory-display'>
@@ -277,13 +276,10 @@ const ChapterOne = () => {
 				</p>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>The Reducer Pattern</span>
-					<span className='discovered-by'>Grand Reducer's Teachings</span>
-				</div>
-				<pre>
-					{`// useReducer: When state logic becomes complex
+			<CodeExample
+				title="The Reducer Pattern"
+				discoveredBy="Grand Reducer's Teachings"
+				code={`// useReducer: When state logic becomes complex
 import React, { useReducer } from 'react';
 
 // Define initial state structure
@@ -358,19 +354,7 @@ function InventoryManager() {
     </div>
   );
 }`}
-				</pre>
-			</div>
-
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 11 (Morning)</h4>
-					<p>The reducer pattern is brilliant! Instead of managing multiple 
-					useState calls that could conflict, everything flows through one 
-					function. It's like having a wise sage who knows all the rules and 
-					ensures every state change follows them perfectly. Grand Reducer 
-					showed me how this prevents bugs and makes complex state predictable!</p>
-				</div>
-			</div>
+			/>
 
 			<div className='common-patterns'>
 				<h3>Grand Reducer's Advanced Patterns:</h3>
@@ -415,31 +399,26 @@ function rootReducer(state = {}, action) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Grand Reducer's Wisdom:</h3>
-				<p>
-					The useReducer hook shines when your state logic becomes complex. 
-					Unlike useState, which is perfect for independent values, useReducer 
-					excels when state updates depend on multiple values or follow complex 
-					business rules. The key benefits are predictability (same action always 
-					produces same result), testability (reducers are pure functions), and 
-					maintainability (all state logic in one place). Use it when your 
-					component feels like it has too many useState calls or when state 
-					updates have intricate dependencies.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does channeling all state changes through a single reducer 
-					function help manage complexity?
-				</p>
-				<p>
-					Can you think of an application feature that would benefit from 
-					the predictability of the reducer pattern?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Grand Reducer',
+						description: 'Master of predictable state transformations. He teaches that complex state changes should flow through a single, pure function that takes the current state and an action, always returning a new state.'
+					}
+				]}
+				lessonInsight={{
+					title: "Grand Reducer's Wisdom:",
+					content: "The useReducer hook shines when your state logic becomes complex. Unlike useState, which is perfect for independent values, useReducer excels when state updates depend on multiple values or follow complex business rules. The key benefits are predictability (same action always produces same result), testability (reducers are pure functions), and maintainability (all state logic in one place). Use it when your component feels like it has too many useState calls or when state updates have intricate dependencies."
+				}}
+				reflectionQuestions={[
+					'How does channeling all state changes through a single reducer function help manage complexity?',
+					'Can you think of an application feature that would benefit from the predictability of the reducer pattern?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 11 (Morning)",
+					content: "The reducer pattern is brilliant! Instead of managing multiple useState calls that could conflict, everything flows through one function. It's like having a wise sage who knows all the rules and ensures every state change follows them perfectly. Grand Reducer showed me how this prevents bugs and makes complex state predictable!"
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [user, setUser] = useState(null);
@@ -7,15 +11,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Living Threads
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>Contextia led Aria to a more intricate section of the Grand Hall, 
-				where the threads pulsed with different colors and seemed to carry 
-				not just data, but also the ability to modify that data.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title="The Living Threads"
+				bridge="Contextia led Aria to a more intricate section of the Grand Hall, where the threads pulsed with different colors and seemed to carry not just data, but also the ability to modify that data."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -100,12 +100,11 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Authentication Network
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Contextia gestures to the control panel.</strong>
+				<InstructionBox character="Contextia gestures to the control panel.">
 					"Try connecting and disconnecting as a user. Watch how every 
 					component instantly knows about the change - and they all have 
 					the power to trigger these changes themselves!"
-				</p>
+				</InstructionBox>
 
 				<div className='kingdom-components'>
 					<div
@@ -163,13 +162,10 @@ const ChapterTwo = () => {
 				</p>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Custom Provider Pattern</span>
-					<span className='discovered-by'>Grand Hall Advanced Techniques</span>
-				</div>
-				<pre className='context-code'>
-					{`// 1. Create the Context thread
+			<CodeExample
+				title="Custom Provider Pattern"
+				discoveredBy="Grand Hall Advanced Techniques"
+				code={`// 1. Create the Context thread
 const UserContext = React.createContext();
 
 // 2. Create a custom Provider with state and functions
@@ -225,20 +221,7 @@ function ProfileMenu() {
     <button onClick={() => navigate('/login')}>Login</button>
   );
 }`}
-				</pre>
-			</div>
-
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 10 (Midday)</h4>
-					<p>Custom Providers are amazing! They're not just about sharing 
-					data - they create complete state management systems. The Provider 
-					holds the state and the logic to change it, then shares both through 
-					the Context threads. Any component can tap in to both read AND write. 
-					It's like having a shared spell book where everyone can read the 
-					spells and add new ones!</p>
-				</div>
-			</div>
+			/>
 
 			<div className='performance-tips'>
 				<h3>Contextia's Performance Wisdom:</h3>
@@ -269,30 +252,20 @@ return (
 				</ul>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Contextia's Advanced Wisdom:</h3>
-				<p>
-					Custom Context Providers are the heart of many React applications. 
-					They combine state, logic, and distribution into one elegant pattern. 
-					By bundling data with the functions to modify it, you create a 
-					complete state management solution that any component can access. 
-					This pattern is perfect for user authentication, shopping carts, 
-					theme systems, and any other global state that needs both reading 
-					and writing capabilities.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the concept of "living threads" that carry both data 
-					and functions help you understand custom Context Providers?
-				</p>
-				<p>
-					What parts of your applications could benefit from this pattern 
-					of bundling state with its update functions?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Contextia's Advanced Wisdom:",
+					content: "Custom Context Providers are the heart of many React applications. They combine state, logic, and distribution into one elegant pattern. By bundling data with the functions to modify it, you create a complete state management solution that any component can access. This pattern is perfect for user authentication, shopping carts, theme systems, and any other global state that needs both reading and writing capabilities."
+				}}
+				reflectionQuestions={[
+					'How does the concept of "living threads" that carry both data and functions help you understand custom Context Providers?',
+					'What parts of your applications could benefit from this pattern of bundling state with its update functions?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 10 (Midday)",
+					content: "Custom Providers are amazing! They're not just about sharing data - they create complete state management systems. The Provider holds the state and the logic to change it, then shares both through the Context threads. Any component can tap in to both read AND write. It's like having a shared spell book where everyone can read the spells and add new ones!"
+				}}
+			/>
 		</div>
 	);
 };

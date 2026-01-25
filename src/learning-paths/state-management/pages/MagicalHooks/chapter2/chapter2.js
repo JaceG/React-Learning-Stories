@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [effectCount, setEffectCount] = useState(0);
@@ -14,16 +18,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Consequence Hook
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>Master Hooke led Aria deeper into the forge, where the air 
-				shimmered with uncontained magical energy. Here, apprentices 
-				worked on hooks that could reach beyond the component boundaries, 
-				affecting the world outside.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title="The Consequence Hook"
+				bridge="Master Hooke led Aria deeper into the forge, where the air shimmered with uncontained magical energy. Here, apprentices worked on hooks that could reach beyond the component boundaries, affecting the world outside."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -75,12 +74,11 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Effect Forge
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Master Hooke gestures to the glowing orb.</strong>
+				<InstructionBox character="Master Hooke gestures to the glowing orb.">
 					"Click the dependency orb to change its state. Notice how the 
 					effect counter increases each time the dependency changes. This 
 					is useEffect responding to state changes!"
-				</p>
+				</InstructionBox>
 
 				<div className='effect-controls'>
 					<div className='effect-info'>
@@ -103,13 +101,10 @@ const ChapterTwo = () => {
 					</button>
 				</div>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>useEffect Implementation</span>
-						<span className='discovered-by'>Hook Forge Archives</span>
-					</div>
-					<pre className='magical-code'>
-						{`// How useEffect responds to changes
+				<CodeExample
+					title="useEffect Implementation"
+					discoveredBy="Hook Forge Archives"
+					code={`// How useEffect responds to changes
 function EffectForge() {
   // State that will trigger effects
   const [isActive, setIsActive] = useState(${effectDependency});
@@ -133,8 +128,7 @@ function EffectForge() {
     </button>
   );
 }`}
-					</pre>
-				</div>
+				/>
 			</div>
 
 			<div className='story-section'>
@@ -144,15 +138,6 @@ function EffectForge() {
 					No array means it runs after every render. And specific dependencies 
 					mean it runs when those values change."
 				</p>
-
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 9 (Midday)</h4>
-					<p>useEffect is fascinating but tricky! It's like casting a spell 
-					that echoes into the future. The dependency array is the key - it's 
-					like telling the spell exactly when to activate. Master Hooke warned 
-					about infinite loops if you're not careful with dependencies. I need 
-					to practice this more!</p>
-				</div>
 			</div>
 
 			<div className='effect-cautions'>
@@ -178,12 +163,10 @@ function EffectForge() {
 				</ul>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Common useEffect Patterns</span>
-					<span className='discovered-by'>Forge Best Practices</span>
-				</div>
-				<pre>{`// Run once on mount
+			<CodeExample
+				title="Common useEffect Patterns"
+				discoveredBy="Forge Best Practices"
+				code={`// Run once on mount
 useEffect(() => {
   console.log("Component mounted!");
   return () => console.log("Component unmounting!");
@@ -207,33 +190,23 @@ useEffect(() => {
   }
   
   fetchData();
-}, []); // Fetch once on mount`}</pre>
-			</div>
+}, []); // Fetch once on mount`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>Master Hooke's Wisdom:</h3>
-				<p>
-					useEffect is the bridge between your component's inner world and 
-					the vast ecosystem beyond. It handles "side effects" - operations 
-					that affect things outside the component. The effect runs after 
-					the render is committed to the screen, ensuring the DOM is ready. 
-					Master this hook, and you can synchronize your components with 
-					any external system, from APIs to browser APIs to third-party 
-					libraries.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of useEffect as the "hook of consequences" 
-					help you understand when to use it?
-				</p>
-				<p>
-					Why is the cleanup function important for preventing memory 
-					leaks and unexpected behavior?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Master Hooke's Wisdom:",
+					content: "useEffect is the bridge between your component's inner world and the vast ecosystem beyond. It handles \"side effects\" - operations that affect things outside the component. The effect runs after the render is committed to the screen, ensuring the DOM is ready. Master this hook, and you can synchronize your components with any external system, from APIs to browser APIs to third-party libraries."
+				}}
+				reflectionQuestions={[
+					'How does thinking of useEffect as the "hook of consequences" help you understand when to use it?',
+					'Why is the cleanup function important for preventing memory leaks and unexpected behavior?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 9 (Midday)",
+					content: "useEffect is fascinating but tricky! It's like casting a spell that echoes into the future. The dependency array is the key - it's like telling the spell exactly when to activate. Master Hooke warned about infinite loops if you're not careful with dependencies. I need to practice this more!"
+				}}
+			/>
 		</div>
 	);
 };

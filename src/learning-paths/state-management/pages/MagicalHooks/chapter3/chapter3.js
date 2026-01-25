@@ -1,4 +1,8 @@
 import { useState, useMemo } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [renderCount, setRenderCount] = useState(0);
@@ -14,16 +18,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Specialized Tools
-			</h2>
-
-			<div className='chapter-bridge'>
-				<p>As the afternoon sun filtered through the forge's crystalline 
-				windows, Master Hooke led Aria to a special vault containing the 
-				most specialized hooks - tools designed for specific challenges 
-				that React developers face.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title="The Specialized Tools"
+				bridge="As the afternoon sun filtered through the forge's crystalline windows, Master Hooke led Aria to a special vault containing the most specialized hooks - tools designed for specific challenges that React developers face."
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -71,26 +70,17 @@ const ChapterThree = () => {
 					previous values."
 				</p>
 
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 9 (Afternoon)</h4>
-					<p>The specialized hooks are fascinating! useRef is like having a 
-					notebook that React doesn't watch - I can write in it without causing 
-					updates. useMemo and useCallback are about efficiency - they prevent 
-					unnecessary work by remembering results and function references. Master 
-					Hooke says they're powerful but warns against overusing them.</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Performance Workshop
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Master Hooke activates a demonstration.</strong>
+				<InstructionBox character="Master Hooke activates a demonstration.">
 					"Click the button to force a re-render. Notice how the memoized 
 					value doesn't recalculate unless its dependency (baseNumber) changes. 
 					This saves computation time!"
-				</p>
+				</InstructionBox>
 
 				<div className='optimization-controls'>
 					<button className='render-button' onClick={toggleRender}>
@@ -103,13 +93,10 @@ const ChapterThree = () => {
 					</button>
 				</div>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The Three Specialized Hooks</span>
-						<span className='discovered-by'>Master Hooke's Vault</span>
-					</div>
-					<pre className='optimization-code'>
-						{`// useRef - The Memory Crystal
+				<CodeExample
+					title="The Three Specialized Hooks"
+					discoveredBy="Master Hooke's Vault"
+					code={`// useRef - The Memory Crystal
 function TimerComponent() {
   const intervalRef = useRef(null);  // Persists without re-renders
   const [seconds, setSeconds] = useState(0);
@@ -161,8 +148,7 @@ function SearchComponent({ onSearch }) {
     </div>
   );
 }`}
-					</pre>
-				</div>
+				/>
 			</div>
 
 			<div className='story-section'>
@@ -258,45 +244,25 @@ function SearchComponent({ onSearch }) {
 				</ul>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Master Hooke's Final Wisdom:</h3>
-				<p>
-					These specialized hooks are like precision tools in a master craftsman's 
-					workshop. You won't need them for every project, but when you do, they're 
-					essential. useRef gives you a way to step outside React's render cycle, 
-					useMemo and useCallback help you optimize performance by preventing 
-					unnecessary work. Master these, and you'll have the complete toolkit 
-					for building efficient React applications. But remember - clarity and 
-					simplicity often trump premature optimization!
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of useRef as a "secret pocket" help you 
-					understand when to use it instead of useState?
-				</p>
-				<p>
-					Why is it important to measure performance before applying 
-					optimization hooks like useMemo and useCallback?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>As the forge's closing bell rang, Master Hooke handed Aria a small 
-				leather pouch. "These are hook samples for practice. Tomorrow, you'll 
-				meet the Context Keepers in the Grand Hall. They'll teach you how to 
-				share state across your entire component kingdom."</p>
-				
-				<p>Binary's lights danced with excitement. "The Grand Context! That's 
-				where components can share memories without passing them hand-to-hand!"</p>
-				
-				<p>Aria carefully tucked the pouch into her satchel, her mind buzzing 
-				with new knowledge. useState, useEffect, useRef, useMemo, useCallback - 
-				each hook a tool with its own purpose. She was beginning to see how they 
-				all fit together in the grand tapestry of React development.</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Master Hooke's Final Wisdom:",
+					content: "These specialized hooks are like precision tools in a master craftsman's workshop. You won't need them for every project, but when you do, they're essential. useRef gives you a way to step outside React's render cycle, useMemo and useCallback help you optimize performance by preventing unnecessary work. Master these, and you'll have the complete toolkit for building efficient React applications. But remember - clarity and simplicity often trump premature optimization!"
+				}}
+				reflectionQuestions={[
+					'How does thinking of useRef as a "secret pocket" help you understand when to use it instead of useState?',
+					'Why is it important to measure performance before applying optimization hooks like useMemo and useCallback?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 9 (Afternoon)",
+					content: "The specialized hooks are fascinating! useRef is like having a notebook that React doesn't watch - I can write in it without causing updates. useMemo and useCallback are about efficiency - they prevent unnecessary work by remembering results and function references. Master Hooke says they're powerful but warns against overusing them."
+				}}
+				chapterEnding={[
+					"As the forge's closing bell rang, Master Hooke handed Aria a small leather pouch. \"These are hook samples for practice. Tomorrow, you'll meet the Context Keepers in the Grand Hall. They'll teach you how to share state across your entire component kingdom.\"",
+					"Binary's lights danced with excitement. \"The Grand Context! That's where components can share memories without passing them hand-to-hand!\"",
+					"Aria carefully tucked the pouch into her satchel, her mind buzzing with new knowledge. useState, useEffect, useRef, useMemo, useCallback - each hook a tool with its own purpose. She was beginning to see how they all fit together in the grand tapestry of React development."
+				]}
+			/>
 		</div>
 	);
 };

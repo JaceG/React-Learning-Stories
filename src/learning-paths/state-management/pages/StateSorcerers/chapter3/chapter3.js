@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [items, setItems] = useState([
@@ -19,17 +23,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Side Effect Enchantments
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title="The Side Effect Enchantments"
+				bridge="As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component."
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					As State Sorcerers advanced in their studies, they
-					discovered that changes in state could trigger side
-					effects—powerful enchantments that interacted with the world
-					outside their component.
-				</p>
 
 				<p className='story-paragraph'>
 					"There exists a second magical hook," explained the mentor,
@@ -39,62 +39,63 @@ const ChapterThree = () => {
 					setting up subscriptions."
 				</p>
 
-				<div className='code-example'>
-					<pre>{`function EnchantedItems() {
-const [items, setItems] = useState([
-{ id: 1, name: 'Scroll of Knowledge', collected: false },
-{ id: 2, name: 'Crystal of Memory', collected: false },
-{ id: 3, name: 'Quill of Truth', collected: false }
-]);
+				<CodeExample
+					title="useEffect Side Effects"
+					discoveredBy="Memnon's Advanced Teachings"
+					code={`function EnchantedItems() {
+  const [items, setItems] = useState([
+    { id: 1, name: 'Scroll of Knowledge', collected: false },
+    { id: 2, name: 'Crystal of Memory', collected: false },
+    { id: 3, name: 'Quill of Truth', collected: false }
+  ]);
 
-const [notification, setNotification] = useState('');
+  const [notification, setNotification] = useState('');
 
-// This effect runs whenever the items state changes
-useEffect(() => {
-const collectedCount = items.filter(item => item.collected).length;
+  // This effect runs whenever the items state changes
+  useEffect(() => {
+    const collectedCount = items.filter(item => item.collected).length;
 
-if (collectedCount === items.length && collectedCount > 0) {
-setNotification('You have collected all items!');
-} else if (collectedCount > 0) {
-setNotification(\`You have collected \${collectedCount} items.\`);
-} else {
-setNotification('');
-}
+    if (collectedCount === items.length && collectedCount > 0) {
+      setNotification('You have collected all items!');
+    } else if (collectedCount > 0) {
+      setNotification(\`You have collected \${collectedCount} items.\`);
+    } else {
+      setNotification('');
+    }
 
-// The effect could also interact with external APIs
-// document.title = \`\${collectedCount} items collected\`;
-}, [items]); // Dependency array - effect runs when items changes
+    // The effect could also interact with external APIs
+    // document.title = \`\${collectedCount} items collected\`;
+  }, [items]); // Dependency array - effect runs when items changes
 
-return (
-<div>
-<h3>Enchanted Items</h3>
-<ul>
-{items.map(item => (
-<li key={item.id}>
-{item.name}
-<button onClick={() => toggleCollectItem(item.id)}>
-  {item.collected ? 'Return' : 'Collect'}
-</button>
-</li>
-))}
-</ul>
-{notification && <div className="notification">{notification}</div>}
-</div>
-);
-}`}</pre>
-				</div>
+  return (
+    <div>
+      <h3>Enchanted Items</h3>
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>
+            {item.name}
+            <button onClick={() => toggleCollectItem(item.id)}>
+              {item.collected ? 'Return' : 'Collect'}
+            </button>
+          </li>
+        ))}
+      </ul>
+      {notification && <div className="notification">{notification}</div>}
+    </div>
+  );
+}`}
+				/>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Artifact Collection Trial
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Memnon presents three glowing artifacts.</strong>
+				<InstructionBox character="Memnon presents three glowing artifacts.">
 					"Your final test today, Aria. Collect these enchanted items and 
 					watch how the collection status updates automatically. This demonstrates 
 					state and effects working in harmony!"
-				</p>
+				</InstructionBox>
 
 				<div className='enchanted-items'>
 					<h4>Magical Artifacts Collection</h4>
@@ -134,47 +135,22 @@ return (
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>Memnon's Final Wisdom:</h3>
-				<p>
-					The useEffect hook is the gateway between your component's inner world 
-					and the vast kingdom beyond. It lets you reach out - to fetch data from 
-					distant servers, update the browser's title, or synchronize with external 
-					systems. The dependency array is your control mechanism: it determines 
-					when your effects activate. Master this, and you master the art of keeping 
-					your components in harmony with the ever-changing world around them.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does Memnon's teaching about "consequences" help you understand 
-					the purpose of useEffect?
-				</p>
-				<p>
-					Why do you think the dependency array is so important in controlling 
-					when effects run?
-				</p>
-			</div>
-			
-			<div className='chapter-ending'>
-				<p>As the stars began to appear over the Eastern Quarter, Memnon placed 
-				his hand on Aria's shoulder. "You've done exceptionally well today, young 
-				sorcerer. You've grasped the fundamentals of state magic far quicker than 
-				most."</p>
-				
-				<p>Binary twirled happily. "Tomorrow you'll learn about hooks - special 
-				spells that give functional components even more power!"</p>
-				
-				<p>"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, 
-				where you'll discover useState and useEffect have many magical siblings. 
-				Each one grants unique powers to those wise enough to wield them."</p>
-				
-				<p>Aria left the crystal spire with her mind buzzing with new knowledge. 
-				State, immutability, effects - the building blocks of dynamic components. 
-				She couldn't wait to see what tomorrow would bring!</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: "Memnon's Final Wisdom:",
+					content: "The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them."
+				}}
+				reflectionQuestions={[
+					'How does Memnon\'s teaching about "consequences" help you understand the purpose of useEffect?',
+					'Why do you think the dependency array is so important in controlling when effects run?'
+				]}
+				chapterEnding={[
+					"As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. \"You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most.\"",
+					"Binary twirled happily. \"Tomorrow you'll learn about hooks - special spells that give functional components even more power!\"",
+					"\"Rest well,\" Memnon advised. \"The path ahead leads to the Hook Forge, where you'll discover useState and useEffect have many magical siblings. Each one grants unique powers to those wise enough to wield them.\"",
+					"Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, effects - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!"
+				]}
+			/>
 		</div>
 	);
 };
