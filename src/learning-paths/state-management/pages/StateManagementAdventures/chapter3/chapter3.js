@@ -518,7 +518,7 @@ const Counter = observer(() => {
 				</ul>
 			</div>
 
-			<div className='best-practices'>
+			<div className='character-guidance'>
 				<h3>Universal State Management Best Practices:</h3>
 				<ol>
 					<li>

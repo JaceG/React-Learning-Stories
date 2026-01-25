@@ -198,12 +198,6 @@ function ComponentForge() {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Forge Master Hooke',
-						description: 'Chief architect of React\'s hook system. Her workshop produces the magical tools that give functional components powers once reserved only for class components.'
-					}
-				]}
 				lessonInsight={{
 					title: "Master Hooke's Wisdom:",
 					content: "The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly."

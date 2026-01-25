@@ -837,6 +837,11 @@ function IntelligentNavigation() {
 						'What possibilities open up when waypoints can preserve state, execute effects, validate transitions, and adapt to user behavior?',
 						"How does Aria's journey through the React Kingdom help her understand Marina's advanced navigation architecture concepts?"
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 23 (Morning)",
+						content:
+							"Marina brought me to the Waypoint Sanctum - a vast chamber where glowing orbs trace navigation paths through the air! Today I learned that routes aren't just paths, they're intelligent waypoints. Each route can have loaders for data fetching, actions for form handling, error boundaries for graceful failures, and metadata (handles) for breadcrumbs and titles. I built a WaypointArchitect class that creates routes with intelligent wrappers, enhanced loaders with prefetching, and comprehensive metadata. The route configuration becomes a declarative description of the entire application! Binary is mapping the navigation graph!",
+					}}
 				/>
 			</div>
 		</>

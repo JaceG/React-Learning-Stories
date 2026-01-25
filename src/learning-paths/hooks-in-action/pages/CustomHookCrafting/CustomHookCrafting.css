@@ -1092,7 +1092,7 @@
   box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
 }
 
-.best-practices {
+.practice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;

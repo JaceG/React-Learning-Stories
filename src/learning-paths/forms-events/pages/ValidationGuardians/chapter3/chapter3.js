@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const {
@@ -141,19 +145,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: The Ultimate Defense Strategy
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The fortress's war room displayed maps of validation
-						strategies from across the kingdom. Commander Validus
-						gathered his elite guard as Aria prepared to demonstrate
-						the ultimate defense - a synthesis of all validation
-						knowledge into one impenetrable system.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='The Ultimate Defense Strategy'
+					bridge="The fortress's war room displayed maps of validation strategies from across the kingdom. Commander Validus gathered his elite guard as Aria prepared to demonstrate the ultimate defense - a synthesis of all validation knowledge into one impenetrable system."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -246,9 +242,10 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='aria-master-code'>
-					<h3>The Master Validation System</h3>
-					<pre className='magical-code'>{`// Aria's Ultimate Form Wizard Validation
+				<CodeExample
+					title="The Master Validation System"
+					discoveredBy="Aria's Ultimate Pattern"
+					code={`// Aria's Ultimate Form Wizard Validation
 const useUltimateValidation = (schemas, conditionalRules) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({});
@@ -305,22 +302,16 @@ const useUltimateValidation = (schemas, conditionalRules) => {
     navigate,
     canProceed: stepStatus[currentStep]
   };
-};`}</pre>
-				</div>
+};`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						The Ultimate Defense Test: Multi-Stage Form Wizard
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria demonstrate the ultimate validation
-								system! Navigate through the multi-stage wizard
-								and watch how each layer of defense activates.
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Validus presents the ultimate defense challenge.">
+						Help Aria demonstrate the ultimate validation system! Navigate through the multi-stage wizard and watch how each layer of defense activates.
+					</InstructionBox>
 
 					<div className='guardian-form wizard'>
 						<div className='wizard-progress'>
@@ -690,88 +681,29 @@ const suggest = (field, value) => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 21 (Evening)</h4>
-						<p>
-							What a journey through the Validation Fortress!
-							Validus taught me how to create the ultimate defense
-							system by combining everything: schema validation
-							(like Context patterns), multi-step management
-							(state machines from Eastern Quarter), conditional
-							logic (props patterns), and performance optimization
-							(hook mastery). He was impressed with how quickly I
-							grasped the concepts! The fortress is now
-							impenetrable yet welcoming to legitimate users.
-							Binary's analysis shows 99.8% efficiency! The
-							guardians will use this system for generations.
-							Tomorrow we head to the final challenge at the
-							Submission Portal Gateway. Portal Keeper Sage
-							awaits...
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Ultimate Guardian's Mastery:</h3>
-					<p>
-						The ultimate validation defense combines multiple
-						strategies into one coherent system. Use schema
-						validation for consistency and maintainability.
-						Implement multi-step validation for complex forms,
-						breaking the journey into manageable pieces. Apply
-						conditional rules for dynamic requirements. Leverage
-						memoization and caching for performance. Most
-						importantly, treat validation as a guide, not a
-						gatekeeper. The strongest fortress is one that
-						legitimate users can enter easily while keeping threats
-						at bay. Master these patterns, and your forms become
-						both secure and delightful.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the fortress walls glowed with the light of activated
-						defenses, Commander Validus smiled with pride. "You've
-						learned exceptionally well, Aria! Your understanding of
-						validation patterns will serve you well in your React
-						journey. The Western Quarter's data security knowledge
-						is now yours!"
-					</p>
-					<p className='story-paragraph'>
-						"Every pattern has its place," Aria reflected. "From
-						simple gates to complex multi-stage defenses, it all
-						builds on the React foundations I've learned."
-					</p>
-					<p className='story-paragraph'>
-						"One final challenge remains," Validus said, pointing
-						toward a shimmering portal. "Portal Keeper Sage has
-						requested your presence. The Submission Portals hold the
-						ultimate test of form mastery."
-					</p>
-					<p className='story-paragraph'>
-						Binary's circuits sparked with anticipation. "Portal
-						energy signatures detected. Shall we complete our Forms
-						& Events mastery?"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does breaking validation into steps improve both
-						security and user experience?
-					</p>
-					<p className='story-paragraph'>
-						Why is combining multiple validation strategies more
-						powerful than relying on one approach?
-					</p>
-					<p className='story-paragraph'>
-						What validation patterns from Aria's entire journey came
-						together in this ultimate system?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Ultimate Guardian's Mastery:",
+						content:
+							"The ultimate validation defense combines multiple strategies into one coherent system. Use schema validation for consistency and maintainability. Implement multi-step validation for complex forms, breaking the journey into manageable pieces. Apply conditional rules for dynamic requirements. Leverage memoization and caching for performance. Most importantly, treat validation as a guide, not a gatekeeper. The strongest fortress is one that legitimate users can enter easily while keeping threats at bay. Master these patterns, and your forms become both secure and delightful.",
+					}}
+					reflectionQuestions={[
+						'How does breaking validation into steps improve both security and user experience?',
+						'Why is combining multiple validation strategies more powerful than relying on one approach?',
+						"What validation patterns from Aria's entire journey came together in this ultimate system?",
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 19 (Evening)",
+						content:
+							"What a journey through the Validation Fortress! Validus taught me how to create the ultimate defense system by combining everything: schema validation (like Context patterns), multi-step management (state machines from Eastern Quarter), conditional logic (props patterns), and performance optimization (hook mastery). He was impressed with how quickly I grasped the concepts! The fortress is now impenetrable yet welcoming to legitimate users. Binary's analysis shows 99.8% efficiency! The guardians will use this system for generations. Tomorrow we head to the final challenge at the Submission Portal Gateway. Portal Keeper Sage awaits...",
+					}}
+					chapterEnding={[
+						'As the fortress walls glowed with the light of activated defenses, Commander Validus smiled with pride. "You\'ve learned exceptionally well, Aria! Your understanding of validation patterns will serve you well in your React journey. The Western Quarter\'s data security knowledge is now yours!"',
+						'"Every pattern has its place," Aria reflected. "From simple gates to complex multi-stage defenses, it all builds on the React foundations I\'ve learned."',
+						'"One final challenge remains," Validus said, pointing toward a shimmering portal. "Portal Keeper Sage has requested your presence. The Submission Portals hold the ultimate test of form mastery."',
+						'Binary\'s circuits sparked with anticipation. "Portal energy signatures detected. Shall we complete our Forms & Events mastery?"',
+					]}
+				/>
 			</div>
 		</>
 	);

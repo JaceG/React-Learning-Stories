@@ -233,13 +233,6 @@ function Greeting() {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Professor Syntaxis',
-						description:
-							'A wise mage of the JSX Magic Academy whose robes shimmer with HTML tags and JavaScript symbols. He teaches the ancient language of JSX and how the Babel sprite transforms it into browser-readable JavaScript.',
-					},
-				]}
 				lessonInsight={{
 					title: 'The JSX Lesson:',
 					content:

@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -53,9 +57,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Window of Perception
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Window of Perception'
+				bridge='Guardian Zephyr led Aria to a mystical viewing chamber deep within the Vault. "Watch closely," he said, waving his hand as the infinite archive transformed. "This is the secret of virtualization - rendering only what the eye can see."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -93,14 +99,10 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Virtual Scrolling in Action
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Enable virtualization and scroll through 10,000 items! Adjust the window 
-							size and buffer to see how they affect performance.
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Guardian Zephyr demonstrates the windowing technique.">
+					Enable virtualization and scroll through 10,000 items! Adjust the window 
+					size and buffer to see how they affect performance.
+				</InstructionBox>
 
 				<div className='vault-controls'>
 					<div className='control-group'>
@@ -228,13 +230,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='vault-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Virtual Implementation</span>
-						<span className='discovered-by'>The Windowing Technique</span>
-					</div>
-					<pre>{`// Virtual Scrolling Implementation
+			<CodeExample
+				title="Scroll of Virtual Implementation"
+				discoveredBy="The Windowing Technique"
+				code={`// Virtual Scrolling Implementation
 
 // Basic Virtual Scroller Component
 function VirtualScroller({ 
@@ -348,50 +347,24 @@ const Row = memo(({ data, index, style }) => {
 const listRef = useRef();
 const scrollToItem = (index) => {
   listRef.current.scrollToItem(index, 'center');
-};`}</pre>
-				</div>
-			</div>
+};`}
+			/>
 
-			<div className='guardian-card'>
-				<h4>Guardian Zephyr's Teaching</h4>
-				<p>"See how we maintain the illusion? The scrollbar shows truth - 10,000 items 
-				exist. But the DOM holds only what's needed. This is the balance between perception 
-				and performance."</p>
-				<div style={{ marginTop: '15px' }}>
-					<strong>Key Principles:</strong>
-					<ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-						<li>Render only visible items plus buffer</li>
-						<li>Reuse DOM nodes as content changes</li>
-						<li>Maintain accurate scrollbar with spacer</li>
-						<li>Calculate positions absolutely</li>
-					</ul>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Windowing Lesson:</h3>
-				<p>
-					Virtual scrolling (windowing) renders only the items currently visible in the 
-					viewport, plus a small buffer for smooth scrolling. By maintaining a virtual 
-					spacer element that represents the total height, we preserve natural scrolling 
-					behavior while dramatically reducing DOM nodes. Libraries like react-window and 
-					react-virtualized make this technique accessible, handling edge cases and 
-					optimizations automatically.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Guardian Zephyr has shown you the power of rendering only what's necessary. 
-					This technique transforms impossible lists into smooth experiences. Where in 
-					your applications could virtual scrolling unlock new possibilities?
-				</p>
-				<p>
-					Remember: users don't need to see everything at once - they need to access 
-					everything smoothly. Virtualization provides that illusion perfectly.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Windowing Lesson:',
+					content: 'Virtual scrolling (windowing) renders only the items currently visible in the viewport, plus a small buffer for smooth scrolling. By maintaining a virtual spacer element that represents the total height, we preserve natural scrolling behavior while dramatically reducing DOM nodes. Libraries like react-window and react-virtualized make this technique accessible, handling edge cases and optimizations automatically.'
+				}}
+				reflectionQuestions={[
+					'Guardian Zephyr has shown you the power of rendering only what\'s necessary. This technique transforms impossible lists into smooth experiences. Where in your applications could virtual scrolling unlock new possibilities?',
+					'Remember: users don\'t need to see everything at once - they need to access everything smoothly. Virtualization provides that illusion perfectly.'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 28 (Afternoon)",
+					content:
+						"Guardian Zephyr showed me the Window of Perception - the secret of virtualization! We create a window showing only what fits in the viewport plus a small buffer. As you scroll, we swap contents seamlessly - users perceive infinity, but we render only necessity! The virtual spacer maintains scrollbar truth (full height), but actual items materialize only when needed. I scrolled through 10,000 items with only ~20 DOM nodes! The react-window library provides FixedSizeList and VariableSizeList. Key insight: calculate visible range, add buffer, position items absolutely, maintain spacer height. 60fps achieved!",
+				}}
+			/>
 		</div>
 	);
 };

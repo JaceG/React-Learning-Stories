@@ -224,7 +224,7 @@ const ChapterThree = () => {
 					</div>
 				</div>
 
-				<div className='best-practices' style={{ marginTop: '40px' }}>
+				<div className='character-guidance' style={{ marginTop: '40px' }}>
 					<h4>Animation Best Practices</h4>
 					<div className='animation-patterns'>
 						{bestPractices.map((practice, index) => (

@@ -1,6 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const { performanceMetrics, updateMetric, logEvent } = useOutletContext();
@@ -107,18 +111,11 @@ function ChapterThree() {
 
 	const content = (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Grand Performance</h2>
-
-			<div className='chapter-bridge'>
-				<p>
-					The finale approached. Conductor Eventus gathered all the
-					musicians for the grand performance, but something was
-					wrong. The symphony stuttered, handlers fired too rapidly,
-					and memory consumption spiraled out of control. "This is
-					exactly what the Academy teaches us to avoid!" Aria
-					observed.
-				</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Grand Performance'
+				bridge='The finale approached. Conductor Eventus gathered all the musicians for the grand performance, but something was wrong. The symphony stuttered, handlers fired too rapidly, and memory consumption spiraled out of control. "This is exactly what the Academy teaches us to avoid!" Aria observed.'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -198,9 +195,10 @@ function ChapterThree() {
 				</div>
 			</div>
 
-			<div className='aria-advanced-patterns'>
-				<h3>Academy Training Applied to Events</h3>
-				<pre className='magical-code'>{`// Aria's Academy Event Optimization Patterns
+			<CodeExample
+				title="Academy Event Optimization Patterns"
+				discoveredBy="Applied by Aria"
+				code={`// Aria's Academy Event Optimization Patterns
 
 // 1. Memoization - Remember the handler (Performance Sanctuary)
 const MemoizedOrchestra = () => {
@@ -240,21 +238,16 @@ const useDebounce = (callback, delay) => {
       callback(...args);
     }, delay);
   }, [callback, delay]);
-};`}</pre>
-			</div>
+};`}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Academy-Enhanced Performance
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Help Aria demonstrate how Academy optimization
-							patterns transform event handling performance!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Eventus hands you the conductor's baton.">
+					Help Aria demonstrate how Academy optimization patterns transform event handling performance!
+				</InstructionBox>
 
 				<div className='event-composition'>
 					<h4>🎼 Academy Event Composition Studio</h4>
@@ -453,86 +446,29 @@ const batchedUpdate = unstable_batchedUpdates(() => {
 				</div>
 			</div>
 
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 20 (Evening)</h4>
-					<p>
-						What a finale! Eventus taught me how to apply Academy
-						patterns to event optimization. I learned how
-						memoization (from Performance Sanctuary) prevents
-						handler recreation, how throttling/debouncing (Academy
-						efficiency patterns) control event flow, and how
-						delegation reduces overhead using the optimization
-						techniques Pattern Weaver taught me. Binary tracked the
-						improvements as we applied Academy methods to event
-						handling! The Event Symphony Hall now runs so much
-						smoother. Eventus says the patterns we explored will be
-						valuable for orchestras throughout the kingdom. Tomorrow
-						we visit the Validation Fortress - I'm curious what
-						Guardian Commander Validus will teach me!
-					</p>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Grand Performance Mastery:</h3>
-				<p>
-					Event optimization transforms chaotic interactions into
-					smooth symphonies using Academy-trained patterns. Memoize
-					handlers with useCallback to prevent recreation on every
-					render (Performance Sanctuary training). Throttle
-					rapidly-firing events (scroll, resize) to control frequency.
-					Debounce user input to wait for typing to finish. Combine
-					with event delegation for ultimate efficiency. These
-					patterns, learned at the Academy and applied here, unite to
-					create performant, responsive applications. Remember:
-					optimization isn't premature when it enhances user
-					experience. Conduct your events with Academy wisdom, and
-					your application will sing.
-				</p>
-			</div>
-
-			<div className='chapter-finale'>
-				<p className='story-paragraph'>
-					As the final notes of the Academy-optimized symphony faded,
-					the entire Event Symphony Hall erupted in applause.
-					Musicians who had struggled with performance issues now
-					played in perfect harmony using optimized patterns.
-				</p>
-				<p className='story-paragraph'>
-					Conductor Eventus bowed deeply to Aria. "You've transformed
-					our understanding of event handling by applying Academy
-					optimization training. The Western Quarter will never forget
-					this performance."
-				</p>
-				<p className='story-paragraph'>
-					"The next challenge awaits," Aria said, looking toward the
-					distant Validation Fortress. "I hear Commander Validus needs
-					help with defensive strategies that might benefit from
-					Academy patterns."
-				</p>
-				<p className='story-paragraph'>
-					Binary displayed a map route. "Validation patterns detected.
-					Academy training applicable. Shall we proceed to the
-					fortress?"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do Academy optimization techniques mirror a conductor's
-					role in managing tempo and timing?
-				</p>
-				<p className='story-paragraph'>
-					Why is combining multiple Academy patterns more powerful
-					than using them individually?
-				</p>
-				<p className='story-paragraph'>
-					What performance issues in your own applications could
-					benefit from these Academy-trained patterns?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Grand Performance Mastery:',
+					content:
+						"Event optimization transforms chaotic interactions into smooth symphonies using Academy-trained patterns. Memoize handlers with useCallback to prevent recreation on every render (Performance Sanctuary training). Throttle rapidly-firing events (scroll, resize) to control frequency. Debounce user input to wait for typing to finish. Combine with event delegation for ultimate efficiency. These patterns, learned at the Academy and applied here, unite to create performant, responsive applications. Remember: optimization isn't premature when it enhances user experience. Conduct your events with Academy wisdom, and your application will sing.",
+				}}
+				reflectionQuestions={[
+					"How do Academy optimization techniques mirror a conductor's role in managing tempo and timing?",
+					'Why is combining multiple Academy patterns more powerful than using them individually?',
+					'What performance issues in your own applications could benefit from these Academy-trained patterns?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 18 (Evening)",
+					content:
+						"What a finale! Eventus taught me how to apply Academy patterns to event optimization. I learned how memoization (from Performance Sanctuary) prevents handler recreation, how throttling/debouncing (Academy efficiency patterns) control event flow, and how delegation reduces overhead using the optimization techniques Pattern Weaver taught me. Binary tracked the improvements as we applied Academy methods to event handling! The Event Symphony Hall now runs so much smoother. Eventus says the patterns we explored will be valuable for orchestras throughout the kingdom. Tomorrow we visit the Validation Fortress - I'm curious what Guardian Commander Validus will teach me!",
+				}}
+				chapterEnding={[
+					'As the final notes of the Academy-optimized symphony faded, the entire Event Symphony Hall erupted in applause. Musicians who had struggled with performance issues now played in perfect harmony using optimized patterns.',
+					'Conductor Eventus bowed deeply to Aria. "You\'ve transformed our understanding of event handling by applying Academy optimization training. The Western Quarter will never forget this performance."',
+					'"The next challenge awaits," Aria said, looking toward the distant Validation Fortress. "I hear Commander Validus needs help with defensive strategies that might benefit from Academy patterns."',
+					'Binary displayed a map route. "Validation patterns detected. Academy training applicable. Shall we proceed to the fortress?"',
+				]}
+			/>
 		</div>
 	);
 

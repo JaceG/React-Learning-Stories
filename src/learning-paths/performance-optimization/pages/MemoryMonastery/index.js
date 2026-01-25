@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './MemoryMonastery.css';
 
@@ -10,17 +10,6 @@ function MemoryMonastery() {
 	const [gcActivity, setGcActivity] = useState([]);
 	const [retainedSize, setRetainedSize] = useState(0);
 	const [memoryOptimizations, setMemoryOptimizations] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Memory leak detection
 	const detectMemoryLeak = (component, size) => {
@@ -72,30 +61,13 @@ function MemoryMonastery() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Memory Monastery</h1>
-			<p className='lesson-subtitle'>
-				Master the sacred arts of memory management and prevent the dreaded leaks
-			</p>
+			<LessonHeader
+				title='Memory Monastery'
+				subtitle='Master the sacred arts of memory management and prevent the dreaded leaks'
+				opener={`Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performance journey was complete. But Master Velocity's parting words echoed in her mind: "Speed is only half the battle. Seek Brother Binary at the Memory Monastery - for even the fastest application will fall if it bleeds memory." The floating monastery appeared through the clouds, its ancient walls humming with the whispers of forgotten allocations.`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					memoryLeaks,
@@ -111,27 +83,10 @@ function MemoryMonastery() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='performance-optimization'
 				lessonId='memory-monastery'
+				totalChapters={3}
 			/>
 		</div>
 	);

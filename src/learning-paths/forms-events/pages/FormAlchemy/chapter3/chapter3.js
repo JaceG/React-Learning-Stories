@@ -1,6 +1,10 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const {
@@ -183,20 +187,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: The Grand Transmutation
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						In the final chamber of the Form Alchemy Lab, Formeus
-						stood before an elaborate setup - multiple cauldrons
-						connected by glowing channels, validation runes floating
-						in the air, and a shimmering portal at the center. "This
-						is it, Aria," he announced. "Let's see how your Academy
-						mastery handles our most complex challenge."
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='The Grand Transmutation'
+					bridge={`In the final chamber of the Form Alchemy Lab, Formeus stood before an elaborate setup - multiple cauldrons connected by glowing channels, validation runes floating in the air, and a shimmering portal at the center. "This is it, Aria," he announced. "Let's see how your Academy mastery handles our most complex challenge."`}
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -277,9 +272,10 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='aria-masterpiece'>
-					<h3>Aria's Academy-Enhanced Form System</h3>
-					<pre className='magical-code'>{`// The Grand Transmutation Pattern - Academy Training Applied
+				<CodeExample
+					title="Aria's Academy-Enhanced Form System"
+					discoveredBy="The Grand Transmutation Pattern"
+					code={`// The Grand Transmutation Pattern - Academy Training Applied
 const useAdvancedForm = (initialValues, validationSchema) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
@@ -328,22 +324,16 @@ const useAdvancedForm = (initialValues, validationSchema) => {
     values, errors, touched, isSubmitting, isValid,
     handleChange, handleBlur, handleSubmit 
   };
-};`}</pre>
-				</div>
+};`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						The Grand Transmutation Demonstration
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Witness Aria's complete Academy-trained form
-								system - combining all hook patterns into a
-								unified, powerful form management solution!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Formeus activates the submission portal.">
+						Witness Aria's complete Academy-trained form system - combining all hook patterns into a unified, powerful form management solution!
+					</InstructionBox>
 
 					<div className='grand-form'>
 						<form
@@ -601,86 +591,29 @@ try {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 20 (Evening)</h4>
-						<p>
-							What a day! Formeus guided me through the Grand
-							Transmutation - a complete form system that uses
-							every Academy pattern I've learned. The validation
-							runes were inspired by the Hook Council chambers,
-							lighting up as each field becomes valid. We used
-							memoization from the Performance Sanctuary to
-							optimize validation checks, callbacks from Academy
-							training for stable handlers, and effects from the
-							Temporal Tower for reactive validation. Formeus was
-							excited to see how Academy patterns applied to form
-							handling! The best part: now I understand how to
-							build reusable form systems. Tomorrow we move to the
-							Event Symphony Hall!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Grand Transmutation Mastery:</h3>
-					<p>
-						Complete form systems require orchestrating all Academy
-						patterns. Build reusable hooks that encapsulate
-						validation logic, submission handling, and state
-						management using the hook orchestration patterns you've
-						mastered. Use memoization for expensive validations,
-						callbacks for stable handlers, and effects for reactive
-						updates. Create composable validation rules that can be
-						mixed and matched. Remember: great forms aren't just
-						functional - they guide users, prevent errors, provide
-						clear feedback, and handle edge cases gracefully. This
-						is Academy-level React form mastery.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the final validation rune lit up and the portal
-						stabilized, Formeus placed a hand on Aria's shoulder.
-						"You've applied Academy training faster than anyone in
-						our history. Your hook mastery approach will be taught
-						to future generations."
-					</p>
-					<p className='story-paragraph'>
-						"Thank you, Master Formeus," Aria replied. "But I sense
-						there's more to learn about user interaction. What about
-						handling complex events?"
-					</p>
-					<p className='story-paragraph'>
-						Formeus smiled. "Ah, you're ready for Conductor Eventus
-						at the Event Symphony Hall. He's been eagerly awaiting
-						someone with your Academy training. The way you handled
-						form events shows you're ready for the full symphony of
-						browser interactions."
-					</p>
-					<p className='story-paragraph'>
-						Binary displayed a map highlighting their next
-						destination. "Event patterns detected in neighboring
-						district. Shall we proceed to the Symphony Hall?"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the Grand Transmutation represent the
-						culmination of Academy hook training?
-					</p>
-					<p className='story-paragraph'>
-						What makes Aria's Academy approach revolutionary
-						compared to traditional form handling?
-					</p>
-					<p className='story-paragraph'>
-						Which Academy patterns from your own forms could benefit
-						from this holistic approach?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'The Grand Transmutation Mastery:',
+						content:
+							"Complete form systems require orchestrating all Academy patterns. Build reusable hooks that encapsulate validation logic, submission handling, and state management using the hook orchestration patterns you've mastered. Use memoization for expensive validations, callbacks for stable handlers, and effects for reactive updates. Create composable validation rules that can be mixed and matched. Remember: great forms aren't just functional - they guide users, prevent errors, provide clear feedback, and handle edge cases gracefully. This is Academy-level React form mastery.",
+					}}
+					reflectionQuestions={[
+						'How does the Grand Transmutation represent the culmination of Academy hook training?',
+						"What makes Aria's Academy approach revolutionary compared to traditional form handling?",
+						'Which Academy patterns from your own forms could benefit from this holistic approach?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Evening)",
+						content:
+							"What a day! Formeus guided me through the Grand Transmutation - a complete form system that uses every Academy pattern I've learned. The validation runes were inspired by the Hook Council chambers, lighting up as each field becomes valid. We used memoization from the Performance Sanctuary to optimize validation checks, callbacks from Academy training for stable handlers, and effects from the Temporal Tower for reactive validation. Formeus was excited to see how Academy patterns applied to form handling! The best part: now I understand how to build reusable form systems. Tomorrow we move to the Event Symphony Hall!",
+					}}
+					chapterEnding={[
+						'As the final validation rune lit up and the portal stabilized, Formeus placed a hand on Aria\'s shoulder. "You\'ve applied Academy training faster than anyone in our history. Your hook mastery approach will be taught to future generations."',
+						'"Thank you, Master Formeus," Aria replied. "But I sense there\'s more to learn about user interaction. What about handling complex events?"',
+						'Formeus smiled. "Ah, you\'re ready for Conductor Eventus at the Event Symphony Hall. He\'s been eagerly awaiting someone with your Academy training. The way you handled form events shows you\'re ready for the full symphony of browser interactions."',
+						'Binary displayed a map highlighting their next destination. "Event patterns detected in neighboring district. Shall we proceed to the Symphony Hall?"',
+					]}
+				/>
 			</div>
 		</>
 	);

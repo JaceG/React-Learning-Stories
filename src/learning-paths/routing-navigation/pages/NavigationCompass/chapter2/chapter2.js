@@ -362,6 +362,11 @@ const useStatefulNavigation = () => {
 						'What benefits come from preserving component state across route changes?',
 						'How can validation and navigation work together to create better user experiences?'
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 21 (Afternoon)",
+						content:
+							"Marina showed me advanced navigation patterns today! Dynamic routes with parameters (/users/:id) are like props for URLs - they make routes reusable and flexible. Query parameters (?sort=name&filter=active) work exactly like form state for filtering! I immediately connected this to what I learned from Formeus about controlled inputs. The URL becomes another state container - a single source of truth that can be shared through links. Marina was impressed when I suggested using route state to preserve form data across navigation. Everything connects!",
+					}}
 				/>
 			</div>
 		</>

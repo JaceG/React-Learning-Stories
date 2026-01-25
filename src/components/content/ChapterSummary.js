@@ -2,7 +2,7 @@
  * ChapterSummary - A reusable component for the summary sections at the end of each chapter.
  * 
  * This component maintains consistent structure and styling for:
- * - Character Intros (optional) - New character introductions (typically only in chapter 1s)
+ * - Character Intros (optional) - New characters introduced in this chapter (chapter 1 only)
  * - Lesson Insight (orange) - Main takeaway from the chapter
  * - Reflection Section (blue) - Questions to ponder
  * - Journal Entry (optional) - Character journal entries like "Aria's Journal"
@@ -10,6 +10,9 @@
  * 
  * @example
  * <ChapterSummary
+ *   characterIntros={[
+ *     { name: "Master Velocity", description: "Guardian of the Speed Sanctum..." }
+ *   ]}
  *   lessonInsight={{
  *     title: "The Component Lesson:",
  *     content: "In React, everything you see is a Component..."
@@ -17,12 +20,6 @@
  *   reflectionQuestions={[
  *     "How does thinking of components as workshops help you understand their purpose?",
  *     "Why is it useful to have many small, focused components?"
- *   ]}
- *   characterIntros={[
- *     {
- *       name: "Forge Master Hooke",
- *       description: "Chief architect of React's hook system. Her workshop produces the magical tools that give functional components powers once reserved only for class components."
- *     }
  *   ]}
  *   journalEntry={{
  *     title: "Aria's Journal - Day 1",
@@ -36,26 +33,28 @@
  */
 
 const ChapterSummary = ({
+	characterIntros,
 	lessonInsight,
 	reflectionQuestions,
-	characterIntros,
 	journalEntry,
 	chapterEnding,
 }) => {
 	return (
 		<div className='chapter-summary'>
-			{/* Character Intros - New character introductions (optional, typically chapter 1s) */}
+			{/* Character Introductions - For chapter 1s (optional) */}
 			{characterIntros && characterIntros.length > 0 && (
-				characterIntros.map((character, index) => (
-					<div key={index} className='character-intro'>
-						<h4>{character.name}</h4>
-						{typeof character.description === 'string' ? (
-							<p>{character.description}</p>
-						) : (
-							character.description
-						)}
-					</div>
-				))
+				<div className='character-intros'>
+					{characterIntros.map((character, index) => (
+						<div key={index} className='character-intro'>
+							<h4>{character.name}</h4>
+							{typeof character.description === 'string' ? (
+								<p>{character.description}</p>
+							) : (
+								character.description
+							)}
+						</div>
+					))}
+				</div>
 			)}
 
 			{/* Lesson Insight - Orange section */}

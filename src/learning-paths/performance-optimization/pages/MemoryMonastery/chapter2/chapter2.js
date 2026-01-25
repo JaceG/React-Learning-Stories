@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -45,9 +48,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Sacred Tools of Memory
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Sacred Tools of Memory'
+				bridge='Brother Binary led Aria deeper into the monastery to a chamber filled with glowing diagnostic instruments. "To heal the Memory Plague, you must first learn to see it. These are our sacred tools - the Chrome DevTools Memory Profiler."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -183,13 +188,10 @@ const ChapterTwo = () => {
 				</div>
 			)}
 
-			<div className='code-example'>
-				<div className='memory-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Diagnostic Wisdom</span>
-						<span className='discovered-by'>Memory Profiling Techniques</span>
-					</div>
-					<pre>{`// Using Chrome DevTools for Memory Analysis
+			<CodeExample
+				title="Scroll of Diagnostic Wisdom"
+				discoveredBy="Memory Profiling Techniques"
+				code={`// Using Chrome DevTools for Memory Analysis
 
 // 1. Taking Heap Snapshots
 // In DevTools: Memory tab > Take snapshot
@@ -255,9 +257,8 @@ class MemoryMonitor {
       }
     }
   }
-}`}</pre>
-				</div>
-			</div>
+}`}
+			/>
 
 			<div className='optimization-grid'>
 				<div 
@@ -283,34 +284,21 @@ class MemoryMonitor {
 				</div>
 			</div>
 
-			<div className='memory-monk'>
-				<h4>Brother Binary's Teaching</h4>
-				<p>"The tools reveal what the eyes cannot see. Use them wisely to hunt down 
-				every leak, trace every reference, and understand every allocation."</p>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Profiling Lesson:</h3>
-				<p>
-					Chrome DevTools Memory Profiler is your window into the application's memory usage. 
-					Heap snapshots capture the state at a moment, allocation timelines show growth 
-					over time, and the retainers view reveals why objects can't be garbage collected. 
-					Master these tools, and no memory leak can hide from you.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Brother Binary has revealed the sacred tools of memory profiling. How often do 
-					you profile your applications? Do you wait until users complain about performance, 
-					or do you proactively hunt for leaks?
-				</p>
-				<p>
-					Consider making memory profiling part of your regular development workflow, 
-					especially before major releases.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Profiling Lesson:',
+					content: 'Chrome DevTools Memory Profiler is your window into the application\'s memory usage. Heap snapshots capture the state at a moment, allocation timelines show growth over time, and the retainers view reveals why objects can\'t be garbage collected. Master these tools, and no memory leak can hide from you.'
+				}}
+				reflectionQuestions={[
+					'Brother Binary has revealed the sacred tools of memory profiling. How often do you profile your applications? Do you wait until users complain about performance, or do you proactively hunt for leaks?',
+					'Consider making memory profiling part of your regular development workflow, especially before major releases.'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 26 (Afternoon)",
+					content:
+						"Brother Binary led me to a chamber filled with glowing diagnostic instruments - the Chrome DevTools Memory Profiler! Three sacred techniques: Heap Snapshots to see memory at a moment in time (take two, compare to find leaks), Allocation Timeline to track growth over time (steady growth = leak, sawtooth = healthy GC), and the Retainers view to see WHY objects can't be garbage collected. I also learned to filter by FiberNode and Component to find React-specific leaks. The key is comparing snapshots before and after user actions to catch what's not being released!",
+				}}
+			/>
 		</div>
 	);
 };

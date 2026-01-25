@@ -335,9 +335,9 @@ describe('useCounter', () => {
 					</div>
 				</div>
 
-				<div className='practical-application'>
+				<div className='character-guidance'>
 					<h3>Building a Hook Library: Best Practices</h3>
-					<div className='best-practices'>
+					<div className='practice-grid'>
 						<div className='practice-item'>
 							<h4>📚 Documentation</h4>
 							<ul>

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -70,9 +74,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Grand Library Architecture
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Grand Library Architecture'
+				bridge='"Now for the final lesson," Keeper Chronos said, leading Aria to the Library&apos;s architectural blueprints. "Lazy loading is powerful, but without proper strategy, it becomes chaos. You must master the four pillars of splitting strategy."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -105,14 +111,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Master the Four Strategies
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Apply each optimization strategy to see how they work together to create 
-							the ultimate performance architecture.
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Keeper Chronos unfurls the architectural blueprints.">
+					Apply each optimization strategy to see how they work together to create 
+					the ultimate performance architecture.
+				</InstructionBox>
 
 				<div className='strategy-selector'>
 					<h4>Choose Your Optimization Strategy:</h4>
@@ -184,13 +186,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='lazy-scroll'>
-					<div className='scroll-header'>
-						<span>The Master Scroll of Optimization</span>
-						<span className='discovered-by'>Complete Splitting Strategy</span>
-					</div>
-					<pre>{`// The Complete Performance Architecture
+			<CodeExample
+				title="The Master Scroll of Optimization"
+				discoveredBy="Complete Splitting Strategy"
+				code={`// The Complete Performance Architecture
 
 // 1. Route-Based Splitting Strategy
 const routes = [
@@ -311,70 +310,27 @@ module.exports = {
       maxSize: '150KB'
     }
   ]
-};`}</pre>
-				</div>
-			</div>
+};`}
+			/>
 
-			{masteryCertificate && (
-				<div className='librarian-card' style={{ 
-					background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
-					color: '#1f2937',
-					marginTop: '30px' 
-				}}>
-					<h3>🏆 Performance Architect Achieved!</h3>
-					<p>
-						"Magnificent!" Keeper Chronos exclaimed. "You have mastered all four 
-						optimization strategies. The Lazy Library recognizes you as a 
-						<strong> Performance Architect</strong>!"
-					</p>
-					<div style={{ marginTop: '20px' }}>
-						<h4>Your Achievements:</h4>
-						<ul style={{ paddingLeft: '20px' }}>
-							<li>Reduced initial bundle by {((1250 - 400) / 1250 * 100).toFixed(0)}%</li>
-							<li>Improved load time by {((8 - 1.2) / 8 * 100).toFixed(0)}%</li>
-							<li>Mastered lazy loading patterns</li>
-							<li>Optimized user experience</li>
-						</ul>
-					</div>
-				</div>
-			)}
-
-			<div className='lesson-insight'>
-				<h3>The Architecture Lesson:</h3>
-				<p>
-					True performance optimization requires a comprehensive strategy. Route-based 
-					splitting provides the foundation, vendor chunking improves caching, smart 
-					preloading anticipates user needs, and prefetching utilizes idle time. Together, 
-					these strategies create applications that are not just fast, but intelligently 
-					fast - loading the right code at the right time.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Aria has become a Performance Architect, mastering the art of strategic code 
-					splitting. But Keeper Chronos's final wisdom resonates: "Performance is not a 
-					feature, it's a fundamental requirement. Every millisecond counts."
-				</p>
-				<p>
-					As you build your applications, remember the Lazy Library's teachings. Split 
-					wisely, load intelligently, and always measure the impact. Your users will 
-					thank you with their engagement.
-				</p>
-			</div>
-
-			{masteryCertificate && (
-				<div className='chapter-ending'>
-					<h3>Chapter Complete!</h3>
-					<p>
-						With the secrets of the Lazy Library mastered, applications across the React 
-						Kingdom loaded with unprecedented speed. Aria had transformed from a student 
-						to an architect of performance. But one final challenge remained - the 
-						Virtualization Vault, where the secrets of handling infinite data awaited...
-					</p>
-				</div>
-			)}
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Architecture Lesson:',
+					content: 'True performance optimization requires a comprehensive strategy. Route-based splitting provides the foundation, vendor chunking improves caching, smart preloading anticipates user needs, and prefetching utilizes idle time. Together, these strategies create applications that are not just fast, but intelligently fast - loading the right code at the right time.'
+				}}
+				reflectionQuestions={[
+					'Aria has become a Performance Architect, mastering the art of strategic code splitting. But Keeper Chronos\'s final wisdom resonates: "Performance is not a feature, it\'s a fundamental requirement. Every millisecond counts."',
+					'As you build your applications, remember the Lazy Library\'s teachings. Split wisely, load intelligently, and always measure the impact. Your users will thank you with their engagement.'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 27 (Evening)",
+					content:
+						"I've mastered the Grand Library Architecture and become a Performance Architect! The four pillars of splitting strategy: 1) Route-Based Splitting - lazy load different routes (admin panels, analytics). 2) Vendor Chunking - separate third-party libraries for better caching (React stays cached even when app code changes). 3) Smart Preloading - load on hover/focus before users click. 4) Resource Prefetching - use requestIdleCallback to fetch likely next routes during idle time. Also learned about webpackPreload and webpackPrefetch magic comments! Initial bundle dropped from 1MB to 400KB. Tomorrow: the Virtualization Vault for handling infinite data!",
+				}}
+				chapterEnding={[
+					'With the secrets of the Lazy Library mastered, applications across the React Kingdom loaded with unprecedented speed. Aria had transformed from a student to an architect of performance. But one final challenge remained - the Virtualization Vault, where the secrets of handling infinite data awaited...'
+				]}
+			/>
 		</div>
 	);
 };

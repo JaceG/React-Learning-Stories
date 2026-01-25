@@ -223,7 +223,7 @@ function ProfileMenu() {
 }`}
 			/>
 
-			<div className='performance-tips'>
+			<div className='character-guidance'>
 				<h3>Contextia's Performance Wisdom:</h3>
 				<ul>
 					<li>

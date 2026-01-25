@@ -123,26 +123,6 @@
   color: #ef4444;
 }
 
-/* Vault Guardian */
-.guardian-card {
-  background: linear-gradient(135deg, #312e81, #4c1d95);
-  color: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 20px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.guardian-card::after {
-  content: "🗄️";
-  position: absolute;
-  top: -20px;
-  right: 20px;
-  font-size: 80px;
-  opacity: 0.1;
-}
-
 /* Window Visualization */
 .window-visualizer {
   background: white;

@@ -1,5 +1,9 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -50,9 +54,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Mastering the Infinite
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='Mastering the Infinite'
+				bridge={`"You've learned the basics of windowing," Guardian Zephyr said, revealing four mystical portals glowing with different energies. "But to become a true Virtualization Master, you must conquer four advanced challenges of the infinite realm."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -89,14 +95,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Master the Four Advanced Techniques
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Apply each advanced virtualization technique to complete your training 
-							and become the Keeper of the Infinite!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Guardian Zephyr reveals the four mystical portals.">
+					Apply each advanced virtualization technique to complete your training 
+					and become the Keeper of the Infinite!
+				</InstructionBox>
 
 				<div className='optimization-badges'>
 					<div 
@@ -195,13 +197,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='vault-scroll'>
-					<div className='scroll-header'>
-						<span>The Master Scroll of Advanced Virtualization</span>
-						<span className='discovered-by'>Ultimate Techniques</span>
-					</div>
-					<pre>{`// Advanced Virtualization Techniques
+			<CodeExample
+				title="The Master Scroll of Advanced Virtualization"
+				discoveredBy="Ultimate Techniques"
+				code={`// Advanced Virtualization Techniques
 
 // 1. Dynamic Heights with react-window
 import { VariableSizeList } from 'react-window';
@@ -348,71 +347,28 @@ function VirtualGrid({ items, columnCount }) {
 // 2. Implement proper keys
 // 3. Add overscan for smooth scrolling
 // 4. Consider intersection observer for lazy images
-// 5. Profile with React DevTools`}</pre>
-				</div>
-			</div>
+// 5. Profile with React DevTools`}
+			/>
 
-			{vaultMastered && (
-				<div className='vault-success'>
-					<h3>🏆 Keeper of the Infinite Achieved!</h3>
-					<p>
-						"Magnificent!" Guardian Zephyr's voice echoed through the Vault. "You have 
-						mastered all four advanced techniques. The Virtualization Vault recognizes 
-						you as its <strong>Keeper</strong>!"
-					</p>
-					<div style={{ marginTop: '20px' }}>
-						<h4>Your Achievements:</h4>
-						<ul style={{ listStyle: 'none', padding: 0 }}>
-							<li>✅ Conquered dynamic height challenges</li>
-							<li>✅ Mastered horizontal virtualization</li>
-							<li>✅ Implemented infinite data patterns</li>
-							<li>✅ Achieved 2D grid virtualization</li>
-						</ul>
-					</div>
-				</div>
-			)}
-
-			<div className='lesson-insight'>
-				<h3>The Master's Wisdom:</h3>
-				<p>
-					Virtualization is not just about lists - it's a philosophy of rendering only 
-					what's necessary. From dynamic heights to infinite grids, the principles remain: 
-					measure, calculate, render efficiently, and reuse aggressively. Master these 
-					techniques, and no amount of data will overwhelm your applications. The key is 
-					choosing the right tool for each challenge.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Aria has become the Keeper of the Infinite, mastering every virtualization 
-					technique. But Guardian Zephyr's final lesson resonates: "True mastery isn't 
-					using these techniques everywhere - it's knowing when they're needed."
-				</p>
-				<p>
-					As you build your applications, remember the Vault's teachings. Not every list 
-					needs virtualization, but when you face truly massive data, these techniques 
-					transform the impossible into the effortless.
-				</p>
-			</div>
-
-			{vaultMastered && (
-				<div className='chapter-ending'>
-					<h3>Performance Optimization Complete!</h3>
-					<p>
-						With the secrets of the Virtualization Vault mastered, Aria had completed 
-						her performance optimization journey. From the Speed Sanctum to the Memory 
-						Monastery, from the Lazy Library to this infinite archive, she had learned 
-						to make React applications not just functional, but blazingly fast.
-					</p>
-					<p style={{ marginTop: '15px' }}>
-						The React Kingdom celebrated as applications everywhere became smoother, 
-						faster, and more responsive. Aria's journey through Act III had transformed 
-						her into a true Performance Master, ready for whatever challenges lay ahead...
-					</p>
-				</div>
-			)}
+			<ChapterSummary
+				lessonInsight={{
+					title: "The Master's Wisdom:",
+					content: "Virtualization is not just about lists - it's a philosophy of rendering only what's necessary. From dynamic heights to infinite grids, the principles remain: measure, calculate, render efficiently, and reuse aggressively. Master these techniques, and no amount of data will overwhelm your applications. The key is choosing the right tool for each challenge."
+				}}
+				reflectionQuestions={[
+					'Aria has become the Keeper of the Infinite, mastering every virtualization technique. But Guardian Zephyr\'s final lesson resonates: "True mastery isn\'t using these techniques everywhere - it\'s knowing when they\'re needed."',
+					'As you build your applications, remember the Vault\'s teachings. Not every list needs virtualization, but when you face truly massive data, these techniques transform the impossible into the effortless.'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 28 (Evening)",
+					content:
+						"I've become the Keeper of the Infinite! Guardian Zephyr's four advanced challenges: 1) Dynamic Heights - VariableSizeList with cached measurements and resetAfterIndex(). 2) Horizontal Scrolling - layout='horizontal' for carousels and timelines. 3) Infinite Loading - react-window-infinite-loader to load data as users scroll near the end. 4) Grid Virtualization - FixedSizeGrid for 2D scrolling (virtualizing rows AND columns). My performance optimization journey is complete! From the Speed Sanctum (profiling, memoization), Memory Monastery (leaks, cleanup), Lazy Library (code splitting), to this Vault. Binary and I are now Performance Masters, ready for any challenge!",
+				}}
+				chapterEnding={[
+					'With the secrets of the Virtualization Vault mastered, Aria had completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive, she had learned to make React applications not just functional, but blazingly fast.',
+					'The React Kingdom celebrated as applications everywhere became smoother, faster, and more responsive. Aria\'s journey through Act III had transformed her into a true Performance Master, ready for whatever challenges lay ahead...'
+				]}
+			/>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './SpeedSanctum.css';
 
@@ -10,17 +10,6 @@ function SpeedSanctum() {
 	const [optimizationLevel, setOptimizationLevel] = useState(0);
 	const [memoizedComponents, setMemoizedComponents] = useState([]);
 	const [renderCount, setRenderCount] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Performance metric handlers
 	const handleMetricSelect = (metric) => {
@@ -47,30 +36,13 @@ function SpeedSanctum() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>The Speed Sanctum</h1>
-			<p className='lesson-subtitle'>
-				Master the ancient arts of React performance optimization
-			</p>
+			<LessonHeader
+				title='The Speed Sanctum'
+				subtitle='Master the ancient arts of React performance optimization'
+				opener='With her mastery of forms and events complete, Aria received an urgent summons from the Northern Mountains. Applications throughout the React Kingdom were slowing to a crawl, and only the ancient optimization techniques of the Speed Sanctum could save them. Binary&apos;s sensors detected performance anomalies everywhere as they ascended the mountain path toward the legendary sanctuary.'
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					selectedMetric,
@@ -85,27 +57,10 @@ function SpeedSanctum() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='performance-optimization'
 				lessonId='speed-sanctum'
+				totalChapters={3}
 			/>
 		</div>
 	);

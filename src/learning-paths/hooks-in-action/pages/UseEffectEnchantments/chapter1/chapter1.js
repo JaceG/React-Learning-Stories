@@ -106,7 +106,6 @@ function ChapterOne() {
 				<ChapterIntro
 					chapterNumber={1}
 					title='The Lifecycle Enchantments'
-					bridge="Aria climbed the spiraling stairs of the Temporal Tower, each step seeming to take longer than the last. Binary's chronometer went haywire, displaying multiple times simultaneously. At the top, she found a chamber where past, present, and future seemed to coexist."
 				/>
 
 				<div className='story-section'>
@@ -387,12 +386,6 @@ useEffect(() => {
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: 'The Effect Sage',
-							description: "A mysterious figure who exists partially outside normal time, the Effect Sage guards the boundary between React's pure functional world and external side effects. Their form shifts between temporal states, and hourglasses orbit around them. They teach the delicate art of useEffect, showing how to safely bridge the gap between React and the chaotic outside world."
-						}
-					]}
 					lessonInsight={{
 						title: "The Effect Sage's Temporal Wisdom:",
 						content: "Master useEffect as your portal to the outside world. This hook handles all side effects - API calls, timers, subscriptions, DOM manipulation - anything impure that reaches beyond React's boundaries. Control effect timing through dependencies: empty array for mount-only, specific deps for selective re-runs, no array for every render. Always return cleanup functions to prevent temporal contamination. Remember: effects run after render commits, in their own timeline."

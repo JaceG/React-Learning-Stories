@@ -367,13 +367,6 @@ function Button(props) {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Hermes',
-						description:
-							'The Head Messenger of the Props Messenger Guild. He teaches apprentices how props enable communication between components, flowing from parent to child like sealed letters that can be read but never modified.',
-					},
-				]}
 				lessonInsight={{
 					title: 'The Props Lesson:',
 					content:

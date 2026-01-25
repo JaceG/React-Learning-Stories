@@ -37,7 +37,6 @@ function ChapterOne() {
 				<ChapterIntro
 					chapterNumber={1}
 					title='The Hook Forge Basics'
-					bridge='Aria entered the Synthesis Workshop to find a massive space filled with the sound of hammering and the glow of magical forges. At the central anvil stood a figure whose hands moved with practiced precision, assembling hooks from pure energy.'
 				/>
 
 				<div className='story-section'>
@@ -248,12 +247,6 @@ function ToggleComponent() {
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: 'Master Artificer Compose',
-							description: "The Academy's master of hook synthesis, Compose teaches students to transcend from hook users to hook creators. Her workshop sparkles with floating blueprints and magical forges where custom hooks are crafted. Known for her philosophy that \"the best abstractions are discovered, not invented,\" she guides students in recognizing patterns worth extracting into reusable hooks."
-						}
-					]}
 					lessonInsight={{
 						title: 'Hook Forging Fundamentals:',
 						content: "Master custom hooks to become a true React artificer. Start function names with \"use\" to enable hook composition - this convention activates React's Rules of Hooks. Extract repetitive stateful logic into reusable functions that return state and methods. Popular patterns include useCounter, useToggle, useFetch, and useLocalStorage. Custom hooks share logic, not state - each component gets its own instance. Think of them as your personal React toolkit, crafted for your specific needs."

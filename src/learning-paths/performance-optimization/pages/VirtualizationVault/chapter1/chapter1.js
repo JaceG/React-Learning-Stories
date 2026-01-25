@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
-	const {
-		renderCount,
-		calculatePerformance
-	} = useOutletContext();
+	const { renderCount, calculatePerformance } = useOutletContext();
 
 	const [itemCount, setItemCount] = useState(100);
 	const [renderingAll, setRenderingAll] = useState(false);
@@ -17,7 +18,7 @@ const ChapterOne = () => {
 		return Array.from({ length: count }, (_, i) => ({
 			id: i,
 			name: `Ancient Scroll #${i + 1}`,
-			content: `Knowledge preserved for eternity...`
+			content: `Knowledge preserved for eternity...`,
 		}));
 	};
 
@@ -33,42 +34,39 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Infinite Archive
-			</h2>
+			<ChapterIntro chapterNumber={1} title='The Infinite Archive' />
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					Deep beneath the React Kingdom lay the <strong>Virtualization Vault</strong>, 
-					an endless archive containing millions of scrolls. <strong>Aria</strong> descended 
-					into its depths, only to find the entrance blocked by a crowd of exhausted messengers.
+					Deep beneath the React Kingdom lay the{' '}
+					<strong>Virtualization Vault</strong>, an endless archive
+					containing millions of scrolls. <strong>Aria</strong>{' '}
+					descended into its depths, only to find the entrance blocked
+					by a crowd of exhausted messengers.
 				</p>
 
 				<p className='story-paragraph'>
-					<strong>Vault Guardian Zephyr</strong> appeared, floating effortlessly above the chaos. 
-					"They try to carry every scroll at once," he explained. "The human eye can only 
-					read a few at a time, yet they burden themselves with thousands. This is the 
+					<strong>Vault Guardian Zephyr</strong> appeared, floating
+					effortlessly above the chaos. "They try to carry every
+					scroll at once," he explained. "The human eye can only read
+					a few at a time, yet they burden themselves with thousands.
+					This is the
 					<strong>Rendering Paradox</strong>."
 				</p>
 
 				<p className='story-paragraph'>
-					He gestured to the infinite shelves stretching into darkness. "When rendering 
-					lists of thousands of items, React creates DOM nodes for each one. The browser 
-					struggles, memory explodes, and scrolling becomes torture. We must teach you 
-					the art of <strong>virtual scrolling</strong>."
+					He gestured to the infinite shelves stretching into
+					darkness. "When rendering lists of thousands of items, React
+					creates DOM nodes for each one. The browser struggles,
+					memory explodes, and scrolling becomes torture. We must
+					teach you the art of <strong>virtual scrolling</strong>."
 				</p>
-
-				<div className='character-intro-card guardian-card'>
-					<h4>Vault Guardian Zephyr</h4>
-					<p>Master of the infinite scroll and keeper of the Virtualization Vault. 
-					His wisdom: "Render only what the eye can see. The rest exists in potential, 
-					not in the DOM."</p>
-				</div>
 
 				<div className='vault-chamber'>
 					<h3>The Rendering Burden</h3>
 					<p style={{ color: 'white', textAlign: 'center' }}>
-						Attempting to render {itemCount.toLocaleString()} items...
+						Attempting to render {itemCount.toLocaleString()}{' '}
+						items...
 					</p>
 				</div>
 			</div>
@@ -77,20 +75,18 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Problem with Large Lists
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Increase the number of items and try rendering them all at once. 
-							Watch how performance degrades as the list grows!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character='Guardian Zephyr gestures to the infinite shelves.'>
+					Increase the number of items and try rendering them all at
+					once. Watch how performance degrades as the list grows!
+				</InstructionBox>
 
 				<div className='vault-controls'>
 					<div className='control-group'>
 						<label className='control-label'>
 							Number of Items:
-							<span className='control-value'>{itemCount.toLocaleString()}</span>
+							<span className='control-value'>
+								{itemCount.toLocaleString()}
+							</span>
 						</label>
 						<input
 							type='range'
@@ -98,34 +94,55 @@ const ChapterOne = () => {
 							max='10000'
 							step='100'
 							value={itemCount}
-							onChange={(e) => setItemCount(Number(e.target.value))}
+							onChange={(e) =>
+								setItemCount(Number(e.target.value))
+							}
 							className='control-slider'
 						/>
 					</div>
 
 					<div className='demo-controls'>
-						<button 
+						<button
 							className='demo-button'
 							onClick={() => setRenderingAll(!renderingAll)}>
-							{renderingAll ? 'Stop Rendering' : 'Render All Items'}
+							{renderingAll
+								? 'Stop Rendering'
+								: 'Render All Items'}
 						</button>
 					</div>
 				</div>
 
 				{renderingAll && (
-					<div className='infinite-container' ref={scrollContainerRef}>
+					<div
+						className='infinite-container'
+						ref={scrollContainerRef}>
 						<div style={{ padding: '10px' }}>
-							{items.slice(0, Math.min(itemCount, 1000)).map(item => (
-								<div key={item.id} className='virtual-item' style={{ position: 'relative' }}>
-									<strong>{item.name}</strong>
-									<span style={{ marginLeft: '20px', color: '#6b7280' }}>
-										{item.content}
-									</span>
-								</div>
-							))}
+							{items
+								.slice(0, Math.min(itemCount, 1000))
+								.map((item) => (
+									<div
+										key={item.id}
+										className='virtual-item'
+										style={{ position: 'relative' }}>
+										<strong>{item.name}</strong>
+										<span
+											style={{
+												marginLeft: '20px',
+												color: '#6b7280',
+											}}>
+											{item.content}
+										</span>
+									</div>
+								))}
 							{itemCount > 1000 && (
-								<div style={{ padding: '20px', textAlign: 'center', color: '#ef4444' }}>
-									⚠️ Browser limits prevent rendering more than 1000 items!
+								<div
+									style={{
+										padding: '20px',
+										textAlign: 'center',
+										color: '#ef4444',
+									}}>
+									⚠️ Browser limits prevent rendering more
+									than 1000 items!
 								</div>
 							)}
 						</div>
@@ -138,7 +155,8 @@ const ChapterOne = () => {
 						<div className='perf-metrics'>
 							<div className='perf-metric'>
 								<div className='metric-label'>DOM Nodes</div>
-								<div className={`metric-value ${itemCount > 5000 ? 'danger' : 'warning'}`}>
+								<div
+									className={`metric-value ${itemCount > 5000 ? 'danger' : 'warning'}`}>
 									{itemCount.toLocaleString()}
 								</div>
 							</div>
@@ -151,7 +169,9 @@ const ChapterOne = () => {
 							<div className='perf-metric'>
 								<div className='metric-label'>Scroll FPS</div>
 								<div className='metric-value danger'>
-									{Math.max(5, 60 - itemCount / 100).toFixed(0)}
+									{Math.max(5, 60 - itemCount / 100).toFixed(
+										0
+									)}
 								</div>
 							</div>
 						</div>
@@ -159,13 +179,10 @@ const ChapterOne = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='vault-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Infinite Problems</span>
-						<span className='discovered-by'>The Traditional Approach</span>
-					</div>
-					<pre>{`// The Problem: Rendering Everything
+			<CodeExample
+				title='Scroll of Infinite Problems'
+				discoveredBy='The Traditional Approach'
+				code={`// The Problem: Rendering Everything
 
 // Traditional list rendering - ALL items in DOM
 function TraditionalList({ items }) {
@@ -225,9 +242,8 @@ function PainfulExample() {
       ))}
     </div>
   );
-}`}</pre>
-				</div>
-			</div>
+}`}
+			/>
 
 			<div className='list-comparison'>
 				<div className='comparison-panel'>
@@ -256,37 +272,37 @@ function PainfulExample() {
 				</div>
 			</div>
 
-			<div className='guardian-card'>
-				<h4>Guardian Zephyr's Warning</h4>
-				<p>"You see the problem now! Each scroll they carry weighs down the entire kingdom. 
-				But fear not - in the next chamber, I will teach you to render only what the eye 
-				can see, creating the illusion of infinity with finite resources."</p>
+			<div className='story-section'>
+				<div className='guardian-warning'>
+					<h4>Guardian Zephyr's Warning</h4>
+					<p className='story-paragraph'>
+						"You see the problem now! Each scroll they carry weighs down the entire kingdom. But fear not - in the next chamber, I will teach you to render only what the eye can see, creating the illusion of infinity with finite resources."
+					</p>
+				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Infinite Problem:</h3>
-				<p>
-					Large lists are one of the most common performance bottlenecks in web applications. 
-					Whether it's a social feed, data table, or search results, rendering thousands of 
-					items destroys performance. The browser must calculate layout, paint, and composite 
-					for every single item, even those far outside the viewport. This is why virtual 
-					scrolling exists - to create the illusion of a complete list while only rendering 
-					what's necessary.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Guardian Zephyr has revealed the burden of infinite rendering. Think about your 
-					own applications - do you have lists that grow without bound? Product searches 
-					that return thousands of results? Chat histories that never end?
-				</p>
-				<p>
-					Every unnecessary DOM node is a weight your users must carry. The path to 
-					performance begins with recognizing this burden.
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Vault Guardian Zephyr',
+						description: 'Master of the infinite scroll and keeper of the Virtualization Vault. His wisdom: "Render only what the eye can see. The rest exists in potential, not in the DOM."'
+					}
+				]}
+				lessonInsight={{
+					title: 'The Infinite Problem:',
+					content:
+						"Large lists are one of the most common performance bottlenecks in web applications. Whether it's a social feed, data table, or search results, rendering thousands of items destroys performance. The browser must calculate layout, paint, and composite for every single item, even those far outside the viewport. This is why virtual scrolling exists - to create the illusion of a complete list while only rendering what's necessary.",
+				}}
+				reflectionQuestions={[
+					'Guardian Zephyr has revealed the burden of infinite rendering. Think about your own applications - do you have lists that grow without bound? Product searches that return thousands of results? Chat histories that never end?',
+					'Every unnecessary DOM node is a weight your users must carry. The path to performance begins with recognizing this burden.',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 28 (Morning)",
+					content:
+						"Deep beneath the React Kingdom lies the Virtualization Vault - an endless archive containing millions of scrolls. I found the entrance blocked by exhausted messengers trying to carry every scroll at once! Vault Guardian Zephyr explained the Rendering Paradox: the human eye can only read a few items at a time, yet traditional rendering creates DOM nodes for ALL items. With 10,000 items: 5000ms+ initial render, 500MB+ memory, <10fps scrolling! Browser limits: ~1.5 million DOM nodes max, but smooth scrolling requires <1,000. This is why social feeds, data tables, and search results struggle. The solution: virtual scrolling!",
+				}}
+			/>
 		</div>
 	);
 };

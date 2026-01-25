@@ -1,6 +1,10 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const {
@@ -180,19 +184,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Advanced Protection Spells
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Commander Validus led Aria deeper into the fortress,
-						past the basic training grounds to an advanced tactical
-						center. Here, elite guardians practiced complex
-						validation maneuvers - cross-field dependencies,
-						asynchronous checks, and multi-layered defenses.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Advanced Protection Spells'
+					bridge='Commander Validus led Aria deeper into the fortress, past the basic training grounds to an advanced tactical center. Here, elite guardians practiced complex validation maneuvers - cross-field dependencies, asynchronous checks, and multi-layered defenses.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -313,9 +309,10 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-				<div className='aria-advanced-patterns'>
-					<h3>Aria's Advanced Validation Architecture</h3>
-					<pre className='magical-code'>{`// Aria's Multi-Layer Validation System
+				<CodeExample
+					title="Aria's Advanced Validation Architecture"
+					discoveredBy="Applied by Aria"
+					code={`// Aria's Multi-Layer Validation System
 const useAdvancedValidation = () => {
   const [errors, setErrors] = useState({});
   const [pending, setPending] = useState({});
@@ -361,23 +358,16 @@ const useAdvancedValidation = () => {
   }, []);
   
   return { errors, pending, validateAsync, validateDependent };
-};`}</pre>
-				</div>
+};`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Elite Guardian Training
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Master advanced validation techniques! Test
-								different stances and watch how they affect
-								validation timing. Activate all ward runes for
-								ultimate protection!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Validus demonstrates the guardian stances.">
+						Master advanced validation techniques! Test different stances and watch how they affect validation timing. Activate all ward runes for ultimate protection!
+					</InstructionBox>
 
 					<div className='guardian-form advanced'>
 						<h4>🏰 Advanced Defense Training Ground</h4>
@@ -610,60 +600,23 @@ const validate = (value) => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 21 (Morning)</h4>
-						<p>
-							Advanced validation is where all my React knowledge
-							converges! Commander Validus taught me how to
-							combine debouncing (from event optimization),
-							caching (from performance patterns), and dependent
-							validation (like Context dependencies). The
-							guardians were struggling with async validation
-							causing server overload - Validus showed me how
-							debouncing fixes this. Cross-field validation was
-							causing infinite loops - he taught me how proper
-							dependencies solve this. Binary tracked a 94%
-							improvement in validation efficiency as I learned
-							these patterns. The ward runes lighting up as
-							validations pass is oddly satisfying. Validus
-							mentioned the Ultimate Defense Strategy awaits...
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Elite Guardian's Wisdom:</h3>
-					<p>
-						Advanced validation requires orchestrating multiple
-						techniques. Use debouncing for async checks to prevent
-						server overload. Implement caching to avoid redundant
-						validations. Handle cross-field dependencies carefully
-						to prevent circular validation. Choose validation timing
-						(onChange, onBlur, onSubmit) based on user experience
-						needs. Remember: the best validation is invisible to
-						users when they're doing things right, but immediately
-						helpful when they need guidance. Master these patterns,
-						and your forms become impenetrable fortresses with
-						welcoming gates.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How do different validation stances affect the user's
-						journey through your form?
-					</p>
-					<p className='story-paragraph'>
-						Why is caching validation results important for both
-						performance and user experience?
-					</p>
-					<p className='story-paragraph'>
-						What validation patterns from Aria's previous learning
-						enhanced the fortress defenses?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Elite Guardian's Wisdom:",
+						content:
+							"Advanced validation requires orchestrating multiple techniques. Use debouncing for async checks to prevent server overload. Implement caching to avoid redundant validations. Handle cross-field dependencies carefully to prevent circular validation. Choose validation timing (onChange, onBlur, onSubmit) based on user experience needs. Remember: the best validation is invisible to users when they're doing things right, but immediately helpful when they need guidance. Master these patterns, and your forms become impenetrable fortresses with welcoming gates.",
+					}}
+					reflectionQuestions={[
+						"How do different validation stances affect the user's journey through your form?",
+						'Why is caching validation results important for both performance and user experience?',
+						"What validation patterns from Aria's previous learning enhanced the fortress defenses?",
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 19 (Afternoon)",
+						content:
+							"Advanced validation is where all my React knowledge converges! Commander Validus taught me how to combine debouncing (from event optimization), caching (from performance patterns), and dependent validation (like Context dependencies). The guardians were struggling with async validation causing server overload - Validus showed me how debouncing fixes this. Cross-field validation was causing infinite loops - he taught me how proper dependencies solve this. Binary tracked a 94% improvement in validation efficiency as I learned these patterns. The ward runes lighting up as validations pass is oddly satisfying. Validus mentioned the Ultimate Defense Strategy awaits...",
+					}}
+				/>
 			</div>
 		</>
 	);

@@ -283,12 +283,6 @@ console.log(element);   // "fire"`}</pre>
 						"Why might destructuring with defaults be like having a \"backup plan\"?",
 						"What advantages does parameter destructuring provide over accessing props directly?"
 					]}
-					characterIntros={[
-						{
-							name: "Master Smith Destructo",
-							description: "The legendary prop smith of React Kingdom. His forge transforms raw data into refined props, but his true mastery lies in destructuring - the art of elegantly extracting exactly what's needed from complex prop objects. His singed beard tells tales of countless hours perfecting the craft."
-						}
-					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 14 (Morning)",
 						content: "The Prop Forge is incredible! Master Destructo showed me how destructuring transforms clumsy prop access into elegant extraction. Instead of writing props.this and props.that everywhere, we can extract all needed properties in one line! Even better - we can provide default values, so our components never break from missing props. It's like having a safety net built into the code. Destructuring in function parameters is especially powerful - it immediately shows which props a component expects. This isn't just about writing less code; it's about writing clearer, more intentional code!"

@@ -461,6 +461,11 @@ function UltimateGuardian({
 						'What benefits come from preserving user context when redirecting for authentication?',
 						"How does Aria's journey through the React Kingdom help her understand these advanced route protection patterns?"
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 22 (Morning)",
+						content:
+							"Marina brought me to the Guardian Gates training grounds today! Route protection is fascinating - it's not just about checking if someone's logged in, but creating intelligent systems that understand context. I learned about Protected Route components that check authentication, preserve intended destinations when redirecting to login, and restore state after successful authentication. The key insight: authentication state flows through React context, making it available everywhere without prop drilling. I immediately connected this to the validation patterns from Formeus - guards can validate permissions, roles, and even form completion before allowing access!",
+					}}
 				/>
 			</div>
 		</>

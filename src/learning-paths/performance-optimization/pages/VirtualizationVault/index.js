@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './VirtualizationVault.css';
 
@@ -11,17 +11,6 @@ function VirtualizationVault() {
 	const [virtualizationEnabled, setVirtualizationEnabled] = useState(false);
 	const [windowSize, setWindowSize] = useState(10);
 	const [bufferSize, setBufferSize] = useState(3);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Update visible items based on scroll
 	const updateVisibleItems = (scrollTop, totalItems) => {
@@ -73,30 +62,13 @@ function VirtualizationVault() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Virtualization Vault</h1>
-			<p className='lesson-subtitle'>
-				Master the art of rendering infinite lists with finite resources
-			</p>
+			<LessonHeader
+				title='Virtualization Vault'
+				subtitle='Master the art of rendering infinite lists with finite resources'
+				opener={`Keeper Chronos had revealed the secrets of lazy loading, but warned of one final challenge. "Deep beneath the kingdom lies the Virtualization Vault, where infinite data threatens to overwhelm even the most optimized applications. Guardian Zephyr awaits - master his techniques, and no amount of data will slow your creations." Aria descended into the depths, ready to conquer the final performance frontier.`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					visibleItems,
@@ -113,27 +85,10 @@ function VirtualizationVault() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='performance-optimization'
 				lessonId='virtualization-vault'
+				totalChapters={3}
 			/>
 		</div>
 	);

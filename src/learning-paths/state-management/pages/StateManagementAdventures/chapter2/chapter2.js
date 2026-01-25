@@ -387,7 +387,7 @@ const store = configureStore({
 				</div>
 			</div>
 
-			<div className='when-to-use'>
+			<div className='character-guidance'>
 				<h3>Grand Reducer's Guidance: When to Use Redux</h3>
 				<ul>
 					<li>Large applications with complex state shared across many components</li>

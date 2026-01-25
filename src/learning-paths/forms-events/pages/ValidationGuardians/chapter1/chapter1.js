@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const { activeGates, secureGate, logDefense } = useOutletContext();
@@ -86,18 +90,10 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 1: The Guardian Gates</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Inside the fortress, crimson banners displayed
-						validation patterns that had protected the kingdom's
-						data for centuries. Aria was led to a vast hall where
-						Guardian Commander Validus stood before ranks of trainee
-						guardians, all struggling with complex validation
-						scenarios.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='The Guardian Gates'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -209,7 +205,10 @@ function ChapterOne() {
 						Binary's projection interface.
 					</p>
 
-					<pre className='magical-code'>{`// Aria's Guardian Validation System
+					<CodeExample
+						title="Aria's Guardian Validation System"
+						discoveredBy="Applied by Aria"
+						code={`// Aria's Guardian Validation System
 const useValidation = (rules) => {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
@@ -264,22 +263,17 @@ const validationRules = {
     valid: regex.test(value),
     message: msg
   })
-};`}</pre>
+};`}
+					/>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Guardian Training Ground
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help train the guardian recruits by testing
-								different validation gates. Watch how each field
-								activates its specific defensive measures!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Commander Validus gestures to the training gates.">
+						Help train the guardian recruits by testing different validation gates. Watch how each field activates its specific defensive measures!
+					</InstructionBox>
 
 					<div className='guardian-form'>
 						<h4>🛡️ Multi-Gate Defense System</h4>
@@ -491,55 +485,23 @@ const uniqueUsername = async (value) => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Character Introduction</h4>
-						<p>
-							<strong>Guardian Commander Validus</strong> - The
-							Western Quarter's supreme defender of data
-							integrity. A veteran of countless validation
-							campaigns, his armor bears runes for every
-							validation pattern ever devised. Despite his
-							imposing presence, he's eager to learn new
-							techniques and quickly recognizes Aria's innovative
-							approaches. His mission: train the next generation
-							of validation guardians to protect the kingdom's
-							data from corruption and invalid entries.
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Guardian's First Law:</h3>
-					<p>
-						Validation gates are your fortress's first line of
-						defense. Each gate serves a specific purpose - format
-						validation (email), constraint checking (length),
-						presence verification (required), and type validation
-						(number). By combining gates through a unified
-						validation system, you create impenetrable defenses.
-						Remember: validate early, validate often, and coordinate
-						your defenses. A fortress with scattered guards is
-						weaker than one with organized defenders working in
-						harmony.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does Aria's hook expertise enhance traditional
-						validation patterns?
-					</p>
-					<p className='story-paragraph'>
-						Why is coordinated validation more effective than
-						isolated checks?
-					</p>
-					<p className='story-paragraph'>
-						What validation challenges in your forms could benefit
-						from unified defense?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Guardian's First Law:",
+						content:
+							"Validation gates are your fortress's first line of defense. Each gate serves a specific purpose - format validation (email), constraint checking (length), presence verification (required), and type validation (number). By combining gates through a unified validation system, you create impenetrable defenses. Remember: validate early, validate often, and coordinate your defenses. A fortress with scattered guards is weaker than one with organized defenders working in harmony.",
+					}}
+					reflectionQuestions={[
+						"How does Aria's hook expertise enhance traditional validation patterns?",
+						'Why is coordinated validation more effective than isolated checks?',
+						'What validation challenges in your forms could benefit from unified defense?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 19 (Morning)",
+						content:
+							"Commander Validus welcomed me to the Validation Fortress with great enthusiasm! He's heard about my progress from Conductor Eventus. Today I learned about validation gates - each type serves a specific purpose: Required (presence), Email (format), Length (constraints), Number (type). The key insight is creating a unified validation system using custom hooks like useValidation that coordinates all gates. Binary analyzed the fortress defenses and suggested connecting validation to the controlled component patterns I learned from Formeus. Validus mentioned advanced protection spells await this afternoon!",
+					}}
+				/>
 			</div>
 		</>
 	);

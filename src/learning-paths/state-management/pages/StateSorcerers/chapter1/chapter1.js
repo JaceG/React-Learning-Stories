@@ -150,12 +150,6 @@ Increment Count
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Memnon, Chief State Sorcerer',
-						description: 'Guardian of memories and master of the useState spell. His crystal orb contains the collective wisdom of component state management, passed down through generations of React sorcerers.'
-					}
-				]}
 				lessonInsight={{
 					title: "Memnon's Wisdom:",
 					content: "State is the soul of interactive components. It's what separates a static painting from a living, breathing entity. When you give a component state, you give it the power to remember, to learn, and to respond. The useState hook is your gateway to this power - it returns both the current memory and the spell to change it. And the most magical part? React automatically re-renders your component whenever the state changes, keeping your UI in perfect sync with your data."

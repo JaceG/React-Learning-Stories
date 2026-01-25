@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
-	const {
-		memoryLeaks,
-		detectMemoryLeak,
-		cleanupLeak,
-		retainedSize
-	} = useOutletContext();
+	const { memoryLeaks, detectMemoryLeak, cleanupLeak, retainedSize } =
+		useOutletContext();
 
 	const [eventListeners, setEventListeners] = useState(0);
 	const [detachedNodes, setDetachedNodes] = useState(0);
@@ -38,52 +38,53 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Memory Plague
-			</h2>
+			<ChapterIntro chapterNumber={1} title='The Memory Plague' />
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					<strong>Aria</strong> arrived at the Memory Monastery, an ancient structure 
-					floating in the clouds above the React Kingdom. Applications below were 
-					suffering from a mysterious plague - they would start fast but gradually 
-					slow to a crawl, eventually crashing entirely.
+					<strong>Aria</strong> arrived at the Memory Monastery, an
+					ancient structure floating in the clouds above the React
+					Kingdom. Applications below were suffering from a mysterious
+					plague - they would start fast but gradually slow to a
+					crawl, eventually crashing entirely.
 				</p>
 
 				<p className='story-paragraph'>
-					<strong>Brother Binary</strong>, the monastery's eldest monk, greeted her with 
-					concern. "The Memory Plague has returned, Aria. Applications are holding onto 
-					memories they should release, creating <strong>memory leaks</strong> that grow 
-					until nothing can function."
+					<strong>Brother Binary</strong>, the monastery's eldest
+					monk, greeted her with concern. "The Memory Plague has
+					returned, Aria. Applications are holding onto memories they
+					should release, creating <strong>memory leaks</strong> that
+					grow until nothing can function."
 				</p>
 
 				<p className='story-paragraph'>
-					He led her to the Observatory, where ethereal representations of memory usage 
-					floated like ghosts. "Before we can heal the plague, you must understand its 
-					three primary forms: <strong>Event Listener Leaks</strong>, <strong>Detached 
-					DOM Nodes</strong>, and <strong>Closure Captures</strong>."
+					He led her to the Observatory, where ethereal
+					representations of memory usage floated like ghosts. "Before
+					we can heal the plague, you must understand its three
+					primary forms: <strong>Event Listener Leaks</strong>,{' '}
+					<strong>Detached DOM Nodes</strong>, and{' '}
+					<strong>Closure Captures</strong>."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Brother Binary</h4>
-					<p>Keeper of the Memory Monastery and guardian against the Memory Plague. 
-					His wisdom: "Every byte retained is a burden carried. Release what is not 
-					needed, and your applications shall soar."</p>
-				</div>
 
 				<div className='monastery-chamber'>
 					<h3>The Observatory of Leaks</h3>
 					<div className='memory-meter'>
-						<div 
-							className='memory-used' 
-							style={{ width: `${Math.min((retainedSize / 50000) * 100, 100)}%` }}>
-						</div>
+						<div
+							className='memory-used'
+							style={{
+								width: `${Math.min((retainedSize / 50000) * 100, 100)}%`,
+							}}></div>
 						<span className='memory-label'>
 							{(retainedSize / 1000).toFixed(1)}KB / 50KB
 						</span>
 					</div>
-					
-					<p style={{ textAlign: 'center', color: 'white', marginTop: '10px' }}>
+
+					<p
+						style={{
+							textAlign: 'center',
+							color: 'white',
+							marginTop: '10px',
+						}}>
 						Current Memory Leaks: {memoryLeaks.length}
 					</p>
 				</div>
@@ -93,29 +94,25 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Creating Memory Leaks
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Create different types of memory leaks to understand how they form. 
-							Watch as the monastery's memory meter fills up!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character='Brother Binary leads you to the Observatory.'>
+					Create different types of memory leaks to understand how
+					they form. Watch as the monastery's memory meter fills up!
+				</InstructionBox>
 
 				<div className='memory-demo'>
 					<div className='demo-controls'>
-						<button 
-							className='demo-button danger' 
+						<button
+							className='demo-button danger'
 							onClick={createEventListenerLeak}>
 							Create Event Listener Leak
 						</button>
-						<button 
-							className='demo-button danger' 
+						<button
+							className='demo-button danger'
 							onClick={createDetachedDOMLeak}>
 							Create Detached DOM Leak
 						</button>
-						<button 
-							className='demo-button danger' 
+						<button
+							className='demo-button danger'
 							onClick={createClosureLeak}>
 							Create Closure Leak
 						</button>
@@ -126,7 +123,9 @@ const ChapterOne = () => {
 							Memory Leak Detector
 						</h4>
 						{memoryLeaks.length === 0 ? (
-							<p style={{ color: '#6b7280' }}>No leaks detected... yet</p>
+							<p style={{ color: '#6b7280' }}>
+								No leaks detected... yet
+							</p>
 						) : (
 							memoryLeaks.map((leak, index) => (
 								<div key={index} className='leak-item'>
@@ -134,9 +133,11 @@ const ChapterOne = () => {
 									<span className='leak-size'>
 										{(leak.size / 1000).toFixed(1)}KB
 									</span>
-									<button 
+									<button
 										className='demo-button success'
-										onClick={() => cleanupLeak(leak.component)}>
+										onClick={() =>
+											cleanupLeak(leak.component)
+										}>
 										Clean Up
 									</button>
 								</div>
@@ -147,21 +148,21 @@ const ChapterOne = () => {
 					{showMonk && (
 						<div className='wisdom-card'>
 							<h4>Brother Binary's Warning</h4>
-							<p>"You see how quickly memory accumulates! In real applications, 
-							these leaks compound over time. Users might not notice at first, 
-							but eventually, the application becomes unusable."</p>
+							<p>
+								"You see how quickly memory accumulates! In real
+								applications, these leaks compound over time.
+								Users might not notice at first, but eventually,
+								the application becomes unusable."
+							</p>
 						</div>
 					)}
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='memory-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Memory Leaks</span>
-						<span className='discovered-by'>Common Patterns of Plague</span>
-					</div>
-					<pre>{`// Common Memory Leak Patterns
+			<CodeExample
+				title='Scroll of Memory Leaks'
+				discoveredBy='Common Patterns of Plague'
+				code={`// Common Memory Leak Patterns
 
 // 1. Event Listener Leaks
 class LeakyComponent extends React.Component {
@@ -219,9 +220,8 @@ function Timer() {
   }, []);
   
   return <div>{count}</div>;
-}`}</pre>
-				</div>
-			</div>
+}`}
+			/>
 
 			<div className='optimization-grid'>
 				<div className='optimization-card'>
@@ -244,29 +244,28 @@ function Timer() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Memory Lesson:</h3>
-				<p>
-					Memory leaks are silent killers of application performance. They occur when 
-					your application holds references to objects that are no longer needed, 
-					preventing the garbage collector from freeing that memory. Common sources include 
-					forgotten event listeners, detached DOM nodes, and closures that capture large 
-					objects. The key to prevention is disciplined cleanup.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Brother Binary has shown Aria the three forms of the Memory Plague. In your 
-					own applications, have you noticed performance degrading over time? Do you 
-					always clean up event listeners and timers? 
-				</p>
-				<p>
-					Consider how a small leak, multiplied by thousands of users and hours of usage, 
-					can bring even the mightiest application to its knees.
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Brother Binary',
+						description: 'Keeper of the Memory Monastery and guardian against the Memory Plague. His wisdom: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."'
+					}
+				]}
+				lessonInsight={{
+					title: 'The Memory Lesson:',
+					content:
+						'Memory leaks are silent killers of application performance. They occur when your application holds references to objects that are no longer needed, preventing the garbage collector from freeing that memory. Common sources include forgotten event listeners, detached DOM nodes, and closures that capture large objects. The key to prevention is disciplined cleanup.',
+				}}
+				reflectionQuestions={[
+					'Brother Binary has shown Aria the three forms of the Memory Plague. In your own applications, have you noticed performance degrading over time? Do you always clean up event listeners and timers?',
+					'Consider how a small leak, multiplied by thousands of users and hours of usage, can bring even the mightiest application to its knees.',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 26 (Morning)",
+					content:
+						"I've arrived at the Memory Monastery, floating in the clouds above the kingdom. Applications below suffer from a mysterious plague - they start fast but gradually slow to a crawl, eventually crashing. Brother Binary, the eldest monk, explained the Memory Plague: applications holding onto memories they should release. The three primary forms: Event Listener Leaks (listeners added but never removed), Detached DOM Nodes (removed from DOM but still referenced), and Closure Captures (closures holding large objects). I created each type to understand how they form. The memory meter fills alarmingly fast!",
+				}}
+			/>
 		</div>
 	);
 };

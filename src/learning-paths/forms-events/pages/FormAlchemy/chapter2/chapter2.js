@@ -1,6 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const {
@@ -77,20 +81,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: The Form Transmutation Circle
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Formeus led Aria deeper into the laboratory, where a
-						massive transmutation circle glowed on the floor.
-						Various input components floated above it, each pulsing
-						with different energies. "Now," he said, "let's see how
-						your Academy training applies to complex form
-						management."
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='The Form Transmutation Circle'
+					bridge={`Formeus led Aria deeper into the laboratory, where a massive transmutation circle glowed on the floor. Various input components floated above it, each pulsing with different energies. "Now," he said, "let's see how your Academy training applies to complex form management."`}
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -169,7 +164,10 @@ function ChapterTwo() {
 						challenge."
 					</p>
 
-					<pre className='magical-code'>{`// Aria applies Academy training to form management
+					<CodeExample
+						title="Academy-Trained Form Management"
+						discoveredBy="Transcribed by Aria"
+						code={`// Aria applies Academy training to form management
 const useForm = (initialValues, validate) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
@@ -204,22 +202,17 @@ const useForm = (initialValues, validate) => {
   }, [initialValues]);
 
   return { values, errors, touched, handleChange, handleBlur, reset };
-};`}</pre>
+};`}
+					/>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Aria's Academy-Trained Form System
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Experience how Aria applies her Academy training
-								to create an advanced form management system
-								with validation and state orchestration!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Formeus gestures to the glowing transmutation circle.">
+						Experience how Aria applies her Academy training to create an advanced form management system with validation and state orchestration!
+					</InstructionBox>
 
 					<div className='form-preview'>
 						<h4>The Academy-Enhanced Form</h4>
@@ -419,59 +412,23 @@ const handleArrayField = (index, value) => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 20 (Afternoon)</h4>
-						<p>
-							Form state management is fascinating when viewed
-							through Academy patterns! Formeus guided me through
-							creating a comprehensive useForm hook that handles
-							values, validation, and touch tracking. He was
-							impressed with how I connected Academy concepts to
-							form handling. The validation runs automatically
-							when values change (using useEffect patterns from
-							the Temporal Tower), touch tracking prevents
-							premature error display, and useCallback optimizes
-							the handlers like Professor Hooksworth taught. It's
-							amazing how Academy training helps me understand
-							these new concepts! Formeus says tomorrow we'll
-							tackle different input types and their quirks.
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Transmutation Circle's Secret:</h3>
-					<p>
-						Complex form management becomes elegant through
-						Academy-trained hook patterns. Unify related concerns -
-						values, errors, touched states - into cohesive
-						abstractions using the orchestration patterns you've
-						mastered. Use useCallback for stable handler references,
-						useEffect for reactive validation, and thoughtful state
-						structure for maintainability. Remember: forms are
-						systems, not collections of inputs. Build reusable
-						patterns that encapsulate common behaviors, reducing
-						boilerplate and increasing consistency across your
-						application.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does Aria's Academy training in hook orchestration
-						enhance traditional form management?
-					</p>
-					<p className='story-paragraph'>
-						Why is unifying form concerns into a single hook more
-						powerful than managing them separately?
-					</p>
-					<p className='story-paragraph'>
-						What other form patterns could benefit from
-						Academy-style hook composition?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Transmutation Circle's Secret:",
+						content:
+							"Complex form management becomes elegant through Academy-trained hook patterns. Unify related concerns - values, errors, touched states - into cohesive abstractions using the orchestration patterns you've mastered. Use useCallback for stable handler references, useEffect for reactive validation, and thoughtful state structure for maintainability. Remember: forms are systems, not collections of inputs. Build reusable patterns that encapsulate common behaviors, reducing boilerplate and increasing consistency across your application.",
+					}}
+					reflectionQuestions={[
+						"How does Aria's Academy training in hook orchestration enhance traditional form management?",
+						'Why is unifying form concerns into a single hook more powerful than managing them separately?',
+						'What other form patterns could benefit from Academy-style hook composition?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Afternoon)",
+						content:
+							"Form state management is fascinating when viewed through Academy patterns! Formeus guided me through creating a comprehensive useForm hook that handles values, validation, and touch tracking. He was impressed with how I connected Academy concepts to form handling. The validation runs automatically when values change (using useEffect patterns from the Temporal Tower), touch tracking prevents premature error display, and useCallback optimizes the handlers like Professor Hooksworth taught. It's amazing how Academy training helps me understand these new concepts! Formeus says tomorrow we'll tackle different input types and their quirks.",
+					}}
+				/>
 			</div>
 		</>
 	);

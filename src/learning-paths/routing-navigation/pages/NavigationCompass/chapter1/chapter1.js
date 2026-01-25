@@ -48,7 +48,6 @@ function ChapterOne() {
 				<ChapterIntro
 					chapterNumber={1}
 					title='The Navigation Command Center'
-					bridge={`The Central Citadel's Navigation Command Center hummed with energy. Holographic maps of the entire React Kingdom floated in the air, showing real-time data flows and component connections. At the center stood Captain Marina, her eyes lighting up as Aria entered.`}
 				/>
 
 				<div className='story-section'>
@@ -216,7 +215,8 @@ function ChapterOne() {
 						Building the Integrated Navigation System
 					</h3>
 					<InstructionBox character='Marina teaches Aria navigation patterns, building on her React foundation.'>
-						Click on different routes above to see how navigation updates the compass direction.
+						Click on different routes above to see how navigation
+						updates the compass direction.
 					</InstructionBox>
 
 					<div className='router-setup integrated'>
@@ -368,21 +368,20 @@ function IntelligentNavigation() {
 				/>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: 'Captain Marina',
-							description: 'Master of the Central Citadel\'s Navigation Command Center. Captain Marina teaches routing and navigation through React applications, showing how navigation integrates with all of React\'s patterns - state, effects, validation, and context.'
-						}
-					]}
 					lessonInsight={{
 						title: 'The Collaborative Discovery:',
-						content: `Your navigation journey: ${navigationHistory.join(' → ')}. Marina taught Aria that navigation in React isn't just about changing URLs - it's about orchestrating the entire application state. By learning Marina's routing expertise and applying her React foundation, Aria discovered how navigation systems can preserve state, validate transitions, manage effects, and provide seamless user experiences. This is what happens when a dedicated student learns from an expert teacher!`
+						content: `Your navigation journey: ${navigationHistory.join(' → ')}. Marina taught Aria that navigation in React isn't just about changing URLs - it's about orchestrating the entire application state. By learning Marina's routing expertise and applying her React foundation, Aria discovered how navigation systems can preserve state, validate transitions, manage effects, and provide seamless user experiences. This is what happens when a dedicated student learns from an expert teacher!`,
 					}}
 					reflectionQuestions={[
 						"How does understanding routing as an extension of React's component system change your approach to navigation?",
 						'What advantages come from integrating state management, effects, and validation into your routing logic?',
-						"How does Aria's React foundation help her understand Marina's navigation concepts more quickly?"
+						"How does Aria's React foundation help her understand Marina's navigation concepts more quickly?",
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 21 (Morning)",
+						content:
+							"Today I arrived at the Central Citadel to meet Captain Marina! The architecture is breathtaking - crystal spires connecting all quarters of the kingdom through navigation pathways. Marina immediately helped me see that routing isn't just about changing URLs - it's about orchestrating the entire application experience. Routes are components! Navigation updates state! Browser history triggers effects! I can already see how everything I've learned connects here. The Navigation Compass she showed me tracks our journey through the app, just like state tracks data flow. Binary is excited to catalog all these new patterns!",
+					}}
 				/>
 			</div>
 		</>

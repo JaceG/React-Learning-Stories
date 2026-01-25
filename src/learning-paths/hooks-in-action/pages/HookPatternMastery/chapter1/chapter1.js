@@ -137,7 +137,6 @@ function ChapterOne() {
 				<ChapterIntro
 					chapterNumber={1}
 					title='The Grand Orchestra - Harmonizing Multiple Hooks'
-					bridge='The Integration Sanctum was breathtaking - a perfect sphere where energy streams from every part of the Academy converged. At its center stood a figure whose very presence seemed to weave the streams into intricate, ever-changing patterns.'
 				/>
 
 				<div className='story-section'>
@@ -420,12 +419,6 @@ function useForm(initialValues, validators = {}) {
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: 'Pattern Weaver Synthesis',
-							description: 'Master of the Integration Sanctum, Synthesis teaches the highest art of hook composition. Their robes are woven from React patterns themselves, constantly shifting to demonstrate new combinations. They believe that true mastery comes not from individual techniques but from understanding how to weave them together into elegant solutions.'
-						}
-					]}
 					lessonInsight={{
 						title: 'Orchestration Mastery:',
 						content: "Master hook patterns by thinking like a conductor. The Orchestra pattern combines multiple specialized hooks into coordinated systems. Build small, focused hooks (useFormField for field state), then compose them with orchestrator hooks (useForm for coordination). This separation enables reusability, testability, and maintainability. Popular patterns include Form Management, Data Pipeline (filter→sort→paginate), and State Machines. Remember: complex behavior emerges from simple, well-orchestrated parts."

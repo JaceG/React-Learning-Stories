@@ -1,6 +1,6 @@
-import React, { useState, Suspense, lazy } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './LazyLibrary.css';
 
@@ -10,17 +10,6 @@ function LazyLibrary() {
 	const [loadingTimes, setLoadingTimes] = useState({});
 	const [splitBundles, setSplitBundles] = useState([]);
 	const [routeStrategy, setRouteStrategy] = useState('eager');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Module loading simulation
 	const loadModule = (moduleName, size) => {
@@ -59,30 +48,13 @@ function LazyLibrary() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>The Lazy Library</h1>
-			<p className='lesson-subtitle'>
-				Master the ancient art of code splitting and lazy loading
-			</p>
+			<LessonHeader
+				title='The Lazy Library'
+				subtitle='Master the ancient art of code splitting and lazy loading'
+				opener={`The Memory Monastery's healing rituals had transformed Aria into a guardian of application health. Brother Binary directed her next journey: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed. Seek Keeper Chronos, for bundle size is the hidden enemy of performance." Aria and Binary descended from the clouds, following ancient pathways to the mystical repository of deferred knowledge.`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					loadedModules,
@@ -97,27 +69,10 @@ function LazyLibrary() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='performance-optimization'
 				lessonId='lazy-library'
+				totalChapters={3}
 			/>
 		</div>
 	);

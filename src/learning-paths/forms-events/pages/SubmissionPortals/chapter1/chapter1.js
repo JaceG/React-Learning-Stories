@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const { portalState, activatePortal, addLog, resetPortal } =
@@ -76,17 +80,10 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 1: Opening the Portal</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The Submission Portal Gateway pulsed with ethereal
-						energy. Here, all form data from across the Western
-						Quarter converged before making the perilous journey to
-						distant servers. Portal Keeper Sage, ancient and wise,
-						stood before the swirling vortex.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='Opening the Portal'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -187,9 +184,10 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='aria-fundamental-pattern'>
-					<h3>The Foundation of Portal Control</h3>
-					<pre className='magical-code'>{`// Aria's Portal Control Pattern
+				<CodeExample
+					title="The Foundation of Portal Control"
+					discoveredBy="Demonstrated by Portal Keeper Sage"
+					code={`// Aria's Portal Control Pattern
 function SubmissionPortal() {
   const [formData, setFormData] = useState({
     name: '',
@@ -238,23 +236,16 @@ function SubmissionPortal() {
       <button type="submit">Open Portal</button>
     </form>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Mastering Portal Control
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria demonstrate proper portal control!
-								Submit the form and observe how preventing
-								default behavior gives us complete control over
-								the submission process.
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Portal Keeper Sage activates the gateway.">
+						Help Aria demonstrate proper portal control! Submit the form and observe how preventing default behavior gives us complete control over the submission process.
+					</InstructionBox>
 
 					<div className='submission-form'>
 						<h4>🌀 Portal Control Interface</h4>
@@ -413,54 +404,23 @@ formRef.current.dispatchEvent(
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Character Introduction</h4>
-						<p>
-							<strong>Portal Keeper Sage</strong> - The Western
-							Quarter's master of interdimensional data
-							transmission. Ancient beyond measure, Sage has
-							witnessed countless failed submissions and data
-							losses. The swirling energies of the portal have
-							given them unique insights into the flow of
-							information between client and server. They seek
-							someone who can finally bring stability to the
-							chaotic portal system.
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Portal Keeper's First Law:</h3>
-					<p>
-						Form submission is the gateway between your React
-						application and the outside world. The fundamental
-						pattern is preventDefault() - this single method
-						transforms chaotic browser behavior into controlled data
-						transmission. By preventing the default submission, you
-						maintain complete control over validation, error
-						handling, loading states, and success feedback.
-						Remember: every portal begins with prevention. Master
-						this, and you master the flow of data from client to
-						server.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						Why is preventDefault() the foundation of modern form
-						submission in React?
-					</p>
-					<p className='story-paragraph'>
-						How does controlling the submission "portal" improve
-						user experience?
-					</p>
-					<p className='story-paragraph'>
-						What happens to your application state without proper
-						portal control?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Portal Keeper's First Law:",
+						content:
+							'Form submission is the gateway between your React application and the outside world. The fundamental pattern is preventDefault() - this single method transforms chaotic browser behavior into controlled data transmission. By preventing the default submission, you maintain complete control over validation, error handling, loading states, and success feedback. Remember: every portal begins with prevention. Master this, and you master the flow of data from client to server.',
+					}}
+					reflectionQuestions={[
+						'Why is preventDefault() the foundation of modern form submission in React?',
+						'How does controlling the submission "portal" improve user experience?',
+						'What happens to your application state without proper portal control?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Morning)",
+						content:
+							"Portal Keeper Sage welcomed me to the Portal Gateway with warmth! This is my final Forms & Events lesson. The portal was unstable - failed submissions, synchronization errors, data loss. Sage taught me the foundational secret: e.preventDefault()! This single incantation stops the browser's default form submission (which would reload the page and lose all state). Now I control the entire submission process - validation, transformation, transmission. Binary detected 100% portal stability after applying the pattern. The submission states (idle, validating, submitting, success, error) remind me of the state machines I learned. Sage mentions advanced techniques await this afternoon!",
+					}}
+				/>
 			</div>
 		</>
 	);

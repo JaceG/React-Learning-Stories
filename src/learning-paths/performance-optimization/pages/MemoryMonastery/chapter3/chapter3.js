@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -78,9 +82,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Healing Rituals
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Healing Rituals'
+				bridge='"Now comes the most important knowledge," Brother Binary said, leading Aria to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -124,14 +130,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					The Four Healing Rituals
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Master each healing ritual to cure the Memory Plague. Apply the techniques 
-							and watch as the monastery's memory is restored!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Brother Binary hands you the sacred scroll.">
+					Master each healing ritual to cure the Memory Plague. Apply the techniques 
+					and watch as the monastery's memory is restored!
+				</InstructionBox>
 
 				<div className='optimization-grid'>
 					<div 
@@ -177,13 +179,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='memory-scroll'>
-					<div className='scroll-header'>
-						<span>The Sacred Scroll of Memory Healing</span>
-						<span className='discovered-by'>Ultimate Memory Patterns</span>
-					</div>
-					<pre>{`// The Four Healing Rituals
+			<CodeExample
+				title="The Sacred Scroll of Memory Healing"
+				discoveredBy="Ultimate Memory Patterns"
+				code={`// The Four Healing Rituals
 
 // 1. Event Cleanup Ritual
 function ProperEventHandling() {
@@ -310,9 +309,8 @@ function MemoryGuardianComponent({ data }) {
   }, [fetchData]);
   
   return <div>{state}</div>;
-}`}</pre>
-				</div>
-			</div>
+}`}
+			/>
 
 			{wisdomUnlocked && (
 				<div className='memory-monk' style={{ marginTop: '30px' }}>
@@ -328,41 +326,24 @@ function MemoryGuardianComponent({ data }) {
 				</div>
 			)}
 
-			<div className='lesson-insight'>
-				<h3>The Memory Guardian's Wisdom:</h3>
-				<p>
-					Memory management is not about complex algorithms or clever tricks. It's about 
-					discipline and consistency. Always clean up what you create, use weak references 
-					when appropriate, manage refs carefully, and memoize wisely. These four rituals, 
-					applied consistently, will keep your applications healthy and performant throughout 
-					their lifetime.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Aria has become a Memory Guardian, mastering the ancient rituals of memory 
-					management. But Brother Binary's final lesson is most important: "Knowledge 
-					without practice is worthless. Apply these rituals in every component you write."
-				</p>
-				<p>
-					Will you take the Memory Guardian oath? Will you commit to always cleaning up 
-					your effects, managing your references, and keeping your applications healthy?
-				</p>
-			</div>
-
-			{wisdomUnlocked && (
-				<div className='chapter-ending'>
-					<h3>Chapter Complete!</h3>
-					<p>
-						With the Memory Plague defeated, the React Kingdom's applications ran smoothly 
-						once more. Aria had not only learned to identify and fix memory leaks but had 
-						become a guardian of memory health. Yet her journey continued, for the Lazy 
-						Library awaited, promising secrets of code splitting and lazy loading...
-					</p>
-				</div>
-			)}
+			<ChapterSummary
+				lessonInsight={{
+					title: "The Memory Guardian's Wisdom:",
+					content: 'Memory management is not about complex algorithms or clever tricks. It\'s about discipline and consistency. Always clean up what you create, use weak references when appropriate, manage refs carefully, and memoize wisely. These four rituals, applied consistently, will keep your applications healthy and performant throughout their lifetime.'
+				}}
+				reflectionQuestions={[
+					'Aria has become a Memory Guardian, mastering the ancient rituals of memory management. But Brother Binary\'s final lesson is most important: "Knowledge without practice is worthless. Apply these rituals in every component you write."',
+					'Will you take the Memory Guardian oath? Will you commit to always cleaning up your effects, managing your references, and keeping your applications healthy?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 26 (Evening)",
+					content:
+						"I've mastered the Four Healing Rituals and become a Memory Guardian! 1) Event Cleanup Ritual - ALWAYS return cleanup functions from useEffect. 2) WeakMap Wisdom - use WeakMap/WeakSet for caches so objects can be garbage collected when no longer needed. 3) Reference Discipline - disconnect observers, clear refs on unmount. 4) Memoization Mastery - memoize context values to prevent recreation. The complete pattern: use isMountedRef to check if component is still mounted before setting state after async operations. Brother Binary's wisdom: 'Knowledge without practice is worthless.' Tomorrow: the Lazy Library!",
+				}}
+				chapterEnding={[
+					'With the Memory Plague defeated, the React Kingdom\'s applications ran smoothly once more. Aria had not only learned to identify and fix memory leaks but had become a guardian of memory health. Yet her journey continued, for the Lazy Library awaited, promising secrets of code splitting and lazy loading...'
+				]}
+			/>
 		</div>
 	);
 };

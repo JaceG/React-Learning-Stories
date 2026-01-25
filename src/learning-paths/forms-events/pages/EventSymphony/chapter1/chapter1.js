@@ -1,6 +1,10 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const {
@@ -33,21 +37,10 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Symphony Hall Invitation
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Word of Aria's form alchemy innovations spread quickly
-						through the Western Quarter. As she and Binary made
-						their way through the bustling streets, a messenger in
-						flowing robes intercepted them with an ornate scroll.
-						"From Conductor Eventus of the Event Symphony Hall," the
-						messenger announced. "Your Academy training is urgently
-						requested."
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='The Symphony Hall Invitation'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -199,7 +192,10 @@ function ChapterOne() {
 						ensures every event behaves consistently."
 					</p>
 
-					<pre className='magical-code'>{`// Aria learns the event pattern
+					<CodeExample
+						title="React's Synthetic Event System"
+						discoveredBy="Demonstrated by Conductor Eventus"
+						code={`// Aria learns the event pattern
 function EventOrchestra() {
   // React wraps native events in SyntheticEvents
   const handleClick = (e) => {
@@ -223,22 +219,17 @@ function EventOrchestra() {
       <p>Every event is orchestrated by React!</p>
     </div>
   );
-}`}</pre>
+}`}
+					/>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Learning Event Orchestration
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria learn how React orchestrates events by
-								trying different interactions with the
-								instruments above!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Conductor Eventus raises his baton.">
+						Help Aria learn how React orchestrates events by trying different interactions with the instruments above!
+					</InstructionBox>
 
 					<div className='sheet-music'>
 						<h4>🎼 Compose Your Event Learning</h4>
@@ -399,53 +390,23 @@ function EventOrchestra() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Character Introduction</h4>
-						<p>
-							<strong>Conductor Eventus</strong> - The Western
-							Quarter's master of event orchestration. His passion
-							for perfect event harmony is matched only by his
-							enthusiasm for teaching Academy graduates. Years of
-							dealing with browser inconsistencies have made him
-							grateful for React's synthetic event system. His
-							conductor's baton can visualize event flow and
-							propagation paths.
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Symphony's First Movement:</h3>
-					<p>
-						React's synthetic event system orchestrates all browser
-						events into a harmonious symphony. By wrapping native
-						events, React ensures consistent behavior across all
-						browsers and provides automatic cleanup. Event handlers
-						in React follow camelCase conventions and receive
-						SyntheticEvent objects that normalize browser
-						differences. This abstraction allows developers to write
-						event handling code once and trust it will work
-						everywhere - the foundation of any great interactive
-						symphony.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does Aria's Academy training in consistent patterns
-						help her understand event handling?
-					</p>
-					<p className='story-paragraph'>
-						Why is React's synthetic event system like a universal
-						conductor for all browsers?
-					</p>
-					<p className='story-paragraph'>
-						What event handling chaos have you experienced that
-						React's system could solve?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Symphony's First Movement:",
+						content:
+							"React's synthetic event system orchestrates all browser events into a harmonious symphony. By wrapping native events, React ensures consistent behavior across all browsers and provides automatic cleanup. Event handlers in React follow camelCase conventions and receive SyntheticEvent objects that normalize browser differences. This abstraction allows developers to write event handling code once and trust it will work everywhere - the foundation of any great interactive symphony.",
+					}}
+					reflectionQuestions={[
+						"How does Aria's Academy training in consistent patterns help her understand event handling?",
+						"Why is React's synthetic event system like a universal conductor for all browsers?",
+						"What event handling chaos have you experienced that React's system could solve?",
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 18 (Morning)",
+						content:
+							"The Event Symphony Hall is magnificent! Conductor Eventus welcomed me warmly after hearing about my progress with Form Alchemy. Today I learned about React's synthetic event system - it wraps native browser events to provide consistent behavior everywhere. onClick instead of onclick, onMouseEnter, onChange - all normalized! Binary was fascinated by how React handles the complexity behind the scenes. The synthetic events have methods like preventDefault() and stopPropagation() that work identically across all browsers. Eventus says this foundation is crucial before we dive into event propagation patterns this afternoon!",
+					}}
+				/>
 			</div>
 		</>
 	);

@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const {
@@ -22,24 +26,10 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Alchemist's Laboratory
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						After mastering hook patterns with Pattern Weaver
-						Synthesis, Aria received a letter sealed with a
-						mysterious symbol. "The Western Quarter awaits," the
-						Academy's chancellor had said. "It's time you learned
-						how to apply your hook mastery to real user
-						interactions." The Form Alchemy Lab was unlike any
-						workshop she had seen before - instead of forges and
-						energy streams, it contained rows of bubbling cauldrons,
-						crystalline vials, and transmutation circles etched into
-						the floor
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title="The Alchemist's Laboratory"
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -160,15 +150,9 @@ function ChapterOne() {
 					<h3 className='section-title'>
 						Interactive Exercise: Learning Form Control Patterns
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria understand how her hook knowledge
-								applies to form control by trying both
-								approaches!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Master Formeus hands you two glowing vials.">
+						Help Aria understand how her hook knowledge applies to form control by trying both approaches!
+					</InstructionBox>
 
 					<div className='controlled-demo'>
 						<h4>🧪 Controlled Transmutation</h4>
@@ -221,11 +205,10 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='alchemy-formula'>
-					<h3 className='formula-title'>
-						Aria Applies Her Hook Knowledge
-					</h3>
-					<pre className='magical-code'>{`// Aria applies her Academy training to form alchemy
+				<CodeExample
+					title="Aria Applies Her Hook Knowledge"
+					discoveredBy="Transcribed by Aria"
+					code={`// Aria applies her Academy training to form alchemy
 function useControlledInput(initialValue = '') {
   const [value, setValue] = useState(initialValue);
   const [touched, setTouched] = useState(false);
@@ -258,8 +241,8 @@ function AlchemicalForm() {
       }}>Reset Cauldron</button>
     </form>
   );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<div className='formeus-reaction'>
 					<p className='story-paragraph'>
@@ -315,73 +298,23 @@ function AlchemicalForm() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 20 (Morning)</h4>
-						<p>
-							The Western Quarter is fascinating! Master Formeus
-							showed me how form handling is really just
-							specialized hook application. Controlled components
-							use useState to maintain a single source of truth -
-							every keystroke updates React state. Uncontrolled
-							components let the DOM handle the state, using
-							useRef when we need values. I immediately saw how to
-							apply my Academy training - created
-							useControlledInput that encapsulates common form
-							logic using the patterns Pattern Weaver taught me.
-							Formeus was impressed, but this is just the
-							beginning. Binary is cataloging all the
-							transmutation patterns for optimization.
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Master Alchemist's Wisdom:</h3>
-					<p>
-						Form control applies your hook mastery to user
-						interaction. Controlled components maintain React as the
-						single source of truth using useState patterns you've
-						learned, enabling instant validation, format
-						enforcement, and state sharing. Uncontrolled components
-						delegate to the DOM using useRef for persistent
-						references. Most modern React applications favor
-						controlled components for their predictability and
-						power. Remember: with great control comes great
-						capability - choose wisely based on your transmutation
-						needs.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>Master Alchemist Formeus</strong> - The Western
-						Quarter's foremost expert on form transmutation. His
-						laboratory contains centuries of accumulated knowledge
-						about transforming user input into application state.
-						Known for his bubbling enthusiasm and tendency to get
-						excited about elegant solutions. His stained coat bears
-						the marks of countless experiments with input validation
-						and state management.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does Aria's hook mastery from the Academy enhance
-						her understanding of form controls?
-					</p>
-					<p className='story-paragraph'>
-						Why might constant monitoring (controlled) be more
-						powerful than passive observation (uncontrolled)?
-					</p>
-					<p className='story-paragraph'>
-						What patterns from your own forms could benefit from
-						custom hook extraction?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Master Alchemist's Wisdom:",
+						content:
+							"Form control applies your hook mastery to user interaction. Controlled components maintain React as the single source of truth using useState patterns you've learned, enabling instant validation, format enforcement, and state sharing. Uncontrolled components delegate to the DOM using useRef for persistent references. Most modern React applications favor controlled components for their predictability and power. Remember: with great control comes great capability - choose wisely based on your transmutation needs.",
+					}}
+					reflectionQuestions={[
+						"How does Aria's hook mastery from the Academy enhance her understanding of form controls?",
+						'Why might constant monitoring (controlled) be more powerful than passive observation (uncontrolled)?',
+						'What patterns from your own forms could benefit from custom hook extraction?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Morning)",
+						content:
+							'The Western Quarter is fascinating! Master Formeus showed me how form handling is really just specialized hook application. Controlled components use useState to maintain a single source of truth - every keystroke updates React state. Uncontrolled components let the DOM handle the state, using useRef when we need values. I immediately saw how to apply my Academy training - created useControlledInput that encapsulates common form logic using the patterns Pattern Weaver taught me. Formeus was impressed, but this is just the beginning. Binary is cataloging all the transmutation patterns for optimization.',
+					}}
+				/>
 			</div>
 		</>
 	);

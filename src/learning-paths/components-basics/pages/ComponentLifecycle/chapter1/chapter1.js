@@ -217,13 +217,6 @@ const ChapterOne = () => {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Chronos',
-						description:
-							'The Master Time Keeper of the Lifecycle Sanctum. An ancient figure who teaches the fundamental truth that every component has a lifecycle - a journey from creation through updates to eventual destruction.',
-					},
-				]}
 				lessonInsight={{
 					title: 'The Lifecycle Lesson:',
 					content:

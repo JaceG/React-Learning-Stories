@@ -550,17 +550,18 @@ function TaskDetail() {
 				/>
 			</div>
 
-			<div className='marina-innovation'>
-				<h3>Marina's Advanced Navigation Framework</h3>
-				<p className='story-paragraph'>
-					Marina taught Aria advanced navigation concepts that created
-					sophisticated routing systems - navigation that seamlessly
-					integrated all aspects of React.
-				</p>
+			<div className='story-section'>
+				<div className='marina-innovation'>
+					<h3>Marina's Advanced Navigation Framework</h3>
+					<p className='story-paragraph'>
+						Marina taught Aria advanced navigation concepts that created
+						sophisticated routing systems - navigation that seamlessly
+						integrated all aspects of React.
+					</p>
 
-				<CodeExample
-					title="Marina's Innovation"
-					code={`// Marina's navigation expertise with React integration
+					<CodeExample
+						title="Marina's Innovation"
+						code={`// Marina's navigation expertise with React integration
 const useSmartNavigation = () => {
   // React state management patterns
   const { user, permissions } = useAuth();
@@ -593,23 +594,22 @@ const useSmartNavigation = () => {
   
   return { smartNavigate, canNavigate: !isDirty };
 };`}
-				/>
-			</div>
+					/>
+				</div>
 
-			<div className='mastery-recognition'>
-				<h3>Full Circle Moment</h3>
-				<div className='story-paragraph'>
-					<p>
+				<div className='mastery-recognition'>
+					<h3>Full Circle Moment</h3>
+					<p className='story-paragraph'>
 						As they completed the nested waypoint system,
 						representatives from all quarters arrived to witness the
-						demonstration. <strong>Master Aurelius</strong>,
+						demonstration. <strong>Master Aurelius</strong>,{' '}
 						<strong>Elder useState</strong>,{' '}
-						<strong>Captain Thunk</strong>, and
+						<strong>Captain Thunk</strong>, and{' '}
 						<strong>Commander Validus</strong> watched as Marina
 						demonstrated the unified navigation framework to Aria.
 					</p>
 
-					<p>
+					<p className='story-paragraph'>
 						"This is remarkable," Master Aurelius observed. "Marina
 						has created something that uses every concept in our
 						kingdom - components for structure, state for memory,
@@ -618,7 +618,7 @@ const useSmartNavigation = () => {
 						together."
 					</p>
 
-					<p>
+					<p className='story-paragraph'>
 						Elder useState added, "Aria's React foundation helps her
 						understand these connections so quickly."
 					</p>
@@ -635,6 +635,11 @@ const useSmartNavigation = () => {
 					'What patterns would you use to create a complex workspace with multiple levels of nested navigation?',
 					'How has your understanding of React as one unified system changed through this journey?'
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 23 (Evening)",
+					content:
+						"The nested waypoint realms! Marina showed me how nested routes create intuitive component hierarchies - DashboardLayout wraps all dashboard routes, SettingsLayout wraps settings, and Outlets render children at each level. I built dynamic breadcrumbs using useMatches() that automatically update based on route metadata, and smooth page transitions with AnimatePresence. The workspace pattern (/workspace/:id/project/:projectId/task/:taskId) shows how nested loaders can access parent data. My final project: a complete navigation framework that integrates authentication, transitions, breadcrumbs, and intelligent waypoints. Marina says I've mastered React navigation! Everything truly is connected - one beautiful, unified system.",
+				}}
 				chapterEnding={[
 					"Binary projected a holographic map showing how every quarter of the React Kingdom connected through the Central Citadel's navigation systems.",
 					"The student who had arrived eager to learn now understood how all the concepts connected through navigation."

@@ -690,6 +690,11 @@ function useNavigation() {
 					'How will you combine these concepts in new and innovative ways?',
 					'Most importantly, who will you teach along the way?'
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 24 (Evening)",
+					content:
+						"Today I mastered advanced portal patterns! Multi-step wizards that persist state across route-based steps, nested portal stacks that properly manage z-index and focus, split views that let users work in parallel contexts, and contextual portals that position themselves intelligently relative to their triggers. The unified navigation architecture Marina showed me combines everything: lazy loading for performance, route-based modals for shareable URLs, breadcrumbs from route metadata, and predictive prefetching. I can see now how navigation is the orchestration layer that ties all of React together. Tomorrow we'll explore Guardian Gates for route protection!",
+				}}
 				chapterEnding={[
 					"Like Aria, you've traveled through the entire React Kingdom. You've seen how components provide structure, state brings life, props enable communication, hooks add power, forms connect users, and navigation creates experiences.",
 					"But your journey doesn't end here. Remember Aria's greatest lesson: React isn't a collection of separate concepts - it's one beautiful, interconnected system. And now, you understand it all."

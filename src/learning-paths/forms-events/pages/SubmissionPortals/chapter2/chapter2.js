@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const {
@@ -179,20 +183,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Advanced Portal Techniques
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Sage guided Aria deeper into the portal chamber, where
-						advanced transmission arrays hummed with energy. "You've
-						mastered basic portal control," Sage said, "but true
-						mastery requires handling the unpredictable - network
-						failures, timeouts, and the art of keeping users
-						informed during long transmissions."
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Advanced Portal Techniques'
+					bridge={`Sage guided Aria deeper into the portal chamber, where advanced transmission arrays hummed with energy. "You've mastered basic portal control," Sage said, "but true mastery requires handling the unpredictable - network failures, timeouts, and the art of keeping users informed during long transmissions."`}
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -350,9 +345,10 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-				<div className='aria-master-code'>
-					<h3>Aria's Advanced Submission Architecture</h3>
-					<pre className='magical-code'>{`// Aria's Ultimate Submission System
+				<CodeExample
+					title="Aria's Advanced Submission Architecture"
+					discoveredBy="Applied by Aria"
+					code={`// Aria's Ultimate Submission System
 const useAdvancedSubmission = (submitFn, options = {}) => {
   const [state, setState] = useState('idle');
   const [error, setError] = useState(null);
@@ -449,23 +445,16 @@ const useAdvancedSubmission = (submitFn, options = {}) => {
     progress,
     optimisticData
   };
-};`}</pre>
-				</div>
+};`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Master Portal Transmission
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria demonstrate advanced submission
-								patterns! Enable optimizations, handle failures
-								gracefully, and watch the portal respond to
-								different scenarios.
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Sage adjusts the portal optimization controls.">
+						Help Aria demonstrate advanced submission patterns! Enable optimizations, handle failures gracefully, and watch the portal respond to different scenarios.
+					</InstructionBox>
 
 					<div className='submission-form advanced'>
 						<h4>🌀 Advanced Portal Interface</h4>
@@ -678,58 +667,23 @@ controller.abort();`}</pre>
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 22 (Midday)</h4>
-						<p>
-							Portal transmission mastery achieved! Sage taught me
-							how to combine everything: async/await patterns,
-							loading states, error boundaries, and even
-							optimistic UI. The key insight was treating form
-							submission as a journey with clear phases. Binary
-							tracked 89% retry success rate after Sage showed me
-							exponential backoff patterns. The AbortController
-							pattern for cancellation was particularly
-							fascinating - it gives users control over their
-							destiny. Sage mentioned one final challenge awaits
-							in the Grand Synthesis Chamber...
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Portal Master's Advanced Wisdom:</h3>
-					<p>
-						Advanced form submission is about managing the entire
-						lifecycle of data transmission. Implement loading states
-						to show progress through each phase. Use optimistic
-						updates to make the UI feel instant while the server
-						processes. Add retry logic with exponential backoff for
-						resilience. Provide cancellation options for user
-						control. Track metrics to understand failure patterns.
-						Most importantly, treat every submission as a critical
-						user journey - guide them through success and help them
-						recover from failure. Master these patterns, and your
-						forms become reliable portals between client and server
-						realms.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How do optimistic updates improve perceived performance
-						in form submissions?
-					</p>
-					<p className='story-paragraph'>
-						Why is giving users the ability to cancel submissions
-						important for user experience?
-					</p>
-					<p className='story-paragraph'>
-						What patterns from Aria's entire journey came together
-						in this advanced submission system?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Portal Master's Advanced Wisdom:",
+						content:
+							'Advanced form submission is about managing the entire lifecycle of data transmission. Implement loading states to show progress through each phase. Use optimistic updates to make the UI feel instant while the server processes. Add retry logic with exponential backoff for resilience. Provide cancellation options for user control. Track metrics to understand failure patterns. Most importantly, treat every submission as a critical user journey - guide them through success and help them recover from failure. Master these patterns, and your forms become reliable portals between client and server realms.',
+					}}
+					reflectionQuestions={[
+						'How do optimistic updates improve perceived performance in form submissions?',
+						'Why is giving users the ability to cancel submissions important for user experience?',
+						"What patterns from Aria's entire journey came together in this advanced submission system?",
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Afternoon)",
+						content:
+							"Portal transmission mastery achieved! Sage taught me how to combine everything: async/await patterns, loading states, error boundaries, and even optimistic UI. The key insight was treating form submission as a journey with clear phases. Binary tracked 89% retry success rate after Sage showed me exponential backoff patterns. The AbortController pattern for cancellation was particularly fascinating - it gives users control over their destiny. Sage mentioned one final challenge awaits in the Grand Synthesis Chamber...",
+					}}
+				/>
 			</div>
 		</>
 	);

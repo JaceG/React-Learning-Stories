@@ -491,7 +491,7 @@
 }
 
 /* Adaptations for previous code styles */
-.lesson-insight, .dependency-examples, .effect-cautions, .best-practices, .common-mistakes, .practical-application {
+.lesson-insight, .dependency-examples, .effect-cautions, .common-mistakes, .practical-application {
   background-color: white;
   border-radius: 8px;
   padding: 20px;

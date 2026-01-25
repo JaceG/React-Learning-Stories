@@ -630,15 +630,7 @@ input:checked + .toggle-slider:before {
   margin-left: 20px;
 }
 
-/* Context Best Practices */
-.best-practices {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin: 30px 0;
-}
-
+/* Practice Items - used within character-guidance */
 .practice-item {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -1370,53 +1362,6 @@ input:checked + .toggle-slider:before {
   color: #3498db;
 }
 
-/* When to Use Section */
-.when-to-use {
-  background-color: #f0f8ff;
-  border-radius: 12px;
-  padding: 30px;
-  margin: 40px 0;
-  border-left: 5px solid #3498db;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-}
-
-.when-to-use h3 {
-  color: #2980b9;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.when-to-use ul {
-  list-style: none;
-  padding: 0;
-}
-
-.when-to-use li {
-  padding: 15px 0;
-  padding-left: 30px;
-  position: relative;
-  border-bottom: 1px solid rgba(52, 152, 219, 0.1);
-}
-
-.when-to-use li:last-child {
-  border-bottom: none;
-}
-
-.when-to-use li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #2ecc71;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.when-to-use strong {
-  color: #2980b9;
-  display: inline-block;
-  margin-right: 8px;
-}
-
 /* Common Patterns Section */
 .common-patterns {
   margin: 40px 0;
@@ -1732,25 +1677,6 @@ input:checked + .toggle-slider:before {
 
 .chapter.dark .reflection-section p {
   color: #dfe6e9;
-}
-
-/* Dark mode for when to use section */
-.chapter.dark .when-to-use {
-  background-color: #34495e;
-  border-left-color: #74b9ff;
-}
-
-.chapter.dark .when-to-use h3 {
-  color: #74b9ff;
-}
-
-.chapter.dark .when-to-use li {
-  color: #dfe6e9;
-  border-bottom-color: rgba(116, 185, 255, 0.2);
-}
-
-.chapter.dark .when-to-use strong {
-  color: #74b9ff;
 }
 
 /* Dark mode for common patterns */
@@ -2069,62 +1995,7 @@ input:checked + .toggle-slider:before {
   vertical-align: middle;
 }
 
-/* Performance Tips Section */
-.performance-tips {
-  background-color: #e8f5e9;
-  border-radius: 15px;
-  padding: 30px;
-  margin: 40px 0;
-  border-left: 5px solid #4caf50;
-  box-shadow: 0 3px 15px rgba(76, 175, 80, 0.1);
-}
-
-.performance-tips h3 {
-  color: #2e7d32;
-  margin-bottom: 20px;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.performance-tips h3::before {
-  content: '⚡';
-  font-size: 28px;
-}
-
-.performance-tips ul {
-  list-style: none;
-  padding: 0;
-}
-
-.performance-tips li {
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(76, 175, 80, 0.1);
-  position: relative;
-  padding-left: 35px;
-}
-
-.performance-tips li:last-child {
-  border-bottom: none;
-}
-
-.performance-tips li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 20px;
-  color: #4caf50;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.performance-tips li strong {
-  color: #1b5e20;
-  display: block;
-  margin-bottom: 8px;
-}
-
+/* Code Styling in Character Guidance */
 .tip-code {
   background-color: #263238;
   color: #aed581;
@@ -2176,24 +2047,6 @@ input:checked + .toggle-slider:before {
 
 .chapter.dark .castle-gates {
   background: linear-gradient(to bottom, #1a1a1a 0%, #0a0a0a 100%);
-}
-
-.chapter.dark .performance-tips {
-  background-color: #1b3a1b;
-  border-left-color: #2e7d32;
-}
-
-.chapter.dark .performance-tips h3 {
-  color: #81c784;
-}
-
-.chapter.dark .performance-tips li {
-  color: #c8e6c9;
-  border-bottom-color: rgba(129, 199, 132, 0.1);
-}
-
-.chapter.dark .performance-tips li strong {
-  color: #a5d6a7;
 }
 
 .chapter.dark .tip-code {
@@ -2598,57 +2451,7 @@ input:checked + .toggle-slider:before {
   margin-top: 20px;
 }
 
-/* Optimization Techniques Section */
-.optimization-techniques {
-  background-color: #f0f8ff;
-  border-radius: 15px;
-  padding: 30px;
-  margin: 40px 0;
-  border-left: 5px solid #3498db;
-}
-
-.optimization-techniques h3 {
-  color: #2980b9;
-  margin-bottom: 25px;
-  font-size: 22px;
-}
-
-.optimization-techniques ol {
-  list-style: none;
-  counter-reset: technique-counter;
-  padding: 0;
-}
-
-.optimization-techniques li {
-  counter-increment: technique-counter;
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.optimization-techniques li::before {
-  content: counter(technique-counter);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  background-color: #3498db;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-
-.optimization-techniques strong {
-  color: #2980b9;
-  display: block;
-  margin-bottom: 8px;
-}
-
+/* Technique Code - used within character-guidance */
 .technique-code {
   background-color: #2c3e50;
   color: #ecf0f1;
@@ -2659,58 +2462,6 @@ input:checked + .toggle-slider:before {
   font-size: 13px;
   line-height: 1.5;
   overflow-x: auto;
-}
-
-/* When to Optimize Section */
-.when-to-optimize {
-  background-color: #fff5e6;
-  border-radius: 15px;
-  padding: 30px;
-  margin: 40px 0;
-  border-left: 5px solid #f39c12;
-  box-shadow: 0 3px 15px rgba(243, 156, 18, 0.1);
-}
-
-.when-to-optimize h3 {
-  color: #d68910;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.when-to-optimize ul {
-  list-style: none;
-  padding: 0;
-}
-
-.when-to-optimize li {
-  padding: 15px 0;
-  padding-left: 30px;
-  position: relative;
-  border-bottom: 1px solid rgba(243, 156, 18, 0.1);
-}
-
-.when-to-optimize li:last-child {
-  border-bottom: none;
-}
-
-.when-to-optimize li::before {
-  content: '⚠️';
-  position: absolute;
-  left: 0;
-  font-size: 18px;
-}
-
-.when-to-optimize strong {
-  color: #d68910;
-}
-
-.when-to-optimize p {
-  margin-top: 20px;
-  font-style: italic;
-  color: #7f8c8d;
-  background-color: rgba(243, 156, 18, 0.1);
-  padding: 15px;
-  border-radius: 8px;
 }
 
 /* Context Alternatives Section */
@@ -2844,49 +2595,9 @@ input:checked + .toggle-slider:before {
   color: #95a5a6;
 }
 
-.chapter.dark .optimization-techniques {
-  background-color: #1a3a4a;
-  border-left-color: #5dade2;
-}
-
-.chapter.dark .optimization-techniques h3 {
-  color: #5dade2;
-}
-
-.chapter.dark .optimization-techniques li::before {
-  background-color: #5dade2;
-}
-
-.chapter.dark .optimization-techniques strong {
-  color: #5dade2;
-}
-
 .chapter.dark .technique-code {
   background-color: #0a0a0a;
   color: #74b9ff;
-}
-
-.chapter.dark .when-to-optimize {
-  background-color: #3a2a1a;
-  border-left-color: #f39c12;
-}
-
-.chapter.dark .when-to-optimize h3 {
-  color: #f8c471;
-}
-
-.chapter.dark .when-to-optimize li {
-  color: #dfe6e9;
-  border-bottom-color: rgba(243, 156, 18, 0.2);
-}
-
-.chapter.dark .when-to-optimize strong {
-  color: #f8c471;
-}
-
-.chapter.dark .when-to-optimize p {
-  color: #95a5a6;
-  background-color: rgba(243, 156, 18, 0.2);
 }
 
 .chapter.dark .context-alternatives h3 {

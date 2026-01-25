@@ -1,23 +1,54 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
-	const {
-		bundleSize,
-		calculateMetrics
-	} = useOutletContext();
+	const { bundleSize, calculateMetrics } = useOutletContext();
 
 	const [showLibrarian, setShowLibrarian] = useState(false);
 	const [selectedBook, setSelectedBook] = useState(null);
 	const [understandingLevel, setUnderstandingLevel] = useState(0);
 
 	const books = [
-		{ id: 'charts', name: 'Chart Magic', size: 180, description: 'Powerful data visualization' },
-		{ id: 'editor', name: 'Code Editor Tome', size: 250, description: 'Rich text editing spells' },
-		{ id: 'calendar', name: 'Time Keeper', size: 120, description: 'Calendar and date magic' },
-		{ id: 'animations', name: 'Motion Scrolls', size: 150, description: 'Animation enchantments' },
-		{ id: 'forms', name: 'Form Alchemy', size: 90, description: 'Advanced form handling' },
-		{ id: 'maps', name: 'World Atlas', size: 300, description: 'Interactive map components' }
+		{
+			id: 'charts',
+			name: 'Chart Magic',
+			size: 180,
+			description: 'Powerful data visualization',
+		},
+		{
+			id: 'editor',
+			name: 'Code Editor Tome',
+			size: 250,
+			description: 'Rich text editing spells',
+		},
+		{
+			id: 'calendar',
+			name: 'Time Keeper',
+			size: 120,
+			description: 'Calendar and date magic',
+		},
+		{
+			id: 'animations',
+			name: 'Motion Scrolls',
+			size: 150,
+			description: 'Animation enchantments',
+		},
+		{
+			id: 'forms',
+			name: 'Form Alchemy',
+			size: 90,
+			description: 'Advanced form handling',
+		},
+		{
+			id: 'maps',
+			name: 'World Atlas',
+			size: 300,
+			description: 'Interactive map components',
+		},
 	];
 
 	const handleBookClick = (book) => {
@@ -32,50 +63,52 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Burden of Knowledge
-			</h2>
+			<ChapterIntro chapterNumber={1} title='The Burden of Knowledge' />
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					<strong>Aria</strong> arrived at the Lazy Library, a mystical repository where 
-					all React knowledge was stored. But something was wrong - the main entrance was 
-					blocked by an enormous bundle of books, too heavy for anyone to move.
+					<strong>Aria</strong> arrived at the Lazy Library, a
+					mystical repository where all React knowledge was stored.
+					But something was wrong - the main entrance was blocked by
+					an enormous bundle of books, too heavy for anyone to move.
 				</p>
 
 				<p className='story-paragraph'>
-					<strong>Keeper Chronos</strong>, the ancient librarian, appeared from the shadows. 
-					"Ah, another victim of the <strong>Bundle Burden</strong>. Young developers pack 
-					every possible library into their applications, not realizing that users must 
-					carry this weight with every page load."
+					<strong>Keeper Chronos</strong>, the ancient librarian,
+					appeared from the shadows. "Ah, another victim of the{' '}
+					<strong>Bundle Burden</strong>. Young developers pack every
+					possible library into their applications, not realizing that
+					users must carry this weight with every page load."
 				</p>
 
 				<p className='story-paragraph'>
-					He gestured to the towering shelves. "Each book represents a library or component. 
-					Some are essential for every visitor, but many are needed only by a few. Yet we 
-					force everyone to carry them all. This is the curse of <strong>eager loading</strong>."
+					He gestured to the towering shelves. "Each book represents a
+					library or component. Some are essential for every visitor,
+					but many are needed only by a few. Yet we force everyone to
+					carry them all. This is the curse of{' '}
+					<strong>eager loading</strong>."
 				</p>
-
-				<div className='character-intro-card librarian-card'>
-					<h4>Keeper Chronos</h4>
-					<p>Guardian of the Lazy Library and master of temporal loading. His wisdom: 
-					"Load only what is needed, when it is needed. Time and bandwidth are precious 
-					resources that should never be wasted."</p>
-				</div>
 
 				<div className='library-hall'>
 					<h3>The Great Bundle</h3>
 					<div className='bundle-meter'>
-						<div 
-							className='bundle-size' 
+						<div
+							className='bundle-size'
 							style={{ width: `${(bundleSize / 1250) * 100}%` }}>
 							<span className='bundle-label'>
 								Main Bundle: {bundleSize}KB
 							</span>
 						</div>
 					</div>
-					<p style={{ textAlign: 'center', color: 'white', marginTop: '10px' }}>
-						{bundleSize > 1000 ? '⚠️ Bundle too large for optimal loading!' : '✅ Bundle size improving'}
+					<p
+						style={{
+							textAlign: 'center',
+							color: 'white',
+							marginTop: '10px',
+						}}>
+						{bundleSize > 1000
+							? '⚠️ Bundle too large for optimal loading!'
+							: '✅ Bundle size improving'}
 					</p>
 				</div>
 			</div>
@@ -84,18 +117,15 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Exploring the Bundle
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Click on the books to understand what's in your bundle. Each represents 
-							a different library that adds to your application's initial load time.
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character='Keeper Chronos gestures to the towering shelves.'>
+					Click on the books to understand what's in your bundle. Each
+					represents a different library that adds to your
+					application's initial load time.
+				</InstructionBox>
 
 				<div className='book-shelf'>
-					{books.map(book => (
-						<div 
+					{books.map((book) => (
+						<div
 							key={book.id}
 							className={`book ${selectedBook?.id === book.id ? 'selected' : ''}`}
 							onClick={() => handleBookClick(book)}
@@ -103,7 +133,11 @@ const ChapterOne = () => {
 							<div className='book-title'>{book.name}</div>
 							<div className='book-size'>{book.size}KB</div>
 							{selectedBook?.id === book.id && (
-								<div style={{ fontSize: '0.7em', marginTop: '10px' }}>
+								<div
+									style={{
+										fontSize: '0.7em',
+										marginTop: '10px',
+									}}>
 									{book.description}
 								</div>
 							)}
@@ -114,33 +148,32 @@ const ChapterOne = () => {
 				{selectedBook && (
 					<div className='bundle-visualizer'>
 						<h4>Bundle Impact Analysis</h4>
-						<p>"{selectedBook.name}" adds {selectedBook.size}KB to your bundle.</p>
-						<p>That's {((selectedBook.size / bundleSize) * 100).toFixed(1)}% of your total bundle!</p>
+						<p>
+							"{selectedBook.name}" adds {selectedBook.size}KB to
+							your bundle.
+						</p>
+						<p>
+							That's{' '}
+							{((selectedBook.size / bundleSize) * 100).toFixed(
+								1
+							)}
+							% of your total bundle!
+						</p>
 						<div style={{ marginTop: '15px', color: '#9ca3af' }}>
 							<small>
-								On a 3G connection, this adds ~{(selectedBook.size / 50).toFixed(1)} seconds to load time.
+								On a 3G connection, this adds ~
+								{(selectedBook.size / 50).toFixed(1)} seconds to
+								load time.
 							</small>
 						</div>
 					</div>
 				)}
-
-				{showLibrarian && (
-					<div className='librarian-card' style={{ marginTop: '20px' }}>
-						<h4>Keeper Chronos Speaks</h4>
-						<p>"You begin to see the problem! Each library has value, but not every user 
-						needs every feature. What if we could load these books only when someone 
-						actually needs to read them? This is the promise of <strong>lazy loading</strong>."</p>
-					</div>
-				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='lazy-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Bundle Analysis</span>
-						<span className='discovered-by'>The Weight of Dependencies</span>
-					</div>
-					<pre>{`// The Problem: Everything Loaded Upfront
+			<CodeExample
+				title='Scroll of Bundle Analysis'
+				discoveredBy='The Weight of Dependencies'
+				code={`// The Problem: Everything Loaded Upfront
 
 // Traditional approach - ALL components imported immediately
 import React from 'react';
@@ -187,9 +220,8 @@ npx source-map-explorer 'build/static/js/*.js'
 // - Multiple UI component libraries
 // - Development-only code in production
 // - Duplicate dependencies
-// - Unminified libraries`}</pre>
-				</div>
-			</div>
+// - Unminified libraries`}
+			/>
 
 			<div className='performance-dashboard'>
 				<h4>Current Performance Impact</h4>
@@ -218,30 +250,28 @@ npx source-map-explorer 'build/static/js/*.js'
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Bundle Lesson:</h3>
-				<p>
-					Modern JavaScript applications often ship massive bundles containing code that 
-					many users will never execute. Every kilobyte increases download time, parse time, 
-					and execution time. The first step to optimization is understanding what's in your 
-					bundle and why. Tools like webpack-bundle-analyzer reveal the true cost of your 
-					dependencies.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Keeper Chronos has revealed the burden that eager loading places on users. 
-					Think about your own applications - do you import large libraries that are only 
-					used in specific features? Do your users download code for admin panels they'll 
-					never see?
-				</p>
-				<p>
-					The journey to performance begins with awareness. What heavy books are your 
-					users forced to carry?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Keeper Chronos',
+						description: 'Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."'
+					}
+				]}
+				lessonInsight={{
+					title: 'The Bundle Lesson:',
+					content:
+						"Modern JavaScript applications often ship massive bundles containing code that many users will never execute. Every kilobyte increases download time, parse time, and execution time. The first step to optimization is understanding what's in your bundle and why. Tools like webpack-bundle-analyzer reveal the true cost of your dependencies.",
+				}}
+				reflectionQuestions={[
+					"Keeper Chronos has revealed the burden that eager loading places on users. Think about your own applications - do you import large libraries that are only used in specific features? Do your users download code for admin panels they'll never see?",
+					'The journey to performance begins with awareness. What heavy books are your users forced to carry?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 27 (Morning)",
+					content:
+						"I've arrived at the Lazy Library, a mystical repository where all React knowledge is stored. But something's wrong - the entrance is blocked by an enormous bundle of books! Keeper Chronos explained the Bundle Burden: developers pack every possible library into applications, forcing users to carry this weight with every page load. Each 'book' (chart library 180KB, editor 250KB, maps 300KB) adds to download time, parse time, and execution time. On 3G, each 50KB adds ~1 second! Tools like webpack-bundle-analyzer and source-map-explorer reveal the true cost. This is the curse of eager loading!",
+				}}
+			/>
 		</div>
 	);
 };

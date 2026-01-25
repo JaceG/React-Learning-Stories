@@ -587,6 +587,11 @@
   margin-bottom: 10px;
 }
 
+/* Character Introductions Container */
+.character-intros {
+  margin: 20px 0;
+}
+
 /* Character Introduction - New character profiles */
 .character-intro {
   background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
@@ -770,5 +775,170 @@
 }
 
 .chapter-ending p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mastery Recognition - Full circle moments and milestone achievements */
+.mastery-recognition {
+  background: linear-gradient(135deg, #fef5e7 0%, #fff8f0 100%);
+  border-left: 4px solid #e67e22;
+  padding: 25px;
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.15);
+}
+
+.mastery-recognition h3 {
+  color: #d35400;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.mastery-recognition .story-paragraph {
+  color: #5d4037;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.mastery-recognition .story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.mastery-recognition strong {
+  color: #e67e22;
+}
+
+/* Guardian Warning - Character warnings and important cautions */
+.guardian-warning {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
+  border-left: 4px solid #ef4444;
+  padding: 20px 25px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+}
+
+.guardian-warning h4 {
+  color: #dc2626;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.guardian-warning .story-paragraph {
+  color: #7f1d1d;
+  margin-bottom: 0;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.guardian-warning strong {
+  color: #ef4444;
+}
+
+/* Character Guidance - Unified style for character wisdom, best practices, tips, and teaching moments */
+.character-guidance {
+  background: linear-gradient(135deg, #fef0f5 0%, #fce4ec 100%);
+  border-left: 4px solid #e84393;
+  padding: 25px;
+  margin: 30px 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(232, 67, 147, 0.12);
+}
+
+.character-guidance h3 {
+  color: #c2185b;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.character-guidance h4 {
+  color: #c2185b;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.character-guidance p {
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.character-guidance p:last-child {
+  margin-bottom: 0;
+}
+
+.character-guidance ul,
+.character-guidance ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.character-guidance li {
+  padding: 10px 0;
+  padding-left: 28px;
+  position: relative;
+  color: #4a4a4a;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(232, 67, 147, 0.1);
+}
+
+.character-guidance li:last-child {
+  border-bottom: none;
+}
+
+.character-guidance li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #e84393;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.character-guidance strong {
+  color: #c2185b;
+}
+
+.character-guidance code {
+  background-color: rgba(232, 67, 147, 0.1);
+  color: #c2185b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+}
+
+.character-guidance pre {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+/* Teaching Dialogue within Character Guidance */
+.character-guidance .teaching-dialogue {
+  margin-top: 15px;
+}
+
+.character-guidance .marina-insight,
+.character-guidance .mentor-insight {
+  font-style: italic;
+  color: #880e4f;
+  margin-bottom: 12px;
+}
+
+.character-guidance .student-response {
+  color: #6a1b9a;
   margin-bottom: 0;
 }

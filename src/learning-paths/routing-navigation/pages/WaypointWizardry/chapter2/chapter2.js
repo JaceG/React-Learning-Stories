@@ -565,6 +565,11 @@ const category = searchParams.get('category') || 'all';
 					'How might you create a multi-step form wizard that uses route parameters to track progress?',
 					'How would you architect a system where form state persists across route changes?'
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 23 (Afternoon)",
+					content:
+						"Dynamic waypoint magic! Marina showed me how one route pattern like /users/:userId can serve infinite destinations. Route parameters (:id) are for identity - which resource are we viewing? Query parameters (?sort=name&filter=active) are for state - how should we display it? Navigation state is for temporary data that shouldn't appear in URLs. I built a dynamic product catalog with filterable queries that sync with URL state - users can share and bookmark filtered views! The useParams and useSearchParams hooks make accessing these values trivial. Key insight: the URL is just another state container, and it should be the single source of truth for shareable view state!",
+				}}
 			/>
 		</div>
 	);

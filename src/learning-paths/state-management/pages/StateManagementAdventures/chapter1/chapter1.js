@@ -400,12 +400,6 @@ function rootReducer(state = {}, action) {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Grand Reducer',
-						description: 'Master of predictable state transformations. He teaches that complex state changes should flow through a single, pure function that takes the current state and an action, always returning a new state.'
-					}
-				]}
 				lessonInsight={{
 					title: "Grand Reducer's Wisdom:",
 					content: "The useReducer hook shines when your state logic becomes complex. Unlike useState, which is perfect for independent values, useReducer excels when state updates depend on multiple values or follow complex business rules. The key benefits are predictability (same action always produces same result), testability (reducers are pure functions), and maintainability (all state logic in one place). Use it when your component feels like it has too many useState calls or when state updates have intricate dependencies."

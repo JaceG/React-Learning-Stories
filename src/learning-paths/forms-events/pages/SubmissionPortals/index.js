@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './SubmissionPortals.css';
 
@@ -18,16 +19,6 @@ function SubmissionPortals() {
 		backgroundSync: false,
 	});
 	const [responseData, setResponseData] = useState(null);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	const activatePortal = () => {
 		setPortalState('active');
@@ -89,39 +80,12 @@ function SubmissionPortals() {
 
 	return (
 		<div className='lesson-container submission-portals-container'>
-			<div className='lesson-opener'>
-				<p>
-					At the heart of the Western Quarter stood the Submission
-					Portal Gateway, a magnificent structure where all form data
-					converged before traveling to distant servers. Aria and
-					Binary approached the swirling vortex of energy, where
-					Portal Keeper Sage awaited - ready to teach the final
-					synthesis of the Forms & Events journey.
-				</p>
-			</div>
-
-			<h1 className='lesson-title'>Submission Portals</h1>
-			<p className='lesson-subtitle'>
-				Master the final synthesis with Portal Keeper Sage
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Submission Portals'
+				subtitle='Master the final synthesis with Portal Keeper Sage'
+				opener='At the heart of the Western Quarter stood the Submission Portal Gateway, a magnificent structure where all form data converged before traveling to distant servers. Aria and Binary approached the swirling vortex of energy, where Portal Keeper Sage awaited - ready to teach the final synthesis of the Forms & Events journey.'
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -144,27 +108,10 @@ function SubmissionPortals() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='forms-events'
 				lessonId='submission-portals'
+				totalChapters={3}
 			/>
 		</div>
 	);

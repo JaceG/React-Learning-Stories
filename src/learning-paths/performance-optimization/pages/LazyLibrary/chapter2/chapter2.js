@@ -1,5 +1,9 @@
 import { useState, Suspense, lazy } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 // Simulated lazy components
 const LazyChart = lazy(() => new Promise(resolve => {
@@ -51,9 +55,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Art of Lazy Loading
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Art of Lazy Loading'
+				bridge='Keeper Chronos led Aria to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the Lazy Wing, where we practice the art of temporal loading with React.lazy() and Suspense."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -91,14 +97,10 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Code Splitting in Action
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							First, apply code splitting to break the bundle. Then try loading 
-							components on demand and watch the bundle size decrease!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Keeper Chronos waves his hand, revealing the magic.">
+					First, apply code splitting to break the bundle. Then try loading 
+					components on demand and watch the bundle size decrease!
+				</InstructionBox>
 
 				<div className='lazy-demo'>
 					<div className='demo-controls'>
@@ -193,13 +195,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='lazy-scroll'>
-					<div className='scroll-header'>
-						<span>Scroll of Lazy Loading</span>
-						<span className='discovered-by'>Dynamic Import Mastery</span>
-					</div>
-					<pre>{`// The Solution: Load on Demand
+			<CodeExample
+				title="Scroll of Lazy Loading"
+				discoveredBy="Dynamic Import Mastery"
+				code={`// The Solution: Load on Demand
 
 // 1. Basic React.lazy() usage
 import React, { lazy, Suspense } from 'react';
@@ -300,46 +299,24 @@ class ErrorBoundary extends React.Component {
   <Suspense fallback={<Loading />}>
     <LazyComponent />
   </Suspense>
-</ErrorBoundary>`}</pre>
-				</div>
-			</div>
+</ErrorBoundary>`}
+			/>
 
-			<div className='librarian-card'>
-				<h4>Keeper Chronos's Wisdom</h4>
-				<p>"See how the bundle shrinks as we defer loading? Users get a faster initial 
-				experience, and bandwidth is conserved. But remember - lazy loading has overhead. 
-				Use it for heavy components, not tiny ones."</p>
-				<ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-					<li>Split at route boundaries first</li>
-					<li>Lazy load heavy third-party libraries</li>
-					<li>Consider preloading on user interaction hints</li>
-					<li>Always provide meaningful loading states</li>
-				</ul>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Lazy Loading Lesson:</h3>
-				<p>
-					React.lazy() and Suspense enable code splitting at the component level. By 
-					breaking your application into chunks and loading them on demand, you can 
-					significantly reduce initial bundle size and improve Time to Interactive (TTI). 
-					The key is finding the right split points - usually routes, modals, and 
-					feature-specific components.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Keeper Chronos has shown you the power of lazy loading. Consider your own 
-					applications - which components are used by all users, and which are accessed 
-					by only a few? 
-				</p>
-				<p>
-					Every lazy-loaded component is a gift to your users - faster loads, less data 
-					usage, and better performance. Where will you apply this magic?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Lazy Loading Lesson:',
+					content: 'React.lazy() and Suspense enable code splitting at the component level. By breaking your application into chunks and loading them on demand, you can significantly reduce initial bundle size and improve Time to Interactive (TTI). The key is finding the right split points - usually routes, modals, and feature-specific components.'
+				}}
+				reflectionQuestions={[
+					'Keeper Chronos has shown you the power of lazy loading. Consider your own applications - which components are used by all users, and which are accessed by only a few?',
+					'Every lazy-loaded component is a gift to your users - faster loads, less data usage, and better performance. Where will you apply this magic?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 27 (Afternoon)",
+					content:
+						"The Lazy Wing of the library is magical! Books float in mid-air, appearing only when reached for. Keeper Chronos taught me React.lazy() and Suspense - the art of temporal loading. Instead of static imports that load everything upfront, dynamic imports load chunks on demand: const HeavyComponent = lazy(() => import('./Heavy')). Wrap with Suspense for loading states! The magic has two parts: code splitting breaks the bundle into chunks, then dynamic imports load them when needed. I implemented route-based splitting for major features and component-based splitting for modals. Users download only what they use!",
+				}}
+			/>
 		</div>
 	);
 };

@@ -856,7 +856,7 @@ export function useMasterAuthorization() {
 					</div>
 				</div>
 
-				<div className='best-practices enhanced'>
+				<div className='character-guidance'>
 					<h3>Marina's Authorization Principles</h3>
 					<div className='practice-list master-edition'>
 						<div className='practice-item'>
@@ -906,6 +906,11 @@ export function useMasterAuthorization() {
 						'What benefits come from treating authorization as a reactive, contextual system rather than static permission lists?',
 						"How does Aria's journey through every quarter of the React Kingdom help her understand Marina's authorization architecture concepts?"
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 22 (Evening)",
+						content:
+							"The ultimate guardian synthesis! Marina showed me role hierarchies (where Royal inherits from Scholar, Knight, and more), granular permission systems with caching, and contextual authorization that considers ownership, time windows, and application state. I built an IntelligentAuthorizationService that registers policies, caches permission checks for performance, and provides reactive updates when policies change. The permission context pattern distributes access checking throughout the app. Authentication asks 'who are you?', authorization asks 'what can you do?', but intelligent authorization asks 'what should you be able to do in THIS context?' Tomorrow: Waypoint Wizardry for advanced routing patterns!",
+					}}
 					chapterEnding={[
 						"Binary's final projection lit up the chamber: \"Guardian Gates evolution complete! Basic checks: TRANSCENDED. Intelligent authorization: ACHIEVED. Marina's teaching + Aria's learning: EXCELLENT. Future students will study this system for generations!\""
 					]}

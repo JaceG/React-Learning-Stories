@@ -32,7 +32,6 @@ function ChapterOne() {
 				<ChapterIntro
 					chapterNumber={1}
 					title='Advanced State Incantations'
-					bridge='The entrance hall of the Hooks Academy was unlike anything Aria had seen. Floating screens displayed code that rewrote itself, demonstrating the evolution from class components to hooks. A receptionist construct directed her to the Advanced Spellcasting Wing, where she would meet her first instructor.'
 				/>
 
 				<div className='story-section'>
@@ -229,12 +228,6 @@ setCount(prevCount => prevCount + 1);`}
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: 'Professor Hooksworth',
-							description: 'The distinguished keeper of Hook Laws at the Hooks Academy. His robes shimmer between states, and his spectacles display real-time component renders. As one of the original researchers who helped develop React Hooks, he transforms functional components from simple to sophisticated through advanced patterns.'
-						}
-					]}
 					lessonInsight={{
 						title: "Professor Hooksworth's useState Wisdom:",
 						content: "Master useState through advanced patterns that separate novices from experts. Lazy initialization with functions prevents expensive computations on every render. Functional updates guarantee you always work with current state, crucial for handling rapid user interactions. These patterns become indispensable as applications scale - they're not optimizations, they're professional requirements. Remember: hooks aren't just simpler syntax, they're a more powerful paradigm."

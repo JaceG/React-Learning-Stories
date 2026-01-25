@@ -486,7 +486,7 @@ function ProductList() {
 				</div>
 			</div>
 
-			<div className='marina-teaching-moment'>
+			<div className='character-guidance'>
 				<h3>Marina's Integrated Portal Wisdom</h3>
 				<div className='teaching-dialogue'>
 					<p className='marina-insight'>
@@ -516,6 +516,11 @@ function ProductList() {
 					'What about maintaining context state across nested modal interactions?',
 					'Consider creating a portal system that remembers user progress, validates input before allowing portal closure, and gracefully handles errors - all while maintaining accessibility and performance.'
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 24 (Morning)",
+					content:
+						"Marina brought me to the Portal Passages chamber today! React portals are fascinating - they let UI elements escape the normal DOM hierarchy while keeping all their React powers. Modals, tooltips, and overlays render at the document body level, but their state, events, and context still flow normally through the React tree. I created my first accessible modal with focus trapping, keyboard navigation, and smooth transitions. The key insight: portals are about WHERE elements render in the DOM, not about breaking React's component model. Binary is cataloging all the accessibility patterns!",
+				}}
 			/>
 		</div>
 	);

@@ -536,7 +536,7 @@ function TransitionRouter() {
 }`}
 				/>
 
-				<div className='performance-tips'>
+				<div className='character-guidance'>
 					<h3>Transition Performance</h3>
 					<div className='tips-grid'>
 						<div className='tip-card'>
@@ -670,6 +670,11 @@ function useViewTransition() {
 					'How would you design a checkout flow that uses smooth transitions between steps, maintains form state across route changes, validates before allowing progression, and gracefully handles errors?',
 					'How might transitions communicate validation states or guide users through complex multi-step processes?'
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 24 (Afternoon)",
+					content:
+						"Transitions aren't just eye candy - they're about maintaining user context! Marina showed me how to choreograph route changes with meaningful animations: slide directions that indicate navigation hierarchy, fade effects that smooth content changes, and scroll position restoration that respects user intent. I built a direction-aware transition system that knows whether users are going forward or backward. The AnimatePresence pattern from Framer Motion handles exit animations beautifully. Key insight: performance matters - use CSS transforms and opacity for smooth 60fps animations, and hint the browser with will-change. Binary tracked our transition timing down to the millisecond!",
+				}}
 			/>
 		</div>
 	);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './ValidationGuardians.css';
 
@@ -11,16 +12,6 @@ function ValidationGuardians() {
 	const [defenseLog, setDefenseLog] = useState([]);
 	const [guardianStance, setGuardianStance] = useState('defensive');
 	const [validationStrategies, setValidationStrategies] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	const secureGate = (gateName, isSecure) => {
 		setActiveGates({ ...activeGates, [gateName]: isSecure });
@@ -66,39 +57,12 @@ function ValidationGuardians() {
 
 	return (
 		<div className='lesson-container validation-guardians-container'>
-			<div className='lesson-opener'>
-				<p>
-					The Validation Fortress stood imposingly at the Western
-					Quarter's edge, its walls shimmering with protective runes.
-					Aria and Binary approached the massive gates where guards in
-					crimson armor stood watch. "Aria," one announced, "Commander
-					Validus has been expecting you. Your systematic approach to
-					optimization has reached even our fortified walls."
-				</p>
-			</div>
-
-			<h1 className='lesson-title'>Validation Guardians</h1>
-			<p className='lesson-subtitle'>
-				Command validation forces with Guardian Commander Validus
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Validation Guardians'
+				subtitle='Command validation forces with Guardian Commander Validus'
+				opener={`The Validation Fortress stood imposingly at the Western Quarter's edge, its walls shimmering with protective runes. Aria and Binary approached the massive gates where guards in crimson armor stood watch. "Aria," one announced, "Commander Validus has been expecting you. Your systematic approach to optimization has reached even our fortified walls."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -117,27 +81,10 @@ function ValidationGuardians() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='forms-events'
 				lessonId='validation-guardians'
+				totalChapters={3}
 			/>
 		</div>
 	);

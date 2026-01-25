@@ -222,7 +222,7 @@ function SearchComponent({ onSearch }) {
 				</div>
 			</div>
 
-			<div className='best-practices'>
+			<div className='character-guidance'>
 				<h3>Master Hooke's Best Practices:</h3>
 				<ul>
 					<li>

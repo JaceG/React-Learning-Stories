@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const {
@@ -202,20 +206,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: The Grand Portal Synthesis
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The Grand Synthesis Chamber pulsed with the combined
-						energy of every form pattern in the Western Quarter.
-						Here, Sage had brought together masters from each domain
-						- Alchemist Formicus, Conductor Eventus, and Commander
-						Validus - all struggling to create the ultimate
-						submission system.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='The Grand Portal Synthesis'
+					bridge='The Grand Synthesis Chamber pulsed with the combined energy of every form pattern in the Western Quarter. Here, Sage had brought together masters from each domain - Alchemist Formicus, Conductor Eventus, and Commander Validus - all struggling to create the ultimate submission system.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -329,9 +324,10 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='aria-ultimate-code'>
-					<h3>The Master Synthesis Pattern</h3>
-					<pre className='magical-code'>{`// Aria's Grand Synthesis - All Patterns United
+				<CodeExample
+					title="The Master Synthesis Pattern"
+					discoveredBy="Aria's Grand Synthesis"
+					code={`// Aria's Grand Synthesis - All Patterns United
 const useUltimateForm = () => {
   // Form Alchemy: State Management
   const [formState, setFormState] = useState(initialState);
@@ -422,22 +418,16 @@ const useUltimateForm = () => {
     submit,
     isValid: Object.keys(validationState).length === 0
   };
-};`}</pre>
-				</div>
+};`}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: The Grand Synthesis
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria demonstrate the ultimate form pattern
-								synthesis! Complete all sections to witness the
-								unified power of Forms & Events mastery.
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="All the masters stand ready around the synthesis chamber.">
+						Help Aria demonstrate the ultimate form pattern synthesis! Complete all sections to witness the unified power of Forms & Events mastery.
+					</InstructionBox>
 
 					<form
 						onSubmit={handleGrandSynthesis}
@@ -826,89 +816,29 @@ const useUltimateForm = () => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 22 (Evening)</h4>
-						<p>
-							The Grand Synthesis complete! Today all my teachers
-							worked together to show me how all their patterns
-							unite into one seamless system. Form Alchemy
-							provides the foundation of state. Event Symphony
-							orchestrates user interaction. Validation Guardians
-							ensure data integrity. Portal Submission handles the
-							final transmission. But the true magic is how they
-							work together - state changes trigger events, events
-							trigger validation, validation enables submission,
-							and submission completes the cycle. Binary recorded
-							99.7% efficiency when all patterns unified. The
-							masters declared my Forms & Events training
-							complete! Tomorrow, we journey to the Routing
-							Crossroads for the next challenge of my React
-							mastery!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Grand Synthesis Master's Ultimate Wisdom:</h3>
-					<p>
-						True mastery of Forms & Events isn't about individual
-						patterns - it's about understanding how they create a
-						unified whole. Form state management provides the data
-						foundation. Event handling creates the interaction
-						layer. Validation ensures data integrity at every step.
-						Submission patterns handle the journey to the server.
-						When combined, they create a seamless experience where
-						users feel guided, protected, and empowered. Remember:
-						in React, every form is a complete application in
-						miniature. Master the synthesis of these patterns, and
-						you master the essence of interactive web applications.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the Grand Synthesis Chamber's energy stabilized, Sage
-						approached Aria with deep respect. "You've done what
-						none of us could achieve alone. You've shown that true
-						mastery comes not from perfecting individual patterns,
-						but from understanding how they dance together."
-					</p>
-					<p className='story-paragraph'>
-						"Every pattern has its purpose," Aria reflected, "but
-						their true power emerges when unified. This synthesis
-						will serve the Western Quarter for generations."
-					</p>
-					<p className='story-paragraph'>
-						Binary displayed a new map marker. "Routing Crossroads
-						detected ahead. The final challenge of your React
-						journey awaits."
-					</p>
-					<p className='story-paragraph'>
-						Aria looked at the assembled masters one last time. Each
-						smiled with the satisfaction of teachers who had guided
-						a dedicated student to mastery. She had learned from
-						each of them and grown tremendously. With Binary at her
-						side, she set off toward the Routing Crossroads, ready
-						for the next chapter of her React journey.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How did combining all Forms & Events patterns create
-						something greater than the sum of its parts?
-					</p>
-					<p className='story-paragraph'>
-						What patterns from Aria's entire React journey came
-						together in this Grand Synthesis?
-					</p>
-					<p className='story-paragraph'>
-						How can you apply this unified approach to forms in your
-						own React applications?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: "The Grand Synthesis Master's Ultimate Wisdom:",
+						content:
+							"True mastery of Forms & Events isn't about individual patterns - it's about understanding how they create a unified whole. Form state management provides the data foundation. Event handling creates the interaction layer. Validation ensures data integrity at every step. Submission patterns handle the journey to the server. When combined, they create a seamless experience where users feel guided, protected, and empowered. Remember: in React, every form is a complete application in miniature. Master the synthesis of these patterns, and you master the essence of interactive web applications.",
+					}}
+					reflectionQuestions={[
+						'How did combining all Forms & Events patterns create something greater than the sum of its parts?',
+						"What patterns from Aria's entire React journey came together in this Grand Synthesis?",
+						'How can you apply this unified approach to forms in your own React applications?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 20 (Evening)",
+						content:
+							"The Grand Synthesis complete! Today all my teachers worked together to show me how all their patterns unite into one seamless system. Form Alchemy provides the foundation of state. Event Symphony orchestrates user interaction. Validation Guardians ensure data integrity. Portal Submission handles the final transmission. But the true magic is how they work together - state changes trigger events, events trigger validation, validation enables submission, and submission completes the cycle. Binary recorded 99.7% efficiency when all patterns unified. The masters declared my Forms & Events training complete! Tomorrow, we journey to the Routing Crossroads for the next challenge of my React mastery!",
+					}}
+					chapterEnding={[
+						'As the Grand Synthesis Chamber\'s energy stabilized, Sage approached Aria with deep respect. "You\'ve done what none of us could achieve alone. You\'ve shown that true mastery comes not from perfecting individual patterns, but from understanding how they dance together."',
+						'"Every pattern has its purpose," Aria reflected, "but their true power emerges when unified. This synthesis will serve the Western Quarter for generations."',
+						'Binary displayed a new map marker. "Routing Crossroads detected ahead. The final challenge of your React journey awaits."',
+						'Aria looked at the assembled masters one last time. Each smiled with the satisfaction of teachers who had guided a dedicated student to mastery. She had learned from each of them and grown tremendously. With Binary at her side, she set off toward the Routing Crossroads, ready for the next chapter of her React journey.',
+					]}
+				/>
 			</div>
 		</>
 	);

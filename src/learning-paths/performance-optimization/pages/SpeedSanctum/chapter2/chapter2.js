@@ -1,5 +1,9 @@
 import { useState, useMemo, memo } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -77,9 +81,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Art of Memoization
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Art of Memoization'
+				bridge='Master Velocity led Aria deeper into the sanctum, where ancient optimization crystals lined the walls. "Now that you can see the Lag Monster&apos;s attacks through the Profiler, it&apos;s time to learn our first defense: the art of Memoization."'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -120,14 +126,10 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Memoization Spellcasting
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Filter and sort the spell list. Watch the console to see how many times 
-							calculations run with and without memoization!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character="Master Velocity reveals the memoization scrolls.">
+					Filter and sort the spell list. Watch the console to see how many times 
+					calculations run with and without memoization!
+				</InstructionBox>
 
 				<div className='optimization-showcase'>
 					<div style={{ marginBottom: '20px' }}>
@@ -179,13 +181,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='code-scroll'>
-					<div className='scroll-header'>
-						<span>Ancient Scroll of Memoization</span>
-						<span className='discovered-by'>Master Velocity's Personal Collection</span>
-					</div>
-					<pre>{`// React.memo - Prevent unnecessary component re-renders
+			<CodeExample
+				title="Ancient Scroll of Memoization"
+				discoveredBy="Master Velocity's Personal Collection"
+				code={`// React.memo - Prevent unnecessary component re-renders
 const ExpensiveComponent = memo(({ data, title }) => {
   console.log('ExpensiveComponent rendered');
   
@@ -221,39 +220,24 @@ function DataProcessor({ items, filter }) {
   }, [items, filter]);
   
   return <DataList data={processedData} />;
-}`}</pre>
-				</div>
-			</div>
+}`}
+			/>
 
-			<div className='character-intro-card'>
-				<h4>Aria's Memoization Insight</h4>
-				<p>"I see now! It's like keeping a journal of calculations. If someone asks the same 
-				question, I don't need to figure it out again - I just check my notes! But keeping 
-				too many notes could slow me down too..."</p>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Memoization Lesson:</h3>
-				<p>
-					Memoization is selective memory. React.memo prevents component re-renders when props 
-					haven't changed, while useMemo caches the results of expensive calculations. But 
-					remember: memoization has its own cost. Profile first, then memoize only the 
-					components and calculations that truly benefit from it.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Master Velocity has shown Aria the power of memoization. In your own applications, 
-					where might you have components that re-render unnecessarily? What expensive 
-					calculations run on every render that could be memoized?
-				</p>
-				<p>
-					Consider the trade-off: Is the cost of checking the memoization cache worth 
-					avoiding the re-render or recalculation? How would you decide?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Memoization Lesson:',
+					content: 'Memoization is selective memory. React.memo prevents component re-renders when props haven\'t changed, while useMemo caches the results of expensive calculations. But remember: memoization has its own cost. Profile first, then memoize only the components and calculations that truly benefit from it.'
+				}}
+				reflectionQuestions={[
+					'Master Velocity has shown Aria the power of memoization. In your own applications, where might you have components that re-render unnecessarily? What expensive calculations run on every render that could be memoized?',
+					'Consider the trade-off: Is the cost of checking the memoization cache worth avoiding the re-render or recalculation? How would you decide?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 25 (Afternoon)",
+					content:
+						"Master Velocity has taught me my first defense against the Lag Monster: Memoization! React.memo creates a shield around components, preventing re-renders when props haven't changed. useMemo caches the results of expensive calculations so they don't run on every render. I built a spell filter that recalculates only when searchTerm or sortOrder changes - the console shows far fewer computation logs! Key insight: memoization has its own cost (comparing props/dependencies), so only use it where the benefit outweighs the overhead. Profile first, optimize second!",
+				}}
+			/>
 		</div>
 	);
 };

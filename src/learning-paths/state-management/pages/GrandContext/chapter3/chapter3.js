@@ -245,7 +245,7 @@ function App() {
 				</div>
 			</div>
 
-			<div className='optimization-techniques'>
+			<div className='character-guidance'>
 				<h3>Contextia's Optimization Checklist:</h3>
 				<ol>
 					<li>
@@ -278,7 +278,7 @@ function App() {
 				</ol>
 			</div>
 
-			<div className='when-to-optimize'>
+			<div className='character-guidance'>
 				<h3>When to Apply These Optimizations:</h3>
 				<ul>
 					<li>Large applications with many Context consumers</li>

@@ -342,12 +342,6 @@ function SignalStation({ onSignal }) {
 						"Why is it important that children can't directly modify parent state?",
 						"What parallels do you see between the waterfall (props) and echo (events) metaphors?"
 					]}
-					characterIntros={[
-						{
-							name: "Echo Keeper Callback",
-							description: "Guardian of the Echo Caves and master of upward communication. Her robes shimmer with sound waves, and her voice creates visible ripples in the air. She teaches the art of callback functions, showing how child components can send messages to their parents without violating the sacred one-way data flow."
-						}
-					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 15 (Morning)",
 						content: "The Echo Caves revealed the missing piece of the data flow puzzle! While props flow downward like water, events echo upward through callbacks. Echo Keeper Callback showed me how parents pass functions down as props - like handing children magical communication devices. When children need to report something, they call these functions, sending echoes up the component tree. The parent receives the echo and decides how to respond, maintaining the one-way data flow. It's brilliant - data down, events up, creating a complete communication cycle!"

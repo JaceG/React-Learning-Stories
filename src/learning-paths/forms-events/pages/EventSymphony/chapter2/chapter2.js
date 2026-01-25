@@ -1,6 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const {
@@ -51,19 +55,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: The Harmony of Event Flow
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Conductor Eventus led Aria to the grand amphitheater
-						where the event propagation patterns were visualized as
-						flowing streams of light. "Here's where many developers
-						struggle," he explained. "They don't understand how
-						events travel through the component tree."
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='The Harmony of Event Flow'
+					bridge={`Conductor Eventus led Aria to the grand amphitheater where the event propagation patterns were visualized as flowing streams of light. "Here's where many developers struggle," he explained. "They don't understand how events travel through the component tree."`}
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -203,7 +199,10 @@ function ChapterTwo() {
 						Sanctuary."
 					</p>
 
-					<pre className='magical-code'>{`// Aria's Academy-trained event delegation
+					<CodeExample
+						title="Academy-Trained Event Delegation"
+						discoveredBy="Applied by Aria"
+						code={`// Aria's Academy-trained event delegation
 const useEventDelegation = (selector, handler) => {
   // Using useCallback from Academy training
   return useCallback((e) => {
@@ -232,22 +231,17 @@ function OptimizedKeyboard() {
       ))}
     </div>
   );
-}`}</pre>
+}`}
+					/>
 				</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Mastering Event Flow
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Help Aria apply her Academy optimization
-								training to demonstrate advanced event
-								propagation control!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character="Eventus gestures to the propagation visualization.">
+						Help Aria apply her Academy optimization training to demonstrate advanced event propagation control!
+					</InstructionBox>
 
 					<div className='tempo-control'>
 						<h4>🎼 Academy-Optimized Event Delegation</h4>
@@ -414,60 +408,23 @@ onClick={(e) => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 20 (Late Afternoon)</h4>
-						<p>
-							Event propagation is fascinating when viewed through
-							Academy optimization training! Conductor Eventus
-							taught me how event delegation reduces handler
-							overhead using the efficiency patterns I learned -
-							instead of n handlers for n elements, use one
-							intelligent handler optimized with useCallback. The
-							capture/bubble phases are like the data flow
-							patterns I learned in Props & Data Flow, but
-							bidirectional. Binary calculated how Academy
-							patterns apply to event optimization. I'm starting
-							to see how one optimized handler could manage an
-							entire keyboard of notes. Eventus mentioned
-							something about async event patterns next...
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Harmony of Event Flow:</h3>
-					<p>
-						Event propagation in React follows the W3C standard:
-						capture phase descends from root to target, then bubble
-						phase ascends back to root. Understanding this flow
-						enables powerful patterns like event delegation, where
-						one optimized handler manages many elements using
-						Academy-trained performance techniques. Use
-						stopPropagation() to halt event flow and
-						preventDefault() to stop default browser actions.
-						Strategic placement of handlers in capture vs bubble
-						phase gives fine-grained control over event processing.
-						Master the flow with Academy optimization patterns, and
-						you master interaction efficiency.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does event delegation relate to Aria's Academy
-						training in optimization patterns?
-					</p>
-					<p className='story-paragraph'>
-						Why is understanding both phases of event flow crucial
-						for complex applications?
-					</p>
-					<p className='story-paragraph'>
-						What performance benefits come from applying Academy
-						techniques to event handling?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'The Harmony of Event Flow:',
+						content:
+							'Event propagation in React follows the W3C standard: capture phase descends from root to target, then bubble phase ascends back to root. Understanding this flow enables powerful patterns like event delegation, where one optimized handler manages many elements using Academy-trained performance techniques. Use stopPropagation() to halt event flow and preventDefault() to stop default browser actions. Strategic placement of handlers in capture vs bubble phase gives fine-grained control over event processing. Master the flow with Academy optimization patterns, and you master interaction efficiency.',
+					}}
+					reflectionQuestions={[
+						"How does event delegation relate to Aria's Academy training in optimization patterns?",
+						'Why is understanding both phases of event flow crucial for complex applications?',
+						'What performance benefits come from applying Academy techniques to event handling?',
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 18 (Afternoon)",
+						content:
+							"Event propagation is fascinating when viewed through Academy optimization training! Conductor Eventus taught me how event delegation reduces handler overhead using the efficiency patterns I learned - instead of n handlers for n elements, use one intelligent handler optimized with useCallback. The capture/bubble phases are like the data flow patterns I learned in Props & Data Flow, but bidirectional. Binary calculated how Academy patterns apply to event optimization. I'm starting to see how one optimized handler could manage an entire keyboard of notes. Eventus mentioned something about async event patterns next...",
+					}}
+				/>
 			</div>
 		</>
 	);

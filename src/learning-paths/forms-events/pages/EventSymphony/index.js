@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './EventSymphony.css';
 
@@ -15,16 +16,6 @@ function EventSymphony() {
 		keyPresses: 0,
 		mouseMoves: 0,
 	});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	const playInstrument = (instrument) => {
 		setPlayingInstruments([...playingInstruments, instrument]);
@@ -65,39 +56,12 @@ function EventSymphony() {
 
 	return (
 		<div className='lesson-container event-symphony-container'>
-			<div className='lesson-opener'>
-				<p>
-					Word of Aria's form alchemy innovations spread quickly
-					through the Western Quarter. As she and Binary made their
-					way through the bustling streets, a messenger in flowing
-					robes intercepted them with an ornate scroll. "From
-					Conductor Eventus of the Event Symphony Hall," the messenger
-					announced. "Your Academy training is urgently needed."
-				</p>
-			</div>
-
-			<h1 className='lesson-title'>Event Symphony</h1>
-			<p className='lesson-subtitle'>
-				Compose complex event orchestrations with Conductor Eventus
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='Event Symphony'
+				subtitle='Compose complex event orchestrations with Conductor Eventus'
+				opener={`Word of Aria's form alchemy innovations spread quickly through the Western Quarter. As she and Binary made their way through the bustling streets, a messenger in flowing robes intercepted them with an ornate scroll. "From Conductor Eventus of the Event Symphony Hall," the messenger announced. "Your Academy training is urgently needed."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -116,27 +80,10 @@ function EventSymphony() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='forms-events'
 				lessonId='event-symphony'
+				totalChapters={3}
 			/>
 		</div>
 	);

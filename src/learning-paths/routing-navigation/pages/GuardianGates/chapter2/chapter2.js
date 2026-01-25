@@ -614,6 +614,11 @@ function useMasterAuth() {
 						'What advantages come from treating authentication as part of the overall user journey rather than an isolated security checkpoint?',
 						"How does Aria's React foundation help her understand how authentication integrates with all the patterns she's learned?"
 					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 22 (Afternoon)",
+						content:
+							"Advanced authentication flows today! Marina showed me how to create an intelligent AuthContext that tracks user sessions, preserves form data when redirecting to login, and restores the complete user journey after authentication. I built login forms with validation (using patterns from Formeus!), loading states during auth checks, and graceful error handling. The useAuth hook provides isAuthenticated, user data, login/logout functions, and permission checking throughout the app. Key insight: save the user's intended destination in route state so they can return after login. Binary tracked 5 different authentication patterns - sessions, JWT, OAuth, and more!",
+					}}
 				/>
 			</div>
 		</>

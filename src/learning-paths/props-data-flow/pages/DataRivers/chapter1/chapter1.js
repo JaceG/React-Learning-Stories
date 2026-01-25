@@ -281,12 +281,6 @@ function PondComponent({ waterLevel }) {
 						"Why might two-way data binding (water flowing uphill) cause problems?",
 						"What advantages does unidirectional flow provide when tracking down bugs?"
 					]}
-					characterIntros={[
-						{
-							name: "River Master Flux",
-							description: "Guardian of the Data Rivers and keeper of the flow. Her robes shift like water, and she understands the deepest principles of data movement in React Kingdom. She teaches that respecting the natural flow of data leads to harmony in applications."
-						}
-					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 13 (Morning)",
 						content: "The Data Rivers have revealed a fundamental truth about React! Data flows like water - always downward, never up. River Master Flux showed me how this unidirectional flow creates order and predictability. When a parent component (the source) changes, every child downstream automatically receives the update. No confusion, no conflicts, no circular dependencies. The elegance is in the simplicity - by restricting flow to one direction, React ensures our applications remain understandable and debuggable. Props truly are read-only for a reason!"

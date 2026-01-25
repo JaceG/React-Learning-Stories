@@ -193,7 +193,7 @@ function App() {
 }`}
 			/>
 
-			<div className='when-to-use'>
+			<div className='character-guidance'>
 				<h3>Contextia's Guidelines for Context Usage:</h3>
 				<ul>
 					<li>
@@ -259,12 +259,6 @@ function AppProvider({ children }) {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: 'Contextia, Keeper of the Grand Context',
-						description: 'Master of the invisible threads that connect components across vast distances. She maintains the Context network that allows data to flow directly from providers to consumers without prop drilling.'
-					}
-				]}
 				lessonInsight={{
 					title: "Contextia's Wisdom:",
 					content: "Context is like creating a network of invisible threads throughout your component tree. Any component can tap into these threads to access shared data without prop drilling. But remember - Context is powerful but not always the answer. Use it for truly global data that many components need. For localized state, props are still your best friend. The key is knowing when each tool is most appropriate."
