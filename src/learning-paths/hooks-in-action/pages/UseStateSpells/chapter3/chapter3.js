@@ -1,5 +1,9 @@
 import React, { useState, useReducer } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	// Multiple related states
@@ -47,19 +51,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: State Architecture Mastery
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						On her final day with Professor Hooksworth, Aria was led
-						to the Academy's Architecture Chamber - a vast room
-						where component structures materialized as living
-						blueprints. State flows were visible as glowing streams
-						connecting different parts of the hovering diagrams.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='State Architecture Mastery'
+					bridge="On her final day with Professor Hooksworth, Aria was led to the Academy's Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -97,8 +93,10 @@ function ChapterThree() {
 						others.
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// ❌ Separate states that change together:
+					<CodeExample
+						title='State Grouping Patterns'
+						discoveredBy='Transcribed by Aria'
+						code={`// ❌ Separate states that change together:
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
 const [data, setData] = useState(null);
@@ -110,8 +108,8 @@ const [fetchState, setFetchState] = useState({
   data: null
 });
 
-// ✅ Or consider useReducer for complex state logic`}</pre>
-					</div>
+// ✅ Or consider useReducer for complex state logic`}
+					/>
 
 					<p className='story-paragraph'>
 						"Second principle," Hooksworth continued, vanishing the
@@ -137,12 +135,11 @@ const [fetchState, setFetchState] = useState({
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
-						State Architecture Laboratory
+						Interactive Exercise: State Architecture Laboratory
 					</h3>
-					<p>
-						Explore different state organization patterns and their
-						effects!
-					</p>
+					<InstructionBox character='Explore different state organization patterns and their effects!'>
+						Compare loading states and derived state patterns in action.
+					</InstructionBox>
 
 					<div className='spell-workshop'>
 						<div className='pattern-showcase'>
@@ -305,83 +302,27 @@ const [fetchState, setFetchState] = useState({
 					</ul>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 16 (Evening)</h4>
-						<p>
-							My final useState lesson was eye-opening! Professor
-							Hooksworth taught me state architecture - how to
-							organize state thoughtfully rather than creating
-							"state soup." Key principles: Group related state
-							that changes together (like loading/error/data),
-							never sync derived state (calculate it during render
-							instead), and keep state as local as possible. The
-							Architecture Chamber's visualizations showed how
-							poor state design creates tangled webs while good
-							architecture flows cleanly. When state logic gets
-							complex, useReducer might be better than multiple
-							useState calls. Architecture matters!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>State Architecture Mastery:</h3>
-					<p>
-						Elevate from useState mechanics to state architecture
-						wisdom. Group related values that change together,
-						preventing synchronization bugs. Calculate derived
-						values during render rather than storing redundant
-						state. Keep state as local as possible - lift only when
-						necessary. When multiple sub-values update together in
-						complex patterns, graduate to useReducer. Remember: good
-						architecture makes components predictable, maintainable,
-						and bug-resistant. Think architecturally, not just
-						functionally.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the Architecture Chamber's diagrams faded, Hooksworth
-						placed a hand on Aria's shoulder. "You've graduated from
-						useState basics to architectural thinking. This
-						foundation will serve you well."
-					</p>
-					<p className='story-paragraph'>
-						"Thank you, Professor," Aria said. "I feel like I
-						understand not just how to use useState, but how to use
-						it wisely."
-					</p>
-					<p className='story-paragraph'>
-						"That's the difference between a coder and an
-						architect," Hooksworth smiled. "Now, I believe the
-						Effect Sage awaits you in the Temporal Tower. Prepare
-						yourself - useEffect is a different beast entirely!"
-					</p>
-					<p className='story-paragraph'>
-						Binary chirped excitedly, already calculating optimal
-						paths to their next lesson. Aria took one last look at
-						the Architecture Chamber before heading toward her next
-						challenge at the Hooks Academy.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the Architecture Chamber metaphor help
-						visualize state organization?
-					</p>
-					<p className='story-paragraph'>
-						What bugs have you encountered from "state soup" in your
-						own projects?
-					</p>
-					<p className='story-paragraph'>
-						When does architectural thinking become more important
-						than individual features?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'State Architecture Mastery:',
+						content: "Elevate from useState mechanics to state architecture wisdom. Group related values that change together, preventing synchronization bugs. Calculate derived values during render rather than storing redundant state. Keep state as local as possible - lift only when necessary. When multiple sub-values update together in complex patterns, graduate to useReducer. Remember: good architecture makes components predictable, maintainable, and bug-resistant. Think architecturally, not just functionally."
+					}}
+					reflectionQuestions={[
+						'How does the Architecture Chamber metaphor help visualize state organization?',
+						'What bugs have you encountered from "state soup" in your own projects?',
+						'When does architectural thinking become more important than individual features?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 16 (Evening)",
+						content: 'My final useState lesson was eye-opening! Professor Hooksworth taught me state architecture - how to organize state thoughtfully rather than creating "state soup." Key principles: Group related state that changes together (like loading/error/data), never sync derived state (calculate it during render instead), and keep state as local as possible. The Architecture Chamber\'s visualizations showed how poor state design creates tangled webs while good architecture flows cleanly. When state logic gets complex, useReducer might be better than multiple useState calls. Architecture matters!'
+					}}
+					chapterEnding={[
+						'As the Architecture Chamber\'s diagrams faded, Hooksworth placed a hand on Aria\'s shoulder. "You\'ve graduated from useState basics to architectural thinking. This foundation will serve you well."',
+						'"Thank you, Professor," Aria said. "I feel like I understand not just how to use useState, but how to use it wisely."',
+						'"That\'s the difference between a coder and an architect," Hooksworth smiled. "Now, I believe the Effect Sage awaits you in the Temporal Tower. Prepare yourself - useEffect is a different beast entirely!"',
+						'Binary chirped excitedly, already calculating optimal paths to their next lesson. Aria took one last look at the Architecture Chamber before heading toward her next challenge at the Hooks Academy.'
+					]}
+				/>
 			</div>
 		</>
 	);

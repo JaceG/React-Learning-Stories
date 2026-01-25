@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const [formData, setFormData] = useState({
@@ -28,20 +32,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: State of Complex Objects
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The next day, Aria found herself in the Academy's
-						Transmutation Lab, where complex data structures floated
-						as three-dimensional holograms. Professor Hooksworth was
-						already there, manipulating what looked like a
-						crystalline object that morphed between different
-						shapes.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='State of Complex Objects'
+					bridge="The next day, Aria found herself in the Academy's Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -81,8 +76,10 @@ function ChapterTwo() {
 						updating complex state."
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// ❌ This won't trigger re-render:
+					<CodeExample
+						title='The Immutability Principle'
+						discoveredBy='Transcribed by Aria'
+						code={`// ❌ This won't trigger re-render:
 const [user, setUser] = useState({ name: 'Aria', level: 1 });
 user.name = 'Master Aria'; // Mutation!
 setUser(user); // Same reference
@@ -90,8 +87,8 @@ setUser(user); // Same reference
 // ✅ Create a new object:
 setUser({ ...user, name: 'Master Aria' });
 // Or use functional update:
-setUser(prev => ({ ...prev, name: 'Master Aria' }));`}</pre>
-					</div>
+setUser(prev => ({ ...prev, name: 'Master Aria' }));`}
+					/>
 
 					<p className='story-paragraph'>
 						"The spread operator is your ally here," Hooksworth
@@ -116,11 +113,10 @@ setUser(prev => ({ ...prev, name: 'Master Aria' }));`}</pre>
 				</div>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>Complex Spell Constructor</h3>
-					<p>
-						Build complex spell objects and manage them with proper
-						state patterns!
-					</p>
+					<h3 className='section-title'>Interactive Exercise: Complex Spell Constructor</h3>
+					<InstructionBox character='Build complex spell objects and manage them with proper state patterns!'>
+						Create spells with multiple properties and see how immutable updates work.
+					</InstructionBox>
 
 					<div className='spell-workshop'>
 						<div className='pattern-showcase'>
@@ -253,8 +249,9 @@ setUser(prev => ({ ...prev, name: 'Master Aria' }));`}</pre>
 				<div className='pattern-showcase'>
 					<span className='pattern-badge'>Array Updates</span>
 					<h4>Immutable Array Patterns</h4>
-					<div className='code-example'>
-						<pre>{`// Adding items:
+					<CodeExample
+						title='Array Update Patterns'
+						code={`// Adding items:
 setItems([...items, newItem]);
 
 // Removing items:
@@ -265,59 +262,25 @@ setItems(items.map(item =>
   item.id === targetId 
     ? { ...item, ...updates } 
     : item
-));`}</pre>
-					</div>
+));`}
+					/>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 16 (Afternoon)</h4>
-						<p>
-							The Transmutation Lab revealed why so many
-							developers struggle with React state! The
-							Immutability Principle is crucial - React only
-							re-renders when it detects new references, not
-							mutations. Professor Hooksworth showed me how spread
-							operators create new objects while preserving
-							unchanged data. For arrays, methods like map,
-							filter, and concat return new arrays automatically.
-							This isn't just a React quirk - it's a powerful
-							pattern that prevents bugs and enables
-							optimizations. Immutability is the foundation of
-							predictable state!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Immutability Lesson:</h3>
-					<p>
-						Master complex state through immutability - the
-						cornerstone of predictable React applications. Create
-						new objects with spread syntax rather than mutating
-						existing ones. For arrays, embrace methods that return
-						new arrays: map for updates, filter for removal, concat
-						or spread for additions. This discipline ensures React
-						detects changes and optimizes renders efficiently.
-						Remember: mutation is the enemy of predictability.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the crystal metaphor help visualize React's
-						change detection?
-					</p>
-					<p className='story-paragraph'>
-						Why does Professor Hooksworth call immutability
-						"discipline"?
-					</p>
-					<p className='story-paragraph'>
-						What debugging nightmares might arise from mutating
-						state directly?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'The Immutability Lesson:',
+						content: "Master complex state through immutability - the cornerstone of predictable React applications. Create new objects with spread syntax rather than mutating existing ones. For arrays, embrace methods that return new arrays: map for updates, filter for removal, concat or spread for additions. This discipline ensures React detects changes and optimizes renders efficiently. Remember: mutation is the enemy of predictability."
+					}}
+					reflectionQuestions={[
+						"How does the crystal metaphor help visualize React's change detection?",
+						'Why does Professor Hooksworth call immutability "discipline"?',
+						'What debugging nightmares might arise from mutating state directly?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 16 (Afternoon)",
+						content: "The Transmutation Lab revealed why so many developers struggle with React state! The Immutability Principle is crucial - React only re-renders when it detects new references, not mutations. Professor Hooksworth showed me how spread operators create new objects while preserving unchanged data. For arrays, methods like map, filter, and concat return new arrays automatically. This isn't just a React quirk - it's a powerful pattern that prevents bugs and enables optimizations. Immutability is the foundation of predictable state!"
+					}}
+				/>
 			</div>
 		</>
 	);

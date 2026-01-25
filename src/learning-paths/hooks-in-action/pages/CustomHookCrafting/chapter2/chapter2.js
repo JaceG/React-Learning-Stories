@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 function ChapterTwo() {
 	// Custom hook: useLocalStorage
@@ -83,19 +86,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Advanced Hook Smithing
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The next day, Compose led Aria to a more advanced
-						section of the workshop where multiple forges worked in
-						harmony. Here, apprentices weren't just creating simple
-						hooks - they were combining multiple React hooks with
-						browser APIs to forge truly powerful tools.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Advanced Hook Smithing'
+					bridge="The next day, Compose led Aria to a more advanced section of the workshop where multiple forges worked in harmony. Here, apprentices weren't just creating simple hooks - they were combining multiple React hooks with browser APIs to forge truly powerful tools."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -151,15 +146,9 @@ function ChapterTwo() {
 					<h3 className='section-title'>
 						Interactive Exercise: Master-Level Hook Crafting
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Experience the power of composed custom hooks
-								that combine multiple React hooks and browser
-								APIs!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character='Experience the power of composed custom hooks that combine multiple React hooks and browser APIs!'>
+						Try changing your name and level - it persists across page refreshes!
+					</InstructionBox>
 
 					<div className='advanced-demos'>
 						<div className='demo-section'>
@@ -382,59 +371,21 @@ function useFetch(url) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 18 (Afternoon)</h4>
-						<p>
-							Advanced hook composition is mind-blowing! Compose
-							showed me how to combine multiple hooks with browser
-							APIs. useLocalStorage merges useState with
-							localStorage, creating persistent memory that
-							survives component unmounting. useFetch orchestrates
-							useState (for data/loading/error) with useEffect
-							(for the async operation) into a complete
-							data-fetching solution. The key insight: hooks
-							aren't just about React - they're bridges to any
-							external system! By composing simpler hooks, we
-							create powerful abstractions that handle complex
-							scenarios elegantly. It's like forging legendary
-							weapons from multiple magical metals!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Advanced Hook Composition:</h3>
-					<p>
-						Master hook composition by combining multiple primitives
-						into powerful abstractions. useLocalStorage demonstrates
-						state + side effects + browser APIs working together.
-						useFetch shows complete async operation management
-						through coordinated hooks. The pattern: identify
-						repetitive logic involving multiple hooks, extract it
-						into a custom hook that manages the entire lifecycle.
-						Popular compositions include useDebounce, useMediaQuery,
-						useOnClickOutside, and useIntersectionObserver. Think of
-						hooks as composable building blocks - combine them to
-						solve any problem elegantly.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the "forging multiple metals" metaphor
-						illuminate hook composition?
-					</p>
-					<p className='story-paragraph'>
-						What external systems could you bridge with custom
-						hooks?
-					</p>
-					<p className='story-paragraph'>
-						Why is encapsulating complexity in custom hooks so
-						powerful?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'Advanced Hook Composition:',
+						content: "Master hook composition by combining multiple primitives into powerful abstractions. useLocalStorage demonstrates state + side effects + browser APIs working together. useFetch shows complete async operation management through coordinated hooks. The pattern: identify repetitive logic involving multiple hooks, extract it into a custom hook that manages the entire lifecycle. Popular compositions include useDebounce, useMediaQuery, useOnClickOutside, and useIntersectionObserver. Think of hooks as composable building blocks - combine them to solve any problem elegantly."
+					}}
+					reflectionQuestions={[
+						'How does the "forging multiple metals" metaphor illuminate hook composition?',
+						'What external systems could you bridge with custom hooks?',
+						'Why is encapsulating complexity in custom hooks so powerful?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 18 (Afternoon)",
+						content: "Advanced hook composition is mind-blowing! Compose showed me how to combine multiple hooks with browser APIs. useLocalStorage merges useState with localStorage, creating persistent memory that survives component unmounting. useFetch orchestrates useState (for data/loading/error) with useEffect (for the async operation) into a complete data-fetching solution. The key insight: hooks aren't just about React - they're bridges to any external system! By composing simpler hooks, we create powerful abstractions that handle complex scenarios elegantly. It's like forging legendary weapons from multiple magical metals!"
+					}}
+				/>
 			</div>
 		</>
 	);

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	const [spellCount, setSpellCount] = useState(0);
@@ -25,20 +29,11 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: Advanced State Incantations
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The entrance hall of the Hooks Academy was unlike
-						anything Aria had seen. Floating screens displayed code
-						that rewrote itself, demonstrating the evolution from
-						class components to hooks. A receptionist construct
-						directed her to the Advanced Spellcasting Wing, where
-						she would meet her first instructor.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='Advanced State Incantations'
+					bridge='The entrance hall of the Hooks Academy was unlike anything Aria had seen. Floating screens displayed code that rewrote itself, demonstrating the evolution from class components to hooks. A receptionist construct directed her to the Advanced Spellcasting Wing, where she would meet her first instructor.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -89,13 +84,15 @@ function ChapterOne() {
 						like a Hook Mage. Let me show you the incantation."
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// Instead of this (runs on every render):
+					<CodeExample
+						title='Lazy Initial State Pattern'
+						discoveredBy='Transcribed by Aria'
+						code={`// Instead of this (runs on every render):
 const [data, setData] = useState(expensiveCalculation());
 
 // Use this (runs only once):
-const [data, setData] = useState(() => expensiveCalculation());`}</pre>
-					</div>
+const [data, setData] = useState(() => expensiveCalculation());`}
+					/>
 
 					<p className='story-paragraph'>
 						"This incantation," Hooksworth explained, waving his
@@ -120,12 +117,11 @@ const [data, setData] = useState(() => expensiveCalculation());`}</pre>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
-						Practice Your State Spells
+						Interactive Exercise: Practice Your State Spells
 					</h3>
-					<p>
-						Create your own magical spells and watch them accumulate
-						in your spell book!
-					</p>
+					<InstructionBox character='Create your own magical spells and watch them accumulate in your spell book!'>
+						Enter a spell name, set the magic level, and cast your spell.
+					</InstructionBox>
 
 					<div className='spell-workshop'>
 						<div className='spell-controls'>
@@ -222,77 +218,37 @@ const [data, setData] = useState(() => expensiveCalculation());`}</pre>
 						When updating state based on previous state, always use
 						the functional form:
 					</p>
-					<div className='code-example'>
-						<pre>{`// ❌ Avoid: Can cause bugs with multiple updates
+					<CodeExample
+						title='Functional Updates Pattern'
+						code={`// ❌ Avoid: Can cause bugs with multiple updates
 setCount(count + 1);
 
 // ✅ Prefer: Always gets the latest state
-setCount(prevCount => prevCount + 1);`}</pre>
-					</div>
+setCount(prevCount => prevCount + 1);`}
+					/>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 16 (Morning)</h4>
-						<p>
-							The Hooks Academy is incredible! Professor
-							Hooksworth introduced me to advanced useState
-							patterns that make my previous spells look amateur.
-							Lazy initialization with arrow functions prevents
-							expensive calculations from running on every render
-							- such an elegant optimization! And functional
-							updates ensure I always work with the latest state,
-							avoiding race conditions. These aren't just
-							improvements; they're essential patterns for
-							professional React development. The Academy truly
-							teaches mastery!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Professor Hooksworth's useState Wisdom:</h3>
-					<p>
-						Master useState through advanced patterns that separate
-						novices from experts. Lazy initialization with functions
-						prevents expensive computations on every render.
-						Functional updates guarantee you always work with
-						current state, crucial for handling rapid user
-						interactions. These patterns become indispensable as
-						applications scale - they're not optimizations, they're
-						professional requirements. Remember: hooks aren't just
-						simpler syntax, they're a more powerful paradigm.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>Professor Hooksworth</strong> - The
-						distinguished keeper of Hook Laws at the Hooks Academy.
-						His robes shimmer between states, and his spectacles
-						display real-time component renders. As one of the
-						original researchers who helped develop React Hooks, he
-						transforms functional components from simple to
-						sophisticated through advanced patterns.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the Academy's modern setting reflect the
-						evolution from classes to hooks?
-					</p>
-					<p className='story-paragraph'>
-						Why might Professor Hooksworth call functional updates
-						"crucial for rapid interactions"?
-					</p>
-					<p className='story-paragraph'>
-						What real-world scenarios would benefit from lazy
-						initialization?
-					</p>
-				</div>
+				<ChapterSummary
+					characterIntros={[
+						{
+							name: 'Professor Hooksworth',
+							description: 'The distinguished keeper of Hook Laws at the Hooks Academy. His robes shimmer between states, and his spectacles display real-time component renders. As one of the original researchers who helped develop React Hooks, he transforms functional components from simple to sophisticated through advanced patterns.'
+						}
+					]}
+					lessonInsight={{
+						title: "Professor Hooksworth's useState Wisdom:",
+						content: "Master useState through advanced patterns that separate novices from experts. Lazy initialization with functions prevents expensive computations on every render. Functional updates guarantee you always work with current state, crucial for handling rapid user interactions. These patterns become indispensable as applications scale - they're not optimizations, they're professional requirements. Remember: hooks aren't just simpler syntax, they're a more powerful paradigm."
+					}}
+					reflectionQuestions={[
+						"How does the Academy's modern setting reflect the evolution from classes to hooks?",
+						'Why might Professor Hooksworth call functional updates "crucial for rapid interactions"?',
+						'What real-world scenarios would benefit from lazy initialization?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 16 (Morning)",
+						content: "The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur. Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! And functional updates ensure I always work with the latest state, avoiding race conditions. These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!"
+					}}
+				/>
 			</div>
 		</>
 	);

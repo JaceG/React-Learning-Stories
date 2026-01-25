@@ -1,5 +1,8 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 function ChapterThree() {
 	// State for the interactive demo
@@ -142,13 +145,11 @@ function ChapterThree() {
 	const content = (
 		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Performance Sanctuary - Mastering Optimization</h2>
-			
-			<div className='chapter-bridge'>
-				<p>The final chamber of the Integration Sanctum was different - calmer, more 
-				refined. Here, the energy streams moved with perfect efficiency, each one 
-				following optimal paths that wasted no motion, no power.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Performance Sanctuary - Mastering Optimization'
+				bridge='The final chamber of the Integration Sanctum was different - calmer, more refined. Here, the energy streams moved with perfect efficiency, each one following optimal paths that wasted no motion, no power.'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -209,14 +210,9 @@ function ChapterThree() {
 				<h3 className='section-title'>
 					Interactive Exercise: The Optimization Laboratory
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Compare optimized and unoptimized performance in real-time. Watch how 
-							memoization prevents unnecessary recalculations and re-renders!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character='Compare optimized and unoptimized performance in real-time!'>
+					Watch how memoization prevents unnecessary recalculations and re-renders as you interact.
+				</InstructionBox>
 
 				<div className='performance-dashboard'>
 					<div className='render-counters'>
@@ -415,73 +411,28 @@ function PerformantList({ items }) {
 				</div>
 			</div>
 
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 19 (Evening)</h4>
-					<p>The Performance Sanctuary completed my hook pattern education! Synthesis revealed 
-					the Trinity of Performance: useMemo (preserves expensive calculations), useCallback 
-					(maintains stable function references), and React.memo (shields components from 
-					unnecessary re-renders). The key insight: optimization is about being strategic, 
-					not obsessive. I watched render counts drop dramatically when using these tools 
-					correctly. The spell example was perfect - without memoization, every keystroke 
-					recalculated everything! But with proper optimization, only what changed was 
-					recalculated. Remember: measure first, optimize second. Not every calculation 
-					needs memoization - sometimes the cure is worse than the disease!</p>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>Performance Pattern Mastery:</h3>
-				<p>
-					Master the art of strategic optimization with the Performance Trinity. UseMemo 
-					caches expensive calculations, preventing redundant work when inputs haven't 
-					changed. UseCallback preserves function identity across renders, crucial for 
-					preventing child re-renders and maintaining referential equality. React.memo 
-					wraps components in a shallow prop comparison shield. Use these tools when you 
-					have measured performance issues, not preemptively. Common scenarios: large lists, 
-					expensive calculations, frequently re-rendering trees. Remember: premature 
-					optimization is the root of all evil - profile first with React DevTools!
-				</p>
-			</div>
-			
-			<div className='chapter-finale'>
-				<p className='story-paragraph'>
-					As the demonstration concluded, Synthesis led Aria and Binary to the center of 
-					the Integration Sanctum. All the patterns they'd learned - orchestration, state 
-					management, and optimization - swirled around them in perfect harmony.
-				</p>
-				<p className='story-paragraph'>
-					"You've completed your training," Synthesis announced proudly. "You now understand 
-					not just individual hooks, but how to weave them into powerful, efficient patterns. 
-					You are ready for any React challenge!"
-				</p>
-				<p className='story-paragraph'>
-					Aria looked at the swirling patterns with new understanding. "It's all connected - 
-					from basic hooks to complex systems, everything builds on everything else."
-				</p>
-				<p className='story-paragraph'>
-					Binary projected a beautiful visualization of all their learned patterns, from 
-					useState to performance optimization. Its display showed: "HOOK MASTERY: COMPLETE"
-				</p>
-				<p className='story-paragraph'>
-					"Your next destination awaits," Synthesis smiled, pointing toward a distant tower. 
-					"The Form Citadel, where you'll learn to capture and validate user input with the 
-					same mastery you've shown here. May your hooks always be optimized!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the Performance Trinity work together to create efficient applications?
-				</p>
-				<p className='story-paragraph'>
-					When have you encountered performance issues that these patterns could solve?
-				</p>
-				<p className='story-paragraph'>
-					Why is it important to measure before optimizing?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'Performance Pattern Mastery:',
+					content: "Master the art of strategic optimization with the Performance Trinity. UseMemo caches expensive calculations, preventing redundant work when inputs haven't changed. UseCallback preserves function identity across renders, crucial for preventing child re-renders and maintaining referential equality. React.memo wraps components in a shallow prop comparison shield. Use these tools when you have measured performance issues, not preemptively. Common scenarios: large lists, expensive calculations, frequently re-rendering trees. Remember: premature optimization is the root of all evil - profile first with React DevTools!"
+				}}
+				reflectionQuestions={[
+					'How does the Performance Trinity work together to create efficient applications?',
+					'When have you encountered performance issues that these patterns could solve?',
+					'Why is it important to measure before optimizing?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 19 (Evening)",
+					content: "The Performance Sanctuary completed my hook pattern education! Synthesis revealed the Trinity of Performance: useMemo (preserves expensive calculations), useCallback (maintains stable function references), and React.memo (shields components from unnecessary re-renders). The key insight: optimization is about being strategic, not obsessive. I watched render counts drop dramatically when using these tools correctly. The spell example was perfect - without memoization, every keystroke recalculated everything! But with proper optimization, only what changed was recalculated. Remember: measure first, optimize second. Not every calculation needs memoization - sometimes the cure is worse than the disease!"
+				}}
+				chapterEnding={[
+					'As the demonstration concluded, Synthesis led Aria and Binary to the center of the Integration Sanctum. All the patterns they\'d learned - orchestration, state management, and optimization - swirled around them in perfect harmony.',
+					'"You\'ve completed your training," Synthesis announced proudly. "You now understand not just individual hooks, but how to weave them into powerful, efficient patterns. You are ready for any React challenge!"',
+					'Aria looked at the swirling patterns with new understanding. "It\'s all connected - from basic hooks to complex systems, everything builds on everything else."',
+					'Binary projected a beautiful visualization of all their learned patterns, from useState to performance optimization. Its display showed: "HOOK MASTERY: COMPLETE"',
+					'"Your next destination awaits," Synthesis smiled, pointing toward a distant tower. "The Form Citadel, where you\'ll learn to capture and validate user input with the same mastery you\'ve shown here. May your hooks always be optimized!"'
+				]}
+			/>
 		</div>
 		</>
 	);

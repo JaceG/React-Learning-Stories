@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterTwo() {
 	const [count, setCount] = useState(0);
@@ -77,20 +81,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 2: Dependencies and Watchers
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The next level of the Temporal Tower contained a vast
-						observatory filled with floating crystal spheres. Each
-						sphere monitored different aspects of time - some
-						spinning rapidly, others frozen, a few pulsing
-						rhythmically. The Effect Sage awaited Aria at the
-						center.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={2}
+					title='Dependencies and Watchers'
+					bridge='The next level of the Temporal Tower contained a vast observatory filled with floating crystal spheres. Each sphere monitored different aspects of time - some spinning rapidly, others frozen, a few pulsing rhythmically. The Effect Sage awaited Aria at the center.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -125,8 +120,10 @@ function ChapterTwo() {
 						became visible:
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// Pattern 1: No dependency array - runs after EVERY render
+					<CodeExample
+						title='Dependency Array Patterns'
+						discoveredBy='Transcribed by Aria'
+						code={`// Pattern 1: No dependency array - runs after EVERY render
 useEffect(() => {
   console.log('I run after every render!');
 });
@@ -139,8 +136,8 @@ useEffect(() => {
 // Pattern 3: With dependencies - runs when deps change
 useEffect(() => {
   console.log('I run when count or name changes!');
-}, [count, name]);`}</pre>
-					</div>
+}, [count, name]);`}
+					/>
 
 					<p className='story-paragraph'>
 						"But beware the temporal paradoxes!" the Sage warned,
@@ -166,12 +163,11 @@ useEffect(() => {
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
-						The Dependency Observatory
+						Interactive Exercise: The Dependency Observatory
 					</h3>
-					<p>
-						Watch how different dependency arrays affect when
-						effects run:
-					</p>
+					<InstructionBox character='Watch how different dependency arrays affect when effects run!'>
+						Change the count, name, or wait for the timer to see which effects trigger.
+					</InstructionBox>
 
 					<div className='dependency-lab'>
 						<div className='control-panel'>
@@ -294,8 +290,9 @@ useEffect(() => {
 				<div className='pattern-showcase'>
 					<span className='pattern-badge'>Common Pitfall</span>
 					<h4>Avoiding Dependency Array Mistakes</h4>
-					<div className='code-example'>
-						<pre>{`// ❌ Missing dependency - causes stale closure
+					<CodeExample
+						title='Stale Closure Prevention'
+						code={`// ❌ Missing dependency - causes stale closure
 const [count, setCount] = useState(0);
 useEffect(() => {
   const timer = setTimeout(() => {
@@ -310,61 +307,25 @@ useEffect(() => {
     console.log(count); // Logs current value
   }, 3000);
   return () => clearTimeout(timer);
-}, [count]); // Includes 'count' dependency`}</pre>
-					</div>
+}, [count]); // Includes 'count' dependency`}
+					/>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 17 (Afternoon)</h4>
-						<p>
-							The Dependency Observatory revealed the true power
-							of dependency arrays! They're temporal contracts
-							that control when effects activate. No array = every
-							render (chaos!), empty array = mount only (perfect
-							for initialization), filled array = specific changes
-							(precision control). The Sage warned of temporal
-							paradoxes: stale closures from missing dependencies
-							freeze values in past time, while unnecessary
-							dependencies create infinite loops. The
-							exhaustive-deps ESLint rule is our guardian against
-							these anomalies. Dependencies aren't just
-							optimization - they're correctness!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Dependency Array Mastery:</h3>
-					<p>
-						Master the dependency array as your temporal contract
-						with React. Empty arrays create mount-only effects, no
-						array means every-render execution, and specific
-						dependencies provide surgical precision. Include ALL
-						values from component scope that your effect uses -
-						missing dependencies create stale closures frozen in
-						time. Trust the exhaustive-deps ESLint rule as your
-						guardian against temporal paradoxes. Remember:
-						dependencies aren't just about performance, they're
-						about correctness.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the "temporal paradox" metaphor help understand
-						stale closures?
-					</p>
-					<p className='story-paragraph'>
-						Why is the dependency array called a "contract with
-						time"?
-					</p>
-					<p className='story-paragraph'>
-						What real bugs have you encountered from incorrect
-						dependencies?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'Dependency Array Mastery:',
+						content: "Master the dependency array as your temporal contract with React. Empty arrays create mount-only effects, no array means every-render execution, and specific dependencies provide surgical precision. Include ALL values from component scope that your effect uses - missing dependencies create stale closures frozen in time. Trust the exhaustive-deps ESLint rule as your guardian against temporal paradoxes. Remember: dependencies aren't just about performance, they're about correctness."
+					}}
+					reflectionQuestions={[
+						'How does the "temporal paradox" metaphor help understand stale closures?',
+						'Why is the dependency array called a "contract with time"?',
+						'What real bugs have you encountered from incorrect dependencies?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 17 (Afternoon)",
+						content: "The Dependency Observatory revealed the true power of dependency arrays! They're temporal contracts that control when effects activate. No array = every render (chaos!), empty array = mount only (perfect for initialization), filled array = specific changes (precision control). The Sage warned of temporal paradoxes: stale closures from missing dependencies freeze values in past time, while unnecessary dependencies create infinite loops. The exhaustive-deps ESLint rule is our guardian against these anomalies. Dependencies aren't just optimization - they're correctness!"
+					}}
+				/>
 			</div>
 		</>
 	);

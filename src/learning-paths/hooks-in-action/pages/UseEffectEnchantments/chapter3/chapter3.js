@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterThree() {
 	const [data, setData] = useState(null);
@@ -106,18 +110,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>Chapter 3: Async Enchantments</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						At the tower's apex, Aria found the Chamber of
-						Asynchronous Arts - a place where multiple timelines
-						converged. Portals opened and closed randomly, each
-						showing data arriving from different moments. The Effect
-						Sage stood at the center, orchestrating the temporal
-						chaos.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='Async Enchantments'
+					bridge="At the tower's apex, Aria found the Chamber of Asynchronous Arts - a place where multiple timelines converged. Portals opened and closed randomly, each showing data arriving from different moments. The Effect Sage stood at the center, orchestrating the temporal chaos."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -150,8 +147,10 @@ function ChapterThree() {
 						"Precisely! Observe the proper incantation:"
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// ❌ Don't do this - effect can't be async
+					<CodeExample
+						title='Async Effect Pattern'
+						discoveredBy='Transcribed by Aria'
+						code={`// ❌ Don't do this - effect can't be async
 useEffect(async () => {
   const data = await fetchData();
   setData(data);
@@ -172,8 +171,8 @@ useEffect(() => {
   };
   
   loadData();
-}, []);`}</pre>
-					</div>
+}, []);`}
+					/>
 
 					<p className='story-paragraph'>
 						The Sage's form flickered between multiple states. "But
@@ -196,8 +195,9 @@ useEffect(() => {
 						Without it, temporal chaos reigns!"
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// Race condition protection with AbortController
+					<CodeExample
+						title='Race Condition Protection'
+						code={`// Race condition protection with AbortController
 useEffect(() => {
   const controller = new AbortController();
   
@@ -223,16 +223,15 @@ useEffect(() => {
   
   // Cleanup - cancel pending request
   return () => controller.abort();
-}, [url]);`}</pre>
-					</div>
+}, [url]);`}
+					/>
 				</div>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>The Async Data Portal</h3>
-					<p>
-						Watch how async operations are handled with proper
-						cleanup and race condition prevention:
-					</p>
+					<h3 className='section-title'>Interactive Exercise: The Async Data Portal</h3>
+					<InstructionBox character='Watch how async operations are handled with proper cleanup and race condition prevention!'>
+						Click different users rapidly to see how AbortController prevents race conditions.
+					</InstructionBox>
 
 					<div className='async-workshop'>
 						<div className='user-selector'>
@@ -357,8 +356,9 @@ useEffect(() => {
 				<div className='pattern-showcase'>
 					<span className='pattern-badge'>Best Practice</span>
 					<h4>Async Error Handling Pattern</h4>
-					<div className='code-example'>
-						<pre>{`const [data, setData] = useState(null);
+					<CodeExample
+						title='Complete Async Pattern'
+						code={`const [data, setData] = useState(null);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 
@@ -391,90 +391,31 @@ useEffect(() => {
   return () => {
     cancelled = true;
   };
-}, []);`}</pre>
-					</div>
+}, []);`}
+					/>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 17 (Evening)</h4>
-						<p>
-							The Chamber of Asynchronous Arts was mind-bending!
-							The Effect Sage showed me how async operations
-							create non-linear time flows in React. Key insights:
-							Never make the effect itself async (React expects
-							cleanup, not Promises!), always create async
-							functions inside effects. Race conditions are the
-							real danger - when multiple requests overlap, the
-							last to finish overwrites all others, regardless of
-							order! AbortController is our salvation, cancelling
-							obsolete requests before they corrupt our timeline.
-							Without proper cleanup, we risk updating unmounted
-							components - temporal contamination at its worst!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Async Effect Mastery:</h3>
-					<p>
-						Master asynchronous operations by respecting useEffect's
-						constraints. Create async functions inside effects,
-						never make the effect itself async. Defend against race
-						conditions with AbortController or cancellation flags -
-						without them, old requests overwrite new data
-						chaotically. Always check if requests were aborted
-						before updating state, preventing updates to unmounted
-						components. These patterns are essential for
-						data-fetching - they transform temporal chaos into
-						predictable, reliable behavior.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As the portals stabilized and temporal chaos subsided,
-						the Effect Sage's form solidified. "You've mastered the
-						most treacherous aspects of useEffect, Aria. From
-						lifecycle management to dependencies to async operations
-						- you understand the bridge between React's pure world
-						and external chaos."
-					</p>
-					<p className='story-paragraph'>
-						"It's all about managing time," Aria reflected, watching
-						Binary's chronometer finally stabilize. "Effects exist
-						in their own timeline, and we must respect that
-						separation."
-					</p>
-					<p className='story-paragraph'>
-						"Wise words from a true Effect Mage," the Sage smiled.
-						"Now, I believe Master Artificer Compose awaits in the
-						Synthesis Workshop. There you'll learn to craft your own
-						hooks - the ultimate expression of React mastery."
-					</p>
-					<p className='story-paragraph'>
-						Aria bowed gratefully. The Temporal Tower had revealed
-						its secrets, but she sensed even greater challenges
-						awaited in custom hook creation. With Binary chirping
-						excitedly, they descended toward their next lesson.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the "competing timelines" metaphor help
-						visualize race conditions?
-					</p>
-					<p className='story-paragraph'>
-						Why does the Sage call AbortController a "temporal
-						guardian"?
-					</p>
-					<p className='story-paragraph'>
-						What chaos have you experienced from unmanaged async
-						operations?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'Async Effect Mastery:',
+						content: "Master asynchronous operations by respecting useEffect's constraints. Create async functions inside effects, never make the effect itself async. Defend against race conditions with AbortController or cancellation flags - without them, old requests overwrite new data chaotically. Always check if requests were aborted before updating state, preventing updates to unmounted components. These patterns are essential for data-fetching - they transform temporal chaos into predictable, reliable behavior."
+					}}
+					reflectionQuestions={[
+						'How does the "competing timelines" metaphor help visualize race conditions?',
+						'Why does the Sage call AbortController a "temporal guardian"?',
+						'What chaos have you experienced from unmanaged async operations?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 17 (Evening)",
+						content: "The Chamber of Asynchronous Arts was mind-bending! The Effect Sage showed me how async operations create non-linear time flows in React. Key insights: Never make the effect itself async (React expects cleanup, not Promises!), always create async functions inside effects. Race conditions are the real danger - when multiple requests overlap, the last to finish overwrites all others, regardless of order! AbortController is our salvation, cancelling obsolete requests before they corrupt our timeline. Without proper cleanup, we risk updating unmounted components - temporal contamination at its worst!"
+					}}
+					chapterEnding={[
+						"As the portals stabilized and temporal chaos subsided, the Effect Sage's form solidified. \"You've mastered the most treacherous aspects of useEffect, Aria. From lifecycle management to dependencies to async operations - you understand the bridge between React's pure world and external chaos.\"",
+						"\"It's all about managing time,\" Aria reflected, watching Binary's chronometer finally stabilize. \"Effects exist in their own timeline, and we must respect that separation.\"",
+						"\"Wise words from a true Effect Mage,\" the Sage smiled. \"Now, I believe Master Artificer Compose awaits in the Synthesis Workshop. There you'll learn to craft your own hooks - the ultimate expression of React mastery.\"",
+						'Aria bowed gratefully. The Temporal Tower had revealed its secrets, but she sensed even greater challenges awaited in custom hook creation. With Binary chirping excitedly, they descended toward their next lesson.'
+					]}
+				/>
 			</div>
 		</>
 	);

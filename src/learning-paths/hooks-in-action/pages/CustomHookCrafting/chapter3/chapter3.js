@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 function ChapterThree() {
 	// Custom hook: useDebounce
@@ -95,19 +98,11 @@ function ChapterThree() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 3: Hook Libraries - The Grand Repository
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						On the final day at the Synthesis Workshop, Compose led
-						Aria to a magnificent library adjoining the forges.
-						Crystalline shelves held thousands of glowing hook
-						patterns, each one a tested solution to common React
-						challenges.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={3}
+					title='Hook Libraries - The Grand Repository'
+					bridge='On the final day at the Synthesis Workshop, Compose led Aria to a magnificent library adjoining the forges. Crystalline shelves held thousands of glowing hook patterns, each one a tested solution to common React challenges.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -158,14 +153,9 @@ function ChapterThree() {
 					<h3 className='section-title'>
 						Interactive Exercise: The Hook Library in Action
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Explore three essential hooks from our library
-								and see how they solve common React challenges!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character='Explore three essential hooks from our library and see how they solve common React challenges!'>
+						Try the debounced search, resize your window, and control the timer.
+					</InstructionBox>
 
 					<div className='library-demos'>
 						<div className='demo-section'>
@@ -385,87 +375,27 @@ describe('useCounter', () => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 18 (Evening)</h4>
-						<p>
-							The Grand Repository was awe-inspiring! Compose
-							showed me how individual hooks become collective
-							wisdom through proper organization. I explored three
-							essential patterns: useDebounce (delays updates
-							until user stops typing - perfect for search!),
-							useWindowSize (responsive design made simple), and
-							useInterval (declarative setInterval that plays nice
-							with React). The key insight: documentation and
-							testing transform personal hooks into shareable
-							assets. Every hook should have clear docs, usage
-							examples, comprehensive tests, and semantic
-							versioning. A well-maintained hook library
-							accelerates entire teams. Why solve the same
-							problems repeatedly?
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Repository Wisdom:</h3>
-					<p>
-						Transform individual solutions into collective assets
-						through well-organized hook libraries. Essential
-						patterns like useDebounce, useWindowSize, and
-						useInterval solve universal problems. Excellence
-						requires comprehensive documentation (JSDoc, examples,
-						edge cases), thorough testing (unit tests, integration
-						tests, edge cases), logical organization (categories,
-						consistent naming, central exports), and proper
-						versioning (semantic versioning, changelogs, migration
-						guides). Remember: a hook in the library saves countless
-						hours across your entire organization.
-					</p>
-				</div>
-
-				<div className='chapter-finale'>
-					<p className='story-paragraph'>
-						As they prepared to leave the Synthesis Workshop,
-						Compose handed Aria a crystal containing the workshop's
-						hook patterns. "You've learned to create, compose, and
-						share hooks. This knowledge makes you a true React
-						artificer."
-					</p>
-					<p className='story-paragraph'>
-						"Thank you, Master Compose," Aria said, clutching the
-						crystal. "I never imagined hooks could be so powerful -
-						not just as tools, but as shared knowledge."
-					</p>
-					<p className='story-paragraph'>
-						"Remember," Compose smiled, "the best abstractions
-						emerge from real problems. Don't force patterns -
-						discover them. Now, Pattern Weaver Synthesis awaits in
-						the Integration Sanctum. There you'll learn to combine
-						everything into true mastery."
-					</p>
-					<p className='story-paragraph'>
-						Binary projected a summary of all the hooks they'd
-						learned, already organizing them into its own internal
-						library. Together, they headed toward their final lesson
-						at the Hooks Academy.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the repository transform individual creativity
-						into collective wisdom?
-					</p>
-					<p className='story-paragraph'>
-						What makes a hook "library-worthy" versus a one-off
-						solution?
-					</p>
-					<p className='story-paragraph'>
-						Why is documentation as important as the code itself?
-					</p>
-				</div>
+				<ChapterSummary
+					lessonInsight={{
+						title: 'Repository Wisdom:',
+						content: "Transform individual solutions into collective assets through well-organized hook libraries. Essential patterns like useDebounce, useWindowSize, and useInterval solve universal problems. Excellence requires comprehensive documentation (JSDoc, examples, edge cases), thorough testing (unit tests, integration tests, edge cases), logical organization (categories, consistent naming, central exports), and proper versioning (semantic versioning, changelogs, migration guides). Remember: a hook in the library saves countless hours across your entire organization."
+					}}
+					reflectionQuestions={[
+						'How does the repository transform individual creativity into collective wisdom?',
+						'What makes a hook "library-worthy" versus a one-off solution?',
+						'Why is documentation as important as the code itself?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 18 (Evening)",
+						content: "The Grand Repository was awe-inspiring! Compose showed me how individual hooks become collective wisdom through proper organization. I explored three essential patterns: useDebounce (delays updates until user stops typing - perfect for search!), useWindowSize (responsive design made simple), and useInterval (declarative setInterval that plays nice with React). The key insight: documentation and testing transform personal hooks into shareable assets. Every hook should have clear docs, usage examples, comprehensive tests, and semantic versioning. A well-maintained hook library accelerates entire teams. Why solve the same problems repeatedly?"
+					}}
+					chapterEnding={[
+						"As they prepared to leave the Synthesis Workshop, Compose handed Aria a crystal containing the workshop's hook patterns. \"You've learned to create, compose, and share hooks. This knowledge makes you a true React artificer.\"",
+						"\"Thank you, Master Compose,\" Aria said, clutching the crystal. \"I never imagined hooks could be so powerful - not just as tools, but as shared knowledge.\"",
+						"\"Remember,\" Compose smiled, \"the best abstractions emerge from real problems. Don't force patterns - discover them. Now, Pattern Weaver Synthesis awaits in the Integration Sanctum. There you'll learn to combine everything into true mastery.\"",
+						"Binary projected a summary of all the hooks they'd learned, already organizing them into its own internal library. Together, they headed toward their final lesson at the Hooks Academy."
+					]}
+				/>
 			</div>
 		</>
 	);

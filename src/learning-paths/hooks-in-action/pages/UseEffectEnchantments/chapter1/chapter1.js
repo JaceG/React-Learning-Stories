@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 function ChapterOne() {
 	// Component lifecycle tracking
@@ -99,19 +103,11 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Lifecycle Enchantments
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						Aria climbed the spiraling stairs of the Temporal Tower,
-						each step seeming to take longer than the last. Binary's
-						chronometer went haywire, displaying multiple times
-						simultaneously. At the top, she found a chamber where
-						past, present, and future seemed to coexist.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='The Lifecycle Enchantments'
+					bridge="Aria climbed the spiraling stairs of the Temporal Tower, each step seeming to take longer than the last. Binary's chronometer went haywire, displaying multiple times simultaneously. At the top, she found a chamber where past, present, and future seemed to coexist."
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -156,8 +152,10 @@ function ChapterOne() {
 						and learn!"
 					</p>
 
-					<div className='code-example'>
-						<pre>{`// The basic useEffect enchantment
+					<CodeExample
+						title='The Basic useEffect Enchantment'
+						discoveredBy='Transcribed by Aria'
+						code={`// The basic useEffect enchantment
 useEffect(() => {
   // This runs after render
   console.log('Effect running!');
@@ -166,8 +164,8 @@ useEffect(() => {
   return () => {
     console.log('Cleaning up!');
   };
-}, []); // Dependencies array`}</pre>
-					</div>
+}, []); // Dependencies array`}
+					/>
 
 					<p className='story-paragraph'>
 						"The cleanup function," the Sage explained, temporal
@@ -192,10 +190,10 @@ useEffect(() => {
 				</div>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>The Lifecycle Laboratory</h3>
-					<p>
-						Explore different types of effects and their lifecycles:
-					</p>
+					<h3 className='section-title'>Interactive Exercise: The Lifecycle Laboratory</h3>
+					<InstructionBox character='Explore different types of effects and their lifecycles!'>
+						Watch how effects run, cleanup, and track mouse movements and window size.
+					</InstructionBox>
 
 					<div className='effect-workshop'>
 						{/* Component Lifecycle Display */}
@@ -388,69 +386,27 @@ useEffect(() => {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 17 (Morning)</h4>
-						<p>
-							The Temporal Tower revealed useEffect's true nature
-							- it's a bridge between React's pure rendering world
-							and the messy reality of side effects! The Effect
-							Sage showed me how one hook replaces all the old
-							lifecycle methods. Empty dependencies make it run
-							once (mount), dependencies control re-runs, and
-							cleanup functions prevent temporal contamination
-							(memory leaks). Effects run AFTER render commits,
-							ensuring DOM readiness. The key insight: effects
-							exist in their own time stream, synchronized with
-							but separate from rendering!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>The Effect Sage's Temporal Wisdom:</h3>
-					<p>
-						Master useEffect as your portal to the outside world.
-						This hook handles all side effects - API calls, timers,
-						subscriptions, DOM manipulation - anything impure that
-						reaches beyond React's boundaries. Control effect timing
-						through dependencies: empty array for mount-only,
-						specific deps for selective re-runs, no array for every
-						render. Always return cleanup functions to prevent
-						temporal contamination. Remember: effects run after
-						render commits, in their own timeline.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>The Effect Sage</strong> - A mysterious figure
-						who exists partially outside normal time, the Effect
-						Sage guards the boundary between React's pure functional
-						world and external side effects. Their form shifts
-						between temporal states, and hourglasses orbit around
-						them. They teach the delicate art of useEffect, showing
-						how to safely bridge the gap between React and the
-						chaotic outside world.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the "temporal contamination" metaphor help
-						visualize memory leaks?
-					</p>
-					<p className='story-paragraph'>
-						Why might effects need their own "timeline" separate
-						from rendering?
-					</p>
-					<p className='story-paragraph'>
-						What real-world chaos might occur without proper cleanup
-						functions?
-					</p>
-				</div>
+				<ChapterSummary
+					characterIntros={[
+						{
+							name: 'The Effect Sage',
+							description: "A mysterious figure who exists partially outside normal time, the Effect Sage guards the boundary between React's pure functional world and external side effects. Their form shifts between temporal states, and hourglasses orbit around them. They teach the delicate art of useEffect, showing how to safely bridge the gap between React and the chaotic outside world."
+						}
+					]}
+					lessonInsight={{
+						title: "The Effect Sage's Temporal Wisdom:",
+						content: "Master useEffect as your portal to the outside world. This hook handles all side effects - API calls, timers, subscriptions, DOM manipulation - anything impure that reaches beyond React's boundaries. Control effect timing through dependencies: empty array for mount-only, specific deps for selective re-runs, no array for every render. Always return cleanup functions to prevent temporal contamination. Remember: effects run after render commits, in their own timeline."
+					}}
+					reflectionQuestions={[
+						'How does the "temporal contamination" metaphor help visualize memory leaks?',
+						'Why might effects need their own "timeline" separate from rendering?',
+						'What real-world chaos might occur without proper cleanup functions?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 17 (Morning)",
+						content: "The Temporal Tower revealed useEffect's true nature - it's a bridge between React's pure rendering world and the messy reality of side effects! The Effect Sage showed me how one hook replaces all the old lifecycle methods. Empty dependencies make it run once (mount), dependencies control re-runs, and cleanup functions prevent temporal contamination (memory leaks). Effects run AFTER render commits, ensuring DOM readiness. The key insight: effects exist in their own time stream, synchronized with but separate from rendering!"
+					}}
+				/>
 			</div>
 		</>
 	);

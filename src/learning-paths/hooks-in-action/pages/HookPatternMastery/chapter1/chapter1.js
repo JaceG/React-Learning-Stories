@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 function ChapterOne() {
 	// Custom hook for form field
@@ -131,19 +134,11 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<h2 className='chapter-title'>
-					Chapter 1: The Grand Orchestra - Harmonizing Multiple Hooks
-				</h2>
-
-				<div className='chapter-bridge'>
-					<p>
-						The Integration Sanctum was breathtaking - a perfect
-						sphere where energy streams from every part of the
-						Academy converged. At its center stood a figure whose
-						very presence seemed to weave the streams into
-						intricate, ever-changing patterns.
-					</p>
-				</div>
+				<ChapterIntro
+					chapterNumber={1}
+					title='The Grand Orchestra - Harmonizing Multiple Hooks'
+					bridge='The Integration Sanctum was breathtaking - a perfect sphere where energy streams from every part of the Academy converged. At its center stood a figure whose very presence seemed to weave the streams into intricate, ever-changing patterns.'
+				/>
 
 				<div className='story-section'>
 					<p className='story-paragraph'>
@@ -206,15 +201,9 @@ function ChapterOne() {
 					<h3 className='section-title'>
 						Interactive Exercise: The Form Symphony
 					</h3>
-					<div className='instruction-box'>
-						<p>
-							<strong>
-								Experience how multiple custom hooks work
-								together to create a powerful, reusable form
-								management system!
-							</strong>
-						</p>
-					</div>
+					<InstructionBox character='Experience how multiple custom hooks work together to create a powerful, reusable form management system!'>
+						Fill out the form fields and watch validation happen automatically.
+					</InstructionBox>
 
 					<div className='form-orchestra'>
 						<form
@@ -430,71 +419,27 @@ function useForm(initialValues, validators = {}) {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<div className='character-intro'>
-						<h4>Aria's Journal - Day 19 (Morning)</h4>
-						<p>
-							The Integration Sanctum revealed the true art of
-							hooks - orchestration! Pattern Weaver Synthesis
-							showed me how to conduct multiple hooks like a
-							symphony. The Form Symphony pattern was brilliant:
-							useFormField hooks for individual fields (each
-							managing its own state, validation, touched status),
-							then a useForm orchestrator that coordinates them
-							all! The magic is in composition - simple hooks
-							combining into complex systems. Like instruments in
-							an orchestra, each hook has its role, but together
-							they create something magnificent. This isn't just
-							using hooks - it's thinking in patterns!
-						</p>
-					</div>
-				</div>
-
-				<div className='lesson-insight'>
-					<h3>Orchestration Mastery:</h3>
-					<p>
-						Master hook patterns by thinking like a conductor. The
-						Orchestra pattern combines multiple specialized hooks
-						into coordinated systems. Build small, focused hooks
-						(useFormField for field state), then compose them with
-						orchestrator hooks (useForm for coordination). This
-						separation enables reusability, testability, and
-						maintainability. Popular patterns include Form
-						Management, Data Pipeline (filter→sort→paginate), and
-						State Machines. Remember: complex behavior emerges from
-						simple, well-orchestrated parts.
-					</p>
-				</div>
-
-				<div className='character-intro'>
-					<h4>Character Introduction</h4>
-					<p>
-						<strong>Pattern Weaver Synthesis</strong> - Master of
-						the Integration Sanctum, Synthesis teaches the highest
-						art of hook composition. Their robes are woven from
-						React patterns themselves, constantly shifting to
-						demonstrate new combinations. They believe that true
-						mastery comes not from individual techniques but from
-						understanding how to weave them together into elegant
-						solutions.
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does orchestration differ from simply using multiple
-						hooks?
-					</p>
-					<p className='story-paragraph'>
-						What UI patterns in your applications could benefit from
-						this approach?
-					</p>
-					<p className='story-paragraph'>
-						Why is composition more powerful than building
-						monolithic hooks?
-					</p>
-				</div>
+				<ChapterSummary
+					characterIntros={[
+						{
+							name: 'Pattern Weaver Synthesis',
+							description: 'Master of the Integration Sanctum, Synthesis teaches the highest art of hook composition. Their robes are woven from React patterns themselves, constantly shifting to demonstrate new combinations. They believe that true mastery comes not from individual techniques but from understanding how to weave them together into elegant solutions.'
+						}
+					]}
+					lessonInsight={{
+						title: 'Orchestration Mastery:',
+						content: "Master hook patterns by thinking like a conductor. The Orchestra pattern combines multiple specialized hooks into coordinated systems. Build small, focused hooks (useFormField for field state), then compose them with orchestrator hooks (useForm for coordination). This separation enables reusability, testability, and maintainability. Popular patterns include Form Management, Data Pipeline (filter→sort→paginate), and State Machines. Remember: complex behavior emerges from simple, well-orchestrated parts."
+					}}
+					reflectionQuestions={[
+						'How does orchestration differ from simply using multiple hooks?',
+						'What UI patterns in your applications could benefit from this approach?',
+						'Why is composition more powerful than building monolithic hooks?'
+					]}
+					journalEntry={{
+						title: "Aria's Journal - Day 19 (Morning)",
+						content: "The Integration Sanctum revealed the true art of hooks - orchestration! Pattern Weaver Synthesis showed me how to conduct multiple hooks like a symphony. The Form Symphony pattern was brilliant: useFormField hooks for individual fields (each managing its own state, validation, touched status), then a useForm orchestrator that coordinates them all! The magic is in composition - simple hooks combining into complex systems. Like instruments in an orchestra, each hook has its role, but together they create something magnificent. This isn't just using hooks - it's thinking in patterns!"
+					}}
+				/>
 			</div>
 		</>
 	);

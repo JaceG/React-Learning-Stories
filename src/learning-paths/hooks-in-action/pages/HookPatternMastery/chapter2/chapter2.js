@@ -1,5 +1,8 @@
 import React, { useReducer, createContext, useContext, useState } from 'react';
 import StoryContent from '../../../../../components/content/StoryContent';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 // Create contexts
 const StateContext = createContext();
@@ -291,14 +294,11 @@ function ChapterTwo() {
 	const content = (
 		<>
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Symphony Conductor - Advanced State Orchestration</h2>
-			
-			<div className='chapter-bridge'>
-				<p>Pattern Weaver Synthesis led Aria deeper into the Integration Sanctum, where 
-				the energy streams formed even more intricate patterns. Here, massive crystalline 
-				structures pulsed with synchronized data flows, each one representing a different 
-				state management pattern.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title='The Symphony Conductor - Advanced State Orchestration'
+				bridge='Pattern Weaver Synthesis led Aria deeper into the Integration Sanctum, where the energy streams formed even more intricate patterns. Here, massive crystalline structures pulsed with synchronized data flows, each one representing a different state management pattern.'
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -351,14 +351,9 @@ function ChapterTwo() {
 				<h3 className='section-title'>
 					Interactive Exercise: The Kingdom Management Symphony
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Experience how useReducer and Context work together to orchestrate 
-							complex state management across an entire kingdom!
-						</strong>
-					</p>
-				</div>
+				<InstructionBox character='Experience how useReducer and Context work together to orchestrate complex state management across an entire kingdom!'>
+					Add knights, assign quests, and watch the kingdom treasury grow.
+				</InstructionBox>
 
 				<KingdomProvider>
 					<KingdomDashboard />
@@ -491,47 +486,21 @@ const ActionButton = () => {
 				</div>
 			</div>
 
-			<div className='story-section'>
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 19 (Afternoon)</h4>
-					<p>The Symphony Pattern revealed how to manage complex state at scale! Synthesis 
-					showed me the Kingdom Management System - useReducer acts as the conductor, processing 
-					actions into state changes with perfect predictability. Context distributes this 
-					state throughout the component tree like sheet music to orchestra sections. The 
-					split context pattern was brilliant: separate contexts for state and dispatch 
-					prevent unnecessary re-renders. Components that only dispatch actions don't 
-					re-render when state changes! This pattern scales beautifully - from managing 
-					a few knights to entire kingdoms. The key: think in actions, not setState calls!</p>
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>Symphony Pattern Mastery:</h3>
-				<p>
-					Master complex state orchestration with useReducer + Context. This pattern 
-					excels when state has multiple sub-values, complex update logic, or when 
-					many components need access. UseReducer provides predictable updates through 
-					actions (like Redux but built-in), while Context eliminates prop drilling. 
-					Split contexts optimize performance - components reading state use StateContext, 
-					those dispatching use DispatchContext. Action creators encapsulate business 
-					logic. This scales to medium-large apps without external dependencies. Remember: 
-					actions describe "what happened," reducers determine "how state changes."
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the orchestra metaphor illuminate the relationship between 
-					useReducer and Context?
-				</p>
-				<p className='story-paragraph'>
-					What makes actions more predictable than direct state mutations?
-				</p>
-				<p className='story-paragraph'>
-					When would this pattern be overkill versus necessary?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'Symphony Pattern Mastery:',
+					content: "Master complex state orchestration with useReducer + Context. This pattern excels when state has multiple sub-values, complex update logic, or when many components need access. UseReducer provides predictable updates through actions (like Redux but built-in), while Context eliminates prop drilling. Split contexts optimize performance - components reading state use StateContext, those dispatching use DispatchContext. Action creators encapsulate business logic. This scales to medium-large apps without external dependencies. Remember: actions describe \"what happened,\" reducers determine \"how state changes.\""
+				}}
+				reflectionQuestions={[
+					'How does the orchestra metaphor illuminate the relationship between useReducer and Context?',
+					'What makes actions more predictable than direct state mutations?',
+					'When would this pattern be overkill versus necessary?'
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 19 (Afternoon)",
+					content: "The Symphony Pattern revealed how to manage complex state at scale! Synthesis showed me the Kingdom Management System - useReducer acts as the conductor, processing actions into state changes with perfect predictability. Context distributes this state throughout the component tree like sheet music to orchestra sections. The split context pattern was brilliant: separate contexts for state and dispatch prevent unnecessary re-renders. Components that only dispatch actions don't re-render when state changes! This pattern scales beautifully - from managing a few knights to entire kingdoms. The key: think in actions, not setState calls!"
+				}}
+			/>
 		</div>
 		</>
 	);
