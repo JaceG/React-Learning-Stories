@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -141,11 +142,10 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Time Keeper's Hourglass
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Chronos hands you a magical hourglass.</strong>
+				<InstructionBox character="Chronos hands you a magical hourglass.">
 					"This hourglass will let you control a component's lifecycle. 
 					Watch carefully as it moves through each stage of existence."
-				</p>
+				</InstructionBox>
 
 				<div className='lifecycle-demo'>
 					<div className='component-visualization'>

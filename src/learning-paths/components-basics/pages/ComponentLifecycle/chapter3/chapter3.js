@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -240,12 +241,11 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 				<h3 className='section-title'>
 					Interactive Exercise: The Cleanup Crystal
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Chronos presents a special crystal that glows with active resources.</strong>
+				<InstructionBox character="Chronos presents a special crystal that glows with active resources.">
 					"This crystal will show you what happens when components leave 
 					responsibly versus carelessly. Watch the difference between proper 
 					cleanup and... the alternative."
-				</p>
+				</InstructionBox>
 
 				<div className='lifecycle-demo'>
 					<div
@@ -553,10 +553,9 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 				<h3 className='section-title'>
 					Common Cleanup Tasks in componentWillUnmount
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Chronos reveals the essential cleanup patterns.</strong>{' '}
+				<InstructionBox character="Chronos reveals the essential cleanup patterns.">
 					These are the most common resources that need to be cleaned up when a component unmounts.
-				</p>
+				</InstructionBox>
 
 				<div className='cleanup-tasks-grid'>
 					<div className='cleanup-card'>

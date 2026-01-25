@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
@@ -123,11 +124,10 @@ function Greeting() {
 				<h3 className='section-title'>
 					Interactive Exercise: The JSX Translator Crystal
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Professor Syntaxis hands you a glowing crystal.</strong> 
+				<InstructionBox character="Professor Syntaxis hands you a glowing crystal.">
 					"This translator crystal will show you how Babel transforms JSX. 
 					Try editing the JSX spell below, then activate the crystal!"
-				</p>
+				</InstructionBox>
 
 				<div className='jsx-translator'>
 					<div className='jsx-display'>

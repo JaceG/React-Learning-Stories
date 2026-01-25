@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [messageBoard, setMessageBoard] = useState('');
@@ -172,10 +173,9 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Deliver Props to Craftsmen
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Drag each prop bag to the appropriate craftsman who needs it.</strong>{' '}
+				<InstructionBox character="Drag each prop bag to the appropriate craftsman who needs it.">
 					Remember, props can only travel down from App to Components!
-				</p>
+				</InstructionBox>
 
 				<div
 					className={`message-board${

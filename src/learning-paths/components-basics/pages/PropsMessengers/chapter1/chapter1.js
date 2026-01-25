@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [selectedComponent, setSelectedComponent] = useState(null);
@@ -232,15 +233,10 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Modify Props
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							👉 Click on a messenger above to see what props it
-							carries!
-						</strong>
-					</p>
-					<p>Click on a specific prop to modify its value below.</p>
-				</div>
+				<InstructionBox
+					character="Click on a messenger above to see what props it carries!"
+					secondaryText="Click on a specific prop to modify its value below."
+				/>
 
 				{activeProp && (
 					<div className='prop-editor'>

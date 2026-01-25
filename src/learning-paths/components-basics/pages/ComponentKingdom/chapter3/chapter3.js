@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [activeComponent, setActiveComponent] = useState(null);
@@ -195,18 +196,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Component Composer
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							👉 Build your own dashboard by selecting components
-							from the library above!
-						</strong>
-					</p>
-					<p>
-						Click on a component to add it to your dashboard. Click
-						the × button to remove it.
-					</p>
-				</div>
+				<InstructionBox
+					character="Build your own dashboard by selecting components from the library above!"
+					secondaryText="Click on a component to add it to your dashboard. Click the × button to remove it."
+				/>
 			</div>
 
 			<div className='code-example'>

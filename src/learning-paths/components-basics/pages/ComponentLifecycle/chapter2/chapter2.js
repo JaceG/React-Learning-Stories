@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -229,12 +230,11 @@ this.fetchUserData(this.props.userId);
 				<h3 className='section-title'>
 					Interactive Exercise: The Lifecycle Observatory
 				</h3>
-				<p className='instruction'>
-					<strong>👉 Chronos activates a magical observatory.</strong>
+				<InstructionBox character="Chronos activates a magical observatory.">
 					"This device will let you witness the lifecycle methods in action. 
 					Watch carefully as components move through their mounting and updating 
 					phases in real-time!"
-				</p>
+				</InstructionBox>
 
 				<div
 					className='lifecycle-demo'

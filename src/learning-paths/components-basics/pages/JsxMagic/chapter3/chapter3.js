@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [jsxChallenges, setJsxChallenges] = useState([
@@ -179,10 +180,9 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The JSX Rulebook</h3>
-				<p className='instruction'>
-					<strong>👉 Professor Syntaxis presents the Sacred Rules of JSX.</strong>{' '}
+				<InstructionBox character="Professor Syntaxis presents the Sacred Rules of JSX.">
 					Study each rule carefully - these are the foundations of writing valid JSX code.
-				</p>
+				</InstructionBox>
 
 				<div className='jsx-rules'>
 					<div className='rule-card'>
@@ -291,11 +291,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: The Debugging Trials</h3>
-				<p className='instruction'>
-					<strong>👉 Professor Syntaxis presents you with broken scrolls.</strong>
+				<InstructionBox character="Professor Syntaxis presents you with broken scrolls.">
 					"These scrolls contain JSX spells with errors. Can you fix them 
 					according to the sacred rules? Binary will check your work!"
-				</p>
+				</InstructionBox>
 
 				<div className='jsx-challenges'>
 					<div className='challenge-selector'>

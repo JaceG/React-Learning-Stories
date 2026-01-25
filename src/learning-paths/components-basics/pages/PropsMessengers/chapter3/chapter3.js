@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [propTypeComponent, setPropTypeComponent] = useState('button');
@@ -504,18 +505,10 @@ Card.defaultProps = {
 				<h3 className='section-title'>
 					Interactive Exercise: Be the PropTypes Guardian!
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							👉 Try modifying the props above to trigger PropType
-							warnings!
-						</strong>
-					</p>
-					<p>
-						See if you can understand why each warning appears based
-						on the PropTypes definition.
-					</p>
-				</div>
+				<InstructionBox
+					character="Try modifying the props above to trigger PropType warnings!"
+					secondaryText="See if you can understand why each warning appears based on the PropTypes definition."
+				/>
 
 				<div className='tips-section'>
 					<h4>Try These Experiments:</h4>

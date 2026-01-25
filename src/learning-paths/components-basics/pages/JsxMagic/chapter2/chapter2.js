@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [expressionType, setExpressionType] = useState('text');
@@ -139,14 +140,10 @@ return (
 				<h3 className='section-title'>
 					Interactive Exercise: Binary's Expression Playground
 				</h3>
-				<p className='instruction'>
-					<strong>
-						👉 Binary invites you to explore the Expression
-						Playground.
-					</strong>{' '}
+				<InstructionBox character="Binary invites you to explore the Expression Playground.">
 					Select different expression types from the dropdown to see
 					how JavaScript expressions work inside JSX curly braces.
-				</p>
+				</InstructionBox>
 
 				<div className='expression-selector'>
 					<label>Try different JSX expression types: </label>

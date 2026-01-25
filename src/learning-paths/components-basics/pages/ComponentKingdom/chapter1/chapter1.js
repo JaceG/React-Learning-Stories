@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [highlightedCard, setHighlightedCard] = useState(null);
@@ -73,15 +74,13 @@ const ChapterOne = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Component Explorer
 				</h3>
-				<div className='instruction-box'>
-					<p>
-						<strong>
-							Explore the Workshops! Move your cursor over each
-							colored workshop above to discover what kind of
-							components they create.
-						</strong>
-					</p>
-				</div>
+				<InstructionBox>
+					<strong>
+						Explore the Workshops! Move your cursor over each
+						colored workshop above to discover what kind of
+						components they create.
+					</strong>
+				</InstructionBox>
 
 				<div className='component-showcase'>
 					{highlightedCard === 0 && (
