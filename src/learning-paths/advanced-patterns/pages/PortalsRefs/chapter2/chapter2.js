@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -201,9 +205,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Reference Scrolls
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Reference Scrolls`}
+				bridge={`"And sometimes," Portal Keeper Escapius continued, unveiling the Reference Scrolls, "React's abstraction isn't enough. You need direct DOM access." Aria handled them carefully. "Master Aurelius warned about refs in my early training. Direct manipulation breaks React's declarative model." Escapius nodded. "Used wisely, they're powerful. Used carelessly, they're dangerous."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -232,7 +238,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Reference Management Laboratory</h3>
+				<h3 className='section-title'>Interactive Exercise: Reference Management Laboratory</h3>
+				
+				<InstructionBox character={`Escapius hands you the Reference Scrolls.`}>
+					Explore DOM element refs, component refs, callback refs, and forwarded refs. 
+					Try the focus trap demonstration and imperative component API!
+				</InstructionBox>
 				
 				<div className='ref-manager'>
 					<h4>Ref Type Explorer</h4>
@@ -417,25 +428,19 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Ref Mastery</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// React Refs - Direct DOM and Component Access
-
+			<CodeExample
+				title={`Ref Mastery`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// React Refs - Direct DOM and Component Access
 import { useRef, forwardRef, useImperativeHandle } from 'react';
 
 // 1. Basic DOM Ref
 function TextInput() {
   const inputRef = useRef(null);
-  
   const focusInput = () => {
-    // Direct DOM manipulation
     inputRef.current.focus();
     inputRef.current.select();
   };
-  
   return (
     <>
       <input ref={inputRef} type="text" />
@@ -444,336 +449,56 @@ function TextInput() {
   );
 }
 
-// 2. Multiple Refs with Callback Pattern
-function MultipleRefs() {
-  const refs = useRef({});
-  
-  // Callback ref for dynamic assignment
-  const setRef = (element, key) => {
-    if (element) {
-      refs.current[key] = element;
-    }
-  };
-  
-  const focusField = (key) => {
-    refs.current[key]?.focus();
-  };
-  
-  return (
-    <>
-      {['name', 'email', 'phone'].map(field => (
-        <input
-          key={field}
-          ref={el => setRef(el, field)}
-          placeholder={field}
-        />
-      ))}
-      <button onClick={() => focusField('email')}>
-        Focus Email
-      </button>
-    </>
-  );
-}
-
-// 3. Component Refs (Class Components)
-class Counter extends React.Component {
-  state = { count: 0 };
-  
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-  
-  getCount = () => this.state.count;
-  
-  render() {
-    return <div>Count: {this.state.count}</div>;
-  }
-}
-
-// Usage
-function App() {
-  const counterRef = useRef(null);
-  
-  return (
-    <>
-      <Counter ref={counterRef} />
-      <button onClick={() => counterRef.current.increment()}>
-        Increment from Parent
-      </button>
-    </>
-  );
-}
-
-// 4. Forwarding Refs
+// 2. Forwarding Refs
 const FancyButton = forwardRef((props, ref) => (
-  <button ref={ref} className="fancy-button">
-    {props.children}
-  </button>
+  <button ref={ref} className="fancy-button">{props.children}</button>
 ));
 
-// Usage
-function Parent() {
-  const buttonRef = useRef(null);
-  
-  return <FancyButton ref={buttonRef}>Click me!</FancyButton>;
-}
-
-// 5. Imperative Handle - Custom Ref API
-const CustomTextInput = forwardRef((props, ref) => {
+// 3. Imperative Handle - Custom Ref API
+const CustomInput = forwardRef((props, ref) => {
   const inputRef = useRef(null);
-  const [isValid, setIsValid] = useState(true);
   
   useImperativeHandle(ref, () => ({
-    // Expose custom methods
-    focus: () => {
-      inputRef.current.focus();
-    },
-    
-    clear: () => {
-      inputRef.current.value = '';
-    },
-    
-    validate: () => {
-      const valid = inputRef.current.value.length > 0;
-      setIsValid(valid);
-      return valid;
-    },
-    
+    focus: () => inputRef.current.focus(),
+    clear: () => { inputRef.current.value = ''; },
     shake: () => {
       inputRef.current.classList.add('shake');
-      setTimeout(() => {
-        inputRef.current.classList.remove('shake');
-      }, 500);
+      setTimeout(() => inputRef.current.classList.remove('shake'), 500);
     },
-    
-    // Expose specific properties
-    get value() {
-      return inputRef.current.value;
-    },
-    
-    set value(val) {
-      inputRef.current.value = val;
-    }
+    get value() { return inputRef.current.value; }
   }));
   
-  return (
-    <input
-      ref={inputRef}
-      style={{ borderColor: isValid ? 'green' : 'red' }}
-      {...props}
-    />
-  );
+  return <input ref={inputRef} {...props} />;
 });
 
-// 6. Focus Management
+// 4. Focus Trap for Modals
 function FocusTrap({ children, active }) {
   const containerRef = useRef(null);
-  
   useEffect(() => {
     if (!active) return;
-    
-    const container = containerRef.current;
-    const focusableElements = container.querySelectorAll(
-      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    const focusableElements = containerRef.current.querySelectorAll(
+      'button, input, select, textarea, a[href]'
     );
-    
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-    
-    // Focus first element
-    firstElement?.focus();
-    
-    const handleTab = (e) => {
-      if (e.key !== 'Tab') return;
-      
-      if (e.shiftKey && document.activeElement === firstElement) {
-        e.preventDefault();
-        lastElement.focus();
-      } else if (!e.shiftKey && document.activeElement === lastElement) {
-        e.preventDefault();
-        firstElement.focus();
-      }
-    };
-    
-    container.addEventListener('keydown', handleTab);
-    
-    return () => {
-      container.removeEventListener('keydown', handleTab);
-    };
+    // Trap focus within container
   }, [active]);
-  
   return <div ref={containerRef}>{children}</div>;
-}
+}`}
+			/>
 
-// 7. Measuring DOM Elements
-function MeasuredComponent() {
-  const [dimensions, setDimensions] = useState({});
-  const elementRef = useRef(null);
-  
-  useEffect(() => {
-    if (!elementRef.current) return;
-    
-    const resizeObserver = new ResizeObserver(entries => {
-      for (let entry of entries) {
-        const { width, height } = entry.contentRect;
-        setDimensions({ width, height });
-      }
-    });
-    
-    resizeObserver.observe(elementRef.current);
-    
-    return () => resizeObserver.disconnect();
-  }, []);
-  
-  return (
-    <div ref={elementRef}>
-      <p>Width: {dimensions.width}px</p>
-      <p>Height: {dimensions.height}px</p>
-    </div>
-  );
-}
-
-// 8. Media Control
-function VideoPlayer({ src }) {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  
-  const togglePlay = () => {
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-  
-  const seek = (seconds) => {
-    videoRef.current.currentTime += seconds;
-  };
-  
-  return (
-    <>
-      <video ref={videoRef} src={src} />
-      <button onClick={togglePlay}>
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
-      <button onClick={() => seek(-10)}>-10s</button>
-      <button onClick={() => seek(10)}>+10s</button>
-    </>
-  );
-}
-
-// 9. Complex Ref Management Hook
-function useRefMap() {
-  const refs = useRef(new Map());
-  
-  const setRef = (key) => (element) => {
-    if (element) {
-      refs.current.set(key, element);
-    } else {
-      refs.current.delete(key);
-    }
-  };
-  
-  const getRef = (key) => refs.current.get(key);
-  
-  const focusRef = (key) => {
-    getRef(key)?.focus();
-  };
-  
-  return { setRef, getRef, focusRef };
-}
-
-// 10. Scroll Management
-function ScrollManager() {
-  const sectionsRef = useRef({});
-  
-  const scrollToSection = (sectionId) => {
-    sectionsRef.current[sectionId]?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  };
-  
-  return (
-    <>
-      <nav>
-        {['intro', 'content', 'conclusion'].map(section => (
-          <button key={section} onClick={() => scrollToSection(section)}>
-            Go to {section}
-          </button>
-        ))}
-      </nav>
-      
-      <div ref={el => sectionsRef.current.intro = el}>
-        <h2>Introduction</h2>
-      </div>
-      <div ref={el => sectionsRef.current.content = el}>
-        <h2>Content</h2>
-      </div>
-      <div ref={el => sectionsRef.current.conclusion = el}>
-        <h2>Conclusion</h2>
-      </div>
-    </>
-  );
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Ref Wisdom:</strong> "Refs are your bridge to the imperative world. 
-					Use them for focus management, DOM measurements, media control, and integration 
-					with third-party libraries. But remember - they're an escape hatch, not a 
-					primary pattern. When you must break React's declarative model, do so 
-					deliberately and document why."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Reference Insight:</h3>
-				<p>
-					Refs provide direct access to DOM elements and component instances, enabling 
-					imperative operations when declarative approaches fall short. They're essential 
-					for focus management, integrating with non-React libraries, and accessing 
-					browser APIs.
-				</p>
-				<p>
-					The key to using refs wisely is understanding when React's declarative model 
-					isn't sufficient. Focus management, media playback, canvas drawing, and text 
-					selection are valid use cases. Avoid refs for things that can be done 
-					declaratively with state and props.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Reference Power</h3>
-				<p>
-					<strong>When are refs truly necessary?</strong> Consider scenarios where 
-					React's declarative model cannot express what you need to accomplish.
-				</p>
-				<p>
-					<strong>How do imperative handles improve component APIs?</strong> Think 
-					about the balance between exposing implementation details and providing 
-					useful methods.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> practiced the ref patterns, feeling the direct 
-					connection to the DOM. "It's powerful, but I see why it should be used 
-					sparingly."
-				</p>
-				<p>
-					<strong>Binary</strong> computed the implications. "Each ref is a bridge 
-					between React's virtual world and the browser's reality. Too many bridges 
-					and the abstraction collapses."
-				</p>
-				<p>
-					<strong>Portal Keeper Escapius</strong> nodded approvingly. "You understand 
-					the balance. Tomorrow, we'll combine portals and refs to create truly 
-					powerful architectural patterns..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Reference Insight:`,
+					content: `Refs provide direct access to DOM elements and component instances, enabling imperative operations when declarative approaches fall short. Essential for focus management, integrating with non-React libraries, and accessing browser APIs. The key is understanding when React's declarative model isn't sufficient.`
+				}}
+				reflectionQuestions={[
+					`When are refs truly necessary?`,
+					`How do imperative handles improve component APIs?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Afternoon)`,
+					content: `Escapius unveiled the Reference Scrolls - the bridge to the imperative world! I learned DOM refs for direct element access, forwardRef to pass refs through components, and useImperativeHandle for custom ref APIs. The focus trap demonstration was impressive - trapping keyboard navigation within a modal. Binary computed: "Each ref is a bridge between React's virtual world and the browser's reality. Too many bridges and the abstraction collapses." ${refs.length} refs bound, ${imperativeHandles.length} imperative handles created!`
+				}}
+			/>
 		</div>
 	);
 };

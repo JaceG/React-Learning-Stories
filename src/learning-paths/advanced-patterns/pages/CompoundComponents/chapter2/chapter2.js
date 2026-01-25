@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -72,13 +76,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Implicit Bond
-			</h2>
-
-			<div className='chapter-bridge'>
-				With the basics understood, Dean Architectus revealed the deeper magic...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Implicit Bond`}
+				bridge={`With the basics understood, Dean Architectus revealed the deeper magic. "Watch how these components share state without explicit props," he demonstrated. A Select component and its Options communicated seamlessly through the Bonding Chamber.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -105,7 +107,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Implicit Communication Laboratory</h3>
+				<h3 className='section-title'>Interactive Exercise: Implicit Communication Laboratory</h3>
+				
+				<InstructionBox character={`Dean Architectus unveils the Component Communication Patterns.`}>
+					Click on different component systems to see how parent components provide context 
+					and children consume it - all while keeping the API surface clean!
+				</InstructionBox>
 				
 				<div className='composition-lab'>
 					<div className='lab-title'>Component Communication Patterns</div>
@@ -177,12 +184,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Advanced Compound Patterns</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced Compound Component Patterns
+			<CodeExample
+				title={`Advanced Compound Patterns`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Advanced Compound Component Patterns
 
 // 1. Using React.Children.map for flexible ordering
 const Accordion = ({ children, defaultIndex = 0 }) => {
@@ -248,40 +253,8 @@ Select.Option = function SelectOption({ value, children }) {
   );
 };
 
-// 3. Compound components with render props
-const DataTable = ({ children, data }) => {
-  const [sortBy, setSortBy] = useState(null);
-  const [filterBy, setFilterBy] = useState('');
-  
-  const processedData = useMemo(() => {
-    let result = [...data];
-    if (filterBy) {
-      result = result.filter(item => 
-        JSON.stringify(item).includes(filterBy)
-      );
-    }
-    if (sortBy) {
-      result.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
-    }
-    return result;
-  }, [data, sortBy, filterBy]);
-  
-  return (
-    <TableContext.Provider value={{ 
-      data: processedData, 
-      sortBy, 
-      setSortBy, 
-      filterBy, 
-      setFilterBy 
-    }}>
-      <div className="data-table">{children}</div>
-    </TableContext.Provider>
-  );
-};
-
-// 4. Compound components with slots
+// 3. Compound components with slots
 const Card = ({ children }) => {
-  // Extract specific children by type
   const header = React.Children.toArray(children)
     .find(child => child.type === Card.Header);
   const body = React.Children.toArray(children)
@@ -298,81 +271,28 @@ const Card = ({ children }) => {
   );
 };
 
-Card.Header = ({ children }) => children;
-Card.Body = ({ children }) => children;
-Card.Footer = ({ children }) => children;
+// Usage - Order doesn't matter with slots!
+<Card>
+  <Card.Footer><button>Save</button></Card.Footer>
+  <Card.Body>Content goes here</Card.Body>
+  <Card.Header><h3>Title</h3></Card.Header>
+</Card>`}
+			/>
 
-// Usage example showing flexibility
-function App() {
-  return (
-    <>
-      {/* Order doesn't matter with slots */}
-      <Card>
-        <Card.Footer>
-          <button>Save</button>
-        </Card.Footer>
-        <Card.Body>
-          Content goes here
-        </Card.Body>
-        <Card.Header>
-          <h3>Title</h3>
-        </Card.Header>
-      </Card>
-      
-      {/* Clean API with static properties */}
-      <Select onChange={value => console.log(value)}>
-        <Select.Trigger />
-        <Select.Options>
-          <Select.Option value="1">Option 1</Select.Option>
-          <Select.Option value="2">Option 2</Select.Option>
-        </Select.Options>
-      </Select>
-    </>
-  );
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>The Implicit Bond:</strong> "See how we use React.Children, static 
-					properties, and Context together? Each pattern has its use case. The goal 
-					is always the same: hide complexity, expose simplicity."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Architecture Insight:</h3>
-				<p>
-					The power of compound components lies in their implicit communication. By 
-					using Context internally and React.Children for flexibility, we create 
-					components that are both powerful and pleasant to use.
-				</p>
-				<p>
-					Static properties keep related components organized, while flexible child 
-					ordering ensures the API remains intuitive regardless of how developers 
-					structure their JSX.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Implicit Design</h3>
-				<p>
-					<strong>How does hiding implementation details improve API design?</strong> 
-					Consider the mental model users need versus the actual implementation 
-					complexity.
-				</p>
-				<p>
-					<strong>What are the trade-offs of implicit vs explicit communication?</strong> 
-					Think about debugging, testing, and discoverability of component relationships.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Aria created her first compound component - a Tabs system where Tab and 
-					TabPanel components intuitively understood their relationships. Binary 
-					mapped the implicit connections, creating a beautiful visualization. 
-					"You're ready for the final lesson," Dean Architectus announced...
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Architecture Insight:`,
+					content: `The power of compound components lies in their implicit communication. By using Context internally and React.Children for flexibility, we create components that are both powerful and pleasant to use. Static properties keep related components organized, while flexible child ordering ensures the API remains intuitive.`
+				}}
+				reflectionQuestions={[
+					`How does hiding implementation details improve API design?`,
+					`What are the trade-offs of implicit vs explicit communication?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Afternoon)`,
+					content: `Dean Architectus led me to the Bonding Chamber where I learned the deeper magic of compound components. I discovered how to use React.Children.map for flexible ordering, static properties for clean organization, and Context for implicit state sharing. I created my first compound component - a Tabs system where Tab and TabPanel intuitively understand their relationships! Binary mapped the implicit connections, creating a beautiful visualization. The Dean's insight: "See how we hide complexity and expose simplicity? That's the goal."`
+				}}
+			/>
 		</div>
 	);
 };

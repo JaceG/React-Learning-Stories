@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -80,13 +84,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Render Mastery
-			</h2>
-
-			<div className='chapter-bridge'>
-				Time to see render props in their full glory...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Render Mastery`}
+				bridge={`"You understand the trade-offs," Pattern Master Renderius said, gathering all the delegation examples. "Compound components for intuitive APIs, render props for maximum flexibility. Both have their place in the architect's toolkit." Time to see render props in their full glory.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -115,7 +117,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Render Props Mastery Showcase</h3>
+				<h3 className='section-title'>Interactive Exercise: Render Props Mastery Showcase</h3>
+				
+				<InstructionBox character={`Pattern Master Renderius presents the Showcase Gallery.`}>
+					Explore complete render prop implementations - Modal, Autocomplete, Animation 
+					Controller, and Data Fetcher. Start the showcase to see them all in action!
+				</InstructionBox>
 				
 				<div className='render-delegation-chamber'>
 					<h4>Complete Render Prop Examples</h4>
@@ -206,305 +213,65 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Production Render Props Examples</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Production-Ready Render Props Components
+			<CodeExample
+				title={`Production Render Props Examples`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Production-Ready Render Props Components
 
 // 1. Flexible Modal with Render Props
-function Modal({ 
-  isOpen, 
-  onClose, 
-  renderHeader, 
-  renderContent, 
-  renderFooter,
-  children 
-}) {
+function Modal({ isOpen, onClose, renderHeader, renderContent, children }) {
   useEffect(() => {
     if (isOpen) {
-      // Lock body scroll
       document.body.style.overflow = 'hidden';
-      
-      // Focus management
-      const previousActive = document.activeElement;
-      return () => {
-        document.body.style.overflow = '';
-        previousActive?.focus();
-      };
+      return () => { document.body.style.overflow = ''; };
     }
   }, [isOpen]);
   
   if (!isOpen) return null;
-  
-  // Support both render props and children function
   const content = children || renderContent;
   
   return createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div 
-        className="modal-container" 
-        onClick={e => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true">
-        {renderHeader && (
-          <div className="modal-header">
-            {renderHeader({ onClose })}
-          </div>
-        )}
-        
-        <div className="modal-content">
-          {typeof content === 'function' 
-            ? content({ onClose })
-            : content
-          }
-        </div>
-        
-        {renderFooter && (
-          <div className="modal-footer">
-            {renderFooter({ onClose })}
-          </div>
-        )}
+      <div className="modal-container" onClick={e => e.stopPropagation()}>
+        {renderHeader?.({ onClose })}
+        {typeof content === 'function' ? content({ onClose }) : content}
       </div>
     </div>,
     document.body
   );
 }
 
-// Usage - Maximum flexibility
-<Modal
-  isOpen={showModal}
-  onClose={() => setShowModal(false)}
-  renderHeader={({ onClose }) => (
-    <>
-      <h2>Custom Header</h2>
-      <button onClick={onClose}>×</button>
-    </>
-  )}
-  renderFooter={({ onClose }) => (
-    <>
-      <button onClick={onClose}>Cancel</button>
-      <button onClick={handleSave}>Save</button>
-    </>
-  )}>
-  {({ onClose }) => (
-    <div>
-      <p>Fully custom modal content!</p>
-      <button onClick={onClose}>Close from content</button>
-    </div>
-  )}
-</Modal>
-
-// 2. Autocomplete with Render Props
-function Autocomplete({ 
-  items, 
-  onSelect,
-  filterItems = defaultFilter,
-  renderInput,
-  renderItem,
-  renderNoResults
-}) {
-  const [query, setQuery] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
-  const [highlightedIndex, setHighlightedIndex] = useState(0);
-  
-  const filteredItems = filterItems(items, query);
-  
-  const getInputProps = () => ({
-    value: query,
-    onChange: (e) => {
-      setQuery(e.target.value);
-      setIsOpen(true);
-    },
-    onKeyDown: (e) => {
-      switch (e.key) {
-        case 'ArrowDown':
-          e.preventDefault();
-          setHighlightedIndex(i => 
-            Math.min(i + 1, filteredItems.length - 1)
-          );
-          break;
-        case 'ArrowUp':
-          e.preventDefault();
-          setHighlightedIndex(i => Math.max(i - 1, 0));
-          break;
-        case 'Enter':
-          e.preventDefault();
-          if (filteredItems[highlightedIndex]) {
-            handleSelect(filteredItems[highlightedIndex]);
-          }
-          break;
-        case 'Escape':
-          setIsOpen(false);
-          break;
-      }
-    },
-    onFocus: () => setIsOpen(true),
-    onBlur: () => setTimeout(() => setIsOpen(false), 200)
-  });
-  
-  const getItemProps = (item, index) => ({
-    onClick: () => handleSelect(item),
-    onMouseEnter: () => setHighlightedIndex(index),
-    className: highlightedIndex === index ? 'highlighted' : ''
-  });
-  
-  const handleSelect = (item) => {
-    onSelect(item);
-    setQuery(item.label || '');
-    setIsOpen(false);
-  };
-  
-  return (
-    <div className="autocomplete">
-      {renderInput({ getInputProps })}
-      
-      {isOpen && (
-        <div className="autocomplete-dropdown">
-          {filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
-              <div key={item.id} {...getItemProps(item, index)}>
-                {renderItem 
-                  ? renderItem(item, { highlighted: index === highlightedIndex })
-                  : item.label
-                }
-              </div>
-            ))
-          ) : (
-            renderNoResults ? renderNoResults(query) : (
-              <div className="no-results">No results for "{query}"</div>
-            )
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// 3. Animation Controller
-function SpringAnimation({ 
-  from, 
-  to, 
-  config = { tension: 170, friction: 26 },
-  children 
-}) {
+// 2. Animation Controller - Animate anything!
+function SpringAnimation({ from, to, config, children }) {
   const [value, setValue] = useState(from);
-  
-  useEffect(() => {
-    let animationId;
-    let velocity = 0;
-    
-    const animate = () => {
-      const distance = to - value;
-      const acceleration = distance * config.tension / 1000;
-      velocity += acceleration;
-      velocity *= 1 - config.friction / 1000;
-      
-      const newValue = value + velocity;
-      
-      if (Math.abs(distance) > 0.01 || Math.abs(velocity) > 0.01) {
-        setValue(newValue);
-        animationId = requestAnimationFrame(animate);
-      } else {
-        setValue(to);
-      }
-    };
-    
-    animationId = requestAnimationFrame(animate);
-    
-    return () => cancelAnimationFrame(animationId);
-  }, [to, config.tension, config.friction]);
-  
-  // Delegate rendering with animated value
+  // Spring physics animation logic...
   return children({ value, progress: (value - from) / (to - from) });
 }
 
-// Usage - Animate anything!
 <SpringAnimation from={0} to={100}>
   {({ value, progress }) => (
-    <div 
-      style={{
-        transform: \`translateX(\${value}px)\`,
-        opacity: progress
-      }}>
+    <div style={{ transform: \`translateX(\${value}px)\`, opacity: progress }}>
       Animated content!
     </div>
   )}
 </SpringAnimation>
 
-// 4. Combining Patterns - Best of Both Worlds
+// 3. Combining Patterns - Best of Both Worlds
 function Toggle({ on: controlledOn, onChange, children }) {
   const [uncontrolledOn, setUncontrolledOn] = useState(false);
   const on = controlledOn ?? uncontrolledOn;
   
-  const toggle = () => {
-    if (controlledOn === undefined) {
-      setUncontrolledOn(!on);
-    }
-    onChange?.(!on);
-  };
-  
-  const getTogglerProps = (props = {}) => ({
-    ...props,
-    onClick: (...args) => {
-      props.onClick?.(...args);
-      toggle();
-    },
-    'aria-pressed': on
-  });
-  
-  // Support multiple API styles
+  // Support BOTH render prop AND compound component APIs!
   if (typeof children === 'function') {
-    // Render prop API
     return children({ on, toggle, getTogglerProps });
   }
-  
-  // Compound component API
   return (
     <ToggleContext.Provider value={{ on, toggle, getTogglerProps }}>
       {children}
     </ToggleContext.Provider>
   );
-}
-
-// Static compound components
-Toggle.Button = function ToggleButton({ children, ...props }) {
-  const { on, getTogglerProps } = useContext(ToggleContext);
-  return (
-    <button {...getTogglerProps(props)}>
-      {children || (on ? 'ON' : 'OFF')}
-    </button>
-  );
-};
-
-Toggle.Display = function ToggleDisplay({ children }) {
-  const { on } = useContext(ToggleContext);
-  return on ? children : null;
-};`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Mastery Achievement:</strong> "These examples show production patterns. 
-					Notice how they handle edge cases, provide multiple APIs, and combine patterns. 
-					True mastery is knowing when to use each approach."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Render Props Mastery:</h3>
-				<p>
-					Render props shine when you need maximum flexibility. They're perfect for 
-					libraries where you can't predict how consumers will want to render UI. 
-					The pattern trades simplicity for power - a worthwhile trade when flexibility 
-					is paramount.
-				</p>
-				<p>
-					Modern React often uses hooks instead of render props for sharing logic, 
-					but render props remain valuable for components that need to delegate 
-					rendering control. The best architects know both patterns and choose 
-					based on the specific need.
-				</p>
-			</div>
+}`}
+			/>
 
 			{flexibilityLevel >= 80 && (
 				<div className='achievement-banner'>
@@ -520,14 +287,23 @@ Toggle.Display = function ToggleDisplay({ children }) {
 				</div>
 			)}
 
-			<div className='chapter-ending'>
-				<p>
-					Pattern Master Renderius applauded as Aria demonstrated her mastery. "You've 
-					learned when to hold control and when to delegate it. Render props are powerful, 
-					but they're not the only pattern for sharing behavior. Forge Master Enhance 
-					awaits to teach you about Higher-Order Components..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Render Props Mastery:`,
+					content: `Render props shine when you need maximum flexibility. They're perfect for libraries where you can't predict how consumers will want to render UI. Modern React often uses hooks instead for sharing logic, but render props remain valuable for delegating rendering control. The best architects know both patterns and choose based on the specific need.`
+				}}
+				reflectionQuestions={[
+					`When would render props be preferred over hooks?`,
+					`How can you combine patterns to support multiple API styles?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 34 (Evening)`,
+					content: `Pattern Master Renderius showed me production-ready render prop implementations! I built a Flexible Modal that supports both render props and children function APIs, an Animation Controller using spring physics, and even combined patterns to support both render prop AND compound component APIs! The comparison chart was enlightening: Compound Components = intuitive APIs (flexibility 40%, simplicity 80%), Render Props = maximum flexibility (flexibility 90%, simplicity 30%), Hooks = modern balance (flexibility 70%, simplicity 70%). Flexibility Level at ${flexibilityLevel}%!`
+				}}
+				chapterEnding={[
+					`Pattern Master Renderius applauded as Aria demonstrated her mastery. "You've learned when to hold control and when to delegate it. Render props are powerful, but they're not the only pattern for sharing behavior. Forge Master Enhance awaits to teach you about Higher-Order Components..."`
+				]}
+			/>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './HigherOrderComponents.css';
 
@@ -12,17 +12,6 @@ function HigherOrderComponents() {
 	const [debuggingDepth, setDebuggingDepth] = useState(0);
 	const [forgeTemperature, setForgeTemperature] = useState(0);
 	const [evolutionStage, setEvolutionStage] = useState('learning');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Forge a new enhanced component
 	const forgeComponent = (baseComponent, enhancement) => {
@@ -67,28 +56,12 @@ function HigherOrderComponents() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Higher-Order Components</h1>
-			<p className='lesson-subtitle'>
-				Enhance components with reusable logic through composition
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Higher-Order Components`}
+				subtitle={`Enhance components with reusable logic through composition`}
+				opener={`The Enhancement Forge glowed with transformative energy as Forge Master Enhance welcomed Aria. "Higher-Order Components are component factories," he explained. "They take a component and return an enhanced version - like my custom hooks, but for components instead of logic." The forge blazed brighter as he demonstrated authentication checking, logging, and performance tracking.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -109,27 +82,10 @@ function HigherOrderComponents() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='advanced-patterns'
-				lessonId='higher-order-components'
+			<LessonFooter
+				courseId={`advanced-patterns`}
+				lessonId={`higher-order-components`}
+				totalChapters={3}
 			/>
 		</div>
 	);

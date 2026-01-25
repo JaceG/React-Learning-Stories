@@ -313,21 +313,6 @@
   margin-bottom: 5px;
 }
 
-/* Character Card */
-.character-intro-card {
-  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-  color: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(108, 92, 231, 0.3);
-}
-
-.character-intro-card h4 {
-  margin-top: 0;
-  font-size: 1.3em;
-}
-
 /* Portal Animation */
 .portal-animation {
   display: flex;

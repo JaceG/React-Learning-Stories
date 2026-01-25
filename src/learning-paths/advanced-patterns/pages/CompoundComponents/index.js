@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './CompoundComponents.css';
 
@@ -11,17 +11,6 @@ function CompoundComponents() {
 	const [sharedState, setSharedState] = useState({});
 	const [compositionPreview, setCompositionPreview] = useState(null);
 	const [architectureLevel, setArchitectureLevel] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Add component to family
 	const addToFamily = (component) => {
@@ -60,28 +49,12 @@ function CompoundComponents() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Compound Components</h1>
-			<p className='lesson-subtitle'>
-				Master the art of component families that work as one
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Compound Components`}
+				subtitle={`Master the art of component families that work as one`}
+				opener={`A golden scroll arrived at Aria's quarters, sealed with the mark of the Architect's Academy. The message was brief but momentous: "Guide Aria, your mastery of React's fundamentals, performance, and quality has not gone unnoticed." The Architect's Academy floated above the kingdom - a crystalline structure that seemed to shift and reconfigure itself constantly. Dean Architectus greeted Aria at the entrance. "Welcome. Here we teach not just how to build components, but how to compose them into elegant architectures."`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -100,27 +73,10 @@ function CompoundComponents() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='advanced-patterns'
-				lessonId='compound-components'
+			<LessonFooter
+				courseId={`advanced-patterns`}
+				lessonId={`compound-components`}
+				totalChapters={3}
 			/>
 		</div>
 	);

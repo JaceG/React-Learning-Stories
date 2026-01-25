@@ -275,21 +275,6 @@
   min-height: 100px;
 }
 
-/* Character Cards */
-.character-intro-card {
-  background: linear-gradient(135deg, #e17055, #d63031);
-  color: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(225, 112, 85, 0.3);
-}
-
-.character-intro-card h4 {
-  margin-top: 0;
-  font-size: 1.3em;
-}
-
 /* Prop Getters Visualization */
 .prop-getters-demo {
   background: #dfe6e9;

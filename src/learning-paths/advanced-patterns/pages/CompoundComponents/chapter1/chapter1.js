@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -57,9 +61,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Architect's Invitation
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Architect's Invitation`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -86,21 +91,18 @@ const ChapterOne = () => {
 					<strong>Binary</strong> scanned the academy. "Aria, the components here... 
 					they're communicating in ways I've never seen!"
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Dean Architectus</h4>
-					<p>Master of architectural patterns and component composition. His philosophy: 
-					"The most elegant code is not clever - it's clear. Compound components hide 
-					complexity while providing intuitive APIs that developers love to use."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Component Composition Laboratory</h3>
+				<h3 className='section-title'>Interactive Exercise: Component Composition Laboratory</h3>
+				
+				<InstructionBox character={`Dean Architectus gestures to the Pattern Explorer.`}>
+					Click on a pattern to see how compound components work together. Watch as the 
+					component family forms and implicit connections are established!
+				</InstructionBox>
 				
 				<div className='architects-academy'>
 					<h4>Pattern Explorer</h4>
-					<p>Click on a pattern to see how compound components work together:</p>
 					
 					<div className='pattern-cards'>
 						{compoundPatterns.map(pattern => (
@@ -158,12 +160,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Introduction to Compound Components</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Compound Components Pattern
+			<CodeExample
+				title={`Introduction to Compound Components`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Compound Components Pattern
 // Components that work together as a cohesive unit
 
 // Traditional approach - prop drilling
@@ -244,52 +244,29 @@ function App() {
 // 2. No prop drilling
 // 3. Intuitive API
 // 4. Components "just work" together
-// 5. Easy to extend and customize`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Architectus explains:</strong> "Notice how Tab and TabPanel don't need 
-					explicit props to communicate? They share state through context, but the API 
-					user doesn't need to know that. The implementation is hidden, the interface 
-					is clean."
-				</div>
-			</div>
+// 5. Easy to extend and customize`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Compound Lesson:</h3>
-				<p>
-					Compound components are like a family that shares an implicit understanding. 
-					Dean Architectus teaches that the most elegant APIs hide complexity while 
-					providing flexibility - components that just "know" how to work together.
-				</p>
-				<p>
-					Unlike traditional prop drilling where parent components must orchestrate 
-					everything, compound components distribute responsibility. Each component 
-					manages its own concern while staying connected to the family's shared state.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Component Architecture</h3>
-				<p>
-					<strong>How do compound components improve developer experience compared to 
-					prop drilling?</strong> Consider the difference between configuring every detail 
-					versus components that intuitively understand their relationships.
-				</p>
-				<p>
-					<strong>When would you choose compound components over simple component 
-					composition?</strong> Think about flexibility needs, API design, and whether 
-					components truly belong together as a family.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As Aria watched the component families communicate seamlessly, Dean Architectus 
-					smiled. "You're beginning to see the elegance. Tomorrow, we'll explore the 
-					implicit bonds that make this magic possible - diving deep into Context and 
-					flexible APIs..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Dean Architectus`,
+						description: `Master of architectural patterns and component composition. His philosophy: "The most elegant code is not clever - it's clear. Compound components hide complexity while providing intuitive APIs that developers love to use."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Compound Lesson:`,
+					content: `Compound components are like a family that shares an implicit understanding. Dean Architectus teaches that the most elegant APIs hide complexity while providing flexibility - components that just "know" how to work together. Unlike traditional prop drilling where parent components must orchestrate everything, compound components distribute responsibility.`
+				}}
+				reflectionQuestions={[
+					`How do compound components improve developer experience compared to prop drilling?`,
+					`When would you choose compound components over simple component composition?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Morning)`,
+					content: `Received an invitation to the Architect's Academy! Dean Architectus welcomed me to learn the highest architectural arts. My first lesson: Compound Components - the art of components that work as one. I explored patterns like Tabs, Accordions, and Selects - all demonstrating how component families communicate through implicit understanding rather than explicit prop drilling. Binary was amazed by the hidden connections. The Dean's wisdom: "The most elegant code is not clever - it's clear." Architecture Level at ${architectureLevel}%!`
+				}}
+			/>
 		</div>
 	);
 };

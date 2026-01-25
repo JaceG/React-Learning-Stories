@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -64,9 +68,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Enhancement Forge
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Enhancement Forge`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -90,17 +95,15 @@ const ChapterOne = () => {
 					component and enhance it with authentication checking, logging, and more. 
 					Each enhancement wraps the original, adding new capabilities."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Forge Master Enhance</h4>
-					<p>Keeper of enhancement patterns and component transformation. His philosophy: 
-					"HOCs are like armor for components - each layer adds protection and capability, 
-					but too many layers make movement difficult. Choose your enhancements wisely."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>The Enhancement Forge</h3>
+				<h3 className='section-title'>Interactive Exercise: The Enhancement Forge</h3>
+				
+				<InstructionBox character={`Forge Master Enhance hands you a component template.`}>
+					Select a base component and an enhancement pattern, then forge them together! 
+					Watch as the component gains new capabilities through HOC wrapping.
+				</InstructionBox>
 				
 				<div className='enhancement-forge'>
 					<h4>Component Enhancement Workshop</h4>
@@ -202,22 +205,18 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>HOC Fundamentals</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Higher-Order Components - The Original Pattern
+			<CodeExample
+				title={`HOC Fundamentals`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Higher-Order Components - The Original Pattern
 
 // 1. Basic HOC Pattern
 function withAuth(WrappedComponent) {
-  // Return a new component
   return function AuthenticatedComponent(props) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-      // Check authentication
       checkAuth()
         .then(() => setIsAuthenticated(true))
         .catch(() => setIsAuthenticated(false))
@@ -227,14 +226,12 @@ function withAuth(WrappedComponent) {
     if (loading) return <LoadingSpinner />;
     if (!isAuthenticated) return <LoginRedirect />;
     
-    // Pass through all props to wrapped component
     return <WrappedComponent {...props} />;
   };
 }
 
 // Usage
 const ProtectedDashboard = withAuth(Dashboard);
-const ProtectedProfile = withAuth(UserProfile);
 
 // 2. HOC with Configuration
 function withLogging(WrappedComponent, componentName) {
@@ -243,157 +240,42 @@ function withLogging(WrappedComponent, componentName) {
       console.log(\`\${componentName} mounted\`);
       return () => console.log(\`\${componentName} unmounted\`);
     }, []);
-    
-    const loggedProps = Object.keys(props).reduce((acc, key) => {
-      acc[key] = (...args) => {
-        if (typeof props[key] === 'function') {
-          console.log(\`\${componentName}.\${key} called\`);
-          return props[key](...args);
-        }
-        return props[key];
-      };
-      return acc;
-    }, {});
-    
-    return <WrappedComponent {...loggedProps} />;
-  };
-}
-
-// Usage with configuration
-const LoggedButton = withLogging(Button, 'Button');
-
-// 3. Data Fetching HOC
-function withData(WrappedComponent, dataSource) {
-  return function DataComponent(props) {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    
-    useEffect(() => {
-      setLoading(true);
-      fetch(dataSource)
-        .then(res => res.json())
-        .then(setData)
-        .catch(setError)
-        .finally(() => setLoading(false));
-    }, [dataSource]);
-    
-    return (
-      <WrappedComponent 
-        {...props}
-        data={data}
-        loading={loading}
-        error={error}
-      />
-    );
-  };
-}
-
-// 4. Theme Injection HOC
-function withTheme(WrappedComponent) {
-  return function ThemedComponent(props) {
-    const theme = useContext(ThemeContext);
-    
-    // Inject theme as prop
-    return <WrappedComponent {...props} theme={theme} />;
-  };
-}
-
-// 5. Performance Monitoring HOC
-function withPerformance(WrappedComponent) {
-  return function PerformanceComponent(props) {
-    const renderStart = performance.now();
-    
-    useEffect(() => {
-      const renderEnd = performance.now();
-      const renderTime = renderEnd - renderStart;
-      
-      if (renderTime > 16) { // Longer than one frame
-        console.warn(
-          \`Slow render detected: \${renderTime.toFixed(2)}ms\`
-        );
-      }
-    });
-    
     return <WrappedComponent {...props} />;
   };
 }
 
-// Composing multiple HOCs
+// 3. Composing multiple HOCs
 const EnhancedDashboard = withAuth(
   withLogging(
-    withData(
-      withTheme(Dashboard),
-      '/api/dashboard'
-    ),
+    withData(withTheme(Dashboard), '/api/dashboard'),
     'Dashboard'
   )
 );
 
-// Or with compose utility
-const enhance = compose(
-  withAuth,
-  withLogging('Dashboard'),
-  withData('/api/dashboard'),
-  withTheme
-);
+// Benefits: Reusable logic, separation of concerns
+// Limitations: Wrapper hell, props collision, static composition`}
+			/>
 
-const EnhancedDashboard = enhance(Dashboard);
-
-// Benefits of HOCs:
-// - Reusable logic across components
-// - Separation of concerns
-// - Props manipulation
-// - Conditional rendering
-
-// Limitations:
-// - Wrapper hell (deep nesting)
-// - Props collision
-// - Static composition
-// - Harder debugging`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Forge Master's Wisdom:</strong> "See how each HOC wraps the component, 
-					adding a layer of functionality? It's powerful but can become unwieldy. Modern 
-					React often prefers hooks, but HOCs remain valuable for certain patterns."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Enhancement Lesson:</h3>
-				<p>
-					Higher-Order Components represent React's original solution for logic reuse. 
-					They follow the factory pattern - taking a component as input and returning 
-					an enhanced version as output.
-				</p>
-				<p>
-					While hooks have largely replaced HOCs for logic sharing, understanding HOCs 
-					is crucial for maintaining existing codebases and recognizing patterns that 
-					influenced React's evolution.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Component Enhancement</h3>
-				<p>
-					<strong>How are HOCs similar to and different from hooks?</strong> Consider 
-					the patterns of logic reuse and the trade-offs of each approach.
-				</p>
-				<p>
-					<strong>When might HOCs still be the best solution?</strong> Think about 
-					scenarios involving props manipulation, conditional rendering, or working 
-					with class components.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the forge cooled, Aria examined her enhanced components. "Each layer adds 
-					capability," she observed, "but the nesting gets deep." Forge Master Enhance 
-					nodded. "Tomorrow, we'll explore advanced enhancement patterns and learn to 
-					manage complexity..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Forge Master Enhance`,
+						description: `Keeper of enhancement patterns and component transformation. His philosophy: "HOCs are like armor for components - each layer adds protection and capability, but too many layers make movement difficult. Choose your enhancements wisely."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Enhancement Lesson:`,
+					content: `Higher-Order Components represent React's original solution for logic reuse. They follow the factory pattern - taking a component as input and returning an enhanced version as output. While hooks have largely replaced HOCs for logic sharing, understanding HOCs is crucial for maintaining existing codebases.`
+				}}
+				reflectionQuestions={[
+					`How are HOCs similar to and different from hooks?`,
+					`When might HOCs still be the best solution?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Morning)`,
+					content: `Forge Master Enhance welcomed me to the Enhancement Forge! I learned that Higher-Order Components are component factories - they take a component and return an enhanced version. I forged components with withAuth, withLogging, withData, and withTheme enhancements. Each layer wraps the original, adding new capabilities. The forge temperature reached ${forgeTemperature}°! The Forge Master's wisdom: "HOCs are like armor - each layer adds capability, but too many layers make movement difficult."`
+				}}
+			/>
 		</div>
 	);
 };

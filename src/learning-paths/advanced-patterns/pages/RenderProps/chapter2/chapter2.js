@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -61,13 +65,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Delegation Patterns
-			</h2>
-
-			<div className='chapter-bridge'>
-				With basic render props understood, it was time for advanced techniques...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Delegation Patterns`}
+				bridge={`With basic render props understood, Pattern Master Renderius led Aria to the Advanced Delegation Laboratory. "It's more flexible than compound components," Aria noted, "but the consumer has to do more work." Renderius nodded. "Precisely why we have patterns like prop getters - they provide flexibility while reducing the burden on consumers."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -94,7 +96,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Advanced Delegation Laboratory</h3>
+				<h3 className='section-title'>Interactive Exercise: Advanced Delegation Laboratory</h3>
+				
+				<InstructionBox character={`Renderius opens the Advanced Patterns Vault.`}>
+					Explore the advanced delegation patterns - prop getters, state reducers, and 
+					control props. Watch how the tradeoff balance shifts between flexibility and simplicity!
+				</InstructionBox>
 				
 				<div className='separation-workshop'>
 					<h4>Logic vs Presentation Separation</h4>
@@ -190,12 +197,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Advanced Render Prop Patterns</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced Render Prop Patterns
+			<CodeExample
+				title={`Advanced Render Prop Patterns`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Advanced Render Prop Patterns
 
 // 1. Prop Getters Pattern - Simplifying Integration
 function useToggle(initialOn = false) {
@@ -216,213 +221,53 @@ function useToggle(initialOn = false) {
   return { on, toggle, getTogglerProps };
 }
 
-// Simple usage with prop getters
-function Toggle({ children }) {
-  const toggle = useToggle();
-  return children(toggle);
-}
-
-function App() {
-  return (
-    <Toggle>
-      {({ on, getTogglerProps }) => (
-        <>
-          {/* Super simple - just spread! */}
-          <button {...getTogglerProps()}>
-            {on ? 'ON' : 'OFF'}
-          </button>
-          
-          {/* With additional props */}
-          <button 
-            {...getTogglerProps({ 
-              className: 'fancy-button',
-              onClick: () => console.log('clicked!')
-            })}>
-            Custom Toggle
-          </button>
-        </>
-      )}
-    </Toggle>
-  );
-}
+// Usage - Super simple, just spread!
+<Toggle>
+  {({ on, getTogglerProps }) => (
+    <button {...getTogglerProps()}>
+      {on ? 'ON' : 'OFF'}
+    </button>
+  )}
+</Toggle>
 
 // 2. State Reducer Pattern - Ultimate Control
-function useToggleWithReducer(initialOn = false, reducer = (s, a) => a) {
+function useToggleWithReducer(initialOn, reducer) {
   const [{ on }, dispatch] = useReducer(
     (state, action) => {
       const changes = toggleReducer(state, action);
-      return reducer(state, changes);
+      return reducer(state, changes); // Consumer can intercept!
     },
     { on: initialOn }
   );
   
-  const toggle = () => dispatch({ type: 'TOGGLE' });
-  const setOn = () => dispatch({ type: 'SET_ON' });
-  const setOff = () => dispatch({ type: 'SET_OFF' });
-  
-  return { on, toggle, setOn, setOff };
-}
-
-function toggleReducer(state, action) {
-  switch (action.type) {
-    case 'TOGGLE':
-      return { on: !state.on };
-    case 'SET_ON':
-      return { on: true };
-    case 'SET_OFF':
-      return { on: false };
-    default:
-      return state;
-  }
-}
-
-// Consumer can control state changes
-function App() {
-  const maxToggles = 4;
-  let toggleCount = 0;
-  
-  return (
-    <ToggleWithReducer
-      reducer={(state, changes) => {
-        if (changes.on && toggleCount >= maxToggles) {
-          // Prevent turning on after max toggles
-          return state;
-        }
-        toggleCount = changes.on ? toggleCount + 1 : toggleCount;
-        return changes;
-      }}>
-      {({ on, toggle }) => (
-        <div>
-          <button onClick={toggle}>
-            {on ? 'ON' : 'OFF'}
-          </button>
-          <p>Toggles remaining: {maxToggles - toggleCount}</p>
-        </div>
-      )}
-    </ToggleWithReducer>
-  );
+  return { on, toggle: () => dispatch({ type: 'TOGGLE' }) };
 }
 
 // 3. Control Props Pattern - Controlled/Uncontrolled
 function Toggle({ on: controlledOn, onChange, children }) {
   const [uncontrolledOn, setUncontrolledOn] = useState(false);
-  
-  // Determine if controlled
   const isControlled = controlledOn !== undefined;
   const on = isControlled ? controlledOn : uncontrolledOn;
   
-  const handleToggle = () => {
-    if (!isControlled) {
-      setUncontrolledOn(!on);
-    }
-    onChange?.(!on);
-  };
-  
-  const getTogglerProps = (props = {}) => ({
-    ...props,
-    onClick: (...args) => {
-      props.onClick?.(...args);
-      handleToggle();
-    },
-    'aria-pressed': on
-  });
-  
+  // Supports both controlled and uncontrolled usage!
   return children({ on, getTogglerProps });
-}
+}`}
+			/>
 
-// Can be used controlled or uncontrolled
-function App() {
-  const [on, setOn] = useState(false);
-  
-  return (
-    <>
-      {/* Controlled */}
-      <Toggle on={on} onChange={setOn}>
-        {({ on, getTogglerProps }) => (
-          <button {...getTogglerProps()}>
-            Controlled: {on ? 'ON' : 'OFF'}
-          </button>
-        )}
-      </Toggle>
-      
-      {/* Uncontrolled */}
-      <Toggle>
-        {({ on, getTogglerProps }) => (
-          <button {...getTogglerProps()}>
-            Uncontrolled: {on ? 'ON' : 'OFF'}
-          </button>
-        )}
-      </Toggle>
-    </>
-  );
-}
-
-// 4. Named Multiple Render Props
-function DataTable({ 
-  data, 
-  renderHeader, 
-  renderRow, 
-  renderEmpty,
-  renderFooter 
-}) {
-  if (data.length === 0) {
-    return renderEmpty?.() || <div>No data</div>;
-  }
-  
-  return (
-    <table>
-      {renderHeader && <thead>{renderHeader()}</thead>}
-      <tbody>
-        {data.map((item, index) => renderRow(item, index))}
-      </tbody>
-      {renderFooter && <tfoot>{renderFooter()}</tfoot>}
-    </table>
-  );
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Advanced Wisdom:</strong> "Prop getters reduce boilerplate. State 
-					reducers provide ultimate control. Control props support both modes. Choose 
-					based on your consumers' needs and expertise level."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Pattern Evolution:</h3>
-				<p>
-					Advanced render prop patterns evolved to address the complexity challenge. 
-					Prop getters make integration almost as simple as regular components. State 
-					reducers give power users complete control. Control props support both 
-					controlled and uncontrolled usage.
-				</p>
-				<p>
-					The key is knowing your audience. Library authors often implement all 
-					patterns, letting consumers choose their preferred level of control and 
-					complexity.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Pattern Complexity</h3>
-				<p>
-					<strong>How do you balance flexibility with ease of use?</strong> Consider 
-					the different skill levels of developers who might use your components.
-				</p>
-				<p>
-					<strong>When is too much flexibility a bad thing?</strong> Think about 
-					decision fatigue and the paradox of choice in API design.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Aria mastered each pattern, understanding their trade-offs. "Different tools 
-					for different situations," she mused. Debuggora computed rapidly: "The 
-					patterns can even be combined!" Pattern Master Renderius smiled. "You're 
-					ready for the final lesson - seeing how render props compare to other 
-					patterns..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Pattern Evolution:`,
+					content: `Advanced render prop patterns evolved to address the complexity challenge. Prop getters make integration almost as simple as regular components. State reducers give power users complete control. Control props support both controlled and uncontrolled usage. The key is knowing your audience.`
+				}}
+				reflectionQuestions={[
+					`How do you balance flexibility with ease of use?`,
+					`When is too much flexibility a bad thing?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 34 (Afternoon)`,
+					content: `Pattern Master Renderius showed me the advanced delegation patterns! Prop getters reduce boilerplate - just spread and you're done. State reducers let consumers intercept and control state changes for ultimate power. Control props support both controlled and uncontrolled modes. The tradeoff balance visualization really helped me understand: more flexibility means more complexity for consumers. Debuggora noted the patterns can even be combined!`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -147,9 +151,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Portal Dimension
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Portal Dimension`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -175,17 +180,15 @@ const ChapterOne = () => {
 					Essential for modals, tooltips, and any UI that must escape its 
 					container's constraints."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Portal Keeper Escapius</h4>
-					<p>Master of dimensional rendering and DOM manipulation. His motto: 
-					"Sometimes the best place for a component isn't where it lives in 
-					the code, but where it needs to appear in the DOM."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Portal Gateway</h3>
+				<h3 className='section-title'>Interactive Exercise: Portal Gateway</h3>
+				
+				<InstructionBox character={`Portal Keeper Escapius opens the Portal Creation Chamber.`}>
+					Click on portal use cases to see how components escape their containers! 
+					Watch the DOM tree visualization as modals and tooltips render outside the React root.
+				</InstructionBox>
 				
 				<div className='portal-gateway'>
 					<h4>Portal Creation Chamber</h4>
@@ -299,19 +302,14 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Portal Fundamentals</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// React Portals - Rendering Outside the Parent
-
+			<CodeExample
+				title={`Portal Fundamentals`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// React Portals - Rendering Outside the Parent
 import ReactDOM from 'react-dom';
 
 // 1. Basic Portal Usage
 function Modal({ children, onClose }) {
-  // Portal renders children into a DOM node
-  // that exists outside the parent component
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -322,235 +320,57 @@ function Modal({ children, onClose }) {
   );
 }
 
-// 2. Creating Portal Target
-// In your HTML:
-// <div id="root"></div>
-// <div id="modal-root"></div>
-
-// Or create dynamically:
-function usePortalTarget(id) {
-  useEffect(() => {
-    const element = document.getElementById(id);
-    if (!element) {
-      const newElement = document.createElement('div');
-      newElement.id = id;
-      document.body.appendChild(newElement);
-    }
-    
-    return () => {
-      // Cleanup if needed
-    };
-  }, [id]);
-}
-
-// 3. Modal with Portal
-function ModalExample() {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  return (
-    <>
-      <button onClick={() => setIsOpen(true)}>
-        Open Modal
-      </button>
-      
-      {isOpen && (
-        <Modal onClose={() => setIsOpen(false)}>
-          <h2>Modal Title</h2>
-          <p>This modal renders outside the parent!</p>
-        </Modal>
-      )}
-    </>
-  );
-}
-
-// 4. Tooltip Portal with Positioning
+// 2. Tooltip Portal with Positioning
 function Tooltip({ children, targetRef }) {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   
   useEffect(() => {
-    if (!targetRef.current) return;
-    
-    const updatePosition = () => {
-      const rect = targetRef.current.getBoundingClientRect();
-      setPosition({
-        top: rect.top - 30,
-        left: rect.left + rect.width / 2
-      });
-    };
-    
-    updatePosition();
-    window.addEventListener('scroll', updatePosition);
-    window.addEventListener('resize', updatePosition);
-    
-    return () => {
-      window.removeEventListener('scroll', updatePosition);
-      window.removeEventListener('resize', updatePosition);
-    };
+    const rect = targetRef.current?.getBoundingClientRect();
+    setPosition({ top: rect.top - 30, left: rect.left + rect.width / 2 });
   }, [targetRef]);
   
   return ReactDOM.createPortal(
-    <div 
-      className="tooltip"
-      style={{
-        position: 'fixed',
-        top: position.top,
-        left: position.left,
-        transform: 'translateX(-50%)'
-      }}>
+    <div className="tooltip" style={{ position: 'fixed', ...position }}>
       {children}
     </div>,
     document.body
   );
 }
 
-// 5. Notification System with Portals
-function NotificationPortal({ notifications }) {
-  return ReactDOM.createPortal(
-    <div className="notification-container">
-      {notifications.map(notification => (
-        <div key={notification.id} className="notification">
-          {notification.message}
-        </div>
-      ))}
-    </div>,
-    document.getElementById('notification-root')
-  );
-}
+// 3. Event Propagation Through Portals
+// Events bubble through React tree, not DOM tree!
+<div onClick={() => console.log('Parent clicked')}>
+  <Modal>
+    <button onClick={() => console.log('Button clicked')}>Click me</button>
+    {/* Both handlers fire! Portal maintains React tree. */}
+  </Modal>
+</div>
 
-// 6. Dropdown that Escapes Overflow
-function Dropdown({ isOpen, children, targetRef }) {
-  const [position, setPosition] = useState({});
-  
-  useLayoutEffect(() => {
-    if (!isOpen || !targetRef.current) return;
-    
-    const rect = targetRef.current.getBoundingClientRect();
-    const dropdownHeight = 200; // Estimate or measure
-    
-    // Smart positioning
-    const shouldFlip = rect.bottom + dropdownHeight > window.innerHeight;
-    
-    setPosition({
-      top: shouldFlip ? rect.top - dropdownHeight : rect.bottom,
-      left: rect.left,
-      width: rect.width
-    });
-  }, [isOpen, targetRef]);
-  
-  if (!isOpen) return null;
-  
-  return ReactDOM.createPortal(
-    <div 
-      className="dropdown"
-      style={{
-        position: 'fixed',
-        ...position
-      }}>
-      {children}
-    </div>,
-    document.body
-  );
-}
+// 4. Context Through Portals
+// Portals maintain context from React tree
+const theme = useContext(ThemeContext); // Works in portals!`}
+			/>
 
-// 7. Event Propagation Through Portals
-function PortalEventExample() {
-  // Events bubble through React tree, not DOM tree!
-  return (
-    <div onClick={() => console.log('Parent clicked')}>
-      <Modal>
-        <button onClick={() => console.log('Button clicked')}>
-          Click me
-        </button>
-        {/* Clicking button logs:
-            1. "Button clicked"
-            2. "Parent clicked" (through React tree!)
-        */}
-      </Modal>
-    </div>
-  );
-}
-
-// 8. Context Through Portals
-const ThemeContext = React.createContext('light');
-
-function ThemedModal({ children }) {
-  // Portals maintain context from React tree
-  const theme = useContext(ThemeContext);
-  
-  return ReactDOM.createPortal(
-    <div className={\`modal theme-\${theme}\`}>
-      {children}
-    </div>,
-    document.getElementById('modal-root')
-  );
-}
-
-// 9. Managing Multiple Portals
-function usePortalManager() {
-  const [portals, setPortals] = useState([]);
-  
-  const addPortal = (content, target = 'portal-root') => {
-    const id = Date.now();
-    setPortals(prev => [...prev, { id, content, target }]);
-    return id;
-  };
-  
-  const removePortal = (id) => {
-    setPortals(prev => prev.filter(p => p.id !== id));
-  };
-  
-  return { portals, addPortal, removePortal };
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Portal Wisdom:</strong> "Portals break the visual hierarchy while 
-					maintaining the component hierarchy. Events and context flow through the 
-					React tree, not the DOM tree. Use them when you need to render outside 
-					container constraints."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Portal Lesson:</h3>
-				<p>
-					React Portals provide a first-class way to render children into a DOM 
-					node that exists outside the parent component's DOM hierarchy. This is 
-					essential for UI patterns like modals, tooltips, and notifications that 
-					need to "escape" their containers.
-				</p>
-				<p>
-					Despite rendering elsewhere in the DOM, portals maintain their position 
-					in the React component tree, preserving context and event bubbling through 
-					React's synthetic event system.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Portal Power</h3>
-				<p>
-					<strong>Why do portals maintain React's event propagation?</strong> Consider 
-					how this differs from manually appending to the DOM and why it matters for 
-					component communication.
-				</p>
-				<p>
-					<strong>When should you avoid portals?</strong> Think about scenarios where 
-					keeping components in their natural DOM position would be better for 
-					accessibility or maintainability.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As portals opened and closed around them, <strong>Aria</strong> marveled 
-					at the dimensional flexibility. "We can render anywhere while maintaining 
-					our component relationships!"
-				</p>
-				<p>
-					<strong>Portal Keeper Escapius</strong> smiled. "You understand the first 
-					truth. Tomorrow, we'll explore the second dimension - direct DOM access 
-					through refs..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Portal Keeper Escapius`,
+						description: `Master of dimensional rendering and DOM manipulation. His motto: "Sometimes the best place for a component isn't where it lives in the code, but where it needs to appear in the DOM."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Portal Lesson:`,
+					content: `React Portals provide a first-class way to render children into a DOM node that exists outside the parent component's DOM hierarchy. Essential for modals, tooltips, and notifications that need to escape their containers. Despite rendering elsewhere in the DOM, portals maintain their position in the React tree, preserving context and event bubbling.`
+				}}
+				reflectionQuestions={[
+					`Why do portals maintain React's event propagation?`,
+					`When should you avoid portals?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Morning)`,
+					content: `Portal Keeper Escapius welcomed me to the final chamber of the Architect's Academy - where physics bend! I learned React Portals render children outside the parent's DOM hierarchy while maintaining the React component tree. This is essential for modals that need to escape overflow:hidden containers, tooltips that need fixed positioning, and notifications. The key insight: events and context flow through the React tree, not the DOM tree! Bridge Strength at ${bridgeStrength}%.`
+				}}
+			/>
 		</div>
 	);
 };

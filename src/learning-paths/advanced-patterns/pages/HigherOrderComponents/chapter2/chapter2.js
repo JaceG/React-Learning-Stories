@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -77,13 +81,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Enhancement Layers
-			</h2>
-
-			<div className='chapter-bridge'>
-				With basic HOCs understood, it was time to explore advanced patterns...
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Enhancement Layers`}
+				bridge={`Aria learned to layer enhancements as they descended deeper into the forge. "Each HOC adds a capability," Forge Master Enhance demonstrated. Binary analyzed the component tree: "The nesting gets deep, Aria. This could affect debugging." The Forge Master acknowledged the concern: "An astute observation. HOCs are powerful but can obscure component hierarchy."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -111,7 +113,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Advanced Enhancement Laboratory</h3>
+				<h3 className='section-title'>Interactive Exercise: Advanced Enhancement Laboratory</h3>
+				
+				<InstructionBox character={`Forge Master Enhance reveals the Advanced Patterns Vault.`}>
+					Explore props proxy, inheritance inversion, conditional rendering, and state 
+					abstraction patterns. Build composition chains and watch the debugging depth grow!
+				</InstructionBox>
 				
 				<div className='enhancement-layers'>
 					<h4>Enhancement Layer Stack</h4>
@@ -233,229 +240,77 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Advanced HOC Patterns</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced HOC Patterns
+			<CodeExample
+				title={`Advanced HOC Patterns`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Advanced HOC Patterns
 
 // 1. Props Proxy Pattern
 function withExtraProps(WrappedComponent) {
-  return function WithExtraPropsComponent(props) {
-    // Add or modify props
+  return function(props) {
     const enhancedProps = {
       ...props,
       extraProp: 'added by HOC',
-      // Override existing prop
       onClick: (...args) => {
         console.log('Click intercepted by HOC');
         props.onClick?.(...args);
       }
     };
-    
     return <WrappedComponent {...enhancedProps} />;
   };
 }
 
-// 2. Inheritance Inversion Pattern
-function withInheritanceInversion(WrappedComponent) {
-  return class extends WrappedComponent {
-    // Access component lifecycle and state
-    componentDidMount() {
-      console.log('HOC: Component mounted');
-      // Access component state
-      console.log('State:', this.state);
-      super.componentDidMount?.();
-    }
-    
-    render() {
-      // Can modify render output
-      const elementTree = super.render();
-      
-      // Conditionally render
-      if (this.state.error) {
-        return <ErrorDisplay error={this.state.error} />;
-      }
-      
-      // Modify element tree
-      return React.cloneElement(elementTree, {
-        className: \`\${elementTree.props.className} enhanced\`
-      });
-    }
-  };
-}
-
-// 3. Conditional Rendering HOC
-function withConditionalRendering(
-  WrappedComponent,
-  condition,
-  FallbackComponent = () => null
-) {
-  return function ConditionalComponent(props) {
-    // Evaluate condition
+// 2. Conditional Rendering HOC
+function withConditionalRendering(WrappedComponent, condition, Fallback) {
+  return function(props) {
     const shouldRender = typeof condition === 'function' 
-      ? condition(props) 
-      : condition;
-    
+      ? condition(props) : condition;
     return shouldRender 
       ? <WrappedComponent {...props} />
-      : <FallbackComponent {...props} />;
+      : <Fallback {...props} />;
   };
 }
 
-// Usage
-const OnlyForAdmins = withConditionalRendering(
-  AdminPanel,
-  (props) => props.user?.role === 'admin',
-  () => <div>Access Denied</div>
-);
-
-// 4. State Abstraction HOC
-function withToggle(WrappedComponent) {
-  return function WithToggleComponent(props) {
-    const [on, setOn] = useState(false);
-    const toggle = () => setOn(!on);
-    
-    return (
-      <WrappedComponent 
-        {...props}
-        on={on}
-        toggle={toggle}
-      />
-    );
-  };
-}
-
-// 5. HOC Composition with Display Names
+// 3. HOC Composition with Display Names
 function compose(...hocs) {
   return function(WrappedComponent) {
     return hocs.reduceRight((acc, hoc) => {
       const Enhanced = hoc(acc);
-      // Preserve display names for debugging
-      Enhanced.displayName = \`\${hoc.name}(\${
-        acc.displayName || acc.name || 'Component'
-      })\`;
+      Enhanced.displayName = \`\${hoc.name}(\${acc.displayName || acc.name})\`;
       return Enhanced;
     }, WrappedComponent);
   };
 }
 
-// Proper display name preservation
-function withDisplayName(hocName) {
-  return function(WrappedComponent) {
-    const WithHOC = (props) => {
-      // HOC logic here
-      return <WrappedComponent {...props} />;
-    };
-    
-    WithHOC.displayName = \`\${hocName}(\${
-      WrappedComponent.displayName || WrappedComponent.name || 'Component'
-    })\`;
-    
-    return WithHOC;
-  };
-}
-
-// 6. HOC with Ref Forwarding
-function withRefForwarding(WrappedComponent) {
-  const WithRef = React.forwardRef((props, ref) => {
-    return <WrappedComponent {...props} forwardedRef={ref} />;
-  });
-  
-  WithRef.displayName = \`withRef(\${
-    WrappedComponent.displayName || WrappedComponent.name
-  })\`;
-  
-  return WithRef;
-}
-
-// 7. Performance Optimized HOC
-function withMemo(WrappedComponent) {
-  const MemoizedComponent = React.memo(WrappedComponent);
-  
-  return function WithMemoComponent(props) {
-    // Can add additional logic here
-    return <MemoizedComponent {...props} />;
-  };
-}
-
-// 8. Error Boundary HOC
+// 4. Error Boundary HOC
 function withErrorBoundary(WrappedComponent, FallbackComponent) {
   return class extends React.Component {
     state = { hasError: false, error: null };
-    
     static getDerivedStateFromError(error) {
       return { hasError: true, error };
     }
-    
-    componentDidCatch(error, errorInfo) {
-      console.error('Error caught by HOC:', error, errorInfo);
-    }
-    
     render() {
-      if (this.state.hasError) {
-        return <FallbackComponent error={this.state.error} />;
-      }
-      
+      if (this.state.hasError) return <FallbackComponent error={this.state.error} />;
       return <WrappedComponent {...this.props} />;
     }
   };
-}
+}`}
+			/>
 
-// Complete example with all patterns
-const enhance = compose(
-  withErrorBoundary(ErrorFallback),
-  withAuth,
-  withExtraProps,
-  withToggle,
-  withMemo,
-  withDisplayName('FullyEnhanced')
-);
-
-const EnhancedComponent = enhance(BaseComponent);`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Layer Management:</strong> "Each pattern serves a purpose. Props proxy 
-					for simple enhancements, inheritance inversion for deep control. But remember - 
-					with each layer, debugging becomes harder. Choose wisely."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Layering Insight:</h3>
-				<p>
-					Advanced HOC patterns provide powerful capabilities but come with complexity 
-					costs. Props proxy is the safest pattern, while inheritance inversion gives 
-					maximum control at the cost of tight coupling.
-				</p>
-				<p>
-					The key to HOC mastery is knowing when to stop. Each layer adds indirection, 
-					making debugging and testing more difficult. Modern React's hooks often provide 
-					cleaner alternatives, but these patterns remain relevant for specific use cases.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Pattern Complexity</h3>
-				<p>
-					<strong>How deep is too deep for HOC composition?</strong> Consider the 
-					debugging experience and cognitive load on other developers.
-				</p>
-				<p>
-					<strong>When would inheritance inversion be justified?</strong> Think about 
-					the trade-offs of accessing component internals versus maintaining loose coupling.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As enhancement layers piled up, Binary's circuits sparked with concern. 
-					"The component tree is becoming a component forest!" Forge Master Enhance 
-					nodded solemnly. "You've seen the power and the peril. Tomorrow, we'll 
-					discuss when to use HOCs and when to choose alternatives..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Layering Insight:`,
+					content: `Advanced HOC patterns provide powerful capabilities but come with complexity costs. Props proxy is the safest pattern, while inheritance inversion gives maximum control at the cost of tight coupling. The key to HOC mastery is knowing when to stop - each layer adds indirection, making debugging and testing more difficult.`
+				}}
+				reflectionQuestions={[
+					`How deep is too deep for HOC composition?`,
+					`When would inheritance inversion be justified?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Afternoon)`,
+					content: `Forge Master Enhance showed me advanced HOC patterns! Props proxy for simple enhancements, inheritance inversion for deep control, conditional rendering for access control, and state abstraction for reusable logic. I built composition chains and learned proper display name preservation for debugging. Binary's circuits sparked with concern: "The component tree is becoming a component forest!" Current debugging depth: ${debuggingDepth} layers. The Forge Master's warning: each layer adds power but reduces clarity.`
+				}}
+			/>
 		</div>
 	);
 };

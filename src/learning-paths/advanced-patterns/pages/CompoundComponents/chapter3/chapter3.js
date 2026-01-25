@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -65,13 +69,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Composed Symphony
-			</h2>
-
-			<div className='chapter-bridge'>
-				Time to bring all the patterns together in perfect harmony...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Composed Symphony`}
+				bridge={`"Your compound components sing together," Dean Architectus praised as they entered the academy's main hall. "You've learned that the best components hide complexity while maximizing flexibility. Now, let me show you the full symphony."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -100,7 +102,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>The Component Symphony Hall</h3>
+				<h3 className='section-title'>Interactive Exercise: The Component Symphony Hall</h3>
+				
+				<InstructionBox character={`Dean Architectus raises his baton to conduct the Component Symphony.`}>
+					Click on different component examples to see them in action. Then start the 
+					symphony to see all components working together in perfect harmony!
+				</InstructionBox>
 				
 				<div className='architects-academy'>
 					<h4>Complete Component Examples</h4>
@@ -171,12 +178,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Complete Compound Component Examples</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Complete Compound Component Implementations
+			<CodeExample
+				title={`Complete Compound Component Examples`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Complete Compound Component Implementations
 
 // 1. Accordion with animations and accessibility
 const Accordion = ({ children, allowMultiple = false }) => {
@@ -195,51 +200,8 @@ const Accordion = ({ children, allowMultiple = false }) => {
   
   return (
     <AccordionContext.Provider value={{ activeIndexes, toggleItem }}>
-      <div className="accordion" role="region">
-        {children}
-      </div>
+      <div className="accordion" role="region">{children}</div>
     </AccordionContext.Provider>
-  );
-};
-
-Accordion.Item = function AccordionItem({ children, index }) {
-  const { activeIndexes } = useContext(AccordionContext);
-  const isActive = activeIndexes.includes(index);
-  
-  return (
-    <div className={\`accordion-item \${isActive ? 'active' : ''}\`}>
-      {children}
-    </div>
-  );
-};
-
-Accordion.Header = function AccordionHeader({ children, index }) {
-  const { toggleItem } = useContext(AccordionContext);
-  
-  return (
-    <button
-      className="accordion-header"
-      onClick={() => toggleItem(index)}
-      aria-expanded={isActive}
-      aria-controls={\`panel-\${index}\`}>
-      {children}
-      <span className="accordion-icon">{isActive ? '−' : '+'}</span>
-    </button>
-  );
-};
-
-Accordion.Panel = function AccordionPanel({ children, index }) {
-  const { activeIndexes } = useContext(AccordionContext);
-  const isActive = activeIndexes.includes(index);
-  
-  return (
-    <div
-      id={\`panel-\${index}\`}
-      className="accordion-panel"
-      hidden={!isActive}
-      aria-labelledby={\`header-\${index}\`}>
-      <div className="accordion-content">{children}</div>
-    </div>
   );
 };
 
@@ -249,30 +211,10 @@ const Modal = ({ children, isOpen, onClose }) => {
   
   useEffect(() => {
     if (isOpen) {
-      // Focus trap
-      const focusableElements = modalRef.current.querySelectorAll(
-        'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-      );
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-      
-      firstElement?.focus();
-      
+      // Focus trap and keyboard handling
       const handleTab = (e) => {
-        if (e.key === 'Tab') {
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-        if (e.key === 'Escape') {
-          onClose();
-        }
+        if (e.key === 'Escape') onClose();
       };
-      
       document.addEventListener('keydown', handleTab);
       return () => document.removeEventListener('keydown', handleTab);
     }
@@ -283,12 +225,9 @@ const Modal = ({ children, isOpen, onClose }) => {
   return (
     <ModalContext.Provider value={{ onClose }}>
       <div className="modal-overlay" onClick={onClose}>
-        <div 
-          ref={modalRef}
-          className="modal-container" 
-          onClick={e => e.stopPropagation()}
-          role="dialog"
-          aria-modal="true">
+        <div ref={modalRef} className="modal-container" 
+             onClick={e => e.stopPropagation()}
+             role="dialog" aria-modal="true">
           {children}
         </div>
       </div>
@@ -296,168 +235,26 @@ const Modal = ({ children, isOpen, onClose }) => {
   );
 };
 
-Modal.Header = function ModalHeader({ children }) {
+Modal.Header = ({ children }) => {
   const { onClose } = useContext(ModalContext);
-  
   return (
     <div className="modal-header">
       {children}
-      <button 
-        className="modal-close" 
-        onClick={onClose}
-        aria-label="Close modal">
-        ×
-      </button>
+      <button onClick={onClose} aria-label="Close">×</button>
     </div>
   );
 };
-
-Modal.Body = function ModalBody({ children }) {
-  return <div className="modal-body">{children}</div>;
-};
-
-Modal.Footer = function ModalFooter({ children }) {
-  return <div className="modal-footer">{children}</div>;
-};
-
-// 3. Form with field coordination
-const Form = ({ children, onSubmit }) => {
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
-  
-  const updateField = (name, value) => {
-    setValues(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const setFieldError = (name, error) => {
-    setErrors(prev => ({ ...prev, [name]: error }));
-  };
-  
-  const setFieldTouched = (name) => {
-    setTouched(prev => ({ ...prev, [name]: true }));
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(values);
-  };
-  
-  return (
-    <FormContext.Provider value={{
-      values,
-      errors,
-      touched,
-      updateField,
-      setFieldError,
-      setFieldTouched
-    }}>
-      <form onSubmit={handleSubmit}>{children}</form>
-    </FormContext.Provider>
-  );
-};
-
-Form.Field = function FormField({ name, label, validate, children }) {
-  const { 
-    values, 
-    errors, 
-    touched, 
-    updateField, 
-    setFieldError, 
-    setFieldTouched 
-  } = useContext(FormContext);
-  
-  const value = values[name] || '';
-  const error = errors[name];
-  const isTouched = touched[name];
-  
-  const handleChange = (e) => {
-    const newValue = e.target.value;
-    updateField(name, newValue);
-    
-    if (validate) {
-      const error = validate(newValue);
-      setFieldError(name, error);
-    }
-  };
-  
-  const handleBlur = () => {
-    setFieldTouched(name);
-  };
-  
-  return (
-    <div className="form-field">
-      {label && <label htmlFor={name}>{label}</label>}
-      {React.cloneElement(children, {
-        id: name,
-        name,
-        value,
-        onChange: handleChange,
-        onBlur: handleBlur,
-        'aria-invalid': isTouched && !!error,
-        'aria-describedby': error ? \`\${name}-error\` : undefined
-      })}
-      {isTouched && error && (
-        <span id={\`\${name}-error\`} className="field-error">
-          {error}
-        </span>
-      )}
-    </div>
-  );
-};
+Modal.Body = ({ children }) => <div className="modal-body">{children}</div>;
+Modal.Footer = ({ children }) => <div className="modal-footer">{children}</div>;
 
 // Usage - Clean and powerful
-function App() {
-  return (
-    <div>
-      <Accordion allowMultiple>
-        <Accordion.Item index={0}>
-          <Accordion.Header index={0}>Section 1</Accordion.Header>
-          <Accordion.Panel index={0}>Content 1</Accordion.Panel>
-        </Accordion.Item>
-        <Accordion.Item index={1}>
-          <Accordion.Header index={1}>Section 2</Accordion.Header>
-          <Accordion.Panel index={1}>Content 2</Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
-      
-      <Form onSubmit={data => console.log(data)}>
-        <Form.Field 
-          name="email" 
-          label="Email"
-          validate={v => !v.includes('@') ? 'Invalid email' : null}>
-          <input type="email" />
-        </Form.Field>
-        <Form.Field name="password" label="Password">
-          <input type="password" />
-        </Form.Field>
-        <button type="submit">Submit</button>
-      </Form>
-    </div>
-  );
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Mastery Achievement:</strong> "These examples show production-ready 
-					compound components. Notice the attention to accessibility, keyboard navigation, 
-					and error handling. This is architectural thinking at its finest."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Symphony of Architecture:</h3>
-				<p>
-					Compound components represent a pinnacle of React component design. They 
-					combine multiple patterns - Context for state sharing, static properties 
-					for organization, and flexible children handling - into cohesive, reusable 
-					systems.
-				</p>
-				<p>
-					The true mastery lies not in the individual techniques, but in knowing when 
-					and how to combine them. Like a conductor leading an orchestra, you must 
-					balance complexity with simplicity, power with usability.
-				</p>
-			</div>
+<Accordion allowMultiple>
+  <Accordion.Item index={0}>
+    <Accordion.Header index={0}>Section 1</Accordion.Header>
+    <Accordion.Panel index={0}>Content 1</Accordion.Panel>
+  </Accordion.Item>
+</Accordion>`}
+			/>
 
 			{architectureLevel >= 80 && (
 				<div className='achievement-banner'>
@@ -473,14 +270,23 @@ function App() {
 				</div>
 			)}
 
-			<div className='chapter-ending'>
-				<p>
-					Dean Architectus smiled proudly as the component symphony concluded. "You've 
-					mastered compound components - hiding complexity while providing flexibility. 
-					But there's another way to share behavior. Pattern Master Renderius awaits 
-					to teach you about Render Props..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Symphony of Architecture:`,
+					content: `Compound components represent a pinnacle of React component design. They combine multiple patterns - Context for state sharing, static properties for organization, and flexible children handling - into cohesive, reusable systems. The true mastery lies not in the individual techniques, but in knowing when and how to combine them.`
+				}}
+				reflectionQuestions={[
+					`How does thinking like a conductor help with component design?`,
+					`When should you combine patterns vs keep them separate?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Evening)`,
+					content: `The component symphony was magnificent! Dean Architectus showed me how Accordions, Menus, Forms, and Modals all perform together - each maintaining its own state while contributing to the greater whole. Binary calculated hundreds of possible interactions, yet the API remains simple. I've learned to combine Context, static properties, and flexible children handling into production-ready systems with proper accessibility and keyboard navigation. Architecture Level at ${architectureLevel}%! The Dean says I'm ready for Render Props next.`
+				}}
+				chapterEnding={[
+					`Dean Architectus smiled proudly as the component symphony concluded. "You've mastered compound components - hiding complexity while providing flexibility. But there's another way to share behavior. Pattern Master Renderius awaits to teach you about Render Props..."`
+				]}
+			/>
 		</div>
 	);
 };

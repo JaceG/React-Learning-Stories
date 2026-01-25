@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import ReactDOM from 'react-dom';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -239,9 +243,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Architectural Summit
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Architectural Summit`}
+				bridge={`Dean Architectus returned for Aria's final evaluation. "You've learned our four great patterns - Compound Components, Render Props, Higher-Order Components, and now Portals & Refs. How would you combine them?" Aria demonstrated a modal system using portals for rendering, compound components for API design, refs for focus management, and render props for customization.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -269,7 +275,13 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Architectural Pattern Synthesis</h3>
+				<h3 className='section-title'>Interactive Exercise: Architectural Pattern Synthesis</h3>
+				
+				<InstructionBox character={`Dean Architectus presents the Final Challenge.`}>
+					Explore combined pattern demonstrations - Modal with Focus Management, Smart Dropdown, 
+					Compound Modal System, and Render Prop Portal. Open the Architectural Modal to see 
+					all patterns working together!
+				</InstructionBox>
 				
 				<div className='pattern-combinations'>
 					<h4>Combined Pattern Demonstrations</h4>
@@ -470,14 +482,12 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Architectural Pattern Synthesis</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Combining Portals, Refs, and Advanced Patterns
+			<CodeExample
+				title={`Architectural Pattern Synthesis`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// Combining Portals, Refs, and Advanced Patterns
 
-// 1. Complete Modal Architecture
+// Complete Modal Architecture - All patterns combined!
 const Modal = {
   Root: forwardRef(({ children, isOpen, onClose }, ref) => {
     const modalRef = useRef(null);
@@ -485,20 +495,14 @@ const Modal = {
     
     // Focus restoration
     useEffect(() => {
-      if (isOpen) {
-        previousActiveElement.current = document.activeElement;
-      }
-      return () => {
-        if (!isOpen && previousActiveElement.current) {
-          previousActiveElement.current.focus();
-        }
-      };
+      if (isOpen) previousActiveElement.current = document.activeElement;
+      return () => previousActiveElement.current?.focus();
     }, [isOpen]);
     
-    // Imperative API
+    // Imperative API via ref
     useImperativeHandle(ref, () => ({
       focus: () => modalRef.current?.focus(),
-      contains: (element) => modalRef.current?.contains(element)
+      contains: (el) => modalRef.current?.contains(el)
     }));
     
     if (!isOpen) return null;
@@ -507,12 +511,9 @@ const Modal = {
       <ModalContext.Provider value={{ onClose }}>
         <FocusTrap active={isOpen}>
           <div className="modal-overlay" onClick={onClose}>
-            <div 
-              ref={modalRef}
-              className="modal-content"
-              onClick={e => e.stopPropagation()}
-              role="dialog"
-              aria-modal="true">
+            <div ref={modalRef} className="modal-content" 
+                 onClick={e => e.stopPropagation()}
+                 role="dialog" aria-modal="true">
               {children}
             </div>
           </div>
@@ -527,349 +528,44 @@ const Modal = {
     return (
       <div className="modal-header">
         {children}
-        <button onClick={onClose} aria-label="Close">×</button>
+        <button onClick={onClose}>×</button>
       </div>
     );
   },
-  
-  Body: ({ children }) => (
-    <div className="modal-body">{children}</div>
-  ),
-  
-  Footer: ({ children }) => (
-    <div className="modal-footer">{children}</div>
-  )
+  Body: ({ children }) => <div className="modal-body">{children}</div>,
+  Footer: ({ children }) => <div className="modal-footer">{children}</div>
 };
 
-// Usage
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef(null);
-  
-  return (
-    <>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      
-      <Modal.Root ref={modalRef} isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Modal.Header>
-          <h2>Architectural Modal</h2>
-        </Modal.Header>
-        <Modal.Body>
-          <p>This modal combines multiple patterns!</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <button onClick={() => setIsOpen(false)}>Close</button>
-        </Modal.Footer>
-      </Modal.Root>
-    </>
-  );
-}
+// Combines: Portals, Compound Components, Refs, Context, Focus Management!`}
+			/>
 
-// 2. Tooltip System with Render Props and Portals
-function TooltipProvider({ children, render }) {
-  const [tooltip, setTooltip] = useState(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  
-  const showTooltip = (content, target) => {
-    const rect = target.getBoundingClientRect();
-    setPosition({
-      x: rect.left + rect.width / 2,
-      y: rect.top - 10
-    });
-    setTooltip(content);
-  };
-  
-  const hideTooltip = () => setTooltip(null);
-  
-  const tooltipProps = {
-    onMouseEnter: (e) => showTooltip(e.currentTarget.dataset.tooltip, e.currentTarget),
-    onMouseLeave: hideTooltip,
-    onFocus: (e) => showTooltip(e.currentTarget.dataset.tooltip, e.currentTarget),
-    onBlur: hideTooltip
-  };
-  
-  return (
-    <>
-      {children({ tooltipProps })}
-      {tooltip && ReactDOM.createPortal(
-        render({
-          content: tooltip,
-          position,
-          isVisible: true
-        }),
-        document.body
-      )}
-    </>
-  );
-}
-
-// Usage
-<TooltipProvider
-  render={({ content, position }) => (
-    <div 
-      className="tooltip"
-      style={{
-        position: 'fixed',
-        left: position.x,
-        top: position.y,
-        transform: 'translate(-50%, -100%)'
-      }}>
-      {content}
-    </div>
-  )}>
-  {({ tooltipProps }) => (
-    <button {...tooltipProps} data-tooltip="Save document">
-      Save
-    </button>
-  )}
-</TooltipProvider>
-
-// 3. Dropdown with HOC, Portal, and Refs
-function withDropdown(Component) {
-  return forwardRef((props, ref) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const triggerRef = useRef(null);
-    const dropdownRef = useRef(null);
-    
-    // Combine refs
-    const combinedRef = (element) => {
-      triggerRef.current = element;
-      if (ref) {
-        if (typeof ref === 'function') ref(element);
-        else ref.current = element;
-      }
-    };
-    
-    useEffect(() => {
-      if (!isOpen) return;
-      
-      const handleClickOutside = (e) => {
-        if (!triggerRef.current?.contains(e.target) &&
-            !dropdownRef.current?.contains(e.target)) {
-          setIsOpen(false);
-        }
-      };
-      
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [isOpen]);
-    
-    return (
-      <>
-        <Component
-          {...props}
-          ref={combinedRef}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-        />
-        {isOpen && (
-          <DropdownPortal
-            targetRef={triggerRef}
-            dropdownRef={dropdownRef}
-            onClose={() => setIsOpen(false)}>
-            {props.dropdownContent}
-          </DropdownPortal>
-        )}
-      </>
-    );
-  });
-}
-
-// 4. Form with Portal Validation Messages
-function FormField({ name, validate, children }) {
-  const [error, setError] = useState(null);
-  const [showError, setShowError] = useState(false);
-  const fieldRef = useRef(null);
-  
-  const handleBlur = async (value) => {
-    const validationError = await validate(value);
-    setError(validationError);
-    setShowError(!!validationError);
-  };
-  
-  return (
-    <div ref={fieldRef}>
-      {React.cloneElement(children, {
-        onBlur: (e) => handleBlur(e.target.value),
-        onFocus: () => setShowError(false),
-        'aria-invalid': !!error,
-        'aria-describedby': error ? \`\${name}-error\` : undefined
-      })}
-      {showError && error && (
-        <ValidationTooltip
-          targetRef={fieldRef}
-          error={error}
-          id={\`\${name}-error\`}
-        />
-      )}
-    </div>
-  );
-}
-
-// 5. Notification System Architecture
-class NotificationManager {
-  constructor() {
-    this.listeners = new Set();
-    this.notifications = [];
-  }
-  
-  subscribe(listener) {
-    this.listeners.add(listener);
-    return () => this.listeners.delete(listener);
-  }
-  
-  notify(notification) {
-    const id = Date.now();
-    const fullNotification = { ...notification, id };
-    this.notifications.push(fullNotification);
-    this.listeners.forEach(listener => listener(this.notifications));
-    
-    if (notification.duration) {
-      setTimeout(() => this.remove(id), notification.duration);
-    }
-    
-    return id;
-  }
-  
-  remove(id) {
-    this.notifications = this.notifications.filter(n => n.id !== id);
-    this.listeners.forEach(listener => listener(this.notifications));
-  }
-}
-
-const notificationManager = new NotificationManager();
-
-function NotificationContainer() {
-  const [notifications, setNotifications] = useState([]);
-  
-  useEffect(() => {
-    return notificationManager.subscribe(setNotifications);
-  }, []);
-  
-  return ReactDOM.createPortal(
-    <div className="notification-container">
-      {notifications.map(notification => (
-        <Notification
-          key={notification.id}
-          {...notification}
-          onClose={() => notificationManager.remove(notification.id)}
-        />
-      ))}
-    </div>,
-    document.getElementById('notification-root')
-  );
-}
-
-// 6. Advanced Focus Management Hook
-function useFocusManager() {
-  const focusStack = useRef([]);
-  const focusListeners = useRef(new Set());
-  
-  const pushFocus = (element) => {
-    const currentFocus = document.activeElement;
-    focusStack.current.push(currentFocus);
-    element?.focus();
-  };
-  
-  const popFocus = () => {
-    const previousFocus = focusStack.current.pop();
-    previousFocus?.focus();
-  };
-  
-  const trapFocus = (container) => {
-    const focusableElements = container.querySelectorAll(
-      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
-    );
-    
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-    
-    const handleTab = (e) => {
-      if (e.key !== 'Tab') return;
-      
-      if (e.shiftKey && document.activeElement === firstElement) {
-        e.preventDefault();
-        lastElement?.focus();
-      } else if (!e.shiftKey && document.activeElement === lastElement) {
-        e.preventDefault();
-        firstElement?.focus();
-      }
-    };
-    
-    container.addEventListener('keydown', handleTab);
-    focusListeners.current.add({ container, handler: handleTab });
-    
-    return () => {
-      container.removeEventListener('keydown', handleTab);
-      focusListeners.current.delete({ container, handler: handleTab });
-    };
-  };
-  
-  return { pushFocus, popFocus, trapFocus };
-}`}</pre>
+			{masteryLevel === 'master' && (
+				<div className='achievement-banner'>
+					<h4>🏆 Architectural Master Achievement!</h4>
+					<p>You've mastered the art of combining React patterns to create powerful, 
+					elegant solutions!</p>
 				</div>
-				<div className='code-tooltip'>
-					<strong>Architectural Wisdom:</strong> "The true power of React patterns 
-					emerges when you combine them thoughtfully. Portals for rendering flexibility, 
-					refs for imperative control, compound components for intuitive APIs, and 
-					render props for customization. Master each pattern individually, then 
-					synthesize them to create architectural solutions that would be impossible 
-					with any single approach."
-				</div>
-			</div>
+			)}
 
-			<div className='lesson-insight'>
-				<h3>The Synthesis Insight:</h3>
-				<p>
-					True architectural mastery comes from understanding not just individual 
-					patterns, but how they complement each other. Portals and refs often work 
-					together for UI that needs both rendering flexibility and imperative control. 
-					Combined with compound components or render props, you can create powerful, 
-					reusable UI systems.
-				</p>
-				<p>
-					The key is purposeful combination. Don't mix patterns just because you can - 
-					each addition should solve a specific problem or improve the developer 
-					experience. The best architectures feel simple to use despite their internal 
-					sophistication.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Architectural Mastery</h3>
-				<p>
-					<strong>How do you decide which patterns to combine?</strong> Consider the 
-					problems you're solving and the experience you want to create for other 
-					developers using your components.
-				</p>
-				<p>
-					<strong>What makes an architecture elegant versus over-engineered?</strong> 
-					Think about the balance between flexibility, simplicity, and solving real 
-					problems.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The Pattern Masters assembled. <strong>Dean Architectus</strong> spoke: 
-					"<strong>Aria</strong>, you've mastered component composition at its highest 
-					level. You understand not just how to use patterns, but when and why. You're 
-					ready for the Modern Frontiers!"
-				</p>
-				<p>
-					As Aria left the floating academy, <strong>Binary</strong> computed their 
-					growth. "We've come so far from basic components, Aria."
-				</p>
-				<p>
-					"And yet," Aria smiled, looking toward the horizon, "there's always more 
-					to learn. The Allied Kingdoms await - it's time to explore the React 
-					Ecosystem!"
-				</p>
-				<p style={{ marginTop: '30px', textAlign: 'center', fontSize: '1.2em', color: '#6c5ce7' }}>
-					<strong>🎓 Advanced Patterns Learning Path Complete!</strong>
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Synthesis Insight:`,
+					content: `True architectural mastery comes from understanding not just individual patterns, but how they complement each other. Portals and refs often work together for UI needing both rendering flexibility and imperative control. The key is purposeful combination - each addition should solve a specific problem. The best architectures feel simple to use despite their internal sophistication.`
+				}}
+				reflectionQuestions={[
+					`How do you decide which patterns to combine?`,
+					`What makes an architecture elegant versus over-engineered?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Evening)`,
+					content: `Dean Architectus returned for my final evaluation! I demonstrated a complete modal system combining ALL the patterns: Portals for rendering outside the DOM hierarchy, Compound Components for intuitive API design, Refs for focus management and imperative control, Render Props for customization, and Context for state sharing. The Pattern Masters assembled to congratulate me. Bridge Strength at ${bridgeStrength}%, Mastery Level: ${masteryLevel}. Binary computed: "We've come so far from basic components." 🎓 Advanced Patterns Learning Path Complete!`
+				}}
+				chapterEnding={[
+					`The Pattern Masters assembled. Dean Architectus spoke: "Aria, you've mastered component composition at its highest level. You understand not just how to use patterns, but when and why. You're ready for the Modern Frontiers!"`,
+					`As Aria left the floating academy, Binary computed their growth. "We've come so far from basic components, Aria."`,
+					`"And yet," Aria smiled, looking toward the horizon, "there's always more to learn. The Allied Kingdoms await - it's time to explore the React Ecosystem!"`
+				]}
+			/>
 		</div>
 	);
 };

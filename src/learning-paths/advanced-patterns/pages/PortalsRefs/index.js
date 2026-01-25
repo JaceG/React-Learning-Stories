@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './PortalsRefs.css';
 
@@ -12,17 +12,6 @@ function PortalsRefs() {
 	const [imperativeHandles, setImperativeHandles] = useState([]);
 	const [bridgeStrength, setBridgeStrength] = useState(0);
 	const [masteryLevel, setMasteryLevel] = useState('novice');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Create a new portal
 	const createPortal = (content, target) => {
@@ -72,28 +61,12 @@ function PortalsRefs() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Portals & Refs</h1>
-			<p className='lesson-subtitle'>
-				Bridge between React's virtual world and the DOM reality
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Portals & Refs`}
+				subtitle={`Bridge between React's virtual world and the DOM reality`}
+				opener={`The final chamber of the Architect's Academy defied physics - portals opened to different parts of the DOM tree. Portal Keeper Escapius demonstrated: "Sometimes components need to render outside their parent hierarchy." He showed how modals, tooltips, and notifications must escape container constraints while maintaining React's component structure and event propagation.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -115,27 +88,10 @@ function PortalsRefs() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='advanced-patterns'
-				lessonId='portals-refs'
+			<LessonFooter
+				courseId={`advanced-patterns`}
+				lessonId={`portals-refs`}
+				totalChapters={3}
 			/>
 		</div>
 	);

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -123,13 +127,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Pattern Evolution
-			</h2>
-
-			<div className='chapter-bridge'>
-				As mastery approached, it was time to understand when HOCs remain the right choice...
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Pattern Evolution`}
+				bridge={`"You've learned the techniques," Forge Master Enhance said, examining the layered components. "Now for the wisdom: knowing when to use them." Aria studied her forged components. "They're powerful, but hooks seem simpler for many cases." The Forge Master smiled. "Precisely! HOCs were React's first pattern for logic reuse. They remain valuable for specific scenarios."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -167,7 +169,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Pattern Evolution Timeline</h3>
+				<h3 className='section-title'>Interactive Exercise: Pattern Evolution Timeline</h3>
+				
+				<InstructionBox character={`Forge Master Enhance reveals the Timeline of React Patterns.`}>
+					Explore the evolution from Mixins to HOCs to Render Props to Hooks. Compare 
+					HOCs vs Hooks in the comparison grid to understand when each approach shines!
+				</InstructionBox>
 				
 				<div className='evolution-timeline'>
 					<h4>React Pattern History</h4>
@@ -284,242 +291,74 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>HOC Best Practices & Migration</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// HOC Best Practices
+			<CodeExample
+				title={`HOC Best Practices & Migration`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// HOC Best Practices
 
-// 1. Always preserve static methods
+// 1. Preserve display names for debugging
 function withEnhancement(WrappedComponent) {
-  class Enhanced extends React.Component {
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  }
-  
-  // Copy static methods
-  hoistNonReactStatics(Enhanced, WrappedComponent);
-  
+  const Enhanced = (props) => <WrappedComponent {...props} enhanced />;
+  Enhanced.displayName = \`withEnhancement(\${
+    WrappedComponent.displayName || WrappedComponent.name
+  })\`;
   return Enhanced;
 }
 
-// 2. Pass through refs properly
-function withRefForwarding(WrappedComponent) {
-  const WithRef = React.forwardRef((props, ref) => {
-    return <WrappedComponent {...props} forwardedRef={ref} />;
-  });
-  
-  WithRef.displayName = \`withRef(\${getDisplayName(WrappedComponent)})\`;
-  
-  return WithRef;
-}
-
-// 3. Preserve display names for debugging
-function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-
-// 4. Don't mutate the original component
-// BAD
-function withBadEnhancement(WrappedComponent) {
-  WrappedComponent.prototype.componentDidUpdate = function() {
-    // Mutating original!
-  };
-  return WrappedComponent;
-}
-
-// GOOD
+// 2. Don't mutate the original component
+// GOOD - Create new component
 function withGoodEnhancement(WrappedComponent) {
   return class extends React.Component {
-    componentDidUpdate() {
-      // New component, no mutation
-    }
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
+    render() { return <WrappedComponent {...this.props} />; }
   };
 }
 
-// Migration Examples: HOC to Hooks
+// Migration: HOC to Hook
+// OLD: const Protected = withAuth(MyComponent);
+// NEW: function MyComponent() {
+//   const { user, loading } = useAuth();
+//   if (loading) return <Spinner />;
+//   if (!user) return <LoginRedirect />;
+// }
 
-// OLD: Authentication HOC
-function withAuth(WrappedComponent) {
-  return function AuthComponent(props) {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
-    
-    useEffect(() => {
-      checkAuth().then(setUser).finally(() => setLoading(false));
-    }, []);
-    
-    if (loading) return <LoadingSpinner />;
-    if (!user) return <LoginRedirect />;
-    
-    return <WrappedComponent {...props} user={user} />;
-  };
-}
-
-// NEW: Authentication Hook
-function useAuth() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    checkAuth().then(setUser).finally(() => setLoading(false));
-  }, []);
-  
-  return { user, loading };
-}
-
-// Usage comparison
-// OLD
-const ProtectedComponent = withAuth(MyComponent);
-
-// NEW
-function MyComponent() {
-  const { user, loading } = useAuth();
-  
-  if (loading) return <LoadingSpinner />;
-  if (!user) return <LoginRedirect />;
-  
-  // Component logic here
-}
-
-// When HOCs are Still Better
-
-// 1. Third-party library integration
-const ConnectedComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyComponent);
-
+// When HOCs are Still Better:
+// 1. Third-party library integration (Redux connect)
 // 2. Route-level authentication
-<Route 
-  path="/admin" 
-  component={withAuth(AdminPanel)} 
-/>
-
 // 3. Error boundaries (class components only)
-const SafeComponent = withErrorBoundary(
-  RiskyComponent,
-  ErrorFallback
-);
-
 // 4. Performance optimization with class components
-const OptimizedComponent = withShouldUpdate(
-  (prevProps, nextProps) => prevProps.id === nextProps.id
-)(ExpensiveComponent);
 
-// Modern Patterns Replacing HOCs
+// Modern Replacements:
+// - Compound Components for prop injection
+// - Render Props for flexible rendering  
+// - Custom Hooks for logic extraction
+// - Context for cross-cutting concerns`}
+			/>
 
-// 1. Compound Components (instead of prop injection)
-<Tabs>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>Content One</TabPanel>
-    <TabPanel>Content Two</TabPanel>
-  </TabPanels>
-</Tabs>
-
-// 2. Render Props (flexible rendering)
-<DataProvider
-  render={({ data, loading }) => 
-    loading ? <Spinner /> : <DataDisplay data={data} />
-  }
-/>
-
-// 3. Custom Hooks (logic extraction)
-function useWindowSize() {
-  const [size, setSize] = useState({ width: 0, height: 0 });
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setSize({ width: window.innerWidth, height: window.innerHeight });
-    };
-    
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  return size;
-}
-
-// 4. Context for cross-cutting concerns
-const ThemeContext = React.createContext();
-
-function App() {
-  return (
-    <ThemeContext.Provider value={theme}>
-      <ThemedComponents />
-    </ThemeContext.Provider>
-  );
-}
-
-function ThemedComponent() {
-  const theme = useContext(ThemeContext);
-  // Use theme directly
-}`}</pre>
+			{forgeTemperature > 80 && (
+				<div className='achievement-banner'>
+					<h4>🔥 Master Forger Achievement Unlocked!</h4>
+					<p>You've explored all HOC patterns and understand their place in modern React!</p>
 				</div>
-				<div className='code-tooltip'>
-					<strong>Evolution Wisdom:</strong> "HOCs paved the way for better patterns. 
-					Understanding them helps you appreciate React's evolution and choose the right 
-					tool for each situation. Sometimes the old ways are still the best ways."
-				</div>
-			</div>
+			)}
 
-			<div className='lesson-insight'>
-				<h3>The Mastery Insight:</h3>
-				<p>
-					Higher-Order Components represent a crucial chapter in React's history. While 
-					hooks have largely replaced them for logic sharing, HOCs remain relevant for 
-					specific use cases: third-party integrations, props manipulation, and legacy 
-					codebases.
-				</p>
-				<p>
-					The key to mastery isn't just knowing how to use HOCs, but understanding when 
-					they're the right choice. In modern React, prefer hooks for most logic sharing, 
-					reach for HOCs when their unique capabilities are needed, and always consider 
-					the debugging and maintenance implications of your architectural choices.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Pattern Evolution</h3>
-				<p>
-					<strong>How has React's approach to logic sharing evolved?</strong> Consider 
-					the journey from mixins to HOCs to hooks, and what each transition taught us.
-				</p>
-				<p>
-					<strong>What patterns from HOCs influenced modern React?</strong> Think about 
-					how concepts like composition and enhancement shaped today's best practices.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The forge cooled as <strong>Aria</strong> completed her final enhancement. 
-					"You understand now," <strong>Forge Master Enhance</strong> said proudly. 
-					"HOCs are not obsolete, but specialized. Use them wisely, and they'll serve 
-					you well."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the patterns. "Each tool has its purpose. 
-					The art is in choosing correctly."
-				</p>
-				<p>
-					As they left the Enhancement Forge, Aria felt the weight of knowledge. She 
-					had mastered not just a pattern, but understood its place in React's grand 
-					tapestry. The Architect's Academy held one more lesson - the mysteries of 
-					Portals and Refs awaited...
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Mastery Insight:`,
+					content: `Higher-Order Components represent a crucial chapter in React's history. While hooks have largely replaced them for logic sharing, HOCs remain relevant for specific use cases: third-party integrations, props manipulation, and legacy codebases. The key to mastery isn't just knowing how to use HOCs, but understanding when they're the right choice.`
+				}}
+				reflectionQuestions={[
+					`How has React's approach to logic sharing evolved?`,
+					`What patterns from HOCs influenced modern React?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Evening)`,
+					content: `Forge Master Enhance revealed the Pattern Evolution Timeline - from Mixins (2013) to HOCs (2015) to Render Props (2017) to Hooks (2019). I learned when HOCs are still the best choice: third-party library integration, route-level authentication, error boundaries. The comparison grid showed HOCs excel at props manipulation and conditional rendering, while hooks dominate for state logic and side effects. Forge Temperature reached ${forgeTemperature}°! The Forge Master's final wisdom: "HOCs are not obsolete, but specialized. Use them wisely."`
+				}}
+				chapterEnding={[
+					`The forge cooled as Aria completed her final enhancement. "You understand now," Forge Master Enhance said proudly. "HOCs are not obsolete, but specialized. Use them wisely, and they'll serve you well."`,
+					`As they left the Enhancement Forge, Aria felt the weight of knowledge. She had mastered not just a pattern, but understood its place in React's grand tapestry. The Architect's Academy held one more lesson - the mysteries of Portals and Refs awaited...`
+				]}
+			/>
 		</div>
 	);
 };

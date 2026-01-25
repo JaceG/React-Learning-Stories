@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './RenderProps.css';
 
@@ -11,17 +11,6 @@ function RenderProps() {
 	const [presentationConsumers, setPresentationConsumers] = useState([]);
 	const [flexibilityLevel, setFlexibilityLevel] = useState(0);
 	const [tradeoffBalance, setTradeoffBalance] = useState({ flexibility: 50, simplicity: 50 });
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Add render delegation
 	const addDelegation = (delegation) => {
@@ -65,28 +54,12 @@ function RenderProps() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Render Props</h1>
-			<p className='lesson-subtitle'>
-				Share behavior while delegating presentation control
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Render Props`}
+				subtitle={`Share behavior while delegating presentation control`}
+				opener={`Pattern Master Renderius welcomed Aria to a chamber filled with floating paintbrushes and blank canvases. "Compound components share state implicitly. Render props share behavior explicitly," he explained. "It's like giving someone else your paintbrush but guiding their hand - the logic provider says 'here's what's happening,' and the presentation consumer says 'here's how to show it.'"`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -106,27 +79,10 @@ function RenderProps() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='advanced-patterns'
-				lessonId='render-props'
+			<LessonFooter
+				courseId={`advanced-patterns`}
+				lessonId={`render-props`}
+				totalChapters={3}
 			/>
 		</div>
 	);
