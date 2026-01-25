@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './JsxMagic.css';
 // import ChapterOne from './chapter1/chapter1';
@@ -228,46 +229,14 @@ function JsxMagic() {
 		}
 	};
 
-	const navigate = useNavigate();
-	const location = useLocation();
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
-
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>The JSX Magic Scrolls</h1>
-			<p className='lesson-subtitle'>
-				A story about the magical syntax that powers React
-			</p>
-			
-			<div className='lesson-opener'>
-				<p>After her success at the Props Messenger Guild, Aria was directed 
-				northward to the JSX Magic Academy. "You'll find Professor Syntaxis there," 
-				Hermes had said with a knowing smile. "He'll teach you the ancient language 
-				that makes all our component spells possible."</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='The JSX Magic Scrolls'
+				subtitle='A story about the magical syntax that powers React'
+				opener='After her success at the Props Messenger Guild, Aria was directed northward to the JSX Magic Academy. "You&apos;ll find Professor Syntaxis there," Hermes had said with a knowing smile. "He&apos;ll teach you the ancient language that makes all our component spells possible."'
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -306,27 +275,10 @@ function JsxMagic() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='components-basics'
 				lessonId='jsx-magic'
+				totalChapters={3}
 			/>
 		</div>
 	);

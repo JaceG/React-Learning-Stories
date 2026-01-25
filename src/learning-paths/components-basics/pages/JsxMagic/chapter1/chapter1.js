@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterOne = () => {
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
@@ -112,14 +113,6 @@ function Greeting() {
 					to use the JSX Translator Crystal..."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 6</h4>
-					<p>The JSX Magic Academy is amazing! Professor Syntaxis showed me 
-					how JSX combines the familiarity of HTML with the power of JavaScript. 
-					It's like writing in a language that feels natural but has hidden 
-					depths. The Babel sprite is fascinating - it works tirelessly behind 
-					the scenes to translate our elegant JSX into function calls.</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -235,30 +228,29 @@ function Greeting() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The JSX Lesson:</h3>
-				<p>
-					JSX is a syntax extension for JavaScript that looks similar
-					to HTML but allows you to write React elements in a more
-					intuitive way. It's not understood directly by browsers and
-					must be transpiled to standard JavaScript before running.
-					JSX makes your component code more readable by representing
-					the UI structure in a familiar HTML-like format. As Professor 
-					Syntaxis says: "JSX bridges the gap between markup and logic!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the translator crystal metaphor help you understand 
-					Babel's role in React development?
-				</p>
-				<p>
-					Why might combining HTML-like syntax with JavaScript be more 
-					powerful than keeping them separate?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Professor Syntaxis',
+						description:
+							'A wise mage of the JSX Magic Academy whose robes shimmer with HTML tags and JavaScript symbols. He teaches the ancient language of JSX and how the Babel sprite transforms it into browser-readable JavaScript.',
+					},
+				]}
+				lessonInsight={{
+					title: 'The JSX Lesson:',
+					content:
+						'JSX is a syntax extension for JavaScript that looks similar to HTML but allows you to write React elements in a more intuitive way. It\'s not understood directly by browsers and must be transpiled to standard JavaScript before running. JSX makes your component code more readable by representing the UI structure in a familiar HTML-like format. As Professor Syntaxis says: "JSX bridges the gap between markup and logic!"',
+				}}
+				reflectionQuestions={[
+					"How does the translator crystal metaphor help you understand Babel's role in React development?",
+					'Why might combining HTML-like syntax with JavaScript be more powerful than keeping them separate?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 6",
+					content:
+						'The JSX Magic Academy is amazing! Professor Syntaxis showed me how JSX combines the familiarity of HTML with the power of JavaScript. It\'s like writing in a language that feels natural but has hidden depths. The Babel sprite is fascinating - it works tirelessly behind the scenes to translate our elegant JSX into function calls.',
+				}}
+			/>
 		</div>
 	);
 };

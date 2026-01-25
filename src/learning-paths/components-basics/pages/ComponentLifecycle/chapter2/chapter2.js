@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -225,15 +226,6 @@ this.fetchUserData(this.props.userId);
 }`}</pre>
 				</div>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 7 (Afternoon)</h4>
-					<p>I'm starting to see the pattern! Mounting is like a component 
-					being born with a purpose (constructor), showing itself (render), 
-					and then taking its first actions (componentDidMount). Updating is 
-					like growing and adapting - the component can decide if it needs to 
-					change and then react to those changes. It's beautiful how organized 
-					it all is!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -646,28 +638,22 @@ this.fetchUserData(this.props.userId);
 				</table>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Update Lesson:</h3>
-				<p>
-					The mounting and updating phases are where most of a
-					component's work happens. Mounting methods like constructor
-					and componentDidMount are perfect for initialization and
-					setup, while updating methods like componentDidUpdate let
-					you respond to changes. By understanding when each method is
-					called, you can ensure that your code runs at the optimal
-					time in a component's lifecycle.
-				</p>
-			</div>
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do mounting and updating methods differ in their
-					purpose?
-				</p>
-				<p>
-					When would you use componentDidMount vs. componentDidUpdate?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Update Lesson:',
+					content:
+						"The mounting and updating phases are where most of a component's work happens. Mounting methods like constructor and componentDidMount are perfect for initialization and setup, while updating methods like componentDidUpdate let you respond to changes. By understanding when each method is called, you can ensure that your code runs at the optimal time in a component's lifecycle.",
+				}}
+				reflectionQuestions={[
+					'How do mounting and updating methods differ in their purpose?',
+					'When would you use componentDidMount vs. componentDidUpdate?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 7 (Afternoon)",
+					content:
+						"I'm starting to see the pattern! Mounting is like a component being born with a purpose (constructor), showing itself (render), and then taking its first actions (componentDidMount). Updating is like growing and adapting - the component can decide if it needs to change and then react to those changes. It's beautiful how organized it all is!",
+				}}
+			/>
 		</div>
 	);
 };

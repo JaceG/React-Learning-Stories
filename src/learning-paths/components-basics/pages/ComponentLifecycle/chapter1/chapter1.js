@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterOne = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -132,14 +133,6 @@ const ChapterOne = () => {
 					gracefully depart when their time ends."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 7</h4>
-					<p>The Lifecycle Sanctum is awe-inspiring! Chronos showed me 
-					how every component follows the same pattern: Mounting (birth), 
-					Updating (growth), and Unmounting (farewell). It's like watching 
-					the entire circle of life, but for React components. Binary keeps 
-					making jokes about component "birthdays" - he's so silly!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -221,30 +214,29 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Lifecycle Lesson:</h3>
-				<p>
-					Every React component goes through a series of lifecycle
-					stages: mounting (birth), updating (growth), and unmounting
-					(retirement). React provides special methods that run at
-					each stage, allowing you to execute code at precise moments
-					in a component's life. Understanding this lifecycle is
-					crucial for controlling when certain operations (like data
-					fetching or cleanup) should occur. As Chronos teaches: 
-					"Time is the canvas upon which components paint their purpose."
-				</p>
-			</div>
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does Chronos's hourglass metaphor help you visualize 
-					the flow of a component's life?
-				</p>
-				<p>
-					Which lifecycle stage (mounting, updating, or unmounting) 
-					do you think is most critical for component behavior?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Chronos',
+						description:
+							'The Master Time Keeper of the Lifecycle Sanctum. An ancient figure who teaches the fundamental truth that every component has a lifecycle - a journey from creation through updates to eventual destruction.',
+					},
+				]}
+				lessonInsight={{
+					title: 'The Lifecycle Lesson:',
+					content:
+						'Every React component goes through a series of lifecycle stages: mounting (birth), updating (growth), and unmounting (retirement). React provides special methods that run at each stage, allowing you to execute code at precise moments in a component\'s life. Understanding this lifecycle is crucial for controlling when certain operations (like data fetching or cleanup) should occur. As Chronos teaches: "Time is the canvas upon which components paint their purpose."',
+				}}
+				reflectionQuestions={[
+					"How does Chronos's hourglass metaphor help you visualize the flow of a component's life?",
+					'Which lifecycle stage (mounting, updating, or unmounting) do you think is most critical for component behavior?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 7",
+					content:
+						'The Lifecycle Sanctum is awe-inspiring! Chronos showed me how every component follows the same pattern: Mounting (birth), Updating (growth), and Unmounting (farewell). It\'s like watching the entire circle of life, but for React components. Binary keeps making jokes about component "birthdays" - he\'s so silly!',
+				}}
+			/>
 		</div>
 	);
 };

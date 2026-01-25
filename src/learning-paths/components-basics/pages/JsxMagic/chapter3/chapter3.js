@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
 	const [jsxChallenges, setJsxChallenges] = useState([
@@ -395,57 +396,27 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Rules Lesson:</h3>
-				<p>
-					JSX has specific syntax rules that differ from standard HTML
-					because it's ultimately converted to JavaScript.
-					Understanding these rules—like requiring a single root
-					element, using camelCase for attributes, and properly
-					closing all tags—is essential for writing valid React
-					components. These constraints ensure that your JSX can be
-					correctly transformed into the function calls that React
-					uses to create elements. As Binary says: "Rules aren't 
-					limitations - they're guardrails for success!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do the glowing tablets metaphor help you remember 
-					the importance of JSX rules?
-				</p>
-				<p>
-					Which of the three main rules (single root, closed tags, 
-					camelCase) do you think causes the most confusion for beginners?
-				</p>
-			</div>
-			
-			<div className='chapter-ending'>
-				<p>As the sun set over the JSX Magic Academy, Aria closed her 
-				journal, her mind buzzing with new knowledge. She had learned 
-				the ancient language of JSX, discovered how to embed dynamic 
-				expressions, and mastered the sacred rules.</p>
-				
-				<p>"You've done well, young apprentice," Professor Syntaxis said 
-				proudly. "You now possess the knowledge to write powerful component 
-				spells. But remember - JSX is just the beginning. Tomorrow, you'll 
-				journey to the Lifecycle Sanctum to learn how components live, 
-				update, and eventually fade away."</p>
-				
-				<p>Binary gave Aria a tiny high-five. "You're going to love the 
-				Lifecycle Chronicles! The Time Keepers there are amazing!"</p>
-			</div>
-			
-			<div className='character-intro'>
-				<h4>Aria's Journal - Day 6 (Evening)</h4>
-				<p>What a day at the JSX Magic Academy! I feel like I've learned 
-				a whole new language. JSX seemed strange at first - mixing HTML 
-				with JavaScript - but now I see its elegance. The rules make sense 
-				when you understand that everything becomes JavaScript in the end. 
-				I can't wait to see what the Lifecycle Sanctum holds tomorrow!</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Rules Lesson:',
+					content:
+						'JSX has specific syntax rules that differ from standard HTML because it\'s ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: "Rules aren\'t limitations - they\'re guardrails for success!"',
+				}}
+				reflectionQuestions={[
+					'How do the glowing tablets metaphor help you remember the importance of JSX rules?',
+					'Which of the three main rules (single root, closed tags, camelCase) do you think causes the most confusion for beginners?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 6 (Evening)",
+					content:
+						"What a day at the JSX Magic Academy! I feel like I've learned a whole new language. JSX seemed strange at first - mixing HTML with JavaScript - but now I see its elegance. The rules make sense when you understand that everything becomes JavaScript in the end. I can't wait to see what the Lifecycle Sanctum holds tomorrow!",
+				}}
+				chapterEnding={[
+					'As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buzzing with new knowledge. She had learned the ancient language of JSX, discovered how to embed dynamic expressions, and mastered the sacred rules.',
+					'"You\'ve done well, young apprentice," Professor Syntaxis said proudly. "You now possess the knowledge to write powerful component spells. But remember - JSX is just the beginning. Tomorrow, you\'ll journey to the Lifecycle Sanctum to learn how components live, update, and eventually fade away."',
+					'Binary gave Aria a tiny high-five. "You\'re going to love the Lifecycle Chronicles! The Time Keepers there are amazing!"',
+				]}
+			/>
 		</div>
 	);
 };

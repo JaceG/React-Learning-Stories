@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
 	const [expressionType, setExpressionType] = useState('text');
@@ -131,14 +132,6 @@ return (
 					you through the Expression Playground..."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 6 (Afternoon)</h4>
-					<p>Binary the sprite is adorable! He showed me six different ways 
-					to use expressions in JSX. I never realized how flexible this system 
-					is - we can embed text, attributes, conditions, arrays, ternaries, 
-					and even function calls. The curly braces are like magical portals 
-					that let JavaScript flow into our markup!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -861,28 +854,22 @@ function getCurrentGreeting() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Expression Lesson:</h3>
-				<p>
-					You can embed any valid JavaScript expression inside JSX
-					using curly braces. This allows you to display dynamic
-					content, compute values, and call functions directly within
-					your UI code. Mastering expressions in JSX is key to
-					building interactive and data-driven React components. Binary 
-					reminds us: "If it's valid JavaScript, it can go in curly braces!"
-				</p>
-			</div>
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does Binary's role as an expression evaluator help you 
-					understand what happens inside curly braces?
-				</p>
-				<p>
-					Which type of expression (text, conditional, array mapping, etc.) 
-					do you think would be most useful in real applications?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Expression Lesson:',
+					content:
+						'You can embed any valid JavaScript expression inside JSX using curly braces. This allows you to display dynamic content, compute values, and call functions directly within your UI code. Mastering expressions in JSX is key to building interactive and data-driven React components. Binary reminds us: "If it\'s valid JavaScript, it can go in curly braces!"',
+				}}
+				reflectionQuestions={[
+					"How does Binary's role as an expression evaluator help you understand what happens inside curly braces?",
+					'Which type of expression (text, conditional, array mapping, etc.) do you think would be most useful in real applications?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 6 (Afternoon)",
+					content:
+						'Binary the sprite is adorable! He showed me six different ways to use expressions in JSX. I never realized how flexible this system is - we can embed text, attributes, conditions, arrays, ternaries, and even function calls. The curly braces are like magical portals that let JavaScript flow into our markup!',
+				}}
+			/>
 		</div>
 	);
 };

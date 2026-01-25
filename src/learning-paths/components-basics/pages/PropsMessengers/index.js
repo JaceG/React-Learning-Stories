@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './PropsMessengers.css';
 // import ChapterOne from './chapter1/chapter1';
@@ -309,47 +310,14 @@ function PropsMessengers() {
 		setShowPropTypeErrors(true);
 	};
 
-	const navigate = useNavigate();
-	const location = useLocation();
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
-
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-opener'>
-				<p>Empowered by the magical syntax of JSX, Aria's confidence grew. She could 
-				now create components with elegance and clarity. But Professor Syntaxis had 
-				hinted at something more - components needed to communicate, to share 
-				information and work together. The Props Messenger Guild held the secrets 
-				to this vital knowledge, and Aria's next destination was clear.</p>
-			</div>
-			
-			<h1 className='lesson-title'>The Props Messengers</h1>
-			<p className='lesson-subtitle'>
-				A story about how information travels in React
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='The Props Messengers'
+				subtitle='A story about how information travels in React'
+				opener="Empowered by the magical syntax of JSX, Aria's confidence grew. She could now create components with elegance and clarity. But Professor Syntaxis had hinted at something more - components needed to communicate, to share information and work together. The Props Messenger Guild held the secrets to this vital knowledge, and Aria's next destination was clear."
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -376,27 +344,10 @@ function PropsMessengers() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='components-basics'
 				lessonId='props-messengers'
+				totalChapters={3}
 			/>
 		</div>
 	);

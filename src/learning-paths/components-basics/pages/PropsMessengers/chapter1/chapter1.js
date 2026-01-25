@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterOne = () => {
 	const [selectedComponent, setSelectedComponent] = useState(null);
@@ -221,13 +222,6 @@ const ChapterOne = () => {
 					This flexibility allows for rich communication between components."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 4</h4>
-					<p>The Props Messenger Guild is amazing! I now understand how components 
-					communicate - parent components send props to their children like messengers 
-					delivering instructions. Hermes showed me how changing a prop instantly 
-					updates the component. It's like magic, but it's just React's data flow!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -372,29 +366,29 @@ function Button(props) {
 }`}</pre>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Props Lesson:</h3>
-				<p>
-					Props are the primary way for parent components to pass data
-					to child components in React. They are read-only and flow
-					downward through the component tree, allowing parent
-					components to control and configure their children. Hermes 
-					teaches that props are like sealed letters - children can 
-					read them but never modify them.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the messenger metaphor help you understand how
-					props work in React?
-				</p>
-				<p>
-					How might you use different prop types to create more
-					dynamic and reusable components?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: 'Hermes',
+						description:
+							'The Head Messenger of the Props Messenger Guild. He teaches apprentices how props enable communication between components, flowing from parent to child like sealed letters that can be read but never modified.',
+					},
+				]}
+				lessonInsight={{
+					title: 'The Props Lesson:',
+					content:
+						'Props are the primary way for parent components to pass data to child components in React. They are read-only and flow downward through the component tree, allowing parent components to control and configure their children. Hermes teaches that props are like sealed letters - children can read them but never modify them.',
+				}}
+				reflectionQuestions={[
+					'How does the messenger metaphor help you understand how props work in React?',
+					'How might you use different prop types to create more dynamic and reusable components?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 4",
+					content:
+						"The Props Messenger Guild is amazing! I now understand how components communicate - parent components send props to their children like messengers delivering instructions. Hermes showed me how changing a prop instantly updates the component. It's like magic, but it's just React's data flow!",
+				}}
+			/>
 		</div>
 	);
 };

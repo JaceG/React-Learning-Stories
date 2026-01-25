@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
 	const [propTypeComponent, setPropTypeComponent] = useState('button');
@@ -500,15 +501,6 @@ Card.defaultProps = {
 					ready just in case!"
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 5</h4>
-					<p>The PropTypes Guardians are brilliant! They're like quality 
-					control inspectors, catching mistakes before they cause problems. 
-					I've learned so much at the Props Messenger Guild - how props flow 
-					from parent to child, how they must never be modified, and how 
-					PropTypes ensure we receive the right data. Tomorrow I head to 
-					the JSX Magic Academy!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -604,43 +596,27 @@ Button.defaultProps = {
 };`}</pre>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The PropTypes Lesson:</h3>
-				<p>
-					Type checking with PropTypes helps catch bugs by verifying
-					that components receive the right types of props. This is
-					especially useful in larger applications where components
-					may be reused in different contexts. Default props provide
-					fallback values to ensure components can render even if
-					certain props are omitted. Guardian TypeCheck reminds us: 
-					"An ounce of type checking is worth a pound of debugging!"
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why is it helpful to detect prop type errors during
-					development rather than at runtime?
-				</p>
-				<p>
-					How might PropTypes and defaultProps work together to create
-					more robust components?
-				</p>
-			</div>
-			
-			<div className='chapter-ending'>
-				<p>As Aria prepared to leave the Props Messenger Guild, Hermes 
-				handed her a special badge. "You've earned this - the Messenger's 
-				Seal. You now understand how components communicate in our kingdom."</p>
-				
-				<p>"Thank you, Hermes," Aria said gratefully. "I feel like I truly 
-				understand props now - their flow, their immutability, and their types."</p>
-				
-				<p>"Your next destination is the JSX Magic Academy," Hermes pointed 
-				northward. "There you'll learn the ancient art of JSX - the magical 
-				syntax that makes React components possible. Safe travels!"</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The PropTypes Lesson:',
+					content:
+						'Type checking with PropTypes helps catch bugs by verifying that components receive the right types of props. This is especially useful in larger applications where components may be reused in different contexts. Default props provide fallback values to ensure components can render even if certain props are omitted. Guardian TypeCheck reminds us: "An ounce of type checking is worth a pound of debugging!"',
+				}}
+				reflectionQuestions={[
+					'Why is it helpful to detect prop type errors during development rather than at runtime?',
+					'How might PropTypes and defaultProps work together to create more robust components?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 5",
+					content:
+						"The PropTypes Guardians are brilliant! They're like quality control inspectors, catching mistakes before they cause problems. I've learned so much at the Props Messenger Guild - how props flow from parent to child, how they must never be modified, and how PropTypes ensure we receive the right data. Tomorrow I head to the JSX Magic Academy!",
+				}}
+				chapterEnding={[
+					'As Aria prepared to leave the Props Messenger Guild, Hermes handed her a special badge. "You\'ve earned this - the Messenger\'s Seal. You now understand how components communicate in our kingdom."',
+					'"Thank you, Hermes," Aria said gratefully. "I feel like I truly understand props now - their flow, their immutability, and their types."',
+					'"Your next destination is the JSX Magic Academy," Hermes pointed northward. "There you\'ll learn the ancient art of JSX - the magical syntax that makes React components possible. Safe travels!"',
+				]}
+			/>
 		</div>
 	);
 };

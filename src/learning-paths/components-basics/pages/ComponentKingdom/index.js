@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './ComponentKingdom.css';
 // import ChapterOne from './chapter1/chapter1';
@@ -13,17 +14,6 @@ function ComponentKingdom() {
 	const [customLabel, setCustomLabel] = useState('');
 	const [activeComponent, setActiveComponent] = useState(null);
 	const [compositePreview, setCompositePreview] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Hover effects for workshop cards
 	const handleWorkshopHover = (index) => {
@@ -53,28 +43,12 @@ function ComponentKingdom() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>The Component Kingdom</h1>
-			<p className='lesson-subtitle'>
-				A story about the fundamental building blocks of React
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title='The Component Kingdom'
+				subtitle='A story about the fundamental building blocks of React'
+				opener='Welcome to the React Kingdom! Aria, a young apprentice, has arrived at the gates of the Component Workshop District. Here she will learn the fundamental art of building components - the magical building blocks that make up every React application.'
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -92,27 +66,10 @@ function ComponentKingdom() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='components-basics'
 				lessonId='component-kingdom'
+				totalChapters={3}
 			/>
 		</div>
 	);

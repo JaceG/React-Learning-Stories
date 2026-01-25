@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterThree = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -234,15 +235,6 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 					a ghost in the machine!"
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 7 (Evening)</h4>
-					<p>Today's final lesson was sobering but crucial. Components 
-					must be responsible citizens of the React Kingdom! When they 
-					leave, they must clean up after themselves - cancel timers, 
-					remove listeners, abort requests. Chronos showed me what happens 
-					when components don't clean up... it wasn't pretty. Ghost timers 
-					everywhere!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -615,50 +607,28 @@ this.abortController.abort();
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Unmounting Lesson:</h3>
-				<p>
-					The unmounting phase gives components a chance to clean up
-					before they're removed from the DOM. The
-					componentWillUnmount method is called just before a
-					component is destroyed, making it the perfect place to
-					remove event listeners, clear timers, and cancel
-					subscriptions. Proper cleanup prevents memory leaks and
-					ensures your app runs smoothly even as components come and
-					go. As Chronos warns: "A component that doesn't clean up 
-					after itself is like a guest who never leaves the party!"
-				</p>
-			</div>
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the "ghost timer" metaphor help you remember the 
-					importance of cleanup?
-				</p>
-				<p>
-					What types of resources might a component need to clean up 
-					in a real application?
-				</p>
-			</div>
-			
-			<div className='chapter-ending'>
-				<p>As the stars appeared above the Lifecycle Sanctum, Chronos placed 
-				a gentle hand on Aria's shoulder. "You've learned well today, young 
-				apprentice. You now understand the sacred rhythm of component life - 
-				from birth through growth to graceful departure."</p>
-				
-				<p>Binary spun in a happy circle. "You did it, Aria! You've completed 
-				your training in the fundamental arts of React!"</p>
-				
-				<p>"But this is just the beginning," Chronos smiled mysteriously. 
-				"Tomorrow, you'll journey to the Eastern Quarter to meet the State 
-				Sorcerers. They'll teach you how to give your components memory and 
-				the power to change over time."</p>
-				
-				<p>Aria clutched her journal tightly, excited for the adventures ahead. 
-				She had mastered components, props, JSX, and lifecycles. She was ready 
-				for the next chapter of her journey!</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Unmounting Lesson:',
+					content:
+						'The unmounting phase gives components a chance to clean up before they\'re removed from the DOM. The componentWillUnmount method is called just before a component is destroyed, making it the perfect place to remove event listeners, clear timers, and cancel subscriptions. Proper cleanup prevents memory leaks and ensures your app runs smoothly even as components come and go. As Chronos warns: "A component that doesn\'t clean up after itself is like a guest who never leaves the party!"',
+				}}
+				reflectionQuestions={[
+					'How does the "ghost timer" metaphor help you remember the importance of cleanup?',
+					'What types of resources might a component need to clean up in a real application?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 7 (Evening)",
+					content:
+						"Today's final lesson was sobering but crucial. Components must be responsible citizens of the React Kingdom! When they leave, they must clean up after themselves - cancel timers, remove listeners, abort requests. Chronos showed me what happens when components don't clean up... it wasn't pretty. Ghost timers everywhere!",
+				}}
+				chapterEnding={[
+					'As the stars appeared above the Lifecycle Sanctum, Chronos placed a gentle hand on Aria\'s shoulder. "You\'ve learned well today, young apprentice. You now understand the sacred rhythm of component life - from birth through growth to graceful departure."',
+					'Binary spun in a happy circle. "You did it, Aria! You\'ve completed your training in the fundamental arts of React!"',
+					'"But this is just the beginning," Chronos smiled mysteriously. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the State Sorcerers. They\'ll teach you how to give your components memory and the power to change over time."',
+					'Aria clutched her journal tightly, excited for the adventures ahead. She had mastered components, props, JSX, and lifecycles. She was ready for the next chapter of her journey!',
+				]}
+			/>
 		</div>
 	);
 };

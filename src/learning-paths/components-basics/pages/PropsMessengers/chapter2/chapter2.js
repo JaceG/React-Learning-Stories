@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
 
 const ChapterTwo = () => {
 	const [messageBoard, setMessageBoard] = useState('');
@@ -166,13 +167,6 @@ const ChapterTwo = () => {
 					calls the function App provided."
 				</p>
 				
-				<div className='character-intro'>
-					<h4>Aria's Journal - Day 4 (Evening)</h4>
-					<p>The one-way road rule makes so much sense now! It's like a chain 
-					of command - orders flow down, reports flow up through official channels 
-					(callbacks). This keeps everything organized and predictable. No workshop 
-					can accidentally change instructions meant for another!</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -269,33 +263,24 @@ function Button(props) {
 // Aria's note: "The button tells App about clicks through the callback!"`}</pre>
 				</div>
 
-				<div className='lesson-insight'>
-					<h3>The Flow Lesson:</h3>
-					<p>
-						Props in React always flow in a single direction: from
-						parent to child. This one-way data flow makes your
-						application easier to understand and debug, because
-						changes always come from above and components never
-						modify the props they receive. If a child needs to
-						communicate back, it does so by calling a callback
-						function provided by its parent. Hermes emphasizes: 
-						"Predictability through unidirectional flow!"
-					</p>
-				</div>
-
-				<div className='reflection-section'>
-					<h3>Reflect on the Story</h3>
-					<p>
-						How does the one-way road metaphor help you understand
-						how data flows in React?
-					</p>
-					<p>
-						Why do you think callbacks are used for child-to-parent
-						communication instead of letting children change props
-						directly?
-					</p>
-				</div>
 			</div>
+
+			<ChapterSummary
+				lessonInsight={{
+					title: 'The Flow Lesson:',
+					content:
+						'Props in React always flow in a single direction: from parent to child. This one-way data flow makes your application easier to understand and debug, because changes always come from above and components never modify the props they receive. If a child needs to communicate back, it does so by calling a callback function provided by its parent. Hermes emphasizes: "Predictability through unidirectional flow!"',
+				}}
+				reflectionQuestions={[
+					'How does the one-way road metaphor help you understand how data flows in React?',
+					'Why do you think callbacks are used for child-to-parent communication instead of letting children change props directly?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 4 (Evening)",
+					content:
+						"The one-way road rule makes so much sense now! It's like a chain of command - orders flow down, reports flow up through official channels (callbacks). This keeps everything organized and predictable. No workshop can accidentally change instructions meant for another!",
+				}}
+			/>
 		</div>
 	);
 };
