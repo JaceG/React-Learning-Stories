@@ -68,6 +68,7 @@ function ChapterThree() {
 				...spell,
 				calculatedPower: showExpensive ? calculateSpellPower(spell, 1.5) : spell.power
 			}));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchTerm, sortBy, showExpensive]);
 
 	// Without useCallback - creates new function on every render

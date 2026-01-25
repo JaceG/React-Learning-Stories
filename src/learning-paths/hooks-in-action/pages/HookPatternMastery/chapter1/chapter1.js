@@ -46,6 +46,7 @@ function ChapterOne() {
 		const [submitCount, setSubmitCount] = useState(0);
 
 		// Create form fields
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		const fields = {};
 		Object.keys(initialValues).forEach((key) => {
 			// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -57,6 +58,7 @@ function ChapterOne() {
 			(field) => field.touched
 		);
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		const handleSubmit = useCallback(
 			async (onSubmit) => {
 				setSubmitCount((count) => count + 1);

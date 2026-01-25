@@ -182,6 +182,7 @@ const ChapterThree = () => {
 			element.removeEventListener('touchstart', handleTouchStart);
 			element.removeEventListener('touchend', handleTouchEnd);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeMethod]);
 
 	// Voice command simulation

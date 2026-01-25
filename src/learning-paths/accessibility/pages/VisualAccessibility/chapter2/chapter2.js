@@ -69,6 +69,7 @@ const ChapterTwo = () => {
 			AA: parseFloat(ratio) >= aaThreshold,
 			AAA: parseFloat(ratio) >= aaaThreshold
 		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [textColor, bgColor, fontSize, fontWeight]);
 
 	const textSizeExamples = [

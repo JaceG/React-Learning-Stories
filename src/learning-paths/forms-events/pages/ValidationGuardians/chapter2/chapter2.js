@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
@@ -173,11 +173,14 @@ function ChapterTwo() {
 				}
 				break;
 
-			case 'email':
-				if (value && value.includes('@')) {
-					await complexValidations.asyncEmailCheck(value);
-				}
-				break;
+		case 'email':
+			if (value && value.includes('@')) {
+				await complexValidations.asyncEmailCheck(value);
+			}
+			break;
+		default:
+			// No validation for other fields
+			break;
 		}
 	};
 

@@ -341,18 +341,21 @@ const ChapterOne = () => {
 
 						{/* Link States Example */}
 						<div>
-							<h4 style={{ marginBottom: '15px' }}>Link States</h4>
+							<h4 style={{ marginBottom: '15px' }} id="link-states">Link States</h4>
 							<div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
 								<div>
-									<a href="#" style={{ color: '#1E90FF' }}>Unvisited link</a>
+									{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+									<a href="#link-states" style={{ color: '#1E90FF' }}>Unvisited link</a>
 									<div style={{ fontSize: '0.85em', color: '#bdc3c7' }}>Blue only</div>
 								</div>
 								<div>
-									<a href="#" style={{ color: '#800080' }}>Visited link</a>
+									{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+									<a href="#link-states" style={{ color: '#800080' }}>Visited link</a>
 									<div style={{ fontSize: '0.85em', color: '#bdc3c7' }}>Purple only</div>
 								</div>
 								<div>
-									<a href="#" style={{ color: '#1E90FF', textDecoration: 'underline' }}>
+									{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+									<a href="#link-states" style={{ color: '#1E90FF', textDecoration: 'underline' }}>
 										Better: Always underlined
 									</a>
 									<div style={{ fontSize: '0.85em', color: '#bdc3c7' }}>Color + underline</div>

@@ -250,7 +250,7 @@ const validationRules = {
   }),
   
   email: (msg = 'Invalid email') => (value) => ({
-    valid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    valid: /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(value),
     message: msg
   }),
   

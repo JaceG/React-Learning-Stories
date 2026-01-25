@@ -66,16 +66,20 @@ const ChapterThree = () => {
 
 	// Cleanup on unmount
 	useEffect(() => {
+		// Copy ref values for cleanup
+		const observer = observerRef.current;
+		const subscription = subscriptionRef.current;
+		
 		return () => {
 			// Clean up all timers
 			timers.forEach(timer => clearInterval(timer));
 			// Clean up observer
-			if (observerRef.current) {
-				observerRef.current.disconnect();
+			if (observer) {
+				observer.disconnect();
 			}
 			// Clean up subscription
-			if (subscriptionRef.current) {
-				subscriptionRef.current.unsubscribe();
+			if (subscription) {
+				subscription.unsubscribe();
 			}
 		};
 	}, [timers]);

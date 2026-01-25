@@ -306,7 +306,7 @@ export default function handler(request) {
 resource "aws_cloudfront_distribution" "app" {
   origin {
     domain_name = aws_s3_bucket.app.bucket_regional_domain_name
-    origin_id   = "S3-${"${aws_s3_bucket.app.id}"}"
+    origin_id   = "S3-\${aws_s3_bucket.app.id}"
   }
   
   enabled             = true
@@ -324,7 +324,7 @@ resource "aws_cloudfront_distribution" "app" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-${"${aws_s3_bucket.app.id}"}"
+    target_origin_id = "S3-\${aws_s3_bucket.app.id}"
     
     forwarded_values {
       query_string = false

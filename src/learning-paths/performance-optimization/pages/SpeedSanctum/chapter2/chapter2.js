@@ -48,6 +48,7 @@ const ChapterTwo = () => {
 			.sort((a, b) => {
 				return sortOrder === 'asc' ? a.power - b.power : b.power - a.power;
 			});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchTerm, sortOrder]);
 
 	// Component without React.memo

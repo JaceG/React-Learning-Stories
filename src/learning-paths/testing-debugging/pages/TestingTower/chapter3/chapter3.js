@@ -244,7 +244,7 @@ jobs:
     "test": "react-scripts test",
     "test:ci": "CI=true npm test -- --coverage",
     "test:e2e": "cypress run",
-    "coverage:check": "jest --coverage --coverageThreshold='{\"global\":{\"branches\":80,\"functions\":80,\"lines\":80,\"statements\":80}}'",
+    "coverage:check": "jest --coverage --coverageThreshold='{ global: { branches: 80, functions: 80, lines: 80, statements: 80 } }'",
     "precommit": "lint-staged && npm test:ci"
   }
 }`}</pre>

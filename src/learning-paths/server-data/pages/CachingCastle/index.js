@@ -101,8 +101,9 @@ function CachingCastle() {
 
 	// Cleanup on unmount
 	useEffect(() => {
+		const timers = cacheTimers.current;
 		return () => {
-			cacheTimers.current.forEach(timer => clearTimeout(timer));
+			timers.forEach(timer => clearTimeout(timer));
 		};
 	}, []);
 

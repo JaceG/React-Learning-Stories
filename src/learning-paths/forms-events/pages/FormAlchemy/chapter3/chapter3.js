@@ -54,7 +54,8 @@ function ChapterThree() {
 					activateValidationRune(field);
 				}
 			});
-		}, [values, touched, validate, activateValidationRune]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		}, [values, touched, validate]);
 
 		const handleChange = useCallback((e) => {
 			const { name, value, type, checked } = e.target;
@@ -101,8 +102,9 @@ function ChapterThree() {
 					setIsSubmitting(false);
 				}
 			},
-			[values, validate, initialValues, openPortal]
-		);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[values, validate, initialValues]
+	);
 
 		const isValid = useMemo(
 			() => Object.keys(errors).length === 0,

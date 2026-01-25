@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const ChapterTwo = () => {
@@ -727,24 +727,24 @@ function DataTable({ data }) {
         </tr>
       </thead>
       <tbody>
-        \\{data.map((row) => (
-          <tr key=\{row.month\}>
-            <th scope="row">\{row.month\}</th>
-            <td>\${row.revenue}</td>
+        {data.map((row) => (
+          <tr key={row.month}>
+            <th scope="row">{row.month}</th>
+            <td>${'$'}{row.revenue}</td>
             <td>
               <span 
-                className=\{row.growth > 0 ? 'positive' : 'negative'\}
-                aria-label=\\{
+                className={row.growth > 0 ? 'positive' : 'negative'}
+                aria-label={
                   row.growth > 0 
-                    ? \\\`Increased \\\${row.growth}%\\\`
-                    : \\\`Decreased \\\${Math.abs(row.growth)}%\\\`
-                \\}
+                    ? 'Increased ' + row.growth + '%'
+                    : 'Decreased ' + Math.abs(row.growth) + '%'
+                }
               >
-                \{row.growth > 0 ? '↑' : '↓'\} \{row.growth\}%
+                {row.growth > 0 ? '↑' : '↓'} {row.growth}%
               </span>
             </td>
           </tr>
-        ))\\}
+        ))}
       </tbody>
     </table>
   );

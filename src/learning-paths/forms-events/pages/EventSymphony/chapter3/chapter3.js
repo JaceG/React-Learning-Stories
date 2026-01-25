@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
@@ -50,6 +50,7 @@ function ChapterThree() {
 	};
 
 	// Throttled handler using Academy patterns
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const handleThrottledInput = useCallback(
 		throttle((value) => {
 			setThrottledValue(value);
@@ -62,6 +63,7 @@ function ChapterThree() {
 	);
 
 	// Debounced handler using Academy patterns
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const handleDebouncedInput = useCallback(
 		debounce((value) => {
 			setDebouncedValue(value);

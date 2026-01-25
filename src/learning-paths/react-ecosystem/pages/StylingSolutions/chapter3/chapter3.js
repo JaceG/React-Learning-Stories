@@ -336,7 +336,7 @@ const migrateToTailwind = \`
 
 // CSS Modules - Optimization
 {
-  test: /\.module\.css$/,
+  test: /\\.module\\.css$/,
   use: [
     MiniCssExtractPlugin.loader,
     {
