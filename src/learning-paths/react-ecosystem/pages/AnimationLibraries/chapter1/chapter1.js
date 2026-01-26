@@ -156,7 +156,7 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Animation Fundamentals</h3>
 				
-				<InstructionBox character={`Master Kinetic demonstrates the fundamentals.`}>
+				<InstructionBox character={`Abbess Motia demonstrates the fundamentals.`}>
 					Learn the core animation concepts: timing functions, transforms, and 
 					transitions. Practice each technique to build your foundation!
 				</InstructionBox>
@@ -288,8 +288,8 @@ if (prefersReducedMotion) return children; // Skip animations
 			<ChapterSummary
 				characterIntros={[
 					{
-						name: `Master Kinetic`,
-						description: `Head of the Motion Monastery, master of all animation arts. Their wisdom: "Animation breathes life into static components. Master the fundamentals first, then choose the right tool for your needs."`
+						name: `Animation Abbess Motia`,
+						description: `Master of motion and guardian of the Motion Monastery. Her philosophy: "Every animation tells a story. Make it meaningful, make it smooth, make it accessible. Motion is the bridge between intention and understanding."`
 					}
 				]}
 				lessonInsight={{
@@ -302,7 +302,7 @@ if (prefersReducedMotion) return children; // Skip animations
 				]}
 				journalEntry={{
 					title: `Aria's Journal - Day 40 (Morning)`,
-					content: `Arrived at the Motion Monastery floating above the clouds! Master Kinetic welcomed me: "Animation breathes life into static components." I learned the fundamentals: CSS transitions (simple but limited), timing functions (ease, linear, spring), and the biggest challenge - React unmounts components immediately, preventing exit animations! Animation libraries solve: exit animations, gesture integration, performance optimization, complex orchestration, spring physics. ${animationTechniques.length} techniques learned! Performance tips: Use transform/opacity (GPU accelerated), avoid layout properties (width/height). Accessibility matters too: prefers-reduced-motion!`
+					content: `Arrived at the Motion Monastery floating above the clouds! Animation Abbess Motia greeted me with trails of light following her gestures: "Every animation tells a story." I learned the fundamentals: CSS transitions (simple but limited), timing functions (ease, linear, spring), and the biggest challenge - React unmounts components immediately, preventing exit animations! Animation libraries solve: exit animations, gesture integration, performance optimization, complex orchestration, spring physics. ${animationTechniques.length} techniques learned! Performance tips: Use transform/opacity (GPU accelerated), avoid layout properties (width/height). Accessibility matters too: prefers-reduced-motion!`
 				}}
 			/>
 		</div>

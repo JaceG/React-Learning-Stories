@@ -43,7 +43,7 @@ function AnimationLibraries() {
 			<LessonHeader
 				title={`Animation Libraries`}
 				subtitle={`Enter the Motion Monastery and master the art of animation`}
-				opener={`The Motion Monastery floated serenely above the clouds. Master Kinetic welcomed Aria: "Animation breathes life into static components. Here, you'll learn to make interfaces dance." The monastery held three dojos: CSS Transitions, React Spring, and Framer Motion. Each taught different philosophies of bringing motion to React applications.`}
+				opener={`The Motion Monastery floated serenely above the clouds. Animation Abbess Motia greeted Aria with a gesture that left glowing trails in the air: "Welcome to where static UIs come to life. Every animation tells a story - make it meaningful, make it smooth, make it accessible." The monastery held three dojos: CSS Transitions, React Spring, and Framer Motion, each teaching different philosophies of bringing motion to React.`}
 				totalChapters={3}
 			/>
 

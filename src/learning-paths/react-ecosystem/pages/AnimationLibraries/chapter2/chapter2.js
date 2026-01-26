@@ -131,7 +131,7 @@ const ChapterTwo = () => {
 			<ChapterIntro
 				chapterNumber={2}
 				title={`The Animation Dojos`}
-				bridge={`"You've learned the philosophy of motion," Master Kinetic said. "Now it's time for practice." The monastery's three dojos awaited: CSS Transitions for foundation, React Spring for physics-based animation, and Framer Motion for declarative power. Each dojo taught different techniques for different needs.`}
+				bridge={`"You've learned the philosophy of motion," Abbess Motia said. "Now it's time for practice." The monastery's three dojos awaited: CSS Transitions for foundation, React Spring for physics-based animation, and Framer Motion for declarative power. Each dojo taught different techniques for different needs.`}
 			/>
 
 			<div className='story-section'>
@@ -167,7 +167,7 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Animation Dojo Training</h3>
 				
-				<InstructionBox character={`Master Kinetic opens the training dojos.`}>
+				<InstructionBox character={`Abbess Motia opens the training dojos.`}>
 					Train in each dojo: CSS Transitions, React Spring, and Framer Motion. 
 					Master each animation library's unique approach and philosophy!
 				</InstructionBox>
