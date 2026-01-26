@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [currentFocus, setCurrentFocus] = useState(null);
@@ -108,9 +112,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter interaction-patterns'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Keyboard Kingdom
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Keyboard Kingdom`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -148,6 +153,10 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Keyboard Navigation Simulator</h3>
 				
+				<InstructionBox character={`Guardian Keyboard hands you a magical keyboard.`}>
+					{`"Enable keyboard mode and navigate through my kingdom using only Tab, Enter, and the arrow keys. Watch your focus path grow!"`}
+				</InstructionBox>
+
 				<button
 					onClick={() => setKeyboardMode(!keyboardMode)}
 					style={{
@@ -378,12 +387,10 @@ const ChapterOne = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Keyboard Navigation Patterns</span>
-					<span className='discovered-by'>Guardian Keyboard's wisdom</span>
-				</div>
-				<pre>{`# Keyboard Accessibility Fundamentals
+			<CodeExample
+				title={`Keyboard Navigation Patterns`}
+				discoveredBy={`Guardian Keyboard's wisdom`}
+				code={`# Keyboard Accessibility Fundamentals
 // Guardian Keyboard: "Every mouse action needs a keyboard equivalent!"
 
 # Focus Management
@@ -704,31 +711,37 @@ function DropdownMenu({ items }) {
 7. Check focus trap in modals
 8. Verify Escape closes things
 9. Test with screen reader
-10. Disable mouse to verify`}</pre>
-			</div>
+10. Disable mouse to verify`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Keyboard Lesson:</h3>
-				<p>
-					Guardian Keyboard reveals that keyboard accessibility is not optional - it's 
-					fundamental to universal access. Every interactive element must be reachable 
-					and operable via keyboard. Focus management, clear indicators, and logical 
-					tab order create a navigable experience. Remember: if it's clickable, it must 
-					be keyboard accessible. The keyboard is the bridge between all users and your 
-					application.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why is keyboard navigation considered the "universal interface" for accessibility?
-				</p>
-				<p>
-					How does proper focus management improve the experience for all users, not 
-					just those using keyboards?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Guardian Keyboard`,
+						description: `Ruler of the Keyboard Kingdom and master of focus management. Their philosophy: "The keyboard is the universal interface - master it, and you unlock access for millions."`
+					},
+					{
+						name: `Binary`,
+						description: `The calculating companion who reveals accessibility statistics. "100% of users benefit from keyboard support!"`
+					},
+					{
+						name: `Debuggora`,
+						description: `The pattern observer who spots interaction gaps. "Every click needs a key equivalent. Every hover needs a focus state."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Keyboard Lesson:`,
+					content: `Guardian Keyboard reveals that keyboard accessibility is not optional - it's fundamental to universal access. Every interactive element must be reachable and operable via keyboard. Focus management, clear indicators, and logical tab order create a navigable experience. Remember: if it's clickable, it must be keyboard accessible. The keyboard is the bridge between all users and your application.`
+				}}
+				reflectionQuestions={[
+					`Why is keyboard navigation considered the "universal interface" for accessibility?`,
+					`How does proper focus management improve the experience for all users, not just those using keyboards?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 43 (Morning)`,
+					content: `I entered the Keyboard Kingdom today where Guardian Keyboard rules without a mouse in sight! I learned that 3% of users navigate exclusively by keyboard, 20% use it frequently, but 100% benefit from keyboard support. The Guardian taught me about focus management, tab order, and keyboard shortcuts. I practiced with focus traps for modals - essential so users don't get stuck! The skip links were clever too - letting keyboard users bypass repetitive navigation. Guardian Keyboard's wisdom: "Every mouse action needs a keyboard equivalent." I mastered Tab, Enter, Escape, Space, and arrow keys - the fundamental shortcuts of accessible navigation.`
+				}}
+			/>
 		</div>
 	);
 };

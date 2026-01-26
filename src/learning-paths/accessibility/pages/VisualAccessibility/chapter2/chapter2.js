@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [textColor, setTextColor] = useState('#333333');
@@ -133,9 +137,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter visual-accessibility'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Contrast Citadel
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Contrast Citadel`}
+				bridge={`Guardian Spectrum led Aria from the Color Conservatory to a towering fortress of black and white marble. "Color alone is not enough," they explained. "Here in the Contrast Citadel, you will learn the mathematics of visibility itself."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -170,6 +176,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Contrast Checker Laboratory</h3>
+
+				<InstructionBox character={`Guardian Spectrum activates the Contrast Calculator.`}>
+					{`"Test your color combinations here. Remember: 4.5:1 for normal text, 3:1 for large text and UI elements."`}
+				</InstructionBox>
 				
 				<div className='contrast-citadel'>
 					<div className='contrast-checker'>
@@ -511,12 +521,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Contrast Best Practices</span>
-					<span className='discovered-by'>Guardian Spectrum's formulas</span>
-				</div>
-				<pre>{`# WCAG Contrast Requirements
+			<CodeExample
+				title={`Contrast Best Practices`}
+				discoveredBy={`Guardian Spectrum's formulas`}
+				code={`# WCAG Contrast Requirements
 // Guardian Spectrum: "Clarity is kindness to your users' eyes!"
 
 # Understanding Contrast Ratios
@@ -801,33 +809,23 @@ a:visited {
     background: #CCCCCC;
     color: #666666; // No requirement
   }
-}`}</pre>
-			</div>
+}`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Contrast Lesson:</h3>
-				<p>
-					The Contrast Citadel teaches us that sufficient contrast isn't just about 
-					meeting standards - it's about ensuring your content is perceivable by everyone. 
-					From bright sunlight to aging eyes, from cheap monitors to high-end displays, 
-					good contrast ensures your message gets through. Remember: 4.5:1 for normal 
-					text, 3:1 for large text and UI elements. When in doubt, test with real 
-					tools and real users. Beautiful design and accessible contrast are not 
-					mutually exclusive - they enhance each other.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does understanding the mathematics behind contrast ratios change your 
-					approach to choosing colors?
-				</p>
-				<p>
-					Why might someone need higher contrast than the minimum standards, and how 
-					can we design for these users without compromising aesthetics?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Contrast Lesson:`,
+					content: `The Contrast Citadel teaches us that sufficient contrast isn't just about meeting standards - it's about ensuring your content is perceivable by everyone. From bright sunlight to aging eyes, from cheap monitors to high-end displays, good contrast ensures your message gets through. Remember: 4.5:1 for normal text, 3:1 for large text and UI elements. When in doubt, test with real tools and real users. Beautiful design and accessible contrast are not mutually exclusive - they enhance each other.`
+				}}
+				reflectionQuestions={[
+					`How does understanding the mathematics behind contrast ratios change your approach to choosing colors?`,
+					`Why might someone need higher contrast than the minimum standards, and how can we design for these users without compromising aesthetics?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 42 (Afternoon)`,
+					content: `The Contrast Citadel is a fortress of mathematics and visibility! Guardian Spectrum taught me the sacred ratios: 4.5:1 for normal text, 3:1 for large text and UI components. Binary calculated our color combinations instantly - many of them failed! The Guardian's words struck deep: "Pretty isn't always accessible. But accessible can be beautiful." I experimented with the Contrast Checker Laboratory, testing text colors against backgrounds. Dark mode, light mode, high contrast mode - each serves users differently. Contrast conquers all obstacles: bright sunlight, aging eyes, poor screens.`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [motionPreference, setMotionPreference] = useState('auto');
@@ -132,9 +136,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter visual-accessibility'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Motion Manor
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Motion Manor`}
+				bridge={`"One final realm awaits," Guardian Spectrum said, leading Aria toward a building that seemed to float and shift. "Color and contrast are but two pillars of visual accessibility. The third is motion." A new guardian emerged from the swirling walls - Guardian Equilibrium, who walked with perfect balance despite the world moving around them.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -169,6 +175,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Motion Control Center</h3>
+
+				<InstructionBox character={`Guardian Equilibrium steadies the room.`}>
+					{`"Control is everything. Test different motion preferences and see how your animations affect users. Remember - 1 in 3 people over 40 experience dizziness from parallax scrolling."`}
+				</InstructionBox>
 				
 				<div className='motion-manor'>
 					<div className='motion-controls'>
@@ -426,12 +436,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Motion Accessibility Implementation</span>
-					<span className='discovered-by'>Guardian Equilibrium's balance</span>
-				</div>
-				<pre>{`# Motion and Animation Accessibility
+			<CodeExample
+				title={`Motion Accessibility Implementation`}
+				discoveredBy={`Guardian Equilibrium's balance`}
+				code={`# Motion and Animation Accessibility
 // Guardian Equilibrium: "Movement with purpose, stillness with grace!"
 
 # Respecting Motion Preferences
@@ -789,33 +797,28 @@ function Toast({ message, duration = 3000 }) {
       </button>
     </div>
   );
-}`}</pre>
-			</div>
+}`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Motion Lesson:</h3>
-				<p>
-					Guardian Equilibrium teaches us that motion should enhance, not harm. With 
-					vestibular disorders affecting millions, respecting motion preferences isn't 
-					optional—it's essential. By implementing proper controls, respecting system 
-					preferences, and avoiding known triggers like parallax scrolling and screen 
-					shake, we create interfaces that delight without causing discomfort. Remember: 
-					the best animations are those users can control, and the most accessible 
-					interfaces work beautifully both with and without motion.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does providing motion controls change the relationship between your 
-					interface and users with vestibular sensitivities?
-				</p>
-				<p>
-					Why is "prefers-reduced-motion" more than just turning off animations, and 
-					how can we create equally engaging experiences without relying on movement?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Motion Lesson:`,
+					content: `Guardian Equilibrium teaches us that motion should enhance, not harm. With vestibular disorders affecting millions, respecting motion preferences isn't optional—it's essential. By implementing proper controls, respecting system preferences, and avoiding known triggers like parallax scrolling and screen shake, we create interfaces that delight without causing discomfort. Remember: the best animations are those users can control, and the most accessible interfaces work beautifully both with and without motion.`
+				}}
+				reflectionQuestions={[
+					`How does providing motion controls change the relationship between your interface and users with vestibular sensitivities?`,
+					`Why is "prefers-reduced-motion" more than just turning off animations, and how can we create equally engaging experiences without relying on movement?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 42 (Evening)`,
+					content: `The Motion Manor was disorienting at first - walls shifting, floors rippling. Guardian Equilibrium taught me that motion can harm as well as delight. One in three people over 40 experience dizziness from parallax scrolling! I learned to respect prefers-reduced-motion, provide play/pause controls, and avoid vestibular triggers like screen shake and rapid zooming. Animation duration matters too: 200-500ms for micro-interactions. The Guardian's wisdom: "Life shouldn't cause suffering. Provide controls. Honor preferences." The best interfaces work beautifully both with and without motion.`
+				}}
+				chapterEnding={[
+					`As the Motion Manor finally stilled, Guardian Spectrum and Guardian Equilibrium stood together. "You have mastered the three pillars of visual accessibility," they said in unison.`,
+					`Binary computed the achievements. "Color independence: achieved. Contrast ratios: mastered. Motion control: implemented. Visual accessibility level: excellent."`,
+					`"But visual accessibility is just one facet," Guardian Spectrum added with a knowing smile. "The Semantic Sanctuary awaits, where you will learn that structure is as important as appearance. The screen reader users cannot see your beautiful colors - they need semantic meaning instead."`
+				]}
+			/>
 		</div>
 	);
 };

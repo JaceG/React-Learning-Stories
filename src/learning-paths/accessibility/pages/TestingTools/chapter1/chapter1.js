@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [activeTab, setActiveTab] = useState('automated');
@@ -168,9 +172,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter testing-tools'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Testing Tower
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Testing Tower`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -206,6 +211,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Testing Strategy Center</h3>
+				
+				<InstructionBox character={`Master Validator activates the Testing Strategy Center.`}>
+					{`"Explore all three approaches - automated, manual, and quick checks. Click on tools to install them, then run tests to see your results. Remember: comprehensive testing combines all three approaches!"`}
+				</InstructionBox>
 				
 				<div className='testing-tower'>
 					<div className='demo-controls'>
@@ -453,12 +462,10 @@ const ChapterOne = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Testing Implementation Guide</span>
-					<span className='discovered-by'>Master Validator's toolkit</span>
-				</div>
-				<pre>{`# Accessibility Testing Strategy
+			<CodeExample
+				title={`Testing Implementation Guide`}
+				discoveredBy={`Master Validator's toolkit`}
+				code={`# Accessibility Testing Strategy
 // Master Validator: "Test early, test often, test comprehensively!"
 
 # Setting Up Automated Testing
@@ -662,121 +669,29 @@ jobs:
           urls: |
             http://localhost:3000
             http://localhost:3000/about
-          uploadArtifacts: true
+          uploadArtifacts: true`}
+			/>
 
-# Custom Testing Utilities
-
-## Focus Management Tester
-function testFocusManagement(component) {
-  const focusableElements = component.querySelectorAll(
-    'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  );
-  
-  const results = {
-    totalElements: focusableElements.length,
-    issues: []
-  };
-  
-  focusableElements.forEach((element, index) => {
-    // Check for visible focus indicator
-    element.focus();
-    const styles = window.getComputedStyle(element);
-    const hasFocusStyle = 
-      styles.outline !== 'none' || 
-      styles.boxShadow !== 'none' ||
-      element.classList.contains('focus-visible');
-    
-    if (!hasFocusStyle) {
-      results.issues.push({
-        element: element.tagName,
-        issue: 'No visible focus indicator',
-        selector: element.className || element.id
-      });
-    }
-  });
-  
-  return results;
-}
-
-## Contrast Checker
-function checkContrast(element) {
-  const styles = window.getComputedStyle(element);
-  const backgroundColor = styles.backgroundColor;
-  const color = styles.color;
-  const fontSize = parseFloat(styles.fontSize);
-  const fontWeight = styles.fontWeight;
-  
-  // Calculate contrast ratio
-  const ratio = getContrastRatio(color, backgroundColor);
-  
-  // Determine requirements
-  const isLargeText = fontSize >= 18 || 
-    (fontSize >= 14 && fontWeight >= 700);
-  const requiredRatio = isLargeText ? 3.0 : 4.5;
-  
-  return {
-    ratio,
-    passes: ratio >= requiredRatio,
-    requirements: {
-      AA: requiredRatio,
-      AAA: isLargeText ? 4.5 : 7.0
-    }
-  };
-}
-
-# Testing Checklist
-
-## Pre-Launch Checklist
-- [ ] Automated tests pass (axe, Lighthouse)
-- [ ] Keyboard navigation complete
-- [ ] Screen reader tested (NVDA/JAWS/VoiceOver)
-- [ ] Color contrast verified
-- [ ] Focus indicators visible
-- [ ] Error messages accessible
-- [ ] Dynamic content announced
-- [ ] Mobile accessibility tested
-- [ ] Zoom to 200% works
-- [ ] Reduced motion respected
-
-## Issue Prioritization
-const prioritizeIssues = (violations) => {
-  return violations.sort((a, b) => {
-    const priority = {
-      'critical': 4,
-      'serious': 3,
-      'moderate': 2,
-      'minor': 1
-    };
-    
-    return priority[b.impact] - priority[a.impact];
-  });
-};`}</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Testing Lesson:</h3>
-				<p>
-					Master Validator teaches us that accessibility testing isn't a one-time check—it's 
-					an ongoing practice. Automated tools catch common issues quickly, but they only 
-					find about 30-50% of accessibility problems. Manual testing with keyboards and 
-					screen readers reveals the real user experience. By combining automated scanning, 
-					manual testing, and real user feedback, we build truly inclusive applications. 
-					Remember: the best accessibility test is having users with disabilities test 
-					your application.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does integrating accessibility testing into your development workflow 
-					change your approach to building features?
-				</p>
-				<p>
-					Why is the combination of automated and manual testing essential for 
-					catching the full spectrum of accessibility issues?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Validator`,
+						description: `Guardian of the Testing Tower and champion of quality assurance. Her philosophy: "Accessibility testing isn't about finding fault - it's about ensuring everyone can experience what you've created. Test early, test often, test comprehensively."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Testing Lesson:`,
+					content: `Master Validator teaches us that accessibility testing isn't a one-time check—it's an ongoing practice. Automated tools catch common issues quickly, but they only find about 30-50% of accessibility problems. Manual testing with keyboards and screen readers reveals the real user experience. By combining automated scanning, manual testing, and real user feedback, we build truly inclusive applications. Remember: the best accessibility test is having users with disabilities test your application.`
+				}}
+				reflectionQuestions={[
+					`How does integrating accessibility testing into your development workflow change your approach to building features?`,
+					`Why is the combination of automated and manual testing essential for catching the full spectrum of accessibility issues?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Morning)`,
+					content: `The Testing Tower stands as the final guardian of accessibility! Master Validator welcomed us with her clipboard and magnifying glass, ready to verify every component we've built. I learned the truth about testing: automated tools like axe DevTools catch 30-50% of issues - important, but not everything! Binary scanned the statistics while I explored keyboard navigation, screen reader testing, and quick checks. The key insight: "Layer your defenses." Automated for speed, manual for nuance, user testing for real experiences. Master Validator's wisdom echoes: "Build testing into your workflow. Make accessibility checking as natural as syntax checking."`
+				}}
+			/>
 		</div>
 	);
 };

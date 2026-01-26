@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [activeComparison, setActiveComparison] = useState('button');
@@ -131,9 +135,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter inclusive-foundations'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Semantic Foundation
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Semantic Foundation`}
+				bridge={`Guardian Semantic stepped forward from the council. "Before we dive into complex solutions," she said, leading Aria to the Foundation Hall, "you must understand the power of semantic HTML. The right element for the right purpose - this is where accessibility begins."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -170,6 +176,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Semantic HTML Showcase</h3>
+				
+				<InstructionBox character={`Guardian Semantic presents the comparison chamber.`}>
+					Click on each element type to see the difference between non-semantic and semantic HTML. Notice how the good examples communicate meaning inherently.
+				</InstructionBox>
 				
 				<div className='semantic-showcase'>
 					<div style={{ 
@@ -244,6 +254,10 @@ const ChapterTwo = () => {
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Landmark Elements</h3>
 				
+				<InstructionBox character={`Guardian Semantic reveals the landmark map.`}>
+					Click on each landmark element to implement it in your application. Screen readers use these to help users jump directly to different sections.
+				</InstructionBox>
+				
 				<div style={{
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
@@ -289,6 +303,10 @@ const ChapterTwo = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Heading Hierarchy</h3>
+				
+				<InstructionBox character={`Guardian Semantic demonstrates proper document structure.`}>
+					Build the heading structure to see how screen readers interpret document hierarchy. Watch for skipped levels!
+				</InstructionBox>
 				
 				<div style={{
 					background: 'rgba(0, 0, 0, 0.3)',
@@ -356,6 +374,10 @@ const ChapterTwo = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Form Associations</h3>
+				
+				<InstructionBox character={`Guardian Semantic shows the form labeling techniques.`}>
+					Implement each labeling technique to ensure all form inputs are accessible. Every input needs a way to identify itself!
+				</InstructionBox>
 				
 				<div style={{
 					display: 'grid',
@@ -462,12 +484,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Semantic HTML in React</span>
-					<span className='discovered-by'>Guardian Semantic's foundation</span>
-				</div>
-				<pre>{`# Semantic HTML Best Practices
+			<CodeExample
+				title={`Semantic HTML in React`}
+				discoveredBy={`Guardian Semantic's foundation`}
+				code={`# Semantic HTML Best Practices
 // Guardian Semantic: "Structure is meaning, meaning is accessibility!"
 
 # React Component Semantics
@@ -713,32 +733,23 @@ const Icon = ({ name, label }) => (
     aria-label={label}
     className={\`icon icon-\${name}\`}
   />
-);`}</pre>
-			</div>
+);`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Semantic Lesson:</h3>
-				<p>
-					Guardian Semantic reveals that semantic HTML is not just about using the 
-					right tags - it's about conveying meaning through structure. When we use 
-					semantic elements, we're not just writing code for browsers, we're creating 
-					a meaningful document that can be understood by all users and technologies. 
-					The foundation of accessibility is choosing elements that accurately describe 
-					their content and purpose. This creates a robust base that requires fewer 
-					ARIA additions and works reliably across all assistive technologies.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does semantic HTML reduce the need for complex accessibility fixes?
-				</p>
-				<p>
-					Why is it important to think of HTML elements as having inherent meaning 
-					rather than just visual appearance?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Semantic Lesson:`,
+					content: `Guardian Semantic reveals that semantic HTML is not just about using the right tags - it's about conveying meaning through structure. When we use semantic elements, we're not just writing code for browsers, we're creating a meaningful document that can be understood by all users and technologies. The foundation of accessibility is choosing elements that accurately describe their content and purpose. This creates a robust base that requires fewer ARIA additions and works reliably across all assistive technologies.`
+				}}
+				reflectionQuestions={[
+					`How does semantic HTML reduce the need for complex accessibility fixes?`,
+					`Why is it important to think of HTML elements as having inherent meaning rather than just visual appearance?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Afternoon)`,
+					content: `Guardian Semantic took me to the Foundation Hall and showed me my biggest mistake: I've been using divs for everything! She explained that semantic HTML is the first and strongest accessibility tool. Buttons for actions, nav for navigation, main for content - each element carries meaning that assistive technologies understand automatically. Binary calculated that semantic HTML gives us 30% less code with 100% more meaning. Debuggora could suddenly see our content hierarchy clearly - screen readers now understand our structure! I implemented landmark elements (header, nav, main, aside, footer) and learned proper heading hierarchy. Guardian Semantic's wisdom: "Master semantic HTML, and you've solved half your accessibility challenges."`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [screenReaderActive, setScreenReaderActive] = useState(false);
@@ -99,9 +103,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter inclusive-foundations'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Inclusive Empire
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Inclusive Empire`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -143,6 +148,10 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Accessibility Audit Chamber</h3>
 				
+				<InstructionBox character={`Empress Inclusiva presents the Guardians of Inclusion.`}>
+					Each Guardian represents a different aspect of accessibility. Explore the audit tools below to understand how different users experience your applications.
+				</InstructionBox>
+				
 				<div className='inclusive-empire'>
 					<div className='guardian-council'>
 						{guardians.map((guardian, index) => (
@@ -173,6 +182,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Barrier Detector</h3>
+				
+				<InstructionBox character={`Debuggora's eyes glow as she scans for accessibility barriers.`}>
+					Click the scan button to detect common accessibility issues in your code. Then fix each barrier to improve your accessibility score.
+				</InstructionBox>
 				
 				<div className='barrier-detector'>
 					<button 
@@ -217,6 +230,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Interactive Testing Tools</h3>
+				
+				<InstructionBox character={`Guardian Audio demonstrates how screen readers experience your app.`}>
+					Use these testing tools to experience your application as users with different abilities do.
+				</InstructionBox>
 				
 				<div style={{ display: 'grid', gap: '20px' }}>
 					{/* Screen Reader Simulator */}
@@ -346,12 +363,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Accessibility Foundations</span>
-					<span className='discovered-by'>Empress Inclusiva's wisdom</span>
-				</div>
-				<pre>{`# Understanding Web Accessibility
+			<CodeExample
+				title={`Accessibility Foundations`}
+				discoveredBy={`Empress Inclusiva's wisdom`}
+				code={`# Understanding Web Accessibility
 // Empress Inclusiva: "Accessibility is not a feature, it's a fundamental!"
 
 # What is Web Accessibility?
@@ -493,31 +508,33 @@ Enter: Activate elements
    - Cleaner, more maintainable code
    - Faster load times
    - Works in more situations
-   - Future-proof design`}</pre>
-			</div>
+   - Future-proof design`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Inclusion Lesson:</h3>
-				<p>
-					Accessibility isn't about adding features for "others" - it's about removing 
-					barriers for everyone. Empress Inclusiva teaches that accessible applications 
-					are better applications, benefiting all users in unexpected ways. When we 
-					design for the edges, we create better experiences for the center. The 
-					Inclusive Empire shows us that true React mastery means building applications 
-					that adapt to human diversity, not forcing humans to adapt to our applications.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the Inclusive Empire as a "philosophy" rather than a place reflect 
-					accessibility's role in development?
-				</p>
-				<p>
-					Why might accessible applications benefit users without disabilities?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Empress Inclusiva`,
+						description: `Ruler of the Inclusive Empire, she teaches that accessibility is not a separate concern but a philosophy that touches all development. Her wisdom: "True mastery means building for everyone."`
+					},
+					{
+						name: `The Guardians of Inclusion`,
+						description: `Five specialists who represent different aspects of accessibility: Guardian Semantic (HTML Expert), Guardian Keyboard (Interaction Specialist), Guardian Audio (Screen Reader Master), Guardian Spectrum (Visual Accessibility), and Guardian Still (Motion Consideration).`
+					}
+				]}
+				lessonInsight={{
+					title: `The Inclusion Lesson:`,
+					content: `Accessibility isn't about adding features for "others" - it's about removing barriers for everyone. Empress Inclusiva teaches that accessible applications are better applications, benefiting all users in unexpected ways. When we design for the edges, we create better experiences for the center. The Inclusive Empire shows us that true React mastery means building applications that adapt to human diversity, not forcing humans to adapt to our applications.`
+				}}
+				reflectionQuestions={[
+					`How does the Inclusive Empire as a "philosophy" rather than a place reflect accessibility's role in development?`,
+					`Why might accessible applications benefit users without disabilities?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Morning)`,
+					content: `I've entered the Inclusive Empire - not a physical place, but a philosophy of building for everyone. Empress Inclusiva's throne room was unlike anything I'd seen: ramps alongside stairs, visual displays paired with audio, multiple ways to interact with everything. She introduced me to the Guardians of Inclusion - five specialists representing different accessibility needs. Debuggora found barriers in our old code I never noticed: color-only information, mouse-only interactions, missing labels. Binary calculated that 15% of people have permanent disabilities, plus countless others with temporary or situational limitations. The Empress's wisdom struck me: "Can everyone use your applications?" It's not just about compliance - it's about building better experiences for all.`
+				}}
+			/>
 		</div>
 	);
 };

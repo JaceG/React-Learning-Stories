@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './VisualAccessibility.css';
 
@@ -34,17 +34,6 @@ function VisualAccessibility() {
 		pause: false,
 		stop: false
 	});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Calculate contrast ratio
 	const calculateContrastRatio = (color1, color2) => {
@@ -96,30 +85,12 @@ function VisualAccessibility() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Visual Accessibility</h1>
-				<p className='lesson-subtitle'>
-					Explore color, contrast, and motion considerations in the Color Conservatory
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Visual Accessibility`}
+				subtitle={`Explore color, contrast, and motion considerations in the Color Conservatory`}
+				opener={`The Color Conservatory shimmered with every hue imaginable, its crystalline walls refracting light into rainbows that danced across the floor. Guardian Spectrum stepped forward, their robes shifting through the entire visible spectrum. "Welcome, young developer. Here you will learn that color is both powerful and perilous. Eight percent of men see differently than you might expect." They gestured to a display where red and green indicators flashed. "Never let color be your only voice."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -156,27 +127,10 @@ function VisualAccessibility() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='accessibility'
-				lessonId='visual-accessibility'
+			<LessonFooter
+				courseId={`accessibility`}
+				lessonId={`visual-accessibility`}
+				totalChapters={3}
 			/>
 		</div>
 	);

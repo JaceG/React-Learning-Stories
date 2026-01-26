@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [activeColorMode, setActiveColorMode] = useState('normal');
@@ -81,9 +85,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter visual-accessibility'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Color Conservatory
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Color Conservatory`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -118,6 +123,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Color Vision Simulator</h3>
+
+				<InstructionBox character={`Guardian Spectrum adjusts a prismatic lens.`}>
+					{`"Experience how others perceive your colors. Switch between vision modes to see your interface through different eyes."`}
+				</InstructionBox>
 				
 				<div className='color-conservatory'>
 					<div className='vision-modes'>
@@ -426,12 +435,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Color Accessibility Patterns</span>
-					<span className='discovered-by'>Guardian Spectrum's teachings</span>
-				</div>
-				<pre>{`# Color Accessibility Best Practices
+			<CodeExample
+				title={`Color Accessibility Patterns`}
+				discoveredBy={`Guardian Spectrum's teachings`}
+				code={`# Color Accessibility Best Practices
 // Guardian Spectrum: "Color enhances, but never excludes!"
 
 # Never Rely on Color Alone
@@ -716,32 +723,29 @@ const contrastErrors = await axe.run({
     <span className="progress-text">\\{progress\\}%</span>
   </div>
   <div className="progress-pattern" aria-hidden="true" />
-</div>`}</pre>
-			</div>
+</div>`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Color Lesson:</h3>
-				<p>
-					Guardian Spectrum teaches that color is a powerful enhancement, but never 
-					essential information. Eight percent of men and many others experience color 
-					differently than you might expect. By combining color with icons, patterns, 
-					text, and other indicators, we ensure our interfaces communicate clearly to 
-					everyone. Remember: if your interface only works in color, it doesn't work 
-					for everyone.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does experiencing your interface through different color vision modes 
-					change your perspective on design decisions?
-				</p>
-				<p>
-					Why is redundancy in visual communication actually a strength rather than 
-					unnecessary repetition?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Guardian Spectrum`,
+						description: `Keeper of the Color Conservatory and master of accessible color design. Their robes shift through every hue of the visible spectrum, a reminder that not all eyes perceive color the same way.`
+					}
+				]}
+				lessonInsight={{
+					title: `The Color Lesson:`,
+					content: `Guardian Spectrum teaches that color is a powerful enhancement, but never essential information. Eight percent of men and many others experience color differently than you might expect. By combining color with icons, patterns, text, and other indicators, we ensure our interfaces communicate clearly to everyone. Remember: if your interface only works in color, it doesn't work for everyone.`
+				}}
+				reflectionQuestions={[
+					`How does experiencing your interface through different color vision modes change your perspective on design decisions?`,
+					`Why is redundancy in visual communication actually a strength rather than unnecessary repetition?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 42 (Morning)`,
+					content: `The Color Conservatory was breathtaking - every shade imaginable dancing across crystalline walls. Guardian Spectrum welcomed me with a sobering truth: 8% of men have color vision differences, and 300 million people globally perceive color differently. My error states relied only on red! The Guardian showed me that color should enhance but never exclude. I learned to add icons (❌✓), patterns, and text labels as companions to every color. Binary helped calculate: "Multiple signals = 100% comprehension!" The most powerful lesson: color enriches for those who see it, but information must never depend on it alone.`
+				}}
+			/>
 		</div>
 	);
 };

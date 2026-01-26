@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activeMethod, setActiveMethod] = useState('mouse');
@@ -234,9 +238,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter interaction-patterns'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Interaction Harmony
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Interaction Harmony`}
+				bridge={`Guardian Audio's final lesson echoed in Aria's mind as she emerged from the Screen Reader Sanctuary. "Labels give voice to the voiceless," the guardian reminded her. "But true accessibility requires more than keyboard and audio support." At the center of the realm, all the Guardians had gathered. "It's time to learn the Interaction Harmony," they announced together.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -273,6 +279,10 @@ const ChapterThree = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Universal Interaction Laboratory</h3>
 				
+				<InstructionBox character={`The Guardians present their Universal Interaction Laboratory.`}>
+					{`"Test each interaction method - mouse, keyboard, touch, voice, and switch. Implement all five universal design principles to achieve true Interaction Harmony!"`}
+				</InstructionBox>
+
 				{/* Interaction Method Selector */}
 				<div className='interaction-methods'>
 					{methods.map((method) => (
@@ -549,12 +559,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Universal Interaction Patterns</span>
-					<span className='discovered-by'>The Guardians' harmony</span>
-				</div>
-				<pre>{`# Universal Design Implementation
+			<CodeExample
+				title={`Universal Interaction Patterns`}
+				discoveredBy={`The Guardians' harmony`}
+				code={`# Universal Design Implementation
 // The Guardians: "Design once, work everywhere!"
 
 # Multi-Modal Button Component
@@ -915,33 +923,29 @@ function AdaptiveComponent() {
 6. Screen Reader + Keyboard
    - Everything announced properly
    - Keyboard navigation works
-   - Dynamic updates announced`}</pre>
-			</div>
+   - Dynamic updates announced`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Harmony Lesson:</h3>
-				<p>
-					The Interaction Harmony teaches us that true accessibility comes from 
-					embracing the diversity of human interaction. Every person has different 
-					abilities, preferences, and contexts. By designing for multiple input 
-					methods from the start, we create interfaces that are not just accessible 
-					but more robust and usable for everyone. The guardians show us that 
-					universal design isn't about special accommodations - it's about flexible, 
-					thoughtful interfaces that adapt to human diversity.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does designing for multiple interaction methods improve the overall 
-					quality and robustness of an interface?
-				</p>
-				<p>
-					Why is it important to test with actual assistive technologies rather 
-					than just following guidelines?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Harmony Lesson:`,
+					content: `The Interaction Harmony teaches us that true accessibility comes from embracing the diversity of human interaction. Every person has different abilities, preferences, and contexts. By designing for multiple input methods from the start, we create interfaces that are not just accessible but more robust and usable for everyone. The guardians show us that universal design isn't about special accommodations - it's about flexible, thoughtful interfaces that adapt to human diversity.`
+				}}
+				reflectionQuestions={[
+					`How does designing for multiple interaction methods improve the overall quality and robustness of an interface?`,
+					`Why is it important to test with actual assistive technologies rather than just following guidelines?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 43 (Evening)`,
+					content: `What a day! All the Guardians assembled to teach me the Interaction Harmony - the art of designing for every input method. Mouse, keyboard, touch, voice, switch - each has its users and considerations. Binary calculated: "Universal design: 5x development time, 10x user reach. ROI: 200%!" I learned the five universal principles: large touch targets (48x48px minimum), clear visual labels, keyboard equivalents, predictable behavior, and error forgiveness. Empress Inclusiva's wisdom resonated deeply: "Accessibility isn't about special features for some. It's about flexible design that adapts to all." The Interaction Harmony achieved!`
+				}}
+				chapterEnding={[
+					`As Aria mastered the Interaction Harmony, Empress Inclusiva smiled proudly. "You've learned to embrace the diversity of human interaction. Your interfaces will welcome all."`,
+					`Binary computed the achievement. "Keyboard navigation: ✓. Screen reader support: ✓. Universal design: ✓. Accessibility level: Expert!"`,
+					`"But visual accessibility awaits," Guardian Keyboard noted. "Color contrast, focus indicators, motion sensitivity - there are more barriers to remove."`,
+					`Aria nodded confidently. "I'm ready. The Visual Accessibility gardens will be my next destination."`
+				]}
+			/>
 		</div>
 	);
 };

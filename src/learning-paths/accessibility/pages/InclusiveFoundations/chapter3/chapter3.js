@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activeAriaExample, setActiveAriaExample] = useState('role');
@@ -145,9 +149,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter inclusive-foundations'>
-			<h2 className='chapter-title'>
-				Chapter 3: The ARIA Arsenal
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The ARIA Arsenal`}
+				bridge={`"You've mastered semantic HTML," Guardian Semantic said as she led Aria to the Arsenal Chamber. "But sometimes HTML lacks the elements we need. That's when ARIA helps - but use it wisely. It's powerful medicine that requires the right dose."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -183,6 +189,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>ARIA Arsenal</h3>
+				
+				<InstructionBox character={`Guardian Semantic opens the ARIA Arsenal.`}>
+					Explore different ARIA attributes and their use cases. Click each type to learn when and how to use it properly.
+				</InstructionBox>
 				
 				<div className='aria-arsenal'>
 					<div style={{ 
@@ -268,6 +278,9 @@ const ChapterThree = () => {
 							borderRadius: '10px'
 						}}>
 							<h4 style={{ marginBottom: '15px' }}>Live Region Demo</h4>
+							<InstructionBox character={`Guardian Audio demonstrates live regions.`}>
+								Click the buttons to see how aria-live announces dynamic content changes to screen readers.
+							</InstructionBox>
 							<button
 								onClick={() => updateLiveRegion('Item added to cart')}
 								style={{
@@ -319,6 +332,9 @@ const ChapterThree = () => {
 							borderRadius: '10px'
 						}}>
 							<h4 style={{ marginBottom: '15px' }}>Expandable Content</h4>
+							<InstructionBox character={`Guardian Keyboard shows state management.`}>
+								Toggle the content and notice how aria-expanded communicates the state to assistive technologies.
+							</InstructionBox>
 							<button
 								onClick={() => setExpandedState(!expandedState)}
 								aria-expanded={expandedState}
@@ -367,6 +383,9 @@ const ChapterThree = () => {
 							borderRadius: '10px'
 						}}>
 							<h4 style={{ marginBottom: '15px' }}>Tab Interface</h4>
+							<InstructionBox character={`Guardian Semantic demonstrates complex patterns.`}>
+								Tabs require multiple ARIA attributes working together. Notice the roles, states, and relationships.
+							</InstructionBox>
 							<div role="tablist" style={{ display: 'flex', gap: '5px', marginBottom: '15px' }}>
 								{['General', 'Advanced', 'Support'].map((tab, index) => (
 									<button
@@ -411,6 +430,10 @@ const ChapterThree = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>The Five Rules of ARIA</h3>
+				
+				<InstructionBox character={`Guardian Semantic reveals the sacred rules.`}>
+					These five rules govern all ARIA usage. Memorize them - they'll save you from creating more problems than you solve.
+				</InstructionBox>
 				
 				<div style={{ display: 'grid', gap: '15px', marginTop: '20px' }}>
 					{ariaRules.map((rule, index) => (
@@ -461,6 +484,10 @@ const ChapterThree = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Common ARIA Patterns</h3>
+				
+				<InstructionBox character={`Guardian Semantic presents the pattern library.`}>
+					These common patterns show how ARIA attributes work together for complex widgets. Study the roles, attributes, and focus management for each.
+				</InstructionBox>
 				
 				<div style={{
 					display: 'grid',
@@ -522,12 +549,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>ARIA Best Practices</span>
-					<span className='discovered-by'>Guardian Semantic's arsenal</span>
-				</div>
-				<pre>{`# ARIA (Accessible Rich Internet Applications)
+			<CodeExample
+				title={`ARIA Best Practices`}
+				discoveredBy={`Guardian Semantic's arsenal`}
+				code={`# ARIA (Accessible Rich Internet Applications)
 // Guardian Semantic: "ARIA is powerful medicine - use the right dose!"
 
 # Understanding ARIA
@@ -795,31 +820,30 @@ function LoadingButton({ loading, onClick, children }) {
 
 // ❌ Don't use placeholder as label
 <input placeholder="Email" />                    // Bad
-<input placeholder="email@example.com" aria-label="Email" /> // Good`}</pre>
-			</div>
+<input placeholder="email@example.com" aria-label="Email" /> // Good`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The ARIA Lesson:</h3>
-				<p>
-					The ARIA Arsenal teaches us that ARIA is not a replacement for semantic HTML, 
-					but an enhancement layer for complex interactions. Guardian Semantic's wisdom 
-					shows that ARIA should be used sparingly and correctly - it's better to have 
-					no ARIA than incorrect ARIA. When semantic HTML falls short, ARIA bridges 
-					the gap, providing the semantic information assistive technologies need. 
-					Master the five rules, understand the patterns, and always test with real 
-					users and assistive technologies.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why is "No ARIA is better than bad ARIA" such an important principle?
-				</p>
-				<p>
-					How does ARIA complement semantic HTML rather than replace it?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The ARIA Lesson:`,
+					content: `The ARIA Arsenal teaches us that ARIA is not a replacement for semantic HTML, but an enhancement layer for complex interactions. Guardian Semantic's wisdom shows that ARIA should be used sparingly and correctly - it's better to have no ARIA than incorrect ARIA. When semantic HTML falls short, ARIA bridges the gap, providing the semantic information assistive technologies need. Master the five rules, understand the patterns, and always test with real users and assistive technologies.`
+				}}
+				reflectionQuestions={[
+					`Why is "No ARIA is better than bad ARIA" such an important principle?`,
+					`How does ARIA complement semantic HTML rather than replace it?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Evening)`,
+					content: `My first day in the Inclusive Empire is complete! Guardian Semantic introduced me to ARIA - the enhancement toolkit for when semantic HTML isn't enough. Binary computed the complexity: 67 roles, 48 properties, infinite combinations - with a 73% misuse probability! The five rules of ARIA are now burned into my memory, especially "No ARIA is better than bad ARIA." I practiced with live regions, expandable content, and tab interfaces - seeing how ARIA attributes work together for complex patterns. Empress Inclusiva's final wisdom echoed: "True mastery means building for everyone." Tomorrow, I continue learning about keyboard navigation and focus management. The Inclusive Empire has shown me that accessibility isn't an add-on - it's fundamental to quality.`
+				}}
+				chapterEnding={[
+					`As the evening star rose over the Inclusive Empire, Empress Inclusiva gathered her Guardians around Aria.`,
+					`"You've learned the foundations," she said warmly. "The POUR principles, semantic HTML, and the ARIA Arsenal. But accessibility is a journey, not a destination."`,
+					`Binary processed their progress. "Accessibility Score: significantly improved. But Guardian Keyboard awaits - keyboard navigation and focus management will complete the foundation."`,
+					`Guardian Semantic nodded. "Remember: start with semantic HTML, enhance with ARIA only when needed, and always test with real users. The Inclusive Empire welcomes all who build with empathy."`,
+					`Aria smiled, her scroll filling with new patterns and principles. "Building for everyone isn't just good practice - it's the right thing to do. The Keyboard Kingdom awaits!"`
+				]}
+			/>
 		</div>
 	);
 };

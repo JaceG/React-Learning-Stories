@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './InclusiveFoundations.css';
 
@@ -16,17 +16,6 @@ function InclusiveFoundations() {
 		colorContrast: false
 	});
 	const [auditResults, setAuditResults] = useState(null);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Barrier detection
 	const addBarrier = (barrier) => {
@@ -76,30 +65,12 @@ function InclusiveFoundations() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Inclusive Foundations</h1>
-				<p className='lesson-subtitle'>
-					Enter the Inclusive Empire with Empress Inclusiva and discover the philosophy of building for everyone
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Inclusive Foundations`}
+				subtitle={`Enter the Inclusive Empire with Empress Inclusiva and discover the philosophy of building for everyone`}
+				opener={`At the heart of the digital realm stood the Inclusive Empire - not a separate kingdom, but a philosophy that touched every corner of the React world. Empress Inclusiva welcomed Aria with a gentle smile that seemed to see everything and nothing at once. "You've built powerful applications, optimized them, deployed them globally," she said, her voice carrying through multiple sensory channels. "But can everyone use them?"`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -116,25 +87,7 @@ function InclusiveFoundations() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='accessibility'
 				lessonId='inclusive-foundations'
 			/>

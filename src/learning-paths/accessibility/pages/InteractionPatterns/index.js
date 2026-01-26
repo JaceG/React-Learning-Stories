@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './InteractionPatterns.css';
 
@@ -25,17 +25,6 @@ function InteractionPatterns() {
 	});
 	const [skipLinks, setSkipLinks] = useState(false);
 	const [focusIndicators, setFocusIndicators] = useState(true);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Focus management
 	const addToFocusPath = (element) => {
@@ -73,30 +62,12 @@ function InteractionPatterns() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Interaction Patterns</h1>
-				<p className='lesson-subtitle'>
-					Master keyboard navigation, screen reader support, and universal interaction methods
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Interaction Patterns`}
+				subtitle={`Master keyboard navigation, screen reader support, and universal interaction methods`}
+				opener={`Beyond the visual layers of the Accessibility Realm lay the Keyboard Kingdom, where Guardian Keyboard maintained order for all who navigated without mice. "Many users can't or won't use pointing devices," Guardian Keyboard explained as Aria arrived at the towering gates. "Your applications must open their doors to every form of input - keyboard, voice, switch, and touch alike."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -120,27 +91,10 @@ function InteractionPatterns() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='accessibility'
-				lessonId='interaction-patterns'
+			<LessonFooter
+				courseId={`accessibility`}
+				lessonId={`interaction-patterns`}
+				totalChapters={3}
 			/>
 		</div>
 	);

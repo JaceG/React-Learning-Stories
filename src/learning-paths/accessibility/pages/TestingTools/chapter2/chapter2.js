@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [activeAuditType, setActiveAuditType] = useState('wcag');
@@ -174,9 +178,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter testing-tools'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Audit Arena
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Audit Arena`}
+				bridge={`Master Validator led them deeper into the Testing Tower, through a corridor lined with scrolls of standards and regulations. "Now that you understand the tools," she explained, "it's time to learn the rules they enforce. The Audit Arena awaits - where WCAG, Section 508, and ADA standards become your guides to true compliance."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -211,6 +217,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Compliance Audit Center</h3>
+				
+				<InstructionBox character={`Compliance Commander unveils the Audit Dashboard.`}>
+					{`"Select your target compliance level, check guidelines as you verify them, and run an audit to discover issues. Remember: Level AA is the standard for most applications, but your specific context may require more or less stringent compliance."`}
+				</InstructionBox>
 				
 				<div className='audit-arena'>
 					<div className='demo-controls'>
@@ -424,12 +434,10 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Audit & Compliance Guide</span>
-					<span className='discovered-by'>Compliance Commander's standards</span>
-				</div>
-				<pre>{`# WCAG 2.1 Compliance Guide
+			<CodeExample
+				title={`Audit & Compliance Guide`}
+				discoveredBy={`Compliance Commander's standards`}
+				code={`# WCAG 2.1 Compliance Guide
 // Compliance Commander: "Standards guide us to inclusion!"
 
 # Understanding WCAG Levels
@@ -614,92 +622,6 @@ function auditOperable() {
   return runChecks(checks);
 }
 
-## Understandable
-function auditUnderstandable() {
-  const checks = {
-    '3.1.1': {
-      name: 'Language of Page',
-      test: () => {
-        const html = document.documentElement;
-        return {
-          pass: html.hasAttribute('lang'),
-          fix: 'Add lang attribute to <html>'
-        };
-      }
-    },
-    '3.3.2': {
-      name: 'Labels or Instructions',
-      test: () => {
-        const inputs = document.querySelectorAll(
-          'input:not([type="submit"]):not([type="button"])'
-        );
-        const unlabeled = Array.from(inputs).filter(input => {
-          const id = input.id;
-          const label = id ? 
-            document.querySelector(\`label[for="\${id}"]\`) : 
-            null;
-          const ariaLabel = input.getAttribute('aria-label');
-          return !label && !ariaLabel;
-        });
-        
-        return {
-          pass: unlabeled.length === 0,
-          issues: unlabeled
-        };
-      }
-    }
-  };
-  
-  return runChecks(checks);
-}
-
-## Robust
-function auditRobust() {
-  const checks = {
-    '4.1.1': {
-      name: 'Parsing',
-      test: () => {
-        // Check for duplicate IDs
-        const ids = {};
-        const duplicates = [];
-        
-        document.querySelectorAll('[id]').forEach(el => {
-          const id = el.id;
-          if (ids[id]) {
-            duplicates.push(id);
-          }
-          ids[id] = true;
-        });
-        
-        return {
-          pass: duplicates.length === 0,
-          issues: duplicates
-        };
-      }
-    },
-    '4.1.2': {
-      name: 'Name, Role, Value',
-      test: () => {
-        const customControls = document.querySelectorAll(
-          '[role="button"], [role="link"], [role="checkbox"]'
-        );
-        const issues = Array.from(customControls).filter(el => {
-          const name = el.getAttribute('aria-label') || 
-                       el.textContent.trim();
-          return !name;
-        });
-        
-        return {
-          pass: issues.length === 0,
-          issues
-        };
-      }
-    }
-  };
-  
-  return runChecks(checks);
-}
-
 # Reporting Tools
 
 ## Generate HTML Report
@@ -733,116 +655,23 @@ function generateA11yReport(findings) {
   };
   
   return report;
-}
+}`}
+			/>
 
-## Continuous Monitoring
-// Aria: "Track progress over time!"
-
-class A11yMonitor {
-  constructor() {
-    this.history = [];
-    this.baseline = null;
-  }
-  
-  scan() {
-    const results = {
-      timestamp: Date.now(),
-      score: this.calculateScore(),
-      issues: this.findIssues(),
-      improvements: this.findImprovements()
-    };
-    
-    this.history.push(results);
-    return results;
-  }
-  
-  trackProgress() {
-    if (this.history.length < 2) return null;
-    
-    const latest = this.history[this.history.length - 1];
-    const previous = this.history[this.history.length - 2];
-    
-    return {
-      scoreChange: latest.score - previous.score,
-      issuesFixed: previous.issues.filter(
-        p => !latest.issues.find(l => l.id === p.id)
-      ),
-      newIssues: latest.issues.filter(
-        l => !previous.issues.find(p => p.id === l.id)
-      )
-    };
-  }
-  
-  generateTrends() {
-    return {
-      scoreHistory: this.history.map(h => ({
-        date: new Date(h.timestamp),
-        score: h.score
-      })),
-      averageFixTime: this.calculateAverageFixTime(),
-      mostCommonIssues: this.findCommonPatterns()
-    };
-  }
-}
-
-# Legal Compliance
-
-## Section 508 Mapping
-const section508ToWCAG = {
-  '1194.22(a)': 'WCAG 1.1.1', // Alt text
-  '1194.22(b)': 'WCAG 1.2.1', // Video captions
-  '1194.22(c)': 'WCAG 1.4.1', // Color coding
-  '1194.22(d)': 'WCAG 1.3.1', // Style sheets
-  '1194.22(n)': 'WCAG 1.3.1', // Forms
-  '1194.22(o)': 'WCAG 2.2.1', // Skip navigation
-  '1194.22(p)': 'WCAG 2.2.2'  // Timed responses
-};
-
-## ADA Compliance
-const adaRequirements = {
-  'effective_communication': [
-    'Provide alternatives for audio/video',
-    'Ensure readable fonts and contrast',
-    'Support assistive technologies'
-  ],
-  'accessible_technology': [
-    'Keyboard accessible',
-    'Screen reader compatible',
-    'Consistent navigation'
-  ],
-  'reasonable_accommodations': [
-    'Extended timeouts',
-    'Alternative formats',
-    'Simplified language options'
-  ]
-};`}</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Audit Lesson:</h3>
-				<p>
-					Compliance Commander teaches us that accessibility standards aren't just 
-					legal requirements—they're blueprints for inclusion. WCAG 2.1 provides 
-					clear, testable criteria that ensure our applications work for everyone. 
-					Level AA compliance is the sweet spot for most applications, balancing 
-					accessibility with practical implementation. Regular audits help track 
-					progress, identify patterns, and demonstrate commitment to accessibility. 
-					Remember: compliance is the minimum; true accessibility goes beyond 
-					checking boxes to creating genuinely inclusive experiences.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does understanding WCAG principles change your approach to designing 
-					and building user interfaces?
-				</p>
-				<p>
-					Why is documenting accessibility efforts and progress as important as 
-					fixing the issues themselves?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Audit Lesson:`,
+					content: `Compliance Commander teaches us that accessibility standards aren't just legal requirements—they're blueprints for inclusion. WCAG 2.1 provides clear, testable criteria that ensure our applications work for everyone. Level AA compliance is the sweet spot for most applications, balancing accessibility with practical implementation. Regular audits help track progress, identify patterns, and demonstrate commitment to accessibility. Remember: compliance is the minimum; true accessibility goes beyond checking boxes to creating genuinely inclusive experiences.`
+				}}
+				reflectionQuestions={[
+					`How does understanding WCAG principles change your approach to designing and building user interfaces?`,
+					`Why is documenting accessibility efforts and progress as important as fixing the issues themselves?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Afternoon)`,
+					content: `The Audit Arena opened my eyes to the structure behind accessibility! Compliance Commander revealed the WCAG framework: 78 success criteria organized into four principles - Perceivable, Operable, Understandable, Robust. Binary processed it all: "Level A: 30 criteria, Level AA: 20 more, Level AAA: 28 additional. Systematic approach required!" I learned to run audits, filter findings by severity, and generate reports. The key insight: "It's not about perfection, but continuous improvement." Each fix makes the web more inclusive. Compliance Commander's wisdom: "Document your efforts. Show progress. Accessibility is a journey, and audits are your map."`
+				}}
+			/>
 		</div>
 	);
 };

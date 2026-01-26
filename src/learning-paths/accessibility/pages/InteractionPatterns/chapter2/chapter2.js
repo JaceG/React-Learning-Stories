@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [audioMode, setAudioMode] = useState(false);
@@ -133,9 +137,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter interaction-patterns'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Screen Reader Sanctuary
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Screen Reader Sanctuary`}
+				bridge={`Having mastered keyboard navigation with Guardian Keyboard, Aria ventured deeper into the Accessibility Realm. "Keyboards open doors," Guardian Keyboard said in farewell, "but Guardian Audio will show you how to give voice to your interfaces." Through a crystalline archway, the Screen Reader Sanctuary awaited.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -173,6 +179,10 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Screen Reader Sanctuary</h3>
 				
+				<InstructionBox character={`Guardian Audio hands you enchanted headphones.`}>
+					{`"Activate the screen reader and click on each example to hear how your interface speaks to those who cannot see. Compare the bad and good implementations!"`}
+				</InstructionBox>
+
 				<button
 					onClick={() => {
 						setScreenReaderMode(!screenReaderMode);
@@ -532,12 +542,10 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Screen Reader Optimization</span>
-					<span className='discovered-by'>Guardian Audio's teachings</span>
-				</div>
-				<pre>{`# Screen Reader Best Practices
+			<CodeExample
+				title={`Screen Reader Optimization`}
+				discoveredBy={`Guardian Audio's teachings`}
+				code={`# Screen Reader Best Practices
 // Guardian Audio: "If it doesn't announce properly, it doesn't exist!"
 
 # Meaningful Labels
@@ -730,7 +738,7 @@ function DataTable({ data }) {
         {data.map((row) => (
           <tr key={row.month}>
             <th scope="row">{row.month}</th>
-            <td>${'$'}{row.revenue}</td>
+            <td>\${row.revenue}</td>
             <td>
               <span 
                 className={row.growth > 0 ? 'positive' : 'negative'}
@@ -810,33 +818,23 @@ T: Next table
 3. Do forms have clear labels?
 4. Are errors announced?
 5. Can you navigate by landmarks?
-6. Do dynamic updates announce?`}</pre>
-			</div>
+6. Do dynamic updates announce?`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Audio Lesson:</h3>
-				<p>
-					Guardian Audio teaches us that screen readers reveal the true structure of 
-					our applications. Without proper labels, descriptions, and semantic markup, 
-					users navigate in darkness. Every image needs appropriate alt text, every 
-					form input needs a label, and every dynamic change needs announcement. The 
-					screen reader strips away visual design and shows whether your content truly 
-					communicates. Remember: if it doesn't announce properly, it doesn't exist 
-					for screen reader users.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does experiencing an app through a screen reader change your perspective 
-					on what information is truly important?
-				</p>
-				<p>
-					Why are proper labels and descriptions more important than visual design for 
-					some users?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Audio Lesson:`,
+					content: `Guardian Audio teaches us that screen readers reveal the true structure of our applications. Without proper labels, descriptions, and semantic markup, users navigate in darkness. Every image needs appropriate alt text, every form input needs a label, and every dynamic change needs announcement. The screen reader strips away visual design and shows whether your content truly communicates. Remember: if it doesn't announce properly, it doesn't exist for screen reader users.`
+				}}
+				reflectionQuestions={[
+					`How does experiencing an app through a screen reader change your perspective on what information is truly important?`,
+					`Why are proper labels and descriptions more important than visual design for some users?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 43 (Afternoon)`,
+					content: `Guardian Audio opened my ears to a whole new world in the Screen Reader Sanctuary! She had me close my eyes and listen to my app - it was just saying "button, button, image, link" with no context! Binary revealed that 2.2% of the population uses screen readers, but 100% rely on proper labeling. I learned about aria-label, aria-describedby, and live regions (polite vs assertive). The landmark navigation was brilliant - header, nav, main, aside, footer become way-points for non-visual navigation. Guardian Audio's truth: "The screen reader reveals truth - it strips away visual decoration and shows if your content truly communicates."`
+				}}
+			/>
 		</div>
 	);
 };

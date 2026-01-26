@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activePhase, setActivePhase] = useState('awareness');
@@ -240,9 +244,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter testing-tools'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Culture Citadel
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Culture Citadel`}
+				bridge={`Compliance Commander led them to the highest floor of the Testing Tower, where the Culture Citadel awaited. "Tools and standards are powerful," she explained, "but without the right culture, accessibility becomes a checkbox rather than a commitment. This final chamber holds the most important lesson of all."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -278,6 +284,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Culture Building Center</h3>
+				
+				<InstructionBox character={`Culture Keeper gestures to the Five Pillars.`}>
+					{`"Click on each pillar to establish it in your team's culture. Watch your team readiness grow as you build a foundation of inclusive practices. Remember: culture change takes time, but every step matters!"`}
+				</InstructionBox>
 				
 				<div className='culture-citadel'>
 					<h4 style={{ marginBottom: '20px' }}>The Five Pillars of Accessibility Culture</h4>
@@ -584,12 +594,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Building Accessibility Culture</span>
-					<span className='discovered-by'>Culture Keeper's wisdom</span>
-				</div>
-				<pre>{`# Building an Accessibility-First Culture
+			<CodeExample
+				title={`Building Accessibility Culture`}
+				discoveredBy={`Culture Keeper's wisdom`}
+				code={`# Building an Accessibility-First Culture
 // Culture Keeper: "Make inclusion everyone's responsibility!"
 
 # Starting the Journey
@@ -679,12 +687,6 @@ class AccessibilityEducation {
     };
     
     return paths[role] || this.curriculum.beginner;
-  }
-  
-  trackProgress(userId, completed) {
-    // Store progress
-    // Generate certificates
-    // Unlock next level
   }
 }
 
@@ -806,127 +808,11 @@ function AccessibilityChampion(teamMember) {
         'Set team goals',
         'Celebrate wins'
       ]
-    },
-    
-    resources: {
-      time: '10% allocation',
-      training: 'Priority access',
-      tools: 'Premium licenses',
-      support: 'Direct mentorship'
     }
   };
 }
 
-## Recognition Program
-const recognitionSystem = {
-  badges: {
-    firstBug: '🐛 Bug Hunter',
-    tenFixes: '🔧 Fix Master',
-    screenReader: '🔊 Screen Reader Pro',
-    mentor: '👨‍🏫 A11y Mentor',
-    innovation: '💡 Innovation Award'
-  },
-  
-  rewards: {
-    individual: [
-      'Conference tickets',
-      'Training courses',
-      'Book allowance',
-      'Extra time off'
-    ],
-    team: [
-      'Team lunch',
-      'Hackathon day',
-      'Charity donation',
-      'Team trophy'
-    ]
-  },
-  
-  celebrate(achievement) {
-    // Announce in team meeting
-    // Post in Slack
-    // Add to performance review
-    // Update team dashboard
-  }
-};
-
-# Measurement & Metrics
-
-## Culture Health Metrics
-class CultureMetrics {
-  constructor() {
-    this.metrics = {
-      awareness: 0,
-      adoption: 0,
-      proficiency: 0,
-      advocacy: 0
-    };
-  }
-  
-  measure() {
-    return {
-      // Quantitative
-      trainingCompletion: this.getTrainingStats(),
-      issuesFound: this.getIssueStats(),
-      fixTime: this.getFixTimeStats(),
-      testCoverage: this.getTestStats(),
-      
-      // Qualitative
-      surveyResults: this.getSurveyData(),
-      userFeedback: this.getUserTestResults(),
-      championGrowth: this.getChampionStats()
-    };
-  }
-  
-  generateDashboard() {
-    return {
-      scorecard: {
-        overall: this.calculateMaturity(),
-        trend: this.getTrend(),
-        nextSteps: this.getRecommendations()
-      },
-      
-      teamView: {
-        trained: this.metrics.awareness,
-        practicing: this.metrics.adoption,
-        proficient: this.metrics.proficiency,
-        teaching: this.metrics.advocacy
-      }
-    };
-  }
-}
-
 # Sustaining Momentum
-
-## Continuous Improvement
-const sustainabilityPlan = {
-  shortTerm: {
-    wins: [
-      'Fix top 5 issues',
-      'Train core team',
-      'Add basic testing'
-    ],
-    timeline: '1-3 months'
-  },
-  
-  mediumTerm: {
-    goals: [
-      'Embed in process',
-      'Expand testing',
-      'User involvement'
-    ],
-    timeline: '3-6 months'
-  },
-  
-  longTerm: {
-    vision: [
-      'Culture transformation',
-      'Industry leadership',
-      'Open source contribution'
-    ],
-    timeline: '6+ months'
-  }
-};
 
 ## Making it Stick
 // Culture Keeper: "Consistency creates culture!"
@@ -942,86 +828,32 @@ const habitFormation = {
     monthly: 'Team metrics review',
     quarterly: 'Celebration events'
   }
-};
+};`}
+			/>
 
-# Resources & Support
-
-## Internal Resources
-const internalSupport = {
-  documentation: {
-    wiki: 'Accessibility guidelines',
-    patterns: 'Component library',
-    checklist: 'Testing protocols',
-    faq: 'Common questions'
-  },
-  
-  people: {
-    champions: 'Local experts',
-    mentors: 'Senior guidance',
-    allies: 'Executive sponsors',
-    users: 'Advisory board'
-  },
-  
-  tools: {
-    testing: 'Licensed tools',
-    learning: 'Course subscriptions',
-    assistive: 'Screen readers',
-    development: 'IDE plugins'
-  }
-};
-
-## External Community
-const communityConnections = {
-  organizations: [
-    'W3C WAI',
-    'WebAIM',
-    'A11y Project',
-    'Deque University'
-  ],
-  
-  events: [
-    'Global Accessibility Awareness Day',
-    'Inclusive Design 24',
-    'CSUN Conference',
-    'Local meetups'
-  ],
-  
-  contribute: [
-    'Open source projects',
-    'Blog about learnings',
-    'Speak at conferences',
-    'Mentor others'
-  ]
-};`}</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Culture Lesson:</h3>
-				<p>
-					Culture Keeper reveals the ultimate truth: tools and standards are important, 
-					but culture makes accessibility sustainable. When every team member understands, 
-					values, and practices accessibility, it becomes part of your organization's DNA. 
-					This isn't achieved overnight—it requires consistent effort, executive support, 
-					continuous learning, and celebration of progress. By building a network of 
-					champions, embedding accessibility into every process, and measuring both 
-					technical and cultural metrics, you create an environment where inclusion 
-					thrives. Remember: accessibility culture isn't about perfection; it's about 
-					continuous improvement and shared commitment to building a web that works 
-					for everyone.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How can you become an accessibility champion in your organization and 
-					inspire others to join the journey?
-				</p>
-				<p>
-					What would change in your team's output if accessibility was considered 
-					from the very beginning of every project?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Culture Lesson:`,
+					content: `Culture Keeper reveals the ultimate truth: tools and standards are important, but culture makes accessibility sustainable. When every team member understands, values, and practices accessibility, it becomes part of your organization's DNA. This isn't achieved overnight—it requires consistent effort, executive support, continuous learning, and celebration of progress. By building a network of champions, embedding accessibility into every process, and measuring both technical and cultural metrics, you create an environment where inclusion thrives. Remember: accessibility culture isn't about perfection; it's about continuous improvement and shared commitment to building a web that works for everyone.`
+				}}
+				reflectionQuestions={[
+					`How can you become an accessibility champion in your organization and inspire others to join the journey?`,
+					`What would change in your team's output if accessibility was considered from the very beginning of every project?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Evening)`,
+					content: `The Culture Citadel taught me the most important lesson of all: accessibility is a journey, not a destination. Culture Keeper showed me the Five Pillars: Education, Documentation, Code Reviews, User Involvement, and Automation. Binary calculated the ROI: "Teams with accessibility culture ship 73% fewer a11y bugs!" I built my first champion network and progressed through the maturity levels. The truth is clear now - tools catch issues, standards guide us, but culture makes it sustainable. Culture Keeper's final wisdom: "Make it part of everything you do." I've completed my accessibility journey - from foundations to visual design, from interactions to testing and culture. I'm ready to build an inclusive web!`
+				}}
+				chapterEnding={[
+					`As the evening light streamed through the Culture Citadel's windows, Master Validator, Compliance Commander, and Culture Keeper assembled before Aria.`,
+					`"You've journeyed far through the Accessibility Kingdom," Master Validator said proudly. "From inclusive foundations to visual accessibility, from interaction patterns to testing and culture."`,
+					`Binary processed the journey's data. "Four lessons completed. Twelve chapters mastered. Countless users who will benefit from what you've learned!"`,
+					`Culture Keeper placed a hand on Aria's shoulder. "Remember: accessibility isn't about perfection. It's about progress, empathy, and the commitment to include everyone."`,
+					`Debuggora landed on Aria's shoulder one final time. "Every barrier you remove, every inclusive pattern you implement - you're not just writing code. You're opening doors for millions."`,
+					`Aria looked back at the Testing Tower, the Audit Arena, and the Culture Citadel - and beyond them, to all the lessons of the Accessibility Kingdom. "I understand now. Accessibility isn't a feature to add at the end. It's a foundation to build upon from the very beginning."`,
+					`Master Validator smiled. "Go forth, Accessibility Champion. The web awaits your inclusive designs. And remember - the journey of inclusion never truly ends. There's always more to learn, more barriers to break, more people to welcome."`
+				]}
+			/>
 		</div>
 	);
 };

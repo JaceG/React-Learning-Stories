@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './TestingTools.css';
 
@@ -34,17 +34,6 @@ function TestingTools() {
 	});
 	const [testResults, setTestResults] = useState([]);
 	const [auditFindings, setAuditFindings] = useState([]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Run accessibility test
 	const runAccessibilityTest = (tool) => {
@@ -104,30 +93,12 @@ function TestingTools() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Testing & Tools</h1>
-				<p className='lesson-subtitle'>
-					Learn accessibility testing, compliance standards, and build an inclusive development culture
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Testing & Tools`}
+				subtitle={`Learn accessibility testing, compliance standards, and build an inclusive development culture`}
+				opener={`The Testing Tower rose from the heart of the Accessibility Kingdom, its many windows glowing with the light of verification tools. Master Validator stood at the entrance, a clipboard in one hand and a magnifying glass in the other. "Welcome, travelers! Every component you've built, every interaction you've designed - they all must pass through the Testing Tower. But testing isn't about finding fault - it's about ensuring everyone can experience what you've created." She gestured to the tower's many levels. "Automated tools, compliance standards, and the most important ingredient: a culture that values inclusion."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -156,25 +127,7 @@ function TestingTools() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='accessibility'
 				lessonId='testing-tools'
 			/>
