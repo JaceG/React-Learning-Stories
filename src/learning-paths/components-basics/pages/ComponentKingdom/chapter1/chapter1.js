@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [highlightedCard, setHighlightedCard] = useState(null);
@@ -567,12 +568,10 @@ const user = {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Ancient Scroll of Component Creation</span>
-					<span className='discovered-by'>Discovered by Aria in the Button Workshop</span>
-				</div>
-				<pre>{`// Aria's First Component Spell
+			<CodeExample
+				title="Ancient Scroll of Component Creation"
+				discoveredBy="Discovered by Aria in the Button Workshop"
+				code={`// Aria's First Component Spell
 function Button(props) {
   // Master Aurelius: "props are the messages components receive"
   return (
@@ -615,8 +614,8 @@ function Form(props) {
       </button>
     </form>
   );
-}`}</pre>
-			</div>
+}`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

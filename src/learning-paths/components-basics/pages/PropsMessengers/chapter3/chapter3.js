@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [propTypeComponent, setPropTypeComponent] = useState('button');
@@ -547,12 +548,10 @@ Card.defaultProps = {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Guardian TypeCheck's Protection Spell</span>
-					<span className='discovered-by'>Learned by Aria at the Guild</span>
-				</div>
-				<pre>{`import PropTypes from 'prop-types';
+			<CodeExample
+				title="Guardian TypeCheck's Protection Spell"
+				discoveredBy="Learned by Aria at the Guild"
+				code={`import PropTypes from 'prop-types';
 
 // Aria's final lesson: Type safety for components
 function Button({ color, text, onClick, size }) {
@@ -583,8 +582,8 @@ Button.propTypes = {
 // Default values for props - "spare parts" as Hermes calls them
 Button.defaultProps = {
   size: 'medium'
-};`}</pre>
-			</div>
+};`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

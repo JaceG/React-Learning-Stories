@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -193,12 +194,10 @@ const ChapterThree = () => {
 					remove event listeners before departing."
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The Farewell Protocol</span>
-						<span className='discovered-by'>A cautionary tale from Chronos</span>
-					</div>
-					<pre>{`// Aria learns the importance of cleanup
+				<CodeExample
+					title="The Farewell Protocol"
+					discoveredBy="A cautionary tale from Chronos"
+					code={`// Aria learns the importance of cleanup
 class TimerComponent extends React.Component {
 constructor(props) {
 super(props);
@@ -225,8 +224,8 @@ console.log("Timer cleaned up!");
 render() {
 return <div>Timer: {this.state.seconds} seconds</div>;
 }
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<p className='story-paragraph'>
 					"See how the TimerComponent remembers to clear its interval?" 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -157,12 +158,10 @@ const ChapterTwo = () => {
 					full bloom (componentDidMount)!"
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The Mounting Ritual</span>
-						<span className='discovered-by'>From Chronos's Sacred Murals</span>
-					</div>
-					<pre>{`class MountingComponent extends React.Component {
+				<CodeExample
+					title="The Mounting Ritual"
+					discoveredBy="From Chronos's Sacred Murals"
+					code={`class MountingComponent extends React.Component {
 constructor(props) {
 super(props);
 this.state = { isLoading: true };
@@ -184,8 +183,8 @@ setTimeout(() => {
 this.setState({ isLoading: false });
 }, 2000);
 }
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<p className='story-paragraph'>
 					The second mural shimmered to life, showing components in motion. 
@@ -207,12 +206,10 @@ this.setState({ isLoading: false });
 					lifecycle - efficient transformation without waste."
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The Update Transformation</span>
-						<span className='discovered-by'>Aria's Study Notes</span>
-					</div>
-					<pre>{`componentDidUpdate(prevProps, prevState) {
+				<CodeExample
+					title="The Update Transformation"
+					discoveredBy="Aria's Study Notes"
+					code={`componentDidUpdate(prevProps, prevState) {
 // This runs after a re-render from state or prop changes
 console.log("ComponentDidUpdate: Component was just updated");
 
@@ -221,8 +218,8 @@ if (prevProps.userId !== this.props.userId) {
 // Only fetch new user data if the userId changed
 this.fetchUserData(this.props.userId);
 }
-}`}</pre>
-				</div>
+}`}
+				/>
 				
 			</div>
 

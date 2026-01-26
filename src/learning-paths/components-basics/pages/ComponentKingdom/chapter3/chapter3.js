@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activeComponent, setActiveComponent] = useState(null);
@@ -202,12 +203,10 @@ const ChapterThree = () => {
 				/>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Master Blueprint: Component Composition</span>
-					<span className='discovered-by'>Aria's Final Component Lesson</span>
-				</div>
-				<pre>{`// The Dashboard workshop combines other components
+			<CodeExample
+				title="Master Blueprint: Component Composition"
+				discoveredBy="Aria's Final Component Lesson"
+				code={`// The Dashboard workshop combines other components
 function Dashboard() {
   // Master Aurelius: "Notice how Dashboard delegates to specialized components"
   return (
@@ -233,8 +232,8 @@ function Dashboard() {
   );
 }
 
-// Aria's insight: "Each component has a single responsibility!"`}</pre>
-			</div>
+// Aria's insight: "Each component has a single responsibility!"`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

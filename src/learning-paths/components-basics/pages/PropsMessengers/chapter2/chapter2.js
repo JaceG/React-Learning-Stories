@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [messageBoard, setMessageBoard] = useState('');
@@ -228,12 +229,10 @@ const ChapterTwo = () => {
 					</button>
 				</div>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>The Sacred One-Way Rule</span>
-						<span className='discovered-by'>Inscribed by Aria in the Guild Hall</span>
-					</div>
-					<pre>{`// Hermes demonstrates the one-way flow
+				<CodeExample
+					title="The Sacred One-Way Rule"
+					discoveredBy="Inscribed by Aria in the Guild Hall"
+					code={`// Hermes demonstrates the one-way flow
 function App() {
   const [count, setCount] = useState(0);
   
@@ -258,8 +257,8 @@ function Button(props) {
   );
 }
 
-// Aria's note: "The button tells App about clicks through the callback!"`}</pre>
-				</div>
+// Aria's note: "The button tells App about clicks through the callback!"`}
+				/>
 
 			</div>
 

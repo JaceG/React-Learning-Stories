@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [selectedComponent, setSelectedComponent] = useState(null);
@@ -333,12 +334,10 @@ const ChapterOne = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Guild Master's Prop Patterns</span>
-					<span className='discovered-by'>Studied by Aria with Hermes</span>
-				</div>
-				<pre>{`// Hermes demonstrates: "Watch how App sends Props to Button"
+			<CodeExample
+				title="Guild Master's Prop Patterns"
+				discoveredBy="Studied by Aria with Hermes"
+				code={`// Hermes demonstrates: "Watch how App sends Props to Button"
 function App() {
   return (
     <div>
@@ -363,8 +362,8 @@ function Button(props) {
       {props.text}
     </button>
   );
-}`}</pre>
-			</div>
+}`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

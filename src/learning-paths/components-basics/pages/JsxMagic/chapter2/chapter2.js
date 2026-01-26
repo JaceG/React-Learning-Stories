@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [expressionType, setExpressionType] = useState('text');
@@ -90,14 +91,10 @@ const ChapterTwo = () => {
 					know it's time to run JavaScript calculations!"
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>Expression Magic Demonstration</span>
-						<span className='discovered-by'>
-							Binary's favorite example
-						</span>
-					</div>
-					<pre>{`// Aria practices embedding expressions
+				<CodeExample
+					title="Expression Magic Demonstration"
+					discoveredBy="Binary's favorite example"
+					code={`// Aria practices embedding expressions
 function Greeter(props) {
 const currentTime = new Date().getHours();
 let greeting;
@@ -120,8 +117,8 @@ return (
 )}
 </div>
 );
-}`}</pre>
-				</div>
+}`}
+				/>
 
 				<p className='story-paragraph'>
 					"By the scrolls!" Aria gasped. "We can put any JavaScript

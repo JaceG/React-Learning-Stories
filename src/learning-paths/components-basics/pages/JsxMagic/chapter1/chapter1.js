@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
@@ -83,12 +84,10 @@ const ChapterOne = () => {
 					JavaScript function calls that browsers can understand. Watch!"
 				</p>
 
-				<div className='code-example'>
-					<div className='scroll-header'>
-						<span>Ancient JSX Transformation Scroll</span>
-						<span className='discovered-by'>Revealed to Aria by Professor Syntaxis</span>
-					</div>
-					<pre>{`// Aria's First JSX Spell
+				<CodeExample
+					title="Ancient JSX Transformation Scroll"
+					discoveredBy="Revealed to Aria by Professor Syntaxis"
+					code={`// Aria's First JSX Spell
 function Greeting() {
   // This magical syntax combines HTML and JavaScript!
   return (
@@ -103,8 +102,8 @@ function Greeting() {
 // React.createElement("div", {className: "greeting"},
 //   React.createElement("h1", null, "Hello, Adventurer!"),
 //   React.createElement("p", null, "Welcome to the Component Kingdom.")
-// )`}</pre>
-				</div>
+// )`}
+				/>
 
 				<p className='story-paragraph'>
 					"Incredible!" Aria exclaimed. "So JSX is like a more elegant 
