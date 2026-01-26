@@ -296,42 +296,181 @@ const ChapterThree = () => {
 				discoveredBy={`Transcribed by Aria`}
 				code={`// HOC Best Practices
 
-// 1. Preserve display names for debugging
+// 1. Always preserve static methods
 function withEnhancement(WrappedComponent) {
-  const Enhanced = (props) => <WrappedComponent {...props} enhanced />;
-  Enhanced.displayName = \`withEnhancement(\${
-    WrappedComponent.displayName || WrappedComponent.name
-  })\`;
+  class Enhanced extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+  
+  // Copy static methods
+  hoistNonReactStatics(Enhanced, WrappedComponent);
+  
   return Enhanced;
 }
 
-// 2. Don't mutate the original component
-// GOOD - Create new component
+// 2. Pass through refs properly
+function withRefForwarding(WrappedComponent) {
+  const WithRef = React.forwardRef((props, ref) => {
+    return <WrappedComponent {...props} forwardedRef={ref} />;
+  });
+  
+  WithRef.displayName = \`withRef(\${getDisplayName(WrappedComponent)})\`;
+  
+  return WithRef;
+}
+
+// 3. Preserve display names for debugging
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+
+// 4. Don't mutate the original component
+// BAD
+function withBadEnhancement(WrappedComponent) {
+  WrappedComponent.prototype.componentDidUpdate = function() {
+    // Mutating original!
+  };
+  return WrappedComponent;
+}
+
+// GOOD
 function withGoodEnhancement(WrappedComponent) {
   return class extends React.Component {
-    render() { return <WrappedComponent {...this.props} />; }
+    componentDidUpdate() {
+      // New component, no mutation
+    }
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
   };
 }
 
-// Migration: HOC to Hook
-// OLD: const Protected = withAuth(MyComponent);
-// NEW: function MyComponent() {
-//   const { user, loading } = useAuth();
-//   if (loading) return <Spinner />;
-//   if (!user) return <LoginRedirect />;
-// }
+// Migration Examples: HOC to Hooks
 
-// When HOCs are Still Better:
-// 1. Third-party library integration (Redux connect)
+// OLD: Authentication HOC
+function withAuth(WrappedComponent) {
+  return function AuthComponent(props) {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
+      checkAuth().then(setUser).finally(() => setLoading(false));
+    }, []);
+    
+    if (loading) return <LoadingSpinner />;
+    if (!user) return <LoginRedirect />;
+    
+    return <WrappedComponent {...props} user={user} />;
+  };
+}
+
+// NEW: Authentication Hook
+function useAuth() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    checkAuth().then(setUser).finally(() => setLoading(false));
+  }, []);
+  
+  return { user, loading };
+}
+
+// Usage comparison
+// OLD
+const ProtectedComponent = withAuth(MyComponent);
+
+// NEW
+function MyComponent() {
+  const { user, loading } = useAuth();
+  
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <LoginRedirect />;
+  
+  // Component logic here
+}
+
+// When HOCs are Still Better
+
+// 1. Third-party library integration
+const ConnectedComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyComponent);
+
 // 2. Route-level authentication
-// 3. Error boundaries (class components only)
-// 4. Performance optimization with class components
+<Route 
+  path="/admin" 
+  component={withAuth(AdminPanel)} 
+/>
 
-// Modern Replacements:
-// - Compound Components for prop injection
-// - Render Props for flexible rendering  
-// - Custom Hooks for logic extraction
-// - Context for cross-cutting concerns`}
+// 3. Error boundaries (class components only)
+const SafeComponent = withErrorBoundary(
+  RiskyComponent,
+  ErrorFallback
+);
+
+// 4. Performance optimization with class components
+const OptimizedComponent = withShouldUpdate(
+  (prevProps, nextProps) => prevProps.id === nextProps.id
+)(ExpensiveComponent);
+
+// Modern Patterns Replacing HOCs
+
+// 1. Compound Components (instead of prop injection)
+<Tabs>
+  <TabList>
+    <Tab>One</Tab>
+    <Tab>Two</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>Content One</TabPanel>
+    <TabPanel>Content Two</TabPanel>
+  </TabPanels>
+</Tabs>
+
+// 2. Render Props (flexible rendering)
+<DataProvider
+  render={({ data, loading }) => 
+    loading ? <Spinner /> : <DataDisplay data={data} />
+  }
+/>
+
+// 3. Custom Hooks (logic extraction)
+function useWindowSize() {
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+    
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  return size;
+}
+
+// 4. Context for cross-cutting concerns
+const ThemeContext = React.createContext();
+
+function App() {
+  return (
+    <ThemeContext.Provider value={theme}>
+      <ThemedComponents />
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemedComponent() {
+  const theme = useContext(ThemeContext);
+  // Use theme directly
+}`}
 			/>
 
 			{forgeTemperature > 80 && (

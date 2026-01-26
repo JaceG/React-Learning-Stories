@@ -212,11 +212,13 @@ const ChapterOne = () => {
 
 // 1. Basic HOC Pattern
 function withAuth(WrappedComponent) {
+  // Return a new component
   return function AuthenticatedComponent(props) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
+      // Check authentication
       checkAuth()
         .then(() => setIsAuthenticated(true))
         .catch(() => setIsAuthenticated(false))
@@ -226,12 +228,14 @@ function withAuth(WrappedComponent) {
     if (loading) return <LoadingSpinner />;
     if (!isAuthenticated) return <LoginRedirect />;
     
+    // Pass through all props to wrapped component
     return <WrappedComponent {...props} />;
   };
 }
 
 // Usage
 const ProtectedDashboard = withAuth(Dashboard);
+const ProtectedProfile = withAuth(UserProfile);
 
 // 2. HOC with Configuration
 function withLogging(WrappedComponent, componentName) {
@@ -240,20 +244,114 @@ function withLogging(WrappedComponent, componentName) {
       console.log(\`\${componentName} mounted\`);
       return () => console.log(\`\${componentName} unmounted\`);
     }, []);
+    
+    const loggedProps = Object.keys(props).reduce((acc, key) => {
+      acc[key] = (...args) => {
+        if (typeof props[key] === 'function') {
+          console.log(\`\${componentName}.\${key} called\`);
+          return props[key](...args);
+        }
+        return props[key];
+      };
+      return acc;
+    }, {});
+    
+    return <WrappedComponent {...loggedProps} />;
+  };
+}
+
+// Usage with configuration
+const LoggedButton = withLogging(Button, 'Button');
+
+// 3. Data Fetching HOC
+function withData(WrappedComponent, dataSource) {
+  return function DataComponent(props) {
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    
+    useEffect(() => {
+      setLoading(true);
+      fetch(dataSource)
+        .then(res => res.json())
+        .then(setData)
+        .catch(setError)
+        .finally(() => setLoading(false));
+    }, [dataSource]);
+    
+    return (
+      <WrappedComponent 
+        {...props}
+        data={data}
+        loading={loading}
+        error={error}
+      />
+    );
+  };
+}
+
+// 4. Theme Injection HOC
+function withTheme(WrappedComponent) {
+  return function ThemedComponent(props) {
+    const theme = useContext(ThemeContext);
+    
+    // Inject theme as prop
+    return <WrappedComponent {...props} theme={theme} />;
+  };
+}
+
+// 5. Performance Monitoring HOC
+function withPerformance(WrappedComponent) {
+  return function PerformanceComponent(props) {
+    const renderStart = performance.now();
+    
+    useEffect(() => {
+      const renderEnd = performance.now();
+      const renderTime = renderEnd - renderStart;
+      
+      if (renderTime > 16) { // Longer than one frame
+        console.warn(
+          \`Slow render detected: \${renderTime.toFixed(2)}ms\`
+        );
+      }
+    });
+    
     return <WrappedComponent {...props} />;
   };
 }
 
-// 3. Composing multiple HOCs
+// Composing multiple HOCs
 const EnhancedDashboard = withAuth(
   withLogging(
-    withData(withTheme(Dashboard), '/api/dashboard'),
+    withData(
+      withTheme(Dashboard),
+      '/api/dashboard'
+    ),
     'Dashboard'
   )
 );
 
-// Benefits: Reusable logic, separation of concerns
-// Limitations: Wrapper hell, props collision, static composition`}
+// Or with compose utility
+const enhance = compose(
+  withAuth,
+  withLogging('Dashboard'),
+  withData('/api/dashboard'),
+  withTheme
+);
+
+const EnhancedDashboard = enhance(Dashboard);
+
+// Benefits of HOCs:
+// - Reusable logic across components
+// - Separation of concerns
+// - Props manipulation
+// - Conditional rendering
+
+// Limitations:
+// - Wrapper hell (deep nesting)
+// - Props collision
+// - Static composition
+// - Harder debugging`}
 			/>
 
 			<ChapterSummary

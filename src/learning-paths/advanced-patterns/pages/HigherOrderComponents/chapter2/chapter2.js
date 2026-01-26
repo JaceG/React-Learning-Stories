@@ -247,54 +247,178 @@ const ChapterTwo = () => {
 
 // 1. Props Proxy Pattern
 function withExtraProps(WrappedComponent) {
-  return function(props) {
+  return function WithExtraPropsComponent(props) {
+    // Add or modify props
     const enhancedProps = {
       ...props,
       extraProp: 'added by HOC',
+      // Override existing prop
       onClick: (...args) => {
         console.log('Click intercepted by HOC');
         props.onClick?.(...args);
       }
     };
+    
     return <WrappedComponent {...enhancedProps} />;
   };
 }
 
-// 2. Conditional Rendering HOC
-function withConditionalRendering(WrappedComponent, condition, Fallback) {
-  return function(props) {
-    const shouldRender = typeof condition === 'function' 
-      ? condition(props) : condition;
-    return shouldRender 
-      ? <WrappedComponent {...props} />
-      : <Fallback {...props} />;
+// 2. Inheritance Inversion Pattern
+function withInheritanceInversion(WrappedComponent) {
+  return class extends WrappedComponent {
+    // Access component lifecycle and state
+    componentDidMount() {
+      console.log('HOC: Component mounted');
+      // Access component state
+      console.log('State:', this.state);
+      super.componentDidMount?.();
+    }
+    
+    render() {
+      // Can modify render output
+      const elementTree = super.render();
+      
+      // Conditionally render
+      if (this.state.error) {
+        return <ErrorDisplay error={this.state.error} />;
+      }
+      
+      // Modify element tree
+      return React.cloneElement(elementTree, {
+        className: \`\${elementTree.props.className} enhanced\`
+      });
+    }
   };
 }
 
-// 3. HOC Composition with Display Names
+// 3. Conditional Rendering HOC
+function withConditionalRendering(
+  WrappedComponent,
+  condition,
+  FallbackComponent = () => null
+) {
+  return function ConditionalComponent(props) {
+    // Evaluate condition
+    const shouldRender = typeof condition === 'function' 
+      ? condition(props) 
+      : condition;
+    
+    return shouldRender 
+      ? <WrappedComponent {...props} />
+      : <FallbackComponent {...props} />;
+  };
+}
+
+// Usage
+const OnlyForAdmins = withConditionalRendering(
+  AdminPanel,
+  (props) => props.user?.role === 'admin',
+  () => <div>Access Denied</div>
+);
+
+// 4. State Abstraction HOC
+function withToggle(WrappedComponent) {
+  return function WithToggleComponent(props) {
+    const [on, setOn] = useState(false);
+    const toggle = () => setOn(!on);
+    
+    return (
+      <WrappedComponent 
+        {...props}
+        on={on}
+        toggle={toggle}
+      />
+    );
+  };
+}
+
+// 5. HOC Composition with Display Names
 function compose(...hocs) {
   return function(WrappedComponent) {
     return hocs.reduceRight((acc, hoc) => {
       const Enhanced = hoc(acc);
-      Enhanced.displayName = \`\${hoc.name}(\${acc.displayName || acc.name})\`;
+      // Preserve display names for debugging
+      Enhanced.displayName = \`\${hoc.name}(\${
+        acc.displayName || acc.name || 'Component'
+      })\`;
       return Enhanced;
     }, WrappedComponent);
   };
 }
 
-// 4. Error Boundary HOC
+// Proper display name preservation
+function withDisplayName(hocName) {
+  return function(WrappedComponent) {
+    const WithHOC = (props) => {
+      // HOC logic here
+      return <WrappedComponent {...props} />;
+    };
+    
+    WithHOC.displayName = \`\${hocName}(\${
+      WrappedComponent.displayName || WrappedComponent.name || 'Component'
+    })\`;
+    
+    return WithHOC;
+  };
+}
+
+// 6. HOC with Ref Forwarding
+function withRefForwarding(WrappedComponent) {
+  const WithRef = React.forwardRef((props, ref) => {
+    return <WrappedComponent {...props} forwardedRef={ref} />;
+  });
+  
+  WithRef.displayName = \`withRef(\${
+    WrappedComponent.displayName || WrappedComponent.name
+  })\`;
+  
+  return WithRef;
+}
+
+// 7. Performance Optimized HOC
+function withMemo(WrappedComponent) {
+  const MemoizedComponent = React.memo(WrappedComponent);
+  
+  return function WithMemoComponent(props) {
+    // Can add additional logic here
+    return <MemoizedComponent {...props} />;
+  };
+}
+
+// 8. Error Boundary HOC
 function withErrorBoundary(WrappedComponent, FallbackComponent) {
   return class extends React.Component {
     state = { hasError: false, error: null };
+    
     static getDerivedStateFromError(error) {
       return { hasError: true, error };
     }
+    
+    componentDidCatch(error, errorInfo) {
+      console.error('Error caught by HOC:', error, errorInfo);
+    }
+    
     render() {
-      if (this.state.hasError) return <FallbackComponent error={this.state.error} />;
+      if (this.state.hasError) {
+        return <FallbackComponent error={this.state.error} />;
+      }
+      
       return <WrappedComponent {...this.props} />;
     }
   };
-}`}
+}
+
+// Complete example with all patterns
+const enhance = compose(
+  withErrorBoundary(ErrorFallback),
+  withAuth,
+  withExtraProps,
+  withToggle,
+  withMemo,
+  withDisplayName('FullyEnhanced')
+);
+
+const EnhancedComponent = enhance(BaseComponent);`}
 			/>
 
 			<ChapterSummary

@@ -432,15 +432,19 @@ const ChapterTwo = () => {
 				title={`Ref Mastery`}
 				discoveredBy={`Transcribed by Aria`}
 				code={`// React Refs - Direct DOM and Component Access
+
 import { useRef, forwardRef, useImperativeHandle } from 'react';
 
 // 1. Basic DOM Ref
 function TextInput() {
   const inputRef = useRef(null);
+  
   const focusInput = () => {
+    // Direct DOM manipulation
     inputRef.current.focus();
     inputRef.current.select();
   };
+  
   return (
     <>
       <input ref={inputRef} type="text" />
@@ -449,39 +453,219 @@ function TextInput() {
   );
 }
 
-// 2. Forwarding Refs
+// 2. Multiple Refs with Callback Pattern
+function MultipleRefs() {
+  const refs = useRef({});
+  
+  // Callback ref for dynamic assignment
+  const setRef = (element, key) => {
+    if (element) {
+      refs.current[key] = element;
+    }
+  };
+  
+  const focusField = (key) => {
+    refs.current[key]?.focus();
+  };
+  
+  return (
+    <>
+      {['name', 'email', 'phone'].map(field => (
+        <input
+          key={field}
+          ref={el => setRef(el, field)}
+          placeholder={field}
+        />
+      ))}
+      <button onClick={() => focusField('email')}>
+        Focus Email
+      </button>
+    </>
+  );
+}
+
+// 3. Forwarding Refs
 const FancyButton = forwardRef((props, ref) => (
-  <button ref={ref} className="fancy-button">{props.children}</button>
+  <button ref={ref} className="fancy-button">
+    {props.children}
+  </button>
 ));
 
-// 3. Imperative Handle - Custom Ref API
-const CustomInput = forwardRef((props, ref) => {
+// Usage
+function Parent() {
+  const buttonRef = useRef(null);
+  
+  return <FancyButton ref={buttonRef}>Click me!</FancyButton>;
+}
+
+// 4. Imperative Handle - Custom Ref API
+const CustomTextInput = forwardRef((props, ref) => {
   const inputRef = useRef(null);
+  const [isValid, setIsValid] = useState(true);
   
   useImperativeHandle(ref, () => ({
-    focus: () => inputRef.current.focus(),
-    clear: () => { inputRef.current.value = ''; },
+    // Expose custom methods
+    focus: () => {
+      inputRef.current.focus();
+    },
+    
+    clear: () => {
+      inputRef.current.value = '';
+    },
+    
+    validate: () => {
+      const valid = inputRef.current.value.length > 0;
+      setIsValid(valid);
+      return valid;
+    },
+    
     shake: () => {
       inputRef.current.classList.add('shake');
-      setTimeout(() => inputRef.current.classList.remove('shake'), 500);
+      setTimeout(() => {
+        inputRef.current.classList.remove('shake');
+      }, 500);
     },
-    get value() { return inputRef.current.value; }
+    
+    // Expose specific properties
+    get value() {
+      return inputRef.current.value;
+    },
+    
+    set value(val) {
+      inputRef.current.value = val;
+    }
   }));
   
-  return <input ref={inputRef} {...props} />;
+  return (
+    <input
+      ref={inputRef}
+      style={{ borderColor: isValid ? 'green' : 'red' }}
+      {...props}
+    />
+  );
 });
 
-// 4. Focus Trap for Modals
+// 5. Focus Management
 function FocusTrap({ children, active }) {
   const containerRef = useRef(null);
+  
   useEffect(() => {
     if (!active) return;
-    const focusableElements = containerRef.current.querySelectorAll(
-      'button, input, select, textarea, a[href]'
+    
+    const container = containerRef.current;
+    const focusableElements = container.querySelectorAll(
+      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
     );
-    // Trap focus within container
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    // Focus first element
+    firstElement?.focus();
+    
+    const handleTab = (e) => {
+      if (e.key !== 'Tab') return;
+      
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    };
+    
+    container.addEventListener('keydown', handleTab);
+    
+    return () => {
+      container.removeEventListener('keydown', handleTab);
+    };
   }, [active]);
+  
   return <div ref={containerRef}>{children}</div>;
+}
+
+// 6. Measuring DOM Elements
+function MeasuredComponent() {
+  const [dimensions, setDimensions] = useState({});
+  const elementRef = useRef(null);
+  
+  useEffect(() => {
+    if (!elementRef.current) return;
+    
+    const resizeObserver = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({ width, height });
+      }
+    });
+    
+    resizeObserver.observe(elementRef.current);
+    
+    return () => resizeObserver.disconnect();
+  }, []);
+  
+  return (
+    <div ref={elementRef}>
+      <p>Width: {dimensions.width}px</p>
+      <p>Height: {dimensions.height}px</p>
+    </div>
+  );
+}
+
+// 7. Ref Map for Dynamic Elements
+function useRefMap() {
+  const refs = useRef(new Map());
+  
+  const setRef = (key) => (element) => {
+    if (element) {
+      refs.current.set(key, element);
+    } else {
+      refs.current.delete(key);
+    }
+  };
+  
+  const getRef = (key) => refs.current.get(key);
+  
+  const focusRef = (key) => {
+    getRef(key)?.focus();
+  };
+  
+  return { setRef, getRef, focusRef };
+}
+
+// 8. Scroll Management
+function ScrollManager() {
+  const sectionsRef = useRef({});
+  
+  const scrollToSection = (sectionId) => {
+    sectionsRef.current[sectionId]?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+  
+  return (
+    <>
+      <nav>
+        {['intro', 'content', 'conclusion'].map(section => (
+          <button key={section} onClick={() => scrollToSection(section)}>
+            Go to {section}
+          </button>
+        ))}
+      </nav>
+      
+      <div ref={el => sectionsRef.current.intro = el}>
+        <h2>Introduction</h2>
+      </div>
+      <div ref={el => sectionsRef.current.content = el}>
+        <h2>Content</h2>
+      </div>
+      <div ref={el => sectionsRef.current.conclusion = el}>
+        <h2>Conclusion</h2>
+      </div>
+    </>
+  );
 }`}
 			/>
 

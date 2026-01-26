@@ -306,10 +306,13 @@ const ChapterOne = () => {
 				title={`Portal Fundamentals`}
 				discoveredBy={`Transcribed by Aria`}
 				code={`// React Portals - Rendering Outside the Parent
+
 import ReactDOM from 'react-dom';
 
 // 1. Basic Portal Usage
 function Modal({ children, onClose }) {
+  // Portal renders children into a DOM node
+  // that exists outside the parent component
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -320,35 +323,185 @@ function Modal({ children, onClose }) {
   );
 }
 
-// 2. Tooltip Portal with Positioning
+// 2. Creating Portal Target
+// In your HTML:
+// <div id="root"></div>
+// <div id="modal-root"></div>
+
+// Or create dynamically:
+function usePortalTarget(id) {
+  useEffect(() => {
+    const element = document.getElementById(id);
+    if (!element) {
+      const newElement = document.createElement('div');
+      newElement.id = id;
+      document.body.appendChild(newElement);
+    }
+    
+    return () => {
+      // Cleanup if needed
+    };
+  }, [id]);
+}
+
+// 3. Modal with Portal
+function ModalExample() {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <>
+      <button onClick={() => setIsOpen(true)}>
+        Open Modal
+      </button>
+      
+      {isOpen && (
+        <Modal onClose={() => setIsOpen(false)}>
+          <h2>Modal Title</h2>
+          <p>This modal renders outside the parent!</p>
+        </Modal>
+      )}
+    </>
+  );
+}
+
+// 4. Tooltip Portal with Positioning
 function Tooltip({ children, targetRef }) {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   
   useEffect(() => {
-    const rect = targetRef.current?.getBoundingClientRect();
-    setPosition({ top: rect.top - 30, left: rect.left + rect.width / 2 });
+    if (!targetRef.current) return;
+    
+    const updatePosition = () => {
+      const rect = targetRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.top - 30,
+        left: rect.left + rect.width / 2
+      });
+    };
+    
+    updatePosition();
+    window.addEventListener('scroll', updatePosition);
+    window.addEventListener('resize', updatePosition);
+    
+    return () => {
+      window.removeEventListener('scroll', updatePosition);
+      window.removeEventListener('resize', updatePosition);
+    };
   }, [targetRef]);
   
   return ReactDOM.createPortal(
-    <div className="tooltip" style={{ position: 'fixed', ...position }}>
+    <div 
+      className="tooltip"
+      style={{
+        position: 'fixed',
+        top: position.top,
+        left: position.left,
+        transform: 'translateX(-50%)'
+      }}>
       {children}
     </div>,
     document.body
   );
 }
 
-// 3. Event Propagation Through Portals
-// Events bubble through React tree, not DOM tree!
-<div onClick={() => console.log('Parent clicked')}>
-  <Modal>
-    <button onClick={() => console.log('Button clicked')}>Click me</button>
-    {/* Both handlers fire! Portal maintains React tree. */}
-  </Modal>
-</div>
+// 5. Notification System with Portals
+function NotificationPortal({ notifications }) {
+  return ReactDOM.createPortal(
+    <div className="notification-container">
+      {notifications.map(notification => (
+        <div key={notification.id} className="notification">
+          {notification.message}
+        </div>
+      ))}
+    </div>,
+    document.getElementById('notification-root')
+  );
+}
 
-// 4. Context Through Portals
-// Portals maintain context from React tree
-const theme = useContext(ThemeContext); // Works in portals!`}
+// 6. Dropdown that Escapes Overflow
+function Dropdown({ isOpen, children, targetRef }) {
+  const [position, setPosition] = useState({});
+  
+  useLayoutEffect(() => {
+    if (!isOpen || !targetRef.current) return;
+    
+    const rect = targetRef.current.getBoundingClientRect();
+    const dropdownHeight = 200; // Estimate or measure
+    
+    // Smart positioning
+    const shouldFlip = rect.bottom + dropdownHeight > window.innerHeight;
+    
+    setPosition({
+      top: shouldFlip ? rect.top - dropdownHeight : rect.bottom,
+      left: rect.left,
+      width: rect.width
+    });
+  }, [isOpen, targetRef]);
+  
+  if (!isOpen) return null;
+  
+  return ReactDOM.createPortal(
+    <div 
+      className="dropdown"
+      style={{
+        position: 'fixed',
+        ...position
+      }}>
+      {children}
+    </div>,
+    document.body
+  );
+}
+
+// 7. Event Propagation Through Portals
+function PortalEventExample() {
+  // Events bubble through React tree, not DOM tree!
+  return (
+    <div onClick={() => console.log('Parent clicked')}>
+      <Modal>
+        <button onClick={() => console.log('Button clicked')}>
+          Click me
+        </button>
+        {/* Clicking button logs:
+            1. "Button clicked"
+            2. "Parent clicked" (through React tree!)
+        */}
+      </Modal>
+    </div>
+  );
+}
+
+// 8. Context Through Portals
+const ThemeContext = React.createContext('light');
+
+function ThemedModal({ children }) {
+  // Portals maintain context from React tree
+  const theme = useContext(ThemeContext);
+  
+  return ReactDOM.createPortal(
+    <div className={\`modal theme-\${theme}\`}>
+      {children}
+    </div>,
+    document.getElementById('modal-root')
+  );
+}
+
+// 9. Managing Multiple Portals
+function usePortalManager() {
+  const [portals, setPortals] = useState([]);
+  
+  const addPortal = (content, target = 'portal-root') => {
+    const id = Date.now();
+    setPortals(prev => [...prev, { id, content, target }]);
+    return id;
+  };
+  
+  const removePortal = (id) => {
+    setPortals(prev => prev.filter(p => p.id !== id));
+  };
+  
+  return { portals, addPortal, removePortal };
+}`}
 			/>
 
 			<ChapterSummary
