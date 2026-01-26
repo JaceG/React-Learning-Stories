@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [activeOptimization, setActiveOptimization] = useState(null);
@@ -60,15 +64,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Optimization Shipyard
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Optimization Shipyard`}
+				bridge={`Admiral Webpack led Aria deeper into the docks, to the Optimization Shipyard where massive vessels were being stripped of unnecessary cargo. "Understanding the build pipeline is just the beginning," he explained. "Now we make ships faster and lighter. Code splitting, lazy loading, tree shaking - each technique serves a purpose."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Admiral Webpack led Aria to the Optimization Shipyard. "Here, we make ships faster 
-					and lighter. Code splitting, lazy loading, tree shaking - each technique serves a purpose."
-				</p>
 				
 				<p className='story-paragraph'>
 					"Tree shaking?" Aria asked, examining a massive vessel being stripped of unnecessary cargo.
@@ -93,6 +95,10 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Optimization Workshop</h3>
 				
+				<InstructionBox character={`Admiral Webpack gestures to the optimization stations. "Each technique reduces bundle size differently."`}>
+					Click on each optimization technique to apply it and watch your bundle shrink. Try to get your fleet readiness above 60% to earn a promotion!
+				</InstructionBox>
+
 				<div className='bundle-analyzer'>
 					<h4>Bundle Size Analyzer</h4>
 					<div className='build-metrics'>
@@ -140,12 +146,10 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Optimization Techniques Manual</span>
-					<span className='discovered-by'>From the Shipyard's master builders</span>
-				</div>
-				<pre>{`// Code Splitting with React.lazy
+			<CodeExample
+				title="Optimization Techniques Manual"
+				discoveredBy="From the Shipyard's master builders"
+				code={`// Code Splitting with React.lazy
 // Admiral: "Load only what you need, when you need it!"
 const HeavyCargo = React.lazy(() => 
   import(/* webpackChunkName: "heavy-cargo" */ './HeavyCargo')
@@ -196,29 +200,23 @@ module.exports = {
 // Debuggora: "Visualize to optimize!"
 "scripts": {
   "analyze": "webpack-bundle-analyzer dist/stats.json"
-}`}</pre>
-			</div>
+}`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Optimization Lesson:</h3>
-				<p>
-					Build optimization is about making smart decisions. Every byte matters when 
-					crossing the digital seas. Tree shaking removes unused code, code splitting 
-					loads features on demand, and compression reduces transfer sizes. Admiral 
-					Webpack's shipyard teaches us that smaller, faster bundles lead to happier 
-					users and more successful deployments.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do optimization techniques work together to create efficient bundles?
-				</p>
-				<p>
-					Why is it important to analyze and understand your bundle composition?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Optimization Lesson:`,
+					content: `Build optimization is about making smart decisions. Every byte matters when crossing the digital seas. Tree shaking removes unused code, code splitting loads features on demand, and compression reduces transfer sizes. Admiral Webpack's shipyard teaches us that smaller, faster bundles lead to happier users and more successful deployments.`
+				}}
+				reflectionQuestions={[
+					`How do optimization techniques work together to create efficient bundles?`,
+					`Why is it important to analyze and understand your bundle composition?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Afternoon)`,
+					content: `The Optimization Shipyard is incredible! I watched workers apply tree shaking to remove dead code - like pruning branches from a tree. Binary calculated a 67.3% bundle size reduction! I learned four key techniques: Tree Shaking (removes unused code), Code Splitting (loads features on demand with React.lazy), Minification (compresses variable names), and Gzip Compression (shrinks transfer size). The Admiral promoted me to Commander after reaching 60% fleet readiness. His wisdom: "Every byte saved is a faster journey to the user."`
+				}}
+			/>
 		</div>
 	);
 };

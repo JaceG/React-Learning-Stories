@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './CiCdPipeline.css';
 
@@ -9,17 +10,6 @@ function CiCdPipeline() {
 	const [selectedPipeline, setSelectedPipeline] = useState(null);
 	const [pipelineStatus, setPipelineStatus] = useState('idle');
 	const [automationLevel, setAutomationLevel] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Create automated flow
 	const createFlow = (flow) => {
@@ -39,30 +29,12 @@ function CiCdPipeline() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>CI/CD Pipeline</h1>
-				<p className='lesson-subtitle'>
-					Navigate the Automation Harbor where code flows through automated gates to production
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`CI/CD Pipeline`}
+				subtitle={`Navigate the Automation Harbor where code flows through automated gates to production`}
+				opener={`Beyond the Optimization Shipyard lay the Automation Harbor, where Captain Pipeline commanded an army of automated workers. "Manual deployments are relics of the past," the Captain declared, watching as code flowed through glowing channels. "Here, we build pipelines that never sleep, never forget, and never make human errors."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -77,27 +49,10 @@ function CiCdPipeline() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='build-deploy'
-				lessonId='ci-cd-pipeline'
+			<LessonFooter
+				courseId={`build-deploy`}
+				lessonId={`ci-cd-pipeline`}
+				totalChapters={3}
 			/>
 		</div>
 	);

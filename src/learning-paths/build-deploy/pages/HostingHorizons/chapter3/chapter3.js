@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [activeRegions, setActiveRegions] = useState(['us-east']);
@@ -88,17 +92,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Global Network
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Global Network`}
+				bridge={`"You've mastered the deployment ceremonies," Navigator Vercel said, leading Aria to a vast observation deck overlooking the entire globe. "Now it's time to think beyond single regions. Edge functions, CDN distribution, geographic routing - these are the tools of truly global applications." Aria watched as data streams flowed across continents.`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria's applications now deployed globally, reaching users on every continent. 
-					"Edge functions, CDN distribution, geographic routing - the world is your 
-					kingdom!" Navigator Hosting proclaimed.
-				</p>
-				
 				<p className='story-paragraph'>
 					Binary monitored the global metrics. "Response times vary by region. 
 					US East: 20ms. Asia Pacific: 150ms. We need edge optimization!"
@@ -113,15 +113,14 @@ const ChapterThree = () => {
 					"You've learned to think globally," Navigator smiled. "Performance isn't 
 					just about code - it's about proximity. Bring your app closer to your users."
 				</p>
-
-				<p className='story-paragraph'>
-					Aria surveyed her global deployment network with pride. "From local 
-					development to worldwide distribution - what a journey!"
-				</p>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Global Deployment Network</h3>
+				
+				<InstructionBox character={`Navigator Vercel activates the global network console.`}>
+					{`"Click on regions to expand your edge network across the globe. Apply performance optimizations to reduce latency for users worldwide. Achieve Global Admiral status by reaching 90% coverage!"`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(142, 68, 173, 0.1))', 
@@ -274,12 +273,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Global Deployment Configuration</span>
-					<span className='discovered-by'>Navigator's worldwide wisdom</span>
-				</div>
-				<pre>{`# Edge Function Example (Vercel)
+			<CodeExample
+				title={`Global Deployment Configuration`}
+				discoveredBy={`Navigator's worldwide wisdom`}
+				code={`# Edge Function Example (Vercel)
 // api/geo-router.js
 export const config = {
   runtime: 'edge',
@@ -357,33 +354,26 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: SAMEORIGIN
 Content-Security-Policy: default-src 'self'
 
-# Aria's final note: "Think globally, cache locally!"`}</pre>
-			</div>
+# Aria's final note: "Think globally, cache locally!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Global Lesson:</h3>
-				<p>
-					Global deployment transforms your application from a single location to a 
-					worldwide presence. Navigator Hosting's final teaching reveals that true 
-					performance comes from proximity - edge functions process near users, CDNs 
-					cache content globally, and geographic routing ensures optimal paths. The 
-					journey from local development to global deployment completes when your 
-					application performs excellently for users everywhere, regardless of their 
-					location.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does global deployment change the way you think about application 
-					architecture and performance?
-				</p>
-				<p>
-					What considerations become important when serving users across different 
-					continents and network conditions?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={`Global deployment transforms your application from a single location to a worldwide presence. Navigator Vercel's final teaching reveals that true performance comes from proximity - edge functions process near users, CDNs cache content globally, and geographic routing ensures optimal paths. The journey from local development to global deployment completes when your application performs excellently for users everywhere, regardless of their location.`}
+				reflectionQuestions={[
+					`How does global deployment change the way you think about application architecture and performance?`,
+					`What considerations become important when serving users across different continents and network conditions?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Evening)`,
+					content: `Tonight I became a Global Admiral! I expanded my edge network across 6 regions: US East (20ms), US West (35ms), EU West (80ms), Asia Pacific (150ms), South America (120ms), and Australia (180ms). I learned three edge strategies: Edge Functions for code near users, CDN Distribution for asset caching, and Geographic Routing for optimal paths. Performance optimizations like Brotli compression, HTTP/3, and image optimization dramatically improved my Core Web Vitals. Navigator Vercel's wisdom: "Performance isn't just about code - it's about proximity. Bring your app closer to your users." Global reach: 100%!`
+				}}
+				chapterEnding={[
+					`Aria surveyed her global deployment network with pride. "From local development to worldwide distribution - what a journey!"`,
+					`Navigator Vercel nodded approvingly. "You've mastered the hosting horizons. Your applications can now reach users anywhere in the world with optimal performance."`,
+					`"But deployment is only the beginning," Binary calculated. "Production environments face unique challenges - monitoring, error handling, scaling under load..."`,
+					`"Indeed," Navigator Vercel agreed. "The Production Readiness trials await you. There you'll learn to prepare your applications for the real world - where users are unpredictable and uptime is everything..."`
+				]}
+			/>
 		</div>
 	);
 };

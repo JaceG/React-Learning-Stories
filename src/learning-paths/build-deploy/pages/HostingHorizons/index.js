@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './HostingHorizons.css';
 
@@ -9,17 +10,6 @@ function HostingHorizons() {
 	const [selectedPlatform, setSelectedPlatform] = useState(null);
 	const [navigationSkill, setNavigationSkill] = useState('Explorer');
 	const [globalReach, setGlobalReach] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Visit a platform
 	const visitPlatform = (platform) => {
@@ -37,30 +27,12 @@ function HostingHorizons() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Hosting Horizons</h1>
-				<p className='lesson-subtitle'>
-					Explore the Platform Archipelago and choose the perfect destination for your applications
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Hosting Horizons`}
+				subtitle={`Explore the Platform Archipelago and choose the perfect destination for your applications`}
+				opener={`The Platform Archipelago stretched across the digital horizon - hundreds of islands, each offering a different home for applications. Navigator Vercel stood at the helm of the exploration vessel. "Every application needs a home, Ambassador. But choosing the right platform is as important as building the application itself."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -75,27 +47,10 @@ function HostingHorizons() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='build-deploy'
-				lessonId='hosting-horizons'
+			<LessonFooter
+				courseId={`build-deploy`}
+				lessonId={`hosting-horizons`}
+				totalChapters={3}
 			/>
 		</div>
 	);

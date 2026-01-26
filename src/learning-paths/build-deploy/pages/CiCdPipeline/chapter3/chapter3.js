@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [activeStrategy, setActiveStrategy] = useState(null);
@@ -96,16 +100,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Continuous Fleet
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Continuous Fleet`}
+				bridge={`Aria's pipeline had grown sophisticated - parallel tests, conditional deployments, automatic rollbacks. "It's like having a crew that never sleeps!" she marveled. Captain Pipeline smiled. "Now let's master the advanced strategies."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria's pipeline had grown sophisticated - parallel tests, conditional deployments, 
-					automatic rollbacks. "It's like having a crew that never sleeps!" she marveled.
-				</p>
-				
 				<p className='story-paragraph'>
 					Captain Pipeline nodded approvingly. "And with feature flags, you can deploy 
 					continuously while controlling feature release. Decouple deployment from release!"
@@ -129,6 +130,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Deployment Strategies</h3>
+				
+				<InstructionBox character={`Captain Pipeline unveils the Fleet Admiral's strategy board.`}>
+					"Select deployment strategies to see how they work. Toggle feature flags to control feature releases independently of deployments. Watch your DORA metrics improve as you master each strategy!"
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1))', 
@@ -246,12 +251,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Deployment Patterns</span>
-					<span className='discovered-by'>Captain Pipeline's master strategies</span>
-				</div>
-				<pre>{`# Blue-Green Deployment with GitHub Actions
+			<CodeExample
+				title="Advanced Deployment Patterns"
+				discoveredBy="Captain Pipeline's master strategies"
+				code={`# Blue-Green Deployment with GitHub Actions
 # Captain: "Two environments, zero downtime!"
 
 name: Blue-Green Deploy
@@ -338,31 +341,28 @@ spec:
   selector:
     matchLabels:
       app: my-app
-      version: canary`}</pre>
-			</div>
+      version: canary`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Continuous Lesson:</h3>
-				<p>
-					Advanced deployment strategies transform releases from risky events into 
-					routine operations. Captain Pipeline's mastery teaches that continuous 
-					deployment isn't just about frequency - it's about safety, control, and 
-					confidence. Blue-green deployments eliminate downtime, canary releases 
-					minimize risk, and feature flags decouple deployment from release. The 
-					goal is to make deployments so safe and routine that they become boring.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do advanced deployment strategies change the relationship between 
-					development teams and production environments?
-				</p>
-				<p>
-					What role do metrics play in building confidence in continuous deployment?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Continuous Fleet Lesson:`,
+					content: `Advanced deployment strategies transform releases from risky events into routine operations. Captain Pipeline's mastery teaches that continuous deployment isn't just about frequency - it's about safety, control, and confidence. Blue-green deployments eliminate downtime, canary releases minimize risk, and feature flags decouple deployment from release. The goal is to make deployments so safe and routine that they become boring.`
+				}}
+				reflectionQuestions={[
+					`How do advanced deployment strategies change the relationship between development teams and production environments?`,
+					`What role do metrics play in building confidence in continuous deployment?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 34 (Evening)`,
+					content: `I've achieved Fleet Admiral status at the Automation Harbor! Captain Pipeline taught me four advanced deployment strategies: Blue-Green (zero downtime switching), Canary (gradual rollout to users), Rolling (updating instances one by one), and Feature Flags (decoupling deploy from release). I also explored Progressive Delivery, GitOps, and Chaos Engineering! Binary tracked our DORA metrics improving - deployment frequency up 10x, lead time reduced to hours, MTTR under 30 minutes. Captain Pipeline's final wisdom: "The goal is to make deployments so safe and routine that they become boring." Continuous value delivery achieved!`
+				}}
+				chapterEnding={[
+					`As Aria mastered the final deployment strategy, Captain Pipeline saluted. "Fleet Admiral Aria, you've learned to automate the entire journey from code to production."`,
+					`Binary computed the achievement metrics. "Deployment frequency: excellent. Lead time: optimal. Change fail rate: minimal. You've mastered CI/CD!"`,
+					`"But automated pipelines need a destination," Captain Pipeline said, pointing toward the horizon. "The Hosting Horizons await - where Harbor Master Domain will teach you where your code actually lives and serves users..."`
+				]}
+			/>
 		</div>
 	);
 };

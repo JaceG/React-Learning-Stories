@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [selectedTool, setSelectedTool] = useState(null);
@@ -75,17 +79,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Pipeline Workshop
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Pipeline Workshop`}
+				bridge={`Captain Pipeline showed Aria the pipeline workshop, where automated workflows were crafted like precision instruments. "Each pipeline is a series of gates. Code must pass through each one to reach production."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Captain Pipeline showed Aria the pipeline workshop, where automated workflows were 
-					crafted like precision instruments. "Each pipeline is a series of gates. Code must 
-					pass through each one to reach production."
-				</p>
-				
 				<p className='story-paragraph'>
 					Aria studied the various tools and configurations. "Lint, test, build, deploy - 
 					like the quality checkpoints in our kingdom!"
@@ -109,6 +109,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Pipeline Builder Workshop</h3>
+				
+				<InstructionBox character={`Captain Pipeline opens the workshop blueprint station.`}>
+					"Choose a CI/CD tool, then build your own pipeline by selecting components. Watch how different configurations affect your automation level and pipeline time!"
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(46, 204, 113, 0.1)', 
@@ -261,12 +265,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Pipeline Configuration</span>
-					<span className='discovered-by'>Captain Pipeline's workshop blueprints</span>
-				</div>
-				<pre>{`# GitLab CI Configuration
+			<CodeExample
+				title="Advanced Pipeline Configuration"
+				discoveredBy="Captain Pipeline's workshop blueprints"
+				code={`# GitLab CI Configuration
 # Captain: "Stages ensure order, jobs enable parallelism!"
 
 stages:
@@ -343,29 +345,23 @@ deploy:production:
     - main
 
 # Binary: "Parallel test execution reduces pipeline time by 67.3%!"
-# Debuggora: "Each stage's logs are preserved for debugging!"`}</pre>
-			</div>
+# Debuggora: "Each stage's logs are preserved for debugging!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Pipeline Lesson:</h3>
-				<p>
-					Building effective pipelines is about balance - comprehensive testing without 
-					sacrificing speed, automation without losing flexibility. Captain Pipeline's 
-					workshop teaches that the best pipeline is one that catches issues early, 
-					provides fast feedback, and gives teams confidence to deploy frequently. 
-					Start simple, iterate based on needs, and always prioritize developer experience.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does building a custom pipeline help teams understand their deployment process?
-				</p>
-				<p>
-					What factors should teams consider when choosing between different CI/CD tools?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Pipeline Workshop Lesson:`,
+					content: `Building effective pipelines is about balance - comprehensive testing without sacrificing speed, automation without losing flexibility. Captain Pipeline's workshop teaches that the best pipeline is one that catches issues early, provides fast feedback, and gives teams confidence to deploy frequently. Start simple, iterate based on needs, and always prioritize developer experience.`
+				}}
+				reflectionQuestions={[
+					`How does building a custom pipeline help teams understand their deployment process?`,
+					`What factors should teams consider when choosing between different CI/CD tools?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 34 (Afternoon)`,
+					content: `Captain Pipeline took me to the workshop where automated workflows are crafted like precision instruments! I explored four CI/CD tools: GitHub Actions (beginner-friendly), GitLab CI (integrated DevOps), Jenkins (plugin ecosystem), and CircleCI (cloud-native). Then I built my own pipeline - linting, unit tests, integration tests, build, staging deployment, E2E tests, and production deployment! Binary calculated that automation reduces deployment time by 95%! Debuggora noted that every failure is caught immediately - no more "works on my machine" mysteries. The Captain's advice: "The best pipeline is one your team will actually use."`
+				}}
+			/>
 		</div>
 	);
 };

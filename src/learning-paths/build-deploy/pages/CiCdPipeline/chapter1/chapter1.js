@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [activeStage, setActiveStage] = useState(null);
@@ -86,16 +90,12 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Automation Harbor
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Automation Harbor`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Captain Pipeline</strong> commanded the Automation Harbor with precision. 
-					"Manual deployment is like rowing across the ocean. CI/CD is like having favorable 
-					winds that never stop."
-				</p>
 				
 				<p className='story-paragraph'>
 					The harbor hummed with automated activity. Code arrived, tests ran, builds completed, 
@@ -121,6 +121,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>CI/CD Fundamentals</h3>
+				
+				<InstructionBox character={`Captain Pipeline activates the pipeline demonstration console.`}>
+					"Watch how code flows through each stage automatically. Click 'Run Pipeline Demo' to see the magic of automation in action!"
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(46, 204, 113, 0.1)', 
@@ -203,12 +207,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Captain Pipeline's Automation Manual</span>
-					<span className='discovered-by'>Essential CI/CD configuration</span>
-				</div>
-				<pre>{`# GitHub Actions Workflow
+			<CodeExample
+				title="Captain Pipeline's Automation Manual"
+				discoveredBy="Essential CI/CD configuration"
+				code={`# GitHub Actions Workflow
 # Captain Pipeline: "Every push triggers the automation!"
 name: CI/CD Pipeline
 
@@ -257,29 +259,29 @@ jobs:
         path: build/
 
 # Aria's notes: "Each step runs automatically! 
-# If any step fails, the pipeline stops and alerts us!"`}</pre>
-			</div>
+# If any step fails, the pipeline stops and alerts us!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Automation Lesson:</h3>
-				<p>
-					CI/CD transforms deployment from a manual, error-prone process into an automated, 
-					reliable flow. Captain Pipeline teaches that automation isn't just about speed - 
-					it's about consistency, reliability, and confidence. Every code change follows 
-					the same path, undergoes the same checks, and deploys the same way, eliminating 
-					human error and enabling rapid iteration.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does automation change the way teams approach deployment and releases?
-				</p>
-				<p>
-					What are the key benefits of having every code change go through the same automated pipeline?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Captain Pipeline`,
+						description: `Commander of the Automation Harbor, master of continuous integration and delivery. His philosophy: "Manual deployment is like rowing across the ocean. CI/CD is like having favorable winds that never stop."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Automation Lesson:`,
+					content: `CI/CD transforms deployment from a manual, error-prone process into an automated, reliable flow. Captain Pipeline teaches that automation isn't just about speed - it's about consistency, reliability, and confidence. Every code change follows the same path, undergoes the same checks, and deploys the same way, eliminating human error and enabling rapid iteration.`
+				}}
+				reflectionQuestions={[
+					`How does automation change the way teams approach deployment and releases?`,
+					`What are the key benefits of having every code change go through the same automated pipeline?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 34 (Morning)`,
+					content: `I've arrived at the Automation Harbor where Captain Pipeline commands an impressive fleet of automated workflows! The harbor hums with activity - code arrives, tests run, builds complete, deployments launch - all without human intervention. I learned about Continuous Integration (merging code frequently), Continuous Delivery (keeping code deployable), and Continuous Deployment (automatic production releases). Binary calculated 92.7% time reduction! Captain Pipeline's wisdom: "Every code change follows the same path, undergoes the same checks, and deploys the same way." The pipeline visualization showed Source → Build → Test → Deploy flowing seamlessly.`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [selectedBuildTarget, setSelectedBuildTarget] = useState(null);
@@ -66,17 +70,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Build Fleet
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Build Fleet`}
+				bridge={`"You've mastered optimization techniques," Admiral Webpack said proudly, leading Aria to a vast harbor filled with specialized vessels. "But different destinations need different ships. Modern browsers, legacy support, mobile platforms - each needs its own build configuration."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Different destinations need different ships," Admiral Webpack explained, gesturing 
-					to a vast harbor filled with specialized vessels. "Modern browsers, legacy support, 
-					mobile platforms - each needs its own build configuration."
-				</p>
-				
 				<p className='story-paragraph'>
 					Aria studied the fleet manifest. "So we create multiple builds for different environments?"
 				</p>
@@ -100,20 +100,9 @@ const ChapterThree = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Build Target Selection</h3>
 				
-				<div style={{ 
-					textAlign: 'center',
-					padding: '20px',
-					background: 'rgba(46, 204, 113, 0.1)',
-					borderRadius: '8px',
-					marginBottom: '20px'
-				}}>
-					<div style={{ fontSize: '1.2em', marginBottom: '10px' }}>
-						🎉 <strong>Fleet Admiral Achievement</strong> 🎉
-					</div>
-					<p style={{ color: '#27ae60' }}>
-						Select different build targets below to complete your fleet mastery and earn the rank of Admiral!
-					</p>
-				</div>
+				<InstructionBox character={`Admiral Webpack presents the fleet manifest. "Each build target serves a different audience."`}>
+					Select different build targets below to see their configurations. Reach 80% fleet readiness to earn the rank of Admiral! Then try enabling Module Federation to share cargo between ships.
+				</InstructionBox>
 				
 				<div className='optimization-grid'>
 					{buildTargets.map((target) => (
@@ -158,12 +147,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Fleet Configuration</span>
-					<span className='discovered-by'>Admiral Webpack's master strategy</span>
-				</div>
-				<pre>{`// Multiple Build Targets
+			<CodeExample
+				title="Advanced Fleet Configuration"
+				discoveredBy="Admiral Webpack's master strategy"
+				code={`// Multiple Build Targets
 // Aria: "One codebase, many destinations!"
 module.exports = [
   // Modern browsers build
@@ -252,30 +239,28 @@ module.exports = {
 // Debuggora: "Smart loading for every browser!"
 <!-- In your HTML -->
 <script type="module" src="/dist/modern/app.js"></script>
-<script nomodule src="/dist/legacy/app.js"></script>`}</pre>
-			</div>
+<script nomodule src="/dist/legacy/app.js"></script>`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Fleet Lesson:</h3>
-				<p>
-					Building for multiple targets ensures your application reaches every user 
-					optimally. Modern browsers get cutting-edge features, legacy browsers get 
-					compatibility, and mobile devices get optimized bundles. Admiral Webpack's 
-					fleet strategy teaches us that one size doesn't fit all - tailor your 
-					builds to your audience's needs while sharing resources efficiently through 
-					module federation.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does building multiple targets improve the user experience across different platforms?
-				</p>
-				<p>
-					What are the benefits and challenges of implementing module federation in your applications?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Fleet Lesson:`,
+					content: `Building for multiple targets ensures your application reaches every user optimally. Modern browsers get cutting-edge features, legacy browsers get compatibility, and mobile devices get optimized bundles. Admiral Webpack's fleet strategy teaches us that one size doesn't fit all - tailor your builds to your audience's needs while sharing resources efficiently through module federation.`
+				}}
+				reflectionQuestions={[
+					`How does building multiple targets improve the user experience across different platforms?`,
+					`What are the benefits and challenges of implementing module federation in your applications?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Evening)`,
+					content: `I've earned the rank of Admiral! The fleet harbor is vast - ships for modern browsers (ES2020+), legacy support (ES5), mobile devices, and edge computing. Admiral Webpack taught me about differential serving: modern browsers load sleek modules, while legacy browsers get polyfilled bundles. The Module Federation system blew my mind - ships can share cargo mid-voyage! React can be a singleton across micro-frontends. The Admiral's final wisdom: "One codebase, many destinations - but always serve each audience optimally."`
+				}}
+				chapterEnding={[
+					`Admiral Webpack saluted as Aria completed her fleet training. "You've mastered build systems, Ambassador. Your applications are ready for any destination."`,
+					`Binary calculated the results. "Build efficiency optimized. Fleet readiness at maximum. Ready for the Automation Harbor!"`,
+					`"The CI/CD Pipeline awaits," the Admiral smiled. "Captain Pipeline will teach you how to automate every voyage..."`
+				]}
+			/>
 		</div>
 	);
 };

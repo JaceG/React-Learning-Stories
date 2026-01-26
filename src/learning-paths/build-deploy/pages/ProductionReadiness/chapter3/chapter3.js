@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterThree = () => {
 	const [deploymentStrategy, setDeploymentStrategy] = useState('');
@@ -114,17 +118,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Battle-Tested Strategies
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`Battle-Tested Strategies`}
+				bridge={`With the monitoring arsenal fully operational, Commander Deployment led Aria to the strategic command center. "You've learned to monitor and prepare," she said, her voice filled with pride. "Now comes the ultimate test - deployment strategies and incident response. These are your battle tactics for conquering production."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					"You've learned to monitor and prepare," Commander Deployment said. "Now 
-					comes the ultimate test - deployment strategies and incident response. These 
-					are your battle tactics."
-				</p>
-				
 				<p className='story-paragraph'>
 					Binary calculated probabilities. "Blue-green: 99.9% uptime potential. 
 					Canary: 85% risk reduction. Rolling: 60% resource efficiency. Each strategy 
@@ -150,6 +150,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Deployment Strategy Command</h3>
+				
+				<InstructionBox character={`Commander Deployment unveils the deployment strategy board.`}>
+					{`"Choose your deployment strategy wisely - Blue-Green for zero downtime, Canary for gradual rollouts, or Rolling for resource efficiency. Then test your incident response skills with a drill. A prepared commander is never surprised."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1))', 
@@ -370,12 +374,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Battle-Tested Production Configurations</span>
-					<span className='discovered-by'>Commander's final teachings</span>
-				</div>
-				<pre>{`# Blue-Green Deployment with AWS
+			<CodeExample
+				title={`Battle-Tested Production Configurations`}
+				discoveredBy={`Commander's final teachings`}
+				code={`# Blue-Green Deployment with AWS
 # Commander: "Two environments, zero downtime!"
 
 # ALB Target Groups
@@ -405,7 +407,7 @@ resource "aws_lb_target_group" "green" {
 
 # Traffic switching script
 #!/bin/bash
-CURRENT=$(aws elbv2 describe-listeners --listener-arn $LISTENER_ARN \
+CURRENT=$(aws elbv2 describe-listeners --listener-arn $LISTENER_ARN \\
   --query 'Listeners[0].DefaultActions[0].TargetGroupArn' --output text)
 
 if [[ $CURRENT == *"blue"* ]]; then
@@ -416,7 +418,7 @@ else
   echo "Switching from GREEN to BLUE"
 fi
 
-aws elbv2 modify-listener --listener-arn $LISTENER_ARN \
+aws elbv2 modify-listener --listener-arn $LISTENER_ARN \\
   --default-actions Type=forward,TargetGroupArn=$TARGET
 
 # Canary Deployment Configuration
@@ -564,34 +566,31 @@ const calculateReadiness = () => {
   }
   
   return totalScore;
-};`}</pre>
-			</div>
+};`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Final Lesson:</h3>
-				<p>
-					Battle-tested strategies transform deployments from risky events into 
-					routine operations. Commander Deployment's final wisdom reveals that 
-					production excellence comes from preparation, automation, and swift response. 
-					Blue-green deployments eliminate downtime, canary releases minimize risk, 
-					automated incident response saves precious minutes, and readiness scores 
-					ensure nothing is forgotten. The journey from code to production ends not 
-					with deployment, but with the confidence that your application can weather 
-					any storm.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do deployment strategies and incident response plans work together to 
-					ensure production reliability?
-				</p>
-				<p>
-					What makes the difference between a good deployment and a great one in 
-					production environments?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Battle-Tested Principle:`,
+					content: `Battle-tested strategies transform deployments from risky events into routine operations. Commander Deployment's final wisdom reveals that production excellence comes from preparation, automation, and swift response. Blue-green deployments eliminate downtime, canary releases minimize risk, automated incident response saves precious minutes, and readiness scores ensure nothing is forgotten. The journey from code to production ends not with deployment, but with the confidence that your application can weather any storm.`
+				}}
+				reflectionQuestions={[
+					`How do deployment strategies and incident response plans work together to ensure production reliability?`,
+					`What makes the difference between a good deployment and a great one in production environments?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Evening)`,
+					content: `The final lesson of the Build & Deploy realm is complete! Commander Deployment taught me the three deployment strategies: Blue-Green (zero downtime with instant rollback), Canary (gradual rollout to minimize risk), and Rolling (sequential updates for efficiency). Binary calculated the odds: 99.9% uptime potential with blue-green! I ran my first incident drill - Detection, Response, Mitigation, Resolution - and performed a successful rollback in 45 seconds. The production excellence checklist now feels like second nature. Commander's final words: "The best incident is one that never happens. But when it does, swift action saves the day." Battle readiness: 100%. I am ready for production.`
+				}}
+				chapterEnding={[
+					`As Aria completed the incident drill, Commander Deployment stood at attention and saluted. "You've earned the rank of Admiral, Aria. From build systems to CI/CD pipelines, from hosting to production readiness - you've mastered it all."`,
+					`Binary processed the achievement. "Build & Deploy realm: 100% complete. Four lessons mastered. Production readiness score: Excellent. Aria has grown from apprentice to production commander."`,
+					`Debuggora hooted in approval. "The monitoring systems will always watch over your deployments now. You've learned to see what others miss."`,
+					`Aria looked back at the War Room's glowing monitors, then toward the horizon where new challenges awaited. "Thank you, Commander. I came here to learn how to ship code - I'm leaving knowing how to ship confidence."`,
+					`"The Allied Kingdoms await your skills," Commander Deployment smiled. "But remember - every journey from code to production is a mission. Prepare well, monitor closely, and respond swiftly. That is the way of the deployment commander."`,
+					`As she departed the Build & Deploy realm, Aria felt a profound sense of accomplishment. The path from local development to global production was no longer mysterious - it was a series of well-practiced steps, battle-tested strategies, and hard-won wisdom.`
+				]}
+			/>
 		</div>
 	);
 };

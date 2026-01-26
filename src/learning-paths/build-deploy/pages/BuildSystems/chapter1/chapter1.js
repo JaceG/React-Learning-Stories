@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [hoveredShip, setHoveredShip] = useState(null);
@@ -56,17 +60,12 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Deployment Armada Docks
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Deployment Armada Docks`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Deployment Armada Docks bustled with activity. Ships of all sizes prepared to 
-					carry applications across the digital seas to Production Island. <strong>Admiral Webpack</strong>, 
-					commander of the fleet, stood on the command deck reviewing manifests.
-				</p>
-				
 				<p className='story-paragraph'>
 					"Ambassador Aria!" the Admiral boomed. "Your applications are powerful, but they're 
 					still in the kingdom. Time to learn the art of deployment - transforming development 
@@ -92,6 +91,10 @@ const ChapterOne = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Build Pipeline Visualizer</h3>
 				
+				<InstructionBox character={`Admiral Webpack hands you a captain's compass. "Every deployment captain must understand the build pipeline."`}>
+					Click on each build phase to learn what happens at each stage. Then prepare your deployment fleet by clicking on the vessels below.
+				</InstructionBox>
+
 				<div style={{ 
 					background: 'rgba(52, 152, 219, 0.1)', 
 					padding: '15px', 
@@ -174,12 +177,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Admiral Webpack's Build Configuration Scroll</span>
-					<span className='discovered-by'>First lesson in deployment mastery</span>
-				</div>
-				<pre>{`// The Admiral's Basic Webpack Configuration
+			<CodeExample
+				title="Admiral Webpack's Build Configuration Scroll"
+				discoveredBy="First lesson in deployment mastery"
+				code={`// The Admiral's Basic Webpack Configuration
 const path = require('path');
 
 module.exports = {
@@ -234,30 +235,29 @@ module.exports = {
 
 // Aria's notes: "Each configuration option prepares the code 
 // for its journey differently. The Admiral says understanding 
-// these options is key to successful deployments!"`}</pre>
-			</div>
+// these options is key to successful deployments!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Build Lesson:</h3>
-				<p>
-					Building for production is like preparing a ship for ocean voyage - every 
-					unnecessary item adds weight, every optimization speeds the journey. Admiral 
-					Webpack teaches that understanding your build process is as important as 
-					writing the code itself. Modern build tools transform your development code 
-					into efficient, production-ready bundles that load quickly and run smoothly.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of builds as "preparing ships" help visualize the 
-					optimization process?
-				</p>
-				<p>
-					Why is it important to understand what happens during the build process?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Admiral Webpack`,
+						description: `Commander of the Deployment Armada who transforms development code into production-ready vessels. His philosophy: "Every byte saved is a faster journey to the user."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Build Lesson:`,
+					content: `Building for production is like preparing a ship for ocean voyage - every unnecessary item adds weight, every optimization speeds the journey. Admiral Webpack teaches that understanding your build process is as important as writing the code itself. Modern build tools transform your development code into efficient, production-ready bundles that load quickly and run smoothly.`
+				}}
+				reflectionQuestions={[
+					`How does thinking of builds as 'preparing ships' help visualize the optimization process?`,
+					`Why is it important to understand what happens during the build process?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 33 (Morning)`,
+					content: `The Deployment Armada Docks are magnificent! Admiral Webpack commands a fleet of optimization vessels, each designed for a specific aspect of the build process. I learned about the build pipeline: from Development Port where raw code lives, through Bundling Dock where modules combine, to Optimization Bay where tree-shaking and minification occur, and finally to the Launch Platform. The Admiral's wisdom: "Understanding your build process is as important as writing the code itself." I prepared three ships today - the Bundle Explorer, Code Splitter, and Tree Shaker. Each transforms code differently for its production journey.`
+				}}
+			/>
 		</div>
 	);
 };

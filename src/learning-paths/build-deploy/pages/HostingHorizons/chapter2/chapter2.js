@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [activeTab, setActiveTab] = useState('vercel');
@@ -95,17 +99,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Deployment Ceremonies
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Deployment Ceremonies`}
+				bridge={`Navigator Vercel led Aria to a ceremonial chamber where platforms performed their deployment rituals. "Each platform has its own ceremony," she explained. "Vercel's is swift and magical - push code, receive URL. Netlify's involves configuration incantations. AWS requires the most elaborate preparation." Aria watched, eager to master each ritual.`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria began deploying to different platforms, each with its own unique rituals 
-					and ceremonies. "Vercel feels magical - push code, get URL!" she exclaimed 
-					after her first deployment.
-				</p>
-				
 				<p className='story-paragraph'>
 					"But AWS gives ultimate control," Navigator Hosting added, showing the vast 
 					array of services. "With great power comes great configuration."
@@ -129,6 +129,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Deep Dive</h3>
+				
+				<InstructionBox character={`Navigator Vercel presents the ceremonial deployment console.`}>
+					{`"Select a platform tab below to learn its deployment steps. Run the simulation to practice the ceremony and configure your custom domain to establish your presence on the web."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(52, 152, 219, 0.1)', 
@@ -298,12 +302,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Platform-Specific Configurations</span>
-					<span className='discovered-by'>Navigator's deployment secrets</span>
-				</div>
-				<pre>{`# Environment Variables Best Practices
+			<CodeExample
+				title={`Platform-Specific Configurations`}
+				discoveredBy={`Navigator's deployment secrets`}
+				code={`# Environment Variables Best Practices
 # Navigator: "Never commit secrets to Git!"
 
 # .env.local (for local development)
@@ -358,31 +360,20 @@ Value: cname.vercel-dns.com
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY`}</pre>
-			</div>
+  X-Frame-Options: DENY`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Deployment Lesson:</h3>
-				<p>
-					Each platform has its own deployment ceremony - a unique set of steps, 
-					configurations, and considerations. Navigator Hosting teaches that mastering 
-					these ceremonies transforms deployment from a stressful event into a smooth 
-					ritual. Understanding environment variables, custom domains, and SSL 
-					configuration ensures your applications are not just deployed, but deployed 
-					correctly and securely.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do platform-specific features influence your deployment decisions?
-				</p>
-				<p>
-					Why is it important to understand the deployment process rather than just 
-					following tutorials?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={`Each platform has its own deployment ceremony - a unique set of steps, configurations, and considerations. Navigator Vercel teaches that mastering these ceremonies transforms deployment from a stressful event into a smooth ritual. Understanding environment variables, custom domains, and SSL configuration ensures your applications are not just deployed, but deployed correctly and securely.`}
+				reflectionQuestions={[
+					`How do platform-specific features influence your deployment decisions?`,
+					`Why is it important to understand the deployment process rather than just following tutorials?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Afternoon)`,
+					content: `This afternoon I learned the deployment ceremonies! Each platform has its own ritual: Vercel's four-step magic (link, import, configure, deploy), Netlify's netlify.toml incantations, and AWS's elaborate S3 + CloudFront ceremony. I mastered environment variables - never commit secrets to Git! Custom domain configuration requires patience: DNS propagation takes 5-48 hours. Binary timed each deployment: Vercel 45s, Netlify 52s, AWS CloudFront 5-10 minutes. Navigator's wisdom: "Master the ceremonies, and deployment becomes a simple ritual rather than a complex ordeal." My Navigator Skill upgraded to Captain!`
+				}}
+			/>
 		</div>
 	);
 };

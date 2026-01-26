@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterTwo = () => {
 	const [activeMonitor, setActiveMonitor] = useState('');
@@ -133,17 +137,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Monitoring Arsenal
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Monitoring Arsenal`}
+				bridge={`With the readiness checks complete, Commander Deployment led Aria to the monitoring station. "Every production system needs eyes and ears," she explained, gesturing to the streams of data flowing across multiple screens. "Monitoring tools are your scouts, alerting you to problems before they become disasters."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Commander Deployment led Aria to the monitoring station. "Every production 
-					system needs eyes and ears. Monitoring tools are your scouts, alerting you 
-					to problems before they become disasters."
-				</p>
-				
 				<p className='story-paragraph'>
 					Binary analyzed the data streams. "Current monitoring coverage: 60%. 
 					Blind spots detected in user experience metrics and third-party service 
@@ -169,6 +169,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Monitoring Command Center</h3>
+				
+				<InstructionBox character={`Commander Deployment activates the monitoring arsenal display.`}>
+					{`"Each of these tools serves a unique purpose - error tracking, performance monitoring, infrastructure observability, and incident management. Click on each tool to activate it and watch how alerts flow through the system."`}
+				</InstructionBox>
 				
 				<div className='monitoring-grid'>
 					{monitoringTools.map((tool) => (
@@ -323,12 +327,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Monitoring Integration Examples</span>
-					<span className='discovered-by'>Commander's arsenal configuration</span>
-				</div>
-				<pre>{`# Sentry Error Tracking Setup
+			<CodeExample
+				title={`Monitoring Integration Examples`}
+				discoveredBy={`Commander's arsenal configuration`}
+				code={`# Sentry Error Tracking Setup
 // Commander: "Catch every error, miss nothing!"
 
 import * as Sentry from "@sentry/react";
@@ -457,33 +459,23 @@ const performanceBudget = {
 new PerformanceBudgetPlugin({
   budget: performanceBudget,
   errorOnBudgetExceed: process.env.NODE_ENV === 'production'
-});`}</pre>
-			</div>
+});`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Monitoring Lesson:</h3>
-				<p>
-					The Monitoring Arsenal reveals that production excellence comes from 
-					visibility. Commander Deployment's tools transform the unknown into the 
-					known - Sentry catches errors with full context, Datadog tracks performance 
-					across the stack, alert rules prevent issues from becoming outages, and 
-					performance budgets keep applications fast. Real-time monitoring isn't just 
-					about reacting to problems; it's about preventing them through continuous 
-					observation and intelligent alerting.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does comprehensive monitoring change the way you approach debugging 
-					production issues?
-				</p>
-				<p>
-					Why is it important to have different types of monitoring tools working 
-					together?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Monitoring Arsenal Principle:`,
+					content: `The Monitoring Arsenal reveals that production excellence comes from visibility. Commander Deployment's tools transform the unknown into the known - Sentry catches errors with full context, Datadog tracks performance across the stack, alert rules prevent issues from becoming outages, and performance budgets keep applications fast. Real-time monitoring isn't just about reacting to problems; it's about preventing them through continuous observation and intelligent alerting.`
+				}}
+				reflectionQuestions={[
+					`How does comprehensive monitoring change the way you approach debugging production issues?`,
+					`Why is it important to have different types of monitoring tools working together?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Afternoon)`,
+					content: `Commander Deployment revealed the monitoring arsenal this afternoon - the eyes and ears of production. I activated Sentry for error tracking, Datadog for APM, New Relic for application monitoring, and PagerDuty for incident management. Binary noted our monitoring coverage jumped from 60% to full visibility. Debuggora showed me how to correlate alerts with deployments - we traced an error spike back to a missing null check within minutes! I resolved three alerts (high, medium, and low severity) and watched the production metrics dashboard update in real-time: uptime climbing, error rate dropping. Commander's insight: "Without monitoring, you're flying blind in production." These tools transform mysteries into actionable insights.`
+				}}
+			/>
 		</div>
 	);
 };

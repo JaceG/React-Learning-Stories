@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [hoveredPlatform, setHoveredPlatform] = useState(null);
@@ -73,18 +77,12 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Platform Archipelago
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Platform Archipelago`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Navigator Hosting</strong> guided Aria through the Platform Archipelago, 
-					a vast ocean dotted with islands of different shapes and sizes. "Each island 
-					offers different advantages - Vercel Island for simplicity, Netlify Shores for 
-					static sites, AWS Continent for scale."
-				</p>
-				
 				<p className='story-paragraph'>
 					"How do I choose?" Aria asked, overwhelmed by the options spread before her.
 				</p>
@@ -108,6 +106,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Exploration Map</h3>
+				
+				<InstructionBox character={`Navigator Vercel unfurls a magical map showing the Platform Archipelago.`}>
+					{`"Explore each island to discover its unique strengths. Click on platforms to learn about their features, best use cases, and difficulty levels."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(52, 152, 219, 0.1)', 
@@ -227,12 +229,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Navigator's Platform Guide</span>
-					<span className='discovered-by'>Essential deployment configurations</span>
-				</div>
-				<pre>{`# Vercel Deployment
+			<CodeExample
+				title={`Navigator's Platform Guide`}
+				discoveredBy={`Essential deployment configurations`}
+				code={`# Vercel Deployment
 # Navigator: "The simplest path to production!"
 
 # Install Vercel CLI
@@ -291,31 +291,26 @@ aws cloudfront create-invalidation \\
   --distribution-id ABCDEFG \\
   --paths "/*"
 
-# Aria's notes: "Each platform has its own deployment dance!"`}</pre>
-			</div>
+# Aria's notes: "Each platform has its own deployment dance!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Platform Lesson:</h3>
-				<p>
-					Choosing a hosting platform is about matching your needs with platform 
-					strengths. Navigator Hosting teaches that there's no "best" platform - 
-					only the best platform for your specific requirements. Consider factors 
-					like ease of use, scalability, cost, features, and team expertise. Start 
-					simple and migrate when your needs outgrow your current platform.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of hosting platforms as islands help visualize their 
-					different characteristics and trade-offs?
-				</p>
-				<p>
-					What factors are most important when choosing a hosting platform for 
-					your React applications?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={`Choosing a hosting platform is about matching your needs with platform strengths. Navigator Vercel teaches that there's no 'best' platform - only the best platform for your specific requirements. Consider factors like ease of use, scalability, cost, features, and team expertise. Start simple and migrate when your needs outgrow your current platform.`}
+				reflectionQuestions={[
+					`How does thinking of hosting platforms as islands help visualize their different characteristics and trade-offs?`,
+					`What factors are most important when choosing a hosting platform for your React applications?`
+				]}
+				characterIntros={[
+					{
+						name: `Navigator Vercel`,
+						description: `Master navigator of the Platform Archipelago and expert guide through the vast ocean of hosting options. Her philosophy: "Every platform has its sweet spot - find yours."`
+					}
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 35 (Morning)`,
+					content: `The build is complete, but now comes the crucial question - where will my application live? Navigator Vercel welcomed me to the Platform Archipelago, a vast ocean dotted with hosting islands. Vercel Island offers the fastest path with zero-config deployments. Netlify Shores excels at static sites and JAMstack. AWS Continent provides infinite scale but requires more navigation skill. Railway Station handles full-stack applications with ease. Navigator's wisdom: "There's no 'best' platform - only the best platform for YOUR needs." I explored 4 islands today, each with unique features and trade-offs!`
+				}}
+			/>
 		</div>
 	);
 };

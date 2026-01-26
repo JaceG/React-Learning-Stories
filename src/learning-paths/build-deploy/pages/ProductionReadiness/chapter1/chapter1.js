@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import CodeExample from '../../../../../components/content/CodeExample';
+import InstructionBox from '../../../../../components/content/InstructionBox';
 
 const ChapterOne = () => {
 	const [selectedChecks, setSelectedChecks] = useState([]);
@@ -105,18 +109,12 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Production War Room
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Production War Room`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria entered the Production War Room, where Commander Deployment stood 
-					before a wall of monitors. "Welcome to the final frontier," the Commander 
-					said solemnly. "Here, we prepare for battle against downtime, errors, and 
-					security threats."
-				</p>
-				
 				<p className='story-paragraph'>
 					Binary scanned the monitoring dashboards. "Current uptime: 99.5%. Error 
 					rate: 0.3%. Performance score: 85/100. Room for improvement detected."
@@ -141,6 +139,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Production Readiness Checklist</h3>
+				
+				<InstructionBox character={`Commander Deployment gestures to the battle readiness assessment board.`}>
+					{`"Every deployment is a mission. Complete these critical checks to ensure your application survives first contact with real users. Click each check to activate it and increase your battle readiness score."`}
+				</InstructionBox>
 				
 				<div className='war-room-dashboard'>
 					<div className='dashboard-header'>
@@ -263,12 +265,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Production Readiness Configuration</span>
-					<span className='discovered-by'>Commander's battle-tested setup</span>
-				</div>
-				<pre>{`# Error Boundaries Implementation
+			<CodeExample
+				title={`Production Readiness Configuration`}
+				discoveredBy={`Commander's battle-tested setup`}
+				code={`# Error Boundaries Implementation
 // Commander: "Catch errors before users see them!"
 
 import React from 'react';
@@ -383,32 +383,29 @@ function validateEnv() {
   if (missing.length > 0) {
     throw new Error(\`Missing environment variables: \${missing.join(', ')}\`);
   }
-}`}</pre>
-			</div>
+}`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The War Room Lesson:</h3>
-				<p>
-					Production readiness begins in the War Room, where every potential issue 
-					is anticipated and prepared for. Commander Deployment's wisdom shows that 
-					successful production deployments require comprehensive checks: error 
-					boundaries catch failures gracefully, health endpoints monitor system status, 
-					security headers protect against attacks, and proper environment configuration 
-					ensures secrets remain secret. The battle against downtime is won through 
-					preparation, not luck.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why is it important to have multiple layers of error handling in production 
-					applications?
-				</p>
-				<p>
-					How does proactive monitoring help prevent issues before users experience them?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The War Room Principle:`,
+					content: `Production readiness begins in the War Room, where every potential issue is anticipated and prepared for. Commander Deployment's wisdom shows that successful production deployments require comprehensive checks: error boundaries catch failures gracefully, health endpoints monitor system status, security headers protect against attacks, and proper environment configuration ensures secrets remain secret. The battle against downtime is won through preparation, not luck.`
+				}}
+				reflectionQuestions={[
+					`Why is it important to have multiple layers of error handling in production applications?`,
+					`How does proactive monitoring help prevent issues before users experience them?`
+				]}
+				characterIntros={[
+					{
+						name: `Commander Deployment`,
+						description: `Master strategist of the Production War Room who oversees all deployment operations. Her philosophy: "Every deployment is a mission - prepare for success, plan for failure."`
+					}
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 36 (Morning)`,
+					content: `I've entered the Production War Room, where Commander Deployment stands vigilant before a wall of monitors. This is the final frontier of our journey - where code meets the real world. I learned about the critical production readiness checks: error boundaries that catch component failures gracefully, health endpoints that monitor system vitals, security headers that defend against attacks, and environment variable validation that keeps secrets safe. Binary's dashboard showed 99.5% uptime and 0.3% error rate - good, but there's always room for improvement. Commander's wisdom: "The battle against downtime is won through preparation, not luck." Each checkbox I completed felt like armor being added before battle.`
+				}}
+			/>
 		</div>
 	);
 };

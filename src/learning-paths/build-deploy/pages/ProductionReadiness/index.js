@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './ProductionReadiness.css';
 
@@ -14,17 +15,6 @@ function ProductionReadiness() {
 		performance: 70,
 		userSatisfaction: 80
 	});
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Add monitoring system
 	const addMonitoringSystem = (system) => {
@@ -49,30 +39,12 @@ function ProductionReadiness() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Production Readiness</h1>
-				<p className='lesson-subtitle'>
-					Prepare for battle in the Production War Room with monitoring, performance, and reliability
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Production Readiness`}
+				subtitle={`Prepare for battle in the Production War Room with monitoring, performance, and reliability`}
+				opener={`The Production War Room hummed with activity as holographic dashboards displayed metrics from across the kingdom. Commander Deployment stood before the central command console. "Building and deploying is only half the battle," she declared. "Now we prepare for production warfare - monitoring, alerting, and rapid response."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -87,27 +59,10 @@ function ProductionReadiness() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='build-deploy'
-				lessonId='production-readiness'
+			<LessonFooter
+				courseId={`build-deploy`}
+				lessonId={`production-readiness`}
+				totalChapters={3}
 			/>
 		</div>
 	);

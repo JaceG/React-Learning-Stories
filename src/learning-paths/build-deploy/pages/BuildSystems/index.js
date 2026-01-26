@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './BuildSystems.css';
 
@@ -9,17 +10,6 @@ function BuildSystems() {
 	const [selectedVessel, setSelectedVessel] = useState(null);
 	const [captainRank, setCaptainRank] = useState('Apprentice');
 	const [fleetReadiness, setFleetReadiness] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Prepare a deployment ship
 	const prepareShip = (ship) => {
@@ -39,30 +29,12 @@ function BuildSystems() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Build Systems</h1>
-				<p className='lesson-subtitle'>
-					Command the Deployment Armada and transform your code into production-ready vessels
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Build Systems`}
+				subtitle={`Command the Deployment Armada and transform your code into production-ready vessels`}
+				opener={`The Deployment Armada Docks bustled with activity as ships of all sizes prepared to carry applications across the digital seas to Production Island. Admiral Webpack, commander of the fleet, stood on the command deck reviewing manifests. "Ambassador Aria! Your applications are powerful, but they're still in the kingdom. Time to learn the art of deployment."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -77,27 +49,10 @@ function BuildSystems() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='build-deploy'
-				lessonId='build-systems'
+			<LessonFooter
+				courseId={`build-deploy`}
+				lessonId={`build-systems`}
+				totalChapters={3}
 			/>
 		</div>
 	);
