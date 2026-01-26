@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
-		formSolutions,
-		addFormSolution,
-		currentLibrary,
-		focusLibrary,
-		federationStage,
-		evolve
+		selectedLibrary,
+		selectLibrary,
+		implementedForms,
+		addImplementedForm,
+		federationProgress
 	} = useOutletContext();
 
 	const [selectedRepresentative, setSelectedRepresentative] = useState(null);
@@ -89,18 +92,16 @@ const ChapterOne = () => {
 	// Select a representative
 	const selectRepresentative = (rep) => {
 		setSelectedRepresentative(rep);
-		addFormSolution(rep);
-		focusLibrary(rep.id);
-		if (formSolutions.length >= 2) {
-			evolve('exploring');
-		}
+		selectLibrary(rep.id);
+		addImplementedForm(rep.id);
 	};
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Form Federation
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Form Federation`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -130,18 +131,15 @@ const ChapterOne = () => {
 					<strong>Debuggora</strong> perched on a form validator. "Each library 
 					optimizes for different use cases. The key is knowing when to use which."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Federal Form Chancellor</h4>
-					<p>The wise leader of the Form Federation. Their motto: "User input 
-					is sacred - handle it with care, validate it with wisdom, and submit 
-					it with confidence. Choose your tools based on your form's complexity, 
-					not popularity."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Meet the Form Representatives</h3>
+				<h3 className='section-title'>Interactive Exercise: Meet the Form Representatives</h3>
+				
+				<InstructionBox character={`The Federal Form Chancellor introduces the library representatives.`}>
+					Click on each representative to learn their philosophy and strengths. 
+					Compare the approaches to understand controlled vs uncontrolled patterns!
+				</InstructionBox>
 				
 				<div className='federation-hall'>
 					<div className='library-representatives'>
@@ -150,7 +148,7 @@ const ChapterOne = () => {
 								key={rep.id}
 								className={`representative-card ${
 									selectedRepresentative?.id === rep.id ? 'selected' : ''
-								} ${currentLibrary === rep.id ? 'focused' : ''}`}
+								} ${selectedLibrary === rep.id ? 'focused' : ''}`}
 								onClick={() => selectRepresentative(rep)}
 								style={{ '--library-color': rep.color }}>
 								<span className='rep-icon'>{rep.icon}</span>
@@ -501,54 +499,26 @@ function FinalForm() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Federation Insight:</h3>
-				<p>
-					Form libraries exist because forms are deceptively complex. What starts 
-					as a simple input quickly grows: validation, error handling, async 
-					submission, field dependencies, dynamic fields, and performance concerns.
-				</p>
-				<p>
-					Each library makes different trade-offs. React Hook Form minimizes 
-					re-renders through uncontrolled components. Formik keeps things familiar 
-					with controlled components. Final Form provides granular control through 
-					subscriptions. Understanding these philosophies helps you choose wisely.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Form Complexity</h3>
-				<p>
-					<strong>When do native React forms become insufficient?</strong> Consider 
-					at what point the complexity of validation, state management, and 
-					performance optimization justifies adding a library.
-				</p>
-				<p>
-					<strong>How do form requirements shape library choice?</strong> Think 
-					about how factors like team size, performance needs, and form complexity 
-					influence the optimal solution.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The Federal Form Chancellor gestured to the library representatives. 
-					"Each has mastered their approach. Now, Ambassador Aria, you must 
-					learn their ways."
-				</p>
-				<p>
-					<strong>Aria</strong> studied the holographic demonstrations. "They 
-					all solve forms differently, but elegantly."
-				</p>
-				<p>
-					<strong>Binary</strong> prepared his benchmarking modules. "Ready to 
-					measure performance impacts and developer experience!"
-				</p>
-				<p>
-					"Then let us begin," the Chancellor declared. "Time to dive deep into 
-					each library's implementation..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Federal Form Chancellor`,
+						description: `The wise leader of the Form Federation. Their motto: "User input is sacred - handle it with care, validate it with wisdom, and submit it with confidence. Choose your tools based on your form's complexity, not popularity."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Federation Insight:`,
+					content: `Form libraries exist because forms are deceptively complex. What starts as a simple input quickly grows: validation, error handling, async submission, field dependencies, dynamic fields, and performance concerns. Each library makes different trade-offs - React Hook Form minimizes re-renders, Formik keeps things familiar, Final Form provides granular control.`
+				}}
+				reflectionQuestions={[
+					`When do native React forms become insufficient?`,
+					`How do form requirements shape library choice?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Morning)`,
+					content: `Welcome to the Form Federation! The Federal Form Chancellor showed me the grand hall with holographic forms of increasing complexity. I met the library representatives: React Hook Form Ambassador (⚡ "Performance through uncontrolled components!"), Formik Federation Leader (🎯 "Simplicity through controlled components!"), Final Form Chancellor (🔄 "Flexibility through subscriptions!"), and TanStack Form Innovator (🚀 "Type-safe forms!"). The philosophy spectrum: controlled vs uncontrolled components. Federation Progress: ${federationProgress}%. The Chancellor's wisdom: "Choose your tools based on form complexity, not popularity."`
+				}}
+			/>
 		</div>
 	);
 };

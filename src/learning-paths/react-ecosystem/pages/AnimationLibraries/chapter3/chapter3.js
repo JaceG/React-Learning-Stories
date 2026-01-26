@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -139,9 +143,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Fluid Kingdom
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Fluid Kingdom`}
+				bridge={`Aria had trained in all three dojos, mastering CSS transitions, spring physics, and declarative animation. "You're ready for the final lesson," Master Kinetic announced. "The Fluid Kingdom - where all animation knowledge comes together. True mastery is knowing which tool serves which purpose."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -179,7 +185,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Building the Fluid Kingdom</h3>
+				<h3 className='section-title'>Interactive Exercise: Building the Fluid Kingdom</h3>
+				
+				<InstructionBox character={`Master Kinetic presents the Final Challenge.`}>
+					Combine all your animation knowledge to build complex, performant animations. 
+					Choose the right tool for each animation need!
+				</InstructionBox>
 				
 				<div className='approach-comparison'>
 					<h4>Animation Project Analyzer</h4>
@@ -613,66 +624,26 @@ if (process.env.NODE_ENV === 'development') {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Fluid Kingdom Insight:</h3>
-				<p>
-					Animation mastery isn't about using every technique - it's about 
-					choosing the right technique for each situation. Performance, 
-					accessibility, and purpose should guide every animation decision.
-				</p>
-				<p>
-					The best animations feel inevitable, not arbitrary. They guide users 
-					through your interface, provide feedback for actions, and create 
-					moments of delight without overwhelming or distracting. Master the 
-					tools, but more importantly, master the principles.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Motion Mastery</h3>
-				<p>
-					<strong>How do you balance delight with usability?</strong> Consider 
-					when animation enhances versus when it becomes a barrier to efficient 
-					use.
-				</p>
-				<p>
-					<strong>What role does performance play in animation decisions?</strong> 
-					Think about how to maintain 60fps while creating rich, interactive 
-					experiences across all devices.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Abbess Motia</strong> observed Aria's final project - a fully 
-					animated dashboard with smooth transitions, meaningful gestures, and 
-					perfect performance. "You understand now. Animation is a language."
-				</p>
-				<p>
-					<strong>Aria</strong> reflected on her journey through the ecosystem. 
-					"State management for complex data, styling for beautiful UIs, forms 
-					for user input, animation for engagement. They're all pieces of a 
-					larger whole."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the final analysis. "Each library 
-					in the ecosystem serves React's greater purpose - building exceptional 
-					user experiences."
-				</p>
-				<p>
-					<strong>Master Aurelius</strong> appeared at the monastery entrance. 
-					"Well done, Ambassador. You've explored our allied kingdoms and brought 
-					back wisdom. The React Kingdom is stronger for your journey."
-				</p>
-				<p>
-					"What's next?" Aria asked, eager for the next adventure.
-				</p>
-				<p>
-					Aurelius pointed skyward, where clouds swirled with data. "The Cloud 
-					Citadel awaits. It's time to bridge the gap between client and server. 
-					Server-side React beckons!"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Fluid Kingdom Insight:`,
+					content: `Animation mastery isn't about using every technique - it's about choosing the right technique for each situation. Performance, accessibility, and purpose should guide every animation decision. The best animations feel inevitable, not arbitrary - they guide users, provide feedback, and create delight without overwhelming.`
+				}}
+				reflectionQuestions={[
+					`How do you balance delight with usability?`,
+					`What role does performance play in animation decisions?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Evening)`,
+					content: `Achieved Animation Mastery in the Fluid Kingdom! Built real-world projects: page transitions with route-based animations, interactive dashboards with staggered children and shared layout transitions, gesture-rich mobile interfaces with pull-to-refresh, marketing sites with scroll animations and parallax, e-commerce cart animations with AnimatePresence. Monastery Stage: ${monasteryStage}! Learned performance optimization: React.memo for animated components, CSS variables for hover effects, testing animations with Jest/RTL. Fluid Kingdom Wisdom: "Every motion should enhance user experience. The best animations are the ones users don't consciously notice - they just make the experience feel right."`
+				}}
+				chapterEnding={[
+					`Master Kinetic observed Aria's final project - a fully animated dashboard with smooth transitions, meaningful gestures, and perfect performance. "You understand now. Animation is a language."`,
+					`Aria reflected on her journey through the ecosystem. "State management for complex data, styling for beautiful UIs, forms for user input, animation for engagement. They're all pieces of a larger whole."`,
+					`Binary compiled the final analysis. "Each library in the ecosystem serves React's greater purpose - building exceptional user experiences."`,
+					`Master Aurelius appeared at the monastery entrance. "Well done, Ambassador. You've explored our allied kingdoms and brought back wisdom. The React Kingdom is stronger for your journey. The Cloud Citadel awaits - it's time to bridge the gap between client and server!"`
+				]}
+			/>
 		</div>
 	);
 };

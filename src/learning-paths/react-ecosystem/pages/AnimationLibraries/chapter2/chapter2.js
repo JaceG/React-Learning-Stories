@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -124,9 +128,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Animation Dojos
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Animation Dojos`}
+				bridge={`"You've learned the philosophy of motion," Master Kinetic said. "Now it's time for practice." The monastery's three dojos awaited: CSS Transitions for foundation, React Spring for physics-based animation, and Framer Motion for declarative power. Each dojo taught different techniques for different needs.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -159,7 +165,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Animation Dojo Training</h3>
+				<h3 className='section-title'>Interactive Exercise: Animation Dojo Training</h3>
+				
+				<InstructionBox character={`Master Kinetic opens the training dojos.`}>
+					Train in each dojo: CSS Transitions, React Spring, and Framer Motion. 
+					Master each animation library's unique approach and philosophy!
+				</InstructionBox>
 				
 				<div className='animation-dojos'>
 					{animationDojos.map(dojo => (
@@ -637,54 +648,20 @@ function ScrollAnimation() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Dojo Insight:</h3>
-				<p>
-					Each animation library represents a different philosophy. Framer Motion 
-					emphasizes developer experience with its declarative API. React Spring 
-					focuses on physics for natural motion. Lottie enables designer-developer 
-					collaboration. React Transition Group keeps things simple.
-				</p>
-				<p>
-					Performance varies: Framer Motion and React Spring optimize for smooth 
-					60fps animations. Lottie's performance depends on animation complexity. 
-					The key is matching the library to your needs: developer experience, 
-					animation complexity, bundle size, and performance requirements.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Animation Practice</h3>
-				<p>
-					<strong>How do different animation APIs affect development?</strong> 
-					Consider how declarative versus imperative approaches change the way 
-					you think about and implement animations.
-				</p>
-				<p>
-					<strong>When is physics-based animation worth the complexity?</strong> 
-					Think about when natural motion enhances user experience versus when 
-					simple transitions suffice.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					After training in each dojo, <strong>Aria</strong> understood their 
-					unique strengths. "Framer Motion for rapid development, Spring for 
-					natural physics, Lottie for complex visuals, Transition Group for 
-					simplicity."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the performance data. "Each optimizes 
-					differently. Bundle size, runtime performance, feature set - all 
-					balanced differently."
-				</p>
-				<p>
-					<strong>Abbess Motia</strong> smiled at their progress. "You've learned 
-					the techniques. Now, let's see how to compose them into fluid, 
-					accessible experiences..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Dojo Insight:`,
+					content: `Each animation library represents a different philosophy. Framer Motion emphasizes developer experience with its declarative API. React Spring focuses on physics for natural motion. Lottie enables designer-developer collaboration. React Transition Group keeps things simple. The key is matching the library to your needs.`
+				}}
+				reflectionQuestions={[
+					`How do different animation APIs affect development?`,
+					`When is physics-based animation worth the complexity?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Afternoon)`,
+					content: `Trained in all the Animation Dojos! Framer Motion: declarative API, variants for orchestration, AnimatePresence for exit animations, layout animations, and drag gestures. React Spring: physics-based (mass, tension, friction), wobbly/stiff/molasses configs, gesture integration with @use-gesture/react. Lottie: complex designer animations from After Effects! React Transition Group: simple CSS-based transitions. ${masteredAnimations.length} animations mastered! Dojo Masters' Wisdom: "Framer Motion for DX, Spring for natural physics, Lottie for complex visuals, Transition Group for simplicity."`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './StylingSolutions.css';
 
@@ -12,17 +12,6 @@ function StylingSolutions() {
 	const [performanceMetrics, setPerformanceMetrics] = useState({});
 	const [harmonyLevel, setHarmonyLevel] = useState(0);
 	const [symposiumStage, setSymposiumStage] = useState('debate');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Visit a styling workshop
 	const visitWorkshop = (workshop) => {
@@ -85,28 +74,12 @@ function StylingSolutions() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Styling Solutions</h1>
-			<p className='lesson-subtitle'>
-				Navigate the passionate world of React styling
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Styling Solutions`}
+				subtitle={`Navigate the passionate world of React styling`}
+				opener={`The Great Style Symposium convened, where representatives from different styling philosophies gathered. Moderator Stylus welcomed Aria: "Ambassador, the styling kingdoms are... passionate about their approaches." Representatives argued loudly about CSS-in-JS, CSS Modules, Utility-First, and Styled Components. Each approach optimizes for different values - developer experience, performance, or maintainability.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -125,27 +98,10 @@ function StylingSolutions() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-ecosystem'
-				lessonId='styling-solutions'
+			<LessonFooter
+				courseId={`react-ecosystem`}
+				lessonId={`styling-solutions`}
+				totalChapters={3}
 			/>
 		</div>
 	);

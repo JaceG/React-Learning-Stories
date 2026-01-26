@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -103,9 +107,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Styled Harmony
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Styled Harmony`}
+				bridge={`After experiencing each styling approach firsthand, Aria gathered the representatives. "Each approach has its merits," she observed. Moderator Stylus smiled. "You're beginning to see the truth. Let's find harmony - not by declaring a winner, but by understanding when each approach shines."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -138,7 +144,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Finding Your Styling Solution</h3>
+				<h3 className='section-title'>Interactive Exercise: Finding Your Styling Solution</h3>
+				
+				<InstructionBox character={`Moderator Stylus presents the Harmony Chamber.`}>
+					Match project requirements to styling solutions. Build a Harmony Matrix 
+					to find the right approach for your specific needs!
+				</InstructionBox>
 				
 				<div className='approach-comparison'>
 					<h4>Project Scenario Analyzer</h4>
@@ -456,57 +467,26 @@ const futureConsiderations = {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Harmony Insight:</h3>
-				<p>
-					The great styling debate resolves not through victory, but through 
-					understanding. Each approach represents different priorities: developer 
-					experience, performance, maintainability, or rapid development.
-				</p>
-				<p>
-					The key to styling harmony is context-aware decision making. A startup 
-					racing to market needs different tools than an enterprise maintaining 
-					a five-year-old application. A component library has different requirements 
-					than a marketing website. Master one approach deeply, but understand 
-					when to reach for alternatives.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Styling Wisdom</h3>
-				<p>
-					<strong>How do project requirements drive styling decisions?</strong> 
-					Consider how factors like team size, performance needs, and application 
-					type influence the optimal choice.
-				</p>
-				<p>
-					<strong>What's more important: consistency or optimization?</strong> 
-					Think about when it's worth using a suboptimal approach to maintain 
-					team consistency versus switching to the "perfect" solution.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The Style Symposium ended not with winners and losers, but with mutual 
-					respect. <strong>Moderator Stylus</strong> smiled at the transformation.
-				</p>
-				<p>
-					"You see? When we stop defending our territories and start understanding 
-					use cases, we all win. <strong>Ambassador Aria</strong>, you've brought 
-					wisdom to our passionate community."
-				</p>
-				<p>
-					<strong>Aria</strong> reflected on her journey. "Every styling solution 
-					tells a story of problems it was designed to solve. Understanding those 
-					stories is the key to making wise choices."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the final analysis. "Next stop: the 
-					Form Federation! I hear they have strong opinions about form state 
-					management..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Harmony Insight:`,
+					content: `The great styling debate resolves not through victory, but through understanding. Each approach represents different priorities: developer experience, performance, maintainability, or rapid development. The key is context-aware decision making - a startup needs different tools than an enterprise maintaining a five-year-old application.`
+				}}
+				reflectionQuestions={[
+					`How do project requirements drive styling decisions?`,
+					`What's more important: consistency or optimization?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 39 (Evening)`,
+					content: `The Style Symposium found harmony! Not by declaring a winner, but by understanding when each approach shines. Decision matrix: For component libraries = CSS-in-JS. For rapid prototyping = Tailwind. For large teams = CSS Modules. For performance-critical = Zero-runtime. Hybrid approaches work too - CSS Modules + Tailwind utilities! Harmony Level: ${harmonyLevel}%. Future trends: CSS-in-JS moving toward zero-runtime, Tailwind growing, CSS Modules stable, and vanilla CSS gaining container queries! Moderator Stylus's wisdom: "Choose based on your project's needs, team's strengths, and performance requirements."`
+				}}
+				chapterEnding={[
+					`The Style Symposium ended not with winners and losers, but with mutual respect. Moderator Stylus smiled at the transformation.`,
+					`"You see? When we stop defending our territories and start understanding use cases, we all win. Ambassador Aria, you've brought wisdom to our passionate community."`,
+					`Aria reflected on her journey. "Every styling solution tells a story of problems it was designed to solve. Understanding those stories is the key to making wise choices."`,
+					`Binary compiled the final analysis. "Next stop: the Motion Monastery! Time to learn animation libraries..."`
+				]}
+			/>
 		</div>
 	);
 };

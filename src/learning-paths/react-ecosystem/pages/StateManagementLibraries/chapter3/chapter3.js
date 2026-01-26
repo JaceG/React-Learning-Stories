@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -107,9 +111,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The State Alliance
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The State Alliance`}
+				bridge={`Having studied the Redux Empire's patterns, Aria set out to visit the remaining kingdoms. "Each has developed unique approaches," Emperor Dispatcher advised. "MobX embraces reactivity, Zustand champions simplicity, and the atomic kingdoms - Recoil and Jotai - focus on fine-grained updates. Learn from all of them."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -149,7 +155,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>The Grand State Comparison</h3>
+				<h3 className='section-title'>Interactive Exercise: The Grand State Comparison</h3>
+				
+				<InstructionBox character={`Master Aurelius presents the Grand Comparison Chamber.`}>
+					Compare state management libraries by features, metrics, or code examples. 
+					Try the migration simulator to understand how to move between libraries!
+				</InstructionBox>
 				
 				<div className='pattern-comparison'>
 					<h4>Library Comparison Mode</h4>
@@ -600,54 +611,32 @@ function TodoApp() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Alliance Insight:</h3>
-				<p>
-					State management isn't about finding the "best" library - it's about 
-					finding the right fit for your project. Each solution represents different 
-					trade-offs between simplicity, power, debugging, and ecosystem.
-				</p>
-				<p>
-					Understanding multiple approaches makes you a better architect. Even if 
-					you primarily use one library, knowing alternatives helps you make informed 
-					decisions and adapt to different project requirements.
-				</p>
-			</div>
+			{wisdomLevel === 'master' && (
+				<div className='achievement-banner'>
+					<h4>🏆 State Ambassador Achievement!</h4>
+					<p>You've mastered the art of state management diplomacy!</p>
+				</div>
+			)}
 
-			<div className='reflection-section'>
-				<h3>Reflect on State Philosophy</h3>
-				<p>
-					<strong>How do you choose between simplicity and power?</strong> Consider 
-					your team's experience, project complexity, and long-term maintenance needs.
-				</p>
-				<p>
-					<strong>What role does ecosystem play in your decision?</strong> Think 
-					about available middleware, DevTools, community patterns, and third-party 
-					integrations.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Master Aurelius</strong> listened to Aria's report with pride. 
-					"You've done well, Ambassador. You've shown that React's strength isn't 
-					in having one way, but in supporting many ways."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the insights. "Each kingdom's approach 
-					reflects their values. Redux values predictability, MobX values reactivity, 
-					Zustand values simplicity."
-				</p>
-				<p>
-					<strong>Debuggora</strong> added, "And knowing when to use each is true 
-					wisdom."
-				</p>
-				<p>
-					"Your next diplomatic mission awaits," Aurelius announced. "The Great 
-					Style Symposium has convened. The styling kingdoms are... passionate 
-					about their approaches. We need your diplomatic skills there too..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Alliance Insight:`,
+					content: `State management isn't about finding the "best" library - it's about finding the right fit for your project. Each solution represents different trade-offs between simplicity, power, debugging, and ecosystem. Understanding multiple approaches makes you a better architect.`
+				}}
+				reflectionQuestions={[
+					`How do you choose between simplicity and power?`,
+					`What role does ecosystem play in your decision?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Evening)`,
+					content: `Completed my tour of all Allied Kingdoms! In MobX Territory, Chief Observer showed reactive programming - components react automatically to changes. The Zustand Settlements demonstrated simplicity with Elder Simplicity: "Small store, simple API, powerful results." Recoil Regions revealed atomic state, and Jotai Archipelago showed similar patterns with React Suspense integration. Wisdom Level: ${wisdomLevel}. The Alliance Insight: each kingdom's approach reflects their values - Redux values predictability, MobX values reactivity, Zustand values simplicity. Knowing when to use each is true wisdom!`
+				}}
+				chapterEnding={[
+					`Master Aurelius listened to Aria's report with pride. "You've done well, Ambassador. You've shown that React's strength isn't in having one way, but in supporting many ways."`,
+					`Binary compiled the insights. "Each kingdom's approach reflects their values. Redux values predictability, MobX values reactivity, Zustand values simplicity."`,
+					`"Your next diplomatic mission awaits," Aurelius announced. "The Form Architects have gathered. Managing form state is... complex. We need your diplomatic skills there too..."`
+				]}
+			/>
 		</div>
 	);
 };

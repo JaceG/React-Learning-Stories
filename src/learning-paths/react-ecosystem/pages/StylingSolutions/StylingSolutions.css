@@ -359,21 +359,6 @@
   box-shadow: 0 0 0 2px #3498db;
 }
 
-/* Character Cards */
-.character-intro-card {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
-  color: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(240, 147, 251, 0.3);
-}
-
-.character-intro-card h4 {
-  margin-top: 0;
-  font-size: 1.3em;
-}
-
 /* Style Battle */
 .style-battle {
   background: #34495e;

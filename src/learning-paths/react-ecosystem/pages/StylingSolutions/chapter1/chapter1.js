@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -104,9 +108,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Style Symposium
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Style Symposium`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -136,17 +141,15 @@ const ChapterOne = () => {
 					optimizes for different values - developer experience, performance, or 
 					maintainability."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Moderator Stylus</h4>
-					<p>The diplomatic mediator of the Style Symposium. Their wisdom: 
-					"There's no universally correct styling solution - only the right 
-					solution for your specific needs. Understanding trade-offs is key."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>The Great Style Debate</h3>
+				<h3 className='section-title'>Interactive Exercise: The Great Style Debate</h3>
+				
+				<InstructionBox character={`Moderator Stylus opens the debate floor.`}>
+					Click on each representative to hear their arguments. Explore the styling 
+					approaches comparison to understand the trade-offs between each philosophy!
+				</InstructionBox>
 				
 				<div className='style-symposium'>
 					<h4 style={{ color: 'white', marginTop: 0 }}>Choose Your Champion</h4>
@@ -423,54 +426,26 @@ function Button({ children }) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Styling Insight:</h3>
-				<p>
-					The styling debate in React isn't about finding a winner - it's about 
-					understanding trade-offs. Each approach optimizes for different values: 
-					developer experience, performance, maintainability, or team scalability.
-				</p>
-				<p>
-					Traditional CSS offers simplicity but lacks component scope. CSS Modules 
-					provide scope with familiar syntax. CSS-in-JS enables dynamic styling 
-					but adds complexity. Utility-first accelerates development but requires 
-					a mental shift. The key is matching the solution to your needs.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Styling Philosophy</h3>
-				<p>
-					<strong>What matters most in your project?</strong> Consider whether 
-					you prioritize developer experience, bundle size, runtime performance, 
-					or maintainability.
-				</p>
-				<p>
-					<strong>How does team size affect styling choices?</strong> Think about 
-					how different approaches scale with team growth and how they affect 
-					onboarding new developers.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The debate raged on, each representative passionately defending their 
-					approach. <strong>Moderator Stylus</strong> raised a hand for silence.
-				</p>
-				<p>
-					"Perhaps," they suggested, "instead of arguing about which is best, 
-					we should explore each approach in depth. Ambassador Aria, would you 
-					visit each styling workshop?"
-				</p>
-				<p>
-					<strong>Aria</strong> nodded. "I'll learn each approach and report back 
-					with practical insights."
-				</p>
-				<p>
-					<strong>Binary</strong> prepared his analysis modules. "Time to compile 
-					some styling knowledge!"
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Moderator Stylus`,
+						description: `The diplomatic mediator of the Style Symposium. Their wisdom: "There's no universally correct styling solution - only the right solution for your specific needs. Understanding trade-offs is key."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Styling Insight:`,
+					content: `The styling debate in React isn't about finding a winner - it's about understanding trade-offs. Each approach optimizes for different values: developer experience, performance, maintainability, or team scalability. The key is matching the solution to your needs.`
+				}}
+				reflectionQuestions={[
+					`What matters most in your project - DX, bundle size, runtime performance, or maintainability?`,
+					`How does team size affect styling choices?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 39 (Morning)`,
+					content: `The Great Style Symposium was intense! Representatives argued passionately: CSS-in-JS Champion (💅 "Styles belong with components!"), CSS Modules Defender (📦 "Separation of concerns!"), Utility-First Advocate (🎨 "Composition over custom styles!"), and Styled Components Artist (🎭 "Components should be stylish by default!"). Moderator Stylus wisely noted each approach optimizes for different values. Traditional CSS = simple but global scope. CSS Modules = local scope with familiar syntax. CSS-in-JS = dynamic but runtime cost. Utility-First = fast development but learning curve. Debate Intensity: ${debateIntensity}%!`
+				}}
+			/>
 		</div>
 	);
 };

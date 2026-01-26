@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -151,9 +155,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Redux Empire
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Redux Empire`}
+				bridge={`With the map of Allied Kingdoms studied, Aria set out on her first diplomatic visit. "The Redux Empire is the largest and most established," Master Aurelius advised. "Their patterns have influenced many, including our own useReducer. Learn their ways carefully."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -178,17 +184,15 @@ const ChapterTwo = () => {
 					"Indeed! We inspired React's useReducer. But we offer more: middleware, 
 					DevTools, and ecosystem. Let me show you..."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Emperor Dispatcher</h4>
-					<p>Ruler of the Redux Empire, guardian of predictable state updates. 
-					His philosophy: "Every action has a reaction, every state change has 
-					a reason, and every bug has a time-traveling solution."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>State Kingdom Workshops</h3>
+				<h3 className='section-title'>Interactive Exercise: State Kingdom Workshops</h3>
+				
+				<InstructionBox character={`Emperor Dispatcher demonstrates the Redux patterns.`}>
+					Explore Basic Redux, Redux Toolkit, and Middleware patterns. Try the live 
+					state management demos to see actions and reducers in action!
+				</InstructionBox>
 				
 				<div className='pattern-comparison'>
 					<h4>Redux Pattern Explorer</h4>
@@ -622,48 +626,26 @@ const action = {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Redux Insight:</h3>
-				<p>
-					Redux's strength lies in its predictability and debugging capabilities. 
-					While it requires more setup than simpler solutions, it provides 
-					unmatched visibility into your application's state changes.
-				</p>
-				<p>
-					The ecosystem around Redux - middleware, DevTools, and patterns - makes 
-					it particularly suitable for large applications with complex state logic 
-					and teams that benefit from strict conventions.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on State Architecture</h3>
-				<p>
-					<strong>When is Redux's ceremony worth it?</strong> Consider applications 
-					with complex state logic, multiple developers, or critical debugging needs.
-				</p>
-				<p>
-					<strong>How does Redux Toolkit change the Redux experience?</strong> Think 
-					about how modern tooling can reduce boilerplate while maintaining benefits.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Emperor Dispatcher</strong> showed Aria the Redux DevTools, 
-					time-traveling through state changes. "See? Every action leaves a trail. 
-					No state change is mysterious."
-				</p>
-				<p>
-					<strong>Binary</strong> was impressed. "The debugging power is remarkable! 
-					But the setup seems extensive."
-				</p>
-				<p>
-					"True," the Emperor acknowledged. "Redux isn't for every kingdom. But for 
-					those who need it, it's invaluable. Now, Ambassador, you should visit the 
-					other kingdoms to see their approaches..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Emperor Dispatcher`,
+						description: `Ruler of the Redux Empire, guardian of predictable state updates. His philosophy: "Every action has a reaction, every state change has a reason, and every bug has a time-traveling solution."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Redux Insight:`,
+					content: `Redux's strength lies in its predictability and debugging capabilities. While it requires more setup than simpler solutions, it provides unmatched visibility into your application's state changes. The ecosystem around Redux - middleware, DevTools, and patterns - makes it suitable for large applications with complex state logic.`
+				}}
+				reflectionQuestions={[
+					`When is Redux's ceremony worth it?`,
+					`How does Redux Toolkit change the Redux experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Afternoon)`,
+					content: `Visited the Redux Empire where Emperor Dispatcher rules with predictable state updates! The empire's three principles are carved in stone: Single source of truth, State is read-only, Changes via pure functions. I explored Basic Redux patterns, Redux Toolkit (modern with less boilerplate), and Middleware for async actions. The DevTools are remarkable - time-traveling through state changes! Binary noted: "The debugging power is impressive, but the setup is extensive." The Emperor's wisdom: "Redux may seem ceremonious, but this ceremony brings order to chaos." ${implementedSolutions.length} solutions implemented!`
+				}}
+			/>
 		</div>
 	);
 };

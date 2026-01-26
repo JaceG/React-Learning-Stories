@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -107,9 +111,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Motion Monastery
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Motion Monastery`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -149,7 +154,12 @@ const ChapterOne = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Animation Fundamentals</h3>
+				<h3 className='section-title'>Interactive Exercise: Animation Fundamentals</h3>
+				
+				<InstructionBox character={`Master Kinetic demonstrates the fundamentals.`}>
+					Learn the core animation concepts: timing functions, transforms, and 
+					transitions. Practice each technique to build your foundation!
+				</InstructionBox>
 				
 				<div className='monastery-entrance'>
 					<h4>The Path to Motion Mastery</h4>
@@ -445,55 +455,26 @@ function AccessibleAnimation({ children }) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Motion Insight:</h3>
-				<p>
-					Animation in React requires understanding both browser animation 
-					capabilities and React's component lifecycle. CSS animations excel 
-					at simple transitions but struggle with dynamic content. JavaScript 
-					animations offer control but require careful performance management.
-				</p>
-				<p>
-					The key challenge is React's immediate unmounting of components, which 
-					prevents exit animations. Animation libraries solve this and provide 
-					declarative APIs that match React's programming model, making complex 
-					animations manageable and performant.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Motion Design</h3>
-				<p>
-					<strong>When does animation enhance vs. distract?</strong> Consider 
-					how motion can guide attention, provide feedback, and create delight 
-					without overwhelming users.
-				</p>
-				<p>
-					<strong>How do performance constraints shape animation choices?</strong> 
-					Think about the trade-offs between visual richness and smooth performance 
-					across devices.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Abbess Motia gestured to the various dojos within the monastery. "You 
-					understand the challenges. Now, let's explore how different libraries 
-					solve them."
-				</p>
-				<p>
-					<strong>Aria</strong> watched elements flow and transform around her. 
-					"Each movement has purpose. Nothing is arbitrary."
-				</p>
-				<p>
-					<strong>Binary</strong> calculated motion vectors. "The mathematics of 
-					smooth motion - it's beautiful!"
-				</p>
-				<p>
-					"Come," said Abbess Motia, "let me show you the different schools of 
-					animation thought. Each dojo has mastered a unique approach..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Kinetic`,
+						description: `Head of the Motion Monastery, master of all animation arts. Their wisdom: "Animation breathes life into static components. Master the fundamentals first, then choose the right tool for your needs."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Motion Insight:`,
+					content: `Animation in React requires understanding both browser animation capabilities and React's component lifecycle. CSS animations excel at simple transitions but struggle with dynamic content. The key challenge is React's immediate unmounting, which prevents exit animations. Animation libraries solve this with declarative APIs matching React's programming model.`
+				}}
+				reflectionQuestions={[
+					`When does animation enhance vs. distract?`,
+					`How do performance constraints shape animation choices?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Morning)`,
+					content: `Arrived at the Motion Monastery floating above the clouds! Master Kinetic welcomed me: "Animation breathes life into static components." I learned the fundamentals: CSS transitions (simple but limited), timing functions (ease, linear, spring), and the biggest challenge - React unmounts components immediately, preventing exit animations! Animation libraries solve: exit animations, gesture integration, performance optimization, complex orchestration, spring physics. ${animationTechniques.length} techniques learned! Performance tips: Use transform/opacity (GPU accelerated), avoid layout properties (width/height). Accessibility matters too: prefers-reduced-motion!`
+				}}
+			/>
 		</div>
 	);
 };

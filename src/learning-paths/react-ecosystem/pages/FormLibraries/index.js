@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './FormLibraries.css';
 
@@ -9,17 +9,6 @@ function FormLibraries() {
 	const [comparisonMode, setComparisonMode] = useState(false);
 	const [implementedForms, setImplementedForms] = useState([]);
 	const [federationProgress, setFederationProgress] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Library selection
 	const selectLibrary = (library) => {
@@ -41,28 +30,12 @@ function FormLibraries() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Form Libraries</h1>
-			<p className='lesson-subtitle'>
-				Join the Form Federation and master advanced form solutions
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Form Libraries`}
+				subtitle={`Join the Form Federation and master advanced form solutions`}
+				opener={`The Federal Form Chancellor welcomed Aria to the Form Federation headquarters. "Ambassador Aria, you've mastered basic React forms, but complex applications demand more." The grand hall displayed holographic forms of increasing complexity - multi-step wizards, dynamic field arrays, real-time validation, and conditional logic that would make any developer's head spin.`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -77,27 +50,10 @@ function FormLibraries() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-ecosystem'
-				lessonId='form-libraries'
+			<LessonFooter
+				courseId={`react-ecosystem`}
+				lessonId={`form-libraries`}
+				totalChapters={3}
 			/>
 		</div>
 	);

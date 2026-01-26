@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './AnimationLibraries.css';
 
@@ -9,17 +9,6 @@ function AnimationLibraries() {
 	const [currentDojo, setCurrentDojo] = useState(null);
 	const [masteredAnimations, setMasteredAnimations] = useState([]);
 	const [monasteryStage, setMonasteryStage] = useState('arrival');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Learn technique
 	const learnTechnique = (technique) => {
@@ -51,28 +40,12 @@ function AnimationLibraries() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Animation Libraries</h1>
-			<p className='lesson-subtitle'>
-				Enter the Motion Monastery and master the art of animation
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Animation Libraries`}
+				subtitle={`Enter the Motion Monastery and master the art of animation`}
+				opener={`The Motion Monastery floated serenely above the clouds. Master Kinetic welcomed Aria: "Animation breathes life into static components. Here, you'll learn to make interfaces dance." The monastery held three dojos: CSS Transitions, React Spring, and Framer Motion. Each taught different philosophies of bringing motion to React applications.`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -87,27 +60,10 @@ function AnimationLibraries() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-ecosystem'
-				lessonId='animation-libraries'
+			<LessonFooter
+				courseId={`react-ecosystem`}
+				lessonId={`animation-libraries`}
+				totalChapters={3}
 			/>
 		</div>
 	);

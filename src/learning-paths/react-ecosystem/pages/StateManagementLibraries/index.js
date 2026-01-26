@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './StateManagementLibraries.css';
 
@@ -12,17 +12,6 @@ function StateManagementLibraries() {
 	const [migrationProgress, setMigrationProgress] = useState(0);
 	const [diplomaticRelations, setDiplomaticRelations] = useState({});
 	const [wisdomLevel, setWisdomLevel] = useState('novice');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Explore a state management kingdom
 	const exploreKingdom = (kingdom) => {
@@ -78,28 +67,12 @@ function StateManagementLibraries() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>State Management Libraries</h1>
-			<p className='lesson-subtitle'>
-				Explore the allied kingdoms of state management
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`State Management Libraries`}
+				subtitle={`Explore the allied kingdoms of state management`}
+				opener={`Master Aurelius summoned Aria to the Great Council Chamber. "Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management." A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.`}
+				totalChapters={3}
+			/>
 
 			{/* Render the current chapter */}
 			<Outlet
@@ -120,27 +93,10 @@ function StateManagementLibraries() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-ecosystem'
-				lessonId='state-management-libraries'
+			<LessonFooter
+				courseId={`react-ecosystem`}
+				lessonId={`state-management-libraries`}
+				totalChapters={3}
 			/>
 		</div>
 	);

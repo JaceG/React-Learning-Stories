@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -98,9 +102,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Ambassador's Mission
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Ambassador's Mission`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -134,7 +139,12 @@ const ChapterOne = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>State Kingdom Explorer</h3>
+				<h3 className='section-title'>Interactive Exercise: State Kingdom Explorer</h3>
+				
+				<InstructionBox character={`Master Aurelius unfurls the magical map of Allied Kingdoms.`}>
+					Click on each kingdom to explore their state management philosophy. 
+					Compare at least two kingdoms to understand their different approaches!
+				</InstructionBox>
 				
 				<div className='kingdom-map'>
 					<h4 style={{ color: 'white', marginTop: 0 }}>The Allied Kingdoms Map</h4>
@@ -238,193 +248,61 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>State Management Overview</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// State Management Libraries Overview
+			<CodeExample
+				title={`State Management Overview`}
+				discoveredBy={`Transcribed by Aria`}
+				code={`// State Management Libraries Overview
 
-// 1. React's Built-in State Management
-// Context API - Good for simple global state
-const ThemeContext = React.createContext();
-const AuthContext = React.createContext();
-
-// useReducer - Good for complex local state
-const [state, dispatch] = useReducer(reducer, initialState);
-
-// When you need more...
-
-// 2. Redux - The Predictable State Container
+// 1. Redux - The Predictable State Container
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
+// Principles: Single source of truth, state read-only, pure functions
 
-// Redux principles:
-// - Single source of truth
-// - State is read-only
-// - Changes made with pure functions
-
-const store = createStore(rootReducer);
-
-// 3. MobX - Simple, Scalable State Management
+// 2. MobX - Simple, Scalable State Management
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react-lite';
+// Principles: Automatic derivations, reactive updates
 
-// MobX principles:
-// - Anything that can be derived, should be
-// - All derivations update automatically
-// - Until needed, derivations are not computed
-
-class TodoStore {
-  todos = [];
-  
-  constructor() {
-    makeAutoObservable(this);
-  }
-  
-  addTodo(text) {
-    this.todos.push({ text, done: false });
-  }
-}
-
-// 4. Zustand - Bear Necessities
+// 3. Zustand - Bear Necessities
 import { create } from 'zustand';
-
-// Zustand principles:
-// - Small bundle size
-// - No providers needed
-// - Simple API
-
 const useStore = create((set) => ({
   bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 })
+  increase: () => set((state) => ({ bears: state.bears + 1 }))
 }));
+// Principles: Small size, no providers, simple API
 
-// 5. Recoil - Experimental State Management
-import { atom, selector, useRecoilState } from 'recoil';
-
-// Recoil principles:
-// - Atoms are units of state
-// - Selectors derive state
-// - Components subscribe to atoms
-
-const todoListState = atom({
-  key: 'todoListState',
-  default: []
-});
-
-// 6. Jotai - Primitive and Flexible
+// 4. Recoil/Jotai - Atomic State Management
 import { atom, useAtom } from 'jotai';
-
-// Jotai principles:
-// - Bottom-up approach
-// - No providers by default
-// - React Suspense integration
-
 const countAtom = atom(0);
-const doubledAtom = atom((get) => get(countAtom) * 2);
+// Principles: Fine-grained reactivity, React Suspense
 
-// Choosing the Right Solution
+// Choosing the Right Solution:
+// Redux - Large teams, complex state, debugging needs
+// MobX - OOP style, minimal boilerplate
+// Zustand - Simplicity, small to medium apps
+// Recoil/Jotai - Fine-grained reactivity, Suspense`}
+			/>
 
-// Use Context/useReducer when:
-// - State is simple and localized
-// - You don't need time-travel debugging
-// - Performance is not critical
-
-// Use Redux when:
-// - Large team needs predictable patterns
-// - Complex state logic
-// - Need extensive debugging tools
-// - Large ecosystem of middleware
-
-// Use MobX when:
-// - You prefer OOP style
-// - Want minimal boilerplate
-// - Like reactive programming
-
-// Use Zustand when:
-// - Want simplicity
-// - Small to medium apps
-// - Don't need complex patterns
-
-// Use Recoil/Jotai when:
-// - Need fine-grained reactivity
-// - Working with React Suspense
-// - Want experimental features
-
-// Migration Strategies
-
-// From Context to Redux:
-// 1. Identify global state
-// 2. Create Redux store
-// 3. Replace Context Providers
-// 4. Update components
-
-// From Redux to Zustand:
-// 1. Map reducers to store actions
-// 2. Replace Provider with Zustand hook
-// 3. Simplify component connections
-
-// Performance Considerations
-
-// Context: Re-renders all consumers
-// Redux: Connect specific slices
-// MobX: Automatic optimization
-// Zustand: Selective subscriptions
-// Recoil/Jotai: Atom-level updates`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Ambassador's Note:</strong> "Each kingdom offers unique advantages. 
-					The key is not finding the 'best' solution, but the right solution for your 
-					specific needs. Consider team size, application complexity, performance 
-					requirements, and developer experience when choosing."
-				</div>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Ecosystem Lesson:</h3>
-				<p>
-					Every state management library solves the same core problems differently. 
-					Master Aurelius teaches that understanding multiple approaches makes you 
-					a better architect, even if you only use one.
-				</p>
-				<p>
-					The React ecosystem thrives because of this diversity. Each solution 
-					pushes others to improve, and developers benefit from having choices 
-					that match their specific needs.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on State Philosophy</h3>
-				<p>
-					<strong>Why might different applications need different state management 
-					solutions?</strong> Consider factors like team size, application complexity, 
-					performance needs, and developer preferences.
-				</p>
-				<p>
-					<strong>How does learning multiple approaches improve your architectural 
-					decisions?</strong> Think about how understanding various patterns helps 
-					you recognize the trade-offs in your chosen solution.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As the magical map glowed with the explored kingdoms, <strong>Master 
-					Aurelius</strong> smiled. "You've taken your first steps as an ambassador, 
-					Aria. Each kingdom you've touched represents a different philosophy."
-				</p>
-				<p>
-					<strong>Binary</strong> processed the data. "So many approaches to the 
-					same problem! How do we choose?"
-				</p>
-				<p>
-					"That's what you'll discover in your diplomatic visits," Aurelius replied. 
-					"Tomorrow, you'll visit the Redux Empire and learn their ways..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Aurelius`,
+						description: `Founder and guide of the React Kingdom. His philosophy: "Understanding multiple approaches makes you a better architect, even if you only use one."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Ecosystem Lesson:`,
+					content: `Every state management library solves the same core problems differently. The React ecosystem thrives because of this diversity - each solution pushes others to improve, and developers benefit from choices that match their specific needs.`
+				}}
+				reflectionQuestions={[
+					`Why might different applications need different state management solutions?`,
+					`How does learning multiple approaches improve your architectural decisions?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Morning)`,
+					content: `Master Aurelius has appointed me as ambassador to the Allied Kingdoms! Beyond React's borders lie the Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and Jotai Archipelago. Each kingdom has its own philosophy: Redux values predictability and debugging, MobX embraces reactive programming, Zustand champions simplicity, while Recoil and Jotai focus on fine-grained reactivity. Binary upgraded his translation modules to interpret different state dialects. Aurelius's wisdom: "The key isn't finding the 'best' solution, but the right solution for your specific needs." ${exploredKingdoms.length} kingdoms explored!`
+				}}
+			/>
 		</div>
 	);
 };

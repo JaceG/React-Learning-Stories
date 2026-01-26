@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -137,9 +141,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Form Consensus
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Form Consensus`}
+				bridge={`After hours of implementation in the Form Workshop, Aria had experienced each library's strengths firsthand. "Each library has its own elegance," she reflected. The Federal Form Chancellor gathered all the representatives. "Now, let's find consensus on when to use each."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -172,7 +178,12 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Finding Form Consensus</h3>
+				<h3 className='section-title'>Interactive Exercise: Finding Form Consensus</h3>
+				
+				<InstructionBox character={`The Federal Form Chancellor presents the Consensus Chamber.`}>
+					Explore real-world scenarios to find the right library for each situation. 
+					Review the decision matrix and migration strategies!
+				</InstructionBox>
 				
 				<div className='approach-comparison'>
 					<h4>Real-World Scenario Analysis</h4>
@@ -523,52 +534,33 @@ const projectPhaseGuide = {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Consensus Insight:</h3>
-				<p>
-					The form library ecosystem demonstrates a mature understanding of 
-					different needs. Each library represents years of community learning 
-					and optimization for specific use cases.
-				</p>
-				<p>
-					Key selection factors: form complexity, performance requirements, team 
-					experience, TypeScript usage, and ecosystem needs. Don't choose based 
-					on popularity alone - match the tool to your specific requirements.
-				</p>
-			</div>
+			{consensusAchieved && (
+				<div className='achievement-banner'>
+					<h4>🤝 Form Federation Consensus Achieved!</h4>
+					<p>You've mastered the art of form library selection!</p>
+				</div>
+			)}
 
-			<div className='reflection-section'>
-				<h3>Reflect on Form Architecture</h3>
-				<p>
-					<strong>How do you balance developer experience with performance?</strong> 
-					Consider when familiar patterns outweigh performance optimizations, and 
-					vice versa.
-				</p>
-				<p>
-					<strong>Should you standardize on one library or use multiple?</strong> 
-					Think about the trade-offs between consistency and using the best tool 
-					for each job.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The Federal Form Chancellor smiled warmly. "You've achieved what many 
-					cannot - understanding without bias. Each library has its place."
-				</p>
-				<p>
-					<strong>Aria</strong> reflected on her journey. "Forms seemed simple at 
-					first. But handling user input properly requires careful consideration."
-				</p>
-				<p>
-					<strong>Binary</strong> finalized his analysis. "Optimal form handling 
-					improves user experience and developer productivity. Both matter!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> prepared for departure. "Next stop: the Motion 
-					Monastery. Time to bring these forms to life with animation!"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Consensus Insight:`,
+					content: `The form library ecosystem demonstrates a mature understanding of different needs. Each library represents years of community learning and optimization. Key selection factors: form complexity, performance requirements, team experience, TypeScript usage, and ecosystem needs. Don't choose based on popularity alone - match the tool to your requirements.`
+				}}
+				reflectionQuestions={[
+					`How do you balance developer experience with performance?`,
+					`Should you standardize on one library or use multiple?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Evening)`,
+					content: `The Form Federation has reached consensus! For Performance-Critical Apps: React Hook Form. For Team Familiarity: Formik. For Ultimate Control: React Final Form. For Modern Type-Safe Apps: TanStack Form. For Simple Forms: Native React. The key is matching requirements to solutions. Decision factors: Learning Curve, Performance, Bundle Size, TypeScript support, and Ecosystem. Federation Progress: ${federationProgress}%! The Chancellor's wisdom: "Choose based on your specific requirements, not trends." Forms seemed simple at first, but handling user input properly requires careful consideration!`
+				}}
+				chapterEnding={[
+					`The Federal Form Chancellor smiled warmly. "You've achieved what many cannot - understanding without bias. Each library has its place."`,
+					`Aria reflected on her journey. "Forms seemed simple at first. But handling user input properly requires careful consideration."`,
+					`Binary finalized his analysis. "Optimal form handling improves both user experience and developer productivity!"`,
+					`Debuggora prepared for departure. "Next stop: the Style Symposium. Time to explore CSS-in-JS, Tailwind, and more!"`
+				]}
+			/>
 		</div>
 	);
 };

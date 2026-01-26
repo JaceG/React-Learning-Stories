@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -257,9 +261,11 @@ const containerStyle = {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Styling Workshops
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Styling Workshops`}
+				bridge={`"The debate has reached its limits," Moderator Stylus announced. "Now let's see these approaches in action." Aria followed the representatives to the Styling Workshops, where each approach had set up demonstration stations. "Actions speak louder than arguments," the Moderator explained.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -290,7 +296,12 @@ const containerStyle = {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Styling Workshop Tour</h3>
+				<h3 className='section-title'>Interactive Exercise: Styling Workshop Tour</h3>
+				
+				<InstructionBox character={`Moderator Stylus guides you through the workshops.`}>
+					Visit each styling workshop and implement examples. Watch the live previews 
+					and compare performance metrics between approaches!
+				</InstructionBox>
 				
 				<div className='styling-workshops'>
 					{stylingWorkshops.map(workshop => (
@@ -628,54 +639,20 @@ export const buttonVariants = styleVariants({
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Workshop Insight:</h3>
-				<p>
-					Each styling workshop revealed different strengths. Styled Components 
-					brings styling into the component world. Tailwind accelerates development 
-					through utility composition. CSS Modules preserves traditional workflows 
-					with modern safety. The key is understanding which approach aligns with 
-					your project's goals.
-				</p>
-				<p>
-					Performance varies significantly between approaches. CSS-in-JS solutions 
-					add runtime overhead but provide dynamic capabilities. Utility-first CSS 
-					creates small production bundles but larger development builds. Zero-runtime 
-					solutions optimize performance but limit dynamic styling.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Styling Practice</h3>
-				<p>
-					<strong>How does your styling choice affect your development workflow?</strong> 
-					Consider how each approach changes the way you think about and write styles.
-				</p>
-				<p>
-					<strong>What role does performance play in your styling decisions?</strong> 
-					Think about the trade-offs between developer experience and runtime performance.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					After visiting all the workshops, <strong>Aria</strong> gathered her 
-					findings. Each approach had passionate advocates and valid use cases.
-				</p>
-				<p>
-					<strong>Binary</strong> computed the data. "No clear winner, but clear 
-					trade-offs. Developer experience versus bundle size. Dynamic capabilities 
-					versus runtime cost."
-				</p>
-				<p>
-					<strong>Debuggora</strong> observed, "The best developers understand 
-					multiple approaches and choose based on context, not dogma."
-				</p>
-				<p>
-					"Time to report back to the symposium," Aria decided. "Let's see if we 
-					can bring harmony to this passionate debate..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Workshop Insight:`,
+					content: `Each styling workshop revealed different strengths. Styled Components brings styling into the component world. Tailwind accelerates development through utility composition. CSS Modules preserves traditional workflows with modern safety. Performance varies - CSS-in-JS adds runtime overhead for dynamic capabilities, while utility-first creates small production bundles.`
+				}}
+				reflectionQuestions={[
+					`How does your styling choice affect your development workflow?`,
+					`What role does performance play in your styling decisions?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 39 (Afternoon)`,
+					content: `Visited all the Styling Workshops! Each approach has matured for complex scenarios: Styled Components for component-based theming, Tailwind for rapid prototyping (my CSS shrunk dramatically!), CSS Modules for familiarity with safety, Emotion for features and performance balance, and Zero-runtime solutions (Vanilla Extract) for production optimization. ${visitedWorkshops.length} workshops visited! Binary computed: "No clear winner, but clear trade-offs - DX vs bundle size, dynamic capabilities vs runtime cost." The Workshop Wisdom: "Master one deeply, but understand all."`
+				}}
+			/>
 		</div>
 	);
 };

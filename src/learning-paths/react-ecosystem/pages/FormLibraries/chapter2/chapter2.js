@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -106,9 +110,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: Form Library Deep Dive
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`Form Library Deep Dive`}
+				bridge={`"Now that you've met the representatives," the Federal Form Chancellor announced, "it's time for hands-on learning. Each library has set up demonstration stations." Aria entered the Form Workshop where complex forms floated in the air, transforming as different libraries handled them.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -135,7 +141,12 @@ const ChapterTwo = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Form Library Workshop</h3>
+				<h3 className='section-title'>Interactive Exercise: Form Library Workshop</h3>
+				
+				<InstructionBox character={`The React Hook Form Ambassador opens the Workshop.`}>
+					Switch between libraries and form complexity levels. Implement forms 
+					and learn validation strategies - schema, custom, async, and dependent fields!
+				</InstructionBox>
 				
 				<div className='form-workshop'>
 					<div className='implementation-tabs'>
@@ -617,55 +628,20 @@ function OptimizedForm() {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Workshop Insight:</h3>
-				<p>
-					Complex forms reveal each library's strengths. React Hook Form's 
-					uncontrolled approach shines in large forms with many fields. Formik's 
-					controlled components feel natural to React developers. Final Form's 
-					subscription model provides ultimate performance control.
-				</p>
-				<p>
-					Beyond basic forms, consider: dynamic fields, conditional logic, 
-					multi-step wizards, async validation, and complex dependencies. Each 
-					library handles these differently, affecting both developer experience 
-					and runtime performance.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Implementation</h3>
-				<p>
-					<strong>How does form complexity affect library choice?</strong> Consider 
-					how different patterns (dynamic fields, validation, performance) influence 
-					which library serves best.
-				</p>
-				<p>
-					<strong>What role does team experience play?</strong> Think about how 
-					familiar patterns versus optimal performance create trade-offs in 
-					library selection.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					After hours of implementation, <strong>Aria</strong> stepped back from 
-					the workshops. "Each library has its own elegance. React Hook Form for 
-					performance, Formik for familiarity, Final Form for control."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the metrics. "The performance differences 
-					are significant in complex forms. But developer experience varies too."
-				</p>
-				<p>
-					<strong>Debuggora</strong> observed, "The best choice depends on your 
-					specific needs. There's no universal answer."
-				</p>
-				<p>
-					The Federal Form Chancellor nodded approvingly. "You begin to understand. 
-					Now, let's discuss when to use each approach..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Workshop Insight:`,
+					content: `Complex forms reveal each library's strengths. React Hook Form's uncontrolled approach shines in large forms. Formik's controlled components feel natural to React developers. Final Form's subscription model provides ultimate performance control. Consider dynamic fields, conditional logic, multi-step wizards, async validation, and dependencies.`
+				}}
+				reflectionQuestions={[
+					`How does form complexity affect library choice?`,
+					`What role does team experience play in library selection?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Afternoon)`,
+					content: `Hands-on learning in the Form Workshop! I implemented the same forms with different libraries: User Registration, Dynamic Survey, Multi-Step Wizard, and Order Form. Each library excels at different patterns: React Hook Form for performance (minimal re-renders), Formik for familiarity (controlled components), Final Form for control (subscriptions). I mastered validation strategies: Schema (Yup/Zod), Custom validators, Async validation, and Dependent fields. ${implementedForms.length} forms implemented! Binary tracked the metrics: re-renders, bundle sizes, and execution time varied significantly.`
+				}}
+			/>
 		</div>
 	);
 };
