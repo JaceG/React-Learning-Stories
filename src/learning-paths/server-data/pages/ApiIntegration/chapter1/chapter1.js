@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -26,7 +30,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Cloud Citadel Beckons</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Cloud Citadel Beckons`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -63,10 +70,11 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Cloud Citadel</h3>
-				<p className='instruction'>
-					<strong>👉 Explore the Cloud Citadel's data streams and practice making your first API request!</strong>
+				
+				<InstructionBox character={`Cloud Keeper Axios gestures to the flowing data streams.`}>
+					Explore the Cloud Citadel's data streams and practice making your first API request!
 					Hover over the data streams to see different formats, then use the request builder to communicate with the server.
-				</p>
+				</InstructionBox>
 				
 				<div className='cloud-citadel-illustration'>
 					<div className='citadel'>
@@ -159,46 +167,21 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='character-intro'>
-				<h4>Cloud Keeper Axios</h4>
-				<p>
-					Master of server communication and guardian of the Cloud Citadel. 
-					Their wisdom: "Server communication is like diplomatic correspondence - 
-					you must speak the right language, follow protocols, and handle delays 
-					gracefully. Patience and error handling are as important as the request 
-					itself."
-				</p>
-			</div>
-
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Cloud Communication Spells</span>
-					<span className='discovered-by'>Discovered by Aria in the Cloud Citadel</span>
-				</div>
-				<pre>
-{`// Basic Fetch Spell - Speaking with the Cloud Citadel
+			<CodeExample
+				title={`Cloud Communication Spells`}
+				discoveredBy={`Discovered by Aria in the Cloud Citadel`}
+				code={`// Basic Fetch Spell - Speaking with the Cloud Citadel
 async function fetchKingdomData() {
   try {
-    // Sending a diplomatic request to the server
     const response = await fetch('/api/kingdoms/react');
-    
-    // Check if the server responded favorably
-    if (!response.ok) {
-      throw new Error(\`Server declined: \${response.status}\`);
-    }
-    
-    // Parse the server's response
-    const data = await response.json();
-    console.log('Kingdom data received:', data);
-    return data;
-    
+    if (!response.ok) throw new Error(\`Server declined: \${response.status}\`);
+    return await response.json();
   } catch (error) {
     console.error('Communication failed:', error);
-    // Handle the error gracefully
   }
 }
 
-// Async/Await Pattern - Patient Communication
+// React Component - Patient Communication
 function KingdomDashboard() {
   const [kingdomData, setKingdomData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -216,72 +199,35 @@ function KingdomDashboard() {
         setLoading(false);
       }
     }
-    
     loadData();
   }, []);
 
   if (loading) return <div>Connecting to Cloud Citadel...</div>;
   if (error) return <div>Connection failed: {error}</div>;
-  
-  return (
-    <div>
-      <h2>Kingdom Status</h2>
-      {/* Display kingdom data */}
-    </div>
-  );
+  return <div><h2>Kingdom Status</h2></div>;
 }`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The API Lesson:</h3>
-				<p>
-					Server communication is like diplomatic correspondence - you must speak 
-					the right language, follow protocols, and handle delays gracefully. 
-					Cloud Keeper Axios teaches that patience and error handling are as 
-					important as the request itself.
-				</p>
-				<p>
-					Every API request involves multiple states: loading, success, and error. 
-					Managing these states properly creates a smooth user experience even 
-					when the network is unpredictable. The key is to always expect the 
-					unexpected.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Server Communication</h3>
-				<p>
-					<strong>How does thinking of APIs as "diplomatic correspondence" help 
-					understand async communication?</strong> Consider how protocols, 
-					patience, and proper etiquette apply to both diplomacy and API requests.
-				</p>
-				<p>
-					<strong>Why is error handling crucial when dealing with external data 
-					sources?</strong> Think about all the ways a network request can fail 
-					and how your app should respond to each scenario.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Cloud Keeper Axios gestured to the flowing data streams. "You've taken 
-					your first steps into server communication, Ambassador Aria. You 
-					understand the basics of speaking with distant servers."
-				</p>
-				<p>
-					<strong>Aria</strong> watched the data flow between client and server. 
-					"It's like extending React's reach beyond its borders."
-				</p>
-				<p>
-					<strong>Binary</strong> processed the new protocols. "So many ways to 
-					communicate! GET, POST, PUT, DELETE - each with its purpose."
-				</p>
-				<p>
-					"Come," said Axios, "let's explore the Protocol Chambers. There you'll 
-					learn advanced patterns for robust server communication..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Cloud Keeper Axios`,
+						description: `Master of server communication and guardian of the Cloud Citadel. Their wisdom: "Server communication is like diplomatic correspondence - you must speak the right language, follow protocols, and handle delays gracefully."`
+					}
+				]}
+				lessonInsight={{
+					title: `The API Lesson:`,
+					content: `Server communication is like diplomatic correspondence - you must speak the right language, follow protocols, and handle delays gracefully. Every API request involves multiple states: loading, success, and error. Managing these states properly creates a smooth user experience even when the network is unpredictable.`
+				}}
+				reflectionQuestions={[
+					`How does thinking of APIs as "diplomatic correspondence" help understand async communication?`,
+					`Why is error handling crucial when dealing with external data sources?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Morning)`,
+					content: `The Cloud Citadel floats majestically above the React Kingdom! Cloud Keeper Axios welcomed us and taught the fundamentals of server communication. I learned the fetch API - it's like sending diplomatic correspondence to distant servers. Key insight: every request has three states (loading, success, error) and handling them properly is crucial. Binary grew new communication modules detecting JSON, XML, and GraphQL streams. Axios's wisdom: "Patience and error handling are as important as the request itself." Made my first successful API call - Status 200!`
+				}}
+			/>
 		</div>
 	);
 };

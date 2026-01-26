@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -33,7 +37,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Living Streams</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Living Streams`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -73,9 +80,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title'>Real-time Protocol Selection</h3>
-				<p className='instruction'>
-					<strong>👉 Choose a real-time protocol to establish your living connection!</strong>
-				</p>
+				
+				<InstructionBox character={`Stream Sage WebSocket presents three glowing portals.`}>
+					Choose a real-time protocol to establish your living connection!
+				</InstructionBox>
 				
 				<div className='protocol-selector'>
 					{protocols.map(protocol => (
@@ -182,134 +190,62 @@ const ChapterOne = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Real-time Connection Fundamentals</span>
-					<span className='discovered-by'>The Living Streams Codex</span>
-				</div>
-				<pre>
-{`// WebSocket Connection - The Living Portal
+			<CodeExample
+				title={`Real-time Connection Fundamentals`}
+				discoveredBy={`The Living Streams Codex`}
+				code={`// WebSocket Connection - The Living Portal
 const ws = new WebSocket('ws://localhost:8080');
 
-// Connection lifecycle
 ws.onopen = () => {
-  console.log('Portal opened to the Living Streams!');
+  console.log('Portal opened!');
   ws.send(JSON.stringify({ type: 'join', user: 'Aria' }));
 };
-
-ws.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  console.log('Data flows through the portal:', data);
-  updateUI(data);
-};
-
-ws.onerror = (error) => {
-  console.error('The streams are disturbed:', error);
-};
-
-ws.onclose = () => {
-  console.log('Portal closed - attempting reconnection...');
-  setTimeout(reconnect, 5000);
-};
+ws.onmessage = (event) => updateUI(JSON.parse(event.data));
+ws.onclose = () => setTimeout(reconnect, 5000);
 
 // Server-Sent Events - One-Way Stream
 const eventSource = new EventSource('/api/stream');
-
 eventSource.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  console.log('Server whispers through the stream:', data);
+  console.log('Server update:', JSON.parse(event.data));
 };
 
-eventSource.addEventListener('notification', (event) => {
-  showNotification(JSON.parse(event.data));
-});
-
-// Long Polling - Persistent Requests
-async function longPoll() {
-  try {
-    const response = await fetch('/api/poll', {
-      method: 'GET',
-      // Wait up to 30 seconds for new data
-      headers: { 'X-Timeout': '30000' }
-    });
-    
-    if (response.ok) {
-      const data = await response.json();
-      processUpdate(data);
-    }
-  } catch (error) {
-    console.error('Polling disrupted:', error);
-  }
-  
-  // Immediately poll again
-  setTimeout(longPoll, 100);
-}
-
-// React Hook for WebSocket - The Sage's Pattern
+// React Hook for WebSocket
 function useWebSocket(url) {
-  const [socket, setSocket] = useState(null);
   const [lastMessage, setLastMessage] = useState(null);
   const [readyState, setReadyState] = useState('CLOSED');
 
   useEffect(() => {
     const ws = new WebSocket(url);
-    
     ws.onopen = () => setReadyState('OPEN');
     ws.onclose = () => setReadyState('CLOSED');
-    ws.onmessage = (event) => setLastMessage(event.data);
-    
-    setSocket(ws);
-    
+    ws.onmessage = (e) => setLastMessage(e.data);
     return () => ws.close();
   }, [url]);
 
-  const sendMessage = useCallback((message) => {
-    if (socket?.readyState === WebSocket.OPEN) {
-      socket.send(message);
-    }
-  }, [socket]);
-
-  return { sendMessage, lastMessage, readyState };
+  return { lastMessage, readyState };
 }`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Living Streams Lesson:</h3>
-				<p>
-					Real-time connections transform applications from request-response cycles to 
-					continuous conversations. WebSockets provide full-duplex communication, 
-					Server-Sent Events offer efficient server-to-client streaming, and Long 
-					Polling ensures compatibility with older systems. Each has its place in 
-					the modern web.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Real-time Communication</h3>
-				<p>
-					<strong>How do real-time connections change user experience?</strong> 
-					Consider how instant updates affect engagement and the feeling of presence 
-					in collaborative applications.
-				</p>
-				<p>
-					<strong>When would you choose WebSockets over Server-Sent Events?</strong> 
-					Think about bidirectional needs versus simple server-to-client updates.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As data flowed through the living streams, <strong>Aria</strong> marveled 
-					at the continuous connection. "It's not just about getting data anymore - 
-					it's about staying connected!"
-				</p>
-				<p>
-					<strong>Stream Sage WebSocket</strong> nodded wisely. "You begin to 
-					understand. But with great connectivity comes great complexity. Ready to 
-					learn synchronization?"
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Stream Sage WebSocket`,
+						description: `Guardian of the Living Streams and master of real-time connections. Their wisdom: "Traditional APIs are like letters. Real-time connections are like conversations - always flowing, always connected."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Living Streams Lesson:`,
+					content: `Real-time connections transform applications from request-response cycles to continuous conversations. WebSockets provide full-duplex communication, Server-Sent Events offer efficient server-to-client streaming, and Long Polling ensures compatibility. Each protocol has its place in the modern web.`
+				}}
+				reflectionQuestions={[
+					`How do real-time connections change user experience?`,
+					`When would you choose WebSockets over Server-Sent Events?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 42 (Morning)`,
+					content: `The Living Streams are mesmerizing! Stream Sage WebSocket appeared in a shimmer of constantly updating data and taught us about real-time connections. WebSockets (🔌) provide full-duplex communication - like an always-open portal! Server-Sent Events (📡) stream server-to-client, and Long Polling (🔄) ensures compatibility. Binary was fascinated: "It's like having an always-open portal!" Connected my first WebSocket - watched data flow like water between client and server.`
+				}}
+			/>
 
 			{showNotification && (
 				<div className='notification-toast info'>

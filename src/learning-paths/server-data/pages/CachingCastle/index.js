@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { useState, useEffect, useRef } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './CachingCastle.css';
 
@@ -14,17 +14,6 @@ function CachingCastle() {
 	const [cacheMetrics, setCacheMetrics] = useState([]);
 	const [isWarmingCache, setIsWarmingCache] = useState(false);
 	const cacheTimers = useRef(new Map());
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Cache operations
 	const getFromCache = (key) => {
@@ -109,30 +98,13 @@ function CachingCastle() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Caching Castle</h1>
-			<p className='lesson-subtitle'>
-				Master the art of storing and serving data efficiently
-			</p>
+			<LessonHeader
+				title={`Caching Castle`}
+				subtitle={`Master the art of storing and serving data efficiently`}
+				opener={`Cache Lord Redux, a distant cousin of the Redux Empire's emperor, welcomed Aria to the Caching Castle. "Why fetch what you already have?" he asked, gesturing to the towering Memory Vaults. "The fastest request is the one you don't make. Here, you'll learn the art of storing, serving, and knowing when to let go."`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					cacheStore,
@@ -154,27 +126,10 @@ function CachingCastle() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='server-data'
-				lessonId='caching-castle'
+			<LessonFooter
+				courseId={`server-data`}
+				lessonId={`caching-castle`}
+				totalChapters={3}
 			/>
 		</div>
 	);

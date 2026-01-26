@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { useState, useEffect, useRef } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './RealtimeConnections.css';
 
@@ -14,17 +14,6 @@ function RealtimeConnections() {
 	const [syncConflicts, setSyncConflicts] = useState([]);
 	const [resolvedConflicts, setResolvedConflicts] = useState([]);
 	const connectionRef = useRef(null);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Simulate WebSocket connection
 	const connectWebSocket = () => {
@@ -108,30 +97,13 @@ function RealtimeConnections() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Real-time Connections</h1>
-			<p className='lesson-subtitle'>
-				Journey to the Living Streams where data flows continuously
-			</p>
+			<LessonHeader
+				title={`Real-time Connections`}
+				subtitle={`Journey to the Living Streams where data flows continuously`}
+				opener={`Stream Sage WebSocket appeared in a shimmer of constantly updating data. "Traditional APIs are like letters - you send, you wait, you receive. But what if you need continuous conversation?" The sage gestured to the Living Streams flowing around them. "Here, data flows like water - always moving, always connected."`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					connectionStatus,
@@ -154,27 +126,10 @@ function RealtimeConnections() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='server-data'
-				lessonId='realtime-connections'
+			<LessonFooter
+				courseId={`server-data`}
+				lessonId={`realtime-connections`}
+				totalChapters={3}
 			/>
 		</div>
 	);

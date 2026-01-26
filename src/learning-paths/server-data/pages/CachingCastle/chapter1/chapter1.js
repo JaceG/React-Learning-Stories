@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -88,7 +92,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Memory Vaults</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Memory Vaults`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -135,9 +142,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title'>Caching Strategies</h3>
-				<p className='instruction'>
-					<strong>👉 Choose your caching strategy to see how data flows through the castle!</strong>
-				</p>
+				
+				<InstructionBox character={`Cache Lord Redux presents three strategy scrolls.`}>
+					Choose your caching strategy to see how data flows through the castle!
+				</InstructionBox>
 				
 				<div className='strategy-selector'>
 					{strategies.map(strategy => (
@@ -252,22 +260,13 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Caching Strategies</span>
-					<span className='discovered-by'>The Memory Vault Codex</span>
-				</div>
-				<pre>
-{`// Cache First - Speed Above All
+			<CodeExample
+				title={`Caching Strategies`}
+				discoveredBy={`The Memory Vault Codex`}
+				code={`// Cache First - Speed Above All
 async function cacheFirst(key, fetchFn) {
-  // Check the vaults first
   const cached = cache.get(key);
-  
-  if (cached && !isExpired(cached)) {
-    return cached.data; // The fastest request!
-  }
-  
-  // Only fetch if necessary
+  if (cached && !isExpired(cached)) return cached.data;
   const fresh = await fetchFn();
   cache.set(key, fresh, { ttl: 60000 });
   return fresh;
@@ -276,17 +275,12 @@ async function cacheFirst(key, fetchFn) {
 // Network First - Freshness Matters
 async function networkFirst(key, fetchFn) {
   try {
-    // Always try fresh data
     const fresh = await fetchFn();
     cache.set(key, fresh, { ttl: 60000 });
     return fresh;
   } catch (error) {
-    // Fall back to cache
     const cached = cache.get(key);
-    if (cached) {
-      console.warn('Using stale cache due to network error');
-      return cached.data;
-    }
+    if (cached) return cached.data; // Fallback
     throw error;
   }
 }
@@ -294,138 +288,46 @@ async function networkFirst(key, fetchFn) {
 // Stale While Revalidate - Best of Both
 async function staleWhileRevalidate(key, fetchFn) {
   const cached = cache.get(key);
-  
-  // Serve immediately if available
   if (cached) {
-    // Update in background
-    fetchFn().then(fresh => {
-      cache.set(key, fresh, { ttl: 60000 });
-    }).catch(console.error);
-    
-    return cached.data;
+    fetchFn().then(fresh => cache.set(key, fresh)); // Background update
+    return cached.data; // Return immediately
   }
-  
-  // First visit - must fetch
   const fresh = await fetchFn();
   cache.set(key, fresh, { ttl: 60000 });
   return fresh;
 }
 
-// TTL Management - The Freshness Formula
+// TTL Management
 class CacheEntry {
-  constructor(data, ttl = 60000) {
-    this.data = data;
-    this.timestamp = Date.now();
-    this.ttl = ttl;
-    this.hits = 0;
-  }
-  
-  get age() {
-    return Date.now() - this.timestamp;
-  }
-  
-  get isExpired() {
-    return this.age > this.ttl;
-  }
-  
   get freshness() {
     const ratio = this.age / this.ttl;
     if (ratio < 0.3) return 'fresh';
     if (ratio < 0.7) return 'stale';
     return 'expired';
   }
-}
-
-// React Hook - Cache Lord's Pattern
-function useCache(key, fetchFn, options = {}) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  
-  const {
-    strategy = 'cache-first',
-    ttl = 60000,
-    onHit,
-    onMiss
-  } = options;
-  
-  useEffect(() => {
-    let cancelled = false;
-    
-    async function loadData() {
-      try {
-        setLoading(true);
-        let result;
-        
-        if (strategy === 'cache-first') {
-          result = await cacheFirst(key, fetchFn);
-        } else if (strategy === 'network-first') {
-          result = await networkFirst(key, fetchFn);
-        } else {
-          result = await staleWhileRevalidate(key, fetchFn);
-        }
-        
-        if (!cancelled) {
-          setData(result);
-          setError(null);
-        }
-      } catch (err) {
-        if (!cancelled) {
-          setError(err);
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
-      }
-    }
-    
-    loadData();
-    
-    return () => { cancelled = true; };
-  }, [key, strategy]);
-  
-  return { data, loading, error };
 }`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Memory Vault Lesson:</h3>
-				<p>
-					Caching is about making intelligent trade-offs between data freshness and 
-					performance. Cache-first strategies maximize speed but risk serving stale 
-					data. Network-first ensures freshness but sacrifices speed. 
-					Stale-while-revalidate offers a balanced approach, serving cached data 
-					immediately while updating in the background.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Caching Strategies</h3>
-				<p>
-					<strong>When would you choose cache-first over network-first?</strong> 
-					Consider scenarios where data changes infrequently versus real-time 
-					requirements.
-				</p>
-				<p>
-					<strong>How does TTL affect user experience?</strong> 
-					Think about the balance between serving fresh data and reducing server load.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> watched as data flowed through the castle's vaults. 
-					"So caching is about predicting what users will need and storing it 
-					efficiently!"
-				</p>
-				<p>
-					<strong>Cache Lord Redux</strong> nodded approvingly. "You grasp the 
-					basics. But remember, young apprentice - storing is easy. Knowing when 
-					to forget is the true challenge..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Cache Lord Redux`,
+						description: `A distant cousin of the Redux Empire's emperor, guardian of the Memory Vaults. His wisdom: "The fastest request is the one you don't make. Caching is about balance - freshness versus performance."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Memory Vault Lesson:`,
+					content: `Caching is about intelligent trade-offs between freshness and performance. Cache-first maximizes speed but risks staleness. Network-first ensures freshness but sacrifices speed. Stale-while-revalidate offers the best of both, serving cached data immediately while updating in the background.`
+				}}
+				reflectionQuestions={[
+					`When would you choose cache-first over network-first?`,
+					`How does TTL affect user experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 43 (Morning)`,
+					content: `The Caching Castle is magnificent! Cache Lord Redux taught me three strategies: Cache-First (💾) for speed, Network-First (🌐) for freshness, and Stale-While-Revalidate (♻️) for the best of both. The vaults are organized by freshness - Fresh, Stale, and Expired. TTL (Time To Live) determines when data transitions between states. Cache Lord's wisdom: "Storing is easy. Knowing when to forget is the true challenge." My first cache hit rate: 70%!`
+				}}
+			/>
 		</div>
 	);
 };

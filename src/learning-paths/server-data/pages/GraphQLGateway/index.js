@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './GraphQLGateway.css';
 
@@ -20,17 +20,6 @@ function GraphQLGateway() {
 	const [fragments, setFragments] = useState([]);
 	const [subscriptions, setSubscriptions] = useState([]);
 	const [isExecuting, setIsExecuting] = useState(false);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Execute GraphQL query
 	const executeQuery = async () => {
@@ -144,30 +133,13 @@ function GraphQLGateway() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>GraphQL Gateway</h1>
-			<p className='lesson-subtitle'>
-				Master the art of precise data fetching with GraphQL
-			</p>
+			<LessonHeader
+				title={`GraphQL Gateway`}
+				subtitle={`Master the art of precise data fetching with GraphQL`}
+				opener={`At the GraphQL Gateway, Query Master Apollo introduced a revolutionary approach. "REST gives you what the server decides. GraphQL lets you ask for exactly what you need - no more, no less." The gateway glowed with a single endpoint: /graphql. "One endpoint, infinite possibilities. Welcome to the future of data fetching."`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					currentQuery,
@@ -186,27 +158,10 @@ function GraphQLGateway() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='server-data'
-				lessonId='graphql-gateway'
+			<LessonFooter
+				courseId={`server-data`}
+				lessonId={`graphql-gateway`}
+				totalChapters={3}
 			/>
 		</div>
 	);

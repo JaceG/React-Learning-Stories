@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -68,13 +72,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Data Embassy</h2>
-
-			<div className='chapter-bridge'>
-				<p>With protocols mastered and patterns understood, it was time to 
-				establish a permanent diplomatic presence. The highest tower of the 
-				Cloud Citadel awaited - the Data Embassy.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Data Embassy`}
+				bridge={`With protocols mastered and patterns understood, Cloud Keeper Axios led Aria to the highest tower of the Cloud Citadel. "You're ready for the final challenge," Axios announced. "Here, you'll establish the Data Embassy - a permanent, production-ready connection between the React Kingdom and external servers."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -115,10 +117,11 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Production Patterns Workshop</h3>
-				<p className='instruction'>
-					<strong>👉 Build your Data Embassy with production-ready patterns!</strong>
+				
+				<InstructionBox character={`Cloud Keeper Axios presents the Embassy blueprints.`}>
+					Build your Data Embassy with production-ready patterns!
 					Select each pattern to understand how it strengthens your server communication infrastructure.
-				</p>
+				</InstructionBox>
 				
 				<div className='protocol-chambers'>
 					{productionPatterns.map(pattern => (
@@ -199,32 +202,26 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Production API Architecture</span>
-					<span className='discovered-by'>The Embassy's Master Blueprint</span>
-				</div>
-				<pre>
-{`// The Complete Data Embassy - Production-Ready API Client
+			<CodeExample
+				title={`Production API Architecture`}
+				discoveredBy={`The Embassy's Master Blueprint`}
+				code={`// The Complete Data Embassy
 class DataEmbassy {
   constructor(config = {}) {
     this.baseURL = config.baseURL || '/api';
     this.cache = new Map();
     this.pendingRequests = new Map();
-    this.loadingManager = new LoadingStateManager();
-    this.errorBoundary = new GlobalErrorHandler();
   }
   
-  // Request with deduplication
   async request(endpoint, options = {}) {
     const requestKey = this.getRequestKey(endpoint, options);
     
-    // Check for pending identical request
+    // Deduplication - reuse pending identical requests
     if (this.pendingRequests.has(requestKey)) {
       return this.pendingRequests.get(requestKey);
     }
     
-    // Check cache
+    // Check cache first
     if (options.cache && this.cache.has(requestKey)) {
       const cached = this.cache.get(requestKey);
       if (Date.now() - cached.timestamp < options.cacheTTL) {
@@ -232,223 +229,61 @@ class DataEmbassy {
       }
     }
     
-    // Create new request
     const requestPromise = this.executeRequest(endpoint, options);
     this.pendingRequests.set(requestKey, requestPromise);
     
     try {
       const result = await requestPromise;
-      
-      // Cache successful responses
       if (options.cache) {
-        this.cache.set(requestKey, {
-          data: result,
-          timestamp: Date.now()
-        });
+        this.cache.set(requestKey, { data: result, timestamp: Date.now() });
       }
-      
       return result;
     } finally {
       this.pendingRequests.delete(requestKey);
     }
   }
-  
-  async executeRequest(endpoint, options) {
-    this.loadingManager.start(endpoint);
-    
-    try {
-      const response = await fetchWithRetry(
-        this.baseURL + endpoint,
-        options
-      );
-      
-      if (!response.ok) {
-        throw new ApiError(response.status, response.statusText);
-      }
-      
-      return await response.json();
-    } catch (error) {
-      this.errorBoundary.handle(error);
-      throw error;
-    } finally {
-      this.loadingManager.stop(endpoint);
-    }
-  }
 }
 
-// Global Loading State Manager - Coordinated UI States
-class LoadingStateManager {
-  constructor() {
-    this.activeRequests = new Set();
-    this.listeners = new Set();
-  }
-  
-  start(key) {
-    this.activeRequests.add(key);
-    this.notify();
-  }
-  
-  stop(key) {
-    this.activeRequests.delete(key);
-    this.notify();
-  }
-  
-  isLoading() {
-    return this.activeRequests.size > 0;
-  }
-  
-  subscribe(listener) {
-    this.listeners.add(listener);
-    return () => this.listeners.delete(listener);
-  }
-  
-  notify() {
-    const loading = this.isLoading();
-    this.listeners.forEach(listener => listener(loading));
-  }
-}
-
-// Hook for global loading state
-function useGlobalLoading() {
-  const [isLoading, setIsLoading] = useState(false);
-  
-  useEffect(() => {
-    const unsubscribe = loadingManager.subscribe(setIsLoading);
-    return unsubscribe;
-  }, []);
-  
-  return isLoading;
-}
-
-// Optimistic Update Pattern - Ambassador's Confidence
+// Optimistic Updates - Instant UI feedback
 function useOptimisticUpdate(initialData, updateFn) {
   const [data, setData] = useState(initialData);
   const [rollbackData, setRollbackData] = useState(null);
   
   const optimisticUpdate = async (newData) => {
-    // Store current state for rollback
     setRollbackData(data);
-    
-    // Apply optimistic update immediately
-    setData(newData);
-    
+    setData(newData); // Apply immediately
     try {
-      // Attempt server update
       const confirmed = await updateFn(newData);
       setData(confirmed);
-      setRollbackData(null);
     } catch (error) {
-      // Rollback on failure
-      setData(rollbackData);
-      setRollbackData(null);
+      setData(rollbackData); // Rollback on failure
       throw error;
     }
   };
-  
   return [data, optimisticUpdate];
-}
-
-// Usage Example - The Embassy in Action
-function KingdomManager() {
-  const embassy = new DataEmbassy({ 
-    baseURL: 'https://api.reactkingdom.com' 
-  });
-  
-  const { data: kingdoms, loading, error } = useApiData(
-    () => embassy.request('/kingdoms', { cache: true })
-  );
-  
-  const [selectedKingdom, updateKingdom] = useOptimisticUpdate(
-    null,
-    async (kingdom) => {
-      return embassy.request(\`/kingdoms/\${kingdom.id}\`, {
-        method: 'PUT',
-        body: JSON.stringify(kingdom)
-      });
-    }
-  );
-  
-  const globalLoading = useGlobalLoading();
-  
-  if (globalLoading) {
-    return <div>The Embassy is processing requests...</div>;
-  }
-  
-  return (
-    <div>
-      {/* Your kingdom management UI */}
-    </div>
-  );
 }`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Embassy Insight:</h3>
-				<p>
-					Building a production-ready API layer requires thinking beyond individual 
-					requests. It's about creating a robust system that handles the 
-					complexities of distributed communication: network failures, concurrent 
-					requests, authentication flows, and performance optimization.
-				</p>
-				<p>
-					The Data Embassy represents a mature approach to server communication - 
-					centralized, resilient, and efficient. By establishing proper patterns 
-					from the start, you create a foundation that scales with your 
-					application's growth.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Production Architecture</h3>
-				<p>
-					<strong>How does centralized API management improve maintainability?</strong> 
-					Consider how changes to authentication, error handling, or caching can 
-					be made in one place rather than scattered throughout components.
-				</p>
-				<p>
-					<strong>What role does optimistic updating play in user experience?</strong> 
-					Think about how immediate UI feedback affects perceived performance, 
-					even when network operations take time.
-				</p>
-			</div>
-
-			<div className='character-intro'>
-				<h4>Aria's Journal - Cloud Citadel Day 3</h4>
-				<p>
-					The Data Embassy is complete! I've learned so much - from basic fetch calls 
-					to production architectures. Request deduplication, caching, global error 
-					handling... it's like building a real diplomatic infrastructure. Cloud Keeper 
-					Axios says I'm ready for the next challenge. What could be more advanced than this?
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Standing atop the completed Data Embassy, <strong>Aria</strong> surveyed 
-					her achievement. "We've built more than just API calls - we've created 
-					a robust communication infrastructure."
-				</p>
-				<p>
-					<strong>Cloud Keeper Axios</strong> nodded with approval. "The embassy 
-					will serve the React Kingdom well. Errors are handled gracefully, 
-					performance is optimized, and the user experience remains smooth."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the statistics. "Request deduplication 
-					reduced API calls by 40%. Caching improved response times by 60%. 
-					Impressive efficiency gains!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> added, "And with proper error boundaries, 
-					no single failure can bring down the entire application."
-				</p>
-				<p>
-					Master Aurelius appeared at the embassy entrance. "Excellent work, 
-					Ambassador. But static requests are just the beginning. Are you ready 
-					to explore real-time connections? The Living Streams await..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Embassy Insight:`,
+					content: `Building a production-ready API layer requires thinking beyond individual requests. The Data Embassy represents a mature approach - centralized, resilient, and efficient. Request deduplication, caching, global error handling, and optimistic updates create a foundation that scales with your application's growth.`
+				}}
+				reflectionQuestions={[
+					`How does centralized API management improve maintainability?`,
+					`What role does optimistic updating play in user experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Evening)`,
+					content: `The Data Embassy is complete! From basic fetch calls to production architecture - what a journey! Request deduplication reduced API calls by 40%, caching improved response times by 60%. I built a LoadingStateManager for coordinated UI states and learned optimistic updates for instant feedback. Cloud Keeper Axios's final wisdom: "The embassy will serve the React Kingdom well." Binary compiled impressive statistics while Debuggora ensured error boundaries protect against cascading failures. Master Aurelius appeared: "The Living Streams await..."`
+				}}
+				chapterEnding={[
+					`Standing atop the completed Data Embassy, Aria surveyed her achievement. "We've built more than just API calls - we've created a robust communication infrastructure."`,
+					`Cloud Keeper Axios nodded with approval. "The embassy will serve the React Kingdom well. Errors are handled gracefully, performance is optimized, and the user experience remains smooth."`,
+					`Binary compiled the statistics. "Request deduplication reduced API calls by 40%. Caching improved response times by 60%. Impressive efficiency gains!"`,
+					`Master Aurelius appeared at the embassy entrance. "Excellent work, Ambassador. But static requests are just the beginning. Are you ready to explore real-time connections? The Living Streams await..."`
+				]}
+			/>
 		</div>
 	);
 };

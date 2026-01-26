@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
 import './ApiIntegration.css';
 
@@ -15,17 +15,6 @@ function ApiIntegration() {
 	const [interceptors, setInterceptors] = useState([]);
 	const [cacheEnabled, setCacheEnabled] = useState(false);
 	const [retryCount, setRetryCount] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Simulate API request
 	const makeRequest = async (endpoint, options = {}) => {
@@ -72,30 +61,13 @@ function ApiIntegration() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>API Integration</h1>
-			<p className='lesson-subtitle'>
-				Journey to the Cloud Citadel and master server communication
-			</p>
+			<LessonHeader
+				title={`API Integration`}
+				subtitle={`Journey to the Cloud Citadel and master server communication`}
+				opener={`The morning mist parted to reveal the Cloud Citadel - a massive structure floating above the React Kingdom, connected by ethereal data streams. Cloud Keeper Axios greeted Aria and Binary: "Welcome! Here, we bridge the gap between earth and sky, client and server. Your first lesson: speaking with distant servers."`}
+				totalChapters={3}
+			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			{/* Render the current chapter */}
 			<Outlet
 				context={{
 					selectedMethod,
@@ -122,27 +94,10 @@ function ApiIntegration() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='server-data'
-				lessonId='api-integration'
+			<LessonFooter
+				courseId={`server-data`}
+				lessonId={`api-integration`}
+				totalChapters={3}
 			/>
 		</div>
 	);

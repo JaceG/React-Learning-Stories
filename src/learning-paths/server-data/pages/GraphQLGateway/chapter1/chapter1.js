@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -58,7 +62,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Query Language</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Query Language`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -93,9 +100,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title'>Operation Types</h3>
-				<p className='instruction'>
-					<strong>👉 Choose your GraphQL operation type to begin crafting queries!</strong>
-				</p>
+				
+				<InstructionBox character={`Query Master Apollo presents the three operation types.`}>
+					Choose your GraphQL operation type to begin crafting queries!
+				</InstructionBox>
 				
 				<div className='operation-selector'>
 					<button
@@ -159,9 +167,10 @@ const ChapterOne = () => {
 				)}
 
 				<h3 className='section-title'>Schema Explorer</h3>
-				<p className='instruction'>
-					<strong>👉 Click on a type to explore its fields and build a query!</strong>
-				</p>
+				
+				<InstructionBox character={`Apollo unveils the Schema Scrolls.`}>
+					Click on a type to explore its fields and build a query!
+				</InstructionBox>
 				
 				<div className='schema-explorer'>
 					<div className='schema-types'>
@@ -258,15 +267,11 @@ selectedOperation === 'mutation' ?
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>GraphQL Fundamentals</span>
-					<span className='discovered-by'>Query Master Apollo's Teachings</span>
-				</div>
-				<pre>
-{`// GraphQL Client Setup - Apollo's Gateway
+			<CodeExample
+				title={`GraphQL Fundamentals`}
+				discoveredBy={`Query Master Apollo's Teachings`}
+				code={`// Apollo Client Setup
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache()
@@ -279,11 +284,7 @@ const GET_USER = gql\`
       id
       name
       email
-      posts {
-        id
-        title
-        # Only fetch what components need
-      }
+      posts { id, title }
     }
   }
 \`;
@@ -291,139 +292,47 @@ const GET_USER = gql\`
 // Mutation - Change data with precision
 const CREATE_POST = gql\`
   mutation CreatePost($input: PostInput!) {
-    createPost(input: $input) {
-      id
-      title
-      content
-      author {
-        name
-      }
-    }
+    createPost(input: $input) { id, title, content }
   }
 \`;
 
 // Subscription - Real-time updates
 const POST_SUBSCRIPTION = gql\`
   subscription OnPostUpdate($userId: ID!) {
-    postUpdated(userId: $userId) {
-      id
-      title
-      content
-      updatedAt
-    }
+    postUpdated(userId: $userId) { id, title, updatedAt }
   }
 \`;
 
-// React Hook Usage - Aria's Implementation
+// React Usage
 function UserProfile({ userId }) {
-  // Query with loading and error states
   const { data, loading, error } = useQuery(GET_USER, {
     variables: { id: userId }
   });
-  
-  // Mutation with optimistic response
-  const [createPost] = useMutation(CREATE_POST, {
-    optimisticResponse: {
-      createPost: {
-        id: 'temp-id',
-        title: 'Optimistic Title',
-        __typename: 'Post'
-      }
-    },
-    update(cache, { data: { createPost } }) {
-      // Update cache with new post
-      cache.modify({
-        fields: {
-          posts(existingPosts = []) {
-            return [...existingPosts, createPost];
-          }
-        }
-      });
-    }
-  });
-  
-  // Subscription for real-time updates
-  useSubscription(POST_SUBSCRIPTION, {
-    variables: { userId },
-    onSubscriptionData: ({ data }) => {
-      console.log('New update:', data);
-    }
-  });
-  
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-  
-  return (
-    <div>
-      <h1>{data.user.name}</h1>
-      <PostList posts={data.user.posts} />
-    </div>
-  );
-}
+  return <div>{data.user.name}</div>;
+}`}
+			/>
 
-// The Power of Fragments - Reusable Query Parts
-const USER_FRAGMENT = gql\`
-  fragment UserInfo on User {
-    id
-    name
-    email
-    avatar
-  }
-\`;
-
-const POSTS_WITH_AUTHOR = gql\`
-  query PostsWithAuthor {
-    posts {
-      id
-      title
-      author {
-        ...UserInfo
-      }
-    }
-  }
-  \${USER_FRAGMENT}
-\`;`}
-				</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Query Language Lesson:</h3>
-				<p>
-					GraphQL revolutionizes data fetching by allowing clients to request 
-					exactly what they need - no more, no less. Unlike REST's fixed endpoints, 
-					GraphQL provides a single endpoint with a flexible query language. This 
-					eliminates over-fetching and under-fetching, leading to more efficient 
-					applications.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on GraphQL's Approach</h3>
-				<p>
-					<strong>How does GraphQL's "ask for what you need" philosophy improve performance?</strong> 
-					Consider mobile applications with limited bandwidth or complex UIs with 
-					specific data requirements.
-				</p>
-				<p>
-					<strong>When might REST be simpler than GraphQL?</strong> 
-					Think about simple CRUD operations or public APIs with fixed requirements.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> practiced writing queries, marveling at the precision. 
-					"I can request exactly the fields I need, nothing more!"
-				</p>
-				<p>
-					<strong>Binary</strong> analyzed the efficiency. "No wasted bytes, no 
-					unnecessary requests. Optimal data transfer achieved!"
-				</p>
-				<p>
-					<strong>Query Master Apollo</strong> nodded. "You grasp the basics. But 
-					queries are just the beginning. Ready to explore the Schema Scrolls?"
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Query Master Apollo`,
+						description: `Guardian of the GraphQL Gateway. His wisdom: "REST gives you what the server decides. GraphQL lets you ask for exactly what you need - no more, no less. One endpoint, infinite possibilities."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Query Language Lesson:`,
+					content: `GraphQL revolutionizes data fetching by allowing clients to request exactly what they need. Unlike REST's fixed endpoints, GraphQL provides a single endpoint with a flexible query language. This eliminates over-fetching and under-fetching, leading to more efficient applications.`
+				}}
+				reflectionQuestions={[
+					`How does GraphQL's "ask for what you need" philosophy improve performance?`,
+					`When might REST be simpler than GraphQL?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Morning)`,
+					content: `The GraphQL Gateway is revolutionary! Query Master Apollo showed me a single endpoint (/graphql) that can handle any data request. Learned three operation types: Query (📖) for reading, Mutation (✏️) for changing, and Subscription (📡) for real-time. Built my first query - asked for user.name and user.posts only! Binary analyzed: "No wasted bytes, no unnecessary requests. Optimal data transfer achieved!" It's like having a conversation with the server instead of receiving packages.`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -48,13 +52,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Protocol Chambers</h2>
-
-			<div className='chapter-bridge'>
-				<p>Axios led them deeper into the Cloud Citadel, where the Protocol 
-				Chambers awaited. Each chamber glowed with a different hue, representing 
-				the various ways to communicate with distant servers.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Protocol Chambers`}
+				bridge={`Cloud Keeper Axios led them deeper into the Cloud Citadel, where the Protocol Chambers awaited. Each chamber glowed with a different hue, representing the various ways to communicate with distant servers. "You've learned to speak with servers," Axios explained. "Now you'll learn the different languages they understand."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -92,10 +94,11 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Protocol Chambers</h3>
-				<p className='instruction'>
-					<strong>👉 Choose your communication protocol and configure your diplomatic credentials.</strong>
+				
+				<InstructionBox character={`Axios opens the doors to each Protocol Chamber.`}>
+					Choose your communication protocol and configure your diplomatic credentials.
 					Each protocol has its own customs and requirements. Select one to begin your training!
-				</p>
+				</InstructionBox>
 				
 				<div className='protocol-chambers'>
 					{protocols.map(protocol => (
@@ -190,13 +193,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Protocol Patterns</span>
-					<span className='discovered-by'>Inscribed by Aria in the Protocol Chambers</span>
-				</div>
-				<pre>
-{`// Custom Hook for Data Fetching - The Ambassador's Tool
+			<CodeExample
+				title={`Advanced Protocol Patterns`}
+				discoveredBy={`Inscribed by Aria in the Protocol Chambers`}
+				code={`// Custom Hook - The Ambassador's Tool
 function useApiData(endpoint) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -204,163 +204,49 @@ function useApiData(endpoint) {
 
   useEffect(() => {
     const controller = new AbortController();
-    
     async function fetchData() {
       try {
-        setLoading(true);
-        setError(null);
-        
         const response = await fetch(endpoint, {
           signal: controller.signal,
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + getAuthToken()
-          }
+          headers: { 'Authorization': 'Bearer ' + getAuthToken() }
         });
-        
-        if (!response.ok) {
-          throw new Error(\`HTTP \${response.status}\`);
-        }
-        
-        const result = await response.json();
-        setData(result);
+        if (!response.ok) throw new Error(\`HTTP \${response.status}\`);
+        setData(await response.json());
       } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err.message);
-        }
-      } finally {
-        setLoading(false);
-      }
+        if (err.name !== 'AbortError') setError(err.message);
+      } finally { setLoading(false); }
     }
-    
     fetchData();
-    
-    // Cleanup: cancel request if component unmounts
-    return () => controller.abort();
+    return () => controller.abort(); // Cleanup
   }, [endpoint]);
-
   return { data, loading, error };
 }
 
-// Request Interceptor Pattern - The Diplomatic Protocol
+// Request Interceptors - Add auth to all requests
 class ApiClient {
-  constructor(baseURL) {
-    this.baseURL = baseURL;
-    this.interceptors = {
-      request: [],
-      response: []
-    };
-  }
-  
-  // Add authentication to all requests
   addAuthInterceptor() {
     this.interceptors.request.push(async (config) => {
-      const token = await getAuthToken();
-      if (token) {
-        config.headers.Authorization = \`Bearer \${token}\`;
-      }
+      config.headers.Authorization = \`Bearer \${await getAuthToken()}\`;
       return config;
     });
   }
-  
-  // Retry failed requests
-  addRetryInterceptor() {
-    this.interceptors.response.push(async (response) => {
-      if (response.status === 401) {
-        // Token expired, refresh and retry
-        await refreshToken();
-        return this.request(response.config);
-      }
-      return response;
-    });
-  }
-  
-  async request(endpoint, options = {}) {
-    let config = { ...options };
-    
-    // Apply request interceptors
-    for (const interceptor of this.interceptors.request) {
-      config = await interceptor(config);
-    }
-    
-    let response = await fetch(this.baseURL + endpoint, config);
-    
-    // Apply response interceptors
-    for (const interceptor of this.interceptors.response) {
-      response = await interceptor(response);
-    }
-    
-    return response;
-  }
-}
+}`}
+			/>
 
-// Error Handling Patterns - Debuggora's Shield
-const handleApiError = (error) => {
-  if (error.status === 404) {
-    return { message: "Resource not found in the Cloud Citadel" };
-  } else if (error.status === 401) {
-    return { message: "Access denied - diplomatic credentials required" };
-  } else if (error.status === 500) {
-    return { message: "The Cloud Citadel is experiencing difficulties" };
-  } else if (error.name === 'NetworkError') {
-    return { message: "Cannot reach the Cloud Citadel - check connection" };
-  }
-  return { message: "An unexpected error occurred" };
-};`}
-				</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Protocol Insight:</h3>
-				<p>
-					Each communication protocol serves different needs. REST provides 
-					simplicity and wide support. GraphQL offers flexibility and efficiency. 
-					WebSockets enable real-time bidirectional communication. The key is 
-					choosing the right protocol for your use case.
-				</p>
-				<p>
-					Beyond protocols, robust API integration requires handling errors 
-					gracefully, managing authentication securely, and optimizing performance 
-					through caching and request management. These patterns form the 
-					foundation of professional API integration.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Protocol Mastery</h3>
-				<p>
-					<strong>How do different protocols affect application architecture?</strong> 
-					Consider how REST's resource-based approach differs from GraphQL's 
-					query-based model.
-				</p>
-				<p>
-					<strong>Why is error handling more complex in distributed systems?</strong> 
-					Think about the various failure points between client and server and 
-					how to handle each gracefully.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					After mastering the Protocol Chambers, <strong>Aria</strong> felt 
-					confident in her communication skills. "Each protocol has its place, 
-					its strengths and weaknesses."
-				</p>
-				<p>
-					<strong>Binary</strong> processed the patterns. "Interceptors for 
-					cross-cutting concerns, retry logic for resilience, caching for 
-					performance. Elegant solutions!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> nodded approvingly. "And proper error 
-					handling throughout. You're learning to expect the unexpected."
-				</p>
-				<p>
-					Cloud Keeper Axios smiled. "You're ready for the final challenge - 
-					establishing the Data Embassy. There, you'll create permanent, 
-					production-ready connections..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Protocol Insight:`,
+					content: `Each communication protocol serves different needs. REST provides simplicity, GraphQL offers flexibility, WebSockets enable real-time communication. Beyond protocols, robust API integration requires handling errors gracefully, managing authentication securely, and optimizing with interceptors and caching.`
+				}}
+				reflectionQuestions={[
+					`How do different protocols affect application architecture?`,
+					`Why is error handling more complex in distributed systems?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 41 (Afternoon)`,
+					content: `The Protocol Chambers are fascinating! Each room glows with different light - REST (🌐), GraphQL (🔮), WebSockets (🔌). I learned that each protocol has its own customs: REST for resource-based APIs, GraphQL for flexible queries, WebSockets for real-time. Created my first interceptor chain: request → transform → response → error. Binary analyzed: "Interceptors handle cross-cutting concerns elegantly!" Debuggora reminded us: "Each protocol can fail uniquely - proper error handling is your shield." Headers are like diplomatic credentials - authentication tokens, content types.`
+				}}
+			/>
 		</div>
 	);
 };

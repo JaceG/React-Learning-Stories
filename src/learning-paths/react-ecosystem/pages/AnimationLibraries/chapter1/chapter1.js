@@ -144,13 +144,6 @@ const ChapterOne = () => {
 					Abbess Motia nodded. "Exactly. Animation must serve purpose: guide 
 					attention, provide feedback, and create delight without distraction."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Animation Abbess Motia</h4>
-					<p>Master of motion and guardian of the Motion Monastery. Her philosophy: 
-					"Every animation tells a story. Make it meaningful, make it smooth, make 
-					it accessible. Motion is the bridge between intention and understanding."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>

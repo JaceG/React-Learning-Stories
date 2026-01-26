@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -74,12 +78,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Invalidation Rituals</h2>
-
-			<div className='chapter-bridge'>
-				<p>With the memory vaults established, Cache Lord Redux revealed the most 
-				challenging aspect of caching - knowing when to let go.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Invalidation Rituals`}
+				bridge={`"You've mastered storing data," Cache Lord Redux said, leading Aria to the Invalidation Chamber. "But the hardest problem in caching is knowing when to let go. Stale data is sometimes acceptable, but serving truly outdated information can mislead your users."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -96,9 +99,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Invalidation Patterns</h3>
-				<p className='instruction'>
-					<strong>👉 Master the art of cache invalidation through smart patterns!</strong>
-				</p>
+				
+				<InstructionBox character={`Cache Lord Redux demonstrates the Invalidation Rituals.`}>
+					Master the art of cache invalidation through smart patterns!
+				</InstructionBox>
 
 				<div style={{
 					background: 'white',
@@ -284,37 +288,24 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Caching Patterns</span>
-					<span className='discovered-by'>Binary's Predictive Algorithms</span>
-				</div>
-				<pre>
-{`// Smart Invalidation - Pattern-Based Clearing
+			<CodeExample
+				title={`Advanced Caching Patterns`}
+				discoveredBy={`Binary's Predictive Algorithms`}
+				code={`// Pattern-Based Invalidation
 class SmartCache {
   invalidatePattern(pattern) {
     const regex = new RegExp(pattern);
-    const keysToInvalidate = [];
-    
     for (const key of this.cache.keys()) {
       if (regex.test(key)) {
-        keysToInvalidate.push(key);
+        this.cache.delete(key);
+        this.emit('invalidated', { key, pattern });
       }
     }
-    
-    // Batch invalidation
-    keysToInvalidate.forEach(key => {
-      this.cache.delete(key);
-      this.emit('invalidated', { key, pattern });
-    });
-    
-    return keysToInvalidate.length;
   }
   
-  // Invalidate related data
+  // Cascade invalidation for dependent data
   invalidateCascade(key) {
     const dependencies = this.getDependencies(key);
-    
     dependencies.forEach(dep => {
       this.cache.delete(dep);
       this.invalidateCascade(dep); // Recursive
@@ -322,184 +313,42 @@ class SmartCache {
   }
 }
 
+// Cache Warming - Proactive Loading
+class CacheWarmer {
+  async warmCache() {
+    const promises = this.endpoints.map(async endpoint => {
+      const data = await fetch(endpoint.url).then(r => r.json());
+      this.cache.set(endpoint.key, data, { ttl: endpoint.ttl });
+      return { success: true, key: endpoint.key };
+    });
+    return Promise.allSettled(promises);
+  }
+}
+
 // Partial Updates - Surgical Cache Surgery
 async function updateCachePartially(key, updates) {
   const cached = cache.get(key);
-  
-  if (!cached) {
-    return null; // Nothing to update
-  }
-  
-  // Merge updates with existing data
-  const updated = {
-    ...cached.data,
-    ...updates,
-    _partial_update: true,
-    _update_timestamp: Date.now()
-  };
-  
-  // Preserve original TTL
-  cache.set(key, updated, {
-    ttl: cached.ttl - cached.age
-  });
-  
+  if (!cached) return null;
+  const updated = { ...cached.data, ...updates };
+  cache.set(key, updated, { ttl: cached.ttl - cached.age });
   return updated;
-}
-
-// Cache Warming - Proactive Loading
-class CacheWarmer {
-  constructor(cache, endpoints) {
-    this.cache = cache;
-    this.endpoints = endpoints;
-    this.warmingInterval = null;
-  }
-  
-  async warmCache() {
-    const promises = this.endpoints.map(async endpoint => {
-      try {
-        const data = await fetch(endpoint.url).then(r => r.json());
-        this.cache.set(endpoint.key, data, {
-          ttl: endpoint.ttl || 300000
-        });
-        return { success: true, key: endpoint.key };
-      } catch (error) {
-        return { success: false, key: endpoint.key, error };
-      }
-    });
-    
-    const results = await Promise.allSettled(promises);
-    return results;
-  }
-  
-  startAutoWarming(interval = 300000) {
-    this.warmingInterval = setInterval(() => {
-      this.warmCache();
-    }, interval);
-  }
-}
-
-// Distributed Cache Sync - Binary's Pattern
-class DistributedCache {
-  constructor(nodeId) {
-    this.nodeId = nodeId;
-    this.localCache = new Map();
-    this.peerNodes = new Set();
-  }
-  
-  // Broadcast invalidation to peers
-  async invalidateAcrossNodes(key) {
-    // Local invalidation
-    this.localCache.delete(key);
-    
-    // Notify peers
-    const invalidationMessage = {
-      type: 'INVALIDATE',
-      key,
-      origin: this.nodeId,
-      timestamp: Date.now()
-    };
-    
-    await this.broadcast(invalidationMessage);
-  }
-  
-  // Sync state with peers
-  async syncWithPeers() {
-    const localState = this.getLocalState();
-    
-    for (const peer of this.peerNodes) {
-      const peerState = await this.fetchPeerState(peer);
-      const merged = this.mergeStates(localState, peerState);
-      this.applyState(merged);
-    }
-  }
-}
-
-// Offline Strategy - Debuggora's Resilience
-class OfflineCache {
-  constructor() {
-    this.storage = window.localStorage;
-    this.memory = new Map();
-  }
-  
-  async get(key) {
-    // Try memory first
-    if (this.memory.has(key)) {
-      return this.memory.get(key);
-    }
-    
-    // Try localStorage
-    const stored = this.storage.getItem(key);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      if (!this.isExpired(parsed)) {
-        this.memory.set(key, parsed); // Promote to memory
-        return parsed.data;
-      }
-    }
-    
-    return null;
-  }
-  
-  set(key, data, options = {}) {
-    const entry = {
-      data,
-      timestamp: Date.now(),
-      ttl: options.ttl || 3600000,
-      offline: options.offline !== false
-    };
-    
-    // Always set in memory
-    this.memory.set(key, entry);
-    
-    // Persist if offline enabled
-    if (entry.offline) {
-      this.storage.setItem(key, JSON.stringify(entry));
-    }
-  }
 }`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Invalidation Insight:</h3>
-				<p>
-					Cache invalidation is indeed one of the hardest problems in computer science. 
-					Smart invalidation strategies include pattern-based clearing, cascade 
-					invalidation for dependent data, and predictive refresh based on usage 
-					patterns. The key is balancing cache efficiency with data consistency.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Cache Management</h3>
-				<p>
-					<strong>How do you decide the right TTL for different data types?</strong> 
-					Consider how frequently data changes and how critical freshness is for 
-					each use case.
-				</p>
-				<p>
-					<strong>What are the risks of aggressive cache warming?</strong> 
-					Think about resource usage and the possibility of warming data that 
-					won't be used.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> mastered the invalidation rituals, watching as 
-					stale data vanished and fresh data took its place. "It's like maintaining 
-					a living library!"
-				</p>
-				<p>
-					<strong>Binary</strong> displayed probability charts. "With proper 
-					patterns, we can achieve 95% cache efficiency while maintaining data 
-					integrity!"
-				</p>
-				<p>
-					<strong>Cache Lord Redux</strong> smiled. "You've learned to balance 
-					storage and freshness. Now, ready to architect a complete caching system?"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Invalidation Insight:`,
+					content: `Cache invalidation is one of the hardest problems in computer science. Smart strategies include pattern-based clearing, cascade invalidation for dependent data, partial updates for surgical changes, and cache warming for proactive loading. The key is balancing efficiency with consistency.`
+				}}
+				reflectionQuestions={[
+					`How do you decide the right TTL for different data types?`,
+					`What are the risks of aggressive cache warming?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 43 (Afternoon)`,
+					content: `The Invalidation Rituals are tricky! "Knowing when to let go is the true challenge," Cache Lord said. Learned pattern-based invalidation (🎯), cascade invalidation for dependent data, and cache warming (🔥) for proactive loading. Binary displayed probability charts: "With proper patterns, we can achieve 95% efficiency while maintaining integrity!" Also learned partial updates - surgical changes without full refetch. The hardest part: predicting when data becomes stale.`
+				}}
+			/>
 		</div>
 	);
 };

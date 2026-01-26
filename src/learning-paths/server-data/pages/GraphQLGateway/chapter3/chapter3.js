@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -73,12 +77,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Unified Interface</h2>
-
-			<div className='chapter-bridge'>
-				<p>With queries mastered and schemas understood, it was time to build 
-				the Unified Interface - a complete GraphQL system serving the entire kingdom.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Unified Interface`}
+				bridge={`"You've mastered queries and understood the schema contract," Query Master Apollo said, ascending to the Gateway's control center. "Now it's time to build the Unified Interface - a complete GraphQL system that serves all data needs through one elegant endpoint."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -96,9 +99,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Unified Interface</h3>
-				<p className='instruction'>
-					<strong>👉 Explore the complete GraphQL ecosystem and learn when to use it!</strong>
-				</p>
+				
+				<InstructionBox character={`Apollo reveals the complete GraphQL ecosystem.`}>
+					Explore the complete GraphQL ecosystem and learn when to use it!
+				</InstructionBox>
 
 				<div style={{
 					display: 'flex',
@@ -450,273 +454,76 @@ GET /posts/2/comments`}
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>The Unified GraphQL Architecture</span>
-					<span className='discovered-by'>Query Master Apollo's Complete System</span>
-				</div>
-				<pre>
-{`// The Complete GraphQL System - Aria's Implementation
-import { 
-  ApolloClient, 
-  InMemoryCache, 
-  ApolloProvider,
-  createHttpLink,
-  split
-} from '@apollo/client';
+			<CodeExample
+				title={`The Unified GraphQL Architecture`}
+				discoveredBy={`Query Master Apollo's Complete System`}
+				code={`// Complete GraphQL Client Setup
+import { ApolloClient, InMemoryCache, split } from '@apollo/client';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
-// HTTP link for queries and mutations
-const httpLink = createHttpLink({
-  uri: '/graphql',
-  credentials: 'include'
-});
-
-// WebSocket link for subscriptions
-const wsLink = new WebSocketLink({
-  uri: 'ws://localhost:4000/graphql',
-  options: {
-    reconnect: true,
-    connectionParams: {
-      authToken: localStorage.getItem('token')
-    }
-  }
-});
-
-// Split link based on operation type
+// Split link: HTTP for queries/mutations, WS for subscriptions
 const splitLink = split(
   ({ query }) => {
-    const definition = getMainDefinition(query);
-    return (
-      definition.kind === 'OperationDefinition' &&
-      definition.operation === 'subscription'
-    );
+    const def = getMainDefinition(query);
+    return def.kind === 'OperationDefinition' && def.operation === 'subscription';
   },
-  wsLink,
-  httpLink
+  new WebSocketLink({ uri: 'ws://localhost:4000/graphql' }),
+  createHttpLink({ uri: '/graphql' })
 );
 
-// Unified cache with type policies
-const cache = new InMemoryCache({
-  typePolicies: {
-    Query: {
-      fields: {
-        // Paginated field policy
-        posts: {
-          keyArgs: ['type', 'filter'],
-          merge(existing = { edges: [] }, incoming) {
-            return {
-              ...incoming,
-              edges: [...existing.edges, ...incoming.edges]
-            };
-          }
-        }
-      }
-    },
-    User: {
-      // Normalize by ID
-      keyFields: ['id'],
-      fields: {
-        // Computed field
-        fullName: {
-          read(_, { readField }) {
-            const firstName = readField('firstName');
-            const lastName = readField('lastName');
-            return \`\${firstName} \${lastName}\`;
-          }
-        }
-      }
-    }
-  }
-});
-
-// Apollo Client instance
 const client = new ApolloClient({
   link: splitLink,
-  cache,
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: 'cache-and-network'
+  cache: new InMemoryCache({
+    typePolicies: {
+      User: { keyFields: ['id'] },
+      Query: { fields: { posts: { merge: (existing = [], incoming) => [...existing, ...incoming] }}}
     }
-  }
+  })
 });
 
-// The Unified App - All data through GraphQL
+// The Unified App
 function UnifiedKingdom() {
   return (
     <ApolloProvider client={client}>
       <DataExplorer />
       <RealTimeUpdates />
-      <OfflineSupport />
     </ApolloProvider>
   );
 }
 
-// Smart Query Component - No over/under fetching
+// Smart Query - No over/under fetching
 function DataExplorer() {
   const { data, loading } = useQuery(gql\`
     query GetKingdomData($userId: ID!) {
-      user(id: $userId) {
-        id
-        name
-        # Only fields this component needs
-        posts(last: 10) {
-          edges {
-            node {
-              id
-              title
-              # Skip content - not needed here
-            }
-          }
-        }
-      }
-      # Parallel queries in one request
-      systemStats {
-        totalUsers
-        totalPosts
-        activeNow
-      }
+      user(id: $userId) { id, name, posts(last: 10) { id, title } }
+      systemStats { totalUsers, activeNow }
     }
   \`);
-  
-  if (loading) return <Loading />;
-  
-  return <Dashboard data={data} />;
-}
+  return loading ? <Loading /> : <Dashboard data={data} />;
+}`}
+			/>
 
-// Real-time with Subscriptions
-function RealTimeUpdates() {
-  const { data } = useSubscription(gql\`
-    subscription OnKingdomActivity {
-      activityStream {
-        id
-        type
-        user {
-          name
-          avatar
-        }
-        timestamp
-      }
-    }
-  \`);
-  
-  return <ActivityFeed activities={data?.activityStream} />;
-}
-
-// Offline Support with Optimistic UI
-function OfflineSupport() {
-  const [createPost] = useMutation(CREATE_POST, {
-    // Optimistic response
-    optimisticResponse: {
-      createPost: {
-        id: 'temp-' + Date.now(),
-        __typename: 'Post',
-        title: 'Optimistic Post',
-        createdAt: new Date().toISOString()
-      }
-    },
-    // Update cache optimistically
-    update: (cache, { data }) => {
-      cache.updateQuery({ query: GET_POSTS }, (prev) => ({
-        posts: {
-          ...prev.posts,
-          edges: [...prev.posts.edges, {
-            node: data.createPost
-          }]
-        }
-      }));
-    },
-    // Retry on reconnect
-    refetchQueries: ['GetPosts'],
-    awaitRefetchQueries: true
-  });
-  
-  return <CreatePostForm onSubmit={createPost} />;
-}
-
-// The Complete System Benefits:
-// 1. Single endpoint for all data needs
-// 2. Type-safe from schema to UI
-// 3. Efficient caching and updates
-// 4. Real-time subscriptions built-in
-// 5. Offline support with optimistic UI
-// 6. No over-fetching or under-fetching
-// 7. Self-documenting API
-
-// Query Master Apollo's Final Wisdom:
-// "GraphQL isn't just a query language - it's a 
-// complete data management philosophy that puts
-// the client in control while maintaining server
-// efficiency and type safety throughout."`}
-				</pre>
-			</div>
-
-			<div className='lesson-insight'>
-				<h3>The Unified Interface Insight:</h3>
-				<p>
-					GraphQL represents a paradigm shift in API design, moving from 
-					resource-based endpoints to a flexible query language. The unified 
-					interface eliminates common REST pain points while introducing new 
-					capabilities like real-time subscriptions and intelligent caching. 
-					However, it's not always the right choice - simpler applications may 
-					benefit from REST's straightforward approach.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on API Architecture</h3>
-				<p>
-					<strong>How does GraphQL change the relationship between frontend and backend teams?</strong> 
-					Consider how the schema serves as a contract and enables parallel development.
-				</p>
-				<p>
-					<strong>What are the operational considerations of running GraphQL in production?</strong> 
-					Think about query complexity, rate limiting, and monitoring requirements.
-				</p>
-			</div>
-
-			<div className='character-intro'>
-				<h4>Aria's Journal - GraphQL Gateway Day 3</h4>
-				<p>
-					The Unified Interface is complete! One endpoint serving all data needs, 
-					type-safe from server to client, with real-time updates and intelligent 
-					caching. Query Master Apollo taught me that GraphQL isn't just about 
-					queries - it's about creating a better developer experience and more 
-					efficient applications. The wisdom to choose the right tool for each 
-					situation is as important as mastering the tool itself.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Standing atop the Cloud Citadel, <strong>Aria</strong> surveyed her 
-					achievements. She could now bridge any gap between client and server, 
-					handle real-time data, cache efficiently, and query elegantly.
-				</p>
-				<p>
-					<strong>Query Master Apollo</strong> placed a hand on her shoulder. 
-					"You've mastered the four pillars of server communication. API integration, 
-					real-time connections, intelligent caching, and flexible querying."
-				</p>
-				<p>
-					<strong>Binary</strong> computed the final statistics. "Complete data 
-					layer mastery achieved. Efficiency optimized across all protocols!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> smiled. "And with proper error handling at 
-					every layer, the system remains robust."
-				</p>
-				<p>
-					<strong>Master Aurelius</strong> appeared. "The Cloud Citadel has served 
-					you well. But there's one more frontier - the Type Forge awaits. Ready 
-					to make your code unbreakable?"
-				</p>
-				<p>
-					Binary and Debuggora exchanged glances. The Type Forge was legendary - 
-					where code became contract, and contracts became law.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Unified Interface Insight:`,
+					content: `GraphQL represents a paradigm shift in API design. The unified interface eliminates common REST pain points while introducing real-time subscriptions and intelligent caching. However, it's not always the right choice - simpler applications may benefit from REST's straightforward approach. The wisdom to choose the right tool is as important as mastering it.`
+				}}
+				reflectionQuestions={[
+					`How does GraphQL change the relationship between frontend and backend teams?`,
+					`What are the operational considerations of running GraphQL in production?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Evening)`,
+					content: `The Unified Interface is complete! Built a full GraphQL client with HTTP for queries/mutations and WebSocket for real-time subscriptions. Apollo's decision matrix helped me understand when to use GraphQL vs REST: complex nested data → GraphQL, simple CRUD → REST. Binary computed final statistics: "Complete data layer mastery achieved!" Query Master Apollo's final wisdom: "GraphQL isn't just a query language - it's a complete data management philosophy." The Type Forge awaits next!`
+				}}
+				chapterEnding={[
+					`Standing atop the Cloud Citadel, Aria surveyed her achievements. She could now bridge any gap between client and server, handle real-time data, cache efficiently, and query elegantly.`,
+					`Query Master Apollo placed a hand on her shoulder. "You've mastered the four pillars of server communication: API integration, real-time connections, intelligent caching, and flexible querying."`,
+					`Binary computed the final statistics. "Complete data layer mastery achieved. Efficiency optimized across all protocols!"`,
+					`Master Aurelius appeared. "The Cloud Citadel has served you well. But there's one more frontier - the Type Forge awaits. Ready to make your code unbreakable?"`
+				]}
+			/>
 		</div>
 	);
 };

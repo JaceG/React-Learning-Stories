@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -102,12 +106,11 @@ type Subscription {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Schema Scrolls</h2>
-
-			<div className='chapter-bridge'>
-				<p>With query basics mastered, Query Master Apollo revealed the deeper 
-				magic - the Schema Scrolls that define the contract between worlds.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Schema Scrolls`}
+				bridge={`"You've learned to write queries," Query Master Apollo said, leading Aria to the Schema Vault. "But the true power lies in understanding the contract itself. The Schema Scrolls define every field, every type, every relationship - like a detailed treaty between client and server."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -129,9 +132,10 @@ type Subscription {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Schema Scrolls</h3>
-				<p className='instruction'>
-					<strong>👉 Explore the type system that powers GraphQL's flexibility!</strong>
-				</p>
+				
+				<InstructionBox character={`Apollo unrolls the ancient Schema Scrolls.`}>
+					Explore the type system that powers GraphQL's flexibility!
+				</InstructionBox>
 
 				<div style={{
 					display: 'flex',
@@ -376,227 +380,66 @@ type Subscription {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced GraphQL Patterns</span>
-					<span className='discovered-by'>The Schema Scrolls' Secrets</span>
-				</div>
-				<pre>
-{`// Type-Safe GraphQL with TypeScript - Apollo's Alliance
-import { gql, TypedDocumentNode } from '@apollo/client';
+			<CodeExample
+				title={`Advanced GraphQL Patterns`}
+				discoveredBy={`The Schema Scrolls' Secrets`}
+				code={`// Type-Safe GraphQL with TypeScript
+interface User { id: string; name: string; posts: Post[]; }
+interface Post { id: string; title: string; author: User; }
 
-// Generated types from schema
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  posts: Post[];
-}
-
-interface Post {
-  id: string;
-  title: string;
-  content: string;
-  author: User;
-}
-
-// Type-safe query with variables
-const GET_USER: TypedDocumentNode<
-  { user: User },
-  { id: string }
-> = gql\`
-  query GetUser($id: ID!) {
-    user(id: $id) {
-      id
-      name
-      email
-      posts {
-        id
-        title
-      }
-    }
-  }
-\`;
-
-// Fragment Composition - Reusable Query Parts
+// Fragments - Reusable Query Parts
 const USER_FIELDS = gql\`
-  fragment UserFields on User {
-    id
-    name
-    email
-    avatar
-  }
+  fragment UserFields on User { id, name, email }
 \`;
 
 const POST_WITH_AUTHOR = gql\`
   fragment PostWithAuthor on Post {
-    id
-    title
-    content
-    author {
-      ...UserFields
-    }
+    id, title
+    author { ...UserFields }
   }
   \${USER_FIELDS}
 \`;
 
-// Complex query with fragments
-const FEED_QUERY = gql\`
-  query GetFeed($limit: Int!) {
-    posts(limit: $limit) {
-      ...PostWithAuthor
-      comments {
-        id
-        text
-        author {
-          ...UserFields
-        }
-      }
-    }
-  }
-  \${POST_WITH_AUTHOR}
-\`;
-
-// Optimistic Response Pattern - Instant UI
+// Optimistic Response - Instant UI
 const [updatePost] = useMutation(UPDATE_POST, {
   optimisticResponse: (vars) => ({
     updatePost: {
       __typename: 'Post',
       id: vars.id,
-      title: vars.input.title,
-      content: vars.input.content,
-      // Assume success optimistically
-      updatedAt: new Date().toISOString()
+      title: vars.input.title
     }
   }),
   update(cache, { data }) {
-    // Update normalized cache
     cache.modify({
       id: cache.identify(data.updatePost),
-      fields: {
-        title: () => data.updatePost.title,
-        content: () => data.updatePost.content
-      }
+      fields: { title: () => data.updatePost.title }
     });
   }
 });
 
-// Cache Normalization - Apollo's Magic
+// Cache Normalization
 const cache = new InMemoryCache({
   typePolicies: {
-    User: {
-      keyFields: ['id'],
-      fields: {
-        posts: {
-          merge(existing = [], incoming) {
-            // Custom merge strategy
-            return [...existing, ...incoming];
-          }
-        }
-      }
-    },
-    Query: {
-      fields: {
-        posts: {
-          // Pagination handling
-          keyArgs: ['type'],
-          merge(existing, incoming, { args }) {
-            const offset = args?.offset || 0;
-            const merged = existing ? existing.slice(0) : [];
-            
-            for (let i = 0; i < incoming.length; ++i) {
-              merged[offset + i] = incoming[i];
-            }
-            
-            return merged;
-          }
-        }
-      }
-    }
-  }
-});
-
-// Subscription with Error Handling - Debuggora's Safety
-function usePostUpdates(userId: string) {
-  const { data, error } = useSubscription(POST_UPDATES, {
-    variables: { userId },
-    onError: (error) => {
-      console.error('Subscription error:', error);
-      // Implement retry logic
-    },
-    shouldResubscribe: true,
-    onSubscriptionData: ({ subscriptionData }) => {
-      // Handle real-time updates
-      if (subscriptionData.data) {
-        updateLocalState(subscriptionData.data);
-      }
-    }
-  });
-  
-  return { updates: data?.postUpdated, error };
-}
-
-// Error Boundary for GraphQL - Binary's Protection
-const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
-    graphQLErrors.forEach(({ message, locations, path }) => {
-      console.error(
-        \`GraphQL error: Message: \${message}, Path: \${path}\`
-      );
-    });
-  }
-  
-  if (networkError) {
-    console.error(\`Network error: \${networkError}\`);
-    // Implement retry or fallback
+    User: { keyFields: ['id'] },
+    Query: { fields: { posts: { merge: (existing = [], incoming) => [...existing, ...incoming] }}}
   }
 });`}
-				</pre>
-			</div>
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Schema Insight:</h3>
-				<p>
-					GraphQL's type system provides a contract between client and server, 
-					ensuring that both sides agree on data structure. Combined with TypeScript, 
-					it creates end-to-end type safety. Features like fragments reduce 
-					duplication, optimistic updates improve perceived performance, and cache 
-					normalization ensures data consistency across your application.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Type Systems</h3>
-				<p>
-					<strong>How does GraphQL's type system prevent runtime errors?</strong> 
-					Consider how compile-time validation catches issues before they reach 
-					production.
-				</p>
-				<p>
-					<strong>What are the benefits of cache normalization?</strong> 
-					Think about how updating one entity automatically updates all views 
-					that reference it.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> studied the Schema Scrolls intensely. "The types 
-					create a perfect understanding between client and server!"
-				</p>
-				<p>
-					<strong>Binary</strong> computed the efficiency. "Type validation at 
-					compile time, zero runtime type errors. Maximum safety achieved!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> added, "And with proper error boundaries, 
-					even GraphQL errors are handled gracefully."
-				</p>
-				<p>
-					<strong>Query Master Apollo</strong> smiled. "You understand the contract. 
-					Now, ready to build the Unified Interface?"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Schema Insight:`,
+					content: `GraphQL's type system provides a contract between client and server. Combined with TypeScript, it creates end-to-end type safety. Fragments reduce duplication, optimistic updates improve perceived performance, and cache normalization ensures data consistency across your application.`
+				}}
+				reflectionQuestions={[
+					`How does GraphQL's type system prevent runtime errors?`,
+					`What are the benefits of cache normalization?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 44 (Afternoon)`,
+					content: `The Schema Scrolls are like a detailed treaty between client and server! Every field, every type, every relationship is defined. Learned fragments for reusable query parts - no more duplication. Apollo showed cache normalization: when you update User#1, it updates everywhere User#1 appears! Built optimistic updates for instant UI feedback. Binary computed: "Type validation at compile time, zero runtime errors. Maximum safety achieved!" GraphQL and TypeScript are natural allies.`
+				}}
+			/>
 		</div>
 	);
 };
