@@ -202,7 +202,7 @@ type PostRoute = APIRoute<'posts'>; // '/api/posts'`
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Type Synthesis</h3>
-				<InstructionBox character={`👉 Master Typus reveals the Synthesis Crystal.`}>
+				<InstructionBox character={`Master Typus reveals the Synthesis Crystal.`}>
 					Master the advanced patterns of the Type Forge! Select each type pattern to understand its power.
 				</InstructionBox>
 

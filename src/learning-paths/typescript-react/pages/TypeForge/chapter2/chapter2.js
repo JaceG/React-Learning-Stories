@@ -150,7 +150,7 @@ function List<T>({ items, renderItem, keyExtractor }: ListProps<T>) {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Component Contract Forge</h3>
-				<InstructionBox character={`👉 Master Typus gestures to the Component Anvil.`}>
+				<InstructionBox character={`Master Typus gestures to the Component Anvil.`}>
 					Learn to forge type contracts for React components! Select different component types to see how TypeScript transforms them.
 				</InstructionBox>
 

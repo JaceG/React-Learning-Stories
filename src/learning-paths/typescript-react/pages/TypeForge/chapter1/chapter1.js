@@ -77,7 +77,7 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Type Forge Workbench</h3>
-				<InstructionBox character={`👉 Master Typus hands you a glowing type hammer.`}>
+				<InstructionBox character={`Master Typus hands you a glowing type hammer.`}>
 					Forge your first type contracts! Enter values and select their types to see TypeScript in action.
 				</InstructionBox>
 
