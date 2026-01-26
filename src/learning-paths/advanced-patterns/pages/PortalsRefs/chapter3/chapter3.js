@@ -487,7 +487,7 @@ const ChapterThree = () => {
 				discoveredBy={`Transcribed by Aria`}
 				code={`// Combining Portals, Refs, and Advanced Patterns
 
-// Complete Modal Architecture - All patterns combined!
+// 1. Complete Modal Architecture
 const Modal = {
   Root: forwardRef(({ children, isOpen, onClose }, ref) => {
     const modalRef = useRef(null);
@@ -495,14 +495,20 @@ const Modal = {
     
     // Focus restoration
     useEffect(() => {
-      if (isOpen) previousActiveElement.current = document.activeElement;
-      return () => previousActiveElement.current?.focus();
+      if (isOpen) {
+        previousActiveElement.current = document.activeElement;
+      }
+      return () => {
+        if (!isOpen && previousActiveElement.current) {
+          previousActiveElement.current.focus();
+        }
+      };
     }, [isOpen]);
     
-    // Imperative API via ref
+    // Imperative API
     useImperativeHandle(ref, () => ({
       focus: () => modalRef.current?.focus(),
-      contains: (el) => modalRef.current?.contains(el)
+      contains: (element) => modalRef.current?.contains(element)
     }));
     
     if (!isOpen) return null;
@@ -511,9 +517,12 @@ const Modal = {
       <ModalContext.Provider value={{ onClose }}>
         <FocusTrap active={isOpen}>
           <div className="modal-overlay" onClick={onClose}>
-            <div ref={modalRef} className="modal-content" 
-                 onClick={e => e.stopPropagation()}
-                 role="dialog" aria-modal="true">
+            <div 
+              ref={modalRef}
+              className="modal-content"
+              onClick={e => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true">
               {children}
             </div>
           </div>
@@ -528,15 +537,185 @@ const Modal = {
     return (
       <div className="modal-header">
         {children}
-        <button onClick={onClose}>×</button>
+        <button onClick={onClose} aria-label="Close">×</button>
       </div>
     );
   },
-  Body: ({ children }) => <div className="modal-body">{children}</div>,
-  Footer: ({ children }) => <div className="modal-footer">{children}</div>
+  
+  Body: ({ children }) => (
+    <div className="modal-body">{children}</div>
+  ),
+  
+  Footer: ({ children }) => (
+    <div className="modal-footer">{children}</div>
+  )
 };
 
-// Combines: Portals, Compound Components, Refs, Context, Focus Management!`}
+// 2. Tooltip System with Render Props and Portals
+function TooltipProvider({ children, render }) {
+  const [tooltip, setTooltip] = useState(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  const showTooltip = (content, target) => {
+    const rect = target.getBoundingClientRect();
+    setPosition({
+      x: rect.left + rect.width / 2,
+      y: rect.top - 10
+    });
+    setTooltip(content);
+  };
+  
+  const hideTooltip = () => setTooltip(null);
+  
+  const tooltipProps = {
+    onMouseEnter: (e) => showTooltip(e.currentTarget.dataset.tooltip, e.currentTarget),
+    onMouseLeave: hideTooltip,
+    onFocus: (e) => showTooltip(e.currentTarget.dataset.tooltip, e.currentTarget),
+    onBlur: hideTooltip
+  };
+  
+  return (
+    <>
+      {children({ tooltipProps })}
+      {tooltip && ReactDOM.createPortal(
+        render({
+          content: tooltip,
+          position,
+          isVisible: true
+        }),
+        document.body
+      )}
+    </>
+  );
+}
+
+// 3. Notification System Architecture
+class NotificationManager {
+  constructor() {
+    this.listeners = new Set();
+    this.notifications = [];
+  }
+  
+  subscribe(listener) {
+    this.listeners.add(listener);
+    return () => this.listeners.delete(listener);
+  }
+  
+  notify(notification) {
+    const id = Date.now();
+    const fullNotification = { ...notification, id };
+    this.notifications.push(fullNotification);
+    this.listeners.forEach(listener => listener(this.notifications));
+    
+    if (notification.duration) {
+      setTimeout(() => this.remove(id), notification.duration);
+    }
+    
+    return id;
+  }
+  
+  remove(id) {
+    this.notifications = this.notifications.filter(n => n.id !== id);
+    this.listeners.forEach(listener => listener(this.notifications));
+  }
+}
+
+const notificationManager = new NotificationManager();
+
+function NotificationContainer() {
+  const [notifications, setNotifications] = useState([]);
+  
+  useEffect(() => {
+    return notificationManager.subscribe(setNotifications);
+  }, []);
+  
+  return ReactDOM.createPortal(
+    <div className="notification-container">
+      {notifications.map(notification => (
+        <Notification
+          key={notification.id}
+          {...notification}
+          onClose={() => notificationManager.remove(notification.id)}
+        />
+      ))}
+    </div>,
+    document.getElementById('notification-root')
+  );
+}
+
+// 4. Advanced Focus Management Hook
+function useFocusManager() {
+  const focusStack = useRef([]);
+  const focusListeners = useRef(new Set());
+  
+  const pushFocus = (element) => {
+    const currentFocus = document.activeElement;
+    focusStack.current.push(currentFocus);
+    element?.focus();
+  };
+  
+  const popFocus = () => {
+    const previousFocus = focusStack.current.pop();
+    previousFocus?.focus();
+  };
+  
+  const trapFocus = (container) => {
+    const focusableElements = container.querySelectorAll(
+      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    const handleTab = (e) => {
+      if (e.key !== 'Tab') return;
+      
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
+      }
+    };
+    
+    container.addEventListener('keydown', handleTab);
+    focusListeners.current.add({ container, handler: handleTab });
+    
+    return () => {
+      container.removeEventListener('keydown', handleTab);
+      focusListeners.current.delete({ container, handler: handleTab });
+    };
+  };
+  
+  return { pushFocus, popFocus, trapFocus };
+}
+
+// Usage combining all patterns
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef(null);
+  
+  return (
+    <>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      
+      <Modal.Root ref={modalRef} isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <Modal.Header>
+          <h2>Architectural Modal</h2>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Combines Portals, Refs, Context, and Compound Components!</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <button onClick={() => setIsOpen(false)}>Close</button>
+        </Modal.Footer>
+      </Modal.Root>
+      
+      <NotificationContainer />
+    </>
+  );
+}`}
 			/>
 
 			{masteryLevel === 'master' && (

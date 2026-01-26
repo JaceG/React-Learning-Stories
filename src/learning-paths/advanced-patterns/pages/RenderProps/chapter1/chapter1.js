@@ -169,35 +169,49 @@ const ChapterOne = () => {
 				code={`// Render Props Pattern - Separation of Concerns
 
 // 1. Basic Render Prop Pattern
-function MouseTracker({ render }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+class MouseTracker extends React.Component {
+  state = { x: 0, y: 0 };
   
-  const handleMouseMove = (event) => {
-    setPosition({ x: event.clientX, y: event.clientY });
+  handleMouseMove = (event) => {
+    this.setState({
+      x: event.clientX,
+      y: event.clientY
+    });
   };
   
-  return (
-    <div onMouseMove={handleMouseMove}>
-      {/* Delegate rendering to the consumer */}
-      {render(position)}
-    </div>
-  );
+  render() {
+    return (
+      <div onMouseMove={this.handleMouseMove}>
+        {/* Delegate rendering to the consumer */}
+        {this.props.render(this.state)}
+      </div>
+    );
+  }
 }
 
 // Usage - Consumer controls presentation
-<MouseTracker
-  render={({ x, y }) => (
-    <div>
-      <h1>Mouse position: ({x}, {y})</h1>
-      <div style={{
-        position: 'absolute',
-        left: x - 10, top: y - 10,
-        width: 20, height: 20,
-        background: 'red', borderRadius: '50%'
-      }} />
-    </div>
-  )}
-/>
+function App() {
+  return (
+    <MouseTracker
+      render={({ x, y }) => (
+        <div>
+          <h1>Mouse position: ({x}, {y})</h1>
+          <div 
+            style={{
+              position: 'absolute',
+              left: x - 10,
+              top: y - 10,
+              width: 20,
+              height: 20,
+              background: 'red',
+              borderRadius: '50%'
+            }}
+          />
+        </div>
+      )}
+    />
+  );
+}
 
 // 2. Children as Function Pattern (more common)
 function Toggle({ children }) {
@@ -209,16 +223,77 @@ function Toggle({ children }) {
 }
 
 // Clean usage
-<Toggle>
-  {({ on, toggle }) => (
-    <>
-      <button onClick={toggle}>{on ? 'ON' : 'OFF'}</button>
-      {on && <div>The light is on! 💡</div>}
-    </>
-  )}
-</Toggle>
+function App() {
+  return (
+    <Toggle>
+      {({ on, toggle }) => (
+        <>
+          <button onClick={toggle}>
+            {on ? 'ON' : 'OFF'}
+          </button>
+          {on && <div>The light is on! 💡</div>}
+        </>
+      )}
+    </Toggle>
+  );
+}
 
-// Benefits: Maximum flexibility, logic reuse, inversion of control`}
+// 3. Multiple Render Props for Complex UIs
+function DataFetcher({ renderSuccess, renderError, renderLoading, url }) {
+  const [state, setState] = useState({
+    data: null,
+    loading: true,
+    error: null
+  });
+  
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setState({ data, loading: false, error: null }))
+      .catch(error => setState({ data: null, loading: false, error }));
+  }, [url]);
+  
+  if (state.loading) return renderLoading();
+  if (state.error) return renderError(state.error);
+  return renderSuccess(state.data);
+}
+
+// Flexible usage with custom UI for each state
+<DataFetcher
+  url="/api/users"
+  renderLoading={() => <Spinner />}
+  renderError={(error) => <ErrorMessage error={error} />}
+  renderSuccess={(users) => <UserList users={users} />}
+/>
+
+// 4. Render Props with Hooks (Modern approach)
+function useMousePosition() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const handleMove = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, []);
+  
+  return position;
+}
+
+// Component that uses render prop pattern with hooks
+function WithMouse({ children }) {
+  const mousePosition = useMousePosition();
+  return children(mousePosition);
+}
+
+// Benefits of Render Props:
+// 1. Maximum flexibility in rendering
+// 2. Logic reuse without UI coupling
+// 3. Dynamic composition
+// 4. Inversion of control
+// 5. Testable logic separate from UI`}
 			/>
 
 			<ChapterSummary

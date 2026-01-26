@@ -219,58 +219,250 @@ const ChapterThree = () => {
 				code={`// Production-Ready Render Props Components
 
 // 1. Flexible Modal with Render Props
-function Modal({ isOpen, onClose, renderHeader, renderContent, children }) {
+function Modal({ 
+  isOpen, 
+  onClose, 
+  renderHeader, 
+  renderContent, 
+  renderFooter,
+  children 
+}) {
   useEffect(() => {
     if (isOpen) {
+      // Lock body scroll
       document.body.style.overflow = 'hidden';
-      return () => { document.body.style.overflow = ''; };
+      
+      // Focus management
+      const previousActive = document.activeElement;
+      return () => {
+        document.body.style.overflow = '';
+        previousActive?.focus();
+      };
     }
   }, [isOpen]);
   
   if (!isOpen) return null;
+  
+  // Support both render props and children function
   const content = children || renderContent;
   
   return createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-container" onClick={e => e.stopPropagation()}>
-        {renderHeader?.({ onClose })}
-        {typeof content === 'function' ? content({ onClose }) : content}
+      <div 
+        className="modal-container" 
+        onClick={e => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true">
+        {renderHeader && (
+          <div className="modal-header">
+            {renderHeader({ onClose })}
+          </div>
+        )}
+        
+        <div className="modal-content">
+          {typeof content === 'function' 
+            ? content({ onClose })
+            : content
+          }
+        </div>
+        
+        {renderFooter && (
+          <div className="modal-footer">
+            {renderFooter({ onClose })}
+          </div>
+        )}
       </div>
     </div>,
     document.body
   );
 }
 
-// 2. Animation Controller - Animate anything!
-function SpringAnimation({ from, to, config, children }) {
+// 2. Autocomplete with Render Props
+function Autocomplete({ 
+  items, 
+  onSelect,
+  filterItems = defaultFilter,
+  renderInput,
+  renderItem,
+  renderNoResults
+}) {
+  const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(0);
+  
+  const filteredItems = filterItems(items, query);
+  
+  const getInputProps = () => ({
+    value: query,
+    onChange: (e) => {
+      setQuery(e.target.value);
+      setIsOpen(true);
+    },
+    onKeyDown: (e) => {
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          setHighlightedIndex(i => 
+            Math.min(i + 1, filteredItems.length - 1)
+          );
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setHighlightedIndex(i => Math.max(i - 1, 0));
+          break;
+        case 'Enter':
+          e.preventDefault();
+          if (filteredItems[highlightedIndex]) {
+            handleSelect(filteredItems[highlightedIndex]);
+          }
+          break;
+        case 'Escape':
+          setIsOpen(false);
+          break;
+      }
+    },
+    onFocus: () => setIsOpen(true),
+    onBlur: () => setTimeout(() => setIsOpen(false), 200)
+  });
+  
+  const getItemProps = (item, index) => ({
+    onClick: () => handleSelect(item),
+    onMouseEnter: () => setHighlightedIndex(index),
+    className: highlightedIndex === index ? 'highlighted' : ''
+  });
+  
+  const handleSelect = (item) => {
+    onSelect(item);
+    setQuery(item.label || '');
+    setIsOpen(false);
+  };
+  
+  return (
+    <div className="autocomplete">
+      {renderInput({ getInputProps })}
+      
+      {isOpen && (
+        <div className="autocomplete-dropdown">
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item, index) => (
+              <div key={item.id} {...getItemProps(item, index)}>
+                {renderItem 
+                  ? renderItem(item, { highlighted: index === highlightedIndex })
+                  : item.label
+                }
+              </div>
+            ))
+          ) : (
+            renderNoResults ? renderNoResults(query) : (
+              <div className="no-results">No results for "{query}"</div>
+            )
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// 3. Animation Controller
+function SpringAnimation({ 
+  from, 
+  to, 
+  config = { tension: 170, friction: 26 },
+  children 
+}) {
   const [value, setValue] = useState(from);
-  // Spring physics animation logic...
+  
+  useEffect(() => {
+    let animationId;
+    let velocity = 0;
+    
+    const animate = () => {
+      const distance = to - value;
+      const acceleration = distance * config.tension / 1000;
+      velocity += acceleration;
+      velocity *= 1 - config.friction / 1000;
+      
+      const newValue = value + velocity;
+      
+      if (Math.abs(distance) > 0.01 || Math.abs(velocity) > 0.01) {
+        setValue(newValue);
+        animationId = requestAnimationFrame(animate);
+      } else {
+        setValue(to);
+      }
+    };
+    
+    animationId = requestAnimationFrame(animate);
+    
+    return () => cancelAnimationFrame(animationId);
+  }, [to, config.tension, config.friction]);
+  
+  // Delegate rendering with animated value
   return children({ value, progress: (value - from) / (to - from) });
 }
 
+// Usage - Animate anything!
 <SpringAnimation from={0} to={100}>
   {({ value, progress }) => (
-    <div style={{ transform: \`translateX(\${value}px)\`, opacity: progress }}>
+    <div 
+      style={{
+        transform: \`translateX(\${value}px)\`,
+        opacity: progress
+      }}>
       Animated content!
     </div>
   )}
 </SpringAnimation>
 
-// 3. Combining Patterns - Best of Both Worlds
+// 4. Combining Patterns - Best of Both Worlds
 function Toggle({ on: controlledOn, onChange, children }) {
   const [uncontrolledOn, setUncontrolledOn] = useState(false);
   const on = controlledOn ?? uncontrolledOn;
   
-  // Support BOTH render prop AND compound component APIs!
+  const toggle = () => {
+    if (controlledOn === undefined) {
+      setUncontrolledOn(!on);
+    }
+    onChange?.(!on);
+  };
+  
+  const getTogglerProps = (props = {}) => ({
+    ...props,
+    onClick: (...args) => {
+      props.onClick?.(...args);
+      toggle();
+    },
+    'aria-pressed': on
+  });
+  
+  // Support multiple API styles
   if (typeof children === 'function') {
+    // Render prop API
     return children({ on, toggle, getTogglerProps });
   }
+  
+  // Compound component API
   return (
     <ToggleContext.Provider value={{ on, toggle, getTogglerProps }}>
       {children}
     </ToggleContext.Provider>
   );
-}`}
+}
+
+// Static compound components
+Toggle.Button = function ToggleButton({ children, ...props }) {
+  const { on, getTogglerProps } = useContext(ToggleContext);
+  return (
+    <button {...getTogglerProps(props)}>
+      {children || (on ? 'ON' : 'OFF')}
+    </button>
+  );
+};
+
+Toggle.Display = function ToggleDisplay({ children }) {
+  const { on } = useContext(ToggleContext);
+  return on ? children : null;
+};`}
 			/>
 
 			{flexibilityLevel >= 80 && (

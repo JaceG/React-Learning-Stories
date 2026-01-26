@@ -221,36 +221,141 @@ function useToggle(initialOn = false) {
   return { on, toggle, getTogglerProps };
 }
 
-// Usage - Super simple, just spread!
-<Toggle>
-  {({ on, getTogglerProps }) => (
-    <button {...getTogglerProps()}>
-      {on ? 'ON' : 'OFF'}
-    </button>
-  )}
-</Toggle>
+// Simple usage with prop getters
+function Toggle({ children }) {
+  const toggle = useToggle();
+  return children(toggle);
+}
+
+function App() {
+  return (
+    <Toggle>
+      {({ on, getTogglerProps }) => (
+        <>
+          {/* Super simple - just spread! */}
+          <button {...getTogglerProps()}>
+            {on ? 'ON' : 'OFF'}
+          </button>
+          
+          {/* With additional props */}
+          <button 
+            {...getTogglerProps({ 
+              className: 'fancy-button',
+              onClick: () => console.log('clicked!')
+            })}>
+            Custom Toggle
+          </button>
+        </>
+      )}
+    </Toggle>
+  );
+}
 
 // 2. State Reducer Pattern - Ultimate Control
-function useToggleWithReducer(initialOn, reducer) {
+function useToggleWithReducer(initialOn = false, reducer = (s, a) => a) {
   const [{ on }, dispatch] = useReducer(
     (state, action) => {
       const changes = toggleReducer(state, action);
-      return reducer(state, changes); // Consumer can intercept!
+      return reducer(state, changes);
     },
     { on: initialOn }
   );
   
-  return { on, toggle: () => dispatch({ type: 'TOGGLE' }) };
+  const toggle = () => dispatch({ type: 'TOGGLE' });
+  const setOn = () => dispatch({ type: 'SET_ON' });
+  const setOff = () => dispatch({ type: 'SET_OFF' });
+  
+  return { on, toggle, setOn, setOff };
+}
+
+function toggleReducer(state, action) {
+  switch (action.type) {
+    case 'TOGGLE':
+      return { on: !state.on };
+    case 'SET_ON':
+      return { on: true };
+    case 'SET_OFF':
+      return { on: false };
+    default:
+      return state;
+  }
 }
 
 // 3. Control Props Pattern - Controlled/Uncontrolled
 function Toggle({ on: controlledOn, onChange, children }) {
   const [uncontrolledOn, setUncontrolledOn] = useState(false);
+  
+  // Determine if controlled
   const isControlled = controlledOn !== undefined;
   const on = isControlled ? controlledOn : uncontrolledOn;
   
-  // Supports both controlled and uncontrolled usage!
+  const handleToggle = () => {
+    if (!isControlled) {
+      setUncontrolledOn(!on);
+    }
+    onChange?.(!on);
+  };
+  
+  const getTogglerProps = (props = {}) => ({
+    ...props,
+    onClick: (...args) => {
+      props.onClick?.(...args);
+      handleToggle();
+    },
+    'aria-pressed': on
+  });
+  
   return children({ on, getTogglerProps });
+}
+
+// Can be used controlled or uncontrolled
+function App() {
+  const [on, setOn] = useState(false);
+  
+  return (
+    <>
+      {/* Controlled */}
+      <Toggle on={on} onChange={setOn}>
+        {({ on, getTogglerProps }) => (
+          <button {...getTogglerProps()}>
+            Controlled: {on ? 'ON' : 'OFF'}
+          </button>
+        )}
+      </Toggle>
+      
+      {/* Uncontrolled */}
+      <Toggle>
+        {({ on, getTogglerProps }) => (
+          <button {...getTogglerProps()}>
+            Uncontrolled: {on ? 'ON' : 'OFF'}
+          </button>
+        )}
+      </Toggle>
+    </>
+  );
+}
+
+// 4. Named Multiple Render Props
+function DataTable({ 
+  data, 
+  renderHeader, 
+  renderRow, 
+  renderEmpty,
+  renderFooter 
+}) {
+  if (data.length === 0) {
+    return renderEmpty?.() || <div>No data</div>;
+  }
+  
+  return (
+    <table>
+      {renderHeader && <thead>{renderHeader()}</thead>}
+      <tbody>
+        {data.map((item, index) => renderRow(item, index))}
+      </tbody>
+      {renderFooter && <tfoot>{renderFooter()}</tfoot>}
+    </table>
+  );
 }`}
 			/>
 
