@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [sanctuaryActive, setSanctuaryActive] = useState(false);
@@ -68,9 +72,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter native-powers'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Device Sanctuary
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Device Sanctuary`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -103,6 +108,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Device Sanctuary</h3>
+				
+				<InstructionBox character={`Bridge gestures to the orbiting capability orbs.`}>
+					{`"Each orb represents a device power. Click on one to request its capability - but remember, users must grant permission. Watch how permissions flow!"`}
+				</InstructionBox>
 				
 				<div className='device-sanctuary'>
 					<div 
@@ -197,12 +206,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Native Module Bridge</span>
-					<span className='discovered-by'>Sanctuary Keeper's permission guide</span>
-				</div>
-				<pre>{`# React Native Permissions
+			<CodeExample
+				title={`Native Module Bridge`}
+				discoveredBy={`Sanctuary Keeper's permission guide`}
+				code={`# React Native Permissions
 // Bridge: "Always request permissions before accessing device features!"
 
 npm install react-native-permissions
@@ -391,30 +398,33 @@ messaging().onMessage(async remoteMessage => {
 
 messaging().setBackgroundMessageHandler(async remoteMessage => {
   console.log('Notification received in background', remoteMessage);
-});`}</pre>
-			</div>
+});`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Sanctuary Lesson:</h3>
-				<p>
-					The Device Sanctuary teaches that native capabilities are powerful gifts 
-					requiring trust. Unlike web APIs with limited access, React Native bridges 
-					JavaScript to device hardware through native modules. Each capability - 
-					camera, location, storage, sensors - requires explicit permission. The 
-					sanctuary reminds us that with access to personal data comes the 
-					responsibility to request permissions thoughtfully and use them wisely.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why do mobile apps require explicit permissions while web apps often don't?
-				</p>
-				<p>
-					How does the permission model protect user privacy while enabling powerful features?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Sanctuary Keeper Bridge`,
+						description: `Guardian of the Device Sanctuary and master of native integrations. Bridge serves as the connection between the JavaScript realm and native device capabilities. His philosophy: "With great access comes great responsibility - and permission requests."`
+					},
+					{
+						name: `Binary`,
+						description: `Aria's analytical companion, always calculating permission states and edge cases. Binary processes complex permission flows with precision: "Permission states: granted, denied, blocked, unavailable. Error handling: critical!"`
+					}
+				]}
+				lessonInsight={{
+					title: `The Sanctuary Lesson:`,
+					content: `The Device Sanctuary teaches that native capabilities are powerful gifts requiring trust. Unlike web APIs with limited access, React Native bridges JavaScript to device hardware through native modules. Each capability - camera, location, storage, sensors - requires explicit permission. The sanctuary reminds us that with access to personal data comes the responsibility to request permissions thoughtfully and use them wisely.`
+				}}
+				reflectionQuestions={[
+					`Why do mobile apps require explicit permissions while web apps often don't?`,
+					`How does the permission model protect user privacy while enabling powerful features?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Morning)`,
+					content: `The Device Sanctuary is incredible! Sanctuary Keeper Bridge introduced us to the six core capabilities: camera, location, contacts, storage, notifications, and sensors. Unlike my web work, mobile apps bridge JavaScript directly to device hardware. Each power requires explicit user permission - no shortcuts. Binary calculated 57 edge cases for permission handling alone! Bridge's wisdom: "With great access comes great responsibility." I unlocked camera and location powers first. The permission flow feels respectful - explaining why access is needed before asking. Trust is earned, not assumed.`
+				}}
+			/>
 		</div>
 	);
 };

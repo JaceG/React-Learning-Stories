@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './MobileFoundations.css';
 
@@ -9,17 +9,6 @@ function MobileFoundations() {
 	const [selectedPlatform, setSelectedPlatform] = useState('ios');
 	const [nativeSkill, setNativeSkill] = useState('Newcomer');
 	const [frontierProgress, setFrontierProgress] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Component translation handler
 	const translateComponent = (webComponent) => {
@@ -48,30 +37,12 @@ function MobileFoundations() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Mobile Foundations</h1>
-				<p className='lesson-subtitle'>
-					Cross the border to the Mobile Frontier with Frontier Marshal Native
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Mobile Foundations`}
+				subtitle={`Cross the border to the Mobile Frontier with Frontier Marshal Native`}
+				opener={`Beyond the Web Kingdom's borders lay the Mobile Frontier - a vast territory where applications lived not in browsers but in the very devices people carried. Frontier Marshal Native stood at the border checkpoint, badge gleaming. "Welcome to familiar yet different territory, Captain Aria. Here, React's principles govern, but the land itself has different rules - no DOM, no CSS as you know it, but native performance and device capabilities beyond anything the browser can offer."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -86,25 +57,7 @@ function MobileFoundations() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='react-native'
 				lessonId='mobile-foundations'
 			/>

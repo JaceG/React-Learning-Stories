@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './AppDistribution.css';
 
@@ -17,17 +17,6 @@ function AppDistribution() {
 	});
 	const [globalReach, setGlobalReach] = useState(0);
 	const [publisherLevel, setPublisherLevel] = useState('Apprentice');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Publishing progress management
 	const advancePublishing = (stage) => {
@@ -69,30 +58,12 @@ function AppDistribution() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>App Distribution</h1>
-				<p className='lesson-subtitle'>
-					Navigate the Publishing Port with Publisher Prime to distribute your app globally
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`App Distribution`}
+				subtitle={`Navigate the Publishing Port with Publisher Prime to distribute your app globally`}
+				opener={`The Publishing Port stood at the edge of the Mobile Frontier, where apps prepared for their journey to millions of devices worldwide. Publisher Prime welcomed Aria to the bustling docks. "You've built something remarkable with React Native," he said, gesturing to the ships preparing for departure. "Now it's time to share it with the world. But between your code and the app stores lies a gauntlet of certificates, reviews, and global considerations."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -109,27 +80,10 @@ function AppDistribution() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-native'
-				lessonId='app-distribution'
+			<LessonFooter
+				courseId={`react-native`}
+				lessonId={`app-distribution`}
+				totalChapters={3}
 			/>
 		</div>
 	);

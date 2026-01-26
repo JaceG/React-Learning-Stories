@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './NativePowers.css';
 
@@ -10,17 +11,6 @@ function NativePowers() {
 	const [sanctuaryLevel, setSanctuaryLevel] = useState('Visitor');
 	const [powerUnlocked, setPowerUnlocked] = useState(0);
 	const [activeDevice, setActiveDevice] = useState(null);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Device capability management
 	const unlockCapability = (capability) => {
@@ -50,30 +40,12 @@ function NativePowers() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Native Powers</h1>
-				<p className='lesson-subtitle'>
-					Access device capabilities at the Device Sanctuary with Sanctuary Keeper Bridge
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Native Powers`}
+				subtitle={`Access device capabilities at the Device Sanctuary with Sanctuary Keeper Bridge`}
+				opener={`The Device Sanctuary pulsed with raw potential. Sanctuary Keeper Bridge welcomed Aria and Binary to the heart of native power. "Here, web knowledge transforms into native capabilities," Bridge explained, gesturing to six glowing orbs orbiting above them. "Each represents a device power - camera, location, storage, sensors. But with great access comes great responsibility."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -90,27 +62,10 @@ function NativePowers() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-native'
-				lessonId='native-powers'
+			<LessonFooter
+				courseId={`react-native`}
+				lessonId={`native-powers`}
+				totalChapters={3}
 			/>
 		</div>
 	);

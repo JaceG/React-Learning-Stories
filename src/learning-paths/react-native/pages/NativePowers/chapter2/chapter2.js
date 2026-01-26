@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [activeFlow, setActiveFlow] = useState('request');
@@ -132,9 +136,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter native-powers'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Permission Protocols
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Permission Protocols`}
+				bridge={`With basic capabilities unlocked, Bridge led Aria and Binary deeper into the sanctuary. "Understanding permissions is one thing," he explained, guiding them to a chamber with glowing device simulators, "but mastering the protocols - the timing, the platform differences, the graceful handling of denials - that's where true power lies."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -165,6 +171,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Device Simulator</h3>
+				
+				<InstructionBox character={`Bridge activates the device simulator.`}>
+					{`"Test the permission flows here! Click buttons to request capabilities and watch how each platform handles the request differently. Notice how iOS remembers your choice forever, while Android may allow retry."`}
+				</InstructionBox>
 				
 				<div className='device-simulator'>
 					<div className='device-screen'>
@@ -412,12 +422,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Permission Best Practices</span>
-					<span className='discovered-by'>Bridge's protocol mastery</span>
-				</div>
-				<pre>{`# Smart Permission Handling
+			<CodeExample
+				title={`Permission Best Practices`}
+				discoveredBy={`Bridge's protocol mastery`}
+				code={`# Smart Permission Handling
 // Bridge: "Context is everything in permission requests!"
 
 import { useState, useEffect } from 'react';
@@ -633,30 +641,23 @@ export const PermissionProvider = ({ children }) => {
       {children}
     </PermissionContext.Provider>
   );
-};`}</pre>
-			</div>
+};`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Protocol Lesson:</h3>
-				<p>
-					The Permission Protocols reveal that trust is earned through transparency 
-					and respect. Each platform has unique rules - iOS's one-time ask versus 
-					Android's flexibility. Success comes from requesting permissions in context, 
-					explaining benefits clearly, and gracefully handling denials. The protocols 
-					teach us that permissions aren't obstacles but opportunities to build user 
-					trust through thoughtful design and clear communication.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does requesting permissions at the point of use improve user experience?
-				</p>
-				<p>
-					Why is handling permission denial gracefully as important as getting approval?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Protocol Lesson:`,
+					content: `The Permission Protocols reveal that trust is earned through transparency and respect. Each platform has unique rules - iOS's one-time ask versus Android's flexibility. Success comes from requesting permissions in context, explaining benefits clearly, and gracefully handling denials. The protocols teach us that permissions aren't obstacles but opportunities to build user trust through thoughtful design and clear communication.`
+				}}
+				reflectionQuestions={[
+					`How does requesting permissions at the point of use improve user experience?`,
+					`Why is handling permission denial gracefully as important as getting approval?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Afternoon)`,
+					content: `The Permission Protocols are a masterclass in trust-building! Bridge taught us the four-step flow: check status, request dialog, handle response, store result. iOS asks once and remembers forever - no second chances. Android allows retries but can still block permanently. The key insight: request at the moment of need with clear purpose. Binary tracked platform differences: iOS has "limited" photo access (iOS 14+), Android separates coarse vs fine location. We built a usePermission hook that handles all states gracefully. Bridge's wisdom: "Don't spam requests - respect the user's decision."`
+				}}
+			/>
 		</div>
 	);
 };

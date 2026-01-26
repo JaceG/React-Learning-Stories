@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [activeStore, setActiveStore] = useState('appstore');
@@ -132,9 +136,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter app-distribution'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Review Gauntlet
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Review Gauntlet`}
+				bridge={`With preparations complete and builds signed, Publisher Prime led Aria to the towering Review Gauntlet. "Your app is packaged and ready," he said, gesturing to the imposing gates ahead. "But between here and the stores lies the toughest test of all - the platform reviewers who guard user safety and quality."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -163,6 +169,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Store Review Center</h3>
+				
+				<InstructionBox character={`Publisher Prime opens the submission portal.`}>
+					{`"Submit your app to both stores and watch the review process unfold. Remember - approval rates hover around 70%, so don't be discouraged by rejections!"`}
+				</InstructionBox>
 				
 				<div className='store-submissions'>
 					<div 
@@ -264,6 +274,10 @@ const ChapterTwo = () => {
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Beta Testing Board</h3>
 				
+				<InstructionBox character={`Binary displays the tester roster.`}>
+					{`"Beta testers catch bugs before your users do. Activate pending testers and monitor bug reports from active ones."`}
+				</InstructionBox>
+				
 				<div className='beta-testing-board'>
 					<div className='tester-list'>
 						{betaTesters.map((tester) => (
@@ -307,6 +321,10 @@ const ChapterTwo = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>App Store Optimization (ASO)</h3>
+				
+				<InstructionBox character={`Debuggora reveals the discovery algorithms.`}>
+					{`"Click keywords to add them to your ASO strategy. Watch how visibility and your ASO score improve!"`}
+				</InstructionBox>
 				
 				<div style={{
 					background: 'rgba(0, 0, 0, 0.3)',
@@ -410,12 +428,10 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Store Review Guidelines</span>
-					<span className='discovered-by'>Publisher Prime's review wisdom</span>
-				</div>
-				<pre>{`# App Store Review Guidelines
+			<CodeExample
+				title={`Store Review Guidelines`}
+				discoveredBy={`Publisher Prime's review wisdom`}
+				code={`# App Store Review Guidelines
 // Publisher Prime: "Know the rules before you play the game!"
 
 # Common Rejection Reasons & Solutions
@@ -586,30 +602,23 @@ support@yourapp.com so we can help resolve this issue."
 - Fixed crash on launch (line 234 in HomeScreen.js)
 - Added null checks for undefined data
 - Tested on all device sizes
-- Attached crash logs showing resolution"`}</pre>
-			</div>
+- Attached crash logs showing resolution"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Review Lesson:</h3>
-				<p>
-					The Review Gauntlet teaches that app store review is not an obstacle but a 
-					quality checkpoint. Each platform has its own priorities - Apple focuses on 
-					user experience and guideline adherence, Google emphasizes security and policy 
-					compliance. Success comes from understanding these requirements, thorough testing, 
-					and viewing rejections as opportunities to improve. Beta testing and ASO are not 
-					afterthoughts but essential parts of the journey to app store success.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do app store reviews protect users while challenging developers to create better apps?
-				</p>
-				<p>
-					Why is beta testing crucial for mobile apps but less common for web applications?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Review Lesson:`,
+					content: `The Review Gauntlet teaches that app store review is not an obstacle but a quality checkpoint. Each platform has its own priorities - Apple focuses on user experience and guideline adherence, Google emphasizes security and policy compliance. Success comes from understanding these requirements, thorough testing, and viewing rejections as opportunities to improve. Beta testing and ASO are not afterthoughts but essential parts of the journey to app store success.`
+				}}
+				reflectionQuestions={[
+					`How do app store reviews protect users while challenging developers to create better apps?`,
+					`Why is beta testing crucial for mobile apps but less common for web applications?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Afternoon)`,
+					content: `The Review Gauntlet is intense! I submitted to both stores and experienced the nerve-wracking wait. Binary's analysis proved accurate - rejections happen, but each one teaches something new. I learned about common rejection reasons: crashes (40%), guideline violations (30%), metadata issues (20%). Beta testing with ${betaTesters.filter(t => t.status === 'active').length} active testers revealed ${betaTesters.reduce((sum, t) => sum + t.bugs, 0)} bugs before submission! The ASO dashboard showed my visibility at ${asoMetrics.visibility}% with ${asoMetrics.keywords.length} keywords optimized. Publisher Prime's wisdom: "Each rejection is a learning opportunity. The key is understanding why and fixing it properly." Persistence is the path to approval!`
+				}}
+			/>
 		</div>
 	);
 };

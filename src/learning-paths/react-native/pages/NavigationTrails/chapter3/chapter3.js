@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [customTransition, setCustomTransition] = useState('');
@@ -182,9 +186,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Connected Routes
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Connected Routes`}
+				bridge={`"You've learned the patterns and the platform ways," Trail Guide Navigator said as they climbed to the highest point of the Navigation Outpost. "Now you must master the advanced techniques - shared element transitions, custom headers, performance optimization, and the deep linking that connects your app to the wider world."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -219,6 +225,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Navigation Mastery</h3>
+
+				<InstructionBox character={`Trail Guide Navigator reveals a crystalline navigation map showing all connected routes.`}>
+					{`"Explore the advanced patterns - Custom Headers, Shared Elements, Bottom Sheets, and Custom Gestures. Then optimize performance and test deep links to truly master mobile navigation!"`}
+				</InstructionBox>
 				
 				<div className='pattern-showcase'>
 					{advancedPatterns.map((pattern) => (
@@ -477,12 +487,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Navigation Patterns</span>
-					<span className='discovered-by'>Trail Guide's master techniques</span>
-				</div>
-				<pre>{`# Custom Header with Animation
+			<CodeExample
+				title={`Advanced Navigation Patterns`}
+				discoveredBy={`Trail Guide's master techniques`}
+				code={`# Custom Header with Animation
 // Trail Guide: "Headers can be works of art!"
 
 import { Animated } from 'react-native';
@@ -676,32 +684,28 @@ const NavigationPerformanceMonitor = ({ children }) => {
       {children}
     </NavigationContainer>
   );
-};`}</pre>
-			</div>
+};`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Connected Routes Lesson:</h3>
-				<p>
-					The Connected Routes reveal the true mastery of mobile navigation. Trail 
-					Guide Navigator's final teachings show that advanced patterns like shared 
-					elements, custom headers, and bottom sheets create delightful experiences. 
-					Performance optimization ensures smooth journeys, deep linking connects 
-					web and app worlds, and navigation hooks provide fine-grained control. 
-					The journey from simple stacks to complex flows completes when navigation 
-					becomes invisible - users simply flow through your app naturally.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do advanced navigation patterns enhance the mobile user experience 
-					beyond basic screen transitions?
-				</p>
-				<p>
-					Why is performance optimization crucial for navigation in mobile apps?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Connected Routes Lesson:`,
+					content: `The Connected Routes reveal the true mastery of mobile navigation. Trail Guide Navigator's final teachings show that advanced patterns like shared elements, custom headers, and bottom sheets create delightful experiences. Performance optimization ensures smooth journeys, deep linking connects web and app worlds, and navigation hooks provide fine-grained control. The journey from simple stacks to complex flows completes when navigation becomes invisible - users simply flow through your app naturally.`
+				}}
+				reflectionQuestions={[
+					`How do advanced navigation patterns enhance the mobile user experience beyond basic screen transitions?`,
+					`Why is performance optimization crucial for navigation in mobile apps?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Evening)`,
+					content: `What a day at the Navigation Outpost! From basic stacks to advanced mastery, Trail Guide Navigator taught me everything. I learned to create animated headers that shrink on scroll, shared element transitions for seamless image galleries, and bottom sheets like map apps use. The navigation hooks - useFocusEffect, useIsFocused, useNavigation, useRoute, useNavigationState - give fine-grained control over screen lifecycle. Performance optimization through lazy loading and native stacks reduced transition times. Deep linking with authentication handling connects marketing campaigns directly to app screens. Trail Guide's final wisdom: "When navigation becomes invisible, you've achieved mastery - users simply flow through your app naturally."`
+				}}
+				chapterEnding={[
+					`Trail Guide Navigator watched Aria demonstrate a complex navigation flow with smooth transitions. "You've mastered the trails," he said proudly. "From basic stacks to connected routes, you can guide users anywhere."`,
+					`Binary computed the achievement. "Navigation patterns: mastered. Performance metrics: optimized. Deep link configurations: complete. Trail Mastery level: Navigation Sage."`,
+					`"But the journey isn't over," Trail Guide added, pointing toward the distant Distribution Harbor. "Your app must reach users. The App Distribution awaits - where you'll learn to package, publish, and deliver your creation to the world..."`
+				]}
+			/>
 		</div>
 	);
 };

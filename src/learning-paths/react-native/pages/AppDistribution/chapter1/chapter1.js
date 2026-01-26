@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [selectedChecklist, setSelectedChecklist] = useState('ios');
@@ -98,9 +102,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter app-distribution'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Publishing Port
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Publishing Port`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -132,6 +137,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Publishing Preparation Center</h3>
+				
+				<InstructionBox character={`Publisher Prime hands you a preparation manifest.`}>
+					{`"Start the build process and complete the platform checklists. Each checkbox represents a crucial step in your app's journey to the stores."`}
+				</InstructionBox>
 				
 				<div className='publishing-port'>
 					<div className='app-pipeline'>
@@ -189,6 +198,10 @@ const ChapterOne = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Pre-Submission Checklist</h3>
+				
+				<InstructionBox character={`Binary displays platform requirements.`}>
+					{`"Toggle between iOS and Android to complete each platform's checklist. Watch your progress bar fill as you prepare for submission!"`}
+				</InstructionBox>
 				
 				<div style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginBottom: '20px' }}>
 					<button
@@ -302,6 +315,10 @@ const ChapterOne = () => {
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Publishing Tools</h3>
 				
+				<InstructionBox character={`Publisher Prime reveals the tool arsenal.`}>
+					{`"Click on each tool to activate it. These automation tools will be your allies in the publishing journey."`}
+				</InstructionBox>
+				
 				<div className='publishing-tools'>
 					<div className='tool-grid'>
 						{publishingTools.map((tool) => (
@@ -325,12 +342,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>App Store Preparation</span>
-					<span className='discovered-by'>Publisher Prime's preparation guide</span>
-				</div>
-				<pre>{`# iOS App Store Preparation
+			<CodeExample
+				title={`App Store Preparation`}
+				discoveredBy={`Publisher Prime's preparation guide`}
+				code={`# iOS App Store Preparation
 // Publisher Prime: "Certificates and profiles are your passport!"
 
 # 1. Apple Developer Setup
@@ -405,7 +420,7 @@ end
 // Binary: "Keystore security is critical!"
 
 # 1. Generate Release Keystore
-keytool -genkeypair -v -keystore my-release-key.keystore \
+keytool -genkeypair -v -keystore my-release-key.keystore \\
   -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 
 # 2. Configure Gradle
@@ -493,30 +508,29 @@ eas submit --platform android
   - App name
   - Description
   - Screenshots
-  - Keywords`}</pre>
-			</div>
+  - Keywords`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Publishing Lesson:</h3>
-				<p>
-					The Publishing Port teaches that mobile app distribution is a journey, not 
-					a destination. Unlike web deployment's instant gratification, mobile apps 
-					must navigate certificates, provisioning profiles, and store requirements. 
-					Publisher Prime shows that preparation is everything - from proper signing 
-					to compelling metadata. Success comes from attention to detail, patience 
-					with the process, and understanding each platform's unique requirements.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why do mobile platforms require such extensive preparation compared to web deployment?
-				</p>
-				<p>
-					How does the app signing process protect both developers and users?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Publisher Prime`,
+						description: `Harbor master of the Publishing Port and expert navigator of app store requirements. His wisdom guides apps from code to global distribution. "Preparation is the difference between a smooth voyage and a shipwreck of rejections."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Publishing Lesson:`,
+					content: `The Publishing Port teaches that mobile app distribution is a journey, not a destination. Unlike web deployment's instant gratification, mobile apps must navigate certificates, provisioning profiles, and store requirements. Publisher Prime shows that preparation is everything - from proper signing to compelling metadata. Success comes from attention to detail, patience with the process, and understanding each platform's unique requirements.`
+				}}
+				reflectionQuestions={[
+					`Why do mobile platforms require such extensive preparation compared to web deployment?`,
+					`How does the app signing process protect both developers and users?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Morning)`,
+					content: `I've arrived at the Publishing Port where Publisher Prime commands the preparation docks! The difference from web deployment is striking - no instant deploys here. Instead, there's a careful dance of certificates, provisioning profiles, and platform-specific requirements. I learned iOS needs Development and Distribution certificates, while Android requires a securely stored keystore. Binary tracked my progress: checklist completion at ${getChecklistProgress(selectedChecklist).toFixed(0)}%, ${activeTools.length} tools activated. Publisher Prime's wisdom: "A well-prepared submission sails through review. A hasty one gets rejected repeatedly." The Publishing Port awaits my app's voyage!`
+				}}
+			/>
 		</div>
 	);
 };

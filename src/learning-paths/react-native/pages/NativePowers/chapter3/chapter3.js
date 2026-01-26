@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activeIntegration, setActiveIntegration] = useState(null);
@@ -130,9 +134,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter native-powers'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Native Mastery
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Native Mastery`}
+				bridge={`"You've learned to request and handle permissions," Bridge said, leading them to the sanctuary's innermost chamber where six pedestals glowed with advanced power. "Now comes the true test - integrating complex native systems. Biometrics, payments, maps, AR, ML, IoT. Each bridges your JavaScript to deep platform APIs."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -165,6 +171,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Native Integration Showcase</h3>
+				
+				<InstructionBox character={`Bridge reveals the six integration pedestals.`}>
+					{`"Click each integration to add it to your master project. Watch how the power level increases as you combine capabilities. Three or more integrations will unlock Grand Master status!"`}
+				</InstructionBox>
 				
 				<div className='integration-showcase'>
 					{integrations.map((integration) => (
@@ -336,12 +346,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Advanced Native Integrations</span>
-					<span className='discovered-by'>Bridge's mastery guide</span>
-				</div>
-				<pre>{`# Biometric Authentication
+			<CodeExample
+				title={`Advanced Native Integrations`}
+				discoveredBy={`Bridge's mastery guide`}
+				code={`# Biometric Authentication
 // Bridge: "Security through native biometrics!"
 npm install react-native-biometrics
 
@@ -585,31 +593,29 @@ RCT_EXPORT_METHOD(doNativeOperation:(NSString *)input
 import { NativeModules } from 'react-native';
 const { CustomModule } = NativeModules;
 
-const result = await CustomModule.doNativeOperation('input');`}</pre>
-			</div>
+const result = await CustomModule.doNativeOperation('input');`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Mastery Lesson:</h3>
-				<p>
-					Native Mastery reveals the true power of React Native - seamlessly bridging 
-					JavaScript to platform capabilities. Through biometrics, payments, maps, AR, 
-					ML, and IoT integrations, we transcend web limitations. The bridge architecture 
-					shows how our React code communicates with native modules, enabling experiences 
-					impossible in browsers. True mastery comes from understanding both worlds and 
-					knowing when to leverage native power for optimal user experiences.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does React Native's bridge architecture enable native capabilities while 
-					maintaining JavaScript development?
-				</p>
-				<p>
-					When should you create custom native modules versus using existing solutions?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Mastery Lesson:`,
+					content: `Native Mastery reveals the true power of React Native - seamlessly bridging JavaScript to platform capabilities. Through biometrics, payments, maps, AR, ML, and IoT integrations, we transcend web limitations. The bridge architecture shows how our React code communicates with native modules, enabling experiences impossible in browsers. True mastery comes from understanding both worlds and knowing when to leverage native power for optimal user experiences.`
+				}}
+				reflectionQuestions={[
+					`How does React Native's bridge architecture enable native capabilities while maintaining JavaScript development?`,
+					`When should you create custom native modules versus using existing solutions?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 38 (Evening)`,
+					content: `I've achieved Grand Master status at the Device Sanctuary! Bridge revealed the six advanced integrations: biometrics (Face ID, Touch ID), payment systems (Apple Pay, Google Pay), maps (MapKit, Google Maps), AR (ARKit, ARCore), ML (Core ML, TensorFlow), and IoT (Bluetooth, device communication). The architecture is elegant: JavaScript → Bridge (serialization) → Native Modules → Platform APIs. Each layer communicates asynchronously. I built a master project combining multiple integrations - the power level is incredible! Bridge's final wisdom: "True mastery comes from understanding both JavaScript and native worlds." Binary's calculation: "100% native power unlocked. Grand Master achieved!"`
+				}}
+				chapterEnding={[
+					`As Aria achieved Grand Master status, Bridge smiled proudly. "You've unlocked the full power of native capabilities. Your React Native apps can now rival any native application."`,
+					`Binary processed their achievement. "Six integrations mastered. Bridge architecture understood. Power level: maximum. Aria, we're ready for anything!"`,
+					`"Almost anything," Bridge corrected gently. "There's still the Navigation Trails to master - the ancient paths that guide users through your mobile realm. Without proper navigation, even the most powerful app becomes a maze."`,
+					`Aria looked toward the horizon where winding trails glowed with promise. "Then that's where we go next. Lead the way, Bridge!"`
+				]}
+			/>
 		</div>
 	);
 };

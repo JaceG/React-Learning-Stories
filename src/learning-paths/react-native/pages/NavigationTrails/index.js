@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './NavigationTrails.css';
 
@@ -9,17 +9,6 @@ function NavigationTrails() {
 	const [activeNavigator, setActiveNavigator] = useState('stack');
 	const [trailMastery, setTrailMastery] = useState('Pathfinder');
 	const [routesDiscovered, setRoutesDiscovered] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Navigation actions
 	const pushScreen = (screenName) => {
@@ -50,30 +39,12 @@ function NavigationTrails() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>Navigation Trails</h1>
-				<p className='lesson-subtitle'>
-					Master mobile navigation patterns at the Navigation Outpost with Trail Guide Navigator
-				</p>
-			</div>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Navigation Trails`}
+				subtitle={`Master mobile navigation patterns at the Navigation Outpost with Trail Guide Navigator`}
+				opener={`The Navigation Outpost stood at the crossroads of the Mobile Frontier, where paths diverged in every direction. Trail Guide Navigator welcomed Aria with a knowing smile. "Forget everything you know about web URLs and browser history," he said, gesturing to a wall of interconnected trail maps. "Mobile navigation is a different beast entirely - stacks, tabs, drawers, and gestures that feel as natural as walking."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -90,27 +61,10 @@ function NavigationTrails() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='react-native'
-				lessonId='navigation-trails'
+			<LessonFooter
+				courseId={`react-native`}
+				lessonId={`navigation-trails`}
+				totalChapters={3}
 			/>
 		</div>
 	);

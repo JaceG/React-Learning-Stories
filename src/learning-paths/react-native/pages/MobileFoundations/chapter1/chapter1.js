@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [activeFeature, setActiveFeature] = useState(null);
@@ -70,9 +74,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Mobile Frontier
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Mobile Frontier`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -108,6 +113,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Comparison Lab</h3>
+				
+				<InstructionBox character={`Marshal Native hands you a dual-screen device.`}>
+					{`"This device displays both platforms side by side. Click on web components to see their native equivalents, and explore the device features that browsers can't access!"`}
+				</InstructionBox>
 				
 				<div className='platform-lab'>
 					<div className='platform-switcher'>
@@ -230,12 +239,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>React Native Foundations</span>
-					<span className='discovered-by'>Marshal Native's introduction</span>
-				</div>
-				<pre>{`# Your First React Native Component
+			<CodeExample
+				title={`React Native Foundations`}
+				discoveredBy={`Marshal Native's introduction`}
+				code={`# Your First React Native Component
 // Marshal Native: "Familiar syntax, different components!"
 
 import React from 'react';
@@ -373,32 +380,29 @@ if (Platform.OS === 'ios') {
 // Method 3: Platform-specific files
 // Button.ios.js
 // Button.android.js
-// React Native automatically picks the right one!`}</pre>
-			</div>
+// React Native automatically picks the right one!`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Native Lesson:</h3>
-				<p>
-					React Native is like speaking React with a native accent - the core 
-					language remains the same, but pronunciation and idioms change. Marshal 
-					Native teaches that success comes from embracing platform differences, 
-					not fighting them. The Mobile Frontier rewards those who adapt their 
-					web knowledge to native constraints while leveraging device capabilities 
-					that browsers can't access.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does thinking of React Native as "React with an accent" help 
-					understand the relationship?
-				</p>
-				<p>
-					Why might platform-specific considerations be important for user 
-					experience?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Frontier Marshal Native`,
+						description: `Guardian of the Mobile Frontier and bridge between web and native worlds. His philosophy: "React's principles govern here, but the land has different rules - embrace them, don't fight them."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Native Lesson:`,
+					content: `React Native is like speaking React with a native accent - the core language remains the same, but pronunciation and idioms change. Marshal Native teaches that success comes from embracing platform differences, not fighting them. The Mobile Frontier rewards those who adapt their web knowledge to native constraints while leveraging device capabilities that browsers can't access.`
+				}}
+				reflectionQuestions={[
+					`How does thinking of React Native as "React with an accent" help understand the relationship?`,
+					`Why might platform-specific considerations be important for user experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Morning)`,
+					content: `I've crossed into the Mobile Frontier! Frontier Marshal Native met me at the border checkpoint - a weathered veteran who speaks both web and native fluently. Binary's circuits are sparking with new inputs: accelerometers, cameras, GPS! The core revelation: React's principles still apply, but components change. View replaces div, Text replaces span, and there's no CSS cascade. Marshal Native's wisdom: "Your React knowledge is your foundation, but you'll need to adapt." I translated my first web components to native equivalents and explored device features browsers can only dream of accessing.`
+				}}
+			/>
 		</div>
 	);
 };

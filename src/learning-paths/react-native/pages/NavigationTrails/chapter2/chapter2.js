@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [platformMode, setPlatformMode] = useState('ios');
@@ -145,9 +149,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Platform Paths
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Platform Paths`}
+				bridge={`Having mastered the four navigation patterns, Trail Guide Navigator led Aria down two diverging paths marked with different symbols. "Now comes the crucial lesson," he said. "iOS and Android users have deeply ingrained expectations. The same navigation pattern must feel native on both platforms."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -176,6 +182,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform-Specific Navigation</h3>
+
+				<InstructionBox character={`Trail Guide Navigator shows you two glowing portals - one blue (iOS), one green (Android).`}>
+					{`"Switch between platforms to see how each handles navigation differently. Then explore nested navigators and authentication flows to understand complex app structures!"`}
+				</InstructionBox>
 				
 				<div className='platform-paths'>
 					<div style={{ 
@@ -382,12 +392,10 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Platform-Specific Navigation</span>
-					<span className='discovered-by'>Trail Guide's platform wisdom</span>
-				</div>
-				<pre>{`# Platform-Specific Options
+			<CodeExample
+				title={`Platform-Specific Navigation`}
+				discoveredBy={`Trail Guide's platform wisdom`}
+				code={`# Platform-Specific Options
 // Trail Guide: "Respect platform conventions!"
 
 import { Platform } from 'react-native';
@@ -559,31 +567,23 @@ navigation.setOptions({
   headerRight: () => (
     <IconButton icon="check" onPress={handleSave} />
   ),
-});`}</pre>
-			</div>
+});`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Platform Path Lesson:</h3>
-				<p>
-					Platform Paths teach that native feel comes from respecting conventions. 
-					Trail Guide Navigator's wisdom: iOS users expect smooth horizontal 
-					transitions and swipe gestures, while Android users rely on the system 
-					back button and material transitions. Nested navigators create complex 
-					app structures, authentication flows control access, and deep linking 
-					connects the web and app worlds. Success lies in embracing each 
-					platform's strengths while maintaining a consistent experience.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How do nested navigators help organize complex app structures?
-				</p>
-				<p>
-					Why is it important to handle authentication state in navigation?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Platform Path Lesson:`,
+					content: `Platform Paths teach that native feel comes from respecting conventions. Trail Guide Navigator's wisdom: iOS users expect smooth horizontal transitions and swipe gestures, while Android users rely on the system back button and material transitions. Nested navigators create complex app structures, authentication flows control access, and deep linking connects the web and app worlds. Success lies in embracing each platform's strengths while maintaining a consistent experience.`
+				}}
+				reflectionQuestions={[
+					`How do nested navigators help organize complex app structures?`,
+					`Why is it important to handle authentication state in navigation?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Afternoon)`,
+					content: `Trail Guide Navigator showed me the Platform Paths - how iOS and Android users have completely different expectations! iOS users expect swipe-back gestures and horizontal slide transitions, while Android users rely on the system back button and fade/scale animations. I learned to use Platform.select() to adapt navigation behavior. We also explored nested navigators - stacking Tab navigators inside Stack navigators to create complex app structures. The authentication flow pattern was brilliant: conditionally render different navigator trees based on auth state. Deep linking lets URLs open specific screens - connecting web marketing to app experiences. Binary computed that platform-specific transitions reduce user confusion by 47%!`
+				}}
+			/>
 		</div>
 	);
 };

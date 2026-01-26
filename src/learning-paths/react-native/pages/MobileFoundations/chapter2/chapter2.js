@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const [tradedComponents, setTradedComponents] = useState([]);
@@ -104,9 +108,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Component Trading Post
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Component Trading Post`}
+				bridge={`Marshal Native led Aria deeper into the Mobile Frontier, past the border checkpoint to a bustling marketplace. "Now that you understand the basics, it's time to learn the language of trade. Here, web components exchange for their native equivalents - and you must understand exactly what you're getting."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -138,6 +144,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Component Trading Post</h3>
+				
+				<InstructionBox character={`Marshal Native gestures to the trading boards.`}>
+					{`"Click each web component to trade it for its native equivalent. Watch how the concepts translate - same ideas, different implementations!"`}
+				</InstructionBox>
 				
 				<div className='trading-post'>
 					<h4>Trade Your Web Components</h4>
@@ -317,12 +327,10 @@ const ChapterTwo = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Core Components in Action</span>
-					<span className='discovered-by'>Trading Post examples</span>
-				</div>
-				<pre>{`# Component Translation Guide
+			<CodeExample
+				title={`Core Components in Action`}
+				discoveredBy={`Trading Post examples`}
+				code={`# Component Translation Guide
 // Marshal Native: "Each trade has its purpose!"
 
 // 1. View - The Universal Container
@@ -454,33 +462,23 @@ import { Platform } from 'react-native';
   <DatePickerAndroid date={date} onDateChange={setDate} />
 )}
 
-// Aria's tip: "Always test on both platforms!"`}</pre>
-			</div>
+// Aria's tip: "Always test on both platforms!"`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Trading Post Lesson:</h3>
-				<p>
-					The Component Trading Post reveals that React Native components aren't 
-					just renamed web elements - they're purpose-built for mobile interfaces. 
-					Marshal Native's wisdom: embrace explicit components like ScrollView and 
-					FlatList instead of fighting for web-like behavior. Each native component 
-					is optimized for touch interaction, performance, and platform conventions. 
-					Success comes from understanding not just what components to use, but why 
-					the mobile frontier demands different approaches.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why do you think React Native requires explicit components like ScrollView 
-					instead of CSS overflow?
-				</p>
-				<p>
-					How does having different Touchable components improve the mobile user 
-					experience?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Trading Post Lesson:`,
+					content: `The Component Trading Post reveals that React Native components aren't just renamed web elements - they're purpose-built for mobile interfaces. Marshal Native's wisdom: embrace explicit components like ScrollView and FlatList instead of fighting for web-like behavior. Each native component is optimized for touch interaction, performance, and platform conventions. Success comes from understanding not just what components to use, but why the mobile frontier demands different approaches.`
+				}}
+				reflectionQuestions={[
+					`Why do you think React Native requires explicit components like ScrollView instead of CSS overflow?`,
+					`How does having different Touchable components improve the mobile user experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Afternoon)`,
+					content: `The Component Trading Post is remarkable! I traded my web components for native equivalents: View for div, Text for spans, FlatList for optimized lists. Binary noted a 40% processing efficiency increase - no virtual DOM intermediary! The key insight: these aren't just renamed elements, they're purpose-built for mobile. ScrollView makes scrolling explicit (no CSS overflow here!), and TouchableOpacity provides proper touch feedback. Marshal Native's advice: "Embrace explicit components instead of fighting for web-like behavior." Each trade taught me why mobile demands different approaches.`
+				}}
+			/>
 		</div>
 	);
 };

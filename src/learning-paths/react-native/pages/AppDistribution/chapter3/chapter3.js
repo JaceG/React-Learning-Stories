@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [launchRegions, setLaunchRegions] = useState({
@@ -143,9 +147,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter app-distribution'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Global Launch
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Global Launch`}
+				bridge={`With both stores showing approval badges, Publisher Prime led Aria to the highest tower of the Publishing Port - the Global Launch Control Center. "You've passed the Review Gauntlet," he said proudly. "Now comes the most exciting part of all - releasing your app to the world and watching it grow."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -176,6 +182,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Global Launch Control</h3>
+				
+				<InstructionBox character={`Publisher Prime unveils the world map.`}>
+					{`"Click on regions to launch your app globally! Each region adds countries to your reach and boosts your metrics. Launch in 4+ regions with 3+ languages to achieve Global Publisher status!"`}
+				</InstructionBox>
 				
 				<div className='global-launch-map'>
 					<div className='world-map'>🌍</div>
@@ -248,6 +258,10 @@ const ChapterThree = () => {
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Localization Center</h3>
 				
+				<InstructionBox character={`Binary calculates international potential.`}>
+					{`"Each language you support opens doors to millions more users. Click languages to add localization support!"`}
+				</InstructionBox>
+				
 				<div style={{
 					background: 'rgba(0, 0, 0, 0.3)',
 					borderRadius: '15px',
@@ -296,6 +310,10 @@ const ChapterThree = () => {
 				</div>
 
 				<h3 className='section-title' style={{ marginTop: '40px' }}>Update Strategy</h3>
+				
+				<InstructionBox character={`Publisher Prime explains deployment approaches.`}>
+					{`"Choose your update strategy wisely. Phased releases minimize risk, while immediate releases get features to users faster."`}
+				</InstructionBox>
 				
 				<div style={{
 					background: 'rgba(0, 0, 0, 0.3)',
@@ -365,12 +383,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Post-Launch Operations</span>
-					<span className='discovered-by'>Publisher Prime's global strategy</span>
-				</div>
-				<pre>{`# Global App Management
+			<CodeExample
+				title={`Post-Launch Operations`}
+				discoveredBy={`Publisher Prime's global strategy`}
+				code={`# Global App Management
 // Publisher Prime: "Launch is just the beginning!"
 
 # App Analytics Integration
@@ -629,63 +645,33 @@ const experiments = {
 - Monthly Recurring Revenue (MRR)
 - Churn rate
 - Lifetime Value (LTV)
-- Trial conversion rate`}</pre>
-			</div>
+- Trial conversion rate`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Global Launch Lesson:</h3>
-				<p>
-					Global distribution transforms your app from a project into a living product. 
-					Publisher Prime's wisdom reveals that launch is not the destination but the 
-					beginning of a continuous journey. Success comes from monitoring metrics, 
-					responding to user feedback, expanding to new markets, and constantly improving. 
-					The mobile frontier rewards those who treat their apps as evolving services, 
-					not static products.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does global distribution change the responsibility of app developers?
-				</p>
-				<p>
-					Why is continuous monitoring and updating crucial for mobile apps' long-term success?
-				</p>
-			</div>
-
-			<div className='achievement-section' style={{ 
-				marginTop: '40px',
-				padding: '30px',
-				background: 'linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(156, 39, 176, 0.1))',
-				borderRadius: '20px',
-				textAlign: 'center'
-			}}>
-				<h3 style={{ color: '#00BCD4', marginBottom: '20px' }}>
-					The Mobile Achievement
-				</h3>
-				<p style={{ fontSize: '1.1em', lineHeight: '1.8' }}>
-					Standing at the Mobile Frontier's edge, Aria reflected on her journey. 
-					She'd taken React's principles and applied them to an entirely new platform.
-				</p>
-				<p style={{ fontSize: '1.1em', lineHeight: '1.8', marginTop: '15px' }}>
-					Marshal Native approached. "Captain Aria, you've proven that React truly 
-					is learn once, write anywhere. Your final challenge awaits in the Inclusive Empire."
-				</p>
-				<p style={{ fontSize: '1.1em', lineHeight: '1.8', marginTop: '15px' }}>
-					Binary had adapted to process touch, motion, and native APIs. Debuggora 
-					had learned to debug across platforms and devices.
-				</p>
-				<p style={{ 
-					fontSize: '1.2em', 
-					fontWeight: 'bold', 
-					color: '#FFC107', 
-					marginTop: '25px' 
-				}}>
-					"One more kingdom to make React truly universal," Aria declared. 
-					"To the Inclusive Empire!"
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Global Launch Lesson:`,
+					content: `Global distribution transforms your app from a project into a living product. Publisher Prime's wisdom reveals that launch is not the destination but the beginning of a continuous journey. Success comes from monitoring metrics, responding to user feedback, expanding to new markets, and constantly improving. The mobile frontier rewards those who treat their apps as evolving services, not static products.`
+				}}
+				reflectionQuestions={[
+					`How does global distribution change the responsibility of app developers?`,
+					`Why is continuous monitoring and updating crucial for mobile apps' long-term success?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 40 (Evening)`,
+					content: `I've done it - my React Native app is live globally! The metrics dashboard shows ${appMetrics.downloads.toLocaleString()} downloads across ${globalReach} countries, with ${localizationLanguages.length} languages supported. Binary streams real-time analytics: active users at ${appMetrics.activeUsers.toLocaleString()}, rating climbing to ${appMetrics.rating.toFixed(1)} stars. I chose the ${updateStrategy} release strategy for future updates - ${updateStrategy === 'phased' ? 'minimizing risk through gradual rollout' : updateStrategy === 'immediate' ? 'getting features to users fast' : 'maintaining full control'}. Publisher Prime's final wisdom: "Launch is just the beginning. Monitor, update, and grow." Publisher Level: ${publisherLevel}. The Mobile Frontier is conquered! 🎉`
+				}}
+				chapterEnding={[
+					`As the global metrics streamed across the dashboard, Publisher Prime placed a hand on Aria's shoulder. "You've completed the Mobile Frontier," he said proudly. "From React Native foundations to native powers, from navigation trails to worldwide distribution."`,
+					`Binary processed the achievement statistics. "Four lessons completed. Twelve chapters mastered. One unified codebase running on millions of devices across ${globalReach > 0 ? globalReach : 'countless'} countries. Truly remarkable, Aria."`,
+					`Marshal Native appeared at the tower's entrance, a rare smile crossing his weathered face. "Captain Aria, you've proven that React truly is 'learn once, write anywhere.' You've taken web wisdom and applied it to the mobile realm."`,
+					`Debuggora perched on the observation deck, watching downloads tick upward from around the world. "Each number represents a user whose life you've touched. Each crash report handled gracefully. Each feature making someone's day easier."`,
+					`Aria looked out over the Publishing Port, where ships carried apps to every corner of the digital world. "I started this journey in the React Kingdom, learning about components and state. Now I'm distributing apps globally."`,
+					`"The Mobile Frontier was just one of many realms," Publisher Prime reminded her. "The Accessibility Empire awaits - where you'll learn to make your apps truly universal, reaching users of all abilities."`,
+					`Binary's circuits hummed with anticipation. "New patterns to learn. New users to serve. The journey continues!"`,
+					`🎓 Congratulations! You have completed the React Native Learning Path! Your apps now run on billions of devices worldwide, powered by React's elegant component model. The Mobile Frontier is yours! 🌍📱`
+				]}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const [currentScreen, setCurrentScreen] = useState('Home');
@@ -100,9 +104,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Navigation Outpost
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Navigation Outpost`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -136,6 +141,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Navigation Pattern Explorer</h3>
+
+				<InstructionBox character={`Trail Guide Navigator hands you a trail map glowing with different colored paths.`}>
+					{`"Each navigation pattern serves a specific purpose. Click on the different navigator types to see how Stack, Tab, Drawer, and Modal navigation work in mobile apps!"`}
+				</InstructionBox>
 				
 				<div className='navigation-outpost'>
 					<div className='navigator-selector'>
@@ -294,12 +303,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>React Navigation Setup</span>
-					<span className='discovered-by'>Trail Guide's navigation patterns</span>
-				</div>
-				<pre>{`# React Navigation Installation
+			<CodeExample
+				title={`React Navigation Setup`}
+				discoveredBy={`Trail Guide's navigation patterns`}
+				code={`# React Navigation Installation
 // Trail Guide: "React Navigation is the standard for React Native!"
 
 npm install @react-navigation/native
@@ -446,32 +453,29 @@ function DrawerNavigator() {
     headerBackTitleVisible: false, // iOS
     presentation: 'modal', // iOS modal style
   }}
-/>`}</pre>
-			</div>
+/>`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Navigation Lesson:</h3>
-				<p>
-					The Navigation Outpost reveals that mobile navigation isn't about URLs 
-					and routes - it's about gestures, stacks, and user expectations. Trail 
-					Guide Navigator teaches that each pattern has its purpose: stacks for 
-					drilling down, tabs for main sections, drawers for secondary options, 
-					and modals for focused tasks. Success comes from choosing the right 
-					pattern for the right purpose, respecting platform conventions while 
-					maintaining consistency.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					Why do mobile apps use different navigation patterns than websites?
-				</p>
-				<p>
-					How do platform-specific gestures (like swipe-back on iOS) enhance 
-					the user experience?
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Trail Guide Navigator`,
+						description: `Master of the Navigation Outpost, where all paths through mobile apps begin. His philosophy: "Mobile navigation isn't about URLs - it's about creating journeys that feel as natural as walking."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Navigation Lesson:`,
+					content: `The Navigation Outpost reveals that mobile navigation isn't about URLs and routes - it's about gestures, stacks, and user expectations. Trail Guide Navigator teaches that each pattern has its purpose: stacks for drilling down, tabs for main sections, drawers for secondary options, and modals for focused tasks. Success comes from choosing the right pattern for the right purpose, respecting platform conventions while maintaining consistency.`
+				}}
+				reflectionQuestions={[
+					`Why do mobile apps use different navigation patterns than websites?`,
+					`How do platform-specific gestures (like swipe-back on iOS) enhance the user experience?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Morning)`,
+					content: `Arrived at the Navigation Outpost where Trail Guide Navigator showed me the four fundamental navigation patterns: Stack (📚), Tab (🗂️), Drawer (☰), and Modal (🪟). Each serves a different purpose - stacks for drilling into details, tabs for main sections always visible, drawers for secondary options, and modals for focused tasks. Binary analyzed it as LIFO structures and conditional rendering. The key insight: mobile navigation is about gestures and user expectations, not URLs. I practiced navigating through stack screens, switching tabs, and opening drawer menus. Trail Guide's wisdom: "Choose the right pattern for the right purpose."`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const [activeStyleType, setActiveStyleType] = useState('basic');
@@ -105,9 +109,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Style Frontier
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Style Frontier`}
+				bridge={`"You've traded your components well," Marshal Native said, leading Aria to a workshop with glowing style sheets hovering in the air. "But components without style are like settlers without shelter. The Style Frontier awaits - where CSS rules give way to JavaScript objects and Flexbox reigns supreme."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -138,6 +144,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Style Frontier Workshop</h3>
+				
+				<InstructionBox character={`Marshal Native activates the Flexbox Playground.`}>
+					{`"Experiment with flexDirection, justifyContent, and alignItems. Watch how the boxes respond - Flexbox is your universal layout tool here!"`}
+				</InstructionBox>
 				
 				<div className='style-comparison'>
 					<div className='style-panel'>
@@ -415,12 +425,10 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>StyleSheet Mastery</span>
-					<span className='discovered-by'>Style Frontier teachings</span>
-				</div>
-				<pre>{`# StyleSheet API Fundamentals
+			<CodeExample
+				title={`StyleSheet Mastery`}
+				discoveredBy={`Style Frontier teachings`}
+				code={`# StyleSheet API Fundamentals
 // Marshal Native: "Styles are just JavaScript!"
 
 import { StyleSheet, Platform, Dimensions } from 'react-native';
@@ -596,32 +604,29 @@ const styles = StyleSheet.create({
     height: StyleSheet.hairlineWidth, // Thinnest possible line
     backgroundColor: '#ddd',
   }
-});`}</pre>
-			</div>
+});`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Style Frontier Lesson:</h3>
-				<p>
-					The Style Frontier teaches that React Native styling is both simpler and 
-					more powerful than web CSS. Without cascade and selectors, styles become 
-					predictable and debuggable. Marshal Native's final wisdom: embrace the 
-					constraints - no units mean consistent spacing, Flexbox-everywhere means 
-					predictable layouts, and JavaScript objects mean dynamic styling power. 
-					The frontier rewards those who think in components, not cascades.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					How does the absence of CSS cascade make React Native styling more 
-					predictable?
-				</p>
-				<p>
-					Why might platform-specific styling (like shadows) be important for 
-					native feel?
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Style Frontier Lesson:`,
+					content: `The Style Frontier teaches that React Native styling is both simpler and more powerful than web CSS. Without cascade and selectors, styles become predictable and debuggable. Marshal Native's final wisdom: embrace the constraints - no units mean consistent spacing, Flexbox-everywhere means predictable layouts, and JavaScript objects mean dynamic styling power. The frontier rewards those who think in components, not cascades.`
+				}}
+				reflectionQuestions={[
+					`How does the absence of CSS cascade make React Native styling more predictable?`,
+					`Why might platform-specific styling (like shadows) be important for native feel?`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 37 (Evening)`,
+					content: `The Style Frontier was my final test today! No CSS cascade, no selectors - just JavaScript objects and Flexbox everywhere. At first it felt limiting, but Marshal Native showed me the power: dynamic styles based on state, screen size, platform - computed on the fly! Binary computed style calculations with exponential possibilities. The Animated API runs at smooth 60fps with useNativeDriver. Debuggora noted the predictability: "No cascade means no unexpected inheritance." Marshal Native's final wisdom: "Think in components, not cascades." I've conquered the Mobile Frontier's foundations!`
+				}}
+				chapterEnding={[
+					`As the sun set over the Style Frontier, Marshal Native nodded approvingly. "You've learned the foundations, Captain Aria. Components, trading, styling - the basics of mobile citizenship."`,
+					`Binary processed their progress. "Foundation modules installed: View, Text, ScrollView, FlatList, StyleSheet. Ready for advanced capabilities."`,
+					`"Tomorrow," Marshal Native said, pointing toward distant peaks glowing with native energy, "we explore Native Powers - the device capabilities that make mobile truly magical. Cameras, sensors, gestures - powers the browser never had."`,
+					`Aria gripped her newly earned Frontier Pass. The Mobile Frontier had welcomed her, and native powers awaited.`
+				]}
+			/>
 		</div>
 	);
 };
