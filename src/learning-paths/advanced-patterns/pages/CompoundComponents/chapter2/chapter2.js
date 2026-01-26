@@ -253,8 +253,40 @@ Select.Option = function SelectOption({ value, children }) {
   );
 };
 
-// 3. Compound components with slots
+// 3. Compound components with render props
+const DataTable = ({ children, data }) => {
+  const [sortBy, setSortBy] = useState(null);
+  const [filterBy, setFilterBy] = useState('');
+  
+  const processedData = useMemo(() => {
+    let result = [...data];
+    if (filterBy) {
+      result = result.filter(item => 
+        JSON.stringify(item).includes(filterBy)
+      );
+    }
+    if (sortBy) {
+      result.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
+    }
+    return result;
+  }, [data, sortBy, filterBy]);
+  
+  return (
+    <TableContext.Provider value={{ 
+      data: processedData, 
+      sortBy, 
+      setSortBy, 
+      filterBy, 
+      setFilterBy 
+    }}>
+      <div className="data-table">{children}</div>
+    </TableContext.Provider>
+  );
+};
+
+// 4. Compound components with slots
 const Card = ({ children }) => {
+  // Extract specific children by type
   const header = React.Children.toArray(children)
     .find(child => child.type === Card.Header);
   const body = React.Children.toArray(children)
@@ -271,12 +303,38 @@ const Card = ({ children }) => {
   );
 };
 
-// Usage - Order doesn't matter with slots!
-<Card>
-  <Card.Footer><button>Save</button></Card.Footer>
-  <Card.Body>Content goes here</Card.Body>
-  <Card.Header><h3>Title</h3></Card.Header>
-</Card>`}
+Card.Header = ({ children }) => children;
+Card.Body = ({ children }) => children;
+Card.Footer = ({ children }) => children;
+
+// Usage example showing flexibility
+function App() {
+  return (
+    <>
+      {/* Order doesn't matter with slots */}
+      <Card>
+        <Card.Footer>
+          <button>Save</button>
+        </Card.Footer>
+        <Card.Body>
+          Content goes here
+        </Card.Body>
+        <Card.Header>
+          <h3>Title</h3>
+        </Card.Header>
+      </Card>
+      
+      {/* Clean API with static properties */}
+      <Select onChange={value => console.log(value)}>
+        <Select.Trigger />
+        <Select.Options>
+          <Select.Option value="1">Option 1</Select.Option>
+          <Select.Option value="2">Option 2</Select.Option>
+        </Select.Options>
+      </Select>
+    </>
+  );
+}`}
 			/>
 
 			<ChapterSummary

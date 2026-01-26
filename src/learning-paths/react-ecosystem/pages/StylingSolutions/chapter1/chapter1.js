@@ -255,32 +255,165 @@ const ChapterOne = () => {
 				discoveredBy={`Moderator's Wisdom`}
 				code={`// React Styling Approaches Comparison
 
-// 1. Traditional CSS - import './styles.css';
-<button className="button">{children}</button>
+// 1. Traditional CSS
+// styles.css
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-// 2. CSS Modules - Scoped by default
+.button:hover {
+  background-color: #2980b9;
+}
+
+// Component.js
+import './styles.css';
+
+function Button({ children }) {
+  return <button className="button">{children}</button>;
+}
+
+// 2. CSS Modules
+// Button.module.css
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+// Button.js
 import styles from './Button.module.css';
-<button className={styles.button}>{children}</button>
+
+function Button({ children }) {
+  return <button className={styles.button}>{children}</button>;
+}
 
 // 3. CSS-in-JS (Emotion)
-const buttonStyle = css\`background: #3498db; &:hover { background: #2980b9; }\`;
-<button css={buttonStyle}>{children}</button>
+import { css } from '@emotion/react';
 
-// 4. Styled Components - Dynamic props
-const StyledButton = styled.button\`background: \${p => p.primary ? '#3498db' : '#95a5a6'}\`;
+const buttonStyle = css\`
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #2980b9;
+  }
+\`;
 
-// 5. Tailwind CSS - Utility-first
-<button className="px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded">
+function Button({ children }) {
+  return <button css={buttonStyle}>{children}</button>;
+}
 
-// 6. Vanilla Extract - Zero-runtime, type-safe
-export const button = style({ backgroundColor: '#3498db', ':hover': { backgroundColor: '#2980b9' } });
+// 4. Styled Components
+import styled from 'styled-components';
 
-// Performance Trade-offs:
-// Traditional CSS: ✅ Cached ❌ Global scope
-// CSS Modules: ✅ Local scope ❌ Build step
-// CSS-in-JS: ✅ Dynamic ❌ Runtime cost
-// Tailwind: ✅ Tiny CSS ❌ Verbose HTML
-// Zero-Runtime: ✅ Type-safe ❌ Limited dynamism`}
+const StyledButton = styled.button\`
+  background-color: \${props => props.primary ? '#3498db' : '#95a5a6'};
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: \${props => props.primary ? '#2980b9' : '#7f8c8d'};
+  }
+\`;
+
+function Button({ children, primary }) {
+  return <StyledButton primary={primary}>{children}</StyledButton>;
+}
+
+// 5. Utility-First (Tailwind CSS)
+function Button({ children, variant = 'primary' }) {
+  const baseClasses = 'px-5 py-2.5 rounded cursor-pointer transition-colors';
+  const variantClasses = {
+    primary: 'bg-blue-500 hover:bg-blue-600 text-white',
+    secondary: 'bg-gray-500 hover:bg-gray-600 text-white',
+    outline: 'border-2 border-blue-500 text-blue-500 hover:bg-blue-50'
+  };
+  
+  return (
+    <button className={\`\${baseClasses} \${variantClasses[variant]}\`}>
+      {children}
+    </button>
+  );
+}
+
+// 6. Zero-Runtime CSS-in-JS (Vanilla Extract)
+// Button.css.ts
+import { style } from '@vanilla-extract/css';
+
+export const button = style({
+  backgroundColor: '#3498db',
+  color: 'white',
+  padding: '10px 20px',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer',
+  
+  ':hover': {
+    backgroundColor: '#2980b9'
+  }
+});
+
+// Button.tsx
+import { button } from './Button.css';
+
+function Button({ children }) {
+  return <button className={button}>{children}</button>;
+}
+
+// Performance Considerations
+
+// Traditional CSS
+// ✅ Cached separately
+// ✅ No JavaScript overhead
+// ❌ Global scope pollution
+
+// CSS Modules
+// ✅ Local scope
+// ✅ Build-time optimization
+// ❌ Extra build step
+
+// CSS-in-JS
+// ✅ Dynamic styles
+// ✅ Component encapsulation
+// ❌ Runtime overhead
+// ❌ Larger bundle
+
+// Styled Components
+// ✅ Great DX
+// ✅ Theming support
+// ❌ Runtime cost
+// ❌ SSR complexity
+
+// Tailwind
+// ✅ Tiny production CSS
+// ✅ Fast development
+// ❌ Learning curve
+// ❌ HTML verbosity
+
+// Zero-Runtime
+// ✅ Type-safe
+// ✅ No runtime cost
+// ❌ Limited dynamism
+// ❌ Build complexity`}
 			/>
 
 			<ChapterSummary

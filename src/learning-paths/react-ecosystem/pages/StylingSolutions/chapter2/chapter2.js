@@ -430,27 +430,202 @@ const containerStyle = {
 				discoveredBy={`Workshop Wisdom`}
 				code={`// Advanced Styling Implementation Examples
 
-// 1. Styled Components - Theming & Variants
-const GlobalStyle = createGlobalStyle\`body { background: \${p => p.theme.bg}; }\`;
-const Button = styled.button\`background: \${({ theme, variant }) => theme[variant]};\`;
+// 1. Styled Components - Advanced Patterns
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-// 2. Tailwind - Config & Composition
-// tailwind.config.js: extend colors, add custom animations
-<div className="bg-white rounded-lg shadow hover:shadow-xl dark:bg-gray-800">
+// Global styles
+const GlobalStyle = createGlobalStyle\`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: \${props => props.theme.background};
+    color: \${props => props.theme.text};
+  }
+\`;
 
-// 3. CSS Modules - Composition
-.primary { composes: button; background: var(--color-primary); }
-<button className={cn(styles[variant], className)} />
+// Theme definition
+const theme = {
+  light: {
+    background: '#ffffff',
+    text: '#333333',
+    primary: '#3498db',
+    secondary: '#2ecc71'
+  },
+  dark: {
+    background: '#1a1a1a',
+    text: '#ffffff',
+    primary: '#2980b9',
+    secondary: '#27ae60'
+  }
+};
 
-// 4. Emotion - Keyframes & Dynamic
-const bounce = keyframes\`40% { transform: translate3d(0,-30px,0); }\`;
-const dynamicStyle = props => css\`animation: \${props.animate ? bounce : 'none'}\`;
+// Component with variants
+const Button = styled.button\`
+  \${({ theme, variant, size }) => css\`
+    background: \${theme[variant] || theme.primary};
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: \${size === 'large' ? '1.2em' : '1em'};
+    padding: \${size === 'large' ? '12px 24px' : '8px 16px'};
+    
+    &:hover {
+      filter: brightness(0.9);
+    }
+  \`}
+\`;
 
-// 5. Vanilla Extract - Zero-runtime Themes
-export const [themeClass, vars] = createTheme({ color: { brand: '#3498db' } });
-export const buttonVariants = styleVariants({ primary: [button, { bg: vars.color.brand }] });
+// 2. Tailwind - Component Patterns
+// tailwind.config.js
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          light: '#3498db',
+          DEFAULT: '#2980b9',
+          dark: '#21618c'
+        }
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out'
+      }
+    }
+  }
+};
 
-// Performance Tips: Critical CSS, Code splitting, PurgeCSS, Tree shaking`}
+// Component with Tailwind
+function Card({ children, elevated }) {
+  return (
+    <div className={\`
+      bg-white rounded-lg p-6
+      \${elevated ? 'shadow-lg' : 'shadow'}
+      hover:shadow-xl transition-shadow duration-300
+      dark:bg-gray-800 dark:text-white
+    \`}>
+      {children}
+    </div>
+  );
+}
+
+// 3. CSS Modules - Advanced Usage
+// Button.module.css
+.button {
+  composes: reset from './reset.module.css';
+  background: var(--color-primary);
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  composes: button;
+  background: var(--color-primary);
+}
+
+.secondary {
+  composes: button;
+  background: var(--color-secondary);
+}
+
+// Button.js
+import styles from './Button.module.css';
+import cn from 'classnames';
+
+function Button({ variant = 'primary', className, ...props }) {
+  return (
+    <button 
+      className={cn(styles[variant], className)} 
+      {...props} 
+    />
+  );
+}
+
+// 4. Emotion - Advanced Features
+import { css, keyframes } from '@emotion/react';
+import styled from '@emotion/styled';
+
+// Keyframe animations
+const bounce = keyframes\`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+\`;
+
+// Dynamic styles with props
+const dynamicStyle = props => css\`
+  color: \${props.color};
+  font-size: \${props.fontSize}px;
+  animation: \${props.animate ? bounce : 'none'} 1s ease infinite;
+\`;
+
+// Composition
+const baseButton = css\`
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+\`;
+
+const primaryButton = css\`
+  \${baseButton}
+  background: #3498db;
+  color: white;
+\`;
+
+// 5. Zero-Runtime CSS (Vanilla Extract)
+// styles.css.ts
+import { style, styleVariants, createTheme } from '@vanilla-extract/css';
+
+export const [themeClass, vars] = createTheme({
+  color: {
+    brand: '#3498db',
+    text: '#333333',
+    background: '#ffffff'
+  },
+  space: {
+    small: '4px',
+    medium: '8px',
+    large: '16px'
+  }
+});
+
+export const button = style({
+  padding: vars.space.medium,
+  background: vars.color.brand,
+  color: 'white',
+  border: 'none',
+  borderRadius: '4px',
+  ':hover': {
+    transform: 'translateY(-2px)'
+  }
+});
+
+export const buttonVariants = styleVariants({
+  primary: [button, { background: vars.color.brand }],
+  secondary: [button, { background: '#95a5a6' }]
+});
+
+// Performance Optimization Tips
+
+// 1. Critical CSS extraction
+// 2. CSS-in-JS code splitting
+// 3. PurgeCSS for Tailwind
+// 4. CSS Module tree shaking
+// 5. Runtime vs build-time trade-offs`}
 			/>
 
 			<ChapterSummary

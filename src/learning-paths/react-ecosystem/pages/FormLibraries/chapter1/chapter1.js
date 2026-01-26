@@ -256,35 +256,237 @@ const ChapterOne = () => {
 			<CodeExample
 				title={`Form Library Foundations`}
 				discoveredBy={`Chancellor's Wisdom`}
-				code={`// Form Library Approaches Comparison
+				code={`// Understanding Form Library Approaches
 
-// 1. Native React (Controlled)
-const [formData, setFormData] = useState({ username: '', email: '' });
-<input name="username" value={formData.username} onChange={handleChange} />
+// 1. Native React Forms (Controlled)
+function NativeForm() {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
+  const [errors, setErrors] = useState({});
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.username) newErrors.username = 'Required';
+    if (!formData.email.includes('@')) newErrors.email = 'Invalid email';
+    if (formData.password.length < 8) newErrors.password = 'Too short';
+    return newErrors;
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length === 0) {
+      console.log('Submit:', formData);
+    } else {
+      setErrors(newErrors);
+    }
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
+      />
+      {errors.username && <span>{errors.username}</span>}
+      {/* More fields... */}
+    </form>
+  );
+}
 
-// 2. React Hook Form (Uncontrolled - Minimal re-renders!)
+// 2. React Hook Form (Uncontrolled)
 import { useForm } from 'react-hook-form';
-const { register, handleSubmit, formState: { errors } } = useForm();
-<input {...register('username', { required: 'Required' })} />
 
-// 3. Formik (Controlled with Yup validation)
-import { Formik, Form, Field } from 'formik';
-const schema = Yup.object({ username: Yup.string().required() });
-<Formik initialValues={{}} validationSchema={schema} onSubmit={...}>
-  <Field name="username" />
-</Formik>
+function HookForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch
+  } = useForm({
+    defaultValues: {
+      username: '',
+      email: '',
+      password: ''
+    }
+  });
+  
+  const onSubmit = (data) => {
+    console.log('Submit:', data);
+  };
+  
+  // Minimal re-renders!
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        {...register('username', { required: 'Required' })}
+      />
+      {errors.username && <span>{errors.username.message}</span>}
+      
+      <input
+        {...register('email', {
+          required: 'Required',
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$/i,
+            message: 'Invalid email'
+          }
+        })}
+      />
+      {errors.email && <span>{errors.email.message}</span>}
+      
+      <input
+        type="password"
+        {...register('password', {
+          required: 'Required',
+          minLength: {
+            value: 8,
+            message: 'Too short'
+          }
+        })}
+      />
+      {errors.password && <span>{errors.password.message}</span>}
+      
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+// 3. Formik (Controlled with helpers)
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const validationSchema = Yup.object({
+  username: Yup.string().required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().min(8, 'Too short').required('Required')
+});
+
+function FormikForm() {
+  return (
+    <Formik
+      initialValues={{
+        username: '',
+        email: '',
+        password: ''
+      }}
+      validationSchema={validationSchema}
+      onSubmit={(values, { setSubmitting }) => {
+        console.log('Submit:', values);
+        setSubmitting(false);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <Form>
+          <Field type="text" name="username" />
+          <ErrorMessage name="username" component="span" />
+          
+          <Field type="email" name="email" />
+          <ErrorMessage name="email" component="span" />
+          
+          <Field type="password" name="password" />
+          <ErrorMessage name="password" component="span" />
+          
+          <button type="submit" disabled={isSubmitting}>
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+}
 
 // 4. React Final Form (Subscription-based)
 import { Form, Field } from 'react-final-form';
-<Form onSubmit={onSubmit} render={({ handleSubmit }) => (
-  <Field name="username">{({ input }) => <input {...input} />}</Field>
-)} />
 
-// When to Use:
-// React Hook Form: Performance critical, large forms, TypeScript
-// Formik: Team familiar with React, rich ecosystem, Yup validation
-// React Final Form: Fine-grained subscriptions, complex logic
-// Native React: Simple forms (< 5 fields), learning, full control`}
+function FinalForm() {
+  const onSubmit = (values) => {
+    console.log('Submit:', values);
+  };
+  
+  const validate = (values) => {
+    const errors = {};
+    if (!values.username) errors.username = 'Required';
+    if (!values.email?.includes('@')) errors.email = 'Invalid email';
+    if (values.password?.length < 8) errors.password = 'Too short';
+    return errors;
+  };
+  
+  return (
+    <Form
+      onSubmit={onSubmit}
+      validate={validate}
+      render={({ handleSubmit, form, submitting, pristine }) => (
+        <form onSubmit={handleSubmit}>
+          <Field name="username">
+            {({ input, meta }) => (
+              <div>
+                <input {...input} placeholder="Username" />
+                {meta.error && meta.touched && <span>{meta.error}</span>}
+              </div>
+            )}
+          </Field>
+          
+          <Field name="email">
+            {({ input, meta }) => (
+              <div>
+                <input {...input} type="email" placeholder="Email" />
+                {meta.error && meta.touched && <span>{meta.error}</span>}
+              </div>
+            )}
+          </Field>
+          
+          <Field name="password">
+            {({ input, meta }) => (
+              <div>
+                <input {...input} type="password" placeholder="Password" />
+                {meta.error && meta.touched && <span>{meta.error}</span>}
+              </div>
+            )}
+          </Field>
+          
+          <button type="submit" disabled={submitting || pristine}>
+            Submit
+          </button>
+        </form>
+      )}
+    />
+  );
+}
+
+// When to Use Each Library
+
+// React Hook Form
+// ✅ Performance is critical
+// ✅ Large forms with many fields
+// ✅ TypeScript projects
+// ✅ Minimal bundle size matters
+
+// Formik
+// ✅ Team familiar with React patterns
+// ✅ Need rich ecosystem
+// ✅ Complex validation with Yup
+// ✅ Established codebase
+
+// React Final Form
+// ✅ Need fine-grained subscriptions
+// ✅ Complex form logic
+// ✅ Performance optimization control
+// ✅ Framework agnostic core
+
+// Native React
+// ✅ Simple forms (< 5 fields)
+// ✅ Learning React
+// ✅ Minimal dependencies
+// ✅ Full control needed`}
 			/>
 
 			<ChapterSummary

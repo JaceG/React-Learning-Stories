@@ -384,43 +384,222 @@ const ChapterThree = () => {
 				code={`// Same App, Different Libraries
 
 // 1. Redux Implementation
+// store.js
 import { createSlice, configureStore } from '@reduxjs/toolkit';
+
 const todoSlice = createSlice({
   name: 'todos',
   initialState: [],
   reducers: {
-    addTodo: (state, action) => { state.push({ id: Date.now(), text: action.payload, done: false }); },
-    toggleTodo: (state, action) => { const todo = state.find(t => t.id === action.payload); if (todo) todo.done = !todo.done; }
+    addTodo: (state, action) => {
+      state.push({ id: Date.now(), text: action.payload, done: false });
+    },
+    toggleTodo: (state, action) => {
+      const todo = state.find(t => t.id === action.payload);
+      if (todo) todo.done = !todo.done;
+    }
   }
 });
-export const store = configureStore({ reducer: { todos: todoSlice.reducer } });
+
+export const store = configureStore({
+  reducer: { todos: todoSlice.reducer }
+});
+
+// App.js
+import { Provider, useSelector, useDispatch } from 'react-redux';
+import { addTodo, toggleTodo } from './store';
+
+function TodoApp() {
+  const todos = useSelector(state => state.todos);
+  const dispatch = useDispatch();
+  
+  return (
+    <div>
+      <button onClick={() => dispatch(addTodo('New Todo'))}>
+        Add Todo
+      </button>
+      {todos.map(todo => (
+        <div key={todo.id} onClick={() => dispatch(toggleTodo(todo.id))}>
+          {todo.text} - {todo.done ? '✓' : '○'}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // 2. MobX Implementation
 import { makeAutoObservable } from 'mobx';
+import { observer } from 'mobx-react-lite';
+
 class TodoStore {
   todos = [];
-  constructor() { makeAutoObservable(this); }
-  addTodo(text) { this.todos.push({ id: Date.now(), text, done: false }); }
-  toggleTodo(id) { const todo = this.todos.find(t => t.id === id); if (todo) todo.done = !todo.done; }
+  
+  constructor() {
+    makeAutoObservable(this);
+  }
+  
+  addTodo(text) {
+    this.todos.push({ id: Date.now(), text, done: false });
+  }
+  
+  toggleTodo(id) {
+    const todo = this.todos.find(t => t.id === id);
+    if (todo) todo.done = !todo.done;
+  }
 }
+
+const todoStore = new TodoStore();
+
+const TodoApp = observer(() => {
+  return (
+    <div>
+      <button onClick={() => todoStore.addTodo('New Todo')}>
+        Add Todo
+      </button>
+      {todoStore.todos.map(todo => (
+        <div key={todo.id} onClick={() => todoStore.toggleTodo(todo.id)}>
+          {todo.text} - {todo.done ? '✓' : '○'}
+        </div>
+      ))}
+    </div>
+  );
+});
 
 // 3. Zustand Implementation
 import { create } from 'zustand';
+
 const useTodoStore = create((set) => ({
   todos: [],
-  addTodo: (text) => set((state) => ({ todos: [...state.todos, { id: Date.now(), text, done: false }] })),
-  toggleTodo: (id) => set((state) => ({ todos: state.todos.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo) }))
+  addTodo: (text) => set((state) => ({
+    todos: [...state.todos, { id: Date.now(), text, done: false }]
+  })),
+  toggleTodo: (id) => set((state) => ({
+    todos: state.todos.map(todo =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo
+    )
+  }))
 }));
 
+function TodoApp() {
+  const { todos, addTodo, toggleTodo } = useTodoStore();
+  
+  return (
+    <div>
+      <button onClick={() => addTodo('New Todo')}>
+        Add Todo
+      </button>
+      {todos.map(todo => (
+        <div key={todo.id} onClick={() => toggleTodo(todo.id)}>
+          {todo.text} - {todo.done ? '✓' : '○'}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // 4. Recoil Implementation
-import { atom, useRecoilState } from 'recoil';
-const todoListState = atom({ key: 'todoListState', default: [] });
+import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+
+const todoListState = atom({
+  key: 'todoListState',
+  default: []
+});
+
+const todoListStatsState = selector({
+  key: 'todoListStatsState',
+  get: ({get}) => {
+    const todoList = get(todoListState);
+    const totalNum = todoList.length;
+    const totalCompletedNum = todoList.filter(item => item.done).length;
+    return { totalNum, totalCompletedNum };
+  }
+});
+
+function TodoApp() {
+  const [todos, setTodos] = useRecoilState(todoListState);
+  const stats = useRecoilValue(todoListStatsState);
+  
+  const addTodo = (text) => {
+    setTodos([...todos, { id: Date.now(), text, done: false }]);
+  };
+  
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo
+    ));
+  };
+  
+  return (
+    <div>
+      <div>Total: {stats.totalNum}, Completed: {stats.totalCompletedNum}</div>
+      <button onClick={() => addTodo('New Todo')}>Add Todo</button>
+      {todos.map(todo => (
+        <div key={todo.id} onClick={() => toggleTodo(todo.id)}>
+          {todo.text} - {todo.done ? '✓' : '○'}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // 5. Jotai Implementation
 import { atom, useAtom } from 'jotai';
-const todosAtom = atom([]);
 
-// Migration: Context→Redux, Redux→Zustand, Any→MobX`}
+const todosAtom = atom([]);
+const todoStatsAtom = atom((get) => {
+  const todos = get(todosAtom);
+  return {
+    total: todos.length,
+    completed: todos.filter(t => t.done).length
+  };
+});
+
+function TodoApp() {
+  const [todos, setTodos] = useAtom(todosAtom);
+  const stats = useAtom(todoStatsAtom)[0];
+  
+  const addTodo = (text) => {
+    setTodos([...todos, { id: Date.now(), text, done: false }]);
+  };
+  
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo
+    ));
+  };
+  
+  return (
+    <div>
+      <div>Total: {stats.total}, Completed: {stats.completed}</div>
+      <button onClick={() => addTodo('New Todo')}>Add Todo</button>
+      {todos.map(todo => (
+        <div key={todo.id} onClick={() => toggleTodo(todo.id)}>
+          {todo.text} - {todo.done ? '✓' : '○'}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Migration Strategies
+
+// Context to Redux
+// 1. Map Context state to Redux state shape
+// 2. Convert Context actions to Redux actions
+// 3. Replace useContext with useSelector/useDispatch
+// 4. Remove Context Providers, add Redux Provider
+
+// Redux to Zustand
+// 1. Combine reducers into Zustand store
+// 2. Convert action creators to store methods
+// 3. Replace useSelector with store hook
+// 4. Remove Redux Provider
+
+// Any to MobX
+// 1. Create observable classes for state domains
+// 2. Convert state updates to class methods
+// 3. Wrap components with observer
+// 4. Use MobX DevTools for debugging`}
 			/>
 
 			{wisdomLevel === 'master' && (

@@ -253,34 +253,134 @@ const ChapterOne = () => {
 				discoveredBy={`Transcribed by Aria`}
 				code={`// State Management Libraries Overview
 
-// 1. Redux - The Predictable State Container
+// 1. React's Built-in State Management
+// Context API - Good for simple global state
+const ThemeContext = React.createContext();
+const AuthContext = React.createContext();
+
+// useReducer - Good for complex local state
+const [state, dispatch] = useReducer(reducer, initialState);
+
+// When you need more...
+
+// 2. Redux - The Predictable State Container
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
-// Principles: Single source of truth, state read-only, pure functions
 
-// 2. MobX - Simple, Scalable State Management
+// Redux principles:
+// - Single source of truth
+// - State is read-only
+// - Changes made with pure functions
+
+const store = createStore(rootReducer);
+
+// 3. MobX - Simple, Scalable State Management
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react-lite';
-// Principles: Automatic derivations, reactive updates
 
-// 3. Zustand - Bear Necessities
+// MobX principles:
+// - Anything that can be derived, should be
+// - All derivations update automatically
+// - Until needed, derivations are not computed
+
+class TodoStore {
+  todos = [];
+  
+  constructor() {
+    makeAutoObservable(this);
+  }
+  
+  addTodo(text) {
+    this.todos.push({ text, done: false });
+  }
+}
+
+// 4. Zustand - Bear Necessities
 import { create } from 'zustand';
+
+// Zustand principles:
+// - Small bundle size
+// - No providers needed
+// - Simple API
+
 const useStore = create((set) => ({
   bears: 0,
-  increase: () => set((state) => ({ bears: state.bears + 1 }))
+  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
+  removeAllBears: () => set({ bears: 0 })
 }));
-// Principles: Small size, no providers, simple API
 
-// 4. Recoil/Jotai - Atomic State Management
+// 5. Recoil - Experimental State Management
+import { atom, selector, useRecoilState } from 'recoil';
+
+// Recoil principles:
+// - Atoms are units of state
+// - Selectors derive state
+// - Components subscribe to atoms
+
+const todoListState = atom({
+  key: 'todoListState',
+  default: []
+});
+
+// 6. Jotai - Primitive and Flexible
 import { atom, useAtom } from 'jotai';
-const countAtom = atom(0);
-// Principles: Fine-grained reactivity, React Suspense
 
-// Choosing the Right Solution:
-// Redux - Large teams, complex state, debugging needs
-// MobX - OOP style, minimal boilerplate
-// Zustand - Simplicity, small to medium apps
-// Recoil/Jotai - Fine-grained reactivity, Suspense`}
+// Jotai principles:
+// - Bottom-up approach
+// - No providers by default
+// - React Suspense integration
+
+const countAtom = atom(0);
+const doubledAtom = atom((get) => get(countAtom) * 2);
+
+// Choosing the Right Solution
+
+// Use Context/useReducer when:
+// - State is simple and localized
+// - You don't need time-travel debugging
+// - Performance is not critical
+
+// Use Redux when:
+// - Large team needs predictable patterns
+// - Complex state logic
+// - Need extensive debugging tools
+// - Large ecosystem of middleware
+
+// Use MobX when:
+// - You prefer OOP style
+// - Want minimal boilerplate
+// - Like reactive programming
+
+// Use Zustand when:
+// - Want simplicity
+// - Small to medium apps
+// - Don't need complex patterns
+
+// Use Recoil/Jotai when:
+// - Need fine-grained reactivity
+// - Working with React Suspense
+// - Want experimental features
+
+// Migration Strategies
+
+// From Context to Redux:
+// 1. Identify global state
+// 2. Create Redux store
+// 3. Replace Context Providers
+// 4. Update components
+
+// From Redux to Zustand:
+// 1. Map reducers to store actions
+// 2. Replace Provider with Zustand hook
+// 3. Simplify component connections
+
+// Performance Considerations
+
+// Context: Re-renders all consumers
+// Redux: Connect specific slices
+// MobX: Automatic optimization
+// Zustand: Selective subscriptions
+// Recoil/Jotai: Atom-level updates`}
 			/>
 
 			<ChapterSummary

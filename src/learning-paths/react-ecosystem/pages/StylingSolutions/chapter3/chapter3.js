@@ -264,27 +264,196 @@ const ChapterThree = () => {
 				discoveredBy={`Harmony Wisdom`}
 				code={`// Styling Strategy Decision Guide
 
-// By Project Type:
-// Marketing Site: CSS Modules or Vanilla Extract (performance)
-// Web App: Styled Components/Emotion (theming, maintainability)
-// Component Library: Styled Components (isolation, distribution)
-// Prototype: Tailwind CSS (speed, consistency)
+// 1. Project Type Analysis
+const stylingDecisionTree = {
+  // Static Marketing Site
+  marketingSite: {
+    requirements: ['SEO', 'Performance', 'Quick loading'],
+    avoid: ['Large CSS-in-JS libraries'],
+    consider: {
+      primary: 'CSS Modules',
+      alternative: 'Vanilla Extract',
+      ifNeeded: 'Tailwind (with PurgeCSS)'
+    }
+  },
+  
+  // Complex Web Application
+  webApp: {
+    requirements: ['Maintainable', 'Themeable', 'Component-based'],
+    avoid: ['Global CSS'],
+    consider: {
+      primary: 'Styled Components / Emotion',
+      alternative: 'CSS Modules + CSS Variables',
+      ifNeeded: 'Tailwind + Component Classes'
+    }
+  },
+  
+  // Component Library
+  componentLibrary: {
+    requirements: ['Isolation', 'Theming', 'Distribution'],
+    avoid: ['Build-time only solutions'],
+    consider: {
+      primary: 'Styled Components',
+      alternative: 'Emotion',
+      ifNeeded: 'CSS-in-JS with zero-runtime fallback'
+    }
+  },
+  
+  // Rapid Prototype
+  prototype: {
+    requirements: ['Speed', 'Iteration', 'Consistency'],
+    avoid: ['Complex setup'],
+    consider: {
+      primary: 'Tailwind CSS',
+      alternative: 'CSS Framework (Bootstrap, etc)',
+      ifNeeded: 'Inline styles (temporary)'
+    }
+  }
+};
 
-// Migration Path:
-// CSS → CSS Modules: Move to .module.css, update imports
-// CSS Modules → Styled: import styles → const Button = styled.button\`...\`
-// CSS-in-JS → Tailwind: Styled props → className utilities
+// 2. Migration Strategies
+// From CSS to CSS Modules
+// Step 1: Move global styles to modules
+// Step 2: Update imports
+// Step 3: Handle composition
 
-// Team Considerations:
-// Large Team: CSS Modules + Style Guide (predictable, git-friendly)
-// Startup: Tailwind (rapid dev, no naming debates)
+// From CSS Modules to CSS-in-JS
+const migrateToStyledComponents = \`
+  // Before (CSS Module)
+  import styles from './Button.module.css';
+  <button className={styles.button}>Click</button>
+  
+  // After (Styled Components)
+  const Button = styled.button\\\`...styles...\\\`;
+  <Button>Click</Button>
+\`;
 
-// Hybrid Approaches:
-<div className={cn(styles.card, 'hover:shadow-lg')}>  // CSS Modules + Tailwind
-const Card = styled.div.attrs({ className: 'hover:shadow-lg' })\`...\`;
+// From CSS-in-JS to Tailwind
+const migrateToTailwind = \`
+  // Before (Styled Components)
+  const Button = styled.button\\\`
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+  \\\`;
+  
+  // After (Tailwind)
+  <button className="bg-blue-500 text-white px-5 py-2.5">
+\`;
 
-// Future Trends:
-// CSS-in-JS → Zero-runtime | Utilities → Growing | CSS → Container queries`}
+// 3. Performance Optimization by Approach
+
+// CSS Modules - Optimization
+{
+  test: /\\.module\\.css$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    {
+      loader: 'css-loader',
+      options: {
+        modules: {
+          localIdentName: '[hash:base64:5]' // Shorter classes
+        }
+      }
+    },
+    'postcss-loader' // For optimizations
+  ]
+}
+
+// Styled Components - Optimization
+import { ServerStyleSheet } from 'styled-components';
+
+// SSR critical CSS extraction
+const sheet = new ServerStyleSheet();
+const html = renderToString(
+  sheet.collectStyles(<App />)
+);
+const styleTags = sheet.getStyleTags();
+
+// Tailwind - Optimization
+// tailwind.config.js
+module.exports = {
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    options: {
+      safelist: [
+        /^bg-/,  // Keep dynamic classes
+        /^text-/,
+      ]
+    }
+  }
+};
+
+// 4. Team Considerations
+
+// Large Team Setup
+const largeTeamStyling = {
+  approach: 'CSS Modules + Style Guide',
+  benefits: [
+    'Clear separation of concerns',
+    'Easy onboarding',
+    'Predictable styles',
+    'Git-friendly'
+  ],
+  tooling: [
+    'Stylelint for consistency',
+    'PostCSS for features',
+    'Design tokens for theming'
+  ]
+};
+
+// Small Team / Startup
+const startupStyling = {
+  approach: 'Tailwind CSS',
+  benefits: [
+    'Rapid development',
+    'Consistent by default',
+    'No naming debates',
+    'Small production CSS'
+  ],
+  tooling: [
+    'Tailwind UI for components',
+    'HeadlessUI for behavior',
+    'Tailwind CSS IntelliSense'
+  ]
+};
+
+// 5. Hybrid Approaches
+
+// CSS Modules + Tailwind
+<div className={cn(styles.card, 'hover:shadow-lg transition-shadow')}>
+  Combining local styles with utility classes
+</div>
+
+// Styled Components + Tailwind
+const Card = styled.div.attrs({
+  className: 'hover:shadow-lg transition-shadow'
+})\`
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+\`;
+
+// 6. Future-Proofing Your Choice
+
+const futureConsiderations = {
+  cssInJs: {
+    trend: 'Moving toward zero-runtime',
+    prepare: 'Use CSS variables for theming'
+  },
+  utilityFirst: {
+    trend: 'Growing adoption',
+    prepare: 'Learn composition patterns'
+  },
+  cssModules: {
+    trend: 'Stable and mature',
+    prepare: 'Adopt CSS custom properties'
+  },
+  vanilla: {
+    trend: 'Container queries, cascade layers',
+    prepare: 'Stay updated with CSS specs'
+  }
+};`}
 			/>
 
 			<ChapterSummary

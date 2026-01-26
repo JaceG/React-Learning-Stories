@@ -200,8 +200,51 @@ const Accordion = ({ children, allowMultiple = false }) => {
   
   return (
     <AccordionContext.Provider value={{ activeIndexes, toggleItem }}>
-      <div className="accordion" role="region">{children}</div>
+      <div className="accordion" role="region">
+        {children}
+      </div>
     </AccordionContext.Provider>
+  );
+};
+
+Accordion.Item = function AccordionItem({ children, index }) {
+  const { activeIndexes } = useContext(AccordionContext);
+  const isActive = activeIndexes.includes(index);
+  
+  return (
+    <div className={\`accordion-item \${isActive ? 'active' : ''}\`}>
+      {children}
+    </div>
+  );
+};
+
+Accordion.Header = function AccordionHeader({ children, index }) {
+  const { toggleItem } = useContext(AccordionContext);
+  
+  return (
+    <button
+      className="accordion-header"
+      onClick={() => toggleItem(index)}
+      aria-expanded={isActive}
+      aria-controls={\`panel-\${index}\`}>
+      {children}
+      <span className="accordion-icon">{isActive ? '−' : '+'}</span>
+    </button>
+  );
+};
+
+Accordion.Panel = function AccordionPanel({ children, index }) {
+  const { activeIndexes } = useContext(AccordionContext);
+  const isActive = activeIndexes.includes(index);
+  
+  return (
+    <div
+      id={\`panel-\${index}\`}
+      className="accordion-panel"
+      hidden={!isActive}
+      aria-labelledby={\`header-\${index}\`}>
+      <div className="accordion-content">{children}</div>
+    </div>
   );
 };
 
@@ -211,10 +254,30 @@ const Modal = ({ children, isOpen, onClose }) => {
   
   useEffect(() => {
     if (isOpen) {
-      // Focus trap and keyboard handling
+      // Focus trap
+      const focusableElements = modalRef.current.querySelectorAll(
+        'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      
+      firstElement?.focus();
+      
       const handleTab = (e) => {
-        if (e.key === 'Escape') onClose();
+        if (e.key === 'Tab') {
+          if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+        if (e.key === 'Escape') {
+          onClose();
+        }
       };
+      
       document.addEventListener('keydown', handleTab);
       return () => document.removeEventListener('keydown', handleTab);
     }
@@ -225,9 +288,12 @@ const Modal = ({ children, isOpen, onClose }) => {
   return (
     <ModalContext.Provider value={{ onClose }}>
       <div className="modal-overlay" onClick={onClose}>
-        <div ref={modalRef} className="modal-container" 
-             onClick={e => e.stopPropagation()}
-             role="dialog" aria-modal="true">
+        <div 
+          ref={modalRef}
+          className="modal-container" 
+          onClick={e => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true">
           {children}
         </div>
       </div>
@@ -235,25 +301,146 @@ const Modal = ({ children, isOpen, onClose }) => {
   );
 };
 
-Modal.Header = ({ children }) => {
+Modal.Header = function ModalHeader({ children }) {
   const { onClose } = useContext(ModalContext);
+  
   return (
     <div className="modal-header">
       {children}
-      <button onClick={onClose} aria-label="Close">×</button>
+      <button 
+        className="modal-close" 
+        onClick={onClose}
+        aria-label="Close modal">
+        ×
+      </button>
     </div>
   );
 };
-Modal.Body = ({ children }) => <div className="modal-body">{children}</div>;
-Modal.Footer = ({ children }) => <div className="modal-footer">{children}</div>;
+
+Modal.Body = function ModalBody({ children }) {
+  return <div className="modal-body">{children}</div>;
+};
+
+Modal.Footer = function ModalFooter({ children }) {
+  return <div className="modal-footer">{children}</div>;
+};
+
+// 3. Form with field coordination
+const Form = ({ children, onSubmit }) => {
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  
+  const updateField = (name, value) => {
+    setValues(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const setFieldError = (name, error) => {
+    setErrors(prev => ({ ...prev, [name]: error }));
+  };
+  
+  const setFieldTouched = (name) => {
+    setTouched(prev => ({ ...prev, [name]: true }));
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(values);
+  };
+  
+  return (
+    <FormContext.Provider value={{
+      values,
+      errors,
+      touched,
+      updateField,
+      setFieldError,
+      setFieldTouched
+    }}>
+      <form onSubmit={handleSubmit}>{children}</form>
+    </FormContext.Provider>
+  );
+};
+
+Form.Field = function FormField({ name, label, validate, children }) {
+  const { 
+    values, 
+    errors, 
+    touched, 
+    updateField, 
+    setFieldError, 
+    setFieldTouched 
+  } = useContext(FormContext);
+  
+  const value = values[name] || '';
+  const error = errors[name];
+  const isTouched = touched[name];
+  
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    updateField(name, newValue);
+    
+    if (validate) {
+      const error = validate(newValue);
+      setFieldError(name, error);
+    }
+  };
+  
+  const handleBlur = () => {
+    setFieldTouched(name);
+  };
+  
+  return (
+    <div className="form-field">
+      {label && <label htmlFor={name}>{label}</label>}
+      {React.cloneElement(children, {
+        id: name,
+        name,
+        value,
+        onChange: handleChange,
+        onBlur: handleBlur,
+        'aria-invalid': isTouched && !!error,
+        'aria-describedby': error ? \`\${name}-error\` : undefined
+      })}
+      {isTouched && error && (
+        <span id={\`\${name}-error\`} className="field-error">
+          {error}
+        </span>
+      )}
+    </div>
+  );
+};
 
 // Usage - Clean and powerful
-<Accordion allowMultiple>
-  <Accordion.Item index={0}>
-    <Accordion.Header index={0}>Section 1</Accordion.Header>
-    <Accordion.Panel index={0}>Content 1</Accordion.Panel>
-  </Accordion.Item>
-</Accordion>`}
+function App() {
+  return (
+    <div>
+      <Accordion allowMultiple>
+        <Accordion.Item index={0}>
+          <Accordion.Header index={0}>Section 1</Accordion.Header>
+          <Accordion.Panel index={0}>Content 1</Accordion.Panel>
+        </Accordion.Item>
+        <Accordion.Item index={1}>
+          <Accordion.Header index={1}>Section 2</Accordion.Header>
+          <Accordion.Panel index={1}>Content 2</Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
+      
+      <Form onSubmit={data => console.log(data)}>
+        <Form.Field 
+          name="email" 
+          label="Email"
+          validate={v => !v.includes('@') ? 'Invalid email' : null}>
+          <input type="email" />
+        </Form.Field>
+        <Form.Field name="password" label="Password">
+          <input type="password" />
+        </Form.Field>
+        <button type="submit">Submit</button>
+      </Form>
+    </div>
+  );
+}`}
 			/>
 
 			{architectureLevel >= 80 && (

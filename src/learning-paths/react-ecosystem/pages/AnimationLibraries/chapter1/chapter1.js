@@ -249,33 +249,192 @@ const ChapterOne = () => {
 				discoveredBy={`Abbess Motia's Wisdom`}
 				code={`// Understanding Animation in React
 
-// 1. CSS Transitions (Simple)
-.element { transition: transform 0.3s ease; }
-.element.active { transform: translateX(100px); }
-<div className={\`element \${isActive ? 'active' : ''}\`}>
+// 1. The CSS Approach
+// Simple but limited
+.element {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-// 2. The Unmounting Problem - CSS can't animate exit!
-{show && <div className="fade-in">I disappear instantly!</div>}
+.element.active {
+  transform: translateX(100px);
+  opacity: 0.5;
+}
 
-// 3. Performance - GOOD vs BAD
-.bad { transition: width 0.3s; }       // Causes reflow
-.good { transition: transform 0.3s; }  // GPU accelerated
+// React Component
+function SimpleAnimation() {
+  const [isActive, setIsActive] = useState(false);
+  
+  return (
+    <div 
+      className={\`element \${isActive ? 'active' : ''}\`}
+      onClick={() => setIsActive(!isActive)}
+    >
+      Click me!
+    </div>
+  );
+}
 
-// 4. React Challenges:
-// - State updates each frame = janky animation
-// - Coordinating multiple elements
-// - Exit animations
+// 2. CSS Keyframes
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-// 5. Why Animation Libraries?
-// ✅ Exit animations | ✅ Gesture integration
-// ✅ GPU acceleration | ✅ Spring physics
-// ✅ Orchestration | ✅ Interruption handling
+.animated-element {
+  animation: slideIn 0.5s ease-out forwards;
+}
 
-// 6. Accessibility
-const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (prefersReducedMotion) return children; // Skip animations
+// 3. The Problem with Unmounting
+// This won't animate out!
+function BadExample() {
+  const [show, setShow] = useState(true);
+  
+  return (
+    <>
+      {show && (
+        <div className="fade-in">
+          I disappear instantly!
+        </div>
+      )}
+      <button onClick={() => setShow(!show)}>Toggle</button>
+    </>
+  );
+}
 
-// 7. Common Patterns: Fade, Slide, Scale, Rotate, Parallax, Page transitions`}
+// 4. JavaScript Animation Basics
+function JSAnimation() {
+  const elementRef = useRef(null);
+  
+  const animate = () => {
+    let start = null;
+    const duration = 1000; // 1 second
+    
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = (timestamp - start) / duration;
+      
+      if (progress < 1) {
+        const x = progress * 100;
+        elementRef.current.style.transform = \`translateX(\${x}px)\`;
+        requestAnimationFrame(step);
+      }
+    };
+    
+    requestAnimationFrame(step);
+  };
+  
+  return (
+    <div ref={elementRef} onClick={animate}>
+      Click to animate!
+    </div>
+  );
+}
+
+// 5. Performance Considerations
+// BAD: Animating properties that trigger layout
+.bad-animation {
+  transition: width 0.3s, height 0.3s; /* Causes reflow */
+}
+
+// GOOD: Animating compositor-only properties
+.good-animation {
+  transition: transform 0.3s, opacity 0.3s; /* GPU accelerated */
+}
+
+// 6. React-Specific Challenges
+
+// Challenge 1: State updates during animation
+function AnimationChallenge() {
+  const [position, setPosition] = useState(0);
+  
+  // This causes janky animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition(p => p + 1); // Re-render every frame!
+    }, 16);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return <div style={{ transform: \`translateX(\${position}px)\` }} />;
+}
+
+// Challenge 2: Coordinating multiple elements
+function CoordinationChallenge() {
+  const [items, setItems] = useState([1, 2, 3]);
+  
+  // How to stagger animations?
+  // How to animate items leaving?
+  // How to handle interruptions?
+  
+  return (
+    <div>
+      {items.map(item => (
+        <div key={item} className="item">
+          Item {item}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// 7. Why Animation Libraries?
+
+// They solve:
+// - Exit animations (components can animate out)
+// - Gesture integration (drag, swipe, pinch)
+// - Performance optimization (batching, GPU acceleration)
+// - Complex orchestration (sequences, staggering)
+// - Interruption handling (smooth transitions between states)
+// - Spring physics (natural motion)
+
+// 8. Accessibility Considerations
+// Respect prefers-reduced-motion
+const prefersReducedMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
+
+function AccessibleAnimation({ children }) {
+  if (prefersReducedMotion) {
+    return children; // No animation
+  }
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// 9. Animation Performance Tips
+// - Use transform and opacity (GPU accelerated)
+// - Avoid animating layout properties (width, height, padding)
+// - Use will-change sparingly
+// - Batch DOM reads/writes
+// - Use CSS containment
+// - Profile with DevTools
+
+// 10. Common Animation Patterns
+// Fade In/Out
+// Slide In/Out
+// Scale
+// Rotate
+// Morph/Transform
+// Parallax
+// Reveal on scroll
+// Hover effects
+// Loading states
+// Page transitions`}
 			/>
 
 			<ChapterSummary
