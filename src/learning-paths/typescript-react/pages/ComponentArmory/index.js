@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './ComponentArmory.css';
 
@@ -9,17 +9,6 @@ function ComponentArmory() {
 	const [selectedArmor, setSelectedArmor] = useState(null);
 	const [armoryLevel, setArmoryLevel] = useState('apprentice');
 	const [typeStrength, setTypeStrength] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Forge a new component
 	const forgeComponent = (component) => {
@@ -39,28 +28,12 @@ function ComponentArmory() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Component Armory</h1>
-			<p className='lesson-subtitle'>
-				Forge type-safe components with the power of TypeScript
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Component Armory`}
+				subtitle={`Forge type-safe components with the power of TypeScript`}
+				opener={`The Component Armory stood at the heart of the TypeScript realm, its blue forge-flames visible from miles away. Master Forger Typhos, the legendary component smith, welcomed Aria at the great entrance. "Here, we transform ordinary components into armored fortresses," he declared, his hammer striking sparks of type definitions. "In JavaScript, components are naked and vulnerable. In TypeScript, they become invincible."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -75,25 +48,7 @@ function ComponentArmory() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='typescript-react'
 				lessonId='component-armory'
 			/>

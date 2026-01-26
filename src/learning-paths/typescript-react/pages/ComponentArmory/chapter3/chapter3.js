@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -110,9 +114,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: The Master's Chamber
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Master's Chamber`}
+				bridge={`"You've mastered hooks with precision," Master Typhos said as he led Aria to a sealed door deep within the armory. "Now witness patterns that bend reality itself—the advanced techniques that separate journeymen from masters." The door opened to reveal the Master's Chamber, its walls lined with glowing type definitions.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -145,6 +151,10 @@ const ChapterThree = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Master Type Patterns</h3>
 				
+				<InstructionBox character={`Master Typhos reveals the advanced armory.`}>
+					Click on each advanced pattern to add it to your mastery. These are the patterns that separate beginners from masters.
+				</InstructionBox>
+
 				<div className='advanced-patterns'>
 					<h4>Advanced Type Armory</h4>
 					<div className='pattern-grid'>
@@ -193,6 +203,9 @@ const ChapterThree = () => {
 
 				<div className='real-world-challenges' style={{ marginTop: '40px' }}>
 					<h4>Real-World Challenges</h4>
+					<InstructionBox character={`Typhos presents the ultimate tests.`}>
+						Complete these real-world challenges to prove your mastery. Each challenge rewards you with a powerful new capability.
+					</InstructionBox>
 					<div className='challenge-grid'>
 						{realWorldChallenges.map(challenge => (
 							<div
@@ -267,8 +280,10 @@ const ChapterThree = () => {
 				<div className='code-header'>
 					<span className='code-title'>Advanced TypeScript Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Master-Level TypeScript React Patterns
+				<CodeExample
+					title={`Master-Level TypeScript React Patterns`}
+					discoveredBy={`Transcribed by Aria in the Master's Chamber`}
+					code={`// Master-Level TypeScript React Patterns
 
 // 1. Polymorphic Component Pattern
 type AsProp<C extends React.ElementType> = {
@@ -543,8 +558,8 @@ const form = createForm({
 // TypeScript knows the exact shape!
 form.setFieldValue('username', 'john'); // ✅
 form.setFieldValue('age', 25);          // ✅
-form.setFieldValue('invalid', 'test');  // ❌ Type error!`}</pre>
-				</div>
+form.setFieldValue('invalid', 'test');  // ❌ Type error!`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Final Wisdom:</strong> "These patterns represent 
 					the pinnacle of TypeScript mastery. Polymorphic components adapt to any 
@@ -553,56 +568,27 @@ form.setFieldValue('invalid', 'test');  // ❌ Type error!`}</pre>
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Master's Insight:</h3>
-				<p>
-					Advanced TypeScript patterns transform React development from a craft into 
-					an art. These patterns don't just catch errors—they guide development, 
-					enforce architectural decisions, and create APIs that are a joy to use.
-				</p>
-				<p>
-					The true mastery lies not in using every pattern, but in knowing which 
-					pattern serves your specific need. Sometimes a simple interface suffices; 
-					other times, only a complex conditional type will do. Wisdom is knowing 
-					the difference.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on TypeScript Mastery</h3>
-				<p>
-					<strong>How do advanced types change your approach to API design?</strong> 
-					Consider how types can guide users toward correct usage and prevent 
-					entire categories of errors.
-				</p>
-				<p>
-					<strong>When is complexity justified in type definitions?</strong> Think 
-					about the balance between type safety, developer experience, and maintainability.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Master Typhos</strong> stood before the completed armory. "You 
-					have proven yourself worthy. These type patterns are now yours to wield."
-				</p>
-				<p>
-					<strong>Aria</strong> examined her arsenal of type-safe components. "I 
-					understand now. Types aren't constraints—they're superpowers."
-				</p>
-				<p>
-					<strong>Binary</strong> compiled the final statistics. "100% type coverage 
-					achieved. Zero runtime type errors possible. Mission complete!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> smiled. "With these patterns, debugging becomes 
-					almost unnecessary. The types catch everything!"
-				</p>
-				<p>
-					"Your training here is complete," Typhos declared. "But remember: with 
-					great type power comes great responsibility. Use it wisely."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Master's Insight:`,
+					content: `Advanced TypeScript patterns transform React development from a craft into an art. These patterns don't just catch errors—they guide development, enforce architectural decisions, and create APIs that are a joy to use. The true mastery lies not in using every pattern, but in knowing which pattern serves your specific need. Sometimes a simple interface suffices; other times, only a complex conditional type will do. Wisdom is knowing the difference.`
+				}}
+				reflectionQuestions={[
+					`How do advanced types change your approach to API design? Consider how types can guide users toward correct usage and prevent entire categories of errors.`,
+					`When is complexity justified in type definitions? Think about the balance between type safety, developer experience, and maintainability.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Evening)`,
+					content: `Master Typhos took me to the Master's Chamber today—the deepest sanctum of the Component Armory. I learned the most powerful type patterns: Conditional Type Armor that adapts based on props, Mapped Type Chainmail that transforms properties, Utility Types like Partial and Pick, and Type Guard Shields for runtime checking. The real-world challenges pushed me to create Polymorphic Components, Type-Safe Form Libraries, and Design System Types. Binary called it "meta-programming—types that generate other types!" Debuggora noted these catch errors she didn't know were possible to detect. Typhos's final wisdom: "Power without wisdom is chaos." My Type Strength reached 100%—I've mastered the Component Armory!`
+				}}
+				chapterEnding={[
+					`Master Typhos stood before the completed armory. "You have proven yourself worthy. These type patterns are now yours to wield."`,
+					`Aria examined her arsenal of type-safe components. "I understand now. Types aren't constraints—they're superpowers."`,
+					`Binary compiled the final statistics. "100% type coverage achieved. Zero runtime type errors possible. Mission complete!"`,
+					`Debuggora smiled. "With these patterns, debugging becomes almost unnecessary. The types catch everything!"`,
+					`"Your training here is complete," Typhos declared. "But the realm of types holds deeper secrets still. In the Generic Forge, you'll learn to create components that adapt to any data type—true type flexibility without sacrificing safety..."`
+				]}
+			/>
 		</div>
 	);
 };

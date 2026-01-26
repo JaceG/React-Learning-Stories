@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -116,17 +120,13 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Migration Mastery
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`Migration Mastery`}
+				bridge={`Commander Guardia led Aria to the tower's pinnacle, where the entire TypeScript realm spread before them. "You've mastered both foundation and advanced guards," she said proudly. "Now comes the ultimate challenge - not protecting new code, but transforming the old. Many kingdoms still speak JavaScript. Your mission: guide them to safety."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					At the tower's pinnacle, <strong>Commander Guardia</strong> revealed the 
-					ultimate challenge. "Many kingdoms still speak JavaScript. Your mission: 
-					guide them to TypeScript's safety without disrupting their realm."
-				</p>
-
 				<p className='story-paragraph'>
 					The chamber displayed countless JavaScript codebases, each representing 
 					a different migration challenge. "Migration," Guardia explained, "is not 
@@ -152,6 +152,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Migration Strategies</h3>
+
+				<InstructionBox character={`Commander Guardia presents four migration strategies, each suited to different scenarios.`}>
+					{`"Every JavaScript codebase is unique. Learn each strategy, then prove your mastery against real-world migration challenges. Complete three challenges to become a Tower Legend!"`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1))', 
@@ -333,8 +337,10 @@ const ChapterThree = () => {
 				<div className='code-header'>
 					<span className='code-title'>Migration Patterns & Strategies</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// TypeScript Migration Patterns
+				<CodeExample
+					title={`Migration Patterns & Strategies`}
+					discoveredBy={`Transcribed by Aria at the Tower's Pinnacle`}
+					code={`// TypeScript Migration Patterns
 
 // 1. Gradual Migration Setup
 // tsconfig.json
@@ -661,8 +667,8 @@ export function getLegacyUser(id) {
 // New typed version
 export function getUser(id: string): Promise<User> {
   // Type-safe implementation
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Commander Guardia's Final Wisdom:</strong> "Migration is the ultimate 
 					test of type guard mastery. Start gradually with allowJs. Create boundaries 
@@ -673,59 +679,32 @@ export function getUser(id: string): Promise<User> {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Migration Master's Insight:</h3>
-				<p>
-					Successful TypeScript migration isn't about converting everything at once. 
-					It's about creating a sustainable path that maintains productivity while 
-					gradually improving type safety. Each codebase requires its own strategy, 
-					balancing risk, team capability, and business needs.
-				</p>
-				<p>
-					The key is to start where it hurts most - the bugs, the confusion points, 
-					the areas where types would provide immediate value. From there, expand 
-					outward, creating islands of type safety that eventually connect into a 
-					fully typed application.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Migration Mastery</h3>
-				<p>
-					<strong>What makes a migration successful?</strong> Consider not just 
-					technical completeness, but team adoption and maintained velocity.
-				</p>
-				<p>
-					<strong>How do you balance strictness with productivity?</strong> Think 
-					about the gradual path from loose to strict typing.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					From the tower's peak, the entire TypeScript realm spread before them. 
-					<strong>Commander Guardia</strong> placed a hand on Aria's shoulder. 
-					"You are now a true Type Guard. The realm's safety is in capable hands."
-				</p>
-				<p>
-					<strong>Aria</strong> looked out at the mixed landscape of JavaScript 
-					and TypeScript. "I understand now. We don't conquer JavaScript - we 
-					guide it to safety, one type at a time."
-				</p>
-				<p>
-					<strong>Binary</strong> projected the statistics. "Migration paths: 
-					Optimized. Type coverage: Expanding. Developer happiness: Maximum!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> smiled knowingly. "The best guard isn't the 
-					one that blocks everything, but the one that helps others cross safely."
-				</p>
-				<p>
-					"Go forth," Guardia commanded, "and spread type safety throughout the 
-					land. Remember: every JavaScript file typed is a future bug prevented. 
-					You are the guardian between chaos and order."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Migration Master's Insight:`,
+					content: `Successful TypeScript migration isn't about converting everything at once. It's about creating a sustainable path that maintains productivity while gradually improving type safety. Each codebase requires its own strategy, balancing risk, team capability, and business needs. The key is to start where it hurts most - the bugs, the confusion points, the areas where types would provide immediate value. From there, expand outward, creating islands of type safety that eventually connect into a fully typed application.`
+				}}
+				reflectionQuestions={[
+					`What makes a migration successful? Consider not just technical completeness, but team adoption and maintained velocity.`,
+					`How do you balance strictness with productivity? Think about the gradual path from loose to strict typing.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 48 (Evening)`,
+					content: `From the tower's pinnacle, I can see the entire TypeScript realm - and beyond it, countless JavaScript kingdoms awaiting transformation. Commander Guardia taught me the four migration strategies: gradual migration (allowJs), strict boundaries (typed wrappers), declaration files (for untyped libraries), and automated codemods (for scale). I completed real-world challenges: Legacy React App migration, untyped dependencies, dynamic JavaScript patterns, and team migration strategies. Tower Legend status achieved! Guardia's final wisdom: "The true test isn't protecting new code - it's safely transforming the old. We don't conquer JavaScript; we guide it to safety, one type at a time."`
+				}}
+				chapterEnding={[
+					`From the tower's peak, the entire TypeScript realm spread before them. Commander Guardia placed a hand on Aria's shoulder. "You are now a true Type Guard. The realm's safety is in capable hands."`,
+					`Aria looked out at the mixed landscape of JavaScript and TypeScript. "I understand now. We don't conquer JavaScript - we guide it to safety, one type at a time."`,
+					`Binary projected the final statistics. "TypeScript mastery: Complete. Type safety: Maximum. Developer confidence: Unprecedented!"`,
+					`Debuggora smiled knowingly. "The best guard isn't the one that blocks everything, but the one that helps others cross safely."`,
+					`Commander Guardia stepped back, pride evident in her bearing. "Your journey through the TypeScript React realm is complete, Aria. You've mastered the Type Forge, learned Generic patterns, explored the Component Armory, and now commanded the Type Guard Tower. Every type narrowing, every generic constraint, every migration pattern - they're all part of you now."`,
+					`Aria felt the weight of her accomplishment. From her first tentative steps with basic types to standing atop the Type Guard Tower, she had transformed from curious student to confident guardian.`,
+					`"What comes next?" she asked, gazing at the horizon where new technologies sparkled like distant stars.`,
+					`Binary computed the possibilities. "The Allied Kingdoms await - new frameworks, new patterns, new adventures. But wherever we go, the TypeScript foundations will guide us."`,
+					`Guardia nodded. "Go forth, Guardian. Spread type safety throughout the land. Remember: every JavaScript file typed is a future bug prevented. You are the bridge between chaos and order."`,
+					`As the sun set over the TypeScript realm, Aria descended from the tower, ready for whatever adventures lay ahead. The TypeScript React path had ended, but her journey as a developer had only just begun.`
+				]}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -100,9 +104,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Foundations of Generics
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Foundations of Generics`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -136,6 +141,10 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Generic Patterns</h3>
+
+				<InstructionBox character={`Master Typhos gestures toward the glowing forge patterns.`}>
+					{`"Click on each pattern to learn its secrets. The forge responds to your curiosity—explore the building blocks of generic programming."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(230, 126, 34, 0.1)', 
@@ -198,6 +207,11 @@ const ChapterOne = () => {
 
 				<div className='forge-scenarios' style={{ marginTop: '40px' }}>
 					<h3>Forge Your First Generics</h3>
+
+					<InstructionBox character={`Master Typhos presents three forge scenarios.`}>
+						{`"Choose a scenario to forge your first generic component. Each completed forge strengthens your understanding and earns you a reward."`}
+					</InstructionBox>
+
 					<div className='scenario-grid'>
 						{forgeScenarios.map(scenario => (
 							<div
@@ -260,8 +274,10 @@ const ChapterOne = () => {
 				<div className='code-header'>
 					<span className='code-title'>Basic Generic Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// TypeScript Generic Foundations
+				<CodeExample
+					title={`TypeScript Generic Foundations`}
+					discoveredBy={`Transcribed by Aria at the Generic Forge`}
+					code={`// TypeScript Generic Foundations
 
 // 1. Basic Generic Function
 function identity<T>(arg: T): T {
@@ -493,8 +509,8 @@ const userData: AsyncData<User> = {
   loading: false,
   error: null,
   data: { id: 1, name: "Alice", email: "alice@example.com" }
-};`}</pre>
-				</div>
+};`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Teaching:</strong> "These patterns form the foundation 
 					of generic programming. Identity functions preserve types. Generic interfaces 
@@ -503,53 +519,26 @@ const userData: AsyncData<User> = {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Forge Insight:</h3>
-				<p>
-					Generics are TypeScript's way of writing code once and using it safely 
-					with any type. They provide the perfect balance between flexibility and 
-					type safety, allowing you to create truly reusable components without 
-					sacrificing the benefits of static typing.
-				</p>
-				<p>
-					The key to understanding generics is to think of them as "type variables" - 
-					placeholders that get filled in when the code is used. Just as a function 
-					parameter can accept different values, a type parameter can accept different types.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Generic Foundations</h3>
-				<p>
-					<strong>How do generics improve code reusability?</strong> Consider how 
-					one List component can handle users, products, or any other data type 
-					without modification.
-				</p>
-				<p>
-					<strong>When should you use generics versus specific types?</strong> Think 
-					about the balance between flexibility and simplicity in your components.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The forge cooled as the first lesson concluded. <strong>Master Typhos</strong> 
-					examined the generic patterns Aria had practiced. "Well done. You've grasped 
-					the basics of generic forging."
-				</p>
-				<p>
-					<strong>Aria</strong> felt the power of flexible types flowing through her 
-					code. "One component to handle them all... this changes everything!"
-				</p>
-				<p>
-					<strong>Binary</strong> calculated the efficiency gains. "Code reuse up 300%. 
-					Type safety maintained at 100%. Optimal results!"
-				</p>
-				<p>
-					"Tomorrow," Typhos promised, "we'll explore constraints and bounds - teaching 
-					your generics to be selective in what they accept..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Typhos`,
+						description: `The legendary forge master of the Generic Forge, Typhos has spent centuries perfecting the art of type-safe reusability. His teachings transform rigid, single-purpose code into flexible, adaptable components. "A generic well-forged," he says, "serves a thousand purposes while maintaining perfect type integrity."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Forge Insight:`,
+					content: `Generics are TypeScript's way of writing code once and using it safely with any type. They provide the perfect balance between flexibility and type safety, allowing you to create truly reusable components without sacrificing the benefits of static typing. The key to understanding generics is to think of them as "type variables"—placeholders that get filled in when the code is used.`
+				}}
+				reflectionQuestions={[
+					`How do generics improve code reusability? Consider how one List component can handle users, products, or any other data type without modification.`,
+					`When should you use generics versus specific types? Think about the balance between flexibility and simplicity in your components.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 47 (Morning)`,
+					content: `I've entered the Generic Forge, where Master Typhos reveals the secrets of type-safe reusability! The forge glows with patterns that adapt to any data type while maintaining perfect type checking. I learned the four foundational patterns: generic functions that preserve types, generic interfaces for flexible contracts, generic components for React, and multiple type parameters for complex relationships. Binary was amazed that TypeScript fills in exact types automatically. Typhos's wisdom: "Begin with the basics—master simple generics before attempting complex constraints." The T, U, and K parameters are becoming my new allies!`
+				}}
+			/>
 		</div>
 	);
 };

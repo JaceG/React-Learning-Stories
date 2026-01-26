@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -172,11 +176,11 @@ type PostRoute = APIRoute<'posts'>; // '/api/posts'`
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 3: The Type Synthesis</h2>
-
-			<div className='chapter-bridge'>
-				<p>With basic types mastered, Master Typus revealed the deeper mysteries of the Type Forge - advanced patterns that could shape reality itself.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`The Type Synthesis`}
+				bridge={`With component contracts mastered, Master Typus led Aria to the deepest chamber of the Type Forge. "You've learned to type values and components," he said, his eyes gleaming with ancient knowledge. "Now witness the deeper mysteries - advanced patterns that can shape reality itself."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -198,9 +202,9 @@ type PostRoute = APIRoute<'posts'>; // '/api/posts'`
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Type Synthesis</h3>
-				<p className='instruction'>
-					<strong>👉 Master the advanced patterns of the Type Forge!</strong>
-				</p>
+				<InstructionBox character={`👉 Master Typus reveals the Synthesis Crystal.`}>
+					Master the advanced patterns of the Type Forge! Select each type pattern to understand its power.
+				</InstructionBox>
 
 				<div className='type-controls'>
 					{Object.entries(advancedPatterns).map(([key, pattern]) => (
@@ -253,12 +257,10 @@ type PostRoute = APIRoute<'posts'>; // '/api/posts'`
 				)}
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Complete TypeScript + React Architecture</span>
-					<span className='discovered-by'>Master Typus's Final Teaching</span>
-				</div>
-				<pre>{`// The Complete Type System - Aria's Implementation
+			<CodeExample
+				title={`Complete TypeScript + React Architecture`}
+				discoveredBy={`Master Typus's Final Teaching`}
+				code={`// The Complete Type System - Aria's Implementation
 import React, { useState, useReducer, useContext, createContext } from 'react';
 
 // Domain Types
@@ -460,78 +462,30 @@ function useForm<T extends Record<string, any>>({
 // "With TypeScript, you don't just write components - you forge contracts.
 // You don't just manage state - you guarantee its shape.
 // You don't just handle errors - you make them impossible.
-// This is the true power of the Type Forge."`}</pre>
-			</div>
+// This is the true power of the Type Forge."`}
+			/>
 
-			<div className='lesson-insight'>
-				<h3>The Type Synthesis Insight:</h3>
-				<p>
-					Advanced TypeScript patterns unlock the full potential of type safety. 
-					Union types model real-world alternatives, intersection types compose 
-					behaviors, conditional types adapt to circumstances, and mapped types 
-					transform entire structures. Together, they create a type system that's 
-					both flexible and bulletproof, catching errors at compile time while 
-					enabling powerful abstractions.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Advanced Types</h3>
-				<p>
-					<strong>How do union types help model real application states?</strong> 
-					Consider loading states, user roles, or response types.
-				</p>
-				<p>
-					<strong>When would you use conditional types over simple unions?</strong> 
-					Think about type relationships that depend on other types.
-				</p>
-			</div>
-
-			<div className='master-wisdom'>
-				<div className='wisdom-quote'>
-					"The Type Forge's greatest gift isn't just catching errors - it's 
-					making entire categories of bugs impossible. When you master advanced 
-					types, you're not just writing safer code; you're designing systems 
-					that guide developers toward correct implementations."
-				</div>
-				<div className='wisdom-author'>- Master Typus, on Advanced Type Synthesis</div>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> successfully forged a complete type system. "Every 
-					component typed, every function safe, every prop guaranteed."
-				</p>
-				<p>
-					<strong>Binary</strong> glowed with new type-checking abilities. 
-					<strong>Debuggora</strong> could see potential errors in the very 
-					structure of code.
-				</p>
-				<p>
-					<strong>Master Typus</strong> awaited Aria at the Forge's heart. "You've 
-					learned to forge unbreakable code. Your components are now contracts, 
-					your functions are now guarantees."
-				</p>
-				<p>
-					"What's next?" Aria asked, her code now fortified with types.
-				</p>
-				<p>
-					Master Typus pointed upward. "The Component Armory awaits. You've learned 
-					to forge types - now learn to apply them to every React pattern you know!"
-				</p>
-			</div>
-
-			<div className='character-intro'>
-				<h4>Aria's Journal - Type Forge Day 3</h4>
-				<p>
-					The Type Forge has transformed how I think about code. Every type is a 
-					promise, every interface a contract. With union types, I can model exactly 
-					what's possible. With generics, I can create reusable patterns. With 
-					conditional types, I can make types that adapt. Binary is practically 
-					glowing with the mathematical precision, and even Debuggora admits she's 
-					never seen code this robust. Ready for the Component Armory!
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Type Synthesis Insight`,
+					content: `Advanced TypeScript patterns unlock the full potential of type safety. Union types model real-world alternatives, intersection types compose behaviors, conditional types adapt to circumstances, and mapped types transform entire structures. Together, they create a type system that's both flexible and bulletproof, catching errors at compile time while enabling powerful abstractions.`
+				}}
+				reflectionQuestions={[
+					`How do union types help model real application states? Consider loading states, user roles, or response types.`,
+					`When would you use conditional types over simple unions? Think about type relationships that depend on other types.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 45 (Evening)`,
+					content: `The Type Forge has transformed how I think about code. Every type is a promise, every interface a contract. I mastered union types, intersection types, conditional types, mapped types, and even template literal types! With generics, I can create reusable patterns. With conditional types, I can make types that adapt. Binary is practically glowing with the mathematical precision, and even Debuggora admits she's never seen code this robust. Master Typus's final wisdom: "The Type Forge's greatest gift isn't catching errors - it's making entire categories of bugs impossible." Ready for the Component Armory!`
+				}}
+				chapterEnding={[
+					`Aria successfully forged a complete type system. "Every component typed, every function safe, every prop guaranteed."`,
+					`Binary glowed with new type-checking abilities. Debuggora could see potential errors in the very structure of code.`,
+					`Master Typus smiled proudly. "You've learned to forge unbreakable code. Your components are now contracts, your functions are now guarantees."`,
+					`"What's next?" Aria asked, her code now fortified with types.`,
+					`Master Typus pointed upward. "The Component Armory awaits. You've learned to forge types - now learn to apply them to every React pattern you know!"`
+				]}
+			/>
 		</div>
 	);
 };

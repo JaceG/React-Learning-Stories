@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -100,9 +104,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Foundation Guards
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Foundation Guards`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -131,17 +136,14 @@ const ChapterOne = () => {
 					"Begin with the basic guards," Guardia instructed. "Master these, and no 
 					type uncertainty will breach your defenses."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Commander Guardia</h4>
-					<p>The eternal sentinel of the Type Guard Tower. Her philosophy: 
-					"Trust nothing at runtime. Verify everything. A well-placed guard 
-					saves a thousand runtime errors."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Guard Patterns</h3>
+
+				<InstructionBox character={`Commander Guardia gestures to the guard patterns displayed on the tower walls.`}>
+					{`"Select each guard pattern to learn its secrets. Master all four foundations, then test your skills with real-world scenarios."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'rgba(52, 152, 219, 0.1)', 
@@ -277,8 +279,10 @@ const ChapterOne = () => {
 				<div className='code-header'>
 					<span className='code-title'>Basic Type Guard Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// TypeScript Type Guard Foundations
+				<CodeExample
+					title={`Basic Type Guard Patterns`}
+					discoveredBy={`Transcribed by Aria at the Type Guard Tower`}
+					code={`// TypeScript Type Guard Foundations
 
 // 1. Typeof Guards for Primitives
 function processValue(value: string | number | boolean) {
@@ -529,8 +533,8 @@ function processUserInput(input: unknown) {
   assertIsDefined(user);
   // TypeScript knows user is not null/undefined
   console.log(user.name);
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Commander Guardia's Wisdom:</strong> "These guards form your first 
 					line of defense against runtime type errors. Typeof guards check primitives. 
@@ -540,53 +544,26 @@ function processUserInput(input: unknown) {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Guard Insight:</h3>
-				<p>
-					Type guards are TypeScript's bridge between the dynamic nature of 
-					JavaScript and the static safety of types. They allow you to narrow 
-					types at runtime while informing the compiler about those narrowings, 
-					creating code that's both safe and flexible.
-				</p>
-				<p>
-					The key is understanding that type guards don't just check types - 
-					they teach TypeScript about your runtime checks, enabling better 
-					type inference and catching potential errors before they happen.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Type Guards</h3>
-				<p>
-					<strong>How do type guards improve code reliability?</strong> Consider 
-					how runtime checks combined with compile-time awareness prevent entire 
-					categories of errors.
-				</p>
-				<p>
-					<strong>When should you create custom type guards?</strong> Think about 
-					complex data structures and external data sources that need validation.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The sun set over the Type Guard Tower as the first lesson concluded. 
-					<strong>Commander Guardia</strong> surveyed the new defenses. "Well done. 
-					You've established your first line of defense."
-				</p>
-				<p>
-					<strong>Aria</strong> felt the security of proper type guards. "It's like 
-					having sentries that never sleep, always watching for type mismatches!"
-				</p>
-				<p>
-					<strong>Binary</strong> calculated the coverage. "Type safety increased by 
-					85%. Runtime errors reduced to near zero. Excellent defensive metrics!"
-				</p>
-				<p>
-					"Tomorrow," Guardia announced, "we'll explore advanced patterns - guards 
-					that handle the most complex type scenarios..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Commander Guardia`,
+						description: `The eternal sentinel of the Type Guard Tower. Her philosophy: "Trust nothing at runtime. Verify everything. A well-placed guard saves a thousand runtime errors."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Guard Insight:`,
+					content: `Type guards are TypeScript's bridge between the dynamic nature of JavaScript and the static safety of types. They allow you to narrow types at runtime while informing the compiler about those narrowings, creating code that's both safe and flexible. The key is understanding that type guards don't just check types - they teach TypeScript about your runtime checks, enabling better type inference and catching potential errors before they happen.`
+				}}
+				reflectionQuestions={[
+					`How do type guards improve code reliability? Consider how runtime checks combined with compile-time awareness prevent entire categories of errors.`,
+					`When should you create custom type guards? Think about complex data structures and external data sources that need validation.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 48 (Morning)`,
+					content: `I've reached the pinnacle of my TypeScript journey - the Type Guard Tower! Commander Guardia welcomed me at the tower's heights, where glowing type signatures adorn every wall. I learned that type guards bridge compile-time safety and runtime reality. The four foundation guards are typeof (for primitives), instanceof (for objects), in operator (for properties), and custom type predicates (for complex cases). Binary was amazed - "Sentries that inform the compiler!" Guardia's wisdom: "Trust nothing at runtime. Verify everything." Defense strength: 85%. No type uncertainty shall breach these walls!`
+				}}
+			/>
 		</div>
 	);
 };

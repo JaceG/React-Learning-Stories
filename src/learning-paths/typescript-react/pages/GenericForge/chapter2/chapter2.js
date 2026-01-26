@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -100,9 +104,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: Constraints and Conditional Types
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`Constraints and Conditional Types`}
+				bridge={`Master Typhos stoked the forge flames higher, the heat intensifying with the complexity of the lesson ahead. "You've learned to forge basic generics," he acknowledged, examining Aria's work. "Now we must teach them discipline. Constraints ensure your generics only work with compatible types—precision over chaos."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -137,6 +143,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Constraint Patterns</h3>
+
+				<InstructionBox character={`Master Typhos reveals four constraint runes glowing on the forge wall.`}>
+					{`"Each constraint pattern adds a layer of precision to your generics. Click on each to understand its power—and watch your mastery grow."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1))', 
@@ -200,6 +210,11 @@ const ChapterTwo = () => {
 
 				<div className='constraint-challenges' style={{ marginTop: '40px' }}>
 					<h4>Constraint Challenges</h4>
+
+					<InstructionBox character={`Master Typhos points to three challenge scrolls.`}>
+						{`"These challenges test your constraint mastery. Each completed challenge proves your understanding of type boundaries and conditional logic."`}
+					</InstructionBox>
+
 					{constraintChallenges.map(challenge => (
 						<div
 							key={challenge.id}
@@ -268,8 +283,10 @@ const ChapterTwo = () => {
 				<div className='code-header'>
 					<span className='code-title'>Advanced Generic Constraints</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced TypeScript Generic Constraints
+				<CodeExample
+					title={`Advanced TypeScript Generic Constraints`}
+					discoveredBy={`Transcribed by Aria at the Generic Forge`}
+					code={`// Advanced TypeScript Generic Constraints
 
 // 1. Basic Extends Constraints
 interface Lengthwise {
@@ -509,8 +526,8 @@ type StringFields = PickByType<Person, string>;
 // { name: string; email: string; }
 
 type NumberFields = PickByType<Person, number>; 
-// { age: number; score: number; }`}</pre>
-				</div>
+// { age: number; score: number; }`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Wisdom:</strong> "Constraints are the guardians of 
 					type safety. They ensure your generics only accept appropriate types, 
@@ -520,52 +537,20 @@ type NumberFields = PickByType<Person, number>;
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Constraint Insight:</h3>
-				<p>
-					Generic constraints transform loose type parameters into precise, 
-					controlled systems. By using extends, keyof, and conditional types, 
-					we create generics that are both flexible and safe, adapting to 
-					different use cases while maintaining strict type checking.
-				</p>
-				<p>
-					The true power of constraints lies in their ability to express 
-					complex type relationships. They allow us to build APIs that guide 
-					developers toward correct usage, catching mistakes at compile time 
-					rather than runtime.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Type Constraints</h3>
-				<p>
-					<strong>How do constraints improve API design?</strong> Consider how 
-					they guide users toward correct usage and prevent invalid states.
-				</p>
-				<p>
-					<strong>When do conditional types become too complex?</strong> Think 
-					about the balance between type safety and code readability.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The advanced patterns glowed in the forge's heat. <strong>Master Typhos</strong> 
-					nodded approvingly. "You've learned to constrain chaos into order."
-				</p>
-				<p>
-					<strong>Aria</strong> experimented with conditional types. "These constraints 
-					don't limit - they empower! They make impossible states impossible to express."
-				</p>
-				<p>
-					<strong>Binary</strong> computed the type coverage. "Constraint satisfaction: 
-					100%. Type inference accuracy: Maximum. No edge cases remain!"
-				</p>
-				<p>
-					"One lesson remains," Typhos announced. "Tomorrow, we combine all you've 
-					learned into the ultimate generic patterns..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Constraint Insight:`,
+					content: `Generic constraints transform loose type parameters into precise, controlled systems. By using extends, keyof, and conditional types, we create generics that are both flexible and safe, adapting to different use cases while maintaining strict type checking. The true power of constraints lies in their ability to express complex type relationships—they allow us to build APIs that guide developers toward correct usage, catching mistakes at compile time rather than runtime.`
+				}}
+				reflectionQuestions={[
+					`How do constraints improve API design? Consider how they guide users toward correct usage and prevent invalid states.`,
+					`When do conditional types become too complex? Think about the balance between type safety and code readability.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 47 (Afternoon)`,
+					content: `The forge burns hotter with advanced techniques! Master Typhos taught me that constraints are the guardians of precision—extends limits types to specific shapes, keyof ensures property access safety, conditional types make decisions at the type level, and mapped types transform entire structures. I built a type-safe API wrapper and completed the constraint challenges. Binary computed: "Constraint satisfaction: 100%. Type inference accuracy: Maximum." Typhos's wisdom: "Constraints don't limit—they empower! They make impossible states impossible to express." The mastered constraint chips glow on my belt: extends, keyof, conditional, mapped.`
+				}}
+			/>
 		</div>
 	);
 };

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -120,11 +124,11 @@ function List<T>({ items, renderItem, keyExtractor }: ListProps<T>) {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 2: The Contract Ceremonies</h2>
-
-			<div className='chapter-bridge'>
-				<p>Master Typus led Aria to the Contract Chamber, where component promises were forged into unbreakable agreements.</p>
-			</div>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Contract Ceremonies`}
+				bridge={`Master Typus led Aria to the Contract Chamber, where component promises were forged into unbreakable agreements. "You've learned to type basic values," he said, his hammer glowing with anticipation. "Now learn to type the very building blocks of React - your components."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -146,9 +150,9 @@ function List<T>({ items, renderItem, keyExtractor }: ListProps<T>) {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Component Contract Forge</h3>
-				<p className='instruction'>
-					<strong>👉 Learn to forge type contracts for React components!</strong>
-				</p>
+				<InstructionBox character={`👉 Master Typus gestures to the Component Anvil.`}>
+					Learn to forge type contracts for React components! Select different component types to see how TypeScript transforms them.
+				</InstructionBox>
 
 				<div className='type-controls'>
 					<button 
@@ -232,12 +236,10 @@ function List<T>({ items, renderItem, keyExtractor }: ListProps<T>) {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Component Typing Patterns</span>
-					<span className='discovered-by'>The Contract Chamber's Secrets</span>
-				</div>
-				<pre>{`// Functional Component with Props Interface
+			<CodeExample
+				title={`Component Typing Patterns`}
+				discoveredBy={`The Contract Chamber's Secrets`}
+				code={`// Functional Component with Props Interface
 interface GreetingProps {
   name: string;
   age?: number; // Optional prop
@@ -334,8 +336,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 );
 
 // Master Typus's wisdom: "Every prop typed is a bug prevented,
-// every interface defined is a contract honored."`}</pre>
-			</div>
+// every interface defined is a contract honored."`}
+			/>
 
 			<div className='type-visualizer'>
 				<h4>Component Type Hierarchy</h4>
@@ -348,58 +350,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Contract Lesson:</h3>
-				<p>
-					Component types are contracts that define the exact shape of props a 
-					component expects. This eliminates the guesswork in component usage and 
-					catches prop mismatches at compile time. With TypeScript, your components 
-					become self-documenting, and refactoring becomes safe and predictable.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Component Contracts</h3>
-				<p>
-					<strong>How do typed props improve team collaboration?</strong> 
-					Consider how explicit contracts reduce misunderstandings and documentation needs.
-				</p>
-				<p>
-					<strong>What's the value of optional props with the ? operator?</strong> 
-					Think about component flexibility while maintaining type safety.
-				</p>
-			</div>
-
-			<div className='character-intro'>
-				<h4>Aria's Journal - Type Forge Day 2</h4>
-				<p>
-					Today I learned to type components! It's incredible - TypeScript knows 
-					exactly what props each component needs. No more runtime errors from 
-					missing or wrong props. Binary is especially excited about the 
-					mathematical certainty it provides. Even Debuggora seems impressed by 
-					catching errors before runtime!
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					<strong>Aria</strong> typed her first component, watching as potential 
-					errors glowed red before she even ran the code. "It's like having 
-					Debuggora's vision built into the editor!"
-				</p>
-				<p>
-					<strong>Binary</strong> computed enthusiastically. "Prop validation at 
-					compile time! Zero runtime overhead! Maximum efficiency!"
-				</p>
-				<p>
-					<strong>Master Typus</strong> stroked his beard. "You've mastered basic 
-					contracts. But what about advanced patterns? Union types, generics, 
-					conditional types?"
-				</p>
-				<p>
-					"Show me everything!" Aria exclaimed, eager to forge even stronger contracts.
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Contract Lesson`,
+					content: `Component types are contracts that define the exact shape of props a component expects. This eliminates the guesswork in component usage and catches prop mismatches at compile time. With TypeScript, your components become self-documenting, and refactoring becomes safe and predictable.`
+				}}
+				reflectionQuestions={[
+					`How do typed props improve team collaboration? Consider how explicit contracts reduce misunderstandings and documentation needs.`,
+					`What's the value of optional props with the ? operator? Think about component flexibility while maintaining type safety.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 45 (Afternoon)`,
+					content: `Today I learned to type components in the Contract Chamber! It's incredible - TypeScript knows exactly what props each component needs. I explored functional components with React.FC, class components with React.Component<Props, State>, and even generic components like List<T>. No more runtime errors from missing or wrong props! Binary is especially excited about the mathematical certainty it provides. Even Debuggora seems impressed by catching errors before runtime. Master Typus's wisdom: "Every prop typed is a bug prevented, every interface defined is a contract honored."`
+				}}
+			/>
 		</div>
 	);
 };

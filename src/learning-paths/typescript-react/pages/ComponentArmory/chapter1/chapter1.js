@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -93,9 +97,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 1: The Component Forge
-			</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Component Forge`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -124,18 +129,15 @@ const ChapterOne = () => {
 					Typhos lifted a glowing component template. "Each piece of armor serves 
 					a purpose. Choose wisely, for your components will face many challenges."
 				</p>
-
-				<div className='character-intro-card'>
-					<h4>Master Forger Typhos</h4>
-					<p>The legendary component smith of the TypeScript realm. His motto: 
-					"A well-typed component is worth a thousand runtime checks. Forge with 
-					precision, deploy with confidence."</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Choose Your Component Armor</h3>
 				
+				<InstructionBox character={`Master Typhos presents the armor rack.`}>
+					Select different armor types to understand their type-safety properties. Each piece of armor represents a different TypeScript component pattern.
+				</InstructionBox>
+
 				<div className='armory-workshop'>
 					<div className='component-forge'>
 						{armorTypes.map(armor => (
@@ -170,6 +172,9 @@ const ChapterOne = () => {
 
 				<div className='pattern-showcase' style={{ marginTop: '40px' }}>
 					<h3>Essential Component Patterns</h3>
+					<InstructionBox character={`Typhos gestures to the pattern scrolls.`}>
+						Click each pattern to understand how TypeScript strengthens your components.
+					</InstructionBox>
 					<div className='pattern-grid'>
 						{componentPatterns.map(pattern => (
 							<div
@@ -225,8 +230,10 @@ const ChapterOne = () => {
 				<div className='code-header'>
 					<span className='code-title'>Component Type Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// TypeScript React Component Patterns
+				<CodeExample
+					title={`TypeScript React Component Patterns`}
+					discoveredBy={`Transcribed by Aria at the Component Forge`}
+					code={`// TypeScript React Component Patterns
 
 // 1. Functional Component with Props Interface
 interface ButtonProps {
@@ -543,8 +550,8 @@ const Panel: React.FC<PanelProps> = ({ id, children }) => {
 };
 
 Tabs.Tab = Tab;
-Tabs.Panel = Panel;`}</pre>
-				</div>
+Tabs.Panel = Panel;`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Wisdom:</strong> "Each pattern serves a purpose. 
 					Props interfaces define your component's contract. Generic components adapt 
@@ -553,52 +560,26 @@ Tabs.Panel = Panel;`}</pre>
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Forging Insight:</h3>
-				<p>
-					TypeScript transforms React components from flexible but fragile constructs 
-					into armored, type-safe fortresses. By defining explicit interfaces for props, 
-					properly typing event handlers, and leveraging generic patterns, we catch 
-					errors at compile time rather than runtime.
-				</p>
-				<p>
-					The key is balance: enough type safety to catch errors, but not so much 
-					that it hinders development. Start with prop interfaces, add event handler 
-					types, then explore advanced patterns like generics and compound components.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Component Architecture</h3>
-				<p>
-					<strong>How do types change the way you design components?</strong> Consider 
-					how explicit contracts make components more predictable and reusable.
-				</p>
-				<p>
-					<strong>When might strict typing become a hindrance?</strong> Think about 
-					the balance between type safety and development velocity.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					Master Typhos examined the components Aria had begun forging. "Good start, 
-					but armor is only as strong as its weakest joint. Tomorrow, we'll explore 
-					advanced patterns."
-				</p>
-				<p>
-					<strong>Aria</strong> felt the weight of type safety settling around her 
-					components like protective mail. "These types... they're like promises 
-					between components."
-				</p>
-				<p>
-					<strong>Binary</strong> calculated type coverage. "87% type safety achieved. 
-					Excellent protection metrics!"
-				</p>
-				<p>
-					"Rest well," Typhos advised. "Tomorrow, we forge hooks with type precision..."
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Forger Typhos`,
+						description: `The legendary component smith of the TypeScript realm. His motto: "A well-typed component is worth a thousand runtime checks. Forge with precision, deploy with confidence."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Forging Insight:`,
+					content: `TypeScript transforms React components from flexible but fragile constructs into armored, type-safe fortresses. By defining explicit interfaces for props, properly typing event handlers, and leveraging generic patterns, we catch errors at compile time rather than runtime. The key is balance: enough type safety to catch errors, but not so much that it hinders development. Start with prop interfaces, add event handler types, then explore advanced patterns like generics and compound components.`
+				}}
+				reflectionQuestions={[
+					`How do types change the way you design components? Consider how explicit contracts make components more predictable and reusable.`,
+					`When might strict typing become a hindrance? Think about the balance between type safety and development velocity.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Morning)`,
+					content: `I entered the Component Armory today and met Master Forger Typhos at the great Component Forge. The blue flames of TypeScript illuminated armor pieces I'd never seen before—Functional Component Armor, Class Component Plate, Generic Component Mail, and the Strict Type Helm. Binary was fascinated by the type definitions (he called them "armor specifications"), and Debuggora explained how types catch errors during forging rather than in production. I learned about Props Interface Patterns, Children Types, Event Handlers, and Ref Forwarding. Typhos's wisdom: "A well-typed component is worth a thousand runtime checks." My Type Safety Strength is growing—I can feel my components becoming more robust!`
+				}}
+			/>
 		</div>
 	);
 };

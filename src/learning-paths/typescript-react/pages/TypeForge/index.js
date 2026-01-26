@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
 import './TypeForge.css';
 
@@ -10,17 +10,6 @@ function TypeForge() {
 	const [contractResults, setContractResults] = useState([]);
 	const [typeErrors, setTypeErrors] = useState([]);
 	const [compileStatus, setCompileStatus] = useState('idle');
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Type Forge demonstration functions
 	const forgeType = (input, expectedType) => {
@@ -68,28 +57,12 @@ function TypeForge() {
 
 	return (
 		<div className='lesson-container'>
-			<h1 className='lesson-title'>Type Forge</h1>
-			<p className='lesson-subtitle'>
-				Where Code Contracts Are Hammered Into Unbreakable Forms
-			</p>
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`Type Forge`}
+				subtitle={`Where Code Contracts Are Hammered Into Unbreakable Forms`}
+				opener={`Deep beneath the React Kingdom, accessible only through the Cloud Citadel's lower passages, lay the Type Forge - a place of ancient power where code contracts were hammered into unbreakable forms. Master Typus, the Forge Keeper, greeted Aria with eyes that seemed to see through code to its very essence. "Ambassador Aria," he rumbled, his beard sparking with type annotations, "you've built great things, but they're held together by trust and hope. Here, we forge guarantees."`}
+				totalChapters={3}
+			/>
 
 			<Outlet context={{
 				typeSystem,
@@ -105,27 +78,10 @@ function TypeForge() {
 				setCompileStatus
 			}} />
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
-				courseId='typescript-react'
-				lessonId='type-forge'
+			<LessonFooter
+				courseId={`typescript-react`}
+				lessonId={`type-forge`}
+				totalChapters={3}
 			/>
 		</div>
 	);

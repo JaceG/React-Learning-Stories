@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import LessonNavigation from '../../../../components/layout/LessonNavigation';
+import { Outlet } from 'react-router-dom';
+import LessonHeader from '../../../../components/layout/LessonHeader';
+import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
 import './TypeGuardTower.css';
 
@@ -9,17 +10,6 @@ function TypeGuardTower() {
 	const [selectedGuard, setSelectedGuard] = useState(null);
 	const [towerLevel, setTowerLevel] = useState('watchman');
 	const [guardStrength, setGuardStrength] = useState(0);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	// Determine current chapter from URL
-	const chapterMatch = location.pathname.match(/chapter(\d)/);
-	const currentChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
-
-	const goToChapter = (chapter) => {
-		navigate(`chapter${chapter}`);
-	};
 
 	// Create a new guard
 	const createGuard = (guard) => {
@@ -39,31 +29,12 @@ function TypeGuardTower() {
 
 	return (
 		<div className='lesson-container'>
-			<div className='lesson-header'>
-				<h1>The Type Guard Tower</h1>
-				<p className='lesson-subtitle'>
-					Bridge runtime and compile-time safety with powerful type guards
-				</p>
-			</div>
-
-
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
+			<LessonHeader
+				title={`The Type Guard Tower`}
+				subtitle={`Bridge runtime and compile-time safety with powerful type guards`}
+				opener={`The Type Guard Tower rose above the TypeScript realm, its battlements glowing with type signatures and runtime checks. Commander Guardia, the eternal sentinel, watched for type mismatches from her post atop the highest parapet. "Welcome, Aria," she called down. "Here we bridge the gap between what TypeScript knows at compile-time and what JavaScript discovers at runtime. Trust nothing—verify everything."`}
+				totalChapters={3}
+			/>
 
 			<Outlet
 				context={{
@@ -78,27 +49,10 @@ function TypeGuardTower() {
 				}}
 			/>
 
-			<div className='chapter-navigation'>
-				<button
-					onClick={() => goToChapter(currentChapter - 1)}
-					disabled={currentChapter === 1}
-					className='chapter-nav-button'>
-					← Previous Chapter
-				</button>
-				<span className='chapter-indicator'>
-					Chapter {currentChapter} of 3
-				</span>
-				<button
-					onClick={() => goToChapter(currentChapter + 1)}
-					disabled={currentChapter === 3}
-					className='chapter-nav-button'>
-					Next Chapter →
-				</button>
-			</div>
-
-			<LessonNavigation
+			<LessonFooter
 				courseId='typescript-react'
 				lessonId='type-guard-tower'
+				totalChapters={3}
 			/>
 		</div>
 	);

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterOne = () => {
 	const {
@@ -29,7 +33,10 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>Chapter 1: The Ancient Type Forge</h2>
+			<ChapterIntro
+				chapterNumber={1}
+				title={`The Ancient Type Forge`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -70,9 +77,9 @@ const ChapterOne = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Type Forge Workbench</h3>
-				<p className='instruction'>
-					<strong>👉 Forge your first type contracts! Enter values and select their types to see TypeScript in action.</strong>
-				</p>
+				<InstructionBox character={`👉 Master Typus hands you a glowing type hammer.`}>
+					Forge your first type contracts! Enter values and select their types to see TypeScript in action.
+				</InstructionBox>
 
 				<div className='type-workbench'>
 					<div className='type-controls'>
@@ -177,12 +184,10 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-example'>
-				<div className='scroll-header'>
-					<span>Introduction to TypeScript Basics</span>
-					<span className='discovered-by'>Master Typus's First Lesson</span>
-				</div>
-				<pre>{`// Basic Type Annotations - The Foundation of the Forge
+			<CodeExample
+				title={`Introduction to TypeScript Basics`}
+				discoveredBy={`Master Typus's First Lesson`}
+				code={`// Basic Type Annotations - The Foundation of the Forge
 let apprenticeName: string = "Aria";
 let forgeTemperature: number = 1000;
 let isForgeActive: boolean = true;
@@ -232,8 +237,8 @@ function assertNever(value: never): never {
 }
 
 // Master Typus says: "With types, we make the implicit explicit,
-// the uncertain certain, and the impossible... impossible."`}</pre>
-			</div>
+// the uncertain certain, and the impossible... impossible."`}
+			/>
 
 			<div className='type-transformation'>
 				<div className='code-before'>
@@ -257,59 +262,26 @@ greet(123); // ❌ Error: number not assignable to string`}</pre>
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Type Lesson:</h3>
-				<p>
-					Types are like the blueprints of the Type Forge - they define what's 
-					possible before the code even runs. Master Typus teaches that a well-typed 
-					application is like a well-forged sword: strong, reliable, and sharp enough 
-					to cut through complexity. TypeScript doesn't just catch bugs; it prevents 
-					entire categories of errors from ever existing.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on the Story</h3>
-				<p>
-					<strong>How do types serve as "contracts" between different parts of your application?</strong> 
-					Consider how they create agreements about data shape and function behavior.
-				</p>
-				<p>
-					<strong>Why is compile-time error catching more powerful than runtime validation?</strong> 
-					Think about the development experience and confidence it provides.
-				</p>
-			</div>
-
-			<div className='master-wisdom'>
-				<div className='wisdom-quote'>
-					"In the Type Forge, we don't just write code - we forge contracts. Each type 
-					is a promise, each interface a guarantee. When your code compiles, it's not 
-					hope that makes it work - it's certainty."
-				</div>
-				<div className='wisdom-author'>- Master Typus, Keeper of the Type Forge</div>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					As <strong>Aria</strong> practiced with the forge, she began to understand 
-					the power of types. Each annotation was like a protective spell, each 
-					interface a binding contract.
-				</p>
-				<p>
-					"I see it now," she said, watching as TypeScript caught an error before 
-					her code even ran. "It's like having Debuggora's vision built into the 
-					very language!"
-				</p>
-				<p>
-					<strong>Master Typus</strong> nodded approvingly. "You're beginning to 
-					understand. But basic types are just the beginning. Ready to learn how 
-					to type your React components?"
-				</p>
-				<p>
-					<strong>Binary</strong> calculated eagerly. "Component contracts! This 
-					will make our prop passing bulletproof!"
-				</p>
-			</div>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Typus`,
+						description: `The Forge Keeper, guardian of the Type Forge deep beneath the React Kingdom. His beard sparks with type annotations, and his hammer glows with strict mode energy. His philosophy: "With types, we make the implicit explicit, the uncertain certain, and the impossible... impossible."`
+					}
+				]}
+				lessonInsight={{
+					title: `The Type Lesson`,
+					content: `Types are like the blueprints of the Type Forge - they define what's possible before the code even runs. Master Typus teaches that a well-typed application is like a well-forged sword: strong, reliable, and sharp enough to cut through complexity. TypeScript doesn't just catch bugs; it prevents entire categories of errors from ever existing.`
+				}}
+				reflectionQuestions={[
+					`How do types serve as "contracts" between different parts of your application? Consider how they create agreements about data shape and function behavior.`,
+					`Why is compile-time error catching more powerful than runtime validation? Think about the development experience and confidence it provides.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 45 (Morning)`,
+					content: `Deep beneath the Cloud Citadel, I discovered the Type Forge - a place of ancient power where code contracts are hammered into unbreakable forms. Master Typus, the Forge Keeper, showed me that TypeScript isn't just about catching errors - it's about making impossibilities impossible. I learned basic type annotations, type inference, interfaces, and union types. Binary's circuits hummed with recognition, and Debuggora can now see errors before they even compile! Master Typus's wisdom: "Each type is a promise, each interface a guarantee. When your code compiles, it's not hope - it's certainty."`
+				}}
+			/>
 		</div>
 	);
 };

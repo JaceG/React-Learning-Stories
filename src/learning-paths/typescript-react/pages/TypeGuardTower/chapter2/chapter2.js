@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -101,17 +105,13 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: Advanced Guard Patterns
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`Advanced Guard Patterns`}
+				bridge={`Commander Guardia led Aria deeper into the tower's strategic command center. "You've mastered the foundations," she acknowledged, "but real applications demand more sophisticated defenses. Basic guards protect against simple threats - now we forge guards that handle complexity."`}
+			/>
 
 			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Commander Guardia</strong> led Aria to the tower's strategic 
-					command center. "Basic guards protect against simple threats, but complex 
-					data requires sophisticated defenses."
-				</p>
-
 				<p className='story-paragraph'>
 					The walls displayed intricate type hierarchies and nested structures. 
 					"Advanced guards," Guardia explained, "handle the reality of modern 
@@ -136,6 +136,10 @@ const ChapterTwo = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Guard Patterns</h3>
+
+				<InstructionBox character={`Commander Guardia reveals four advanced guard patterns, each glowing with increasing intensity.`}>
+					{`"These patterns handle real-world complexity. Master each one to unlock Advanced Guardian status, then prove your skills against the complex scenarios below."`}
+				</InstructionBox>
 				
 				<div className="progress-tracker" style={{ 
 					background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1))', 
@@ -291,8 +295,10 @@ const ChapterTwo = () => {
 				<div className='code-header'>
 					<span className='code-title'>Advanced Type Guard Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced TypeScript Type Guard Patterns
+				<CodeExample
+					title={`Advanced Type Guard Patterns`}
+					discoveredBy={`Transcribed by Aria in the Strategic Command Center`}
+					code={`// Advanced TypeScript Type Guard Patterns
 
 // 1. Exhaustive Checking with Never
 type Color = 'red' | 'green' | 'blue';
@@ -653,8 +659,8 @@ class ObjectSchema<T extends Record<string, unknown>>
     }
     return value;
   }
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Commander Guardia's Advanced Teaching:</strong> "These patterns 
 					handle the complexity of real-world applications. Exhaustive checking ensures 
@@ -664,51 +670,20 @@ class ObjectSchema<T extends Record<string, unknown>>
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Advanced Guard Insight:</h3>
-				<p>
-					Advanced type guards go beyond simple type checking to handle complex, 
-					real-world scenarios. They validate nested structures, ensure exhaustive 
-					handling, and create reusable patterns that scale with your application.
-				</p>
-				<p>
-					The power lies in composition - building complex guards from simple ones, 
-					creating validation schemas that mirror your domain logic, and ensuring 
-					that your runtime checks perfectly align with your compile-time types.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Advanced Guards</h3>
-				<p>
-					<strong>How do exhaustive checks prevent future bugs?</strong> Consider 
-					how the compiler becomes your ally in catching missed cases.
-				</p>
-				<p>
-					<strong>When is a generic guard better than specific ones?</strong> Think 
-					about reusability and the DRY principle in type checking.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The tower's defenses glowed stronger as advanced patterns took hold. 
-					<strong>Commander Guardia</strong> nodded with approval. "Your guards 
-					now handle complexity with grace."
-				</p>
-				<p>
-					<strong>Aria</strong> marveled at the intricate type validations. "These 
-					patterns... they make even the most complex data structures safe!"
-				</p>
-				<p>
-					<strong>Binary</strong> computed the improvements. "Nested validation: 
-					Complete. Edge case coverage: 100%. Type safety: Maximum!"
-				</p>
-				<p>
-					"One challenge remains," Guardia announced. "Tomorrow, we tackle the 
-					ultimate test: migrating JavaScript to TypeScript..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Advanced Guard Insight:`,
+					content: `Advanced type guards go beyond simple type checking to handle complex, real-world scenarios. They validate nested structures, ensure exhaustive handling, and create reusable patterns that scale with your application. The power lies in composition - building complex guards from simple ones, creating validation schemas that mirror your domain logic, and ensuring that your runtime checks perfectly align with your compile-time types.`
+				}}
+				reflectionQuestions={[
+					`How do exhaustive checks prevent future bugs? Consider how the compiler becomes your ally in catching missed cases.`,
+					`When is a generic guard better than specific ones? Think about reusability and the DRY principle in type checking.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 48 (Afternoon)`,
+					content: `Commander Guardia brought me to the tower's strategic command center this afternoon. The complexity here is staggering - intricate type hierarchies and nested structures cover every surface. I learned four advanced patterns: exhaustive checking (using 'never' to catch missed cases), nested object guards (deep validation), generic type guards (reusable patterns), and branded types (nominal type checking). Binary analyzed everything excitedly: "Recursive validation! No malformed data can slip through!" Complex guard mastery: 100%. Guardia's teaching: "The power lies in composition - building complex guards from simple ones." Advanced Guardian status achieved!`
+				}}
+			/>
 		</div>
 	);
 };

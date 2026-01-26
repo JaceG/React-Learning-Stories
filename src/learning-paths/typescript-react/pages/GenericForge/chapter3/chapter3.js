@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterThree = () => {
 	const {
@@ -110,9 +114,11 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 3: Generic Mastery
-			</h2>
+			<ChapterIntro
+				chapterNumber={3}
+				title={`Generic Mastery`}
+				bridge={`"You've learned to forge and constrain," Master Typhos said, leading Aria to the forge's inner sanctum where the flames burned white-hot. "Now witness the true art of generic composition—patterns so powerful they create entire type systems." The walls shimmered with advanced type transformations, each more intricate than the last.`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -146,6 +152,10 @@ const ChapterThree = () => {
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Master Generic Patterns</h3>
+
+				<InstructionBox character={`Master Typhos unveils the four master-level composition patterns.`}>
+					{`"These patterns represent the pinnacle of generic mastery. Click each to learn its secrets—master them all to earn the title of Forge Master."`}
+				</InstructionBox>
 				
 				<div style={{ 
 					background: 'linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1))', 
@@ -243,6 +253,11 @@ const ChapterThree = () => {
 
 				<div className='master-challenges' style={{ marginTop: '40px' }}>
 					<h4>Master Forge Challenges</h4>
+
+					<InstructionBox character={`Master Typhos presents the final forge challenges.`}>
+						{`"These challenges represent real-world applications of master-level generics. Complete them to prove your mastery and earn legendary rewards."`}
+					</InstructionBox>
+
 					<div style={{ 
 						display: 'grid', 
 						gap: '20px',
@@ -328,8 +343,10 @@ const ChapterThree = () => {
 				<div className='code-header'>
 					<span className='code-title'>Master Generic Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Master-Level Generic Patterns
+				<CodeExample
+					title={`Master-Level Generic Patterns`}
+					discoveredBy={`Transcribed by Aria at the Generic Forge`}
+					code={`// Master-Level Generic Patterns
 
 // 1. Higher-Order Generic Types
 type Wrapper<T> = {
@@ -695,8 +712,8 @@ const emailValidator = new StringValidator()
   .matches(/^[\\w-]+@[\\w-]+\\.[\\w-]+$/);
 
 const errors = emailValidator.validate('bad');
-// ["Minimum length is 5", "Invalid format"]`}</pre>
-				</div>
+// ["Minimum length is 5", "Invalid format"]`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Final Teaching:</strong> "These patterns represent 
 					the pinnacle of generic mastery. Higher-order generics create types that 
@@ -706,57 +723,27 @@ const errors = emailValidator.validate('bad');
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Master's Insight:</h3>
-				<p>
-					Master-level generic patterns go beyond simple type parameters. They 
-					create entire type systems that guide development, prevent errors, and 
-					make complex operations feel natural. These patterns form the backbone 
-					of modern TypeScript libraries and frameworks.
-				</p>
-				<p>
-					The key to mastery is not memorizing every pattern, but understanding 
-					the principles behind them. Once you grasp how types flow through your 
-					system, you can create new patterns tailored to your specific needs.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Generic Mastery</h3>
-				<p>
-					<strong>How do these patterns change your approach to system design?</strong> 
-					Consider how type-safe builders and factories can shape entire architectures.
-				</p>
-				<p>
-					<strong>What makes a generic pattern worth the complexity?</strong> Think 
-					about the balance between flexibility, safety, and developer experience.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The Generic Forge blazed with the light of a thousand type transformations. 
-					<strong>Master Typhos</strong> stood before his students, pride evident in 
-					his stance. "You have completed your training. The forge is now yours."
-				</p>
-				<p>
-					<strong>Aria</strong> held a perfectly typed component, its generics flowing 
-					seamlessly. "I understand now. Generics aren't just about reuse - they're 
-					about creating languages within the language."
-				</p>
-				<p>
-					<strong>Binary</strong> calculated the final metrics. "Type safety: Absolute. 
-					Code reuse: Maximized. Developer experience: Optimal. Mission accomplished!"
-				</p>
-				<p>
-					<strong>Debuggora</strong> smiled. "With these patterns, bugs don't stand 
-					a chance. The types catch everything!"
-				</p>
-				<p>
-					"Go forth," Typhos commanded, "and forge components that will stand the 
-					test of time. Remember: with great generic power comes great type responsibility."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Master's Insight:`,
+					content: `Master-level generic patterns go beyond simple type parameters. They create entire type systems that guide development, prevent errors, and make complex operations feel natural. These patterns form the backbone of modern TypeScript libraries and frameworks. The key to mastery is not memorizing every pattern, but understanding the principles behind them—once you grasp how types flow through your system, you can create new patterns tailored to your specific needs.`
+				}}
+				reflectionQuestions={[
+					`How do these patterns change your approach to system design? Consider how type-safe builders and factories can shape entire architectures.`,
+					`What makes a generic pattern worth the complexity? Think about the balance between flexibility, safety, and developer experience.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 47 (Evening)`,
+					content: `I've completed my training at the Generic Forge and earned the title of Master Forger! Master Typhos revealed the ultimate patterns: higher-order generics that create other generics, builder patterns with perfect type inference, type-safe event emitters, and factory functions. I built a type-safe state store, query builder, validation framework, and event system. Binary computed: "Type safety: Absolute. Code reuse: Maximized. Developer experience: Optimal." Typhos's final wisdom: "Generics aren't just about reuse—they're about creating languages within the language. With great generic power comes great type responsibility."`
+				}}
+				chapterEnding={[
+					`The Generic Forge blazed with the light of a thousand type transformations. Master Typhos stood before his students, pride evident in his stance. "You have completed your training. The forge is now yours."`,
+					`Aria held a perfectly typed component, its generics flowing seamlessly. "I understand now. Generics aren't just about reuse—they're about creating languages within the language."`,
+					`Binary calculated the final metrics. "Type safety: Absolute. Code reuse: Maximized. Developer experience: Optimal. Mission accomplished!"`,
+					`As Aria prepared to leave the forge, Typhos's expression grew serious. "One challenge remains, young developer. The Type Guard Tower awaits—where Commander Guardia will teach you to bridge the gap between compile-time knowledge and runtime reality."`,
+					`"Trust nothing—verify everything," Binary quoted. "That's the motto of the Type Guard Tower. Runtime type safety awaits!"`
+				]}
+			/>
 		</div>
 	);
 };

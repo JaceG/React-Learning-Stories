@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ChapterIntro from '../../../../../components/content/ChapterIntro';
+import ChapterSummary from '../../../../../components/content/ChapterSummary';
+import InstructionBox from '../../../../../components/content/InstructionBox';
+import CodeExample from '../../../../../components/content/CodeExample';
 
 const ChapterTwo = () => {
 	const {
@@ -104,9 +108,11 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<h2 className='chapter-title'>
-				Chapter 2: The Hook Forge
-			</h2>
+			<ChapterIntro
+				chapterNumber={2}
+				title={`The Hook Forge`}
+				bridge={`Master Typhos led Aria deeper into the armory, past the component templates and into a chamber where ethereal chains of logic hung suspended in blue flame. "You've armored your components," he said. "Now we forge the hooks that give them power—with type precision that ensures they never fail."`}
+			/>
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
@@ -139,6 +145,10 @@ const ChapterTwo = () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Hook Type Mastery</h3>
 				
+				<InstructionBox character={`Master Typhos presents the hook forge.`}>
+					Click on each hook pattern to master its type signature. Watch your Hook Mastery Level increase as you learn each pattern.
+				</InstructionBox>
+
 				<div className='hook-forge'>
 					<h4>Essential Hook Patterns</h4>
 					<div className='pattern-grid'>
@@ -188,6 +198,9 @@ const ChapterTwo = () => {
 
 				<div className='custom-hook-forge' style={{ marginTop: '40px' }}>
 					<h4>Forge Custom Hooks</h4>
+					<InstructionBox character={`Typhos gestures to the forge scenarios.`}>
+						Select a scenario to forge your own type-safe custom hook. Each hook you create adds to your armory.
+					</InstructionBox>
 					<div className='forge-scenarios'>
 						{forgeScenarios.map(scenario => (
 							<div
@@ -254,8 +267,10 @@ const ChapterTwo = () => {
 				<div className='code-header'>
 					<span className='code-title'>TypeScript Hook Patterns</span>
 				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced TypeScript Hook Patterns
+				<CodeExample
+					title={`Advanced TypeScript Hook Patterns`}
+					discoveredBy={`Transcribed by Aria at the Hook Forge`}
+					code={`// Advanced TypeScript Hook Patterns
 
 // 1. Typed useState Patterns
 // Basic typed state
@@ -568,8 +583,8 @@ function useDebounce<T>(value: T, delay: number): T {
   }, [value, delay]);
   
   return debouncedValue;
-}`}</pre>
-				</div>
+}`}
+				/>
 				<div className='code-tooltip'>
 					<strong>Master Typhos's Teaching:</strong> "Hooks are the lifeblood of 
 					modern React. With TypeScript, we ensure that blood flows pure and strong. 
@@ -578,53 +593,20 @@ function useDebounce<T>(value: T, delay: number): T {
 				</div>
 			</div>
 
-			<div className='lesson-insight'>
-				<h3>The Hook Forge Insight:</h3>
-				<p>
-					TypeScript transforms React hooks from flexible utilities into precision 
-					instruments. By properly typing state, reducers, and custom hooks, we 
-					create a development experience where errors are caught immediately and 
-					autocomplete guides us to correct usage.
-				</p>
-				<p>
-					The power of generic hooks cannot be overstated - they allow us to write 
-					reusable logic that maintains type safety across different data types. This 
-					is the true strength of TypeScript: write once, use safely everywhere.
-				</p>
-			</div>
-
-			<div className='reflection-section'>
-				<h3>Reflect on Hook Architecture</h3>
-				<p>
-					<strong>How do typed hooks change your approach to state management?</strong> 
-					Consider how knowing exact types at every step prevents bugs and improves 
-					developer confidence.
-				</p>
-				<p>
-					<strong>When should you create a custom hook versus inline logic?</strong> 
-					Think about reusability, testability, and separation of concerns.
-				</p>
-			</div>
-
-			<div className='chapter-ending'>
-				<p>
-					The forge flames dimmed as the day's work concluded. <strong>Typhos</strong> 
-					examined the hooks Aria had crafted. "Excellent work. These hooks will serve 
-					you well in battle."
-				</p>
-				<p>
-					<strong>Aria</strong> felt the power of typed hooks coursing through her 
-					components. "Each hook knows exactly what it expects and what it returns."
-				</p>
-				<p>
-					<strong>Binary</strong> optimized the type definitions. "Zero runtime errors 
-					detected. Type safety at 95%!"
-				</p>
-				<p>
-					"Tomorrow," Typhos promised, "we'll explore the ultimate challenge: advanced 
-					patterns that push TypeScript to its limits..."
-				</p>
-			</div>
+			<ChapterSummary
+				lessonInsight={{
+					title: `The Hook Forge Insight:`,
+					content: `TypeScript transforms React hooks from flexible utilities into precision instruments. By properly typing state, reducers, and custom hooks, we create a development experience where errors are caught immediately and autocomplete guides us to correct usage. The power of generic hooks cannot be overstated—they allow us to write reusable logic that maintains type safety across different data types. This is the true strength of TypeScript: write once, use safely everywhere.`
+				}}
+				reflectionQuestions={[
+					`How do typed hooks change your approach to state management? Consider how knowing exact types at every step prevents bugs and improves developer confidence.`,
+					`When should you create a custom hook versus inline logic? Think about reusability, testability, and separation of concerns.`
+				]}
+				journalEntry={{
+					title: `Aria's Journal - Day 46 (Afternoon)`,
+					content: `Master Typhos took me to the Hook Forge this afternoon, where ethereal chains of logic hung suspended in blue flame. I learned to type useState with explicit types, useReducer with discriminated union actions, and Context with strongly typed values. The custom hooks were fascinating—useFetch with generics, useForm with full type safety, useLocalStorage with typed persistence. Binary was amazed at how type parameters ensure hook reliability, and Debuggora noted that typed hooks eliminate mysterious 'undefined' values. I forged several custom hooks myself! Typhos's teaching: "Generic hooks adapt to any data type, discriminated unions handle complex states." Hook Mastery is climbing!`
+				}}
+			/>
 		</div>
 	);
 };
