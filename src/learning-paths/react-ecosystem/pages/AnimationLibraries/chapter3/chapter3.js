@@ -316,313 +316,42 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Building Fluid Experiences</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Complete Animation System Implementation
+			<CodeExample
+				title={`Building Fluid Experiences`}
+				discoveredBy={`Fluid Kingdom Wisdom`}
+				code={`// Complete Animation System Implementation
 
-// 1. Animation System Setup
-// Design tokens for consistent motion
+// 1. Design Tokens for Consistent Motion
 const animationTokens = {
-  duration: {
-    instant: 0,
-    fast: 200,
-    normal: 300,
-    slow: 500,
-    slowest: 1000
-  },
-  easing: {
-    ease: [0.4, 0, 0.2, 1],
-    easeIn: [0.4, 0, 1, 1],
-    easeOut: [0, 0, 0.2, 1],
-    spring: { type: 'spring', damping: 25, stiffness: 300 }
-  },
-  scale: {
-    pressed: 0.95,
-    hover: 1.05,
-    inactive: 0.8
-  }
+  duration: { instant: 0, fast: 200, normal: 300, slow: 500 },
+  easing: { spring: { type: 'spring', damping: 25, stiffness: 300 } },
+  scale: { pressed: 0.95, hover: 1.05 }
 };
 
 // 2. Accessible Animation Wrapper
-import { motion, useReducedMotion } from 'framer-motion';
+const shouldReduceMotion = useReducedMotion();
+if (shouldReduceMotion) return <motion.div transition={{ duration: 0 }}>{children}</motion.div>;
 
-function AccessibleMotion({ children, ...props }) {
-  const shouldReduceMotion = useReducedMotion();
-  
-  if (shouldReduceMotion) {
-    // Instant transitions for reduced motion
-    return (
-      <motion.div
-        {...props}
-        transition={{ duration: 0 }}
-      >
-        {children}
-      </motion.div>
-    );
-  }
-  
-  return <motion.div {...props}>{children}</motion.div>;
-}
+// 3. Dashboard with Stagger
+<motion.div variants={{ show: { transition: { staggerChildren: 0.1 } } }} animate="show">
 
-// 3. Complete Dashboard Example
-function AnimatedDashboard() {
-  const [selectedMetric, setSelectedMetric] = useState(null);
-  const [data, setData] = useState(generateData());
-  
-  return (
-    <motion.div className="dashboard" layout>
-      {/* Animated Header */}
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ...animationTokens.easing.spring }}
-      >
-        <h1>Analytics Dashboard</h1>
-      </motion.header>
-      
-      {/* Metric Cards with Stagger */}
-      <motion.div 
-        className="metrics-grid"
-        variants={{
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.1
-            }
-          }
-        }}
-        initial="hidden"
-        animate="show"
-      >
-        {data.metrics.map((metric) => (
-          <MetricCard
-            key={metric.id}
-            metric={metric}
-            isSelected={selectedMetric === metric.id}
-            onClick={() => setSelectedMetric(metric.id)}
-          />
-        ))}
-      </motion.div>
-      
-      {/* Detail View with Shared Layout */}
-      <AnimatePresence mode="wait">
-        {selectedMetric && (
-          <DetailView
-            key={selectedMetric}
-            metricId={selectedMetric}
-            onClose={() => setSelectedMetric(null)}
-          />
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
+// 4. Pull-to-Refresh Gesture
+const bind = useDrag(({ movement: [, my] }) => api.start({ y: Math.max(0, my) }));
 
-// 4. Gesture-Rich Mobile Interface
-import { useSpring, animated } from '@react-spring/web';
-import { useDrag } from '@use-gesture/react';
+// 5. Parallax Scroll
+const { scrollYProgress } = useScroll();
+const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
-function PullToRefresh({ onRefresh, children }) {
-  const [{ y }, api] = useSpring(() => ({ y: 0 }));
-  const threshold = 100;
-  
-  const bind = useDrag(
-    ({ down, movement: [, my], memo = y.get() }) => {
-      if (down) {
-        api.start({ y: Math.max(0, memo + my) });
-      } else {
-        if (memo + my > threshold) {
-          onRefresh();
-        }
-        api.start({ y: 0 });
-      }
-      return memo;
-    },
-    { axis: 'y', bounds: { top: 0 }, rubberband: true }
-  );
-  
-  return (
-    <animated.div {...bind()} style={{ y }}>
-      <animated.div
-        style={{
-          opacity: y.to([0, threshold], [0, 1]),
-          transform: y.to(y => \`rotate(\${y * 2}deg)\`)
-        }}
-        className="refresh-indicator"
-      >
-        🔄
-      </animated.div>
-      {children}
-    </animated.div>
-  );
-}
+// 6. E-commerce: layoutId for shared element transitions
+<motion.img layoutId={\`product-\${id}\`} />
 
-// 5. Marketing Site with Scroll Animations
-import { useScroll, useTransform } from 'framer-motion';
+// 7. Performance: React.memo + CSS variables for dynamic values
 
-function HeroSection() {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  
-  return (
-    <section className="hero">
-      <motion.div 
-        className="hero-background"
-        style={{ y }}
-      />
-      <motion.div 
-        className="hero-content"
-        style={{ opacity }}
-      >
-        <h1>Welcome to the Future</h1>
-        {/* Lottie animation for complex visuals */}
-        <Lottie options={heroAnimationOptions} />
-      </motion.div>
-    </section>
-  );
-}
+// 8. Page Transitions with AnimatePresence
+<AnimatePresence mode="wait"><motion.div key={path} exit={{ opacity: 0 }} /></AnimatePresence>
 
-// 6. E-commerce Cart Animation
-function ShoppingCart() {
-  const [items, setItems] = useState([]);
-  
-  return (
-    <motion.div className="cart" layout>
-      <AnimatePresence>
-        {items.map((item) => (
-          <motion.div
-            key={item.id}
-            layout
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={animationTokens.easing.spring}
-            className="cart-item"
-          >
-            <motion.img 
-              src={item.image}
-              layoutId={\`product-\${item.id}\`}
-            />
-            <span>{item.name}</span>
-            <button onClick={() => removeItem(item.id)}>
-              Remove
-            </button>
-          </motion.div>
-        ))}
-      </AnimatePresence>
-      
-      {/* Cart total with number animation */}
-      <motion.div className="cart-total">
-        Total: <AnimatedNumber value={calculateTotal(items)} />
-      </motion.div>
-    </motion.div>
-  );
-}
-
-// 7. Performance Optimization Patterns
-
-// Optimize re-renders with memo
-const OptimizedAnimation = React.memo(({ value }) => {
-  return (
-    <motion.div
-      animate={{ x: value * 100 }}
-      transition={{ type: 'spring' }}
-    />
-  );
-});
-
-// Use CSS variables for dynamic values
-function PerformantHover() {
-  const [hoverX, setHoverX] = useState(0);
-  
-  return (
-    <div
-      className="hover-container"
-      style={{ '--hover-x': hoverX }}
-      onMouseMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setHoverX((e.clientX - rect.left) / rect.width);
-      }}
-    >
-      {/* CSS handles the animation */}
-      <div className="hover-effect" />
-    </div>
-  );
-}
-
-// 8. Animation Orchestration
-const pageTransition = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
-};
-
-function App() {
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        variants={pageTransition}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={animationTokens.easing.spring}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
-
-// 9. Testing Animations
-import { render, waitFor } from '@testing-library/react';
-
-test('animation completes', async () => {
-  const onComplete = jest.fn();
-  
-  render(
-    <motion.div
-      animate={{ x: 100 }}
-      transition={{ duration: 0.1 }}
-      onAnimationComplete={onComplete}
-    />
-  );
-  
-  await waitFor(() => expect(onComplete).toHaveBeenCalled(), {
-    timeout: 200
-  });
-});
-
-// 10. Animation Debug Tools
-if (process.env.NODE_ENV === 'development') {
-  // Slow down all animations
-  window.__SLOW_ANIMATIONS__ = true;
-  
-  // Visual animation debugger
-  import('framer-motion').then(({ visualElement }) => {
-    visualElement.animationState.setProps({
-      transition: { duration: 2 }
-    });
-  });
-}`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Fluid Kingdom Wisdom:</strong> "True animation mastery comes 
-					from understanding when and why to animate, not just how. Every motion 
-					should enhance the user experience. Consider performance from the start. 
-					Respect accessibility preferences. Test on real devices. Remember: the 
-					best animations are often the ones users don't consciously notice - 
-					they just make the experience feel right."
-				</div>
-			</div>
+// 9. Testing: await waitFor(() => expect(onComplete).toHaveBeenCalled())`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

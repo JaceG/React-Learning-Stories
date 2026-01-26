@@ -297,242 +297,35 @@ const ChapterThree = () => {
 				)}
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Form Library Selection Guide</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Comprehensive Form Library Selection Guide
-
-// 1. Decision Tree
-function selectFormLibrary(requirements) {
-  // Simple forms (< 5 fields, basic validation)
-  if (requirements.fields < 5 && !requirements.complexValidation) {
-    return 'native-react';
-  }
-  
-  // Performance critical (many fields, frequent updates)
-  if (requirements.fields > 20 || requirements.realTimeValidation) {
-    return 'react-hook-form';
-  }
-  
-  // Team familiarity and ecosystem
-  if (requirements.teamSize > 5 && requirements.needsEcosystem) {
-    return 'formik';
-  }
-  
-  // Complex state management needs
-  if (requirements.conditionalLogic === 'complex' || 
-      requirements.subscriptionControl) {
-    return 'react-final-form';
-  }
-  
-  // Modern TypeScript-first projects
-  if (requirements.typeScript === 'strict' && requirements.modern) {
-    return 'tanstack-form';
-  }
-  
-  // Default recommendation
-  return 'react-hook-form';
+			<CodeExample
+				title={`Form Library Selection Guide`}
+				discoveredBy={`Consensus Wisdom`}
+				code={`// Form Library Selection Decision Tree
+function selectFormLibrary(req) {
+  if (req.fields < 5) return 'native-react';
+  if (req.fields > 20 || req.realTimeValidation) return 'react-hook-form';
+  if (req.teamSize > 5 && req.needsEcosystem) return 'formik';
+  if (req.complexConditionalLogic) return 'react-final-form';
+  return 'react-hook-form'; // Default
 }
 
-// 2. Migration Example: Formik to React Hook Form
-// Before (Formik)
-const FormikExample = () => {
-  return (
-    <Formik
-      initialValues={{ email: '', password: '' }}
-      validationSchema={Yup.object({
-        email: Yup.string().email().required(),
-        password: Yup.string().min(8).required()
-      })}
-      onSubmit={(values) => console.log(values)}
-    >
-      {({ errors, touched }) => (
-        <Form>
-          <Field name="email" type="email" />
-          {errors.email && touched.email && <div>{errors.email}</div>}
-          
-          <Field name="password" type="password" />
-          {errors.password && touched.password && <div>{errors.password}</div>}
-          
-          <button type="submit">Submit</button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
+// Migration: Formik → React Hook Form
+// Before: <Formik><Field name="email" /></Formik>
+// After:  <input {...register('email')} />
 
-// After (React Hook Form)
-const HookFormExample = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(Yup.object({
-      email: Yup.string().email().required(),
-      password: Yup.string().min(8).required()
-    }))
-  });
-  
-  return (
-    <form onSubmit={handleSubmit(console.log)}>
-      <input {...register('email')} type="email" />
-      {errors.email && <div>{errors.email.message}</div>}
-      
-      <input {...register('password')} type="password" />
-      {errors.password && <div>{errors.password.message}</div>}
-      
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
+// Hybrid Approach - Different libs for different forms
+<SearchForm />   // Native React (simple)
+<OrderForm />    // React Hook Form (performance)
+<WizardForm />   // Final Form (control)
 
-// 3. Hybrid Approach - Using Multiple Libraries
-// Sometimes using different libraries for different forms makes sense
-const App = () => {
-  return (
-    <>
-      {/* Simple search form - Native React */}
-      <SearchForm />
-      
-      {/* User profile form - Formik for familiarity */}
-      <ProfileForm />
-      
-      {/* Complex order form - React Hook Form for performance */}
-      <OrderForm />
-      
-      {/* Multi-step wizard - React Final Form for control */}
-      <WizardForm />
-    </>
-  );
-};
+// Feature Comparison:
+// react-hook-form: Minimal re-renders, small bundle, best TypeScript
+// formik: Familiar patterns, large ecosystem, easy to learn
+// react-final-form: Fine-grained subscriptions, highly optimizable
 
-// 4. Creating a Form Abstraction Layer
-// Abstract form library choice from components
-interface FormConfig {
-  fields: FieldConfig[];
-  onSubmit: (values: any) => void;
-  validation?: ValidationSchema;
-}
-
-class FormFactory {
-  static create(config: FormConfig, library: 'formik' | 'hook-form' | 'native') {
-    switch (library) {
-      case 'formik':
-        return <FormikForm {...config} />;
-      case 'hook-form':
-        return <HookForm {...config} />;
-      case 'native':
-        return <NativeForm {...config} />;
-      default:
-        throw new Error('Unknown form library');
-    }
-  }
-}
-
-// Usage
-<FormFactory 
-  config={formConfig} 
-  library={process.env.REACT_APP_FORM_LIBRARY} 
-/>
-
-// 5. Performance Monitoring
-const FormPerformanceMonitor = ({ children, formName }) => {
-  const renderCount = useRef(0);
-  const renderTimes = useRef([]);
-  
-  useEffect(() => {
-    renderCount.current++;
-    renderTimes.current.push(performance.now());
-    
-    // Log performance metrics
-    if (renderCount.current % 10 === 0) {
-      console.log(\`Form \${formName} metrics:\`, {
-        renders: renderCount.current,
-        averageRenderTime: calculateAverage(renderTimes.current)
-      });
-    }
-  });
-  
-  return children;
-};
-
-// 6. Form Library Feature Comparison
-const featureMatrix = {
-  'react-hook-form': {
-    pros: [
-      'Minimal re-renders',
-      'Small bundle size',
-      'Built-in validation',
-      'Excellent TypeScript support',
-      'Great DevTools'
-    ],
-    cons: [
-      'Learning curve for uncontrolled components',
-      'Less intuitive for complex dependent fields'
-    ],
-    bestFor: 'Performance-critical applications, large forms'
-  },
-  
-  formik: {
-    pros: [
-      'Familiar React patterns',
-      'Large ecosystem',
-      'Extensive documentation',
-      'Easy to learn',
-      'Good community support'
-    ],
-    cons: [
-      'Performance issues with large forms',
-      'Larger bundle size',
-      'More boilerplate'
-    ],
-    bestFor: 'Teams new to form libraries, standard CRUD apps'
-  },
-  
-  'react-final-form': {
-    pros: [
-      'Fine-grained subscriptions',
-      'Highly optimizable',
-      'Framework agnostic core',
-      'Powerful form state management'
-    ],
-    cons: [
-      'Steeper learning curve',
-      'More complex API',
-      'Smaller community'
-    ],
-    bestFor: 'Complex forms with specific performance needs'
-  }
-};
-
-// 7. Choosing Based on Project Phase
-const projectPhaseGuide = {
-  prototype: {
-    recommendation: 'Native React or Formik',
-    reason: 'Quick to implement, familiar patterns'
-  },
-  mvp: {
-    recommendation: 'React Hook Form',
-    reason: 'Good balance of DX and performance'
-  },
-  scale: {
-    recommendation: 'React Hook Form or Final Form',
-    reason: 'Performance becomes critical'
-  },
-  enterprise: {
-    recommendation: 'Standardize on one, provide abstractions',
-    reason: 'Consistency across teams'
-  }
-};`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Consensus Wisdom:</strong> "The Form Federation agrees: there's 
-					no universal best form library. React Hook Form excels at performance. 
-					Formik provides familiar patterns. Final Form offers ultimate control. 
-					Native React works for simple cases. Choose based on your specific 
-					requirements, not trends. The best form library is the one that serves 
-					your users and developers effectively."
-				</div>
-			</div>
+// Project Phase Guide:
+// Prototype: Native/Formik | MVP: Hook Form | Scale: Hook Form/Final Form`}
+			/>
 
 			{consensusAchieved && (
 				<div className='achievement-banner'>

@@ -367,266 +367,43 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Advanced Form Patterns</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Advanced Form Implementation Patterns
+			<CodeExample
+				title={`Advanced Form Patterns`}
+				discoveredBy={`Workshop Wisdom`}
+				code={`// Advanced Form Implementation Patterns
 
-// 1. Dynamic Form Fields
-// React Hook Form
-import { useForm, useFieldArray } from 'react-hook-form';
+// 1. Dynamic Form Fields (useFieldArray)
+const { fields, append, remove } = useFieldArray({ control, name: 'users' });
+{fields.map((field, i) => <input {...register(\`users.\${i}.name\`)} />)}
+<button onClick={() => append({ name: '' })}>Add</button>
 
-function DynamicForm() {
-  const { register, control, handleSubmit } = useForm({
-    defaultValues: {
-      users: [{ name: '', email: '' }]
-    }
-  });
-  
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: 'users'
-  });
-  
-  return (
-    <form onSubmit={handleSubmit(console.log)}>
-      {fields.map((field, index) => (
-        <div key={field.id}>
-          <input {...register(\`users.\${index}.name\`)} />
-          <input {...register(\`users.\${index}.email\`)} />
-          <button type="button" onClick={() => remove(index)}>
-            Remove
-          </button>
-        </div>
-      ))}
-      <button type="button" onClick={() => append({ name: '', email: '' })}>
-        Add User
-      </button>
-    </form>
-  );
-}
+// 2. Conditional Fields (watch)
+const watchCountry = watch('country');
+{watchCountry === 'US' && <input {...register('zipCode')} />}
 
-// Formik Dynamic Fields
-import { FieldArray } from 'formik';
-
-<FieldArray name="users">
-  {({ push, remove }) => (
-    <>
-      {values.users.map((user, index) => (
-        <div key={index}>
-          <Field name={\`users[\${index}].name\`} />
-          <Field name={\`users[\${index}].email\`} />
-          <button onClick={() => remove(index)}>Remove</button>
-        </div>
-      ))}
-      <button onClick={() => push({ name: '', email: '' })}>
-        Add User
-      </button>
-    </>
-  )}
-</FieldArray>
-
-// 2. Conditional Fields & Dependencies
-// React Hook Form with watch
-function ConditionalForm() {
-  const { register, watch, formState: { errors } } = useForm();
-  const watchCountry = watch('country');
-  
-  return (
-    <form>
-      <select {...register('country')}>
-        <option value="">Select Country</option>
-        <option value="US">United States</option>
-        <option value="CA">Canada</option>
-      </select>
-      
-      {watchCountry === 'US' && (
-        <input
-          {...register('zipCode', {
-            required: 'ZIP code required for US',
-            pattern: {
-              value: /^[0-9]{5}$/,
-              message: 'Invalid ZIP code'
-            }
-          })}
-          placeholder="ZIP Code"
-        />
-      )}
-      
-      {watchCountry === 'CA' && (
-        <input
-          {...register('postalCode', {
-            required: 'Postal code required for Canada',
-            pattern: {
-              value: /^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$/,
-              message: 'Invalid postal code'
-            }
-          })}
-          placeholder="Postal Code"
-        />
-      )}
-    </form>
-  );
-}
-
-// 3. Multi-Step Wizard Forms
-// React Hook Form with form state persistence
-function WizardForm() {
-  const [step, setStep] = useState(1);
-  const methods = useForm({
-    mode: 'onChange',
-    defaultValues: {
-      // Persist across steps
-      personal: {},
-      address: {},
-      preferences: {}
-    }
-  });
-  
-  const { trigger, getValues } = methods;
-  
-  const nextStep = async () => {
-    const isValid = await trigger(\`step\${step}\`);
-    if (isValid) setStep(step + 1);
-  };
-  
-  const prevStep = () => setStep(step - 1);
-  
-  return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(console.log)}>
-        {step === 1 && <PersonalInfoStep />}
-        {step === 2 && <AddressStep />}
-        {step === 3 && <PreferencesStep />}
-        
-        <div>
-          {step > 1 && (
-            <button type="button" onClick={prevStep}>
-              Previous
-            </button>
-          )}
-          {step < 3 ? (
-            <button type="button" onClick={nextStep}>
-              Next
-            </button>
-          ) : (
-            <button type="submit">Submit</button>
-          )}
-        </div>
-      </form>
-    </FormProvider>
-  );
-}
+// 3. Multi-Step Wizard
+const [step, setStep] = useState(1);
+const nextStep = async () => {
+  const isValid = await trigger(\`step\${step}\`);
+  if (isValid) setStep(step + 1);
+};
 
 // 4. Async Validation
-// React Hook Form
 const validateUsername = async (value) => {
-  const response = await fetch(\`/api/check-username?username=\${value}\`);
-  const data = await response.json();
-  return data.available || 'Username already taken';
+  const { available } = await fetch('/api/check-username').then(r => r.json());
+  return available || 'Username taken';
 };
+<input {...register('username', { validate: validateUsername })} />
 
-<input
-  {...register('username', {
-    validate: validateUsername
-  })}
-/>
-
-// Formik Async Validation
-const validate = async (values) => {
-  const errors = {};
-  
-  try {
-    const response = await fetch(\`/api/check-username?username=\${values.username}\`);
-    const data = await response.json();
-    if (!data.available) {
-      errors.username = 'Username already taken';
-    }
-  } catch (error) {
-    errors.username = 'Could not validate username';
-  }
-  
-  return errors;
-};
-
-// 5. Complex Validation with Yup
-import * as Yup from 'yup';
-
-const orderSchema = Yup.object({
-  items: Yup.array()
-    .of(
-      Yup.object({
-        product: Yup.string().required('Product required'),
-        quantity: Yup.number()
-          .min(1, 'At least 1')
-          .required('Quantity required'),
-        price: Yup.number()
-          .positive('Must be positive')
-          .required('Price required')
-      })
-    )
-    .min(1, 'At least one item required'),
-  
-  shipping: Yup.object({
-    method: Yup.string()
-      .oneOf(['standard', 'express', 'overnight'])
-      .required('Shipping method required'),
-    address: Yup.string()
-      .when('method', {
-        is: (method) => method !== 'pickup',
-        then: Yup.string().required('Address required for delivery'),
-        otherwise: Yup.string()
-      })
-  }),
-  
-  total: Yup.number()
-    .test('minimum-order', 'Minimum order $10', function(value) {
-      return value >= 10;
-    })
+// 5. Complex Yup Schema
+const schema = Yup.object({
+  items: Yup.array().of(Yup.object({ product: Yup.string().required() })).min(1),
+  shipping: Yup.object({ address: Yup.string().when('method', ...) })
 });
 
-// 6. Performance Optimization
-// React Hook Form - Isolated re-renders
-function OptimizedForm() {
-  const { register, control } = useForm();
-  
-  return (
-    <form>
-      {/* This component only re-renders when its field changes */}
-      <Controller
-        name="expensiveField"
-        control={control}
-        render={({ field }) => (
-          <ExpensiveComponent {...field} />
-        )}
-      />
-      
-      {/* Regular fields don't trigger re-renders */}
-      <input {...register('cheapField')} />
-    </form>
-  );
-}
-
-// React Final Form - Field-level subscriptions
-<Field
-  name="specificField"
-  subscription={{ value: true, error: true }}
-  render={({ input, meta }) => (
-    // Only re-renders when this field's value or error changes
-    <input {...input} />
-  )}
-/>`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Workshop Wisdom:</strong> "Each library excels at different 
-					patterns. React Hook Form minimizes re-renders in large forms. Formik 
-					provides the most React-like experience. Final Form offers granular 
-					subscription control. Choose based on your form's complexity and 
-					performance requirements."
-				</div>
-			</div>
+// 6. Performance: Controller for expensive components
+<Controller name="expensive" control={control} render={({ field }) => <Heavy {...field} />} />`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{

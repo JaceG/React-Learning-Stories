@@ -250,181 +250,38 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Styling Approaches Overview</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// React Styling Approaches Comparison
+			<CodeExample
+				title={`Styling Approaches Overview`}
+				discoveredBy={`Moderator's Wisdom`}
+				code={`// React Styling Approaches Comparison
 
-// 1. Traditional CSS
-// styles.css
-.button {
-  background-color: #3498db;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+// 1. Traditional CSS - import './styles.css';
+<button className="button">{children}</button>
 
-.button:hover {
-  background-color: #2980b9;
-}
-
-// Component.js
-import './styles.css';
-
-function Button({ children }) {
-  return <button className="button">{children}</button>;
-}
-
-// 2. CSS Modules
-// Button.module.css
-.button {
-  background-color: #3498db;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #2980b9;
-}
-
-// Button.js
+// 2. CSS Modules - Scoped by default
 import styles from './Button.module.css';
-
-function Button({ children }) {
-  return <button className={styles.button}>{children}</button>;
-}
+<button className={styles.button}>{children}</button>
 
 // 3. CSS-in-JS (Emotion)
-import { css } from '@emotion/react';
+const buttonStyle = css\`background: #3498db; &:hover { background: #2980b9; }\`;
+<button css={buttonStyle}>{children}</button>
 
-const buttonStyle = css\`
-  background-color: #3498db;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: #2980b9;
-  }
-\`;
+// 4. Styled Components - Dynamic props
+const StyledButton = styled.button\`background: \${p => p.primary ? '#3498db' : '#95a5a6'}\`;
 
-function Button({ children }) {
-  return <button css={buttonStyle}>{children}</button>;
-}
+// 5. Tailwind CSS - Utility-first
+<button className="px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded">
 
-// 4. Styled Components
-import styled from 'styled-components';
+// 6. Vanilla Extract - Zero-runtime, type-safe
+export const button = style({ backgroundColor: '#3498db', ':hover': { backgroundColor: '#2980b9' } });
 
-const StyledButton = styled.button\`
-  background-color: \${props => props.primary ? '#3498db' : '#95a5a6'};
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: \${props => props.primary ? '#2980b9' : '#7f8c8d'};
-  }
-\`;
-
-function Button({ children, primary }) {
-  return <StyledButton primary={primary}>{children}</StyledButton>;
-}
-
-// 5. Utility-First (Tailwind CSS)
-function Button({ children, variant = 'primary' }) {
-  const baseClasses = 'px-5 py-2.5 rounded cursor-pointer transition-colors';
-  const variantClasses = {
-    primary: 'bg-blue-500 hover:bg-blue-600 text-white',
-    secondary: 'bg-gray-500 hover:bg-gray-600 text-white',
-    outline: 'border-2 border-blue-500 text-blue-500 hover:bg-blue-50'
-  };
-  
-  return (
-    <button className={\`\${baseClasses} \${variantClasses[variant]}\`}>
-      {children}
-    </button>
-  );
-}
-
-// 6. Zero-Runtime CSS-in-JS (Vanilla Extract)
-// Button.css.ts
-import { style } from '@vanilla-extract/css';
-
-export const button = style({
-  backgroundColor: '#3498db',
-  color: 'white',
-  padding: '10px 20px',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-  
-  ':hover': {
-    backgroundColor: '#2980b9'
-  }
-});
-
-// Button.tsx
-import { button } from './Button.css';
-
-function Button({ children }) {
-  return <button className={button}>{children}</button>;
-}
-
-// Performance Considerations
-
-// Traditional CSS
-// ✅ Cached separately
-// ✅ No JavaScript overhead
-// ❌ Global scope pollution
-
-// CSS Modules
-// ✅ Local scope
-// ✅ Build-time optimization
-// ❌ Extra build step
-
-// CSS-in-JS
-// ✅ Dynamic styles
-// ✅ Component encapsulation
-// ❌ Runtime overhead
-// ❌ Larger bundle
-
-// Styled Components
-// ✅ Great DX
-// ✅ Theming support
-// ❌ Runtime cost
-// ❌ SSR complexity
-
-// Tailwind
-// ✅ Tiny production CSS
-// ✅ Fast development
-// ❌ Learning curve
-// ❌ HTML verbosity
-
-// Zero-Runtime
-// ✅ Type-safe
-// ✅ No runtime cost
-// ❌ Limited dynamism
-// ❌ Build complexity`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Moderator's Wisdom:</strong> "Each styling approach has evolved 
-					to solve specific problems. Traditional CSS struggles with scope. CSS 
-					Modules solve scope but add complexity. CSS-in-JS provides power but 
-					adds runtime cost. Utility-first speeds development but changes your 
-					workflow. Choose based on your project's specific needs."
-				</div>
-			</div>
+// Performance Trade-offs:
+// Traditional CSS: ✅ Cached ❌ Global scope
+// CSS Modules: ✅ Local scope ❌ Build step
+// CSS-in-JS: ✅ Dynamic ❌ Runtime cost
+// Tailwind: ✅ Tiny CSS ❌ Verbose HTML
+// Zero-Runtime: ✅ Type-safe ❌ Limited dynamism`}
+			/>
 
 			<ChapterSummary
 				characterIntros={[

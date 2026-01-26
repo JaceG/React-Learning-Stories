@@ -343,310 +343,36 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<div className='code-section'>
-				<div className='code-header'>
-					<span className='code-title'>Animation Library Implementations</span>
-				</div>
-				<div className='code-example'>
-					<pre>{`// Animation Library Deep Dive
+			<CodeExample
+				title={`Animation Library Implementations`}
+				discoveredBy={`Dojo Masters' Wisdom`}
+				code={`// Animation Library Deep Dive
 
-// 1. Framer Motion - Declarative Magic
-import { motion, AnimatePresence } from 'framer-motion';
+// 1. Framer Motion - Declarative & Exit Animations
+<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+  whileHover={{ scale: 1.1 }} drag dragConstraints={{ left: -100, right: 100 }} />
+<AnimatePresence>{show && <motion.div exit={{ y: 50 }} />}</AnimatePresence>
 
-// Basic Animation
-function FramerBasic() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      Declarative animations!
-    </motion.div>
-  );
-}
+// 2. React Spring - Physics-Based
+const styles = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, config: config.wobbly });
+<animated.div style={styles}>Spring physics!</animated.div>
 
-// Exit Animations
-function FramerExit() {
-  const [show, setShow] = useState(true);
-  
-  return (
-    <AnimatePresence>
-      {show && (
-        <motion.div
-          key="modal"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
-          transition={{ type: "spring", damping: 25 }}
-        >
-          I animate out!
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
+// Gesture integration
+const bind = useGesture({ onDrag: ({ offset: [x, y] }) => api.start({ x, y }) });
+<animated.div {...bind()} style={{ x, y }} />
 
-// Gesture Animations
-function FramerGestures() {
-  return (
-    <motion.div
-      drag
-      dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-      dragElastic={0.2}
-      whileDrag={{ scale: 1.2 }}
-    >
-      Drag me around!
-    </motion.div>
-  );
-}
+// 3. Lottie - Designer Animations (After Effects → React)
+<Lottie options={{ animationData, loop: true }} height={400} width={400} />
 
-// Layout Animations
-function FramerLayout() {
-  const [expanded, setExpanded] = useState(false);
-  
-  return (
-    <motion.div
-      layout
-      onClick={() => setExpanded(!expanded)}
-      style={{
-        width: expanded ? 400 : 200,
-        height: expanded ? 200 : 100,
-        background: "linear-gradient(135deg, #667eea, #764ba2)"
-      }}
-    >
-      Click to expand (smooth layout transition)
-    </motion.div>
-  );
-}
+// 4. React Transition Group - CSS-based
+<TransitionGroup>
+  <CSSTransition key={item} timeout={500} classNames="item">{children}</CSSTransition>
+</TransitionGroup>
 
-// 2. React Spring - Physics-Based Animation
-import { useSpring, animated, config } from '@react-spring/web';
-
-// Spring Animation
-function SpringBasic() {
-  const styles = useSpring({
-    from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
-    to: { opacity: 1, transform: 'translate3d(0,0px,0)' },
-    config: config.wobbly // Predefined spring config
-  });
-  
-  return (
-    <animated.div style={styles}>
-      Spring physics!
-    </animated.div>
-  );
-}
-
-// Gesture Integration
-import { useGesture } from '@use-gesture/react';
-
-function SpringGesture() {
-  const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
-  
-  const bind = useGesture({
-    onDrag: ({ offset: [x, y] }) => api.start({ x, y }),
-    onDragEnd: () => api.start({ x: 0, y: 0 })
-  });
-  
-  return (
-    <animated.div
-      {...bind()}
-      style={{
-        x,
-        y,
-        touchAction: 'none',
-        cursor: 'grab'
-      }}
-    >
-      Drag and release!
-    </animated.div>
-  );
-}
-
-// Complex Spring Chains
-function SpringChain() {
-  const items = ['🎯', '🎨', '🎭', '🎪'];
-  const [springs] = useSprings(items.length, (i) => ({
-    from: { transform: 'scale(0) rotate(0deg)' },
-    to: { transform: 'scale(1) rotate(360deg)' },
-    delay: i * 100,
-    config: { mass: 5, tension: 1000, friction: 100 }
-  }));
-  
-  return springs.map((style, i) => (
-    <animated.div key={i} style={style}>
-      {items[i]}
-    </animated.div>
-  ));
-}
-
-// 3. Lottie - Designer Animations
-import Lottie from 'react-lottie';
-import animationData from './animation.json';
-
-function LottieAnimation() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
-  
-  return (
-    <Lottie
-      options={defaultOptions}
-      height={400}
-      width={400}
-      isStopped={false}
-      isPaused={false}
-    />
-  );
-}
-
-// Interactive Lottie
-function LottieInteractive() {
-  const [animationState, setAnimationState] = useState({
-    isStopped: false,
-    isPaused: false,
-    speed: 1,
-    direction: 1
-  });
-  
-  return (
-    <>
-      <Lottie
-        options={defaultOptions}
-        isStopped={animationState.isStopped}
-        isPaused={animationState.isPaused}
-        speed={animationState.speed}
-        direction={animationState.direction}
-      />
-      <button onClick={() => setAnimationState({...animationState, isPaused: !animationState.isPaused})}>
-        {animationState.isPaused ? 'Play' : 'Pause'}
-      </button>
-    </>
-  );
-}
-
-// 4. React Transition Group - Simple Transitions
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-function TransitionGroupExample() {
-  const [items, setItems] = useState([1, 2, 3]);
-  
-  return (
-    <TransitionGroup>
-      {items.map(item => (
-        <CSSTransition
-          key={item}
-          timeout={500}
-          classNames="item"
-        >
-          <div className="item">
-            Item {item}
-            <button onClick={() => setItems(items.filter(i => i !== item))}>
-              Remove
-            </button>
-          </div>
-        </CSSTransition>
-      ))}
-    </TransitionGroup>
-  );
-}
-
-// CSS for transitions
-.item-enter {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-.item-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 500ms ease;
-}
-.item-exit {
-  opacity: 1;
-  transform: translateX(0);
-}
-.item-exit-active {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 500ms ease;
-}
-
-// 5. Advanced Patterns
-
-// Orchestrated Animations (Framer Motion)
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
-};
-
-function StaggeredList() {
-  return (
-    <motion.ul variants={container} initial="hidden" animate="visible">
-      {[1, 2, 3, 4].map(index => (
-        <motion.li key={index} variants={item}>
-          Item {index}
-        </motion.li>
-      ))}
-    </motion.ul>
-  );
-}
-
-// Scroll-Triggered Animations
-import { useInView } from 'framer-motion';
-
-function ScrollAnimation() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 100 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      I animate when scrolled into view!
-    </motion.div>
-  );
-}
-
-// Performance Optimization
-// 1. Use transform instead of position properties
-// 2. Enable GPU acceleration with transform3d
-// 3. Avoid animating expensive properties
-// 4. Use will-change sparingly
-// 5. Batch animations with libraries' schedulers`}</pre>
-				</div>
-				<div className='code-tooltip'>
-					<strong>Dojo Masters' Wisdom:</strong> "Each library serves different 
-					needs. Framer Motion excels at declarative animations and gestures. 
-					React Spring provides natural physics-based motion. Lottie bridges 
-					the designer-developer gap. Transition Group handles simple cases 
-					elegantly. Master one deeply, but understand when to reach for others."
-				</div>
-			</div>
+// 5. Advanced: Staggered Lists & Scroll Animations
+const container = { visible: { transition: { staggerChildren: 0.2 } } };
+const isInView = useInView(ref, { once: true });`}
+			/>
 
 			<ChapterSummary
 				lessonInsight={{
