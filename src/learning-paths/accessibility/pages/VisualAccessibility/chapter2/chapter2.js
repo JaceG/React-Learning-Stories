@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [textColor, setTextColor] = useState('#333333');
@@ -143,36 +144,16 @@ const ChapterTwo = () => {
 				bridge={`Guardian Spectrum led Aria from the Color Conservatory to a towering fortress of black and white marble. "Color alone is not enough," they explained. "Here in the Contrast Citadel, you will learn the mathematics of visibility itself."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					At the Contrast Citadel, Aria learned about visual clarity. "4.5:1 for 
-					normal text, 3:1 for large text, 3:1 for UI elements," Guardian Spectrum recited.
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary calculated contrasts instantly. "Many of our color combinations fail!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Pretty isn't always accessible. But accessible can be beautiful."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora analyzed the patterns. "Low contrast equals invisible content 
-					for many users. It's not just preference - it's perception!"
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Spectrum demonstrated. "Contrast ensures readability across 
-					different vision abilities, devices, and environments. Bright sunlight, 
-					aging eyes, poor screens - contrast conquers all."
-				</p>
-
-				<p className='story-paragraph'>
-					"Beauty and accessibility aren't opposites," the Guardian concluded. 
-					"They're partners in excellent design."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`At the Contrast Citadel, Aria learned about visual clarity. "4.5:1 for normal text, 3:1 for large text, 3:1 for UI elements," Guardian Spectrum recited.`,
+					`Binary calculated contrasts instantly. "Many of our color combinations fail!"`,
+					`"Pretty isn't always accessible. But accessible can be beautiful."`,
+					`Debuggora analyzed the patterns. "Low contrast equals invisible content for many users. It's not just preference - it's perception!"`,
+					`Guardian Spectrum demonstrated. "Contrast ensures readability across different vision abilities, devices, and environments. Bright sunlight, aging eyes, poor screens - contrast conquers all."`,
+					`"Beauty and accessibility aren't opposites," the Guardian concluded. "They're partners in excellent design."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Contrast Checker Laboratory</h3>

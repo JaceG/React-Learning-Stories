@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [currentFocus, setCurrentFocus] = useState(null);
@@ -117,38 +118,16 @@ const ChapterOne = () => {
 				title={`The Keyboard Kingdom`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Guardian Keyboard</strong> ruled a kingdom navigated entirely 
-					without mice. "Many users can't or won't use pointing devices. Your apps 
-					must be fully keyboard accessible."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria tried navigating her apps with only a keyboard. "I can't reach half 
-					my interactive elements!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Focus management, tab order, keyboard shortcuts - these are your tools 
-					for keyboard accessibility."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated rapidly. "Keyboard users: 3% use keyboard exclusively, 
-					20% use keyboard frequently, 100% benefit from keyboard support!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora observed the patterns. "Every click needs a key equivalent. 
-					Every hover needs a focus state. Every interaction must be reachable!"
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Keyboard nodded. "The keyboard is the universal interface. Master 
-					it, and you unlock access for millions."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Guardian Keyboard</strong> ruled a kingdom navigated entirely without mice. "Many users can't or won't use pointing devices. Your apps must be fully keyboard accessible."</>,
+					`Aria tried navigating her apps with only a keyboard. "I can't reach half my interactive elements!"`,
+					`"Focus management, tab order, keyboard shortcuts - these are your tools for keyboard accessibility."`,
+					`Binary calculated rapidly. "Keyboard users: 3% use keyboard exclusively, 20% use keyboard frequently, 100% benefit from keyboard support!"`,
+					`Debuggora observed the patterns. "Every click needs a key equivalent. Every hover needs a focus state. Every interaction must be reachable!"`,
+					`Guardian Keyboard nodded. "The keyboard is the universal interface. Master it, and you unlock access for millions."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Keyboard Navigation Simulator</h3>

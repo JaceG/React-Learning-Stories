@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [activeColorMode, setActiveColorMode] = useState('normal');
@@ -90,36 +91,16 @@ const ChapterOne = () => {
 				title={`The Color Conservatory`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Guardian Spectrum</strong> managed the Color Conservatory. "Eight 
-					percent of men have color vision differences. Never convey information 
-					through color alone."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria's error states used only red. "But red means error!"
-				</p>
-
-				<p className='story-paragraph'>
-					"To you. Add icons, text, patterns. Redundancy ensures everyone gets the message."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed the spectrum. "Color perception variance: 300 million 
-					affected globally. Solution: Multi-modal indicators!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the patterns. "I see - color is enhancement, not 
-					essential. Every color needs a non-color companion."
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Spectrum smiled. "Color enriches for those who see it, but 
-					information must never depend on it alone."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Guardian Spectrum</strong> managed the Color Conservatory. "Eight percent of men have color vision differences. Never convey information through color alone."</>,
+					`Aria's error states used only red. "But red means error!"`,
+					`"To you. Add icons, text, patterns. Redundancy ensures everyone gets the message."`,
+					`Binary analyzed the spectrum. "Color perception variance: 300 million affected globally. Solution: Multi-modal indicators!"`,
+					`Debuggora examined the patterns. "I see - color is enhancement, not essential. Every color needs a non-color companion."`,
+					`Guardian Spectrum smiled. "Color enriches for those who see it, but information must never depend on it alone."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Color Vision Simulator</h3>

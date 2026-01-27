@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [audioMode, setAudioMode] = useState(false);
@@ -143,38 +144,16 @@ const ChapterTwo = () => {
 				bridge={`Having mastered keyboard navigation with Guardian Keyboard, Aria ventured deeper into the Accessibility Realm. "Keyboards open doors," Guardian Keyboard said in farewell, "but Guardian Audio will show you how to give voice to your interfaces." Through a crystalline archway, the Screen Reader Sanctuary awaited.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					In the Screen Reader Sanctuary, <strong>Guardian Audio</strong> demonstrated 
-					how blind users experienced applications. "Close your eyes and listen," she 
-					instructed.
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria heard her app through a screen reader. "It's just saying 'button, 
-					button, image, link' - no context!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly. Labels, descriptions, and context are crucial. Your visual design 
-					means nothing here - only structure and text matter."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed patterns. "Screen reader users: 2.2% of population, but 
-					100% rely on proper labeling. Calculation: Critical feature!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora listened intently. "I hear it now - without labels, it's like 
-					trying to navigate in complete darkness with no landmarks."
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Audio smiled. "The screen reader reveals truth - it strips away 
-					visual decoration and shows if your content truly communicates."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>In the Screen Reader Sanctuary, <strong>Guardian Audio</strong> demonstrated how blind users experienced applications. "Close your eyes and listen," she instructed.</>,
+					`Aria heard her app through a screen reader. "It's just saying 'button, button, image, link' - no context!"`,
+					`"Exactly. Labels, descriptions, and context are crucial. Your visual design means nothing here - only structure and text matter."`,
+					`Binary analyzed patterns. "Screen reader users: 2.2% of population, but 100% rely on proper labeling. Calculation: Critical feature!"`,
+					`Debuggora listened intently. "I hear it now - without labels, it's like trying to navigate in complete darkness with no landmarks."`,
+					`Guardian Audio smiled. "The screen reader reveals truth - it strips away visual decoration and shows if your content truly communicates."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Screen Reader Sanctuary</h3>

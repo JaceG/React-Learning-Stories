@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [motionPreference, setMotionPreference] = useState('auto');
@@ -142,36 +143,16 @@ const ChapterThree = () => {
 				bridge={`"One final realm awaits," Guardian Spectrum said, leading Aria toward a building that seemed to float and shift. "Color and contrast are but two pillars of visual accessibility. The third is motion." A new guardian emerged from the swirling walls - Guardian Equilibrium, who walked with perfect balance despite the world moving around them.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Motion Manor floated mysteriously, its walls shifting and dancing. 
-					<strong>Guardian Equilibrium</strong> steadied them. "Motion can disorient. 
-					Some users experience vestibular disorders. Respect their needs."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria's animations were elaborate. "But movement makes interfaces feel alive!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Life shouldn't cause suffering. Provide controls. Honor prefers-reduced-motion."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated probabilities. "1 in 3 people over 40 experience dizziness 
-					from parallax scrolling. Significant user impact detected!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora observed the patterns. "I see - animation enhances when wanted, 
-					but never when harmful. User control is paramount."
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Equilibrium demonstrated. "Motion is powerful. Use it thoughtfully. 
-					Always provide alternatives and controls. Let users choose their experience."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The Motion Manor floated mysteriously, its walls shifting and dancing. <strong>Guardian Equilibrium</strong> steadied them. "Motion can disorient. Some users experience vestibular disorders. Respect their needs."</>,
+					`Aria's animations were elaborate. "But movement makes interfaces feel alive!"`,
+					`"Life shouldn't cause suffering. Provide controls. Honor prefers-reduced-motion."`,
+					`Binary calculated probabilities. "1 in 3 people over 40 experience dizziness from parallax scrolling. Significant user impact detected!"`,
+					`Debuggora observed the patterns. "I see - animation enhances when wanted, but never when harmful. User control is paramount."`,
+					`Guardian Equilibrium demonstrated. "Motion is powerful. Use it thoughtfully. Always provide alternatives and controls. Let users choose their experience."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Motion Control Center</h3>

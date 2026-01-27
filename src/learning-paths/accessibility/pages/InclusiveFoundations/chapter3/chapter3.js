@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeAriaExample, setActiveAriaExample] = useState('role');
@@ -155,37 +156,16 @@ const ChapterThree = () => {
 				bridge={`"You've mastered semantic HTML," Guardian Semantic said as she led Aria to the Arsenal Chamber. "But sometimes HTML lacks the elements we need. That's when ARIA helps - but use it wisely. It's powerful medicine that requires the right dose."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Sometimes," Guardian Semantic explained, "HTML lacks the elements we need. 
-					That's when ARIA helps - but use it wisely."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria learned ARIA attributes. "It's like adding type annotations, but for 
-					accessibility!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Yes, but remember: No ARIA is better than bad ARIA. First rule of ARIA: 
-					Don't use ARIA if you can use HTML."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary computed patterns. "ARIA attributes: 67 roles, 48 properties, 
-					infinite combinations. Complexity level: high. Misuse probability: 73%!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied carefully. "I see - ARIA bridges the gap when semantic 
-					HTML isn't enough. But it's a powerful tool that requires understanding."
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Semantic nodded. "ARIA is your enhancement toolkit. Use it to 
-					clarify, not to recreate. Always test with real assistive technologies."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`"Sometimes," Guardian Semantic explained, "HTML lacks the elements we need. That's when ARIA helps - but use it wisely."`,
+					`Aria learned ARIA attributes. "It's like adding type annotations, but for accessibility!"`,
+					`"Yes, but remember: No ARIA is better than bad ARIA. First rule of ARIA: Don't use ARIA if you can use HTML."`,
+					`Binary computed patterns. "ARIA attributes: 67 roles, 48 properties, infinite combinations. Complexity level: high. Misuse probability: 73%!"`,
+					`Debuggora studied carefully. "I see - ARIA bridges the gap when semantic HTML isn't enough. But it's a powerful tool that requires understanding."`,
+					`Guardian Semantic nodded. "ARIA is your enhancement toolkit. Use it to clarify, not to recreate. Always test with real assistive technologies."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>ARIA Arsenal</h3>

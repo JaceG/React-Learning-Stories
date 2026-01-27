@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [screenReaderActive, setScreenReaderActive] = useState(false);
@@ -108,42 +109,16 @@ const ChapterOne = () => {
 				title={`The Inclusive Empire`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					At the heart of the digital realm stood the Inclusive Empire - not a 
-					separate kingdom, but a philosophy that touched every corner of the React 
-					world. <strong>Empress Inclusiva</strong> welcomed Aria with a gentle 
-					smile that seemed to see everything and nothing at once.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Captain Aria," she began, her voice carrying through multiple sensory 
-					channels, "you've built powerful applications, optimized them, deployed 
-					them globally. But can everyone use them?"
-				</p>
-
-				<p className='story-paragraph'>
-					The throne room was unlike any Aria had seen - ramps alongside stairs, 
-					visual displays paired with audio, text in multiple sizes and contrasts. 
-					Every element had multiple ways to interact.
-				</p>
-
-				<p className='story-paragraph'>
-					Binary's circuits hummed with new understanding. "Aria, I'm detecting 
-					screen readers, voice controls, switch devices... so many ways to interact!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora's eyes glowed with empathy. "And I see barriers everywhere in 
-					our old code - color-only information, mouse-only interactions, missing labels."
-				</p>
-
-				<p className='story-paragraph'>
-					Empress Inclusiva gestured to her diverse council. "Meet the Guardians of 
-					Inclusion - each represents different ways people interact with your 
-					applications. Your final lesson: true mastery means building for everyone."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>At the heart of the digital realm stood the Inclusive Empire - not a separate kingdom, but a philosophy that touched every corner of the React world. <strong>Empress Inclusiva</strong> welcomed Aria with a gentle smile that seemed to see everything and nothing at once.</>,
+					`"Captain Aria," she began, her voice carrying through multiple sensory channels, "you've built powerful applications, optimized them, deployed them globally. But can everyone use them?"`,
+					`The throne room was unlike any Aria had seen - ramps alongside stairs, visual displays paired with audio, text in multiple sizes and contrasts. Every element had multiple ways to interact.`,
+					`Binary's circuits hummed with new understanding. "Aria, I'm detecting screen readers, voice controls, switch devices... so many ways to interact!"`,
+					`Debuggora's eyes glowed with empathy. "And I see barriers everywhere in our old code - color-only information, mouse-only interactions, missing labels."`,
+					`Empress Inclusiva gestured to her diverse council. "Meet the Guardians of Inclusion - each represents different ways people interact with your applications. Your final lesson: true mastery means building for everyone."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Accessibility Audit Chamber</h3>

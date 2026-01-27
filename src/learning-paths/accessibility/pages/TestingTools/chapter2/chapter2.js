@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeAuditType, setActiveAuditType] = useState('wcag');
@@ -184,36 +185,16 @@ const ChapterTwo = () => {
 				bridge={`Master Validator led them deeper into the Testing Tower, through a corridor lined with scrolls of standards and regulations. "Now that you understand the tools," she explained, "it's time to learn the rules they enforce. The Audit Arena awaits - where WCAG, Section 508, and ADA standards become your guides to true compliance."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Audit Arena hummed with activity. <strong>Compliance Commander</strong> 
-					reviewed scrolls of standards. "WCAG 2.1, Section 508, ADA - each has its place."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria felt overwhelmed. "So many rules! How do we track them all?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Start with WCAG. It's the international standard. Level AA covers most 
-					legal requirements. Level AAA for critical applications."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary processed the data. "WCAG 2.1 contains 78 success criteria. 
-					Level A: 30, Level AA: 20, Level AAA: 28. Systematic approach required!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied the patterns. "I see - it's not about perfection, but 
-					continuous improvement. Each fix makes the web more inclusive."
-				</p>
-
-				<p className='story-paragraph'>
-					Compliance Commander nodded. "Document your efforts. Show progress. 
-					Accessibility is a journey, and audits are your map."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The Audit Arena hummed with activity. <strong>Compliance Commander</strong> reviewed scrolls of standards. "WCAG 2.1, Section 508, ADA - each has its place."</>,
+					`Aria felt overwhelmed. "So many rules! How do we track them all?"`,
+					`"Start with WCAG. It's the international standard. Level AA covers most legal requirements. Level AAA for critical applications."`,
+					`Binary processed the data. "WCAG 2.1 contains 78 success criteria. Level A: 30, Level AA: 20, Level AAA: 28. Systematic approach required!"`,
+					`Debuggora studied the patterns. "I see - it's not about perfection, but continuous improvement. Each fix makes the web more inclusive."`,
+					`Compliance Commander nodded. "Document your efforts. Show progress. Accessibility is a journey, and audits are your map."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Compliance Audit Center</h3>

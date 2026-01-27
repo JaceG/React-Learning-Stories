@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeMethod, setActiveMethod] = useState('mouse');
@@ -244,37 +245,16 @@ const ChapterThree = () => {
 				bridge={`Guardian Audio's final lesson echoed in Aria's mind as she emerged from the Screen Reader Sanctuary. "Labels give voice to the voiceless," the guardian reminded her. "But true accessibility requires more than keyboard and audio support." At the center of the realm, all the Guardians had gathered. "It's time to learn the Interaction Harmony," they announced together.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Guardians assembled. "Every interaction method should work," they 
-					declared in unison. "Mouse, keyboard, touch, voice, switch - design for all."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria created components that responded to all input methods. "It's more 
-					work initially, but the code is actually cleaner!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary computed efficiency. "Universal design: 5x development time, 10x user 
-					reach. Return on investment: 200%!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora tested each method. "Every interaction path works! Mouse users, 
-					keyboard users, touch users - everyone can accomplish their goals."
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Keyboard smiled. "This is the harmony we seek - not designing for 
-					the average, but embracing the diversity of human interaction."
-				</p>
-
-				<p className='story-paragraph'>
-					Empress Inclusiva appeared. "You understand now - accessibility isn't about 
-					special features for some. It's about flexible design that adapts to all."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`The Guardians assembled. "Every interaction method should work," they declared in unison. "Mouse, keyboard, touch, voice, switch - design for all."`,
+					`Aria created components that responded to all input methods. "It's more work initially, but the code is actually cleaner!"`,
+					`Binary computed efficiency. "Universal design: 5x development time, 10x user reach. Return on investment: 200%!"`,
+					`Debuggora tested each method. "Every interaction path works! Mouse users, keyboard users, touch users - everyone can accomplish their goals."`,
+					`Guardian Keyboard smiled. "This is the harmony we seek - not designing for the average, but embracing the diversity of human interaction."`,
+					`Empress Inclusiva appeared. "You understand now - accessibility isn't about special features for some. It's about flexible design that adapts to all."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Universal Interaction Laboratory</h3>

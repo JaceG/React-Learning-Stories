@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [activeTab, setActiveTab] = useState('automated');
@@ -177,37 +178,16 @@ const ChapterOne = () => {
 				title={`The Testing Tower`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Testing Tower stood tall, its many windows glowing with different tools. 
-					<strong>Master Validator</strong> greeted them. "Welcome to where quality 
-					meets inclusion. No single tool catches everything."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria examined the tools. "So many options! Where do we start?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Layer your defenses. Automated tools catch low-hanging fruit. Manual testing 
-					finds nuanced issues. User testing reveals real experiences."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary scanned the statistics. "Automated tools detect 30-50% of issues. 
-					Manual testing essential for complete coverage!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied the patterns. "I see - it's not about choosing one tool, 
-					but combining many approaches. Defense in depth!"
-				</p>
-
-				<p className='story-paragraph'>
-					Master Validator nodded. "Exactly. Build testing into your workflow. Make 
-					accessibility checking as natural as syntax checking. Quality is a habit."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The Testing Tower stood tall, its many windows glowing with different tools. <strong>Master Validator</strong> greeted them. "Welcome to where quality meets inclusion. No single tool catches everything."</>,
+					`Aria examined the tools. "So many options! Where do we start?"`,
+					`"Layer your defenses. Automated tools catch low-hanging fruit. Manual testing finds nuanced issues. User testing reveals real experiences."`,
+					`Binary scanned the statistics. "Automated tools detect 30-50% of issues. Manual testing essential for complete coverage!"`,
+					`Debuggora studied the patterns. "I see - it's not about choosing one tool, but combining many approaches. Defense in depth!"`,
+					`Master Validator nodded. "Exactly. Build testing into your workflow. Make accessibility checking as natural as syntax checking. Quality is a habit."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Testing Strategy Center</h3>

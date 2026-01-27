@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeComparison, setActiveComparison] = useState('button');
@@ -141,38 +142,16 @@ const ChapterTwo = () => {
 				bridge={`Guardian Semantic stepped forward from the council. "Before we dive into complex solutions," she said, leading Aria to the Foundation Hall, "you must understand the power of semantic HTML. The right element for the right purpose - this is where accessibility begins."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Guardian Semantic</strong> led Aria to the Foundation Hall. 
-					"Before ARIA labels, before complex solutions - semantic HTML. The right 
-					element for the right purpose."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria reviewed her components. "I've been using divs for everything!"
-				</p>
-
-				<p className='story-paragraph'>
-					"A common mistake. Buttons for actions, nav for navigation, main for 
-					content. Each element carries meaning that assistive technologies understand."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary processed the patterns. "Semantic HTML: 30% less code, 100% more 
-					meaning. Efficiency metrics improving!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the structure. "Look! Screen readers can now understand 
-					our content hierarchy. Navigation is clearer, forms make sense!"
-				</p>
-
-				<p className='story-paragraph'>
-					Guardian Semantic smiled. "Semantic HTML is your first and strongest 
-					accessibility tool. Master this, and you've solved half your accessibility 
-					challenges."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Guardian Semantic</strong> led Aria to the Foundation Hall. "Before ARIA labels, before complex solutions - semantic HTML. The right element for the right purpose."</>,
+					`Aria reviewed her components. "I've been using divs for everything!"`,
+					`"A common mistake. Buttons for actions, nav for navigation, main for content. Each element carries meaning that assistive technologies understand."`,
+					`Binary processed the patterns. "Semantic HTML: 30% less code, 100% more meaning. Efficiency metrics improving!"`,
+					`Debuggora examined the structure. "Look! Screen readers can now understand our content hierarchy. Navigation is clearer, forms make sense!"`,
+					`Guardian Semantic smiled. "Semantic HTML is your first and strongest accessibility tool. Master this, and you've solved half your accessibility challenges."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Semantic HTML Showcase</h3>

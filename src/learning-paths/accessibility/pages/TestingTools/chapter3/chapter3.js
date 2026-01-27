@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activePhase, setActivePhase] = useState('awareness');
@@ -250,37 +251,16 @@ const ChapterThree = () => {
 				bridge={`Compliance Commander led them to the highest floor of the Testing Tower, where the Culture Citadel awaited. "Tools and standards are powerful," she explained, "but without the right culture, accessibility becomes a checkbox rather than a commitment. This final chamber holds the most important lesson of all."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Culture Citadel glowed with shared purpose. <strong>Culture Keeper</strong> 
-					welcomed them warmly. "Tools and standards are important, but culture makes 
-					accessibility sustainable."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria understood. "It's not just about fixing issues - it's about preventing them!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly. When every team member champions inclusion, accessibility becomes 
-					natural. Build it into your DNA."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated the impact. "Teams with accessibility culture ship 73% 
-					fewer a11y bugs. ROI: Positive. Efficiency: Maximized!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora saw the bigger picture. "We're not just building accessible products - 
-					we're building an inclusive future. Every team member is part of this."
-				</p>
-
-				<p className='story-paragraph'>
-					Culture Keeper smiled. "You understand. Accessibility isn't a destination - 
-					it's a journey we take together. Make it part of everything you do."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The Culture Citadel glowed with shared purpose. <strong>Culture Keeper</strong> welcomed them warmly. "Tools and standards are important, but culture makes accessibility sustainable."</>,
+					`Aria understood. "It's not just about fixing issues - it's about preventing them!"`,
+					`"Exactly. When every team member champions inclusion, accessibility becomes natural. Build it into your DNA."`,
+					`Binary calculated the impact. "Teams with accessibility culture ship 73% fewer a11y bugs. ROI: Positive. Efficiency: Maximized!"`,
+					`Debuggora saw the bigger picture. "We're not just building accessible products - we're building an inclusive future. Every team member is part of this."`,
+					`Culture Keeper smiled. "You understand. Accessibility isn't a destination - it's a journey we take together. Make it part of everything you do."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Culture Building Center</h3>
