@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -80,30 +81,18 @@ const ChapterThree = () => {
 				bridge='"Now for the final lesson," Keeper Chronos said, leading Aria to the Library&apos;s architectural blueprints. "Lazy loading is powerful, but without proper strategy, it becomes chaos. You must master the four pillars of splitting strategy."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Now for the final lesson," Keeper Chronos said, leading <strong>Aria</strong> 
-					to the Library's architectural plans. "Lazy loading is powerful, but without 
-					proper <strong>strategy</strong>, it becomes chaos."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"Now for the final lesson," Keeper Chronos said, leading <strong>Aria</strong> to the Library's architectural plans. "Lazy loading is powerful, but without proper <strong>strategy</strong>, it becomes chaos."</>,
+					<>The plans revealed intricate pathways and loading patterns. "The secret is in the <strong>splitting strategy</strong>. Route-based splitting for major sections, vendor chunking for libraries, and intelligent preloading for predicted paths."</>,
+					<>"Master these four strategies," Chronos continued, "and you'll achieve the perfect balance between performance and user experience. The Library will recognize you as a <strong>Performance Architect</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					The plans revealed intricate pathways and loading patterns. "The secret is in 
-					the <strong>splitting strategy</strong>. Route-based splitting for major sections, 
-					vendor chunking for libraries, and intelligent preloading for predicted paths."
-				</p>
-
-				<p className='story-paragraph'>
-					"Master these four strategies," Chronos continued, "and you'll achieve the 
-					perfect balance between performance and user experience. The Library will 
-					recognize you as a <strong>Performance Architect</strong>."
-				</p>
-
-				<div className='library-hall'>
-					<h3>Architectural Strategies</h3>
-					<div style={{ color: 'white', textAlign: 'center' }}>
-						Applied Optimizations: {optimizationLevel}/4
-					</div>
+			<div className='library-hall'>
+				<h3>Architectural Strategies</h3>
+				<div style={{ color: 'white', textAlign: 'center' }}>
+					Applied Optimizations: {optimizationLevel}/4
 				</div>
 			</div>
 

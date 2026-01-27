@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -88,38 +89,23 @@ const ChapterTwo = () => {
 				bridge='Master Velocity led Aria deeper into the sanctum, where ancient optimization crystals lined the walls. "Now that you can see the Lag Monster&apos;s attacks through the Profiler, it&apos;s time to learn our first defense: the art of Memoization."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Master Velocity led Aria deeper into the sanctum, where ancient optimization 
-					crystals lined the walls. "Now that you can see the Lag Monster's attacks, 
-					it's time to learn our first defense: <strong>Memoization</strong>."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>Master Velocity led Aria deeper into the sanctum, where ancient optimization crystals lined the walls. "Now that you can see the Lag Monster's attacks, it's time to learn our first defense: <strong>Memoization</strong>."</>,
+					<>He pulled out two glowing scrolls. "These are React's memoization spells - <strong>React.memo</strong> for components and <strong>useMemo</strong> for expensive calculations. They create a shield of memory around your work."</>,
+					<><strong>Aria</strong> studied the scrolls intently. "So instead of repeating the same calculations or renders, we remember the results?"</>,
+					<>"Precisely!" Master Velocity smiled. "But beware - memoization itself has a cost. Use it wisely, only where the benefit outweighs the overhead."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					He pulled out two glowing scrolls. "These are React's memoization spells - 
-					<strong>React.memo</strong> for components and <strong>useMemo</strong> for 
-					expensive calculations. They create a shield of memory around your work."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> studied the scrolls intently. "So instead of repeating 
-					the same calculations or renders, we remember the results?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely!" Master Velocity smiled. "But beware - memoization itself has a 
-					cost. Use it wisely, only where the benefit outweighs the overhead."
-				</p>
-
-				<div className='memoization-diagram'>
-					<h3>The Memoization Flow</h3>
-					<div className='memo-flow'>
-						<div className='flow-item'>Input</div>
-						<div className='flow-arrow'>→</div>
-						<div className='flow-item'>Check Cache</div>
-						<div className='flow-arrow'>→</div>
-						<div className='flow-item'>Return Cached or Compute</div>
-					</div>
+			<div className='memoization-diagram'>
+				<h3>The Memoization Flow</h3>
+				<div className='memo-flow'>
+					<div className='flow-item'>Input</div>
+					<div className='flow-arrow'>→</div>
+					<div className='flow-item'>Check Cache</div>
+					<div className='flow-arrow'>→</div>
+					<div className='flow-item'>Return Cached or Compute</div>
 				</div>
 			</div>
 

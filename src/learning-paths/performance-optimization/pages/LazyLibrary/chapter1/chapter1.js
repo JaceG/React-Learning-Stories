@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const { bundleSize, calculateMetrics } = useOutletContext();
@@ -65,52 +66,35 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<ChapterIntro chapterNumber={1} title='The Burden of Knowledge' />
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> arrived at the Lazy Library, a
-					mystical repository where all React knowledge was stored.
-					But something was wrong - the main entrance was blocked by
-					an enormous bundle of books, too heavy for anyone to move.
-				</p>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong> arrived at the Lazy Library, a mystical repository where all React knowledge was stored. But something was wrong - the main entrance was blocked by an enormous bundle of books, too heavy for anyone to move.</>,
+					<><strong>Keeper Chronos</strong>, the ancient librarian, appeared from the shadows. "Ah, another victim of the{' '}<strong>Bundle Burden</strong>. Young developers pack every possible library into their applications, not realizing that users must carry this weight with every page load."</>,
+					<>He gestured to the towering shelves. "Each book represents a library or component. Some are essential for every visitor, but many are needed only by a few. Yet we force everyone to carry them all. This is the curse of{' '}<strong>eager loading</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					<strong>Keeper Chronos</strong>, the ancient librarian,
-					appeared from the shadows. "Ah, another victim of the{' '}
-					<strong>Bundle Burden</strong>. Young developers pack every
-					possible library into their applications, not realizing that
-					users must carry this weight with every page load."
-				</p>
-
-				<p className='story-paragraph'>
-					He gestured to the towering shelves. "Each book represents a
-					library or component. Some are essential for every visitor,
-					but many are needed only by a few. Yet we force everyone to
-					carry them all. This is the curse of{' '}
-					<strong>eager loading</strong>."
-				</p>
-
-				<div className='library-hall'>
-					<h3>The Great Bundle</h3>
-					<div className='bundle-meter'>
-						<div
-							className='bundle-size'
-							style={{ width: `${(bundleSize / 1250) * 100}%` }}>
-							<span className='bundle-label'>
-								Main Bundle: {bundleSize}KB
-							</span>
-						</div>
+			<div className='library-hall'>
+				<h3>The Great Bundle</h3>
+				<div className='bundle-meter'>
+					<div
+						className='bundle-size'
+						style={{ width: `${(bundleSize / 1250) * 100}%` }}>
+						<span className='bundle-label'>
+							Main Bundle: {bundleSize}KB
+						</span>
 					</div>
-					<p
-						style={{
-							textAlign: 'center',
-							color: 'white',
-							marginTop: '10px',
-						}}>
-						{bundleSize > 1000
-							? '⚠️ Bundle too large for optimal loading!'
-							: '✅ Bundle size improving'}
-					</p>
 				</div>
+				<p
+					style={{
+						textAlign: 'center',
+						color: 'white',
+						marginTop: '10px',
+					}}>
+					{bundleSize > 1000
+						? '⚠️ Bundle too large for optimal loading!'
+						: '✅ Bundle size improving'}
+				</p>
 			</div>
 
 			<div className='interactive-section'>

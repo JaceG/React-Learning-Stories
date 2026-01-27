@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const { optimizationLevel, applyOptimization, memoizedComponents } =
@@ -79,35 +80,14 @@ const ChapterThree = () => {
 				bridge='"You&apos;ve mastered component and computation memoization," Master Velocity said, leading Aria to the inner sanctum&apos;s final chamber. "But there&apos;s one more crucial technique that completes the Trinity of Optimization - useCallback, the stabilizer of function references."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"You've mastered component and computation memoization,"
-					Master Velocity said, leading Aria to the inner sanctum.
-					"But there's one more crucial technique:
-					<strong>useCallback</strong>."
-				</p>
-
-				<p className='story-paragraph'>
-					He pointed to a wall of interconnected crystals. "Watch what
-					happens when I touch one." As he touched a crystal, all the
-					others flickered and re-rendered. "Without stable function
-					references, every parent update cascades to all children."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> understood immediately. "Even if we
-					memoize child components, passing new function instances as
-					props defeats the optimization!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly!" Master Velocity beamed. "useCallback ensures
-					function stability across renders. Combined with React.memo
-					and useMemo, it forms the{' '}
-					<strong>Trinity of Optimization</strong>."
-				</p>
-
-			</div>
+			<StorySection
+				paragraphs={[
+					<>"You've mastered component and computation memoization," Master Velocity said, leading Aria to the inner sanctum. "But there's one more crucial technique: <strong>useCallback</strong>."</>,
+					<>He pointed to a wall of interconnected crystals. "Watch what happens when I touch one." As he touched a crystal, all the others flickered and re-rendered. "Without stable function references, every parent update cascades to all children."</>,
+					<><strong>Aria</strong> understood immediately. "Even if we memoize child components, passing new function instances as props defeats the optimization!"</>,
+					<>"Exactly!" Master Velocity beamed. "useCallback ensures function stability across renders. Combined with React.memo and useMemo, it forms the{' '}<strong>Trinity of Optimization</strong>."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

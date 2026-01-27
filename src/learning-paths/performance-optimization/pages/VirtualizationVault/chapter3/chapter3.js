@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -60,34 +61,21 @@ const ChapterThree = () => {
 				bridge={`"You've learned the basics of windowing," Guardian Zephyr said, revealing four mystical portals glowing with different energies. "But to become a true Virtualization Master, you must conquer four advanced challenges of the infinite realm."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"You've learned the basics," Guardian Zephyr said, "but the Vault holds deeper 
-					secrets. <strong>Aria</strong>, to become a true <strong>Virtualization Master</strong>, 
-					you must conquer four advanced challenges."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"You've learned the basics," Guardian Zephyr said, "but the Vault holds deeper secrets. <strong>Aria</strong>, to become a true <strong>Virtualization Master</strong>, you must conquer four advanced challenges."</>,
+					<>He revealed four mystical portals, each glowing with different energy. "Dynamic heights for content that varies. Horizontal realms for sideways scrolling. Infinite loading for endless data. And the ultimate challenge - <strong>grid virtualization</strong> for two-dimensional infinity."</>,
+					<>"Master all four," Zephyr proclaimed, "and the Vault will grant you the title of <strong>Keeper of the Infinite</strong>. Your applications will handle any amount of data with grace and speed."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					He revealed four mystical portals, each glowing with different energy. "Dynamic 
-					heights for content that varies. Horizontal realms for sideways scrolling. 
-					Infinite loading for endless data. And the ultimate challenge - 
-					<strong>grid virtualization</strong> for two-dimensional infinity."
-				</p>
-
-				<p className='story-paragraph'>
-					"Master all four," Zephyr proclaimed, "and the Vault will grant you the title 
-					of <strong>Keeper of the Infinite</strong>. Your applications will handle any 
-					amount of data with grace and speed."
-				</p>
-
-				<div className='vault-chamber'>
-					<h3>The Master's Challenge</h3>
-					<div style={{ color: 'white', textAlign: 'center' }}>
-						Mastery Progress: {masteryLevel}/4
-						{vaultMastered && <div style={{ marginTop: '10px' }}>
-							✨ Vault Mastered! ✨
-						</div>}
-					</div>
+			<div className='vault-chamber'>
+				<h3>The Master's Challenge</h3>
+				<div style={{ color: 'white', textAlign: 'center' }}>
+					Mastery Progress: {masteryLevel}/4
+					{vaultMastered && <div style={{ marginTop: '10px' }}>
+						✨ Vault Mastered! ✨
+					</div>}
 				</div>
 			</div>
 

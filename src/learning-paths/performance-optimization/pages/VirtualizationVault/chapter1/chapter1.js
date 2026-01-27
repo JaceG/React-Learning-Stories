@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const { renderCount, calculatePerformance } = useOutletContext();
@@ -36,39 +37,20 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<ChapterIntro chapterNumber={1} title='The Infinite Archive' />
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Deep beneath the React Kingdom lay the{' '}
-					<strong>Virtualization Vault</strong>, an endless archive
-					containing millions of scrolls. <strong>Aria</strong>{' '}
-					descended into its depths, only to find the entrance blocked
-					by a crowd of exhausted messengers.
-				</p>
+			<StorySection
+				paragraphs={[
+					<>Deep beneath the React Kingdom lay the{' '}<strong>Virtualization Vault</strong>, an endless archive containing millions of scrolls. <strong>Aria</strong>{' '}descended into its depths, only to find the entrance blocked by a crowd of exhausted messengers.</>,
+					<><strong>Vault Guardian Zephyr</strong> appeared, floating effortlessly above the chaos. "They try to carry every scroll at once," he explained. "The human eye can only read a few at a time, yet they burden themselves with thousands. This is the <strong>Rendering Paradox</strong>."</>,
+					<>He gestured to the infinite shelves stretching into darkness. "When rendering lists of thousands of items, React creates DOM nodes for each one. The browser struggles, memory explodes, and scrolling becomes torture. We must teach you the art of <strong>virtual scrolling</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					<strong>Vault Guardian Zephyr</strong> appeared, floating
-					effortlessly above the chaos. "They try to carry every
-					scroll at once," he explained. "The human eye can only read
-					a few at a time, yet they burden themselves with thousands.
-					This is the
-					<strong>Rendering Paradox</strong>."
+			<div className='vault-chamber'>
+				<h3>The Rendering Burden</h3>
+				<p style={{ color: 'white', textAlign: 'center' }}>
+					Attempting to render {itemCount.toLocaleString()}{' '}
+					items...
 				</p>
-
-				<p className='story-paragraph'>
-					He gestured to the infinite shelves stretching into
-					darkness. "When rendering lists of thousands of items, React
-					creates DOM nodes for each one. The browser struggles,
-					memory explodes, and scrolling becomes torture. We must
-					teach you the art of <strong>virtual scrolling</strong>."
-				</p>
-
-				<div className='vault-chamber'>
-					<h3>The Rendering Burden</h3>
-					<p style={{ color: 'white', textAlign: 'center' }}>
-						Attempting to render {itemCount.toLocaleString()}{' '}
-						items...
-					</p>
-				</div>
 			</div>
 
 			<div className='interactive-section'>
@@ -272,13 +254,13 @@ function PainfulExample() {
 				</div>
 			</div>
 
-			<div className='story-section'>
-				<div className='guardian-warning'>
-					<h4>Guardian Zephyr's Warning</h4>
-					<p className='story-paragraph'>
-						"You see the problem now! Each scroll they carry weighs down the entire kingdom. But fear not - in the next chamber, I will teach you to render only what the eye can see, creating the illusion of infinity with finite resources."
-					</p>
-				</div>
+			<div className='guardian-warning'>
+				<h4>Guardian Zephyr's Warning</h4>
+				<StorySection
+					paragraphs={[
+						`"You see the problem now! Each scroll they carry weighs down the entire kingdom. But fear not - in the next chamber, I will teach you to render only what the eye can see, creating the illusion of infinity with finite resources."`
+					]}
+				/>
 			</div>
 
 			<ChapterSummary

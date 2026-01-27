@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -63,36 +64,21 @@ const ChapterTwo = () => {
 				bridge='Guardian Zephyr led Aria to a mystical viewing chamber deep within the Vault. "Watch closely," he said, waving his hand as the infinite archive transformed. "This is the secret of virtualization - rendering only what the eye can see."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Guardian Zephyr led <strong>Aria</strong> to a mystical viewing chamber. 
-					"Watch closely," he said, waving his hand. The infinite archive transformed - 
-					instead of all scrolls being visible, only a small window showed a handful 
-					at a time.
-				</p>
+			<StorySection
+				paragraphs={[
+					<>Guardian Zephyr led <strong>Aria</strong> to a mystical viewing chamber. "Watch closely," he said, waving his hand. The infinite archive transformed - instead of all scrolls being visible, only a small window showed a handful at a time.</>,
+					<>"This is the secret of <strong>virtualization</strong>," Zephyr explained. "We create a window that shows only what fits in the viewport, plus a small buffer. As you scroll, we swap the contents seamlessly. The user perceives infinity, but we render only necessity."</>,
+					<>He demonstrated with a gesture. "The <strong>virtual spacer</strong> maintains the scrollbar's truth - showing the full height. But the actual scrolls? They materialize only when needed, then vanish when passed. This is the art of <strong>windowing</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					"This is the secret of <strong>virtualization</strong>," Zephyr explained. 
-					"We create a window that shows only what fits in the viewport, plus a small 
-					buffer. As you scroll, we swap the contents seamlessly. The user perceives 
-					infinity, but we render only necessity."
-				</p>
-
-				<p className='story-paragraph'>
-					He demonstrated with a gesture. "The <strong>virtual spacer</strong> maintains 
-					the scrollbar's truth - showing the full height. But the actual scrolls? They 
-					materialize only when needed, then vanish when passed. This is the art of 
-					<strong>windowing</strong>."
-				</p>
-
-				<div className='vault-chamber'>
-					<h3>The Virtualization Chamber</h3>
-					<button 
-						className={`demo-button ${virtualizationEnabled ? 'active' : ''}`}
-						onClick={toggleVirtualization}>
-						{virtualizationEnabled ? '✅ Virtualization Active' : '❌ Traditional Rendering'}
-					</button>
-				</div>
+			<div className='vault-chamber'>
+				<h3>The Virtualization Chamber</h3>
+				<button 
+					className={`demo-button ${virtualizationEnabled ? 'active' : ''}`}
+					onClick={toggleVirtualization}>
+					{virtualizationEnabled ? '✅ Virtualization Active' : '❌ Traditional Rendering'}
+				</button>
 			</div>
 
 			<div className='interactive-section'>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -41,66 +42,47 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<ChapterIntro chapterNumber={1} title='The Slowing Kingdom' />
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong>, now a React Kingdom Guide, stood at
-					the edge of the Northern Mountains. The summons had been
-					urgent - applications throughout the kingdom were slowing to
-					a crawl. Citizens complained of stuttering interfaces and
-					frozen forms.
-				</p>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong>, now a React Kingdom Guide, stood at the edge of the Northern Mountains. The summons had been urgent - applications throughout the kingdom were slowing to a crawl. Citizens complained of stuttering interfaces and frozen forms.</>,
+					<><strong>Master Velocity</strong> emerged from the mist, his robes shimmering with optimization symbols. "Welcome, Aria. Your reputation precedes you. The kingdom faces a threat unlike any before - the <strong>Lag Monster</strong> has awakened."</>,
+					<>He gestured toward the valley below where components flickered erratically. "The monster feeds on inefficiency - unnecessary re-renders, memory leaks, and bloated bundles. Before we can fight it, we must learn to{' '}<strong>see</strong> its influence."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					<strong>Master Velocity</strong> emerged from the mist, his
-					robes shimmering with optimization symbols. "Welcome, Aria.
-					Your reputation precedes you. The kingdom faces a threat
-					unlike any before - the <strong>Lag Monster</strong> has
-					awakened."
-				</p>
-
-				<p className='story-paragraph'>
-					He gestured toward the valley below where components
-					flickered erratically. "The monster feeds on inefficiency -
-					unnecessary re-renders, memory leaks, and bloated bundles.
-					Before we can fight it, we must learn to{' '}
-					<strong>see</strong> its influence."
-				</p>
-
-				<div className='sanctum-visualization'>
-					<div className='sanctum-chamber'>
-						<h3>The Speed Sanctum</h3>
-						<div className='performance-crystals'>
-							{metrics.map((metric) => (
-								<div
-									key={metric.id}
-									className={`crystal ${selectedMetric === metric.id ? 'active' : ''}`}
-									onClick={() =>
-										handleMetricSelect(metric.id)
-									}>
-									{metric.value}
-								</div>
-							))}
-						</div>
-						<p
-							style={{
-								textAlign: 'center',
-								color: '#ecf0f1',
-								position: 'relative',
-								zIndex: 1,
-							}}>
-							Click the crystals to examine different performance
-							metrics
-						</p>
+			<div className='sanctum-visualization'>
+				<div className='sanctum-chamber'>
+					<h3>The Speed Sanctum</h3>
+					<div className='performance-crystals'>
+						{metrics.map((metric) => (
+							<div
+								key={metric.id}
+								className={`crystal ${selectedMetric === metric.id ? 'active' : ''}`}
+								onClick={() =>
+									handleMetricSelect(metric.id)
+								}>
+								{metric.value}
+							</div>
+						))}
 					</div>
+					<p
+						style={{
+							textAlign: 'center',
+							color: '#ecf0f1',
+							position: 'relative',
+							zIndex: 1,
+						}}>
+						Click the crystals to examine different performance
+						metrics
+					</p>
 				</div>
-
-				<p className='story-paragraph'>
-					"These crystals," Master Velocity explained, "represent the
-					vital signs of our applications. When they glow red, the Lag
-					Monster grows stronger. Our first weapon is the{' '}
-					<strong>React DevTools Profiler</strong>."
-				</p>
 			</div>
+
+			<StorySection
+				paragraphs={[
+					<>"These crystals," Master Velocity explained, "represent the vital signs of our applications. When they glow red, the Lag Monster grows stronger. Our first weapon is the{' '}<strong>React DevTools Profiler</strong>."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -54,34 +55,21 @@ const ChapterTwo = () => {
 				bridge='Brother Binary led Aria deeper into the monastery to a chamber filled with glowing diagnostic instruments. "To heal the Memory Plague, you must first learn to see it. These are our sacred tools - the Chrome DevTools Memory Profiler."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Brother Binary led <strong>Aria</strong> deeper into the monastery to a chamber 
-					filled with glowing instruments. "To heal the Memory Plague, you must master our 
-					sacred tools - the <strong>Chrome DevTools Memory Profiler</strong>."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>Brother Binary led <strong>Aria</strong> deeper into the monastery to a chamber filled with glowing instruments. "To heal the Memory Plague, you must master our sacred tools - the <strong>Chrome DevTools Memory Profiler</strong>."</>,
+					<>He activated a mystical viewing portal that revealed the inner workings of memory. "This is how we see what others cannot - the hidden allocations, the retained objects, the paths that prevent garbage collection."</>,
+					<>"Three sacred techniques will serve you well," he continued. "<strong>Heap Snapshots</strong> to see memory at a moment in time, <strong>Allocation Timeline</strong> to track growth over time, and <strong>Manual Garbage Collection</strong> to force cleanup."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					He activated a mystical viewing portal that revealed the inner workings of 
-					memory. "This is how we see what others cannot - the hidden allocations, the 
-					retained objects, the paths that prevent garbage collection."
-				</p>
-
-				<p className='story-paragraph'>
-					"Three sacred techniques will serve you well," he continued. "<strong>Heap 
-					Snapshots</strong> to see memory at a moment in time, <strong>Allocation 
-					Timeline</strong> to track growth over time, and <strong>Manual Garbage 
-					Collection</strong> to force cleanup."
-				</p>
-
-				<div className='monastery-chamber'>
-					<h3>The Memory Observatory</h3>
-					<button 
-						className='demo-button'
-						onClick={() => setDevToolsOpen(!devToolsOpen)}>
-						{devToolsOpen ? 'Close' : 'Open'} Sacred DevTools
-					</button>
-				</div>
+			<div className='monastery-chamber'>
+				<h3>The Memory Observatory</h3>
+				<button 
+					className='demo-button'
+					onClick={() => setDevToolsOpen(!devToolsOpen)}>
+					{devToolsOpen ? 'Close' : 'Open'} Sacred DevTools
+				</button>
 			</div>
 
 			{devToolsOpen && (

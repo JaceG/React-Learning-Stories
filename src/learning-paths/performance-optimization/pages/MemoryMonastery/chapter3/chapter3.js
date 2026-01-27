@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -92,41 +93,27 @@ const ChapterThree = () => {
 				bridge='"Now comes the most important knowledge," Brother Binary said, leading Aria to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Now comes the most important knowledge," Brother Binary said, leading 
-					<strong> Aria</strong> to the Sanctuary of Solutions. "Understanding leaks is 
-					only half the battle. You must master the <strong>Four Healing Rituals</strong> 
-					to cure the Memory Plague permanently."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"Now comes the most important knowledge," Brother Binary said, leading <strong>Aria</strong> to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the <strong>Four Healing Rituals</strong> to cure the Memory Plague permanently."</>,
+					<>The sanctuary walls glowed with ancient inscriptions, each describing a different healing technique. "These rituals have been refined over generations of monks. Apply them faithfully, and your applications will remain healthy for eternity."</>,
+					<>Brother Binary handed Aria a sacred scroll. "The time has come to put your knowledge into practice. Demonstrate each ritual, and the monastery will grant you the title of <strong>Memory Guardian</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					The sanctuary walls glowed with ancient inscriptions, each describing a 
-					different healing technique. "These rituals have been refined over generations 
-					of monks. Apply them faithfully, and your applications will remain healthy 
-					for eternity."
-				</p>
-
-				<p className='story-paragraph'>
-					Brother Binary handed Aria a sacred scroll. "The time has come to put your 
-					knowledge into practice. Demonstrate each ritual, and the monastery will 
-					grant you the title of <strong>Memory Guardian</strong>."
-				</p>
-
-				<div className='monastery-chamber'>
-					<h3>The Sanctuary of Solutions</h3>
-					<div className='memory-meter'>
-						<div 
-							className='memory-used' 
-							style={{ 
-								width: `${100 - healingProgress}%`,
-								background: healingProgress > 50 ? '#10b981' : 'linear-gradient(90deg, #10b981 0%, #f59e0b 70%, #ef4444 100%)'
-							}}>
-						</div>
-						<span className='memory-label'>
-							Healing Progress: {healingProgress}%
-						</span>
+			<div className='monastery-chamber'>
+				<h3>The Sanctuary of Solutions</h3>
+				<div className='memory-meter'>
+					<div 
+						className='memory-used' 
+						style={{ 
+							width: `${100 - healingProgress}%`,
+							background: healingProgress > 50 ? '#10b981' : 'linear-gradient(90deg, #10b981 0%, #f59e0b 70%, #ef4444 100%)'
+						}}>
 					</div>
+					<span className='memory-label'>
+						Healing Progress: {healingProgress}%
+					</span>
 				</div>
 			</div>
 

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 // Simulated lazy components
 const LazyChart = lazy(() => new Promise(resolve => {
@@ -61,35 +62,23 @@ const ChapterTwo = () => {
 				bridge='Keeper Chronos led Aria to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the Lazy Wing, where we practice the art of temporal loading with React.lazy() and Suspense."'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Keeper Chronos led <strong>Aria</strong> to a special section of the library 
-					where books floated in mid-air, appearing only when reached for. "This is the 
-					<strong>Lazy Wing</strong>, where we practice the art of temporal loading."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>Keeper Chronos led <strong>Aria</strong> to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the <strong>Lazy Wing</strong>, where we practice the art of temporal loading."</>,
+					<>"Watch this," he said, waving his hand. A book materialized just as he grasped for it. "With <strong>React.lazy()</strong> and <strong>Suspense</strong>, we can summon components only when they're needed, not before."</>,
+					<>"The magic has two parts," Chronos explained. "First, <strong>code splitting</strong> breaks your bundle into smaller chunks. Then, <strong>dynamic imports</strong> load these chunks on demand. Your users download only what they use."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					"Watch this," he said, waving his hand. A book materialized just as he grasped 
-					for it. "With <strong>React.lazy()</strong> and <strong>Suspense</strong>, we 
-					can summon components only when they're needed, not before."
-				</p>
-
-				<p className='story-paragraph'>
-					"The magic has two parts," Chronos explained. "First, <strong>code splitting</strong> 
-					breaks your bundle into smaller chunks. Then, <strong>dynamic imports</strong> 
-					load these chunks on demand. Your users download only what they use."
-				</p>
-
-				<div className='library-hall'>
-					<h3>The Lazy Wing</h3>
-					<button 
-						className='demo-button'
-						onClick={() => setLazyLoadingEnabled(!lazyLoadingEnabled)}>
-						{lazyLoadingEnabled ? 'Disable' : 'Enable'} Lazy Loading Magic
-					</button>
-					<div style={{ marginTop: '20px', color: 'white', textAlign: 'center' }}>
-						{lazyLoadingEnabled ? '✨ Lazy loading active - components load on demand!' : '📦 Traditional loading - everything upfront'}
-					</div>
+			<div className='library-hall'>
+				<h3>The Lazy Wing</h3>
+				<button 
+					className='demo-button'
+					onClick={() => setLazyLoadingEnabled(!lazyLoadingEnabled)}>
+					{lazyLoadingEnabled ? 'Disable' : 'Enable'} Lazy Loading Magic
+				</button>
+				<div style={{ marginTop: '20px', color: 'white', textAlign: 'center' }}>
+					{lazyLoadingEnabled ? '✨ Lazy loading active - components load on demand!' : '📦 Traditional loading - everything upfront'}
 				</div>
 			</div>
 

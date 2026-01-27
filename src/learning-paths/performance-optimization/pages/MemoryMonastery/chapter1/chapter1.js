@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const { memoryLeaks, detectMemoryLeak, cleanupLeak, retainedSize } =
@@ -40,54 +41,35 @@ const ChapterOne = () => {
 		<div className='chapter'>
 			<ChapterIntro chapterNumber={1} title='The Memory Plague' />
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> arrived at the Memory Monastery, an
-					ancient structure floating in the clouds above the React
-					Kingdom. Applications below were suffering from a mysterious
-					plague - they would start fast but gradually slow to a
-					crawl, eventually crashing entirely.
-				</p>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong> arrived at the Memory Monastery, an ancient structure floating in the clouds above the React Kingdom. Applications below were suffering from a mysterious plague - they would start fast but gradually slow to a crawl, eventually crashing entirely.</>,
+					<><strong>Brother Binary</strong>, the monastery's eldest monk, greeted her with concern. "The Memory Plague has returned, Aria. Applications are holding onto memories they should release, creating <strong>memory leaks</strong> that grow until nothing can function."</>,
+					<>He led her to the Observatory, where ethereal representations of memory usage floated like ghosts. "Before we can heal the plague, you must understand its three primary forms: <strong>Event Listener Leaks</strong>,{' '}<strong>Detached DOM Nodes</strong>, and{' '}<strong>Closure Captures</strong>."</>
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					<strong>Brother Binary</strong>, the monastery's eldest
-					monk, greeted her with concern. "The Memory Plague has
-					returned, Aria. Applications are holding onto memories they
-					should release, creating <strong>memory leaks</strong> that
-					grow until nothing can function."
-				</p>
-
-				<p className='story-paragraph'>
-					He led her to the Observatory, where ethereal
-					representations of memory usage floated like ghosts. "Before
-					we can heal the plague, you must understand its three
-					primary forms: <strong>Event Listener Leaks</strong>,{' '}
-					<strong>Detached DOM Nodes</strong>, and{' '}
-					<strong>Closure Captures</strong>."
-				</p>
-
-				<div className='monastery-chamber'>
-					<h3>The Observatory of Leaks</h3>
-					<div className='memory-meter'>
-						<div
-							className='memory-used'
-							style={{
-								width: `${Math.min((retainedSize / 50000) * 100, 100)}%`,
-							}}></div>
-						<span className='memory-label'>
-							{(retainedSize / 1000).toFixed(1)}KB / 50KB
-						</span>
-					</div>
-
-					<p
+			<div className='monastery-chamber'>
+				<h3>The Observatory of Leaks</h3>
+				<div className='memory-meter'>
+					<div
+						className='memory-used'
 						style={{
-							textAlign: 'center',
-							color: 'white',
-							marginTop: '10px',
-						}}>
-						Current Memory Leaks: {memoryLeaks.length}
-					</p>
+							width: `${Math.min((retainedSize / 50000) * 100, 100)}%`,
+						}}></div>
+					<span className='memory-label'>
+						{(retainedSize / 1000).toFixed(1)}KB / 50KB
+					</span>
 				</div>
+
+				<p
+					style={{
+						textAlign: 'center',
+						color: 'white',
+						marginTop: '10px',
+					}}>
+					Current Memory Leaks: {memoryLeaks.length}
+				</p>
 			</div>
 
 			<div className='interactive-section'>
