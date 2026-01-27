@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -133,40 +134,16 @@ const ChapterThree = () => {
 				bridge={`"You've learned the techniques," Forge Master Enhance said, examining the layered components. "Now for the wisdom: knowing when to use them." Aria studied her forged components. "They're powerful, but hooks seem simpler for many cases." The Forge Master smiled. "Precisely! HOCs were React's first pattern for logic reuse. They remain valuable for specific scenarios."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"You've learned the techniques," <strong>Forge Master Enhance</strong> said, 
-					examining the layered components. "Now for the wisdom: knowing when to use them."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> studied her forged components. "They're powerful, but 
-					hooks seem simpler for many cases."
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely!" the Forge Master smiled. "HOCs were React's first pattern for 
-					logic reuse. They remain valuable for specific scenarios, but modern React 
-					offers alternatives. Let me show you when each approach shines."
-				</p>
-
-				<p className='story-paragraph'>
-					He revealed a comparison chart. "HOCs excel at props manipulation, conditional 
-					rendering, and working with legacy code. Hooks dominate for state logic, side 
-					effects, and composition. Neither is universally superior - context determines 
-					the choice."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> processed the patterns. "So HOCs aren't obsolete, just 
-					specialized?" 
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly. Like any tool, they have their place. Master them, but reach for 
-					them judiciously."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"You've learned the techniques," <strong>Forge Master Enhance</strong> said, examining the layered components. "Now for the wisdom: knowing when to use them."</>,
+				<><strong>Aria</strong> studied her forged components. "They're powerful, but hooks seem simpler for many cases."</>,
+				<>"Precisely!" the Forge Master smiled. "HOCs were React's first pattern for logic reuse. They remain valuable for specific scenarios, but modern React offers alternatives. Let me show you when each approach shines."</>,
+				<>He revealed a comparison chart. "HOCs excel at props manipulation, conditional rendering, and working with legacy code. Hooks dominate for state logic, side effects, and composition. Neither is universally superior - context determines the choice."</>,
+				<><strong>Binary</strong> processed the patterns. "So HOCs aren't obsolete, just specialized?"</>,
+				<>"Exactly. Like any tool, they have their place. Master them, but reach for them judiciously."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Pattern Evolution Timeline</h3>

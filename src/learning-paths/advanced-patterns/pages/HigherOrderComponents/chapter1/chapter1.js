@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -73,29 +74,14 @@ const ChapterOne = () => {
 				title={`The Enhancement Forge`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Enhancement Forge glowed with transformative energy. <strong>Forge Master 
-					Enhance</strong> explained: "Higher-Order Components are component factories. 
-					They take a component and return an enhanced version."
-				</p>
-
-				<p className='story-paragraph'>
-					"Like my custom hooks," <strong>Aria</strong> said, "but for components 
-					instead of logic?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Similar principle, different application. HOCs were the original pattern 
-					for sharing behavior. Let me show you their power and their limitations."
-				</p>
-
-				<p className='story-paragraph'>
-					The forge blazed brighter as Enhance demonstrated. "Watch as I take a simple 
-					component and enhance it with authentication checking, logging, and more. 
-					Each enhancement wraps the original, adding new capabilities."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Enhancement Forge glowed with transformative energy. <strong>Forge Master Enhance</strong> explained: "Higher-Order Components are component factories. They take a component and return an enhanced version."</>,
+				<>"Like my custom hooks," <strong>Aria</strong> said, "but for components instead of logic?"</>,
+				<>"Similar principle, different application. HOCs were the original pattern for sharing behavior. Let me show you their power and their limitations."</>,
+				<>The forge blazed brighter as Enhance demonstrated. "Watch as I take a simple component and enhance it with authentication checking, logging, and more. Each enhancement wraps the original, adding new capabilities."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: The Enhancement Forge</h3>

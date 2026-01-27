@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -87,30 +88,14 @@ const ChapterTwo = () => {
 				bridge={`Aria learned to layer enhancements as they descended deeper into the forge. "Each HOC adds a capability," Forge Master Enhance demonstrated. Binary analyzed the component tree: "The nesting gets deep, Aria. This could affect debugging." The Forge Master acknowledged the concern: "An astute observation. HOCs are powerful but can obscure component hierarchy."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> learned to layer enhancements. "Each HOC adds a 
-					capability," <strong>Forge Master Enhance</strong> demonstrated. 
-					"Authentication, logging, performance tracking - all through composition."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the component tree. "The nesting gets deep, 
-					Aria. This could affect debugging."
-				</p>
-
-				<p className='story-paragraph'>
-					"An astute observation," the Forge Master acknowledged. "HOCs are powerful 
-					but can obscure component hierarchy. Modern React often prefers hooks, but 
-					HOCs remain valuable for certain patterns."
-				</p>
-
-				<p className='story-paragraph'>
-					He showed her advanced techniques: "Props proxy for manipulation, inheritance 
-					inversion for deep access, proper display name preservation. Master these, 
-					and HOCs become surgical tools rather than blunt instruments."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> learned to layer enhancements. "Each HOC adds a capability," <strong>Forge Master Enhance</strong> demonstrated. "Authentication, logging, performance tracking - all through composition."</>,
+				<><strong>Binary</strong> analyzed the component tree. "The nesting gets deep, Aria. This could affect debugging."</>,
+				<>"An astute observation," the Forge Master acknowledged. "HOCs are powerful but can obscure component hierarchy. Modern React often prefers hooks, but HOCs remain valuable for certain patterns."</>,
+				<>He showed her advanced techniques: "Props proxy for manipulation, inheritance inversion for deep access, proper display name preservation. Master these, and HOCs become surgical tools rather than blunt instruments."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Advanced Enhancement Laboratory</h3>

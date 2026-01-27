@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -211,31 +212,14 @@ const ChapterTwo = () => {
 				bridge={`"And sometimes," Portal Keeper Escapius continued, unveiling the Reference Scrolls, "React's abstraction isn't enough. You need direct DOM access." Aria handled them carefully. "Master Aurelius warned about refs in my early training. Direct manipulation breaks React's declarative model." Escapius nodded. "Used wisely, they're powerful. Used carelessly, they're dangerous."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"And sometimes," <strong>Escapius</strong> continued, "React's 
-					abstraction isn't enough. You need direct DOM access." He unveiled 
-					the Reference Scrolls - refs in their purest form.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> handled them carefully. "Master Aurelius warned 
-					about refs in my early training. Direct manipulation breaks React's 
-					declarative model."
-				</p>
-
-				<p className='story-paragraph'>
-					"Used wisely, they're powerful. Used carelessly, they're dangerous. 
-					Let me teach you wisdom." <strong>Escapius</strong> demonstrated 
-					various ref patterns.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the patterns. "Refs provide an escape 
-					hatch when declarative approaches aren't sufficient. But they should 
-					be the exception, not the rule."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"And sometimes," <strong>Escapius</strong> continued, "React's abstraction isn't enough. You need direct DOM access." He unveiled the Reference Scrolls - refs in their purest form.</>,
+				<><strong>Aria</strong> handled them carefully. "Master Aurelius warned about refs in my early training. Direct manipulation breaks React's declarative model."</>,
+				<>"Used wisely, they're powerful. Used carelessly, they're dangerous. Let me teach you wisdom." <strong>Escapius</strong> demonstrated various ref patterns.</>,
+				<><strong>Binary</strong> analyzed the patterns. "Refs provide an escape hatch when declarative approaches aren't sufficient. But they should be the exception, not the rule."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Reference Management Laboratory</h3>

@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -249,30 +250,14 @@ const ChapterThree = () => {
 				bridge={`Dean Architectus returned for Aria's final evaluation. "You've learned our four great patterns - Compound Components, Render Props, Higher-Order Components, and now Portals & Refs. How would you combine them?" Aria demonstrated a modal system using portals for rendering, compound components for API design, refs for focus management, and render props for customization.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Dean Architectus</strong> returned for Aria's final evaluation. 
-					"You've learned our four great patterns. How would you combine them?"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> demonstrated a modal system using portals for 
-					rendering, compound components for API design, refs for focus management, 
-					and render props for customization.
-				</p>
-
-				<p className='story-paragraph'>
-					"Magnificent! You think like a true architect - not just using patterns, 
-					but combining them purposefully." The Dean's approval resonated through 
-					the chamber.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> compiled their architectural knowledge. "Each 
-					pattern has its strength, but combined, they create solutions impossible 
-					with any single approach."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Dean Architectus</strong> returned for Aria's final evaluation. "You've learned our four great patterns. How would you combine them?"</>,
+				<><strong>Aria</strong> demonstrated a modal system using portals for rendering, compound components for API design, refs for focus management, and render props for customization.</>,
+				<>"Magnificent! You think like a true architect - not just using patterns, but combining them purposefully." The Dean's approval resonated through the chamber.</>,
+				<><strong>Binary</strong> compiled their architectural knowledge. "Each pattern has its strength, but combined, they create solutions impossible with any single approach."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Architectural Pattern Synthesis</h3>

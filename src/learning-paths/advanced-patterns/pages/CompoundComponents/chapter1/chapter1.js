@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -66,32 +67,14 @@ const ChapterOne = () => {
 				title={`The Architect's Invitation`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					A golden scroll arrived at <strong>Aria's</strong> quarters, sealed with 
-					the mark of the Architect's Academy. The message was brief but momentous: 
-					"Guide Aria, your mastery of React's fundamentals, performance, and quality 
-					has not gone unnoticed. The Pattern Masters invite you to learn the highest 
-					architectural arts."
-				</p>
-
-				<p className='story-paragraph'>
-					The Architect's Academy floated above the kingdom - a crystalline structure 
-					that seemed to shift and reconfigure itself constantly. <strong>Dean Architectus</strong> 
-					greeted Aria at the entrance, his robes decorated with component diagrams.
-				</p>
-
-				<p className='story-paragraph'>
-					"Welcome, Aria. Here we teach not just how to build components, but how to 
-					compose them into elegant architectures. Your first lesson: Compound Components - 
-					the art of components that work as one."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> scanned the academy. "Aria, the components here... 
-					they're communicating in ways I've never seen!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>A golden scroll arrived at <strong>Aria's</strong> quarters, sealed with the mark of the Architect's Academy. The message was brief but momentous: "Guide Aria, your mastery of React's fundamentals, performance, and quality has not gone unnoticed. The Pattern Masters invite you to learn the highest architectural arts."</>,
+				<>The Architect's Academy floated above the kingdom - a crystalline structure that seemed to shift and reconfigure itself constantly. <strong>Dean Architectus</strong> greeted Aria at the entrance, his robes decorated with component diagrams.</>,
+				<>"Welcome, Aria. Here we teach not just how to build components, but how to compose them into elegant architectures. Your first lesson: Compound Components - the art of components that work as one."</>,
+				<><strong>Binary</strong> scanned the academy. "Aria, the components here... they're communicating in ways I've never seen!"</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Component Composition Laboratory</h3>

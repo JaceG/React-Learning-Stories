@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -90,31 +91,14 @@ const ChapterThree = () => {
 				bridge={`"You understand the trade-offs," Pattern Master Renderius said, gathering all the delegation examples. "Compound components for intuitive APIs, render props for maximum flexibility. Both have their place in the architect's toolkit." Time to see render props in their full glory.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Pattern Master Renderius</strong> gathered all the delegation 
-					examples. "You understand the trade-offs. Compound components for intuitive 
-					APIs, render props for maximum flexibility. Both have their place in the 
-					architect's toolkit."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> demonstrated her mastery by creating components that 
-					supported both patterns. "I can provide a default UI with compound components, 
-					but allow render prop overrides for customization!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Brilliant!" Renderius exclaimed. "You're thinking like a true architect - 
-					not choosing between patterns, but combining them purposefully."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> displayed the statistics: "Render props: maximum 
-					flexibility, higher complexity. Compound components: intuitive API, less 
-					flexible. The choice depends on your users' needs."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Pattern Master Renderius</strong> gathered all the delegation examples. "You understand the trade-offs. Compound components for intuitive APIs, render props for maximum flexibility. Both have their place in the architect's toolkit."</>,
+				<><strong>Aria</strong> demonstrated her mastery by creating components that supported both patterns. "I can provide a default UI with compound components, but allow render prop overrides for customization!"</>,
+				<>"Brilliant!" Renderius exclaimed. "You're thinking like a true architect - not choosing between patterns, but combining them purposefully."</>,
+				<><strong>Binary</strong> displayed the statistics: "Render props: maximum flexibility, higher complexity. Compound components: intuitive API, less flexible. The choice depends on your users' needs."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Render Props Mastery Showcase</h3>

@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -156,31 +157,14 @@ const ChapterOne = () => {
 				title={`The Portal Dimension`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The final chamber of the Architect's Academy defied physics - portals 
-					opened to different parts of the DOM tree. <strong>Portal Keeper 
-					Escapius</strong> demonstrated: "Sometimes components need to render 
-					outside their parent hierarchy."
-				</p>
-
-				<p className='story-paragraph'>
-					"Like my Navigation Portals!" <strong>Aria</strong> exclaimed. "But 
-					more fundamental - actual DOM escaping."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> computed the implications. "This breaks the 
-					normal parent-child relationship. Components can render anywhere!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely," Escapius nodded. "Portals let you maintain React's 
-					component structure while rendering to different DOM locations. 
-					Essential for modals, tooltips, and any UI that must escape its 
-					container's constraints."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The final chamber of the Architect's Academy defied physics - portals opened to different parts of the DOM tree. <strong>Portal Keeper Escapius</strong> demonstrated: "Sometimes components need to render outside their parent hierarchy."</>,
+				<>"Like my Navigation Portals!" <strong>Aria</strong> exclaimed. "But more fundamental - actual DOM escaping."</>,
+				<><strong>Binary</strong> computed the implications. "This breaks the normal parent-child relationship. Components can render anywhere!"</>,
+				<>"Precisely," Escapius nodded. "Portals let you maintain React's component structure while rendering to different DOM locations. Essential for modals, tooltips, and any UI that must escape its container's constraints."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Portal Gateway</h3>

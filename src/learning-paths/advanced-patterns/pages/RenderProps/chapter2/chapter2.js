@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -71,29 +72,14 @@ const ChapterTwo = () => {
 				bridge={`With basic render props understood, Pattern Master Renderius led Aria to the Advanced Delegation Laboratory. "It's more flexible than compound components," Aria noted, "but the consumer has to do more work." Renderius nodded. "Precisely why we have patterns like prop getters - they provide flexibility while reducing the burden on consumers."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> practiced different delegation patterns in the workshop. 
-					"It's more flexible than compound components," she noted, "but the consumer 
-					has to do more work."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong>, perched nearby, observed: "But with great power 
-					comes great responsibility. The consumer must handle more complexity."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Pattern Master Renderius</strong> nodded. "Precisely why we have 
-					patterns like prop getters - they provide flexibility while reducing the 
-					burden on consumers. Let me show you..."
-				</p>
-
-				<p className='story-paragraph'>
-					He demonstrated three advanced patterns, each balancing flexibility and 
-					ease of use differently. "Choose your pattern based on your consumers' needs."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> practiced different delegation patterns in the workshop. "It's more flexible than compound components," she noted, "but the consumer has to do more work."</>,
+				<><strong>Debuggora</strong>, perched nearby, observed: "But with great power comes great responsibility. The consumer must handle more complexity."</>,
+				<><strong>Pattern Master Renderius</strong> nodded. "Precisely why we have patterns like prop getters - they provide flexibility while reducing the burden on consumers. Let me show you..."</>,
+				<>He demonstrated three advanced patterns, each balancing flexibility and ease of use differently. "Choose your pattern based on your consumers' needs."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Advanced Delegation Laboratory</h3>

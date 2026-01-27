@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -66,30 +67,14 @@ const ChapterOne = () => {
 				title={`The Render Delegation`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Pattern Master Renderius</strong> introduced the next concept in a 
-					chamber filled with floating paintbrushes and blank canvases. "Compound 
-					components share state implicitly. Render props share behavior explicitly. 
-					Watch..."
-				</p>
-
-				<p className='story-paragraph'>
-					He showed a component that delegated its rendering to its children. "It's 
-					like giving someone else your paintbrush but guiding their hand."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria's</strong> eyes widened. "So the component provides the logic, 
-					but the consumer provides the UI?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly!" Renderius smiled. "The logic provider says 'here's what's 
-					happening,' and the presentation consumer says 'here's how to show it.' 
-					Maximum flexibility, complete separation of concerns."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Pattern Master Renderius</strong> introduced the next concept in a chamber filled with floating paintbrushes and blank canvases. "Compound components share state implicitly. Render props share behavior explicitly. Watch..."</>,
+				<>He showed a component that delegated its rendering to its children. "It's like giving someone else your paintbrush but guiding their hand."</>,
+				<><strong>Aria's</strong> eyes widened. "So the component provides the logic, but the consumer provides the UI?"</>,
+				<>"Exactly!" Renderius smiled. "The logic provider says 'here's what's happening,' and the presentation consumer says 'here's how to show it.' Maximum flexibility, complete separation of concerns."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Render Delegation Workshop</h3>

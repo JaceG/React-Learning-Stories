@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -82,29 +83,14 @@ const ChapterTwo = () => {
 				bridge={`With the basics understood, Dean Architectus revealed the deeper magic. "Watch how these components share state without explicit props," he demonstrated. A Select component and its Options communicated seamlessly through the Bonding Chamber.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Dean Architectus</strong> led Aria to the Bonding Chamber. "Watch 
-					how these components share state without explicit props," he demonstrated. 
-					A Select component and its Options communicated seamlessly.
-				</p>
-
-				<p className='story-paragraph'>
-					"It's like the Grand Context," <strong>Aria</strong> observed, "but scoped 
-					to a component family!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely! You're combining your Context knowledge with component design. 
-					This is true architectural thinking." The Dean waved his hand, and the 
-					implicit connections became visible - glowing threads of shared state.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> computed rapidly. "The parent provides context, 
-					children consume it, but the API user sees none of this complexity. Elegant!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Dean Architectus</strong> led Aria to the Bonding Chamber. "Watch how these components share state without explicit props," he demonstrated. A Select component and its Options communicated seamlessly.</>,
+				<>"It's like the Grand Context," <strong>Aria</strong> observed, "but scoped to a component family!"</>,
+				<>"Precisely! You're combining your Context knowledge with component design. This is true architectural thinking." The Dean waved his hand, and the implicit connections became visible - glowing threads of shared state.</>,
+				<><strong>Binary</strong> computed rapidly. "The parent provides context, children consume it, but the API user sees none of this complexity. Elegant!"</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Implicit Communication Laboratory</h3>

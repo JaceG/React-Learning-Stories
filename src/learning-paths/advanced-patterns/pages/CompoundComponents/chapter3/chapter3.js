@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -75,31 +76,14 @@ const ChapterThree = () => {
 				bridge={`"Your compound components sing together," Dean Architectus praised as they entered the academy's main hall. "You've learned that the best components hide complexity while maximizing flexibility. Now, let me show you the full symphony."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Your compound components sing together," <strong>Dean Architectus</strong> 
-					praised. "You've learned that the best components hide complexity while 
-					maximizing flexibility. Now, let me show you the full symphony."
-				</p>
-
-				<p className='story-paragraph'>
-					The academy's main hall transformed into a concert stage. Each compound 
-					component system took its place - Accordions, Menus, Forms, and Modals - 
-					all ready to perform together.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched in awe as the components began their performance. 
-					Each system maintained its own state while contributing to the greater whole. 
-					<strong>Binary</strong> calculated the complexity: "Hundreds of possible 
-					interactions, yet the API remains simple!"
-				</p>
-
-				<p className='story-paragraph'>
-					"This is the true power of compound components," Architectus explained. 
-					"Complex behavior, simple interface. Now you're ready for the next pattern."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"Your compound components sing together," <strong>Dean Architectus</strong> praised. "You've learned that the best components hide complexity while maximizing flexibility. Now, let me show you the full symphony."</>,
+				<>The academy's main hall transformed into a concert stage. Each compound component system took its place - Accordions, Menus, Forms, and Modals - all ready to perform together.</>,
+				<><strong>Aria</strong> watched in awe as the components began their performance. Each system maintained its own state while contributing to the greater whole. <strong>Binary</strong> calculated the complexity: "Hundreds of possible interactions, yet the API remains simple!"</>,
+				<>"This is the true power of compound components," Architectus explained. "Complex behavior, simple interface. Now you're ready for the next pattern."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: The Component Symphony Hall</h3>
