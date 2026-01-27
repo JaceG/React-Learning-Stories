@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [effectCount, setEffectCount] = useState(0);
@@ -18,33 +19,21 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title="The Consequence Hook"
-				bridge="Master Hooke led Aria deeper into the forge, where the air shimmered with uncontained magical energy. Here, apprentices worked on hooks that could reach beyond the component boundaries, affecting the world outside."
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title="The Consequence Hook"
+			bridge="Master Hooke led Aria deeper into the forge, where the air shimmered with uncontained magical energy. Here, apprentices worked on hooks that could reach beyond the component boundaries, affecting the world outside."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Now for something more advanced," Master Hooke announced, 
-					approaching a workstation surrounded by glowing runes. "The 
-					<strong>useEffect</strong> hook - perhaps the most powerful 
-					and dangerous tool we craft here."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Now for something more advanced," Master Hooke announced, approaching a workstation surrounded by glowing runes. "The <strong>useEffect</strong> hook - perhaps the most powerful and dangerous tool we craft here."</>,
+				`Binary's lights flickered nervously. "Dangerous? But Aria just started learning!"`,
+				<>"Not dangerous if used wisely," Hooke reassured them. "useEffect is the hook of <strong>consequences</strong>. It lets components reach out and affect the world beyond their boundaries - fetching data, subscribing to services, or synchronizing with external systems."</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's lights flickered nervously. "Dangerous? But Aria just 
-					started learning!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Not dangerous if used wisely," Hooke reassured them. "useEffect 
-					is the hook of <strong>consequences</strong>. It lets components 
-					reach out and affect the world beyond their boundaries - fetching 
-					data, subscribing to services, or synchronizing with external systems."
-				</p>
-
-				<div className='spell-illustration'>
+		<div className='spell-illustration'>
 					<div className='spell-circle'>
 						<div className='spell-core'>
 							<div
@@ -60,15 +49,14 @@ const ChapterTwo = () => {
 								Effects: {effectCount}
 							</div>
 						</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"Watch this demonstration," Master Hooke said, activating the runes. 
-					"Every time the dependency changes, the effect fires. The key is 
-					the dependency array - it controls when your effects activate."
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`"Watch this demonstration," Master Hooke said, activating the runes. "Every time the dependency changes, the effect fires. The key is the dependency array - it controls when your effects activate."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

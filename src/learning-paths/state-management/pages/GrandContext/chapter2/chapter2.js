@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [user, setUser] = useState(null);
@@ -11,32 +12,21 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title="The Living Threads"
-				bridge="Contextia led Aria to a more intricate section of the Grand Hall, where the threads pulsed with different colors and seemed to carry not just data, but also the ability to modify that data."
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title="The Living Threads"
+			bridge="Contextia led Aria to a more intricate section of the Grand Hall, where the threads pulsed with different colors and seemed to carry not just data, but also the ability to modify that data."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"What you've seen so far," Contextia explained, "is just the beginning. 
-					Context threads can carry more than simple values - they can transport 
-					<strong>living state</strong> that components can both read and modify."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"What you've seen so far," Contextia explained, "is just the beginning. Context threads can carry more than simple values - they can transport <strong>living state</strong> that components can both read and modify."</>,
+				`Binary's circuits sparkled with interest. "So components don't just receive data - they can send changes back through the same threads?"`,
+				`"Exactly!" Contextia waved her hand, and a new set of threads appeared, glowing with a golden light. "Watch as I demonstrate with a user authentication system - one of the most common uses for Context in real applications."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's circuits sparkled with interest. "So components don't just 
-					receive data - they can send changes back through the same threads?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly!" Contextia waved her hand, and a new set of threads appeared, 
-					glowing with a golden light. "Watch as I demonstrate with a user 
-					authentication system - one of the most common uses for Context in 
-					real applications."
-				</p>
-
-				<div className='kingdom-illustration'>
+		<div className='kingdom-illustration'>
 					<div className='royal-palace'>
 						<div className='palace-banner'>
 							User Context Provider
@@ -85,16 +75,14 @@ const ChapterTwo = () => {
 								)}
 							</div>
 						</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"See how the Provider doesn't just share the user state," Contextia 
-					pointed to the glowing threads, "but also the functions to login and 
-					logout. Any component connected to this thread can both read the 
-					current user AND change it!"
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`"See how the Provider doesn't just share the user state," Contextia pointed to the glowing threads, "but also the functions to login and logout. Any component connected to this thread can both read the current user AND change it!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

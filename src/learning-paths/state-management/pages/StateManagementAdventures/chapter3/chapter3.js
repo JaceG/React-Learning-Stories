@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeLibrary, setActiveLibrary] = useState('zustand');
@@ -12,37 +13,22 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title="The New State Management Frontiers"
-				bridge="As the afternoon sun filtered through the Citadel's crystalline windows, Grand Reducer led Aria to a chamber filled with glowing portals. Each shimmered with different colors and patterns, pulsing with the energy of innovation."
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title="The New State Management Frontiers"
+			bridge="As the afternoon sun filtered through the Citadel's crystalline windows, Grand Reducer led Aria to a chamber filled with glowing portals. Each shimmered with different colors and patterns, pulsing with the energy of innovation."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"The Redux Archives taught you the classical approach," Grand 
-					Reducer said, his robes shifting to display constellations of 
-					data flow. "But React Kingdom evolves constantly. New pioneers 
-					have charted territories that solve state management differently."
-				</p>
+		<StorySection
+			paragraphs={[
+				`"The Redux Archives taught you the classical approach," Grand Reducer said, his robes shifting to display constellations of data flow. "But React Kingdom evolves constantly. New pioneers have charted territories that solve state management differently."`,
+				`Binary's circuits sparkled with curiosity. "Different from Redux? But that seemed so complete!"`,
+				`"Redux is powerful," Aria reflected, "but it can be complex for smaller applications. What alternatives exist?"`,
+				`Grand Reducer smiled. "Wise observation. Each portal before you leads to a different approach. Some prize simplicity, others performance. Let's explore these modern frontiers together."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's circuits sparkled with curiosity. "Different from Redux? 
-					But that seemed so complete!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Redux is powerful," Aria reflected, "but it can be complex for 
-					smaller applications. What alternatives exist?"
-				</p>
-
-				<p className='story-paragraph'>
-					Grand Reducer smiled. "Wise observation. Each portal before you 
-					leads to a different approach. Some prize simplicity, others 
-					performance. Let's explore these modern frontiers together."
-				</p>
-
-				<div className='frontier-illustration'>
+		<div className='frontier-illustration'>
 					<div className='state-map'>
 						<div className='map-regions'>
 							<div
@@ -99,16 +85,14 @@ const ChapterThree = () => {
 								</button>
 							</div>
 						</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"Each portal represents a modern solution," Grand Reducer 
-					explained, gesturing to the shimmering gateways. "Touch them 
-					to witness their power. Remember, young apprentice - the best 
-					tool depends on your quest's needs, not on following trends."
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`"Each portal represents a modern solution," Grand Reducer explained, gesturing to the shimmering gateways. "Touch them to witness their power. Remember, young apprentice - the best tool depends on your quest's needs, not on following trends."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

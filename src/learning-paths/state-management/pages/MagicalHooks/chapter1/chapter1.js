@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [currentState, setCurrentState] = useState(5);
@@ -14,39 +15,21 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title="The Hook Forge Masters"
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title="The Hook Forge Masters"
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Hook Forge was unlike anything Aria had seen before. 
-					Glowing anvils rang with the sound of hooks being shaped, 
-					while crystalline tubes carried pure React energy to each 
-					workstation.
-				</p>
+		<StorySection
+			paragraphs={[
+				`The Hook Forge was unlike anything Aria had seen before. Glowing anvils rang with the sound of hooks being shaped, while crystalline tubes carried pure React energy to each workstation.`,
+				<>"Welcome to the Hook Forge!" called out a sturdy figure in a leather apron, sparks flying from the hook she was crafting. "I'm <strong>Forge Master Hooke</strong>. Memnon sent word of your arrival."</>,
+				`Binary chirped excitedly. "Master Hooke makes the most powerful hooks in all of React Kingdom! Each one grants unique abilities to functional components!"`,
+				<>"You've already met my most popular creation," Hooke said with pride, holding up a gleaming hook. "The <strong>useState</strong> hook! But let me show you its full potential..."</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"Welcome to the Hook Forge!" called out a sturdy figure in a 
-					leather apron, sparks flying from the hook she was crafting. 
-					"I'm <strong>Forge Master Hooke</strong>. Memnon sent word of 
-					your arrival."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary chirped excitedly. "Master Hooke makes the most powerful 
-					hooks in all of React Kingdom! Each one grants unique abilities 
-					to functional components!"
-				</p>
-
-				<p className='story-paragraph'>
-					"You've already met my most popular creation," Hooke said with 
-					pride, holding up a gleaming hook. "The <strong>useState</strong> 
-					hook! But let me show you its full potential..."
-				</p>
-
-				<div className='potion-illustration'>
+		<div className='potion-illustration'>
 					<div className='potion-bottle'>
 						<div
 							className='potion-liquid'
@@ -54,16 +37,14 @@ const ChapterOne = () => {
 							<span className='potion-value'>{currentState}</span>
 						</div>
 						<div className='potion-label'>Hook Energy Level</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					She led Aria to a workbench where a crystalline apparatus 
-					glowed softly. "useState can hold any type of value - numbers, 
-					strings, objects, arrays. Watch how it preserves the value 
-					between renders and triggers updates when changed!"
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`She led Aria to a workbench where a crystalline apparatus glowed softly. "useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

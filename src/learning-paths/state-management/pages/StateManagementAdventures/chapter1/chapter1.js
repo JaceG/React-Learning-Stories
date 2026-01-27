@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 // Initial state for our adventure
 const initialState = {
@@ -105,38 +106,21 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title="The Reducer's Challenge"
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title="The Reducer's Challenge"
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The State Management Citadel's grand entrance led to a vast chamber 
-					where an elderly figure sat meditating. His robes bore patterns that 
-					shifted like flowing data, and his eyes held the wisdom of countless 
-					state transformations.
-				</p>
+		<StorySection
+			paragraphs={[
+				`The State Management Citadel's grand entrance led to a vast chamber where an elderly figure sat meditating. His robes bore patterns that shifted like flowing data, and his eyes held the wisdom of countless state transformations.`,
+				<>"Welcome, Aria," the figure spoke without opening his eyes. "I am <strong>Grand Reducer</strong>, keeper of predictable state transformations. You've learned to manage simple state, but what happens when state becomes complex, interconnected, and governed by intricate rules?"</>,
+				`Binary whirred thoughtfully. "Simple useState would get messy with all those connections!"`,
+				`"Precisely," Grand Reducer smiled. "That's why we use the reducer pattern. Instead of many separate state updates, we channel all changes through a single, pure function. Watch and learn."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"Welcome, Aria," the figure spoke without opening his eyes. "I am 
-					<strong>Grand Reducer</strong>, keeper of predictable state transformations. 
-					You've learned to manage simple state, but what happens when state becomes 
-					complex, interconnected, and governed by intricate rules?"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary whirred thoughtfully. "Simple useState would get messy with all 
-					those connections!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely," Grand Reducer smiled. "That's why we use the reducer pattern. 
-					Instead of many separate state updates, we channel all changes through a 
-					single, pure function. Watch and learn."
-				</p>
-
-				<div className='realm-illustration'>
+		<div className='realm-illustration'>
 					<div className='state-castle'>
 						<div className='castle-banner'>Current State</div>
 						<div
@@ -152,16 +136,14 @@ const ChapterOne = () => {
 						<div className='temple-inscription'>
 							(state, action) =&gt; newState
 						</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"Your first challenge," Grand Reducer announced, "is to manage an 
-					adventurer's inventory. Multiple items, different actions, complex 
-					rules - all flowing through one reducer function. This is how real 
-					applications handle sophisticated state!"
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`"Your first challenge," Grand Reducer announced, "is to manage an adventurer's inventory. Multiple items, different actions, complex rules - all flowing through one reducer function. This is how real applications handle sophisticated state!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

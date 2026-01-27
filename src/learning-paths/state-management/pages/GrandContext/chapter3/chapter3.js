@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [consumerCount, setConsumerCount] = useState(0);
@@ -13,32 +14,21 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title="The Thread Optimization"
-				bridge="As Aria mastered the basics of Context, Contextia led her to the highest tower of the Grand Hall, where ancient scrolls contained the secrets of Context optimization."
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title="The Thread Optimization"
+			bridge="As Aria mastered the basics of Context, Contextia led her to the highest tower of the Grand Hall, where ancient scrolls contained the secrets of Context optimization."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Aria," Contextia began, her expression serious, "with great power 
-					comes great responsibility. Context threads are magical, but they 
-					have a cost. Every time a Provider's value changes, <strong>all</strong> 
-					connected consumers re-render."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Aria," Contextia began, her expression serious, "with great power comes great responsibility. Context threads are magical, but they have a cost. Every time a Provider's value changes, <strong>all</strong> connected consumers re-render."</>,
+				`Binary's lights dimmed slightly. "All of them? Even if they don't care about the part that changed?"`,
+				`"Precisely the problem," Contextia nodded. "Watch this demonstration. When Context is unoptimized, a single change creates a cascade of unnecessary updates throughout the network."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's lights dimmed slightly. "All of them? Even if they don't 
-					care about the part that changed?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely the problem," Contextia nodded. "Watch this demonstration. 
-					When Context is unoptimized, a single change creates a cascade of 
-					unnecessary updates throughout the network."
-				</p>
-
-				<div className='kingdom-illustration advanced'>
+		<div className='kingdom-illustration advanced'>
 					<div className='optimization-castle'>
 						<div className='castle-banner'>
 							Context Optimization Chamber
@@ -81,16 +71,14 @@ const ChapterThree = () => {
 							onClick={toggleConsumer}>
 							{consumerCount > 0 ? 'Remove' : 'Add'} Consumers
 						</button>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"See how in the unoptimized state, all consumers flash when any 
-					value changes?" Contextia explained. "But with optimization, only 
-					the consumers that actually use the changed data re-render. Let me 
-					show you the techniques."
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`"See how in the unoptimized state, all consumers flash when any value changes?" Contextia explained. "But with optimization, only the consumers that actually use the changed data re-render. Let me show you the techniques."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

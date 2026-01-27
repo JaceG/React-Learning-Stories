@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const initialStoreState = {
 	game: { score: 0, level: 1, lives: 3 },
@@ -85,33 +86,21 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title="The Redux Archives"
-				bridge="Grand Reducer led Aria through a massive doorway into a library that seemed to stretch infinitely upward. Ancient tomes lined the walls, each glowing with the accumulated wisdom of state management patterns from across the ages."
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title="The Redux Archives"
+			bridge="Grand Reducer led Aria through a massive doorway into a library that seemed to stretch infinitely upward. Ancient tomes lined the walls, each glowing with the accumulated wisdom of state management patterns from across the ages."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Before we continue," Grand Reducer said, pulling a massive, 
-					leather-bound book from a pedestal, "you must understand the 
-					history of our craft. This is the <strong>Redux Codex</strong> - 
-					the most influential state management pattern ever created."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Before we continue," Grand Reducer said, pulling a massive, leather-bound book from a pedestal, "you must understand the history of our craft. This is the <strong>Redux Codex</strong> - the most influential state management pattern ever created."</>,
+				`Binary's lights flickered with recognition. "Redux! I've heard stories about its power - a single source of truth for entire applications!"`,
+				`"Indeed," Grand Reducer nodded. "Redux took the reducer pattern you just learned and expanded it to manage an entire application's state. Watch as I demonstrate its principles."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's lights flickered with recognition. "Redux! I've heard 
-					stories about its power - a single source of truth for entire 
-					applications!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Indeed," Grand Reducer nodded. "Redux took the reducer pattern 
-					you just learned and expanded it to manage an entire application's 
-					state. Watch as I demonstrate its principles."
-				</p>
-
-				<div className='empire-illustration'>
+		<div className='empire-illustration'>
 					<div className='central-store'>
 						<div className='store-banner'>The Central Store</div>
 						<div className='store-vault'>
@@ -216,14 +205,11 @@ const ChapterTwo = () => {
 					</div>
 				</div>
 
-				<p className='story-paragraph'>
-					"Redux operates on three sacred principles," Grand Reducer explained. 
-					"First, a <strong>single source of truth</strong> - all state lives 
-					in one store. Second, <strong>state is read-only</strong> - the only 
-					way to change it is through actions. Third, <strong>changes are made 
-					with pure functions</strong> - reducers that never mutate state."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"Redux operates on three sacred principles," Grand Reducer explained. "First, a <strong>single source of truth</strong> - all state lives in one store. Second, <strong>state is read-only</strong> - the only way to change it is through actions. Third, <strong>changes are made with pure functions</strong> - reducers that never mutate state."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

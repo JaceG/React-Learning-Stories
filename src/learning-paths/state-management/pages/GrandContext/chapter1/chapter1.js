@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [theme, setTheme] = useState('light');
@@ -10,32 +11,20 @@ const ChapterOne = () => {
 
 	return (
 		<div className={`chapter ${theme}`}>
-			<ChapterIntro
-				chapterNumber={1}
-				title="The Context Keepers' Hall"
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title="The Context Keepers' Hall"
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Grand Hall was breathtaking - a vast circular chamber with a 
-					domed ceiling covered in constellations of glowing threads. Each thread 
-					connected different points throughout the hall, creating an intricate 
-					web of light that pulsed with data.
-				</p>
+		<StorySection
+			paragraphs={[
+				`The Grand Hall was breathtaking - a vast circular chamber with a domed ceiling covered in constellations of glowing threads. Each thread connected different points throughout the hall, creating an intricate web of light that pulsed with data.`,
+				<>"Welcome, young Aria," came a gentle voice from the center of the hall. A tall figure in flowing robes approached, her hands gracefully tracing patterns in the air that made the threads glow brighter. "I am <strong>Contextia</strong>, Keeper of the Grand Context."</>,
+				`Binary whistled in awe. "Look at all those connections! They bypass the normal prop chains entirely!"`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"Welcome, young Aria," came a gentle voice from the center of the hall. 
-					A tall figure in flowing robes approached, her hands gracefully tracing 
-					patterns in the air that made the threads glow brighter. "I am 
-					<strong>Contextia</strong>, Keeper of the Grand Context."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary whistled in awe. "Look at all those connections! They bypass 
-					the normal prop chains entirely!"
-				</p>
-
-				<div className='kingdom-illustration'>
+		<div className='kingdom-illustration'>
 					<div className={`castle ${theme}`}>
 						<div className='castle-flag'>Provider</div>
 						<div className='castle-tower'>
@@ -56,27 +45,16 @@ const ChapterOne = () => {
 								</div>
 							</div>
 						</div>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"You see," Contextia explained, gesturing to the glowing threads, 
-					"in the early days of React Kingdom, components had to pass messages 
-					through every single component in between - what we call 'prop drilling.' 
-					But Context allows us to create <strong>direct connections</strong> between 
-					any provider and its consumers, no matter how far apart they are!"
-				</p>
-
-				<p className='story-paragraph'>
-					Aria watched in fascination as data seemed to teleport along the threads. 
-					"It's like... magical portals for data!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely!" Contextia smiled. "Let me show you how it works with a 
-					simple example - theme management for an entire application."
-				</p>
 			</div>
+
+		<StorySection
+			paragraphs={[
+				<>"You see," Contextia explained, gesturing to the glowing threads, "in the early days of React Kingdom, components had to pass messages through every single component in between - what we call 'prop drilling.' But Context allows us to create <strong>direct connections</strong> between any provider and its consumers, no matter how far apart they are!"</>,
+				`Aria watched in fascination as data seemed to teleport along the threads. "It's like... magical portals for data!"`,
+				`"Precisely!" Contextia smiled. "Let me show you how it works with a simple example - theme management for an entire application."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

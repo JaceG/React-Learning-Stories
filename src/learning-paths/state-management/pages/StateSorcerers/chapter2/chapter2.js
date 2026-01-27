@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [formData, setFormData] = useState({
@@ -21,38 +22,22 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title="The Transformation Spells"
-				bridge="After mastering simple state with numbers, Memnon led Aria deeper into the crystal spire. The walls here pulsed with more complex patterns - orbs containing entire collections of memories swirling together."
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title="The Transformation Spells"
+			bridge="After mastering simple state with numbers, Memnon led Aria deeper into the crystal spire. The walls here pulsed with more complex patterns - orbs containing entire collections of memories swirling together."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Now," Memnon announced, his staff glowing brighter, "you're ready 
-					for the deeper mysteries. State can hold more than simple values - 
-					it can contain <strong>objects</strong>, <strong>arrays</strong>, 
-					even nested structures of incredible complexity!"
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary bounced excitedly, projecting holographic shapes in the air. 
-					"But there's a sacred rule, Aria! State memories are <strong>immutable</strong> - 
-					you can never change them directly. You must always create new memories!"
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Now," Memnon announced, his staff glowing brighter, "you're ready for the deeper mysteries. State can hold more than simple values - it can contain <strong>objects</strong>, <strong>arrays</strong>, even nested structures of incredible complexity!"</>,
+				<>Binary bounced excitedly, projecting holographic shapes in the air. "But there's a sacred rule, Aria! State memories are <strong>immutable</strong> - you can never change them directly. You must always create new memories!"</>,
+				`Aria looked puzzled. "But why can't we just change the existing memory?"`,
+				`"Ah, an excellent question!" Memnon smiled. "React needs to know when something has changed to update the kingdom's reality. If you secretly modify a memory, React won't notice. But if you create a completely new memory, React sees the change and updates everything accordingly!"`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Aria looked puzzled. "But why can't we just change the existing memory?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Ah, an excellent question!" Memnon smiled. "React needs to know when 
-					something has changed to update the kingdom's reality. If you secretly 
-					modify a memory, React won't notice. But if you create a completely new 
-					memory, React sees the change and updates everything accordingly!"
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="Complex State Transformation"
 					discoveredBy="The Immutability Principle"
 					code={`function SorcererForm() {
@@ -84,15 +69,13 @@ const ChapterTwo = () => {
     </form>
   );
 }`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					"Watch closely," Memnon demonstrated, tracing glowing patterns in the air. 
-					"The spread operator (...) is your most powerful ally. It creates copies 
-					of existing memories while allowing you to change specific parts!"
-				</p>
-				
-			</div>
+		<StorySection
+			paragraphs={[
+				`"Watch closely," Memnon demonstrated, tracing glowing patterns in the air. "The spread operator (...) is your most powerful ally. It creates copies of existing memories while allowing you to change specific parts!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

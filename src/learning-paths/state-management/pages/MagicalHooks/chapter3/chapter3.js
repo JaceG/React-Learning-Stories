@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [renderCount, setRenderCount] = useState(0);
@@ -18,27 +19,20 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title="The Specialized Tools"
-				bridge="As the afternoon sun filtered through the forge's crystalline windows, Master Hooke led Aria to a special vault containing the most specialized hooks - tools designed for specific challenges that React developers face."
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title="The Specialized Tools"
+			bridge="As the afternoon sun filtered through the forge's crystalline windows, Master Hooke led Aria to a special vault containing the most specialized hooks - tools designed for specific challenges that React developers face."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"These are our precision instruments," Master Hooke said, opening 
-					an ornate chest. "Not every component needs them, but when you do, 
-					they're invaluable. Meet <strong>useRef</strong>, the memory crystal; 
-					<strong>useMemo</strong>, the calculation cache; and <strong>useCallback</strong>, 
-					the function preserver."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"These are our precision instruments," Master Hooke said, opening an ornate chest. "Not every component needs them, but when you do, they're invaluable. Meet <strong>useRef</strong>, the memory crystal; <strong>useMemo</strong>, the calculation cache; and <strong>useCallback</strong>, the function preserver."</>,
+				`Aria examined each tool carefully. "They look powerful, but when would I need them instead of useState or useEffect?"`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Aria examined each tool carefully. "They look powerful, but when 
-					would I need them instead of useState or useEffect?"
-				</p>
-
-				<div className='artifacts-illustration'>
+		<div className='artifacts-illustration'>
 					<div className='artifact-container'>
 						<div className='artifact ref-crystal'>
 							<div className='artifact-label'>useRef</div>
@@ -60,17 +54,14 @@ const ChapterThree = () => {
 					<div className='render-counter'>
 						Component Renders:{' '}
 						<span className='render-count'>{renderCount}</span>
-					</div>
 				</div>
-
-				<p className='story-paragraph'>
-					"Excellent question!" Master Hooke beamed. "useRef is like a secret 
-					pocket - it holds values that persist between renders but <em>don't</em> 
-					trigger re-renders when changed. Perfect for DOM references or storing 
-					previous values."
-				</p>
-
 			</div>
+
+		<StorySection
+			paragraphs={[
+				<>"Excellent question!" Master Hooke beamed. "useRef is like a secret pocket - it holds values that persist between renders but <em>don't</em> trigger re-renders when changed. Perfect for DOM references or storing previous values."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

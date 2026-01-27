@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [count, setCount] = useState(0);
@@ -12,32 +13,20 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title="The Memory Keepers"
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title="The Memory Keepers"
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					As Aria entered the Eastern Quarter, she marveled at the crystal 
-					spires that seemed to pulse with living energy. Each tower contained 
-					countless glowing orbs - the stored memories of a thousand components.
-				</p>
+		<StorySection
+			paragraphs={[
+				`As Aria entered the Eastern Quarter, she marveled at the crystal spires that seemed to pulse with living energy. Each tower contained countless glowing orbs - the stored memories of a thousand components.`,
+				<>At the entrance to the tallest spire stood a figure in flowing robes, his staff topped with a constantly shifting orb of light. "Welcome, Aria," he said warmly. "I am <strong>Memnon</strong>, Chief of the State Sorcerers. Chronos told me of your arrival."</>,
+				`Binary zipped around excitedly. "State Sorcerers are amazing! They can remember things between renders! Regular components forget everything each time they re-render, but not these magical beings!"`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					At the entrance to the tallest spire stood a figure in flowing 
-					robes, his staff topped with a constantly shifting orb of light. 
-					"Welcome, Aria," he said warmly. "I am <strong>Memnon</strong>, 
-					Chief of the State Sorcerers. Chronos told me of your arrival."
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary zipped around excitedly. "State Sorcerers are amazing! They 
-					can remember things between renders! Regular components forget 
-					everything each time they re-render, but not these magical beings!"
-				</p>
-
-				<div className='sorcerer-illustration'>
+		<div className='sorcerer-illustration'>
 					<div className='sorcerer'>
 						<div className='sorcerer-head'></div>
 						<div className='sorcerer-body'></div>
@@ -49,29 +38,18 @@ const ChapterOne = () => {
 						<div className='memory-orb'>count: 0</div>
 						<div className='memory-orb'>name: ""</div>
 						<div className='memory-orb'>isActive: false</div>
-					</div>
-				</div>
+			</div>
+		</div>
 
-				<p className='story-paragraph'>
-					Memnon gestured to the glowing orbs floating around his staff. 
-					"You see these memory orbs? They represent <strong>state</strong> - 
-					the magical ability for components to remember information between 
-					renderings. Without state, components would be like goldfish, 
-					forgetting everything the moment they blink!"
-				</p>
+		<StorySection
+			paragraphs={[
+				<>Memnon gestured to the glowing orbs floating around his staff. "You see these memory orbs? They represent <strong>state</strong> - the magical ability for components to remember information between renderings. Without state, components would be like goldfish, forgetting everything the moment they blink!"</>,
+				`"But how do we give components this power?" Aria asked, her eyes wide with curiosity.`,
+				<>Memnon smiled and pulled out a shimmering hook from his robes. "With this - the <strong>useState</strong> hook! It's the most fundamental spell in our arsenal. Let me show you..."</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"But how do we give components this power?" Aria asked, her eyes 
-					wide with curiosity.
-				</p>
-				
-				<p className='story-paragraph'>
-					Memnon smiled and pulled out a shimmering hook from his robes. 
-					"With this - the <strong>useState</strong> hook! It's the most 
-					fundamental spell in our arsenal. Let me show you..."
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="The useState Incantation"
 					discoveredBy="Memnon's First Lesson"
 					code={`function Counter() {
@@ -87,17 +65,13 @@ const ChapterOne = () => {
     </div>
   );
 }`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					"Observe carefully," Memnon explained, tracing the spell in the air. 
-					"The useState hook returns two things: a <strong>value</strong> (what 
-					you remember) and a <strong>setter</strong> (the spell to change that 
-					memory). When you call the setter, React knows to re-render the 
-					component with the new memory!"
-				</p>
-				
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"Observe carefully," Memnon explained, tracing the spell in the air. "The useState hook returns two things: a <strong>value</strong> (what you remember) and a <strong>setter</strong> (the spell to change that memory). When you call the setter, React knows to re-render the component with the new memory!"</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

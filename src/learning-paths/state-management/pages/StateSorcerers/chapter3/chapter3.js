@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [items, setItems] = useState([
@@ -23,23 +24,19 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title="The Side Effect Enchantments"
-				bridge="As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component."
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title="The Side Effect Enchantments"
+			bridge="As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component."
+		/>
 
-			<div className='story-section'>
+		<StorySection
+			paragraphs={[
+				`"There exists a second magical hook," explained the mentor, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"There exists a second magical hook," explained the mentor,
-					"called useEffect. This hook allows you to perform side
-					effects when your state changes, like communicating with
-					remote data sources, directly manipulating the DOM, or
-					setting up subscriptions."
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="useEffect Side Effects"
 					discoveredBy="Memnon's Advanced Teachings"
 					code={`function EnchantedItems() {
@@ -84,10 +81,9 @@ const ChapterThree = () => {
     </div>
   );
 }`}
-				/>
-			</div>
+			/>
 
-			<div className='interactive-section'>
+		<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Artifact Collection Trial
 				</h3>
