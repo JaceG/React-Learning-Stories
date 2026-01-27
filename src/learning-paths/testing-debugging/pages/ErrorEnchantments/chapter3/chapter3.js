@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -115,32 +116,14 @@ const ChapterThree = () => {
 				bridge={`The final chamber of the Error Enchantments sanctuary glowed with monitors showing live production data. "This is where theory meets reality," Safiya gestured to the displays. "Production errors are different beasts - unpredictable, varied, and often silent. The key is not preventing all errors, but graceful degradation and quick recovery."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The final chamber of the Error Enchantments sanctuary glowed with monitors 
-					showing live production data. <strong>Safiya</strong> gestured to the displays. 
-					"This is where theory meets reality. Production errors are different beasts - 
-					unpredictable, varied, and often silent."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched as error patterns flowed across the screens. Some 
-					errors appeared frequently but had low impact. Others were rare but catastrophic. 
-					"The key," Safiya explained, "is not preventing all errors - that's impossible. 
-					It's about graceful degradation and quick recovery."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> pointed to a particularly nasty ChunkLoadError. "In 
-					production, users have different networks, devices, and browsers. Errors you never 
-					saw in development will emerge. Your enchantments must be adaptive."
-				</p>
-
-				<p className='story-paragraph'>
-					"Remember," Safiya concluded, "error handling is about user experience. A well-handled 
-					error that lets users continue is better than a perfect app that crashes completely."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The final chamber of the Error Enchantments sanctuary glowed with monitors showing live production data. <strong>Safiya</strong> gestured to the displays. "This is where theory meets reality. Production errors are different beasts - unpredictable, varied, and often silent."</>,
+					<><strong>Aria</strong> watched as error patterns flowed across the screens. Some errors appeared frequently but had low impact. Others were rare but catastrophic. "The key," Safiya explained, "is not preventing all errors - that's impossible. It's about graceful degradation and quick recovery."</>,
+					<><strong>Debuggora</strong> pointed to a particularly nasty ChunkLoadError. "In production, users have different networks, devices, and browsers. Errors you never saw in development will emerge. Your enchantments must be adaptive."</>,
+					`"Remember," Safiya concluded, "error handling is about user experience. A well-handled error that lets users continue is better than a perfect app that crashes completely."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Production Error Command Center</h3>

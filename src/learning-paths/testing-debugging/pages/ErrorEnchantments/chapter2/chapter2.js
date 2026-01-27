@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -12,7 +13,7 @@ const ChapterTwo = () => {
 		addFallbackStrategy,
 		errorLogbook,
 		logError,
-		protectionLevel
+		protectionLevel,
 	} = useOutletContext();
 
 	const [selectedComponent, setSelectedComponent] = useState(null);
@@ -21,34 +22,34 @@ const ChapterTwo = () => {
 
 	// Components that need error boundaries
 	const vulnerableComponents = [
-		{ 
+		{
 			id: 'userProfile',
 			name: 'User Profile',
 			icon: '👤',
 			vulnerability: 'Async data loading',
-			protected: false
+			protected: false,
 		},
-		{ 
+		{
 			id: 'dataGrid',
 			name: 'Data Grid',
 			icon: '📊',
 			vulnerability: 'Complex rendering logic',
-			protected: false
+			protected: false,
 		},
-		{ 
+		{
 			id: 'paymentForm',
 			name: 'Payment Form',
 			icon: '💳',
 			vulnerability: 'Third-party integration',
-			protected: false
+			protected: false,
 		},
-		{ 
+		{
 			id: 'chatWidget',
 			name: 'Chat Widget',
 			icon: '💬',
 			vulnerability: 'Real-time updates',
-			protected: false
-		}
+			protected: false,
+		},
 	];
 
 	// Create error boundary for component
@@ -57,14 +58,14 @@ const ChapterTwo = () => {
 			id: component.id,
 			name: `${component.name} Boundary`,
 			component: component.name,
-			fallback: 'default'
+			fallback: 'default',
 		});
 
 		// Add fallback strategy
 		addFallbackStrategy(component.id, {
 			type: 'graceful',
 			message: `${component.name} is temporarily unavailable`,
-			retry: true
+			retry: true,
 		});
 
 		setSelectedComponent(null);
@@ -79,10 +80,12 @@ const ChapterTwo = () => {
 			error: {
 				type: 'Test Error',
 				message: `Simulated error in ${component.name}`,
-				component: component.name
+				component: component.name,
 			},
 			timestamp: new Date().toISOString(),
-			handled: errorBoundaries.find(b => b.component === component.name) ? true : false
+			handled: errorBoundaries.find((b) => b.component === component.name)
+				? true
+				: false,
 		});
 
 		setTimeout(() => setTestError(null), 3000);
@@ -96,67 +99,84 @@ const ChapterTwo = () => {
 				bridge={`Safiya led Aria to the Boundary Workshop. "Error Boundaries are React's built-in protection spell," she explained. "They catch errors in component trees and display fallback UI instead of crashing." She deliberately triggered an error to demonstrate - the unprotected component crashed everything, while the protected one displayed a gentle message.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Safiya</strong> led Aria to the Boundary Workshop. "Error Boundaries 
-					are React's built-in protection spell," she explained. "They catch errors in 
-					component trees and display fallback UI instead of crashing."
-				</p>
-
-				<p className='story-paragraph'>
-					The workshop was filled with shimmering barriers, each protecting a different 
-					component. "Watch this," Safiya said, deliberately triggering an error in an 
-					unprotected component. The error spread like wildfire, crashing everything it 
-					touched.
-				</p>
-
-				<p className='story-paragraph'>
-					Then she triggered the same error in a protected component. The boundary 
-					contained it, displaying a gentle message instead. "Error Boundaries act like 
-					try-catch for components," <strong>Debuggora</strong> explained. "But they only 
-					catch certain errors."
-				</p>
-
-				<p className='story-paragraph'>
-					"The art," Safiya continued, "is knowing where to place boundaries and what 
-					fallback UI to show. Too many boundaries fragment your app. Too few leave it 
-					vulnerable."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>
+						<strong>Safiya</strong> led Aria to the Boundary
+						Workshop. "Error Boundaries are React's built-in
+						protection spell," she explained. "They catch errors in
+						component trees and display fallback UI instead of
+						crashing."
+					</>,
+					`The workshop was filled with shimmering barriers, each protecting a different component. "Watch this," Safiya said, deliberately triggering an error in an unprotected component. The error spread like wildfire, crashing everything it touched.`,
+					<>
+						Then she triggered the same error in a protected
+						component. The boundary contained it, displaying a
+						gentle message instead. "Error Boundaries act like
+						try-catch for components," <strong>Debuggora</strong>{' '}
+						explained. "But they only catch certain errors."
+					</>,
+					`"The art," Safiya continued, "is knowing where to place boundaries and what fallback UI to show. Too many boundaries fragment your app. Too few leave it vulnerable."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Error Boundary Workshop</h3>
-				
+
 				<div className='error-boundary-workshop'>
 					<h4>
 						<span className='service-icon'>🛡️</span>
 						Component Protection Status
 					</h4>
-					
-					<button 
+
+					<button
 						className='mock-button'
-						onClick={() => setBoundaryCreationMode(!boundaryCreationMode)}>
-						{boundaryCreationMode ? 'Exit Protection Mode' : 'Create Error Boundaries'}
+						onClick={() =>
+							setBoundaryCreationMode(!boundaryCreationMode)
+						}>
+						{boundaryCreationMode
+							? 'Exit Protection Mode'
+							: 'Create Error Boundaries'}
 					</button>
-					
+
 					<div className='boundary-components'>
-						{vulnerableComponents.map(component => {
-							const isProtected = errorBoundaries.find(b => b.component === component.name);
+						{vulnerableComponents.map((component) => {
+							const isProtected = errorBoundaries.find(
+								(b) => b.component === component.name
+							);
 							return (
-								<div 
+								<div
 									key={component.id}
 									className={`component-boundary ${isProtected ? 'protected' : ''} ${
-										testError?.component === component.name ? 'error-active' : ''
+										testError?.component === component.name
+											? 'error-active'
+											: ''
 									}`}
-									onClick={() => boundaryCreationMode && !isProtected && setSelectedComponent(component)}>
-									<div style={{ fontSize: '30px', marginBottom: '10px' }}>{component.icon}</div>
-									<div className='component-name'>{component.name}</div>
-									<div className='vulnerability-info'>{component.vulnerability}</div>
+									onClick={() =>
+										boundaryCreationMode &&
+										!isProtected &&
+										setSelectedComponent(component)
+									}>
+									<div
+										style={{
+											fontSize: '30px',
+											marginBottom: '10px',
+										}}>
+										{component.icon}
+									</div>
+									<div className='component-name'>
+										{component.name}
+									</div>
+									<div className='vulnerability-info'>
+										{component.vulnerability}
+									</div>
 									<div className='boundary-status'>
-										{isProtected ? '✓ Protected' : '⚠️ Vulnerable'}
+										{isProtected
+											? '✓ Protected'
+											: '⚠️ Vulnerable'}
 									</div>
 									{!boundaryCreationMode && (
-										<button 
+										<button
 											className='test-error-button'
 											onClick={(e) => {
 												e.stopPropagation();
@@ -173,29 +193,38 @@ const ChapterTwo = () => {
 
 				{selectedComponent && boundaryCreationMode && (
 					<div className='boundary-creation-panel'>
-						<h4>Configure Error Boundary: {selectedComponent.name}</h4>
-						
+						<h4>
+							Configure Error Boundary: {selectedComponent.name}
+						</h4>
+
 						<div className='fallback-options'>
 							<h5>Choose Fallback Strategy:</h5>
 							<div className='fallback-screen'>
 								<div className='fallback-icon'>⚠️</div>
 								<div className='fallback-message'>
-									Something went wrong in {selectedComponent.name}
+									Something went wrong in{' '}
+									{selectedComponent.name}
 								</div>
 								<div className='fallback-actions'>
-									<button className='fallback-button primary'>Try Again</button>
-									<button className='fallback-button'>Go Back</button>
+									<button className='fallback-button primary'>
+										Try Again
+									</button>
+									<button className='fallback-button'>
+										Go Back
+									</button>
 								</div>
 							</div>
 						</div>
-						
+
 						<div className='boundary-controls'>
-							<button 
+							<button
 								className='mock-button'
-								onClick={() => protectComponent(selectedComponent)}>
+								onClick={() =>
+									protectComponent(selectedComponent)
+								}>
 								Create Boundary
 							</button>
-							<button 
+							<button
 								className='mock-button'
 								onClick={() => setSelectedComponent(null)}>
 								Cancel
@@ -207,31 +236,54 @@ const ChapterTwo = () => {
 				{errorLogbook.length > 0 && (
 					<div className='error-logbook'>
 						<div className='logbook-header'>Error Logbook</div>
-						{errorLogbook.slice(-5).reverse().map(entry => (
-							<div 
-								key={entry.id} 
-								className={`log-entry ${entry.handled ? 'handled' : ''} ${
-									entry.recovered ? 'recovered' : ''
-								}`}>
-								<div className='log-timestamp'>{new Date(entry.timestamp).toLocaleTimeString()}</div>
-								<div className='log-error-type'>{entry.error.type}</div>
-								<div className='log-message'>{entry.error.message}</div>
-								{entry.handled && <span className='handled-badge'>Handled</span>}
-							</div>
-						))}
+						{errorLogbook
+							.slice(-5)
+							.reverse()
+							.map((entry) => (
+								<div
+									key={entry.id}
+									className={`log-entry ${entry.handled ? 'handled' : ''} ${
+										entry.recovered ? 'recovered' : ''
+									}`}>
+									<div className='log-timestamp'>
+										{new Date(
+											entry.timestamp
+										).toLocaleTimeString()}
+									</div>
+									<div className='log-error-type'>
+										{entry.error.type}
+									</div>
+									<div className='log-message'>
+										{entry.error.message}
+									</div>
+									{entry.handled && (
+										<span className='handled-badge'>
+											Handled
+										</span>
+									)}
+								</div>
+							))}
 					</div>
 				)}
 			</div>
 
 			<div className='code-section'>
 				<div className='code-header'>
-					<span className='code-title'>Error Boundary Implementation</span>
+					<span className='code-title'>
+						Error Boundary Implementation
+					</span>
 					<div className='code-actions'>
-						<button onClick={() => logError({ 
-							error: { type: 'Demo', message: 'Boundary test' },
-							timestamp: new Date().toISOString(),
-							handled: true
-						})}>
+						<button
+							onClick={() =>
+								logError({
+									error: {
+										type: 'Demo',
+										message: 'Boundary test',
+									},
+									timestamp: new Date().toISOString(),
+									handled: true,
+								})
+							}>
 							Log Test Error
 						</button>
 					</div>
@@ -403,9 +455,11 @@ function useErrorHandler() {
 }`}
 				/>
 				<div className='code-tooltip'>
-					<strong>Boundary Wisdom:</strong> "Error Boundaries don't catch errors in event 
-					handlers, async code, SSR, or in the boundary itself. Place them strategically - 
-					around feature sections, not every component. Each boundary is a safety checkpoint."
+					<strong>Boundary Wisdom:</strong> "Error Boundaries don't
+					catch errors in event handlers, async code, SSR, or in the
+					boundary itself. Place them strategically - around feature
+					sections, not every component. Each boundary is a safety
+					checkpoint."
 				</div>
 			</div>
 
@@ -415,29 +469,31 @@ function useErrorHandler() {
 					content: (
 						<>
 							<p>
-								Error Boundaries are React's way of containing component failures. They work like 
-								try-catch blocks but for component trees. When an error occurs in a child component, 
-								the boundary catches it and renders fallback UI instead of crashing the entire app.
+								Error Boundaries are React's way of containing
+								component failures. They work like try-catch
+								blocks but for component trees. When an error
+								occurs in a child component, the boundary
+								catches it and renders fallback UI instead of
+								crashing the entire app.
 							</p>
 							<p>
-								The strategic placement of Error Boundaries is crucial. Too granular, and you 
-								fragment the user experience. Too broad, and large sections fail together. The 
-								sweet spot is usually around feature boundaries or major UI sections.
+								The strategic placement of Error Boundaries is
+								crucial. Too granular, and you fragment the user
+								experience. Too broad, and large sections fail
+								together. The sweet spot is usually around
+								feature boundaries or major UI sections.
 							</p>
 						</>
-					)
+					),
 				}}
 				reflectionQuestions={[
 					`What errors can't Error Boundaries catch? Consider why event handlers and async code need different error handling strategies. How would you handle errors in these cases?`,
-					`How do you decide where to place Error Boundaries? Think about user experience - which parts of your app can fail independently? What's the impact of showing fallback UI in different locations?`
+					`How do you decide where to place Error Boundaries? Think about user experience - which parts of your app can fail independently? What's the impact of showing fallback UI in different locations?`,
 				]}
 				journalEntry={{
 					title: `Aria's Journal - Day 32 (Afternoon)`,
-					content: `The Boundary Workshop! Safiya demonstrated: an unprotected component error crashed everything, but a protected one showed a gentle fallback message. Error Boundaries are React's try-catch for component trees! Class components with getDerivedStateFromError() and componentDidCatch(). I protected four vulnerable components: User Profile (async loading), Data Grid (complex rendering), Payment Form (third-party integration), and Chat Widget (real-time updates). Each boundary logs errors and shows retry options. Critical: Error Boundaries don't catch errors in event handlers, async code, SSR, or in themselves! Strategic placement is key - around feature boundaries, not every component.`
+					content: `The Boundary Workshop! Safiya demonstrated: an unprotected component error crashed everything, but a protected one showed a gentle fallback message. Error Boundaries are React's try-catch for component trees! Class components with getDerivedStateFromError() and componentDidCatch(). I protected four vulnerable components: User Profile (async loading), Data Grid (complex rendering), Payment Form (third-party integration), and Chat Widget (real-time updates). Each boundary logs errors and shows retry options. Critical: Error Boundaries don't catch errors in event handlers, async code, SSR, or in themselves! Strategic placement is key - around feature boundaries, not every component.`,
 				}}
-				chapterEnding={[
-					`As boundaries shimmered into place around vulnerable components, Safiya smiled. "You've learned to contain errors. Tomorrow, we'll explore production error handling - monitoring, logging, and recovering gracefully from the unexpected..."`
-				]}
 			/>
 		</div>
 	);

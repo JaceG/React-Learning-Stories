@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -11,7 +12,7 @@ const ChapterOne = () => {
 		bugTrail,
 		debugDepth,
 		descendDeeper,
-		captureBug
+		captureBug,
 	} = useOutletContext();
 
 	const [dungeonBugs, setDungeonBugs] = useState([]);
@@ -21,17 +22,48 @@ const ChapterOne = () => {
 	// Generate dungeon bugs
 	useEffect(() => {
 		const bugs = [
-			{ id: 1, type: 'race-condition', icon: '🏃', speed: 'fast', behavior: 'flickering' },
-			{ id: 2, type: 'memory-leak', icon: '💧', speed: 'slow', behavior: 'growing' },
-			{ id: 3, type: 'null-reference', icon: '👻', speed: 'medium', behavior: 'vanishing' }
+			{
+				id: 1,
+				type: 'race-condition',
+				icon: '🏃',
+				speed: 'fast',
+				behavior: 'flickering',
+			},
+			{
+				id: 2,
+				type: 'memory-leak',
+				icon: '💧',
+				speed: 'slow',
+				behavior: 'growing',
+			},
+			{
+				id: 3,
+				type: 'null-reference',
+				icon: '👻',
+				speed: 'medium',
+				behavior: 'vanishing',
+			},
 		];
 		setDungeonBugs(bugs);
 
 		// Simulate console errors
 		const errors = [
-			{ type: 'error', message: 'Cannot read property "state" of undefined', timestamp: '14:23:45' },
-			{ type: 'warn', message: 'Component is changing an uncontrolled input to be controlled', timestamp: '14:23:47' },
-			{ type: 'error', message: 'Maximum update depth exceeded', timestamp: '14:23:52' }
+			{
+				type: 'error',
+				message: 'Cannot read property "state" of undefined',
+				timestamp: '14:23:45',
+			},
+			{
+				type: 'warn',
+				message:
+					'Component is changing an uncontrolled input to be controlled',
+				timestamp: '14:23:47',
+			},
+			{
+				type: 'error',
+				message: 'Maximum update depth exceeded',
+				timestamp: '14:23:52',
+			},
 		];
 		setLoggedErrors(errors);
 	}, []);
@@ -42,71 +74,81 @@ const ChapterOne = () => {
 			...bug,
 			component: 'UserDashboard',
 			file: 'Dashboard.js',
-			line: Math.floor(Math.random() * 200) + 1
+			line: Math.floor(Math.random() * 200) + 1,
 		});
 	};
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title={`Descent into Darkness`}
+			<ChapterIntro chapterNumber={1} title={`Descent into Darkness`} />
+
+			<StorySection
+				paragraphs={[
+					`Below the Testing Tower lay the Debug Dungeon, where the most elusive bugs hid. These weren't ordinary bugs - they were production bugs, shape-shifters that behaved differently than in development.`,
+					<>
+						<strong>Dungeon Keeper Logsworth</strong> met them at
+						the entrance, his beard grey from years of debugging.
+						"Even with tests, some bugs slip through. Here, we hunt
+						them in production."
+					</>,
+					<>
+						The dungeon was a maze of error logs, stack traces, and
+						mysterious behaviors. <strong>Debuggora's</strong> eyes
+						glowed brighter in the darkness. "I sense a race
+						condition bug - the most elusive kind! It appears and
+						disappears based on timing."
+					</>,
+				]}
 			/>
-
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Below the Testing Tower lay the Debug Dungeon, where the most elusive bugs 
-					hid. These weren't ordinary bugs - they were production bugs, shape-shifters 
-					that behaved differently than in development.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Dungeon Keeper Logsworth</strong> met them at the entrance, his beard 
-					grey from years of debugging. "Even with tests, some bugs slip through. Here, 
-					we hunt them in production."
-				</p>
-
-				<p className='story-paragraph'>
-					The dungeon was a maze of error logs, stack traces, and mysterious behaviors. 
-					<strong>Debuggora's</strong> eyes glowed brighter in the darkness. "I sense a 
-					race condition bug - the most elusive kind! It appears and disappears based 
-					on timing."
-				</p>
-
-			</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Dungeon Entrance</h3>
-				
+
 				<div className='dungeon-entrance'>
 					<h4>Production Bug Hunt</h4>
-					<p>The deeper you go, the stranger the bugs become. Use your debugging tools 
-					to track and capture them!</p>
-					
+					<p>
+						The deeper you go, the stranger the bugs become. Use
+						your debugging tools to track and capture them!
+					</p>
+
 					<div className='dungeon-levels'>
-						<div className={`dungeon-level ${debugDepth === 0 ? 'active' : ''}`}>
-							<span className='level-indicator'>Level {debugDepth}</span>
-							<p>Current depth: {debugDepth === 0 ? 'Surface Level' : 
-								debugDepth === 1 ? 'Component Layer' : 
-								debugDepth === 2 ? 'State Management' : 'Deep Production'}</p>
-							
+						<div
+							className={`dungeon-level ${debugDepth === 0 ? 'active' : ''}`}>
+							<span className='level-indicator'>
+								Level {debugDepth}
+							</span>
+							<p>
+								Current depth:{' '}
+								{debugDepth === 0
+									? 'Surface Level'
+									: debugDepth === 1
+										? 'Component Layer'
+										: debugDepth === 2
+											? 'State Management'
+											: 'Deep Production'}
+							</p>
+
 							<div className='race-condition-bug'>
 								{dungeonBugs.map((bug, index) => (
 									<div
 										key={bug.id}
 										className={`racing-bug ${selectedBug?.id === bug.id ? 'caught' : ''}`}
-										style={{ 
+										style={{
 											animationDelay: `${index * 0.5}s`,
-											animationDuration: bug.speed === 'fast' ? '3s' : 
-												bug.speed === 'slow' ? '7s' : '5s'
+											animationDuration:
+												bug.speed === 'fast'
+													? '3s'
+													: bug.speed === 'slow'
+														? '7s'
+														: '5s',
 										}}
 										onClick={() => huntBug(bug)}>
 										{bug.icon}
 									</div>
 								))}
 							</div>
-							
-							<button 
+
+							<button
 								className='test-button'
 								onClick={descendDeeper}>
 								Descend Deeper
@@ -116,26 +158,32 @@ const ChapterOne = () => {
 				</div>
 
 				<div className='debug-tools'>
-					<div 
+					<div
 						className={`debug-tool ${activeDebugTool === 'devtools' ? 'active' : ''}`}
 						onClick={() => activateTool('devtools')}>
 						<span className='tool-icon'>🔧</span>
 						<div className='tool-name'>React DevTools</div>
-						<div className='tool-description'>Inspect component tree and state</div>
+						<div className='tool-description'>
+							Inspect component tree and state
+						</div>
 					</div>
-					<div 
+					<div
 						className={`debug-tool ${activeDebugTool === 'console' ? 'active' : ''}`}
 						onClick={() => activateTool('console')}>
 						<span className='tool-icon'>📝</span>
 						<div className='tool-name'>Console Debugging</div>
-						<div className='tool-description'>Track errors and log statements</div>
+						<div className='tool-description'>
+							Track errors and log statements
+						</div>
 					</div>
-					<div 
+					<div
 						className={`debug-tool ${activeDebugTool === 'network' ? 'active' : ''}`}
 						onClick={() => activateTool('network')}>
 						<span className='tool-icon'>🌐</span>
 						<div className='tool-name'>Network Inspector</div>
-						<div className='tool-description'>Monitor API calls and responses</div>
+						<div className='tool-description'>
+							Monitor API calls and responses
+						</div>
 					</div>
 				</div>
 
@@ -164,18 +212,23 @@ const ChapterOne = () => {
 				<div className='debuggora-insights'>
 					<h4>Debuggora's Wisdom</h4>
 					<div className='insight-message'>
-						"See how the race condition bug moves unpredictably? In development it 
-						might work perfectly, but under production load, timing changes everything. 
-						This is why we need different debugging strategies here."
+						"See how the race condition bug moves unpredictably? In
+						development it might work perfectly, but under
+						production load, timing changes everything. This is why
+						we need different debugging strategies here."
 					</div>
 				</div>
 			</div>
 
 			<div className='code-section'>
 				<div className='code-header'>
-					<span className='code-title'>Deep Debugging Techniques</span>
+					<span className='code-title'>
+						Deep Debugging Techniques
+					</span>
 					<div className='code-actions'>
-						<button onClick={() => activateTool('console')}>Activate Debug Mode</button>
+						<button onClick={() => activateTool('console')}>
+							Activate Debug Mode
+						</button>
 					</div>
 				</div>
 				<CodeExample
@@ -252,9 +305,11 @@ const ProfiledComponent = () => {
 };`}
 				/>
 				<div className='code-tooltip'>
-					<strong>Logsworth's Tip:</strong> "Production debugging requires different tools. 
-					DevTools shows you the present, console logs show you the past, and performance 
-					profiling shows you the bottlenecks. Master all three to catch any bug."
+					<strong>Logsworth's Tip:</strong> "Production debugging
+					requires different tools. DevTools shows you the present,
+					console logs show you the past, and performance profiling
+					shows you the bottlenecks. Master all three to catch any
+					bug."
 				</div>
 			</div>
 
@@ -262,39 +317,41 @@ const ProfiledComponent = () => {
 				characterIntros={[
 					{
 						name: `Dungeon Keeper Logsworth`,
-						description: `Master of production debugging and keeper of the error logs. His philosophy: "In production, bugs reveal their true nature. Here we learn to read the signs they leave behind - stack traces are maps, logs are clues, and timing is everything."`
-					}
+						description: `Master of production debugging and keeper of the error logs. His philosophy: "In production, bugs reveal their true nature. Here we learn to read the signs they leave behind - stack traces are maps, logs are clues, and timing is everything."`,
+					},
 				]}
 				lessonInsight={{
 					title: `The Deep Debugging Lesson:`,
 					content: (
 						<>
 							<p>
-								Debugging in production is like archaeology - you're reconstructing what 
-								happened from the artifacts left behind. Unlike development debugging where 
-								you can pause and inspect, production debugging requires you to be a 
-								detective, following clues through logs, metrics, and user reports.
+								Debugging in production is like archaeology -
+								you're reconstructing what happened from the
+								artifacts left behind. Unlike development
+								debugging where you can pause and inspect,
+								production debugging requires you to be a
+								detective, following clues through logs,
+								metrics, and user reports.
 							</p>
 							<p>
-								The key insight: Production bugs often involve timing, load, or environment 
-								differences. A race condition that never appears in development might happen 
-								constantly under real user load. This is why defensive programming and 
+								The key insight: Production bugs often involve
+								timing, load, or environment differences. A race
+								condition that never appears in development
+								might happen constantly under real user load.
+								This is why defensive programming and
 								comprehensive logging are essential.
 							</p>
 						</>
-					)
+					),
 				}}
 				reflectionQuestions={[
 					`Why do bugs behave differently in production? Consider how factors like network latency, concurrent users, different data sets, and various device capabilities create conditions you can't fully replicate in development.`,
-					`How is debugging like solving a mystery? Think about the process of gathering clues (logs), forming hypotheses (potential causes), testing theories (reproduction attempts), and eliminating possibilities until you find the truth.`
+					`How is debugging like solving a mystery? Think about the process of gathering clues (logs), forming hypotheses (potential causes), testing theories (reproduction attempts), and eliminating possibilities until you find the truth.`,
 				]}
 				journalEntry={{
 					title: `Aria's Journal - Day 30 (Morning)`,
-					content: `Below the Testing Tower lies the Debug Dungeon - where production bugs hide! These shape-shifters behave differently than in development. Dungeon Keeper Logsworth met me at the entrance, his beard grey from years of debugging. I encountered three dungeon bugs: the race-condition (🏃 fast, flickering), memory-leak (💧 slow, growing), and null-reference (👻 medium, vanishing). Three debugging tools: React DevTools for component inspection, Console for error tracking, and Network Inspector for API monitoring. Logsworth's wisdom: "Production debugging is archaeology - reconstructing what happened from artifacts left behind." DevTools shows the present, logs show the past!`
+					content: `Below the Testing Tower lies the Debug Dungeon - where production bugs hide! These shape-shifters behave differently than in development. Dungeon Keeper Logsworth met me at the entrance, his beard grey from years of debugging. I encountered three dungeon bugs: the race-condition (🏃 fast, flickering), memory-leak (💧 slow, growing), and null-reference (👻 medium, vanishing). Three debugging tools: React DevTools for component inspection, Console for error tracking, and Network Inspector for API monitoring. Logsworth's wisdom: "Production debugging is archaeology - reconstructing what happened from artifacts left behind." DevTools shows the present, logs show the past!`,
 				}}
-				chapterEnding={[
-					`As Aria captured her first production bug, Logsworth nodded approvingly. "You're learning to see in the dark. But these surface bugs are just the beginning. Tomorrow, we'll navigate the Stack Trace Labyrinth, where the real mysteries hide..."`
-				]}
 			/>
 		</div>
 	);

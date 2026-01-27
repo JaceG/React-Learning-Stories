@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -81,30 +82,14 @@ const ChapterThree = () => {
 				bridge={`"Individual tests are powerful," Jasmine explained as they climbed to the tower's highest chamber, "but automated test suites are an army." The chamber contained a massive crystalline structure - the Continuous Integration Engine that runs every test automatically whenever code changes.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Individual tests are powerful," Jasmine explained as they climbed to the 
-					tower's highest chamber, "but automated test suites are an army."
-				</p>
-
-				<p className='story-paragraph'>
-					The chamber contained a massive crystalline structure - the Continuous 
-					Integration Engine. "This device," Jasmine gestured proudly, "runs every 
-					test automatically whenever code changes. No bug can slip through unnoticed."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria watched in amazement as phantom test runners materialized, each one 
-					executing hundreds of tests in seconds. "They never tire, never miss a test, 
-					and guard the kingdom day and night."
-				</p>
-
-				<p className='story-paragraph'>
-					Together, they configured the automated testing system. With each setting, 
-					more guardian tests awakened, forming an impenetrable defense network around 
-					the kingdom's code.
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`"Individual tests are powerful," Jasmine explained as they climbed to the tower's highest chamber, "but automated test suites are an army."`,
+					`The chamber contained a massive crystalline structure - the Continuous Integration Engine. "This device," Jasmine gestured proudly, "runs every test automatically whenever code changes. No bug can slip through unnoticed."`,
+					`Aria watched in amazement as phantom test runners materialized, each one executing hundreds of tests in seconds. "They never tire, never miss a test, and guard the kingdom day and night."`,
+					`Together, they configured the automated testing system. With each setting, more guardian tests awakened, forming an impenetrable defense network around the kingdom's code.`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Continuous Integration Engine</h3>
@@ -260,17 +245,12 @@ jobs:
 
 			<div className='story-section'>
 				<h3>The Testing Mastery Ceremony</h3>
-				<p className='story-paragraph'>
-					As the automated tests hummed with activity, Jasmine placed a hand on Aria's 
-					shoulder. "You've learned well. From catching individual bugs to building an 
-					automated defense system, you now possess the knowledge to protect any kingdom."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora hooted approvingly, her eyes glowing with pride. "The bugs fear you 
-					now, Aria. But remember - vigilance is eternal. New bugs evolve, new patterns 
-					emerge. Keep your tests updated, your coverage high, and your automation running."
-				</p>
+				<StorySection
+					paragraphs={[
+						`As the automated tests hummed with activity, Jasmine placed a hand on Aria's shoulder. "You've learned well. From catching individual bugs to building an automated defense system, you now possess the knowledge to protect any kingdom."`,
+						`Debuggora hooted approvingly, her eyes glowing with pride. "The bugs fear you now, Aria. But remember - vigilance is eternal. New bugs evolve, new patterns emerge. Keep your tests updated, your coverage high, and your automation running."`
+					]}
+				/>
 
 				<div className='achievement-banner'>
 					<h4>🏆 Testing Tower Mastery Achieved! 🏆</h4>

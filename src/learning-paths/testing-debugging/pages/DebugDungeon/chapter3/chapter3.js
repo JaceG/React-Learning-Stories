@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -78,31 +79,14 @@ const ChapterThree = () => {
 				bridge={`In the deepest chamber of the Debug Dungeon, they encountered the Production Bug - a massive, shape-shifting creature that behaved differently than any bug in development. "This is why we need more than just debugging skills," Logsworth declared, raising his staff. "We need error boundaries, monitoring, and logging!"`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					In the deepest chamber of the Debug Dungeon, they encountered the Production 
-					Bug - a massive, shape-shifting creature that behaved differently than any 
-					bug in development.
-				</p>
-
-				<p className='story-paragraph'>
-					"This is why we need more than just debugging skills," Logsworth declared, 
-					raising his staff. "We need error boundaries to contain it, monitoring to 
-					track it, and logging to understand its patterns!"
-				</p>
-
-				<p className='story-paragraph'>
-					The bug shifted forms - sometimes a memory leak growing larger, sometimes 
-					a race condition flickering in and out of existence, sometimes corrupting 
-					state in impossible ways.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> stepped forward confidently. "I've learned from the 
-					Testing Tower and navigated your labyrinth. This bug may shift, but I have 
-					tools for every form it takes!"
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`In the deepest chamber of the Debug Dungeon, they encountered the Production Bug - a massive, shape-shifting creature that behaved differently than any bug in development.`,
+					`"This is why we need more than just debugging skills," Logsworth declared, raising his staff. "We need error boundaries to contain it, monitoring to track it, and logging to understand its patterns!"`,
+					`The bug shifted forms - sometimes a memory leak growing larger, sometimes a race condition flickering in and out of existence, sometimes corrupting state in impossible ways.`,
+					<><strong>Aria</strong> stepped forward confidently. "I've learned from the Testing Tower and navigated your labyrinth. This bug may shift, but I have tools for every form it takes!"</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Boss Battle Arena</h3>

@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -84,31 +85,14 @@ const ChapterThree = () => {
 				bridge={`The inn hosted an integration feast - a celebration where all components worked together in perfect harmony. Innkeeper Cypress raised his glass high. "Tonight, we witness true integration! Every component knows its role, every service is accounted for, and every interaction is tested!"`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The inn hosted an integration feast - a celebration where all components 
-					worked together in perfect harmony. <strong>Innkeeper Cypress</strong> raised 
-					his glass high.
-				</p>
-
-				<p className='story-paragraph'>
-					"Tonight, we witness true integration!" he announced. "Every component knows 
-					its role, every service is accounted for, and every interaction is tested. 
-					This is what we strive for!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched as components that once conflicted now danced 
-					together seamlessly. Forms validated smoothly, APIs responded predictably 
-					(thanks to mocks), and state flowed like water through the system.
-				</p>
-
-				<p className='story-paragraph'>
-					"To Aria," Cypress toasted, "who taught us that components, like people, 
-					must be tested both alone and together! You've shown us the path from 
-					isolation to integration!"
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The inn hosted an integration feast - a celebration where all components worked together in perfect harmony. <strong>Innkeeper Cypress</strong> raised his glass high.</>,
+					`"Tonight, we witness true integration!" he announced. "Every component knows its role, every service is accounted for, and every interaction is tested. This is what we strive for!"`,
+					<><strong>Aria</strong> watched as components that once conflicted now danced together seamlessly. Forms validated smoothly, APIs responded predictably (thanks to mocks), and state flowed like water through the system.</>,
+					`"To Aria," Cypress toasted, "who taught us that components, like people, must be tested both alone and together! You've shown us the path from isolation to integration!"`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Grand Integration Test</h3>

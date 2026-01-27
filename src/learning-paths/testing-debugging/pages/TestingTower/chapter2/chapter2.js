@@ -3,32 +3,29 @@ import { useOutletContext } from 'react-router-dom';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
-	const {
-		runTest,
-		testResults,
-		updateCoverage,
-		protectedComponents
-	} = useOutletContext();
+	const { runTest, testResults, updateCoverage, protectedComponents } =
+		useOutletContext();
 
 	const [activeTestLevel, setActiveTestLevel] = useState(null);
 	const [testSpells, setTestSpells] = useState({
 		unit: false,
 		integration: false,
-		e2e: false
+		e2e: false,
 	});
 
 	const castTestSpell = (level) => {
 		setActiveTestLevel(level);
 		setTestSpells({ ...testSpells, [level]: true });
 		runTest(`${level.toUpperCase()} Test Suite`);
-		
+
 		// Update coverage based on test level
 		const components = {
 			unit: 'Button Component',
 			integration: 'Form System',
-			e2e: 'User Journey'
+			e2e: 'User Journey',
 		};
 		updateCoverage(components[level]);
 	};
@@ -40,7 +37,7 @@ const ChapterTwo = () => {
 			icon: '🧩',
 			description: 'Individual component testing',
 			power: 'Catches 60% of bugs',
-			example: 'Testing a single button click'
+			example: 'Testing a single button click',
 		},
 		{
 			id: 'integration',
@@ -48,7 +45,7 @@ const ChapterTwo = () => {
 			icon: '🔗',
 			description: 'Component cooperation testing',
 			power: 'Catches 30% of bugs',
-			example: 'Testing form submission flow'
+			example: 'Testing form submission flow',
 		},
 		{
 			id: 'e2e',
@@ -56,8 +53,8 @@ const ChapterTwo = () => {
 			icon: '🎯',
 			description: 'Complete user journey testing',
 			power: 'Catches 10% of bugs',
-			example: 'Testing full checkout process'
-		}
+			example: 'Testing full checkout process',
+		},
 	];
 
 	return (
@@ -68,56 +65,40 @@ const ChapterTwo = () => {
 				bridge={`Jasmine led Aria deeper into the Testing Tower, through a circular chamber with three glowing portals. "Individual bug catching is useful," she explained, "but we need systematic protection. I will teach you the three levels of testing spells - each more powerful than the last."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Jasmine led Aria deeper into the Testing Tower. "Individual bug catching is 
-					useful," she explained, "but we need systematic protection. I will teach you 
-					the three levels of testing spells."
-				</p>
-
-				<p className='story-paragraph'>
-					They entered a circular chamber with three glowing portals. Each portal 
-					emanated a different color - blue for unit tests, green for integration tests, 
-					and gold for end-to-end tests.
-				</p>
-
-				<p className='story-paragraph'>
-					"Unit tests for individual components, integration tests for component 
-					cooperation, and end-to-end tests for complete user journeys," Jasmine 
-					intoned. "Each has its purpose, each its power."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria studied the portals thoughtfully. "It's like the Validation Guardians," 
-					she realized, "but for code correctness rather than data validity."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora perched on Aria's shoulder, whispering insights: "See that bug 
-					trying to form? Your test just prevented it from manifesting!"
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					`Jasmine led Aria deeper into the Testing Tower. "Individual bug catching is useful," she explained, "but we need systematic protection. I will teach you the three levels of testing spells."`,
+					`They entered a circular chamber with three glowing portals. Each portal emanated a different color - blue for unit tests, green for integration tests, and gold for end-to-end tests.`,
+					`"Unit tests for individual components, integration tests for component cooperation, and end-to-end tests for complete user journeys," Jasmine intoned. "Each has its purpose, each its power."`,
+					`Aria studied the portals thoughtfully. "It's like the Validation Guardians," she realized, "but for code correctness rather than data validity."`,
+					`Debuggora perched on Aria's shoulder, whispering insights: "See that bug trying to form? Your test just prevented it from manifesting!"`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Three Testing Portals</h3>
-				
+
 				<div className='testing-tower'>
 					<h4>Choose Your Testing Level</h4>
 					<div className='test-portals'>
-						{testLevels.map(level => (
-							<div 
+						{testLevels.map((level) => (
+							<div
 								key={level.id}
 								className={`test-portal ${testSpells[level.id] ? 'activated' : ''} ${activeTestLevel === level.id ? 'active' : ''}`}
 								onClick={() => castTestSpell(level.id)}>
 								<div className='portal-icon'>{level.icon}</div>
 								<h5>{level.name}</h5>
-								<p className='portal-description'>{level.description}</p>
+								<p className='portal-description'>
+									{level.description}
+								</p>
 								<p className='portal-power'>{level.power}</p>
 								<p className='portal-example'>
 									<em>Example: {level.example}</em>
 								</p>
 								{testSpells[level.id] && (
-									<div className='spell-active'>✓ Spell Active</div>
+									<div className='spell-active'>
+										✓ Spell Active
+									</div>
 								)}
 							</div>
 						))}
@@ -128,9 +109,12 @@ const ChapterTwo = () => {
 					<div className='test-demonstration'>
 						<h4>Active Test: {activeTestLevel.toUpperCase()}</h4>
 						<div className='protection-barrier active'>
-							<span className='barrier-label'>Protection Active</span>
+							<span className='barrier-label'>
+								Protection Active
+							</span>
 							<p>
-								Your {activeTestLevel} tests are now protecting the kingdom from bugs!
+								Your {activeTestLevel} tests are now protecting
+								the kingdom from bugs!
 							</p>
 						</div>
 					</div>
@@ -138,13 +122,20 @@ const ChapterTwo = () => {
 
 				<div className='coverage-map'>
 					<h4>Kingdom Protection Coverage</h4>
-					{['Button Component', 'Form System', 'User Journey', 'API Layer'].map(zone => (
-						<div 
+					{[
+						'Button Component',
+						'Form System',
+						'User Journey',
+						'API Layer',
+					].map((zone) => (
+						<div
 							key={zone}
 							className={`coverage-zone ${protectedComponents.includes(zone) ? 'protected' : 'vulnerable'}`}>
 							<div className='zone-name'>{zone}</div>
 							<div className='zone-status'>
-								{protectedComponents.includes(zone) ? 'Protected' : 'Vulnerable'}
+								{protectedComponents.includes(zone)
+									? 'Protected'
+									: 'Vulnerable'}
 							</div>
 						</div>
 					))}
@@ -153,9 +144,14 @@ const ChapterTwo = () => {
 
 			<div className='code-section'>
 				<div className='code-header'>
-					<span className='code-title'>The Three Testing Incantations</span>
+					<span className='code-title'>
+						The Three Testing Incantations
+					</span>
 					<div className='code-actions'>
-						<button onClick={() => runTest('Testing Pyramid Suite')}>Cast All Spells</button>
+						<button
+							onClick={() => runTest('Testing Pyramid Suite')}>
+							Cast All Spells
+						</button>
 					</div>
 				</div>
 				<CodeExample
@@ -215,9 +211,10 @@ describe('User Registration Journey', () => {
 });`}
 				/>
 				<div className='code-tooltip'>
-					<strong>Jasmine's Wisdom:</strong> "The Testing Pyramid guides us - many unit 
-					tests at the base, fewer integration tests in the middle, and selected E2E 
-					tests at the peak. Each level catches different bugs, together they form an 
+					<strong>Jasmine's Wisdom:</strong> "The Testing Pyramid
+					guides us - many unit tests at the base, fewer integration
+					tests in the middle, and selected E2E tests at the peak.
+					Each level catches different bugs, together they form an
 					impenetrable defense."
 				</div>
 			</div>
@@ -225,11 +222,11 @@ describe('User Registration Journey', () => {
 			<div className='interactive-section'>
 				<h3 className='section-title'>Binary's New Ability</h3>
 				<div className='character-update'>
-					<p className='story-paragraph'>
-						Binary's circuits glowed with new patterns. "I can now predict where bugs 
-						might spawn based on code complexity!" he announced proudly. His display 
-						showed heat maps of untested code paths.
-					</p>
+					<StorySection
+						paragraphs={[
+							`Binary's circuits glowed with new patterns. "I can now predict where bugs might spawn based on code complexity!" he announced proudly. His display showed heat maps of untested code paths.`,
+						]}
+					/>
 					<div className='binary-display'>
 						<pre>{`// Binary's Bug Prediction Algorithm
 {
@@ -250,30 +247,32 @@ describe('User Registration Journey', () => {
 					content: (
 						<>
 							<p>
-								The three levels of testing work together like layers of armor. Unit tests 
-								are your chainmail - numerous small rings that catch most attacks. Integration 
-								tests are your plate armor - fewer pieces but covering critical joints. E2E 
-								tests are your shield - selective protection for the most important battles.
+								The three levels of testing work together like
+								layers of armor. Unit tests are your chainmail -
+								numerous small rings that catch most attacks.
+								Integration tests are your plate armor - fewer
+								pieces but covering critical joints. E2E tests
+								are your shield - selective protection for the
+								most important battles.
 							</p>
 							<p>
-								Remember the testing pyramid: A strong base of unit tests, a solid middle of 
-								integration tests, and a carefully chosen peak of E2E tests. This structure 
-								gives you fast feedback, comprehensive coverage, and maintainable test suites.
+								Remember the testing pyramid: A strong base of
+								unit tests, a solid middle of integration tests,
+								and a carefully chosen peak of E2E tests. This
+								structure gives you fast feedback, comprehensive
+								coverage, and maintainable test suites.
 							</p>
 						</>
-					)
+					),
 				}}
 				reflectionQuestions={[
 					`How do the three levels of testing complement each other? Consider how unit tests provide fast feedback, integration tests catch component interaction issues, and E2E tests verify complete user workflows.`,
-					`Why is the testing pyramid shape important? Think about test execution time, maintenance cost, and debugging difficulty at each level. How does this shape optimize for developer productivity?`
+					`Why is the testing pyramid shape important? Think about test execution time, maintenance cost, and debugging difficulty at each level. How does this shape optimize for developer productivity?`,
 				]}
 				journalEntry={{
 					title: `Aria's Journal - Day 29 (Afternoon)`,
-					content: `Jasmine showed me a circular chamber with three glowing portals - each representing a level of testing magic! Blue for Unit Tests (individual components, catches 60% of bugs), Green for Integration Tests (component cooperation, catches 30%), and Gold for End-to-End Tests (complete user journeys, catches 10%). Binary showed me his bug prediction algorithm that highlights high-risk areas with low coverage! The Testing Pyramid is key: many unit tests at the base for fast feedback, fewer integration tests in the middle, and selective E2E tests at the peak. Like layers of armor - chainmail, plate armor, and shield working together!`
+					content: `Jasmine showed me a circular chamber with three glowing portals - each representing a level of testing magic! Blue for Unit Tests (individual components, catches 60% of bugs), Green for Integration Tests (component cooperation, catches 30%), and Gold for End-to-End Tests (complete user journeys, catches 10%). Binary showed me his bug prediction algorithm that highlights high-risk areas with low coverage! The Testing Pyramid is key: many unit tests at the base for fast feedback, fewer integration tests in the middle, and selective E2E tests at the peak. Like layers of armor - chainmail, plate armor, and shield working together!`,
 				}}
-				chapterEnding={[
-					`As the three portals glowed with activated test spells, Jasmine nodded approvingly. "You've learned to cast individual test spells, but true mastery comes from automation. Tomorrow, we'll build an army of tests that guard the kingdom day and night..."`
-				]}
 			/>
 		</div>
 	);
