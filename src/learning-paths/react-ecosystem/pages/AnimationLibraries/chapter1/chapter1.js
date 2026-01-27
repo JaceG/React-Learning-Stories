@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -116,35 +117,15 @@ const ChapterOne = () => {
 				title={`The Motion Monastery`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Motion Monastery moved constantly - walls shifted, decorations 
-					danced, everything flowed. <strong>Animation Abbess Motia</strong> 
-					greeted Aria with a gesture that left glowing trails in the air.
-				</p>
-
-				<p className='story-paragraph'>
-					"Welcome, Ambassador Aria, to where static UIs come to life. Users 
-					expect fluid, responsive interfaces. Animation isn't decoration - 
-					it's communication."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong>'s circuits sparkled with excitement. "This 
-					place makes my processors happy! Look at all the smooth transitions!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> observed the flowing motions. "Beautiful, 
-					but smooth animation requires careful performance management. Too much 
-					motion can overwhelm."
-				</p>
-
-				<p className='story-paragraph'>
-					Abbess Motia nodded. "Exactly. Animation must serve purpose: guide 
-					attention, provide feedback, and create delight without distraction."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The Motion Monastery moved constantly - walls shifted, decorations danced, everything flowed. <strong>Animation Abbess Motia</strong> greeted Aria with a gesture that left glowing trails in the air.</>,
+					`"Welcome, Ambassador Aria, to where static UIs come to life. Users expect fluid, responsive interfaces. Animation isn't decoration - it's communication."`,
+					<><strong>Binary</strong>'s circuits sparkled with excitement. "This place makes my processors happy! Look at all the smooth transitions!"</>,
+					<><strong>Debuggora</strong> observed the flowing motions. "Beautiful, but smooth animation requires careful performance management. Too much motion can overwhelm."</>,
+					`Abbess Motia nodded. "Exactly. Animation must serve purpose: guide attention, provide feedback, and create delight without distraction."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Animation Fundamentals</h3>

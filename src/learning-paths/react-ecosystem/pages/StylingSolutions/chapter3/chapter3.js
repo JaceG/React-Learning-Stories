@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -113,35 +114,15 @@ const ChapterThree = () => {
 				bridge={`After experiencing each styling approach firsthand, Aria gathered the representatives. "Each approach has its merits," she observed. Moderator Stylus smiled. "You're beginning to see the truth. Let's find harmony - not by declaring a winner, but by understanding when each approach shines."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Moderator Stylus</strong> concluded: "Aria has shown us that 
-					each approach serves different needs. The key is choosing based on 
-					your project's requirements, not dogma."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> summarized: "Component libraries might prefer 
-					styled-components. Rapid prototypes love Tailwind. Large teams might 
-					choose CSS Modules. There's no single answer."
-				</p>
-
-				<p className='story-paragraph'>
-					The representatives, once argumentative, began to nod in understanding. 
-					<strong>CSS-in-JS Champion</strong> admitted, "For a marketing site, 
-					I'd actually recommend CSS Modules for performance."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Utility-First Advocate</strong> agreed, "And I'd use Styled 
-					Components for a complex component library needing theming."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> calculated happily. "Harmony through understanding! 
-					Each tool has its optimal use case."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Moderator Stylus</strong> concluded: "Aria has shown us that each approach serves different needs. The key is choosing based on your project's requirements, not dogma."</>,
+					<><strong>Aria</strong> summarized: "Component libraries might prefer styled-components. Rapid prototypes love Tailwind. Large teams might choose CSS Modules. There's no single answer."</>,
+					<>The representatives, once argumentative, began to nod in understanding. <strong>CSS-in-JS Champion</strong> admitted, "For a marketing site, I'd actually recommend CSS Modules for performance."</>,
+					<><strong>Utility-First Advocate</strong> agreed, "And I'd use Styled Components for a complex component library needing theming."</>,
+					<><strong>Binary</strong> calculated happily. "Harmony through understanding! Each tool has its optimal use case."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Finding Your Styling Solution</h3>

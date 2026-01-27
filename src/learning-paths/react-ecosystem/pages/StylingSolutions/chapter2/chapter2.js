@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -267,33 +268,15 @@ const containerStyle = {
 				bridge={`"The debate has reached its limits," Moderator Stylus announced. "Now let's see these approaches in action." Aria followed the representatives to the Styling Workshops, where each approach had set up demonstration stations. "Actions speak louder than arguments," the Moderator explained.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> visited each styling workshop:
-				</p>
-
-				<p className='story-paragraph'>
-					At the <strong>Styled Components Atelier</strong>, she learned 
-					component-centric styling: "Your Button component IS the style," 
-					the artist explained.
-				</p>
-
-				<p className='story-paragraph'>
-					The <strong>Tailwind Factory</strong> showed composition: "Why write 
-					custom CSS? Compose utilities!"
-				</p>
-
-				<p className='story-paragraph'>
-					The <strong>CSS Modules Academy</strong> emphasized tradition with 
-					safety: "Keep CSS separate but scoped."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed each approach. "Different philosophies, 
-					different trade-offs. Performance, developer experience, maintainability 
-					- each optimizes differently."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong> visited each styling workshop:</>,
+					<>At the <strong>Styled Components Atelier</strong>, she learned component-centric styling: "Your Button component IS the style," the artist explained.</>,
+					<>The <strong>Tailwind Factory</strong> showed composition: "Why write custom CSS? Compose utilities!"</>,
+					<>The <strong>CSS Modules Academy</strong> emphasized tradition with safety: "Keep CSS separate but scoped."</>,
+					<><strong>Binary</strong> analyzed each approach. "Different philosophies, different trade-offs. Performance, developer experience, maintainability - each optimizes differently."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Styling Workshop Tour</h3>

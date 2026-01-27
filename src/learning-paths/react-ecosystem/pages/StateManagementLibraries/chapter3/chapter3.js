@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -117,42 +118,16 @@ const ChapterThree = () => {
 				bridge={`Having studied the Redux Empire's patterns, Aria set out to visit the remaining kingdoms. "Each has developed unique approaches," Emperor Dispatcher advised. "MobX embraces reactivity, Zustand champions simplicity, and the atomic kingdoms - Recoil and Jotai - focus on fine-grained updates. Learn from all of them."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> traveled swiftly through the allied territories:
-				</p>
-
-				<p className='story-paragraph'>
-					In <strong>MobX Territory</strong>, Chief Observer showed her reactive 
-					programming: "We make state observable. Components react automatically 
-					to changes."
-				</p>
-
-				<p className='story-paragraph'>
-					The <strong>Zustand Settlements</strong> demonstrated simplicity: "Why 
-					complicate? Small store, simple API, powerful results," explained Elder 
-					Simplicity.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Recoil Regions</strong> revealed atomic state: "Each piece of 
-					state is an atom. Components subscribe to exactly what they need," 
-					taught Atom Master.
-				</p>
-
-				<p className='story-paragraph'>
-					The <strong>Jotai Archipelago</strong> showed similar patterns with 
-					different philosophy: "We're like Recoil, but with React Suspense at 
-					our core."
-				</p>
-
-				<p className='story-paragraph'>
-					Returning to React Kingdom, Aria presented her findings to the Council. 
-					"Each approach has its place. Redux for large teams needing structure. 
-					MobX for reactive programming fans. Zustand for simplicity. Recoil and 
-					Jotai for fine-grained reactivity."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong> traveled swiftly through the allied territories:</>,
+					<>In <strong>MobX Territory</strong>, Chief Observer showed her reactive programming: "We make state observable. Components react automatically to changes."</>,
+					<>The <strong>Zustand Settlements</strong> demonstrated simplicity: "Why complicate? Small store, simple API, powerful results," explained Elder Simplicity.</>,
+					<><strong>Recoil Regions</strong> revealed atomic state: "Each piece of state is an atom. Components subscribe to exactly what they need," taught Atom Master.</>,
+					<>The <strong>Jotai Archipelago</strong> showed similar patterns with different philosophy: "We're like Recoil, but with React Suspense at our core."</>,
+					`Returning to React Kingdom, Aria presented her findings to the Council. "Each approach has its place. Redux for large teams needing structure. MobX for reactive programming fans. Zustand for simplicity. Recoil and Jotai for fine-grained reactivity."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: The Grand State Comparison</h3>

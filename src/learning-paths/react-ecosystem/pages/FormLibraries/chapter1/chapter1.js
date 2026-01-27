@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -103,35 +104,15 @@ const ChapterOne = () => {
 				title={`The Form Federation`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Federal Form Chancellor</strong> welcomed Aria to the 
-					Form Federation headquarters. "Ambassador Aria, you've mastered 
-					basic React forms, but complex applications demand more."
-				</p>
-
-				<p className='story-paragraph'>
-					The grand hall displayed holographic forms of increasing complexity - 
-					multi-step wizards, dynamic field arrays, real-time validation, and 
-					conditional logic that would make any developer's head spin.
-				</p>
-
-				<p className='story-paragraph'>
-					"Native React forms work," the Chancellor explained, "but specialized 
-					libraries offer power, performance, and developer experience that can 
-					transform how you handle user input."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the displays. "So many validation 
-					patterns! So many state management approaches!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> perched on a form validator. "Each library 
-					optimizes for different use cases. The key is knowing when to use which."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Federal Form Chancellor</strong> welcomed Aria to the Form Federation headquarters. "Ambassador Aria, you've mastered basic React forms, but complex applications demand more."</>,
+					`The grand hall displayed holographic forms of increasing complexity - multi-step wizards, dynamic field arrays, real-time validation, and conditional logic that would make any developer's head spin.`,
+					`"Native React forms work," the Chancellor explained, "but specialized libraries offer power, performance, and developer experience that can transform how you handle user input."`,
+					<><strong>Binary</strong> analyzed the displays. "So many validation patterns! So many state management approaches!"</>,
+					<><strong>Debuggora</strong> perched on a form validator. "Each library optimizes for different use cases. The key is knowing when to use which."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Meet the Form Representatives</h3>

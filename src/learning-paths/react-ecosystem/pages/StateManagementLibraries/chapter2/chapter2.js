@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -161,30 +162,14 @@ const ChapterTwo = () => {
 				bridge={`With the map of Allied Kingdoms studied, Aria set out on her first diplomatic visit. "The Redux Empire is the largest and most established," Master Aurelius advised. "Their patterns have influenced many, including our own useReducer. Learn their ways carefully."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria's first stop was the mighty Redux Empire, where <strong>Emperor 
-					Dispatcher</strong> ruled with predictable state updates. The empire's 
-					three principles were carved in stone: Single source of truth, State 
-					is read-only, Changes via pure functions.
-				</p>
-
-				<p className='story-paragraph'>
-					"Welcome, Ambassador Aria," Emperor Dispatcher greeted. "Our empire 
-					runs on actions and reducers. Every state change is documented, 
-					traceable, and predictable."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> studied their patterns. "It's like a more formal 
-					version of useReducer," she observed.
-				</p>
-
-				<p className='story-paragraph'>
-					"Indeed! We inspired React's useReducer. But we offer more: middleware, 
-					DevTools, and ecosystem. Let me show you..."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>Aria's first stop was the mighty Redux Empire, where <strong>Emperor Dispatcher</strong> ruled with predictable state updates. The empire's three principles were carved in stone: Single source of truth, State is read-only, Changes via pure functions.</>,
+					`"Welcome, Ambassador Aria," Emperor Dispatcher greeted. "Our empire runs on actions and reducers. Every state change is documented, traceable, and predictable."`,
+					<><strong>Aria</strong> studied their patterns. "It's like a more formal version of useReducer," she observed.</>,
+					`"Indeed! We inspired React's useReducer. But we offer more: middleware, DevTools, and ecosystem. Let me show you..."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: State Kingdom Workshops</h3>

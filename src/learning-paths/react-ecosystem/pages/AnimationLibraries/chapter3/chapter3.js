@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -149,40 +150,16 @@ const ChapterThree = () => {
 				bridge={`Aria had trained in all three dojos, mastering CSS transitions, spring physics, and declarative animation. "You're ready for the final lesson," Abbess Motia announced. "The Fluid Kingdom - where all animation knowledge comes together. True mastery is knowing which tool serves which purpose."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Abbess Motia</strong> led Aria to the monastery's highest 
-					tower. "You've learned individual techniques. Now, see how they 
-					compose into fluid experiences."
-				</p>
-
-				<p className='story-paragraph'>
-					The view revealed a fully animated dashboard - data flowing like 
-					rivers, transitions smooth as silk, gestures responding instantly. 
-					"This is the Fluid Kingdom," Abbess Motia explained.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched in awe. "Every movement has purpose. 
-					Nothing feels arbitrary or excessive."
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly," nodded Abbess Motia. "Animation isn't decoration - it's 
-					communication. Motion guides attention, provides feedback, and creates 
-					delight without distraction."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> calculated the complexity. "So many moving 
-					parts, yet performance remains smooth. The optimization is impressive!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> added, "And notice the accessibility - users 
-					who prefer reduced motion get a different but equally functional experience."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Abbess Motia</strong> led Aria to the monastery's highest tower. "You've learned individual techniques. Now, see how they compose into fluid experiences."</>,
+					`The view revealed a fully animated dashboard - data flowing like rivers, transitions smooth as silk, gestures responding instantly. "This is the Fluid Kingdom," Abbess Motia explained.`,
+					<><strong>Aria</strong> watched in awe. "Every movement has purpose. Nothing feels arbitrary or excessive."</>,
+					`"Exactly," nodded Abbess Motia. "Animation isn't decoration - it's communication. Motion guides attention, provides feedback, and creates delight without distraction."`,
+					<><strong>Binary</strong> calculated the complexity. "So many moving parts, yet performance remains smooth. The optimization is impressive!"</>,
+					<><strong>Debuggora</strong> added, "And notice the accessibility - users who prefer reduced motion get a different but equally functional experience."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Building the Fluid Kingdom</h3>

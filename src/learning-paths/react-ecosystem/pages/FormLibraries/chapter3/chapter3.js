@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -147,35 +148,15 @@ const ChapterThree = () => {
 				bridge={`After hours of implementation in the Form Workshop, Aria had experienced each library's strengths firsthand. "Each library has its own elegance," she reflected. The Federal Form Chancellor gathered all the representatives. "Now, let's find consensus on when to use each."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The <strong>Federal Form Chancellor</strong> gathered all the library 
-					representatives. "Ambassador Aria has studied each approach. Now, let's 
-					find consensus on when to use each."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> presented her findings: "Each library excels in 
-					different scenarios. There's no universal best - only the best for 
-					specific needs."
-				</p>
-
-				<p className='story-paragraph'>
-					The representatives, once competitive, began nodding in agreement. 
-					<strong>React Hook Form Ambassador</strong> admitted, "For simple forms, 
-					native React might suffice."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Formik Leader</strong> added, "And for performance-critical 
-					applications, React Hook Form's approach is superior."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> computed the consensus. "Optimal library selection 
-					based on requirements - this is true engineering!"
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<>The <strong>Federal Form Chancellor</strong> gathered all the library representatives. "Ambassador Aria has studied each approach. Now, let's find consensus on when to use each."</>,
+					<><strong>Aria</strong> presented her findings: "Each library excels in different scenarios. There's no universal best - only the best for specific needs."</>,
+					<>The representatives, once competitive, began nodding in agreement. <strong>React Hook Form Ambassador</strong> admitted, "For simple forms, native React might suffice."</>,
+					<><strong>Formik Leader</strong> added, "And for performance-critical applications, React Hook Form's approach is superior."</>,
+					<><strong>Binary</strong> computed the consensus. "Optimal library selection based on requirements - this is true engineering!"</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Finding Form Consensus</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -116,29 +117,14 @@ const ChapterTwo = () => {
 				bridge={`"Now that you've met the representatives," the Federal Form Chancellor announced, "it's time for hands-on learning. Each library has set up demonstration stations." Aria entered the Form Workshop where complex forms floated in the air, transforming as different libraries handled them.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> entered the Form Workshop, where each library 
-					had set up demonstration stations. Complex forms floated in the air, 
-					transforming as different libraries handled them.
-				</p>
-
-				<p className='story-paragraph'>
-					"Time for hands-on learning," announced the <strong>React Hook Form 
-					Ambassador</strong>. "Watch how each library handles the same form 
-					differently."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> activated his performance monitors. "I'll 
-					track re-renders, bundle sizes, and execution time!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> perched between the stations. "Notice how 
-					each approach affects debugging and developer experience."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Aria</strong> entered the Form Workshop, where each library had set up demonstration stations. Complex forms floated in the air, transforming as different libraries handled them.</>,
+					<>"Time for hands-on learning," announced the <strong>React Hook Form Ambassador</strong>. "Watch how each library handles the same form differently."</>,
+					<><strong>Binary</strong> activated his performance monitors. "I'll track re-renders, bundle sizes, and execution time!"</>,
+					<><strong>Debuggora</strong> perched between the stations. "Notice how each approach affects debugging and developer experience."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Form Library Workshop</h3>

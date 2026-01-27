@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -134,35 +135,15 @@ const ChapterTwo = () => {
 				bridge={`"You've learned the philosophy of motion," Abbess Motia said. "Now it's time for practice." The monastery's three dojos awaited: CSS Transitions for foundation, React Spring for physics-based animation, and Framer Motion for declarative power. Each dojo taught different techniques for different needs.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Abbess Motia</strong> led Aria through the monastery's many 
-					dojos. "Each school has mastered different aspects of motion. Learn 
-					their techniques, understand their philosophies."
-				</p>
-
-				<p className='story-paragraph'>
-					In the <strong>Framer Motion Dojo</strong>, elements danced with 
-					declarative ease. <strong>Sensei Framer</strong> demonstrated: 
-					"Watch how naturally components animate in and out!"
-				</p>
-
-				<p className='story-paragraph'>
-					The <strong>React Spring School</strong> felt different - everything 
-					moved with physics. <strong>Professor Spring</strong> explained: 
-					"No duration, just tension and friction. Natural motion!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed each approach. "Different algorithms, 
-					different optimizations. Fascinating variations!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> tested performance. "Each library makes 
-					different trade-offs. Bundle size versus features, ease versus control."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Abbess Motia</strong> led Aria through the monastery's many dojos. "Each school has mastered different aspects of motion. Learn their techniques, understand their philosophies."</>,
+					<>In the <strong>Framer Motion Dojo</strong>, elements danced with declarative ease. <strong>Sensei Framer</strong> demonstrated: "Watch how naturally components animate in and out!"</>,
+					<>The <strong>React Spring School</strong> felt different - everything moved with physics. <strong>Professor Spring</strong> explained: "No duration, just tension and friction. Natural motion!"</>,
+					<><strong>Binary</strong> analyzed each approach. "Different algorithms, different optimizations. Fascinating variations!"</>,
+					<><strong>Debuggora</strong> tested performance. "Each library makes different trade-offs. Bundle size versus features, ease versus control."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: Animation Dojo Training</h3>

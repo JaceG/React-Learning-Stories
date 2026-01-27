@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -107,36 +108,15 @@ const ChapterOne = () => {
 				title={`The Ambassador's Mission`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Master Aurelius</strong> summoned Aria to the Great Council 
-					Chamber. "Guide Aria, you've mastered React's internal arts. Now, we 
-					need you as an ambassador to the Allied Kingdoms - each with their 
-					own approach to state management."
-				</p>
-
-				<p className='story-paragraph'>
-					A magical map unfurled, showing kingdoms beyond React's borders: The 
-					Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, 
-					and the Jotai Archipelago.
-				</p>
-
-				<p className='story-paragraph'>
-					"Each kingdom has developed its own state management philosophy," 
-					Aurelius explained. "As our ambassador, you'll learn their ways and 
-					bring back wisdom to strengthen our own kingdom."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> upgraded his translation modules. "I'm ready 
-					to interpret different state management dialects!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> spread her wings. "And I'll help you see 
-					through the different patterns to their core principles."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Master Aurelius</strong> summoned Aria to the Great Council Chamber. "Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management."</>,
+					`A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.`,
+					`"Each kingdom has developed its own state management philosophy," Aurelius explained. "As our ambassador, you'll learn their ways and bring back wisdom to strengthen our own kingdom."`,
+					<><strong>Binary</strong> upgraded his translation modules. "I'm ready to interpret different state management dialects!"</>,
+					<><strong>Debuggora</strong> spread her wings. "And I'll help you see through the different patterns to their core principles."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: State Kingdom Explorer</h3>

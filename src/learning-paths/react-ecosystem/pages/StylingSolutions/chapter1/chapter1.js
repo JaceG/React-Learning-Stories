@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -113,35 +114,26 @@ const ChapterOne = () => {
 				title={`The Style Symposium`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Great Style Symposium convened, where representatives from different 
-					styling philosophies gathered. <strong>Moderator Stylus</strong> welcomed 
-					Aria: "Ambassador, the styling kingdoms are... passionate about their 
-					approaches."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>The Great Style Symposium convened, where representatives from different styling philosophies gathered. <strong>Moderator Stylus</strong> welcomed Aria: "Ambassador, the styling kingdoms are... passionate about their approaches."</>,
+					`Representatives argued loudly:`
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					Representatives argued loudly:
-				</p>
-				<ul style={{ marginLeft: '20px' }}>
-					<li><strong>CSS-in-JS Champion</strong>: "Styles belong with components!"</li>
-					<li><strong>CSS Modules Defender</strong>: "Separation of concerns!"</li>
-					<li><strong>Utility-First Advocate</strong>: "Composition over custom styles!"</li>
-					<li><strong>Styled Components Artist</strong>: "Components should be stylish by default!"</li>
-				</ul>
+			<ul style={{ marginLeft: '20px' }}>
+				<li><strong>CSS-in-JS Champion</strong>: "Styles belong with components!"</li>
+				<li><strong>CSS Modules Defender</strong>: "Separation of concerns!"</li>
+				<li><strong>Utility-First Advocate</strong>: "Composition over custom styles!"</li>
+				<li><strong>Styled Components Artist</strong>: "Components should be stylish by default!"</li>
+			</ul>
 
-				<p className='story-paragraph'>
-					<strong>Binary</strong> calculated rapidly. "So many approaches to the 
-					same problem! How do we choose?"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> observed the heated debate. "Each approach 
-					optimizes for different values - developer experience, performance, or 
-					maintainability."
-				</p>
-			</div>
+			<StorySection
+				paragraphs={[
+					<><strong>Binary</strong> calculated rapidly. "So many approaches to the same problem! How do we choose?"</>,
+					<><strong>Debuggora</strong> observed the heated debate. "Each approach optimizes for different values - developer experience, performance, or maintainability."</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Interactive Exercise: The Great Style Debate</h3>
