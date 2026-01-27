@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -83,19 +84,12 @@ const ChapterThree = () => {
 				bridge={`"You've mastered queries and understood the schema contract," Query Master Apollo said, ascending to the Gateway's control center. "Now it's time to build the Unified Interface - a complete GraphQL system that serves all data needs through one elegant endpoint."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> built a complete GraphQL client, efficiently 
-					fetching exactly what each component needed. "No over-fetching, no 
-					under-fetching," she marveled.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Query Master Apollo</strong> smiled. "You've learned the 
-					elegance of GraphQL. But remember, it's a tool. Sometimes REST is 
-					simpler, sometimes GraphQL is better. Wisdom lies in choosing."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> built a complete GraphQL client, efficiently fetching exactly what each component needed. "No over-fetching, no under-fetching," she marveled.</>,
+				<><strong>Query Master Apollo</strong> smiled. "You've learned the elegance of GraphQL. But remember, it's a tool. Sometimes REST is simpler, sometimes GraphQL is better. Wisdom lies in choosing."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Unified Interface</h3>

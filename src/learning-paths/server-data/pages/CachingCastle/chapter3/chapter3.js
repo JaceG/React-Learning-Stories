@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -67,18 +68,12 @@ const ChapterThree = () => {
 				bridge={`"You've mastered strategies and invalidation," Cache Lord Redux said, ascending to the highest tower. "Now it's time to architect a complete caching system. Multiple layers, intelligent TTL, automatic optimization - the Optimized Kingdom awaits!"`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> designed a comprehensive caching system. Data flowed 
-					efficiently, users experienced instant responses, and the servers breathed 
-					easier.
-				</p>
-
-				<p className='story-paragraph'>
-					"You've learned the balance," <strong>Cache Lord Redux</strong> approved. 
-					"Fresh when needed, cached when possible."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> designed a comprehensive caching system. Data flowed efficiently, users experienced instant responses, and the servers breathed easier.</>,
+				<>"You've learned the balance," <strong>Cache Lord Redux</strong> approved. "Fresh when needed, cached when possible."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Cache Architecture Overview</h3>

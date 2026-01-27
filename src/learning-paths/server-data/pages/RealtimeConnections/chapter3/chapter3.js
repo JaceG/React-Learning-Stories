@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -66,18 +67,12 @@ const ChapterThree = () => {
 				bridge={`"You've mastered streams and synchronization," Stream Sage WebSocket said, ascending to the highest observation platform. "Now witness the ultimate pattern - the Omnipresent Network. Here, users across all devices feel connected as one, sharing presence, cursors, and experiences in real-time."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> created a real-time collaborative system, users 
-					seeing changes instantly across the kingdom. "It's like the Event Echoes, 
-					but across the network!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Stream Sage</strong> nodded. "You understand. Real-time brings 
-					presence to applications. Users feel connected, not isolated."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> created a real-time collaborative system, users seeing changes instantly across the kingdom. "It's like the Event Echoes, but across the network!"</>,
+				<><strong>Stream Sage</strong> nodded. "You understand. Real-time brings presence to applications. Users feel connected, not isolated."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Omnipresent Network</h3>

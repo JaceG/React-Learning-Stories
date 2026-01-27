@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -112,23 +113,13 @@ type Subscription {
 				bridge={`"You've learned to write queries," Query Master Apollo said, leading Aria to the Schema Vault. "But the true power lies in understanding the contract itself. The Schema Scrolls define every field, every type, every relationship - like a detailed treaty between client and server."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Schema Scrolls defined the contract between client and server. 
-					"Every field, every type, every relationship," <strong>Apollo</strong> 
-					explained. "Like a detailed treaty between kingdoms."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> noticed similarities to her upcoming TypeScript 
-					training. "Types everywhere!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Yes! GraphQL and TypeScript are natural allies. Together, they create 
-					unbreakable contracts."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Schema Scrolls defined the contract between client and server. "Every field, every type, every relationship," <strong>Apollo</strong> explained. "Like a detailed treaty between kingdoms."</>,
+				<><strong>Aria</strong> noticed similarities to her upcoming TypeScript training. "Types everywhere!"</>,
+				`"Yes! GraphQL and TypeScript are natural allies. Together, they create unbreakable contracts."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Schema Scrolls</h3>

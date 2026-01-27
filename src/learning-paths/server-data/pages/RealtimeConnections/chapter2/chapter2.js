@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -67,18 +68,12 @@ const ChapterTwo = () => {
 				bridge={`"You've learned to open the streams," Stream Sage WebSocket said, leading Aria deeper into the flowing data. "But with great connectivity comes great complexity. Multiple users, concurrent updates, race conditions... Real-time isn't just about speed - it's about consistency."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Aria</strong> learned the complexity of real-time data. "Multiple 
-					users, concurrent updates, conflict resolution," Stream Sage explained. 
-					"Real-time isn't just about speed - it's about consistency."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> warned: "Watch for race conditions! When data 
-					flows constantly, timing becomes critical."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Aria</strong> learned the complexity of real-time data. "Multiple users, concurrent updates, conflict resolution," Stream Sage explained. "Real-time isn't just about speed - it's about consistency."</>,
+				<><strong>Debuggora</strong> warned: "Watch for race conditions! When data flows constantly, timing becomes critical."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Collaborative Editing Demo</h3>

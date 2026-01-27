@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -78,42 +79,16 @@ const ChapterThree = () => {
 				bridge={`With protocols mastered and patterns understood, Cloud Keeper Axios led Aria to the highest tower of the Cloud Citadel. "You're ready for the final challenge," Axios announced. "Here, you'll establish the Data Embassy - a permanent, production-ready connection between the React Kingdom and external servers."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Data Embassy was established - a permanent connection between the 
-					React Kingdom and external servers. <strong>Cloud Keeper Axios</strong> 
-					showed Aria the grand architecture.
-				</p>
-
-				<p className='story-paragraph'>
-					"This embassy will handle all diplomatic relations with servers," 
-					Axios explained. "Global error handling, coordinated loading states, 
-					optimistic updates - everything needed for production."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> implemented sophisticated data fetching patterns, 
-					combining her custom hook knowledge with API calls. "It's like creating 
-					a permanent embassy between our kingdom and the server!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> optimized the communication channels. "Request 
-					deduplication, caching, automatic retries - efficiency at every level!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> ensured reliability. "Error boundaries, 
-					fallback strategies, graceful degradation. The embassy must never 
-					fail completely."
-				</p>
-
-				<p className='story-paragraph'>
-					"You've done well," Axios praised. "But remember, with great data 
-					comes great responsibility. Always validate, always handle errors, 
-					always consider loading states."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Data Embassy was established - a permanent connection between the React Kingdom and external servers. <strong>Cloud Keeper Axios</strong> showed Aria the grand architecture.</>,
+				`"This embassy will handle all diplomatic relations with servers," Axios explained. "Global error handling, coordinated loading states, optimistic updates - everything needed for production."`,
+				<><strong>Aria</strong> implemented sophisticated data fetching patterns, combining her custom hook knowledge with API calls. "It's like creating a permanent embassy between our kingdom and the server!"</>,
+				<><strong>Binary</strong> optimized the communication channels. "Request deduplication, caching, automatic retries - efficiency at every level!"</>,
+				<><strong>Debuggora</strong> ensured reliability. "Error boundaries, fallback strategies, graceful degradation. The embassy must never fail completely."</>,
+				`"You've done well," Axios praised. "But remember, with great data comes great responsibility. Always validate, always handle errors, always consider loading states."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Production Patterns Workshop</h3>

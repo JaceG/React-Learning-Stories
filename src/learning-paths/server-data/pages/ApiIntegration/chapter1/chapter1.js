@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -35,38 +36,15 @@ const ChapterOne = () => {
 				title={`The Cloud Citadel Beckons`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The morning mist parted to reveal the Cloud Citadel - a massive 
-					structure floating above the React Kingdom, connected by ethereal 
-					data streams. Master Aurelius stood beside Aria on the observation deck.
-				</p>
-
-				<p className='story-paragraph'>
-					"Ambassador Aria," he began, using her new title with pride, "you've 
-					mastered client-side React. But modern applications need data from 
-					beyond our borders. The Cloud Citadel holds the keys to server 
-					communication."
-				</p>
-
-				<p className='story-paragraph'>
-					As they approached via sky bridge, <strong>Cloud Keeper Axios</strong> 
-					greeted them. "Welcome! Here, we bridge the gap between earth and sky, 
-					client and server. Your first lesson: speaking with distant servers."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary's</strong> circuits adapted, growing new communication 
-					modules. "I'm detecting multiple data streams, Aria. JSON, XML, 
-					GraphQL... each has its own patterns!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong>, now a permanent companion, observed: "And 
-					each stream has its own patterns, protocols, and pitfalls. Timing and 
-					error handling will be crucial."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`The morning mist parted to reveal the Cloud Citadel - a massive structure floating above the React Kingdom, connected by ethereal data streams. Master Aurelius stood beside Aria on the observation deck.`,
+				`"Ambassador Aria," he began, using her new title with pride, "you've mastered client-side React. But modern applications need data from beyond our borders. The Cloud Citadel holds the keys to server communication."`,
+				<>As they approached via sky bridge, <strong>Cloud Keeper Axios</strong> greeted them. "Welcome! Here, we bridge the gap between earth and sky, client and server. Your first lesson: speaking with distant servers."</>,
+				<><strong>Binary's</strong> circuits adapted, growing new communication modules. "I'm detecting multiple data streams, Aria. JSON, XML, GraphQL... each has its own patterns!"</>,
+				<><strong>Debuggora</strong>, now a permanent companion, observed: "And each stream has its own patterns, protocols, and pitfalls. Timing and error handling will be crucial."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Cloud Citadel</h3>

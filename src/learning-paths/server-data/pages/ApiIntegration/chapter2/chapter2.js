@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -58,39 +59,16 @@ const ChapterTwo = () => {
 				bridge={`Cloud Keeper Axios led them deeper into the Cloud Citadel, where the Protocol Chambers awaited. Each chamber glowed with a different hue, representing the various ways to communicate with distant servers. "You've learned to speak with servers," Axios explained. "Now you'll learn the different languages they understand."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Cloud Keeper Axios</strong> led them through the Protocol 
-					Chambers. "Each room represents a different way to communicate: REST, 
-					GraphQL, WebSockets. Each has its own customs."
-				</p>
-
-				<p className='story-paragraph'>
-					In the REST room, Aria learned the verbs: "GET for reading, POST for 
-					creating, PUT for updating, DELETE for removing. Like diplomatic 
-					actions!"
-				</p>
-
-				<p className='story-paragraph'>
-					"And headers?" Aria asked, remembering her navigation training.
-				</p>
-
-				<p className='story-paragraph'>
-					"Ah yes, the credentials and metadata. Authentication tokens, content 
-					types - the formal dress code of API communication."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the patterns. "Each protocol optimizes 
-					for different needs. REST for simplicity, GraphQL for flexibility, 
-					WebSockets for real-time!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> warned, "But each protocol can fail in 
-					unique ways. Proper error handling is your shield against chaos."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Cloud Keeper Axios</strong> led them through the Protocol Chambers. "Each room represents a different way to communicate: REST, GraphQL, WebSockets. Each has its own customs."</>,
+				`In the REST room, Aria learned the verbs: "GET for reading, POST for creating, PUT for updating, DELETE for removing. Like diplomatic actions!"`,
+				`"And headers?" Aria asked, remembering her navigation training.`,
+				`"Ah yes, the credentials and metadata. Authentication tokens, content types - the formal dress code of API communication."`,
+				<><strong>Binary</strong> analyzed the patterns. "Each protocol optimizes for different needs. REST for simplicity, GraphQL for flexibility, WebSockets for real-time!"</>,
+				<><strong>Debuggora</strong> warned, "But each protocol can fail in unique ways. Proper error handling is your shield against chaos."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Protocol Chambers</h3>

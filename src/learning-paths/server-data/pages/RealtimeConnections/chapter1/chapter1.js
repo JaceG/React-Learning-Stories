@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -42,23 +43,13 @@ const ChapterOne = () => {
 				title={`The Living Streams`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Stream Sage WebSocket</strong> appeared in a shimmer of constantly 
-					updating data. "Traditional APIs are like letters. But what if you need 
-					continuous conversation?"
-				</p>
-
-				<p className='story-paragraph'>
-					The sage demonstrated real-time streams - data flowing constantly between 
-					client and server. "WebSockets, Server-Sent Events, polling - each creates 
-					living connections."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> was fascinated. "It's like having an always-open portal!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Stream Sage WebSocket</strong> appeared in a shimmer of constantly updating data. "Traditional APIs are like letters. But what if you need continuous conversation?"</>,
+				`The sage demonstrated real-time streams - data flowing constantly between client and server. "WebSockets, Server-Sent Events, polling - each creates living connections."`,
+				<><strong>Binary</strong> was fascinated. "It's like having an always-open portal!"</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Living Streams Visualization</h3>

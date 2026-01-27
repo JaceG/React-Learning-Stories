@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -84,18 +85,12 @@ const ChapterTwo = () => {
 				bridge={`"You've mastered storing data," Cache Lord Redux said, leading Aria to the Invalidation Chamber. "But the hardest problem in caching is knowing when to let go. Stale data is sometimes acceptable, but serving truly outdated information can mislead your users."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"The hardest problem in caching," <strong>Cache Lord Redux</strong> intoned, 
-					"is knowing when to let go." Aria learned cache invalidation - the art of 
-					knowing when data was no longer fresh.
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> calculated probabilities. "Based on usage patterns, 
-					we can predict when to refresh!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"The hardest problem in caching," <strong>Cache Lord Redux</strong> intoned, "is knowing when to let go." Aria learned cache invalidation - the art of knowing when data was no longer fresh.</>,
+				<><strong>Binary</strong> calculated probabilities. "Based on usage patterns, we can predict when to refresh!"</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Invalidation Patterns</h3>

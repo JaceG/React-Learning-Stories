@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -97,19 +98,12 @@ const ChapterOne = () => {
 				title={`The Memory Vaults`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Caching Castle stored frequently used data. <strong>Cache Lord Redux</strong> 
-					(a distant cousin of the Redux Empire's emperor) explained: "Why fetch what 
-					you already have? The fastest request is the one you don't make."
-				</p>
-
-				<p className='story-paragraph'>
-					The castle's vaults were organized by freshness. "Stale data is sometimes 
-					acceptable," the Cache Lord explained. "It's about balance - freshness 
-					versus performance."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Caching Castle stored frequently used data. <strong>Cache Lord Redux</strong> (a distant cousin of the Redux Empire's emperor) explained: "Why fetch what you already have? The fastest request is the one you don't make."</>,
+				`The castle's vaults were organized by freshness. "Stale data is sometimes acceptable," the Cache Lord explained. "It's about balance - freshness versus performance."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Caching Castle</h3>

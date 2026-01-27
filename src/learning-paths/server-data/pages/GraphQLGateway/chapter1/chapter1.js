@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -67,23 +68,13 @@ const ChapterOne = () => {
 				title={`The Query Language`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					At the GraphQL Gateway, <strong>Query Master Apollo</strong> introduced 
-					a different approach. "REST gives you what the server decides. GraphQL 
-					lets you ask for exactly what you need."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria studied the query language. "It's like having a conversation 
-					instead of receiving packages!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely! One endpoint, infinite possibilities. But with great 
-					flexibility comes great responsibility."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>At the GraphQL Gateway, <strong>Query Master Apollo</strong> introduced a different approach. "REST gives you what the server decides. GraphQL lets you ask for exactly what you need."</>,
+				`Aria studied the query language. "It's like having a conversation instead of receiving packages!"`,
+				`"Precisely! One endpoint, infinite possibilities. But with great flexibility comes great responsibility."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The GraphQL Gateway</h3>
