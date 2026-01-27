@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	// Multiple related states
@@ -57,46 +58,20 @@ function ChapterThree() {
 					bridge="On her final day with Professor Hooksworth, Aria was led to the Academy's Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to your final useState lesson," Hooksworth
-						announced, gesturing at the complex diagrams. "You've
-						mastered individual spells, but true expertise lies in
-						<strong>architecting your state wisely</strong>."
-					</p>
+			<StorySection
+				paragraphs={[
+					<>"Welcome to your final useState lesson," Hooksworth announced, gesturing at the complex diagrams. "You've mastered individual spells, but true expertise lies in <strong>architecting your state wisely</strong>."</>,
+					`Aria watched as he manipulated a diagram showing multiple useState calls. "This looks... chaotic," she observed.`,
+					<>"Indeed! Many developers create what I call 'state soup' - dozens of unrelated useState calls swimming together." He consolidated several states into one with a wave of his wand. "First principle: <strong>Group related state</strong>. If values change together, they belong together."</>,
+					`Binary projected its own analysis, showing how grouped state reduced complexity and prevented synchronization bugs.`,
+					`"Your companion sees the pattern!" Hooksworth smiled. "Now observe this common mistake..." He pointed to redundant state values that could be calculated from others.`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Aria watched as he manipulated a diagram showing
-						multiple useState calls. "This looks... chaotic," she
-						observed.
-					</p>
-
-					<p className='story-paragraph'>
-						"Indeed! Many developers create what I call 'state soup'
-						- dozens of unrelated useState calls swimming together."
-						He consolidated several states into one with a wave of
-						his wand. "First principle:{' '}
-						<strong>Group related state</strong>. If values change
-						together, they belong together."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected its own analysis, showing how grouped
-						state reduced complexity and prevented synchronization
-						bugs.
-					</p>
-
-					<p className='story-paragraph'>
-						"Your companion sees the pattern!" Hooksworth smiled.
-						"Now observe this common mistake..." He pointed to
-						redundant state values that could be calculated from
-						others.
-					</p>
-
-					<CodeExample
-						title='State Grouping Patterns'
-						discoveredBy='Transcribed by Aria'
-						code={`// ❌ Separate states that change together:
+			<CodeExample
+				title='State Grouping Patterns'
+				discoveredBy='Transcribed by Aria'
+				code={`// ❌ Separate states that change together:
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
 const [data, setData] = useState(null);
@@ -109,29 +84,15 @@ const [fetchState, setFetchState] = useState({
 });
 
 // ✅ Or consider useReducer for complex state logic`}
-					/>
+			/>
 
-					<p className='story-paragraph'>
-						"Second principle," Hooksworth continued, vanishing the
-						redundant state with a gesture, "
-						<strong>Don't sync state</strong>. If you can calculate
-						something from existing state, calculate it during
-						render. Storing derived values is asking for bugs!"
-					</p>
-
-					<p className='story-paragraph'>
-						"Like the fullName example?" Aria suggested. "Calculate
-						it from firstName and lastName rather than storing it
-						separately?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Brilliant application!" Hooksworth beamed. "You're
-						thinking architecturally now. This prevents the
-						nightmare of state values disagreeing with each other.
-						Let me show you these principles in action."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					<>"Second principle," Hooksworth continued, vanishing the redundant state with a gesture, "<strong>Don't sync state</strong>. If you can calculate something from existing state, calculate it during render. Storing derived values is asking for bugs!"</>,
+					`"Like the fullName example?" Aria suggested. "Calculate it from firstName and lastName rather than storing it separately?"`,
+					`"Brilliant application!" Hooksworth beamed. "You're thinking architecturally now. This prevents the nightmare of state values disagreeing with each other. Let me show you these principles in action."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>

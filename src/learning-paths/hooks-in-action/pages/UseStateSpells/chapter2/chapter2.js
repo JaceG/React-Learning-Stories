@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const [formData, setFormData] = useState({
@@ -38,48 +39,21 @@ function ChapterTwo() {
 					bridge="The next day, Aria found herself in the Academy's Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Ah, Aria! Perfect timing," Hooksworth greeted. "Today
-						we tackle a challenge that trips up even experienced
-						mages - managing complex state structures."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Ah, Aria! Perfect timing," Hooksworth greeted. "Today we tackle a challenge that trips up even experienced mages - managing complex state structures."`,
+					`He gestured to the floating crystal. "Watch what happens when I try to change this object's properties directly." He touched the crystal, and it flickered but didn't update. "Nothing! Do you know why?"`,
+					`Aria studied the phenomenon. "Because React only detects changes when the reference changes?"`,
+					<>"Brilliant!" Hooksworth exclaimed. "This is the <strong>Immutability Principle</strong>. React's rendering magic only triggers when it sees a new object, not when we mutate an existing one."</>,
+					`Binary projected a comparison showing the difference between mutation and creating new objects, its display highlighting the reference changes.`,
+					`"Your companion visualizes it perfectly," Hooksworth noted. "Now, let me show you the proper incantations for updating complex state."`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						He gestured to the floating crystal. "Watch what happens
-						when I try to change this object's properties directly."
-						He touched the crystal, and it flickered but didn't
-						update. "Nothing! Do you know why?"
-					</p>
-
-					<p className='story-paragraph'>
-						Aria studied the phenomenon. "Because React only detects
-						changes when the reference changes?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Brilliant!" Hooksworth exclaimed. "This is the{' '}
-						<strong>Immutability Principle</strong>. React's
-						rendering magic only triggers when it sees a new object,
-						not when we mutate an existing one."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected a comparison showing the difference
-						between mutation and creating new objects, its display
-						highlighting the reference changes.
-					</p>
-
-					<p className='story-paragraph'>
-						"Your companion visualizes it perfectly," Hooksworth
-						noted. "Now, let me show you the proper incantations for
-						updating complex state."
-					</p>
-
-					<CodeExample
-						title='The Immutability Principle'
-						discoveredBy='Transcribed by Aria'
-						code={`// ❌ This won't trigger re-render:
+			<CodeExample
+				title='The Immutability Principle'
+				discoveredBy='Transcribed by Aria'
+				code={`// ❌ This won't trigger re-render:
 const [user, setUser] = useState({ name: 'Aria', level: 1 });
 user.name = 'Master Aria'; // Mutation!
 setUser(user); // Same reference
@@ -88,29 +62,15 @@ setUser(user); // Same reference
 setUser({ ...user, name: 'Master Aria' });
 // Or use functional update:
 setUser(prev => ({ ...prev, name: 'Master Aria' }));`}
-					/>
+			/>
 
-					<p className='story-paragraph'>
-						"The spread operator is your ally here," Hooksworth
-						continued, demonstrating with glowing gestures. "It
-						creates a new object while preserving unchanged
-						properties. For nested structures, you must spread at
-						each level you modify."
-					</p>
-
-					<p className='story-paragraph'>
-						"It seems tedious," Aria observed, "but I suppose it
-						prevents unexpected mutations?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Exactly! This discipline," Hooksworth emphasized,
-						tapping his wand on a floating tome, "is what separates
-						reliable applications from buggy nightmares.
-						Immutability ensures predictable state updates and
-						enables React's optimization magic."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"The spread operator is your ally here," Hooksworth continued, demonstrating with glowing gestures. "It creates a new object while preserving unchanged properties. For nested structures, you must spread at each level you modify."`,
+					`"It seems tedious," Aria observed, "but I suppose it prevents unexpected mutations?"`,
+					`"Exactly! This discipline," Hooksworth emphasized, tapping his wand on a floating tome, "is what separates reliable applications from buggy nightmares. Immutability ensures predictable state updates and enables React's optimization magic."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Interactive Exercise: Complex Spell Constructor</h3>

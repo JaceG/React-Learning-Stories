@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const [spellCount, setSpellCount] = useState(0);
@@ -34,85 +35,35 @@ function ChapterOne() {
 					title='Advanced State Incantations'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						In a circular classroom filled with hovering spell
-						books, Aria found a distinguished wizard whose robes
-						seemed to shimmer between different states. His beard
-						sparkled with tiny useState calls that blinked in and
-						out of existence.
-					</p>
+			<StorySection
+				paragraphs={[
+					`In a circular classroom filled with hovering spell books, Aria found a distinguished wizard whose robes seemed to shimmer between different states. His beard sparkled with tiny useState calls that blinked in and out of existence.`,
+					<>"Ah, you must be Aria!" the wizard exclaimed, adjusting his spectacles that displayed real-time component renders. "I am <strong>Professor Hooksworth</strong>, keeper of the Hook Laws. Word of your achievements has reached even these halls."</>,
+					`Binary chirped a greeting, projecting a small hologram of their previous adventures.`,
+					`"Impressive companion!" Hooksworth noted. "Now, I understand you've mastered basic state management with the State Sorcerers. But here at the Academy, we refine those crude spells into elegant hooks."`,
+					<>He waved his wand, and glowing runes appeared in the air. "Let's begin with an advanced pattern - <strong>Lazy Initial State</strong>. You see, Aria, sometimes our initial state requires expensive calculations. Rather than computing them on every render..."</>,
+					`"We can provide a function!" Aria finished, her eyes lighting up with understanding. "It only runs once, during initialization!"`,
+					`"Precisely!" Hooksworth beamed. "You're already thinking like a Hook Mage. Let me show you the incantation."`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						"Ah, you must be Aria!" the wizard exclaimed, adjusting
-						his spectacles that displayed real-time component
-						renders. "I am <strong>Professor Hooksworth</strong>,
-						keeper of the Hook Laws. Word of your achievements has
-						reached even these halls."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary chirped a greeting, projecting a small hologram
-						of their previous adventures.
-					</p>
-
-					<p className='story-paragraph'>
-						"Impressive companion!" Hooksworth noted. "Now, I
-						understand you've mastered basic state management with
-						the State Sorcerers. But here at the Academy, we refine
-						those crude spells into elegant hooks."
-					</p>
-
-					<p className='story-paragraph'>
-						He waved his wand, and glowing runes appeared in the
-						air. "Let's begin with an advanced pattern -{' '}
-						<strong>Lazy Initial State</strong>. You see, Aria,
-						sometimes our initial state requires expensive
-						calculations. Rather than computing them on every
-						render..."
-					</p>
-
-					<p className='story-paragraph'>
-						"We can provide a function!" Aria finished, her eyes
-						lighting up with understanding. "It only runs once,
-						during initialization!"
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely!" Hooksworth beamed. "You're already thinking
-						like a Hook Mage. Let me show you the incantation."
-					</p>
-
-					<CodeExample
-						title='Lazy Initial State Pattern'
-						discoveredBy='Transcribed by Aria'
-						code={`// Instead of this (runs on every render):
+			<CodeExample
+				title='Lazy Initial State Pattern'
+				discoveredBy='Transcribed by Aria'
+				code={`// Instead of this (runs on every render):
 const [data, setData] = useState(expensiveCalculation());
 
 // Use this (runs only once):
 const [data, setData] = useState(() => expensiveCalculation());`}
-					/>
+			/>
 
-					<p className='story-paragraph'>
-						"This incantation," Hooksworth explained, waving his
-						wand to highlight the arrow function, "ensures expensive
-						calculations only occur during the component's birth,
-						not with every re-render. It's the difference between a
-						novice and a master!"
-					</p>
-
-					<p className='story-paragraph'>
-						Binary beeped excitedly, projecting performance metrics
-						showing the efficiency gains.
-					</p>
-
-					<p className='story-paragraph'>
-						"Your companion grasps it immediately!" Hooksworth
-						chuckled. "Now, let me show you another crucial pattern
-						- functional updates. This is where many apprentices
-						stumble."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"This incantation," Hooksworth explained, waving his wand to highlight the arrow function, "ensures expensive calculations only occur during the component's birth, not with every re-render. It's the difference between a novice and a master!"`,
+					`Binary beeped excitedly, projecting performance metrics showing the efficiency gains.`,
+					`"Your companion grasps it immediately!" Hooksworth chuckled. "Now, let me show you another crucial pattern - functional updates. This is where many apprentices stumble."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>

@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	// Custom hook for form field
@@ -141,62 +142,31 @@ function ChapterOne() {
 					title='The Grand Orchestra - Harmonizing Multiple Hooks'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Aria, Binary, welcome!" The figure turned, revealing
-						robes that seemed woven from pure React patterns. "I am{' '}
-						<strong>Pattern Weaver Synthesis</strong>, and this is
-						where all your hook knowledge culminates into true
-						mastery."
-					</p>
+			<StorySection
+				paragraphs={[
+					<>"Aria, Binary, welcome!" The figure turned, revealing robes that seemed woven from pure React patterns. "I am <strong>Pattern Weaver Synthesis</strong>, and this is where all your hook knowledge culminates into true mastery."</>,
+					`Binary's processors hummed with excitement, detecting the complex interplay of all the hooks they'd learned flowing together.`,
+					`"You've learned individual hooks," Synthesis continued, gesturing to the energy streams, "but real applications require orchestration. Watch as I conduct multiple hooks like instruments in a symphony!"`,
+					`Synthesis raised their hands, and the energy streams began to dance. "Form management is the perfect demonstration - it requires state, validation, submission handling, error management, all working in perfect harmony."`,
+					`"Like a conductor managing an orchestra?" Aria suggested, already seeing the pattern.`,
+					`"Precisely! Each hook plays its part," Synthesis smiled, "but together they create something far greater. Let me show you the Form Symphony pattern!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Binary's processors hummed with excitement, detecting
-						the complex interplay of all the hooks they'd learned
-						flowing together.
-					</p>
-
-					<p className='story-paragraph'>
-						"You've learned individual hooks," Synthesis continued,
-						gesturing to the energy streams, "but real applications
-						require orchestration. Watch as I conduct multiple hooks
-						like instruments in a symphony!"
-					</p>
-
-					<p className='story-paragraph'>
-						Synthesis raised their hands, and the energy streams
-						began to dance. "Form management is the perfect
-						demonstration - it requires state, validation,
-						submission handling, error management, all working in
-						perfect harmony."
-					</p>
-
-					<p className='story-paragraph'>
-						"Like a conductor managing an orchestra?" Aria
-						suggested, already seeing the pattern.
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely! Each hook plays its part," Synthesis smiled,
-						"but together they create something far greater. Let me
-						show you the Form Symphony pattern!"
-					</p>
-
-					<div className='orchestra-visualization'>
-						<div className='orchestra-section'>
-							<div className='instrument'>🎻 useState</div>
-							<div className='instrument'>🎺 useEffect</div>
-							<div className='instrument'>🥁 useCallback</div>
-							<div className='instrument'>🎹 Custom Hooks</div>
-						</div>
-						<div className='conductor'>
-							<div className='conductor-icon'>🎼</div>
-							<div className='conductor-label'>
-								Form Orchestrator
-							</div>
-						</div>
+			<div className='orchestra-visualization'>
+				<div className='orchestra-section'>
+					<div className='instrument'>🎻 useState</div>
+					<div className='instrument'>🎺 useEffect</div>
+					<div className='instrument'>🥁 useCallback</div>
+					<div className='instrument'>🎹 Custom Hooks</div>
+				</div>
+				<div className='conductor'>
+					<div className='conductor-icon'>🎼</div>
+					<div className='conductor-label'>
+						Form Orchestrator
 					</div>
 				</div>
+			</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>

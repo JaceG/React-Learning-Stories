@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	// Component lifecycle tracking
@@ -108,53 +109,21 @@ function ChapterOne() {
 					title='The Lifecycle Enchantments'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						A figure materialized from the temporal flux - robed in
-						fabric that shifted between states of existence.
-						Hourglasses orbited around them, sand flowing upward in
-						some, frozen in others.
-					</p>
+				<StorySection
+					paragraphs={[
+						`A figure materialized from the temporal flux - robed in fabric that shifted between states of existence. Hourglasses orbited around them, sand flowing upward in some, frozen in others.`,
+						<>"Aria of the State Sorcerers," the figure intoned, their voice seeming to come from multiple moments in time. "I am the <strong>Effect Sage</strong>, keeper of the bridge between React's pure realm and the chaotic outside world."</>,
+						`Binary beeped nervously as its sensors detected temporal anomalies throughout the room.`,
+						<>"Fear not, small construct," the Sage smiled. "Time flows differently here because <strong>useEffect</strong> exists outside React's normal rendering cycle. It's where we handle side effects - the messy, impure operations that connect our components to external systems."</>,
+						`Aria stepped forward, intrigued. "Professor Hooksworth mentioned useEffect was different from other hooks."`,
+						`"Indeed," the Sage waved their hand, creating temporal diagrams in the air. "In the ancient times, class components had separate lifecycle methods. useEffect unified them all into one powerful enchantment. Watch and learn!"`
+					]}
+				/>
 
-					<p className='story-paragraph'>
-						"Aria of the State Sorcerers," the figure intoned, their
-						voice seeming to come from multiple moments in time. "I
-						am the <strong>Effect Sage</strong>, keeper of the
-						bridge between React's pure realm and the chaotic
-						outside world."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary beeped nervously as its sensors detected temporal
-						anomalies throughout the room.
-					</p>
-
-					<p className='story-paragraph'>
-						"Fear not, small construct," the Sage smiled. "Time
-						flows differently here because
-						<strong>useEffect</strong> exists outside React's normal
-						rendering cycle. It's where we handle side effects - the
-						messy, impure operations that connect our components to
-						external systems."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria stepped forward, intrigued. "Professor Hooksworth
-						mentioned useEffect was different from other hooks."
-					</p>
-
-					<p className='story-paragraph'>
-						"Indeed," the Sage waved their hand, creating temporal
-						diagrams in the air. "In the ancient times, class
-						components had separate lifecycle methods. useEffect
-						unified them all into one powerful enchantment. Watch
-						and learn!"
-					</p>
-
-					<CodeExample
-						title='The Basic useEffect Enchantment'
-						discoveredBy='Transcribed by Aria'
-						code={`// The basic useEffect enchantment
+				<CodeExample
+					title='The Basic useEffect Enchantment'
+					discoveredBy='Transcribed by Aria'
+					code={`// The basic useEffect enchantment
 useEffect(() => {
   // This runs after render
   console.log('Effect running!');
@@ -164,29 +133,15 @@ useEffect(() => {
     console.log('Cleaning up!');
   };
 }, []); // Dependencies array`}
-					/>
+				/>
 
-					<p className='story-paragraph'>
-						"The cleanup function," the Sage explained, temporal
-						echoes emphasizing each word, "is your protection
-						against temporal contamination. Without it, effects
-						linger across time, causing memory leaks and phantom
-						behaviors."
-					</p>
-
-					<p className='story-paragraph'>
-						"I see timers and subscriptions that outlive their
-						components," Aria observed, studying the code. "The
-						cleanup prevents them from haunting the application!"
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely!" The Sage's form solidified with approval.
-						"You understand the danger of unmanaged side effects.
-						Now, let me show you how different dependency arrays
-						control when your effects activate across the timeline."
-					</p>
-				</div>
+				<StorySection
+					paragraphs={[
+						`"The cleanup function," the Sage explained, temporal echoes emphasizing each word, "is your protection against temporal contamination. Without it, effects linger across time, causing memory leaks and phantom behaviors."`,
+						`"I see timers and subscriptions that outlive their components," Aria observed, studying the code. "The cleanup prevents them from haunting the application!"`,
+						`"Precisely!" The Sage's form solidified with approval. "You understand the danger of unmanaged side effects. Now, let me show you how different dependency arrays control when your effects activate across the timeline."`
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Interactive Exercise: The Lifecycle Laboratory</h3>

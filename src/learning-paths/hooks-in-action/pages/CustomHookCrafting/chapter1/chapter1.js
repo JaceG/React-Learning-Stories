@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	// Custom hook: useCounter
@@ -39,50 +40,38 @@ function ChapterOne() {
 					title='The Hook Forge Basics'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome, Aria!" The figure turned, revealing a woman
+				<StorySection
+					paragraphs={[
+						<>"Welcome, Aria!" The figure turned, revealing a woman
 						whose apron sparkled with embedded hook patterns. "I am{' '}
 						<strong>Master Artificer Compose</strong>, and this is
-						where we transcend from hook users to hook creators!"
-					</p>
-
-					<p className='story-paragraph'>
-						Binary scanned the workshop, projecting amazement at the
-						complex hook blueprints floating everywhere.
-					</p>
-
-					<p className='story-paragraph'>
-						"You've mastered useState and useEffect," Compose
+						where we transcend from hook users to hook creators!"</>,
+						`Binary scanned the workshop, projecting amazement at the
+						complex hook blueprints floating everywhere.`,
+						`"You've mastered useState and useEffect," Compose
 						continued, gesturing to her workbench. "But what if you
 						need the same pattern repeatedly? What if you want to
 						share stateful logic between components? This is where
-						custom hooks shine!"
-					</p>
-
-					<p className='story-paragraph'>
-						"So we can create our own hooks?" Aria asked, examining
-						a glowing blueprint.
-					</p>
-
-					<p className='story-paragraph'>
-						"Exactly! The secret is simple yet profound," Compose
+						custom hooks shine!"`,
+						`"So we can create our own hooks?" Aria asked, examining
+						a glowing blueprint.`,
+						`"Exactly! The secret is simple yet profound," Compose
 						explained, beginning to forge a new hook. "Any function
 						starting with 'use' can contain other hooks. This naming
 						convention tells React to apply the Rules of Hooks.
-						Watch as I forge two fundamental patterns!"
-					</p>
+						Watch as I forge two fundamental patterns!"`
+					]}
+				/>
 
-					<div className='forge-illustration'>
-						<div
-							className={`forge ${
-								isForgeOpen ? 'forge-active' : ''
-							}`}>
-							<div className='forge-fire'>🔥</div>
-							<div className='forge-anvil'>
-								<div className='hook-being-forged'>
-									{isForgeOpen ? 'useCustomHook' : 'Closed'}
-								</div>
+				<div className='forge-illustration'>
+					<div
+						className={`forge ${
+							isForgeOpen ? 'forge-active' : ''
+						}`}>
+						<div className='forge-fire'>🔥</div>
+						<div className='forge-anvil'>
+							<div className='hook-being-forged'>
+								{isForgeOpen ? 'useCustomHook' : 'Closed'}
 							</div>
 						</div>
 					</div>

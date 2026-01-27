@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	// Custom hook: useLocalStorage
@@ -92,52 +93,40 @@ function ChapterTwo() {
 					bridge="The next day, Compose led Aria to a more advanced section of the workshop where multiple forges worked in harmony. Here, apprentices weren't just creating simple hooks - they were combining multiple React hooks with browser APIs to forge truly powerful tools."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Yesterday you learned the basics," Compose began, her
+				<StorySection
+					paragraphs={[
+						`"Yesterday you learned the basics," Compose began, her
 						hands dancing between different energy streams. "Today,
 						we forge hooks that bridge React with the outside world.
 						Watch as I combine useState and useEffect to create
-						something greater!"
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected excitement, its sensors detecting the
-						complex energy patterns being woven together.
-					</p>
-
-					<p className='story-paragraph'>
-						"First, observe <strong>useLocalStorage</strong>,"
+						something greater!"`,
+						`Binary projected excitement, its sensors detecting the
+						complex energy patterns being woven together.`,
+						<>"First, observe <strong>useLocalStorage</strong>,"
 						Compose demonstrated, pulling localStorage energy into
 						her forge. "This hook persists state across browser
 						sessions - your data survives even when components
-						unmount!"
-					</p>
-
-					<p className='story-paragraph'>
-						"It's like giving components memory that transcends
+						unmount!"</>,
+						`"It's like giving components memory that transcends
 						their lifecycle!" Aria exclaimed, understanding the
-						implications.
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely! And here," Compose gestured to another
+						implications.`,
+						<>"Precisely! And here," Compose gestured to another
 						forge, "we have
 						<strong>useFetch</strong> - a hook that manages the
 						entire lifecycle of data fetching: loading states, error
 						handling, and the data itself. Multiple hooks working in
-						perfect harmony!"
-					</p>
+						perfect harmony!"</>
+					]}
+				/>
 
-					<div className='smithing-workshop'>
-						<div className='hook-combination'>
-							<div className='hook-ingredient'>useState</div>
-							<div className='plus-sign'>+</div>
-							<div className='hook-ingredient'>useEffect</div>
-							<div className='equals-sign'>=</div>
-							<div className='hook-result'>
-								Complex Custom Hook
-							</div>
+				<div className='smithing-workshop'>
+					<div className='hook-combination'>
+						<div className='hook-ingredient'>useState</div>
+						<div className='plus-sign'>+</div>
+						<div className='hook-ingredient'>useEffect</div>
+						<div className='equals-sign'>=</div>
+						<div className='hook-result'>
+							Complex Custom Hook
 						</div>
 					</div>
 				</div>

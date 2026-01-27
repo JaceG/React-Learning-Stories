@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	// State for the interactive demo
@@ -152,59 +153,34 @@ function ChapterThree() {
 				bridge='The final chamber of the Integration Sanctum was different - calmer, more refined. Here, the energy streams moved with perfect efficiency, each one following optimal paths that wasted no motion, no power.'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Welcome to the Performance Sanctuary," Synthesis said, their voice taking on 
-					a more serious tone. "Here, we address the final challenge of hook mastery - 
-					<strong>optimization</strong>. All the patterns you've learned mean nothing if 
-					they consume too much power."
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary's efficiency processors lit up, immediately analyzing the streamlined 
-					energy flows. It projected calculations showing wasted cycles versus optimized 
-					patterns.
-				</p>
-				
-				<p className='story-paragraph'>
-					"In React, every render has a cost," Synthesis explained, gesturing to a 
-					visualization of component renders cascading like waterfalls. "Without proper 
-					optimization, even simple changes can trigger expensive recalculations throughout 
-					your entire application tree."
-				</p>
-				
-				<p className='story-paragraph'>
-					"So we need to be selective about what recalculates?" Aria asked, studying the 
-					patterns.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Exactly! Meet your optimization allies," Synthesis waved their hand, and three 
-					glowing symbols appeared: "<strong>useMemo</strong> preserves calculation results, 
-					<strong>useCallback</strong> preserves function references, and <strong>React.memo</strong> 
-					preserves entire components. Together, they form the Trinity of Performance!"
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"Welcome to the Performance Sanctuary," Synthesis said, their voice taking on a more serious tone. "Here, we address the final challenge of hook mastery - <strong>optimization</strong>. All the patterns you've learned mean nothing if they consume too much power."</>,
+					`Binary's efficiency processors lit up, immediately analyzing the streamlined energy flows. It projected calculations showing wasted cycles versus optimized patterns.`,
+					`"In React, every render has a cost," Synthesis explained, gesturing to a visualization of component renders cascading like waterfalls. "Without proper optimization, even simple changes can trigger expensive recalculations throughout your entire application tree."`,
+					`"So we need to be selective about what recalculates?" Aria asked, studying the patterns.`,
+					<>"Exactly! Meet your optimization allies," Synthesis waved their hand, and three glowing symbols appeared: "<strong>useMemo</strong> preserves calculation results, <strong>useCallback</strong> preserves function references, and <strong>React.memo</strong> preserves entire components. Together, they form the Trinity of Performance!"</>
+				]}
+			/>
 
-				<div className='optimization-visualization'>
-					<div className='performance-trinity'>
-						<div className='trinity-member'>
-							<div className='member-icon'>🧠</div>
-							<div className='member-name'>useMemo</div>
-							<div className='member-role'>Calculation Memory</div>
-						</div>
-						<div className='trinity-member'>
-							<div className='member-icon'>🔄</div>
-							<div className='member-name'>useCallback</div>
-							<div className='member-role'>Function Stability</div>
-						</div>
-						<div className='trinity-member'>
-							<div className='member-icon'>⚡</div>
-							<div className='member-name'>React.memo</div>
-							<div className='member-role'>Component Shield</div>
-						</div>
+			<div className='optimization-visualization'>
+				<div className='performance-trinity'>
+					<div className='trinity-member'>
+						<div className='member-icon'>🧠</div>
+						<div className='member-name'>useMemo</div>
+						<div className='member-role'>Calculation Memory</div>
+					</div>
+					<div className='trinity-member'>
+						<div className='member-icon'>🔄</div>
+						<div className='member-name'>useCallback</div>
+						<div className='member-role'>Function Stability</div>
+					</div>
+					<div className='trinity-member'>
+						<div className='member-icon'>⚡</div>
+						<div className='member-name'>React.memo</div>
+						<div className='member-role'>Component Shield</div>
 					</div>
 				</div>
-
 			</div>
 
 			<div className='interactive-section'>

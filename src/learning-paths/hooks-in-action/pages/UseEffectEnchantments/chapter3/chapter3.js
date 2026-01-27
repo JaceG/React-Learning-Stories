@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const [data, setData] = useState(null);
@@ -116,41 +117,20 @@ function ChapterThree() {
 					bridge="At the tower's apex, Aria found the Chamber of Asynchronous Arts - a place where multiple timelines converged. Portals opened and closed randomly, each showing data arriving from different moments. The Effect Sage stood at the center, orchestrating the temporal chaos."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the most dangerous chamber in the tower,"
-						the Sage intoned, gestures creating ripples through
-						time. "Here, we handle asynchronous operations - where
-						time becomes non-linear and race conditions threaten
-						reality itself."
-					</p>
+				<StorySection
+					paragraphs={[
+						`"Welcome to the most dangerous chamber in the tower," the Sage intoned, gestures creating ripples through time. "Here, we handle asynchronous operations - where time becomes non-linear and race conditions threaten reality itself."`,
+						`Binary's processors whirred anxiously as it detected temporal anomalies everywhere.`,
+						`"The first law of async effects," the Sage continued, stabilizing a flickering portal, "is that you cannot make the effect function itself async. React expects either nothing or a cleanup function, not a Promise floating in temporal limbo."`,
+						`"So we create async functions inside the effect?" Aria deduced, studying the patterns.`,
+						`"Precisely! Observe the proper incantation:"`
+					]}
+				/>
 
-					<p className='story-paragraph'>
-						Binary's processors whirred anxiously as it detected
-						temporal anomalies everywhere.
-					</p>
-
-					<p className='story-paragraph'>
-						"The first law of async effects," the Sage continued,
-						stabilizing a flickering portal, "is that you cannot
-						make the effect function itself async. React expects
-						either nothing or a cleanup function, not a Promise
-						floating in temporal limbo."
-					</p>
-
-					<p className='story-paragraph'>
-						"So we create async functions inside the effect?" Aria
-						deduced, studying the patterns.
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely! Observe the proper incantation:"
-					</p>
-
-					<CodeExample
-						title='Async Effect Pattern'
-						discoveredBy='Transcribed by Aria'
-						code={`// ❌ Don't do this - effect can't be async
+				<CodeExample
+					title='Async Effect Pattern'
+					discoveredBy='Transcribed by Aria'
+					code={`// ❌ Don't do this - effect can't be async
 useEffect(async () => {
   const data = await fetchData();
   setData(data);
@@ -172,32 +152,19 @@ useEffect(() => {
   
   loadData();
 }, []);`}
-					/>
+				/>
 
-					<p className='story-paragraph'>
-						The Sage's form flickered between multiple states. "But
-						beware the greatest temporal threat - race conditions!
-						When multiple async requests overlap, they create
-						competing timelines. The last to arrive isn't always the
-						last requested!"
-					</p>
+				<StorySection
+					paragraphs={[
+						`The Sage's form flickered between multiple states. "But beware the greatest temporal threat - race conditions! When multiple async requests overlap, they create competing timelines. The last to arrive isn't always the last requested!"`,
+						`"Like messages arriving out of order?" Aria asked, watching portals deliver data chaotically.`,
+						`"Exactly! The AbortController spell is your temporal guardian," the Sage demonstrated, closing outdated portals with precise gestures. "It cancels obsolete requests, preventing old data from overwriting new. Without it, temporal chaos reigns!"`
+					]}
+				/>
 
-					<p className='story-paragraph'>
-						"Like messages arriving out of order?" Aria asked,
-						watching portals deliver data chaotically.
-					</p>
-
-					<p className='story-paragraph'>
-						"Exactly! The AbortController spell is your temporal
-						guardian," the Sage demonstrated, closing outdated
-						portals with precise gestures. "It cancels obsolete
-						requests, preventing old data from overwriting new.
-						Without it, temporal chaos reigns!"
-					</p>
-
-					<CodeExample
-						title='Race Condition Protection'
-						code={`// Race condition protection with AbortController
+				<CodeExample
+					title='Race Condition Protection'
+					code={`// Race condition protection with AbortController
 useEffect(() => {
   const controller = new AbortController();
   
@@ -224,8 +191,7 @@ useEffect(() => {
   // Cleanup - cancel pending request
   return () => controller.abort();
 }, [url]);`}
-					/>
-				</div>
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Interactive Exercise: The Async Data Portal</h3>

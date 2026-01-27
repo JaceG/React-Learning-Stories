@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	// Custom hook: useDebounce
@@ -104,48 +105,36 @@ function ChapterThree() {
 					bridge='On the final day at the Synthesis Workshop, Compose led Aria to a magnificent library adjoining the forges. Crystalline shelves held thousands of glowing hook patterns, each one a tested solution to common React challenges.'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the Grand Repository!" Compose announced
+				<StorySection
+					paragraphs={[
+						`"Welcome to the Grand Repository!" Compose announced
 						with pride. "Every hook forged here is documented,
 						tested, and battle-proven. This is where individual
-						creativity becomes collective wisdom."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary scanned the shelves, downloading documentation at
+						creativity becomes collective wisdom."`,
+						`Binary scanned the shelves, downloading documentation at
 						an impressive rate, its display showing excitement at
-						the vast collection.
-					</p>
-
-					<p className='story-paragraph'>
-						"A hook library," Compose explained, pulling several
+						the vast collection.`,
+						`"A hook library," Compose explained, pulling several
 						glowing patterns from the shelves, "transforms solved
 						problems into reusable tools. Why should every developer
-						reinvent debouncing or window size detection?"
-					</p>
-
-					<p className='story-paragraph'>
-						"It's like a shared armory!" Aria realized. "Each hook
+						reinvent debouncing or window size detection?"`,
+						`"It's like a shared armory!" Aria realized. "Each hook
 						is a weapon against complexity, available to all who
-						need it."
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely! Let me show you our most essential hooks,"
+						need it."`,
+						`"Precisely! Let me show you our most essential hooks,"
 						Compose said, activating three patterns. "These solve
 						problems so common, they've become fundamental tools in
-						every React developer's arsenal."
-					</p>
+						every React developer's arsenal."`
+					]}
+				/>
 
-					<div className='library-visualization'>
-						<div className='library-shelf'>
-							<div className='hook-scroll'>useDebounce</div>
-							<div className='hook-scroll'>useWindowSize</div>
-							<div className='hook-scroll'>useInterval</div>
-							<div className='hook-scroll'>useAsync</div>
-							<div className='hook-scroll'>usePrevious</div>
-						</div>
+				<div className='library-visualization'>
+					<div className='library-shelf'>
+						<div className='hook-scroll'>useDebounce</div>
+						<div className='hook-scroll'>useWindowSize</div>
+						<div className='hook-scroll'>useInterval</div>
+						<div className='hook-scroll'>useAsync</div>
+						<div className='hook-scroll'>usePrevious</div>
 					</div>
 				</div>
 

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const [count, setCount] = useState(0);
@@ -87,43 +88,20 @@ function ChapterTwo() {
 					bridge='The next level of the Temporal Tower contained a vast observatory filled with floating crystal spheres. Each sphere monitored different aspects of time - some spinning rapidly, others frozen, a few pulsing rhythmically. The Effect Sage awaited Aria at the center.'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the Dependency Observatory," the Sage
-						announced, gesturing to the swirling orbs. "Here we
-						study the most delicate aspect of useEffect - the
-						dependency array, which controls when effects activate
-						across time."
-					</p>
+				<StorySection
+					paragraphs={[
+						`"Welcome to the Dependency Observatory," the Sage announced, gesturing to the swirling orbs. "Here we study the most delicate aspect of useEffect - the dependency array, which controls when effects activate across time."`,
+						`Binary scanned the spheres, its display showing different activation patterns for each one.`,
+						`"The dependency array," the Sage explained, touching a sphere that immediately synchronized with their movement, "is your contract with time itself. It declares: 'Only activate this effect when these specific values change their temporal state.'"`,
+						`Aria watched three primary spheres float forward, each glowing with distinct patterns. "These represent the three fundamental dependency patterns?"`,
+						`"Indeed!" The Sage waved their hand, and the patterns became visible:`
+					]}
+				/>
 
-					<p className='story-paragraph'>
-						Binary scanned the spheres, its display showing
-						different activation patterns for each one.
-					</p>
-
-					<p className='story-paragraph'>
-						"The dependency array," the Sage explained, touching a
-						sphere that immediately synchronized with their
-						movement, "is your contract with time itself. It
-						declares: 'Only activate this effect when these specific
-						values change their temporal state.'"
-					</p>
-
-					<p className='story-paragraph'>
-						Aria watched three primary spheres float forward, each
-						glowing with distinct patterns. "These represent the
-						three fundamental dependency patterns?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Indeed!" The Sage waved their hand, and the patterns
-						became visible:
-					</p>
-
-					<CodeExample
-						title='Dependency Array Patterns'
-						discoveredBy='Transcribed by Aria'
-						code={`// Pattern 1: No dependency array - runs after EVERY render
+				<CodeExample
+					title='Dependency Array Patterns'
+					discoveredBy='Transcribed by Aria'
+					code={`// Pattern 1: No dependency array - runs after EVERY render
 useEffect(() => {
   console.log('I run after every render!');
 });
@@ -137,29 +115,15 @@ useEffect(() => {
 useEffect(() => {
   console.log('I run when count or name changes!');
 }, [count, name]);`}
-					/>
+				/>
 
-					<p className='story-paragraph'>
-						"But beware the temporal paradoxes!" the Sage warned,
-						their form flickering with urgency. "Missing
-						dependencies create stale closures - values frozen in
-						past time. Unnecessary dependencies cause temporal
-						loops, triggering effects repeatedly."
-					</p>
-
-					<p className='story-paragraph'>
-						"How do we avoid these paradoxes?" Aria asked, noting
-						Binary's concerned beeping.
-					</p>
-
-					<p className='story-paragraph'>
-						"The ancient ESLint spell 'exhaustive-deps' serves as
-						your temporal guardian," the Sage replied. "It warns
-						when your dependency array lies about what values your
-						effect truly observes. Trust its wisdom - it prevents
-						countless temporal anomalies!"
-					</p>
-				</div>
+				<StorySection
+					paragraphs={[
+						`"But beware the temporal paradoxes!" the Sage warned, their form flickering with urgency. "Missing dependencies create stale closures - values frozen in past time. Unnecessary dependencies cause temporal loops, triggering effects repeatedly."`,
+						`"How do we avoid these paradoxes?" Aria asked, noting Binary's concerned beeping.`,
+						`"The ancient ESLint spell 'exhaustive-deps' serves as your temporal guardian," the Sage replied. "It warns when your dependency array lies about what values your effect truly observes. Trust its wisdom - it prevents countless temporal anomalies!"`
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>

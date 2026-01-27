@@ -3,6 +3,7 @@ import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 // Create contexts
 const StateContext = createContext();
@@ -300,51 +301,28 @@ function ChapterTwo() {
 				bridge='Pattern Weaver Synthesis led Aria deeper into the Integration Sanctum, where the energy streams formed even more intricate patterns. Here, massive crystalline structures pulsed with synchronized data flows, each one representing a different state management pattern.'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"You've mastered individual hook orchestration," Synthesis began, gesturing 
-					to a particularly complex crystal formation. "Now witness how we manage 
-					state across entire applications. This is the <strong>Grand Symphony 
-					Pattern</strong>!"
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary's processors whirred with anticipation, detecting the familiar patterns 
-					of useReducer combined with Context in ways it had never seen before.
-				</p>
-				
-				<p className='story-paragraph'>
-					"When your application grows beyond simple state," Synthesis explained, 
-					weaving energy streams together, "you need patterns that scale. UseReducer 
-					brings predictable state updates through actions, while Context distributes 
-					that state throughout your component tree."
-				</p>
-				
-				<p className='story-paragraph'>
-					"Like a conductor managing an entire orchestra?" Aria suggested, seeing 
-					the pattern emerge.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Exactly! Each section plays its part," Synthesis smiled, "but they all 
-					follow the conductor's lead. Let me show you the Kingdom Management System - 
-					a perfect demonstration of this pattern!"
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"You've mastered individual hook orchestration," Synthesis began, gesturing to a particularly complex crystal formation. "Now witness how we manage state across entire applications. This is the <strong>Grand Symphony Pattern</strong>!"</>,
+					`Binary's processors whirred with anticipation, detecting the familiar patterns of useReducer combined with Context in ways it had never seen before.`,
+					`"When your application grows beyond simple state," Synthesis explained, weaving energy streams together, "you need patterns that scale. UseReducer brings predictable state updates through actions, while Context distributes that state throughout your component tree."`,
+					`"Like a conductor managing an entire orchestra?" Aria suggested, seeing the pattern emerge.`,
+					`"Exactly! Each section plays its part," Synthesis smiled, "but they all follow the conductor's lead. Let me show you the Kingdom Management System - a perfect demonstration of this pattern!"`
+				]}
+			/>
 
-				<div className='symphony-visualization'>
-					<div className='orchestra-layout'>
-						<div className='conductor-podium'>
-							<div className='conductor'>🎼 useReducer</div>
-							<div className='baton'>Actions & Dispatch</div>
-						</div>
-						<div className='orchestra-sections'>
-							<div className='section'>🎻 State Context</div>
-							<div className='section'>🎺 Dispatch Context</div>
-							<div className='section'>🥁 Components</div>
-						</div>
+			<div className='symphony-visualization'>
+				<div className='orchestra-layout'>
+					<div className='conductor-podium'>
+						<div className='conductor'>🎼 useReducer</div>
+						<div className='baton'>Actions & Dispatch</div>
+					</div>
+					<div className='orchestra-sections'>
+						<div className='section'>🎻 State Context</div>
+						<div className='section'>🎺 Dispatch Context</div>
+						<div className='section'>🥁 Components</div>
 					</div>
 				</div>
-
 			</div>
 
 			<div className='interactive-section'>
