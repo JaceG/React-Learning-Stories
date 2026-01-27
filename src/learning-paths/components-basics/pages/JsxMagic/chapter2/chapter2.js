@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [expressionType, setExpressionType] = useState('text');
@@ -62,36 +63,21 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title='Embedding Magic Spells'
-				bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title='Embedding Magic Spells'
+			bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"The real magic of JSX," Professor Syntaxis explained,
-					"comes from its ability to embed JavaScript expressions
-					directly within the markup. Watch as I demonstrate the{' '}
-					<strong>Curly Brace Incantation</strong>!"
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"The real magic of JSX," Professor Syntaxis explained, "comes from its ability to embed JavaScript expressions directly within the markup. Watch as I demonstrate the{' '}<strong>Curly Brace Incantation</strong>!"</>,
+				`The professor waved his wand, and curly braces began to glow around various parts of a component spell. "These braces act as portals between the markup realm and the JavaScript realm. Anything inside them is evaluated as pure JavaScript!"`,
+				<>Aria watched in fascination as a small sprite named <strong>Binary</strong> appeared. "I help evaluate expressions!" Binary chirped. "When I see curly braces, I know it's time to run JavaScript calculations!"</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					The professor waved his wand, and curly braces began to glow
-					around various parts of a component spell. "These braces act
-					as portals between the markup realm and the JavaScript
-					realm. Anything inside them is evaluated as pure
-					JavaScript!"
-				</p>
-
-				<p className='story-paragraph'>
-					Aria watched in fascination as a small sprite named
-					<strong>Binary</strong> appeared. "I help evaluate
-					expressions!" Binary chirped. "When I see curly braces, I
-					know it's time to run JavaScript calculations!"
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="Expression Magic Demonstration"
 					discoveredBy="Binary's favorite example"
 					code={`// Aria practices embedding expressions
@@ -118,20 +104,14 @@ return (
 </div>
 );
 }`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					"By the scrolls!" Aria gasped. "We can put any JavaScript
-					expression inside those curly braces - variables, function
-					calls, even conditional logic!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Indeed," Syntaxis nodded. "This fusion of markup and logic
-					is what makes React components so powerful. Now, let Binary
-					guide you through the Expression Playground..."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"By the scrolls!" Aria gasped. "We can put any JavaScript expression inside those curly braces - variables, function calls, even conditional logic!"`,
+				`"Indeed," Syntaxis nodded. "This fusion of markup and logic is what makes React components so powerful. Now, let Binary guide you through the Expression Playground..."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

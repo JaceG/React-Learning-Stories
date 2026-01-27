@@ -19,6 +19,10 @@ REFACTORING_INSTRUCTIONS.md
 .env.test.local
 .env.production.local
 
+# narrative extraction
+/scripts/narrative-master.json
+/scripts/narrative-master.md
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

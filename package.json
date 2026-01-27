@@ -21,7 +21,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "render-build": "npm install && npm run build",
-    "serve": "serve -s build -l 10000"
+    "serve": "serve -s build -l 10000",
+    "extract-narrative": "node scripts/extract-narrative.js",
+    "inject-narrative": "node scripts/inject-narrative.js",
+    "export-markdown": "node scripts/export-markdown.js"
   },
   "eslintConfig": {
     "extends": [

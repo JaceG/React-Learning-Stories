@@ -1,0 +1,139 @@
+{
+  "learningPaths": [
+    {
+      "id": "components-basics",
+      "lessons": [
+        { "id": "ComponentKingdom", "folder": "ComponentKingdom" },
+        { "id": "PropsMessengers", "folder": "PropsMessengers" },
+        { "id": "JsxMagic", "folder": "JsxMagic" },
+        { "id": "ComponentLifecycle", "folder": "ComponentLifecycle" }
+      ]
+    },
+    {
+      "id": "state-management",
+      "lessons": [
+        { "id": "StateSorcerers", "folder": "StateSorcerers" },
+        { "id": "MagicalHooks", "folder": "MagicalHooks" },
+        { "id": "GrandContext", "folder": "GrandContext" },
+        { "id": "StateManagementAdventures", "folder": "StateManagementAdventures" }
+      ]
+    },
+    {
+      "id": "props-data-flow",
+      "lessons": [
+        { "id": "PropForge", "folder": "PropForge" },
+        { "id": "PropsCaravans", "folder": "PropsCaravans" },
+        { "id": "EventEchoes", "folder": "EventEchoes" },
+        { "id": "DataRivers", "folder": "DataRivers" }
+      ]
+    },
+    {
+      "id": "hooks-in-action",
+      "lessons": [
+        { "id": "UseStateSpells", "folder": "UseStateSpells" },
+        { "id": "UseEffectEnchantments", "folder": "UseEffectEnchantments" },
+        { "id": "CustomHookCrafting", "folder": "CustomHookCrafting" },
+        { "id": "HookPatternMastery", "folder": "HookPatternMastery" }
+      ]
+    },
+    {
+      "id": "forms-events",
+      "lessons": [
+        { "id": "EventSymphony", "folder": "EventSymphony" },
+        { "id": "FormAlchemy", "folder": "FormAlchemy" },
+        { "id": "ValidationGuardians", "folder": "ValidationGuardians" },
+        { "id": "SubmissionPortals", "folder": "SubmissionPortals" }
+      ]
+    },
+    {
+      "id": "routing-navigation",
+      "lessons": [
+        { "id": "NavigationCompass", "folder": "NavigationCompass" },
+        { "id": "WaypointWizardry", "folder": "WaypointWizardry" },
+        { "id": "GuardianGates", "folder": "GuardianGates" },
+        { "id": "PortalPassages", "folder": "PortalPassages" }
+      ]
+    },
+    {
+      "id": "performance-optimization",
+      "lessons": [
+        { "id": "MemoryMonastery", "folder": "MemoryMonastery" },
+        { "id": "LazyLibrary", "folder": "LazyLibrary" },
+        { "id": "VirtualizationVault", "folder": "VirtualizationVault" },
+        { "id": "SpeedSanctum", "folder": "SpeedSanctum" }
+      ]
+    },
+    {
+      "id": "testing-debugging",
+      "lessons": [
+        { "id": "TestingTower", "folder": "TestingTower" },
+        { "id": "IntegrationInn", "folder": "IntegrationInn" },
+        { "id": "DebugDungeon", "folder": "DebugDungeon" },
+        { "id": "ErrorEnchantments", "folder": "ErrorEnchantments" }
+      ]
+    },
+    {
+      "id": "advanced-patterns",
+      "lessons": [
+        { "id": "CompoundComponents", "folder": "CompoundComponents" },
+        { "id": "RenderProps", "folder": "RenderProps" },
+        { "id": "HigherOrderComponents", "folder": "HigherOrderComponents" },
+        { "id": "PortalsRefs", "folder": "PortalsRefs" }
+      ]
+    },
+    {
+      "id": "react-ecosystem",
+      "lessons": [
+        { "id": "StateManagementLibraries", "folder": "StateManagementLibraries" },
+        { "id": "StylingSolutions", "folder": "StylingSolutions" },
+        { "id": "FormLibraries", "folder": "FormLibraries" },
+        { "id": "AnimationLibraries", "folder": "AnimationLibraries" }
+      ]
+    },
+    {
+      "id": "server-data",
+      "lessons": [
+        { "id": "ApiIntegration", "folder": "ApiIntegration" },
+        { "id": "RealtimeConnections", "folder": "RealtimeConnections" },
+        { "id": "CachingCastle", "folder": "CachingCastle" },
+        { "id": "GraphQLGateway", "folder": "GraphQLGateway" }
+      ]
+    },
+    {
+      "id": "typescript-react",
+      "lessons": [
+        { "id": "TypeForge", "folder": "TypeForge" },
+        { "id": "ComponentArmory", "folder": "ComponentArmory" },
+        { "id": "GenericForge", "folder": "GenericForge" },
+        { "id": "TypeGuardTower", "folder": "TypeGuardTower" }
+      ]
+    },
+    {
+      "id": "build-deploy",
+      "lessons": [
+        { "id": "BuildSystems", "folder": "BuildSystems" },
+        { "id": "CiCdPipeline", "folder": "CiCdPipeline" },
+        { "id": "HostingHorizons", "folder": "HostingHorizons" },
+        { "id": "ProductionReadiness", "folder": "ProductionReadiness" }
+      ]
+    },
+    {
+      "id": "react-native",
+      "lessons": [
+        { "id": "MobileFoundations", "folder": "MobileFoundations" },
+        { "id": "NativePowers", "folder": "NativePowers" },
+        { "id": "NavigationTrails", "folder": "NavigationTrails" },
+        { "id": "AppDistribution", "folder": "AppDistribution" }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "lessons": [
+        { "id": "InclusiveFoundations", "folder": "InclusiveFoundations" },
+        { "id": "InteractionPatterns", "folder": "InteractionPatterns" },
+        { "id": "VisualAccessibility", "folder": "VisualAccessibility" },
+        { "id": "TestingTools", "folder": "TestingTools" }
+      ]
+    }
+  ]
+}

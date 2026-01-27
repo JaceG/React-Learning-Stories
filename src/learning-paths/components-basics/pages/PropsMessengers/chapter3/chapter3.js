@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [propTypeComponent, setPropTypeComponent] = useState('button');
@@ -163,32 +164,16 @@ const ChapterThree = () => {
 				bridge='Having learned about the one-way flow of props, Aria was ready for the final lesson at the Props Messenger Guild. Hermes had one more important concept to share.'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"As our kingdom grew," Hermes began, "we encountered a new problem. 
-					Sometimes messengers would deliver the wrong type of props to a workshop. 
-					A Button might receive a number where it expected text, or a Card 
-					might receive a string where it expected an object."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria winced. "That must have caused chaos!"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Indeed it did," Hermes nodded. "Until we established the 
-					<strong>PropTypes Guardians</strong> - specialized sentinels that 
-					inspect the props at each workshop to ensure they are of the correct 
-					type. If an improper prop is detected, the Guardians raise a warning."
-				</p>
-				
-				<p className='story-paragraph'>
-					A stern-looking guardian appeared, wearing robes adorned with type 
-					symbols. "I am Guardian TypeCheck," she announced. "I ensure that 
-					workshops receive exactly what they expect. Watch and learn!"
-				</p>
+			<StorySection
+				paragraphs={[
+					`"As our kingdom grew," Hermes began, "we encountered a new problem. Sometimes messengers would deliver the wrong type of props to a workshop. A Button might receive a number where it expected text, or a Card might receive a string where it expected an object."`,
+					`Aria winced. "That must have caused chaos!"`,
+					<>"Indeed it did," Hermes nodded. "Until we established the <strong>PropTypes Guardians</strong> - specialized sentinels that inspect the props at each workshop to ensure they are of the correct type. If an improper prop is detected, the Guardians raise a warning."</>,
+					`A stern-looking guardian appeared, wearing robes adorned with type symbols. "I am Guardian TypeCheck," she announced. "I ensure that workshops receive exactly what they expect. Watch and learn!"`
+				]}
+			/>
 
-				<div className='proptype-guardians-illustration'>
+			<div className='proptype-guardians-illustration'>
 					<div className='component-selector'>
 						<h3>Choose a Component</h3>
 						<div className='component-options'>
@@ -484,23 +469,14 @@ Card.defaultProps = {
 							)}
 						</div>
 					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					"The PropTypes Guardians don't prevent a component from rendering 
-					with incorrect props," Guardian TypeCheck explained, "but they 
-					provide valuable warnings during development, making it easier to 
-					track down bugs."
-				</p>
-				
-				<p className='story-paragraph'>
-					"And notice," Hermes added, "how some workshops establish 
-					<strong>DefaultProps</strong> as fallback values if a messenger 
-					fails to deliver a particular prop. It's like having spare parts 
-					ready just in case!"
-				</p>
-				
 			</div>
+
+			<StorySection
+				paragraphs={[
+					`"The PropTypes Guardians don't prevent a component from rendering with incorrect props," Guardian TypeCheck explained, "but they provide valuable warnings during development, making it easier to track down bugs."`,
+					<>"And notice," Hermes added, "how some workshops establish <strong>DefaultProps</strong> as fallback values if a messenger fails to deliver a particular prop. It's like having spare parts ready just in case!"</>
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

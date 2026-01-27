@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeComponent, setActiveComponent] = useState(null);
@@ -24,33 +25,22 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title='Building Complex Structures'
-				bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title='Building Complex Structures'
+			bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Now comes the true power of our kingdom," Aurelius announced with pride. 
-					"Watch how workshops collaborate. Larger workshops can use the creations 
-					of smaller workshops, combining them into more complex structures. This 
-					practice, known as <strong>Component Composition</strong>, allows us to 
-					build incredible things."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria watched as components began assembling themselves like magical 
-					building blocks. "It's like... each component is a piece of a larger puzzle!"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece 
-					focuses on doing one thing well, delegating other responsibilities to 
-					specialized components."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Now comes the true power of our kingdom," Aurelius announced with pride. "Watch how workshops collaborate. Larger workshops can use the creations of smaller workshops, combining them into more complex structures. This practice, known as <strong>Component Composition</strong>, allows us to build incredible things."</>,
+				`Aria watched as components began assembling themselves like magical building blocks. "It's like... each component is a piece of a larger puzzle!"`,
+				`"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components."`
+			]}
+		/>
 
-				<div className='composition-illustration'>
+		<div className='story-section'>
+			<div className='composition-illustration'>
 					<div className='component-library'>
 						<h4>Component Library</h4>
 						<p>Click components to add them to your dashboard:</p>
@@ -183,15 +173,14 @@ const ChapterThree = () => {
 							)}
 						</div>
 					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					Aria experimented with different combinations, marveling at how 
-					simple components could be assembled into increasingly sophisticated 
-					interfaces. "I can build anything now!" she exclaimed.
-				</p>
-				
 			</div>
+		</div>
+
+		<StorySection
+			paragraphs={[
+				`Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. "I can build anything now!" she exclaimed.`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [selectedProp, setSelectedProp] = useState(null);
@@ -14,22 +15,20 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={2}
-				title='Messages Between Workshops'
-				bridge='After mastering individual workshops, Aria discovered that components could work together. Master Aurelius led her to a bustling communication hub where messengers rushed between workshops.'
-			/>
+		<ChapterIntro
+			chapterNumber={2}
+			title='Messages Between Workshops'
+			bridge='After mastering individual workshops, Aria discovered that components could work together. Master Aurelius led her to a bustling communication hub where messengers rushed between workshops.'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"For the Component Kingdom to function properly," Aurelius explained, 
-					"workshops must communicate with each other. Watch how the master builder 
-					App sends special messengers carrying bags called <strong>Props</strong> 
-					to each workshop. These props contain all the specifications a workshop 
-					needs to create its piece."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"For the Component Kingdom to function properly," Aurelius explained, "workshops must communicate with each other. Watch how the master builder App sends special messengers carrying bags called <strong>Props</strong> to each workshop. These props contain all the specifications a workshop needs to create its piece."</>
+			]}
+		/>
 
-				<div className='messenger-illustration'>
+		<div className='story-section'>
+			<div className='messenger-illustration'>
 					<div className='app-messenger'>
 						<div className='messenger-label'>App</div>
 						<div className='messenger-bag'>
@@ -88,20 +87,15 @@ const ChapterTwo = () => {
 							)}
 						</div>
 					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					Aria watched in fascination. "So each workshop receives these props 
-					and uses them to determine exactly what to build and how it should behave?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Precisely!" Aurelius confirmed. "Props can contain any type of 
-					information - text, numbers, functions, or even other components! 
-					It's how we create harmony in the kingdom."
-				</p>
-				
 			</div>
+		</div>
+
+		<StorySection
+			paragraphs={[
+				`Aria watched in fascination. "So each workshop receives these props and uses them to determine exactly what to build and how it should behave?"`,
+				`"Precisely!" Aurelius confirmed. "Props can contain any type of information - text, numbers, functions, or even other components! It's how we create harmony in the kingdom."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

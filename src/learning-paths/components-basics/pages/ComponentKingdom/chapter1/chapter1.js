@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [highlightedCard, setHighlightedCard] = useState(null);
@@ -13,27 +14,20 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title='The Village of Components'
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title='The Village of Components'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The morning mist parted as <strong>Aria</strong> approached the gates of the React Kingdom. 
-					After months of studying ancient JavaScript scrolls, she had finally been accepted as an 
-					apprentice. <strong>Master Aurelius</strong>, the Grand Architect, awaited her at the entrance 
-					to the Northern Quarter's Component Workshop District.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Welcome, young apprentice," Aurelius said, his beard sparkling with fragments of code. 
-					"In our kingdom, everything you see is built from magical building blocks called{' '}
-					<strong>Components</strong>. Unlike the static structures in your homeland, these 
-					Components are alive and responsive."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>The morning mist parted as <strong>Aria</strong> approached the gates of the React Kingdom. After months of studying ancient JavaScript scrolls, she had finally been accepted as an apprentice. <strong>Master Aurelius</strong>, the Grand Architect, awaited her at the entrance to the Northern Quarter's Component Workshop District.</>,
+				<>"Welcome, young apprentice," Aurelius said, his beard sparkling with fragments of code. "In our kingdom, everything you see is built from magical building blocks called{' '}<strong>Components</strong>. Unlike the static structures in your homeland, these Components are alive and responsive.</>
+			]}
+		/>
 
-				<div className='kingdom-illustration'>
+		<div className='story-section'>
+			<div className='kingdom-illustration'>
 					<div className='castle'>
 						<div className='castle-tower'>App</div>
 						<div className='castle-body'>
@@ -60,16 +54,14 @@ const ChapterOne = () => {
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					Aurelius pointed to the tallest tower. "The master builder, <strong>App</strong>, lives there 
-					and organizes all the craftsmen to work together. Every component in our kingdom
-					has its own special purpose and design, but they all share
-					the ability to be reused throughout the realm."
-				</p>
-				
 			</div>
+		</div>
+
+		<StorySection
+			paragraphs={[
+				<>Aurelius pointed to the tallest tower. "The master builder, <strong>App</strong>, lives there and organizes all the craftsmen to work together. Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm."</>
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

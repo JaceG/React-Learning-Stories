@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [jsxChallenges, setJsxChallenges] = useState([
@@ -150,33 +151,19 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title='The Rules of the Scrolls'
-				bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title='The Rules of the Scrolls'
+			bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Every magical language has its laws," Syntaxis explained, 
-					gesturing to the tablets. "JSX may seem flexible, but it 
-					demands strict adherence to certain rules. Break them, and 
-					your spells will fail."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary zipped around the tablets, illuminating each rule as 
-					he passed. "I've seen many apprentices struggle with these!" 
-					the sprite warned. "But once you understand why each rule 
-					exists, they become second nature."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria pulled out her journal, ready to document these sacred 
-					laws. "I'm ready to learn, Professor. Show me what pitfalls 
-					to avoid."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"Every magical language has its laws," Syntaxis explained, gesturing to the tablets. "JSX may seem flexible, but it demands strict adherence to certain rules. Break them, and your spells will fail."`,
+				`Binary zipped around the tablets, illuminating each rule as he passed. "I've seen many apprentices struggle with these!" the sprite warned. "But once you understand why each rule exists, they become second nature."`,
+				`Aria pulled out her journal, ready to document these sacred laws. "I'm ready to learn, Professor. Show me what pitfalls to avoid."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The JSX Rulebook</h3>

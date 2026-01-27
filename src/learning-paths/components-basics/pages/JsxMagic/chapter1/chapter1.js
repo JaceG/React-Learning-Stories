@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
@@ -52,39 +53,21 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title='The Magic Language'
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title='The Magic Language'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Welcome, Aria!" called out <strong>Professor Syntaxis</strong>, 
-					a wise mage whose robes shimmered with HTML tags and JavaScript 
-					symbols. "I've heard of your progress from Hermes. You're ready 
-					to learn the ancient language that makes React truly magical."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Welcome, Aria!" called out <strong>Professor Syntaxis</strong>, a wise mage whose robes shimmered with HTML tags and JavaScript symbols. "I've heard of your progress from Hermes. You're ready to learn the ancient language that makes React truly magical."</>,
+				<>Professor Syntaxis led Aria to a grand library filled with glowing scrolls. "This is <strong>JSX</strong> - a magical syntax that allows us to write component spells using a blend of HTML-like tags and JavaScript expressions."</>,
+				`"But how can browsers understand this magical language?" Aria asked, examining a scroll that seemed to contain both HTML and JavaScript.`,
+				<>"Ah, that's where our translator sprite, <strong>Babel</strong>, comes in," Syntaxis explained. "Babel transforms JSX into regular JavaScript function calls that browsers can understand. Watch!"</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Professor Syntaxis led Aria to a grand library filled with 
-					glowing scrolls. "This is <strong>JSX</strong> - a magical 
-					syntax that allows us to write component spells using a blend 
-					of HTML-like tags and JavaScript expressions."
-				</p>
-				
-				<p className='story-paragraph'>
-					"But how can browsers understand this magical language?" Aria 
-					asked, examining a scroll that seemed to contain both HTML and 
-					JavaScript.
-				</p>
-
-				<p className='story-paragraph'>
-					"Ah, that's where our translator sprite, <strong>Babel</strong>, 
-					comes in," Syntaxis explained. "Babel transforms JSX into regular 
-					JavaScript function calls that browsers can understand. Watch!"
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="Ancient JSX Transformation Scroll"
 					discoveredBy="Revealed to Aria by Professor Syntaxis"
 					code={`// Aria's First JSX Spell
@@ -103,21 +86,14 @@ function Greeting() {
 //   React.createElement("h1", null, "Hello, Adventurer!"),
 //   React.createElement("p", null, "Welcome to the Component Kingdom.")
 // )`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					"Incredible!" Aria exclaimed. "So JSX is like a more elegant 
-					spell notation that gets translated into the verbose function 
-					calls?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Exactly!" Syntaxis beamed. "This makes our component spells 
-					much more readable and intuitive. Now, let me show you how 
-					to use the JSX Translator Crystal..."
-				</p>
-				
-			</div>
+		<StorySection
+			paragraphs={[
+				`"Incredible!" Aria exclaimed. "So JSX is like a more elegant spell notation that gets translated into the verbose function calls?"`,
+				`"Exactly!" Syntaxis beamed. "This makes our component spells much more readable and intuitive. Now, let me show you how to use the JSX Translator Crystal..."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [messageBoard, setMessageBoard] = useState('');
@@ -117,58 +118,35 @@ const ChapterTwo = () => {
 				bridge='After understanding how messengers deliver props, Aria was ready to learn about the sacred rule that governed all communication in the React Kingdom.'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Hermes led Aria to the Grand Thoroughfare - a magnificent road system 
-					that connected the App castle to all workshops. "Observe carefully," 
-					he said. "Notice how all roads lead downward from App to the workshops?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Yes," Aria replied, studying the paths. "But I don't see any roads 
-					going back up!"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Exactly!" Hermes smiled. "This is the most important rule in our kingdom: 
-					<strong>Props can only travel in one direction—from parent to child</strong>. 
-					No craftsman can modify the contents of the Props bag they receive; they 
-					can only read the instructions and create their piece accordingly."
-				</p>
+			<StorySection
+				paragraphs={[
+					`Hermes led Aria to the Grand Thoroughfare - a magnificent road system that connected the App castle to all workshops. "Observe carefully," he said. "Notice how all roads lead downward from App to the workshops?"`,
+					`"Yes," Aria replied, studying the paths. "But I don't see any roads going back up!"`,
+					<>"Exactly!" Hermes smiled. "This is the most important rule in our kingdom: <strong>Props can only travel in one direction—from parent to child</strong>. No craftsman can modify the contents of the Props bag they receive; they can only read the instructions and create their piece accordingly."</>
+				]}
+			/>
 
-				<div className='kingdom-roads'>
-					<div className='app-castle'>App</div>
-					<div className='roads'>
-						<div className='road road-left'></div>
-						<div className='road road-middle'></div>
-						<div className='road road-right'></div>
-					</div>
-					<div className='workshops'>
-						<div className='road-workshop'>Button</div>
-						<div className='road-workshop'>Card</div>
-						<div className='road-workshop'>Navbar</div>
-					</div>
+			<div className='kingdom-roads'>
+				<div className='app-castle'>App</div>
+				<div className='roads'>
+					<div className='road road-left'></div>
+					<div className='road road-middle'></div>
+					<div className='road road-right'></div>
 				</div>
-
-				<p className='story-paragraph'>
-					"This one-way flow creates a predictable system," Hermes explained. 
-					"When something needs to change, the instructions always come from above. 
-					Workshops never modify their instructions; they simply follow them."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria pondered this. "But what if a Button workshop needs to tell App 
-					that it was clicked?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Ah, excellent question!" Hermes beamed. "For that, App sends special 
-					callback messengers - functions that the workshop can invoke to send 
-					messages back up. The workshop doesn't change the prop; it simply 
-					calls the function App provided."
-				</p>
-				
+				<div className='workshops'>
+					<div className='road-workshop'>Button</div>
+					<div className='road-workshop'>Card</div>
+					<div className='road-workshop'>Navbar</div>
+				</div>
 			</div>
+
+			<StorySection
+				paragraphs={[
+					`"This one-way flow creates a predictable system," Hermes explained. "When something needs to change, the instructions always come from above. Workshops never modify their instructions; they simply follow them."`,
+					`Aria pondered this. "But what if a Button workshop needs to tell App that it was clicked?"`,
+					`"Ah, excellent question!" Hermes beamed. "For that, App sends special callback messengers - functions that the workshop can invoke to send messages back up. The workshop doesn't change the prop; it simply calls the function App provided."`
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
