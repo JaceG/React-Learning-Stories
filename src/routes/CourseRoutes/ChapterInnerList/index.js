@@ -8,9 +8,9 @@ import PMChapterThree from '../../../learning-paths/components-basics/pages/Prop
 import JsxMagicChapterOne from '../../../learning-paths/components-basics/pages/JsxMagic/chapter1/chapter1';
 import JsxMagicChapterTwo from '../../../learning-paths/components-basics/pages/JsxMagic/chapter2/chapter2';
 import JsxMagicChapterThree from '../../../learning-paths/components-basics/pages/JsxMagic/chapter3/chapter3';
-import ComponentLifecycleChapterOne from '../../../learning-paths/components-basics/pages/ComponentLifecycle/chapter1/chapter1';
-import ComponentLifecycleChapterTwo from '../../../learning-paths/components-basics/pages/ComponentLifecycle/chapter2/chapter2';
-import ComponentLifecycleChapterThree from '../../../learning-paths/components-basics/pages/ComponentLifecycle/chapter3/chapter3';
+import LifecycleChroniclesChapterOne from '../../../learning-paths/components-basics/pages/LifecycleChronicles/chapter1/chapter1';
+import LifecycleChroniclesChapterTwo from '../../../learning-paths/components-basics/pages/LifecycleChronicles/chapter2/chapter2';
+import LifecycleChroniclesChapterThree from '../../../learning-paths/components-basics/pages/LifecycleChronicles/chapter3/chapter3';
 import StateSorcerersChapterOne from '../../../learning-paths/state-management/pages/StateSorcerers/chapter1/chapter1';
 import StateSorcerersChapterTwo from '../../../learning-paths/state-management/pages/StateSorcerers/chapter2/chapter2';
 import StateSorcerersChapterThree from '../../../learning-paths/state-management/pages/StateSorcerers/chapter3/chapter3';
@@ -200,11 +200,11 @@ const courseListMap = {
 			chapter2: <JsxMagicChapterTwo />,
 			chapter3: <JsxMagicChapterThree />,
 		},
-		'component-lifecycle': {
-			'/': <ComponentLifecycleChapterOne />,
-			chapter1: <ComponentLifecycleChapterOne />,
-			chapter2: <ComponentLifecycleChapterTwo />,
-			chapter3: <ComponentLifecycleChapterThree />,
+		'lifecycle-chronicles': {
+			'/': <LifecycleChroniclesChapterOne />,
+			chapter1: <LifecycleChroniclesChapterOne />,
+			chapter2: <LifecycleChroniclesChapterTwo />,
+			chapter3: <LifecycleChroniclesChapterThree />,
 		},
 	},
 	'state-management': {

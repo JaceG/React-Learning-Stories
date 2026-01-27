@@ -26,7 +26,7 @@ function ComponentsBasicsOverview() {
 			icon: '📜'
 		},
 		{
-			id: 'component-lifecycle',
+			id: 'lifecycle-chronicles',
 			title: 'The Lifecycle Chronicles',
 			description:
 				"Follow the journey of a component from birth to retirement and learn about React's component lifecycle.",

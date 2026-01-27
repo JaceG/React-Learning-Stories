@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout';
 import '../../../CourseStyles.css';
-import './ComponentLifecycle.css';
+import './LifecycleChronicles.css';
 // import ChapterOne from './chapter1/chapter1';
 // import ChapterTwo from './chapter2/chapter2';
 // import ChapterThree from './chapter3/chapter3';
 
-function ComponentLifecycle() {
+function LifecycleChronicles() {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
 	const [componentAge, setComponentAge] = useState(0);
 	const [isComponentRetired, setIsComponentRetired] = useState(false);
@@ -226,11 +226,11 @@ function ComponentLifecycle() {
 
 			<LessonFooter
 				courseId='components-basics'
-				lessonId='component-lifecycle'
+				lessonId='lifecycle-chronicles'
 				totalChapters={3}
 			/>
 		</div>
 	);
 }
 
-export default ComponentLifecycle;
+export default LifecycleChronicles;

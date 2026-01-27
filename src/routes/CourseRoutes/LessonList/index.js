@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import ComponentKingdom from '../../../learning-paths/components-basics/pages/ComponentKingdom';
 import PropsMessengers from '../../../learning-paths/components-basics/pages/PropsMessengers';
 import JsxMagic from '../../../learning-paths/components-basics/pages/JsxMagic';
-import ComponentLifecycle from '../../../learning-paths/components-basics/pages/ComponentLifecycle';
+import LifecycleChronicles from '../../../learning-paths/components-basics/pages/LifecycleChronicles';
 import StateSorcerers from '../../../learning-paths/state-management/pages/StateSorcerers';
 import MagicalHooks from '../../../learning-paths/state-management/pages/MagicalHooks';
 import GrandContext from '../../../learning-paths/state-management/pages/GrandContext';
@@ -65,7 +65,7 @@ const courseListMap = {
 		'component-kingdom': <ComponentKingdom />,
 		'props-messengers': <PropsMessengers />,
 		'jsx-magic': <JsxMagic />,
-		'component-lifecycle': <ComponentLifecycle />,
+		'lifecycle-chronicles': <LifecycleChronicles />,
 	},
 	'state-management': {
 		'state-sorcerers': <StateSorcerers />,

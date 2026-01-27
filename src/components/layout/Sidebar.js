@@ -56,7 +56,7 @@ function Sidebar({ activePath, onPathChange }) {
 			{ id: 'component-kingdom', title: 'The Component Kingdom' },
 			{ id: 'props-messengers', title: 'The Props Messengers' },
 			{ id: 'jsx-magic', title: 'The JSX Magic Scrolls' },
-			{ id: 'component-lifecycle', title: 'The Lifecycle Chronicles' },
+			{ id: 'lifecycle-chronicles', title: 'The Lifecycle Chronicles' },
 		],
 		'state-management': [
 			{ id: 'state-sorcerers', title: 'The State Sorcerers' },
