@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [sanctuaryActive, setSanctuaryActive] = useState(false);
@@ -77,34 +78,15 @@ const ChapterOne = () => {
 				title={`The Device Sanctuary`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Sanctuary Keeper Bridge</strong> welcomed them to the Device Sanctuary. 
-					"Here, web knowledge transforms into native power. Each capability requires 
-					trust and permission."
-				</p>
-				
-				<p className='story-paragraph'>
-					The sanctuary glowed with potential. Six orbs floated in orbit, each 
-					representing a device capability. "Touch an orb to request its power," 
-					Bridge explained.
-				</p>
-
-				<p className='story-paragraph'>
-					Aria marveled at the setup. "It's like my web APIs, but with deeper 
-					system access!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated permissions. "Camera: privacy critical. Location: 
-					sensitivity high. Storage: security paramount. Permission flow essential!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly," Bridge nodded. "Native apps bridge JavaScript to device hardware. 
-					But with great power comes great responsibility - and permission requests."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Sanctuary Keeper Bridge</strong> welcomed them to the Device Sanctuary. "Here, web knowledge transforms into native power. Each capability requires trust and permission."</>,
+				`The sanctuary glowed with potential. Six orbs floated in orbit, each representing a device capability. "Touch an orb to request its power," Bridge explained.`,
+				`Aria marveled at the setup. "It's like my web APIs, but with deeper system access!"`,
+				`Binary calculated permissions. "Camera: privacy critical. Location: sensitivity high. Storage: security paramount. Permission flow essential!"`,
+				`"Exactly," Bridge nodded. "Native apps bridge JavaScript to device hardware. But with great power comes great responsibility - and permission requests."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The Device Sanctuary</h3>

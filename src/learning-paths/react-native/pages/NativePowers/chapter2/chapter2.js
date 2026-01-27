@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeFlow, setActiveFlow] = useState('request');
@@ -142,32 +143,15 @@ const ChapterTwo = () => {
 				bridge={`With basic capabilities unlocked, Bridge led Aria and Binary deeper into the sanctuary. "Understanding permissions is one thing," he explained, guiding them to a chamber with glowing device simulators, "but mastering the protocols - the timing, the platform differences, the graceful handling of denials - that's where true power lies."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Bridge led them deeper into the sanctuary. "Permissions are sacred protocols. 
-					Each platform has its own rituals and rules."
-				</p>
-				
-				<p className='story-paragraph'>
-					They approached a glowing device simulator. "iOS asks once and remembers 
-					forever. Android may allow multiple requests. Know your platform!"
-				</p>
-
-				<p className='story-paragraph'>
-					Aria studied the patterns. "It's about trust and timing - asking at the 
-					right moment with clear purpose."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed the flows. "Permission states: granted, denied, blocked, 
-					unavailable. Edge cases: 57. Error handling: critical!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely," Bridge confirmed. "Master these protocols, and users will 
-					trust your app with their device's power."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Bridge led them deeper into the sanctuary. "Permissions are sacred protocols. Each platform has its own rituals and rules."`,
+				`They approached a glowing device simulator. "iOS asks once and remembers forever. Android may allow multiple requests. Know your platform!"`,
+				`Aria studied the patterns. "It's about trust and timing - asking at the right moment with clear purpose."`,
+				`Binary analyzed the flows. "Permission states: granted, denied, blocked, unavailable. Edge cases: 57. Error handling: critical!"`,
+				`"Precisely," Bridge confirmed. "Master these protocols, and users will trust your app with their device's power."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Device Simulator</h3>

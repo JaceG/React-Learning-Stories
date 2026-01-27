@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeIntegration, setActiveIntegration] = useState(null);
@@ -140,34 +141,15 @@ const ChapterThree = () => {
 				bridge={`"You've learned to request and handle permissions," Bridge said, leading them to the sanctuary's innermost chamber where six pedestals glowed with advanced power. "Now comes the true test - integrating complex native systems. Biometrics, payments, maps, AR, ML, IoT. Each bridges your JavaScript to deep platform APIs."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					At the sanctuary's heart, Bridge revealed the ultimate challenge. "True 
-					mastery comes from seamlessly integrating native powers into your React realm."
-				</p>
-				
-				<p className='story-paragraph'>
-					Six integration pedestals glowed with advanced capabilities. "Biometrics, 
-					payments, maps, AR, ML, IoT - each requires deep understanding of both 
-					React and native worlds."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria's eyes widened. "These aren't just permissions - they're entire 
-					systems bridging JavaScript to platform APIs!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary computed rapidly. "Bridge architecture: JavaScript → Serialization → 
-					Native Modules → Platform APIs. Latency considerations critical. Performance 
-					optimization essential!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Indeed," Bridge smiled. "Master these integrations, and you'll wield the 
-					full power of mobile platforms through React Native's bridge."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`At the sanctuary's heart, Bridge revealed the ultimate challenge. "True mastery comes from seamlessly integrating native powers into your React realm."`,
+				`Six integration pedestals glowed with advanced capabilities. "Biometrics, payments, maps, AR, ML, IoT - each requires deep understanding of both React and native worlds."`,
+				`Aria's eyes widened. "These aren't just permissions - they're entire systems bridging JavaScript to platform APIs!"`,
+				`Binary computed rapidly. "Bridge architecture: JavaScript → Serialization → Native Modules → Platform APIs. Latency considerations critical. Performance optimization essential!"`,
+				`"Indeed," Bridge smiled. "Master these integrations, and you'll wield the full power of mobile platforms through React Native's bridge."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Native Integration Showcase</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [currentScreen, setCurrentScreen] = useState('Home');
@@ -109,35 +110,15 @@ const ChapterOne = () => {
 				title={`The Navigation Outpost`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Trail Guide Navigator</strong> ran the Navigation Outpost. 
-					"Forget URLs and browser history. Mobile navigation is about stacks, 
-					tabs, and drawers."
-				</p>
-				
-				<p className='story-paragraph'>
-					The guide showed various navigation patterns. "Stack for drilling down, 
-					tabs for main sections, drawer for menus. Each platform has its own 
-					expectations."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria recognized concepts. "Like my Navigation Compass training, but 
-					adapted for mobile!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed the patterns. "Stack navigation: LIFO data structure. 
-					Tab navigation: indexed access. Drawer: conditional rendering. 
-					Efficiency calculations optimal!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly!" Trail Guide Navigator smiled. "Each pattern serves a specific 
-					purpose in the mobile journey."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Trail Guide Navigator</strong> ran the Navigation Outpost. "Forget URLs and browser history. Mobile navigation is about stacks, tabs, and drawers."</>,
+				`The guide showed various navigation patterns. "Stack for drilling down, tabs for main sections, drawer for menus. Each platform has its own expectations."`,
+				`Aria recognized concepts. "Like my Navigation Compass training, but adapted for mobile!"`,
+				`Binary analyzed the patterns. "Stack navigation: LIFO data structure. Tab navigation: indexed access. Drawer: conditional rendering. Efficiency calculations optimal!"`,
+				`"Exactly!" Trail Guide Navigator smiled. "Each pattern serves a specific purpose in the mobile journey."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Navigation Pattern Explorer</h3>

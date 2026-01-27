@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeStore, setActiveStore] = useState('appstore');
@@ -142,30 +143,15 @@ const ChapterTwo = () => {
 				bridge={`With preparations complete and builds signed, Publisher Prime led Aria to the towering Review Gauntlet. "Your app is packaged and ready," he said, gesturing to the imposing gates ahead. "But between here and the stores lies the toughest test of all - the platform reviewers who guard user safety and quality."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"The Review Gauntlet tests every app," Publisher Prime explained. "Apple 
-					for quality and guidelines, Google for security and policy."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria submitted her first app. "It's nerve-wracking! What if they reject it?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Then you fix and resubmit. Persistence and adherence to guidelines are key."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed patterns. "Rejection reasons: 40% crashes, 30% guideline 
-					violations, 20% metadata issues, 10% other. Optimization algorithms engaged!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora prepared for battle. "Each rejection is a learning opportunity. 
-					The key is understanding why and fixing it properly."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"The Review Gauntlet tests every app," Publisher Prime explained. "Apple for quality and guidelines, Google for security and policy."`,
+				`Aria submitted her first app. "It's nerve-wracking! What if they reject it?"`,
+				`"Then you fix and resubmit. Persistence and adherence to guidelines are key."`,
+				`Binary analyzed patterns. "Rejection reasons: 40% crashes, 30% guideline violations, 20% metadata issues, 10% other. Optimization algorithms engaged!"`,
+				`Debuggora prepared for battle. "Each rejection is a learning opportunity. The key is understanding why and fixing it properly."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Store Review Center</h3>

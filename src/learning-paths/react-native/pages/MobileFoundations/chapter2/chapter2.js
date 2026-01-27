@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [tradedComponents, setTradedComponents] = useState([]);
@@ -114,33 +115,15 @@ const ChapterTwo = () => {
 				bridge={`Marshal Native led Aria deeper into the Mobile Frontier, past the border checkpoint to a bustling marketplace. "Now that you understand the basics, it's time to learn the language of trade. Here, web components exchange for their native equivalents - and you must understand exactly what you're getting."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Marshal Native led Aria to the Component Trading Post. "Here, web 
-					components trade for their native equivalents. View for div, ScrollView 
-					for scrollable containers, FlatList for efficient lists."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria experimented with translations. "The concepts are the same, but 
-					the implementation feels more... direct?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly! You're not rendering to a browser engine, but to native UI 
-					elements. More performant, more platform-authentic."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary analyzed the components. "No virtual DOM intermediary. Direct 
-					native rendering. Processing efficiency increased by 40%!"
-				</p>
-
-				<p className='story-paragraph'>
-					"But what about platform differences?" Aria asked. "Ah, the Platform 
-					API - your bridge between iOS and Android. Write once, adapt where needed."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Marshal Native led Aria to the Component Trading Post. "Here, web components trade for their native equivalents. View for div, ScrollView for scrollable containers, FlatList for efficient lists."`,
+				`Aria experimented with translations. "The concepts are the same, but the implementation feels more... direct?"`,
+				`"Exactly! You're not rendering to a browser engine, but to native UI elements. More performant, more platform-authentic."`,
+				`Binary analyzed the components. "No virtual DOM intermediary. Direct native rendering. Processing efficiency increased by 40%!"`,
+				`"But what about platform differences?" Aria asked. "Ah, the Platform API - your bridge between iOS and Android. Write once, adapt where needed."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Component Trading Post</h3>

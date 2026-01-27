@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [selectedChecklist, setSelectedChecklist] = useState('ios');
@@ -107,33 +108,15 @@ const ChapterOne = () => {
 				title={`The Publishing Port`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Publishing Port prepared apps for their journey to the App Store and 
-					Google Play. <strong>Publisher Prime</strong> reviewed Aria's app. "Web 
-					deployment was instant. Mobile requires approval, certificates, and patience."
-				</p>
-				
-				<p className='story-paragraph'>
-					The port buzzed with activity - apps being signed, tested, and packaged. 
-					"Each store has its own requirements, review process, and rules."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria surveyed the preparation areas. "So many steps before users can even 
-					download the app!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary processed requirements. "Certificates: check. Provisioning profiles: 
-					check. App signing: in progress. Metadata optimization: pending!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Preparation is key," Publisher Prime explained. "A well-prepared submission 
-					sails through review. A hasty one gets rejected repeatedly."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Publishing Port prepared apps for their journey to the App Store and Google Play. <strong>Publisher Prime</strong> reviewed Aria's app. "Web deployment was instant. Mobile requires approval, certificates, and patience."</>,
+				`The port buzzed with activity - apps being signed, tested, and packaged. "Each store has its own requirements, review process, and rules."`,
+				`Aria surveyed the preparation areas. "So many steps before users can even download the app!"`,
+				`Binary processed requirements. "Certificates: check. Provisioning profiles: check. App signing: in progress. Metadata optimization: pending!"`,
+				`"Preparation is key," Publisher Prime explained. "A well-prepared submission sails through review. A hasty one gets rejected repeatedly."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Publishing Preparation Center</h3>

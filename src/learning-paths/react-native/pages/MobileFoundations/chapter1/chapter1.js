@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [activeFeature, setActiveFeature] = useState(null);
@@ -79,37 +80,15 @@ const ChapterOne = () => {
 				title={`The Mobile Frontier`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Beyond the Web Kingdom's borders lay the Mobile Frontier - a vast territory 
-					where applications lived not in browsers but in the very devices people 
-					carried. <strong>Frontier Marshal Native</strong> met Aria at the border 
-					checkpoint.
-				</p>
-				
-				<p className='story-paragraph'>
-					"Welcome to a familiar yet different world, Captain Aria," the Marshal 
-					greeted. "Here, React's principles govern, but the land itself has 
-					different rules. No DOM, no CSS as you know it, but native performance 
-					and device capabilities."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary's circuits sparked with new modules. "I'm detecting accelerometers, 
-					cameras, GPS sensors... so many new inputs!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora ruffled her feathers. "And new types of bugs. Platform-specific 
-					issues, device fragmentation, native crashes."
-				</p>
-
-				<p className='story-paragraph'>
-					Marshal Native handed Aria a device. "Your React knowledge is your 
-					foundation, but you'll need to adapt. Components are still components, 
-					but View replaces div, Text replaces spans. Ready to go native?"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>Beyond the Web Kingdom's borders lay the Mobile Frontier - a vast territory where applications lived not in browsers but in the very devices people carried. <strong>Frontier Marshal Native</strong> met Aria at the border checkpoint.</>,
+				`"Welcome to a familiar yet different world, Captain Aria," the Marshal greeted. "Here, React's principles govern, but the land itself has different rules. No DOM, no CSS as you know it, but native performance and device capabilities."`,
+				`Binary's circuits sparked with new modules. "I'm detecting accelerometers, cameras, GPS sensors... so many new inputs!"`,
+				`Debuggora ruffled her feathers. "And new types of bugs. Platform-specific issues, device fragmentation, native crashes."`,
+				`Marshal Native handed Aria a device. "Your React knowledge is your foundation, but you'll need to adapt. Components are still components, but View replaces div, Text replaces spans. Ready to go native?"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Comparison Lab</h3>

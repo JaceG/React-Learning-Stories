@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [customTransition, setCustomTransition] = useState('');
@@ -192,36 +193,15 @@ const ChapterThree = () => {
 				bridge={`"You've learned the patterns and the platform ways," Trail Guide Navigator said as they climbed to the highest point of the Navigation Outpost. "Now you must master the advanced techniques - shared element transitions, custom headers, performance optimization, and the deep linking that connects your app to the wider world."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria built complex navigation systems - authenticated routes, deep 
-					linking, custom transitions. "It's more complex than web routing, 
-					but more powerful for mobile UX."
-				</p>
-				
-				<p className='story-paragraph'>
-					Trail Guide Navigator approved. "You understand that mobile navigation 
-					isn't just about moving between screens - it's about creating intuitive 
-					user journeys."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary optimized navigation performance. "Screen preloading reduces 
-					transition latency by 47%. Memory footprint optimized through lazy 
-					loading protocols."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora traced user paths. "Navigation state persistence ensures 
-					users never lose their place. Deep links connect web marketing to 
-					app experiences."
-				</p>
-
-				<p className='story-paragraph'>
-					"You've mastered the trails," Trail Guide said proudly. "From basic 
-					stacks to complex flows, you can guide users anywhere."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Aria built complex navigation systems - authenticated routes, deep linking, custom transitions. "It's more complex than web routing, but more powerful for mobile UX."`,
+				`Trail Guide Navigator approved. "You understand that mobile navigation isn't just about moving between screens - it's about creating intuitive user journeys."`,
+				`Binary optimized navigation performance. "Screen preloading reduces transition latency by 47%. Memory footprint optimized through lazy loading protocols."`,
+				`Debuggora traced user paths. "Navigation state persistence ensures users never lose their place. Deep links connect web marketing to app experiences."`,
+				`"You've mastered the trails," Trail Guide said proudly. "From basic stacks to complex flows, you can guide users anywhere."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Navigation Mastery</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeStyleType, setActiveStyleType] = useState('basic');
@@ -115,32 +116,15 @@ const ChapterThree = () => {
 				bridge={`"You've traded your components well," Marshal Native said, leading Aria to a workshop with glowing style sheets hovering in the air. "But components without style are like settlers without shelter. The Style Frontier awaits - where CSS rules give way to JavaScript objects and Flexbox reigns supreme."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Style Frontier challenged Aria's CSS knowledge. "No cascading, no 
-					selectors, but Flexbox everywhere!" Marshal Native explained.
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria created her first StyleSheet. "It's like inline styles, but 
-					optimized?"
-				</p>
-
-				<p className='story-paragraph'>
-					"And with consistent Flexbox behavior across platforms. Plus, styles 
-					are just JavaScript objects - use all your programming power!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary computed style calculations. "Dynamic styles based on state, 
-					screen size, platform... the possibilities are exponential!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora noted the differences. "No cascade means no unexpected 
-					inheritance. Every component's styles are explicit and predictable."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`The Style Frontier challenged Aria's CSS knowledge. "No cascading, no selectors, but Flexbox everywhere!" Marshal Native explained.`,
+				`Aria created her first StyleSheet. "It's like inline styles, but optimized?"`,
+				`"And with consistent Flexbox behavior across platforms. Plus, styles are just JavaScript objects - use all your programming power!"`,
+				`Binary computed style calculations. "Dynamic styles based on state, screen size, platform... the possibilities are exponential!"`,
+				`Debuggora noted the differences. "No cascade means no unexpected inheritance. Every component's styles are explicit and predictable."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Style Frontier Workshop</h3>

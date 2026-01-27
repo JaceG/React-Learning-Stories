@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [launchRegions, setLaunchRegions] = useState({
@@ -153,32 +154,15 @@ const ChapterThree = () => {
 				bridge={`With both stores showing approval badges, Publisher Prime led Aria to the highest tower of the Publishing Port - the Global Launch Control Center. "You've passed the Review Gauntlet," he said proudly. "Now comes the most exciting part of all - releasing your app to the world and watching it grow."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria's app launched globally. "Millions of devices, different languages, 
-					various screen sizes - all running my React Native app!"
-				</p>
-				
-				<p className='story-paragraph'>
-					Publisher Prime celebrated. "From web to mobile, you've conquered both 
-					frontiers. Your app now reaches users worldwide."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary streamed analytics. "Downloads increasing! User engagement: optimal. 
-					Crash rate: minimal. Revenue generation: active!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora monitored error reports. "Crashes from 132 device models, but our 
-					error handling catches 99.2% gracefully!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Global distribution isn't the end," Publisher Prime advised. "It's the 
-					beginning of your app's journey. Monitor, update, and grow."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Aria's app launched globally. "Millions of devices, different languages, various screen sizes - all running my React Native app!"`,
+				`Publisher Prime celebrated. "From web to mobile, you've conquered both frontiers. Your app now reaches users worldwide."`,
+				`Binary streamed analytics. "Downloads increasing! User engagement: optimal. Crash rate: minimal. Revenue generation: active!"`,
+				`Debuggora monitored error reports. "Crashes from 132 device models, but our error handling catches 99.2% gracefully!"`,
+				`"Global distribution isn't the end," Publisher Prime advised. "It's the beginning of your app's journey. Monitor, update, and grow."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Global Launch Control</h3>

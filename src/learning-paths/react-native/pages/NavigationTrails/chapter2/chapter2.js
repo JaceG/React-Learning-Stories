@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [platformMode, setPlatformMode] = useState('ios');
@@ -155,30 +156,15 @@ const ChapterTwo = () => {
 				bridge={`Having mastered the four navigation patterns, Trail Guide Navigator led Aria down two diverging paths marked with different symbols. "Now comes the crucial lesson," he said. "iOS and Android users have deeply ingrained expectations. The same navigation pattern must feel native on both platforms."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"iOS users expect certain transitions, Android users others," Trail 
-					Guide explained. "React Navigation respects these conventions."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria implemented platform-specific navigation. "It automatically adapts!"
-				</p>
-
-				<p className='story-paragraph'>
-					"That's the power - write once, feel native everywhere."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary computed transition matrices. "Platform.OS detection enables 
-					conditional behavior. Optimization parameters platform-specific!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora observed the differences. "iOS swipe-back gesture, Android 
-					hardware back button. Each platform has deeply ingrained patterns."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"iOS users expect certain transitions, Android users others," Trail Guide explained. "React Navigation respects these conventions."`,
+				`Aria implemented platform-specific navigation. "It automatically adapts!"`,
+				`"That's the power - write once, feel native everywhere."`,
+				`Binary computed transition matrices. "Platform.OS detection enables conditional behavior. Optimization parameters platform-specific!"`,
+				`Debuggora observed the differences. "iOS swipe-back gesture, Android hardware back button. Each platform has deeply ingrained patterns."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform-Specific Navigation</h3>
