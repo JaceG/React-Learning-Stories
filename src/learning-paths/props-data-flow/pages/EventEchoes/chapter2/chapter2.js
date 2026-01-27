@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const [events, setEvents] = useState([]);
@@ -49,45 +50,16 @@ function ChapterTwo() {
 					bridge="Deeper in the Echo Caves, the passages opened into a vast chamber where sounds seemed to multiply and layer upon themselves. Each whisper became a chorus, each footstep a rhythmic pattern. Aria felt like she was inside a living instrument."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the Echo Chamber!" Callback announced, her
-						voice creating harmonious layers. "Here, we move beyond
-						simple signals to orchestrate complex communication
-						symphonies."
-					</p>
-					<p className='story-paragraph'>
-						Aria watched as Binary sent out a chirp that transformed
-						into multiple tones, each carrying different
-						information. "How does it carry so much data?" she
-						asked.
-					</p>
-					<p className='story-paragraph'>
-						"Ah, you've discovered the secret!" Callback smiled.
-						"Simple clicks were just the beginning. Real
-						applications need rich communication - forms sending
-						complete datasets, lists notifying of selections,
-						complex interactions flowing upward like multi-voiced
-						songs."
-					</p>
-					<p className='story-paragraph'>
-						She handed Aria a resonance crystal that pulsed with
-						captured sounds. "With callback props, children don't
-						just ping their parents - they can send entire messages,
-						complete with context, data, and intent. The parent
-						becomes a conductor, orchestrating responses from
-						multiple children."
-					</p>
-					<p className='story-paragraph'>
-						"So callbacks can carry parameters?" Aria asked,
-						examining the crystal.
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! Just as an echo can carry the nuance of the
-						original sound, callbacks can transport rich data
-						structures upward. Watch and learn!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Welcome to the Echo Chamber!" Callback announced, her voice creating harmonious layers. "Here, we move beyond simple signals to orchestrate complex communication symphonies."`,
+					`Aria watched as Binary sent out a chirp that transformed into multiple tones, each carrying different information. "How does it carry so much data?" she asked.`,
+					`"Ah, you've discovered the secret!" Callback smiled. "Simple clicks were just the beginning. Real applications need rich communication - forms sending complete datasets, lists notifying of selections, complex interactions flowing upward like multi-voiced songs."`,
+					`She handed Aria a resonance crystal that pulsed with captured sounds. "With callback props, children don't just ping their parents - they can send entire messages, complete with context, data, and intent. The parent becomes a conductor, orchestrating responses from multiple children."`,
+					`"So callbacks can carry parameters?" Aria asked, examining the crystal.`,
+					`"Exactly! Just as an echo can carry the nuance of the original sound, callbacks can transport rich data structures upward. Watch and learn!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>The Communication Form</h3>
@@ -244,41 +216,15 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Magnificent!" Aria exclaimed, watching the event log
-						fill with detailed information. "The child isn't just
-						saying 'something happened' - it's sending complete
-						reports!"
-					</p>
-					<p className='story-paragraph'>
-						"Now you understand!" Callback's eyes sparkled. "This is
-						how complex applications communicate. Forms send entire
-						data objects, lists report which item was selected with
-						full context, and interactive components share their
-						complete state changes."
-					</p>
-					<p className='story-paragraph'>
-						She unrolled a glowing scroll covered in callback
-						patterns. "Through these echoes, parent components
-						become orchestrators. They can update their own state,
-						coordinate between siblings, trigger side effects, or
-						even cascade changes throughout the entire component
-						tree."
-					</p>
-					<p className='story-paragraph'>
-						Binary projected examples of callback chains, showing
-						how events could ripple upward through multiple
-						component layers.
-					</p>
-					<p className='story-paragraph'>
-						"But be cautious," Callback warned. "Too many echo
-						layers create confusion. If callbacks must travel
-						through many components, consider other patterns like
-						Context or state management libraries. The echo should
-						reach its intended listener directly when possible."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Magnificent!" Aria exclaimed, watching the event log fill with detailed information. "The child isn't just saying 'something happened' - it's sending complete reports!"`,
+					`"Now you understand!" Callback's eyes sparkled. "This is how complex applications communicate. Forms send entire data objects, lists report which item was selected with full context, and interactive components share their complete state changes."`,
+					`She unrolled a glowing scroll covered in callback patterns. "Through these echoes, parent components become orchestrators. They can update their own state, coordinate between siblings, trigger side effects, or even cascade changes throughout the entire component tree."`,
+					`Binary projected examples of callback chains, showing how events could ripple upward through multiple component layers.`,
+					`"But be cautious," Callback warned. "Too many echo layers create confusion. If callbacks must travel through many components, consider other patterns like Context or state management libraries. The echo should reach its intended listener directly when possible."`
+				]}
+			/>
 
 				<CodeExample
 					title="Parent Component with Multiple Callback Handlers"

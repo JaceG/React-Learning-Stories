@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const [damGates, setDamGates] = useState({
@@ -40,37 +41,15 @@ function ChapterTwo() {
 					bridge="Flux led Aria upstream to where the data rivers converged at a massive dam complex. The sound of controlled waterfalls filled the air as data streams were carefully managed through an intricate system of gates and channels."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Ah, visitors!" A stocky figure emerged from the control
-						house, water droplets glistening in his thick beard.
-						"I'm <strong>Dam Master Gatekeeper</strong>, controller
-						of the flows. River Master Flux, bringing another
-						student?"
-					</p>
-					<p className='story-paragraph'>
-						"Indeed, Gatekeeper. Aria needs to understand flow
-						control," Flux replied.
-					</p>
-					<p className='story-paragraph'>
-						Gatekeeper's eyes twinkled. "Perfect timing! You see,
-						young Aria, while we cannot reverse the river's flow, we
-						absolutely can control it." He gestured to the complex
-						gate system. "These dams represent conditional rendering
-						- deciding which data streams reach which components."
-					</p>
-					<p className='story-paragraph'>
-						Binary scanned the controls. "So you filter data as it
-						flows?"
-					</p>
-					<p className='story-paragraph'>
-						"Filter, transform, redirect!" Gatekeeper boomed.
-						"Sometimes sensitive data must be filtered out before
-						flowing to public components. Other times, we transform
-						raw data into exactly what downstream components need.
-						Watch this!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					<>"Ah, visitors!" A stocky figure emerged from the control house, water droplets glistening in his thick beard. "I'm <strong>Dam Master Gatekeeper</strong>, controller of the flows. River Master Flux, bringing another student?"</>,
+					`"Indeed, Gatekeeper. Aria needs to understand flow control," Flux replied.`,
+					`Gatekeeper's eyes twinkled. "Perfect timing! You see, young Aria, while we cannot reverse the river's flow, we absolutely can control it." He gestured to the complex gate system. "These dams represent conditional rendering - deciding which data streams reach which components."`,
+					`Binary scanned the controls. "So you filter data as it flows?"`,
+					`"Filter, transform, redirect!" Gatekeeper boomed. "Sometimes sensitive data must be filtered out before flowing to public components. Other times, we transform raw data into exactly what downstream components need. Watch this!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Dam Control System</h3>
@@ -158,37 +137,15 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After experimenting with the gates, Gatekeeper led them
-						to an observation deck overlooking a network of bridges
-						spanning the various river branches. "Now for the second
-						lesson - data distribution!"
-					</p>
-					<p className='story-paragraph'>
-						"See those bridges?" Flux pointed to the elegant
-						structures. "They represent components that share data
-						with multiple children. The data still flows downward,
-						but bridges allow it to reach different branches of your
-						component tree."
-					</p>
-					<p className='story-paragraph'>
-						Aria studied the flow patterns. "So if multiple
-						components need the same data..."
-					</p>
-					<p className='story-paragraph'>
-						"You lift the source up!" Gatekeeper finished. "Place
-						your data high enough that it can flow naturally to all
-						components that need it. Like building a water tower on
-						a hill to serve the entire village below."
-					</p>
-					<p className='story-paragraph'>
-						"This prevents prop drilling," Flux added, "and ensures
-						efficient data distribution. Remember - data should live
-						at the lowest common ancestor of all components that use
-						it."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After experimenting with the gates, Gatekeeper led them to an observation deck overlooking a network of bridges spanning the various river branches. "Now for the second lesson - data distribution!"`,
+					`"See those bridges?" Flux pointed to the elegant structures. "They represent components that share data with multiple children. The data still flows downward, but bridges allow it to reach different branches of your component tree."`,
+					`Aria studied the flow patterns. "So if multiple components need the same data..."`,
+					`"You lift the source up!" Gatekeeper finished. "Place your data high enough that it can flow naturally to all components that need it. Like building a water tower on a hill to serve the entire village below."`,
+					`"This prevents prop drilling," Flux added, "and ensures efficient data distribution. Remember - data should live at the lowest common ancestor of all components that use it."`
+				]}
+			/>
 
 				<CodeExample
 					title="Controlling Data Flow with Conditional Rendering"

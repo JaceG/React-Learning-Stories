@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const [selectedMaterials, setSelectedMaterials] = useState([]);
@@ -52,52 +53,17 @@ function ChapterOne() {
 					title="The Art of Destructuring"
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						The heat hit Aria like a wall as she entered the Prop
-						Forge. Molten data flowed in channels carved into the
-						floor, and the air shimmered with the energy of
-						transformation. At the center of it all stood a figure
-						wielding a glowing hammer.
-					</p>
-				</div>
-
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to my domain!" The smith turned, revealing a
-						face weathered by years at the forge. His beard was
-						singed at the edges, and his eyes sparkled with the
-						reflection of data flames. "I am{' '}
-						<strong>Master Smith Destructo</strong>, and you must be
-						Aria!"
-					</p>
-					<p className='story-paragraph'>
-						"How did you know?" Aria asked, wiping sweat from her
-						brow.
-					</p>
-					<p className='story-paragraph'>
-						"River Master Flux sent word of your coming. Plus," he
-						grinned, "Binary's unique design is hard to miss. Not
-						many companion constructs can project holograms like
-						that!"
-					</p>
-					<p className='story-paragraph'>
-						Binary beamed proudly, literally, projecting a small
-						light show.
-					</p>
-					<p className='story-paragraph'>
-						"Now then," Destructo continued, gesturing to his
-						workshop, "you've learned to transport props and control
-						their flow. But here, we master their transformation!
-						The ancient art of destructuring allows us to break
-						props apart and extract exactly what we need."
-					</p>
-					<p className='story-paragraph'>
-						He held up a glowing object. "Behold - a prop object
-						containing multiple values. Watch as I extract its
-						essence with a single incantation!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`The heat hit Aria like a wall as she entered the Prop Forge. Molten data flowed in channels carved into the floor, and the air shimmered with the energy of transformation. At the center of it all stood a figure wielding a glowing hammer.`,
+					<>"Welcome to my domain!" The smith turned, revealing a face weathered by years at the forge. His beard was singed at the edges, and his eyes sparkled with the reflection of data flames. "I am <strong>Master Smith Destructo</strong>, and you must be Aria!"</>,
+					`"How did you know?" Aria asked, wiping sweat from her brow.`,
+					`"River Master Flux sent word of your coming. Plus," he grinned, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"`,
+					`Binary beamed proudly, literally, projecting a small light show.`,
+					`"Now then," Destructo continued, gesturing to his workshop, "you've learned to transport props and control their flow. But here, we master their transformation! The ancient art of destructuring allows us to break props apart and extract exactly what we need."`,
+					`He held up a glowing object. "Behold - a prop object containing multiple values. Watch as I extract its essence with a single incantation!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>The Forging Chamber</h3>
@@ -174,32 +140,14 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After the forging demonstration, Destructo's expression
-						grew serious. "Forging is only half the craft. The true
-						mastery lies in destructuring - breaking props apart
-						efficiently."
-					</p>
-					<p className='story-paragraph'>
-						He showed Aria two identical prop objects. "Watch the
-						difference between a novice and a master." With one, he
-						tediously accessed each property: props.title,
-						props.damage, props.element. With the other, he
-						performed a single elegant gesture, and the properties
-						separated cleanly into individual variables.
-					</p>
-					<p className='story-paragraph'>
-						"Destructuring!" Aria exclaimed. "You're extracting
-						multiple values at once!"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! And it gets better," Destructo winked. "We can
-						even provide default values for properties that might be
-						missing. It's like having a backup plan built into your
-						extraction process."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After the forging demonstration, Destructo's expression grew serious. "Forging is only half the craft. The true mastery lies in destructuring - breaking props apart efficiently."`,
+					`He showed Aria two identical prop objects. "Watch the difference between a novice and a master." With one, he tediously accessed each property: props.title, props.damage, props.element. With the other, he performed a single elegant gesture, and the properties separated cleanly into individual variables.`,
+					`"Destructuring!" Aria exclaimed. "You're extracting multiple values at once!"`,
+					`"Exactly! And it gets better," Destructo winked. "We can even provide default values for properties that might be missing. It's like having a backup plan built into your extraction process."`
+				]}
+			/>
 
 				<CodeExample
 					title="The Art of Destructuring Props"

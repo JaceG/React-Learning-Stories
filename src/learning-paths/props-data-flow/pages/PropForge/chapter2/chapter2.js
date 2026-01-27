@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const baseProps = {
@@ -39,42 +40,16 @@ function ChapterTwo() {
 					bridge="The next morning, Aria found Destructo working with multiple glowing crystals, each pulsing with different data properties. The forge's heat seemed even more intense as he prepared for advanced techniques."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Ah, right on time!" Destructo called out. "Today, we
-						move beyond simple destructuring to the art of
-						combination and transformation!"
-					</p>
-					<p className='story-paragraph'>
-						He held up three glowing dots that floated in formation.
-						"These three dots are the
-						<strong>Spread Operator</strong> - one of the most
-						powerful enchantments in our forge. They can merge
-						objects, copy properties, and transform data as it
-						flows!"
-					</p>
-					<p className='story-paragraph'>
-						Binary's processors whirred. "Three dots? That seems...
-						simple?"
-					</p>
-					<p className='story-paragraph'>
-						Destructo laughed heartily. "Simple in form, profound in
-						power! Watch this." He placed two prop crystals on the
-						anvil. "When I spread these together, their properties
-						merge. But here's the key - later properties override
-						earlier ones, like pouring different metals into the
-						same mold."
-					</p>
-					<p className='story-paragraph'>
-						Aria leaned in, fascinated. "So you can combine multiple
-						prop sources?"
-					</p>
-					<p className='story-paragraph'>
-						"Combine, override, extend!" Destructo's eyes gleamed.
-						"The spread operator is the ultimate tool for prop
-						manipulation. Let me show you!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Ah, right on time!" Destructo called out. "Today, we move beyond simple destructuring to the art of combination and transformation!"`,
+					<>He held up three glowing dots that floated in formation. "These three dots are the <strong>Spread Operator</strong> - one of the most powerful enchantments in our forge. They can merge objects, copy properties, and transform data as it flows!"</>,
+					`Binary's processors whirred. "Three dots? That seems... simple?"`,
+					`Destructo laughed heartily. "Simple in form, profound in power! Watch this." He placed two prop crystals on the anvil. "When I spread these together, their properties merge. But here's the key - later properties override earlier ones, like pouring different metals into the same mold."`,
+					`Aria leaned in, fascinated. "So you can combine multiple prop sources?"`,
+					`"Combine, override, extend!" Destructo's eyes gleamed. "The spread operator is the ultimate tool for prop manipulation. Let me show you!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>The Spread Forge</h3>
@@ -151,38 +126,15 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After the merging demonstration, Destructo led them to a
-						series of transformation chambers, each glowing with
-						different energies. "Now for the real magic -
-						transformation!"
-					</p>
-					<p className='story-paragraph'>
-						"Sometimes," he explained, "a parent component sends raw
-						materials, but the child needs refined props. The spread
-						operator lets us transform on the fly."
-					</p>
-					<p className='story-paragraph'>
-						He demonstrated with a weapon prop. "Watch - I spread
-						all the original properties, then override just the ones
-						I want to change. It's like keeping a sword's blade and
-						handle while swapping the pommel!"
-					</p>
-					<p className='story-paragraph'>
-						Aria practiced the technique, spreading props and
-						selectively transforming them. "This is incredible! I
-						can forward most props unchanged while customizing
-						specific ones!"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly!" Destructo beamed. "And here's a smith's
-						secret - you can use destructuring with spread to
-						exclude certain props before passing them on. Perfect
-						for removing props that shouldn't travel further
-						downstream!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After the merging demonstration, Destructo led them to a series of transformation chambers, each glowing with different energies. "Now for the real magic - transformation!"`,
+					`"Sometimes," he explained, "a parent component sends raw materials, but the child needs refined props. The spread operator lets us transform on the fly."`,
+					`He demonstrated with a weapon prop. "Watch - I spread all the original properties, then override just the ones I want to change. It's like keeping a sword's blade and handle while swapping the pommel!"`,
+					`Aria practiced the technique, spreading props and selectively transforming them. "This is incredible! I can forward most props unchanged while customizing specific ones!"`,
+					`"Exactly!" Destructo beamed. "And here's a smith's secret - you can use destructuring with spread to exclude certain props before passing them on. Perfect for removing props that shouldn't travel further downstream!"`
+				]}
+			/>
 
 				<CodeExample
 					title="The Spread Operator in Action"

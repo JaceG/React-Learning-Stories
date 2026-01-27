@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const [echoCount, setEchoCount] = useState(0);
@@ -41,54 +42,17 @@ function ChapterOne() {
 					title="The Echo Tower"
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						The entrance to the Echo Caves revealed itself as a
-						massive archway carved into the mountainside. Strange
-						sounds emanated from within - clicks, chimes, and
-						whispers that seemed to defy gravity, traveling upward
-						through the rock itself.
-					</p>
-				</div>
-
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						Inside the first cavern, Aria found a figure draped in
-						robes that shimmered with sound waves. The woman stood
-						beside a crystalline formation that pulsed with each
-						echo that passed through it.
-					</p>
-					<p className='story-paragraph'>
-						"Welcome, Aria," the figure said, her voice creating
-						visible ripples in the air. "I am
-						<strong>Echo Keeper Callback</strong>, guardian of
-						upward communication. Master Destructo sent word of your
-						arrival."
-					</p>
-					<p className='story-paragraph'>
-						Binary chirped excitedly, the sound bouncing off the
-						cave walls in fascinating patterns.
-					</p>
-					<p className='story-paragraph'>
-						"Your companion demonstrates it perfectly!" Callback
-						smiled. "You've mastered how data flows downward through
-						props, but what happens when a child component needs to
-						speak to its parent?"
-					</p>
-					<p className='story-paragraph'>
-						She struck a crystal chime, and Aria watched in
-						amazement as the sound traveled upward, defying the
-						natural downward flow she'd grown accustomed to.
-					</p>
-					<p className='story-paragraph'>
-						"This is the secret of callbacks," Callback explained.
-						"Parents pass down special functions as props - like
-						giving children magical conch shells. When children need
-						to send messages upward, they simply call these
-						functions, creating echoes that reach their parents'
-						ears."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`The entrance to the Echo Caves revealed itself as a massive archway carved into the mountainside. Strange sounds emanated from within - clicks, chimes, and whispers that seemed to defy gravity, traveling upward through the rock itself.`,
+					`Inside the first cavern, Aria found a figure draped in robes that shimmered with sound waves. The woman stood beside a crystalline formation that pulsed with each echo that passed through it.`,
+					<>"Welcome, Aria," the figure said, her voice creating visible ripples in the air. "I am <strong>Echo Keeper Callback</strong>, guardian of upward communication. Master Destructo sent word of your arrival."</>,
+					`Binary chirped excitedly, the sound bouncing off the cave walls in fascinating patterns.`,
+					`"Your companion demonstrates it perfectly!" Callback smiled. "You've mastered how data flows downward through props, but what happens when a child component needs to speak to its parent?"`,
+					`She struck a crystal chime, and Aria watched in amazement as the sound traveled upward, defying the natural downward flow she'd grown accustomed to.`,
+					`"This is the secret of callbacks," Callback explained. "Parents pass down special functions as props - like giving children magical conch shells. When children need to send messages upward, they simply call these functions, creating echoes that reach their parents' ears."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>The Signal Chamber</h3>
@@ -171,38 +135,15 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Fascinating!" Aria observed. "The child component
-						doesn't directly change the parent's state. It just...
-						sends a signal?"
-					</p>
-					<p className='story-paragraph'>
-						"Precisely!" Callback's eyes gleamed. "The child calls
-						the function the parent provided, and the parent decides
-						how to respond. This maintains the sacred one-way data
-						flow."
-					</p>
-					<p className='story-paragraph'>
-						She traced glowing patterns in the air, showing signal
-						paths. "Think of it as a conversation across
-						generations. Parents speak downward through props:
-						'Here's your allowance, here's your task.' Children
-						respond upward through callbacks: 'Task complete! Need
-						more resources!'"
-					</p>
-					<p className='story-paragraph'>
-						Binary projected a diagram showing props flowing down
-						and events echoing up, creating a complete communication
-						cycle.
-					</p>
-					<p className='story-paragraph'>
-						"Your companion understands the elegance," Callback
-						noted. "Data flows down like a waterfall, but events
-						echo up like sound in a canyon. Two different forces,
-						working in harmony."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Fascinating!" Aria observed. "The child component doesn't directly change the parent's state. It just... sends a signal?"`,
+					`"Precisely!" Callback's eyes gleamed. "The child calls the function the parent provided, and the parent decides how to respond. This maintains the sacred one-way data flow."`,
+					`She traced glowing patterns in the air, showing signal paths. "Think of it as a conversation across generations. Parents speak downward through props: 'Here's your allowance, here's your task.' Children respond upward through callbacks: 'Task complete! Need more resources!'"`,
+					`Binary projected a diagram showing props flowing down and events echoing up, creating a complete communication cycle.`,
+					`"Your companion understands the elegance," Callback noted. "Data flows down like a waterfall, but events echo up like sound in a canyon. Two different forces, working in harmony."`
+				]}
+			/>
 
 				<CodeExample
 					title="Parent Component Provides the Echo Chamber"

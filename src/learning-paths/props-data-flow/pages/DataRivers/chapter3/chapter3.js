@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	// Removed unused state - waterfallData was not being used in this component
@@ -27,35 +28,15 @@ function ChapterThree() {
 					bridge="On the final morning at the Cascade District, Flux led Aria to a breathtaking sight - the Great Data Waterfall, where information cascaded through seven majestic tiers, each pool glowing with transmitted data."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Behold the most complex flow pattern in React Kingdom,"
-						Flux said, her voice filled with awe. "This waterfall
-						demonstrates how data cascades through deeply nested
-						components."
-					</p>
-					<p className='story-paragraph'>
-						Aria watched in fascination as data drops fell from pool
-						to pool. "It's beautiful, but it seems... complicated."
-					</p>
-					<p className='story-paragraph'>
-						"Ah, you perceive the challenge!" Flux smiled. "Each
-						tier represents a component level. The water - our data
-						- must flow through every level to reach the bottom.
-						Watch how it splits and transforms along the way."
-					</p>
-					<p className='story-paragraph'>
-						Binary calculated rapidly. "Seven levels of cascade...
-						that's a lot of prop passing!"
-					</p>
-					<p className='story-paragraph'>
-						"Indeed. This is both the beauty and the burden of
-						nested components," Flux explained. "Each pool can
-						filter what it passes down, split streams to different
-						children, or transform the data. But too many levels
-						create maintenance waterfalls - I mean, nightmares!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Behold the most complex flow pattern in React Kingdom," Flux said, her voice filled with awe. "This waterfall demonstrates how data cascades through deeply nested components."`,
+					`Aria watched in fascination as data drops fell from pool to pool. "It's beautiful, but it seems... complicated."`,
+					`"Ah, you perceive the challenge!" Flux smiled. "Each tier represents a component level. The water - our data - must flow through every level to reach the bottom. Watch how it splits and transforms along the way."`,
+					`Binary calculated rapidly. "Seven levels of cascade... that's a lot of prop passing!"`,
+					`"Indeed. This is both the beauty and the burden of nested components," Flux explained. "Each pool can filter what it passes down, split streams to different children, or transform the data. But too many levels create maintenance waterfalls - I mean, nightmares!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>The Cascading Waterfall</h3>
@@ -170,35 +151,15 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After observing the cascade patterns, Flux grew serious.
-						"Beautiful as they are, deep waterfalls have a dark
-						side. Change something at the source, and every pool
-						below must adapt. It's fragile."
-					</p>
-					<p className='story-paragraph'>
-						She pointed to a series of elevated aqueducts in the
-						distance. "See those? They're Context channels - they
-						can teleport water directly to deep pools, bypassing all
-						the intermediate levels. You've already learned about
-						these from Contextus Magnus!"
-					</p>
-					<p className='story-paragraph'>
-						Aria's eyes lit up. "So when cascades get too deep..."
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! You already know the solution. Context, Redux,
-						or other state management can create direct channels.
-						The art is knowing when a beautiful cascade has become
-						an unmaintainable waterfall."
-					</p>
-					<p className='story-paragraph'>
-						"Remember," Flux concluded, "3-4 levels of cascade is
-						natural and manageable. Beyond that, consider
-						alternative flows. The goal is clarity, not complexity."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After observing the cascade patterns, Flux grew serious. "Beautiful as they are, deep waterfalls have a dark side. Change something at the source, and every pool below must adapt. It's fragile."`,
+					`She pointed to a series of elevated aqueducts in the distance. "See those? They're Context channels - they can teleport water directly to deep pools, bypassing all the intermediate levels. You've already learned about these from Contextus Magnus!"`,
+					`Aria's eyes lit up. "So when cascades get too deep..."`,
+					`"Exactly! You already know the solution. Context, Redux, or other state management can create direct channels. The art is knowing when a beautiful cascade has become an unmaintainable waterfall."`,
+					`"Remember," Flux concluded, "3-4 levels of cascade is natural and manageable. Beyond that, consider alternative flows. The goal is clarity, not complexity."`
+				]}
+			/>
 
 				<CodeExample
 					title="The Waterfall Cascade Pattern"

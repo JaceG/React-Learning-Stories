@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const [testProps, setTestProps] = useState({
@@ -63,44 +64,17 @@ function ChapterThree() {
 					bridge="On the final day at the Prop Forge, Destructo led Aria and Binary deep underground to a chamber that hummed with protective energy. Glowing runes covered every surface, pulsing with validation magic."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the Validation Vault," Destructo said
-						solemnly. "This is where we ensure prop quality. Every
-						prop that passes through here is tested, validated, and
-						guaranteed to be exactly what it claims."
-					</p>
-					<p className='story-paragraph'>
-						Aria examined the runes. "These symbols... they're
-						checking data types?"
-					</p>
-					<p className='story-paragraph'>
-						"Precisely! The most insidious bugs come from props that
-						lie," Destructo explained. "A string masquerading as a
-						number, a missing required prop, an unexpected null -
-						these can shatter components like brittle iron."
-					</p>
-					<p className='story-paragraph'>
-						Binary projected a warning symbol. "Type errors
-						detected! Type errors detected!"
-					</p>
-					<p className='story-paragraph'>
-						"Your companion understands!" Destructo smiled. "In the
-						early days, we used PropTypes - magical validators that
-						warned of incorrect props. Now, many smiths use
-						TypeScript, an even more powerful enchantment that
-						catches errors before the code even runs."
-					</p>
-					<p className='story-paragraph'>
-						"It's like having a quality inspector for every prop?"
-						Aria asked.
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! And just as important - default values provide
-						safety nets when optional props are missing. Come, let
-						me show you the validation process!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Welcome to the Validation Vault," Destructo said solemnly. "This is where we ensure prop quality. Every prop that passes through here is tested, validated, and guaranteed to be exactly what it claims."`,
+					`Aria examined the runes. "These symbols... they're checking data types?"`,
+					`"Precisely! The most insidious bugs come from props that lie," Destructo explained. "A string masquerading as a number, a missing required prop, an unexpected null - these can shatter components like brittle iron."`,
+					`Binary projected a warning symbol. "Type errors detected! Type errors detected!"`,
+					`"Your companion understands!" Destructo smiled. "In the early days, we used PropTypes - magical validators that warned of incorrect props. Now, many smiths use TypeScript, an even more powerful enchantment that catches errors before the code even runs."`,
+					`"It's like having a quality inspector for every prop?" Aria asked.`,
+					`"Exactly! And just as important - default values provide safety nets when optional props are missing. Come, let me show you the validation process!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>The Validation Forge</h3>
@@ -236,38 +210,15 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After the validation demonstration, Destructo gathered
-						several perfectly forged props, each bearing the seal of
-						quality. "These represent the pinnacle of our craft," he
-						said proudly.
-					</p>
-					<p className='story-paragraph'>
-						"Remember the sacred rules, Aria: Never mutate props -
-						they're read-only contracts. Always validate for type
-						safety. Provide sensible defaults for optional props.
-						And document everything!"
-					</p>
-					<p className='story-paragraph'>
-						Aria nodded thoughtfully. "So validation isn't just
-						about catching errors - it's about creating reliable
-						contracts between components?"
-					</p>
-					<p className='story-paragraph'>
-						"Wisdom beyond your years!" Destructo beamed. "Props are
-						promises. When a parent sends props to a child, it's
-						making a promise about what data will arrive. Validation
-						ensures that promise is kept."
-					</p>
-					<p className='story-paragraph'>
-						"Future developers - including yourself six months from
-						now - will thank you for clear prop interfaces and good
-						validation. It's the difference between a forge that
-						produces masterworks and one that creates brittle
-						failures."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After the validation demonstration, Destructo gathered several perfectly forged props, each bearing the seal of quality. "These represent the pinnacle of our craft," he said proudly.`,
+					`"Remember the sacred rules, Aria: Never mutate props - they're read-only contracts. Always validate for type safety. Provide sensible defaults for optional props. And document everything!"`,
+					`Aria nodded thoughtfully. "So validation isn't just about catching errors - it's about creating reliable contracts between components?"`,
+					`"Wisdom beyond your years!" Destructo beamed. "Props are promises. When a parent sends props to a child, it's making a promise about what data will arrive. Validation ensures that promise is kept."`,
+					`"Future developers - including yourself six months from now - will thank you for clear prop interfaces and good validation. It's the difference between a forge that produces masterworks and one that creates brittle failures."`
+				]}
+			/>
 
 				<CodeExample
 					title="PropTypes and TypeScript Validation"

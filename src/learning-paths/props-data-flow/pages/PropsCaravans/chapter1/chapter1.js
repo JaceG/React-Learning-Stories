@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const [caravans, setCaravans] = useState([]);
@@ -32,46 +33,16 @@ function ChapterOne() {
 					title="The Caravan Masters"
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						The Trade Quarter's morning market was unlike anything
-						Aria had seen. Merchants called out their wares while
-						caravans rolled through cobblestone streets, each wagon
-						carefully labeled with its destination and cargo.
-					</p>
-				</div>
-
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Aria! Over here!" A familiar voice cut through the
-						market noise. It was Propius, one of the Props
-						Messengers she'd met during her early training. But now
-						he wore the elaborate robes of a Caravan Master,
-						decorated with routing symbols and data flow patterns.
-					</p>
-					<p className='story-paragraph'>
-						"Propius!" Aria exclaimed. "You've certainly moved up in
-						the world!"
-					</p>
-					<p className='story-paragraph'>
-						He grinned proudly. "Indeed! After you mastered basic
-						prop passing, we messengers evolved our craft. No longer
-						do we carry simple messages - now we organize entire
-						caravans!" He gestured to the bustling depot behind him.
-						"Each caravan can transport multiple pieces of data:
-						text scrolls, number tablets, color crystals, even
-						function scrolls that contain powerful spells!"
-					</p>
-					<p className='story-paragraph'>
-						Binary whirred excitedly. "So props aren't just simple
-						values anymore?"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly, little companion," Propius nodded. "Modern
-						React demands sophisticated data transport. Let me show
-						you how we organize our caravans."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`The Trade Quarter's morning market was unlike anything Aria had seen. Merchants called out their wares while caravans rolled through cobblestone streets, each wagon carefully labeled with its destination and cargo.`,
+					`"Aria! Over here!" A familiar voice cut through the market noise. It was Propius, one of the Props Messengers she'd met during her early training. But now he wore the elaborate robes of a Caravan Master, decorated with routing symbols and data flow patterns.`,
+					`"Propius!" Aria exclaimed. "You've certainly moved up in the world!"`,
+					`He grinned proudly. "Indeed! After you mastered basic prop passing, we messengers evolved our craft. No longer do we carry simple messages - now we organize entire caravans!" He gestured to the bustling depot behind him. "Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"`,
+					`Binary whirred excitedly. "So props aren't just simple values anymore?"`,
+					`"Exactly, little companion," Propius nodded. "Modern React demands sophisticated data transport. Let me show you how we organize our caravans."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Build Your First Caravan</h3>
@@ -133,36 +104,14 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						As Aria watched the caravans being loaded, Propius
-						explained, "Each component workshop in React Kingdom has
-						specific needs. When a parent component wants something
-						built, it doesn't just send vague instructions - it
-						sends a fully loaded caravan with precise
-						specifications."
-					</p>
-					<p className='story-paragraph'>
-						He led them to a nearby Button Workshop where artisans
-						were unpacking a newly arrived caravan. "Watch this,"
-						Propius said. "The App component just sent this caravan
-						with everything needed to create a perfect button: the
-						text to display, the color scheme, even a function
-						scroll that activates when the button is pressed."
-					</p>
-					<p className='story-paragraph'>
-						Aria observed as the workshop artisans carefully
-						unpacked each item, using them to craft exactly what was
-						requested. "So props are like... detailed blueprints and
-						materials combined?"
-					</p>
-					<p className='story-paragraph'>
-						"Precisely!" Propius beamed. "And the beauty is that the
-						same workshop can create countless different buttons,
-						each unique based on the cargo it receives. This is the
-						power of component reusability!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`As Aria watched the caravans being loaded, Propius explained, "Each component workshop in React Kingdom has specific needs. When a parent component wants something built, it doesn't just send vague instructions - it sends a fully loaded caravan with precise specifications."`,
+					`He led them to a nearby Button Workshop where artisans were unpacking a newly arrived caravan. "Watch this," Propius said. "The App component just sent this caravan with everything needed to create a perfect button: the text to display, the color scheme, even a function scroll that activates when the button is pressed."`,
+					`Aria observed as the workshop artisans carefully unpacked each item, using them to craft exactly what was requested. "So props are like... detailed blueprints and materials combined?"`,
+					`"Precisely!" Propius beamed. "And the beauty is that the same workshop can create countless different buttons, each unique based on the cargo it receives. This is the power of component reusability!"`
+				]}
+			/>
 
 				<CodeExample
 					title="Props as Cargo"

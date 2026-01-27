@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const [symphony, setSymphony] = useState([]);
@@ -85,41 +86,16 @@ function ChapterThree() {
 					bridge="At the heart of the Echo Caves lay the Grand Symphony Hall, a natural amphitheater where thousands of stalactites formed a stone organ. The acoustics were perfect - every sound resonated with crystalline clarity. Aria and Binary entered to find Callback standing at a conductor's podium."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to your final lesson!" Callback announced,
-						raising a baton that sparkled with captured echoes.
-						"You've learned how individual components communicate,
-						but real applications require orchestration!"
-					</p>
-					<p className='story-paragraph'>
-						Binary's eyes widened as it scanned the cavern,
-						detecting complex acoustic patterns bouncing between
-						formations.
-					</p>
-					<p className='story-paragraph'>
-						"In complex applications," Callback explained, "events
-						don't just echo between parent and child. They create
-						symphonies - coordinated patterns where multiple
-						components work in harmony, all conducted by their
-						shared parent."
-					</p>
-					<p className='story-paragraph'>
-						She gestured to the stone formations. "Each stalactite
-						is like a component. Alone, they make simple sounds. But
-						when coordinated..." She tapped her baton, and the
-						entire cavern rang with harmonious tones.
-					</p>
-					<p className='story-paragraph'>
-						"The parent component becomes the conductor," Aria
-						realized. "Receiving signals from multiple children and
-						orchestrating their interactions!"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! Watch as I demonstrate the Symphony Pattern -
-						the ultimate expression of event coordination in React!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Welcome to your final lesson!" Callback announced, raising a baton that sparkled with captured echoes. "You've learned how individual components communicate, but real applications require orchestration!"`,
+					`Binary's eyes widened as it scanned the cavern, detecting complex acoustic patterns bouncing between formations.`,
+					`"In complex applications," Callback explained, "events don't just echo between parent and child. They create symphonies - coordinated patterns where multiple components work in harmony, all conducted by their shared parent."`,
+					`She gestured to the stone formations. "Each stalactite is like a component. Alone, they make simple sounds. But when coordinated..." She tapped her baton, and the entire cavern rang with harmonious tones.`,
+					`"The parent component becomes the conductor," Aria realized. "Receiving signals from multiple children and orchestrating their interactions!"`,
+					`"Exactly! Watch as I demonstrate the Symphony Pattern - the ultimate expression of event coordination in React!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>The Component Orchestra</h3>
@@ -208,46 +184,16 @@ function ChapterThree() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Beautiful!" Aria exclaimed as the symphony grew. "Each
-						component plays its part, but they're all synchronized
-						through the parent!"
-					</p>
-					<p className='story-paragraph'>
-						Callback nodded approvingly. "Now observe event
-						propagation." She traced glowing paths in the air. "In
-						the DOM, events bubble naturally upward. But in React,
-						we control the flow explicitly through our callback
-						chains."
-					</p>
-					<p className='story-paragraph'>
-						Binary projected a visualization showing events flowing
-						through component trees, each callback creating a
-						deliberate path for information to travel.
-					</p>
-					<p className='story-paragraph'>
-						"Sometimes," Callback continued, "a single action
-						triggers cascading effects. A drum beat might cue the
-						strings, which signal the brass. The parent conductor
-						receives each event and orchestrates the response,
-						maintaining perfect harmony."
-					</p>
-					<p className='story-paragraph'>
-						"It's like a living system," Aria marveled. "Each part
-						aware of its role, all coordinated through careful event
-						management."
-					</p>
-					<p className='story-paragraph'>
-						"You've grasped the essence!" Callback smiled. "But
-						remember - as symphonies grow complex, so do the
-						callback patterns. When coordination becomes
-						overwhelming, consider advanced patterns like Context or
-						state management libraries. They're like hiring
-						assistant conductors for different sections of your
-						orchestra."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Beautiful!" Aria exclaimed as the symphony grew. "Each component plays its part, but they're all synchronized through the parent!"`,
+					`Callback nodded approvingly. "Now observe event propagation." She traced glowing paths in the air. "In the DOM, events bubble naturally upward. But in React, we control the flow explicitly through our callback chains."`,
+					`Binary projected a visualization showing events flowing through component trees, each callback creating a deliberate path for information to travel.`,
+					`"Sometimes," Callback continued, "a single action triggers cascading effects. A drum beat might cue the strings, which signal the brass. The parent conductor receives each event and orchestrates the response, maintaining perfect harmony."`,
+					`"It's like a living system," Aria marveled. "Each part aware of its role, all coordinated through careful event management."`,
+					`"You've grasped the essence!" Callback smiled. "But remember - as symphonies grow complex, so do the callback patterns. When coordination becomes overwhelming, consider advanced patterns like Context or state management libraries. They're like hiring assistant conductors for different sections of your orchestra."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3>Propagation Visualizer</h3>

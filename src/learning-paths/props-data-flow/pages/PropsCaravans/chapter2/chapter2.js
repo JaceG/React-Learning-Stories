@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const cargoManifest = {
@@ -43,41 +44,16 @@ function ChapterTwo() {
 					bridge="Dawn broke over the Trade Quarter as Aria arrived at the Grand Loading Dock. Massive wagons lined up in neat rows, each being carefully loaded with diverse cargo under Propius's watchful eye."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Aria! Ready for today's lesson?" Propius called out,
-						clipboard in hand. "Yesterday you learned about basic
-						cargo transport. Today, we explore the full diversity of
-						what our caravans can carry!"
-					</p>
-					<p className='story-paragraph'>
-						He led her to a particularly impressive wagon. "This
-						beauty is headed to the ProductCard Workshop. Look at
-						its manifest - it carries text scrolls, number tablets,
-						boolean crystals, entire arrays of items, even complex
-						object maps!"
-					</p>
-					<p className='story-paragraph'>
-						Binary's display lit up with curiosity. "All in one
-						caravan? How do they keep track?"
-					</p>
-					<p className='story-paragraph'>
-						"Every piece of cargo has a label," Propius explained,
-						showing them the detailed manifest. "In React, we call
-						these prop names. Each name tells the receiving workshop
-						exactly what they're getting and how to use it."
-					</p>
-					<p className='story-paragraph'>
-						Aria studied the manifest intently. "So a component can
-						receive multiple props at once, each with its own
-						purpose?"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! And here's the clever part - workshops can
-						'destructure' their deliveries, unpacking exactly what
-						they need in one smooth motion. Let me show you!"
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"Aria! Ready for today's lesson?" Propius called out, clipboard in hand. "Yesterday you learned about basic cargo transport. Today, we explore the full diversity of what our caravans can carry!"`,
+					`He led her to a particularly impressive wagon. "This beauty is headed to the ProductCard Workshop. Look at its manifest - it carries text scrolls, number tablets, boolean crystals, entire arrays of items, even complex object maps!"`,
+					`Binary's display lit up with curiosity. "All in one caravan? How do they keep track?"`,
+					`"Every piece of cargo has a label," Propius explained, showing them the detailed manifest. "In React, we call these prop names. Each name tells the receiving workshop exactly what they're getting and how to use it."`,
+					`Aria studied the manifest intently. "So a component can receive multiple props at once, each with its own purpose?"`,
+					`"Exactly! And here's the clever part - workshops can 'destructure' their deliveries, unpacking exactly what they need in one smooth motion. Let me show you!"`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Cargo Manifest Inspector</h3>
@@ -145,35 +121,15 @@ function ChapterTwo() {
 					)}
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After exploring the cargo types, Propius showed Aria how
-						workshops prepared for incoming deliveries. "Each
-						workshop posts a manifest at their entrance," he
-						explained, leading them to a nearby Button Workshop.
-						"See? It lists every type of cargo they accept."
-					</p>
-					<p className='story-paragraph'>
-						Aria read the manifest aloud: "Text for display, color
-						specifications, size measurements, and... function
-						scrolls?"
-					</p>
-					<p className='story-paragraph'>
-						"Ah, those are special!" Propius's eyes gleamed.
-						"Function scrolls contain instructions that activate
-						when certain events occur. We call them callbacks. They
-						allow child components to send messages back to their
-						parents!"
-					</p>
-					<p className='story-paragraph'>
-						"Like a return caravan?" Aria asked.
-					</p>
-					<p className='story-paragraph'>
-						"Precisely! The parent sends a function, and the child
-						can invoke it when needed. It's how components
-						communicate upstream, against the normal flow of props."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After exploring the cargo types, Propius showed Aria how workshops prepared for incoming deliveries. "Each workshop posts a manifest at their entrance," he explained, leading them to a nearby Button Workshop. "See? It lists every type of cargo they accept."`,
+					`Aria read the manifest aloud: "Text for display, color specifications, size measurements, and... function scrolls?"`,
+					`"Ah, those are special!" Propius's eyes gleamed. "Function scrolls contain instructions that activate when certain events occur. We call them callbacks. They allow child components to send messages back to their parents!"`,
+					`"Like a return caravan?" Aria asked.`,
+					`"Precisely! The parent sends a function, and the child can invoke it when needed. It's how components communicate upstream, against the normal flow of props."`
+				]}
+			/>
 
 				<CodeExample
 					title="Sending a Fully Loaded Caravan"

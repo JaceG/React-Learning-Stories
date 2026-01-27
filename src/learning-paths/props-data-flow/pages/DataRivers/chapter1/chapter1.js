@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const [riverFlowing, setRiverFlowing] = useState(false);
@@ -31,44 +32,16 @@ function ChapterOne() {
 					title="The River's Law"
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						The Cascade District was breathtaking. Data rivers
-						cascaded down terraced waterfalls, each stream glowing
-						with the soft blue light of information flowing from
-						higher to lower components.
-					</p>
-					<p className='story-paragraph'>
-						"Magnificent, isn't it?" A voice called from the
-						observation platform. Aria turned to see a figure in
-						flowing blue robes, patterns shifting like water across
-						the fabric. "I am
-						<strong>River Master Flux</strong>, keeper of the data
-						streams."
-					</p>
-					<p className='story-paragraph'>
-						"It's beautiful!" Aria breathed. "But these aren't
-						normal rivers, are they?"
-					</p>
-					<p className='story-paragraph'>
-						Flux smiled knowingly. "Indeed not. These rivers carry
-						data, not water. And they obey an ancient law - they
-						flow in one direction only, from the mountain peaks of
-						parent components down to the valleys of their
-						children."
-					</p>
-					<p className='story-paragraph'>
-						Binary projected a small waterfall hologram.
-						"Unidirectional flow! That's why props are read-only!"
-					</p>
-					<p className='story-paragraph'>
-						"Precisely, little one," Flux nodded. "Just as water
-						cannot flow uphill without magical pumps, data cannot
-						flow upstream through props. This law keeps our
-						kingdom's data flow predictable and pure. Come, let me
-						show you the source."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`The Cascade District was breathtaking. Data rivers cascaded down terraced waterfalls, each stream glowing with the soft blue light of information flowing from higher to lower components.`,
+					<>"Magnificent, isn't it?" A voice called from the observation platform. Aria turned to see a figure in flowing blue robes, patterns shifting like water across the fabric. "I am <strong>River Master Flux</strong>, keeper of the data streams."</>,
+					`"It's beautiful!" Aria breathed. "But these aren't normal rivers, are they?"`,
+					`Flux smiled knowingly. "Indeed not. These rivers carry data, not water. And they obey an ancient law - they flow in one direction only, from the mountain peaks of parent components down to the valleys of their children."`,
+					`Binary projected a small waterfall hologram. "Unidirectional flow! That's why props are read-only!"`,
+					`"Precisely, little one," Flux nodded. "Just as water cannot flow uphill without magical pumps, data cannot flow upstream through props. This law keeps our kingdom's data flow predictable and pure. Come, let me show you the source."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>The River's Source</h3>
@@ -146,33 +119,14 @@ function ChapterOne() {
 					</div>
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						As they walked along the crystalline riverbank, Flux
-						explained the wisdom behind the law. "Imagine if water
-						could flow in any direction - chaos! Rivers would
-						collide, pools would overflow, and no one could predict
-						where the water would go."
-					</p>
-					<p className='story-paragraph'>
-						She touched a control crystal, and the data flow
-						shifted. "Watch - when I change the source, every
-						downstream component instantly receives the update.
-						Perfect synchronization! This is why React applications
-						are so reliable."
-					</p>
-					<p className='story-paragraph'>
-						Aria observed the elegant cascade. "So parent components
-						are like mountain springs, and their children are the
-						streams below?"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly! And just as a stream cannot change its source,
-						a child component cannot modify the props it receives.
-						It can only use them, pass them further downstream, or
-						trigger callbacks to request changes from above."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`As they walked along the crystalline riverbank, Flux explained the wisdom behind the law. "Imagine if water could flow in any direction - chaos! Rivers would collide, pools would overflow, and no one could predict where the water would go."`,
+					`She touched a control crystal, and the data flow shifted. "Watch - when I change the source, every downstream component instantly receives the update. Perfect synchronization! This is why React applications are so reliable."`,
+					`Aria observed the elegant cascade. "So parent components are like mountain springs, and their children are the streams below?"`,
+					`"Exactly! And just as a stream cannot change its source, a child component cannot modify the props it receives. It can only use them, pass them further downstream, or trigger callbacks to request changes from above."`
+				]}
+			/>
 
 				<CodeExample
 					title="Data Flows Downward Like a River"

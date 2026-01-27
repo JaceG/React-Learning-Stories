@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const [activeRoute, setActiveRoute] = useState(0);
@@ -100,41 +101,16 @@ function ChapterThree() {
 					bridge="On Aria's final day at the Trade Quarter, Propius led her to the Map Room - a circular chamber with walls covered in intricate route diagrams showing every caravan path in React Kingdom."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"This," Propius said with reverence, "is where we plan
-						every delivery route. But I must warn you about a
-						challenge every trader faces."
-					</p>
-					<p className='story-paragraph'>
-						He pointed to a particularly convoluted path on the map.
-						"See this? The cargo starts at the App Workshop and
-						needs to reach ProductCard, five levels down. But our
-						caravans can only travel parent-to-child, never skipping
-						generations."
-					</p>
-					<p className='story-paragraph'>
-						Binary computed quickly. "So the cargo must pass through
-						Dashboard, ShopSection, and ProductList, even if they
-						don't need it?"
-					</p>
-					<p className='story-paragraph'>
-						"Exactly!" Propius nodded grimly. "We call it 'prop
-						drilling' - boring tunnels through components just to
-						pass data. Each intermediate workshop must receive and
-						forward cargo they'll never use."
-					</p>
-					<p className='story-paragraph'>
-						Aria frowned. "That seems inefficient. What if one
-						workshop forgets to pass it along?"
-					</p>
-					<p className='story-paragraph'>
-						"Precisely the problem! The entire route breaks. It's
-						like a game of telephone where every player must
-						perfectly repeat the message, even if they don't
-						understand it."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`"This," Propius said with reverence, "is where we plan every delivery route. But I must warn you about a challenge every trader faces."`,
+					`He pointed to a particularly convoluted path on the map. "See this? The cargo starts at the App Workshop and needs to reach ProductCard, five levels down. But our caravans can only travel parent-to-child, never skipping generations."`,
+					`Binary computed quickly. "So the cargo must pass through Dashboard, ShopSection, and ProductList, even if they don't need it?"`,
+					`"Exactly!" Propius nodded grimly. "We call it 'prop drilling' - boring tunnels through components just to pass data. Each intermediate workshop must receive and forward cargo they'll never use."`,
+					`Aria frowned. "That seems inefficient. What if one workshop forgets to pass it along?"`,
+					`"Precisely the problem! The entire route breaks. It's like a game of telephone where every player must perfectly repeat the message, even if they don't understand it."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Trade Route Explorer</h3>
@@ -180,38 +156,15 @@ function ChapterThree() {
 					)}
 				</div>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						After exploring the routes, Propius showed Aria the
-						consequences of deep prop drilling. "Watch what happens
-						when we need to change something," he said, adjusting a
-						pin on the map.
-					</p>
-					<p className='story-paragraph'>
-						Instantly, red warning lights appeared along the entire
-						route. "Every workshop in the chain must be updated!
-						It's maintenance nightmare. Plus, each workshop carries
-						cargo it doesn't need, slowing everything down."
-					</p>
-					<p className='story-paragraph'>
-						"Is there a better way?" Aria asked, studying the
-						tangled paths.
-					</p>
-					<p className='story-paragraph'>
-						Propius smiled mysteriously. "Indeed there is. You've
-						already learned about Context from Contextus Magnus - it
-						can teleport data directly to where it's needed. And
-						there are other solutions you'll discover. But first,
-						you must understand these fundamental routes."
-					</p>
-					<p className='story-paragraph'>
-						"Remember," he added, "prop drilling isn't always bad.
-						For shallow routes of 2-3 levels, it's often the
-						simplest solution. The key is knowing when the route has
-						become too deep and recognizing when to use more
-						advanced patterns."
-					</p>
-				</div>
+			<StorySection
+				paragraphs={[
+					`After exploring the routes, Propius showed Aria the consequences of deep prop drilling. "Watch what happens when we need to change something," he said, adjusting a pin on the map.`,
+					`Instantly, red warning lights appeared along the entire route. "Every workshop in the chain must be updated! It's maintenance nightmare. Plus, each workshop carries cargo it doesn't need, slowing everything down."`,
+					`"Is there a better way?" Aria asked, studying the tangled paths.`,
+					`Propius smiled mysteriously. "Indeed there is. You've already learned about Context from Contextus Magnus - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."`,
+					`"Remember," he added, "prop drilling isn't always bad. For shallow routes of 2-3 levels, it's often the simplest solution. The key is knowing when the route has become too deep and recognizing when to use more advanced patterns."`
+				]}
+			/>
 
 				<CodeExample
 					title="Prop Drilling Example"
