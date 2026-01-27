@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -135,33 +136,18 @@ const ChapterTwo = () => {
 				bridge="Chronos led Aria deeper into the Lifecycle Sanctum, where glowing murals depicted the two most active phases of a component's life - the moments of birth and change."
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"These murals," Chronos explained, gesturing to the luminous 
-					walls, "chronicle the <strong>Mounting</strong> and 
-					<strong>Updating</strong> phases - the most crucial moments in 
-					a component's existence. Watch how they come to life!"
-				</p>
+			<StorySection
+				paragraphs={[
+					<>"These murals," Chronos explained, gesturing to the luminous walls, "chronicle the <strong>Mounting</strong> and <strong>Updating</strong> phases - the most crucial moments in a component's existence. Watch how they come to life!"</>,
+					<>The first mural began to glow, showing a component's birth ritual. "The Mounting phase," Chronos intoned, "follows a sacred sequence. First, the <strong>constructor</strong> awakens, preparing the component's initial state. Then <strong>render</strong> paints its form into existence. Finally, <strong>componentDidMount</strong> brings it fully to life, ready to interact with the world."</>,
+					`Binary bounced excitedly. "It's like watching a flower bloom! First the seed (constructor), then the bud (render), then the full bloom (componentDidMount)!"`
+				]}
+			/>
 
-				<p className='story-paragraph'>
-					The first mural began to glow, showing a component's birth ritual. 
-					"The Mounting phase," Chronos intoned, "follows a sacred sequence. 
-					First, the <strong>constructor</strong> awakens, preparing the 
-					component's initial state. Then <strong>render</strong> paints its 
-					form into existence. Finally, <strong>componentDidMount</strong> 
-					brings it fully to life, ready to interact with the world."
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary bounced excitedly. "It's like watching a flower bloom! 
-					First the seed (constructor), then the bud (render), then the 
-					full bloom (componentDidMount)!"
-				</p>
-
-				<CodeExample
-					title="The Mounting Ritual"
-					discoveredBy="From Chronos's Sacred Murals"
-					code={`class MountingComponent extends React.Component {
+			<CodeExample
+				title="The Mounting Ritual"
+				discoveredBy="From Chronos's Sacred Murals"
+				code={`class MountingComponent extends React.Component {
 constructor(props) {
 super(props);
 this.state = { isLoading: true };
@@ -184,32 +170,20 @@ this.setState({ isLoading: false });
 }, 2000);
 }
 }`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					The second mural shimmered to life, showing components in motion. 
-					"The <strong>Updating</strong> phase," Chronos continued, "occurs 
-					whenever change flows through a component. First, 
-					<strong>shouldComponentUpdate</strong> asks 'Do I need to change?' 
-					If yes, <strong>render</strong> repaints the component, and 
-					<strong>componentDidUpdate</strong> handles any ripple effects."
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria watched in fascination as the mural showed components 
-					gracefully adapting to new data. "So components can evolve 
-					without being destroyed and recreated?"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Precisely!" Chronos beamed. "That's the beauty of React's 
-					lifecycle - efficient transformation without waste."
-				</p>
+			<StorySection
+				paragraphs={[
+					<>The second mural shimmered to life, showing components in motion. "The <strong>Updating</strong> phase," Chronos continued, "occurs whenever change flows through a component. First, <strong>shouldComponentUpdate</strong> asks 'Do I need to change?' If yes, <strong>render</strong> repaints the component, and <strong>componentDidUpdate</strong> handles any ripple effects."</>,
+					`Aria watched in fascination as the mural showed components gracefully adapting to new data. "So components can evolve without being destroyed and recreated?"`,
+					`"Precisely!" Chronos beamed. "That's the beauty of React's lifecycle - efficient transformation without waste."`
+				]}
+			/>
 
-				<CodeExample
-					title="The Update Transformation"
-					discoveredBy="Aria's Study Notes"
-					code={`componentDidUpdate(prevProps, prevState) {
+			<CodeExample
+				title="The Update Transformation"
+				discoveredBy="Aria's Study Notes"
+				code={`componentDidUpdate(prevProps, prevState) {
 // This runs after a re-render from state or prop changes
 console.log("ComponentDidUpdate: Component was just updated");
 
@@ -219,9 +193,7 @@ if (prevProps.userId !== this.props.userId) {
 this.fetchUserData(this.props.userId);
 }
 }`}
-				/>
-				
-			</div>
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

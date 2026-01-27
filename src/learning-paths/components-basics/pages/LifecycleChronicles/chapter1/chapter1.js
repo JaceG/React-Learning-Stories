@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -63,36 +64,20 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={1}
-				title='The Component Life Stages'
-			/>
+		<ChapterIntro
+			chapterNumber={1}
+			title='The Component Life Stages'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Lifecycle Sanctum was unlike anything Aria had seen. 
-					Massive hourglasses floated in the air, each representing a 
-					different component's journey through time. An ancient figure 
-					approached - <strong>Chronos</strong>, the Master Time Keeper.
-				</p>
+		<StorySection
+			paragraphs={[
+				<>The Lifecycle Sanctum was unlike anything Aria had seen. Massive hourglasses floated in the air, each representing a different component's journey through time. An ancient figure approached - <strong>Chronos</strong>, the Master Time Keeper.</>,
+				`"Welcome, young Aria," Chronos said, his voice echoing through time itself. "Professor Syntaxis speaks highly of your progress. Today, you'll learn the most fundamental truth of our kingdom: every component has a lifecycle - a journey from creation to destruction."`,
+				`Binary appeared beside Aria, bouncing excitedly. "I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!"`
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					"Welcome, young Aria," Chronos said, his voice echoing through 
-					time itself. "Professor Syntaxis speaks highly of your progress. 
-					Today, you'll learn the most fundamental truth of our kingdom: 
-					every component has a lifecycle - a journey from creation to 
-					destruction."
-				</p>
-				
-				<p className='story-paragraph'>
-					Binary appeared beside Aria, bouncing excitedly. "I love this 
-					place! Watch - when a component is born, mounted into the DOM, 
-					updated with new data, or unmounted from existence, special 
-					methods are called. It's like having birthday parties, growth 
-					spurts, and retirement ceremonies!"
-				</p>
-
-				<div className='lifecycle-diagram'>
+		<div className='lifecycle-diagram'>
 					<div className='lifecycle-stage'>
 						<div className='lifecycle-icon mounting'></div>
 						<h3>Mounting</h3>
@@ -127,16 +112,13 @@ const ChapterOne = () => {
 							<li>componentWillUnmount</li>
 						</ul>
 					</div>
-				</div>
-
-				<p className='story-paragraph'>
-					Chronos gestured to the floating hourglasses. "These lifecycle 
-					methods are the heartbeat of every component. They allow 
-					components to prepare when born, adapt when they change, and 
-					gracefully depart when their time ends."
-				</p>
-				
 			</div>
+
+		<StorySection
+			paragraphs={[
+				`Chronos gestured to the floating hourglasses. "These lifecycle methods are the heartbeat of every component. They allow components to prepare when born, adapt when they change, and gracefully depart when their time ends."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>

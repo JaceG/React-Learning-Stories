@@ -3,6 +3,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
@@ -162,39 +163,22 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-			<ChapterIntro
-				chapterNumber={3}
-				title='The Farewell Ceremony'
-				bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
-			/>
+		<ChapterIntro
+			chapterNumber={3}
+			title='The Farewell Ceremony'
+			bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
+		/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Not all components live forever," Chronos said solemnly. "When 
-					their purpose is fulfilled or they're no longer needed, they must 
-					depart through the <strong>Unmounting</strong> phase. But a component's 
-					true character is revealed in how it says farewell."
-				</p>
+		<StorySection
+			paragraphs={[
+				<>"Not all components live forever," Chronos said solemnly. "When their purpose is fulfilled or they're no longer needed, they must depart through the <strong>Unmounting</strong> phase. But a component's true character is revealed in how it says farewell."</>,
+				`Binary's usual bouncing slowed to a gentle float. "This is the important part, Aria. Components that don't clean up after themselves leave behind ghost timers, phantom listeners, and memory leaks that haunt the kingdom!"`,
+				`Aria shuddered. "Ghost timers? That sounds terrible!"`,
+				<>"Indeed," Chronos nodded gravely. "That's why we have <strong>componentWillUnmount</strong> - a component's last chance to clean up its affairs, cancel subscriptions, clear timers, and remove event listeners before departing."</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					Binary's usual bouncing slowed to a gentle float. "This is the 
-					important part, Aria. Components that don't clean up after themselves 
-					leave behind ghost timers, phantom listeners, and memory leaks that 
-					haunt the kingdom!"
-				</p>
-				
-				<p className='story-paragraph'>
-					Aria shuddered. "Ghost timers? That sounds terrible!"
-				</p>
-				
-				<p className='story-paragraph'>
-					"Indeed," Chronos nodded gravely. "That's why we have 
-					<strong>componentWillUnmount</strong> - a component's last chance 
-					to clean up its affairs, cancel subscriptions, clear timers, and 
-					remove event listeners before departing."
-				</p>
-
-				<CodeExample
+		<CodeExample
 					title="The Farewell Protocol"
 					discoveredBy="A cautionary tale from Chronos"
 					code={`// Aria learns the importance of cleanup
@@ -225,16 +209,13 @@ render() {
 return <div>Timer: {this.state.seconds} seconds</div>;
 }
 }`}
-				/>
+			/>
 
-				<p className='story-paragraph'>
-					"See how the TimerComponent remembers to clear its interval?" 
-					Chronos pointed to the code. "Without this cleanup, the timer 
-					would continue ticking forever, even after the component is gone - 
-					a ghost in the machine!"
-				</p>
-				
-			</div>
+		<StorySection
+			paragraphs={[
+				`"See how the TimerComponent remembers to clear its interval?" Chronos pointed to the code. "Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
