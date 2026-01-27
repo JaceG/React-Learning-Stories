@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const {
@@ -193,121 +194,94 @@ function ChapterTwo() {
 					bridge='Commander Validus led Aria deeper into the fortress, past the basic training grounds to an advanced tactical center. Here, elite guardians practiced complex validation maneuvers - cross-field dependencies, asynchronous checks, and multi-layered defenses.'
 				/>
 
-				<div className='story-section'>
+				<StorySection paragraphs={[
+					`"The real threats," Validus explained, "aren't simple invalid entries. They're sophisticated attacks that require coordinated defenses. Watch our elite guard's struggles."`,
+					`Aria observed guardians attempting to validate password confirmations, check email availability against distant servers, and verify complex business rules. Their efforts were valiant but uncoordinated.`,
+					`Aria observed the struggles with growing understanding. "I can see some patterns from my Academy training that might apply here. The performance issues remind me of what I learned about debouncing and memoization."`,
+					`Binary projected analysis: "Current validation efficiency: 43%. Response time: 2.3 seconds average. User frustration index: HIGH."`,
+					`"Excellent observation!" Validus praised. "Your Academy training helps you spot the performance issues. Let me teach you how we handle complex validation scenarios."`
+				]} />
+
+				<div className='aria-advanced-strategy'>
+					<h3>Aria's Multi-Layered Defense System</h3>
 					<p className='story-paragraph'>
-						"The real threats," Validus explained, "aren't simple
-						invalid entries. They're sophisticated attacks that
-						require coordinated defenses. Watch our elite guard's
-						struggles."
+						"First, we need different stances for different
+						situations," Validus explained, addressing the elite
+						guardians and Aria. "Just like you learned about
+						timing at the Academy - timing is everything in
+						validation."
 					</p>
+				</div>
 
-					<p className='story-paragraph'>
-						Aria observed guardians attempting to validate password
-						confirmations, check email availability against distant
-						servers, and verify complex business rules. Their
-						efforts were valiant but uncoordinated.
+				<div className='guardian-stance'>
+					<h3>Guardian Validation Stances</h3>
+					<p className='stance-instruction'>
+						Commander Validus: "Choose your stance based on the
+						threat level!"
 					</p>
+					{stances.map((stance) => (
+						<div
+							key={stance.name}
+							className={`stance-option ${
+								guardianStance === stance.name
+									? 'active'
+									: ''
+							}`}
+							onClick={() => changeStance(stance.name)}>
+							<div className='stance-icon'>{stance.icon}</div>
+							<h4>
+								{stance.name.charAt(0).toUpperCase() +
+									stance.name.slice(1)}{' '}
+								Stance
+							</h4>
+							<p className='stance-desc'>
+								{stance.description}
+							</p>
+						</div>
+					))}
+				</div>
 
-					<p className='story-paragraph'>
-						Aria observed the struggles with growing understanding.
-						"I can see some patterns from my Academy training that
-						might apply here. The performance issues remind me of
-						what I learned about debouncing and memoization."
+				<div className='ward-circle'>
+					<h3>Protection Ward Activation</h3>
+					<p className='ward-description'>
+						Each successful validation activates a protective
+						ward
 					</p>
-
-					<p className='story-paragraph'>
-						Binary projected analysis: "Current validation
-						efficiency: 43%. Response time: 2.3 seconds average.
-						User frustration index: HIGH."
-					</p>
-
-					<p className='story-paragraph'>
-						"Excellent observation!" Validus praised. "Your Academy
-						training helps you spot the performance issues. Let me
-						teach you how we handle complex validation scenarios."
-					</p>
-
-					<div className='aria-advanced-strategy'>
-						<h3>Aria's Multi-Layered Defense System</h3>
-						<p className='story-paragraph'>
-							"First, we need different stances for different
-							situations," Validus explained, addressing the elite
-							guardians and Aria. "Just like you learned about
-							timing at the Academy - timing is everything in
-							validation."
-						</p>
-					</div>
-
-					<div className='guardian-stance'>
-						<h3>Guardian Validation Stances</h3>
-						<p className='stance-instruction'>
-							Commander Validus: "Choose your stance based on the
-							threat level!"
-						</p>
-						{stances.map((stance) => (
-							<div
-								key={stance.name}
-								className={`stance-option ${
-									guardianStance === stance.name
-										? 'active'
-										: ''
-								}`}
-								onClick={() => changeStance(stance.name)}>
-								<div className='stance-icon'>{stance.icon}</div>
-								<h4>
-									{stance.name.charAt(0).toUpperCase() +
-										stance.name.slice(1)}{' '}
-									Stance
-								</h4>
-								<p className='stance-desc'>
-									{stance.description}
-								</p>
-							</div>
-						))}
-					</div>
-
-					<div className='ward-circle'>
-						<h3>Protection Ward Activation</h3>
-						<p className='ward-description'>
-							Each successful validation activates a protective
-							ward
-						</p>
-						<div className='ward-runes-display'>
-							<div
-								className={`ward-rune ${
-									wardRunes.Ultimate ? 'activated' : ''
-								}`}>
-								<span className='rune-symbol'>U</span>
-								<span className='rune-name'>Ultimate</span>
-							</div>
-							<div
-								className={`ward-rune ${
-									wardRunes.Strong ? 'activated' : ''
-								}`}>
-								<span className='rune-symbol'>S</span>
-								<span className='rune-name'>Strong</span>
-							</div>
-							<div
-								className={`ward-rune ${
-									wardRunes.Match ? 'activated' : ''
-								}`}>
-								<span className='rune-symbol'>M</span>
-								<span className='rune-name'>Match</span>
-							</div>
-							<div
-								className={`ward-rune ${
-									wardRunes.Age ? 'activated' : ''
-								}`}>
-								<span className='rune-symbol'>A</span>
-								<span className='rune-name'>Age</span>
-							</div>
-							<div
-								className={`ward-rune ${
-									wardRunes.Unique ? 'activated' : ''
-								}`}>
-								<span className='rune-symbol'>✓</span>
-								<span className='rune-name'>Unique</span>
-							</div>
+					<div className='ward-runes-display'>
+						<div
+							className={`ward-rune ${
+								wardRunes.Ultimate ? 'activated' : ''
+							}`}>
+							<span className='rune-symbol'>U</span>
+							<span className='rune-name'>Ultimate</span>
+						</div>
+						<div
+							className={`ward-rune ${
+								wardRunes.Strong ? 'activated' : ''
+							}`}>
+							<span className='rune-symbol'>S</span>
+							<span className='rune-name'>Strong</span>
+						</div>
+						<div
+							className={`ward-rune ${
+								wardRunes.Match ? 'activated' : ''
+							}`}>
+							<span className='rune-symbol'>M</span>
+							<span className='rune-name'>Match</span>
+						</div>
+						<div
+							className={`ward-rune ${
+								wardRunes.Age ? 'activated' : ''
+							}`}>
+							<span className='rune-symbol'>A</span>
+							<span className='rune-name'>Age</span>
+						</div>
+						<div
+							className={`ward-rune ${
+								wardRunes.Unique ? 'activated' : ''
+							}`}>
+							<span className='rune-symbol'>✓</span>
+							<span className='rune-name'>Unique</span>
 						</div>
 					</div>
 				</div>
@@ -541,28 +515,11 @@ const useAdvancedValidation = () => {
 					</div>
 				</div>
 
-				<div className='validus-enlightenment'>
-					<p className='story-paragraph'>
-						Commander Validus watched with satisfaction as Aria
-						grasped the patterns and the validation attempts became
-						smooth, coordinated defenses. "Excellent! You're
-						understanding how to apply Academy training to
-						validation scenarios without overwhelming our servers!"
-					</p>
-
-					<p className='story-paragraph'>
-						"The key," Validus explained, "is combining patterns.
-						Debouncing from event handling knowledge, caching from
-						performance optimization, and memoization from hook
-						mastery. Everything connects in validation work."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary displayed updated metrics: "Validation
-						efficiency: 94%. Response time: 0.3 seconds. User
-						satisfaction: OPTIMAL. Cache hit rate: 78%!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Commander Validus watched with satisfaction as Aria grasped the patterns and the validation attempts became smooth, coordinated defenses. "Excellent! You're understanding how to apply Academy training to validation scenarios without overwhelming our servers!"`,
+				`"The key," Validus explained, "is combining patterns. Debouncing from event handling knowledge, caching from performance optimization, and memoization from hook mastery. Everything connects in validation work."`,
+				`Binary displayed updated metrics: "Validation efficiency: 94%. Response time: 0.3 seconds. User satisfaction: OPTIMAL. Cache hit rate: 78%!"`
+			]} />
 
 				<div className='advanced-techniques'>
 					<h3>Elite Guardian Techniques</h3>

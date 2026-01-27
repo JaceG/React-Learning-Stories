@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const { activeGates, secureGate, logDefense } = useOutletContext();
@@ -95,105 +96,76 @@ function ChapterOne() {
 					title='The Guardian Gates'
 				/>
 
-				<div className='story-section'>
+				<StorySection paragraphs={[
+					<>"<strong>Aria!</strong>" Commander Validus's voice boomed across the hall. A warrior in gleaming red armor strode forward, each piece inscribed with validation runes. "Word from the Event Symphony Hall speaks of your progress with Conductor Eventus. Welcome to the Validation Fortress - I'm eager to teach you about defensive data patterns!"</>,
+					`Binary's sensors immediately began analyzing the fortress's defensive systems. "Detecting multiple validation layers, but patterns could benefit from optimization techniques. Validation logic scattered, potential for systematic improvement."`,
+					`Aria surveyed the training grounds where guardians practiced on isolated validation gates. "I can see validation happening, but I'm curious how to apply systematic patterns to coordinate these defenses more efficiently."`,
+					`"Excellent question!" Validus gestured to the assembled recruits. "These are our finest, but they struggle with complex, multi-field validation. Your Academy training in systematic thinking should help you understand these patterns quickly."`
+				]} />
+
+				<div className='aria-applies-training'>
+					<h3>Aria Applies Systematic Thinking</h3>
 					<p className='story-paragraph'>
-						"<strong>Aria!</strong>" Commander Validus's voice
-						boomed across the hall. A warrior in gleaming red armor
-						strode forward, each piece inscribed with validation
-						runes. "Word from the Event Symphony Hall speaks of your
-						progress with Conductor Eventus. Welcome to the
-						Validation Fortress - I'm eager to teach you about
-						defensive data patterns!"
+						"I see the connections," Aria said, drawing on her
+						training. "Each gate is strong alone, but I imagine
+						when coordinated through a central system - like the
+						orchestration patterns I learned - they could become
+						much more effective?"
 					</p>
-
 					<p className='story-paragraph'>
-						Binary's sensors immediately began analyzing the
-						fortress's defensive systems. "Detecting multiple
-						validation layers, but patterns could benefit from
-						optimization techniques. Validation logic scattered,
-						potential for systematic improvement."
+						"Precisely!" Validus beamed. "Let me show you how
+						validation coordination works..."
 					</p>
+				</div>
 
-					<p className='story-paragraph'>
-						Aria surveyed the training grounds where guardians
-						practiced on isolated validation gates. "I can see
-						validation happening, but I'm curious how to apply
-						systematic patterns to coordinate these defenses more
-						efficiently."
+				<div className='fortress'>
+					<h3>The Fortress Validation Gates</h3>
+					<p className='commander-instruction'>
+						Commander Validus points to the gates: "Test your
+						defenses against Aria's patterns!"
 					</p>
-
-					<p className='story-paragraph'>
-						"Excellent question!" Validus gestured to the assembled
-						recruits. "These are our finest, but they struggle with
-						complex, multi-field validation. Your Academy training
-						in systematic thinking should help you understand these
-						patterns quickly."
-					</p>
-
-					<div className='aria-applies-training'>
-						<h3>Aria Applies Systematic Thinking</h3>
-						<p className='story-paragraph'>
-							"I see the connections," Aria said, drawing on her
-							training. "Each gate is strong alone, but I imagine
-							when coordinated through a central system - like the
-							orchestration patterns I learned - they could become
-							much more effective?"
-						</p>
-						<p className='story-paragraph'>
-							"Precisely!" Validus beamed. "Let me show you how
-							validation coordination works..."
-						</p>
-					</div>
-
-					<div className='fortress'>
-						<h3>The Fortress Validation Gates</h3>
-						<p className='commander-instruction'>
-							Commander Validus points to the gates: "Test your
-							defenses against Aria's patterns!"
-						</p>
-						<div className='guardian-gates'>
-							{validationGates.map((gate) => (
-								<div
-									key={gate.name}
-									className={`gate ${
-										Object.entries(activeGates).some(
-											([key, value]) =>
-												key.includes(gate.name) && value
-										)
-											? 'secured'
-											: ''
-									} ${
-										Object.entries(activeGates).some(
-											([key, value]) =>
-												key.includes(gate.name) &&
-												!value
-										)
-											? 'breached'
-											: ''
-									}`}>
-									<div className='gate-icon'>{gate.icon}</div>
-									<h4>{gate.name} Gate</h4>
-									<p className='gate-description'>
-										{gate.message}
-									</p>
-									<div className='gate-status'>
-										{Object.entries(activeGates).some(
-											([key, value]) =>
-												key.includes(gate.name) && value
-										)
-											? '🟢 Secured'
-											: Object.entries(activeGates).some(
-													([key, value]) =>
-														key.includes(
-															gate.name
-														) && !value
-											  )
-											? '🔴 Breached'
-											: '⚪ Waiting'}
-									</div>
+					<div className='guardian-gates'>
+						{validationGates.map((gate) => (
+							<div
+								key={gate.name}
+								className={`gate ${
+									Object.entries(activeGates).some(
+										([key, value]) =>
+											key.includes(gate.name) && value
+									)
+										? 'secured'
+										: ''
+								} ${
+									Object.entries(activeGates).some(
+										([key, value]) =>
+											key.includes(gate.name) &&
+											!value
+									)
+										? 'breached'
+										: ''
+								}`}>
+								<div className='gate-icon'>{gate.icon}</div>
+								<h4>{gate.name} Gate</h4>
+								<p className='gate-description'>
+									{gate.message}
+								</p>
+								<div className='gate-status'>
+									{Object.entries(activeGates).some(
+										([key, value]) =>
+											key.includes(gate.name) && value
+									)
+										? '🟢 Secured'
+										: Object.entries(activeGates).some(
+												([key, value]) =>
+													key.includes(
+														gate.name
+													) && !value
+										  )
+										? '🔴 Breached'
+										: '⚪ Waiting'}
 								</div>
-							))}
-						</div>
+							</div>
+						))}
 					</div>
 				</div>
 
@@ -424,27 +396,11 @@ const validationRules = {
 					</div>
 				</div>
 
-				<div className='validus-amazement'>
-					<p className='story-paragraph'>
-						Commander Validus watched as his recruits began
-						understanding the coordinated defense patterns.
-						"Remarkable! You've shown them how to unify individual
-						gates into a cohesive defensive system!"
-					</p>
-
-					<p className='story-paragraph'>
-						"It's the same principle I used in form alchemy," Aria
-						explained. "Individual validations are like solo
-						defenders. But when orchestrated through a central hook,
-						they become an elite guard unit."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary displayed tactical analysis: "Defense
-						coordination improved by 82%. Validation response time
-						decreased by 67%. Error detection accuracy: 99.7%!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Commander Validus watched as his recruits began understanding the coordinated defense patterns. "Remarkable! You've shown them how to unify individual gates into a cohesive defensive system!"`,
+				`"It's the same principle I used in form alchemy," Aria explained. "Individual validations are like solo defenders. But when orchestrated through a central hook, they become an elite guard unit."`,
+				`Binary displayed tactical analysis: "Defense coordination improved by 82%. Validation response time decreased by 67%. Error detection accuracy: 99.7%!"`
+			]} />
 
 				<div className='advanced-defense-patterns'>
 					<h3>Guardian Defense Patterns</h3>

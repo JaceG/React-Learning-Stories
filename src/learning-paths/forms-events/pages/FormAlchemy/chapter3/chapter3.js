@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const {
@@ -195,44 +196,13 @@ function ChapterThree() {
 					bridge={`In the final chamber of the Form Alchemy Lab, Formeus stood before an elaborate setup - multiple cauldrons connected by glowing channels, validation runes floating in the air, and a shimmering portal at the center. "This is it, Aria," he announced. "Let's see how your Academy mastery handles our most complex challenge."`}
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"This is the Grand Transmutation," Formeus announced
-						solemnly. "Where all form alchemy converges. Most
-						alchemists take years to master this, but with your
-						Academy training in hook patterns..."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria studied the complex setup with curiosity. "This
-						looks incredibly advanced! I can see patterns from my
-						Academy training, but I'm not sure how they all fit
-						together."
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely the challenge!" Formeus beamed. "The Grand
-						Transmutation requires combining everything you've
-						learned with new form-specific patterns. Let me guide
-						you through creating an advanced form management
-						system."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's processors hummed at maximum capacity, ready to
-						assist with the learning process. "Academy patterns
-						detected! Ready to apply previous training to new
-						concepts!"
-					</p>
-
-					<p className='story-paragraph'>
-						"We'll create a form management system together,"
-						Formeus explained, "that combines everything: memoized
-						validation for performance (like the Performance
-						Sanctuary), proper submission handling with effects,
-						field-level error display, and even validation runes
-						that light up as fields become valid!"
-					</p>
+			<StorySection paragraphs={[
+				`"This is the Grand Transmutation," Formeus announced solemnly. "Where all form alchemy converges. Most alchemists take years to master this, but with your Academy training in hook patterns..."`,
+				`Aria studied the complex setup with curiosity. "This looks incredibly advanced! I can see patterns from my Academy training, but I'm not sure how they all fit together."`,
+				`"Precisely the challenge!" Formeus beamed. "The Grand Transmutation requires combining everything you've learned with new form-specific patterns. Let me guide you through creating an advanced form management system."`,
+				`Binary's processors hummed at maximum capacity, ready to assist with the learning process. "Academy patterns detected! Ready to apply previous training to new concepts!"`,
+				`"We'll create a form management system together," Formeus explained, "that combines everything: memoized validation for performance (like the Performance Sanctuary), proper submission handling with effects, field-level error display, and even validation runes that light up as fields become valid!"`
+			]} />
 
 					<div className='validation-runes'>
 						<h3>The Academy-Enhanced Validation Rune Circle</h3>
@@ -512,38 +482,12 @@ const useAdvancedForm = (initialValues, validationSchema) => {
 					</div>
 				</div>
 
-				<div className='formeus-finale'>
-					<p className='story-paragraph'>
-						As they worked together, Formeus guided Aria through
-						each step. "Excellent! You're quickly grasping how
-						Academy patterns apply to form systems. Your hook
-						training gives you a strong foundation for understanding
-						these concepts."
-					</p>
-
-					<p className='story-paragraph'>
-						"It's amazing how everything connects," Aria marveled.
-						"useState for values, useCallback for handler
-						optimization (Performance Sanctuary), useMemo for
-						expensive computations, useEffect for reactive
-						validation (Temporal Tower). Every Academy pattern has a
-						role in form alchemy!"
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely!" Formeus beamed. "You're learning faster
-						than most because you already understand the underlying
-						hook patterns. Now you see how they apply to practical
-						form handling."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected statistics: "Form validation
-						efficiency: 95%. User experience score: 98%. Code
-						reusability: 100%. Academy training patterns
-						successfully applied to form handling!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`As they worked together, Formeus guided Aria through each step. "Excellent! You're quickly grasping how Academy patterns apply to form systems. Your hook training gives you a strong foundation for understanding these concepts."`,
+				`"It's amazing how everything connects," Aria marveled. "useState for values, useCallback for handler optimization (Performance Sanctuary), useMemo for expensive computations, useEffect for reactive validation (Temporal Tower). Every Academy pattern has a role in form alchemy!"`,
+				`"Precisely!" Formeus beamed. "You're learning faster than most because you already understand the underlying hook patterns. Now you see how they apply to practical form handling."`,
+				`Binary projected statistics: "Form validation efficiency: 95%. User experience score: 98%. Code reusability: 100%. Academy training patterns successfully applied to form handling!"`
+			]} />
 
 				<div className='practical-application'>
 					<h3>The Complete Academy-Enhanced Form Toolkit</h3>
@@ -616,7 +560,6 @@ try {
 						'Binary displayed a map highlighting their next destination. "Event patterns detected in neighboring district. Shall we proceed to the Symphony Hall?"',
 					]}
 				/>
-			</div>
 		</>
 	);
 

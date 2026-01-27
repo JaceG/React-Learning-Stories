@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const {
@@ -31,51 +32,13 @@ function ChapterOne() {
 					title="The Alchemist's Laboratory"
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"<strong>Welcome, young scholar!</strong>" A figure in a
-						stained laboratory coat emerged from behind a
-						particularly vigorous cauldron. "
-						<strong>Master Alchemist Formeus</strong>
-						at your service. I've heard of your accomplishments at
-						the Academy - quite impressive for someone so young! I'm
-						excited to teach you how your hook knowledge applies to
-						the practical art of form handling."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's sensors immediately began analyzing the various
-						reactions occurring throughout the lab, projecting
-						chemical formulas and React patterns in the air.
-						"Detecting new applications! Form interactions combined
-						with hook patterns!"
-					</p>
-
-					<p className='story-paragraph'>
-						Aria looked around in wonder. "I understand useState and
-						useRef from the Academy, but I'm curious how they apply
-						to capturing user input in forms."
-					</p>
-
-					<p className='story-paragraph'>
-						"Excellent question!" Formeus gestured enthusiastically
-						to three glowing cauldrons. "Form Alchemy is about
-						applying the hooks you've mastered to real user
-						interactions. The patterns you learned from Pattern
-						Weaver Synthesis are the foundation, but now we must
-						learn how to capture and transform user intent into
-						application state. Let me show you the fundamental
-						choice: <strong>controlled</strong> versus{' '}
-						<strong>uncontrolled</strong> components."
-					</p>
-
-					<p className='story-paragraph'>
-						Formeus approached the cauldrons, each bubbling with
-						different intensities. "These represent the three
-						approaches to form alchemy. Watch closely as I
-						demonstrate how your hook knowledge applies to user
-						input..."
-					</p>
+	<StorySection paragraphs={[
+		<><strong>Welcome, young scholar!</strong>{" A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron. "} <strong>Master Alchemist Formeus</strong>{" at your service. I've heard of your accomplishments at the Academy - quite impressive for someone so young! I'm excited to teach you how your hook knowledge applies to the practical art of form handling."}</>,
+		`Binary's sensors immediately began analyzing the various reactions occurring throughout the lab, projecting chemical formulas and React patterns in the air. "Detecting new applications! Form interactions combined with hook patterns!"`,
+		`Aria looked around in wonder. "I understand useState and useRef from the Academy, but I'm curious how they apply to capturing user input in forms."`,
+		<>{"Excellent question! Formeus gestured enthusiastically to three glowing cauldrons. Form Alchemy is about applying the hooks you've mastered to real user interactions. The patterns you learned from Pattern Weaver Synthesis are the foundation, but now we must learn how to capture and transform user intent into application state. Let me show you the fundamental choice: "}<strong>controlled</strong>{" versus "}<strong>uncontrolled</strong>{" components."}</>,
+		`Formeus approached the cauldrons, each bubbling with different intensities. "These represent the three approaches to form alchemy. Watch closely as I demonstrate how your hook knowledge applies to user input..."`
+	]} />
 
 					<div className='alchemy-lab'>
 						<h3>The Three Cauldrons of Form Control</h3>
@@ -244,22 +207,10 @@ function AlchemicalForm() {
 }`}
 				/>
 
-				<div className='formeus-reaction'>
-					<p className='story-paragraph'>
-						Formeus watched with satisfaction as Aria connected the
-						concepts. "Excellent! You're grasping how Academy
-						training applies to form handling. Your hook foundation
-						makes these concepts much clearer."
-					</p>
-
-					<p className='story-paragraph'>
-						"It's amazing how it all connects," Aria replied
-						thoughtfully. "The patterns I learned from Pattern
-						Weaver Synthesis really do apply here. Custom hooks can
-						encapsulate form logic just like any other stateful
-						behavior."
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Formeus watched with satisfaction as Aria connected the concepts. "Excellent! You're grasping how Academy training applies to form handling. Your hook foundation makes these concepts much clearer."`,
+				`"It's amazing how it all connects," Aria replied thoughtfully. "The patterns I learned from Pattern Weaver Synthesis really do apply here. Custom hooks can encapsulate form logic just like any other stateful behavior."`
+			]} />
 
 				<div className='practical-application'>
 					<h3>The Alchemist's Decision Matrix</h3>
@@ -315,7 +266,6 @@ function AlchemicalForm() {
 							'The Western Quarter is fascinating! Master Formeus showed me how form handling is really just specialized hook application. Controlled components use useState to maintain a single source of truth - every keystroke updates React state. Uncontrolled components let the DOM handle the state, using useRef when we need values. I immediately saw how to apply my Academy training - created useControlledInput that encapsulates common form logic using the patterns Pattern Weaver taught me. Formeus was impressed, but this is just the beginning. Binary is cataloging all the transmutation patterns for optimization.',
 					}}
 				/>
-			</div>
 		</>
 	);
 

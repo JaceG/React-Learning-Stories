@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const {
@@ -61,35 +62,12 @@ function ChapterTwo() {
 					bridge={`Conductor Eventus led Aria to the grand amphitheater where the event propagation patterns were visualized as flowing streams of light. "Here's where many developers struggle," he explained. "They don't understand how events travel through the component tree."`}
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						Aria watched the light patterns with recognition from
-						her Academy training. "This reminds me of the Data
-						Rivers I learned about! Events flow like data, but in
-						two phases - capture down, bubble up."
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely!" Eventus exclaimed. "Your Academy background
-						serves you well. But we have a performance challenge.
-						Many developers place handlers inefficiently, causing
-						event conflicts and unnecessary re-renders."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's scanners tracked the event flows, applying
-						Academy optimization knowledge. "Detecting inefficient
-						event attachment patterns. Multiple handlers where one
-						delegated handler would suffice. Classic Academy
-						optimization opportunity!"
-					</p>
-
-					<p className='story-paragraph'>
-						"This is fascinating!" Aria exclaimed, studying the
-						patterns. "I can see connections to the optimization
-						patterns I learned at the Academy. Could you show me how
-						event delegation works?"
-					</p>
+			<StorySection paragraphs={[
+				`Aria watched the light patterns with recognition from her Academy training. "This reminds me of the Data Rivers I learned about! Events flow like data, but in two phases - capture down, bubble up."`,
+				`"Precisely!" Eventus exclaimed. "Your Academy background serves you well. But we have a performance challenge. Many developers place handlers inefficiently, causing event conflicts and unnecessary re-renders."`,
+				`Binary's scanners tracked the event flows, applying Academy optimization knowledge. "Detecting inefficient event attachment patterns. Multiple handlers where one delegated handler would suffice. Classic Academy optimization opportunity!"`,
+				`"This is fascinating!" Aria exclaimed, studying the patterns. "I can see connections to the optimization patterns I learned at the Academy. Could you show me how event delegation works?"`
+			]} />
 
 					<div className='aria-applies-training'>
 						<h3>Aria Applies Academy Event Patterns</h3>
@@ -349,28 +327,11 @@ function OptimizedKeyboard() {
 					</div>
 				</div>
 
-				<div className='eventus-amazement'>
-					<p className='story-paragraph'>
-						Conductor Eventus watched as Aria applied Academy
-						optimization patterns to event handling. "Your
-						Academy-trained approach to event delegation is
-						excellent! You've learned how one optimized handler can
-						manage many elements efficiently!"
-					</p>
-
-					<p className='story-paragraph'>
-						"It's a pattern I learned from the Performance
-						Sanctuary," Aria explained. "Combine it with proper
-						phase understanding, and you can create incredibly
-						efficient event systems."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary displayed performance metrics: "Event handler
-						count reduced by 89%. Memory usage optimized using
-						Academy patterns. Event flow conflicts eliminated!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Conductor Eventus watched as Aria applied Academy optimization patterns to event handling. "Your Academy-trained approach to event delegation is excellent! You've learned how one optimized handler can manage many elements efficiently!"`,
+				`"It's a pattern I learned from the Performance Sanctuary," Aria explained. "Combine it with proper phase understanding, and you can create incredibly efficient event systems."`,
+				`Binary displayed performance metrics: "Event handler count reduced by 89%. Memory usage optimized using Academy patterns. Event flow conflicts eliminated!"`
+			]} />
 
 				<div className='advanced-patterns'>
 					<h3>Academy-Enhanced Event Flow Patterns</h3>
@@ -425,7 +386,6 @@ onClick={(e) => {
 							"Event propagation is fascinating when viewed through Academy optimization training! Conductor Eventus taught me how event delegation reduces handler overhead using the efficiency patterns I learned - instead of n handlers for n elements, use one intelligent handler optimized with useCallback. The capture/bubble phases are like the data flow patterns I learned in Props & Data Flow, but bidirectional. Binary calculated how Academy patterns apply to event optimization. I'm starting to see how one optimized handler could manage an entire keyboard of notes. Eventus mentioned something about async event patterns next...",
 					}}
 				/>
-			</div>
 		</>
 	);
 

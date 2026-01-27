@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const { performanceMetrics, updateMetric, logEvent } = useOutletContext();
@@ -112,39 +113,20 @@ function ChapterThree() {
 	};
 
 	const content = (
-		<div className='chapter'>
+		<>
+			<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
 				title='The Grand Performance'
 				bridge='The finale approached. Conductor Eventus gathered all the musicians for the grand performance, but something was wrong. The symphony stuttered, handlers fired too rapidly, and memory consumption spiraled out of control. "This is exactly what the Academy teaches us to avoid!" Aria observed.'
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"This is exactly what I feared," Eventus said, his baton
-					trembling. "Without optimization, even the most beautiful
-					symphony becomes chaos."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria studied the chaotic performance with concern. "This
-					reminds me of performance issues I learned about at the
-					Academy's Performance Sanctuary. Could the optimization
-					techniques I learned help here?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Precisely what I was hoping you'd ask!" Eventus exclaimed.
-					"Your Academy training in optimization is exactly what we
-					need. Let me teach you how to apply those patterns to event
-					handling."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary's processors whirred excitedly, ready to learn new
-					applications. "Academy patterns detected! Ready to learn how
-					they apply to event optimization!"
-				</p>
+		<StorySection paragraphs={[
+			`"This is exactly what I feared," Eventus said, his baton trembling. "Without optimization, even the most beautiful symphony becomes chaos."`,
+			`Aria studied the chaotic performance with concern. "This reminds me of performance issues I learned about at the Academy's Performance Sanctuary. Could the optimization techniques I learned help here?"`,
+			`"Precisely what I was hoping you'd ask!" Eventus exclaimed. "Your Academy training in optimization is exactly what we need. Let me teach you how to apply those patterns to event handling."`,
+			`Binary's processors whirred excitedly, ready to learn new applications. "Academy patterns detected! Ready to learn how they apply to event optimization!"`
+		]} />
 
 				<div className='aria-teaches-optimization'>
 					<h3>Aria's Academy Performance Masterclass</h3>
@@ -378,31 +360,11 @@ const useDebounce = (callback, delay) => {
 				</div>
 			</div>
 
-			<div className='eventus-revelation'>
-				<p className='story-paragraph'>
-					Conductor Eventus watched with satisfaction as the Academy
-					patterns transformed the performance. "The stuttering is
-					gone! The memory usage is stable! You've learned these
-					optimization concepts very well!"
-				</p>
-
-				<p className='story-paragraph'>
-					"By learning how to apply Academy training to events," Aria
-					replied. "Eventus taught me how memoization from the
-					Performance Sanctuary prevents handler recreation.
-					Throttling and debouncing patterns control event flow. Event
-					delegation reduces handler count. It's amazing how the
-					optimization patterns I learned apply to events!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary projected the results: "Academy patterns successfully
-					applied to event optimization! Handler recreation reduced by
-					95% using useCallback patterns. Event processing efficiency
-					increased by 78% using Performance Sanctuary techniques.
-					Memory usage stable. The symphony is perfect!"
-				</p>
-			</div>
+		<StorySection paragraphs={[
+			`Conductor Eventus watched with satisfaction as the Academy patterns transformed the performance. "The stuttering is gone! The memory usage is stable! You've learned these optimization concepts very well!"`,
+			`"By learning how to apply Academy training to events," Aria replied. "Eventus taught me how memoization from the Performance Sanctuary prevents handler recreation. Throttling and debouncing patterns control event flow. Event delegation reduces handler count. It's amazing how the optimization patterns I learned apply to events!"`,
+			`Binary projected the results: "Academy patterns successfully applied to event optimization! Handler recreation reduced by 95% using useCallback patterns. Event processing efficiency increased by 78% using Performance Sanctuary techniques. Memory usage stable. The symphony is perfect!"`
+		]} />
 
 			<div className='advanced-patterns'>
 				<h3>Academy Performance Patterns Applied</h3>
@@ -471,7 +433,7 @@ const batchedUpdate = unstable_batchedUpdates(() => {
 					'Binary displayed a map route. "Validation patterns detected. Academy training applicable. Shall we proceed to the fortress?"',
 				]}
 			/>
-		</div>
+		</>
 	);
 
 	return <StoryContent content={content} />;

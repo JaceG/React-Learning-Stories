@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const {
@@ -212,50 +213,20 @@ function ChapterThree() {
 					bridge='The Grand Synthesis Chamber pulsed with the combined energy of every form pattern in the Western Quarter. Here, Sage had brought together masters from each domain - Alchemist Formicus, Conductor Eventus, and Commander Validus - all struggling to create the ultimate submission system.'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"<strong>Aria!</strong>" Sage's voice echoed with
-						excitement. "Perfect timing! I've gathered all your
-						teachers here for a special lesson. Each master will
-						show you how their domain connects with the others to
-						create the ultimate form system."
-					</p>
+				<StorySection paragraphs={[
+					<>"<strong>Aria!</strong>" Sage's voice echoed with excitement. "Perfect timing! I've gathered all your teachers here for a special lesson. Each master will show you how their domain connects with the others to create the ultimate form system."</>,
+					`Binary's sensors detected massive energy fluctuations. "Multiple pattern types detected! Form state management, event handlers, validation logic, and submission systems all present. Preparing to learn integration patterns!"`,
+					`Aria looked around in wonder at the assembled masters. "This is incredible! All my teachers working together?"`,
+					`"Indeed," Sage smiled. "For your final lesson, we'll show you how everything connects. Formeus will demonstrate state management, Eventus will show event orchestration, Validus will handle validation, and I'll teach submission - all working as one unified system."`,
+					`"Form Alchemy for state, Event Symphony for interaction, Validation Guardians for defense, and Portal Submission for transmission," Formeus explained. "They're all movements in the same composition, and today you'll learn how they harmonize."`
+				]} />
 
+				<div className='aria-grand-synthesis'>
+					<h3>Aria's Ultimate Form System</h3>
 					<p className='story-paragraph'>
-						Binary's sensors detected massive energy fluctuations.
-						"Multiple pattern types detected! Form state management,
-						event handlers, validation logic, and submission systems
-						all present. Preparing to learn integration patterns!"
+						"Watch as I unify all the patterns you've taught me
+						into one seamless system..."
 					</p>
-
-					<p className='story-paragraph'>
-						Aria looked around in wonder at the assembled masters.
-						"This is incredible! All my teachers working together?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Indeed," Sage smiled. "For your final lesson, we'll
-						show you how everything connects. Formeus will
-						demonstrate state management, Eventus will show event
-						orchestration, Validus will handle validation, and I'll
-						teach submission - all working as one unified system."
-					</p>
-
-					<p className='story-paragraph'>
-						"Form Alchemy for state, Event Symphony for interaction,
-						Validation Guardians for defense, and Portal Submission
-						for transmission," Formeus explained. "They're all
-						movements in the same composition, and today you'll
-						learn how they harmonize."
-					</p>
-
-					<div className='aria-grand-synthesis'>
-						<h3>Aria's Ultimate Form System</h3>
-						<p className='story-paragraph'>
-							"Watch as I unify all the patterns you've taught me
-							into one seamless system..."
-						</p>
-					</div>
 				</div>
 
 				<div className='grand-synthesis-chamber'>
@@ -753,34 +724,12 @@ const useUltimateForm = () => {
 					)}
 				</div>
 
-				<div className='masters-recognition'>
-					<p className='story-paragraph'>
-						The assembled masters watched with satisfaction as their
-						collaborative teaching stabilized the portal. Each
-						pattern flowed seamlessly into the next - form state
-						managed by alchemy, events orchestrated like a symphony,
-						validation standing guard, and submission flowing
-						through a perfect portal.
-					</p>
-
-					<p className='story-paragraph'>
-						"Incredible!" Formeus exclaimed. "She's learned how to
-						connect my controlled components with Eventus's
-						delegation patterns!"
-					</p>
-
-					<p className='story-paragraph'>
-						"And my validation gates work perfectly with Sage's
-						async submission!" Validus added, his armor glowing with
-						approval.
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's final analysis appeared: "System efficiency:
-						99.7%! All patterns unified. Zero conflicts detected.
-						Aria has achieved true Forms & Events mastery!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`The assembled masters watched with satisfaction as their collaborative teaching stabilized the portal. Each pattern flowed seamlessly into the next - form state managed by alchemy, events orchestrated like a symphony, validation standing guard, and submission flowing through a perfect portal.`,
+				`"Incredible!" Formeus exclaimed. "She's learned how to connect my controlled components with Eventus's delegation patterns!"`,
+				`"And my validation gates work perfectly with Sage's async submission!" Validus added, his armor glowing with approval.`,
+				`Binary's final analysis appeared: "System efficiency: 99.7%! All patterns unified. Zero conflicts detected. Aria has achieved true Forms & Events mastery!"`
+			]} />
 
 				<div className='ultimate-wisdom'>
 					<h3>The Unified Patterns</h3>

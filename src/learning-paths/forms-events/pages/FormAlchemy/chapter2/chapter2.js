@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const {
@@ -87,33 +88,12 @@ function ChapterTwo() {
 					bridge={`Formeus led Aria deeper into the laboratory, where a massive transmutation circle glowed on the floor. Various input components floated above it, each pulsing with different energies. "Now," he said, "let's see how your Academy training applies to complex form management."`}
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"This is where your hook mastery truly shines," Formeus
-						announced, gesturing to the circle. "Managing multiple
-						form inputs is like conducting a symphony of
-						transmutations. Each input type has its own nature, its
-						own requirements."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria studied the floating components, her mind already
-						connecting patterns. "At the Academy, I learned to
-						create custom hooks that manage complex state. Could we
-						apply those patterns here?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Show me!" Formeus interrupted eagerly. "I'm curious to
-						see how Academy training approaches this challenge!"
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected a holographic code editor, and Aria
-						began crafting a comprehensive form management solution,
-						drawing on everything she'd learned from the Hook
-						Council.
-					</p>
+			<StorySection paragraphs={[
+				`"This is where your hook mastery truly shines," Formeus announced, gesturing to the circle. "Managing multiple form inputs is like conducting a symphony of transmutations. Each input type has its own nature, its own requirements."`,
+				`Aria studied the floating components, her mind already connecting patterns. "At the Academy, I learned to create custom hooks that manage complex state. Could we apply those patterns here?"`,
+				`"Show me!" Formeus interrupted eagerly. "I'm curious to see how Academy training approaches this challenge!"`,
+				`Binary projected a holographic code editor, and Aria began crafting a comprehensive form management solution, drawing on everything she'd learned from the Hook Council.`
+			]} />
 
 					<div className='ingredient-mixer'>
 						<h3>The Input Ingredient Collection</h3>
@@ -350,27 +330,11 @@ const useForm = (initialValues, validate) => {
 					</div>
 				</div>
 
-				<div className='formeus-amazement'>
-					<p className='story-paragraph'>
-						Formeus watched the demonstration with growing
-						excitement. "Incredible! You're grasping how Academy
-						patterns apply to form management. This orchestration
-						approach is exactly what I hoped you'd understand!"
-					</p>
-
-					<p className='story-paragraph'>
-						"The key," Formeus explained, "is thinking of forms as
-						systems, like Pattern Weaver taught you. Each piece -
-						values, errors, touched states - they're all part of the
-						same orchestrated pattern."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary added excitedly, "Pattern efficiency increased by
-						73%! Academy training helps understand these
-						optimization concepts!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Formeus watched the demonstration with growing excitement. "Incredible! You're grasping how Academy patterns apply to form management. This orchestration approach is exactly what I hoped you'd understand!"`,
+				`"The key," Formeus explained, "is thinking of forms as systems, like Pattern Weaver taught you. Each piece - values, errors, touched states - they're all part of the same orchestrated pattern."`,
+				`Binary added excitedly, "Pattern efficiency increased by 73%! Academy training helps understand these optimization concepts!"`
+			]} />
 
 				<div className='practical-application'>
 					<h3>Advanced Form Patterns</h3>
@@ -429,7 +393,6 @@ const handleArrayField = (index, value) => {
 							"Form state management is fascinating when viewed through Academy patterns! Formeus guided me through creating a comprehensive useForm hook that handles values, validation, and touch tracking. He was impressed with how I connected Academy concepts to form handling. The validation runs automatically when values change (using useEffect patterns from the Temporal Tower), touch tracking prevents premature error display, and useCallback optimizes the handlers like Professor Hooksworth taught. It's amazing how Academy training helps me understand these new concepts! Formeus says tomorrow we'll tackle different input types and their quirks.",
 					}}
 				/>
-			</div>
 		</>
 	);
 

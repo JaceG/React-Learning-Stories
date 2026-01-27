@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const {
@@ -151,93 +152,72 @@ function ChapterThree() {
 					bridge="The fortress's war room displayed maps of validation strategies from across the kingdom. Commander Validus gathered his elite guard as Aria prepared to demonstrate the ultimate defense - a synthesis of all validation knowledge into one impenetrable system."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"This is our greatest challenge," Validus announced.
-						"Multi-stage attacks that evolve and adapt. Traditional
-						defenses crumble against such sophisticated threats."
-					</p>
+				<StorySection paragraphs={[
+					`"This is our greatest challenge," Validus announced. "Multi-stage attacks that evolve and adapt. Traditional defenses crumble against such sophisticated threats."`,
+					`Aria stepped forward, Binary projecting complex validation patterns in the air. "I've faced similar challenges across the kingdom. The solution isn't just strong gates - it's intelligent, adaptive defense that guides legitimate users while repelling threats."`,
+					`"Show us," Validus commanded, his elite guard leaning forward eagerly.`,
+					`"I'll create a validation system that combines everything," Aria declared. "Schema validation, step management, conditional logic, and performance optimization - all working together systematically."`
+				]} />
 
+				<div className='aria-ultimate-system'>
+					<h3>Aria's Ultimate Defense Architecture</h3>
 					<p className='story-paragraph'>
-						Aria stepped forward, Binary projecting complex
-						validation patterns in the air. "I've faced similar
-						challenges across the kingdom. The solution isn't just
-						strong gates - it's intelligent, adaptive defense that
-						guides legitimate users while repelling threats."
+						"Watch as I synthesize all validation knowledge into
+						one system..."
 					</p>
+				</div>
 
-					<p className='story-paragraph'>
-						"Show us," Validus commanded, his elite guard leaning
-						forward eagerly.
-					</p>
-
-					<p className='story-paragraph'>
-						"I'll create a validation system that combines
-						everything," Aria declared. "Schema validation, step
-						management, conditional logic, and performance
-						optimization - all working together systematically."
-					</p>
-
-					<div className='aria-ultimate-system'>
-						<h3>Aria's Ultimate Defense Architecture</h3>
-						<p className='story-paragraph'>
-							"Watch as I synthesize all validation knowledge into
-							one system..."
+				<div
+					className={`fortress ${
+						fortressSecured ? 'fortified' : ''
+					}`}>
+					<h3>Fortress Defense Status</h3>
+					<div className='fortress-status'>
+						<div className='status-indicator'>
+							{fortressSecured
+								? '🏰 FULLY SECURED'
+								: '⚠️ DEFENSES INCOMPLETE'}
+						</div>
+						<p className='status-description'>
+							{fortressSecured
+								? 'All validation layers active. The fortress is impenetrable!'
+								: 'Complete all validation steps to secure the fortress.'}
 						</p>
 					</div>
 
-					<div
-						className={`fortress ${
-							fortressSecured ? 'fortified' : ''
-						}`}>
-						<h3>Fortress Defense Status</h3>
-						<div className='fortress-status'>
-							<div className='status-indicator'>
-								{fortressSecured
-									? '🏰 FULLY SECURED'
-									: '⚠️ DEFENSES INCOMPLETE'}
-							</div>
-							<p className='status-description'>
-								{fortressSecured
-									? 'All validation layers active. The fortress is impenetrable!'
-									: 'Complete all validation steps to secure the fortress.'}
-							</p>
-						</div>
-
-						<div className='validation-strategy'>
-							<h4>Strategic Defense Layers</h4>
-							<p className='strategy-intro'>
-								Commander Validus: "Deploy these validation
-								strategies to fortify our defenses!"
-							</p>
-							<div className='strategy-grid'>
-								{strategies.map((strategy) => (
-									<div
-										key={strategy.id}
-										className={`strategy-card ${
-											validationStrategies.includes(
-												strategy.name
-											)
-												? 'active'
-												: ''
-										}`}
-										onClick={() =>
-											addStrategy(strategy.name)
-										}>
-										<div className='strategy-icon'>
-											{strategy.icon}
-										</div>
-										<h5>{strategy.name}</h5>
-										<p className='strategy-status'>
-											{validationStrategies.includes(
-												strategy.name
-											)
-												? '✅ Deployed'
-												: '⚡ Click to activate'}
-										</p>
+					<div className='validation-strategy'>
+						<h4>Strategic Defense Layers</h4>
+						<p className='strategy-intro'>
+							Commander Validus: "Deploy these validation
+							strategies to fortify our defenses!"
+						</p>
+						<div className='strategy-grid'>
+							{strategies.map((strategy) => (
+								<div
+									key={strategy.id}
+									className={`strategy-card ${
+										validationStrategies.includes(
+											strategy.name
+										)
+											? 'active'
+											: ''
+									}`}
+									onClick={() =>
+										addStrategy(strategy.name)
+									}>
+									<div className='strategy-icon'>
+										{strategy.icon}
 									</div>
-								))}
-							</div>
+									<h5>{strategy.name}</h5>
+									<p className='strategy-status'>
+										{validationStrategies.includes(
+											strategy.name
+										)
+											? '✅ Deployed'
+											: '⚡ Click to activate'}
+									</p>
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
@@ -618,31 +598,11 @@ const useUltimateValidation = (schemas, conditionalRules) => {
 					</div>
 				</div>
 
-				<div className='validus-final-lesson'>
-					<p className='story-paragraph'>
-						Commander Validus watched with satisfaction as Aria
-						grasped the validation concepts and the system handled
-						every scenario. "Excellent! You've learned how to create
-						a defense system that's both impenetrable and
-						user-friendly!"
-					</p>
-
-					<p className='story-paragraph'>
-						"The secret," Validus explained, "is treating validation
-						as a journey, not a barrier. Guide users through each
-						step, provide clear feedback, and use all the patterns
-						you've learned - memoization for performance,
-						conditional logic for flexibility, and schema validation
-						for consistency."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary displayed final metrics: "Defense system
-						efficiency: 99.8%. User success rate: 96%. Invalid data
-						blocked: 100%. Academy training successfully applied to
-						validation fortress design!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Commander Validus watched with satisfaction as Aria grasped the validation concepts and the system handled every scenario. "Excellent! You've learned how to create a defense system that's both impenetrable and user-friendly!"`,
+				`"The secret," Validus explained, "is treating validation as a journey, not a barrier. Guide users through each step, provide clear feedback, and use all the patterns you've learned - memoization for performance, conditional logic for flexibility, and schema validation for consistency."`,
+				`Binary displayed final metrics: "Defense system efficiency: 99.8%. User success rate: 96%. Invalid data blocked: 100%. Academy training successfully applied to validation fortress design!"`
+			]} />
 
 				<div className='ultimate-patterns'>
 					<h3>The Ultimate Defense Patterns</h3>

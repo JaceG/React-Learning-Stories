@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const {
@@ -189,52 +190,23 @@ function ChapterTwo() {
 					bridge={`Sage guided Aria deeper into the portal chamber, where advanced transmission arrays hummed with energy. "You've mastered basic portal control," Sage said, "but true mastery requires handling the unpredictable - network failures, timeouts, and the art of keeping users informed during long transmissions."`}
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						Aria examined the complex portal mechanisms. "I can see
-						patterns from my journey - async operations from event
-						handling, state management for loading states, and error
-						boundaries for recovery. But I'm not sure how they all
-						work together for submission."
-					</p>
+			<StorySection
+				paragraphs={[
+					`Aria examined the complex portal mechanisms. "I can see patterns from my journey - async operations from event handling, state management for loading states, and error boundaries for recovery. But I'm not sure how they all work together for submission."`,
+					`"Excellent observations!" Sage praised. "Your Academy training helps you recognize the underlying patterns. Our current system frustrates travelers with long waits and unclear feedback. Failed transmissions often leave them stranded."`,
+					`Binary projected analysis: "Current retry success rate: 34%. User abandonment during transmission: 67%. Optimistic update implementation: 0%."`,
+					`"Those metrics are concerning," Aria noted. "Could you teach me patterns that address these issues? Maybe something that combines loading states, error recovery, and better user feedback?"`,
+					`"Precisely what I hoped you'd ask!" Sage smiled. "Let me show you advanced submission patterns - loading states, error recovery, optimistic updates, and even cancellation. Portal transmission should feel instantaneous, even when it's not."`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						"Excellent observations!" Sage praised. "Your Academy
-						training helps you recognize the underlying patterns.
-						Our current system frustrates travelers with long waits
-						and unclear feedback. Failed transmissions often leave
-						them stranded."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected analysis: "Current retry success rate:
-						34%. User abandonment during transmission: 67%.
-						Optimistic update implementation: 0%."
-					</p>
-
-					<p className='story-paragraph'>
-						"Those metrics are concerning," Aria noted. "Could you
-						teach me patterns that address these issues? Maybe
-						something that combines loading states, error recovery,
-						and better user feedback?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Precisely what I hoped you'd ask!" Sage smiled. "Let me
-						show you advanced submission patterns - loading states,
-						error recovery, optimistic updates, and even
-						cancellation. Portal transmission should feel
-						instantaneous, even when it's not."
-					</p>
-
-					<div className='aria-advanced-portal'>
-						<h3>Aria's Advanced Portal Control System</h3>
-						<p className='story-paragraph'>
-							"Watch as I enhance your portal with techniques from
-							across the kingdom..."
-						</p>
-					</div>
-				</div>
+			<div className='aria-advanced-portal'>
+				<h3>Aria's Advanced Portal Control System</h3>
+				<p className='story-paragraph'>
+					"Watch as I enhance your portal with techniques from
+					across the kingdom..."
+				</p>
+			</div>
 
 				<div className='portal-optimization-panel'>
 					<h3>Portal Enhancement Controls</h3>
@@ -601,31 +573,11 @@ const useAdvancedSubmission = (submitFn, options = {}) => {
 					</div>
 				</div>
 
-				<div className='sage-wisdom'>
-					<p className='story-paragraph'>
-						Sage watched with satisfaction as Aria grasped the
-						advanced patterns and the portal stabilized. "Excellent!
-						You're understanding how these patterns work together.
-						Optimistic updates make transmissions feel instant,
-						retry logic ensures reliability, and cancellation gives
-						users control!"
-					</p>
-
-					<p className='story-paragraph'>
-						"Every pattern serves a purpose," Sage explained.
-						"Optimistic UI from state management principles,
-						AbortController from modern JavaScript, retry logic with
-						exponential backoff from distributed systems. It's all
-						connected."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's displays lit up with improved metrics: "Retry
-						success rate: 89%! User abandonment: down to 12%!
-						Perceived performance: 3x faster with optimistic
-						updates!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Sage watched with satisfaction as Aria grasped the advanced patterns and the portal stabilized. "Excellent! You're understanding how these patterns work together. Optimistic updates make transmissions feel instant, retry logic ensures reliability, and cancellation gives users control!"`,
+				`"Every pattern serves a purpose," Sage explained. "Optimistic UI from state management principles, AbortController from modern JavaScript, retry logic with exponential backoff from distributed systems. It's all connected."`,
+				`Binary's displays lit up with improved metrics: "Retry success rate: 89%! User abandonment: down to 12%! Perceived performance: 3x faster with optimistic updates!"`
+			]} />
 
 				<div className='advanced-patterns'>
 					<h3>Portal Transmission Patterns</h3>

@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const {
@@ -42,49 +43,13 @@ function ChapterOne() {
 					title='The Symphony Hall Invitation'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						The Event Symphony Hall stood as a magnificent structure
-						in the heart of the Western Quarter, its crystalline
-						walls pulsing with the rhythm of countless user
-						interactions. Aria and Binary arrived to find controlled
-						chaos - events firing in patterns, handlers coordinating
-						responses, but something seemed... unoptimized.
-					</p>
-
-					<p className='story-paragraph'>
-						"<strong>Academy graduate Aria!</strong>" A
-						distinguished figure in a conductor's coat rushed
-						forward, his baton crackling with event energy. "
-						<strong>Conductor Eventus</strong>
-						at your service. Master Formeus wrote of your progress
-						in form alchemy. Welcome to the Symphony Hall - I'm
-						excited to teach you about React's event system!"
-					</p>
-
-					<p className='story-paragraph'>
-						Binary's sensors immediately began analyzing the event
-						flows, projecting waveforms and interaction patterns in
-						the air. "Detecting event propagation patterns, but
-						performance could be optimized using Academy
-						techniques!"
-					</p>
-
-					<p className='story-paragraph'>
-						Aria surveyed the scene with her Academy-trained eyes.
-						"I can see event handling happening, but I'm curious how
-						React's event system works under the hood. At the
-						Academy, we focused on hooks and state - this is my
-						first deep dive into event management."
-					</p>
-
-					<p className='story-paragraph'>
-						Eventus's eyes lit up with excitement. "Excellent! I can
-						see your Academy training will help you understand these
-						concepts quickly. Let me show you how React's event
-						system works - it's like a well-conducted symphony where
-						every interaction is orchestrated."
-					</p>
+	<StorySection paragraphs={[
+		`The Event Symphony Hall stood as a magnificent structure in the heart of the Western Quarter, its crystalline walls pulsing with the rhythm of countless user interactions. Aria and Binary arrived to find controlled chaos - events firing in patterns, handlers coordinating responses, but something seemed... unoptimized.`,
+		<><strong>Academy graduate Aria!</strong>{" A distinguished figure in a conductor's coat rushed forward, his baton crackling with event energy. "} <strong>Conductor Eventus</strong>{" at your service. Master Formeus wrote of your progress in form alchemy. Welcome to the Symphony Hall - I'm excited to teach you about React's event system!"}</>,
+		`Binary's sensors immediately began analyzing the event flows, projecting waveforms and interaction patterns in the air. "Detecting event propagation patterns, but performance could be optimized using Academy techniques!"`,
+		`Aria surveyed the scene with her Academy-trained eyes. "I can see event handling happening, but I'm curious how React's event system works under the hood. At the Academy, we focused on hooks and state - this is my first deep dive into event management."`,
+		`Eventus's eyes lit up with excitement. "Excellent! I can see your Academy training will help you understand these concepts quickly. Let me show you how React's event system works - it's like a well-conducted symphony where every interaction is orchestrated."`
+	]} />
 
 					<div className='aria-demonstrates'>
 						<h3>Learning React's Event System</h3>
@@ -292,29 +257,11 @@ function EventOrchestra() {
 					</div>
 				</div>
 
-				<div className='eventus-teaches-aria'>
-					<p className='story-paragraph'>
-						Conductor Eventus watched as Aria experimented with the
-						event patterns, her Academy training helping her quickly
-						grasp the concepts. "I see you understand the
-						fundamentals! React's synthetic events are like musical
-						notes that have been perfectly tuned for consistency."
-					</p>
-
-					<p className='story-paragraph'>
-						"Exactly like the patterns I learned at the Academy,"
-						Aria confirmed, connecting the concepts. "Just like
-						useState provides consistent state management, React's
-						event system provides consistent event handling across
-						all browsers."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary added cheerfully, "Event handling consistency
-						improved! No browser-specific workarounds detected in
-						React's system!"
-					</p>
-				</div>
+			<StorySection paragraphs={[
+				`Conductor Eventus watched as Aria experimented with the event patterns, her Academy training helping her quickly grasp the concepts. "I see you understand the fundamentals! React's synthetic events are like musical notes that have been perfectly tuned for consistency."`,
+				`"Exactly like the patterns I learned at the Academy," Aria confirmed, connecting the concepts. "Just like useState provides consistent state management, React's event system provides consistent event handling across all browsers."`,
+				`Binary added cheerfully, "Event handling consistency improved! No browser-specific workarounds detected in React's system!"`
+			]} />
 
 				<div className='synthetic-event-comparison'>
 					<h3>The Two Worlds of Events</h3>
@@ -407,7 +354,6 @@ function EventOrchestra() {
 							"The Event Symphony Hall is magnificent! Conductor Eventus welcomed me warmly after hearing about my progress with Form Alchemy. Today I learned about React's synthetic event system - it wraps native browser events to provide consistent behavior everywhere. onClick instead of onclick, onMouseEnter, onChange - all normalized! Binary was fascinated by how React handles the complexity behind the scenes. The synthetic events have methods like preventDefault() and stopPropagation() that work identically across all browsers. Eventus says this foundation is crucial before we dive into event propagation patterns this afternoon!",
 					}}
 				/>
-			</div>
 		</>
 	);
 
