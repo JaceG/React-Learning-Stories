@@ -364,7 +364,10 @@ Value: cname.vercel-dns.com
 			/>
 
 			<ChapterSummary
-				lessonInsight={`Each platform has its own deployment ceremony - a unique set of steps, configurations, and considerations. Navigator Vercel teaches that mastering these ceremonies transforms deployment from a stressful event into a smooth ritual. Understanding environment variables, custom domains, and SSL configuration ensures your applications are not just deployed, but deployed correctly and securely.`}
+				lessonInsight={{
+					title: `The Deployment Lesson:`,
+					content: `Each platform has its own deployment ceremony - a unique set of steps, configurations, and considerations. Navigator Vercel teaches that mastering these ceremonies transforms deployment from a stressful event into a smooth ritual. Understanding environment variables, custom domains, and SSL configuration ensures your applications are not just deployed, but deployed correctly and securely.`
+				}}
 				reflectionQuestions={[
 					`How do platform-specific features influence your deployment decisions?`,
 					`Why is it important to understand the deployment process rather than just following tutorials?`

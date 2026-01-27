@@ -719,14 +719,6 @@ function DropdownMenu({ items }) {
 					{
 						name: `Guardian Keyboard`,
 						description: `Ruler of the Keyboard Kingdom and master of focus management. Their philosophy: "The keyboard is the universal interface - master it, and you unlock access for millions."`
-					},
-					{
-						name: `Binary`,
-						description: `The calculating companion who reveals accessibility statistics. "100% of users benefit from keyboard support!"`
-					},
-					{
-						name: `Debuggora`,
-						description: `The pattern observer who spots interaction gaps. "Every click needs a key equivalent. Every hover needs a focus state."`
 					}
 				]}
 				lessonInsight={{

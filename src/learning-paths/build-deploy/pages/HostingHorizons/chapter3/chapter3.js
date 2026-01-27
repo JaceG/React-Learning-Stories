@@ -358,7 +358,10 @@ Content-Security-Policy: default-src 'self'
 			/>
 
 			<ChapterSummary
-				lessonInsight={`Global deployment transforms your application from a single location to a worldwide presence. Navigator Vercel's final teaching reveals that true performance comes from proximity - edge functions process near users, CDNs cache content globally, and geographic routing ensures optimal paths. The journey from local development to global deployment completes when your application performs excellently for users everywhere, regardless of their location.`}
+				lessonInsight={{
+					title: `The Global Network Lesson:`,
+					content: `Global deployment transforms your application from a single location to a worldwide presence. Navigator Vercel's final teaching reveals that true performance comes from proximity - edge functions process near users, CDNs cache content globally, and geographic routing ensures optimal paths. The journey from local development to global deployment completes when your application performs excellently for users everywhere, regardless of their location.`
+				}}
 				reflectionQuestions={[
 					`How does global deployment change the way you think about application architecture and performance?`,
 					`What considerations become important when serving users across different continents and network conditions?`

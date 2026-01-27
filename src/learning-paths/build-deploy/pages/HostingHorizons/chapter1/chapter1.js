@@ -295,7 +295,10 @@ aws cloudfront create-invalidation \\
 			/>
 
 			<ChapterSummary
-				lessonInsight={`Choosing a hosting platform is about matching your needs with platform strengths. Navigator Vercel teaches that there's no 'best' platform - only the best platform for your specific requirements. Consider factors like ease of use, scalability, cost, features, and team expertise. Start simple and migrate when your needs outgrow your current platform.`}
+				lessonInsight={{
+					title: `The Hosting Lesson:`,
+					content: `Choosing a hosting platform is about matching your needs with platform strengths. Navigator Vercel teaches that there's no 'best' platform - only the best platform for your specific requirements. Consider factors like ease of use, scalability, cost, features, and team expertise. Start simple and migrate when your needs outgrow your current platform.`
+				}}
 				reflectionQuestions={[
 					`How does thinking of hosting platforms as islands help visualize their different characteristics and trade-offs?`,
 					`What factors are most important when choosing a hosting platform for your React applications?`

@@ -406,10 +406,6 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 					{
 						name: `Sanctuary Keeper Bridge`,
 						description: `Guardian of the Device Sanctuary and master of native integrations. Bridge serves as the connection between the JavaScript realm and native device capabilities. His philosophy: "With great access comes great responsibility - and permission requests."`
-					},
-					{
-						name: `Binary`,
-						description: `Aria's analytical companion, always calculating permission states and edge cases. Binary processes complex permission flows with precision: "Permission states: granted, denied, blocked, unavailable. Error handling: critical!"`
 					}
 				]}
 				lessonInsight={{
