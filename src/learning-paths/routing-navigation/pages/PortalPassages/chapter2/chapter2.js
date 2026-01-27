@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -86,47 +87,16 @@ const ChapterTwo = () => {
 				bridge={`Marina continued the lesson, moving to the topic of transitions. "Portal transitions aren't just about visual effects," she explained. "They're about maintaining user context and creating meaningful connections between views."`}
 			/>
 
-			<div className='story-section'>
-				<div className='marina-demonstrates-transitions'>
-					<p className='story-paragraph'>
-						Marina continued the lesson, moving to the topic of
-						transitions. "Portal transitions aren't just about
-						visual effects," she explained, as{' '}
-						<strong>Binary</strong> created smooth animations
-						between holographic interfaces. "They're about
-						maintaining user context and creating meaningful
-						connections."
-					</p>
+		<StorySection
+			paragraphs={[
+				<>Marina continued the lesson, moving to the topic of transitions. "Portal transitions aren't just about visual effects," she explained, as <strong>Binary</strong> created smooth animations between holographic interfaces. "They're about maintaining user context and creating meaningful connections."</>,
+				<>She demonstrated with a complex gesture, combining techniques from multiple quarters. "Watch how I blend <strong>useEffect</strong> for timing, <strong>useState</strong> for transition states, and <strong>useCallback</strong> for performance. Each transition tells a story about the relationship between where users are and where they're going."</>,
+				<><strong>Captain Thunk</strong> from the Eastern Quarter leaned forward, impressed. "You've unified animation with state management in ways we never considered!"</>,
+				<>"That's because transitions aren't isolated," Aria replied. "They must consider <strong>scroll restoration</strong>, form state persistence, and even authentication status. Everything we've learned applies here." Marina watched proudly as her colleague transformed portal transitions into a comprehensive system.</>
+			]}
+		/>
 
-					<p className='story-paragraph'>
-						She demonstrated with a complex gesture, combining
-						techniques from multiple quarters. "Watch how I blend{' '}
-						<strong>useEffect</strong> for timing,
-						<strong>useState</strong> for transition states, and{' '}
-						<strong>useCallback</strong>
-						for performance. Each transition tells a story about the
-						relationship between where users are and where they're
-						going."
-					</p>
-
-					<p className='story-paragraph'>
-						<strong>Captain Thunk</strong> from the Eastern Quarter
-						leaned forward, impressed. "You've unified animation
-						with state management in ways we never considered!"
-					</p>
-
-					<p className='story-paragraph'>
-						"That's because transitions aren't isolated," Aria
-						replied. "They must consider{' '}
-						<strong>scroll restoration</strong>, form state
-						persistence, and even authentication status. Everything
-						we've learned applies here." Marina watched proudly as
-						her colleague transformed portal transitions into a
-						comprehensive system.
-					</p>
-				</div>
-
-				<div className='transition-laboratory'>
+		<div className='transition-laboratory'>
 					<h3>Transition Effects Laboratory</h3>
 
 					<div className='transition-selector'>
@@ -207,11 +177,10 @@ const ChapterTwo = () => {
 								</div>
 							))}
 						</div>
-					</div>
 				</div>
 			</div>
 
-			<div className='interactive-section'>
+		<div className='interactive-section'>
 				<h3 className='section-title'>
 					Implementing Smooth Transitions
 				</h3>

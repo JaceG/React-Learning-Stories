@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const { authState, roleGates, checkPermission, gateStatuses } =
@@ -107,46 +108,17 @@ function ChapterThree() {
 					bridge='Marina led Aria to the grand Hall of Authority for the final lesson in route protection. Here, she would learn the ultimate guardian patterns - systems that integrated every React concept she had studied across her journey.'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to the advanced guardian training," Marina
-						began, her voice carrying authority and warmth. "Today,
-						I'll teach you how authentication and authorization can
-						become truly intelligent when combined with all React
-						patterns you've learned."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Welcome to the advanced guardian training," Marina began, her voice carrying authority and warmth. "Today, I'll teach you how authentication and authorization can become truly intelligent when combined with all React patterns you've learned."`,
+					`Marina activated a complex authorization matrix. "Let me show you how everything connects. In the Northern Quarter, you learned that routes are components. In the Eastern, that permissions are state. In the Southern, how authority flows through props. In the Western, how validation guards access. Watch as we unite them all."`,
+					`Aria watched with fascination as the patterns connected. "This is incredible! I can see how all my learning comes together in route protection!"`,
+					<>"It's not just about roles anymore," Marina explained, activating the demonstration. "It's about creating an intelligent system that understands context, preserves state, validates dynamically, and adapts to user behavior. I call it the <strong>Hierarchical Intelligence Pattern</strong>."</>,
+					`Binary displayed the integration: "System online! Components: INTEGRATED. State: MANAGED. Props: FLOWING. Hooks: ACTIVE. Forms: VALIDATED. Authorization: REVOLUTIONARY!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Marina activated a complex authorization matrix. "Let me
-						show you how everything connects. In the Northern
-						Quarter, you learned that routes are components. In the
-						Eastern, that permissions are state. In the Southern,
-						how authority flows through props. In the Western, how
-						validation guards access. Watch as we unite them all."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria watched with fascination as the patterns connected.
-						"This is incredible! I can see how all my learning comes
-						together in route protection!"
-					</p>
-
-					<p className='story-paragraph'>
-						"It's not just about roles anymore," Marina explained,
-						activating the demonstration. "It's about creating an
-						intelligent system that understands context, preserves
-						state, validates dynamically, and adapts to user
-						behavior. I call it the{' '}
-						<strong>Hierarchical Intelligence Pattern</strong>."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary displayed the integration: "System online!
-						Components: INTEGRATED. State: MANAGED. Props: FLOWING.
-						Hooks: ACTIVE. Forms: VALIDATED. Authorization:
-						REVOLUTIONARY!"
-					</p>
-					<div className='role-visualization master-demonstration'>
+			<div className='role-visualization master-demonstration'>
 						<h3>The Intelligent Authority System</h3>
 
 						{!masterDemonstration && (
@@ -284,27 +256,14 @@ function ChapterThree() {
 								)}
 							</div>
 						)}
-					</div>
-
-					<div className='masters-collaboration'>
-						<p className='story-paragraph'>
-							"Watch carefully," Marina demonstrated to the
-							learning group. "Each gate doesn't just check roles
-							- it integrates patterns from every quarter. The
-							Treasury uses state-managed tokens. The Library
-							leverages context providers. The Market validates
-							with forms."
-						</p>
-
-						<p className='story-paragraph'>
-							Aria watched with fascination. "This is amazing!
-							Authorization isn't just checking permissions, but
-							creating intelligent systems that understand
-							context, preserve state, and adapt to user
-							behavior."
-						</p>
-					</div>
 				</div>
+
+			<StorySection
+				paragraphs={[
+					`"Watch carefully," Marina demonstrated to the learning group. "Each gate doesn't just check roles - it integrates patterns from every quarter. The Treasury uses state-managed tokens. The Library leverages context providers. The Market validates with forms."`,
+					`Aria watched with fascination. "This is amazing! Authorization isn't just checking permissions, but creating intelligent systems that understand context, preserve state, and adapt to user behavior."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
@@ -586,16 +545,13 @@ export function useIntelligentPermissions() {
 								<code>useTimeBasedAccess(schedule)</code>
 							</div>
 						</div>
-						<div className='pattern-explanation'>
-							<p className='story-paragraph'>
-								"Each pattern builds on traditional
-								authorization," Marina explained. "We're not
-								just checking permissions - we're creating
-								reactive, intelligent systems that adapt to
-								context and user behavior."
-							</p>
-						</div>
-					</div>
+				</div>
+
+				<StorySection
+					paragraphs={[
+						`"Each pattern builds on traditional authorization," Marina explained. "We're not just checking permissions - we're creating reactive, intelligent systems that adapt to context and user behavior."`
+					]}
+				/>
 
 					<CodeExample
 						title="The Ultimate Authorization System"
@@ -819,41 +775,18 @@ export function useMasterAuthorization() {
 }`}
 					/>
 
-					<div className='masters-finale'>
-						<h3>The Grand Authorization Synthesis</h3>
-						<p className='story-paragraph'>
-							Marina demonstrated the complete system. "This shows
-							how we can take simple role checks and transform
-							them into an intelligent, reactive authorization
-							system," she explained.
-						</p>
+				<div className='masters-finale'>
+					<h3>The Grand Authorization Synthesis</h3>
+				</div>
 
-						<p className='story-paragraph'>
-							Aria studied the patterns with growing
-							understanding. "I can see how hooks enable
-							permission checking, state handles caching, context
-							manages distribution, and effects provide
-							reactivity. It all works together!"
-						</p>
-
-						<p className='story-paragraph'>
-							Marina smiled with teaching satisfaction. "This is
-							what learning looks like. By applying your
-							comprehensive React foundation to navigation
-							security concepts, you've understood something
-							profound."
-						</p>
-
-						<p className='story-paragraph'>
-							"I can see how every pattern has its place!" Aria
-							marveled. "Components render based on permissions.
-							State tracks authorization. Props pass access
-							rights. Hooks manage permission logic. Forms
-							validate before granting access. And routes
-							orchestrate it all. This is the true power of React
-							- everything connects."
-						</p>
-					</div>
+				<StorySection
+					paragraphs={[
+						`Marina demonstrated the complete system. "This shows how we can take simple role checks and transform them into an intelligent, reactive authorization system," she explained.`,
+						`Aria studied the patterns with growing understanding. "I can see how hooks enable permission checking, state handles caching, context manages distribution, and effects provide reactivity. It all works together!"`,
+						`Marina smiled with teaching satisfaction. "This is what learning looks like. By applying your comprehensive React foundation to navigation security concepts, you've understood something profound."`,
+						`"I can see how every pattern has its place!" Aria marveled. "Components render based on permissions. State tracks authorization. Props pass access rights. Hooks manage permission logic. Forms validate before granting access. And routes orchestrate it all. This is the true power of React - everything connects."`
+					]}
+				/>
 				</div>
 
 				<div className='character-guidance'>

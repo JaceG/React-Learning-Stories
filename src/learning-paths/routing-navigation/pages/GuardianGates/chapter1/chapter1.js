@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const { guardianState, handleGateCheck, attemptedEntries } =
@@ -57,46 +58,17 @@ function ChapterOne() {
 					title='The Guardian Training'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to Guardian Gates training," Marina announced,
-						her voice carrying authority and warmth. "Today, I'll
-						teach you how to protect routes using authentication and
-						authorization."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Welcome to Guardian Gates training," Marina announced, her voice carrying authority and warmth. "Today, I'll teach you how to protect routes using authentication and authorization."`,
+					`Marina activated a complex security diagram. "Protected routes aren't just about checking if someone's logged in," she explained. "They're about integrating authentication with state management, form validation, and intelligent user flows."`,
+					`Aria studied the patterns with fascination. "I can see connections to everything I've learned! Authentication is like state management, route protection uses validation patterns, and user flows connect to the form handling I studied in the Western Quarter."`,
+					`"Excellent observations!" Marina praised. "Your journey through the React Kingdom gives you the perfect foundation for understanding route security. You've learned components, state, hooks, and forms - now you'll see how they all work together in navigation protection."`,
+					`"And now," Marina continued, "you'll learn how to apply all that knowledge here. Watch as I demonstrate the Guardian Gates system and how it integrates with React patterns."`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Marina activated a complex security diagram. "Protected
-						routes aren't just about checking if someone's logged
-						in," she explained. "They're about integrating
-						authentication with state management, form validation,
-						and intelligent user flows."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria studied the patterns with fascination. "I can see
-						connections to everything I've learned! Authentication
-						is like state management, route protection uses
-						validation patterns, and user flows connect to the form
-						handling I studied in the Western Quarter."
-					</p>
-
-					<p className='story-paragraph'>
-						"Excellent observations!" Marina praised. "Your journey
-						through the React Kingdom gives you the perfect
-						foundation for understanding route security. You've
-						learned components, state, hooks, and forms - now you'll
-						see how they all work together in navigation
-						protection."
-					</p>
-
-					<p className='story-paragraph'>
-						"And now," Marina continued, "you'll learn how to apply
-						all that knowledge here. Watch as I demonstrate the
-						Guardian Gates system and how it integrates with React
-						patterns."
-					</p>
-					<div className='gate-visualization enhanced'>
+			<div className='gate-visualization enhanced'>
 						<h3>The Integrated Guardian System</h3>
 						{!teachingMode && (
 							<button
@@ -194,26 +166,14 @@ function ChapterOne() {
 								</button>
 							</div>
 						)}
-					</div>
-
-					<div className='collaborative-teaching'>
-						<p className='story-paragraph'>
-							"Notice how each gate type requires different
-							patterns," Marina explained. "The Public Market uses
-							basic component rendering - anyone can enter. But
-							the Royal Chambers? That requires form validation,
-							state checks, and multi-factor authentication."
-						</p>
-
-						<p className='story-paragraph'>
-							Aria studied the examples with growing
-							understanding. "I can see how my React foundation
-							applies here! Authentication isn't just checking if
-							someone's logged in - it's validating their entire
-							journey through the application."
-						</p>
-					</div>
 				</div>
+
+			<StorySection
+				paragraphs={[
+					`"Notice how each gate type requires different patterns," Marina explained. "The Public Market uses basic component rendering - anyone can enter. But the Royal Chambers? That requires form validation, state checks, and multi-factor authentication."`,
+					`Aria studied the examples with growing understanding. "I can see how my React foundation applies here! Authentication isn't just checking if someone's logged in - it's validating their entire journey through the application."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Marina's Guardian Pattern</h3>
@@ -427,28 +387,17 @@ function UltimateGuardian({
 }`}
 					/>
 
-					<div className='pattern-integration'>
-						<h3>Teaching the Trainees</h3>
-						<p className='story-paragraph'>
-							"You see," Aria explained, gesturing to the code,
-							"each guardian pattern builds on knowledge from
-							different quarters. Form-aware guards remember user
-							progress. Stateful guards preserve UI state.
-							Hook-enhanced guards provide reusable logic."
-						</p>
+				<div className='pattern-integration'>
+					<h3>Teaching the Trainees</h3>
+				</div>
 
-						<p className='story-paragraph'>
-							Aria asked, "But how do we know which pattern to
-							use?"
-						</p>
-
-						<p className='story-paragraph'>
-							Marina smiled. "That's where learning comes in. You
-							have studied through every quarter, learned every
-							pattern. You understand that the best guardian isn't
-							the strongest lock, but the smartest system."
-						</p>
-					</div>
+				<StorySection
+					paragraphs={[
+						`"You see," Aria explained, gesturing to the code, "each guardian pattern builds on knowledge from different quarters. Form-aware guards remember user progress. Stateful guards preserve UI state. Hook-enhanced guards provide reusable logic."`,
+						`Aria asked, "But how do we know which pattern to use?"`,
+						`Marina smiled. "That's where learning comes in. You have studied through every quarter, learned every pattern. You understand that the best guardian isn't the strongest lock, but the smartest system."`
+					]}
+				/>
 				</div>
 
 				<ChapterSummary

@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const { authState, handleLogin, handleLogout, redirectPath } =
@@ -65,50 +66,18 @@ function ChapterTwo() {
 					bridge="Marina led Aria deeper into the Guardian Archives, where ancient memory crystals lined the walls. Here, she would teach the most sophisticated authentication patterns, building on Aria's React foundation."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Authentication isn't just about checking credentials,"
-						Marina began, activating a memory crystal that began to
-						glow. "It's about preserving the entire user journey.
-						Let me show you advanced patterns that integrate with
-						everything you've learned."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Authentication isn't just about checking credentials," Marina began, activating a memory crystal that began to glow. "It's about preserving the entire user journey. Let me show you advanced patterns that integrate with everything you've learned."`,
+					`Aria studied the glowing patterns with fascination. "I can see connections to my journey! State management for user data, form validation for credentials, and context patterns for sharing authentication across the app."`,
+					`"Exactly!" Marina praised. "Your React foundation makes these concepts much clearer. Modern guardians don't just turn people away - they remember intentions, preserve state, and create seamless experiences."`,
+					<>"I can see how everything connects!" Aria exclaimed. "Authentication uses state patterns from the Eastern Quarter, login forms use validation from the Western Quarter, and user data flows through protected routes. Could you show me how these integrate into the <strong>Complete Authentication Flow</strong>?"</>,
+					`"Absolutely!" Marina replied. "Let me demonstrate how all these patterns work together in authentication."`,
+					`Binary projected an intricate diagram. "Authentication system online! Integrating: State Management ✓, Form Validation ✓, Context Preservation ✓, Intelligent Redirection ✓!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Aria studied the glowing patterns with fascination. "I
-						can see connections to my journey! State management for
-						user data, form validation for credentials, and context
-						patterns for sharing authentication across the app."
-					</p>
-
-					<p className='story-paragraph'>
-						"Exactly!" Marina praised. "Your React foundation makes
-						these concepts much clearer. Modern guardians don't just
-						turn people away - they remember intentions, preserve
-						state, and create seamless experiences."
-					</p>
-
-					<p className='story-paragraph'>
-						"I can see how everything connects!" Aria exclaimed.
-						"Authentication uses state patterns from the Eastern
-						Quarter, login forms use validation from the Western
-						Quarter, and user data flows through protected routes.
-						Could you show me how these integrate into the{' '}
-						<strong>Complete Authentication Flow</strong>?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Absolutely!" Marina replied. "Let me demonstrate how
-						all these patterns work together in authentication."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary projected an intricate diagram. "Authentication
-						system online! Integrating: State Management ✓, Form
-						Validation ✓, Context Preservation ✓, Intelligent
-						Redirection ✓!"
-					</p>
-					<div className='auth-flow-demo advanced'>
+			<div className='auth-flow-demo advanced'>
 						<h3>The Integrated Authentication System</h3>
 
 						{!demonstrationMode && (
@@ -223,17 +192,13 @@ function ChapterTwo() {
 								</div>
 							))}
 						</div>
-					</div>
-
-					<div className='collaborative-explanation'>
-						<p className='story-paragraph'>
-							"Each step integrates patterns from across the
-							kingdom," Marina explained. "Authentication isn't
-							isolated - it touches every system you've learned
-							about."
-						</p>
-					</div>
 				</div>
+
+			<StorySection
+				paragraphs={[
+					`"Each step integrates patterns from across the kingdom," Marina explained. "Authentication isn't isolated - it touches every system you've learned about."`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
@@ -453,16 +418,14 @@ export function IntelligentAuthProvider({ children }) {
 								</p>
 								<code>OAuth + state restore</code>
 							</div>
-						</div>
-						<div className='pattern-explanation'>
-							<p className='story-paragraph'>
-								"Notice how each pattern combines security with
-								user experience," Marina explained. "We're not
-								just checking if someone can enter - we're
-								making their journey smooth and memorable."
-							</p>
-						</div>
 					</div>
+				</div>
+
+				<StorySection
+					paragraphs={[
+						`"Notice how each pattern combines security with user experience," Marina explained. "We're not just checking if someone can enter - we're making their journey smooth and memorable."`
+					]}
+				/>
 
 					<CodeExample
 						title="The Ultimate Authentication Flow"
@@ -587,22 +550,12 @@ function useMasterAuth() {
 }`}
 					/>
 
-					<div className='masters-insight'>
-						<p className='story-paragraph'>
-							"This is the power of synthesis," Marina explained
-							proudly. "You can see how every pattern you've
-							learned integrates into authentication systems."
-						</p>
-
-						<p className='story-paragraph'>
-							"It's amazing!" Aria marveled. "Authentication
-							touches everything - components render based on auth
-							state, forms validate credentials, effects track
-							sessions, and context provides access throughout the
-							app. It's all connected, just like you're teaching
-							me!"
-						</p>
-					</div>
+				<StorySection
+					paragraphs={[
+						`"This is the power of synthesis," Marina explained proudly. "You can see how every pattern you've learned integrates into authentication systems."`,
+						`"It's amazing!" Aria marveled. "Authentication touches everything - components render based on auth state, forms validate credentials, effects track sessions, and context provides access throughout the app. It's all connected, just like you're teaching me!"`
+					]}
+				/>
 				</div>
 				<ChapterSummary
 					lessonInsight={{

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StoryContent from '../../../../../components/content/StoryContent';
 import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -70,43 +72,16 @@ const ChapterOne = () => {
 				title='The Discovery of Portal Magic'
 			/>
 
-			<div className='story-section'>
-				<div className='portal-passages-opening'>
-					<p className='story-paragraph'>
-						Marina led Aria to the Portal Passages chamber, where
-						the most advanced navigation concepts awaited - modals,
-						overlays, and parallel routes. Here, she would learn the
-						final navigation patterns.
-					</p>
+		<StorySection
+			paragraphs={[
+				`Marina led Aria to the Portal Passages chamber, where the most advanced navigation concepts awaited - modals, overlays, and parallel routes. Here, she would learn the final navigation patterns.`,
+				`"Today, you'll learn something special," Marina announced. "I'll teach you how to create portal-based navigation that maintains state, handles forms, and provides seamless transitions. Your React foundation will help you understand these advanced portal techniques."`,
+				<>Marina activated holographic portals around the room, <strong>Binary</strong> assisting with the projections. "Portal Passages combine every concept in our kingdom," she explained. "Components provide structure, state manages portal visibility, effects handle focus management, and forms can span across portals."</>,
+				`Aria watched with fascination as the portal patterns unfolded before her. "This is amazing! I can see how every concept I've learned contributes to these advanced navigation patterns."`
+			]}
+		/>
 
-					<p className='story-paragraph'>
-						"Today, you'll learn something special," Marina
-						announced. "I'll teach you how to create portal-based
-						navigation that maintains state, handles forms, and
-						provides seamless transitions. Your React foundation
-						will help you understand these advanced portal
-						techniques."
-					</p>
-
-					<p className='story-paragraph'>
-						Marina activated holographic portals around the room,{' '}
-						<strong>Binary</strong>
-						assisting with the projections. "Portal Passages combine
-						every concept in our kingdom," she explained.
-						"Components provide structure, state manages portal
-						visibility, effects handle focus management, and forms
-						can span across portals."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria watched with fascination as the portal patterns
-						unfolded before her. "This is amazing! I can see how
-						every concept I've learned contributes to these advanced
-						navigation patterns."
-					</p>
-				</div>
-
-				<div className='portal-demonstration'>
+		<div className='portal-demonstration'>
 					<h3>Portal Types Exhibition</h3>
 
 					<div className='portal-type-selector'>
@@ -173,11 +148,10 @@ const ChapterOne = () => {
 								5 seconds...
 							</p>
 						)}
-					</div>
 				</div>
 			</div>
 
-			<div className='interactive-section'>
+		<div className='interactive-section'>
 				<h3 className='section-title'>Creating Your First Portals</h3>
 
 				<InstructionBox character='Select a portal type above and customize the content, then click Open to create your first portal!'>

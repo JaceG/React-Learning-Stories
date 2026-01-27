@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const {
@@ -50,67 +51,28 @@ function ChapterOne() {
 					title='The Navigation Command Center'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"<strong>Welcome, young navigator!</strong>" Marina's
-						voice carried warmth and excitement. "I've heard
-						wonderful things about your journey through the React
-						Kingdom. Portal Keeper Sage sent word of your progress
-						in Forms & Events. I'm excited to teach you about
-						routing and navigation!"
-					</p>
+			<StorySection
+				paragraphs={[
+					<>"<strong>Welcome, young navigator!</strong>" Marina's voice carried warmth and excitement. "I've heard wonderful things about your journey through the React Kingdom. Portal Keeper Sage sent word of your progress in Forms & Events. I'm excited to teach you about routing and navigation!"</>,
+					`Aria looked around in wonder, Binary hovering excitedly beside her. "Captain Marina, your navigation systems are legendary. I'm eager to learn from you!"`,
+					`Marina gestured to the floating maps. "Excellent attitude! Navigation builds on everything you've learned. It's not just about moving between pages - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences. Your Academy training will help you understand these concepts quickly."`,
+					`Binary projected Aria's learning progress: "Foundation knowledge confirmed! Components: ✓, State Management: ✓, Props & Data Flow: ✓, Hooks Training: ✓, Forms & Events: ✓. Ready for navigation training!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Aria looked around in wonder, Binary hovering excitedly
-						beside her. "Captain Marina, your navigation systems are
-						legendary. I'm eager to learn from you!"
-					</p>
+			<div className='marina-teaching'>
+				<h3>The Navigation Vision</h3>
+			</div>
 
-					<p className='story-paragraph'>
-						Marina gestured to the floating maps. "Excellent
-						attitude! Navigation builds on everything you've
-						learned. It's not just about moving between pages - it's
-						about maintaining state across routes, managing effects
-						during transitions, handling forms that span multiple
-						views, and creating seamless user experiences. Your
-						Academy training will help you understand these concepts
-						quickly."
-					</p>
+			<StorySection
+				paragraphs={[
+					`Marina activated the central hologram. "Let me show you something fascinating - how navigation systems integrate everything you've learned. I think you'll find the patterns quite familiar."`,
+					`Aria studied the projections with growing understanding. "This is amazing! Routes look like specialized components that conditionally render based on location state. Is navigation just another form of state management?"`,
+					`"Exactly!" Marina's enthusiasm was contagious. "And look here - when users navigate, it triggers effects, updates context, and can even validate forms before allowing route changes. Everything connects, just like you've been learning!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Binary projected Aria's learning progress: "Foundation
-						knowledge confirmed! Components: ✓, State Management: ✓,
-						Props & Data Flow: ✓, Hooks Training: ✓, Forms & Events:
-						✓. Ready for navigation training!"
-					</p>
-
-					<div className='marina-teaching'>
-						<h3>The Navigation Vision</h3>
-						<p className='story-paragraph'>
-							Marina activated the central hologram. "Let me show
-							you something fascinating - how navigation systems
-							integrate everything you've learned. I think you'll
-							find the patterns quite familiar."
-						</p>
-
-						<p className='story-paragraph'>
-							Aria studied the projections with growing
-							understanding. "This is amazing! Routes look like
-							specialized components that conditionally render
-							based on location state. Is navigation just another
-							form of state management?"
-						</p>
-
-						<p className='story-paragraph'>
-							"Exactly!" Marina's enthusiasm was contagious. "And
-							look here - when users navigate, it triggers
-							effects, updates context, and can even validate
-							forms before allowing route changes. Everything
-							connects, just like you've been learning!"
-						</p>
-					</div>
-
-					<div className='compass-chamber evolved'>
+			<div className='compass-chamber evolved'>
 						<h3>The Master's Navigation Compass</h3>
 						<p className='marina-explanation'>
 							"This isn't just any compass," Marina explained. "As
@@ -182,35 +144,18 @@ function ChapterOne() {
 									</div>
 								))}
 							</div>
-						</div>
-					</div>
-
-					<div className='collaborative-insight'>
-						<p className='story-paragraph'>
-							"You see it immediately," Marina observed with
-							admiration. "Most struggle to understand that
-							routing is just another layer of React's component
-							system. But with your comprehensive knowledge..."
-						</p>
-
-						<p className='story-paragraph'>
-							"It's all connected," Aria finished. "Routes are
-							components. Navigation updates state. Browser
-							history triggers effects. And we can guard routes
-							with the same validation patterns I used in the
-							Western Quarter!"
-						</p>
-
-						<p className='story-paragraph'>
-							Binary displayed the synthesis: "Pattern recognition
-							complete! Navigation = Components + State + Effects
-							+ Context + Validation. Aria's learning progress:
-							EXCELLENT!"
-						</p>
 					</div>
 				</div>
 
-				<div className='interactive-section'>
+			<StorySection
+				paragraphs={[
+					`"You see it immediately," Marina observed with admiration. "Most struggle to understand that routing is just another layer of React's component system. But with your comprehensive knowledge..."`,
+					`"It's all connected," Aria finished. "Routes are components. Navigation updates state. Browser history triggers effects. And we can guard routes with the same validation patterns I used in the Western Quarter!"`,
+					`Binary displayed the synthesis: "Pattern recognition complete! Navigation = Components + State + Effects + Context + Validation. Aria's learning progress: EXCELLENT!"`
+				]}
+			/>
+
+			<div className='interactive-section'>
 					<h3 className='section-title'>
 						Building the Integrated Navigation System
 					</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -46,152 +47,123 @@ const ChapterTwo = () => {
 				bridge={`Marina and Aria stood together at the Waypoint Control Center, examining a complex navigation map. "I've been wanting to implement dynamic parameters in our waypoint system," Marina explained, gesturing to the floating route structures.`}
 			/>
 
-			<div className='story-section'>
-				<div className='collaborative-discussion'>
-					<p className='story-paragraph'>
-						<strong>Marina</strong> and <strong>Aria</strong> stood
-						together at the Waypoint Control Center, examining a
-						complex navigation map. "I've been wanting to implement
-						dynamic parameters in our waypoint system," Marina
-						explained, gesturing to the floating route structures.
-					</p>
+			<StorySection
+				paragraphs={[
+					<><strong>Marina</strong> and <strong>Aria</strong> stood together at the Waypoint Control Center, examining a complex navigation map. "I've been wanting to implement dynamic parameters in our waypoint system," Marina explained, gesturing to the floating route structures.</>,
+					<><strong>Aria</strong> studied the patterns with growing understanding. "This reminds me of the dynamic forms I learned about in the Western Quarter! Instead of hardcoding every possible route, we can use <strong>parameters</strong> to make routes adaptable."</>,
+					<>"Exactly!" Marina smiled. "Watch this." She touched a waypoint that suddenly split into thousands of tiny lights. "One waypoint pattern like <code>/users/:id</code> can serve infinite destinations. It's similar to how form components accept props."</>,
+					<>Aria's eyes lit up with recognition. "And could we use <strong>query parameters</strong> for filtering, just like I learned about state for form filters? The URL becomes another state container!" <strong>Binary</strong> beeped excitedly, projecting examples of dynamic routes.</>
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						<strong>Aria</strong> studied the patterns with growing
-						understanding. "This reminds me of the dynamic forms I
-						learned about in the Western Quarter! Instead of
-						hardcoding every possible route, we can use
-						<strong>parameters</strong> to make routes adaptable."
-					</p>
+			<div className='dynamic-waypoint-demo'>
+			<h3>Dynamic Waypoint Laboratory</h3>
 
-					<p className='story-paragraph'>
-						"Exactly!" Marina smiled. "Watch this." She touched a
-						waypoint that suddenly split into thousands of tiny
-						lights. "One waypoint pattern like{' '}
-						<code>/users/:id</code>
-						can serve infinite destinations. It's similar to how
-						form components accept props."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria's eyes lit up with recognition. "And could we use{' '}
-						<strong>query parameters</strong>
-						for filtering, just like I learned about state for form
-						filters? The URL becomes another state container!"{' '}
-						<strong>Binary</strong> beeped excitedly, projecting
-						examples of dynamic routes.
-					</p>
-				</div>
-
-				<div className='dynamic-waypoint-demo'>
-					<h3>Dynamic Waypoint Laboratory</h3>
-
-					<div className='parameter-section'>
-						<h4>User Profiles Portal</h4>
-						<p>Select a citizen to view their profile:</p>
-						<div className='user-grid'>
-							{users.map((user) => (
-								<div
-									key={user.id}
-									className={`user-card ${
-										selectedUser?.id === user.id
-											? 'selected'
-											: ''
-									}`}
-									onClick={() => setSelectedUser(user)}>
-									<h5>{user.name}</h5>
-									<p>Role: {user.role}</p>
-									<p>Level: {user.level}</p>
-									<div className='waypoint-path'>
-										<code>/users/{user.id}</code>
-									</div>
-								</div>
-							))}
-						</div>
-						{selectedUser && (
-							<div className='parameter-preview'>
-								<h5>Waypoint Activated:</h5>
-								<code>/users/{selectedUser.id}</code>
-								<p>
-									This single waypoint pattern handles all
-									user profiles!
-								</p>
+			<div className='parameter-section'>
+				<h4>User Profiles Portal</h4>
+				<p>Select a citizen to view their profile:</p>
+				<div className='user-grid'>
+					{users.map((user) => (
+						<div
+							key={user.id}
+							className={`user-card ${
+								selectedUser?.id === user.id
+									? 'selected'
+									: ''
+							}`}
+							onClick={() => setSelectedUser(user)}>
+							<h5>{user.name}</h5>
+							<p>Role: {user.role}</p>
+							<p>Level: {user.level}</p>
+							<div className='waypoint-path'>
+								<code>/users/{user.id}</code>
 							</div>
-						)}
+						</div>
+					))}
+				</div>
+				{selectedUser && (
+					<div className='parameter-preview'>
+						<h5>Waypoint Activated:</h5>
+						<code>/users/{selectedUser.id}</code>
+						<p>
+							This single waypoint pattern handles all
+							user profiles!
+						</p>
 					</div>
+				)}
+			</div>
 
-					<div className='query-section'>
-						<h4>Merchant's Catalog with Query Magic</h4>
-						<div className='query-controls'>
-							<label>
-								Sort by:
-								<select
-									value={queryParams.sort}
-									onChange={(e) =>
-										setQueryParams({
-											...queryParams,
-											sort: e.target.value,
-										})
-									}>
-									<option value='name'>Name</option>
-									<option value='price'>Price</option>
-									<option value='category'>Category</option>
-								</select>
-							</label>
-							<label>
-								Filter:
-								<select
-									value={queryParams.filter}
-									onChange={(e) =>
-										setQueryParams({
-											...queryParams,
-											filter: e.target.value,
-										})
-									}>
-									{categories.map((cat) => (
-										<option key={cat} value={cat}>
-											{cat}
-										</option>
-									))}
-								</select>
-							</label>
-						</div>
-						<div className='query-result'>
-							<h5>Current Waypoint:</h5>
-							<code>
-								/products?sort={queryParams.sort}&filter=
-								{queryParams.filter}
-							</code>
-						</div>
-						<div className='product-grid'>
-							{products
-								.filter(
-									(p) =>
-										queryParams.filter === 'all' ||
-										p.category === queryParams.filter
-								)
-								.sort((a, b) => {
-									if (queryParams.sort === 'name')
-										return a.name.localeCompare(b.name);
-									if (queryParams.sort === 'price')
-										return a.price - b.price;
-									return 0;
+			<div className='query-section'>
+				<h4>Merchant's Catalog with Query Magic</h4>
+				<div className='query-controls'>
+					<label>
+						Sort by:
+						<select
+							value={queryParams.sort}
+							onChange={(e) =>
+								setQueryParams({
+									...queryParams,
+									sort: e.target.value,
 								})
-								.map((product) => (
-									<div
-										key={product.id}
-										className='product-card'>
-										<h5>{product.name}</h5>
-										<p>{product.price} gold</p>
-										<span className='category-badge'>
-											{product.category}
-										</span>
-									</div>
-								))}
-						</div>
-					</div>
+							}>
+							<option value='name'>Name</option>
+							<option value='price'>Price</option>
+							<option value='category'>Category</option>
+						</select>
+					</label>
+					<label>
+						Filter:
+						<select
+							value={queryParams.filter}
+							onChange={(e) =>
+								setQueryParams({
+									...queryParams,
+									filter: e.target.value,
+								})
+							}>
+							{categories.map((cat) => (
+								<option key={cat} value={cat}>
+									{cat}
+								</option>
+							))}
+						</select>
+					</label>
+				</div>
+				<div className='query-result'>
+					<h5>Current Waypoint:</h5>
+					<code>
+						/products?sort={queryParams.sort}&filter=
+						{queryParams.filter}
+					</code>
+				</div>
+				<div className='product-grid'>
+					{products
+						.filter(
+							(p) =>
+								queryParams.filter === 'all' ||
+								p.category === queryParams.filter
+						)
+						.sort((a, b) => {
+							if (queryParams.sort === 'name')
+								return a.name.localeCompare(b.name);
+							if (queryParams.sort === 'price')
+								return a.price - b.price;
+							return 0;
+						})
+						.map((product) => (
+							<div
+								key={product.id}
+								className='product-card'>
+								<h5>{product.name}</h5>
+								<p>{product.price} gold</p>
+								<span className='category-badge'>
+									{product.category}
+								</span>
+							</div>
+						))}
 				</div>
 			</div>
+		</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Mastering Dynamic Routes</h3>
@@ -500,50 +472,39 @@ function DynamicNavMenu() {
 				</div>
 			</div>
 
-			<div className='learning-insight'>
-				<h3>Collaborative Discovery</h3>
-				<div className='insight-dialogue'>
-					<div className='marina-quote'>
-						<p>
-							"Dynamic parameters are like the component props of
-							navigation - they make routes reusable and
-							flexible."
-						</p>
-					</div>
-					<div className='student-quote'>
-						<p>
-							"I see it now! Route parameters are for identity (
-							<code>:id</code>), query parameters are for state (
-							<code>?filter=active</code>), and navigation state
-							is for temporary data that shouldn't be in the URL.
-							It all connects to what I learned about state
-							management!"
-						</p>
-					</div>
-				</div>
-			</div>
+		<div className='learning-insight'>
+			<h3>Collaborative Discovery</h3>
+		</div>
 
-			<div className='integration-moment'>
-				<h3>Marina's Teaching Moment</h3>
-				<p className='story-paragraph'>
-					Marina demonstrated the parameter patterns to help Aria
-					understand the concepts more deeply. "Let me show you how
-					these patterns connect to what you've learned," she
-					explained.
-				</p>
+		<StorySection
+			paragraphs={[
+				`"Dynamic parameters are like the component props of navigation - they make routes reusable and flexible," Marina explained.`,
+				<>"I see it now!" <strong>Aria</strong> exclaimed. "Route parameters are for identity (<code>:id</code>), query parameters are for state (<code>?filter=active</code>), and navigation state is for temporary data that shouldn't be in the URL. It all connects to what I learned about state management!"</>
+			]}
+		/>
 
-				<div className='student-learns'>
-					<p className='student-explanation'>
-						"I think I understand," Aria said, connecting the
-						concepts. "In forms, we have controlled inputs that sync
-						with state. In routing, URL parameters sync with your
-						app's navigation state. Both follow the same principle -
-						a single source of truth that updates your UI."
-					</p>
+		<div className='integration-moment'>
+			<h3>Marina's Teaching Moment</h3>
+		</div>
 
-					<CodeExample
-						title="Marina's Integrated Example"
-						code={`// Marina's integrated example
+		<StorySection
+			paragraphs={[
+				`Marina demonstrated the parameter patterns to help Aria understand the concepts more deeply. "Let me show you how these patterns connect to what you've learned," she explained.`
+		]}
+		/>
+
+		<div className='student-learns'>
+			<p className='student-explanation'>
+				"I think I understand," Aria said, connecting the
+				concepts. "In forms, we have controlled inputs that sync
+				with state. In routing, URL parameters sync with your
+				app's navigation state. Both follow the same principle -
+				a single source of truth that updates your UI."
+			</p>
+
+			<CodeExample
+				title="Marina's Integrated Example"
+				code={`// Marina's integrated example
 // Form state (from Western Quarter)
 const [filters, setFilters] = useState({ category: 'all' });
 
@@ -552,11 +513,10 @@ const [searchParams, setSearchParams] = useSearchParams();
 const category = searchParams.get('category') || 'all';
 
 // They work the same way!`}
-					/>
-				</div>
-			</div>
+			/>
+		</div>
 
-			<ChapterSummary
+		<ChapterSummary
 				lessonInsight={{
 					title: 'Collaborative Discovery:',
 					content: "\"Dynamic parameters are like the component props of navigation - they make routes reusable and flexible,\" Marina explained. Aria connected the concepts: \"Route parameters are for identity (:id), query parameters are for state (?filter=active), and navigation state is for temporary data that shouldn't be in the URL. It all connects to what I learned about state management!\""

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const { customWaypoints, routeTransitions, addRouteTransition } =
@@ -45,67 +46,42 @@ const ChapterThree = () => {
 	];
 
 	return (
-		<div className='chapter'>
+		<>
+			<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
 				title='The Nested Waypoint Realms'
 				bridge="Marina led Aria to the Waypoint Observatory's upper level, where the most sophisticated navigation systems were taught. Here, she would learn advanced routing architecture for complex applications."
 			/>
 
-			<div className='story-section'>
-				<div className='marina-teaching'>
-					<p className='story-paragraph'>
-						Marina led Aria to the Waypoint Observatory's upper
-						level, where the most sophisticated navigation systems
-						were taught. Here, she would learn advanced routing
-						architecture for complex applications.
-					</p>
+			<StorySection
+				paragraphs={[
+					`Marina led Aria to the Waypoint Observatory's upper level, where the most sophisticated navigation systems were taught. Here, she would learn advanced routing architecture for complex applications.`,
+					`"Now I'll teach you nested route design," Marina explained, showing Aria a complex waypoint structure. "Users need consistent layouts, but also flexibility at each level."`,
+					<><strong>Aria</strong> studied the patterns thoughtfully. "This reminds me of the component composition patterns from the Northern Quarter! Are route levels like components that wrap their children?"</>,
+					<>Marina's eyes lit up. "Exactly! <strong>Nested routes</strong> are just component hierarchies applied to navigation. And with <strong>Outlets</strong>, we can create slots where child routes render - just like the component children pattern!" <strong>Binary</strong> projected the design, showing how Aria's previous learning helped her understand these concepts.</>
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						"Now I'll teach you nested route design," Marina
-						explained, showing Aria a complex waypoint structure.
-						"Users need consistent layouts, but also flexibility at
-						each level."
-					</p>
+		<div className='nested-visualization'>
+			<h3>Waypoint Realm Architecture</h3>
 
-					<p className='story-paragraph'>
-						<strong>Aria</strong> studied the patterns thoughtfully.
-						"This reminds me of the component composition patterns
-						from the Northern Quarter! Are route levels like
-						components that wrap their children?"
-					</p>
-
-					<p className='story-paragraph'>
-						Marina's eyes lit up. "Exactly!{' '}
-						<strong>Nested routes</strong> are just component
-						hierarchies applied to navigation. And with{' '}
-						<strong>Outlets</strong>, we can create slots where
-						child routes render - just like the component children
-						pattern!" <strong>Binary</strong> projected the design,
-						showing how Aria's previous learning helped her
-						understand these concepts.
-					</p>
+			<div className='layout-selector'>
+				<h4>Explore Different Architectures:</h4>
+				<div className='layout-tabs'>
+					{Object.entries(layoutExamples).map(
+						([key, layout]) => (
+							<button
+								key={key}
+								className={`layout-tab ${
+									activeLayout === key ? 'active' : ''
+								}`}
+								onClick={() => setActiveLayout(key)}>
+								{layout.name}
+							</button>
+						)
+					)}
 				</div>
-
-				<div className='nested-visualization'>
-					<h3>Waypoint Realm Architecture</h3>
-
-					<div className='layout-selector'>
-						<h4>Explore Different Architectures:</h4>
-						<div className='layout-tabs'>
-							{Object.entries(layoutExamples).map(
-								([key, layout]) => (
-									<button
-										key={key}
-										className={`layout-tab ${
-											activeLayout === key ? 'active' : ''
-										}`}
-										onClick={() => setActiveLayout(key)}>
-										{layout.name}
-									</button>
-								)
-							)}
-						</div>
 					</div>
 
 					<div className='layout-display'>
@@ -547,21 +523,21 @@ function TaskDetail() {
     </div>
   );
 }`}
-				/>
-			</div>
+			/>
 
-			<div className='story-section'>
-				<div className='marina-innovation'>
-					<h3>Marina's Advanced Navigation Framework</h3>
-					<p className='story-paragraph'>
-						Marina taught Aria advanced navigation concepts that created
-						sophisticated routing systems - navigation that seamlessly
-						integrated all aspects of React.
-					</p>
+		<div className='marina-innovation'>
+			<h3>Marina's Advanced Navigation Framework</h3>
+		</div>
 
-					<CodeExample
-						title="Marina's Innovation"
-						code={`// Marina's navigation expertise with React integration
+		<StorySection
+			paragraphs={[
+				`Marina taught Aria advanced navigation concepts that created sophisticated routing systems - navigation that seamlessly integrated all aspects of React.`
+			]}
+		/>
+
+		<CodeExample
+			title="Marina's Innovation"
+			code={`// Marina's navigation expertise with React integration
 const useSmartNavigation = () => {
   // React state management patterns
   const { user, permissions } = useAuth();
@@ -594,38 +570,21 @@ const useSmartNavigation = () => {
   
   return { smartNavigate, canNavigate: !isDirty };
 };`}
-					/>
-				</div>
+		/>
 
-				<div className='mastery-recognition'>
-					<h3>Full Circle Moment</h3>
-					<p className='story-paragraph'>
-						As they completed the nested waypoint system,
-						representatives from all quarters arrived to witness the
-						demonstration. <strong>Master Aurelius</strong>,{' '}
-						<strong>Elder useState</strong>,{' '}
-						<strong>Captain Thunk</strong>, and{' '}
-						<strong>Commander Validus</strong> watched as Marina
-						demonstrated the unified navigation framework to Aria.
-					</p>
+		<div className='mastery-recognition'>
+			<h3>Full Circle Moment</h3>
+		</div>
 
-					<p className='story-paragraph'>
-						"This is remarkable," Master Aurelius observed. "Marina
-						has created something that uses every concept in our
-						kingdom - components for structure, state for memory,
-						effects for synchronization, context for sharing, forms
-						for interaction, and now navigation to tie it all
-						together."
-					</p>
+		<StorySection
+			paragraphs={[
+				<>As they completed the nested waypoint system, representatives from all quarters arrived to witness the demonstration. <strong>Master Aurelius</strong>, <strong>Elder useState</strong>, <strong>Captain Thunk</strong>, and <strong>Commander Validus</strong> watched as Marina demonstrated the unified navigation framework to Aria.</>,
+				`"This is remarkable," Master Aurelius observed. "Marina has created something that uses every concept in our kingdom - components for structure, state for memory, effects for synchronization, context for sharing, forms for interaction, and now navigation to tie it all together."`,
+				`Elder useState added, "Aria's React foundation helps her understand these connections so quickly."`
+			]}
+		/>
 
-					<p className='story-paragraph'>
-						Elder useState added, "Aria's React foundation helps her
-						understand these connections so quickly."
-					</p>
-				</div>
-			</div>
-
-			<ChapterSummary
+		<ChapterSummary
 				lessonInsight={{
 					title: 'The Complete Picture:',
 					content: "\"Nested routes aren't just about organization,\" Marina explained. \"They're about creating intuitive user journeys that maintain context and state at every level.\" Aria marveled: \"I can see how every concept I've learned builds on the others! Components give us structure, hooks give us behavior, forms give us interaction, and navigation gives us the architecture to connect it all. React isn't separate pieces - it's one unified system.\""
@@ -643,9 +602,10 @@ const useSmartNavigation = () => {
 				chapterEnding={[
 					"Binary projected a holographic map showing how every quarter of the React Kingdom connected through the Central Citadel's navigation systems.",
 					"The student who had arrived eager to learn now understood how all the concepts connected through navigation."
-				]}
-			/>
+			]}
+		/>
 		</div>
+		</>
 	);
 };
 

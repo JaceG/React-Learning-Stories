@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterThree() {
 	const {
@@ -63,31 +64,15 @@ function ChapterThree() {
 					bridge="Marina led Aria to the advanced Navigation Laboratory. Here, she would learn the most sophisticated routing patterns - techniques that integrate everything she'd studied across her React journey."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Now for the advanced concepts," Marina explained,
-						activating a complex holographic display. "What you've
-						learned about components, state, hooks, and forms - it
-						all comes together in sophisticated navigation patterns
-						that create truly intelligent React applications."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Now for the advanced concepts," Marina explained, activating a complex holographic display. "What you've learned about components, state, hooks, and forms - it all comes together in sophisticated navigation patterns that create truly intelligent React applications."`,
+					`Aria watched in fascination as Binary projected her learning progress. "This is incredible! Navigation really does tie everything together - state management, form handling, validation, and user experience. How do we build such intelligent systems?"`,
+					`The hologram displayed interconnected patterns, each glowing with the colors of different quarters. "Watch," Marina said, "as I show you the ultimate synthesis of all React knowledge in navigation form."`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Aria watched in fascination as Binary projected her
-						learning progress. "This is incredible! Navigation
-						really does tie everything together - state management,
-						form handling, validation, and user experience. How do
-						we build such intelligent systems?"
-					</p>
-
-					<p className='story-paragraph'>
-						The hologram displayed interconnected patterns, each
-						glowing with the colors of different quarters. "Watch,"
-						Marina said, "as I show you the ultimate synthesis of
-						all React knowledge in navigation form."
-					</p>
-
-					<div className='ultimate-patterns-showcase'>
+			<div className='ultimate-patterns-showcase'>
 						<h3>The Unified Navigation Architecture</h3>
 						<div className='route-list unified'>
 							{unifiedPatterns.map((pattern) => (
@@ -108,18 +93,14 @@ function ChapterThree() {
 									<code>{pattern.code}</code>
 								</div>
 							))}
-						</div>
-					</div>
-
-					<div className='collaborative-demonstration'>
-						<p className='story-paragraph'>
-							"Let me show you what I mean," Marina said, her
-							hands moving confidently across the interface. Aria
-							watched with fascination as her teacher demonstrated
-							these advanced navigation patterns.
-						</p>
-					</div>
 				</div>
+			</div>
+
+			<StorySection
+				paragraphs={[
+					`"Let me show you what I mean," Marina said, her hands moving confidently across the interface. Aria watched with fascination as her teacher demonstrated these advanced navigation patterns.`
+				]}
+			/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>

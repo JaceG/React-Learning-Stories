@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterTwo() {
 	const {
@@ -78,35 +79,16 @@ function ChapterTwo() {
 					bridge='The Navigation Command Center transformed into an advanced learning space. Marina guided Aria to a massive holographic display, ready to teach her the next level of React navigation patterns.'
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Traditional routing has limitations," Marina explained,
-						manipulating the hologram. "Static routes work for
-						simple cases, but modern applications need intelligence.
-						Let me show you advanced patterns."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Traditional routing has limitations," Marina explained, manipulating the hologram. "Static routes work for simple cases, but modern applications need intelligence. Let me show you advanced patterns."`,
+					`Aria studied the display with growing interest. "I can see connections to my journey - state persistence, forms across routes, and authentication patterns. How do these all work together in navigation?"`,
+					`"Excellent observations!" Marina praised. "Your React foundation helps you see the connections immediately. Let me show you how we integrate these patterns."`,
+					`Binary interfaced with the hologram, ready to learn. "Advanced navigation patterns detected! Marina's routing expertise + Aria's React foundation = Excellent learning opportunity!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Aria studied the display with growing interest. "I can
-						see connections to my journey - state persistence, forms
-						across routes, and authentication patterns. How do these
-						all work together in navigation?"
-					</p>
-
-					<p className='story-paragraph'>
-						"Excellent observations!" Marina praised. "Your React
-						foundation helps you see the connections immediately.
-						Let me show you how we integrate these patterns."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary interfaced with the hologram, ready to learn.
-						"Advanced navigation patterns detected! Marina's routing
-						expertise + Aria's React foundation = Excellent learning
-						opportunity!"
-					</p>
-
-					<div className='collaborative-design'>
+			<div className='collaborative-design'>
 						<h3>The Unified Navigation Architecture</h3>
 						<div className='design-contribution marina'>
 							<h4>Marina's Routing Foundation</h4>
@@ -162,33 +144,18 @@ function ChapterTwo() {
 									</div>
 								))}
 							</div>
-						</div>
-					</div>
-
-					<div className='peer-discussion'>
-						<p className='story-paragraph'>
-							"Now watch this advanced pattern," Marina
-							demonstrated, her fingers dancing across the
-							interface. "We can combine dynamic routing with
-							state management patterns. When users navigate, we
-							don't just change the URL - we intelligently
-							preserve and restore their context."
-						</p>
-
-						<p className='story-paragraph'>
-							Aria's eyes widened with excitement. "And if you add
-							navigation guards with validation patterns..."
-						</p>
-
-						<p className='story-paragraph'>
-							"We get routes that validate before allowing
-							navigation!" Marina finished. "No more losing form
-							data when users accidentally click away."
-						</p>
 					</div>
 				</div>
 
-				<div className='interactive-section'>
+			<StorySection
+				paragraphs={[
+					`"Now watch this advanced pattern," Marina demonstrated, her fingers dancing across the interface. "We can combine dynamic routing with state management patterns. When users navigate, we don't just change the URL - we intelligently preserve and restore their context."`,
+					`Aria's eyes widened with excitement. "And if you add navigation guards with validation patterns..."`,
+					`"We get routes that validate before allowing navigation!" Marina finished. "No more losing form data when users accidentally click away."`
+				]}
+			/>
+
+			<div className='interactive-section'>
 					<h3 className='section-title'>
 						Advanced Dynamic Routing Patterns
 					</h3>

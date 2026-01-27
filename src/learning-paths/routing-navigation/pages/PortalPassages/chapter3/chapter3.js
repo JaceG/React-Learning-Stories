@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const { portalState, modalPortals, createModalPortal, closeModalPortal } =
@@ -96,154 +97,121 @@ const ChapterThree = () => {
 				chapterNumber={3}
 				title='Mastery of the Portal Realms'
 				bridge='Marina led Aria to the final demonstration chamber where the most advanced portal patterns would be taught. Here, she would learn how all the navigation concepts came together in sophisticated portal systems.'
-			/>
+		/>
 
-			<div className='story-section'>
-				<div className='journey-culmination'>
-					<p className='story-paragraph'>
-						Marina led Aria to the final demonstration chamber where
-						the most advanced portal patterns would be taught. Here,
-						she would learn how all the navigation concepts came
-						together in sophisticated portal systems.
-					</p>
+		<StorySection
+			paragraphs={[
+				`Marina led Aria to the final demonstration chamber where the most advanced portal patterns would be taught. Here, she would learn how all the navigation concepts came together in sophisticated portal systems.`,
+				<>"You've learned individual techniques," Marina addressed Aria. "Now I'll show you how they <strong>orchestrate together</strong>. Advanced patterns like <strong>wizard flows</strong>, <strong>split views</strong>, and <strong>contextual portals</strong> aren't just navigation - they're the culmination of everything React offers."</>,
+				<>Marina created a complex demonstration with <strong>Binary</strong>'s help - a multi-step wizard with form validation, nested modals with shared context, and smooth transitions that preserved state. Aria watched with fascination as all her learning came together in these advanced patterns.</>,
+				<><strong>Master Aurelius</strong> observed with satisfaction. "Marina has taught exceptionally well. Aria's understanding shows that navigation is not just about moving through space - it's about <strong>guiding users on meaningful journeys</strong> using every tool in our kingdom."</>
+			]}
+		/>
 
-					<p className='story-paragraph'>
-						"You've learned individual techniques," Marina addressed
-						Aria. "Now I'll show you how they
-						<strong>orchestrate together</strong>. Advanced patterns
-						like <strong>wizard flows</strong>,{' '}
-						<strong>split views</strong>, and{' '}
-						<strong>contextual portals</strong>
-						aren't just navigation - they're the culmination of
-						everything React offers."
-					</p>
+		<div className='advanced-patterns-showcase'>
+			<h3>Advanced Portal Patterns</h3>
 
-					<p className='story-paragraph'>
-						Marina created a complex demonstration with{' '}
-						<strong>Binary</strong>'s help - a multi-step wizard
-						with form validation, nested modals with shared context,
-						and smooth transitions that preserved state. Aria
-						watched with fascination as all her learning came
-						together in these advanced patterns.
-					</p>
-
-					<p className='story-paragraph'>
-						<strong>Master Aurelius</strong> observed with
-						satisfaction. "Marina has taught exceptionally well.
-						Aria's understanding shows that navigation is not just
-						about moving through space - it's about
-						<strong>
-							guiding users on meaningful journeys
-						</strong>{' '}
-						using every tool in our kingdom."
-					</p>
-				</div>
-
-				<div className='advanced-patterns-showcase'>
-					<h3>Advanced Portal Patterns</h3>
-
-					<div className='pattern-selector'>
-						{advancedPatterns.map((pattern) => (
-							<div
-								key={pattern.id}
-								className={`pattern-card ${
-									advancedPattern === pattern.id
-										? 'selected'
-										: ''
-								}`}
-								onClick={() => setAdvancedPattern(pattern.id)}>
-								<span className='pattern-icon'>
-									{pattern.icon}
-								</span>
-								<h4>{pattern.name}</h4>
-								<p>{pattern.description}</p>
-							</div>
-						))}
+			<div className='pattern-selector'>
+				{advancedPatterns.map((pattern) => (
+					<div
+						key={pattern.id}
+						className={`pattern-card ${
+							advancedPattern === pattern.id
+								? 'selected'
+								: ''
+						}`}
+						onClick={() => setAdvancedPattern(pattern.id)}>
+						<span className='pattern-icon'>
+							{pattern.icon}
+						</span>
+						<h4>{pattern.name}</h4>
+						<p>{pattern.description}</p>
 					</div>
+				))}
+			</div>
 
-					<div className='pattern-demonstration'>
-						{advancedPattern === 'wizard' && (
-							<div className='wizard-demo'>
-								<h4>Multi-Step Portal Wizard</h4>
-								<div className='wizard-progress'>
-									{[1, 2, 3, 4].map((step) => (
-										<div
-											key={step}
-											className={`progress-step ${
-												wizardStep >= step
-													? 'completed'
-													: ''
-											} ${
-												wizardStep === step
-													? 'active'
-													: ''
-											}`}>
-											<span className='step-number'>
-												{step}
-											</span>
-											<span className='step-label'>
-												Step {step}
-											</span>
-										</div>
-									))}
+			<div className='pattern-demonstration'>
+				{advancedPattern === 'wizard' && (
+					<div className='wizard-demo'>
+						<h4>Multi-Step Portal Wizard</h4>
+						<div className='wizard-progress'>
+							{[1, 2, 3, 4].map((step) => (
+								<div
+									key={step}
+									className={`progress-step ${
+										wizardStep >= step
+											? 'completed'
+											: ''
+									} ${
+										wizardStep === step
+											? 'active'
+											: ''
+									}`}>
+									<span className='step-number'>
+										{step}
+									</span>
+									<span className='step-label'>
+										Step {step}
+									</span>
 								</div>
-								<div className='wizard-content'>
-									<h5>Current Step: {wizardStep}</h5>
-									<p>Wizard content for step {wizardStep}</p>
-									<div className='wizard-navigation'>
-										<button
-											onClick={() =>
-												handleWizardNavigation('prev')
-											}
-											disabled={wizardStep === 1}>
-											← Previous
-										</button>
-										<button
-											onClick={() =>
-												handleWizardNavigation('next')
-											}
-											disabled={wizardStep === 4}>
-											Next →
-										</button>
-									</div>
-								</div>
-							</div>
-						)}
-
-						{advancedPattern === 'nested' && (
-							<div className='nested-portal-demo'>
-								<h4>Nested Portal Stack</h4>
-								<div className='portal-stack-view'>
-									{portalStack.map((portal, index) => (
-										<div
-											key={portal.id}
-											className='stacked-portal'
-											style={{
-												zIndex: index + 1,
-												transform: `scale(${
-													1 - index * 0.05
-												}) translateY(${index * 10}px)`,
-											}}>
-											<h5>{portal.title}</h5>
-											<button
-												onClick={() =>
-													removePortalFromStack(
-														portal.id
-													)
-												}>
-												Close
-											</button>
-										</div>
-									))}
-								</div>
-								<button onClick={addPortalToStack}>
-									Add Portal Layer
+							))}
+						</div>
+						<div className='wizard-content'>
+							<h5>Current Step: {wizardStep}</h5>
+							<p>Wizard content for step {wizardStep}</p>
+							<div className='wizard-navigation'>
+								<button
+									onClick={() =>
+										handleWizardNavigation('prev')
+									}
+									disabled={wizardStep === 1}>
+									← Previous
+								</button>
+								<button
+									onClick={() =>
+										handleWizardNavigation('next')
+									}
+									disabled={wizardStep === 4}>
+									Next →
 								</button>
 							</div>
-						)}
+						</div>
 					</div>
-				</div>
+				)}
+
+				{advancedPattern === 'nested' && (
+					<div className='nested-portal-demo'>
+						<h4>Nested Portal Stack</h4>
+						<div className='portal-stack-view'>
+							{portalStack.map((portal, index) => (
+								<div
+									key={portal.id}
+									className='stacked-portal'
+									style={{
+										zIndex: index + 1,
+										transform: `scale(${
+											1 - index * 0.05
+										}) translateY(${index * 10}px)`,
+									}}>
+									<h5>{portal.title}</h5>
+									<button
+										onClick={() =>
+											removePortalFromStack(
+												portal.id
+											)
+										}>
+										Close
+									</button>
+								</div>
+							))}
+						</div>
+						<button onClick={addPortalToStack}>
+							Add Portal Layer
+						</button>
+					</div>
+				)}
 			</div>
+		</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Navigation Patterns</h3>
@@ -588,53 +556,43 @@ function useNavigation() {
 							<span className='mastery-status'>Mastered!</span>
 						</div>
 					))}
-				</div>
 			</div>
+		</div>
 
-			<div className='navigation-master-ceremony'>
-				<h3>The Navigation Master Ceremony</h3>
-				<div className='grand-finale'>
-					<p className='story-paragraph'>
-						As Marina's demonstration concluded, Aria watched with
-						deep understanding.
-						<strong>Marina</strong> smiled with the satisfaction of
-						a teacher whose student had grasped the deepest
-						concepts.
-					</p>
+		<div className='navigation-master-ceremony'>
+			<h3>The Navigation Master Ceremony</h3>
+		</div>
 
-					<p className='story-paragraph'>
-						"When I began teaching Aria navigation," Marina
-						reflected, "I knew her comprehensive React foundation
-						would help her learn quickly. She has exceeded every
-						expectation. She hasn't just learned the techniques -
-						she understands how they all connect."
-					</p>
+		<StorySection
+			paragraphs={[
+				<>As Marina's demonstration concluded, Aria watched with deep understanding. <strong>Marina</strong> smiled with the satisfaction of a teacher whose student had grasped the deepest concepts.</>,
+				`"When I began teaching Aria navigation," Marina reflected, "I knew her comprehensive React foundation would help her learn quickly. She has exceeded every expectation. She hasn't just learned the techniques - she understands how they all connect."`
+			]}
+		/>
 
-					<div className='testimonials-section'>
-						<div className='master-testimonial'>
-							<p>
-								<strong>Elder useState:</strong> "Her
-								understanding of state management in portals
-								shows excellent learning."
-							</p>
-						</div>
-						<div className='master-testimonial'>
-							<p>
-								<strong>Captain Thunk:</strong> "The way she
-								grasps how effects work with navigation is
-								impressive."
-							</p>
-						</div>
-						<div className='master-testimonial'>
-							<p>
-								<strong>Commander Validus:</strong> "She
-								understands form validation across portal
-								boundaries perfectly!"
-							</p>
-						</div>
-					</div>
-				</div>
+		<div className='testimonials-section'>
+			<div className='master-testimonial'>
+				<p>
+					<strong>Elder useState:</strong> "Her
+					understanding of state management in portals
+					shows excellent learning."
+				</p>
 			</div>
+			<div className='master-testimonial'>
+				<p>
+					<strong>Captain Thunk:</strong> "The way she
+					grasps how effects work with navigation is
+					impressive."
+				</p>
+			</div>
+			<div className='master-testimonial'>
+				<p>
+					<strong>Commander Validus:</strong> "She
+					understands form validation across portal
+					boundaries perfectly!"
+				</p>
+			</div>
+		</div>
 
 			<div className='completion-ceremony'>
 				<h3>The Learning Journey Complete</h3>
@@ -662,25 +620,18 @@ function useNavigation() {
 				</div>
 			</div>
 
-			<div className='new-role-announcement'>
-				<h3>A New Chapter Begins</h3>
-				<p className='story-paragraph'>
-					<strong>Master Aurelius</strong> smiled with pride. "Aria
-					has completed her foundational training in React. She now
-					understands how components, state, props, hooks, forms, and
-					navigation all work together."
-				</p>
+		<div className='new-role-announcement'>
+			<h3>A New Chapter Begins</h3>
+		</div>
 
-				<p className='story-paragraph'>
-					Marina placed a hand on Aria's shoulder. "Your journey
-					through the React Kingdom has given you a solid foundation.
-					You understand not just the individual concepts, but how
-					they connect to create powerful applications. You're ready
-					for whatever challenges await in your development career."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Master Aurelius</strong> smiled with pride. "Aria has completed her foundational training in React. She now understands how components, state, props, hooks, forms, and navigation all work together."</>,
+				`Marina placed a hand on Aria's shoulder. "Your journey through the React Kingdom has given you a solid foundation. You understand not just the individual concepts, but how they connect to create powerful applications. You're ready for whatever challenges await in your development career."`
+			]}
+		/>
 
-			<ChapterSummary
+		<ChapterSummary
 				lessonInsight={{
 					title: 'The Learning Journey Complete:',
 					content: "\"My journey through the React Kingdom taught me that no concept exists in isolation,\" Aria reflected. \"Components need state, state needs effects, forms need validation, and navigation ties it all together. Marina has shown me how everything connects.\""

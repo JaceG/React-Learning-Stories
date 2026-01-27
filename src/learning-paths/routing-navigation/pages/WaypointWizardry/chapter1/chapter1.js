@@ -5,6 +5,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 function ChapterOne() {
 	const {
@@ -76,42 +77,17 @@ function ChapterOne() {
 					bridge="Marina guided Aria into the Waypoint Sanctum's crystal dome, where light refracted into countless rainbows. Here, surrounded by floating navigation orbs, she would learn the most advanced routing patterns that could adapt and respond to user behavior."
 				/>
 
-				<div className='story-section'>
-					<p className='story-paragraph'>
-						"Welcome to advanced waypoint training," Marina began,
-						her voice resonating through the chamber. "Today, I'll
-						teach you how waypoints become more than destinations -
-						they become intelligent navigation nodes."
-					</p>
+			<StorySection
+				paragraphs={[
+					`"Welcome to advanced waypoint training," Marina began, her voice resonating through the chamber. "Today, I'll teach you how waypoints become more than destinations - they become intelligent navigation nodes."`,
+					`Marina activated a complex navigation matrix. "In your journey through every quarter, you've learned that routes are living entities. They breathe with state, pulse with effects, communicate through props, and transform through hooks."`,
+					`Aria watched with growing understanding. "So routes can be intelligent? How do we make them respond to user context and behavior?"`,
+					<>"By integrating every pattern you've learned," Marina replied, activating the sanctum's holographic display. "Watch as I demonstrate the <strong>Waypoint Architecture Pattern</strong> - where navigation becomes a symphony of all React knowledge."</>,
+					`Binary chirped excitedly: "System initialization! Marina's routing: LOADED. Aria's foundation: READY. Waypoint intelligence: ACTIVATING!"`
+				]}
+			/>
 
-					<p className='story-paragraph'>
-						Marina activated a complex navigation matrix. "In your
-						journey through every quarter, you've learned that
-						routes are living entities. They breathe with state,
-						pulse with effects, communicate through props, and
-						transform through hooks."
-					</p>
-
-					<p className='story-paragraph'>
-						Aria watched with growing understanding. "So routes can
-						be intelligent? How do we make them respond to user
-						context and behavior?"
-					</p>
-					<p className='story-paragraph'>
-						"By integrating every pattern you've learned," Marina
-						replied, activating the sanctum's holographic display.
-						"Watch as I demonstrate the{' '}
-						<strong>Waypoint Architecture Pattern</strong> - where
-						navigation becomes a symphony of all React knowledge."
-					</p>
-
-					<p className='story-paragraph'>
-						Binary chirped excitedly: "System initialization!
-						Marina's routing: LOADED. Aria's foundation: READY.
-						Waypoint intelligence: ACTIVATING!"
-					</p>
-
-					<div className='waypoint-map master-architecture'>
+			<div className='waypoint-map master-architecture'>
 						<h3>Marina's Advanced Navigation Architecture</h3>
 
 						{!masterMode && (
@@ -249,35 +225,25 @@ function ChapterOne() {
 								</div>
 							))}
 						</div>
-					</div>
-
-					<div className='masters-dialogue'>
-						<p className='story-paragraph'>
-							"Notice how each waypoint isn't just a destination,"
-							Marina explained. "The Castle Keep uses component
-							composition. The Grand Bazaar manages product state.
-							The Academy leverages custom hooks. The Forge
-							validates with forms."
-						</p>
-
-						<p className='story-paragraph'>
-							Aria studied the patterns with fascination. "I can
-							see how they all communicate through the navigation
-							system! This is incredible - routes that understand
-							context, preserve state, and adapt to user needs."
-						</p>
-					</div>
 				</div>
+			</div>
 
-				<div className='interactive-section'>
-					<h3 className='section-title'>
-						Marina's Waypoint Architecture
-					</h3>
-					<InstructionBox character='Click "Activate Master Vision" to see how React patterns integrate with each waypoint!'>
-						Click on different waypoints to navigate and watch the compass track your journey.
-					</InstructionBox>
+			<StorySection
+				paragraphs={[
+					`"Notice how each waypoint isn't just a destination," Marina explained. "The Castle Keep uses component composition. The Grand Bazaar manages product state. The Academy leverages custom hooks. The Forge validates with forms."`,
+					`Aria studied the patterns with fascination. "I can see how they all communicate through the navigation system! This is incredible - routes that understand context, preserve state, and adapt to user needs."`
+			]}
+		/>
 
-					<CodeExample
+		<div className='interactive-section'>
+			<h3 className='section-title'>
+				Marina's Waypoint Architecture
+			</h3>
+			<InstructionBox character='Click "Activate Master Vision" to see how React patterns integrate with each waypoint!'>
+				Click on different waypoints to navigate and watch the compass track your journey.
+			</InstructionBox>
+
+			<CodeExample
 						title="Intelligent Route Configuration"
 						code={`// Marina's Advanced Routing with React Integration
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -760,48 +726,28 @@ function IntelligentNavigation() {
 								<code>{`lazy: predictiveImport()`}</code>
 							</div>
 						</div>
-						<div className='feature-explanation'>
-							<p className='story-paragraph'>
-								"Each enhancement builds on the foundation,"
-								Marina explained. "We're not just loading data -
-								we're orchestrating entire user experiences."
-							</p>
-						</div>
-					</div>
-
-					<div className='masters-demonstration'>
-						<h3>Live Architecture Demonstration</h3>
-						<p className='story-paragraph'>
-							Marina demonstrated the complete waypoint system to
-							the learning group. "This shows how we can transform
-							simple routing into an intelligent navigation
-							ecosystem," she explained.
-						</p>
-
-						<p className='story-paragraph'>
-							Aria watched with amazement. "The way state flows
-							through the routes... it's like watching a river
-							system that knows where it needs to go!"
-						</p>
-
-						<p className='story-paragraph'>
-							Marina smiled with teaching satisfaction. "This is
-							what learning looks like - not just knowing
-							patterns, but understanding how they weave together
-							into something greater."
-						</p>
-
-						<p className='story-paragraph'>
-							Binary projected the final statistics: "Waypoint
-							intelligence: MAXIMUM! Pattern integration:
-							COMPLETE! Marina's teaching + Aria's learning:
-							EXCELLENT! Future students will study this system
-							for generations!"
-						</p>
-					</div>
 				</div>
 
-				<div className='journey-tracker master-journey'>
+				<StorySection
+					paragraphs={[
+						`"Each enhancement builds on the foundation," Marina explained. "We're not just loading data - we're orchestrating entire user experiences."`
+					]}
+				/>
+
+				<div className='masters-demonstration'>
+					<h3>Live Architecture Demonstration</h3>
+				</div>
+
+				<StorySection
+					paragraphs={[
+						`Marina demonstrated the complete waypoint system to the learning group. "This shows how we can transform simple routing into an intelligent navigation ecosystem," she explained.`,
+						`Aria watched with amazement. "The way state flows through the routes... it's like watching a river system that knows where it needs to go!"`,
+						`Marina smiled with teaching satisfaction. "This is what learning looks like - not just knowing patterns, but understanding how they weave together into something greater."`,
+						`Binary projected the final statistics: "Waypoint intelligence: MAXIMUM! Pattern integration: COMPLETE! Marina's teaching + Aria's learning: EXCELLENT! Future students will study this system for generations!"`
+			]}
+			/>
+
+			<div className='journey-tracker master-journey'>
 					<h3>Your Architectural Journey</h3>
 					<div className='journey-path enhanced'>
 						{waypointHistory.map((waypoint, index) => (
