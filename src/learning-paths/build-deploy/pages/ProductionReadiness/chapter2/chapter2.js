@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeMonitor, setActiveMonitor] = useState('');
@@ -143,29 +144,14 @@ const ChapterTwo = () => {
 				bridge={`With the readiness checks complete, Commander Deployment led Aria to the monitoring station. "Every production system needs eyes and ears," she explained, gesturing to the streams of data flowing across multiple screens. "Monitoring tools are your scouts, alerting you to problems before they become disasters."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Binary analyzed the data streams. "Current monitoring coverage: 60%. 
-					Blind spots detected in user experience metrics and third-party service 
-					dependencies."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora investigated an alert. "This error spike started 15 minutes ago. 
-					Correlating with the last deployment... Found it! Missing null check in 
-					the payment service."
-				</p>
-
-				<p className='story-paragraph'>
-					"See how monitoring turns mysteries into actionable insights?" Commander 
-					said. "Without it, you're flying blind in production."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria watched the dashboards update in real-time. "It's like having a 
-					thousand eyes watching over our application!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Binary analyzed the data streams. "Current monitoring coverage: 60%. Blind spots detected in user experience metrics and third-party service dependencies."`,
+				`Debuggora investigated an alert. "This error spike started 15 minutes ago. Correlating with the last deployment... Found it! Missing null check in the payment service."`,
+				`"See how monitoring turns mysteries into actionable insights?" Commander said. "Without it, you're flying blind in production."`,
+				`Aria watched the dashboards update in real-time. "It's like having a thousand eyes watching over our application!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Monitoring Command Center</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [hoveredPlatform, setHoveredPlatform] = useState(null);
@@ -82,27 +83,14 @@ const ChapterOne = () => {
 				title={`The Platform Archipelago`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"How do I choose?" Aria asked, overwhelmed by the options spread before her.
-				</p>
-
-				<p className='story-paragraph'>
-					"Consider your needs," Navigator Hosting explained, pointing to a detailed map. 
-					"Traffic expectations, features required, budget constraints, complexity tolerance. 
-					Each platform has its sweet spot."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary scanned the platforms. "Calculating optimal routes... Each destination 
-					has unique performance characteristics and cost structures!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied the deployment logs flowing from each island. "Different 
-					error handling, different debugging tools. Choose wisely!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"How do I choose?" Aria asked, overwhelmed by the options spread before her.`,
+				`"Consider your needs," Navigator Hosting explained, pointing to a detailed map. "Traffic expectations, features required, budget constraints, complexity tolerance. Each platform has its sweet spot."`,
+				`Binary scanned the platforms. "Calculating optimal routes... Each destination has unique performance characteristics and cost structures!"`,
+				`Debuggora studied the deployment logs flowing from each island. "Different error handling, different debugging tools. Choose wisely!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Exploration Map</h3>

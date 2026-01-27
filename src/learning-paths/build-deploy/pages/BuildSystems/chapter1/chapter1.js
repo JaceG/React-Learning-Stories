@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [hoveredShip, setHoveredShip] = useState(null);
@@ -65,28 +66,14 @@ const ChapterOne = () => {
 				title={`The Deployment Armada Docks`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Ambassador Aria!" the Admiral boomed. "Your applications are powerful, but they're 
-					still in the kingdom. Time to learn the art of deployment - transforming development 
-					code into production-ready vessels."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary scanned the ships. "Each one is optimized differently, Aria. Minified code, 
-					bundled assets, tree-shaken dependencies..."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora perched on a mast. "And each journey has its own perils - failed builds, 
-					missing dependencies, environment mismatches."
-				</p>
-
-				<p className='story-paragraph'>
-					Admiral Webpack handed Aria a captain's hat. "Today, you become a deployment captain. 
-					First lesson: understanding how we transform your code for the journey."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"Ambassador Aria!" the Admiral boomed. "Your applications are powerful, but they're still in the kingdom. Time to learn the art of deployment - transforming development code into production-ready vessels."`,
+				`Binary scanned the ships. "Each one is optimized differently, Aria. Minified code, bundled assets, tree-shaken dependencies..."`,
+				`Debuggora perched on a mast. "And each journey has its own perils - failed builds, missing dependencies, environment mismatches."`,
+				`Admiral Webpack handed Aria a captain's hat. "Today, you become a deployment captain. First lesson: understanding how we transform your code for the journey."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Build Pipeline Visualizer</h3>

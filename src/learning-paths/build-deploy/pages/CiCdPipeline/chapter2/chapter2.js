@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [selectedTool, setSelectedTool] = useState(null);
@@ -85,27 +86,14 @@ const ChapterTwo = () => {
 				bridge={`Captain Pipeline showed Aria the pipeline workshop, where automated workflows were crafted like precision instruments. "Each pipeline is a series of gates. Code must pass through each one to reach production."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria studied the various tools and configurations. "Lint, test, build, deploy - 
-					like the quality checkpoints in our kingdom!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated efficiency gains. "Automation reduces deployment time by 95%! 
-					Manual processes that took hours now complete in minutes!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the test results flowing through. "Every failure is caught 
-					immediately. No more 'works on my machine' mysteries!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Choose your tools wisely," Captain Pipeline advised. "Each has strengths. The 
-					best pipeline is one your team will actually use."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Aria studied the various tools and configurations. "Lint, test, build, deploy - like the quality checkpoints in our kingdom!"`,
+				`Binary calculated efficiency gains. "Automation reduces deployment time by 95%! Manual processes that took hours now complete in minutes!"`,
+				`Debuggora examined the test results flowing through. "Every failure is caught immediately. No more 'works on my machine' mysteries!"`,
+				`"Choose your tools wisely," Captain Pipeline advised. "Each has strengths. The best pipeline is one your team will actually use."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Pipeline Builder Workshop</h3>

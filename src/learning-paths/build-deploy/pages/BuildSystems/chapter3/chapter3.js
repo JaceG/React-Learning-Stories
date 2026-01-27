@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [selectedBuildTarget, setSelectedBuildTarget] = useState(null);
@@ -76,26 +77,14 @@ const ChapterThree = () => {
 				bridge={`"You've mastered optimization techniques," Admiral Webpack said proudly, leading Aria to a vast harbor filled with specialized vessels. "But different destinations need different ships. Modern browsers, legacy support, mobile platforms - each needs its own build configuration."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Aria studied the fleet manifest. "So we create multiple builds for different environments?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly! And with module federation," the Admiral's eyes gleamed, "ships can share 
-					cargo during the journey. No need to carry duplicate supplies."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary's processors whirred with excitement. "Like the React Native frontier, but for 
-					different web environments! Calculating optimal distribution patterns..."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the module federation setup. "Ships communicating mid-voyage? 
-					The debugging possibilities are fascinating!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Aria studied the fleet manifest. "So we create multiple builds for different environments?"`,
+				`"Exactly! And with module federation," the Admiral's eyes gleamed, "ships can share cargo during the journey. No need to carry duplicate supplies."`,
+				`Binary's processors whirred with excitement. "Like the React Native frontier, but for different web environments! Calculating optimal distribution patterns..."`,
+				`Debuggora examined the module federation setup. "Ships communicating mid-voyage? The debugging possibilities are fascinating!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Build Target Selection</h3>

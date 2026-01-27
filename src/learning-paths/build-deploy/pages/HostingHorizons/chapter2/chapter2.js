@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeTab, setActiveTab] = useState('vercel');
@@ -105,27 +106,14 @@ const ChapterTwo = () => {
 				bridge={`Navigator Vercel led Aria to a ceremonial chamber where platforms performed their deployment rituals. "Each platform has its own ceremony," she explained. "Vercel's is swift and magical - push code, receive URL. Netlify's involves configuration incantations. AWS requires the most elaborate preparation." Aria watched, eager to master each ritual.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"But AWS gives ultimate control," Navigator Hosting added, showing the vast 
-					array of services. "With great power comes great configuration."
-				</p>
-
-				<p className='story-paragraph'>
-					Binary compared deployment speeds. "Vercel: 45 seconds. Netlify: 52 seconds. 
-					AWS CloudFront invalidation: 5-10 minutes. Choose based on your patience!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the deployment logs. "Each platform has different log 
-					formats and error messages. Learn their languages!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Master the ceremonies," Navigator advised, "and deployment becomes a 
-					simple ritual rather than a complex ordeal."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"But AWS gives ultimate control," Navigator Hosting added, showing the vast array of services. "With great power comes great configuration."`,
+				`Binary compared deployment speeds. "Vercel: 45 seconds. Netlify: 52 seconds. AWS CloudFront invalidation: 5-10 minutes. Choose based on your patience!"`,
+				`Debuggora examined the deployment logs. "Each platform has different log formats and error messages. Learn their languages!"`,
+				`"Master the ceremonies," Navigator advised, "and deployment becomes a simple ritual rather than a complex ordeal."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Platform Deep Dive</h3>

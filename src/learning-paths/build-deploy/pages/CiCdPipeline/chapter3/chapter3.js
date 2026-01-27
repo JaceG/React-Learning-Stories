@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeStrategy, setActiveStrategy] = useState(null);
@@ -106,27 +107,14 @@ const ChapterThree = () => {
 				bridge={`Aria's pipeline had grown sophisticated - parallel tests, conditional deployments, automatic rollbacks. "It's like having a crew that never sleeps!" she marveled. Captain Pipeline smiled. "Now let's master the advanced strategies."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Captain Pipeline nodded approvingly. "And with feature flags, you can deploy 
-					continuously while controlling feature release. Decouple deployment from release!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary monitored the metrics. "Deployment frequency increased 10x! Lead time 
-					reduced to hours! Mean time to recovery under 30 minutes!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora tracked the canary deployments. "We can test in production safely, 
-					catching issues before they affect all users."
-				</p>
-
-				<p className='story-paragraph'>
-					"The ultimate goal," Captain Pipeline declared, "is continuous value delivery. 
-					Every commit that passes the pipeline should be production-ready."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Captain Pipeline nodded approvingly. "And with feature flags, you can deploy continuously while controlling feature release. Decouple deployment from release!"`,
+				`Binary monitored the metrics. "Deployment frequency increased 10x! Lead time reduced to hours! Mean time to recovery under 30 minutes!"`,
+				`Debuggora tracked the canary deployments. "We can test in production safely, catching issues before they affect all users."`,
+				`"The ultimate goal," Captain Pipeline declared, "is continuous value delivery. Every commit that passes the pipeline should be production-ready."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Deployment Strategies</h3>

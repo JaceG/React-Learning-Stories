@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [activeStage, setActiveStage] = useState(null);
@@ -95,29 +96,14 @@ const ChapterOne = () => {
 				title={`The Automation Harbor`}
 			/>
 
-			<div className='story-section'>
-				
-				<p className='story-paragraph'>
-					The harbor hummed with automated activity. Code arrived, tests ran, builds completed, 
-					deployments launched - all without human intervention. Aria watched in amazement as 
-					ships sailed themselves.
-				</p>
-
-				<p className='story-paragraph'>
-					"It's like the Testing Tower, but automated!" Aria exclaimed, watching quality gates 
-					activate automatically as code flowed through.
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated the efficiency. "Processing time reduced by 92.7%! Human error 
-					eliminated! Deployment frequency increased exponentially!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied the pipeline flows. "Every stage leaves a trace. If something fails, 
-					we know exactly where and why."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`The harbor hummed with automated activity. Code arrived, tests ran, builds completed, deployments launched - all without human intervention. Aria watched in amazement as ships sailed themselves.`,
+				`"It's like the Testing Tower, but automated!" Aria exclaimed, watching quality gates activate automatically as code flowed through.`,
+				`Binary calculated the efficiency. "Processing time reduced by 92.7%! Human error eliminated! Deployment frequency increased exponentially!"`,
+				`Debuggora studied the pipeline flows. "Every stage leaves a trace. If something fails, we know exactly where and why."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>CI/CD Fundamentals</h3>

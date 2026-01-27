@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [deploymentStrategy, setDeploymentStrategy] = useState('');
@@ -124,29 +125,14 @@ const ChapterThree = () => {
 				bridge={`With the monitoring arsenal fully operational, Commander Deployment led Aria to the strategic command center. "You've learned to monitor and prepare," she said, her voice filled with pride. "Now comes the ultimate test - deployment strategies and incident response. These are your battle tactics for conquering production."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Binary calculated probabilities. "Blue-green: 99.9% uptime potential. 
-					Canary: 85% risk reduction. Rolling: 60% resource efficiency. Each strategy 
-					has optimal use cases."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora studied the incident playbook. "The key is preparation. When 
-					production burns, there's no time to figure out what to do. You follow 
-					the playbook."
-				</p>
-
-				<p className='story-paragraph'>
-					"Remember," Commander advised, "the best incident is one that never happens. 
-					But when it does, swift action saves the day."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria stood ready at the deployment console. "From development to production, 
-					from monitoring to incident response - I'm ready for anything!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Binary calculated probabilities. "Blue-green: 99.9% uptime potential. Canary: 85% risk reduction. Rolling: 60% resource efficiency. Each strategy has optimal use cases."`,
+				`Debuggora studied the incident playbook. "The key is preparation. When production burns, there's no time to figure out what to do. You follow the playbook."`,
+				`"Remember," Commander advised, "the best incident is one that never happens. But when it does, swift action saves the day."`,
+				`Aria stood ready at the deployment console. "From development to production, from monitoring to incident response - I'm ready for anything!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Deployment Strategy Command</h3>

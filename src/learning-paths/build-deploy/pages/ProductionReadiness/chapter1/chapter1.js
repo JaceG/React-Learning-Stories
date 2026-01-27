@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const [selectedChecks, setSelectedChecks] = useState([]);
@@ -114,28 +115,14 @@ const ChapterOne = () => {
 				title={`The Production War Room`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Binary scanned the monitoring dashboards. "Current uptime: 99.5%. Error 
-					rate: 0.3%. Performance score: 85/100. Room for improvement detected."
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora examined the error logs. "Error boundaries will catch component 
-					failures. But what about unhandled promise rejections and network errors?"
-				</p>
-
-				<p className='story-paragraph'>
-					"Production readiness isn't just about code," Commander Deployment explained. 
-					"It's about monitoring, security, performance, and being prepared for the 
-					unexpected."
-				</p>
-
-				<p className='story-paragraph'>
-					Aria surveyed the war room's displays. "So many things to check before 
-					deployment. Where do we even begin?"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Binary scanned the monitoring dashboards. "Current uptime: 99.5%. Error rate: 0.3%. Performance score: 85/100. Room for improvement detected."`,
+				`Debuggora examined the error logs. "Error boundaries will catch component failures. But what about unhandled promise rejections and network errors?"`,
+				`"Production readiness isn't just about code," Commander Deployment explained. "It's about monitoring, security, performance, and being prepared for the unexpected."`,
+				`Aria surveyed the war room's displays. "So many things to check before deployment. Where do we even begin?"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Production Readiness Checklist</h3>

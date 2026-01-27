@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import CodeExample from '../../../../../components/content/CodeExample';
 import InstructionBox from '../../../../../components/content/InstructionBox';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const [activeRegions, setActiveRegions] = useState(['us-east']);
@@ -98,22 +99,13 @@ const ChapterThree = () => {
 				bridge={`"You've mastered the deployment ceremonies," Navigator Vercel said, leading Aria to a vast observation deck overlooking the entire globe. "Now it's time to think beyond single regions. Edge functions, CDN distribution, geographic routing - these are the tools of truly global applications." Aria watched as data streams flowed across continents.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Binary monitored the global metrics. "Response times vary by region. 
-					US East: 20ms. Asia Pacific: 150ms. We need edge optimization!"
-				</p>
-
-				<p className='story-paragraph'>
-					Debuggora tracked errors across regions. "Different regions, different 
-					challenges. Network conditions, regulations, user behaviors all vary."
-				</p>
-
-				<p className='story-paragraph'>
-					"You've learned to think globally," Navigator smiled. "Performance isn't 
-					just about code - it's about proximity. Bring your app closer to your users."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`Binary monitored the global metrics. "Response times vary by region. US East: 20ms. Asia Pacific: 150ms. We need edge optimization!"`,
+				`Debuggora tracked errors across regions. "Different regions, different challenges. Network conditions, regulations, user behaviors all vary."`,
+				`"You've learned to think globally," Navigator smiled. "Performance isn't just about code - it's about proximity. Bring your app closer to your users."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Global Deployment Network</h3>

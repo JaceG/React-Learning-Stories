@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const [activeOptimization, setActiveOptimization] = useState(null);
@@ -70,27 +71,14 @@ const ChapterTwo = () => {
 				bridge={`Admiral Webpack led Aria deeper into the docks, to the Optimization Shipyard where massive vessels were being stripped of unnecessary cargo. "Understanding the build pipeline is just the beginning," he explained. "Now we make ships faster and lighter. Code splitting, lazy loading, tree shaking - each technique serves a purpose."`}
 			/>
 
-			<div className='story-section'>
-				
-				<p className='story-paragraph'>
-					"Tree shaking?" Aria asked, examining a massive vessel being stripped of unnecessary cargo.
-				</p>
-
-				<p className='story-paragraph'>
-					"Removing dead code - like shaking a tree to remove dead branches. Your bundle should 
-					only include what's actually used." The Admiral pointed to workers removing unused exports.
-				</p>
-
-				<p className='story-paragraph'>
-					Aria watched as unused exports disappeared from bundles. "It's like the performance 
-					optimizations, but at build time!"
-				</p>
-
-				<p className='story-paragraph'>
-					Binary calculated rapidly. "Optimization efficiency increasing! Bundle size decreasing 
-					by 67.3%!"
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`"Tree shaking?" Aria asked, examining a massive vessel being stripped of unnecessary cargo.`,
+				`"Removing dead code - like shaking a tree to remove dead branches. Your bundle should only include what's actually used." The Admiral pointed to workers removing unused exports.`,
+				`Aria watched as unused exports disappeared from bundles. "It's like the performance optimizations, but at build time!"`,
+				`Binary calculated rapidly. "Optimization efficiency increasing! Bundle size decreasing by 67.3%!"`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Optimization Workshop</h3>
