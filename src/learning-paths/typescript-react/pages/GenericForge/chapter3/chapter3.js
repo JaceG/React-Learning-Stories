@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -120,35 +121,15 @@ const ChapterThree = () => {
 				bridge={`"You've learned to forge and constrain," Master Typhos said, leading Aria to the forge's inner sanctum where the flames burned white-hot. "Now witness the true art of generic composition—patterns so powerful they create entire type systems." The walls shimmered with advanced type transformations, each more intricate than the last.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					In the heart of the Generic Forge, <strong>Master Typhos</strong> revealed 
-					the most powerful patterns. "You've learned the basics and constraints. Now, 
-					witness the true art of generic composition."
-				</p>
-
-				<p className='story-paragraph'>
-					The forge erupted with complex type patterns, each more intricate than the 
-					last. "These patterns," Typhos explained, "combine everything you've learned 
-					into systems that seem almost magical in their flexibility."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the type flows. "These compositions... they're 
-					creating entire type systems! The inference chains are incredible!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> traced through the generic transformations. "With 
-					these patterns, we can build frameworks that are both incredibly flexible 
-					and completely type-safe!"
-				</p>
-
-				<p className='story-paragraph'>
-					"The ultimate test," Typhos declared, "is not just understanding these 
-					patterns, but knowing when and how to apply them. Power without wisdom is chaos."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>In the heart of the Generic Forge, <strong>Master Typhos</strong> revealed the most powerful patterns. "You've learned the basics and constraints. Now, witness the true art of generic composition."</>,
+				`The forge erupted with complex type patterns, each more intricate than the last. "These patterns," Typhos explained, "combine everything you've learned into systems that seem almost magical in their flexibility."`,
+				<><strong>Binary</strong> analyzed the type flows. "These compositions... they're creating entire type systems! The inference chains are incredible!"</>,
+				<><strong>Debuggora</strong> traced through the generic transformations. "With these patterns, we can build frameworks that are both incredibly flexible and completely type-safe!"</>,
+				`"The ultimate test," Typhos declared, "is not just understanding these patterns, but knowing when and how to apply them. Power without wisdom is chaos."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Master Generic Patterns</h3>

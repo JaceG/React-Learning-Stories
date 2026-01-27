@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -109,34 +110,15 @@ const ChapterOne = () => {
 				title={`The Foundation Guards`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					High atop the Type Guard Tower, <strong>Commander Guardia</strong> stood 
-					watch over the TypeScript realm. "Welcome, Aria. Here we bridge the gap 
-					between compile-time safety and runtime reality."
-				</p>
-
-				<p className='story-paragraph'>
-					The tower's walls displayed glowing type signatures, each protected by 
-					vigilant guards. "In JavaScript," Guardia explained, "data can be anything. 
-					Type guards ensure it's what we expect."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> scanned the defensive patterns. "These guards... 
-					they're like sentries that check types at runtime and inform the compiler!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> perched on a battlement. "No more runtime type 
-					errors sneaking past our defenses. These guards catch them all!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Begin with the basic guards," Guardia instructed. "Master these, and no 
-					type uncertainty will breach your defenses."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>High atop the Type Guard Tower, <strong>Commander Guardia</strong> stood watch over the TypeScript realm. "Welcome, Aria. Here we bridge the gap between compile-time safety and runtime reality."</>,
+				`The tower's walls displayed glowing type signatures, each protected by vigilant guards. "In JavaScript," Guardia explained, "data can be anything. Type guards ensure it's what we expect."`,
+				<><strong>Binary</strong> scanned the defensive patterns. "These guards... they're like sentries that check types at runtime and inform the compiler!"</>,
+				<><strong>Debuggora</strong> perched on a battlement. "No more runtime type errors sneaking past our defenses. These guards catch them all!"</>,
+				`"Begin with the basic guards," Guardia instructed. "Master these, and no type uncertainty will breach your defenses."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Guard Patterns</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -38,42 +39,22 @@ const ChapterOne = () => {
 				title={`The Ancient Type Forge`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Deep beneath the React Kingdom, accessible only through the Cloud Citadel's 
-					lower passages, lay the Type Forge - a place of ancient power where code 
-					contracts were hammered into unbreakable forms.
-				</p>
+		<StorySection
+			paragraphs={[
+				`Deep beneath the React Kingdom, accessible only through the Cloud Citadel's lower passages, lay the Type Forge - a place of ancient power where code contracts were hammered into unbreakable forms.`,
+				<><strong>Master Typus</strong>, the Forge Keeper, greeted Aria with eyes that seemed to see through code to its very essence. His beard sparked with type annotations, and his hammer glowed with strict mode energy.</>,
+				`"Ambassador Aria," he rumbled, "you've built great things, but they're held together by trust and hope. Here, we forge guarantees. TypeScript isn't just about catching errors - it's about making impossibilities impossible."`,
+				<><strong>Binary's</strong> circuits hummed with anticipation. "My processors already use types internally, Aria. This feels... natural."</>,
+				<><strong>Debuggora</strong> nodded wisely. "And I'll see errors before they even compile. Prevention at its purest!"</>
+			]}
+		/>
 
-				<p className='story-paragraph'>
-					<strong>Master Typus</strong>, the Forge Keeper, greeted Aria with eyes 
-					that seemed to see through code to its very essence. His beard sparked with 
-					type annotations, and his hammer glowed with strict mode energy.
-				</p>
-
-				<p className='story-paragraph'>
-					"Ambassador Aria," he rumbled, "you've built great things, but they're held 
-					together by trust and hope. Here, we forge guarantees. TypeScript isn't just 
-					about catching errors - it's about making impossibilities impossible."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary's</strong> circuits hummed with anticipation. "My processors 
-					already use types internally, Aria. This feels... natural."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> nodded wisely. "And I'll see errors before they 
-					even compile. Prevention at its purest!"
-				</p>
-
-				<div className='forge-illustration'>
-					<div className='forge-anvil'>
-						<div className={`forge-hammer ${compileStatus === 'forging' ? 'active' : ''}`}></div>
-						Type Forge
-					</div>
-				</div>
+		<div className='forge-illustration'>
+			<div className='forge-anvil'>
+				<div className={`forge-hammer ${compileStatus === 'forging' ? 'active' : ''}`}></div>
+				Type Forge
 			</div>
+		</div>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Type Forge Workbench</h3>

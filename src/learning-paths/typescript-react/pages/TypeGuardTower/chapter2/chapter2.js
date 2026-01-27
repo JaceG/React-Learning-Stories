@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -111,28 +112,14 @@ const ChapterTwo = () => {
 				bridge={`Commander Guardia led Aria deeper into the tower's strategic command center. "You've mastered the foundations," she acknowledged, "but real applications demand more sophisticated defenses. Basic guards protect against simple threats - now we forge guards that handle complexity."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The walls displayed intricate type hierarchies and nested structures. 
-					"Advanced guards," Guardia explained, "handle the reality of modern 
-					applications - deep objects, conditional types, and complex validations."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the patterns. "These guards can validate 
-					entire data structures recursively! No malformed data can slip through."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> traced the validation flows. "With exhaustive 
-					checking, we catch every edge case. The compiler becomes our ally!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Master these patterns," Guardia commanded, "and you'll guard against 
-					the most insidious type errors - the ones that hide in complexity."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`The walls displayed intricate type hierarchies and nested structures. "Advanced guards," Guardia explained, "handle the reality of modern applications - deep objects, conditional types, and complex validations."`,
+				<><strong>Binary</strong> analyzed the patterns. "These guards can validate entire data structures recursively! No malformed data can slip through."</>,
+				<><strong>Debuggora</strong> traced the validation flows. "With exhaustive checking, we catch every edge case. The compiler becomes our ally!"</>,
+				`"Master these patterns," Guardia commanded, "and you'll guard against the most insidious type errors - the ones that hide in complexity."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Guard Patterns</h3>

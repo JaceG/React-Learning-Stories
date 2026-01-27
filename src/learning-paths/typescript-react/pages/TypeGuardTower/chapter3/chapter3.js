@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -126,29 +127,14 @@ const ChapterThree = () => {
 				bridge={`Commander Guardia led Aria to the tower's pinnacle, where the entire TypeScript realm spread before them. "You've mastered both foundation and advanced guards," she said proudly. "Now comes the ultimate challenge - not protecting new code, but transforming the old. Many kingdoms still speak JavaScript. Your mission: guide them to safety."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The chamber displayed countless JavaScript codebases, each representing 
-					a different migration challenge. "Migration," Guardia explained, "is not 
-					just about adding types. It's about transformation without breaking trust."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> calculated the scope. "Millions of lines of 
-					JavaScript... but with the right strategy, we can type them all safely!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> studied the migration paths. "Each codebase 
-					needs its own approach. There's no one-size-fits-all solution."
-				</p>
-
-				<p className='story-paragraph'>
-					"The true test of a Type Guard," Guardia declared, "is not just protecting 
-					new code, but safely transforming the old. Master this, and you become a 
-					true guardian of type safety."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				`The chamber displayed countless JavaScript codebases, each representing a different migration challenge. "Migration," Guardia explained, "is not just about adding types. It's about transformation without breaking trust."`,
+				<><strong>Binary</strong> calculated the scope. "Millions of lines of JavaScript... but with the right strategy, we can type them all safely!"</>,
+				<><strong>Debuggora</strong> studied the migration paths. "Each codebase needs its own approach. There's no one-size-fits-all solution."</>,
+				`"The true test of a Type Guard," Guardia declared, "is not just protecting new code, but safely transforming the old. Master this, and you become a true guardian of type safety."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Migration Strategies</h3>

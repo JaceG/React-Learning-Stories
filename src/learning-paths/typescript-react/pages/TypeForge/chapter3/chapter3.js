@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -182,23 +183,13 @@ type PostRoute = APIRoute<'posts'>; // '/api/posts'`
 				bridge={`With component contracts mastered, Master Typus led Aria to the deepest chamber of the Type Forge. "You've learned to type values and components," he said, his eyes gleaming with ancient knowledge. "Now witness the deeper mysteries - advanced patterns that can shape reality itself."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					"Basic types are just the beginning," <strong>Master Typus</strong> revealed. 
-					"Watch as we forge union types, intersection types, and conditional types. 
-					Each adds flexibility while maintaining safety."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> combined her state management knowledge with TypeScript. 
-					"Typed reducers! The actions know their own shapes!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Now you see the power. Every dispatch, every state update, every prop - 
-					all guaranteed correct at compile time."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>"Basic types are just the beginning," <strong>Master Typus</strong> revealed. "Watch as we forge union types, intersection types, and conditional types. Each adds flexibility while maintaining safety."</>,
+				<><strong>Aria</strong> combined her state management knowledge with TypeScript. "Typed reducers! The actions know their own shapes!"</>,
+				`"Now you see the power. Every dispatch, every state update, every prop - all guaranteed correct at compile time."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Type Synthesis</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -102,34 +103,15 @@ const ChapterOne = () => {
 				title={`The Component Forge`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Master Forger Typhos</strong> stood before the great Component 
-					Forge, its blue flames casting dancing shadows. "Welcome, Aria, to where 
-					components are armored with type safety."
-				</p>
-
-				<p className='story-paragraph'>
-					The forge displayed various component templates, each glowing with 
-					TypeScript's protective aura. "In JavaScript," Typhos explained, "components 
-					are naked, vulnerable to prop misuse and type errors."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> examined the forge's blueprints. "These type 
-					definitions... they're like armor specifications!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> perched on a type anvil. "With proper typing, 
-					errors are caught during forging, not in battle—I mean, production."
-				</p>
-
-				<p className='story-paragraph'>
-					Typhos lifted a glowing component template. "Each piece of armor serves 
-					a purpose. Choose wisely, for your components will face many challenges."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Master Forger Typhos</strong> stood before the great Component Forge, its blue flames casting dancing shadows. "Welcome, Aria, to where components are armored with type safety."</>,
+				`The forge displayed various component templates, each glowing with TypeScript's protective aura. "In JavaScript," Typhos explained, "components are naked, vulnerable to prop misuse and type errors."`,
+				<><strong>Binary</strong> examined the forge's blueprints. "These type definitions... they're like armor specifications!"</>,
+				<><strong>Debuggora</strong> perched on a type anvil. "With proper typing, errors are caught during forging, not in battle—I mean, production."</>,
+				`Typhos lifted a glowing component template. "Each piece of armor serves a purpose. Choose wisely, for your components will face many challenges."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Choose Your Component Armor</h3>

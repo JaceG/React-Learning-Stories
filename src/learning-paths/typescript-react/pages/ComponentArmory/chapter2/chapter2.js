@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -114,33 +115,15 @@ const ChapterTwo = () => {
 				bridge={`Master Typhos led Aria deeper into the armory, past the component templates and into a chamber where ethereal chains of logic hung suspended in blue flame. "You've armored your components," he said. "Now we forge the hooks that give them power—with type precision that ensures they never fail."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					Deep within the armory, <strong>Master Typhos</strong> led Aria to the 
-					Hook Forge, where ethereal chains of logic hung suspended in blue flame.
-				</p>
-
-				<p className='story-paragraph'>
-					"Hooks are the soul of modern components," Typhos explained, lifting a 
-					glowing useState chain. "But untyped hooks are like untested weapons - 
-					they may fail when you need them most."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> interfaced with the forge controls. "These type 
-					parameters... they ensure hook reliability across all usage patterns!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> examined the hook templates. "I see how types 
-					flow through the hook lifecycle. No more mysterious 'undefined' values!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Each hook requires specific type armor," Typhos demonstrated. "Master 
-					these patterns, and your components will wield hooks with precision."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>Deep within the armory, <strong>Master Typhos</strong> led Aria to the Hook Forge, where ethereal chains of logic hung suspended in blue flame.</>,
+				`"Hooks are the soul of modern components," Typhos explained, lifting a glowing useState chain. "But untyped hooks are like untested weapons - they may fail when you need them most."`,
+				<><strong>Binary</strong> interfaced with the forge controls. "These type parameters... they ensure hook reliability across all usage patterns!"</>,
+				<><strong>Debuggora</strong> examined the hook templates. "I see how types flow through the hook lifecycle. No more mysterious 'undefined' values!"</>,
+				`"Each hook requires specific type armor," Typhos demonstrated. "Master these patterns, and your components will wield hooks with precision."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Hook Type Mastery</h3>

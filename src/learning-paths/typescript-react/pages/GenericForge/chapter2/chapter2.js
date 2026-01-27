@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -110,36 +111,15 @@ const ChapterTwo = () => {
 				bridge={`Master Typhos stoked the forge flames higher, the heat intensifying with the complexity of the lesson ahead. "You've learned to forge basic generics," he acknowledged, examining Aria's work. "Now we must teach them discipline. Constraints ensure your generics only work with compatible types—precision over chaos."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The forge blazed hotter as <strong>Master Typhos</strong> introduced more 
-					advanced techniques. "Raw generics are powerful, but constraints make them 
-					precise. We must teach our types to be selective."
-				</p>
-
-				<p className='story-paragraph'>
-					He demonstrated a generic that only accepted certain types. "Constraints 
-					are like filters - they ensure your generics only work with compatible types, 
-					preventing misuse before it happens."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the constraint syntax. "So we can create 
-					generics that adapt their behavior based on the input type? That's 
-					incredibly sophisticated!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> watched the type transformations. "With these 
-					constraints, we can catch impossible states at compile time. No more 
-					runtime surprises!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Conditional types," Typhos continued, "are the ultimate expression of 
-					type flexibility. They allow your generics to make decisions."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The forge blazed hotter as <strong>Master Typhos</strong> introduced more advanced techniques. "Raw generics are powerful, but constraints make them precise. We must teach our types to be selective."</>,
+				`He demonstrated a generic that only accepted certain types. "Constraints are like filters - they ensure your generics only work with compatible types, preventing misuse before it happens."`,
+				<><strong>Binary</strong> analyzed the constraint syntax. "So we can create generics that adapt their behavior based on the input type? That's incredibly sophisticated!"</>,
+				<><strong>Debuggora</strong> watched the type transformations. "With these constraints, we can catch impossible states at compile time. No more runtime surprises!"</>,
+				`"Conditional types," Typhos continued, "are the ultimate expression of type flexibility. They allow your generics to make decisions."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Advanced Constraint Patterns</h3>

@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterThree = () => {
 	const {
@@ -120,33 +121,15 @@ const ChapterThree = () => {
 				bridge={`"You've mastered hooks with precision," Master Typhos said as he led Aria to a sealed door deep within the armory. "Now witness patterns that bend reality itself—the advanced techniques that separate journeymen from masters." The door opened to reveal the Master's Chamber, its walls lined with glowing type definitions.`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					In the deepest sanctum of the Component Armory, <strong>Master Typhos</strong> 
-					revealed the most powerful type patterns known to the TypeScript realm.
-				</p>
-
-				<p className='story-paragraph'>
-					"You've learned the basics," he said, gesturing to walls lined with 
-					glowing type definitions. "Now witness patterns that bend reality itself - 
-					types that think, adapt, and transform."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> scanned the complex type signatures. "These patterns... 
-					they're like meta-programming! Types that generate other types!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> studied the intricate type flows. "With these, 
-					we can catch errors I didn't even know were possible to detect at compile time."
-				</p>
-
-				<p className='story-paragraph'>
-					"The ultimate test," Typhos announced, "is not just knowing these patterns, 
-					but knowing when and how to wield them. Power without wisdom is chaos."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>In the deepest sanctum of the Component Armory, <strong>Master Typhos</strong> revealed the most powerful type patterns known to the TypeScript realm.</>,
+				`"You've learned the basics," he said, gesturing to walls lined with glowing type definitions. "Now witness patterns that bend reality itself - types that think, adapt, and transform."`,
+				<><strong>Binary</strong> scanned the complex type signatures. "These patterns... they're like meta-programming! Types that generate other types!"</>,
+				<><strong>Debuggora</strong> studied the intricate type flows. "With these, we can catch errors I didn't even know were possible to detect at compile time."</>,
+				`"The ultimate test," Typhos announced, "is not just knowing these patterns, but knowing when and how to wield them. Power without wisdom is chaos."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Master Type Patterns</h3>

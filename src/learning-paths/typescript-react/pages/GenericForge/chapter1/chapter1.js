@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterOne = () => {
 	const {
@@ -109,35 +110,15 @@ const ChapterOne = () => {
 				title={`The Foundations of Generics`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					The Generic Forge glowed with an otherworldly light as <strong>Master Typhos</strong> 
-					began the lesson. "Generics," he intoned, "are the key to true reusability. 
-					They allow components to adapt without losing type safety."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched as Typhos demonstrated, creating a component 
-					that could handle any data type while maintaining perfect type checking. "It's 
-					like having a universal key that still only opens the right doors!"
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Binary</strong> analyzed the patterns. "Fascinating! The type parameter 
-					acts as a placeholder until the component is used, then TypeScript fills in 
-					the exact type needed."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Debuggora</strong> perched on a type anvil. "No more 'any' types 
-					everywhere! These generics catch type mismatches while staying flexible."
-				</p>
-
-				<p className='story-paragraph'>
-					"Begin with the basics," Typhos instructed. "Master simple generics before 
-					attempting complex constraints. Each pattern builds upon the last."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<>The Generic Forge glowed with an otherworldly light as <strong>Master Typhos</strong> began the lesson. "Generics," he intoned, "are the key to true reusability. They allow components to adapt without losing type safety."</>,
+				<><strong>Aria</strong> watched as Typhos demonstrated, creating a component that could handle any data type while maintaining perfect type checking. "It's like having a universal key that still only opens the right doors!"</>,
+				<><strong>Binary</strong> analyzed the patterns. "Fascinating! The type parameter acts as a placeholder until the component is used, then TypeScript fills in the exact type needed."</>,
+				<><strong>Debuggora</strong> perched on a type anvil. "No more 'any' types everywhere! These generics catch type mismatches while staying flexible."</>,
+				`"Begin with the basics," Typhos instructed. "Master simple generics before attempting complex constraints. Each pattern builds upon the last."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Basic Generic Patterns</h3>

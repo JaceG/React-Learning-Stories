@@ -4,6 +4,7 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
+import StorySection from '../../../../../components/content/StorySection';
 
 const ChapterTwo = () => {
 	const {
@@ -130,23 +131,13 @@ function List<T>({ items, renderItem, keyExtractor }: ListProps<T>) {
 				bridge={`Master Typus led Aria to the Contract Chamber, where component promises were forged into unbreakable agreements. "You've learned to type basic values," he said, his hammer glowing with anticipation. "Now learn to type the very building blocks of React - your components."`}
 			/>
 
-			<div className='story-section'>
-				<p className='story-paragraph'>
-					<strong>Master Typus</strong> led Aria to the Contract Chamber. "Every 
-					component is a promise," he explained. "Props are the terms of that promise. 
-					TypeScript makes promises unbreakable."
-				</p>
-
-				<p className='story-paragraph'>
-					<strong>Aria</strong> watched as he demonstrated typing a component. "It's 
-					like my Props Messengers, but with guarantees!"
-				</p>
-
-				<p className='story-paragraph'>
-					"Exactly! No more wondering what props a component expects. The contract 
-					is explicit, enforced by the Forge itself."
-				</p>
-			</div>
+		<StorySection
+			paragraphs={[
+				<><strong>Master Typus</strong> led Aria to the Contract Chamber. "Every component is a promise," he explained. "Props are the terms of that promise. TypeScript makes promises unbreakable."</>,
+				<><strong>Aria</strong> watched as he demonstrated typing a component. "It's like my Props Messengers, but with guarantees!"</>,
+				`"Exactly! No more wondering what props a component expects. The contract is explicit, enforced by the Forge itself."`
+			]}
+		/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>Component Contract Forge</h3>
