@@ -1,9 +1,9 @@
 /**
  * Inject Narrative Content Script
- * 
+ *
  * Takes edited narrative content from narrative-master.json and injects it back
  * into the React component files, preserving code structure and formatting.
- * 
+ *
  * Usage: node scripts/inject-narrative.js
  * Input: scripts/narrative-master.json
  */
@@ -21,15 +21,24 @@ function replacePropContent(fileContent, propName, newValue) {
 	if (!newValue) return fileContent;
 
 	// Try template literal format first: propName={`...`}
-	const templateRegex = new RegExp(`(${propName}=\\{\`)([\\s\\S]*?)(\`\\})`, 'm');
+	const templateRegex = new RegExp(
+		`(${propName}=\\{\`)([\\s\\S]*?)(\`\\})`,
+		'm'
+	);
 	if (templateRegex.test(fileContent)) {
 		return fileContent.replace(templateRegex, `$1${newValue}$3`);
 	}
 
-	// Try string format: propName="..."
+	// Try double quote format: propName="..."
 	const stringRegex = new RegExp(`(${propName}=")([^"]*)(")`);
 	if (stringRegex.test(fileContent)) {
 		return fileContent.replace(stringRegex, `$1${newValue}$3`);
+	}
+
+	// Try single quote format: propName='...'
+	const singleQuoteRegex = new RegExp(`(${propName}=')([^']*)(')`);
+	if (singleQuoteRegex.test(fileContent)) {
+		return fileContent.replace(singleQuoteRegex, `$1${newValue}$3`);
 	}
 
 	return fileContent;
@@ -41,7 +50,11 @@ function replacePropContent(fileContent, propName, newValue) {
 function replaceObjectProp(fileContent, propName, newValue) {
 	if (!newValue || !newValue.title || !newValue.content) return fileContent;
 
-	const regex = new RegExp(`${propName}=\\{\\{([\\s\\S]*?)\\}\\}`, 'm');
+	// Use lookahead to ensure proper matching
+	const regex = new RegExp(
+		`${propName}=\\{\\{([\\s\\S]*?)\\}\\}(?=\\s*[,/>])`,
+		'm'
+	);
 	const match = fileContent.match(regex);
 	if (!match) return fileContent;
 
@@ -59,18 +72,21 @@ function replaceObjectProp(fileContent, propName, newValue) {
  * Replaces array prop content like reflectionQuestions={["...", "..."]}
  */
 function replaceArrayProp(fileContent, propName, newValue) {
-	if (!newValue || !Array.isArray(newValue) || newValue.length === 0) return fileContent;
+	if (!newValue || !Array.isArray(newValue) || newValue.length === 0)
+		return fileContent;
 
 	const regex = new RegExp(`${propName}=\\{\\[([\\s\\S]*?)\\]\\}`, 'm');
 	const match = fileContent.match(regex);
 	if (!match) return fileContent;
 
 	// Escape single quotes in the content by using backticks instead
-	const formattedItems = newValue.map(item => {
-		// Use backticks to avoid escaping issues with quotes/apostrophes
-		return `\`${item}\``;
-	}).join(',\n					');
-	
+	const formattedItems = newValue
+		.map((item) => {
+			// Use backticks to avoid escaping issues with quotes/apostrophes
+			return `\`${item}\``;
+		})
+		.join(',\n					');
+
 	const newArrayContent = `${propName}={[
 					${formattedItems},
 				]}`;
@@ -97,14 +113,20 @@ function replaceStorySections(fileContent, newSections) {
 		const paragraphs = newSections[sectionIndex];
 
 		// Format paragraphs (detect if JSX or plain string)
-		const formattedParagraphs = paragraphs.map(p => {
-			// If contains HTML tags, wrap in <>...</>
-			if (p.includes('<strong>') || p.includes('<em>') || p.includes('{')) {
-				return `<>${p}</>`;
-			}
-			// Otherwise, use backtick string
-			return `\`${p}\``;
-		}).join(',\n\t\t\t\t');
+		const formattedParagraphs = paragraphs
+			.map((p) => {
+				// If contains HTML tags, wrap in <>...</>
+				if (
+					p.includes('<strong>') ||
+					p.includes('<em>') ||
+					p.includes('{')
+				) {
+					return `<>${p}</>`;
+				}
+				// Otherwise, use backtick string
+				return `\`${p}\``;
+			})
+			.join(',\n\t\t\t\t');
 
 		const newStorySection = `<StorySection
 			paragraphs={[
@@ -112,9 +134,10 @@ function replaceStorySections(fileContent, newSections) {
 			]}
 		/>`;
 
-		updatedContent = updatedContent.substring(0, match.index) + 
-		                newStorySection + 
-		                updatedContent.substring(match.index + match[0].length);
+		updatedContent =
+			updatedContent.substring(0, match.index) +
+			newStorySection +
+			updatedContent.substring(match.index + match[0].length);
 	}
 
 	return updatedContent;
@@ -126,19 +149,59 @@ function replaceStorySections(fileContent, newSections) {
 function replaceCharacterIntros(fileContent, newIntros) {
 	if (!newIntros || newIntros.length === 0) return fileContent;
 
-	const regex = /characterIntros=\{(\[[^\]]*\])\}/s;
-	const match = fileContent.match(regex);
-	if (!match) return fileContent;
+	// Match characterIntros={[ ... ]} more robustly
+	// We need to handle nested braces and brackets properly
+	const startMatch = fileContent.match(/characterIntros=\{\[/);
+	if (!startMatch) return fileContent;
 
-	const formattedIntros = newIntros.map(intro => 
-		`{ name: \`${intro.name}\`, description: \`${intro.description}\` }`
-	).join(',\n\t\t\t\t\t');
+	const startIndex = startMatch.index;
+	const propStart = startIndex + 'characterIntros={'.length;
+	let depth = 0;
+	let endIndex = propStart;
+
+	// Find the matching closing bracket and brace
+	for (let i = propStart; i < fileContent.length; i++) {
+		const char = fileContent[i];
+		if (char === '[' || char === '{') {
+			depth++;
+		} else if (char === ']' || char === '}') {
+			depth--;
+			if (depth === 0 && char === ']') {
+				// Check if next non-whitespace char is }
+				let j = i + 1;
+				while (j < fileContent.length && /\s/.test(fileContent[j])) {
+					j++;
+				}
+				if (fileContent[j] === '}') {
+					endIndex = j + 1; // Include the closing }
+					break;
+				}
+			}
+		}
+	}
+
+	if (endIndex === propStart) return fileContent;
+
+	// Format the new character intros
+	const formattedIntros = newIntros
+		.map((intro) => {
+			return `{
+						name: \`${intro.name}\`,
+						description: \`${intro.description}\`,
+					}`;
+		})
+		.join(',\n					');
 
 	const newCharacterIntros = `characterIntros={[
-					${formattedIntros}
+					${formattedIntros},
 				]}`;
 
-	return fileContent.replace(regex, newCharacterIntros);
+	// Replace the old content with new content
+	return (
+		fileContent.substring(0, startIndex) +
+		newCharacterIntros +
+		fileContent.substring(endIndex)
+	);
 }
 
 /**
@@ -149,31 +212,57 @@ function injectChapterFile(filePath, chapterData) {
 
 	// Replace each narrative element
 	if (chapterData.bridge) {
-		fileContent = replacePropContent(fileContent, 'bridge', chapterData.bridge);
+		fileContent = replacePropContent(
+			fileContent,
+			'bridge',
+			chapterData.bridge
+		);
 	}
 
 	if (chapterData.storySections) {
-		fileContent = replaceStorySections(fileContent, chapterData.storySections);
+		fileContent = replaceStorySections(
+			fileContent,
+			chapterData.storySections
+		);
 	}
 
 	if (chapterData.lessonInsight) {
-		fileContent = replaceObjectProp(fileContent, 'lessonInsight', chapterData.lessonInsight);
+		fileContent = replaceObjectProp(
+			fileContent,
+			'lessonInsight',
+			chapterData.lessonInsight
+		);
 	}
 
 	if (chapterData.reflectionQuestions) {
-		fileContent = replaceArrayProp(fileContent, 'reflectionQuestions', chapterData.reflectionQuestions);
+		fileContent = replaceArrayProp(
+			fileContent,
+			'reflectionQuestions',
+			chapterData.reflectionQuestions
+		);
 	}
 
 	if (chapterData.journalEntry) {
-		fileContent = replaceObjectProp(fileContent, 'journalEntry', chapterData.journalEntry);
+		fileContent = replaceObjectProp(
+			fileContent,
+			'journalEntry',
+			chapterData.journalEntry
+		);
 	}
 
 	if (chapterData.chapterEnding) {
-		fileContent = replaceArrayProp(fileContent, 'chapterEnding', chapterData.chapterEnding);
+		fileContent = replaceArrayProp(
+			fileContent,
+			'chapterEnding',
+			chapterData.chapterEnding
+		);
 	}
 
 	if (chapterData.characterIntros) {
-		fileContent = replaceCharacterIntros(fileContent, chapterData.characterIntros);
+		fileContent = replaceCharacterIntros(
+			fileContent,
+			chapterData.characterIntros
+		);
 	}
 
 	fs.writeFileSync(filePath, fileContent, 'utf8');
@@ -186,7 +275,11 @@ function injectLessonIndex(filePath, lessonData) {
 	let fileContent = fs.readFileSync(filePath, 'utf8');
 
 	if (lessonData.opener) {
-		fileContent = replacePropContent(fileContent, 'opener', lessonData.opener);
+		fileContent = replacePropContent(
+			fileContent,
+			'opener',
+			lessonData.opener
+		);
 	}
 
 	fs.writeFileSync(filePath, fileContent, 'utf8');
@@ -203,7 +296,12 @@ function injectAllNarrative() {
 
 	for (const [learningPath, lessons] of Object.entries(narrativeData)) {
 		for (const [lesson, lessonData] of Object.entries(lessons)) {
-			const lessonDir = path.join(LEARNING_PATHS_DIR, learningPath, 'pages', lesson);
+			const lessonDir = path.join(
+				LEARNING_PATHS_DIR,
+				learningPath,
+				'pages',
+				lesson
+			);
 
 			// Inject lesson opener
 			const indexPath = path.join(lessonDir, 'index.js');
@@ -217,7 +315,11 @@ function injectAllNarrative() {
 				const chapterKey = `chapter${i}`;
 				if (!lessonData[chapterKey]) continue;
 
-				const chapterFile = path.join(lessonDir, chapterKey, `${chapterKey}.js`);
+				const chapterFile = path.join(
+					lessonDir,
+					chapterKey,
+					`${chapterKey}.js`
+				);
 				if (fs.existsSync(chapterFile)) {
 					injectChapterFile(chapterFile, lessonData[chapterKey]);
 					filesUpdated++;
@@ -240,11 +342,10 @@ try {
 	}
 
 	const filesUpdated = injectAllNarrative();
-	
+
 	console.log('✅ Injection complete!');
 	console.log(`📝 Updated ${filesUpdated} files`);
 	console.log('\n⚠️  Remember to review the changes and test the app!');
-	
 } catch (error) {
 	console.error('❌ Error during injection:', error.message);
 	console.error(error.stack);

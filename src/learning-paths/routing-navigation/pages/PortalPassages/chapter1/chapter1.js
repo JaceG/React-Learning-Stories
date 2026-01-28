@@ -486,12 +486,6 @@ function ProductList() {
 			</div>
 
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Captain Marina`,
-						description: `Expert guide through the Portal Passages chamber where the most advanced navigation concepts await - modals, overlays, and parallel routes. She teaches how to create portal-based navigation that maintains state, handles forms, and provides seamless transitions. "Portals combine every concept in our kingdom. Components provide structure, state manages portal visibility, effects handle focus management, and forms can span across portals. It all connects!"`,
-					},
-				]}
 				lessonInsight={{
 					title: "Marina's Integrated Portal Wisdom:",
 					content:

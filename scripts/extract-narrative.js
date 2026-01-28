@@ -1,9 +1,9 @@
 /**
  * Extract Narrative Content Script
- * 
+ *
  * Extracts all narrative content from React component files into a single JSON file.
  * This makes it easy to review, edit, and check continuity across all learning paths.
- * 
+ *
  * Usage: node scripts/extract-narrative.js
  * Output: scripts/narrative-master.json
  */
@@ -26,11 +26,18 @@ function extractPropContent(fileContent, propName) {
 		return templateMatch[1].trim();
 	}
 
-	// Try string format: propName="..."
+	// Try double quote format: propName="..."
 	const stringRegex = new RegExp(`${propName}="([^"]*)"`, 'm');
 	const stringMatch = fileContent.match(stringRegex);
 	if (stringMatch) {
 		return stringMatch[1].trim();
+	}
+
+	// Try single quote format: propName='...'
+	const singleQuoteRegex = new RegExp(`${propName}='([^']*)'`, 'm');
+	const singleQuoteMatch = fileContent.match(singleQuoteRegex);
+	if (singleQuoteMatch) {
+		return singleQuoteMatch[1].trim();
 	}
 
 	return null;
@@ -41,12 +48,15 @@ function extractPropContent(fileContent, propName) {
  */
 function extractObjectProp(fileContent, propName) {
 	// Match the entire prop including nested braces
-	const regex = new RegExp(`${propName}=\\{\\{([\\s\\S]*?)\\}\\}(?=\\s*[,/>])`, 'm');
+	const regex = new RegExp(
+		`${propName}=\\{\\{([\\s\\S]*?)\\}\\}(?=\\s*[,/>])`,
+		'm'
+	);
 	const match = fileContent.match(regex);
 	if (!match) return null;
 
 	const objectContent = match[1];
-	
+
 	// Extract title - handle quotes, backticks, and apostrophes
 	const titleMatch = objectContent.match(/title:\s*['"`]([^'"`]*?)['"`]/s);
 	const title = titleMatch ? titleMatch[1] : null;
@@ -54,19 +64,23 @@ function extractObjectProp(fileContent, propName) {
 	// Extract content - handle multi-line strings with proper quote matching
 	// Match content: followed by a quote/backtick, then everything until the matching closing quote
 	let content = null;
-	
+
 	// Try backticks first (most common for multi-line)
 	const backtickMatch = objectContent.match(/content:\s*`([^`]*)`/s);
 	if (backtickMatch) {
 		content = backtickMatch[1].trim();
 	} else {
 		// Try single quotes
-		const singleQuoteMatch = objectContent.match(/content:\s*'((?:[^'\\]|\\.)*)'/s);
+		const singleQuoteMatch = objectContent.match(
+			/content:\s*'((?:[^'\\]|\\.)*)'/s
+		);
 		if (singleQuoteMatch) {
 			content = singleQuoteMatch[1].trim();
 		} else {
 			// Try double quotes
-			const doubleQuoteMatch = objectContent.match(/content:\s*"((?:[^"\\]|\\.)*)"/s);
+			const doubleQuoteMatch = objectContent.match(
+				/content:\s*"((?:[^"\\]|\\.)*)"/s
+			);
 			if (doubleQuoteMatch) {
 				content = doubleQuoteMatch[1].trim();
 			}
@@ -85,15 +99,15 @@ function extractArrayProp(fileContent, propName) {
 	if (!match) return null;
 
 	const arrayContent = match[1];
-	
+
 	// Extract individual items - handle strings with apostrophes and quotes
 	const items = [];
-	
+
 	// Use a single regex that matches any quoted string (backtick, single, or double quote)
 	// This prevents overlapping matches
 	const stringRegex = /(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g;
 	let itemMatch;
-	
+
 	while ((itemMatch = stringRegex.exec(arrayContent)) !== null) {
 		// itemMatch[2] contains the string content (without quotes)
 		items.push(itemMatch[2]);
@@ -113,17 +127,17 @@ function extractStorySection(fileContent) {
 	while ((match = regex.exec(fileContent)) !== null) {
 		const arrayContent = match[1];
 		const paragraphs = [];
-		
+
 		// Extract JSX content or strings
 		// Handle both: `string` and <>JSX content</>
 		const jsxRegex = /<>([\s\S]*?)<\/>/g;
 		const stringRegex = /`([^`]*)`/g;
-		
+
 		let jsxMatch;
 		while ((jsxMatch = jsxRegex.exec(arrayContent)) !== null) {
 			paragraphs.push(jsxMatch[1].trim());
 		}
-		
+
 		let stringMatch;
 		while ((stringMatch = stringRegex.exec(arrayContent)) !== null) {
 			paragraphs.push(stringMatch[1].trim());
@@ -141,20 +155,72 @@ function extractStorySection(fileContent) {
  * Extracts character intros array
  */
 function extractCharacterIntros(fileContent) {
-	const regex = /characterIntros=\{(\[[^\]]*\])\}/s;
-	const match = fileContent.match(regex);
-	if (!match) return null;
+	// Match characterIntros={[ ... ]} more robustly
+	// We need to handle nested braces and brackets properly
+	const startMatch = fileContent.match(/characterIntros=\{\[/);
+	if (!startMatch) return null;
 
-	const arrayContent = match[1];
+	const startIndex = startMatch.index + 'characterIntros={'.length;
+	let depth = 0;
+	let endIndex = startIndex;
+
+	// Find the matching closing bracket and brace
+	for (let i = startIndex; i < fileContent.length; i++) {
+		const char = fileContent[i];
+		if (char === '[' || char === '{') {
+			depth++;
+		} else if (char === ']' || char === '}') {
+			depth--;
+			if (depth === 0 && char === ']') {
+				// Check if next non-whitespace char is }
+				let j = i + 1;
+				while (j < fileContent.length && /\s/.test(fileContent[j])) {
+					j++;
+				}
+				if (fileContent[j] === '}') {
+					endIndex = i;
+					break;
+				}
+			}
+		}
+	}
+
+	if (endIndex === startIndex) return null;
+
+	const arrayContent = fileContent.substring(startIndex, endIndex + 1);
 	const intros = [];
-	
-	// Extract each character intro object
-	const introRegex = /\{\s*name:\s*`([^`]*)`\s*,\s*description:\s*`([^`]*)`\s*\}/g;
+
+	// Extract each character intro object - handle backticks, single quotes, and double quotes
+	// Use flexible regex that handles newlines and formatting between name and description
+	const backtickRegex =
+		/\{\s*name:\s*`([^`]*)`[\s\S]*?description:\s*`([^`]*)`[\s\S]*?\}/g;
+	const singleQuoteRegex =
+		/\{\s*name:\s*'([^']*)'[\s\S]*?description:\s*'([^']*)'[\s\S]*?\}/g;
+	const doubleQuoteRegex =
+		/\{\s*name:\s*"([^"]*)"[\s\S]*?description:\s*"([^"]*)"[\s\S]*?\}/g;
+
+	// Try backticks first (most common)
 	let introMatch;
-	while ((introMatch = introRegex.exec(arrayContent)) !== null) {
+	while ((introMatch = backtickRegex.exec(arrayContent)) !== null) {
 		intros.push({
-			name: introMatch[1],
-			description: introMatch[2]
+			name: introMatch[1].trim(),
+			description: introMatch[2].trim(),
+		});
+	}
+
+	// Try single quotes
+	while ((introMatch = singleQuoteRegex.exec(arrayContent)) !== null) {
+		intros.push({
+			name: introMatch[1].trim(),
+			description: introMatch[2].trim(),
+		});
+	}
+
+	// Try double quotes
+	while ((introMatch = doubleQuoteRegex.exec(arrayContent)) !== null) {
+		intros.push({
+			name: introMatch[1].trim(),
+			description: introMatch[2].trim(),
 		});
 	}
 
@@ -166,19 +232,22 @@ function extractCharacterIntros(fileContent) {
  */
 function processChapterFile(filePath) {
 	const fileContent = fs.readFileSync(filePath, 'utf8');
-	
+
 	const narrative = {
 		bridge: extractPropContent(fileContent, 'bridge'),
 		storySections: extractStorySection(fileContent),
 		lessonInsight: extractObjectProp(fileContent, 'lessonInsight'),
-		reflectionQuestions: extractArrayProp(fileContent, 'reflectionQuestions'),
+		reflectionQuestions: extractArrayProp(
+			fileContent,
+			'reflectionQuestions'
+		),
 		journalEntry: extractObjectProp(fileContent, 'journalEntry'),
 		chapterEnding: extractArrayProp(fileContent, 'chapterEnding'),
-		characterIntros: extractCharacterIntros(fileContent)
+		characterIntros: extractCharacterIntros(fileContent),
 	};
 
 	// Remove null values
-	Object.keys(narrative).forEach(key => {
+	Object.keys(narrative).forEach((key) => {
 		if (narrative[key] === null) {
 			delete narrative[key];
 		}
@@ -192,29 +261,31 @@ function processChapterFile(filePath) {
  */
 function processLessonIndex(filePath) {
 	const fileContent = fs.readFileSync(filePath, 'utf8');
-	
+
 	// Extract opener from LessonHeader component
 	// Match the entire LessonHeader block first
 	const lessonHeaderRegex = /<LessonHeader[\s\S]*?\/>/;
 	const headerMatch = fileContent.match(lessonHeaderRegex);
-	
+
 	if (!headerMatch) {
 		return { opener: null };
 	}
-	
+
 	const headerContent = headerMatch[0];
-	
+
 	// Now extract the opener prop value, handling multi-line strings
 	// Match opener=" or opener=' or opener={` and capture until the matching closing quote
 	let opener = null;
-	
+
 	// Try double quotes
 	const doubleQuoteMatch = headerContent.match(/opener="((?:[^"\\]|\\.)*)"/s);
 	if (doubleQuoteMatch) {
 		opener = doubleQuoteMatch[1];
 	} else {
 		// Try single quotes
-		const singleQuoteMatch = headerContent.match(/opener='((?:[^'\\]|\\.)*)'/s);
+		const singleQuoteMatch = headerContent.match(
+			/opener='((?:[^'\\]|\\.)*)'/s
+		);
 		if (singleQuoteMatch) {
 			opener = singleQuoteMatch[1];
 		} else {
@@ -225,9 +296,9 @@ function processLessonIndex(filePath) {
 			}
 		}
 	}
-	
+
 	return {
-		opener: opener ? opener.trim() : null
+		opener: opener ? opener.trim() : null,
 	};
 }
 
@@ -243,8 +314,12 @@ function extractAllNarrative() {
 	// Process learning paths in the correct order
 	for (const pathConfig of storyOrder.learningPaths) {
 		const learningPathId = pathConfig.id;
-		const learningPathDir = path.join(LEARNING_PATHS_DIR, learningPathId, 'pages');
-		
+		const learningPathDir = path.join(
+			LEARNING_PATHS_DIR,
+			learningPathId,
+			'pages'
+		);
+
 		if (!fs.existsSync(learningPathDir)) continue;
 
 		narrativeData[learningPathId] = {};
@@ -273,7 +348,8 @@ function extractAllNarrative() {
 
 				if (fs.existsSync(chapterFile)) {
 					const chapterData = processChapterFile(chapterFile);
-					narrativeData[learningPathId][lessonName][`chapter${i}`] = chapterData;
+					narrativeData[learningPathId][lessonName][`chapter${i}`] =
+						chapterData;
 				}
 			}
 		}
@@ -287,30 +363,35 @@ console.log('🔍 Extracting narrative content from all learning paths...\n');
 
 try {
 	const narrativeData = extractAllNarrative();
-	
+
 	// Write to JSON file
-	fs.writeFileSync(OUTPUT_FILE, JSON.stringify(narrativeData, null, 2), 'utf8');
-	
+	fs.writeFileSync(
+		OUTPUT_FILE,
+		JSON.stringify(narrativeData, null, 2),
+		'utf8'
+	);
+
 	console.log('✅ Extraction complete!');
 	console.log(`📄 Output file: ${OUTPUT_FILE}`);
-	
+
 	// Print summary
 	const pathCount = Object.keys(narrativeData).length;
 	let lessonCount = 0;
 	let chapterCount = 0;
-	
-	Object.values(narrativeData).forEach(path => {
+
+	Object.values(narrativeData).forEach((path) => {
 		lessonCount += Object.keys(path).length;
-		Object.values(path).forEach(lesson => {
-			chapterCount += Object.keys(lesson).filter(k => k.startsWith('chapter')).length;
+		Object.values(path).forEach((lesson) => {
+			chapterCount += Object.keys(lesson).filter((k) =>
+				k.startsWith('chapter')
+			).length;
 		});
 	});
-	
+
 	console.log(`\n📊 Summary:`);
 	console.log(`   - ${pathCount} learning paths`);
 	console.log(`   - ${lessonCount} lessons`);
 	console.log(`   - ${chapterCount} chapters`);
-	
 } catch (error) {
 	console.error('❌ Error during extraction:', error.message);
 	process.exit(1);

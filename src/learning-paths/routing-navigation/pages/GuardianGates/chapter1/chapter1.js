@@ -398,12 +398,6 @@ function UltimateGuardian({
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: `Captain Marina`,
-							description: `Authority on route protection and authentication in the Guardian Gates training grounds. Her voice carries both authority and warmth as she activates complex security diagrams. "Protected routes aren't just about checking if someone's logged in - they're about integrating authentication with state management, form validation, and intelligent user flows. Guardian Gates are intelligent systems that understand context and enhance rather than hinder the user experience."`,
-						},
-					]}
 					lessonInsight={{
 						title: "Marina's Wisdom:",
 						content: `Guardian Gates aren't just security checkpoints - they're intelligent systems that understand context. They preserve user state, validate forms, track journeys, and provide graceful fallbacks. Every React pattern you learn makes these guards smarter. This way, we create protection that enhances rather than hinders the user experience. Guardian attempts tracked: ${attemptedEntries.length}`,

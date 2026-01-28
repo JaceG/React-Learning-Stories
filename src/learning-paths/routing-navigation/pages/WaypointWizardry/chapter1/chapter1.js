@@ -761,12 +761,6 @@ function IntelligentNavigation() {
 				</div>
 
 				<ChapterSummary
-					characterIntros={[
-						{
-							name: `Captain Marina`,
-							description: `Master navigator of the Central Citadel and keeper of the Waypoint Sanctum, where floating navigation orbs trace paths through the crystal dome. Her voice resonates through the chamber as she teaches the most advanced routing patterns. "Waypoints are living entities. They breathe with state, pulse with effects, communicate through context, and evolve through user interaction. By integrating every pattern you've learned, navigation becomes a symphony of all React knowledge."`,
-						},
-					]}
 					lessonInsight={{
 						title: "Marina's Wisdom:",
 						content:
