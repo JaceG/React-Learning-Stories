@@ -91,24 +91,31 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<ChapterIntro
-					chapterNumber={1}
-					title='The Guardian Gates'
-				/>
+				<ChapterIntro chapterNumber={1} title='The Guardian Gates' />
 
-				<StorySection paragraphs={[
-					<>"<strong>Aria!</strong>" Commander Validus's voice boomed across the hall. A warrior in gleaming red armor strode forward, each piece inscribed with validation runes. "Word from the Event Symphony Hall speaks of your progress with Conductor Eventus. Welcome to the Validation Fortress - I'm eager to teach you about defensive data patterns!"</>,
-					`Binary's sensors immediately began analyzing the fortress's defensive systems. "Detecting multiple validation layers, but patterns could benefit from optimization techniques. Validation logic scattered, potential for systematic improvement."`,
-					`Aria surveyed the training grounds where guardians practiced on isolated validation gates. "I can see validation happening, but I'm curious how to apply systematic patterns to coordinate these defenses more efficiently."`,
-					`"Excellent question!" Validus gestured to the assembled recruits. "These are our finest, but they struggle with complex, multi-field validation. Your Academy training in systematic thinking should help you understand these patterns quickly."`
-				]} />
+				<StorySection
+					paragraphs={[
+						<>
+							"<strong>Aria!</strong>" Commander Validus's voice
+							boomed across the hall. A warrior in gleaming red
+							armor strode forward, each piece inscribed with
+							validation runes. "Word from the Event Symphony Hall
+							speaks of your progress with Conductor Eventus.
+							Welcome to the Validation Fortress - I'm eager to
+							teach you about defensive data patterns!"
+						</>,
+						`Binary's sensors immediately began analyzing the fortress's defensive systems. "Detecting multiple validation layers, but patterns could benefit from optimization techniques. Validation logic scattered, potential for systematic improvement."`,
+						`Aria surveyed the training grounds where guardians practiced on isolated validation gates. "I can see validation happening, but I'm curious how to apply systematic patterns to coordinate these defenses more efficiently."`,
+						`"Excellent question!" Validus gestured to the assembled recruits. "These are our finest, but they struggle with complex, multi-field validation. Your Academy training in systematic thinking should help you understand these patterns quickly."`,
+					]}
+				/>
 
 				<div className='aria-applies-training'>
 					<h3>Aria Applies Systematic Thinking</h3>
 					<p className='story-paragraph'>
 						"I see the connections," Aria said, drawing on her
-						training. "Each gate is strong alone, but I imagine
-						when coordinated through a central system - like the
+						training. "Each gate is strong alone, but I imagine when
+						coordinated through a central system - like the
 						orchestration patterns I learned - they could become
 						much more effective?"
 					</p>
@@ -138,8 +145,7 @@ function ChapterOne() {
 								} ${
 									Object.entries(activeGates).some(
 										([key, value]) =>
-											key.includes(gate.name) &&
-											!value
+											key.includes(gate.name) && !value
 									)
 										? 'breached'
 										: ''
@@ -156,13 +162,13 @@ function ChapterOne() {
 									)
 										? '🟢 Secured'
 										: Object.entries(activeGates).some(
-												([key, value]) =>
-													key.includes(
-														gate.name
-													) && !value
-										  )
-										? '🔴 Breached'
-										: '⚪ Waiting'}
+													([key, value]) =>
+														key.includes(
+															gate.name
+														) && !value
+											  )
+											? '🔴 Breached'
+											: '⚪ Waiting'}
 								</div>
 							</div>
 						))}
@@ -179,7 +185,7 @@ function ChapterOne() {
 
 					<CodeExample
 						title="Aria's Guardian Validation System"
-						discoveredBy="Applied by Aria"
+						discoveredBy='Applied by Aria'
 						code={`// Aria's Guardian Validation System
 const useValidation = (rules) => {
   const [errors, setErrors] = useState({});
@@ -243,8 +249,10 @@ const validationRules = {
 					<h3 className='section-title'>
 						Interactive Exercise: Guardian Training Ground
 					</h3>
-					<InstructionBox character="Commander Validus gestures to the training gates.">
-						Help train the guardian recruits by testing different validation gates. Watch how each field activates its specific defensive measures!
+					<InstructionBox character='Commander Validus gestures to the training gates.'>
+						Help train the guardian recruits by testing different
+						validation gates. Watch how each field activates its
+						specific defensive measures!
 					</InstructionBox>
 
 					<div className='guardian-form'>
@@ -262,8 +270,8 @@ const validationRules = {
 									fieldErrors.email
 										? 'invalid'
 										: fieldValues.email
-										? 'valid'
-										: ''
+											? 'valid'
+											: ''
 								}
 								placeholder='guardian@fortress.com'
 							/>
@@ -279,8 +287,8 @@ const validationRules = {
 								{activeGates['email-Email']
 									? '✅ Secured'
 									: fieldErrors.email
-									? '❌ Breached'
-									: '🛡️ Ready'}
+										? '❌ Breached'
+										: '🛡️ Ready'}
 							</div>
 						</div>
 
@@ -301,8 +309,8 @@ const validationRules = {
 									fieldErrors.password
 										? 'invalid'
 										: fieldValues.password
-										? 'valid'
-										: ''
+											? 'valid'
+											: ''
 								}
 								placeholder='Enter secure password'
 							/>
@@ -318,8 +326,8 @@ const validationRules = {
 								{activeGates['password-Length']
 									? '✅ Secured'
 									: fieldErrors.password
-									? '❌ Breached'
-									: '🛡️ Ready'}
+										? '❌ Breached'
+										: '🛡️ Ready'}
 							</div>
 						</div>
 
@@ -335,8 +343,8 @@ const validationRules = {
 									fieldErrors.age
 										? 'invalid'
 										: fieldValues.age
-										? 'valid'
-										: ''
+											? 'valid'
+											: ''
 								}
 								placeholder='Enter your age'
 							/>
@@ -352,8 +360,8 @@ const validationRules = {
 								{activeGates['age-Number']
 									? '✅ Secured'
 									: fieldErrors.age
-									? '❌ Breached'
-									: '🛡️ Ready'}
+										? '❌ Breached'
+										: '🛡️ Ready'}
 							</div>
 						</div>
 
@@ -372,8 +380,8 @@ const validationRules = {
 									fieldErrors.username
 										? 'invalid'
 										: fieldValues.username
-										? 'valid'
-										: ''
+											? 'valid'
+											: ''
 								}
 								placeholder='Choose a username'
 							/>
@@ -389,18 +397,20 @@ const validationRules = {
 								{activeGates['username-Required']
 									? '✅ Secured'
 									: fieldErrors.username
-									? '❌ Breached'
-									: '🛡️ Ready'}
+										? '❌ Breached'
+										: '🛡️ Ready'}
 							</div>
 						</div>
 					</div>
 				</div>
 
-			<StorySection paragraphs={[
-				`Commander Validus watched as his recruits began understanding the coordinated defense patterns. "Remarkable! You've shown them how to unify individual gates into a cohesive defensive system!"`,
-				`"It's the same principle I used in form alchemy," Aria explained. "Individual validations are like solo defenders. But when orchestrated through a central hook, they become an elite guard unit."`,
-				`Binary displayed tactical analysis: "Defense coordination improved by 82%. Validation response time decreased by 67%. Error detection accuracy: 99.7%!"`
-			]} />
+				<StorySection
+					paragraphs={[
+						`Commander Validus watched as his recruits began understanding the coordinated defense patterns. "Remarkable! You've shown them how to unify individual gates into a cohesive defensive system!"`,
+						`"It's the same principle I used in form alchemy," Aria explained. "Individual validations are like solo defenders. But when orchestrated through a central hook, they become an elite guard unit."`,
+						`Binary displayed tactical analysis: "Defense coordination improved by 82%. Validation response time decreased by 67%. Error detection accuracy: 99.7%!"`,
+					]}
+				/>
 
 				<div className='advanced-defense-patterns'>
 					<h3>Guardian Defense Patterns</h3>
@@ -442,6 +452,12 @@ const uniqueUsername = async (value) => {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Commander Validus`,
+							description: `Guardian commander of the Validation Fortress training grounds, warrior in gleaming red armor with each piece inscribed with validation runes. His voice booms with authority as he teaches defensive data patterns. "These are our finest guardians, but they struggle with complex, multi-field validation. Validation gates are your fortress's first line of defense - validate early, validate often, and coordinate your defenses."`,
+						},
+					]}
 					lessonInsight={{
 						title: "The Guardian's First Law:",
 						content:

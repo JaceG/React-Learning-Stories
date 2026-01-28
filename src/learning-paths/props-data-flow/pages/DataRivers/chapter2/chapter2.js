@@ -37,19 +37,26 @@ function ChapterTwo() {
 			<div className='chapter'>
 				<ChapterIntro
 					chapterNumber={2}
-					title="Dams and Bridges"
-					bridge="Flux led Aria upstream to where the data rivers converged at a massive dam complex. The sound of controlled waterfalls filled the air as data streams were carefully managed through an intricate system of gates and channels."
+					title='Dams and Bridges'
+					bridge='Flux led Aria upstream to where the data rivers converged at a massive dam complex. The sound of controlled waterfalls filled the air as data streams were carefully managed through an intricate system of gates and channels.'
 				/>
 
-			<StorySection
-				paragraphs={[
-					<>"Ah, visitors!" A stocky figure emerged from the control house, water droplets glistening in his thick beard. "I'm <strong>Dam Master Gatekeeper</strong>, controller of the flows. River Master Flux, bringing another student?"</>,
-					`"Indeed, Gatekeeper. Aria needs to understand flow control," Flux replied.`,
-					`Gatekeeper's eyes twinkled. "Perfect timing! You see, young Aria, while we cannot reverse the river's flow, we absolutely can control it." He gestured to the complex gate system. "These dams represent conditional rendering - deciding which data streams reach which components."`,
-					`Binary scanned the controls. "So you filter data as it flows?"`,
-					`"Filter, transform, redirect!" Gatekeeper boomed. "Sometimes sensitive data must be filtered out before flowing to public components. Other times, we transform raw data into exactly what downstream components need. Watch this!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						<>
+							"Ah, visitors!" A stocky figure emerged from the
+							control house, water droplets glistening in his
+							thick beard. "I'm{' '}
+							<strong>Dam Master Gatekeeper</strong>, controller
+							of the flows. River Master Flux, bringing another
+							student?"
+						</>,
+						`"Indeed, Gatekeeper. Aria needs to understand flow control," Flux replied.`,
+						`Gatekeeper's eyes twinkled. "Perfect timing! You see, young Aria, while we cannot reverse the river's flow, we absolutely can control it." He gestured to the complex gate system. "These dams represent conditional rendering - deciding which data streams reach which components."`,
+						`Binary scanned the controls. "So you filter data as it flows?"`,
+						`"Filter, transform, redirect!" Gatekeeper boomed. "Sometimes sensitive data must be filtered out before flowing to public components. Other times, we transform raw data into exactly what downstream components need. Watch this!"`,
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Dam Control System</h3>
@@ -137,18 +144,18 @@ function ChapterTwo() {
 					</div>
 				</div>
 
-			<StorySection
-				paragraphs={[
-					`After experimenting with the gates, Gatekeeper led them to an observation deck overlooking a network of bridges spanning the various river branches. "Now for the second lesson - data distribution!"`,
-					`"See those bridges?" Flux pointed to the elegant structures. "They represent components that share data with multiple children. The data still flows downward, but bridges allow it to reach different branches of your component tree."`,
-					`Aria studied the flow patterns. "So if multiple components need the same data..."`,
-					`"You lift the source up!" Gatekeeper finished. "Place your data high enough that it can flow naturally to all components that need it. Like building a water tower on a hill to serve the entire village below."`,
-					`"This prevents prop drilling," Flux added, "and ensures efficient data distribution. Remember - data should live at the lowest common ancestor of all components that use it."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`After experimenting with the gates, Gatekeeper led them to an observation deck overlooking a network of bridges spanning the various river branches. "Now for the second lesson - data distribution!"`,
+						`"See those bridges?" Flux pointed to the elegant structures. "They represent components that share data with multiple children. The data still flows downward, but bridges allow it to reach different branches of your component tree."`,
+						`Aria studied the flow patterns. "So if multiple components need the same data..."`,
+						`"You lift the source up!" Gatekeeper finished. "Place your data high enough that it can flow naturally to all components that need it. Like building a water tower on a hill to serve the entire village below."`,
+						`"This prevents prop drilling," Flux added, "and ensures efficient data distribution. Remember - data should live at the lowest common ancestor of all components that use it."`,
+					]}
+				/>
 
 				<CodeExample
-					title="Controlling Data Flow with Conditional Rendering"
+					title='Controlling Data Flow with Conditional Rendering'
 					code={`// Controlling data flow with conditional rendering
 function DataDam({ userData, settings, permissions, userRole }) {
   // Gate 1: Filter user data based on permissions
@@ -242,18 +249,26 @@ function DataTransformer({ rawData }) {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Dam Master Gatekeeper`,
+							description: `Controller of the data flows at the massive dam complex upstream, where data streams are carefully managed through an intricate system of gates and channels. His thick beard glistens with water droplets as he teaches flow control. "These dams represent conditional rendering - deciding which data streams reach which components. Filter, transform, redirect!"`,
+						},
+					]}
 					lessonInsight={{
 						title: "Gatekeeper's Flow Control Wisdom:",
-						content: "Master data flow through three techniques: conditional rendering (gates that control which components receive data), prop transformation (processing data into the exact shape children need), and strategic placement (positioning data sources high enough to serve all consumers). Like a well-designed dam system, your components should filter sensitive data, transform raw information into useful formats, and distribute efficiently without prop drilling. Remember: the best data flow is both secure and maintainable."
+						content:
+							'Master data flow through three techniques: conditional rendering (gates that control which components receive data), prop transformation (processing data into the exact shape children need), and strategic placement (positioning data sources high enough to serve all consumers). Like a well-designed dam system, your components should filter sensitive data, transform raw information into useful formats, and distribute efficiently without prop drilling. Remember: the best data flow is both secure and maintainable.',
 					}}
 					reflectionQuestions={[
-						"How do dams and bridges help you visualize data flow control?",
-						"When might filtering data early (upstream) be better than filtering late?",
-						"What signs indicate that your data source needs to be \"lifted\" higher?"
+						'How do dams and bridges help you visualize data flow control?',
+						'When might filtering data early (upstream) be better than filtering late?',
+						'What signs indicate that your data source needs to be "lifted" higher?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 13 (Afternoon)",
-						content: "The dam complex taught me crucial flow control! Gatekeeper showed how conditional rendering acts like dam gates - controlling which data reaches which components. We can filter sensitive information, transform raw data into useful formats, and use bridges (shared parents) to distribute data efficiently. The key insight: place data sources at the lowest common ancestor of components that need them. This prevents prop drilling while maintaining the sacred one-way flow. Data management is as much about what you don't pass as what you do!"
+						content:
+							"The dam complex taught me crucial flow control! Gatekeeper showed how conditional rendering acts like dam gates - controlling which data reaches which components. We can filter sensitive information, transform raw data into useful formats, and use bridges (shared parents) to distribute data efficiently. The key insight: place data sources at the lowest common ancestor of components that need them. This prevents prop drilling while maintaining the sacred one-way flow. Data management is as much about what you don't pass as what you do!",
 					}}
 				/>
 			</div>

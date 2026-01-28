@@ -32,146 +32,159 @@ function ChapterOne() {
 					title="The Alchemist's Laboratory"
 				/>
 
-	<StorySection paragraphs={[
-		<><strong>Welcome, young scholar!</strong>{" A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron. "} <strong>Master Alchemist Formeus</strong>{" at your service. I've heard of your accomplishments at the Academy - quite impressive for someone so young! I'm excited to teach you how your hook knowledge applies to the practical art of form handling."}</>,
-		`Binary's sensors immediately began analyzing the various reactions occurring throughout the lab, projecting chemical formulas and React patterns in the air. "Detecting new applications! Form interactions combined with hook patterns!"`,
-		`Aria looked around in wonder. "I understand useState and useRef from the Academy, but I'm curious how they apply to capturing user input in forms."`,
-		<>{"Excellent question! Formeus gestured enthusiastically to three glowing cauldrons. Form Alchemy is about applying the hooks you've mastered to real user interactions. The patterns you learned from Pattern Weaver Synthesis are the foundation, but now we must learn how to capture and transform user intent into application state. Let me show you the fundamental choice: "}<strong>controlled</strong>{" versus "}<strong>uncontrolled</strong>{" components."}</>,
-		`Formeus approached the cauldrons, each bubbling with different intensities. "These represent the three approaches to form alchemy. Watch closely as I demonstrate how your hook knowledge applies to user input..."`
-	]} />
+				<StorySection
+					paragraphs={[
+						<>
+							<strong>Welcome, young scholar!</strong>
+							{
+								' A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron. '
+							}{' '}
+							<strong>Master Alchemist Formeus</strong>
+							{
+								" at your service. I've heard of your accomplishments at the Academy - quite impressive for someone so young! I'm excited to teach you how your hook knowledge applies to the practical art of form handling."
+							}
+						</>,
+						`Binary's sensors immediately began analyzing the various reactions occurring throughout the lab, projecting chemical formulas and React patterns in the air. "Detecting new applications! Form interactions combined with hook patterns!"`,
+						`Aria looked around in wonder. "I understand useState and useRef from the Academy, but I'm curious how they apply to capturing user input in forms."`,
+						<>
+							{
+								"Excellent question! Formeus gestured enthusiastically to three glowing cauldrons. Form Alchemy is about applying the hooks you've mastered to real user interactions. The patterns you learned from Pattern Weaver Synthesis are the foundation, but now we must learn how to capture and transform user intent into application state. Let me show you the fundamental choice: "
+							}
+							<strong>controlled</strong>
+							{' versus '}
+							<strong>uncontrolled</strong>
+							{' components.'}
+						</>,
+						`Formeus approached the cauldrons, each bubbling with different intensities. "These represent the three approaches to form alchemy. Watch closely as I demonstrate how your hook knowledge applies to user input..."`,
+					]}
+				/>
 
-					<div className='alchemy-lab'>
-						<h3>The Three Cauldrons of Form Control</h3>
-						<div className='potion-shelf'>
-							{potions.map((potion) => (
-								<div
-									key={potion.name}
-									className={`potion-bottle ${
+				<div className='alchemy-lab'>
+					<h3>The Three Cauldrons of Form Control</h3>
+					<div className='potion-shelf'>
+						{potions.map((potion) => (
+							<div
+								key={potion.name}
+								className={`potion-bottle ${
+									selectedPotion === potion.name
+										? 'active'
+										: ''
+								}`}
+								onClick={() => handlePotionSelect(potion.name)}
+								style={{
+									borderColor:
 										selectedPotion === potion.name
-											? 'active'
-											: ''
-									}`}
-									onClick={() =>
-										handlePotionSelect(potion.name)
-									}
-									style={{
-										borderColor:
-											selectedPotion === potion.name
-												? potion.color
-												: undefined,
-									}}>
-									<div className='potion-icon'>
-										{potion.icon}
-									</div>
-									<h4>{potion.name} Potion</h4>
-									<p>Click to select</p>
-								</div>
-							))}
-						</div>
-
-						<div className='cauldron'>
-							<div className='cauldron-contents'>
-								{cauldronContents ||
-									'Select a potion to begin...'}
+											? potion.color
+											: undefined,
+								}}>
+								<div className='potion-icon'>{potion.icon}</div>
+								<h4>{potion.name} Potion</h4>
+								<p>Click to select</p>
 							</div>
+						))}
+					</div>
+
+					<div className='cauldron'>
+						<div className='cauldron-contents'>
+							{cauldronContents || 'Select a potion to begin...'}
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div className='aria-learning'>
-					<h3>Aria Connects Her Knowledge</h3>
-					<p className='story-paragraph'>
-						"Controlled components..." Aria said thoughtfully,
-						connecting the dots. "They use
-						<strong>useState</strong> to manage every change! Like
-						the state patterns I learned from Professor Hooksworth
-						at the Academy."
+			<div className='aria-learning'>
+				<h3>Aria Connects Her Knowledge</h3>
+				<p className='story-paragraph'>
+					"Controlled components..." Aria said thoughtfully,
+					connecting the dots. "They use
+					<strong>useState</strong> to manage every change! Like the
+					state patterns I learned from Professor Hooksworth at the
+					Academy."
+				</p>
+
+				<p className='story-paragraph'>
+					"Excellent connection!" Formeus beamed. "You're applying
+					your hook training perfectly. And what about uncontrolled
+					components?"
+				</p>
+
+				<p className='story-paragraph'>
+					"They must use <strong>useRef</strong> - accessing the DOM
+					directly when needed. I remember the Effect Sage teaching
+					about persistent references that don't trigger re-renders!"
+					Aria's eyes lit up with understanding.
+				</p>
+
+				<p className='story-paragraph'>
+					Binary chimed in excitedly: "Pattern analysis complete!
+					Controlled = React state ownership. Uncontrolled = DOM state
+					ownership. Aria is making excellent hook connections!"
+				</p>
+			</div>
+
+			<div className='interactive-section'>
+				<h3 className='section-title'>
+					Interactive Exercise: Learning Form Control Patterns
+				</h3>
+				<InstructionBox character='Master Formeus hands you two glowing vials.'>
+					Help Aria understand how her hook knowledge applies to form
+					control by trying both approaches!
+				</InstructionBox>
+
+				<div className='controlled-demo'>
+					<h4>🧪 Controlled Transmutation</h4>
+					<p>
+						React maintains constant awareness of the input's value:
 					</p>
-
-					<p className='story-paragraph'>
-						"Excellent connection!" Formeus beamed. "You're applying
-						your hook training perfectly. And what about
-						uncontrolled components?"
-					</p>
-
-					<p className='story-paragraph'>
-						"They must use <strong>useRef</strong> - accessing the
-						DOM directly when needed. I remember the Effect Sage
-						teaching about persistent references that don't trigger
-						re-renders!" Aria's eyes lit up with understanding.
-					</p>
-
-					<p className='story-paragraph'>
-						Binary chimed in excitedly: "Pattern analysis complete!
-						Controlled = React state ownership. Uncontrolled = DOM
-						state ownership. Aria is making excellent hook
-						connections!"
-					</p>
-				</div>
-
-				<div className='interactive-section'>
-					<h3 className='section-title'>
-						Interactive Exercise: Learning Form Control Patterns
-					</h3>
-					<InstructionBox character="Master Formeus hands you two glowing vials.">
-						Help Aria understand how her hook knowledge applies to form control by trying both approaches!
-					</InstructionBox>
-
-					<div className='controlled-demo'>
-						<h4>🧪 Controlled Transmutation</h4>
-						<p>
-							React maintains constant awareness of the input's
-							value:
-						</p>
-						<input
-							type='text'
-							value={controlledValue}
-							onChange={(e) => {
-								setControlledValue(e.target.value);
-								setCauldronContents(
-									`Controlled: "${e.target.value}"`
-								);
-							}}
-							placeholder='Type here (controlled)'
-							className='alchemy-input'
-						/>
-						<div className='state-display'>
-							State value: "{controlledValue}"
-						</div>
-					</div>
-
-					<div className='uncontrolled-demo'>
-						<h4>⚗️ Uncontrolled Transmutation</h4>
-						<p>The DOM maintains the value until we need it:</p>
-						<input
-							type='text'
-							ref={uncontrolledRef}
-							onChange={(e) => {
-								setCauldronContents(
-									`Uncontrolled: "${e.target.value}"`
-								);
-							}}
-							placeholder='Type here (uncontrolled)'
-							className='alchemy-input'
-						/>
-						<button
-							onClick={() => {
-								if (uncontrolledRef?.current) {
-									alert(
-										`Uncontrolled value: ${uncontrolledRef.current.value}`
-									);
-								}
-							}}
-							className='extract-button'>
-							Extract Value
-						</button>
+					<input
+						type='text'
+						value={controlledValue}
+						onChange={(e) => {
+							setControlledValue(e.target.value);
+							setCauldronContents(
+								`Controlled: "${e.target.value}"`
+							);
+						}}
+						placeholder='Type here (controlled)'
+						className='alchemy-input'
+					/>
+					<div className='state-display'>
+						State value: "{controlledValue}"
 					</div>
 				</div>
 
-				<CodeExample
-					title="Aria Applies Her Hook Knowledge"
-					discoveredBy="Transcribed by Aria"
-					code={`// Aria applies her Academy training to form alchemy
+				<div className='uncontrolled-demo'>
+					<h4>⚗️ Uncontrolled Transmutation</h4>
+					<p>The DOM maintains the value until we need it:</p>
+					<input
+						type='text'
+						ref={uncontrolledRef}
+						onChange={(e) => {
+							setCauldronContents(
+								`Uncontrolled: "${e.target.value}"`
+							);
+						}}
+						placeholder='Type here (uncontrolled)'
+						className='alchemy-input'
+					/>
+					<button
+						onClick={() => {
+							if (uncontrolledRef?.current) {
+								alert(
+									`Uncontrolled value: ${uncontrolledRef.current.value}`
+								);
+							}
+						}}
+						className='extract-button'>
+						Extract Value
+					</button>
+				</div>
+			</div>
+
+			<CodeExample
+				title='Aria Applies Her Hook Knowledge'
+				discoveredBy='Transcribed by Aria'
+				code={`// Aria applies her Academy training to form alchemy
 function useControlledInput(initialValue = '') {
   const [value, setValue] = useState(initialValue);
   const [touched, setTouched] = useState(false);
@@ -205,67 +218,70 @@ function AlchemicalForm() {
     </form>
   );
 }`}
-				/>
+			/>
 
-			<StorySection paragraphs={[
-				`Formeus watched with satisfaction as Aria connected the concepts. "Excellent! You're grasping how Academy training applies to form handling. Your hook foundation makes these concepts much clearer."`,
-				`"It's amazing how it all connects," Aria replied thoughtfully. "The patterns I learned from Pattern Weaver Synthesis really do apply here. Custom hooks can encapsulate form logic just like any other stateful behavior."`
-			]} />
+			<StorySection
+				paragraphs={[
+					`Formeus watched with satisfaction as Aria connected the concepts. "Excellent! You're grasping how Academy training applies to form handling. Your hook foundation makes these concepts much clearer."`,
+					`"It's amazing how it all connects," Aria replied thoughtfully. "The patterns I learned from Pattern Weaver Synthesis really do apply here. Custom hooks can encapsulate form logic just like any other stateful behavior."`,
+				]}
+			/>
 
-				<div className='practical-application'>
-					<h3>The Alchemist's Decision Matrix</h3>
-					<div className='decision-grid'>
-						<div className='decision-card controlled'>
-							<h4>🧪 Use Controlled Components When:</h4>
-							<ul>
-								<li>You need instant validation feedback</li>
-								<li>
-									You want to enforce input formats as user
-									types
-								</li>
-								<li>
-									Multiple components need to share the form
-									state
-								</li>
-								<li>
-									You need to disable submit based on input
-								</li>
-								<li>You're building complex form logic</li>
-							</ul>
-						</div>
-						<div className='decision-card uncontrolled'>
-							<h4>⚗️ Use Uncontrolled Components When:</h4>
-							<ul>
-								<li>
-									Working with file inputs (always
-									uncontrolled)
-								</li>
-								<li>Integrating with non-React libraries</li>
-								<li>You only need the value on submit</li>
-								<li>Performance is critical for large forms</li>
-								<li>Building quick prototypes</li>
-							</ul>
-						</div>
+			<div className='practical-application'>
+				<h3>The Alchemist's Decision Matrix</h3>
+				<div className='decision-grid'>
+					<div className='decision-card controlled'>
+						<h4>🧪 Use Controlled Components When:</h4>
+						<ul>
+							<li>You need instant validation feedback</li>
+							<li>
+								You want to enforce input formats as user types
+							</li>
+							<li>
+								Multiple components need to share the form state
+							</li>
+							<li>You need to disable submit based on input</li>
+							<li>You're building complex form logic</li>
+						</ul>
+					</div>
+					<div className='decision-card uncontrolled'>
+						<h4>⚗️ Use Uncontrolled Components When:</h4>
+						<ul>
+							<li>
+								Working with file inputs (always uncontrolled)
+							</li>
+							<li>Integrating with non-React libraries</li>
+							<li>You only need the value on submit</li>
+							<li>Performance is critical for large forms</li>
+							<li>Building quick prototypes</li>
+						</ul>
 					</div>
 				</div>
+			</div>
 
-				<ChapterSummary
-					lessonInsight={{
-						title: "The Master Alchemist's Wisdom:",
-						content:
-							"Form control applies your hook mastery to user interaction. Controlled components maintain React as the single source of truth using useState patterns you've learned, enabling instant validation, format enforcement, and state sharing. Uncontrolled components delegate to the DOM using useRef for persistent references. Most modern React applications favor controlled components for their predictability and power. Remember: with great control comes great capability - choose wisely based on your transmutation needs.",
-					}}
-					reflectionQuestions={[
-						"How does Aria's hook mastery from the Academy enhance her understanding of form controls?",
-						'Why might constant monitoring (controlled) be more powerful than passive observation (uncontrolled)?',
-						'What patterns from your own forms could benefit from custom hook extraction?',
-					]}
-					journalEntry={{
-						title: "Aria's Journal - Day 20 (Morning)",
-						content:
-							'The Western Quarter is fascinating! Master Formeus showed me how form handling is really just specialized hook application. Controlled components use useState to maintain a single source of truth - every keystroke updates React state. Uncontrolled components let the DOM handle the state, using useRef when we need values. I immediately saw how to apply my Academy training - created useControlledInput that encapsulates common form logic using the patterns Pattern Weaver taught me. Formeus was impressed, but this is just the beginning. Binary is cataloging all the transmutation patterns for optimization.',
-					}}
-				/>
+			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Alchemist Formeus`,
+						description: `Master of form handling in the Western Quarter's laboratory filled with bubbling cauldrons and glowing vials. His stained laboratory coat bears the marks of countless experiments as he teaches how hook knowledge applies to capturing user input. "Form Alchemy is about applying the hooks you've mastered to real user interactions. Controlled components use useState to maintain a single source of truth - React maintains constant awareness of the input's value."`,
+					},
+				]}
+				lessonInsight={{
+					title: "The Master Alchemist's Wisdom:",
+					content:
+						"Form control applies your hook mastery to user interaction. Controlled components maintain React as the single source of truth using useState patterns you've learned, enabling instant validation, format enforcement, and state sharing. Uncontrolled components delegate to the DOM using useRef for persistent references. Most modern React applications favor controlled components for their predictability and power. Remember: with great control comes great capability - choose wisely based on your transmutation needs.",
+				}}
+				reflectionQuestions={[
+					"How does Aria's hook mastery from the Academy enhance her understanding of form controls?",
+					'Why might constant monitoring (controlled) be more powerful than passive observation (uncontrolled)?',
+					'What patterns from your own forms could benefit from custom hook extraction?',
+				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 20 (Morning)",
+					content:
+						'The Western Quarter is fascinating! Master Formeus showed me how form handling is really just specialized hook application. Controlled components use useState to maintain a single source of truth - every keystroke updates React state. Uncontrolled components let the DOM handle the state, using useRef when we need values. I immediately saw how to apply my Academy training - created useControlledInput that encapsulates common form logic using the patterns Pattern Weaver taught me. Formeus was impressed, but this is just the beginning. Binary is cataloging all the transmutation patterns for optimization.',
+				}}
+			/>
 		</>
 	);
 

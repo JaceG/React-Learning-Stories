@@ -63,24 +63,34 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={2}
-			title='Embedding Magic Spells'
-			bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
-		/>
+			<ChapterIntro
+				chapterNumber={2}
+				title='Embedding Magic Spells'
+				bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
+			/>
 
-		<StorySection
-			paragraphs={[
-				<>"The real magic of JSX," Professor Syntaxis explained, "comes from its ability to embed JavaScript expressions directly within the markup. Watch as I demonstrate the{' '}<strong>Curly Brace Incantation</strong>!"</>,
-				`The professor waved his wand, and curly braces began to glow around various parts of a component spell. "These braces act as portals between the markup realm and the JavaScript realm. Anything inside them is evaluated as pure JavaScript!"`,
-				<>Aria watched in fascination as a small sprite named <strong>Binary</strong> appeared. "I help evaluate expressions!" Binary chirped. "When I see curly braces, I know it's time to run JavaScript calculations!"</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						"The real magic of JSX," Professor Syntaxis explained,
+						"comes from its ability to embed JavaScript expressions
+						directly within the markup. Watch as I demonstrate the{' '}
+						<strong>Curly Brace Incantation</strong>!"
+					</>,
+					`The professor waved his wand, and curly braces began to glow around various parts of a component spell. "These braces act as portals between the markup realm and the JavaScript realm. Anything inside them is evaluated as pure JavaScript!"`,
+					<>
+						Aria watched in fascination as a small sprite named{' '}
+						<strong>Binary</strong> appeared. "I help evaluate
+						expressions!" Binary chirped. "When I see curly braces,
+						I know it's time to run JavaScript calculations!"
+					</>,
+				]}
+			/>
 
-		<CodeExample
-					title="Expression Magic Demonstration"
-					discoveredBy="Binary's favorite example"
-					code={`// Aria practices embedding expressions
+			<CodeExample
+				title='Expression Magic Demonstration'
+				discoveredBy="Binary's favorite example"
+				code={`// Aria practices embedding expressions
 function Greeter(props) {
 const currentTime = new Date().getHours();
 let greeting;
@@ -106,18 +116,18 @@ return (
 }`}
 			/>
 
-		<StorySection
-			paragraphs={[
-				`"By the scrolls!" Aria gasped. "We can put any JavaScript expression inside those curly braces - variables, function calls, even conditional logic!"`,
-				`"Indeed," Syntaxis nodded. "This fusion of markup and logic is what makes React components so powerful. Now, let Binary guide you through the Expression Playground..."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"By the scrolls!" Aria gasped. "We can put any JavaScript expression inside those curly braces - variables, function calls, even conditional logic!"`,
+					`"Indeed," Syntaxis nodded. "This fusion of markup and logic is what makes React components so powerful. Now, let Binary guide you through the Expression Playground..."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Binary's Expression Playground
 				</h3>
-				<InstructionBox character="Binary invites you to explore the Expression Playground.">
+				<InstructionBox character='Binary invites you to explore the Expression Playground.'>
 					Select different expression types from the dropdown to see
 					how JavaScript expressions work inside JSX curly braces.
 				</InstructionBox>
@@ -842,6 +852,12 @@ function getCurrentGreeting() {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Binary`,
+						description: `A helpful sprite who evaluates expressions and assists with JSX magic. Binary's lights flicker with excitement when processing JavaScript calculations, guiding learners through the portal between markup and logic. "I help evaluate expressions! When I see curly braces, I know it's time to run JavaScript calculations!"`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The Expression Lesson:',
 					content:

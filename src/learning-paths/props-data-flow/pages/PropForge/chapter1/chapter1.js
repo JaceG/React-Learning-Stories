@@ -50,20 +50,27 @@ function ChapterOne() {
 			<div className='chapter'>
 				<ChapterIntro
 					chapterNumber={1}
-					title="The Art of Destructuring"
+					title='The Art of Destructuring'
 				/>
 
-			<StorySection
-				paragraphs={[
-					`The heat hit Aria like a wall as she entered the Prop Forge. Molten data flowed in channels carved into the floor, and the air shimmered with the energy of transformation. At the center of it all stood a figure wielding a glowing hammer.`,
-					<>"Welcome to my domain!" The smith turned, revealing a face weathered by years at the forge. His beard was singed at the edges, and his eyes sparkled with the reflection of data flames. "I am <strong>Master Smith Destructo</strong>, and you must be Aria!"</>,
-					`"How did you know?" Aria asked, wiping sweat from her brow.`,
-					`"River Master Flux sent word of your coming. Plus," he grinned, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"`,
-					`Binary beamed proudly, literally, projecting a small light show.`,
-					`"Now then," Destructo continued, gesturing to his workshop, "you've learned to transport props and control their flow. But here, we master their transformation! The ancient art of destructuring allows us to break props apart and extract exactly what we need."`,
-					`He held up a glowing object. "Behold - a prop object containing multiple values. Watch as I extract its essence with a single incantation!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`The heat hit Aria like a wall as she entered the Prop Forge. Molten data flowed in channels carved into the floor, and the air shimmered with the energy of transformation. At the center of it all stood a figure wielding a glowing hammer.`,
+						<>
+							"Welcome to my domain!" The smith turned, revealing
+							a face weathered by years at the forge. His beard
+							was singed at the edges, and his eyes sparkled with
+							the reflection of data flames. "I am{' '}
+							<strong>Master Smith Destructo</strong>, and you
+							must be Aria!"
+						</>,
+						`"How did you know?" Aria asked, wiping sweat from her brow.`,
+						`"River Master Flux sent word of your coming. Plus," he grinned, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"`,
+						`Binary beamed proudly, literally, projecting a small light show.`,
+						`"Now then," Destructo continued, gesturing to his workshop, "you've learned to transport props and control their flow. But here, we master their transformation! The ancient art of destructuring allows us to break props apart and extract exactly what we need."`,
+						`He held up a glowing object. "Behold - a prop object containing multiple values. Watch as I extract its essence with a single incantation!"`,
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>The Forging Chamber</h3>
@@ -140,17 +147,17 @@ function ChapterOne() {
 					</div>
 				</div>
 
-			<StorySection
-				paragraphs={[
-					`After the forging demonstration, Destructo's expression grew serious. "Forging is only half the craft. The true mastery lies in destructuring - breaking props apart efficiently."`,
-					`He showed Aria two identical prop objects. "Watch the difference between a novice and a master." With one, he tediously accessed each property: props.title, props.damage, props.element. With the other, he performed a single elegant gesture, and the properties separated cleanly into individual variables.`,
-					`"Destructuring!" Aria exclaimed. "You're extracting multiple values at once!"`,
-					`"Exactly! And it gets better," Destructo winked. "We can even provide default values for properties that might be missing. It's like having a backup plan built into your extraction process."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`After the forging demonstration, Destructo's expression grew serious. "Forging is only half the craft. The true mastery lies in destructuring - breaking props apart efficiently."`,
+						`He showed Aria two identical prop objects. "Watch the difference between a novice and a master." With one, he tediously accessed each property: props.title, props.damage, props.element. With the other, he performed a single elegant gesture, and the properties separated cleanly into individual variables.`,
+						`"Destructuring!" Aria exclaimed. "You're extracting multiple values at once!"`,
+						`"Exactly! And it gets better," Destructo winked. "We can even provide default values for properties that might be missing. It's like having a backup plan built into your extraction process."`,
+					]}
+				/>
 
 				<CodeExample
-					title="The Art of Destructuring Props"
+					title='The Art of Destructuring Props'
 					code={`// The old way - accessing props repeatedly
 function WeaponCard(props) {
   return (
@@ -222,18 +229,26 @@ console.log(element);   // "fire"`}</pre>
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Master Smith Destructo`,
+							description: `The master smith of the Prop Forge where molten data flows in channels carved into the floor. His beard is singed at the edges and his eyes sparkle with the reflection of data flames as he wields his glowing hammer. "The ancient art of destructuring allows us to break props apart and extract exactly what we need. Destructuring extracts properties from props objects with surgical precision!"`,
+						},
+					]}
 					lessonInsight={{
 						title: "Master Destructo's Forging Wisdom:",
-						content: "Destructuring extracts properties from props objects with surgical precision, transforming verbose prop access into clean, readable code. Master this art by destructuring in function parameters, providing default values for optional props, and extracting only what you need. This technique not only reduces repetition but also documents your component's expectations clearly. Remember: a component that destructures its props is a component that knows exactly what it needs."
+						content:
+							"Destructuring extracts properties from props objects with surgical precision, transforming verbose prop access into clean, readable code. Master this art by destructuring in function parameters, providing default values for optional props, and extracting only what you need. This technique not only reduces repetition but also documents your component's expectations clearly. Remember: a component that destructures its props is a component that knows exactly what it needs.",
 					}}
 					reflectionQuestions={[
-						"How does the forging metaphor help you understand prop transformation?",
-						"Why might destructuring with defaults be like having a \"backup plan\"?",
-						"What advantages does parameter destructuring provide over accessing props directly?"
+						'How does the forging metaphor help you understand prop transformation?',
+						'Why might destructuring with defaults be like having a "backup plan"?',
+						'What advantages does parameter destructuring provide over accessing props directly?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 14 (Morning)",
-						content: "The Prop Forge is incredible! Master Destructo showed me how destructuring transforms clumsy prop access into elegant extraction. Instead of writing props.this and props.that everywhere, we can extract all needed properties in one line! Even better - we can provide default values, so our components never break from missing props. It's like having a safety net built into the code. Destructuring in function parameters is especially powerful - it immediately shows which props a component expects. This isn't just about writing less code; it's about writing clearer, more intentional code!"
+						content:
+							"The Prop Forge is incredible! Master Destructo showed me how destructuring transforms clumsy prop access into elegant extraction. Instead of writing props.this and props.that everywhere, we can extract all needed properties in one line! Even better - we can provide default values, so our components never break from missing props. It's like having a safety net built into the code. Destructuring in function parameters is especially powerful - it immediately shows which props a component expects. This isn't just about writing less code; it's about writing clearer, more intentional code!",
 					}}
 				/>
 			</div>

@@ -53,136 +53,133 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<ChapterIntro
-					chapterNumber={1}
-					title='The Guardian Training'
+				<ChapterIntro chapterNumber={1} title='The Guardian Training' />
+
+				<StorySection
+					paragraphs={[
+						`"Welcome to Guardian Gates training," Marina announced, her voice carrying authority and warmth. "Today, I'll teach you how to protect routes using authentication and authorization."`,
+						`Marina activated a complex security diagram. "Protected routes aren't just about checking if someone's logged in," she explained. "They're about integrating authentication with state management, form validation, and intelligent user flows."`,
+						`Aria studied the patterns with fascination. "I can see connections to everything I've learned! Authentication is like state management, route protection uses validation patterns, and user flows connect to the form handling I studied in the Western Quarter."`,
+						`"Excellent observations!" Marina praised. "Your journey through the React Kingdom gives you the perfect foundation for understanding route security. You've learned components, state, hooks, and forms - now you'll see how they all work together in navigation protection."`,
+						`"And now," Marina continued, "you'll learn how to apply all that knowledge here. Watch as I demonstrate the Guardian Gates system and how it integrates with React patterns."`,
+					]}
 				/>
 
-			<StorySection
-				paragraphs={[
-					`"Welcome to Guardian Gates training," Marina announced, her voice carrying authority and warmth. "Today, I'll teach you how to protect routes using authentication and authorization."`,
-					`Marina activated a complex security diagram. "Protected routes aren't just about checking if someone's logged in," she explained. "They're about integrating authentication with state management, form validation, and intelligent user flows."`,
-					`Aria studied the patterns with fascination. "I can see connections to everything I've learned! Authentication is like state management, route protection uses validation patterns, and user flows connect to the form handling I studied in the Western Quarter."`,
-					`"Excellent observations!" Marina praised. "Your journey through the React Kingdom gives you the perfect foundation for understanding route security. You've learned components, state, hooks, and forms - now you'll see how they all work together in navigation protection."`,
-					`"And now," Marina continued, "you'll learn how to apply all that knowledge here. Watch as I demonstrate the Guardian Gates system and how it integrates with React patterns."`
-				]}
-			/>
+				<div className='gate-visualization enhanced'>
+					<h3>The Integrated Guardian System</h3>
+					{!teachingMode && (
+						<button
+							className='teaching-toggle'
+							onClick={() => setTeachingMode(true)}>
+							🎓 Enter Learning Mode
+						</button>
+					)}
 
-			<div className='gate-visualization enhanced'>
-						<h3>The Integrated Guardian System</h3>
-						{!teachingMode && (
-							<button
-								className='teaching-toggle'
-								onClick={() => setTeachingMode(true)}>
-								🎓 Enter Learning Mode
-							</button>
-						)}
-
-						{teachingMode && (
-							<div className='teaching-intro'>
-								<p className='marina-teaching'>
-									Marina explains: "Watch how each gate
-									integrates patterns from across the
-									kingdom..."
-								</p>
-							</div>
-						)}
-
-						<div className='gates-grid masters-version'>
-							{kingdomGates.map((gate) => (
-								<div
-									key={gate.id}
-									className={`gate-card ${
-										selectedGate?.id === gate.id
-											? 'selected'
-											: ''
-									} ${
-										guardianState[gate.id]
-											? 'accessible'
-											: 'locked'
-									}`}
-									onClick={() => setSelectedGate(gate)}>
-									<div className='gate-icon'>{gate.icon}</div>
-									<h4>{gate.name}</h4>
-									<p className='gate-requirement'>
-										Requires: {gate.required}
-									</p>
-									<p className='gate-description'>
-										{gate.description}
-									</p>
-									{teachingMode && (
-										<div className='react-insight'>
-											<strong>React Pattern:</strong>
-											<p>{gate.reactPattern}</p>
-										</div>
-									)}
-									{guardianState[gate.id] ? (
-										<span className='access-badge'>
-											✓ Access Granted
-										</span>
-									) : (
-										<span className='access-badge locked'>
-											🔒 Locked
-										</span>
-									)}
-								</div>
-							))}
+					{teachingMode && (
+						<div className='teaching-intro'>
+							<p className='marina-teaching'>
+								Marina explains: "Watch how each gate integrates
+								patterns from across the kingdom..."
+							</p>
 						</div>
+					)}
 
-						{selectedGate && (
-							<div className='gate-attempt master-demonstration'>
-								<h4>
-									Marina's Authentication Flow:{' '}
-									{selectedGate.name}
-								</h4>
-								<div className='demonstration-flow'>
-									<div className='marina-part'>
-										<strong>Marina's Check:</strong>
-										<p>Route authentication</p>
+					<div className='gates-grid masters-version'>
+						{kingdomGates.map((gate) => (
+							<div
+								key={gate.id}
+								className={`gate-card ${
+									selectedGate?.id === gate.id
+										? 'selected'
+										: ''
+								} ${
+									guardianState[gate.id]
+										? 'accessible'
+										: 'locked'
+								}`}
+								onClick={() => setSelectedGate(gate)}>
+								<div className='gate-icon'>{gate.icon}</div>
+								<h4>{gate.name}</h4>
+								<p className='gate-requirement'>
+									Requires: {gate.required}
+								</p>
+								<p className='gate-description'>
+									{gate.description}
+								</p>
+								{teachingMode && (
+									<div className='react-insight'>
+										<strong>React Pattern:</strong>
+										<p>{gate.reactPattern}</p>
 									</div>
-									<div className='react-part'>
-										<strong>React Integration:</strong>
-										<p>Integrated validation</p>
-									</div>
-								</div>
-								<select
-									value={accessLevel}
-									onChange={(e) =>
-										setAccessLevel(e.target.value)
-									}>
-									<option value='visitor'>Visitor</option>
-									<option value='merchant'>Merchant</option>
-									<option value='student'>Student</option>
-									<option value='royal'>Royal</option>
-								</select>
-								<button
-									onClick={() =>
-										handleGateCheck(
-											selectedGate.id,
-											accessLevel
-										)
-									}>
-									Present Credentials
-								</button>
+								)}
+								{guardianState[gate.id] ? (
+									<span className='access-badge'>
+										✓ Access Granted
+									</span>
+								) : (
+									<span className='access-badge locked'>
+										🔒 Locked
+									</span>
+								)}
 							</div>
-						)}
+						))}
+					</div>
+
+					{selectedGate && (
+						<div className='gate-attempt master-demonstration'>
+							<h4>
+								Marina's Authentication Flow:{' '}
+								{selectedGate.name}
+							</h4>
+							<div className='demonstration-flow'>
+								<div className='marina-part'>
+									<strong>Marina's Check:</strong>
+									<p>Route authentication</p>
+								</div>
+								<div className='react-part'>
+									<strong>React Integration:</strong>
+									<p>Integrated validation</p>
+								</div>
+							</div>
+							<select
+								value={accessLevel}
+								onChange={(e) =>
+									setAccessLevel(e.target.value)
+								}>
+								<option value='visitor'>Visitor</option>
+								<option value='merchant'>Merchant</option>
+								<option value='student'>Student</option>
+								<option value='royal'>Royal</option>
+							</select>
+							<button
+								onClick={() =>
+									handleGateCheck(
+										selectedGate.id,
+										accessLevel
+									)
+								}>
+								Present Credentials
+							</button>
+						</div>
+					)}
 				</div>
 
-			<StorySection
-				paragraphs={[
-					`"Notice how each gate type requires different patterns," Marina explained. "The Public Market uses basic component rendering - anyone can enter. But the Royal Chambers? That requires form validation, state checks, and multi-factor authentication."`,
-					`Aria studied the examples with growing understanding. "I can see how my React foundation applies here! Authentication isn't just checking if someone's logged in - it's validating their entire journey through the application."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"Notice how each gate type requires different patterns," Marina explained. "The Public Market uses basic component rendering - anyone can enter. But the Royal Chambers? That requires form validation, state checks, and multi-factor authentication."`,
+						`Aria studied the examples with growing understanding. "I can see how my React foundation applies here! Authentication isn't just checking if someone's logged in - it's validating their entire journey through the application."`,
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>Marina's Guardian Pattern</h3>
 					<InstructionBox character='Click on different gates above to test access levels!'>
-						Select your access level and present your credentials to see how guardian gates protect routes.
+						Select your access level and present your credentials to
+						see how guardian gates protect routes.
 					</InstructionBox>
 
 					<CodeExample
-						title="Basic Protection with Intelligence"
+						title='Basic Protection with Intelligence'
 						code={`// Marina's Guardian System with React Integration
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth, useFormValidation, useStatePreservation } from './hooks';
@@ -284,7 +281,7 @@ function IntelligentProtectedRoute({ children, requirements = {} }) {
 					</div>
 
 					<CodeExample
-						title="Advanced Guardian Patterns"
+						title='Advanced Guardian Patterns'
 						code={`// Marina's Complete Guardian System
 
 // 1. Form-Aware Protection (Western Quarter Knowledge)
@@ -387,28 +384,34 @@ function UltimateGuardian({
 }`}
 					/>
 
-				<div className='pattern-integration'>
-					<h3>Teaching the Trainees</h3>
-				</div>
+					<div className='pattern-integration'>
+						<h3>Teaching the Trainees</h3>
+					</div>
 
-				<StorySection
-					paragraphs={[
-						`"You see," Aria explained, gesturing to the code, "each guardian pattern builds on knowledge from different quarters. Form-aware guards remember user progress. Stateful guards preserve UI state. Hook-enhanced guards provide reusable logic."`,
-						`Aria asked, "But how do we know which pattern to use?"`,
-						`Marina smiled. "That's where learning comes in. You have studied through every quarter, learned every pattern. You understand that the best guardian isn't the strongest lock, but the smartest system."`
-					]}
-				/>
+					<StorySection
+						paragraphs={[
+							`"You see," Aria explained, gesturing to the code, "each guardian pattern builds on knowledge from different quarters. Form-aware guards remember user progress. Stateful guards preserve UI state. Hook-enhanced guards provide reusable logic."`,
+							`Aria asked, "But how do we know which pattern to use?"`,
+							`Marina smiled. "That's where learning comes in. You have studied through every quarter, learned every pattern. You understand that the best guardian isn't the strongest lock, but the smartest system."`,
+						]}
+					/>
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Captain Marina`,
+							description: `Authority on route protection and authentication in the Guardian Gates training grounds. Her voice carries both authority and warmth as she activates complex security diagrams. "Protected routes aren't just about checking if someone's logged in - they're about integrating authentication with state management, form validation, and intelligent user flows. Guardian Gates are intelligent systems that understand context and enhance rather than hinder the user experience."`,
+						},
+					]}
 					lessonInsight={{
 						title: "Marina's Wisdom:",
-						content: `Guardian Gates aren't just security checkpoints - they're intelligent systems that understand context. They preserve user state, validate forms, track journeys, and provide graceful fallbacks. Every React pattern you learn makes these guards smarter. This way, we create protection that enhances rather than hinders the user experience. Guardian attempts tracked: ${attemptedEntries.length}`
+						content: `Guardian Gates aren't just security checkpoints - they're intelligent systems that understand context. They preserve user state, validate forms, track journeys, and provide graceful fallbacks. Every React pattern you learn makes these guards smarter. This way, we create protection that enhances rather than hinders the user experience. Guardian attempts tracked: ${attemptedEntries.length}`,
 					}}
 					reflectionQuestions={[
 						'How does integrating state management, form validation, and user journey tracking enhance basic route protection?',
 						'What benefits come from preserving user context when redirecting for authentication?',
-						"How does Aria's journey through the React Kingdom help her understand these advanced route protection patterns?"
+						"How does Aria's journey through the React Kingdom help her understand these advanced route protection patterns?",
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 22 (Morning)",

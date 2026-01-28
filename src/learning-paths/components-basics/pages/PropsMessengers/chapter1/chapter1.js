@@ -33,191 +33,189 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={1}
-			title='The Royal Messengers'
-		/>
+			<ChapterIntro chapterNumber={1} title='The Royal Messengers' />
 
-		<StorySection
-			paragraphs={[
-				<>The Props Messenger Guild was a hive of activity. Messengers rushed in all directions, carrying satchels filled with important information. <strong>Hermes</strong>, the Head Messenger, greeted Aria warmly.</>,
-				<>"Welcome, apprentice Aria! Master Aurelius told me about your progress with components. Now you'll learn how we enable communication in the kingdom." Hermes gestured to the busy messengers. "These are our <strong>Props</strong> - special messengers who carry instructions from parent components to their children."</>,
-				<>"I see!" Aria exclaimed, remembering her lessons. "So the master builder <strong>App</strong> uses these messengers to tell each workshop exactly what to create?"</>,
-				`"Precisely!" Hermes smiled. "Watch how a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						The Props Messenger Guild was a hive of activity.
+						Messengers rushed in all directions, carrying satchels
+						filled with important information.{' '}
+						<strong>Hermes</strong>, the Head Messenger, greeted
+						Aria warmly.
+					</>,
+					<>
+						"Welcome, apprentice Aria! Master Aurelius told me about
+						your progress with components. Now you'll learn how we
+						enable communication in the kingdom." Hermes gestured to
+						the busy messengers. "These are our{' '}
+						<strong>Props</strong> - special messengers who carry
+						instructions from parent components to their children."
+					</>,
+					<>
+						"I see!" Aria exclaimed, remembering her lessons. "So
+						the master builder <strong>App</strong> uses these
+						messengers to tell each workshop exactly what to
+						create?"
+					</>,
+					`"Precisely!" Hermes smiled. "Watch how a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked."`,
+				]}
+			/>
 
-		<div className='props-kingdom-illustration'>
-					<div className='app-castle'>
-						<div className='app-label'>App Component</div>
+			<div className='props-kingdom-illustration'>
+				<div className='app-castle'>
+					<div className='app-label'>App Component</div>
+				</div>
+
+				<div className='messengers-container'>
+					<div
+						className={`messenger messenger-button ${
+							selectedComponent === 'button' ? 'selected' : ''
+						}`}
+						onClick={() => handleComponentSelect('button')}>
+						<div className='messenger-label'>Button Messenger</div>
+						<div className='satchel-icon'>📫</div>
 					</div>
-
-					<div className='messengers-container'>
-						<div
-							className={`messenger messenger-button ${
-								selectedComponent === 'button' ? 'selected' : ''
-							}`}
-							onClick={() => handleComponentSelect('button')}>
-							<div className='messenger-label'>
-								Button Messenger
-							</div>
-							<div className='satchel-icon'>📫</div>
-						</div>
-						<div
-							className={`messenger messenger-card ${
-								selectedComponent === 'card' ? 'selected' : ''
-							}`}
-							onClick={() => handleComponentSelect('card')}>
-							<div className='messenger-label'>
-								Card Messenger
-							</div>
-							<div className='satchel-icon'>📫</div>
-						</div>
+					<div
+						className={`messenger messenger-card ${
+							selectedComponent === 'card' ? 'selected' : ''
+						}`}
+						onClick={() => handleComponentSelect('card')}>
+						<div className='messenger-label'>Card Messenger</div>
+						<div className='satchel-icon'>📫</div>
 					</div>
+				</div>
 
-					<div className='props-pathway'>
-						{selectedComponent && (
-							<div className='prop-satchel'>
-								<div className='satchel-content'>
-									{selectedComponent === 'button' ? (
-										<div className='props-list'>
-											<div
-												className={`prop-item ${
-													activeProp === 'buttonColor'
-														? 'active'
-														: ''
-												}`}
-												onClick={() =>
-													handlePropSelect(
-														'buttonColor'
-													)
-												}>
-												color: "
-												{currentPropValues.buttonColor}"
-											</div>
-											<div
-												className={`prop-item ${
-													activeProp === 'buttonText'
-														? 'active'
-														: ''
-												}`}
-												onClick={() =>
-													handlePropSelect(
-														'buttonText'
-													)
-												}>
-												text: "
-												{currentPropValues.buttonText}"
-											</div>
-											<div
-												className={`prop-item ${
-													activeProp === 'buttonClick'
-														? 'active'
-														: ''
-												}`}
-												onClick={() =>
-													handlePropSelect(
-														'buttonClick'
-													)
-												}>
-												onClick: function()
-												&#123;...&#125;
-											</div>
+				<div className='props-pathway'>
+					{selectedComponent && (
+						<div className='prop-satchel'>
+							<div className='satchel-content'>
+								{selectedComponent === 'button' ? (
+									<div className='props-list'>
+										<div
+											className={`prop-item ${
+												activeProp === 'buttonColor'
+													? 'active'
+													: ''
+											}`}
+											onClick={() =>
+												handlePropSelect('buttonColor')
+											}>
+											color: "
+											{currentPropValues.buttonColor}"
 										</div>
-									) : (
-										<div className='props-list'>
-											<div
-												className={`prop-item ${
-													activeProp === 'cardTitle'
-														? 'active'
-														: ''
-												}`}
-												onClick={() =>
-													handlePropSelect(
-														'cardTitle'
-													)
-												}>
-												title: "
-												{currentPropValues.cardTitle}"
-											</div>
-											<div
-												className={`prop-item ${
-													activeProp === 'cardContent'
-														? 'active'
-														: ''
-												}`}
-												onClick={() =>
-													handlePropSelect(
-														'cardContent'
-													)
-												}>
-												content: "
-												{currentPropValues.cardContent}"
-											</div>
+										<div
+											className={`prop-item ${
+												activeProp === 'buttonText'
+													? 'active'
+													: ''
+											}`}
+											onClick={() =>
+												handlePropSelect('buttonText')
+											}>
+											text: "
+											{currentPropValues.buttonText}"
 										</div>
-									)}
-								</div>
-								<div className='satchel-arrow'>↓</div>
+										<div
+											className={`prop-item ${
+												activeProp === 'buttonClick'
+													? 'active'
+													: ''
+											}`}
+											onClick={() =>
+												handlePropSelect('buttonClick')
+											}>
+											onClick: function() &#123;...&#125;
+										</div>
+									</div>
+								) : (
+									<div className='props-list'>
+										<div
+											className={`prop-item ${
+												activeProp === 'cardTitle'
+													? 'active'
+													: ''
+											}`}
+											onClick={() =>
+												handlePropSelect('cardTitle')
+											}>
+											title: "
+											{currentPropValues.cardTitle}"
+										</div>
+										<div
+											className={`prop-item ${
+												activeProp === 'cardContent'
+													? 'active'
+													: ''
+											}`}
+											onClick={() =>
+												handlePropSelect('cardContent')
+											}>
+											content: "
+											{currentPropValues.cardContent}"
+										</div>
+									</div>
+								)}
+							</div>
+							<div className='satchel-arrow'>↓</div>
+						</div>
+					)}
+				</div>
+
+				<div className='workshops-container'>
+					<div
+						className={`workshop props-button-workshop ${
+							selectedComponent === 'button' ? 'active' : ''
+						}`}>
+						<h4>Button Workshop</h4>
+						{selectedComponent === 'button' && (
+							<div className='workshop-output'>
+								<button
+									style={{
+										backgroundColor:
+											currentPropValues.buttonColor,
+										color: 'white',
+										padding: '8px 16px',
+										border: 'none',
+										borderRadius: '4px',
+										cursor: 'pointer',
+									}}
+									onClick={() => alert('Button clicked!')}>
+									{currentPropValues.buttonText}
+								</button>
 							</div>
 						)}
 					</div>
-
-					<div className='workshops-container'>
-						<div
-							className={`workshop props-button-workshop ${
-								selectedComponent === 'button' ? 'active' : ''
-							}`}>
-							<h4>Button Workshop</h4>
-							{selectedComponent === 'button' && (
-								<div className='workshop-output'>
-									<button
-										style={{
-											backgroundColor:
-												currentPropValues.buttonColor,
-											color: 'white',
-											padding: '8px 16px',
-											border: 'none',
-											borderRadius: '4px',
-											cursor: 'pointer',
-										}}
-										onClick={() =>
-											alert('Button clicked!')
-										}>
-										{currentPropValues.buttonText}
-									</button>
+					<div
+						className={`workshop props-card-workshop ${
+							selectedComponent === 'card' ? 'active' : ''
+						}`}>
+						<h4>Card Workshop</h4>
+						{selectedComponent === 'card' && (
+							<div className='workshop-output'>
+								<div className='card-component'>
+									<h3>{currentPropValues.cardTitle}</h3>
+									<p>{currentPropValues.cardContent}</p>
 								</div>
-							)}
-						</div>
-						<div
-							className={`workshop props-card-workshop ${
-								selectedComponent === 'card' ? 'active' : ''
-							}`}>
-							<h4>Card Workshop</h4>
-							{selectedComponent === 'card' && (
-								<div className='workshop-output'>
-									<div className='card-component'>
-										<h3>{currentPropValues.cardTitle}</h3>
-										<p>{currentPropValues.cardContent}</p>
-									</div>
-								</div>
-							)}
+							</div>
+						)}
 					</div>
 				</div>
-		</div>
+			</div>
 
-		<StorySection
-			paragraphs={[
-				`"Props can contain various types of information," Hermes explained as Aria experimented with the messengers. "Text strings, numbers, boolean flags, functions, arrays, objects, and even other components! This flexibility allows for rich communication between components."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"Props can contain various types of information," Hermes explained as Aria experimented with the messengers. "Text strings, numbers, boolean flags, functions, arrays, objects, and even other components! This flexibility allows for rich communication between components."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Modify Props
 				</h3>
 				<InstructionBox
-					character="Click on a messenger above to see what props it carries!"
-					secondaryText="Click on a specific prop to modify its value below."
+					character='Click on a messenger above to see what props it carries!'
+					secondaryText='Click on a specific prop to modify its value below.'
 				/>
 
 				{activeProp && (
@@ -317,7 +315,7 @@ const ChapterOne = () => {
 
 			<CodeExample
 				title="Guild Master's Prop Patterns"
-				discoveredBy="Studied by Aria with Hermes"
+				discoveredBy='Studied by Aria with Hermes'
 				code={`// Hermes demonstrates: "Watch how App sends Props to Button"
 function App() {
   return (
@@ -347,6 +345,12 @@ function Button(props) {
 			/>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Hermes`,
+						description: `Head Messenger of the Props Messenger Guild, orchestrating the flow of information throughout the React Kingdom. His messengers rush in all directions carrying satchels filled with props - the special messengers who carry instructions from parent components to their children. "Props can contain various types of information: text strings, numbers, boolean flags, functions, arrays, objects, and even other components!"`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The Props Lesson:',
 					content:

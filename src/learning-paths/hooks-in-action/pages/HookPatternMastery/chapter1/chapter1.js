@@ -142,38 +142,44 @@ function ChapterOne() {
 					title='The Grand Orchestra - Harmonizing Multiple Hooks'
 				/>
 
-			<StorySection
-				paragraphs={[
-					<>"Aria, Binary, welcome!" The figure turned, revealing robes that seemed woven from pure React patterns. "I am <strong>Pattern Weaver Synthesis</strong>, and this is where all your hook knowledge culminates into true mastery."</>,
-					`Binary's processors hummed with excitement, detecting the complex interplay of all the hooks they'd learned flowing together.`,
-					`"You've learned individual hooks," Synthesis continued, gesturing to the energy streams, "but real applications require orchestration. Watch as I conduct multiple hooks like instruments in a symphony!"`,
-					`Synthesis raised their hands, and the energy streams began to dance. "Form management is the perfect demonstration - it requires state, validation, submission handling, error management, all working in perfect harmony."`,
-					`"Like a conductor managing an orchestra?" Aria suggested, already seeing the pattern.`,
-					`"Precisely! Each hook plays its part," Synthesis smiled, "but together they create something far greater. Let me show you the Form Symphony pattern!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						<>
+							"Aria, Binary, welcome!" The figure turned,
+							revealing robes that seemed woven from pure React
+							patterns. "I am{' '}
+							<strong>Pattern Weaver Synthesis</strong>, and this
+							is where all your hook knowledge culminates into
+							true mastery."
+						</>,
+						`Binary's processors hummed with excitement, detecting the complex interplay of all the hooks they'd learned flowing together.`,
+						`"You've learned individual hooks," Synthesis continued, gesturing to the energy streams, "but real applications require orchestration. Watch as I conduct multiple hooks like instruments in a symphony!"`,
+						`Synthesis raised their hands, and the energy streams began to dance. "Form management is the perfect demonstration - it requires state, validation, submission handling, error management, all working in perfect harmony."`,
+						`"Like a conductor managing an orchestra?" Aria suggested, already seeing the pattern.`,
+						`"Precisely! Each hook plays its part," Synthesis smiled, "but together they create something far greater. Let me show you the Form Symphony pattern!"`,
+					]}
+				/>
 
-			<div className='orchestra-visualization'>
-				<div className='orchestra-section'>
-					<div className='instrument'>🎻 useState</div>
-					<div className='instrument'>🎺 useEffect</div>
-					<div className='instrument'>🥁 useCallback</div>
-					<div className='instrument'>🎹 Custom Hooks</div>
-				</div>
-				<div className='conductor'>
-					<div className='conductor-icon'>🎼</div>
-					<div className='conductor-label'>
-						Form Orchestrator
+				<div className='orchestra-visualization'>
+					<div className='orchestra-section'>
+						<div className='instrument'>🎻 useState</div>
+						<div className='instrument'>🎺 useEffect</div>
+						<div className='instrument'>🥁 useCallback</div>
+						<div className='instrument'>🎹 Custom Hooks</div>
+					</div>
+					<div className='conductor'>
+						<div className='conductor-icon'>🎼</div>
+						<div className='conductor-label'>Form Orchestrator</div>
 					</div>
 				</div>
-			</div>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: The Form Symphony
 					</h3>
 					<InstructionBox character='Experience how multiple custom hooks work together to create a powerful, reusable form management system!'>
-						Fill out the form fields and watch validation happen automatically.
+						Fill out the form fields and watch validation happen
+						automatically.
 					</InstructionBox>
 
 					<div className='form-orchestra'>
@@ -391,18 +397,26 @@ function useForm(initialValues, validators = {}) {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Pattern Weaver Synthesis`,
+							description: `Master conductor of the Integration Sanctum where all hook knowledge culminates into true mastery. Their robes seem woven from pure React patterns as energy streams dance through the air. "Real applications require orchestration. Form management is the perfect demonstration - it requires state, validation, submission handling, error management, all working in perfect harmony like instruments in a symphony!"`,
+						},
+					]}
 					lessonInsight={{
 						title: 'Orchestration Mastery:',
-						content: "Master hook patterns by thinking like a conductor. The Orchestra pattern combines multiple specialized hooks into coordinated systems. Build small, focused hooks (useFormField for field state), then compose them with orchestrator hooks (useForm for coordination). This separation enables reusability, testability, and maintainability. Popular patterns include Form Management, Data Pipeline (filter→sort→paginate), and State Machines. Remember: complex behavior emerges from simple, well-orchestrated parts."
+						content:
+							'Master hook patterns by thinking like a conductor. The Orchestra pattern combines multiple specialized hooks into coordinated systems. Build small, focused hooks (useFormField for field state), then compose them with orchestrator hooks (useForm for coordination). This separation enables reusability, testability, and maintainability. Popular patterns include Form Management, Data Pipeline (filter→sort→paginate), and State Machines. Remember: complex behavior emerges from simple, well-orchestrated parts.',
 					}}
 					reflectionQuestions={[
 						'How does orchestration differ from simply using multiple hooks?',
 						'What UI patterns in your applications could benefit from this approach?',
-						'Why is composition more powerful than building monolithic hooks?'
+						'Why is composition more powerful than building monolithic hooks?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 19 (Morning)",
-						content: "The Integration Sanctum revealed the true art of hooks - orchestration! Pattern Weaver Synthesis showed me how to conduct multiple hooks like a symphony. The Form Symphony pattern was brilliant: useFormField hooks for individual fields (each managing its own state, validation, touched status), then a useForm orchestrator that coordinates them all! The magic is in composition - simple hooks combining into complex systems. Like instruments in an orchestra, each hook has its role, but together they create something magnificent. This isn't just using hooks - it's thinking in patterns!"
+						content:
+							"The Integration Sanctum revealed the true art of hooks - orchestration! Pattern Weaver Synthesis showed me how to conduct multiple hooks like a symphony. The Form Symphony pattern was brilliant: useFormField hooks for individual fields (each managing its own state, validation, touched status), then a useForm orchestrator that coordinates them all! The magic is in composition - simple hooks combining into complex systems. Like instruments in an orchestra, each hook has its role, but together they create something magnificent. This isn't just using hooks - it's thinking in patterns!",
 					}}
 				/>
 			</div>

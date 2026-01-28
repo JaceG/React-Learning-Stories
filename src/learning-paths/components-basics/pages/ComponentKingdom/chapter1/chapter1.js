@@ -14,20 +14,32 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={1}
-			title='The Village of Components'
-		/>
+			<ChapterIntro chapterNumber={1} title='The Village of Components' />
 
-		<StorySection
-			paragraphs={[
-				<>The morning mist parted as <strong>Aria</strong> approached the gates of the React Kingdom. After months of studying ancient JavaScript scrolls, she had finally been accepted as an apprentice. <strong>Master Aurelius</strong>, the Grand Architect, awaited her at the entrance to the Northern Quarter's Component Workshop District.</>,
-				<>"Welcome, young apprentice," Aurelius said, his beard sparkling with fragments of code. "In our kingdom, everything you see is built from magical building blocks called{' '}<strong>Components</strong>. Unlike the static structures in your homeland, these Components are alive and responsive.</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						The morning mist parted as <strong>Aria</strong>{' '}
+						approached the gates of the React Kingdom. After months
+						of studying ancient JavaScript scrolls, she had finally
+						been accepted as an apprentice.{' '}
+						<strong>Master Aurelius</strong>, the Grand Architect,
+						awaited her at the entrance to the Northern Quarter's
+						Component Workshop District.
+					</>,
+					<>
+						"Welcome, young apprentice," Aurelius said, his beard
+						sparkling with fragments of code. "In our kingdom,
+						everything you see is built from magical building blocks
+						called <strong>Components</strong>. Unlike the static
+						structures in your homeland, these Components are alive
+						and responsive.
+					</>,
+				]}
+			/>
 
-		<div className='story-section'>
-			<div className='kingdom-illustration'>
+			<div className='story-section'>
+				<div className='kingdom-illustration'>
 					<div className='castle'>
 						<div className='castle-tower'>App</div>
 						<div className='castle-body'>
@@ -54,14 +66,21 @@ const ChapterOne = () => {
 							</div>
 						</div>
 					</div>
+				</div>
 			</div>
-		</div>
 
-		<StorySection
-			paragraphs={[
-				<>Aurelius pointed to the tallest tower. "The master builder, <strong>App</strong>, lives there and organizes all the craftsmen to work together. Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm."</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						Aurelius pointed to the tallest tower. "The master
+						builder, <strong>App</strong>, lives there and organizes
+						all the craftsmen to work together. Every component in
+						our kingdom has its own special purpose and design, but
+						they all share the ability to be reused throughout the
+						realm."
+					</>,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -561,8 +580,8 @@ const user = {
 			</div>
 
 			<CodeExample
-				title="Ancient Scroll of Component Creation"
-				discoveredBy="Discovered by Aria in the Button Workshop"
+				title='Ancient Scroll of Component Creation'
+				discoveredBy='Discovered by Aria in the Button Workshop'
 				code={`// Aria's First Component Spell
 function Button(props) {
   // Master Aurelius: "props are the messages components receive"
@@ -610,6 +629,12 @@ function Form(props) {
 			/>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Master Aurelius`,
+						description: `The Grand Architect of the React Kingdom and mentor to all component apprentices. His beard sparkles with fragments of code, and his wisdom guides newcomers through the magical building blocks of React. "Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm."`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The Component Lesson:',
 					content:
@@ -622,7 +647,7 @@ function Form(props) {
 				journalEntry={{
 					title: "Aria's Journal - Day 1",
 					content:
-						'Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. He mentioned something about workshops that create living components. Can\'t wait to explore!',
+						"Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. He mentioned something about workshops that create living components. Can't wait to explore!",
 				}}
 			/>
 		</div>

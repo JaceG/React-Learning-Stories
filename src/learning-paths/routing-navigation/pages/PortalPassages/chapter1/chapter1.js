@@ -72,90 +72,95 @@ const ChapterOne = () => {
 				title='The Discovery of Portal Magic'
 			/>
 
-		<StorySection
-			paragraphs={[
-				`Marina led Aria to the Portal Passages chamber, where the most advanced navigation concepts awaited - modals, overlays, and parallel routes. Here, she would learn the final navigation patterns.`,
-				`"Today, you'll learn something special," Marina announced. "I'll teach you how to create portal-based navigation that maintains state, handles forms, and provides seamless transitions. Your React foundation will help you understand these advanced portal techniques."`,
-				<>Marina activated holographic portals around the room, <strong>Binary</strong> assisting with the projections. "Portal Passages combine every concept in our kingdom," she explained. "Components provide structure, state manages portal visibility, effects handle focus management, and forms can span across portals."</>,
-				`Aria watched with fascination as the portal patterns unfolded before her. "This is amazing! I can see how every concept I've learned contributes to these advanced navigation patterns."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`Marina led Aria to the Portal Passages chamber, where the most advanced navigation concepts awaited - modals, overlays, and parallel routes. Here, she would learn the final navigation patterns.`,
+					`"Today, you'll learn something special," Marina announced. "I'll teach you how to create portal-based navigation that maintains state, handles forms, and provides seamless transitions. Your React foundation will help you understand these advanced portal techniques."`,
+					<>
+						Marina activated holographic portals around the room,{' '}
+						<strong>Binary</strong> assisting with the projections.
+						"Portal Passages combine every concept in our kingdom,"
+						she explained. "Components provide structure, state
+						manages portal visibility, effects handle focus
+						management, and forms can span across portals."
+					</>,
+					`Aria watched with fascination as the portal patterns unfolded before her. "This is amazing! I can see how every concept I've learned contributes to these advanced navigation patterns."`,
+				]}
+			/>
 
-		<div className='portal-demonstration'>
-					<h3>Portal Types Exhibition</h3>
+			<div className='portal-demonstration'>
+				<h3>Portal Types Exhibition</h3>
 
-					<div className='portal-type-selector'>
-						{portalTypes.map((type) => (
-							<div
-								key={type.id}
-								className={`portal-type-card ${
-									selectedPortalType === type.id
-										? 'selected'
-										: ''
-								}`}
-								onClick={() => setSelectedPortalType(type.id)}>
-								<span className='portal-icon'>{type.icon}</span>
-								<h4>{type.name}</h4>
-								<p>{type.description}</p>
-							</div>
-						))}
-					</div>
-
-					<div className='portal-creation-lab'>
-						<h4>Portal Creation Workshop</h4>
-						<div className='portal-config'>
-							<label>
-								Portal Title:
-								<input
-									type='text'
-									value={portalContent.title}
-									onChange={(e) =>
-										setPortalContent({
-											...portalContent,
-											title: e.target.value,
-										})
-									}
-								/>
-							</label>
-							<label>
-								Portal Message:
-								<textarea
-									value={portalContent.message}
-									onChange={(e) =>
-										setPortalContent({
-											...portalContent,
-											message: e.target.value,
-										})
-									}
-								/>
-							</label>
+				<div className='portal-type-selector'>
+					{portalTypes.map((type) => (
+						<div
+							key={type.id}
+							className={`portal-type-card ${
+								selectedPortalType === type.id ? 'selected' : ''
+							}`}
+							onClick={() => setSelectedPortalType(type.id)}>
+							<span className='portal-icon'>{type.icon}</span>
+							<h4>{type.name}</h4>
+							<p>{type.description}</p>
 						</div>
-						<button
-							className='create-portal-btn'
-							onClick={handleCreatePortal}
-							disabled={demoPortalOpen}>
-							Open{' '}
-							{
-								portalTypes.find(
-									(t) => t.id === selectedPortalType
-								)?.name
-							}{' '}
-							✨
-						</button>
-						{demoPortalOpen && (
-							<p className='portal-status'>
-								Portal is active! It will close automatically in
-								5 seconds...
-							</p>
-						)}
+					))}
+				</div>
+
+				<div className='portal-creation-lab'>
+					<h4>Portal Creation Workshop</h4>
+					<div className='portal-config'>
+						<label>
+							Portal Title:
+							<input
+								type='text'
+								value={portalContent.title}
+								onChange={(e) =>
+									setPortalContent({
+										...portalContent,
+										title: e.target.value,
+									})
+								}
+							/>
+						</label>
+						<label>
+							Portal Message:
+							<textarea
+								value={portalContent.message}
+								onChange={(e) =>
+									setPortalContent({
+										...portalContent,
+										message: e.target.value,
+									})
+								}
+							/>
+						</label>
+					</div>
+					<button
+						className='create-portal-btn'
+						onClick={handleCreatePortal}
+						disabled={demoPortalOpen}>
+						Open{' '}
+						{
+							portalTypes.find((t) => t.id === selectedPortalType)
+								?.name
+						}{' '}
+						✨
+					</button>
+					{demoPortalOpen && (
+						<p className='portal-status'>
+							Portal is active! It will close automatically in 5
+							seconds...
+						</p>
+					)}
 				</div>
 			</div>
 
-		<div className='interactive-section'>
+			<div className='interactive-section'>
 				<h3 className='section-title'>Creating Your First Portals</h3>
 
 				<InstructionBox character='Select a portal type above and customize the content, then click Open to create your first portal!'>
-					Watch how portals render outside the normal component tree while maintaining React state.
+					Watch how portals render outside the normal component tree
+					while maintaining React state.
 				</InstructionBox>
 
 				<CodeExample
@@ -481,14 +486,21 @@ function ProductList() {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Captain Marina`,
+						description: `Expert guide through the Portal Passages chamber where the most advanced navigation concepts await - modals, overlays, and parallel routes. She teaches how to create portal-based navigation that maintains state, handles forms, and provides seamless transitions. "Portals combine every concept in our kingdom. Components provide structure, state manages portal visibility, effects handle focus management, and forms can span across portals. It all connects!"`,
+					},
+				]}
 				lessonInsight={{
 					title: "Marina's Integrated Portal Wisdom:",
-					content: "\"Notice how portals use everything you've learned,\" Marina explained. \"The modal component structure from the Northern Quarter, state management for visibility from the Eastern Quarter, form handling that persists across portal boundaries from the Western Quarter, and now navigation integration. It all connects!\""
+					content:
+						'"Notice how portals use everything you\'ve learned," Marina explained. "The modal component structure from the Northern Quarter, state management for visibility from the Eastern Quarter, form handling that persists across portal boundaries from the Western Quarter, and now navigation integration. It all connects!"',
 				}}
 				reflectionQuestions={[
 					'How might you combine the validation patterns from forms with portal-based wizards?',
 					'What about maintaining context state across nested modal interactions?',
-					'Consider creating a portal system that remembers user progress, validates input before allowing portal closure, and gracefully handles errors - all while maintaining accessibility and performance.'
+					'Consider creating a portal system that remembers user progress, validates input before allowing portal closure, and gracefully handles errors - all while maintaining accessibility and performance.',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 24 (Morning)",

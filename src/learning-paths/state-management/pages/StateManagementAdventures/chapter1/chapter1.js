@@ -92,8 +92,8 @@ const ChapterOne = () => {
 						actionName === 'gold'
 							? 1
 							: actionName === 'weapon'
-							? 3
-							: 0
+								? 3
+								: 0
 					})`
 				);
 				if (button) {
@@ -106,53 +106,57 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={1}
-			title="The Reducer's Challenge"
-		/>
+			<ChapterIntro chapterNumber={1} title="The Reducer's Challenge" />
 
-		<StorySection
-			paragraphs={[
-				`The State Management Citadel's grand entrance led to a vast chamber where an elderly figure sat meditating. His robes bore patterns that shifted like flowing data, and his eyes held the wisdom of countless state transformations.`,
-				<>"Welcome, Aria," the figure spoke without opening his eyes. "I am <strong>Grand Reducer</strong>, keeper of predictable state transformations. You've learned to manage simple state, but what happens when state becomes complex, interconnected, and governed by intricate rules?"</>,
-				`Binary whirred thoughtfully. "Simple useState would get messy with all those connections!"`,
-				`"Precisely," Grand Reducer smiled. "That's why we use the reducer pattern. Instead of many separate state updates, we channel all changes through a single, pure function. Watch and learn."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`The State Management Citadel's grand entrance led to a vast chamber where an elderly figure sat meditating. His robes bore patterns that shifted like flowing data, and his eyes held the wisdom of countless state transformations.`,
+					<>
+						"Welcome, Aria," the figure spoke without opening his
+						eyes. "I am <strong>Grand Reducer</strong>, keeper of
+						predictable state transformations. You've learned to
+						manage simple state, but what happens when state becomes
+						complex, interconnected, and governed by intricate
+						rules?"
+					</>,
+					`Binary whirred thoughtfully. "Simple useState would get messy with all those connections!"`,
+					`"Precisely," Grand Reducer smiled. "That's why we use the reducer pattern. Instead of many separate state updates, we channel all changes through a single, pure function. Watch and learn."`,
+				]}
+			/>
 
-		<div className='realm-illustration'>
-					<div className='state-castle'>
-						<div className='castle-banner'>Current State</div>
-						<div
-							className={`state-display ${
-								isUpdating ? 'updating' : ''
-							}`}>
-							<pre>{`${JSON.stringify(state, null, 2)}`}</pre>
-						</div>
+			<div className='realm-illustration'>
+				<div className='state-castle'>
+					<div className='castle-banner'>Current State</div>
+					<div
+						className={`state-display ${
+							isUpdating ? 'updating' : ''
+						}`}>
+						<pre>{`${JSON.stringify(state, null, 2)}`}</pre>
 					</div>
-					<div className='action-path'></div>
-					<div className='reducer-temple'>
-						<div className='temple-banner'>Reducer Function</div>
-						<div className='temple-inscription'>
-							(state, action) =&gt; newState
-						</div>
+				</div>
+				<div className='action-path'></div>
+				<div className='reducer-temple'>
+					<div className='temple-banner'>Reducer Function</div>
+					<div className='temple-inscription'>
+						(state, action) =&gt; newState
+					</div>
 				</div>
 			</div>
 
-		<StorySection
-			paragraphs={[
-				`"Your first challenge," Grand Reducer announced, "is to manage an adventurer's inventory. Multiple items, different actions, complex rules - all flowing through one reducer function. This is how real applications handle sophisticated state!"`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"Your first challenge," Grand Reducer announced, "is to manage an adventurer's inventory. Multiple items, different actions, complex rules - all flowing through one reducer function. This is how real applications handle sophisticated state!"`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Challenge: The Inventory Management Trial
 				</h3>
-				<InstructionBox character="Grand Reducer gestures to a glowing interface.">
-					"Manage this inventory using different actions. Notice how the reducer 
-					maintains consistency and predictability, no matter how complex the 
-					state becomes!"
+				<InstructionBox character='Grand Reducer gestures to a glowing interface.'>
+					"Manage this inventory using different actions. Notice how
+					the reducer maintains consistency and predictability, no
+					matter how complex the state becomes!"
 				</InstructionBox>
 
 				<div className='inventory-controls'>
@@ -251,15 +255,16 @@ const ChapterOne = () => {
 
 			<div className='story-section'>
 				<p className='story-paragraph'>
-					"See how each action flows through the reducer?" Grand Reducer explained 
-					as Aria experimented. "The reducer examines the action type and payload, 
-					then returns a new state. It never modifies the existing state - always 
-					creates new!"
+					"See how each action flows through the reducer?" Grand
+					Reducer explained as Aria experimented. "The reducer
+					examines the action type and payload, then returns a new
+					state. It never modifies the existing state - always creates
+					new!"
 				</p>
 			</div>
 
 			<CodeExample
-				title="The Reducer Pattern"
+				title='The Reducer Pattern'
 				discoveredBy="Grand Reducer's Teachings"
 				code={`// useReducer: When state logic becomes complex
 import React, { useReducer } from 'react';
@@ -382,17 +387,25 @@ function rootReducer(state = {}, action) {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Grand Reducer`,
+						description: `Keeper of predictable state transformations in the State Management Citadel. His robes bear patterns that shift like flowing data, and his eyes hold the wisdom of countless state transformations. "Instead of many separate state updates, we channel all changes through a single, pure function. The reducer pattern ensures that same action always produces same result."`,
+					},
+				]}
 				lessonInsight={{
 					title: "Grand Reducer's Wisdom:",
-					content: "The useReducer hook shines when your state logic becomes complex. Unlike useState, which is perfect for independent values, useReducer excels when state updates depend on multiple values or follow complex business rules. The key benefits are predictability (same action always produces same result), testability (reducers are pure functions), and maintainability (all state logic in one place). Use it when your component feels like it has too many useState calls or when state updates have intricate dependencies."
+					content:
+						'The useReducer hook shines when your state logic becomes complex. Unlike useState, which is perfect for independent values, useReducer excels when state updates depend on multiple values or follow complex business rules. The key benefits are predictability (same action always produces same result), testability (reducers are pure functions), and maintainability (all state logic in one place). Use it when your component feels like it has too many useState calls or when state updates have intricate dependencies.',
 				}}
 				reflectionQuestions={[
 					'How does channeling all state changes through a single reducer function help manage complexity?',
-					'Can you think of an application feature that would benefit from the predictability of the reducer pattern?'
+					'Can you think of an application feature that would benefit from the predictability of the reducer pattern?',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 11 (Morning)",
-					content: "The reducer pattern is brilliant! Instead of managing multiple useState calls that could conflict, everything flows through one function. It's like having a wise sage who knows all the rules and ensures every state change follows them perfectly. Grand Reducer showed me how this prevents bugs and makes complex state predictable!"
+					content:
+						"The reducer pattern is brilliant! Instead of managing multiple useState calls that could conflict, everything flows through one function. It's like having a wise sage who knows all the rules and ensures every state change follows them perfectly. Grand Reducer showed me how this prevents bugs and makes complex state predictable!",
 				}}
 			/>
 		</div>

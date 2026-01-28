@@ -51,111 +51,116 @@ function ChapterOne() {
 					title='The Navigation Command Center'
 				/>
 
-			<StorySection
-				paragraphs={[
-					<>"<strong>Welcome, young navigator!</strong>" Marina's voice carried warmth and excitement. "I've heard wonderful things about your journey through the React Kingdom. Portal Keeper Sage sent word of your progress in Forms & Events. I'm excited to teach you about routing and navigation!"</>,
-					`Aria looked around in wonder, Binary hovering excitedly beside her. "Captain Marina, your navigation systems are legendary. I'm eager to learn from you!"`,
-					`Marina gestured to the floating maps. "Excellent attitude! Navigation builds on everything you've learned. It's not just about moving between pages - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences. Your Academy training will help you understand these concepts quickly."`,
-					`Binary projected Aria's learning progress: "Foundation knowledge confirmed! Components: ✓, State Management: ✓, Props & Data Flow: ✓, Hooks Training: ✓, Forms & Events: ✓. Ready for navigation training!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						<>
+							"<strong>Welcome, young navigator!</strong>"
+							Marina's voice carried warmth and excitement. "I've
+							heard wonderful things about your journey through
+							the React Kingdom. Portal Keeper Sage sent word of
+							your progress in Forms & Events. I'm excited to
+							teach you about routing and navigation!"
+						</>,
+						`Aria looked around in wonder, Binary hovering excitedly beside her. "Captain Marina, your navigation systems are legendary. I'm eager to learn from you!"`,
+						`Marina gestured to the floating maps. "Excellent attitude! Navigation builds on everything you've learned. It's not just about moving between pages - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences. Your Academy training will help you understand these concepts quickly."`,
+						`Binary projected Aria's learning progress: "Foundation knowledge confirmed! Components: ✓, State Management: ✓, Props & Data Flow: ✓, Hooks Training: ✓, Forms & Events: ✓. Ready for navigation training!"`,
+					]}
+				/>
 
-			<div className='marina-teaching'>
-				<h3>The Navigation Vision</h3>
-			</div>
+				<div className='marina-teaching'>
+					<h3>The Navigation Vision</h3>
+				</div>
 
-			<StorySection
-				paragraphs={[
-					`Marina activated the central hologram. "Let me show you something fascinating - how navigation systems integrate everything you've learned. I think you'll find the patterns quite familiar."`,
-					`Aria studied the projections with growing understanding. "This is amazing! Routes look like specialized components that conditionally render based on location state. Is navigation just another form of state management?"`,
-					`"Exactly!" Marina's enthusiasm was contagious. "And look here - when users navigate, it triggers effects, updates context, and can even validate forms before allowing route changes. Everything connects, just like you've been learning!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`Marina activated the central hologram. "Let me show you something fascinating - how navigation systems integrate everything you've learned. I think you'll find the patterns quite familiar."`,
+						`Aria studied the projections with growing understanding. "This is amazing! Routes look like specialized components that conditionally render based on location state. Is navigation just another form of state management?"`,
+						`"Exactly!" Marina's enthusiasm was contagious. "And look here - when users navigate, it triggers effects, updates context, and can even validate forms before allowing route changes. Everything connects, just like you've been learning!"`,
+					]}
+				/>
 
-			<div className='compass-chamber evolved'>
-						<h3>The Master's Navigation Compass</h3>
-						<p className='marina-explanation'>
-							"This isn't just any compass," Marina explained. "As
-							you learn navigation patterns, we can explore how
-							routing leverages all of React's power that you've
-							been studying."
-						</p>
+				<div className='compass-chamber evolved'>
+					<h3>The Master's Navigation Compass</h3>
+					<p className='marina-explanation'>
+						"This isn't just any compass," Marina explained. "As you
+						learn navigation patterns, we can explore how routing
+						leverages all of React's power that you've been
+						studying."
+					</p>
 
-						<div className='compass-display enhanced'>
-							<div
-								className='compass-needle'
-								style={{
-									transform: `rotate(${compassDirection}deg)`,
-								}}
-							/>
-							<div className='compass-directions'>
-								<span className='direction north'>N</span>
-								<span className='direction south'>S</span>
-								<span className='direction east'>E</span>
-								<span className='direction west'>W</span>
-							</div>
-							<div className='master-badges'>
-								{Object.entries(masterStatus).map(
-									([skill, achieved]) => (
-										<div
-											key={skill}
-											className={`badge ${
-												achieved
-													? 'achieved'
-													: 'pending'
-											}`}
-											title={skill}>
-											{achieved ? '✓' : '○'}
-										</div>
-									)
-								)}
-							</div>
+					<div className='compass-display enhanced'>
+						<div
+							className='compass-needle'
+							style={{
+								transform: `rotate(${compassDirection}deg)`,
+							}}
+						/>
+						<div className='compass-directions'>
+							<span className='direction north'>N</span>
+							<span className='direction south'>S</span>
+							<span className='direction east'>E</span>
+							<span className='direction west'>W</span>
 						</div>
-
-						<div className='route-map collaborative'>
-							<h4>Integrated Route Architecture</h4>
-							<div className='route-list'>
-								{routes.map((route) => (
+						<div className='master-badges'>
+							{Object.entries(masterStatus).map(
+								([skill, achieved]) => (
 									<div
-										key={route.path}
-										className={`route-card ${
-											activeRoute === route.path
-												? 'active'
-												: ''
+										key={skill}
+										className={`badge ${
+											achieved ? 'achieved' : 'pending'
 										}`}
-										onClick={() =>
-											handleNavigation(route.path)
-										}>
-										<div className='route-icon'>
-											{route.icon}
-										</div>
-										<h5>{route.name}</h5>
-										<p>{route.description}</p>
-										<div className='integration-hint'>
-											{route.path === '/' &&
-												'← State persistence here'}
-											{route.path === '/about' &&
-												'← Context provides data'}
-											{route.path === '/products' &&
-												'← Effects load content'}
-											{route.path === '/contact' &&
-												'← Form validation active'}
-										</div>
+										title={skill}>
+										{achieved ? '✓' : '○'}
 									</div>
-								))}
-							</div>
+								)
+							)}
+						</div>
+					</div>
+
+					<div className='route-map collaborative'>
+						<h4>Integrated Route Architecture</h4>
+						<div className='route-list'>
+							{routes.map((route) => (
+								<div
+									key={route.path}
+									className={`route-card ${
+										activeRoute === route.path
+											? 'active'
+											: ''
+									}`}
+									onClick={() =>
+										handleNavigation(route.path)
+									}>
+									<div className='route-icon'>
+										{route.icon}
+									</div>
+									<h5>{route.name}</h5>
+									<p>{route.description}</p>
+									<div className='integration-hint'>
+										{route.path === '/' &&
+											'← State persistence here'}
+										{route.path === '/about' &&
+											'← Context provides data'}
+										{route.path === '/products' &&
+											'← Effects load content'}
+										{route.path === '/contact' &&
+											'← Form validation active'}
+									</div>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 
-			<StorySection
-				paragraphs={[
-					`"You see it immediately," Marina observed with admiration. "Most struggle to understand that routing is just another layer of React's component system. But with your comprehensive knowledge..."`,
-					`"It's all connected," Aria finished. "Routes are components. Navigation updates state. Browser history triggers effects. And we can guard routes with the same validation patterns I used in the Western Quarter!"`,
-					`Binary displayed the synthesis: "Pattern recognition complete! Navigation = Components + State + Effects + Context + Validation. Aria's learning progress: EXCELLENT!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"You see it immediately," Marina observed with admiration. "Most struggle to understand that routing is just another layer of React's component system. But with your comprehensive knowledge..."`,
+						`"It's all connected," Aria finished. "Routes are components. Navigation updates state. Browser history triggers effects. And we can guard routes with the same validation patterns I used in the Western Quarter!"`,
+						`Binary displayed the synthesis: "Pattern recognition complete! Navigation = Components + State + Effects + Context + Validation. Aria's learning progress: EXCELLENT!"`,
+					]}
+				/>
 
-			<div className='interactive-section'>
+				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Building the Integrated Navigation System
 					</h3>
@@ -313,6 +318,12 @@ function IntelligentNavigation() {
 				/>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Captain Marina`,
+							description: `Legendary navigation expert of the Central Citadel, teacher of routing and navigation in the command center with floating maps. Her voice carries warmth and excitement as she welcomes newcomers to the world of React routing. "Navigation in React isn't just about changing URLs - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences!"`,
+						},
+					]}
 					lessonInsight={{
 						title: 'The Collaborative Discovery:',
 						content: `Your navigation journey: ${navigationHistory.join(' → ')}. Marina taught Aria that navigation in React isn't just about changing URLs - it's about orchestrating the entire application state. By learning Marina's routing expertise and applying her React foundation, Aria discovered how navigation systems can preserve state, validate transitions, manage effects, and provide seamless user experiences. This is what happens when a dedicated student learns from an expert teacher!`,

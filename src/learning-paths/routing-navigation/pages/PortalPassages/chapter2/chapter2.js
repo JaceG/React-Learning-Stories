@@ -87,106 +87,131 @@ const ChapterTwo = () => {
 				bridge={`Marina continued the lesson, moving to the topic of transitions. "Portal transitions aren't just about visual effects," she explained. "They're about maintaining user context and creating meaningful connections between views."`}
 			/>
 
-		<StorySection
-			paragraphs={[
-				<>Marina continued the lesson, moving to the topic of transitions. "Portal transitions aren't just about visual effects," she explained, as <strong>Binary</strong> created smooth animations between holographic interfaces. "They're about maintaining user context and creating meaningful connections."</>,
-				<>She demonstrated with a complex gesture, combining techniques from multiple quarters. "Watch how I blend <strong>useEffect</strong> for timing, <strong>useState</strong> for transition states, and <strong>useCallback</strong> for performance. Each transition tells a story about the relationship between where users are and where they're going."</>,
-				<><strong>Captain Thunk</strong> from the Eastern Quarter leaned forward, impressed. "You've unified animation with state management in ways we never considered!"</>,
-				<>"That's because transitions aren't isolated," Aria replied. "They must consider <strong>scroll restoration</strong>, form state persistence, and even authentication status. Everything we've learned applies here." Marina watched proudly as her colleague transformed portal transitions into a comprehensive system.</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						Marina continued the lesson, moving to the topic of
+						transitions. "Portal transitions aren't just about
+						visual effects," she explained, as{' '}
+						<strong>Binary</strong> created smooth animations
+						between holographic interfaces. "They're about
+						maintaining user context and creating meaningful
+						connections."
+					</>,
+					<>
+						She demonstrated with a complex gesture, combining
+						techniques from multiple quarters. "Watch how I blend{' '}
+						<strong>useEffect</strong> for timing,{' '}
+						<strong>useState</strong> for transition states, and{' '}
+						<strong>useCallback</strong> for performance. Each
+						transition tells a story about the relationship between
+						where users are and where they're going."
+					</>,
+					<>
+						<strong>Captain Thunk</strong> from the Eastern Quarter
+						leaned forward, impressed. "You've unified animation
+						with state management in ways we never considered!"
+					</>,
+					<>
+						"That's because transitions aren't isolated," Aria
+						replied. "They must consider{' '}
+						<strong>scroll restoration</strong>, form state
+						persistence, and even authentication status. Everything
+						we've learned applies here." Marina watched proudly as
+						her colleague transformed portal transitions into a
+						comprehensive system.
+					</>,
+				]}
+			/>
 
-		<div className='transition-laboratory'>
-					<h3>Transition Effects Laboratory</h3>
+			<div className='transition-laboratory'>
+				<h3>Transition Effects Laboratory</h3>
 
-					<div className='transition-selector'>
-						<h4>Choose Your Transition:</h4>
-						<div className='transition-options'>
-							{transitionStyles.map((style) => (
-								<div
-									key={style.id}
-									className={`transition-card ${
-										activeTransition === style.id
-											? 'selected'
-											: ''
-									}`}
-									onClick={() =>
-										setActiveTransition(style.id)
-									}>
-									<span className='transition-icon'>
-										{style.icon}
-									</span>
-									<h5>{style.name}</h5>
-								</div>
-							))}
-						</div>
-					</div>
-
-					<div className='transition-demo'>
-						<h4>Live Transition Preview</h4>
-						<div className='demo-container'>
+				<div className='transition-selector'>
+					<h4>Choose Your Transition:</h4>
+					<div className='transition-options'>
+						{transitionStyles.map((style) => (
 							<div
-								className={`demo-page ${
-									transitionDemo.isTransitioning
-										? `transitioning-${activeTransition}`
+								key={style.id}
+								className={`transition-card ${
+									activeTransition === style.id
+										? 'selected'
 										: ''
-								}`}>
-								<h5>
-									{transitionDemo.current === 'page1'
-										? 'Origin Portal'
-										: 'Destination Portal'}
-								</h5>
-								<p>Current Page: {transitionDemo.current}</p>
+								}`}
+								onClick={() => setActiveTransition(style.id)}>
+								<span className='transition-icon'>
+									{style.icon}
+								</span>
+								<h5>{style.name}</h5>
 							</div>
-						</div>
-						<div className='demo-controls'>
-							<button
-								onClick={() =>
-									simulateTransition(
-										transitionDemo.current === 'page1'
-											? 'page2'
-											: 'page1'
-									)
-								}
-								disabled={transitionDemo.isTransitioning}>
-								Travel to{' '}
+						))}
+					</div>
+				</div>
+
+				<div className='transition-demo'>
+					<h4>Live Transition Preview</h4>
+					<div className='demo-container'>
+						<div
+							className={`demo-page ${
+								transitionDemo.isTransitioning
+									? `transitioning-${activeTransition}`
+									: ''
+							}`}>
+							<h5>
 								{transitionDemo.current === 'page1'
-									? 'Destination'
-									: 'Origin'}{' '}
-								✨
-							</button>
+									? 'Origin Portal'
+									: 'Destination Portal'}
+							</h5>
+							<p>Current Page: {transitionDemo.current}</p>
 						</div>
 					</div>
+					<div className='demo-controls'>
+						<button
+							onClick={() =>
+								simulateTransition(
+									transitionDemo.current === 'page1'
+										? 'page2'
+										: 'page1'
+								)
+							}
+							disabled={transitionDemo.isTransitioning}>
+							Travel to{' '}
+							{transitionDemo.current === 'page1'
+								? 'Destination'
+								: 'Origin'}{' '}
+							✨
+						</button>
+					</div>
+				</div>
 
-					<div className='scroll-behavior-selector'>
-						<h4>Scroll Behavior Magic:</h4>
-						<div className='behavior-options'>
-							{scrollBehaviors.map((behavior) => (
-								<div
-									key={behavior.id}
-									className={`behavior-card ${
-										scrollBehavior === behavior.id
-											? 'selected'
-											: ''
-									}`}
-									onClick={() =>
-										setScrollBehavior(behavior.id)
-									}>
-									<h5>{behavior.name}</h5>
-									<p>{behavior.description}</p>
-								</div>
-							))}
-						</div>
+				<div className='scroll-behavior-selector'>
+					<h4>Scroll Behavior Magic:</h4>
+					<div className='behavior-options'>
+						{scrollBehaviors.map((behavior) => (
+							<div
+								key={behavior.id}
+								className={`behavior-card ${
+									scrollBehavior === behavior.id
+										? 'selected'
+										: ''
+								}`}
+								onClick={() => setScrollBehavior(behavior.id)}>
+								<h5>{behavior.name}</h5>
+								<p>{behavior.description}</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 
-		<div className='interactive-section'>
+			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Implementing Smooth Transitions
 				</h3>
 
 				<InstructionBox character='Select a transition type and scroll behavior, then travel between portals to see the effects!'>
-					Watch how different transitions create different user experiences.
+					Watch how different transitions create different user
+					experiences.
 				</InstructionBox>
 
 				<CodeExample
@@ -631,13 +656,20 @@ function useViewTransition() {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Captain Thunk`,
+						description: `A master from the Eastern Quarter who specializes in state management and animation integration. He recognizes when animation and state management are unified in ways never considered before, bringing expertise from the State Management domain. "You've unified animation with state management in ways we never considered!"`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The Complete Transition System:',
-					content: "\"Transitions combine everything,\" Marina explained. \"Component lifecycle tells us when to trigger animations. State management tracks transition progress. Effect hooks synchronize with the browser's animation frame. And forms must gracefully handle transitions without losing user input.\""
+					content:
+						'"Transitions combine everything," Marina explained. "Component lifecycle tells us when to trigger animations. State management tracks transition progress. Effect hooks synchronize with the browser\'s animation frame. And forms must gracefully handle transitions without losing user input."',
 				}}
 				reflectionQuestions={[
 					'How would you design a checkout flow that uses smooth transitions between steps, maintains form state across route changes, validates before allowing progression, and gracefully handles errors?',
-					'How might transitions communicate validation states or guide users through complex multi-step processes?'
+					'How might transitions communicate validation states or guide users through complex multi-step processes?',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 24 (Afternoon)",

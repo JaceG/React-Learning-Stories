@@ -64,69 +64,73 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={1}
-			title='The Component Life Stages'
-		/>
+			<ChapterIntro chapterNumber={1} title='The Component Life Stages' />
 
-		<StorySection
-			paragraphs={[
-				<>The Lifecycle Sanctum was unlike anything Aria had seen. Massive hourglasses floated in the air, each representing a different component's journey through time. An ancient figure approached - <strong>Chronos</strong>, the Master Time Keeper.</>,
-				`"Welcome, young Aria," Chronos said, his voice echoing through time itself. "Professor Syntaxis speaks highly of your progress. Today, you'll learn the most fundamental truth of our kingdom: every component has a lifecycle - a journey from creation to destruction."`,
-				`Binary appeared beside Aria, bouncing excitedly. "I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!"`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						The Lifecycle Sanctum was unlike anything Aria had seen.
+						Massive hourglasses floated in the air, each
+						representing a different component's journey through
+						time. An ancient figure approached -{' '}
+						<strong>Chronos</strong>, the Master Time Keeper.
+					</>,
+					`"Welcome, young Aria," Chronos said, his voice echoing through time itself. "Professor Syntaxis speaks highly of your progress. Today, you'll learn the most fundamental truth of our kingdom: every component has a lifecycle - a journey from creation to destruction."`,
+					`Binary appeared beside Aria, bouncing excitedly. "I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!"`,
+				]}
+			/>
 
-		<div className='lifecycle-diagram'>
-					<div className='lifecycle-stage'>
-						<div className='lifecycle-icon mounting'></div>
-						<h3>Mounting</h3>
-						<p>Component enters the DOM</p>
-						<ul>
-							<li>Constructor</li>
-							<li>render</li>
-							<li>componentDidMount</li>
-						</ul>
-					</div>
+			<div className='lifecycle-diagram'>
+				<div className='lifecycle-stage'>
+					<div className='lifecycle-icon mounting'></div>
+					<h3>Mounting</h3>
+					<p>Component enters the DOM</p>
+					<ul>
+						<li>Constructor</li>
+						<li>render</li>
+						<li>componentDidMount</li>
+					</ul>
+				</div>
 
-					<div className='lifecycle-connector'></div>
+				<div className='lifecycle-connector'></div>
 
-					<div className='lifecycle-stage'>
-						<div className='lifecycle-icon updating'></div>
-						<h3>Updating</h3>
-						<p>Component re-renders when props or state change</p>
-						<ul>
-							<li>shouldComponentUpdate</li>
-							<li>render</li>
-							<li>componentDidUpdate</li>
-						</ul>
-					</div>
+				<div className='lifecycle-stage'>
+					<div className='lifecycle-icon updating'></div>
+					<h3>Updating</h3>
+					<p>Component re-renders when props or state change</p>
+					<ul>
+						<li>shouldComponentUpdate</li>
+						<li>render</li>
+						<li>componentDidUpdate</li>
+					</ul>
+				</div>
 
-					<div className='lifecycle-connector'></div>
+				<div className='lifecycle-connector'></div>
 
-					<div className='lifecycle-stage'>
-						<div className='lifecycle-icon unmounting'></div>
-						<h3>Unmounting</h3>
-						<p>Component leaves the DOM</p>
-						<ul>
-							<li>componentWillUnmount</li>
-						</ul>
-					</div>
+				<div className='lifecycle-stage'>
+					<div className='lifecycle-icon unmounting'></div>
+					<h3>Unmounting</h3>
+					<p>Component leaves the DOM</p>
+					<ul>
+						<li>componentWillUnmount</li>
+					</ul>
+				</div>
 			</div>
 
-		<StorySection
-			paragraphs={[
-				`Chronos gestured to the floating hourglasses. "These lifecycle methods are the heartbeat of every component. They allow components to prepare when born, adapt when they change, and gracefully depart when their time ends."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`Chronos gestured to the floating hourglasses. "These lifecycle methods are the heartbeat of every component. They allow components to prepare when born, adapt when they change, and gracefully depart when their time ends."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Time Keeper's Hourglass
 				</h3>
-				<InstructionBox character="Chronos hands you a magical hourglass.">
-					"This hourglass will let you control a component's lifecycle. 
-					Watch carefully as it moves through each stage of existence."
+				<InstructionBox character='Chronos hands you a magical hourglass.'>
+					"This hourglass will let you control a component's
+					lifecycle. Watch carefully as it moves through each stage of
+					existence."
 				</InstructionBox>
 
 				<div className='lifecycle-demo'>
@@ -199,6 +203,12 @@ const ChapterOne = () => {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Chronos`,
+						description: `Master Time Keeper of the Lifecycle Sanctum, guardian of the hourglasses that track every component's journey through time. His voice echoes through time itself as he teaches the fundamental truth of React. "Every component has a lifecycle - a journey from creation to destruction. Time is the canvas upon which components paint their purpose."`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The Lifecycle Lesson:',
 					content:

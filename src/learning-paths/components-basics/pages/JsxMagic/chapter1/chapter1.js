@@ -53,24 +53,39 @@ const ChapterOne = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={1}
-			title='The Magic Language'
-		/>
+			<ChapterIntro chapterNumber={1} title='The Magic Language' />
 
-		<StorySection
-			paragraphs={[
-				<>"Welcome, Aria!" called out <strong>Professor Syntaxis</strong>, a wise mage whose robes shimmered with HTML tags and JavaScript symbols. "I've heard of your progress from Hermes. You're ready to learn the ancient language that makes React truly magical."</>,
-				<>Professor Syntaxis led Aria to a grand library filled with glowing scrolls. "This is <strong>JSX</strong> - a magical syntax that allows us to write component spells using a blend of HTML-like tags and JavaScript expressions."</>,
-				`"But how can browsers understand this magical language?" Aria asked, examining a scroll that seemed to contain both HTML and JavaScript.`,
-				<>"Ah, that's where our translator sprite, <strong>Babel</strong>, comes in," Syntaxis explained. "Babel transforms JSX into regular JavaScript function calls that browsers can understand. Watch!"</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						"Welcome, Aria!" called out{' '}
+						<strong>Professor Syntaxis</strong>, a wise mage whose
+						robes shimmered with HTML tags and JavaScript symbols.
+						"I've heard of your progress from Hermes. You're ready
+						to learn the ancient language that makes React truly
+						magical."
+					</>,
+					<>
+						Professor Syntaxis led Aria to a grand library filled
+						with glowing scrolls. "This is <strong>JSX</strong> - a
+						magical syntax that allows us to write component spells
+						using a blend of HTML-like tags and JavaScript
+						expressions."
+					</>,
+					`"But how can browsers understand this magical language?" Aria asked, examining a scroll that seemed to contain both HTML and JavaScript.`,
+					<>
+						"Ah, that's where our translator sprite,{' '}
+						<strong>Babel</strong>, comes in," Syntaxis explained.
+						"Babel transforms JSX into regular JavaScript function
+						calls that browsers can understand. Watch!"
+					</>,
+				]}
+			/>
 
-		<CodeExample
-					title="Ancient JSX Transformation Scroll"
-					discoveredBy="Revealed to Aria by Professor Syntaxis"
-					code={`// Aria's First JSX Spell
+			<CodeExample
+				title='Ancient JSX Transformation Scroll'
+				discoveredBy='Revealed to Aria by Professor Syntaxis'
+				code={`// Aria's First JSX Spell
 function Greeting() {
   // This magical syntax combines HTML and JavaScript!
   return (
@@ -88,20 +103,21 @@ function Greeting() {
 // )`}
 			/>
 
-		<StorySection
-			paragraphs={[
-				`"Incredible!" Aria exclaimed. "So JSX is like a more elegant spell notation that gets translated into the verbose function calls?"`,
-				`"Exactly!" Syntaxis beamed. "This makes our component spells much more readable and intuitive. Now, let me show you how to use the JSX Translator Crystal..."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"Incredible!" Aria exclaimed. "So JSX is like a more elegant spell notation that gets translated into the verbose function calls?"`,
+					`"Exactly!" Syntaxis beamed. "This makes our component spells much more readable and intuitive. Now, let me show you how to use the JSX Translator Crystal..."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The JSX Translator Crystal
 				</h3>
-				<InstructionBox character="Professor Syntaxis hands you a glowing crystal.">
-					"This translator crystal will show you how Babel transforms JSX. 
-					Try editing the JSX spell below, then activate the crystal!"
+				<InstructionBox character='Professor Syntaxis hands you a glowing crystal.'>
+					"This translator crystal will show you how Babel transforms
+					JSX. Try editing the JSX spell below, then activate the
+					crystal!"
 				</InstructionBox>
 
 				<div className='jsx-translator'>
@@ -208,6 +224,12 @@ function Greeting() {
 			</div>
 
 			<ChapterSummary
+				characterIntros={[
+					{
+						name: `Professor Syntaxis`,
+						description: `A wise mage whose robes shimmer with HTML tags and JavaScript symbols, keeper of the ancient JSX language. He guards the grand library of glowing scrolls and teaches the magical syntax that makes React truly powerful. "JSX bridges the gap between markup and logic, allowing us to write component spells using a blend of HTML-like tags and JavaScript expressions."`,
+					},
+				]}
 				lessonInsight={{
 					title: 'The JSX Lesson:',
 					content:
@@ -220,7 +242,7 @@ function Greeting() {
 				journalEntry={{
 					title: "Aria's Journal - Day 6",
 					content:
-						'The JSX Magic Academy is amazing! Professor Syntaxis showed me how JSX combines the familiarity of HTML with the power of JavaScript. It\'s like writing in a language that feels natural but has hidden depths. The Babel sprite is fascinating - it works tirelessly behind the scenes to translate our elegant JSX into function calls.',
+						"The JSX Magic Academy is amazing! Professor Syntaxis showed me how JSX combines the familiarity of HTML with the power of JavaScript. It's like writing in a language that feels natural but has hidden depths. The Babel sprite is fascinating - it works tirelessly behind the scenes to translate our elegant JSX into function calls.",
 				}}
 			/>
 		</div>

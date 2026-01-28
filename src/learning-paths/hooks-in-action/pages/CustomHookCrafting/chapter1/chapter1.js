@@ -35,17 +35,18 @@ function ChapterOne() {
 	const content = (
 		<>
 			<div className='chapter'>
-				<ChapterIntro
-					chapterNumber={1}
-					title='The Hook Forge Basics'
-				/>
+				<ChapterIntro chapterNumber={1} title='The Hook Forge Basics' />
 
 				<StorySection
 					paragraphs={[
-						<>"Welcome, Aria!" The figure turned, revealing a woman
-						whose apron sparkled with embedded hook patterns. "I am{' '}
-						<strong>Master Artificer Compose</strong>, and this is
-						where we transcend from hook users to hook creators!"</>,
+						<>
+							"Welcome, Aria!" The figure turned, revealing a
+							woman whose apron sparkled with embedded hook
+							patterns. "I am{' '}
+							<strong>Master Artificer Compose</strong>, and this
+							is where we transcend from hook users to hook
+							creators!"
+						</>,
 						`Binary scanned the workshop, projecting amazement at the
 						complex hook blueprints floating everywhere.`,
 						`"You've mastered useState and useEffect," Compose
@@ -59,7 +60,7 @@ function ChapterOne() {
 						explained, beginning to forge a new hook. "Any function
 						starting with 'use' can contain other hooks. This naming
 						convention tells React to apply the Rules of Hooks.
-						Watch as I forge two fundamental patterns!"`
+						Watch as I forge two fundamental patterns!"`,
 					]}
 				/>
 
@@ -82,7 +83,8 @@ function ChapterOne() {
 						Interactive Exercise: Forge Your First Hooks
 					</h3>
 					<InstructionBox character='Experience the power of custom hooks by interacting with useCounter and useToggle below!'>
-						Try the counter controls and toggle the forge to see custom hooks in action.
+						Try the counter controls and toggle the forge to see
+						custom hooks in action.
 					</InstructionBox>
 
 					<div className='hook-demonstrations'>
@@ -236,18 +238,26 @@ function ToggleComponent() {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Master Artificer Compose`,
+							description: `Creator of custom hooks in a workshop where complex hook blueprints float everywhere. Her apron sparkles with embedded hook patterns as she teaches the transcendent art of hook creation. "Any function starting with 'use' can contain other hooks. This naming convention tells React to apply the Rules of Hooks. Custom hooks share logic, not state - each component gets its own instance."`,
+						},
+					]}
 					lessonInsight={{
 						title: 'Hook Forging Fundamentals:',
-						content: "Master custom hooks to become a true React artificer. Start function names with \"use\" to enable hook composition - this convention activates React's Rules of Hooks. Extract repetitive stateful logic into reusable functions that return state and methods. Popular patterns include useCounter, useToggle, useFetch, and useLocalStorage. Custom hooks share logic, not state - each component gets its own instance. Think of them as your personal React toolkit, crafted for your specific needs."
+						content:
+							'Master custom hooks to become a true React artificer. Start function names with "use" to enable hook composition - this convention activates React\'s Rules of Hooks. Extract repetitive stateful logic into reusable functions that return state and methods. Popular patterns include useCounter, useToggle, useFetch, and useLocalStorage. Custom hooks share logic, not state - each component gets its own instance. Think of them as your personal React toolkit, crafted for your specific needs.',
 					}}
 					reflectionQuestions={[
 						'How does the workshop setting reflect the creative nature of custom hooks?',
 						'What patterns in your own code are begging to be extracted into custom hooks?',
-						'Why is "use" more than just a naming convention?'
+						'Why is "use" more than just a naming convention?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 18 (Morning)",
-						content: "The Synthesis Workshop opened my eyes to the true power of React! Master Artificer Compose showed me how to forge my own hooks. The secret: any function starting with \"use\" can contain other hooks! I created useCounter (encapsulating increment/decrement logic) and useToggle (managing boolean states with helper methods). Custom hooks extract stateful logic into reusable functions - I can share complex patterns between components without copy-pasting! It's like creating my own toolkit of React superpowers. The forge metaphor is perfect - we're literally crafting new tools from existing hooks!"
+						content:
+							'The Synthesis Workshop opened my eyes to the true power of React! Master Artificer Compose showed me how to forge my own hooks. The secret: any function starting with "use" can contain other hooks! I created useCounter (encapsulating increment/decrement logic) and useToggle (managing boolean states with helper methods). Custom hooks extract stateful logic into reusable functions - I can share complex patterns between components without copy-pasting! It\'s like creating my own toolkit of React superpowers. The forge metaphor is perfect - we\'re literally crafting new tools from existing hooks!',
 					}}
 				/>
 			</div>

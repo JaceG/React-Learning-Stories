@@ -35,42 +35,57 @@ function ChapterOne() {
 					title='Advanced State Incantations'
 				/>
 
-			<StorySection
-				paragraphs={[
-					`In a circular classroom filled with hovering spell books, Aria found a distinguished wizard whose robes seemed to shimmer between different states. His beard sparkled with tiny useState calls that blinked in and out of existence.`,
-					<>"Ah, you must be Aria!" the wizard exclaimed, adjusting his spectacles that displayed real-time component renders. "I am <strong>Professor Hooksworth</strong>, keeper of the Hook Laws. Word of your achievements has reached even these halls."</>,
-					`Binary chirped a greeting, projecting a small hologram of their previous adventures.`,
-					`"Impressive companion!" Hooksworth noted. "Now, I understand you've mastered basic state management with the State Sorcerers. But here at the Academy, we refine those crude spells into elegant hooks."`,
-					<>He waved his wand, and glowing runes appeared in the air. "Let's begin with an advanced pattern - <strong>Lazy Initial State</strong>. You see, Aria, sometimes our initial state requires expensive calculations. Rather than computing them on every render..."</>,
-					`"We can provide a function!" Aria finished, her eyes lighting up with understanding. "It only runs once, during initialization!"`,
-					`"Precisely!" Hooksworth beamed. "You're already thinking like a Hook Mage. Let me show you the incantation."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`In a circular classroom filled with hovering spell books, Aria found a distinguished wizard whose robes seemed to shimmer between different states. His beard sparkled with tiny useState calls that blinked in and out of existence.`,
+						<>
+							"Ah, you must be Aria!" the wizard exclaimed,
+							adjusting his spectacles that displayed real-time
+							component renders. "I am{' '}
+							<strong>Professor Hooksworth</strong>, keeper of the
+							Hook Laws. Word of your achievements has reached
+							even these halls."
+						</>,
+						`Binary chirped a greeting, projecting a small hologram of their previous adventures.`,
+						`"Impressive companion!" Hooksworth noted. "Now, I understand you've mastered basic state management with the State Sorcerers. But here at the Academy, we refine those crude spells into elegant hooks."`,
+						<>
+							He waved his wand, and glowing runes appeared in the
+							air. "Let's begin with an advanced pattern -{' '}
+							<strong>Lazy Initial State</strong>. You see, Aria,
+							sometimes our initial state requires expensive
+							calculations. Rather than computing them on every
+							render..."
+						</>,
+						`"We can provide a function!" Aria finished, her eyes lighting up with understanding. "It only runs once, during initialization!"`,
+						`"Precisely!" Hooksworth beamed. "You're already thinking like a Hook Mage. Let me show you the incantation."`,
+					]}
+				/>
 
-			<CodeExample
-				title='Lazy Initial State Pattern'
-				discoveredBy='Transcribed by Aria'
-				code={`// Instead of this (runs on every render):
+				<CodeExample
+					title='Lazy Initial State Pattern'
+					discoveredBy='Transcribed by Aria'
+					code={`// Instead of this (runs on every render):
 const [data, setData] = useState(expensiveCalculation());
 
 // Use this (runs only once):
 const [data, setData] = useState(() => expensiveCalculation());`}
-			/>
+				/>
 
-			<StorySection
-				paragraphs={[
-					`"This incantation," Hooksworth explained, waving his wand to highlight the arrow function, "ensures expensive calculations only occur during the component's birth, not with every re-render. It's the difference between a novice and a master!"`,
-					`Binary beeped excitedly, projecting performance metrics showing the efficiency gains.`,
-					`"Your companion grasps it immediately!" Hooksworth chuckled. "Now, let me show you another crucial pattern - functional updates. This is where many apprentices stumble."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"This incantation," Hooksworth explained, waving his wand to highlight the arrow function, "ensures expensive calculations only occur during the component's birth, not with every re-render. It's the difference between a novice and a master!"`,
+						`Binary beeped excitedly, projecting performance metrics showing the efficiency gains.`,
+						`"Your companion grasps it immediately!" Hooksworth chuckled. "Now, let me show you another crucial pattern - functional updates. This is where many apprentices stumble."`,
+					]}
+				/>
 
 				<div className='interactive-section'>
 					<h3 className='section-title'>
 						Interactive Exercise: Practice Your State Spells
 					</h3>
 					<InstructionBox character='Create your own magical spells and watch them accumulate in your spell book!'>
-						Enter a spell name, set the magic level, and cast your spell.
+						Enter a spell name, set the magic level, and cast your
+						spell.
 					</InstructionBox>
 
 					<div className='spell-workshop'>
@@ -179,18 +194,26 @@ setCount(prevCount => prevCount + 1);`}
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Professor Hooksworth`,
+							description: `Keeper of the Hook Laws in the circular classroom of the Hooks Academy, distinguished wizard whose robes shimmer between different states. His beard sparkles with tiny useState calls that blink in and out of existence, and his spectacles display real-time component renders. "Here at the Academy, we refine crude spells into elegant hooks. Lazy initialization with functions prevents expensive computations on every render - it's the difference between a novice and a master!"`,
+						},
+					]}
 					lessonInsight={{
 						title: "Professor Hooksworth's useState Wisdom:",
-						content: "Master useState through advanced patterns that separate novices from experts. Lazy initialization with functions prevents expensive computations on every render. Functional updates guarantee you always work with current state, crucial for handling rapid user interactions. These patterns become indispensable as applications scale - they're not optimizations, they're professional requirements. Remember: hooks aren't just simpler syntax, they're a more powerful paradigm."
+						content:
+							"Master useState through advanced patterns that separate novices from experts. Lazy initialization with functions prevents expensive computations on every render. Functional updates guarantee you always work with current state, crucial for handling rapid user interactions. These patterns become indispensable as applications scale - they're not optimizations, they're professional requirements. Remember: hooks aren't just simpler syntax, they're a more powerful paradigm.",
 					}}
 					reflectionQuestions={[
 						"How does the Academy's modern setting reflect the evolution from classes to hooks?",
 						'Why might Professor Hooksworth call functional updates "crucial for rapid interactions"?',
-						'What real-world scenarios would benefit from lazy initialization?'
+						'What real-world scenarios would benefit from lazy initialization?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 16 (Morning)",
-						content: "The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur. Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! And functional updates ensure I always work with the latest state, avoiding race conditions. These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!"
+						content:
+							"The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur. Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! And functional updates ensure I always work with the latest state, avoiding race conditions. These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!",
 					}}
 				/>
 			</div>

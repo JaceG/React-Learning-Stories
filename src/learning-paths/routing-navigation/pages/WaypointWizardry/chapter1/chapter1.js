@@ -77,175 +77,167 @@ function ChapterOne() {
 					bridge="Marina guided Aria into the Waypoint Sanctum's crystal dome, where light refracted into countless rainbows. Here, surrounded by floating navigation orbs, she would learn the most advanced routing patterns that could adapt and respond to user behavior."
 				/>
 
-			<StorySection
-				paragraphs={[
-					`"Welcome to advanced waypoint training," Marina began, her voice resonating through the chamber. "Today, I'll teach you how waypoints become more than destinations - they become intelligent navigation nodes."`,
-					`Marina activated a complex navigation matrix. "In your journey through every quarter, you've learned that routes are living entities. They breathe with state, pulse with effects, communicate through props, and transform through hooks."`,
-					`Aria watched with growing understanding. "So routes can be intelligent? How do we make them respond to user context and behavior?"`,
-					<>"By integrating every pattern you've learned," Marina replied, activating the sanctum's holographic display. "Watch as I demonstrate the <strong>Waypoint Architecture Pattern</strong> - where navigation becomes a symphony of all React knowledge."</>,
-					`Binary chirped excitedly: "System initialization! Marina's routing: LOADED. Aria's foundation: READY. Waypoint intelligence: ACTIVATING!"`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"Welcome to advanced waypoint training," Marina began, her voice resonating through the chamber. "Today, I'll teach you how waypoints become more than destinations - they become intelligent navigation nodes."`,
+						`Marina activated a complex navigation matrix. "In your journey through every quarter, you've learned that routes are living entities. They breathe with state, pulse with effects, communicate through props, and transform through hooks."`,
+						`Aria watched with growing understanding. "So routes can be intelligent? How do we make them respond to user context and behavior?"`,
+						<>
+							"By integrating every pattern you've learned,"
+							Marina replied, activating the sanctum's holographic
+							display. "Watch as I demonstrate the{' '}
+							<strong>Waypoint Architecture Pattern</strong> -
+							where navigation becomes a symphony of all React
+							knowledge."
+						</>,
+						`Binary chirped excitedly: "System initialization! Marina's routing: LOADED. Aria's foundation: READY. Waypoint intelligence: ACTIVATING!"`,
+					]}
+				/>
 
-			<div className='waypoint-map master-architecture'>
-						<h3>Marina's Advanced Navigation Architecture</h3>
+				<div className='waypoint-map master-architecture'>
+					<h3>Marina's Advanced Navigation Architecture</h3>
 
-						{!masterMode && (
-							<button
-								className='master-mode-toggle'
-								onClick={() => setMasterMode(true)}>
-								✨ Activate Master Vision
-							</button>
-						)}
+					{!masterMode && (
+						<button
+							className='master-mode-toggle'
+							onClick={() => setMasterMode(true)}>
+							✨ Activate Master Vision
+						</button>
+					)}
 
-						<div className='map-container enhanced'>
-							<svg
-								viewBox='0 0 100 100'
-								className='waypoint-svg master-enhanced'>
-								{/* Draw intelligent connections */}
-								{masterMode &&
-									predefinedWaypoints.map(
-										(waypoint, index) => {
-											const nextIndex =
-												(index + 1) %
-												predefinedWaypoints.length;
-											const next =
-												predefinedWaypoints[nextIndex];
-											return (
-												<g
-													key={`connection-${waypoint.id}`}>
-													<line
-														x1={
-															waypoint.coordinates
-																.x
-														}
-														y1={
-															waypoint.coordinates
-																.y
-														}
-														x2={next.coordinates.x}
-														y2={next.coordinates.y}
-														stroke='rgba(147, 51, 234, 0.3)'
-														strokeWidth='1'
-														strokeDasharray='2,2'
-														className='intelligent-path'
-													/>
-													<text
-														x={
-															(waypoint
-																.coordinates.x +
-																next.coordinates
-																	.x) /
-															2
-														}
-														y={
-															(waypoint
-																.coordinates.y +
-																next.coordinates
-																	.y) /
-															2
-														}
-														fontSize='3'
-														fill='#9333ea'
-														textAnchor='middle'>
-														state flow
-													</text>
-												</g>
-											);
-										}
-									)}
+					<div className='map-container enhanced'>
+						<svg
+							viewBox='0 0 100 100'
+							className='waypoint-svg master-enhanced'>
+							{/* Draw intelligent connections */}
+							{masterMode &&
+								predefinedWaypoints.map((waypoint, index) => {
+									const nextIndex =
+										(index + 1) %
+										predefinedWaypoints.length;
+									const next = predefinedWaypoints[nextIndex];
+									return (
+										<g key={`connection-${waypoint.id}`}>
+											<line
+												x1={waypoint.coordinates.x}
+												y1={waypoint.coordinates.y}
+												x2={next.coordinates.x}
+												y2={next.coordinates.y}
+												stroke='rgba(147, 51, 234, 0.3)'
+												strokeWidth='1'
+												strokeDasharray='2,2'
+												className='intelligent-path'
+											/>
+											<text
+												x={
+													(waypoint.coordinates.x +
+														next.coordinates.x) /
+													2
+												}
+												y={
+													(waypoint.coordinates.y +
+														next.coordinates.y) /
+													2
+												}
+												fontSize='3'
+												fill='#9333ea'
+												textAnchor='middle'>
+												state flow
+											</text>
+										</g>
+									);
+								})}
 
-								{/* Draw intelligent waypoints */}
-								{predefinedWaypoints.map((waypoint) => (
-									<g key={waypoint.id}>
-										<circle
-											cx={waypoint.coordinates.x}
-											cy={waypoint.coordinates.y}
-											r={masterMode ? '10' : '8'}
-											fill={
-												activeWaypoint === waypoint.id
-													? '#8b5cf6'
-													: '#e9d5ff'
-											}
-											stroke='#7c3aed'
-											strokeWidth='2'
-											className='waypoint-node intelligent'
-											onClick={() =>
-												navigateToWaypoint(waypoint.id)
-											}
-										/>
-										<text
-											x={waypoint.coordinates.x}
-											y={waypoint.coordinates.y + 2}
-											textAnchor='middle'
-											fontSize='8'
-											className='waypoint-icon'>
-											{waypoint.icon}
-										</text>
-										<text
-											x={waypoint.coordinates.x}
-											y={waypoint.coordinates.y + 15}
-											textAnchor='middle'
-											fontSize='4'
-											fill='#6b7280'>
-											{waypoint.name}
-										</text>
-									</g>
-								))}
-							</svg>
-						</div>
-
-						<div className='waypoint-legend master-enhanced'>
-							<h4>Intelligent Waypoint System</h4>
+							{/* Draw intelligent waypoints */}
 							{predefinedWaypoints.map((waypoint) => (
-								<div
-									key={waypoint.id}
-									className={`waypoint-item ${
-										activeWaypoint === waypoint.id
-											? 'active'
-											: ''
-									}`}
-									onClick={() =>
-										navigateToWaypoint(waypoint.id)
-									}>
-									<span className='waypoint-icon'>
+								<g key={waypoint.id}>
+									<circle
+										cx={waypoint.coordinates.x}
+										cy={waypoint.coordinates.y}
+										r={masterMode ? '10' : '8'}
+										fill={
+											activeWaypoint === waypoint.id
+												? '#8b5cf6'
+												: '#e9d5ff'
+										}
+										stroke='#7c3aed'
+										strokeWidth='2'
+										className='waypoint-node intelligent'
+										onClick={() =>
+											navigateToWaypoint(waypoint.id)
+										}
+									/>
+									<text
+										x={waypoint.coordinates.x}
+										y={waypoint.coordinates.y + 2}
+										textAnchor='middle'
+										fontSize='8'
+										className='waypoint-icon'>
 										{waypoint.icon}
-									</span>
-									<div className='waypoint-info'>
-										<h5>{waypoint.name}</h5>
-										<p>{waypoint.description}</p>
-										<code>{waypoint.path}</code>
-										{masterMode && (
-											<div className='react-pattern'>
-												<strong>React Pattern:</strong>
-												<p>{waypoint.reactPattern}</p>
-											</div>
-										)}
-									</div>
-								</div>
+									</text>
+									<text
+										x={waypoint.coordinates.x}
+										y={waypoint.coordinates.y + 15}
+										textAnchor='middle'
+										fontSize='4'
+										fill='#6b7280'>
+										{waypoint.name}
+									</text>
+								</g>
 							))}
-						</div>
+						</svg>
+					</div>
+
+					<div className='waypoint-legend master-enhanced'>
+						<h4>Intelligent Waypoint System</h4>
+						{predefinedWaypoints.map((waypoint) => (
+							<div
+								key={waypoint.id}
+								className={`waypoint-item ${
+									activeWaypoint === waypoint.id
+										? 'active'
+										: ''
+								}`}
+								onClick={() => navigateToWaypoint(waypoint.id)}>
+								<span className='waypoint-icon'>
+									{waypoint.icon}
+								</span>
+								<div className='waypoint-info'>
+									<h5>{waypoint.name}</h5>
+									<p>{waypoint.description}</p>
+									<code>{waypoint.path}</code>
+									{masterMode && (
+										<div className='react-pattern'>
+											<strong>React Pattern:</strong>
+											<p>{waypoint.reactPattern}</p>
+										</div>
+									)}
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 
 			<StorySection
 				paragraphs={[
 					`"Notice how each waypoint isn't just a destination," Marina explained. "The Castle Keep uses component composition. The Grand Bazaar manages product state. The Academy leverages custom hooks. The Forge validates with forms."`,
-					`Aria studied the patterns with fascination. "I can see how they all communicate through the navigation system! This is incredible - routes that understand context, preserve state, and adapt to user needs."`
-			]}
-		/>
+					`Aria studied the patterns with fascination. "I can see how they all communicate through the navigation system! This is incredible - routes that understand context, preserve state, and adapt to user needs."`,
+				]}
+			/>
 
-		<div className='interactive-section'>
-			<h3 className='section-title'>
-				Marina's Waypoint Architecture
-			</h3>
-			<InstructionBox character='Click "Activate Master Vision" to see how React patterns integrate with each waypoint!'>
-				Click on different waypoints to navigate and watch the compass track your journey.
-			</InstructionBox>
+			<div className='interactive-section'>
+				<h3 className='section-title'>
+					Marina's Waypoint Architecture
+				</h3>
+				<InstructionBox character='Click "Activate Master Vision" to see how React patterns integrate with each waypoint!'>
+					Click on different waypoints to navigate and watch the
+					compass track your journey.
+				</InstructionBox>
 
-			<CodeExample
-						title="Intelligent Route Configuration"
-						code={`// Marina's Advanced Routing with React Integration
+				<CodeExample
+					title='Intelligent Route Configuration'
+					code={`// Marina's Advanced Routing with React Integration
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { StateProvider, useAppState } from './react-patterns';
 
@@ -383,119 +375,114 @@ export function useRouteIntelligence() {
   
   return routeInfo;
 }`}
-					/>
+				/>
 
-					<div className='waypoint-creation master-workshop'>
-						<h3>Architect an Intelligent Waypoint</h3>
-						<div className='creation-form enhanced'>
-							<div className='form-group'>
-								<label>Waypoint Name</label>
-								<input
-									type='text'
-									value={customWaypoint.name}
-									onChange={(e) =>
-										setCustomWaypoint({
-											...customWaypoint,
-											name: e.target.value,
-										})
-									}
-									placeholder='Mystic Grove'
-								/>
-							</div>
-							<div className='form-group'>
-								<label>Path</label>
-								<input
-									type='text'
-									value={customWaypoint.path}
-									onChange={(e) =>
-										setCustomWaypoint({
-											...customWaypoint,
-											path: e.target.value,
-										})
-									}
-									placeholder='/grove'
-								/>
-							</div>
-							<div className='form-group'>
-								<label>Icon</label>
-								<div className='icon-selector'>
-									{waypointIcons.map((icon) => (
-										<button
-											key={icon}
-											className={`icon-option ${
-												customWaypoint.icon === icon
-													? 'selected'
-													: ''
-											}`}
-											onClick={() =>
-												setCustomWaypoint({
-													...customWaypoint,
-													icon,
-												})
-											}>
-											{icon}
-										</button>
-									))}
-								</div>
-							</div>
-							<div className='form-group'>
-								<label>Description</label>
-								<textarea
-									value={customWaypoint.description}
-									onChange={(e) =>
-										setCustomWaypoint({
-											...customWaypoint,
-											description: e.target.value,
-										})
-									}
-									placeholder='A peaceful place for meditation...'
-								/>
-							</div>
-							{masterMode && (
-								<div className='form-group react-enhancement'>
-									<label>React Pattern Integration</label>
-									<select
-										value={customWaypoint.reactEnhancement}
-										onChange={(e) =>
+				<div className='waypoint-creation master-workshop'>
+					<h3>Architect an Intelligent Waypoint</h3>
+					<div className='creation-form enhanced'>
+						<div className='form-group'>
+							<label>Waypoint Name</label>
+							<input
+								type='text'
+								value={customWaypoint.name}
+								onChange={(e) =>
+									setCustomWaypoint({
+										...customWaypoint,
+										name: e.target.value,
+									})
+								}
+								placeholder='Mystic Grove'
+							/>
+						</div>
+						<div className='form-group'>
+							<label>Path</label>
+							<input
+								type='text'
+								value={customWaypoint.path}
+								onChange={(e) =>
+									setCustomWaypoint({
+										...customWaypoint,
+										path: e.target.value,
+									})
+								}
+								placeholder='/grove'
+							/>
+						</div>
+						<div className='form-group'>
+							<label>Icon</label>
+							<div className='icon-selector'>
+								{waypointIcons.map((icon) => (
+									<button
+										key={icon}
+										className={`icon-option ${
+											customWaypoint.icon === icon
+												? 'selected'
+												: ''
+										}`}
+										onClick={() =>
 											setCustomWaypoint({
 												...customWaypoint,
-												reactEnhancement:
-													e.target.value,
+												icon,
 											})
 										}>
-										<option value=''>
-											Select Pattern...
-										</option>
-										<option value='state'>
-											State Management
-										</option>
-										<option value='hooks'>
-											Custom Hooks
-										</option>
-										<option value='context'>
-											Context Providers
-										</option>
-										<option value='forms'>
-											Form Validation
-										</option>
-									</select>
-								</div>
-							)}
-							<button
-								className='create-waypoint-btn master-create'
-								onClick={() => {
-									createWaypoint(customWaypoint);
-									setShowCreationProcess(true);
-								}}>
-								Architect Waypoint ✨
-							</button>
+										{icon}
+									</button>
+								))}
+							</div>
 						</div>
+						<div className='form-group'>
+							<label>Description</label>
+							<textarea
+								value={customWaypoint.description}
+								onChange={(e) =>
+									setCustomWaypoint({
+										...customWaypoint,
+										description: e.target.value,
+									})
+								}
+								placeholder='A peaceful place for meditation...'
+							/>
+						</div>
+						{masterMode && (
+							<div className='form-group react-enhancement'>
+								<label>React Pattern Integration</label>
+								<select
+									value={customWaypoint.reactEnhancement}
+									onChange={(e) =>
+										setCustomWaypoint({
+											...customWaypoint,
+											reactEnhancement: e.target.value,
+										})
+									}>
+									<option value=''>Select Pattern...</option>
+									<option value='state'>
+										State Management
+									</option>
+									<option value='hooks'>Custom Hooks</option>
+									<option value='context'>
+										Context Providers
+									</option>
+									<option value='forms'>
+										Form Validation
+									</option>
+								</select>
+							</div>
+						)}
+						<button
+							className='create-waypoint-btn master-create'
+							onClick={() => {
+								createWaypoint(customWaypoint);
+								setShowCreationProcess(true);
+							}}>
+							Architect Waypoint ✨
+						</button>
+					</div>
 
-						{showCreationProcess && (
-							<div className='creation-result master-result'>
-								<h4>Intelligent Waypoint Architected!</h4>
-								<div className='code-snippet'>
-									{`{
+					{showCreationProcess && (
+						<div className='creation-result master-result'>
+							<h4>Intelligent Waypoint Architected!</h4>
+							<div className='code-snippet'>
+								{`{
   path: "${customWaypoint.path}",
   element: <${customWaypoint.name.replace(/\s+/g, '')} />,
   loader: async () => {
@@ -514,28 +501,28 @@ export function useRouteIntelligence() {
     title: "${customWaypoint.name}",
     icon: "${customWaypoint.icon}",
     description: "${customWaypoint.description}"${
-										customWaypoint.reactEnhancement
-											? `,
+		customWaypoint.reactEnhancement
+			? `,
     pattern: "${customWaypoint.reactEnhancement}",
     stateKey: "${customWaypoint.path.slice(1)}"`
-											: ''
-									}
+			: ''
+	}
   }
 }`}
-								</div>
-								<p className='creation-note'>
-									Marina: "Excellent route structure!"
-									<br />
-									Student: "And beautifully integrated with
-									React patterns!"
-								</p>
 							</div>
-						)}
-					</div>
+							<p className='creation-note'>
+								Marina: "Excellent route structure!"
+								<br />
+								Student: "And beautifully integrated with React
+								patterns!"
+							</p>
+						</div>
+					)}
+				</div>
 
-					<CodeExample
-						title="The Complete Waypoint System"
-						code={`// Marina's Advanced Route Architecture
+				<CodeExample
+					title='The Complete Waypoint System'
+					code={`// Marina's Advanced Route Architecture
 import { createBrowserRouter, useNavigation, useMatches } from 'react-router-dom';
 import { useRouteState, useRouteEffects, useRouteValidation } from './react-hooks';
 
@@ -688,49 +675,49 @@ function IntelligentNavigation() {
     </nav>
   );
 }`}
-					/>
+				/>
 
-					<div className='waypoint-features master-features'>
-						<h3>Marina's Waypoint Enhancements</h3>
-						<div className='feature-grid master-grid'>
-							<div className='feature-card'>
-								<h4>Intelligent Loaders</h4>
-								<p className='marina'>Marina: Data fetching</p>
-								<p className='integration'>
-									Integration: + State prefetching
-								</p>
-								<code>{`loader: intelligentLoader()`}</code>
-							</div>
-							<div className='feature-card'>
-								<h4>Smart Actions</h4>
-								<p className='marina'>Marina: Form handling</p>
-								<p className='integration'>
-									Integration: + Validation flow
-								</p>
-								<code>{`action: validatedAction()`}</code>
-							</div>
-							<div className='feature-card'>
-								<h4>Reactive Boundaries</h4>
-								<p className='marina'>Marina: Error catching</p>
-								<p className='integration'>
-									Integration: + State recovery
-								</p>
-								<code>{`errorElement: <SmartError />`}</code>
-							</div>
-							<div className='feature-card'>
-								<h4>Predictive Loading</h4>
-								<p className='marina'>Marina: Lazy loading</p>
-								<p className='integration'>
-									Integration: + Preload hints
-								</p>
-								<code>{`lazy: predictiveImport()`}</code>
-							</div>
+				<div className='waypoint-features master-features'>
+					<h3>Marina's Waypoint Enhancements</h3>
+					<div className='feature-grid master-grid'>
+						<div className='feature-card'>
+							<h4>Intelligent Loaders</h4>
+							<p className='marina'>Marina: Data fetching</p>
+							<p className='integration'>
+								Integration: + State prefetching
+							</p>
+							<code>{`loader: intelligentLoader()`}</code>
 						</div>
+						<div className='feature-card'>
+							<h4>Smart Actions</h4>
+							<p className='marina'>Marina: Form handling</p>
+							<p className='integration'>
+								Integration: + Validation flow
+							</p>
+							<code>{`action: validatedAction()`}</code>
+						</div>
+						<div className='feature-card'>
+							<h4>Reactive Boundaries</h4>
+							<p className='marina'>Marina: Error catching</p>
+							<p className='integration'>
+								Integration: + State recovery
+							</p>
+							<code>{`errorElement: <SmartError />`}</code>
+						</div>
+						<div className='feature-card'>
+							<h4>Predictive Loading</h4>
+							<p className='marina'>Marina: Lazy loading</p>
+							<p className='integration'>
+								Integration: + Preload hints
+							</p>
+							<code>{`lazy: predictiveImport()`}</code>
+						</div>
+					</div>
 				</div>
 
 				<StorySection
 					paragraphs={[
-						`"Each enhancement builds on the foundation," Marina explained. "We're not just loading data - we're orchestrating entire user experiences."`
+						`"Each enhancement builds on the foundation," Marina explained. "We're not just loading data - we're orchestrating entire user experiences."`,
 					]}
 				/>
 
@@ -743,11 +730,11 @@ function IntelligentNavigation() {
 						`Marina demonstrated the complete waypoint system to the learning group. "This shows how we can transform simple routing into an intelligent navigation ecosystem," she explained.`,
 						`Aria watched with amazement. "The way state flows through the routes... it's like watching a river system that knows where it needs to go!"`,
 						`Marina smiled with teaching satisfaction. "This is what learning looks like - not just knowing patterns, but understanding how they weave together into something greater."`,
-						`Binary projected the final statistics: "Waypoint intelligence: MAXIMUM! Pattern integration: COMPLETE! Marina's teaching + Aria's learning: EXCELLENT! Future students will study this system for generations!"`
-			]}
-			/>
+						`Binary projected the final statistics: "Waypoint intelligence: MAXIMUM! Pattern integration: COMPLETE! Marina's teaching + Aria's learning: EXCELLENT! Future students will study this system for generations!"`,
+					]}
+				/>
 
-			<div className='journey-tracker master-journey'>
+				<div className='journey-tracker master-journey'>
 					<h3>Your Architectural Journey</h3>
 					<div className='journey-path enhanced'>
 						{waypointHistory.map((waypoint, index) => (
@@ -759,10 +746,10 @@ function IntelligentNavigation() {
 										{index % 4 === 0
 											? 'component'
 											: index % 4 === 1
-											? 'state'
-											: index % 4 === 2
-											? 'hook'
-											: 'form'}
+												? 'state'
+												: index % 4 === 2
+													? 'hook'
+													: 'form'}
 									</span>
 								)}
 								{index < waypointHistory.length - 1 && (
@@ -774,14 +761,21 @@ function IntelligentNavigation() {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Captain Marina`,
+							description: `Master navigator of the Central Citadel and keeper of the Waypoint Sanctum, where floating navigation orbs trace paths through the crystal dome. Her voice resonates through the chamber as she teaches the most advanced routing patterns. "Waypoints are living entities. They breathe with state, pulse with effects, communicate through context, and evolve through user interaction. By integrating every pattern you've learned, navigation becomes a symphony of all React knowledge."`,
+						},
+					]}
 					lessonInsight={{
 						title: "Marina's Wisdom:",
-						content: "Waypoints are living entities. They breathe with state, pulse with effects, communicate through context, and evolve through user interaction. Navigation isn't just about moving between pages - it's about orchestrating entire application experiences. Every route is a complete React application in miniature, with all the patterns working in harmony!"
+						content:
+							"Waypoints are living entities. They breathe with state, pulse with effects, communicate through context, and evolve through user interaction. Navigation isn't just about moving between pages - it's about orchestrating entire application experiences. Every route is a complete React application in miniature, with all the patterns working in harmony!",
 					}}
 					reflectionQuestions={[
 						'How does treating routes as intelligent entities that integrate all React patterns change your approach to application architecture?',
 						'What possibilities open up when waypoints can preserve state, execute effects, validate transitions, and adapt to user behavior?',
-						"How does Aria's journey through the React Kingdom help her understand Marina's advanced navigation architecture concepts?"
+						"How does Aria's journey through the React Kingdom help her understand Marina's advanced navigation architecture concepts?",
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 23 (Morning)",

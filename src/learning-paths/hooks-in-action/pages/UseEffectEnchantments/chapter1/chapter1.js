@@ -112,11 +112,24 @@ function ChapterOne() {
 				<StorySection
 					paragraphs={[
 						`A figure materialized from the temporal flux - robed in fabric that shifted between states of existence. Hourglasses orbited around them, sand flowing upward in some, frozen in others.`,
-						<>"Aria of the State Sorcerers," the figure intoned, their voice seeming to come from multiple moments in time. "I am the <strong>Effect Sage</strong>, keeper of the bridge between React's pure realm and the chaotic outside world."</>,
+						<>
+							"Aria of the State Sorcerers," the figure intoned,
+							their voice seeming to come from multiple moments in
+							time. "I am the <strong>Effect Sage</strong>, keeper
+							of the bridge between React's pure realm and the
+							chaotic outside world."
+						</>,
 						`Binary beeped nervously as its sensors detected temporal anomalies throughout the room.`,
-						<>"Fear not, small construct," the Sage smiled. "Time flows differently here because <strong>useEffect</strong> exists outside React's normal rendering cycle. It's where we handle side effects - the messy, impure operations that connect our components to external systems."</>,
+						<>
+							"Fear not, small construct," the Sage smiled. "Time
+							flows differently here because{' '}
+							<strong>useEffect</strong> exists outside React's
+							normal rendering cycle. It's where we handle side
+							effects - the messy, impure operations that connect
+							our components to external systems."
+						</>,
 						`Aria stepped forward, intrigued. "Professor Hooksworth mentioned useEffect was different from other hooks."`,
-						`"Indeed," the Sage waved their hand, creating temporal diagrams in the air. "In the ancient times, class components had separate lifecycle methods. useEffect unified them all into one powerful enchantment. Watch and learn!"`
+						`"Indeed," the Sage waved their hand, creating temporal diagrams in the air. "In the ancient times, class components had separate lifecycle methods. useEffect unified them all into one powerful enchantment. Watch and learn!"`,
 					]}
 				/>
 
@@ -139,14 +152,17 @@ useEffect(() => {
 					paragraphs={[
 						`"The cleanup function," the Sage explained, temporal echoes emphasizing each word, "is your protection against temporal contamination. Without it, effects linger across time, causing memory leaks and phantom behaviors."`,
 						`"I see timers and subscriptions that outlive their components," Aria observed, studying the code. "The cleanup prevents them from haunting the application!"`,
-						`"Precisely!" The Sage's form solidified with approval. "You understand the danger of unmanaged side effects. Now, let me show you how different dependency arrays control when your effects activate across the timeline."`
+						`"Precisely!" The Sage's form solidified with approval. "You understand the danger of unmanaged side effects. Now, let me show you how different dependency arrays control when your effects activate across the timeline."`,
 					]}
 				/>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>Interactive Exercise: The Lifecycle Laboratory</h3>
+					<h3 className='section-title'>
+						Interactive Exercise: The Lifecycle Laboratory
+					</h3>
 					<InstructionBox character='Explore different types of effects and their lifecycles!'>
-						Watch how effects run, cleanup, and track mouse movements and window size.
+						Watch how effects run, cleanup, and track mouse
+						movements and window size.
 					</InstructionBox>
 
 					<div className='effect-workshop'>
@@ -341,18 +357,26 @@ useEffect(() => {
 				</div>
 
 				<ChapterSummary
+					characterIntros={[
+						{
+							name: `Effect Sage`,
+							description: `Keeper of the bridge between React's pure realm and the chaotic outside world in the Temporal Tower. Robed in fabric that shifts between states of existence, with hourglasses orbiting around them - sand flowing upward in some, frozen in others. "useEffect exists outside React's normal rendering cycle. It's where we handle side effects - the messy, impure operations that connect our components to external systems."`,
+						},
+					]}
 					lessonInsight={{
 						title: "The Effect Sage's Temporal Wisdom:",
-						content: "Master useEffect as your portal to the outside world. This hook handles all side effects - API calls, timers, subscriptions, DOM manipulation - anything impure that reaches beyond React's boundaries. Control effect timing through dependencies: empty array for mount-only, specific deps for selective re-runs, no array for every render. Always return cleanup functions to prevent temporal contamination. Remember: effects run after render commits, in their own timeline."
+						content:
+							"Master useEffect as your portal to the outside world. This hook handles all side effects - API calls, timers, subscriptions, DOM manipulation - anything impure that reaches beyond React's boundaries. Control effect timing through dependencies: empty array for mount-only, specific deps for selective re-runs, no array for every render. Always return cleanup functions to prevent temporal contamination. Remember: effects run after render commits, in their own timeline.",
 					}}
 					reflectionQuestions={[
 						'How does the "temporal contamination" metaphor help visualize memory leaks?',
 						'Why might effects need their own "timeline" separate from rendering?',
-						'What real-world chaos might occur without proper cleanup functions?'
+						'What real-world chaos might occur without proper cleanup functions?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 17 (Morning)",
-						content: "The Temporal Tower revealed useEffect's true nature - it's a bridge between React's pure rendering world and the messy reality of side effects! The Effect Sage showed me how one hook replaces all the old lifecycle methods. Empty dependencies make it run once (mount), dependencies control re-runs, and cleanup functions prevent temporal contamination (memory leaks). Effects run AFTER render commits, ensuring DOM readiness. The key insight: effects exist in their own time stream, synchronized with but separate from rendering!"
+						content:
+							"The Temporal Tower revealed useEffect's true nature - it's a bridge between React's pure rendering world and the messy reality of side effects! The Effect Sage showed me how one hook replaces all the old lifecycle methods. Empty dependencies make it run once (mount), dependencies control re-runs, and cleanup functions prevent temporal contamination (memory leaks). Effects run AFTER render commits, ensuring DOM readiness. The key insight: effects exist in their own time stream, synchronized with but separate from rendering!",
 					}}
 				/>
 			</div>
