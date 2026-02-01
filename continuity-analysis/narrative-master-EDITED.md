@@ -1471,7 +1471,9 @@ Instantly, red warning lights appeared along the entire route. "Every workshop i
 
 "Is there a better way?" Aria asked, studying the tangled paths.
 
-🔴 ~~Propius~~ 🟢 **Master Cargo** smiled mysteriously. "Indeed there is. You've already learned about Context from Contextus Magnus - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."
+🔴 ~~Propius~~ 🟢 **Master Cargo** smiled mysteriously. "Indeed there is. You've already learned about Context from 🔴 ~~Contextus Magnus~~ 🟢 **Contextia** - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."
+
+💡 **EDIT NOTE:** Fixed name inconsistency - Contextus Magnus → Contextia (Issue #14).
 
 "Remember," he added, "prop drilling isn't always bad. For shallow routes of 2-3 levels, it's often the simplest solution. The key is knowing when the route has become too deep and recognizing when to use more advanced patterns."
 
@@ -1814,7 +1816,9 @@ Binary calculated rapidly. "Seven levels of cascade... that's a lot of prop pass
 
 After observing the cascade patterns, Flux grew serious. "Beautiful as they are, deep waterfalls have a dark side. Change something at the source, and every pool below must adapt. It's fragile."
 
-She pointed to a series of elevated aqueducts in the distance. "See those? They're Context channels - they can teleport water directly to deep pools, bypassing all the intermediate levels. You've already learned about these from Contextus Magnus!"
+She pointed to a series of elevated aqueducts in the distance. "See those? They're Context channels - they can teleport water directly to deep pools, bypassing all the intermediate levels. You've already learned about these from 🔴 ~~Contextus Magnus~~ 🟢 **Contextia**!"
+
+💡 **EDIT NOTE:** Fixed name inconsistency - Contextus Magnus → Contextia (Issue #14).
 
 Aria's eyes lit up. "So when cascades get too deep..."
 
