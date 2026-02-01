@@ -5700,7 +5700,9 @@ As they approached via sky bridge, **Cloud Keeper Axios** greeted them. "Welcome
 
 **Binary's** circuits adapted, growing new communication modules. "I'm detecting multiple data streams, Aria. JSON, XML, GraphQL... each has its own patterns!"
 
-**Debuggora**, now a permanent companion, observed: "And each stream has its own patterns, protocols, and pitfalls. Timing and error handling will be crucial."
+🔴 ~~**Debuggora**, now a permanent companion, observed: "And each stream has its own patterns, protocols, and pitfalls. Timing and error handling will be crucial."~~
+
+💡 **CRITICAL EDIT NOTE (Issue #30):** Removed Debuggora's "permanent companion" declaration. This explicitly violates the core rule that only Aria and Binary travel across all LPs. Debuggora is Test Master Jasmine's companion from LP8 and should NOT become permanent.
 
 **New Characters:**
 
@@ -5750,7 +5752,7 @@ Each communication protocol serves different needs. REST provides simplicity, Gr
 - Why is error handling more complex in distributed systems?
 
 **Aria's Journal - Day 41 (Afternoon)**
-*The Protocol Chambers are fascinating! Each room glows with different light - REST (🌐), GraphQL (🔮), WebSockets (🔌). I learned that each protocol has its own customs: REST for resource-based APIs, GraphQL for flexible queries, WebSockets for real-time. Created my first interceptor chain: request → transform → response → error. Binary analyzed: "Interceptors handle cross-cutting concerns elegantly!" Debuggora reminded us: "Each protocol can fail uniquely - proper error handling is your shield." Headers are like diplomatic credentials - authentication tokens, content types.*
+*The Protocol Chambers are fascinating! Each room glows with different light - REST (🌐), GraphQL (🔮), WebSockets (🔌). I learned that each protocol has its own customs: REST for resource-based APIs, GraphQL for flexible queries, WebSockets for real-time. Created my first interceptor chain: request → transform → response → error. Binary analyzed: "Interceptors handle cross-cutting concerns elegantly!"* 🔴 ~~Debuggora reminded us: "Each protocol can fail uniquely - proper error handling is your shield."~~ *Headers are like diplomatic credentials - authentication tokens, content types.*
 
 ---
 
@@ -5771,7 +5773,9 @@ The Data Embassy was established - a permanent connection between the React King
 
 **Binary** optimized the communication channels. "Request deduplication, caching, automatic retries - efficiency at every level!"
 
-**Debuggora** ensured reliability. "Error boundaries, fallback strategies, graceful degradation. The embassy must never fail completely."
+🔴 ~~**Debuggora** ensured reliability. "Error boundaries, fallback strategies, graceful degradation. The embassy must never fail completely."~~
+
+💡 **EDIT NOTE (Issue #30):** Removed Debuggora from LP11.
 
 "You've done well," Axios praised. "But remember, with great data comes great responsibility. Always validate, always handle errors, always consider loading states."
 
@@ -5784,7 +5788,7 @@ Building a production-ready API layer requires thinking beyond individual reques
 - What role does optimistic updating play in user experience?
 
 **Aria's Journal - Day 41 (Evening)**
-*The Data Embassy is complete! From basic fetch calls to production architecture - what a journey! Request deduplication reduced API calls by 40%, caching improved response times by 60%. I built a LoadingStateManager for coordinated UI states and learned optimistic updates for instant feedback. Cloud Keeper Axios's final wisdom: "The embassy will serve the React Kingdom well." Binary compiled impressive statistics while Debuggora ensured error boundaries protect against cascading failures. Master Aurelius appeared: "The Living Streams await..."*
+*The Data Embassy is complete! From basic fetch calls to production architecture - what a journey! Request deduplication reduced API calls by 40%, caching improved response times by 60%. I built a LoadingStateManager for coordinated UI states and learned optimistic updates for instant feedback. Cloud Keeper Axios's final wisdom: "The embassy will serve the React Kingdom well." Binary compiled impressive statistics* 🔴 ~~while Debuggora ensured error boundaries protect against cascading failures~~*. Master Aurelius appeared: "The Living Streams await..."*
 
 **Chapter Ending:**
 
@@ -5845,7 +5849,9 @@ Real-time connections transform applications from request-response cycles to con
 
 **Aria** learned the complexity of real-time data. "Multiple users, concurrent updates, conflict resolution," Stream Sage explained. "Real-time isn't just about speed - it's about consistency."
 
-**Debuggora** warned: "Watch for race conditions! When data flows constantly, timing becomes critical."
+🔴 ~~**Debuggora** warned: "Watch for race conditions! When data flows constantly, timing becomes critical."~~
+
+💡 **EDIT NOTE (Issue #30):** Removed Debuggora from LP11.
 
 **The Synchronization Insight:**
 Real-time synchronization is about maintaining consistency across distributed systems. Optimistic updates improve perceived performance, conflict resolution handles concurrent edits gracefully, and event ordering ensures causality. The key is choosing the right strategy for your use case.
@@ -5856,7 +5862,7 @@ Real-time synchronization is about maintaining consistency across distributed sy
 - What are the trade-offs between different conflict resolution strategies?
 
 **Aria's Journal - Day 42 (Afternoon)**
-*Synchronization is harder than I expected! When multiple users edit simultaneously, conflicts arise. Stream Sage taught three resolution strategies: Last-Write-Wins (simple but data loss risk), Merge (complex but preserves both), and Manual (user decides). Built an optimistic update system - changes appear instantly while confirming with the server in the background. Binary calculated: "The algorithms ensure eventual consistency across all nodes. Elegant!" Debuggora warned about race conditions - timing is critical when data flows constantly.*
+*Synchronization is harder than I expected! When multiple users edit simultaneously, conflicts arise. Stream Sage taught three resolution strategies: Last-Write-Wins (simple but data loss risk), Merge (complex but preserves both), and Manual (user decides). Built an optimistic update system - changes appear instantly while confirming with the server in the background. Binary calculated: "The algorithms ensure eventual consistency across all nodes. Elegant!"* 🔴 ~~Debuggora warned about race conditions - timing is critical when data flows constantly.~~
 
 ---
 
