@@ -80,6 +80,26 @@
 
 ---
 
+### Props Data Flow (Learning Path 3)
+
+**Issue #14: Character Name Inconsistency**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: DataRivers Ch2 mentions "Contextus Magnus" but the Context teacher in LP2 was named "Contextia."
+- **Location**: DataRivers Ch2
+- **Recommendation**: Change to "Contextia" for consistency.
+
+**Issue #15: Reference to Unknown Character**
+- **Severity**: Minor
+- **Type**: Character Issues
+- **Description**: PropForge Ch1 mentions "River Master Flux sent word" before Flux is introduced. Works if we assume word travels ahead, but slightly confusing.
+- **Location**: PropForge Ch1  
+- **Recommendation**: Either introduce Flux earlier or change to a character already met.
+
+**POSITIVE NOTE**: Propius returns from LP1 PropsMessengers! Excellent continuity - evolved from Props Messenger to Caravan Master. This is how returning characters should work!
+
+---
+
 ### State Management (Learning Path 2)
 
 #### 2.1 StateSorcerers
