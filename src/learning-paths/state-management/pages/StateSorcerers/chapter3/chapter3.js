@@ -24,22 +24,22 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={3}
-			title="The Side Effect Enchantments"
-			bridge="As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component."
-		/>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Side Effect Enchantments'
+				bridge='As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component.'
+			/>
 
-		<StorySection
-			paragraphs={[
-				`"There exists a second magical hook," explained the mentor, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"There exists a second magical hook," explained Memnon, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."`,
+				]}
+			/>
 
-		<CodeExample
-					title="useEffect Side Effects"
-					discoveredBy="Memnon's Advanced Teachings"
-					code={`function EnchantedItems() {
+			<CodeExample
+				title='useEffect Side Effects'
+				discoveredBy="Memnon's Advanced Teachings"
+				code={`function EnchantedItems() {
   const [items, setItems] = useState([
     { id: 1, name: 'Scroll of Knowledge', collected: false },
     { id: 2, name: 'Crystal of Memory', collected: false },
@@ -83,14 +83,14 @@ const ChapterThree = () => {
 }`}
 			/>
 
-		<div className='interactive-section'>
+			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Artifact Collection Trial
 				</h3>
-				<InstructionBox character="Memnon presents three glowing artifacts.">
-					"Your final test today, Aria. Collect these enchanted items and 
-					watch how the collection status updates automatically. This demonstrates 
-					state and effects working in harmony!"
+				<InstructionBox character='Memnon presents three glowing artifacts.'>
+					"Your final test today, Aria. Collect these enchanted items
+					and watch how the collection status updates automatically.
+					This demonstrates state and effects working in harmony!"
 				</InstructionBox>
 
 				<div className='enchanted-items'>
@@ -134,17 +134,23 @@ const ChapterThree = () => {
 			<ChapterSummary
 				lessonInsight={{
 					title: "Memnon's Final Wisdom:",
-					content: "The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them."
+					content:
+						"The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them.",
 				}}
 				reflectionQuestions={[
 					'How does Memnon\'s teaching about "consequences" help you understand the purpose of useEffect?',
-					'Why do you think the dependency array is so important in controlling when effects run?'
+					'Why do you think the dependency array is so important in controlling when effects run?',
 				]}
+				journalEntry={{
+					title: "Aria's Journal - Day 8 (Evening)",
+					content:
+						"What an incredible day with the State Sorcerers! After learning useState and immutability, Memnon revealed the useEffect hook - the gateway between a component's inner world and everything beyond! I collected enchanted artifacts and watched the effects trigger automatically when state changed. The dependency array is like a watchlist - telling React exactly which state changes should trigger the effect. Binary explained that effects can reach out to APIs, update the document title, or set up subscriptions. The key insight: state gives components memory, but useEffect gives them the power to interact with the outside world!",
+				}}
 				chapterEnding={[
 					"As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. \"You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most.\"",
-					"Binary twirled happily. \"Tomorrow you'll learn about hooks - special spells that give functional components even more power!\"",
-					"\"Rest well,\" Memnon advised. \"The path ahead leads to the Hook Forge, where you'll discover useState and useEffect have many magical siblings. Each one grants unique powers to those wise enough to wield them.\"",
-					"Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, effects - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!"
+					'Binary twirled happily. "Tomorrow you\'ll learn about hooks - special spells that give functional components even more power!"',
+					'"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you\'ll discover useState and useEffect have many magical siblings. Each one grants unique powers to those wise enough to wield them."',
+					"Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, effects - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!",
 				]}
 			/>
 		</div>

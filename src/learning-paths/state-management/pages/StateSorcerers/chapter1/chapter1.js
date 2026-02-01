@@ -162,7 +162,7 @@ Increment Count
 					"Why do you think React automatically re-renders components when their state changes? What would happen if it didn't?",
 				]}
 				journalEntry={{
-					title: "Aria's Journal - Day 8",
+					title: "Aria's Journal - Day 8 (Morning)",
 					content:
 						"My first day in the Eastern Quarter! Memnon is wise but kind, and the useState hook seems like the key to everything. It's so simple yet so powerful - just call useState with an initial value, and you get back the current value and a way to update it. When I update it, the component re-renders automatically! It's like giving components a brain!",
 				}}

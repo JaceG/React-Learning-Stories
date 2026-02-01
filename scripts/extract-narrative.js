@@ -26,15 +26,18 @@ function extractPropContent(fileContent, propName) {
 		return templateMatch[1].trim();
 	}
 
-	// Try double quote format: propName="..."
-	const stringRegex = new RegExp(`${propName}="([^"]*)"`, 'm');
+	// Try double quote format: propName="..." (handles apostrophes inside)
+	const stringRegex = new RegExp(`${propName}="((?:[^"\\\\]|\\\\.)*)"`, 'm');
 	const stringMatch = fileContent.match(stringRegex);
 	if (stringMatch) {
 		return stringMatch[1].trim();
 	}
 
-	// Try single quote format: propName='...'
-	const singleQuoteRegex = new RegExp(`${propName}='([^']*)'`, 'm');
+	// Try single quote format: propName='...' (handles escaped single quotes)
+	const singleQuoteRegex = new RegExp(
+		`${propName}='((?:[^'\\\\]|\\\\.)*)'`,
+		'm'
+	);
 	const singleQuoteMatch = fileContent.match(singleQuoteRegex);
 	if (singleQuoteMatch) {
 		return singleQuoteMatch[1].trim();
@@ -48,8 +51,9 @@ function extractPropContent(fileContent, propName) {
  */
 function extractObjectProp(fileContent, propName) {
 	// Match the entire prop including nested braces
+	// Lookahead now handles: comma, slash, greater-than, OR word character (next prop name)
 	const regex = new RegExp(
-		`${propName}=\\{\\{([\\s\\S]*?)\\}\\}(?=\\s*[,/>])`,
+		`${propName}=\\{\\{([\\s\\S]*?)\\}\\}(?=\\s*[,/>\\w])`,
 		'm'
 	);
 	const match = fileContent.match(regex);
@@ -57,9 +61,31 @@ function extractObjectProp(fileContent, propName) {
 
 	const objectContent = match[1];
 
-	// Extract title - handle quotes, backticks, and apostrophes
-	const titleMatch = objectContent.match(/title:\s*['"`]([^'"`]*?)['"`]/s);
-	const title = titleMatch ? titleMatch[1] : null;
+	// Extract title - handle quotes, backticks, and apostrophes within strings
+	let title = null;
+
+	// Try double quotes first (allows apostrophes inside)
+	const doubleQuoteTitleMatch = objectContent.match(
+		/title:\s*"((?:[^"\\]|\\.)*)"/s
+	);
+	if (doubleQuoteTitleMatch) {
+		title = doubleQuoteTitleMatch[1].trim();
+	} else {
+		// Try single quotes (handles escaped single quotes)
+		const singleQuoteTitleMatch = objectContent.match(
+			/title:\s*'((?:[^'\\]|\\.)*)'/s
+		);
+		if (singleQuoteTitleMatch) {
+			title = singleQuoteTitleMatch[1].trim();
+		} else {
+			// Try backticks
+			const backtickTitleMatch =
+				objectContent.match(/title:\s*`([^`]*)`/s);
+			if (backtickTitleMatch) {
+				title = backtickTitleMatch[1].trim();
+			}
+		}
+	}
 
 	// Extract content - handle multi-line strings with proper quote matching
 	// Match content: followed by a quote/backtick, then everything until the matching closing quote
@@ -70,19 +96,19 @@ function extractObjectProp(fileContent, propName) {
 	if (backtickMatch) {
 		content = backtickMatch[1].trim();
 	} else {
-		// Try single quotes
-		const singleQuoteMatch = objectContent.match(
-			/content:\s*'((?:[^'\\]|\\.)*)'/s
+		// Try double quotes (handles escaped quotes and apostrophes)
+		const doubleQuoteMatch = objectContent.match(
+			/content:\s*"((?:[^"\\]|\\.)*)"/s
 		);
-		if (singleQuoteMatch) {
-			content = singleQuoteMatch[1].trim();
+		if (doubleQuoteMatch) {
+			content = doubleQuoteMatch[1].trim();
 		} else {
-			// Try double quotes
-			const doubleQuoteMatch = objectContent.match(
-				/content:\s*"((?:[^"\\]|\\.)*)"/s
+			// Try single quotes (handles escaped single quotes)
+			const singleQuoteMatch = objectContent.match(
+				/content:\s*'((?:[^'\\]|\\.)*)'/s
 			);
-			if (doubleQuoteMatch) {
-				content = doubleQuoteMatch[1].trim();
+			if (singleQuoteMatch) {
+				content = singleQuoteMatch[1].trim();
 			}
 		}
 	}
@@ -121,27 +147,49 @@ function extractArrayProp(fileContent, propName) {
  */
 function extractStorySection(fileContent) {
 	const sections = [];
-	const regex = /<StorySection\s+paragraphs=\{(\[[^\]]*\])\}\s*\/>/g;
+
+	// Find all StorySection components
+	const storySectionRegex =
+		/<StorySection[\s\S]*?paragraphs=\{(\[[\s\S]*?\])\}[\s\S]*?\/>/g;
 	let match;
 
-	while ((match = regex.exec(fileContent)) !== null) {
+	while ((match = storySectionRegex.exec(fileContent)) !== null) {
 		const arrayContent = match[1];
 		const paragraphs = [];
 
-		// Extract JSX content or strings
-		// Handle both: `string` and <>JSX content</>
-		const jsxRegex = /<>([\s\S]*?)<\/>/g;
-		const stringRegex = /`([^`]*)`/g;
+		// Extract items in order by finding both JSX and strings together
+		// Create array of {type, content, index} to maintain order
+		const items = [];
 
+		// Find JSX fragments: <>content</>
+		const jsxRegex = /<>([\s\S]*?)<\/>/g;
 		let jsxMatch;
 		while ((jsxMatch = jsxRegex.exec(arrayContent)) !== null) {
-			paragraphs.push(jsxMatch[1].trim());
+			items.push({
+				type: 'jsx',
+				content: jsxMatch[1].trim(),
+				index: jsxMatch.index,
+			});
 		}
 
+		// Find backtick strings: `content`
+		const stringRegex = /`([^`]*)`/g;
 		let stringMatch;
 		while ((stringMatch = stringRegex.exec(arrayContent)) !== null) {
-			paragraphs.push(stringMatch[1].trim());
+			items.push({
+				type: 'string',
+				content: stringMatch[1].trim(),
+				index: stringMatch.index,
+			});
 		}
+
+		// Sort by index to maintain original order
+		items.sort((a, b) => a.index - b.index);
+
+		// Extract just the content in order
+		items.forEach((item) => {
+			paragraphs.push(item.content);
+		});
 
 		if (paragraphs.length > 0) {
 			sections.push(paragraphs);
@@ -234,6 +282,7 @@ function processChapterFile(filePath) {
 	const fileContent = fs.readFileSync(filePath, 'utf8');
 
 	const narrative = {
+		chapterTitle: extractPropContent(fileContent, 'title'),
 		bridge: extractPropContent(fileContent, 'bridge'),
 		storySections: extractStorySection(fileContent),
 		lessonInsight: extractObjectProp(fileContent, 'lessonInsight'),
