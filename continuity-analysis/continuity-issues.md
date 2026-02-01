@@ -475,11 +475,10 @@
 
 ## Summary of LP8-15 Issues
 
-### Critical Issues (2):
-- Issue #26: Master Aurelius returns in LP10.1
-- Issue #29: Master Aurelius returns again in LP11.1
+### Critical Issues (1):
+- Issue #21: Master Aurelius returns across LP10.1 and LP11.1
 
-### High Priority (6):
+### High Priority Issues (34):
 - Issue #25: Debuggora continues through LP9
 - Issue #27: Debuggora made permanent in LP10
 - Issue #30: Debuggora declared permanent in LP11

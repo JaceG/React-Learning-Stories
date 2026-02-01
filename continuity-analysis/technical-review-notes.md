@@ -1259,8 +1259,8 @@
 - ✅ LP7: Chronos returns (Issue #19), Brother Binary conflict (Issue #20), otherwise new
 - ✅ LP8: All new characters + Debuggora (owl companion introduced)
 - ✅ LP9: All new characters (but Debuggora continues from LP8)
-- ⚠️ LP10: Aurelius returns (Issue #26), Debuggora continues
-- ⚠️ LP11: Aurelius returns again (Issue #29), Debuggora declared permanent
+- ⚠️ LP10: Aurelius returns (Issue #21), Debuggora continues
+- ⚠️ LP11: Aurelius returns again (Issue #21), Debuggora declared permanent
 - ✅ LP12: All new characters (but Debuggora continues)
 - ✅ LP13: All new characters (but Debuggora continues)
 - ✅ LP14: All new characters (but Debuggora continues)
@@ -1288,9 +1288,14 @@
 **Single-LP Companions** (appropriate):
 - None others besides Debuggora issue
 
-### New Issues Summary (LP8-15)
-- **Issues #23-56**: 34 new issue instances documented
-  - 2 CRITICAL (Aurelius returns in LP10, LP11)
-  - 26 HIGH (Debuggora appearances across LP8-15)
-  - 6 MEDIUM (Aria inappropriate titles)
-- **Total course issues**: 37 unique problems (22 from LP1-7, 15 new from LP8-15)
+### Issues Summary
+- **Total Issues**: 56 documented
+  - Issues #1-22: LP1-7 
+  - Issue #21: Master Aurelius returns (spans LP1, LP10, LP11) - CRITICAL
+  - Issues #23-56: LP8-15 (34 new issues)
+- **By Severity**:
+  - 1 CRITICAL: Aurelius returns (Issue #21)
+  - 34 HIGH: Debuggora cross-LP appearances (Issues #25, #27, #30, #39-56)
+  - 10 MEDIUM: Aria inappropriate titles (Issues #22-24, #28, #31, #38, #43, #48, #52)
+  - 11 other issues: Teaching redundancy, story completeness, character conflicts
+- **Debuggora**: 18 separate issue entries documenting 36+ instances across LP8-15 chapters
