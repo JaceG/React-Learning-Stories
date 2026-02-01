@@ -1184,7 +1184,9 @@ The heat hit Aria like a wall as she entered the Prop Forge. Molten data flowed 
 
 "How did you know?" Aria asked, wiping sweat from her brow.
 
-"River Master Flux sent word of your coming. Plus," he grinned, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"
+"🔴 ~~River Master Flux~~ 🟢 **Master Cargo** sent word of your coming. Plus," he grinned, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"
+
+💡 **EDIT NOTE:** Changed Flux (not yet met) to Master Cargo (LP3.2 character Aria knows). Issue #15 fix.
 
 Binary beamed proudly, literally, projecting a small light show.
 
