@@ -1321,32 +1321,61 @@ After mastering the complexities of state management, Aria found herself at the 
 
 The Trade Quarter's morning market was unlike anything Aria had seen. Merchants called out their wares while caravans rolled through cobblestone streets, each wagon carefully labeled with its destination and cargo.
 
-"Aria! Over here!" A familiar voice cut through the market noise. It was Propius, one of the Props Messengers she'd met during her early training. But now he wore the elaborate robes of a Caravan Master, decorated with routing symbols and data flow patterns.
+---
+🔴 **DELETED:**
+> ~~"Aria! Over here!" A familiar voice cut through the market noise. It was Propius, one of the Props Messengers she'd met during her early training. But now he wore the elaborate robes of a Caravan Master, decorated with routing symbols and data flow patterns.~~
+> 
+> ~~"Propius!" Aria exclaimed. "You've certainly moved up in the world!"~~
+> 
+> ~~He grinned proudly. "Indeed! After you mastered basic prop passing, we messengers evolved our craft. No longer do we carry simple messages - now we organize entire caravans!"~~
+---
 
-"Propius!" Aria exclaimed. "You've certainly moved up in the world!"
+---
+🟢 **ADDED:**
+> **"Welcome to the Trade Quarter!" A commanding voice rang out. A figure in elaborate robes decorated with routing symbols and data flow patterns approached. "I am Master Cargo, keeper of the caravan routes. You must be Aria - word of your prop message training has reached us here."**
+> 
+> **Aria studied the bustling depot. "This is incredible! So much more complex than the Props Messenger Guild."**
+> 
+> **Master Cargo nodded proudly. "The messengers handle simple deliveries. Here, we organize entire caravans!"**
+---
 
-He grinned proudly. "Indeed! After you mastered basic prop passing, we messengers evolved our craft. No longer do we carry simple messages - now we organize entire caravans!" He gestured to the bustling depot behind him. "Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"
+He gestured to the bustling depot behind him. "Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"
 
 Binary whirred excitedly. "So props aren't just simple values anymore?"
 
-"Exactly, little companion," Propius nodded. "Modern React demands sophisticated data transport. Let me show you how we organize our caravans."
+"Exactly, little companion," 🔴 ~~Propius~~ 🟢 **Master Cargo** nodded. "Modern React demands sophisticated data transport. Let me show you how we organize our caravans."
+
+💡 **EDIT NOTE:** Replaced Propius (LP1 character) with new character Master Cargo. Removed recognition/reunion.
 
 **Story Group 2:**
 
-As Aria watched the caravans being loaded, Propius explained, "Each component workshop in React Kingdom has specific needs. When a parent component wants something built, it doesn't just send vague instructions - it sends a fully loaded caravan with precise specifications."
+As Aria watched the caravans being loaded, 🔴 ~~Propius~~ 🟢 **Master Cargo** explained, "Each component workshop in React Kingdom has specific needs. When a parent component wants something built, it doesn't just send vague instructions - it sends a fully loaded caravan with precise specifications."
 
-He led them to a nearby Button Workshop where artisans were unpacking a newly arrived caravan. "Watch this," Propius said. "The App component just sent this caravan with everything needed to create a perfect button: the text to display, the color scheme, even a function scroll that activates when the button is pressed."
+He led them to a nearby Button Workshop where artisans were unpacking a newly arrived caravan. "Watch this," 🔴 ~~Propius~~ 🟢 **Master Cargo** said. "The App component just sent this caravan with everything needed to create a perfect button: the text to display, the color scheme, even a function scroll that activates when the button is pressed."
 
 Aria observed as the workshop artisans carefully unpacked each item, using them to craft exactly what was requested. "So props are like... detailed blueprints and materials combined?"
 
-"Precisely!" Propius beamed. "And the beauty is that the same workshop can create countless different buttons, each unique based on the cargo it receives. This is the power of component reusability!"
+"Precisely!" 🔴 ~~Propius~~ 🟢 **Master Cargo** beamed. "And the beauty is that the same workshop can create countless different buttons, each unique based on the cargo it receives. This is the power of component reusability!"
+
+💡 **EDIT NOTE:** Continued Propius → Master Cargo replacement.
 
 **New Characters:**
 
-**Propius**
-Former Props Messenger who evolved into a Caravan Master in the Trade Quarter's morning market. His elaborate robes are decorated with routing symbols and data flow patterns. "Modern React demands sophisticated data transport. Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"
+---
+🔴 **DELETED:**
+> ~~**Propius**~~
+> ~~Former Props Messenger who evolved into a Caravan Master in the Trade Quarter's morning market. His elaborate robes are decorated with routing symbols and data flow patterns. "Modern React demands sophisticated data transport. Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"~~
 
-**Propius's Trading Wisdom:**
+💡 **WHY:** Propius is from LP1 and shouldn't return in LP3.
+---
+
+---
+🟢 **ADDED:**
+> **Master Cargo**
+> Keeper of the caravan routes in the Trade Quarter. His elaborate robes are decorated with routing symbols and data flow patterns. "Modern React demands sophisticated data transport. Each caravan can transport multiple pieces of data: text scrolls, number tablets, color crystals, even function scrolls that contain powerful spells!"
+---
+
+🔴 ~~**Propius's Trading Wisdom:**~~ 🟢 **Master Cargo's Trading Wisdom:**
 Props in React are the cargo that flows from parent components to their children, carrying any JavaScript value - strings, numbers, arrays, objects, even functions. Like merchant caravans, props travel in one direction only (parent to child) and their contents are read-only, ensuring data integrity. This system enables the same component to render differently based on the props it receives, making your components as versatile as a workshop that can craft countless unique items from different materials.
 
 **Reflection Questions:**
@@ -1356,44 +1385,48 @@ Props in React are the cargo that flows from parent components to their children
 - What advantages does a workshop (component) gain by accepting different cargo (props) rather than always building the same thing?
 
 **Aria's Journal - Day 12 (Morning)**
-*The Trade Quarter has opened my eyes to a whole new aspect of React! Props aren't just simple messages - they're complete cargo shipments that can carry any type of data. Propius showed me how a single Button Workshop can create thousands of unique buttons, each crafted according to the props it receives. The key insight: props make components reusable by separating what a component does (its logic) from what it displays (its data). And since props are read-only, the receiving component can't accidentally modify the sender's data - maintaining order in the kingdom!*
+*The Trade Quarter has opened my eyes to a whole new aspect of React! Props aren't just simple messages - they're complete cargo shipments that can carry any type of data. 🔴 ~~Propius~~ 🟢 **Master Cargo** showed me how a single Button Workshop can create thousands of unique buttons, each crafted according to the props it receives. The key insight: props make components reusable by separating what a component does (its logic) from what it displays (its data). And since props are read-only, the receiving component can't accidentally modify the sender's data - maintaining order in the kingdom!*
 
 ---
 
 ### Chapter 2: Loading the Cargo
 
 **Bridge:**
-Dawn broke over the Trade Quarter as Aria arrived at the Grand Loading Dock. Massive wagons lined up in neat rows, each being carefully loaded with diverse cargo under Propius's watchful eye.
+Dawn broke over the Trade Quarter as Aria arrived at the Grand Loading Dock. Massive wagons lined up in neat rows, each being carefully loaded with diverse cargo under 🔴 ~~Propius's~~ 🟢 **Master Cargo's** watchful eye.
 
 **Narrative:**
 
 **Story Group 1:**
 
-"Aria! Ready for today's lesson?" Propius called out, clipboard in hand. "Yesterday you learned about basic cargo transport. Today, we explore the full diversity of what our caravans can carry!"
+"Aria! Ready for today's lesson?" 🔴 ~~Propius~~ 🟢 **Master Cargo** called out, clipboard in hand. "Yesterday you learned about basic cargo transport. Today, we explore the full diversity of what our caravans can carry!"
 
 He led her to a particularly impressive wagon. "This beauty is headed to the ProductCard Workshop. Look at its manifest - it carries text scrolls, number tablets, boolean crystals, entire arrays of items, even complex object maps!"
 
 Binary's display lit up with curiosity. "All in one caravan? How do they keep track?"
 
-"Every piece of cargo has a label," Propius explained, showing them the detailed manifest. "In React, we call these prop names. Each name tells the receiving workshop exactly what they're getting and how to use it."
+"Every piece of cargo has a label," 🔴 ~~Propius~~ 🟢 **Master Cargo** explained, showing them the detailed manifest. "In React, we call these prop names. Each name tells the receiving workshop exactly what they're getting and how to use it."
 
 Aria studied the manifest intently. "So a component can receive multiple props at once, each with its own purpose?"
 
 "Exactly! And here's the clever part - workshops can 'destructure' their deliveries, unpacking exactly what they need in one smooth motion. Let me show you!"
 
+💡 **EDIT NOTE:** Continued Propius → Master Cargo replacement in Ch2.
+
 **Story Group 2:**
 
-After exploring the cargo types, Propius showed Aria how workshops prepared for incoming deliveries. "Each workshop posts a manifest at their entrance," he explained, leading them to a nearby Button Workshop. "See? It lists every type of cargo they accept."
+After exploring the cargo types, 🔴 ~~Propius~~ 🟢 **Master Cargo** showed Aria how workshops prepared for incoming deliveries. "Each workshop posts a manifest at their entrance," he explained, leading them to a nearby Button Workshop. "See? It lists every type of cargo they accept."
 
 Aria read the manifest aloud: "Text for display, color specifications, size measurements, and... function scrolls?"
 
-"Ah, those are special!" Propius's eyes gleamed. "Function scrolls contain instructions that activate when certain events occur. We call them callbacks. They allow child components to send messages back to their parents!"
+"Ah, those are special!" 🔴 ~~Propius's~~ 🟢 **Master Cargo's** eyes gleamed. "Function scrolls contain instructions that activate when certain events occur. We call them callbacks. They allow child components to send messages back to their parents!"
 
 "Like a return caravan?" Aria asked.
 
 "Precisely! The parent sends a function, and the child can invoke it when needed. It's how components communicate upstream, against the normal flow of props."
 
-**Propius's Cargo Management Wisdom:**
+💡 **EDIT NOTE:** Continued Propius → Master Cargo replacement in Ch2 Story Group 2.
+
+🔴 ~~**Propius's Cargo Management Wisdom:**~~ 🟢 **Master Cargo's Cargo Management Wisdom:**
 React props accept any JavaScript type as cargo - from simple strings and numbers to complex objects and powerful function callbacks. Destructuring allows clean unpacking of multiple props, while descriptive naming ensures clarity. Function props are particularly special, enabling upward communication from child to parent. Remember: props flow down, events bubble up through callbacks, creating a complete communication cycle in your component hierarchy.
 
 **Reflection Questions:**
@@ -1403,44 +1436,46 @@ React props accept any JavaScript type as cargo - from simple strings and number
 - What benefits do you see in destructuring props versus accessing them directly?
 
 **Aria's Journal - Day 12 (Afternoon)**
-*The Loading Dock taught me that props are incredibly versatile! A single caravan (component) can carry strings, numbers, booleans, arrays, objects, and even functions. Propius showed me how destructuring lets workshops unpack cargo efficiently - much cleaner than accessing props.text, props.price, etc. The most magical discovery: function props! They're like return addresses that let child components send messages back to their parents. This two-way communication (props down, callbacks up) creates truly interactive applications!*
+*The Loading Dock taught me that props are incredibly versatile! A single caravan (component) can carry strings, numbers, booleans, arrays, objects, and even functions. 🔴 ~~Propius~~ 🟢 **Master Cargo** showed me how destructuring lets workshops unpack cargo efficiently - much cleaner than accessing props.text, props.price, etc. The most magical discovery: function props! They're like return addresses that let child components send messages back to their parents. This two-way communication (props down, callbacks up) creates truly interactive applications!*
 
 ---
 
 ### Chapter 3: The Trade Routes
 
 **Bridge:**
-On Aria's final day at the Trade Quarter, Propius led her to the Map Room - a circular chamber with walls covered in intricate route diagrams showing every caravan path in React Kingdom.
+On Aria's final day at the Trade Quarter, 🔴 ~~Propius~~ 🟢 **Master Cargo** led her to the Map Room - a circular chamber with walls covered in intricate route diagrams showing every caravan path in React Kingdom.
 
 **Narrative:**
 
 **Story Group 1:**
 
-"This," Propius said with reverence, "is where we plan every delivery route. But I must warn you about a challenge every trader faces."
+"This," 🔴 ~~Propius~~ 🟢 **Master Cargo** said with reverence, "is where we plan every delivery route. But I must warn you about a challenge every trader faces."
 
 He pointed to a particularly convoluted path on the map. "See this? The cargo starts at the App Workshop and needs to reach ProductCard, five levels down. But our caravans can only travel parent-to-child, never skipping generations."
 
 Binary computed quickly. "So the cargo must pass through Dashboard, ShopSection, and ProductList, even if they don't need it?"
 
-"Exactly!" Propius nodded grimly. "We call it 'prop drilling' - boring tunnels through components just to pass data. Each intermediate workshop must receive and forward cargo they'll never use."
+"Exactly!" 🔴 ~~Propius~~ 🟢 **Master Cargo** nodded grimly. "We call it 'prop drilling' - boring tunnels through components just to pass data. Each intermediate workshop must receive and forward cargo they'll never use."
 
 Aria frowned. "That seems inefficient. What if one workshop forgets to pass it along?"
 
 "Precisely the problem! The entire route breaks. It's like a game of telephone where every player must perfectly repeat the message, even if they don't understand it."
 
+💡 **EDIT NOTE:** Continued Propius → Master Cargo replacement in Ch3.
+
 **Story Group 2:**
 
-After exploring the routes, Propius showed Aria the consequences of deep prop drilling. "Watch what happens when we need to change something," he said, adjusting a pin on the map.
+After exploring the routes, 🔴 ~~Propius~~ 🟢 **Master Cargo** showed Aria the consequences of deep prop drilling. "Watch what happens when we need to change something," he said, adjusting a pin on the map.
 
 Instantly, red warning lights appeared along the entire route. "Every workshop in the chain must be updated! It's maintenance nightmare. Plus, each workshop carries cargo it doesn't need, slowing everything down."
 
 "Is there a better way?" Aria asked, studying the tangled paths.
 
-Propius smiled mysteriously. "Indeed there is. You've already learned about Context from Contextus Magnus - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."
+🔴 ~~Propius~~ 🟢 **Master Cargo** smiled mysteriously. "Indeed there is. You've already learned about Context from Contextus Magnus - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."
 
 "Remember," he added, "prop drilling isn't always bad. For shallow routes of 2-3 levels, it's often the simplest solution. The key is knowing when the route has become too deep and recognizing when to use more advanced patterns."
 
-**Propius's Route Planning Wisdom:**
+🔴 ~~**Propius's Route Planning Wisdom:**~~ 🟢 **Master Cargo's Route Planning Wisdom:**
 Prop drilling - passing data through components that don't use it - becomes problematic beyond 2-3 levels. It creates fragile dependencies, maintenance headaches, and unclear data flow. While acceptable for shallow hierarchies, deep drilling signals the need for alternative patterns. Component composition, Context API, or state management libraries can eliminate unnecessary prop forwarding. Remember: good architecture minimizes the distance data must travel to reach its destination.
 
 **Reflection Questions:**
@@ -1450,19 +1485,21 @@ Prop drilling - passing data through components that don't use it - becomes prob
 - In what scenarios might prop drilling be preferable to more complex solutions?
 
 **Aria's Journal - Day 12 (Evening)**
-*Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. Propius showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!*
+*Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. 🔴 ~~Propius~~ 🟢 **Master Cargo** showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!*
 
 **Chapter Ending:**
 
 As the sun set over the Trade Quarter, Aria felt she truly understood the caravan system. Props were more than simple messages - they were the lifeblood of React Kingdom's commerce, flowing through carefully planned routes.
 
-"You've learned well," Propius said proudly. "You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures."
+"You've learned well," 🔴 ~~Propius~~ 🟢 **Master Cargo** said proudly. "You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures."
 
 Binary chimed happily. "From simple props to complex routes to the perils of drilling - we've seen it all!"
 
 "Indeed," Aria smiled. "Now I'm curious about these data rivers you mentioned. Where do they flow?"
 
-Propius pointed toward the sound of rushing water in the distance. "Follow that sound tomorrow, and you'll find River Master Flux. He'll teach you about the one-way flow of data through React Kingdom. Safe travels, Aria!"
+🔴 ~~Propius~~ 🟢 **Master Cargo** pointed toward the sound of rushing water in the distance. "Follow that sound tomorrow, and you'll find River Master Flux. He'll teach you about the one-way flow of data through React Kingdom. Safe travels, Aria!"
+
+💡 **EDIT NOTE:** Final Propius → Master Cargo replacements in Ch3 ending.
 
 ---
 
@@ -1643,7 +1680,9 @@ Aria consulted her map, eyes bright with anticipation. "The Hooks Academy awaits
 
 ### 📖 Lesson Opener
 
-Following Propius's directions, Aria and Binary made their way to the Cascade District, where the sound of rushing water grew louder with each step. Here, crystal-clear rivers flowed through the kingdom, carrying not water, but streams of pure data between the component settlements.
+Following 🔴 ~~Propius's~~ 🟢 **Master Cargo's** directions, Aria and Binary made their way to the Cascade District, where the sound of rushing water grew louder with each step. Here, crystal-clear rivers flowed through the kingdom, carrying not water, but streams of pure data between the component settlements.
+
+💡 **EDIT NOTE:** Last Propius reference updated in LP3.4 opener.
 
 ### Chapter 1: The River's Law
 
