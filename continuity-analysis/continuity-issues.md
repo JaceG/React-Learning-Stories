@@ -226,18 +226,183 @@
 
 ---
 
-### State Management (Learning Path 3)
-[To be filled during review]
+### Testing Debugging (Learning Path 8)
+
+**Issue #23: Aria Title - "Guide Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Guide Aria" in LP8.1, but she's a student, not a guide/teacher.
+- **Location**: TestingTower Ch1 (line 2695)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22 (Aria titles across LP8-15)
 
 ---
 
-### Performance Optimization (Learning Path 4)
-[To be filled during review]
+### Advanced Patterns (Learning Path 9)
+
+**Issue #24: Aria Title - "Guide Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Guide Aria" in LP9.1.
+- **Location**: CompoundComponents Ch1 (line 2961)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+**Issue #25: Debuggora Cross-LP Companion**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora (owl companion from LP8) continues through LP9. Need to determine if LP companions should be limited to single LP like other characters.
+- **Location**: LP9 all lessons
+- **Recommendation**: Either restrict Debuggora to LP8 only, OR explicitly establish owl as temporary traveling companion (like Binary) with clear handoff.
 
 ---
 
-### Advanced Patterns (Learning Path 5)
-[To be filled during review]
+### React Ecosystem (Learning Path 10)
+
+🔴 **Issue #26: Master Aurelius ACTIVELY RETURNS (CRITICAL)**
+- **Severity**: CRITICAL
+- **Type**: Character Issues - VIOLATES CORE RULE
+- **Description**: Master Aurelius from LP1 (ComponentKingdom) ACTIVELY RETURNS in LP10.1. He summons Aria, gives her ambassador mission, provides dialogue and guidance. This is not a mention - it's active participation.
+- **Location**: StateManagementLibraries Ch1 (line 3203)
+- **Quote**: "Master Aurelius summoned Aria to the Great Council Chamber. 'Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador...'"
+- **Recommendation**: Remove Master Aurelius entirely. Replace with council announcement or new character sending Aria on mission.
+
+**Issue #27: Debuggora Made Permanent Companion**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora from LP8 continues through LP10 and is explicitly called "permanent companion" in LP11. This violates the single-LP companion rule.
+- **Location**: LP10.1 (line 3209), LP11.1 (line 3471 "now a permanent companion")
+- **Recommendation**: Remove Debuggora after LP8/LP9, or establish clear rules about companions.
+
+**Issue #28: Aria Titles - "Ambassador Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Ambassador Aria" multiple times in LP10.
+- **Location**: LP10.1 (lines 3224), LP10.3 (line 3331), LP10.4 (line 3396)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+---
+
+### Server Data (Learning Path 11)
+
+🔴 **Issue #29: Master Aurelius ACTIVELY RETURNS AGAIN (CRITICAL)**
+- **Severity**: CRITICAL
+- **Type**: Character Issues - VIOLATES CORE RULE
+- **Description**: Master Aurelius from LP1 ACTIVELY RETURNS AGAIN in LP11.1. He stands beside Aria on observation deck, speaks to her, provides guidance.
+- **Location**: ApiIntegration Ch1 (line 3463)
+- **Quote**: "Master Aurelius stood beside Aria on the observation deck. 'Ambassador Aria,' he began, using her new title with pride, 'you've mastered client-side React...'"
+- **Recommendation**: Remove Master Aurelius entirely. Replace with new character or solo arrival at Cloud Citadel.
+
+**Issue #30: Debuggora Permanent Companion Declaration**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: LP11.1 explicitly declares "Debuggora, now a permanent companion" - making LP8 character permanent violates single-LP rule.
+- **Location**: ApiIntegration Ch1 (line 3471)
+- **Recommendation**: Remove Debuggora from LP10+ entirely.
+
+**Issue #31: Aria Title - "Ambassador Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Ambassador Aria" in LP11.1.
+- **Location**: ApiIntegration Ch1 (line 3465)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+---
+
+### Typescript React (Learning Path 12)
+
+[Review needed - initial scan showed all new characters, but detailed review pending]
+
+---
+
+### Build Deploy (Learning Path 13)
+
+**Issue #32: Aria Title - "Ambassador Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Ambassador Aria" in LP13.1.
+- **Location**: BuildSystems Ch1 (line 3931)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+**Issue #33: Debuggora Continues Through LP13**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora from LP8 continues through LP13 (appears in lines 3935, 3975, 3996, 4031).
+- **Location**: LP13 all lessons
+- **Recommendation**: Remove Debuggora after LP8/LP9.
+- **Related**: Issue #27, #30
+
+---
+
+### React Native (Learning Path 14)
+
+**Issue #34: Aria Title - "Captain Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Captain Aria" in LP14.1.
+- **Location**: MobileFoundations Ch1 (line 4169)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+**Issue #35: Debuggora Continues Through LP14**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora from LP8 continues through ALL of LP14 (appears in 10+ locations).
+- **Location**: LP14 all lessons (lines 4173, 4216, 4239, 4257, 4280, 4304, 4324, 4344, 4369, 4390)
+- **Recommendation**: Remove Debuggora after LP8/LP9.
+- **Related**: Issue #27, #30, #33
+
+---
+
+### Accessibility (Learning Path 15)
+
+**Issue #36: Aria Title - "Captain Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Aria referred to as "Captain Aria" in LP15.1.
+- **Location**: InclusiveFoundations Ch1 (line 4431)
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+**Issue #37: Debuggora Continues Through LP15**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora from LP8 continues through ALL of LP15 (appears in 12+ locations).
+- **Location**: LP15 all lessons (lines 4437, 4458, 4482, 4509, 4529, 4551, 4579, 4599, 4624, 4650, 4672, 4695)
+- **Recommendation**: Remove Debuggora after LP8/LP9.
+- **Related**: Issue #27, #30, #33, #35
+
+---
+
+## Summary of LP8-15 Issues
+
+### Critical Issues (2):
+- Issue #26: Master Aurelius returns in LP10.1
+- Issue #29: Master Aurelius returns again in LP11.1
+
+### High Priority (6):
+- Issue #25: Debuggora continues through LP9
+- Issue #27: Debuggora made permanent in LP10
+- Issue #30: Debuggora declared permanent in LP11
+- Issue #33: Debuggora continues through LP13
+- Issue #35: Debuggora continues through LP14
+- Issue #37: Debuggora continues through LP15
+
+### Medium Priority (8 Aria title issues):
+- Issue #23: "Guide Aria" in LP8.1
+- Issue #24: "Guide Aria" in LP9.1
+- Issue #28: "Ambassador Aria" in LP10 (3 instances)
+- Issue #31: "Ambassador Aria" in LP11.1
+- Issue #32: "Ambassador Aria" in LP13.1
+- Issue #34: "Captain Aria" in LP14.1
+- Issue #36: "Captain Aria" in LP15.1
+
+**Total New Issues Found in LP8-15: 15 issues**
+**Previous Issues from LP1-7: 22 issues**
+**Grand Total: 37 continuity issues**
 
 ---
 
