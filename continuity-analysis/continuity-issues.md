@@ -80,8 +80,63 @@
 
 ---
 
-### Hooks in Action (Learning Path 2)
-[To be filled during review]
+### State Management (Learning Path 2)
+
+#### 2.1 StateSorcerers
+**Issue #7: useEffect Introduced Too Early**
+- **Severity**: Medium
+- **Type**: Concept Issues
+- **Description**: StateSorcerers Ch3 introduces useEffect, but lesson 2.2 (MagicalHooks) also teaches useEffect. This creates the same redundancy problem as Props in LP1.
+- **Location**: StateSorcerers Ch3 Story Group 1
+- **Recommendation**: Either keep useEffect entirely in 2.2, or make 2.1 Ch3 a brief introduction and 2.2 the deep dive.
+
+**Issue #8: Minimal Story Group Content in Ch3**
+- **Severity**: Minor
+- **Type**: Plot Issues
+- **Description**: StateSorcerers Ch3 Story Group 1 is very brief (2 sentences), then jumps to "Memnon's Final Wisdom" which isn't Story Group content. The actual narrative is minimal.
+- **Location**: StateSorcerers Ch3
+- **Recommendation**: Add more narrative content to Story Groups showing Aria learning useEffect through story, not just wisdom sections.
+
+#### 2.2 MagicalHooks
+**Issue #9: Major Hook Redundancy**
+- **Severity**: High
+- **Type**: Concept Issues
+- **Description**: MagicalHooks re-teaches useState and useEffect which were already covered in StateSorcerers. This is confusing and wastes lesson time.
+- **Location**: MagicalHooks Ch1-2
+- **Recommendation**: Either:
+  - Focus 2.1 only on useState basics, move ALL useEffect to 2.2
+  - OR acknowledge in 2.2 that Aria learned basics and frame this as "mastering" hooks
+  - OR make 2.2 about performance hooks only (useRef, useMemo, useCallback) and move useState/useEffect content elsewhere
+
+**Issue #10: Hook Creation Attribution Confusion**
+- **Severity**: Minor
+- **Type**: Character Issues
+- **Description**: Forge Master Hooke claims useState is "my most popular creation" that Aria has "already met," but Aria learned useState from Memnon, not Hooke. Creates confusion about who created/teaches what.
+- **Location**: MagicalHooks Ch1 Story Group 1
+- **Recommendation**: Clarify that Hooke forges/creates the hooks, but various masters teach how to use them. Or have Hooke acknowledge Memnon taught Aria the basics.
+
+#### 2.3 GrandContext
+**Issue #11: Location Quarter Unspecified**
+- **Severity**: Minor
+- **Type**: Location Issues
+- **Description**: Grand Context Hall's quarter not specified. Makes world geography unclear.
+- **Location**: GrandContext Ch1
+- **Recommendation**: Assign Grand Context Hall to a specific quarter for better world coherence.
+
+#### 2.4 StateManagementAdventures
+**Issue #12: Modern Tools Not Named in Story**
+- **Severity**: Minor
+- **Type**: Plot Issues
+- **Description**: Ch3 mentions "modern frontiers" and "portals" to different state management approaches but doesn't name any specific tools in Story Groups. Likely covered only in interactive content.
+- **Location**: StateManagementAdventures Ch3
+- **Recommendation**: Add at least 1-2 specific modern state management library names (Zustand, Jotai, Recoil) in Story Groups for narrative completeness.
+
+**Issue #13: Location Quarter Unspecified**
+- **Severity**: Minor
+- **Type**: Location Issues
+- **Description**: State Management Citadel quarter not specified.
+- **Location**: StateManagementAdventures Ch1
+- **Recommendation**: Assign to a specific quarter.
 
 ---
 

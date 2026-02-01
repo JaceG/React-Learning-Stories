@@ -27,9 +27,11 @@ Ensure that the main story narrative flows logically, maintains character and lo
 ### Tracking Documents
 - **`story-groups-only.md`** - Auto-generated, Story Groups only (no Bridges, Questions, etc.)
 - **`story-bible.md`** - Cumulative registry of characters, locations, plot, and concepts
+- **`kingdom-geography.md`** - World map tracking quarters, districts, locations, and travel routes
 - **`technical-review-notes.md`** - Technical accuracy and concept progression notes per Learning Path
 - **`continuity-issues.md`** - Running log of narrative continuity problems
 - **`progress-tracker.md`** - Current status, what's done, next steps
+- **`workflow-notes.md`** - Internal notes and process reminders
 
 ## How to Use
 

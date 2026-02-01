@@ -85,6 +85,43 @@
 - **Residence**: Tallest tower in Northern Quarter
 - **Purpose**: Metaphor for root App component
 
+### State Management Era (LP2)
+
+**Memnon**
+- **Role**: Chief of the State Sorcerers
+- **First Appearance**: State Management → StateSorcerers → Chapter 1
+- **Teachings**: useState hook, state as memory, immutability, spread operator, useEffect introduction
+- **Key Traits**: Warm, flowing robes, staff topped with constantly shifting orb of light
+- **Location**: Eastern Quarter - tallest crystal spire with glowing memory orbs
+- **Connection**: Chronos told him about Aria's arrival
+- **Quote**: "Without state, components would be like goldfish, forgetting everything the moment they blink!"
+
+**Forge Master Hooke**
+- **Role**: Hook crafter, creates hooks for functional components
+- **First Appearance**: State Management → MagicalHooks → Chapter 1
+- **Teachings**: useState mastery, useEffect (re-taught), useRef, useMemo, useCallback
+- **Key Traits**: Sturdy, leather apron, sparks flying, creates hooks at glowing anvils
+- **Location**: Hook Forge (quarter unspecified) with crystalline tubes of React energy
+- **Connection**: Memnon sent word of Aria's arrival
+- **Quote**: "useRef is like a secret pocket - it holds values that persist between renders but don't trigger re-renders when changed."
+- **Note**: Claims useState is "her creation" but Memnon taught it to Aria (continuity issue #10)
+
+**Contextia**
+- **Role**: Keeper of the Grand Context
+- **First Appearance**: State Management → GrandContext → Chapter 1
+- **Teachings**: Context API, Provider/Consumer pattern, prop drilling solution, Context optimization
+- **Key Traits**: Tall, flowing robes, gracefully traces patterns in air, makes threads glow
+- **Location**: Grand Context Hall (quarter unspecified) - vast circular chamber with glowing thread constellations
+- **Quote**: "Context allows us to create direct connections between any provider and its consumers, no matter how far apart they are!"
+
+**Grand Reducer**
+- **Role**: Keeper of predictable state transformations
+- **First Appearance**: State Management → StateManagementAdventures → Chapter 1
+- **Teachings**: useReducer, reducer pattern, Redux principles, modern state management alternatives
+- **Key Traits**: Elderly, meditating, robes bear patterns that shift like flowing data, wise eyes
+- **Location**: State Management Citadel (quarter unspecified) - vast meditation chamber with Redux Archives
+- **Quote**: "Instead of many separate state updates, we channel all changes through a single, pure function."
+
 ---
 
 ## Locations
@@ -192,7 +229,66 @@
 37. Learns about Unmounting phase and componentWillUnmount
 38. Learns importance of cleanup (ghost timers, memory leaks warning)
 39. Sees TimerComponent example of proper cleanup
-40. [Completes Components Basics - ready for next Learning Path]
+40. [Completes Components Basics]
+
+### Arc 2: State Management Mastery (Learning Path 2: State Management)
+
+**2.1 StateSorcerers - The Memory Keepers**
+41. Aria enters Eastern Quarter, sees crystal spires pulsing with energy
+42. Arrives at tallest spire with glowing memory orbs (stored memories)
+43. Meets Memnon (Chief of State Sorcerers) - Chronos told him she was coming
+44. Binary explains State Sorcerers can remember between renders
+45. Learns about state as "memory between renderings" (goldfish metaphor)
+46. Memnon introduces useState hook - returns value and setter
+47. Learns about state immutability - must create new memories, not modify
+48. React won't notice secret modifications, only new memory creation
+49. Learns spread operator (...) for copying state with changes
+50. Brief introduction to useEffect hook (ISSUE: redundant with 2.2)
+
+**2.2 MagicalHooks - The Hook Forge**
+51. Arrives at Hook Forge (quarter unspecified) with glowing anvils and React energy tubes
+52. Meets Forge Master Hooke in leather apron - Memnon sent word
+53. Binary explains Hooke makes hooks that grant abilities to functional components
+54. Hooke claims useState is "her creation" (ISSUE: confusing since Memnon taught it)
+55. Re-learns useState capabilities (ISSUE: redundant with 2.1)
+56. Learns useEffect as "hook of consequences" (ISSUE: redundant with 2.1)
+57. Binary initially nervous about "dangerous" hook
+58. Learns dependency array controls when effects activate
+59. Learns specialized hooks: useRef (memory crystal), useMemo (calculation cache), useCallback (function preserver)
+60. useRef doesn't trigger re-renders - "secret pocket" outside render cycle
+61. Learns about premature optimization warnings
+
+**2.3 GrandContext - The Thread Connections**
+62. Arrives at Grand Context Hall (quarter unspecified) - vast circular chamber
+63. Sees domed ceiling with glowing thread constellations creating web of light
+64. Meets Contextia (Keeper of Grand Context) tracing patterns in air
+65. Binary amazed at connections bypassing normal prop chains
+66. Learns about "prop drilling" problem from early React days
+67. Learns Context creates direct connections between Provider and consumers
+68. Aria compares to "magical portals for data"
+69. Sees theme management example
+70. Learns Context threads can carry "living state" - both read and modify
+71. Learns about authentication system pattern with login/logout functions
+72. Learns Context performance cost - all consumers re-render on Provider change
+73. Learns optimization: split contexts, memoize values, use React.memo
+74. Contextia emphasizes measuring before optimizing
+
+**2.4 StateManagementAdventures - The Reducer Pattern**
+75. Arrives at State Management Citadel (quarter unspecified) grand entrance
+76. Enters vast meditation chamber
+77. Meets Grand Reducer (elderly, meditating) who speaks without opening eyes
+78. Learns about complex, interconnected state with intricate rules
+79. Binary agrees simple useState would get messy
+80. Learns reducer pattern - channel all changes through single pure function
+81. First challenge: manage adventurer's inventory with reducer
+82. Grand Reducer reveals Redux Codex (massive leather-bound book on pedestal)
+83. Binary recognizes Redux reputation - single source of truth
+84. Learns three Redux principles: single source, read-only state, pure functions
+85. Learns Redux is "classical approach" but React Kingdom evolves
+86. Aria observes Redux complexity may be overkill for smaller apps
+87. Sees portals to "modern frontiers" - different state management approaches
+88. Learns to choose tools based on needs, not trends
+89. [Completes State Management]
 
 [More arcs to be added during review]
 
