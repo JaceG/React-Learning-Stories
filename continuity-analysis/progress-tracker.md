@@ -2,11 +2,16 @@
 
 ## Current Status
 
-**Phase**: 3 - Story Modifications ✅ **COMPLETE** (All 56 issues fixed)
-**Status**: Ready for Phase 4 - Secondary Element Alignment
+**Phase**: 3.5 - Manual Notes Fixes ⏳ **READY TO START**
+**Status**: Manual review completed (LP2-5, LP7), ready to fix 90+ identified issues
 **Last Updated**: February 1, 2026
 
-**Phase 1**: ✅ COMPLETE - All 15 LPs manually reviewed (100%)
+**⚠️ WORKFLOW REVISED**: See `REVISED-WORKFLOW.md` for updated phase structure based on:
+- Manual review findings (90+ annotations, pages 21-103)
+- Quality degradation in LP8-15 (AI-assisted content)
+- Need for deeper review than originally planned
+
+**Phase 1**: ✅ COMPLETE - All 15 LPs technical review (100%)
 - Total: **56 continuity issues** identified
 
 **Phase 2**: ✅ COMPLETE - All characters/locations extracted
@@ -17,22 +22,31 @@
 - Round 2 (LP8-15): 34 issues fixed
 - Total: **56 fixes with inline change tracking**
 
+**Manual Review Extract**: ✅ COMPLETE - Patterns extracted into guidelines
+- `editing-guidelines.md` created (10 categories)
+- `review-coverage-map.md` created (detailed status)
+- **90+ annotations** from pages 21-103 (LP2-5, LP7)
+
 ---
 
-## Overall Progress
+## Overall Progress - REVISED
 
 - **Phase 1 - Technical Review**: ✅ **COMPLETE** (All 15 LPs reviewed, 56 issues found)
 - **Phase 2 - Detail Extraction**: ✅ **COMPLETE** (All characters/locations documented)
-- **Phase 3 - Story Modifications**: ✅ **COMPLETE** (All 56 issues fixed)
-- **Phase 4 - Secondary Element Alignment**: ⏳ Ready to start
-- **Phase 5 - Final Verification**: ⏳ Not Started
+- **Phase 3 - Story Modifications**: ✅ **COMPLETE** (All 56 continuity issues fixed)
+- **Phase 3.5 - Manual Notes Fixes**: ⏳ **READY TO START** (LP2-5, LP7 - 90+ issues)
+- **Phase 4 - Deep Review LP8-15**: ⏳ Not Started (revised scope - more intensive)
+- **Phase 5 - Final Polish**: ⏳ Not Started
 
-**Overall Completion**: ~60% (3 of 5 phases complete)
+**Overall Completion**: ~50% (3 of 6 phases complete)
 
 **✅ PHASES 1-3 COMPLETE**: 
-- All 180 chapters reviewed
-- All 56 issues fixed with inline tracking
-- Ready for secondary element alignment
+- All 180 chapters reviewed for technical accuracy
+- All 56 continuity issues fixed with inline tracking
+- Manual review completed for 7 lessons (LP2-5, LP7)
+- Editing guidelines extracted from manual review patterns
+
+**📍 NEXT: Phase 3.5** - Fix manual review issues before tackling LP8-15
 
 ---
 
