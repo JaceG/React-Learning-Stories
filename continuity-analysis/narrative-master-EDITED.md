@@ -1209,7 +1209,9 @@ Aria smiled, feeling the weight of knowledge and responsibility. "Yes, Binary. B
 
 ### 📖 Lesson Opener
 
-Following Flux's directions, Aria and Binary climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Forge stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
+🔴 ~~Following Flux's directions, Aria and Binary~~ 🟢 **Aria and Binary** climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Forge stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
+
+💡 **EDIT NOTE:** Removed "Flux's directions" - Flux not introduced until LP3.4. Issue #3.5-001 fix.
 
 ### Chapter 1: The Art of Destructuring
 
