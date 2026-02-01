@@ -837,7 +837,7 @@ Maker of the most powerful hooks in all of React Kingdom, crafting each one at g
 - Why do you think functional updates (using the previous state) are important when multiple updates might happen quickly?
 
 **Aria's Journal - Day 9 (Morning)**
-*The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. useState isn't just for simple values; it can handle complex data structures too. Master Hooke showed me how to use functional updates when the new state depends on the previous state. So much more to learn!*
+*The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. 🔴 ~~useState isn't just for simple values; it can handle complex data structures too. Master Hooke showed me how to use functional updates when the new state depends on the previous state.~~ 🟢 **Master Hooke showed me the full hook family - useState for memory (which Memnon taught me), useEffect for side effects, useRef for persistence, useMemo for optimization, and useCallback for stable functions. Each hook serves a unique purpose!** So much more to learn!*
 
 ---
 
