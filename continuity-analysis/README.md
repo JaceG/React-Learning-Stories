@@ -32,6 +32,7 @@ Ensure that the main story narrative flows logically, maintains character and lo
 - **`continuity-issues.md`** - Running log of narrative continuity problems
 - **`progress-tracker.md`** - Current status, what's done, next steps
 - **`workflow-notes.md`** - Internal notes and process reminders
+- **`narrative-master-EDITED.md`** - Working copy with tracked changes (Phase 3)
 
 ## How to Use
 
