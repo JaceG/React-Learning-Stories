@@ -478,6 +478,18 @@ Binary zipped around the tablets, illuminating each rule as he passed. "I've see
 
 Aria pulled out her journal, ready to document these sacred laws. "I'm ready to learn, Professor. Show me what pitfalls to avoid."
 
+🟢 **Story Group 2:**
+
+🟢 **Syntaxis pointed to the first glowing tablet. "Rule One: Every JSX spell must have a single root element. You cannot return multiple siblings without wrapping them." He demonstrated both a failing spell and a corrected one.**
+
+🟢 **"Rule Two," he continued, touching the second tablet, "All elements must be closed. In HTML, tags like `<img>` or `<br>` can be left open, but JSX demands closure - either with a closing tag or self-closing syntax like `<img />`."**
+
+🟢 **Binary lit up the third tablet. "And Rule Three is tricky - use `className` instead of `class` for CSS styling! Since JSX becomes JavaScript, and `class` is a reserved keyword, React Kingdom requires `className`."**
+
+🟢 **"These aren't arbitrary restrictions," Syntaxis explained. "Each rule exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'."**
+
+💡 **EDIT NOTE:** Added Story Group 2 with specific JSX rules (Issue #4 fix).
+
 **Professor Syntaxis's Wisdom:**
 JSX has specific syntax rules that differ from standard HTML because it's ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: "Rules aren't limitations - they're guardrails for success!"
 
