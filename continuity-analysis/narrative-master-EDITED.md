@@ -6125,7 +6125,9 @@ Deep beneath the React Kingdom, accessible only through the Cloud Citadel's lowe
 
 **Binary's** circuits hummed with anticipation. "My processors already use types internally, Aria. This feels... natural."
 
-**Debuggora** nodded wisely. "And I'll see errors before they even compile. Prevention at its purest!"
+🔴 ~~**Debuggora** nodded wisely. "And I'll see errors before they even compile. Prevention at its purest!"~~
+
+💡 **EDIT NOTE (Issue #39):** Removed Debuggora from LP12. Cross-LP companion violation.
 
 **New Characters:**
 
@@ -6141,7 +6143,7 @@ Types are like the blueprints of the Type Forge - they define what's possible be
 - Why is compile-time error catching more powerful than runtime validation? Think about the development experience and confidence it provides.
 
 **Aria's Journal - Day 45 (Morning)**
-*Deep beneath the Cloud Citadel, I discovered the Type Forge - a place of ancient power where code contracts are hammered into unbreakable forms. Master Typus, the Forge Keeper, showed me that TypeScript isn't just about catching errors - it's about making impossibilities impossible. I learned basic type annotations, type inference, interfaces, and union types. Binary's circuits hummed with recognition, and Debuggora can now see errors before they even compile! Master Typus's wisdom: "Each type is a promise, each interface a guarantee. When your code compiles, it's not hope - it's certainty."*
+*Deep beneath the Cloud Citadel, I discovered the Type Forge - a place of ancient power where code contracts are hammered into unbreakable forms. Master Typus, the Forge Keeper, showed me that TypeScript isn't just about catching errors - it's about making impossibilities impossible. I learned basic type annotations, type inference, interfaces, and union types. Binary's circuits hummed with recognition* 🔴 ~~, and Debuggora can now see errors before they even compile!~~ *Master Typus's wisdom: "Each type is a promise, each interface a guarantee. When your code compiles, it's not hope - it's certainty."*
 
 ---
 
@@ -6169,7 +6171,7 @@ Component types are contracts that define the exact shape of props a component e
 - What's the value of optional props with the ? operator? Think about component flexibility while maintaining type safety.
 
 **Aria's Journal - Day 45 (Afternoon)**
-*Today I learned to type components in the Contract Chamber! It's incredible - TypeScript knows exactly what props each component needs. I explored functional components with React.FC, class components with React.Component<Props, State>, and even generic components like List<T>. No more runtime errors from missing or wrong props! Binary is especially excited about the mathematical certainty it provides. Even Debuggora seems impressed by catching errors before runtime. Master Typus's wisdom: "Every prop typed is a bug prevented, every interface defined is a contract honored."*
+*Today I learned to type components in the Contract Chamber! It's incredible - TypeScript knows exactly what props each component needs. I explored functional components with React.FC, class components with React.Component<Props, State>, and even generic components like List<T>. No more runtime errors from missing or wrong props! Binary is especially excited about the mathematical certainty it provides.* 🔴 ~~Even Debuggora seems impressed by catching errors before runtime.~~ *Master Typus's wisdom: "Every prop typed is a bug prevented, every interface defined is a contract honored."*
 
 ---
 
@@ -6197,13 +6199,15 @@ Advanced TypeScript patterns unlock the full potential of type safety. Union typ
 - When would you use conditional types over simple unions? Think about type relationships that depend on other types.
 
 **Aria's Journal - Day 45 (Evening)**
-*The Type Forge has transformed how I think about code. Every type is a promise, every interface a contract. I mastered union types, intersection types, conditional types, mapped types, and even template literal types! With generics, I can create reusable patterns. With conditional types, I can make types that adapt. Binary is practically glowing with the mathematical precision, and even Debuggora admits she's never seen code this robust. Master Typus's final wisdom: "The Type Forge's greatest gift isn't catching errors - it's making entire categories of bugs impossible." Ready for the Component Armory!*
+*The Type Forge has transformed how I think about code. Every type is a promise, every interface a contract. I mastered union types, intersection types, conditional types, mapped types, and even template literal types! With generics, I can create reusable patterns. With conditional types, I can make types that adapt. Binary is practically glowing with the mathematical precision* 🔴 ~~, and even Debuggora admits she's never seen code this robust~~*. Master Typus's final wisdom: "The Type Forge's greatest gift isn't catching errors - it's making entire categories of bugs impossible." Ready for the Component Armory!*
 
 **Chapter Ending:**
 
 Aria successfully forged a complete type system. "Every component typed, every function safe, every prop guaranteed."
 
-Binary glowed with new type-checking abilities. Debuggora could see potential errors in the very structure of code.
+Binary glowed with new type-checking abilities. 🔴 ~~Debuggora could see potential errors in the very structure of code.~~
+
+💡 **EDIT NOTE (Issue #40):** Removed Debuggora from LP12.2.
 
 Master Typus smiled proudly. "You've learned to forge unbreakable code. Your components are now contracts, your functions are now guarantees."
 
@@ -6249,7 +6253,7 @@ TypeScript transforms React components from flexible but fragile constructs into
 - When might strict typing become a hindrance? Think about the balance between type safety and development velocity.
 
 **Aria's Journal - Day 46 (Morning)**
-*I entered the Component Armory today and met Master Forger Typhos at the great Component Forge. The blue flames of TypeScript illuminated armor pieces I'd never seen before—Functional Component Armor, Class Component Plate, Generic Component Mail, and the Strict Type Helm. Binary was fascinated by the type definitions (he called them "armor specifications"), and Debuggora explained how types catch errors during forging rather than in production. I learned about Props Interface Patterns, Children Types, Event Handlers, and Ref Forwarding. Typhos's wisdom: "A well-typed component is worth a thousand runtime checks." My Type Safety Strength is growing—I can feel my components becoming more robust!*
+*I entered the Component Armory today and met Master Forger Typhos at the great Component Forge. The blue flames of TypeScript illuminated armor pieces I'd never seen before—Functional Component Armor, Class Component Plate, Generic Component Mail, and the Strict Type Helm. Binary was fascinated by the type definitions (he called them "armor specifications")* 🔴 ~~, and Debuggora explained how types catch errors during forging rather than in production~~*. I learned about Props Interface Patterns, Children Types, Event Handlers, and Ref Forwarding. Typhos's wisdom: "A well-typed component is worth a thousand runtime checks." My Type Safety Strength is growing—I can feel my components becoming more robust!*
 
 ---
 
@@ -6268,7 +6272,9 @@ Deep within the armory, **Master Typhos** led Aria to the Hook Forge, where ethe
 
 **Binary** interfaced with the forge controls. "These type parameters... they ensure hook reliability across all usage patterns!"
 
-**Debuggora** examined the hook templates. "I see how types flow through the hook lifecycle. No more mysterious 'undefined' values!"
+🔴 ~~**Debuggora** examined the hook templates. "I see how types flow through the hook lifecycle. No more mysterious 'undefined' values!"~~
+
+💡 **EDIT NOTE (Issue #40):** Removed Debuggora from LP12.2.
 
 "Each hook requires specific type armor," Typhos demonstrated. "Master these patterns, and your components will wield hooks with precision."
 
@@ -6281,7 +6287,7 @@ TypeScript transforms React hooks from flexible utilities into precision instrum
 - When should you create a custom hook versus inline logic? Think about reusability, testability, and separation of concerns.
 
 **Aria's Journal - Day 46 (Afternoon)**
-*Master Typhos took me to the Hook Forge this afternoon, where ethereal chains of logic hung suspended in blue flame. I learned to type useState with explicit types, useReducer with discriminated union actions, and Context with strongly typed values. The custom hooks were fascinating—useFetch with generics, useForm with full type safety, useLocalStorage with typed persistence. Binary was amazed at how type parameters ensure hook reliability, and Debuggora noted that typed hooks eliminate mysterious 'undefined' values. I forged several custom hooks myself! Typhos's teaching: "Generic hooks adapt to any data type, discriminated unions handle complex states." Hook Mastery is climbing!*
+*Master Typhos took me to the Hook Forge this afternoon, where ethereal chains of logic hung suspended in blue flame. I learned to type useState with explicit types, useReducer with discriminated union actions, and Context with strongly typed values. The custom hooks were fascinating—useFetch with generics, useForm with full type safety, useLocalStorage with typed persistence. Binary was amazed at how type parameters ensure hook reliability* 🔴 ~~, and Debuggora noted that typed hooks eliminate mysterious 'undefined' values~~*. I forged several custom hooks myself! Typhos's teaching: "Generic hooks adapt to any data type, discriminated unions handle complex states." Hook Mastery is climbing!*
 
 ---
 
@@ -6300,7 +6306,9 @@ In the deepest sanctum of the Component Armory, **Master Typhos** revealed the m
 
 **Binary** scanned the complex type signatures. "These patterns... they're like meta-programming! Types that generate other types!"
 
-**Debuggora** studied the intricate type flows. "With these, we can catch errors I didn't even know were possible to detect at compile time."
+🔴 ~~**Debuggora** studied the intricate type flows. "With these, we can catch errors I didn't even know were possible to detect at compile time."~~
+
+💡 **EDIT NOTE (Issue #40):** Removed Debuggora from LP12.2.
 
 "The ultimate test," Typhos announced, "is not just knowing these patterns, but knowing when and how to wield them. Power without wisdom is chaos."
 

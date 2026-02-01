@@ -12,10 +12,10 @@
 
 **Progress**:
 - ✅ LP8: KEEP Debuggora (appropriate - Jasmine's companion)
-- ✅ LP9: 2 instances REMOVED (lines 4882, 4899)
-- 🔄 LP10: 8 instances total
-  - ✅ Line 5194 REMOVED
-  - ⏳ Line 5320 - TODO
+- ✅ LP9: 2 instances REMOVED 
+- ✅ LP10: 8 instances REMOVED
+- ✅ LP11: 7 instances REMOVED (including CRITICAL "permanent companion" declaration)
+- 🔄 LP12: 10 of 19 instances REMOVED
   - ⏳ Line 5440 - TODO
   - ⏳ Line 5475 - TODO
   - ⏳ Line 5530 - TODO
