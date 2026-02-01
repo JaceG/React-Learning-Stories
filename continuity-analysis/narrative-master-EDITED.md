@@ -3768,7 +3768,9 @@ With the Memory Plague defeated, the React Kingdom's applications ran smoothly o
 
 ### 📖 Lesson Opener
 
-The Memory Monastery's healing rituals had transformed Aria into a guardian of application health. Brother Binary directed her next journey: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed. Seek Keeper Chronos, for bundle size is the hidden enemy of performance." Aria and Binary descended from the clouds, following ancient pathways to the mystical repository of deferred knowledge.
+The Memory Monastery's healing rituals had transformed Aria into a guardian of application health. Brother Binary directed her next journey: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed. Seek 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris**, for bundle size is the hidden enemy of performance." Aria and Binary descended from the clouds, following ancient pathways to the mystical repository of deferred knowledge.
+
+💡 **EDIT NOTE:** Changed Chronos (LP1 character) to Keeper Libris (new character).
 
 ### Chapter 1: The Burden of Knowledge
 
@@ -3782,7 +3784,7 @@ The Memory Monastery's healing rituals had transformed Aria into a guardian of a
 						blocked by an enormous bundle of books, too heavy for
 						anyone to move.
 
-**Keeper Chronos**, the ancient librarian,
+🔴 ~~**Keeper Chronos**~~ 🟢 **Keeper Libris**, the ancient librarian,
 						appeared from the shadows. "Ah, another victim of the 
 						**Bundle Burden**. Young developers pack
 						every possible library into their applications, not
@@ -3795,12 +3797,25 @@ He gestured to the towering shelves. "Each book
 						Yet we force everyone to carry them all. This is the
 						curse of **eager loading**."
 
+💡 **EDIT NOTE:** Replaced Keeper Chronos (LP1 character) with Keeper Libris (new character).
+
 **New Characters:**
 
-**Keeper Chronos**
-Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."
+---
+🔴 **DELETED:**
+> ~~**Keeper Chronos**~~
+> ~~Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."~~
 
-**Keeper Chronos's Wisdom:**
+💡 **WHY:** Chronos is from LP1 (Lifecycle Sanctum) and shouldn't return.
+---
+
+---
+🟢 **ADDED:**
+> **Keeper Libris**
+> Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."
+---
+
+🔴 ~~**Keeper Chronos's Wisdom:**~~ 🟢 **Keeper Libris's Wisdom:**
 Modern JavaScript applications often ship massive bundles containing code that many users will never execute. Every kilobyte increases download time, parse time, and execution time. The first step to optimization is understanding what's in your bundle and why. Tools like webpack-bundle-analyzer reveal the true cost of your dependencies.
 
 **Reflection Questions:**
@@ -3816,13 +3831,13 @@ Modern JavaScript applications often ship massive bundles containing code that m
 ### Chapter 2: The Art of Lazy Loading
 
 **Bridge:**
-Keeper Chronos led Aria to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the Lazy Wing, where we practice the art of temporal loading with React.lazy() and Suspense."
+🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** led Aria to a special section of the library where books floated in mid-air, appearing only when reached for. "This is the Lazy Wing, where we practice the art of temporal loading with React.lazy() and Suspense."
 
 **Narrative:**
 
 **Story Group 1:**
 
-Keeper Chronos led **Aria** to a special
+🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** led **Aria** to a special
 						section of the library where books floated in mid-air,
 						appearing only when reached for. "This is the 
 						**Lazy Wing**, where we practice the art of
@@ -3834,13 +3849,15 @@ Keeper Chronos led **Aria** to a special
 						**Suspense**, we can summon components only
 						when they're needed, not before."
 
-"The magic has two parts," Chronos explained. "First, 
+"The magic has two parts," 🔴 ~~Chronos~~ 🟢 **Libris** explained. "First, 
 						**code splitting** breaks your bundle into
 						smaller chunks. Then, **dynamic imports** 
 						load these chunks on demand. Your users download only
 						what they use."
 
-**Keeper Chronos's Wisdom:**
+💡 **EDIT NOTE:** Continued Chronos → Libris replacement in Ch2.
+
+🔴 ~~**Keeper Chronos's Wisdom:**~~ 🟢 **Keeper Libris's Wisdom:**
 React.lazy() and Suspense enable code splitting at the component level. By breaking your application into chunks and loading them on demand, you can significantly reduce initial bundle size and improve Time to Interactive (TTI). The key is finding the right split points - usually routes, modals, and feature-specific components.
 
 **Reflection Questions:**
