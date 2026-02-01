@@ -3644,7 +3644,9 @@ But your journey doesn't end here. Remember Aria's greatest lesson: React isn't 
 
 ### 📖 Lesson Opener
 
-Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performance journey was complete. But Master Velocity's parting words echoed in her mind: "Speed is only half the battle. Seek Brother Binary at the Memory Monastery - for even the fastest application will fall if it bleeds memory." The floating monastery appeared through the clouds, its ancient walls humming with the whispers of forgotten allocations.
+Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performance journey was complete. But Master Velocity's parting words echoed in her mind: "Speed is only half the battle. Seek 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** at the Memory Monastery - for even the fastest application will fall if it bleeds memory." The floating monastery appeared through the clouds, its ancient walls humming with the whispers of forgotten allocations.
+
+💡 **EDIT NOTE:** Renamed "Brother Binary" to "Brother Memor" to avoid conflict with Aria's companion Binary.
 
 ### Chapter 1: The Memory Plague
 
@@ -3658,7 +3660,7 @@ Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performan
 						mysterious plague - they would start fast but gradually
 						slow to a crawl, eventually crashing entirely.
 
-**Brother Binary**, the monastery's eldest
+🔴 ~~**Brother Binary**~~ 🟢 **Brother Memor**, the monastery's eldest
 						monk, greeted her with concern. "The Memory Plague has
 						returned, Aria. Applications are holding onto memories
 						they should release, creating 
@@ -3673,34 +3675,36 @@ He led her to the Observatory, where ethereal
 						**Detached DOM Nodes**, and 
 						**Closure Captures**."
 
+💡 **EDIT NOTE:** Brother Binary → Brother Memor (avoid companion Binary conflict).
+
 **New Characters:**
 
-**Brother Binary**
+🔴 ~~**Brother Binary**~~ 🟢 **Brother Memor**
 Keeper of the Memory Monastery and guardian against the Memory Plague. His wisdom: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."
 
-**Brother Binary's Wisdom:**
+🔴 ~~**Brother Binary's Wisdom:**~~ 🟢 **Brother Memor's Wisdom:**
 Memory leaks are silent killers of application performance. They occur when your application holds references to objects that are no longer needed, preventing the garbage collector from freeing that memory. Common sources include forgotten event listeners, detached DOM nodes, and closures that capture large objects. The key to prevention is disciplined cleanup.
 
 **Reflection Questions:**
 
-- Brother Binary has shown Aria the three forms of the Memory Plague. In your own applications, have you noticed performance degrading over time? Do you always clean up event listeners and timers?
+- 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** has shown Aria the three forms of the Memory Plague. In your own applications, have you noticed performance degrading over time? Do you always clean up event listeners and timers?
 - Consider how a small leak, multiplied by thousands of users and hours of usage, can bring even the mightiest application to its knees.
 
 **Aria's Journal - Day 26 (Morning)**
-*I've arrived at the Memory Monastery, floating in the clouds above the kingdom. Applications below suffer from a mysterious plague - they start fast but gradually slow to a crawl, eventually crashing. Brother Binary, the eldest monk, explained the Memory Plague: applications holding onto memories they should release. The three primary forms: Event Listener Leaks (listeners added but never removed), Detached DOM Nodes (removed from DOM but still referenced), and Closure Captures (closures holding large objects). I created each type to understand how they form. The memory meter fills alarmingly fast!*
+*I've arrived at the Memory Monastery, floating in the clouds above the kingdom. Applications below suffer from a mysterious plague - they start fast but gradually slow to a crawl, eventually crashing. 🔴 ~~Brother Binary~~ 🟢 **Brother Memor**, the eldest monk, explained the Memory Plague: applications holding onto memories they should release. The three primary forms: Event Listener Leaks (listeners added but never removed), Detached DOM Nodes (removed from DOM but still referenced), and Closure Captures (closures holding large objects). I created each type to understand how they form. The memory meter fills alarmingly fast!*
 
 ---
 
 ### Chapter 2: The Sacred Tools of Memory
 
 **Bridge:**
-Brother Binary led Aria deeper into the monastery to a chamber filled with glowing diagnostic instruments. "To heal the Memory Plague, you must first learn to see it. These are our sacred tools - the Chrome DevTools Memory Profiler."
+🔴 ~~Brother Binary~~ 🟢 **Brother Memor** led Aria deeper into the monastery to a chamber filled with glowing diagnostic instruments. "To heal the Memory Plague, you must first learn to see it. These are our sacred tools - the Chrome DevTools Memory Profiler."
 
 **Narrative:**
 
 **Story Group 1:**
 
-Brother Binary led **Aria** deeper into the
+🔴 ~~Brother Binary~~ 🟢 **Brother Memor** led **Aria** deeper into the
 						monastery to a chamber filled with glowing instruments.
 						"To heal the Memory Plague, you must master our sacred
 						tools - the 
@@ -3719,44 +3723,48 @@ He activated a mystical viewing portal that revealed the
 						**Manual Garbage Collection** to force
 						cleanup."
 
-**Brother Binary's Wisdom:**
+💡 **EDIT NOTE:** Continued Brother Binary → Brother Memor in Ch2.
+
+🔴 ~~**Brother Binary's Wisdom:**~~ 🟢 **Brother Memor's Wisdom:**
 Chrome DevTools Memory Profiler is your window into the application's memory usage. Heap snapshots capture the state at a moment, allocation timelines show growth over time, and the retainers view reveals why objects can't be garbage collected. Master these tools, and no memory leak can hide from you.
 
 **Reflection Questions:**
 
-- Brother Binary has revealed the sacred tools of memory profiling. How often do you profile your applications? Do you wait until users complain about performance, or do you proactively hunt for leaks?
+- 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** has revealed the sacred tools of memory profiling. How often do you profile your applications? Do you wait until users complain about performance, or do you proactively hunt for leaks?
 - Consider making memory profiling part of your regular development workflow, especially before major releases.
 
 **Aria's Journal - Day 26 (Afternoon)**
-*Brother Binary led me to a chamber filled with glowing diagnostic instruments - the Chrome DevTools Memory Profiler! Three sacred techniques: Heap Snapshots to see memory at a moment in time (take two, compare to find leaks), Allocation Timeline to track growth over time (steady growth = leak, sawtooth = healthy GC), and the Retainers view to see WHY objects can't be garbage collected. I also learned to filter by FiberNode and Component to find React-specific leaks. The key is comparing snapshots before and after user actions to catch what's not being released!*
+*🔴 ~~Brother Binary~~ 🟢 **Brother Memor** led me to a chamber filled with glowing diagnostic instruments - the Chrome DevTools Memory Profiler! Three sacred techniques: Heap Snapshots to see memory at a moment in time (take two, compare to find leaks), Allocation Timeline to track growth over time (steady growth = leak, sawtooth = healthy GC), and the Retainers view to see WHY objects can't be garbage collected. I also learned to filter by FiberNode and Component to find React-specific leaks. The key is comparing snapshots before and after user actions to catch what's not being released!*
 
 ---
 
 ### Chapter 3: The Sacred Scroll of Memory Healing
 
 **Bridge:**
-"Now comes the most important knowledge," Brother Binary said, leading Aria to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently."
+"Now comes the most important knowledge," 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** said, leading Aria to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently."
+
+💡 **EDIT NOTE:** Continued Brother Binary → Brother Memor in Ch3.
 
 **Narrative:**
 
 **Story Group 1:**
 
-"Now comes the most important knowledge," Brother Binary said, leading **Aria** to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the **Four Healing Rituals** to cure the Memory Plague permanently."
+"Now comes the most important knowledge," 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** said, leading **Aria** to the Sanctuary of Solutions. "Understanding leaks is only half the battle. You must master the **Four Healing Rituals** to cure the Memory Plague permanently."
 
 The sanctuary walls glowed with ancient inscriptions, each describing a different healing technique. "These rituals have been refined over generations of monks. Apply them faithfully, and your applications will remain healthy for eternity."
 
-Brother Binary handed Aria a sacred scroll. "The time has come to put your knowledge into practice. Demonstrate each ritual, and the monastery will grant you the title of **Memory Guardian**."
+🔴 ~~Brother Binary~~ 🟢 **Brother Memor** handed Aria a sacred scroll. "The time has come to put your knowledge into practice. Demonstrate each ritual, and the monastery will grant you the title of **Memory Guardian**."
 
 **The Memory Guardian's Wisdom:**
 Memory management is not about complex algorithms or clever tricks. It's about discipline and consistency. Always clean up what you create, use weak references when appropriate, manage refs carefully, and memoize wisely. These four rituals, applied consistently, will keep your applications healthy and performant throughout their lifetime.
 
 **Reflection Questions:**
 
-- Aria has become a Memory Guardian, mastering the ancient rituals of memory management. But Brother Binary's final lesson is most important: "Knowledge without practice is worthless. Apply these rituals in every component you write."
+- Aria has become a Memory Guardian, mastering the ancient rituals of memory management. But 🔴 ~~Brother Binary's~~ 🟢 **Brother Memor's** final lesson is most important: "Knowledge without practice is worthless. Apply these rituals in every component you write."
 - Will you take the Memory Guardian oath? Will you commit to always cleaning up your effects, managing your references, and keeping your applications healthy?
 
 **Aria's Journal - Day 26 (Evening)**
-*I've mastered the Four Healing Rituals and become a Memory Guardian! 1) Event Cleanup Ritual - ALWAYS return cleanup functions from useEffect. 2) WeakMap Wisdom - use WeakMap/WeakSet for caches so objects can be garbage collected when no longer needed. 3) Reference Discipline - disconnect observers, clear refs on unmount. 4) Memoization Mastery - memoize context values to prevent recreation. The complete pattern: use isMountedRef to check if component is still mounted before setting state after async operations. Brother Binary's wisdom: 'Knowledge without practice is worthless.' Tomorrow: the Lazy Library!*
+*I've mastered the Four Healing Rituals and become a Memory Guardian! 1) Event Cleanup Ritual - ALWAYS return cleanup functions from useEffect. 2) WeakMap Wisdom - use WeakMap/WeakSet for caches so objects can be garbage collected when no longer needed. 3) Reference Discipline - disconnect observers, clear refs on unmount. 4) Memoization Mastery - memoize context values to prevent recreation. The complete pattern: use isMountedRef to check if component is still mounted before setting state after async operations. 🔴 ~~Brother Binary's~~ 🟢 **Brother Memor's** wisdom: 'Knowledge without practice is worthless.' Tomorrow: the Lazy Library!*
 
 **Chapter Ending:**
 
@@ -3768,7 +3776,7 @@ With the Memory Plague defeated, the React Kingdom's applications ran smoothly o
 
 ### 📖 Lesson Opener
 
-The Memory Monastery's healing rituals had transformed Aria into a guardian of application health. Brother Binary directed her next journey: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed. Seek 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris**, for bundle size is the hidden enemy of performance." Aria and Binary descended from the clouds, following ancient pathways to the mystical repository of deferred knowledge.
+The Memory Monastery's healing rituals had transformed Aria into a guardian of application health. 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** directed her next journey: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed. Seek 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris**, for bundle size is the hidden enemy of performance." Aria and Binary descended from the clouds, following ancient pathways to the mystical repository of deferred knowledge.
 
 💡 **EDIT NOTE:** Changed Chronos (LP1 character) to Keeper Libris (new character).
 
