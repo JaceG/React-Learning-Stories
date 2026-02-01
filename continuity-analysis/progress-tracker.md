@@ -53,11 +53,13 @@
 
 **Summary**: Strong technical content on forms and events. Good use of "Academy training" references (mentions previous learning, doesn't bring back characters). Final chapter brings LP5 teachers together - excellent! Heavy use of "Academy graduate Aria" framing.
 
-### 6. Routing Navigation (In Progress)
-- [ ] 6.1 NavigationCompass (3 chapters)
-- [ ] 6.2 WaypointWizardry (3 chapters)
-- [ ] 6.3 GuardianGates (3 chapters)
-- [ ] 6.4 PortalPassages (3 chapters)
+### 6. Routing Navigation ✅ COMPLETED
+- [x] 6.1 NavigationCompass (3 chapters) - ✅ Captain Marina introduced
+- [x] 6.2 WaypointWizardry (3 chapters) - ✅ ISSUE: Multiple old characters return
+- [x] 6.3 GuardianGates (3 chapters) - ✅ Good technical content
+- [x] 6.4 PortalPassages (3 chapters) - ✅ ISSUE: Old characters return again
+
+**Summary**: Strong technical content on routing. MAJOR ISSUE: Master Aurelius (LP1), Commander Validus (LP5), Captain Thunk, and "Elder useState" all appear as active participants, violating "mentions only" rule.
 
 ### 7. Performance Optimization
 - [ ] 7.1 MemoryMonastery (3 chapters)

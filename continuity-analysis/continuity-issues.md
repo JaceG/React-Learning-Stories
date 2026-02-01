@@ -105,6 +105,28 @@
 
 ---
 
+### Routing Navigation (Learning Path 6)
+
+**Issue #17: Multiple Characters Return from Previous LPs**
+- **Severity**: HIGH (violates core rule)
+- **Type**: Character Issues
+- **Description**: Several characters from previous Learning Paths appear as active participants in LP6, violating the "mentions only" rule:
+  - Master Aurelius (LP1) appears in 6.2 Ch3 and 6.4 Ch3
+  - Commander Validus (LP5) appears in 6.2 Ch3
+  - Captain Thunk appears in 6.2 Ch3 and 6.4 Ch2 (origin unclear)
+  - "Elder useState" mentioned in 6.2 Ch3 (unclear origin)
+- **Location**: NavigationCompass Ch3, PortalPassages Ch2-3
+- **Recommendation**: Remove all character appearances. They can be mentioned (e.g., "As Master Aurelius taught...") but should not actively participate or speak.
+
+**Issue #18: Marina as Sole Teacher**
+- **Severity**: None (observation)
+- **Type**: Character Issues
+- **Description**: Marina is the primary (and seemingly only new) teacher for all of LP6. This is fine but notable - most LPs have 3-4 different teachers.
+- **Location**: All LP6 lessons
+- **Recommendation**: No change needed, just noting the pattern.
+
+---
+
 ### State Management (Learning Path 2)
 
 #### 2.1 StateSorcerers
