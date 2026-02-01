@@ -3312,11 +3312,23 @@ Marina taught Aria advanced navigation concepts that created sophisticated routi
 
 **Story Group 3:**
 
-As they completed the nested waypoint system, representatives from all quarters arrived to witness the demonstration. **Master Aurelius**, **Elder useState**, **Captain Thunk**, and **Commander Validus** watched as Marina demonstrated the unified navigation framework to Aria.
+---
+🔴 **DELETED:**
+> ~~As they completed the nested waypoint system, representatives from all quarters arrived to witness the demonstration. **Master Aurelius**, **Elder useState**, **Captain Thunk**, and **Commander Validus** watched as Marina demonstrated the unified navigation framework to Aria.~~
+> 
+> ~~"This is remarkable," Master Aurelius observed. "Marina has created something that uses every concept in our kingdom - components for structure, state for memory, effects for synchronization, context for sharing, forms for interaction, and now navigation to tie it all together."~~
+> 
+> ~~Elder useState added, "Aria's React foundation helps her understand these connections so quickly."~~
 
-"This is remarkable," Master Aurelius observed. "Marina has created something that uses every concept in our kingdom - components for structure, state for memory, effects for synchronization, context for sharing, forms for interaction, and now navigation to tie it all together."
+💡 **WHY:** Removed Master Aurelius (LP1), Elder useState (LP2), Captain Thunk (LP5), and Commander Validus (LP5) - all prior LP characters who shouldn't actively return.
+---
 
-Elder useState added, "Aria's React foundation helps her understand these connections so quickly."
+---
+🟢 **ADDED:**
+> As they completed the nested waypoint system, Marina stepped back to admire their work. "Look at what you've built, Aria. This unified navigation framework brings together everything you've learned across the kingdom."
+> 
+> Binary displayed proud analysis: "Navigation system integrates: Components (structure), State (memory), Effects (synchronization), Context (sharing), Forms (interaction), and Routes (architecture). Complete React ecosystem unified!"
+---
 
 **The Complete Picture:**
 "Nested routes aren't just about organization," Marina explained. "They're about creating intuitive user journeys that maintain context and state at every level." Aria marveled: "I can see how every concept I've learned builds on the others! Components give us structure, hooks give us behavior, forms give us interaction, and navigation gives us the architecture to connect it all. React isn't separate pieces - it's one unified system."
@@ -3558,22 +3570,43 @@ She demonstrated with a complex gesture, combining
 						transition tells a story about the relationship between
 						where users are and where they're going."
 
-**Captain Thunk** from the Eastern Quarter
-						leaned forward, impressed. "You've unified animation
-						with state management in ways we never considered!"
+---
+🔴 **DELETED:**
+> ~~**Captain Thunk** from the Eastern Quarter~~
+> ~~leaned forward, impressed. "You've unified animation~~
+> ~~with state management in ways we never considered!"~~
+> 
+> ~~"That's because transitions aren't isolated," Aria~~
+> ~~replied.~~
 
-"That's because transitions aren't isolated," Aria
-						replied. "They must consider 
+💡 **WHY:** Removed Captain Thunk (LP5 character) from active participation.
+---
+
+---
+🟢 **ADDED:**
+> Marina observed with admiration. "You've unified animation with state management beautifully, Aria!"
+> 
+> "That's because transitions aren't isolated," Aria explained.
+---
+
+"They must consider 
 						**scroll restoration**, form state
 						persistence, and even authentication status. Everything
 						we've learned applies here." Marina watched proudly as
 						her colleague transformed portal transitions into a
 						comprehensive system.
 
+💡 **EDIT NOTE:** Captain Thunk removed, Marina provides feedback instead.
+
 **New Characters:**
 
-**Captain Thunk**
-A master from the Eastern Quarter who specializes in state management and animation integration. He recognizes when animation and state management are unified in ways never considered before, bringing expertise from the State Management domain. "You've unified animation with state management in ways we never considered!"
+---
+🔴 **DELETED:**
+> ~~**Captain Thunk**~~
+> ~~A master from the Eastern Quarter who specializes in state management and animation integration. He recognizes when animation and state management are unified in ways never considered before, bringing expertise from the State Management domain. "You've unified animation with state management in ways we never considered!"~~
+
+💡 **WHY:** Captain Thunk is from LP5 (State Management) and shouldn't return as active character.
+---
 
 **The Complete Transition System:**
 "Transitions combine everything," Marina explained. "Component lifecycle tells us when to trigger animations. State management tracks transition progress. Effect hooks synchronize with the browser's animation frame. And forms must gracefully handle transitions without losing user input."
