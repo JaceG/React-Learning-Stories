@@ -915,7 +915,9 @@ Aria carefully tucked the pouch into her satchel, her mind buzzing with new know
 
 ### 📖 Lesson Opener
 
-Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
+Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom 🟢 **, in the Central Plaza between all four quarters**. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
+
+💡 **EDIT NOTE:** Added location detail - Central Plaza (Issue #11 fix).
 
 ### Chapter 1: The Context Keepers' Hall
 
@@ -1042,7 +1044,9 @@ Aria carefully stored the crystal in her satchel, her mind racing with possibili
 
 ### 📖 Lesson Opener
 
-The morning sun cast long shadows across React Kingdom as Aria stood before the State Management Citadel - a towering structure where all the state management disciplines converged. Here, she would face her final challenge: combining everything she had learned into a unified understanding of state management.
+The morning sun cast long shadows across React Kingdom as Aria stood before the State Management Citadel - a towering structure 🟢 **in the Eastern Quarter** where all the state management disciplines converged. Here, she would face her final challenge: combining everything she had learned into a unified understanding of state management.
+
+💡 **EDIT NOTE:** Added location detail - Eastern Quarter (Issue #13 fix).
 
 ### Chapter 1: The Reducer's Challenge
 
