@@ -313,67 +313,163 @@
 
 ### Typescript React (Learning Path 12)
 
-[Review needed - initial scan showed all new characters, but detailed review pending]
+**Issue #38: Aria Title - "Ambassador Aria"**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Master Typus addresses Aria as "Ambassador Aria" when introducing TypeScript. Aria is a student, not an ambassador/diplomat.
+- **Location**: TypeForge Ch1 Story Group 1
+- **Quote**: "Ambassador Aria," he rumbled, "you've built great things, but they're held together by trust and hope."
+- **Recommendation**: Change to just "Aria".
+- **Related**: Issue #22
+
+**Issue #39: Debuggora Cross-LP Companion (LP12.1)**
+- **Severity**: HIGH
+- **Type**: Character Issues - Cross-LP Violation
+- **Description**: Debuggora from LP8 appears in LP12.1 TypeForge, continuing cross-LP presence.
+- **Location**: TypeForge Ch1 Story Group 1
+- **Quote**: "Debuggora nodded wisely. 'And I'll see errors before they even compile. Prevention at its purest!'"
+- **Recommendation**: Remove from LP12.
+
+**Issue #40: Debuggora Continues (LP12.2)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of ComponentArmory.
+- **Locations**: Lines 3744, 3764, 3786
+- **Recommendation**: Remove from LP12.2.
+
+**Issue #41: Debuggora Continues (LP12.3)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of GenericForge.
+- **Locations**: Lines 3809, 3828, 3850
+- **Recommendation**: Remove from LP12.3.
+
+**Issue #42: Debuggora Continues (LP12.4)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of TypeGuardTower, concluding her presence through all of LP12.
+- **Locations**: Lines 3874, 3891, 3911
+- **Recommendation**: Remove from LP12.4.
 
 ---
 
 ### Build Deploy (Learning Path 13)
 
-**Issue #32: Aria Title - "Ambassador Aria"**
+**Issue #43: Aria Title - "Ambassador Aria"**
 - **Severity**: Medium
 - **Type**: Character Issues
-- **Description**: Aria referred to as "Ambassador Aria" in LP13.1.
-- **Location**: BuildSystems Ch1 (line 3931)
+- **Description**: Admiral Webpack addresses Aria as "Ambassador Aria" in build systems introduction.
+- **Location**: BuildSystems Ch1 Story Group 1
+- **Quote**: "Ambassador Aria!" the Admiral boomed.
 - **Recommendation**: Change to just "Aria".
 - **Related**: Issue #22
 
-**Issue #33: Debuggora Continues Through LP13**
+**Issue #44: Debuggora Cross-LP Companion (LP13.1)**
 - **Severity**: HIGH
 - **Type**: Character Issues
-- **Description**: Debuggora from LP8 continues through LP13 (appears in lines 3935, 3975, 3996, 4031).
-- **Location**: LP13 all lessons
-- **Recommendation**: Remove Debuggora after LP8/LP9.
-- **Related**: Issue #27, #30
+- **Description**: Debuggora appears in BuildSystems, her 6th LP, commenting on build perils and module federation.
+- **Locations**: Lines ~3935, ~3974 (naval deployment context)
+- **Recommendation**: Remove from LP13.1.
+
+**Issue #45: Debuggora Continues (LP13.2)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in CiCdPipeline, commenting on pipeline tracing and canary deployments.
+- **Locations**: Lines ~3996, ~4031
+- **Recommendation**: Remove from LP13.2.
+
+**Issue #46: Debuggora Continues (LP13.3)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of HostingHorizons, focusing on deployment logs and error tracking across platforms.
+- **Locations**: Lines ~4055, ~4070, ~4088
+- **Recommendation**: Remove from LP13.3.
+
+**Issue #47: Debuggora Continues (LP13.4)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of ProductionReadiness, actively debugging production issues and studying incident playbooks.
+- **Locations**: Lines ~4108, ~4125, ~4145
+- **Recommendation**: Remove from LP13.4.
 
 ---
 
 ### React Native (Learning Path 14)
 
-**Issue #34: Aria Title - "Captain Aria"**
+**Issue #48: Aria Title - "Captain Aria"**
 - **Severity**: Medium
 - **Type**: Character Issues
-- **Description**: Aria referred to as "Captain Aria" in LP14.1.
-- **Location**: MobileFoundations Ch1 (line 4169)
+- **Description**: Frontier Marshal Native addresses Aria as "Captain Aria" in mobile introduction. New title variant suggesting military/ship command.
+- **Location**: MobileFoundations Ch1 Story Group 1
+- **Quote**: "Welcome to a familiar yet different world, Captain Aria," the Marshal greeted.
 - **Recommendation**: Change to just "Aria".
 - **Related**: Issue #22
 
-**Issue #35: Debuggora Continues Through LP14**
+**Issue #49: Debuggora Cross-LP Companion (LP14.1)**
 - **Severity**: HIGH
 - **Type**: Character Issues
-- **Description**: Debuggora from LP8 continues through ALL of LP14 (appears in 10+ locations).
-- **Location**: LP14 all lessons (lines 4173, 4216, 4239, 4257, 4280, 4304, 4324, 4344, 4369, 4390)
-- **Recommendation**: Remove Debuggora after LP8/LP9.
-- **Related**: Issue #27, #30, #33
+- **Description**: Debuggora appears in LP14.1, her 7th LP, commenting on platform-specific bugs and styling differences.
+- **Locations**: Ch1 (platform bugs), Ch3 (styling cascade)
+- **Quotes**: "And new types of bugs. Platform-specific issues..." / "No cascade means no unexpected inheritance..."
+- **Recommendation**: Remove from LP14.1.
+
+**Issue #50: Debuggora Continues (LP14.3)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in LP14.3 NavigationTrails, commenting on platform patterns and deep linking.
+- **Locations**: Ch2, Ch3
+- **Recommendation**: Remove from LP14.3.
+
+**Issue #51: Debuggora Continues (LP14.4)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in LP14.4 AppDistribution, commenting on app rejections and crash monitoring.
+- **Locations**: Ch2, Ch3
+- **Recommendation**: Remove from LP14.4.
 
 ---
 
 ### Accessibility (Learning Path 15)
 
-**Issue #36: Aria Title - "Captain Aria"**
+**Issue #52: Aria Title - "Captain Aria"**
 - **Severity**: Medium
 - **Type**: Character Issues
-- **Description**: Aria referred to as "Captain Aria" in LP15.1.
-- **Location**: InclusiveFoundations Ch1 (line 4431)
+- **Description**: Empress Inclusiva addresses Aria as "Captain Aria" in accessibility introduction, maintaining inappropriate command title.
+- **Location**: InclusiveFoundations Ch1 Story Group 1
+- **Quote**: "Captain Aria," she began, "you've built powerful applications... But can everyone use them?"
 - **Recommendation**: Change to just "Aria".
 - **Related**: Issue #22
 
-**Issue #37: Debuggora Continues Through LP15**
+**Issue #53: Debuggora Cross-LP Companion (LP15.1)**
 - **Severity**: HIGH
 - **Type**: Character Issues
-- **Description**: Debuggora from LP8 continues through ALL of LP15 (appears in 12+ locations).
-- **Location**: LP15 all lessons (lines 4437, 4458, 4482, 4509, 4529, 4551, 4579, 4599, 4624, 4650, 4672, 4695)
-- **Recommendation**: Remove Debuggora after LP8/LP9.
-- **Related**: Issue #27, #30, #33, #35
+- **Description**: Debuggora appears in all 3 chapters of InclusiveFoundations, her 8th LP, commenting on accessibility barriers and ARIA.
+- **Locations**: Ch1, Ch2, Ch3
+- **Quotes**: "I see barriers everywhere..." / "Screen readers can now understand..." / "ARIA bridges the gap..."
+- **Recommendation**: Remove from LP15.1.
+
+**Issue #54: Debuggora Continues (LP15.2)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of InteractionPatterns, commenting on keyboard navigation and screen readers.
+- **Locations**: Ch1, Ch2, Ch3
+- **Recommendation**: Remove from LP15.2.
+
+**Issue #55: Debuggora Continues (LP15.3)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora appears in all 3 chapters of VisualAccessibility, commenting on color theory, contrast, and motion.
+- **Locations**: Ch1, Ch2, Ch3
+- **Recommendation**: Remove from LP15.3.
+
+**Issue #56: Debuggora Continues (LP15.4)**
+- **Severity**: HIGH
+- **Type**: Character Issues
+- **Description**: Debuggora's final appearances in TestingTools, concluding her 8-LP journey with accessibility culture commentary.
+- **Locations**: Ch1, Ch2, Ch3
+- **Quote (final)**: "We're not just building accessible products - we're building an inclusive future."
+- **Recommendation**: Remove from LP15.4.
+- **Note**: This concludes Debuggora's presence - 8 LPs total (LP8-15), ~57 instances across ~96 chapters
 
 ---
 
