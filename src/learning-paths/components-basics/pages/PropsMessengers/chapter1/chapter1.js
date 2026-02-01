@@ -352,7 +352,7 @@ function Button(props) {
 					},
 				]}
 				lessonInsight={{
-					title: 'The Props Lesson:',
+					title: "Hermes's Wisdom:",
 					content:
 						'Props are the primary way for parent components to pass data to child components in React. They are read-only and flow downward through the component tree, allowing parent components to control and configure their children. Hermes teaches that props are like sealed letters - children can read them but never modify them.',
 				}}

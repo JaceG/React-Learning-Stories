@@ -859,7 +859,7 @@ function getCurrentGreeting() {
 					},
 				]}
 				lessonInsight={{
-					title: 'The Expression Lesson:',
+					title: "Binary's Wisdom:",
 					content:
 						'You can embed any valid JavaScript expression inside JSX using curly braces. This allows you to display dynamic content, compute values, and call functions directly within your UI code. Mastering expressions in JSX is key to building interactive and data-driven React components. Binary reminds us: "If it\'s valid JavaScript, it can go in curly braces!"',
 				}}

@@ -12,7 +12,7 @@ const ChapterTwo = () => {
 		applyOptimization,
 		memoizedComponents,
 		renderCount,
-		incrementRender
+		incrementRender,
 	} = useOutletContext();
 
 	const [searchTerm, setSearchTerm] = useState('');
@@ -25,29 +25,39 @@ const ChapterTwo = () => {
 		{ id: 2, name: 'Lightning Bolt', power: 90, mana: 35 },
 		{ id: 3, name: 'Frost Nova', power: 70, mana: 25 },
 		{ id: 4, name: 'Meteor Strike', power: 100, mana: 50 },
-		{ id: 5, name: 'Ice Shard', power: 60, mana: 20 }
+		{ id: 5, name: 'Ice Shard', power: 60, mana: 20 },
 	];
 
 	// Expensive computation WITHOUT useMemo (for comparison)
 	const unoptimizedFilterAndSort = () => {
 		console.log('🔴 Unoptimized: Computing filtered and sorted spells');
 		incrementRender();
-		
+
 		return spells
-			.filter(spell => spell.name.toLowerCase().includes(searchTerm.toLowerCase()))
+			.filter((spell) =>
+				spell.name.toLowerCase().includes(searchTerm.toLowerCase())
+			)
 			.sort((a, b) => {
-				return sortOrder === 'asc' ? a.power - b.power : b.power - a.power;
+				return sortOrder === 'asc'
+					? a.power - b.power
+					: b.power - a.power;
 			});
 	};
 
 	// Expensive computation WITH useMemo
 	const optimizedFilterAndSort = useMemo(() => {
-		console.log('🟢 Optimized: Computing filtered and sorted spells (memoized)');
-		
+		console.log(
+			'🟢 Optimized: Computing filtered and sorted spells (memoized)'
+		);
+
 		return spells
-			.filter(spell => spell.name.toLowerCase().includes(searchTerm.toLowerCase()))
+			.filter((spell) =>
+				spell.name.toLowerCase().includes(searchTerm.toLowerCase())
+			)
 			.sort((a, b) => {
-				return sortOrder === 'asc' ? a.power - b.power : b.power - a.power;
+				return sortOrder === 'asc'
+					? a.power - b.power
+					: b.power - a.power;
 			});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchTerm, sortOrder]);
@@ -77,8 +87,8 @@ const ChapterTwo = () => {
 		);
 	});
 
-	const displayedSpells = memoizedComponents.includes('useMemo') 
-		? optimizedFilterAndSort 
+	const displayedSpells = memoizedComponents.includes('useMemo')
+		? optimizedFilterAndSort
 		: unoptimizedFilterAndSort();
 
 	return (
@@ -91,10 +101,29 @@ const ChapterTwo = () => {
 
 			<StorySection
 				paragraphs={[
-					<>Master Velocity led Aria deeper into the sanctum, where ancient optimization crystals lined the walls. "Now that you can see the Lag Monster's attacks, it's time to learn our first defense: <strong>Memoization</strong>."</>,
-					<>He pulled out two glowing scrolls. "These are React's memoization spells - <strong>React.memo</strong> for components and <strong>useMemo</strong> for expensive calculations. They create a shield of memory around your work."</>,
-					<><strong>Aria</strong> studied the scrolls intently. "So instead of repeating the same calculations or renders, we remember the results?"</>,
-					<>"Precisely!" Master Velocity smiled. "But beware - memoization itself has a cost. Use it wisely, only where the benefit outweighs the overhead."</>
+					<>
+						Master Velocity led Aria deeper into the sanctum, where
+						ancient optimization crystals lined the walls. "Now that
+						you can see the Lag Monster's attacks, it's time to
+						learn our first defense: <strong>Memoization</strong>."
+					</>,
+					<>
+						He pulled out two glowing scrolls. "These are React's
+						memoization spells - <strong>React.memo</strong> for
+						components and <strong>useMemo</strong> for expensive
+						calculations. They create a shield of memory around your
+						work."
+					</>,
+					<>
+						<strong>Aria</strong> studied the scrolls intently. "So
+						instead of repeating the same calculations or renders,
+						we remember the results?"
+					</>,
+					<>
+						"Precisely!" Master Velocity smiled. "But beware -
+						memoization itself has a cost. Use it wisely, only where
+						the benefit outweighs the overhead."
+					</>,
 				]}
 			/>
 
@@ -113,9 +142,9 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Memoization Spellcasting
 				</h3>
-				<InstructionBox character="Master Velocity reveals the memoization scrolls.">
-					Filter and sort the spell list. Watch the console to see how many times 
-					calculations run with and without memoization!
+				<InstructionBox character='Master Velocity reveals the memoization scrolls.'>
+					Filter and sort the spell list. Watch the console to see how
+					many times calculations run with and without memoization!
 				</InstructionBox>
 
 				<div className='optimization-showcase'>
@@ -127,8 +156,8 @@ const ChapterTwo = () => {
 							onChange={(e) => setSearchTerm(e.target.value)}
 							style={{ marginRight: '10px', padding: '8px' }}
 						/>
-						<select 
-							value={sortOrder} 
+						<select
+							value={sortOrder}
 							onChange={(e) => setSortOrder(e.target.value)}
 							style={{ padding: '8px' }}>
 							<option value='asc'>Power: Low to High</option>
@@ -137,12 +166,12 @@ const ChapterTwo = () => {
 					</div>
 
 					<div className='optimization-badges'>
-						<button 
+						<button
 							className={`opt-badge ${memoizedComponents.includes('useMemo') ? 'earned' : ''}`}
 							onClick={() => applyOptimization('useMemo')}>
 							Apply useMemo
 						</button>
-						<button 
+						<button
 							className={`opt-badge ${memoizedComponents.includes('React.memo') ? 'earned' : ''}`}
 							onClick={() => applyOptimization('React.memo')}>
 							Apply React.memo
@@ -150,9 +179,12 @@ const ChapterTwo = () => {
 					</div>
 
 					<div className='optimization-demo'>
-						{displayedSpells.map(spell => 
+						{displayedSpells.map((spell) =>
 							memoizedComponents.includes('React.memo') ? (
-								<OptimizedSpellCard key={spell.id} spell={spell} />
+								<OptimizedSpellCard
+									key={spell.id}
+									spell={spell}
+								/>
 							) : (
 								<SpellCard key={spell.id} spell={spell} />
 							)
@@ -160,7 +192,10 @@ const ChapterTwo = () => {
 					</div>
 
 					<div style={{ textAlign: 'center', marginTop: '20px' }}>
-						<p>Render Count: <span className='metric-value'>{renderCount}</span></p>
+						<p>
+							Render Count:{' '}
+							<span className='metric-value'>{renderCount}</span>
+						</p>
 						<p style={{ fontSize: '0.9em', color: '#7f8c8d' }}>
 							Open your browser console to see the rendering logs!
 						</p>
@@ -169,7 +204,7 @@ const ChapterTwo = () => {
 			</div>
 
 			<CodeExample
-				title="Ancient Scroll of Memoization"
+				title='Ancient Scroll of Memoization'
 				discoveredBy="Master Velocity's Personal Collection"
 				code={`// React.memo - Prevent unnecessary component re-renders
 const ExpensiveComponent = memo(({ data, title }) => {
@@ -212,12 +247,13 @@ function DataProcessor({ items, filter }) {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Memoization Lesson:',
-					content: 'Memoization is selective memory. React.memo prevents component re-renders when props haven\'t changed, while useMemo caches the results of expensive calculations. But remember: memoization has its own cost. Profile first, then memoize only the components and calculations that truly benefit from it.'
+					title: "Master Velocity's Wisdom:",
+					content:
+						"Memoization is selective memory. React.memo prevents component re-renders when props haven't changed, while useMemo caches the results of expensive calculations. But remember: memoization has its own cost. Profile first, then memoize only the components and calculations that truly benefit from it.",
 				}}
 				reflectionQuestions={[
 					'Master Velocity has shown Aria the power of memoization. In your own applications, where might you have components that re-render unnecessarily? What expensive calculations run on every render that could be memoized?',
-					'Consider the trade-off: Is the cost of checking the memoization cache worth avoiding the re-render or recalculation? How would you decide?'
+					'Consider the trade-off: Is the cost of checking the memoization cache worth avoiding the re-render or recalculation? How would you decide?',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 25 (Afternoon)",

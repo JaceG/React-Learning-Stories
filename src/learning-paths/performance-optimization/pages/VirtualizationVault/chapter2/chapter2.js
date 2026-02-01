@@ -16,7 +16,7 @@ const ChapterTwo = () => {
 		toggleVirtualization,
 		setWindowSize,
 		setBufferSize,
-		calculatePerformance
+		calculatePerformance,
 	} = useOutletContext();
 
 	const [totalItems] = useState(10000);
@@ -29,15 +29,18 @@ const ChapterTwo = () => {
 		id: i,
 		name: `Scroll of Knowledge #${i + 1}`,
 		author: `Ancient Sage ${String.fromCharCode(65 + (i % 26))}`,
-		power: Math.floor(Math.random() * 100) + 1
+		power: Math.floor(Math.random() * 100) + 1,
 	}));
 
 	// Handle scroll event
-	const onScroll = useCallback((e) => {
-		const newScrollTop = e.target.scrollTop;
-		setScrollTop(newScrollTop);
-		handleScroll(newScrollTop, totalItems);
-	}, [handleScroll, totalItems]);
+	const onScroll = useCallback(
+		(e) => {
+			const newScrollTop = e.target.scrollTop;
+			setScrollTop(newScrollTop);
+			handleScroll(newScrollTop, totalItems);
+		},
+		[handleScroll, totalItems]
+	);
 
 	// Calculate total height for virtual spacer
 	const totalHeight = totalItems * itemHeight;
@@ -47,10 +50,10 @@ const ChapterTwo = () => {
 		if (!virtualizationEnabled) {
 			return items.slice(0, 100); // Limit for demo
 		}
-		
-		return visibleItems.map(index => ({
+
+		return visibleItems.map((index) => ({
 			...items[index],
-			index
+			index,
 		}));
 	};
 
@@ -66,18 +69,39 @@ const ChapterTwo = () => {
 
 			<StorySection
 				paragraphs={[
-					<>Guardian Zephyr led <strong>Aria</strong> to a mystical viewing chamber. "Watch closely," he said, waving his hand. The infinite archive transformed - instead of all scrolls being visible, only a small window showed a handful at a time.</>,
-					<>"This is the secret of <strong>virtualization</strong>," Zephyr explained. "We create a window that shows only what fits in the viewport, plus a small buffer. As you scroll, we swap the contents seamlessly. The user perceives infinity, but we render only necessity."</>,
-					<>He demonstrated with a gesture. "The <strong>virtual spacer</strong> maintains the scrollbar's truth - showing the full height. But the actual scrolls? They materialize only when needed, then vanish when passed. This is the art of <strong>windowing</strong>."</>
+					<>
+						Guardian Zephyr led <strong>Aria</strong> to a mystical
+						viewing chamber. "Watch closely," he said, waving his
+						hand. The infinite archive transformed - instead of all
+						scrolls being visible, only a small window showed a
+						handful at a time.
+					</>,
+					<>
+						"This is the secret of <strong>virtualization</strong>,"
+						Zephyr explained. "We create a window that shows only
+						what fits in the viewport, plus a small buffer. As you
+						scroll, we swap the contents seamlessly. The user
+						perceives infinity, but we render only necessity."
+					</>,
+					<>
+						He demonstrated with a gesture. "The{' '}
+						<strong>virtual spacer</strong> maintains the
+						scrollbar's truth - showing the full height. But the
+						actual scrolls? They materialize only when needed, then
+						vanish when passed. This is the art of{' '}
+						<strong>windowing</strong>."
+					</>,
 				]}
 			/>
 
 			<div className='vault-chamber'>
 				<h3>The Virtualization Chamber</h3>
-				<button 
+				<button
 					className={`demo-button ${virtualizationEnabled ? 'active' : ''}`}
 					onClick={toggleVirtualization}>
-					{virtualizationEnabled ? '✅ Virtualization Active' : '❌ Traditional Rendering'}
+					{virtualizationEnabled
+						? '✅ Virtualization Active'
+						: '❌ Traditional Rendering'}
 				</button>
 			</div>
 
@@ -85,9 +109,10 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Virtual Scrolling in Action
 				</h3>
-				<InstructionBox character="Guardian Zephyr demonstrates the windowing technique.">
-					Enable virtualization and scroll through 10,000 items! Adjust the window 
-					size and buffer to see how they affect performance.
+				<InstructionBox character='Guardian Zephyr demonstrates the windowing technique.'>
+					Enable virtualization and scroll through 10,000 items!
+					Adjust the window size and buffer to see how they affect
+					performance.
 				</InstructionBox>
 
 				<div className='vault-controls'>
@@ -101,7 +126,9 @@ const ChapterTwo = () => {
 							min='5'
 							max='30'
 							value={windowSize}
-							onChange={(e) => setWindowSize(Number(e.target.value))}
+							onChange={(e) =>
+								setWindowSize(Number(e.target.value))
+							}
 							className='control-slider'
 							disabled={!virtualizationEnabled}
 						/>
@@ -116,7 +143,9 @@ const ChapterTwo = () => {
 							min='0'
 							max='10'
 							value={bufferSize}
-							onChange={(e) => setBufferSize(Number(e.target.value))}
+							onChange={(e) =>
+								setBufferSize(Number(e.target.value))
+							}
 							className='control-slider'
 							disabled={!virtualizationEnabled}
 						/>
@@ -126,64 +155,96 @@ const ChapterTwo = () => {
 				<div className='window-visualizer'>
 					<h4>Virtualization Diagram</h4>
 					<div className='window-diagram'>
-						<div 
+						<div
 							className='window-buffer'
 							style={{
 								top: `${Math.max(0, (scrollTop / itemHeight - bufferSize) * 2)}px`,
-								height: `${(windowSize + bufferSize * 2) * 2}px`
-							}}>
-						</div>
-						<div 
+								height: `${(windowSize + bufferSize * 2) * 2}px`,
+							}}></div>
+						<div
 							className='window-viewport'
 							style={{
 								top: `${(scrollTop / itemHeight) * 2}px`,
-								height: `${windowSize * 2}px`
-							}}>
-						</div>
-						{Array.from({ length: Math.min(50, totalItems) }, (_, i) => (
-							<div 
-								key={i} 
-								className={`diagram-item ${
-									virtualizationEnabled && visibleItems.includes(i) ? 'rendered' : ''
-								}`}>
-								{virtualizationEnabled && visibleItems.includes(i) && '✓'}
-							</div>
-						))}
+								height: `${windowSize * 2}px`,
+							}}></div>
+						{Array.from(
+							{ length: Math.min(50, totalItems) },
+							(_, i) => (
+								<div
+									key={i}
+									className={`diagram-item ${
+										virtualizationEnabled &&
+										visibleItems.includes(i)
+											? 'rendered'
+											: ''
+									}`}>
+									{virtualizationEnabled &&
+										visibleItems.includes(i) &&
+										'✓'}
+								</div>
+							)
+						)}
 					</div>
-					<div style={{ marginTop: '10px', fontSize: '0.9em', color: '#6b7280' }}>
-						<span style={{ color: '#3b82f6' }}>■ Viewport</span> | 
-						<span style={{ color: '#10b981', marginLeft: '10px' }}>□ Buffer</span> | 
-						<span style={{ marginLeft: '10px' }}>Rendered: {visibleItems.length}/{totalItems}</span>
+					<div
+						style={{
+							marginTop: '10px',
+							fontSize: '0.9em',
+							color: '#6b7280',
+						}}>
+						<span style={{ color: '#3b82f6' }}>■ Viewport</span> |
+						<span style={{ color: '#10b981', marginLeft: '10px' }}>
+							□ Buffer
+						</span>{' '}
+						|
+						<span style={{ marginLeft: '10px' }}>
+							Rendered: {visibleItems.length}/{totalItems}
+						</span>
 					</div>
 				</div>
 
-				<div className='infinite-container' ref={scrollContainerRef} onScroll={onScroll}>
+				<div
+					className='infinite-container'
+					ref={scrollContainerRef}
+					onScroll={onScroll}>
 					<div className='virtual-scroller'>
 						{virtualizationEnabled && (
-							<div 
-								className='scroll-spacer' 
-								style={{ height: `${totalHeight}px` }} 
+							<div
+								className='scroll-spacer'
+								style={{ height: `${totalHeight}px` }}
 							/>
 						)}
 						{getVisibleItems().map((item, i) => (
-							<div 
-								key={item.id} 
+							<div
+								key={item.id}
 								className='virtual-item visible'
-								style={virtualizationEnabled ? {
-									position: 'absolute',
-									top: `${item.index * itemHeight}px`,
-									height: `${itemHeight}px`
-								} : {
-									position: 'relative',
-									height: `${itemHeight}px`
-								}}>
+								style={
+									virtualizationEnabled
+										? {
+												position: 'absolute',
+												top: `${item.index * itemHeight}px`,
+												height: `${itemHeight}px`,
+											}
+										: {
+												position: 'relative',
+												height: `${itemHeight}px`,
+											}
+								}>
 								<div style={{ flex: 1 }}>
 									<strong>{item.name}</strong>
-									<span style={{ marginLeft: '20px', color: '#6b7280', fontSize: '0.9em' }}>
+									<span
+										style={{
+											marginLeft: '20px',
+											color: '#6b7280',
+											fontSize: '0.9em',
+										}}>
 										by {item.author}
 									</span>
 								</div>
-								<span style={{ color: '#3b82f6', fontWeight: 'bold' }}>
+								<span
+									style={{
+										color: '#3b82f6',
+										fontWeight: 'bold',
+									}}>
 									Power: {item.power}
 								</span>
 							</div>
@@ -196,20 +257,30 @@ const ChapterTwo = () => {
 					<div className='perf-metrics'>
 						<div className='perf-metric'>
 							<div className='metric-label'>DOM Nodes</div>
-							<div className={`metric-value ${virtualizationEnabled ? '' : 'danger'}`}>
-								{virtualizationEnabled ? visibleItems.length : '100+'}
+							<div
+								className={`metric-value ${virtualizationEnabled ? '' : 'danger'}`}>
+								{virtualizationEnabled
+									? visibleItems.length
+									: '100+'}
 							</div>
 						</div>
 						<div className='perf-metric'>
 							<div className='metric-label'>Memory Usage</div>
-							<div className={`metric-value ${virtualizationEnabled ? '' : 'warning'}`}>
-								{virtualizationEnabled ? performance.memoryUsage : '100MB'}
+							<div
+								className={`metric-value ${virtualizationEnabled ? '' : 'warning'}`}>
+								{virtualizationEnabled
+									? performance.memoryUsage
+									: '100MB'}
 							</div>
 						</div>
 						<div className='perf-metric'>
 							<div className='metric-label'>Render Time</div>
-							<div className={`metric-value ${virtualizationEnabled ? '' : 'danger'}`}>
-								{virtualizationEnabled ? performance.withVirtual : performance.withoutVirtual}ms
+							<div
+								className={`metric-value ${virtualizationEnabled ? '' : 'danger'}`}>
+								{virtualizationEnabled
+									? performance.withVirtual
+									: performance.withoutVirtual}
+								ms
 							</div>
 						</div>
 					</div>
@@ -217,8 +288,8 @@ const ChapterTwo = () => {
 			</div>
 
 			<CodeExample
-				title="Scroll of Virtual Implementation"
-				discoveredBy="The Windowing Technique"
+				title='Scroll of Virtual Implementation'
+				discoveredBy='The Windowing Technique'
 				code={`// Virtual Scrolling Implementation
 
 // Basic Virtual Scroller Component
@@ -338,17 +409,18 @@ const scrollToItem = (index) => {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Windowing Lesson:',
-					content: 'Virtual scrolling (windowing) renders only the items currently visible in the viewport, plus a small buffer for smooth scrolling. By maintaining a virtual spacer element that represents the total height, we preserve natural scrolling behavior while dramatically reducing DOM nodes. Libraries like react-window and react-virtualized make this technique accessible, handling edge cases and optimizations automatically.'
+					title: "Guardian Zephyr's Wisdom:",
+					content:
+						'Virtual scrolling (windowing) renders only the items currently visible in the viewport, plus a small buffer for smooth scrolling. By maintaining a virtual spacer element that represents the total height, we preserve natural scrolling behavior while dramatically reducing DOM nodes. Libraries like react-window and react-virtualized make this technique accessible, handling edge cases and optimizations automatically.',
 				}}
 				reflectionQuestions={[
-					'Guardian Zephyr has shown you the power of rendering only what\'s necessary. This technique transforms impossible lists into smooth experiences. Where in your applications could virtual scrolling unlock new possibilities?',
-					'Remember: users don\'t need to see everything at once - they need to access everything smoothly. Virtualization provides that illusion perfectly.'
+					"Guardian Zephyr has shown you the power of rendering only what's necessary. This technique transforms impossible lists into smooth experiences. Where in your applications could virtual scrolling unlock new possibilities?",
+					"Remember: users don't need to see everything at once - they need to access everything smoothly. Virtualization provides that illusion perfectly.",
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 28 (Afternoon)",
 					content:
-						"Guardian Zephyr showed me the Window of Perception - the secret of virtualization! We create a window showing only what fits in the viewport plus a small buffer. As you scroll, we swap contents seamlessly - users perceive infinity, but we render only necessity! The virtual spacer maintains scrollbar truth (full height), but actual items materialize only when needed. I scrolled through 10,000 items with only ~20 DOM nodes! The react-window library provides FixedSizeList and VariableSizeList. Key insight: calculate visible range, add buffer, position items absolutely, maintain spacer height. 60fps achieved!",
+						'Guardian Zephyr showed me the Window of Perception - the secret of virtualization! We create a window showing only what fits in the viewport plus a small buffer. As you scroll, we swap contents seamlessly - users perceive infinity, but we render only necessity! The virtual spacer maintains scrollbar truth (full height), but actual items materialize only when needed. I scrolled through 10,000 items with only ~20 DOM nodes! The react-window library provides FixedSizeList and VariableSizeList. Key insight: calculate visible range, add buffer, position items absolutely, maintain spacer height. 60fps achieved!',
 				}}
 			/>
 		</div>

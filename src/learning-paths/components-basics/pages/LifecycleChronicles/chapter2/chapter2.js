@@ -138,14 +138,29 @@ const ChapterTwo = () => {
 
 			<StorySection
 				paragraphs={[
-					<>"These murals," Chronos explained, gesturing to the luminous walls, "chronicle the <strong>Mounting</strong> and <strong>Updating</strong> phases - the most crucial moments in a component's existence. Watch how they come to life!"</>,
-					<>The first mural began to glow, showing a component's birth ritual. "The Mounting phase," Chronos intoned, "follows a sacred sequence. First, the <strong>constructor</strong> awakens, preparing the component's initial state. Then <strong>render</strong> paints its form into existence. Finally, <strong>componentDidMount</strong> brings it fully to life, ready to interact with the world."</>,
-					`Binary bounced excitedly. "It's like watching a flower bloom! First the seed (constructor), then the bud (render), then the full bloom (componentDidMount)!"`
+					<>
+						"These murals," Chronos explained, gesturing to the
+						luminous walls, "chronicle the <strong>Mounting</strong>{' '}
+						and <strong>Updating</strong> phases - the most crucial
+						moments in a component's existence. Watch how they come
+						to life!"
+					</>,
+					<>
+						The first mural began to glow, showing a component's
+						birth ritual. "The Mounting phase," Chronos intoned,
+						"follows a sacred sequence. First, the{' '}
+						<strong>constructor</strong> awakens, preparing the
+						component's initial state. Then <strong>render</strong>{' '}
+						paints its form into existence. Finally,{' '}
+						<strong>componentDidMount</strong> brings it fully to
+						life, ready to interact with the world."
+					</>,
+					`Binary bounced excitedly. "It's like watching a flower bloom! First the seed (constructor), then the bud (render), then the full bloom (componentDidMount)!"`,
 				]}
 			/>
 
 			<CodeExample
-				title="The Mounting Ritual"
+				title='The Mounting Ritual'
 				discoveredBy="From Chronos's Sacred Murals"
 				code={`class MountingComponent extends React.Component {
 constructor(props) {
@@ -174,14 +189,23 @@ this.setState({ isLoading: false });
 
 			<StorySection
 				paragraphs={[
-					<>The second mural shimmered to life, showing components in motion. "The <strong>Updating</strong> phase," Chronos continued, "occurs whenever change flows through a component. First, <strong>shouldComponentUpdate</strong> asks 'Do I need to change?' If yes, <strong>render</strong> repaints the component, and <strong>componentDidUpdate</strong> handles any ripple effects."</>,
+					<>
+						The second mural shimmered to life, showing components
+						in motion. "The <strong>Updating</strong> phase,"
+						Chronos continued, "occurs whenever change flows through
+						a component. First,{' '}
+						<strong>shouldComponentUpdate</strong> asks 'Do I need
+						to change?' If yes, <strong>render</strong> repaints the
+						component, and <strong>componentDidUpdate</strong>{' '}
+						handles any ripple effects."
+					</>,
 					`Aria watched in fascination as the mural showed components gracefully adapting to new data. "So components can evolve without being destroyed and recreated?"`,
-					`"Precisely!" Chronos beamed. "That's the beauty of React's lifecycle - efficient transformation without waste."`
+					`"Precisely!" Chronos beamed. "That's the beauty of React's lifecycle - efficient transformation without waste."`,
 				]}
 			/>
 
 			<CodeExample
-				title="The Update Transformation"
+				title='The Update Transformation'
 				discoveredBy="Aria's Study Notes"
 				code={`componentDidUpdate(prevProps, prevState) {
 // This runs after a re-render from state or prop changes
@@ -199,10 +223,10 @@ this.fetchUserData(this.props.userId);
 				<h3 className='section-title'>
 					Interactive Exercise: The Lifecycle Observatory
 				</h3>
-				<InstructionBox character="Chronos activates a magical observatory.">
-					"This device will let you witness the lifecycle methods in action. 
-					Watch carefully as components move through their mounting and updating 
-					phases in real-time!"
+				<InstructionBox character='Chronos activates a magical observatory.'>
+					"This device will let you witness the lifecycle methods in
+					action. Watch carefully as components move through their
+					mounting and updating phases in real-time!"
 				</InstructionBox>
 
 				<div
@@ -606,7 +630,7 @@ this.fetchUserData(this.props.userId);
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Update Lesson:',
+					title: "Chronos's Wisdom:",
 					content:
 						"The mounting and updating phases are where most of a component's work happens. Mounting methods like constructor and componentDidMount are perfect for initialization and setup, while updating methods like componentDidUpdate let you respond to changes. By understanding when each method is called, you can ensure that your code runs at the optimal time in a component's lifecycle.",
 				}}

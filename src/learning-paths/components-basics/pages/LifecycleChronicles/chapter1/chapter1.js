@@ -210,7 +210,7 @@ const ChapterOne = () => {
 					},
 				]}
 				lessonInsight={{
-					title: 'The Lifecycle Lesson:',
+					title: "Chronos's Wisdom:",
 					content:
 						'Every React component goes through a series of lifecycle stages: mounting (birth), updating (growth), and unmounting (retirement). React provides special methods that run at each stage, allowing you to execute code at precise moments in a component\'s life. Understanding this lifecycle is crucial for controlling when certain operations (like data fetching or cleanup) should occur. As Chronos teaches: "Time is the canvas upon which components paint their purpose."',
 				}}

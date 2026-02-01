@@ -636,7 +636,7 @@ function Form(props) {
 					},
 				]}
 				lessonInsight={{
-					title: 'The Component Lesson:',
+					title: "Master Aurelius's Wisdom:",
 					content:
 						'In React, everything you see is a Component – a reusable piece of code that returns JSX elements describing what should appear on the screen. Components can be as simple as a button or as complex as an entire page. Master Aurelius teaches that each component should have a single, clear purpose.',
 				}}

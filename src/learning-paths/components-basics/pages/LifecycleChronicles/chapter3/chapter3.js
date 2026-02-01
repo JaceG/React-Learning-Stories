@@ -157,31 +157,43 @@ const ChapterThree = () => {
 		? lastCleanupStatus.text.includes('All resources properly cleaned up.')
 			? 'cleaned'
 			: lastCleanupStatus.text.includes('without cleanup')
-			? 'not_cleaned'
-			: null
+				? 'not_cleaned'
+				: null
 		: null;
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={3}
-			title='The Farewell Ceremony'
-			bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
-		/>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Farewell Ceremony'
+				bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
+			/>
 
-		<StorySection
-			paragraphs={[
-				<>"Not all components live forever," Chronos said solemnly. "When their purpose is fulfilled or they're no longer needed, they must depart through the <strong>Unmounting</strong> phase. But a component's true character is revealed in how it says farewell."</>,
-				`Binary's usual bouncing slowed to a gentle float. "This is the important part, Aria. Components that don't clean up after themselves leave behind ghost timers, phantom listeners, and memory leaks that haunt the kingdom!"`,
-				`Aria shuddered. "Ghost timers? That sounds terrible!"`,
-				<>"Indeed," Chronos nodded gravely. "That's why we have <strong>componentWillUnmount</strong> - a component's last chance to clean up its affairs, cancel subscriptions, clear timers, and remove event listeners before departing."</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						"Not all components live forever," Chronos said
+						solemnly. "When their purpose is fulfilled or they're no
+						longer needed, they must depart through the{' '}
+						<strong>Unmounting</strong> phase. But a component's
+						true character is revealed in how it says farewell."
+					</>,
+					`Binary's usual bouncing slowed to a gentle float. "This is the important part, Aria. Components that don't clean up after themselves leave behind ghost timers, phantom listeners, and memory leaks that haunt the kingdom!"`,
+					`Aria shuddered. "Ghost timers? That sounds terrible!"`,
+					<>
+						"Indeed," Chronos nodded gravely. "That's why we have{' '}
+						<strong>componentWillUnmount</strong> - a component's
+						last chance to clean up its affairs, cancel
+						subscriptions, clear timers, and remove event listeners
+						before departing."
+					</>,
+				]}
+			/>
 
-		<CodeExample
-					title="The Farewell Protocol"
-					discoveredBy="A cautionary tale from Chronos"
-					code={`// Aria learns the importance of cleanup
+			<CodeExample
+				title='The Farewell Protocol'
+				discoveredBy='A cautionary tale from Chronos'
+				code={`// Aria learns the importance of cleanup
 class TimerComponent extends React.Component {
 constructor(props) {
 super(props);
@@ -211,20 +223,20 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 }`}
 			/>
 
-		<StorySection
-			paragraphs={[
-				`"See how the TimerComponent remembers to clear its interval?" Chronos pointed to the code. "Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine!"`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"See how the TimerComponent remembers to clear its interval?" Chronos pointed to the code. "Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine!"`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Cleanup Crystal
 				</h3>
-				<InstructionBox character="Chronos presents a special crystal that glows with active resources.">
-					"This crystal will show you what happens when components leave 
-					responsibly versus carelessly. Watch the difference between proper 
-					cleanup and... the alternative."
+				<InstructionBox character='Chronos presents a special crystal that glows with active resources.'>
+					"This crystal will show you what happens when components
+					leave responsibly versus carelessly. Watch the difference
+					between proper cleanup and... the alternative."
 				</InstructionBox>
 
 				<div className='lifecycle-demo'>
@@ -315,8 +327,8 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 									{cleanupStatus === 'not_cleaned'
 										? '⚠️ Warning: Resources were not properly cleaned up!'
 										: cleanupStatus === 'cleaned'
-										? '✅ All resources were properly cleaned up.'
-										: ''}
+											? '✅ All resources were properly cleaned up.'
+											: ''}
 								</p>
 							</div>
 						)}
@@ -355,11 +367,11 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 											!isComponentRetired
 												? '#e6f7ff'
 												: cleanupStatus === 'cleaned'
-												? '#e6ffe6'
-												: cleanupStatus ===
-												  'not_cleaned'
-												? '#ffe6e6'
-												: '#f9f9f9',
+													? '#e6ffe6'
+													: cleanupStatus ===
+														  'not_cleaned'
+														? '#ffe6e6'
+														: '#f9f9f9',
 										transition: 'all 0.3s ease',
 									}}>
 									<div
@@ -412,24 +424,24 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 													!isComponentRetired
 														? '100%'
 														: cleanupStatus ===
-														  'cleaned'
-														? '0%'
-														: cleanupStatus ===
-														  'not_cleaned'
-														? '100%'
-														: '100%',
+															  'cleaned'
+															? '0%'
+															: cleanupStatus ===
+																  'not_cleaned'
+																? '100%'
+																: '100%',
 												height: '100%',
 												backgroundColor:
 													isComponentBorn &&
 													!isComponentRetired
 														? '#3498db'
 														: cleanupStatus ===
-														  'cleaned'
-														? 'transparent'
-														: cleanupStatus ===
-														  'not_cleaned'
-														? '#e74c3c'
-														: '#e74c3c',
+															  'cleaned'
+															? 'transparent'
+															: cleanupStatus ===
+																  'not_cleaned'
+																? '#e74c3c'
+																: '#e74c3c',
 												transition: 'width 1s ease',
 											}}
 										/>
@@ -446,13 +458,14 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 										{!isComponentBorn
 											? 'Inactive'
 											: isComponentBorn &&
-											  !isComponentRetired
-											? 'Active and consuming resources'
-											: cleanupStatus === 'cleaned'
-											? 'Properly cleaned up'
-											: cleanupStatus === 'not_cleaned'
-											? 'Still running in background! Memory leak!'
-											: ''}
+												  !isComponentRetired
+												? 'Active and consuming resources'
+												: cleanupStatus === 'cleaned'
+													? 'Properly cleaned up'
+													: cleanupStatus ===
+														  'not_cleaned'
+														? 'Still running in background! Memory leak!'
+														: ''}
 									</div>
 								</div>
 							))}
@@ -533,8 +546,9 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 				<h3 className='section-title'>
 					Common Cleanup Tasks in componentWillUnmount
 				</h3>
-				<InstructionBox character="Chronos reveals the essential cleanup patterns.">
-					These are the most common resources that need to be cleaned up when a component unmounts.
+				<InstructionBox character='Chronos reveals the essential cleanup patterns.'>
+					These are the most common resources that need to be cleaned
+					up when a component unmounts.
 				</InstructionBox>
 
 				<div className='cleanup-tasks-grid'>
@@ -591,7 +605,7 @@ this.abortController.abort();
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Unmounting Lesson:',
+					title: "Chronos's Wisdom:",
 					content:
 						'The unmounting phase gives components a chance to clean up before they\'re removed from the DOM. The componentWillUnmount method is called just before a component is destroyed, making it the perfect place to remove event listeners, clear timers, and cancel subscriptions. Proper cleanup prevents memory leaks and ensures your app runs smoothly even as components come and go. As Chronos warns: "A component that doesn\'t clean up after itself is like a guest who never leaves the party!"',
 				}}

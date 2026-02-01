@@ -122,7 +122,17 @@ const ChapterTwo = () => {
 				paragraphs={[
 					`Hermes led Aria to the Grand Thoroughfare - a magnificent road system that connected the App castle to all workshops. "Observe carefully," he said. "Notice how all roads lead downward from App to the workshops?"`,
 					`"Yes," Aria replied, studying the paths. "But I don't see any roads going back up!"`,
-					<>"Exactly!" Hermes smiled. "This is the most important rule in our kingdom: <strong>Props can only travel in one direction—from parent to child</strong>. No craftsman can modify the contents of the Props bag they receive; they can only read the instructions and create their piece accordingly."</>
+					<>
+						"Exactly!" Hermes smiled. "This is the most important
+						rule in our kingdom:{' '}
+						<strong>
+							Props can only travel in one direction—from parent
+							to child
+						</strong>
+						. No craftsman can modify the contents of the Props bag
+						they receive; they can only read the instructions and
+						create their piece accordingly."
+					</>,
 				]}
 			/>
 
@@ -144,7 +154,7 @@ const ChapterTwo = () => {
 				paragraphs={[
 					`"This one-way flow creates a predictable system," Hermes explained. "When something needs to change, the instructions always come from above. Workshops never modify their instructions; they simply follow them."`,
 					`Aria pondered this. "But what if a Button workshop needs to tell App that it was clicked?"`,
-					`"Ah, excellent question!" Hermes beamed. "For that, App sends special callback messengers - functions that the workshop can invoke to send messages back up. The workshop doesn't change the prop; it simply calls the function App provided."`
+					`"Ah, excellent question!" Hermes beamed. "For that, App sends special callback messengers - functions that the workshop can invoke to send messages back up. The workshop doesn't change the prop; it simply calls the function App provided."`,
 				]}
 			/>
 
@@ -152,7 +162,7 @@ const ChapterTwo = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: Deliver Props to Craftsmen
 				</h3>
-				<InstructionBox character="Drag each prop bag to the appropriate craftsman who needs it.">
+				<InstructionBox character='Drag each prop bag to the appropriate craftsman who needs it.'>
 					Remember, props can only travel down from App to Components!
 				</InstructionBox>
 
@@ -208,8 +218,8 @@ const ChapterTwo = () => {
 				</div>
 
 				<CodeExample
-					title="The Sacred One-Way Rule"
-					discoveredBy="Inscribed by Aria in the Guild Hall"
+					title='The Sacred One-Way Rule'
+					discoveredBy='Inscribed by Aria in the Guild Hall'
 					code={`// Hermes demonstrates the one-way flow
 function App() {
   const [count, setCount] = useState(0);
@@ -237,12 +247,11 @@ function Button(props) {
 
 // Aria's note: "The button tells App about clicks through the callback!"`}
 				/>
-
 			</div>
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Flow Lesson:',
+					title: "Hermes's Wisdom:",
 					content:
 						'Props in React always flow in a single direction: from parent to child. This one-way data flow makes your application easier to understand and debug, because changes always come from above and components never modify the props they receive. If a child needs to communicate back, it does so by calling a callback function provided by its parent. Hermes emphasizes: "Predictability through unidirectional flow!"',
 				}}

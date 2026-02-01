@@ -231,7 +231,7 @@ function Greeting() {
 					},
 				]}
 				lessonInsight={{
-					title: 'The JSX Lesson:',
+					title: "Professor Syntaxis's Wisdom:",
 					content:
 						'JSX is a syntax extension for JavaScript that looks similar to HTML but allows you to write React elements in a more intuitive way. It\'s not understood directly by browsers and must be transpiled to standard JavaScript before running. JSX makes your component code more readable by representing the UI structure in a familiar HTML-like format. As Professor Syntaxis says: "JSX bridges the gap between markup and logic!"',
 				}}

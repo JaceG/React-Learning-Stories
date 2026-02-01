@@ -151,24 +151,25 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={3}
-			title='The Rules of the Scrolls'
-			bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
-		/>
+			<ChapterIntro
+				chapterNumber={3}
+				title='The Rules of the Scrolls'
+				bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
+			/>
 
-		<StorySection
-			paragraphs={[
-				`"Every magical language has its laws," Syntaxis explained, gesturing to the tablets. "JSX may seem flexible, but it demands strict adherence to certain rules. Break them, and your spells will fail."`,
-				`Binary zipped around the tablets, illuminating each rule as he passed. "I've seen many apprentices struggle with these!" the sprite warned. "But once you understand why each rule exists, they become second nature."`,
-				`Aria pulled out her journal, ready to document these sacred laws. "I'm ready to learn, Professor. Show me what pitfalls to avoid."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`"Every magical language has its laws," Syntaxis explained, gesturing to the tablets. "JSX may seem flexible, but it demands strict adherence to certain rules. Break them, and your spells will fail."`,
+					`Binary zipped around the tablets, illuminating each rule as he passed. "I've seen many apprentices struggle with these!" the sprite warned. "But once you understand why each rule exists, they become second nature."`,
+					`Aria pulled out her journal, ready to document these sacred laws. "I'm ready to learn, Professor. Show me what pitfalls to avoid."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>The JSX Rulebook</h3>
-				<InstructionBox character="Professor Syntaxis presents the Sacred Rules of JSX.">
-					Study each rule carefully - these are the foundations of writing valid JSX code.
+				<InstructionBox character='Professor Syntaxis presents the Sacred Rules of JSX.'>
+					Study each rule carefully - these are the foundations of
+					writing valid JSX code.
 				</InstructionBox>
 
 				<div className='jsx-rules'>
@@ -277,10 +278,13 @@ const ChapterThree = () => {
 			</div>
 
 			<div className='interactive-section'>
-				<h3 className='section-title'>Interactive Exercise: The Debugging Trials</h3>
-				<InstructionBox character="Professor Syntaxis presents you with broken scrolls.">
-					"These scrolls contain JSX spells with errors. Can you fix them 
-					according to the sacred rules? Binary will check your work!"
+				<h3 className='section-title'>
+					Interactive Exercise: The Debugging Trials
+				</h3>
+				<InstructionBox character='Professor Syntaxis presents you with broken scrolls.'>
+					"These scrolls contain JSX spells with errors. Can you fix
+					them according to the sacred rules? Binary will check your
+					work!"
 				</InstructionBox>
 
 				<div className='jsx-challenges'>
@@ -385,9 +389,9 @@ const ChapterThree = () => {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Rules Lesson:',
+					title: "Professor Syntaxis's Wisdom:",
 					content:
-						'JSX has specific syntax rules that differ from standard HTML because it\'s ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: "Rules aren\'t limitations - they\'re guardrails for success!"',
+						"JSX has specific syntax rules that differ from standard HTML because it's ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: \"Rules aren't limitations - they're guardrails for success!\"",
 				}}
 				reflectionQuestions={[
 					'How do the glowing tablets metaphor help you remember the importance of JSX rules?',

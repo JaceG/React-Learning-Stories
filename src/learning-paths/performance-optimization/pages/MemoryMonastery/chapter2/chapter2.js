@@ -13,7 +13,7 @@ const ChapterTwo = () => {
 		triggerGC,
 		retainedSize,
 		memoryOptimizations,
-		applyOptimization
+		applyOptimization,
 	} = useOutletContext();
 
 	const [devToolsOpen, setDevToolsOpen] = useState(false);
@@ -26,10 +26,13 @@ const ChapterTwo = () => {
 	useEffect(() => {
 		if (profiling) {
 			intervalRef.current = setInterval(() => {
-				setMemoryTimeline(prev => [...prev, {
-					time: Date.now(),
-					heap: retainedSize + Math.random() * 5000
-				}]);
+				setMemoryTimeline((prev) => [
+					...prev,
+					{
+						time: Date.now(),
+						heap: retainedSize + Math.random() * 5000,
+					},
+				]);
 			}, 1000);
 		} else {
 			if (intervalRef.current) {
@@ -44,7 +47,7 @@ const ChapterTwo = () => {
 	const devToolsTabs = [
 		{ id: 'memory', label: 'Memory', icon: '🧠' },
 		{ id: 'performance', label: 'Performance', icon: '⚡' },
-		{ id: 'profiler', label: 'Profiler', icon: '📊' }
+		{ id: 'profiler', label: 'Profiler', icon: '📊' },
 	];
 
 	return (
@@ -57,15 +60,34 @@ const ChapterTwo = () => {
 
 			<StorySection
 				paragraphs={[
-					<>Brother Binary led <strong>Aria</strong> deeper into the monastery to a chamber filled with glowing instruments. "To heal the Memory Plague, you must master our sacred tools - the <strong>Chrome DevTools Memory Profiler</strong>."</>,
-					<>He activated a mystical viewing portal that revealed the inner workings of memory. "This is how we see what others cannot - the hidden allocations, the retained objects, the paths that prevent garbage collection."</>,
-					<>"Three sacred techniques will serve you well," he continued. "<strong>Heap Snapshots</strong> to see memory at a moment in time, <strong>Allocation Timeline</strong> to track growth over time, and <strong>Manual Garbage Collection</strong> to force cleanup."</>
+					<>
+						Brother Binary led <strong>Aria</strong> deeper into the
+						monastery to a chamber filled with glowing instruments.
+						"To heal the Memory Plague, you must master our sacred
+						tools - the{' '}
+						<strong>Chrome DevTools Memory Profiler</strong>."
+					</>,
+					<>
+						He activated a mystical viewing portal that revealed the
+						inner workings of memory. "This is how we see what
+						others cannot - the hidden allocations, the retained
+						objects, the paths that prevent garbage collection."
+					</>,
+					<>
+						"Three sacred techniques will serve you well," he
+						continued. "<strong>Heap Snapshots</strong> to see
+						memory at a moment in time,{' '}
+						<strong>Allocation Timeline</strong> to track growth
+						over time, and{' '}
+						<strong>Manual Garbage Collection</strong> to force
+						cleanup."
+					</>,
 				]}
 			/>
 
 			<div className='monastery-chamber'>
 				<h3>The Memory Observatory</h3>
-				<button 
+				<button
 					className='demo-button'
 					onClick={() => setDevToolsOpen(!devToolsOpen)}>
 					{devToolsOpen ? 'Close' : 'Open'} Sacred DevTools
@@ -77,22 +99,35 @@ const ChapterTwo = () => {
 					<h3 className='section-title'>
 						Chrome DevTools Memory Profiler (Simulated)
 					</h3>
-					
-					<div className='memory-leak-detector' style={{ minHeight: '400px' }}>
-						<div style={{ display: 'flex', borderBottom: '1px solid #374151', marginBottom: '20px' }}>
-							{devToolsTabs.map(tab => (
+
+					<div
+						className='memory-leak-detector'
+						style={{ minHeight: '400px' }}>
+						<div
+							style={{
+								display: 'flex',
+								borderBottom: '1px solid #374151',
+								marginBottom: '20px',
+							}}>
+							{devToolsTabs.map((tab) => (
 								<button
 									key={tab.id}
 									onClick={() => setSelectedTab(tab.id)}
 									style={{
-										background: selectedTab === tab.id ? '#1f2937' : 'transparent',
-										color: selectedTab === tab.id ? '#10b981' : '#9ca3af',
+										background:
+											selectedTab === tab.id
+												? '#1f2937'
+												: 'transparent',
+										color:
+											selectedTab === tab.id
+												? '#10b981'
+												: '#9ca3af',
 										border: 'none',
 										padding: '10px 20px',
 										cursor: 'pointer',
 										display: 'flex',
 										alignItems: 'center',
-										gap: '5px'
+										gap: '5px',
 									}}>
 									<span>{tab.icon}</span>
 									{tab.label}
@@ -103,18 +138,18 @@ const ChapterTwo = () => {
 						{selectedTab === 'memory' && (
 							<div>
 								<div style={{ marginBottom: '20px' }}>
-									<button 
+									<button
 										className='demo-button'
 										onClick={takeSnapshot}
 										style={{ marginRight: '10px' }}>
 										Take Heap Snapshot
 									</button>
-									<button 
+									<button
 										className='demo-button success'
 										onClick={triggerGC}>
 										Collect Garbage
 									</button>
-									<button 
+									<button
 										className={`demo-button ${profiling ? 'danger' : ''}`}
 										onClick={() => setProfiling(!profiling)}
 										style={{ marginLeft: '10px' }}>
@@ -124,27 +159,52 @@ const ChapterTwo = () => {
 
 								{heapSnapshot && (
 									<div className='heap-snapshot'>
-										<h4>Heap Snapshot #{Math.floor(heapSnapshot.timestamp / 10000)}</h4>
-										<p>Total Size: {(heapSnapshot.totalSize / 1000).toFixed(1)}KB</p>
+										<h4>
+											Heap Snapshot #
+											{Math.floor(
+												heapSnapshot.timestamp / 10000
+											)}
+										</h4>
+										<p>
+											Total Size:{' '}
+											{(
+												heapSnapshot.totalSize / 1000
+											).toFixed(1)}
+											KB
+										</p>
 										<div className='heap-objects'>
-											{heapSnapshot.objects.map((obj, index) => (
-												<div key={index} className='heap-object'>
-													<div className='object-type'>{obj.type}</div>
-													<div className='object-count'>Count: {obj.count}</div>
-													<div className='object-size'>
-														{(obj.size / 1000).toFixed(1)}KB
+											{heapSnapshot.objects.map(
+												(obj, index) => (
+													<div
+														key={index}
+														className='heap-object'>
+														<div className='object-type'>
+															{obj.type}
+														</div>
+														<div className='object-count'>
+															Count: {obj.count}
+														</div>
+														<div className='object-size'>
+															{(
+																obj.size / 1000
+															).toFixed(1)}
+															KB
+														</div>
 													</div>
-												</div>
-											))}
+												)
+											)}
 										</div>
 									</div>
 								)}
 
 								{profiling && memoryTimeline.length > 0 && (
 									<div style={{ marginTop: '20px' }}>
-										<h4 style={{ color: '#10b981' }}>Memory Timeline</h4>
+										<h4 style={{ color: '#10b981' }}>
+											Memory Timeline
+										</h4>
 										<div style={{ color: '#6b7280' }}>
-											Recording... {memoryTimeline.length}s
+											Recording... {memoryTimeline.length}
+											s
 										</div>
 									</div>
 								)}
@@ -157,16 +217,24 @@ const ChapterTwo = () => {
 						<div className='gc-stats'>
 							<div className='gc-stat'>
 								<div className='gc-stat-label'>Collections</div>
-								<div className='gc-stat-value'>{gcActivity.length}</div>
+								<div className='gc-stat-value'>
+									{gcActivity.length}
+								</div>
 							</div>
 							<div className='gc-stat'>
 								<div className='gc-stat-label'>Total Freed</div>
 								<div className='gc-stat-value'>
-									{gcActivity.reduce((sum, gc) => sum + gc.freed, 0) / 1000}KB
+									{gcActivity.reduce(
+										(sum, gc) => sum + gc.freed,
+										0
+									) / 1000}
+									KB
 								</div>
 							</div>
 							<div className='gc-stat'>
-								<div className='gc-stat-label'>Current Heap</div>
+								<div className='gc-stat-label'>
+									Current Heap
+								</div>
 								<div className='gc-stat-value'>
 									{(retainedSize / 1000).toFixed(1)}KB
 								</div>
@@ -177,8 +245,8 @@ const ChapterTwo = () => {
 			)}
 
 			<CodeExample
-				title="Scroll of Diagnostic Wisdom"
-				discoveredBy="Memory Profiling Techniques"
+				title='Scroll of Diagnostic Wisdom'
+				discoveredBy='Memory Profiling Techniques'
 				code={`// Using Chrome DevTools for Memory Analysis
 
 // 1. Taking Heap Snapshots
@@ -249,21 +317,21 @@ class MemoryMonitor {
 			/>
 
 			<div className='optimization-grid'>
-				<div 
+				<div
 					className={`optimization-card ${memoryOptimizations.includes('weakmap') ? 'applied' : ''}`}
 					onClick={() => applyOptimization('weakmap')}>
 					<div className='optimization-icon'>🗝️</div>
 					<div className='optimization-title'>WeakMap Usage</div>
 					<p>Prevent reference leaks</p>
 				</div>
-				<div 
+				<div
 					className={`optimization-card ${memoryOptimizations.includes('cleanup') ? 'applied' : ''}`}
 					onClick={() => applyOptimization('cleanup')}>
 					<div className='optimization-icon'>🧹</div>
 					<div className='optimization-title'>Effect Cleanup</div>
 					<p>Always return cleanup functions</p>
 				</div>
-				<div 
+				<div
 					className={`optimization-card ${memoryOptimizations.includes('refs') ? 'applied' : ''}`}
 					onClick={() => applyOptimization('refs')}>
 					<div className='optimization-icon'>📌</div>
@@ -274,12 +342,13 @@ class MemoryMonitor {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Profiling Lesson:',
-					content: 'Chrome DevTools Memory Profiler is your window into the application\'s memory usage. Heap snapshots capture the state at a moment, allocation timelines show growth over time, and the retainers view reveals why objects can\'t be garbage collected. Master these tools, and no memory leak can hide from you.'
+					title: "Brother Binary's Wisdom:",
+					content:
+						"Chrome DevTools Memory Profiler is your window into the application's memory usage. Heap snapshots capture the state at a moment, allocation timelines show growth over time, and the retainers view reveals why objects can't be garbage collected. Master these tools, and no memory leak can hide from you.",
 				}}
 				reflectionQuestions={[
 					'Brother Binary has revealed the sacred tools of memory profiling. How often do you profile your applications? Do you wait until users complain about performance, or do you proactively hunt for leaks?',
-					'Consider making memory profiling part of your regular development workflow, especially before major releases.'
+					'Consider making memory profiling part of your regular development workflow, especially before major releases.',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 26 (Afternoon)",

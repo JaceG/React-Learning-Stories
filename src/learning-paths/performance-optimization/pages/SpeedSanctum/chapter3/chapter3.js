@@ -82,10 +82,30 @@ const ChapterThree = () => {
 
 			<StorySection
 				paragraphs={[
-					<>"You've mastered component and computation memoization," Master Velocity said, leading Aria to the inner sanctum. "But there's one more crucial technique: <strong>useCallback</strong>."</>,
-					<>He pointed to a wall of interconnected crystals. "Watch what happens when I touch one." As he touched a crystal, all the others flickered and re-rendered. "Without stable function references, every parent update cascades to all children."</>,
-					<><strong>Aria</strong> understood immediately. "Even if we memoize child components, passing new function instances as props defeats the optimization!"</>,
-					<>"Exactly!" Master Velocity beamed. "useCallback ensures function stability across renders. Combined with React.memo and useMemo, it forms the{' '}<strong>Trinity of Optimization</strong>."</>
+					<>
+						"You've mastered component and computation memoization,"
+						Master Velocity said, leading Aria to the inner sanctum.
+						"But there's one more crucial technique:{' '}
+						<strong>useCallback</strong>."
+					</>,
+					<>
+						He pointed to a wall of interconnected crystals. "Watch
+						what happens when I touch one." As he touched a crystal,
+						all the others flickered and re-rendered. "Without
+						stable function references, every parent update cascades
+						to all children."
+					</>,
+					<>
+						<strong>Aria</strong> understood immediately. "Even if
+						we memoize child components, passing new function
+						instances as props defeats the optimization!"
+					</>,
+					<>
+						"Exactly!" Master Velocity beamed. "useCallback ensures
+						function stability across renders. Combined with
+						React.memo and useMemo, it forms the{' '}
+						<strong>Trinity of Optimization</strong>."
+					</>,
 				]}
 			/>
 
@@ -93,8 +113,10 @@ const ChapterThree = () => {
 				<h3 className='section-title'>
 					Interactive Exercise: The Final Optimization
 				</h3>
-				<InstructionBox character="Master Velocity gestures to the interconnected crystals.">
-					Click the crystals and watch the console. Apply useCallback to see how stable function references prevent unnecessary re-renders!
+				<InstructionBox character='Master Velocity gestures to the interconnected crystals.'>
+					Click the crystals and watch the console. Apply useCallback
+					to see how stable function references prevent unnecessary
+					re-renders!
 				</InstructionBox>
 
 				<div className='optimization-showcase'>
@@ -168,8 +190,8 @@ const ChapterThree = () => {
 			</div>
 
 			<CodeExample
-				title="Ancient Scroll of useCallback"
-				discoveredBy="The Final Secret of the Sanctum"
+				title='Ancient Scroll of useCallback'
+				discoveredBy='The Final Secret of the Sanctum'
 				code={`// useCallback - Memoize function references
 function ParentComponent() {
   const [count, setCount] = useState(0);
@@ -222,12 +244,13 @@ const OptimizedList = memo(({ items, onItemClick }) => {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Optimization Lesson:',
-					content: 'The Trinity of Optimization - React.memo, useMemo, and useCallback - work in harmony to defeat performance problems. But remember: premature optimization is the root of all evil. Always profile first, identify real bottlenecks, then apply these techniques strategically. The goal is not to optimize everything, but to optimize what matters.'
+					title: "Master Velocity's Wisdom:",
+					content:
+						'The Trinity of Optimization - React.memo, useMemo, and useCallback - work in harmony to defeat performance problems. But remember: premature optimization is the root of all evil. Always profile first, identify real bottlenecks, then apply these techniques strategically. The goal is not to optimize everything, but to optimize what matters.',
 				}}
 				reflectionQuestions={[
 					'Aria has learned all three optimization techniques and defeated the Lag Monster. But Master Velocity\'s final wisdom rings true: "The greatest optimization is often better architecture."',
-					'In your applications, how might you restructure components to avoid performance problems in the first place? When is optimization necessary, and when is it better to rethink your approach?'
+					'In your applications, how might you restructure components to avoid performance problems in the first place? When is optimization necessary, and when is it better to rethink your approach?',
 				]}
 				journalEntry={{
 					title: "Aria's Journal - Day 25 (Evening)",
@@ -235,7 +258,7 @@ const OptimizedList = memo(({ items, onItemClick }) => {
 						"The Trinity of Optimization is complete! Master Velocity taught me useCallback - the stabilizer of function references. Without it, even memoized child components re-render because they receive new function instances as props each time the parent renders. Together, React.memo (component memoization), useMemo (computation memoization), and useCallback (function memoization) defeated the Lag Monster! But Master Velocity's final wisdom resonates: 'Premature optimization is the root of all evil.' Profile first, identify real bottlenecks, then apply strategically. Tomorrow I travel to the Memory Monastery to learn about memory leaks!",
 				}}
 				chapterEnding={[
-					'With the Lag Monster defeated, the React Kingdom\'s performance was restored. Aria had mastered the optimization arts, but her journey was far from over. The Memory Monastery awaited, where even deeper performance secrets lay hidden...'
+					"With the Lag Monster defeated, the React Kingdom's performance was restored. Aria had mastered the optimization arts, but her journey was far from over. The Memory Monastery awaited, where even deeper performance secrets lay hidden...",
 				]}
 			/>
 		</div>

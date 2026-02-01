@@ -68,9 +68,28 @@ const ChapterOne = () => {
 
 			<StorySection
 				paragraphs={[
-					<><strong>Aria</strong> arrived at the Lazy Library, a mystical repository where all React knowledge was stored. But something was wrong - the main entrance was blocked by an enormous bundle of books, too heavy for anyone to move.</>,
-					<><strong>Keeper Chronos</strong>, the ancient librarian, appeared from the shadows. "Ah, another victim of the{' '}<strong>Bundle Burden</strong>. Young developers pack every possible library into their applications, not realizing that users must carry this weight with every page load."</>,
-					<>He gestured to the towering shelves. "Each book represents a library or component. Some are essential for every visitor, but many are needed only by a few. Yet we force everyone to carry them all. This is the curse of{' '}<strong>eager loading</strong>."</>
+					<>
+						<strong>Aria</strong> arrived at the Lazy Library, a
+						mystical repository where all React knowledge was
+						stored. But something was wrong - the main entrance was
+						blocked by an enormous bundle of books, too heavy for
+						anyone to move.
+					</>,
+					<>
+						<strong>Keeper Chronos</strong>, the ancient librarian,
+						appeared from the shadows. "Ah, another victim of the{' '}
+						<strong>Bundle Burden</strong>. Young developers pack
+						every possible library into their applications, not
+						realizing that users must carry this weight with every
+						page load."
+					</>,
+					<>
+						He gestured to the towering shelves. "Each book
+						represents a library or component. Some are essential
+						for every visitor, but many are needed only by a few.
+						Yet we force everyone to carry them all. This is the
+						curse of <strong>eager loading</strong>."
+					</>,
 				]}
 			/>
 
@@ -238,11 +257,12 @@ npx source-map-explorer 'build/static/js/*.js'
 				characterIntros={[
 					{
 						name: 'Keeper Chronos',
-						description: 'Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."'
-					}
+						description:
+							'Guardian of the Lazy Library and master of temporal loading. His wisdom: "Load only what is needed, when it is needed. Time and bandwidth are precious resources that should never be wasted."',
+					},
 				]}
 				lessonInsight={{
-					title: 'The Bundle Lesson:',
+					title: "Keeper Chronos's Wisdom:",
 					content:
 						"Modern JavaScript applications often ship massive bundles containing code that many users will never execute. Every kilobyte increases download time, parse time, and execution time. The first step to optimization is understanding what's in your bundle and why. Tools like webpack-bundle-analyzer reveal the true cost of your dependencies.",
 				}}

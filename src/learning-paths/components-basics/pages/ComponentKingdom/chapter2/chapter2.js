@@ -15,20 +15,28 @@ const ChapterTwo = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={2}
-			title='Messages Between Workshops'
-			bridge='After mastering individual workshops, Aria discovered that components could work together. Master Aurelius led her to a bustling communication hub where messengers rushed between workshops.'
-		/>
+			<ChapterIntro
+				chapterNumber={2}
+				title='Messages Between Workshops'
+				bridge='After mastering individual workshops, Aria discovered that components could work together. Master Aurelius led her to a bustling communication hub where messengers rushed between workshops.'
+			/>
 
-		<StorySection
-			paragraphs={[
-				<>"For the Component Kingdom to function properly," Aurelius explained, "workshops must communicate with each other. Watch how the master builder App sends special messengers carrying bags called <strong>Props</strong> to each workshop. These props contain all the specifications a workshop needs to create its piece."</>
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						"For the Component Kingdom to function properly,"
+						Aurelius explained, "workshops must communicate with
+						each other. Watch how the master builder App sends
+						special messengers carrying bags called{' '}
+						<strong>Props</strong> to each workshop. These props
+						contain all the specifications a workshop needs to
+						create its piece."
+					</>,
+				]}
+			/>
 
-		<div className='story-section'>
-			<div className='messenger-illustration'>
+			<div className='story-section'>
+				<div className='messenger-illustration'>
 					<div className='app-messenger'>
 						<div className='messenger-label'>App</div>
 						<div className='messenger-bag'>
@@ -87,21 +95,21 @@ const ChapterTwo = () => {
 							)}
 						</div>
 					</div>
+				</div>
 			</div>
-		</div>
 
-		<StorySection
-			paragraphs={[
-				`Aria watched in fascination. "So each workshop receives these props and uses them to determine exactly what to build and how it should behave?"`,
-				`"Precisely!" Aurelius confirmed. "Props can contain any type of information - text, numbers, functions, or even other components! It's how we create harmony in the kingdom."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`Aria watched in fascination. "So each workshop receives these props and uses them to determine exactly what to build and how it should behave?"`,
+					`"Precisely!" Aurelius confirmed. "Props can contain any type of information - text, numbers, functions, or even other components! It's how we create harmony in the kingdom."`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Prop Messenger
 				</h3>
-				<InstructionBox character="Click on different props in the messenger bag to see how they affect the Button component!" />
+				<InstructionBox character='Click on different props in the messenger bag to see how they affect the Button component!' />
 
 				<div className='prop-customizer'>
 					<h4>Try Your Own Props</h4>
@@ -133,8 +141,8 @@ const ChapterTwo = () => {
 			</div>
 
 			<CodeExample
-				title="Messenger Communication Patterns"
-				discoveredBy="Transcribed by Aria at the Hub"
+				title='Messenger Communication Patterns'
+				discoveredBy='Transcribed by Aria at the Hub'
 				code={`// Aria's Second Discovery: Props Flow
 function App() {
   // Master Aurelius: "The App component orchestrates all communication"
@@ -168,9 +176,9 @@ function Button(props) {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Props Lesson:',
+					title: "Master Aurelius's Wisdom:",
 					content:
-						'Props are how components talk to each other. They\'re passed from parent to child, like arguments to a function. Props allow components to be flexible and reusable with different data and behaviors. Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.',
+						"Props are how components talk to each other. They're passed from parent to child, like arguments to a function. Props allow components to be flexible and reusable with different data and behaviors. Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.",
 				}}
 				reflectionQuestions={[
 					'How does the messenger metaphor help you understand how props work in React?',
@@ -179,7 +187,7 @@ function Button(props) {
 				journalEntry={{
 					title: "Aria's Journal - Day 2",
 					content:
-						'The props system is genius! Instead of each workshop guessing what to make, they receive clear instructions. I tried sending different props to the Button workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I\'ll learn about component families working together!',
+						"The props system is genius! Instead of each workshop guessing what to make, they receive clear instructions. I tried sending different props to the Button workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I'll learn about component families working together!",
 				}}
 			/>
 		</div>

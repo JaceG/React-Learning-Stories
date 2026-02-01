@@ -43,9 +43,30 @@ const ChapterOne = () => {
 
 			<StorySection
 				paragraphs={[
-					<><strong>Aria</strong> arrived at the Memory Monastery, an ancient structure floating in the clouds above the React Kingdom. Applications below were suffering from a mysterious plague - they would start fast but gradually slow to a crawl, eventually crashing entirely.</>,
-					<><strong>Brother Binary</strong>, the monastery's eldest monk, greeted her with concern. "The Memory Plague has returned, Aria. Applications are holding onto memories they should release, creating <strong>memory leaks</strong> that grow until nothing can function."</>,
-					<>He led her to the Observatory, where ethereal representations of memory usage floated like ghosts. "Before we can heal the plague, you must understand its three primary forms: <strong>Event Listener Leaks</strong>,{' '}<strong>Detached DOM Nodes</strong>, and{' '}<strong>Closure Captures</strong>."</>
+					<>
+						<strong>Aria</strong> arrived at the Memory Monastery,
+						an ancient structure floating in the clouds above the
+						React Kingdom. Applications below were suffering from a
+						mysterious plague - they would start fast but gradually
+						slow to a crawl, eventually crashing entirely.
+					</>,
+					<>
+						<strong>Brother Binary</strong>, the monastery's eldest
+						monk, greeted her with concern. "The Memory Plague has
+						returned, Aria. Applications are holding onto memories
+						they should release, creating{' '}
+						<strong>memory leaks</strong> that grow until nothing
+						can function."
+					</>,
+					<>
+						He led her to the Observatory, where ethereal
+						representations of memory usage floated like ghosts.
+						"Before we can heal the plague, you must understand its
+						three primary forms:{' '}
+						<strong>Event Listener Leaks</strong>,{' '}
+						<strong>Detached DOM Nodes</strong>, and{' '}
+						<strong>Closure Captures</strong>."
+					</>,
 				]}
 			/>
 
@@ -230,11 +251,12 @@ function Timer() {
 				characterIntros={[
 					{
 						name: 'Brother Binary',
-						description: 'Keeper of the Memory Monastery and guardian against the Memory Plague. His wisdom: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."'
-					}
+						description:
+							'Keeper of the Memory Monastery and guardian against the Memory Plague. His wisdom: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."',
+					},
 				]}
 				lessonInsight={{
-					title: 'The Memory Lesson:',
+					title: "Brother Binary's Wisdom:",
 					content:
 						'Memory leaks are silent killers of application performance. They occur when your application holds references to objects that are no longer needed, preventing the garbage collector from freeing that memory. Common sources include forgotten event listeners, detached DOM nodes, and closures that capture large objects. The key to prevention is disciplined cleanup.',
 				}}

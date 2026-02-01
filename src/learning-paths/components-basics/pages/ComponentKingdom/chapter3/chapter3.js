@@ -25,22 +25,30 @@ const ChapterThree = () => {
 
 	return (
 		<div className='chapter'>
-		<ChapterIntro
-			chapterNumber={3}
-			title='Building Complex Structures'
-			bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
-		/>
+			<ChapterIntro
+				chapterNumber={3}
+				title='Building Complex Structures'
+				bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
+			/>
 
-		<StorySection
-			paragraphs={[
-				<>"Now comes the true power of our kingdom," Aurelius announced with pride. "Watch how workshops collaborate. Larger workshops can use the creations of smaller workshops, combining them into more complex structures. This practice, known as <strong>Component Composition</strong>, allows us to build incredible things."</>,
-				`Aria watched as components began assembling themselves like magical building blocks. "It's like... each component is a piece of a larger puzzle!"`,
-				`"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components."`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					<>
+						"Now comes the true power of our kingdom," Aurelius
+						announced with pride. "Watch how workshops collaborate.
+						Larger workshops can use the creations of smaller
+						workshops, combining them into more complex structures.
+						This practice, known as{' '}
+						<strong>Component Composition</strong>, allows us to
+						build incredible things."
+					</>,
+					`Aria watched as components began assembling themselves like magical building blocks. "It's like... each component is a piece of a larger puzzle!"`,
+					`"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components."`,
+				]}
+			/>
 
-		<div className='story-section'>
-			<div className='composition-illustration'>
+			<div className='story-section'>
+				<div className='composition-illustration'>
 					<div className='component-library'>
 						<h4>Component Library</h4>
 						<p>Click components to add them to your dashboard:</p>
@@ -173,27 +181,27 @@ const ChapterThree = () => {
 							)}
 						</div>
 					</div>
+				</div>
 			</div>
-		</div>
 
-		<StorySection
-			paragraphs={[
-				`Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. "I can build anything now!" she exclaimed.`
-			]}
-		/>
+			<StorySection
+				paragraphs={[
+					`Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. "I can build anything now!" she exclaimed.`,
+				]}
+			/>
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: Component Composer
 				</h3>
 				<InstructionBox
-					character="Build your own dashboard by selecting components from the library above!"
-					secondaryText="Click on a component to add it to your dashboard. Click the × button to remove it."
+					character='Build your own dashboard by selecting components from the library above!'
+					secondaryText='Click on a component to add it to your dashboard. Click the × button to remove it.'
 				/>
 			</div>
 
 			<CodeExample
-				title="Master Blueprint: Component Composition"
+				title='Master Blueprint: Component Composition'
 				discoveredBy="Aria's Final Component Lesson"
 				code={`// The Dashboard workshop combines other components
 function Dashboard() {
@@ -226,7 +234,7 @@ function Dashboard() {
 
 			<ChapterSummary
 				lessonInsight={{
-					title: 'The Composition Lesson:',
+					title: "Master Aurelius's Wisdom:",
 					content:
 						'React encourages building UIs through composition rather than inheritance. Complex interfaces are created by combining simpler components together, creating a hierarchy that\'s both flexible and maintainable. Master Aurelius\'s final teaching: "A kingdom is strongest when each citizen excels at their craft and works in harmony with others."',
 				}}

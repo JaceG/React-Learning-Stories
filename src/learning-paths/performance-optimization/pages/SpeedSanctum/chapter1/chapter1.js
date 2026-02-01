@@ -44,9 +44,27 @@ const ChapterOne = () => {
 
 			<StorySection
 				paragraphs={[
-					<><strong>Aria</strong>, now a React Kingdom Guide, stood at the edge of the Northern Mountains. The summons had been urgent - applications throughout the kingdom were slowing to a crawl. Citizens complained of stuttering interfaces and frozen forms.</>,
-					<><strong>Master Velocity</strong> emerged from the mist, his robes shimmering with optimization symbols. "Welcome, Aria. Your reputation precedes you. The kingdom faces a threat unlike any before - the <strong>Lag Monster</strong> has awakened."</>,
-					<>He gestured toward the valley below where components flickered erratically. "The monster feeds on inefficiency - unnecessary re-renders, memory leaks, and bloated bundles. Before we can fight it, we must learn to{' '}<strong>see</strong> its influence."</>
+					<>
+						<strong>Aria</strong>, now a React Kingdom Guide, stood
+						at the edge of the Northern Mountains. The summons had
+						been urgent - applications throughout the kingdom were
+						slowing to a crawl. Citizens complained of stuttering
+						interfaces and frozen forms.
+					</>,
+					<>
+						<strong>Master Velocity</strong> emerged from the mist,
+						his robes shimmering with optimization symbols.
+						"Welcome, Aria. Your reputation precedes you. The
+						kingdom faces a threat unlike any before - the{' '}
+						<strong>Lag Monster</strong> has awakened."
+					</>,
+					<>
+						He gestured toward the valley below where components
+						flickered erratically. "The monster feeds on
+						inefficiency - unnecessary re-renders, memory leaks, and
+						bloated bundles. Before we can fight it, we must learn
+						to <strong>see</strong> its influence."
+					</>,
 				]}
 			/>
 
@@ -58,9 +76,7 @@ const ChapterOne = () => {
 							<div
 								key={metric.id}
 								className={`crystal ${selectedMetric === metric.id ? 'active' : ''}`}
-								onClick={() =>
-									handleMetricSelect(metric.id)
-								}>
+								onClick={() => handleMetricSelect(metric.id)}>
 								{metric.value}
 							</div>
 						))}
@@ -80,7 +96,12 @@ const ChapterOne = () => {
 
 			<StorySection
 				paragraphs={[
-					<>"These crystals," Master Velocity explained, "represent the vital signs of our applications. When they glow red, the Lag Monster grows stronger. Our first weapon is the{' '}<strong>React DevTools Profiler</strong>."</>
+					<>
+						"These crystals," Master Velocity explained, "represent
+						the vital signs of our applications. When they glow red,
+						the Lag Monster grows stronger. Our first weapon is the{' '}
+						<strong>React DevTools Profiler</strong>."
+					</>,
 				]}
 			/>
 
@@ -223,11 +244,12 @@ function DataTable({ rows }) {
 				characterIntros={[
 					{
 						name: 'Master Velocity',
-						description: 'Guardian of the Speed Sanctum and keeper of optimization secrets. His motto: "Measure twice, optimize once. Performance is not about speed alone, but about the perception of speed."'
-					}
+						description:
+							'Guardian of the Speed Sanctum and keeper of optimization secrets. His motto: "Measure twice, optimize once. Performance is not about speed alone, but about the perception of speed."',
+					},
 				]}
 				lessonInsight={{
-					title: 'The Performance Lesson:',
+					title: "Master Velocity's Wisdom:",
 					content:
 						'The first step in optimization is observation. The React DevTools Profiler is your lens into the performance realm. It reveals which components render frequently, how long they take, and why they re-render. Remember: you cannot optimize what you cannot measure. Always profile before making optimization decisions.',
 				}}

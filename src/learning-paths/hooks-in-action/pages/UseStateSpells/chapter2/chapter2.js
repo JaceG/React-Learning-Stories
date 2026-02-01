@@ -39,21 +39,26 @@ function ChapterTwo() {
 					bridge="The next day, Aria found herself in the Academy's Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes."
 				/>
 
-			<StorySection
-				paragraphs={[
-					`"Ah, Aria! Perfect timing," Hooksworth greeted. "Today we tackle a challenge that trips up even experienced mages - managing complex state structures."`,
-					`He gestured to the floating crystal. "Watch what happens when I try to change this object's properties directly." He touched the crystal, and it flickered but didn't update. "Nothing! Do you know why?"`,
-					`Aria studied the phenomenon. "Because React only detects changes when the reference changes?"`,
-					<>"Brilliant!" Hooksworth exclaimed. "This is the <strong>Immutability Principle</strong>. React's rendering magic only triggers when it sees a new object, not when we mutate an existing one."</>,
-					`Binary projected a comparison showing the difference between mutation and creating new objects, its display highlighting the reference changes.`,
-					`"Your companion visualizes it perfectly," Hooksworth noted. "Now, let me show you the proper incantations for updating complex state."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"Ah, Aria! Perfect timing," Hooksworth greeted. "Today we tackle a challenge that trips up even experienced mages - managing complex state structures."`,
+						`He gestured to the floating crystal. "Watch what happens when I try to change this object's properties directly." He touched the crystal, and it flickered but didn't update. "Nothing! Do you know why?"`,
+						`Aria studied the phenomenon. "Because React only detects changes when the reference changes?"`,
+						<>
+							"Brilliant!" Hooksworth exclaimed. "This is the{' '}
+							<strong>Immutability Principle</strong>. React's
+							rendering magic only triggers when it sees a new
+							object, not when we mutate an existing one."
+						</>,
+						`Binary projected a comparison showing the difference between mutation and creating new objects, its display highlighting the reference changes.`,
+						`"Your companion visualizes it perfectly," Hooksworth noted. "Now, let me show you the proper incantations for updating complex state."`,
+					]}
+				/>
 
-			<CodeExample
-				title='The Immutability Principle'
-				discoveredBy='Transcribed by Aria'
-				code={`// ❌ This won't trigger re-render:
+				<CodeExample
+					title='The Immutability Principle'
+					discoveredBy='Transcribed by Aria'
+					code={`// ❌ This won't trigger re-render:
 const [user, setUser] = useState({ name: 'Aria', level: 1 });
 user.name = 'Master Aria'; // Mutation!
 setUser(user); // Same reference
@@ -62,20 +67,23 @@ setUser(user); // Same reference
 setUser({ ...user, name: 'Master Aria' });
 // Or use functional update:
 setUser(prev => ({ ...prev, name: 'Master Aria' }));`}
-			/>
+				/>
 
-			<StorySection
-				paragraphs={[
-					`"The spread operator is your ally here," Hooksworth continued, demonstrating with glowing gestures. "It creates a new object while preserving unchanged properties. For nested structures, you must spread at each level you modify."`,
-					`"It seems tedious," Aria observed, "but I suppose it prevents unexpected mutations?"`,
-					`"Exactly! This discipline," Hooksworth emphasized, tapping his wand on a floating tome, "is what separates reliable applications from buggy nightmares. Immutability ensures predictable state updates and enables React's optimization magic."`
-				]}
-			/>
+				<StorySection
+					paragraphs={[
+						`"The spread operator is your ally here," Hooksworth continued, demonstrating with glowing gestures. "It creates a new object while preserving unchanged properties. For nested structures, you must spread at each level you modify."`,
+						`"It seems tedious," Aria observed, "but I suppose it prevents unexpected mutations?"`,
+						`"Exactly! This discipline," Hooksworth emphasized, tapping his wand on a floating tome, "is what separates reliable applications from buggy nightmares. Immutability ensures predictable state updates and enables React's optimization magic."`,
+					]}
+				/>
 
 				<div className='interactive-section'>
-					<h3 className='section-title'>Interactive Exercise: Complex Spell Constructor</h3>
+					<h3 className='section-title'>
+						Interactive Exercise: Complex Spell Constructor
+					</h3>
 					<InstructionBox character='Build complex spell objects and manage them with proper state patterns!'>
-						Create spells with multiple properties and see how immutable updates work.
+						Create spells with multiple properties and see how
+						immutable updates work.
 					</InstructionBox>
 
 					<div className='spell-workshop'>
@@ -228,17 +236,19 @@ setItems(items.map(item =>
 
 				<ChapterSummary
 					lessonInsight={{
-						title: 'The Immutability Lesson:',
-						content: "Master complex state through immutability - the cornerstone of predictable React applications. Create new objects with spread syntax rather than mutating existing ones. For arrays, embrace methods that return new arrays: map for updates, filter for removal, concat or spread for additions. This discipline ensures React detects changes and optimizes renders efficiently. Remember: mutation is the enemy of predictability."
+						title: "Professor Hooksworth's Wisdom:",
+						content:
+							'Master complex state through immutability - the cornerstone of predictable React applications. Create new objects with spread syntax rather than mutating existing ones. For arrays, embrace methods that return new arrays: map for updates, filter for removal, concat or spread for additions. This discipline ensures React detects changes and optimizes renders efficiently. Remember: mutation is the enemy of predictability.',
 					}}
 					reflectionQuestions={[
 						"How does the crystal metaphor help visualize React's change detection?",
 						'Why does Professor Hooksworth call immutability "discipline"?',
-						'What debugging nightmares might arise from mutating state directly?'
+						'What debugging nightmares might arise from mutating state directly?',
 					]}
 					journalEntry={{
 						title: "Aria's Journal - Day 16 (Afternoon)",
-						content: "The Transmutation Lab revealed why so many developers struggle with React state! The Immutability Principle is crucial - React only re-renders when it detects new references, not mutations. Professor Hooksworth showed me how spread operators create new objects while preserving unchanged data. For arrays, methods like map, filter, and concat return new arrays automatically. This isn't just a React quirk - it's a powerful pattern that prevents bugs and enables optimizations. Immutability is the foundation of predictable state!"
+						content:
+							"The Transmutation Lab revealed why so many developers struggle with React state! The Immutability Principle is crucial - React only re-renders when it detects new references, not mutations. Professor Hooksworth showed me how spread operators create new objects while preserving unchanged data. For arrays, methods like map, filter, and concat return new arrays automatically. This isn't just a React quirk - it's a powerful pattern that prevents bugs and enables optimizations. Immutability is the foundation of predictable state!",
 					}}
 				/>
 			</div>

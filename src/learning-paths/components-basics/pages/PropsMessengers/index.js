@@ -314,7 +314,7 @@ function PropsMessengers() {
 			<LessonHeader
 				title='The Props Messengers'
 				subtitle='A story about how information travels in React'
-				opener="Empowered by the magical syntax of JSX, Aria's confidence grew. She could now create components with elegance and clarity. But Professor Syntaxis had hinted at something more - components needed to communicate, to share information and work together. The Props Messenger Guild held the secrets to this vital knowledge, and Aria's next destination was clear."
+				opener='With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, but there was something deeper calling to her. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering component communication - the art of passing information between components with precision and purpose.'
 				totalChapters={3}
 			/>
 
