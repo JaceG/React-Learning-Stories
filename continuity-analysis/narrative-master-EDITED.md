@@ -5319,7 +5319,9 @@ Representatives argued loudly:
 
 **Binary** calculated rapidly. "So many approaches to the same problem! How do we choose?"
 
-**Debuggora** observed the heated debate. "Each approach optimizes for different values - developer experience, performance, or maintainability."
+🔴 ~~**Debuggora** observed the heated debate. "Each approach optimizes for different values - developer experience, performance, or maintainability."~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 **New Characters:**
 
@@ -5439,7 +5441,9 @@ The grand hall displayed holographic forms of increasing complexity - multi-step
 
 **Binary** analyzed the displays. "So many validation patterns! So many state management approaches!"
 
-**Debuggora** perched on a form validator. "Each library optimizes for different use cases. The key is knowing when to use which."
+🔴 ~~**Debuggora** perched on a form validator. "Each library optimizes for different use cases. The key is knowing when to use which."~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 **New Characters:**
 
@@ -5474,7 +5478,9 @@ Form libraries exist because forms are deceptively complex. What starts as a sim
 
 **Binary** activated his performance monitors. "I'll track re-renders, bundle sizes, and execution time!"
 
-**Debuggora** perched between the stations. "Notice how each approach affects debugging and developer experience."
+🔴 ~~**Debuggora** perched between the stations. "Notice how each approach affects debugging and developer experience."~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 **The Workshop Insight:**
 Complex forms reveal each library's strengths. React Hook Form's uncontrolled approach shines in large forms. Formik's controlled components feel natural to React developers. Final Form's subscription model provides ultimate performance control. Consider dynamic fields, conditional logic, multi-step wizards, async validation, and dependencies.
@@ -5529,7 +5535,9 @@ Aria reflected on her journey. "Forms seemed simple at first. But handling user 
 
 Binary finalized his analysis. "Optimal form handling improves both user experience and developer productivity!"
 
-Debuggora prepared for departure. "Next stop: the Style Symposium. Time to explore CSS-in-JS, Tailwind, and more!"
+🔴 ~~Debuggora prepared for departure. "Next stop: the Style Symposium. Time to explore CSS-in-JS, Tailwind, and more!"~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 ---
 
@@ -5547,7 +5555,9 @@ The Motion Monastery floated serenely above the clouds. Animation Abbess Motia g
 
 The Motion Monastery moved constantly - walls shifted, decorations danced, everything flowed. **Animation Abbess Motia** greeted Aria with a gesture that left glowing trails in the air.
 
-"Welcome, 🔴 ~~Ambassador~~ Aria, to where static UIs come to life. Users expect fluid, responsive interfaces. Animation isn't decoration - it's communication."
+"Welcome, Aria, to where static UIs come to life. Users expect fluid, responsive interfaces. Animation isn't decoration - it's communication."
+
+💡 **NOTE:** Ambassador title already removed from this line.
 
 💡 **TITLE FIX:** Aria is a student, not an ambassador.
 
@@ -5592,7 +5602,9 @@ The **React Spring School** felt different - everything moved with physics. **Pr
 
 **Binary** analyzed each approach. "Different algorithms, different optimizations. Fascinating variations!"
 
-**Debuggora** tested performance. "Each library makes different trade-offs. Bundle size versus features, ease versus control."
+🔴 ~~**Debuggora** tested performance. "Each library makes different trade-offs. Bundle size versus features, ease versus control."~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 **The Dojo Insight:**
 Each animation library represents a different philosophy. Framer Motion emphasizes developer experience with its declarative API. React Spring focuses on physics for natural motion. Lottie enables designer-developer collaboration. React Transition Group keeps things simple. The key is matching the library to your needs.
@@ -5626,7 +5638,9 @@ The view revealed a fully animated dashboard - data flowing like rivers, transit
 
 **Binary** calculated the complexity. "So many moving parts, yet performance remains smooth. The optimization is impressive!"
 
-**Debuggora** added, "And notice the accessibility - users who prefer reduced motion get a different but equally functional experience."
+🔴 ~~**Debuggora** added, "And notice the accessibility - users who prefer reduced motion get a different but equally functional experience."~~
+
+💡 **EDIT NOTE (Issue #27):** Removed Debuggora from LP10.
 
 **The Fluid Kingdom Insight:**
 Animation mastery isn't about using every technique - it's about choosing the right technique for each situation. Performance, accessibility, and purpose should guide every animation decision. The best animations feel inevitable, not arbitrary - they guide users, provide feedback, and create delight without overwhelming.
