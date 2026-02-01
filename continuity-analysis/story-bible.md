@@ -179,6 +179,451 @@
 
 ---
 
+## Learning Path 3: Hooks in Action (Advanced)
+
+### Characters
+
+**Master Destructo**
+- **Role**: Master Smith, validation expert
+- **Location**: Validation Vault (Prop Forge)
+- **First Appearance**: LP3.1 Chapter 1
+- **Key Traits**: Focuses on prop validation, PropTypes, TypeScript, immutability
+- **Teaching**: Prop validation, destructuring, spread operator, default values
+
+**Propius** (⚠️ RETURNS from LP1)
+- **Role**: Caravan Master (was Props Messenger in LP1)
+- **Location**: Trade Quarter (PropsCaravans)
+- **First Appearance**: LP1 (returns in LP3.2)
+- **Issue**: Violates "no character returns" rule
+- **Teaching**: Complex prop passing, prop drilling, component composition
+
+**Echo Keeper Callback**
+- **Role**: Guardian of upward communication
+- **Location**: Echo Caves, Echo Tower
+- **First Appearance**: LP3.3 Chapter 1
+- **Key Traits**: Voice creates visible ripples, teaches callbacks
+- **Teaching**: Callback functions, event handling, parent-child communication
+
+**River Master Flux**
+- **Role**: Keeper of data streams
+- **Location**: Cascade District, Data Rivers
+- **First Appearance**: LP3.4 Chapter 1
+- **Key Traits**: Blue robes with water patterns
+- **Teaching**: Unidirectional data flow, props flow direction, cascading
+
+**Dam Master Gatekeeper**
+- **Role**: Flow controller
+- **Location**: Cascade District
+- **First Appearance**: LP3.4 Chapter 2
+- **Key Traits**: Stocky, thick beard with water droplets
+- **Teaching**: Conditional rendering, data filtering, data distribution
+
+---
+
+## Learning Path 4: Hooks In Action
+
+### Characters
+
+**Professor Hooksworth**
+- **Role**: Keeper of Hook Laws
+- **Location**: Hook Academy
+- **First Appearance**: LP4.1 Chapter 1
+- **Key Traits**: Shimmering robes, beard with useState calls, spectacles showing renders
+- **Teaching**: Advanced useState patterns, lazy initial state, functional updates, immutability
+
+**Effect Sage** (implied)
+- **Role**: useEffect teacher
+- **Location**: Hook Academy
+- **First Appearance**: LP4.2 (implied)
+- **Teaching**: useEffect, dependency arrays, cleanup, async operations
+
+**Master Artificer Compose**
+- **Role**: Custom hooks expert
+- **Location**: Hook Forge/Academy
+- **First Appearance**: LP4.3 Chapter 1
+- **Teaching**: Custom hooks, hook composition, reusable logic patterns
+
+**Pattern Weaver Synthesis**
+- **Role**: Pattern synthesis expert
+- **Location**: Grand Context Hall (implied)
+- **First Appearance**: LP4.4 (implied)
+- **Teaching**: Advanced hook patterns, state architecture, optimization
+
+---
+
+## Learning Path 5: Forms & Events
+
+### Characters
+
+**Conductor Eventus**
+- **Role**: Event system conductor
+- **Location**: Event Symphony Hall
+- **First Appearance**: LP5.1 Chapter 1
+- **Teaching**: React's event system, synthetic events, event propagation
+
+**Master Alchemist Formeus**
+- **Role**: Form master
+- **Location**: Alchemist's Laboratory
+- **First Appearance**: LP5.2 Chapter 1
+- **Teaching**: Form management, controlled/uncontrolled components, validation
+
+**Commander Validus**
+- **Role**: Validation commander
+- **Location**: Validation Fortress
+- **First Appearance**: LP5.3 Chapter 1
+- **Teaching**: Form validation, error handling, validation patterns
+
+**Portal Keeper Sage**
+- **Role**: Portal guardian
+- **Location**: Portal Gateway
+- **First Appearance**: LP5.4 Chapter 1
+- **Teaching**: Advanced form patterns, multi-step forms, portal usage
+
+---
+
+## Learning Path 6: Routing Navigation
+
+### Characters
+
+**Captain Marina**
+- **Role**: Navigation expert
+- **Location**: Navigation Compass (harbor/waypoint system)
+- **First Appearance**: LP6.1 Chapter 1
+- **Key Traits**: Warmth and excitement, comprehensive navigation knowledge
+- **Teaching**: Routing, React Router, navigation patterns, route guards
+
+**⚠️ Character Returns in LP6.2 Ch3:**
+- Master Aurelius (LP1)
+- Elder useState (unclear origin)
+- Captain Thunk (unclear origin)
+- Commander Validus (LP5)
+
+---
+
+## Learning Path 7: Performance Optimization
+
+### Characters
+
+**Brother Binary** (⚠️ NAME CONFLICT)
+- **Role**: Eldest monk
+- **Location**: Memory Monastery
+- **First Appearance**: LP7.1 Chapter 1
+- **Issue**: Name conflicts with Aria's companion Binary
+- **Teaching**: Memory leaks, memory profiling, cleanup
+
+**Keeper Chronos** (⚠️ RETURNS from LP1)
+- **Role**: Ancient librarian (was Master Time Keeper at Lifecycle Sanctum in LP1)
+- **Location**: Lazy Library
+- **First Appearance**: LP1 (returns in LP7.2)
+- **Issue**: Violates "no character returns" rule
+- **Teaching**: Lazy loading, code splitting, React.lazy, Suspense
+
+**Vault Guardian Zephyr**
+- **Role**: Virtualization guardian
+- **Location**: Virtualization Vault
+- **First Appearance**: LP7.3 Chapter 1
+- **Key Traits**: Floats effortlessly
+- **Teaching**: Virtual scrolling, windowing, infinite lists
+
+**Master Velocity**
+- **Role**: Optimization master
+- **Location**: Speed Sanctum (Northern Mountains)
+- **First Appearance**: LP7.4 Chapter 1
+- **Key Traits**: Robes with optimization symbols
+- **Teaching**: Memoization, React.memo, useMemo, useCallback
+
+---
+
+## Learning Path 8: Testing Debugging
+
+### Characters
+
+**Test Master Jasmine**
+- **Role**: Testing master
+- **Location**: Testing Tower
+- **First Appearance**: LP8.1 Chapter 1
+- **Teaching**: Unit tests, integration tests, testing strategies
+
+**Debuggora**
+- **Role**: Wise owl companion (travels with Aria through LP8-15)
+- **Location**: Testing Tower (origin)
+- **First Appearance**: LP8.1 Chapter 1
+- **Key Traits**: Can see through code, spots bugs
+- **Teaching**: Debugging, code inspection
+
+**Innkeeper Cypress**
+- **Role**: Integration inn keeper
+- **Location**: Integration Inn
+- **First Appearance**: LP8.2 Chapter 1
+- **Teaching**: Integration testing, mock services, component interaction
+
+**Dungeon Keeper Logsworth**
+- **Role**: Debug dungeon keeper
+- **Location**: Debug Dungeon
+- **First Appearance**: LP8.3 Chapter 1
+- **Key Traits**: Grey beard from years of debugging
+- **Teaching**: Stack traces, production debugging, error tracking
+
+**Guardian Safiya**
+- **Role**: Error sanctuary guardian
+- **Location**: Error Enchantments Sanctuary
+- **First Appearance**: LP8.4 Chapter 1
+- **Teaching**: Error boundaries, error handling, error recovery
+
+---
+
+## Learning Path 9: Advanced Patterns
+
+### Characters
+
+**Dean Architectus**
+- **Role**: Academy dean
+- **Location**: Architect's Academy (floating above kingdom)
+- **First Appearance**: LP9.1 Chapter 1
+- **Key Traits**: Robes decorated with component diagrams
+- **Teaching**: Compound components, architectural patterns
+
+**Pattern Master Renderius**
+- **Role**: Render props expert
+- **Location**: Architect's Academy
+- **First Appearance**: LP9.2 Chapter 1
+- **Teaching**: Render props, delegation patterns, prop getters
+
+**Forge Master Enhance**
+- **Role**: HOC expert
+- **Location**: Enhancement Forge
+- **First Appearance**: LP9.3 Chapter 1
+- **Teaching**: Higher-Order Components, component enhancement, composition
+
+**Portal Keeper Escapius**
+- **Role**: Portals and refs expert
+- **Location**: Architect's Academy
+- **First Appearance**: LP9.4 Chapter 1
+- **Teaching**: React Portals, refs, imperative DOM access
+
+---
+
+## Learning Path 10: React Ecosystem
+
+### Characters
+
+**⚠️ Master Aurelius RETURNS** (CRITICAL)
+- **Location**: Great Council Chamber
+- **Appearance**: LP10.1 Chapter 1
+- **Issue**: Actively summons Aria, speaks, assigns mission
+- **Recommendation**: REMOVE - can be mentioned only
+
+**Emperor Dispatcher**
+- **Role**: Redux Empire ruler
+- **Location**: Redux Empire
+- **First Appearance**: LP10.1 Chapter 2
+- **Teaching**: Redux, actions, reducers, middleware
+
+**Chief Observer** (MobX)
+- **Role**: MobX territory chief
+- **Location**: MobX Territory
+- **Teaching**: Reactive programming, observables
+
+**Elder Simplicity** (Zustand)
+- **Role**: Zustand settlements elder
+- **Location**: Zustand Settlements
+- **Teaching**: Simple state management
+
+**Atom Master** (Recoil)
+- **Role**: Recoil regions teacher
+- **Location**: Recoil Regions
+- **Teaching**: Atomic state, fine-grained reactivity
+
+**Moderator Stylus**
+- **Role**: Style symposium moderator
+- **Location**: Great Style Symposium
+- **First Appearance**: LP10.2 Chapter 1
+- **Teaching**: CSS-in-JS, styling approaches
+
+**Federal Form Chancellor**
+- **Role**: Form federation leader
+- **Location**: Form Federation HQ
+- **First Appearance**: LP10.3 Chapter 1
+- **Teaching**: Form libraries, React Hook Form, Formik
+
+**Abbess Motia**
+- **Role**: Animation monastery leader
+- **Location**: Motion Monastery
+- **First Appearance**: LP10.4 Chapter 1
+- **Key Traits**: Gestures leave glowing trails
+- **Teaching**: Animation libraries, Framer Motion, React Spring
+
+**Professor Spring** (React Spring School)
+- **Role**: Physics-based animation teacher
+- **Location**: Motion Monastery
+- **Teaching**: React Spring, physics-based motion
+
+---
+
+## Learning Path 11: Server Data
+
+### Characters
+
+**⚠️ Master Aurelius RETURNS AGAIN** (CRITICAL)
+- **Location**: Observation deck near Cloud Citadel
+- **Appearance**: LP11.1 Chapter 1
+- **Issue**: Actively participates, stands with Aria
+- **Recommendation**: REMOVE - can be mentioned only
+
+**Cloud Keeper Axios**
+- **Role**: Cloud citadel keeper
+- **Location**: Cloud Citadel
+- **First Appearance**: LP11.1 Chapter 1
+- **Teaching**: API integration, REST, GraphQL, WebSockets
+
+**Stream Sage WebSocket**
+- **Role**: Real-time connection sage
+- **Location**: Cloud Citadel
+- **First Appearance**: LP11.2 Chapter 1
+- **Teaching**: WebSockets, Server-Sent Events, real-time data
+
+**Cache Lord Redux**
+- **Role**: Caching expert (distant cousin of Emperor Dispatcher)
+- **Location**: Caching Castle
+- **First Appearance**: LP11.3 Chapter 1
+- **Teaching**: Caching strategies, cache invalidation, performance
+
+**Query Master Apollo**
+- **Role**: GraphQL expert
+- **Location**: GraphQL Gateway
+- **First Appearance**: LP11.4 Chapter 1
+- **Teaching**: GraphQL queries, schemas, mutations, Apollo Client
+
+---
+
+## Learning Path 12: TypeScript React
+
+### Characters
+
+**Master Typus**
+- **Role**: Type Forge keeper
+- **Location**: Type Forge (beneath React Kingdom)
+- **First Appearance**: LP12.1 Chapter 1
+- **Key Traits**: Beard sparks with type annotations, hammer glows with strict mode
+- **Teaching**: TypeScript basics, type safety, interfaces
+
+**Master Forger Typhos**
+- **Role**: Component typing expert
+- **Location**: Component Armory
+- **First Appearance**: LP12.2 Chapter 1
+- **Teaching**: Component typing, hook typing, generic components
+
+**Commander Guardia**
+- **Role**: Type guard commander
+- **Location**: Type Guard Tower
+- **First Appearance**: LP12.4 Chapter 1
+- **Teaching**: Type guards, runtime validation, type narrowing
+
+---
+
+## Learning Path 13: Build & Deploy
+
+### Characters
+
+**Admiral Webpack**
+- **Role**: Build systems admiral
+- **Location**: Deployment Armada (harbor)
+- **First Appearance**: LP13.1 Chapter 1
+- **Teaching**: Build systems, optimization, tree shaking, code splitting
+
+**Captain Pipeline**
+- **Role**: CI/CD expert
+- **Location**: Automation Harbor
+- **First Appearance**: LP13.2 Chapter 1
+- **Teaching**: CI/CD pipelines, automated testing, deployment automation
+
+**Navigator Hosting/Vercel**
+- **Role**: Hosting navigator
+- **Location**: Platform Archipelago
+- **First Appearance**: LP13.3 Chapter 1
+- **Teaching**: Hosting platforms, deployment strategies, CDN
+
+**Commander Deployment**
+- **Role**: Production readiness commander
+- **Location**: Production War Room
+- **First Appearance**: LP13.4 Chapter 1
+- **Teaching**: Monitoring, incident response, production best practices
+
+---
+
+## Learning Path 14: React Native
+
+### Characters
+
+**Frontier Marshal Native**
+- **Role**: Mobile frontier marshal
+- **Location**: Mobile Frontier
+- **First Appearance**: LP14.1 Chapter 1
+- **Teaching**: React Native basics, native components, platform differences
+
+---
+
+## Learning Path 15: Accessibility
+
+### Characters
+
+**Empress Inclusiva**
+- **Role**: Inclusive Empire leader
+- **Location**: Inclusive Empire (philosophy touching all quarters)
+- **First Appearance**: LP15.1 Chapter 1
+- **Key Traits**: Gentle smile, sees everything and nothing
+- **Teaching**: Accessibility philosophy, inclusive design
+
+**Guardian Semantic**
+- **Role**: Semantic HTML guardian
+- **Location**: Foundation Hall
+- **First Appearance**: LP15.1 Chapter 2
+- **Teaching**: Semantic HTML, proper element usage
+
+**Guardian Keyboard**
+- **Role**: Keyboard accessibility guardian
+- **Location**: Keyboard Kingdom
+- **First Appearance**: LP15.2 Chapter 1
+- **Teaching**: Keyboard navigation, focus management, tab order
+
+**Guardian Audio**
+- **Role**: Screen reader guardian
+- **Location**: Screen Reader Sanctuary
+- **First Appearance**: LP15.2 Chapter 2
+- **Teaching**: Screen reader compatibility, ARIA labels
+
+**Guardian Spectrum**
+- **Role**: Visual accessibility guardian
+- **Location**: Color Conservatory, Contrast Citadel
+- **First Appearance**: LP15.3 Chapter 1
+- **Teaching**: Color contrast, visual accessibility
+
+**Guardian Equilibrium**
+- **Role**: Motion accessibility guardian
+- **Location**: Motion Manor
+- **First Appearance**: LP15.3 Chapter 3
+- **Teaching**: Motion preferences, vestibular considerations
+
+**Master Validator**
+- **Role**: Accessibility testing master
+- **Location**: Testing Tower (accessibility)
+- **First Appearance**: LP15.4 Chapter 1
+- **Teaching**: Accessibility testing, WCAG compliance
+
+**Compliance Commander**
+- **Role**: Standards compliance expert
+- **Location**: Audit Arena
+- **First Appearance**: LP15.4 Chapter 2
+- **Teaching**: WCAG standards, compliance audits
+
+**Culture Keeper**
+- **Role**: Accessibility culture guardian
+- **Location**: Culture Citadel
+- **First Appearance**: LP15.4 Chapter 3
+- **Teaching**: Building accessibility culture, sustainable practices
+
+---
+
 ## Plot Timeline
 
 ### Arc 1: Component Fundamentals (Learning Path 1: Components Basics)
