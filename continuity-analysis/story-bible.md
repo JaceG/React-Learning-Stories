@@ -175,7 +175,265 @@
 - Mentor: Chronos (Master Time Keeper)
 - Lessons taught: Component lifecycle, mounting, updating, unmounting, cleanup
 
-[More locations to be added in future learning paths]
+### Additional LP3-15 Locations
+
+**Trade Quarter** (LP3.2)
+- Location: PropsCaravans
+- Key features: Morning markets, caravans, wagon routes
+- Mentor: Propius (Caravan Master - returns from LP1)
+- Teaching: Complex prop passing, prop drilling
+
+**Validation Vault** (LP3.1)
+- Location: Prop Forge
+- Key features: Testing runes, quality seals
+- Mentor: Master Destructo
+- Teaching: Prop validation, PropTypes, TypeScript
+
+**Echo Caves/Tower** (LP3.3)
+- Location: Echo Caves (mountainside)
+- Key features: Sounds travel upward defying gravity, crystalline formations
+- Mentor: Echo Keeper Callback
+- Teaching: Callbacks, event handling, upward communication
+
+**Cascade District** (LP3.4)
+- Location: Data Rivers
+- Key features: Rivers with unidirectional flow, dams, gates, waterfalls, bridges, aqueducts
+- Mentors: River Master Flux, Dam Master Gatekeeper
+- Teaching: Unidirectional data flow, conditional rendering, data distribution
+
+**Hook Academy** (LP4)
+- Location: Northern Quarter (implied)
+- Key features: Circular classroom, hovering spell books, floating crystals
+- Mentor: Professor Hooksworth
+- Teaching: Advanced useState, useEffect, custom hooks
+
+**Event Symphony Hall** (LP5.1)
+- Location: Western Quarter
+- Mentor: Conductor Eventus
+- Teaching: React event system, synthetic events, event propagation
+
+**Alchemist's Laboratory** (LP5.2)
+- Location: Western Quarter
+- Mentor: Master Alchemist Formeus
+- Teaching: Form management, controlled/uncontrolled components
+
+**Validation Fortress** (LP5.3)
+- Location: Western Quarter
+- Mentor: Commander Validus
+- Teaching: Form validation, error handling
+
+**Portal Gateway** (LP5.4)
+- Location: Western Quarter
+- Mentor: Portal Keeper Sage
+- Teaching: Advanced form patterns, multi-step forms
+
+**Navigation Compass** (LP6)
+- Location: Harbor/Waypoint system
+- Key features: Floating maps, holographic displays, waypoint control center
+- Mentor: Captain Marina
+- Teaching: Routing, React Router, navigation patterns
+
+**Guardian Gates** (LP6.3)
+- Location: Navigation system
+- Key features: Security diagrams, gate systems
+- Mentor: Captain Marina (continues)
+- Teaching: Route guards, authentication, authorization
+
+**Portal Passages** (LP6.4)
+- Location: Navigation system
+- Key features: Holographic portals, modal chambers
+- Mentor: Captain Marina (continues)
+- Teaching: Modal navigation, overlays, parallel routes
+
+**Memory Monastery** (LP7.1)
+- Location: Floating in clouds above React Kingdom
+- Key features: Observatory with ethereal memory representations, viewing portals
+- Mentor: Brother Binary (⚠️ name conflict with Aria's companion)
+- Teaching: Memory leaks, memory profiling, cleanup
+
+**Lazy Library** (LP7.2)
+- Location: Mystical repository
+- Key features: Towering shelves, books blocked at entrance, floating books in Lazy Wing
+- Mentor: Keeper Chronos (⚠️ returns from LP1)
+- Teaching: Lazy loading, code splitting, React.lazy, Suspense
+
+**Virtualization Vault** (LP7.3)
+- Location: Deep beneath React Kingdom
+- Key features: Endless archive with millions of scrolls, infinite shelves
+- Mentor: Vault Guardian Zephyr
+- Teaching: Virtual scrolling, windowing, infinite lists
+
+**Speed Sanctum** (LP7.4)
+- Location: Northern Mountains
+- Key features: Optimization crystals, vital sign displays
+- Mentor: Master Velocity
+- Teaching: Memoization, React.memo, useMemo, useCallback
+
+**Testing Tower** (LP8.1)
+- Location: Underground Realms
+- Key features: First line of defense, circular chamber with glowing portals, Continuous Integration Engine
+- Mentors: Test Master Jasmine, Debuggora (owl)
+- Teaching: Unit tests, integration tests, automated testing
+
+**Integration Inn** (LP8.2)
+- Location: Underground Realms
+- Key features: Warm tavern, Mock Service Chamber with magical mirrors
+- Mentor: Innkeeper Cypress
+- Teaching: Integration testing, mock services, component interaction
+
+**Debug Dungeon** (LP8.3)
+- Location: Below Testing Tower
+- Key features: Maze of error logs and stack traces, labyrinth, deepest chamber
+- Mentor: Dungeon Keeper Logsworth
+- Teaching: Stack traces, production debugging, error tracking
+
+**Error Enchantments Sanctuary** (LP8.4)
+- Location: Underground Realms
+- Key features: Errors float as glowing orbs, boundary workshop, monitors
+- Mentor: Guardian Safiya
+- Teaching: Error boundaries, error handling, production errors
+
+**Architect's Academy** (LP9)
+- Location: Floating above React Kingdom
+- Key features: Crystalline structure, constantly shifting/reconfiguring, Bonding Chamber, Enhancement Forge
+- Mentors: Dean Architectus, Pattern Master Renderius, Forge Master Enhance, Portal Keeper Escapius
+- Teaching: Compound components, render props, HOCs, portals & refs
+
+**Allied Kingdoms** (LP10.1)
+- Redux Empire (Emperor Dispatcher)
+- MobX Territory (Chief Observer)
+- Zustand Settlements (Elder Simplicity)
+- Recoil Regions (Atom Master)
+- Jotai Archipelago
+- Teaching: External state management libraries
+
+**Great Style Symposium** (LP10.2)
+- Mentor: Moderator Stylus
+- Teaching: CSS-in-JS approaches, styling philosophies
+
+**Form Federation HQ** (LP10.3)
+- Key features: Holographic forms, demonstration stations
+- Mentors: Federal Form Chancellor, React Hook Form Ambassador, Formik Leader
+- Teaching: Form libraries comparison
+
+**Motion Monastery** (LP10.4)
+- Key features: Walls shift/move, decorations dance, multiple dojos (Framer Motion, React Spring)
+- Mentors: Abbess Motia, Professor Spring
+- Teaching: Animation libraries
+
+**Cloud Citadel** (LP11.1)
+- Location: Floating above React Kingdom
+- Key features: Massive floating structure, connected by ethereal data streams, Protocol Chambers, sky bridge
+- Mentor: Cloud Keeper Axios
+- Teaching: API integration, REST, GraphQL, WebSockets
+
+**Real-time Streams** (LP11.2)
+- Location: Cloud Citadel area
+- Mentor: Stream Sage WebSocket
+- Teaching: WebSockets, Server-Sent Events, real-time data
+
+**Caching Castle** (LP11.3)
+- Key features: Memory vaults organized by freshness
+- Mentor: Cache Lord Redux
+- Teaching: Caching strategies, cache invalidation
+
+**GraphQL Gateway** (LP11.4)
+- Key features: Schema Scrolls, query language displays
+- Mentor: Query Master Apollo
+- Teaching: GraphQL queries, schemas, mutations
+
+**Type Forge** (LP12.1)
+- Location: Deep beneath React Kingdom (via Cloud Citadel lower passages)
+- Key features: Ancient power, unbreakable contracts, hammering sounds, Contract Chamber
+- Mentor: Master Typus
+- Teaching: TypeScript basics, type safety, interfaces
+
+**Component Armory** (LP12.2-3)
+- Location: Type Forge area
+- Key features: Blue flames, type armor forging, Hook Forge chamber, Master's Chamber
+- Mentor: Master Forger Typhos
+- Teaching: Component typing, hook typing, generic components
+
+**Type Guard Tower** (LP12.4)
+- Location: High tower watching over TypeScript realm
+- Key features: Glowing type signatures on walls
+- Mentor: Commander Guardia
+- Teaching: Type guards, runtime validation, type narrowing
+
+**Deployment Armada** (LP13.1)
+- Location: Harbor
+- Key features: Ships being loaded, optimization shipyard
+- Mentor: Admiral Webpack
+- Teaching: Build systems, optimization, tree shaking, code splitting
+
+**Automation Harbor** (LP13.2)
+- Key features: Automated shipping activities, pipeline workshop
+- Mentor: Captain Pipeline
+- Teaching: CI/CD pipelines, automated testing, deployment
+
+**Platform Archipelago** (LP13.3)
+- Key features: Multiple hosting islands (Vercel, Netlify, AWS), global network
+- Mentor: Navigator Hosting/Vercel
+- Teaching: Hosting platforms, deployment strategies, CDN
+
+**Production War Room** (LP13.4)
+- Key features: Monitoring dashboards, control displays, alert systems
+- Mentor: Commander Deployment
+- Teaching: Monitoring, incident response, production practices
+
+**Mobile Frontier** (LP14)
+- Location: Beyond Web Kingdom borders
+- Key features: Border checkpoint, Component Trading Post, Style Frontier
+- Mentor: Frontier Marshal Native
+- Teaching: React Native basics, native components, platform differences
+
+**Inclusive Empire** (LP15)
+- Location: Philosophy throughout all quarters (not separate kingdom)
+- Key features: Throne room with multiple accessibility features (ramps, audio, varied text)
+- Mentor: Empress Inclusiva
+- Teaching: Accessibility philosophy, inclusive design
+
+**Foundation Hall** (LP15.1)
+- Location: Inclusive Empire
+- Mentor: Guardian Semantic
+- Teaching: Semantic HTML, proper element usage
+
+**Keyboard Kingdom** (LP15.2)
+- Location: Inclusive Empire
+- Key features: Navigated entirely without mice
+- Mentor: Guardian Keyboard
+- Teaching: Keyboard navigation, focus management
+
+**Screen Reader Sanctuary** (LP15.2)
+- Location: Inclusive Empire
+- Mentor: Guardian Audio
+- Teaching: Screen reader compatibility, ARIA labels
+
+**Color Conservatory & Contrast Citadel** (LP15.3)
+- Location: Inclusive Empire
+- Mentor: Guardian Spectrum
+- Teaching: Color contrast, visual accessibility
+
+**Motion Manor** (LP15.3)
+- Location: Inclusive Empire (floating)
+- Key features: Walls shift and dance mysteriously
+- Mentor: Guardian Equilibrium
+- Teaching: Motion preferences, vestibular considerations
+
+**Testing Tower** (accessibility) (LP15.4)
+- Key features: Many windows with tools
+- Mentor: Master Validator
+- Teaching: Accessibility testing, WCAG compliance
+
+**Audit Arena** (LP15.4)
+- Key features: Scrolls of standards (WCAG, Section 508, ADA)
+- Mentor: Compliance Commander
+- Teaching: Standards compliance, audits
+
+**Culture Citadel** (LP15.4)
+- Key features: Glows with shared purpose
+- Mentor: Culture Keeper
+- Teaching: Building accessibility culture, sustainable practices
 
 ---
 
