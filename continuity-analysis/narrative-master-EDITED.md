@@ -124,19 +124,23 @@ After mastering individual workshops, Aria discovered that components could work
 "For the Component Kingdom to function properly,"
 						Aurelius explained, "workshops must communicate with
 						each other. Watch how the master builder App sends
-						special messengers carrying bags called 
-						**Props** to each workshop. These props
-						contain all the specifications a workshop needs to
-						create its piece."
+						special messengers 🔴 ~~carrying bags called~~
+						~~**Props** to each workshop. These props~~
+						~~contain all the specifications a workshop needs to~~
+						~~create its piece~~🟢 **to deliver instructions to each workshop. These messengers ensure every component knows exactly what to create**."
+
+💡 **EDIT NOTE:** Made Props reference more vague/high-level. Full Props teaching moved to LP1.2 (Issue #1).
 
 **Story Group 2:**
 
-Aria watched in fascination. "So each workshop receives these props and uses them to determine exactly what to build and how it should behave?"
+Aria watched in fascination. "So each workshop receives 🔴 ~~these props~~ 🟢 **instructions** and uses them to determine exactly what to build and how it should behave?"
 
-"Precisely!" Aurelius confirmed. "Props can contain any type of information - text, numbers, functions, or even other components! It's how we create harmony in the kingdom."
+"Precisely!" Aurelius confirmed. 🔴 ~~"Props can contain any type of information - text, numbers, functions, or even other components!~~ 🟢 **"The Eastern Quarter's Props Messengers Guild will teach you the details of this communication system.** It's how we create harmony in the kingdom."
 
 **Master Aurelius's Wisdom:**
-Props are how components talk to each other. They're passed from parent to child, like arguments to a function. Props allow components to be flexible and reusable with different data and behaviors. Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.
+🔴 ~~Props are how~~ 🟢 **Components need a way to** talk to each other. They're 🔴 ~~passed~~ 🟢 **instructed** from parent to child, like 🔴 ~~arguments to a function~~ 🟢 **orders flowing down a chain of command**. 🔴 ~~Props allow~~ 🟢 **This communication system allows** components to be flexible and reusable with different data and behaviors. 🔴 ~~Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.~~ 🟢 **The Props Messengers Guild will reveal the secrets of this system.**
+
+💡 **EDIT NOTE:** Removed specific Props details, kept concept general. Full teaching in LP1.2.
 
 **Reflection Questions:**
 
@@ -144,7 +148,9 @@ Props are how components talk to each other. They're passed from parent to child
 - Why is it important that props can carry different types of data (strings, numbers, functions)?
 
 **Aria's Journal - Day 2**
-*The props system is genius! Instead of each workshop guessing what to make, they receive clear instructions. I tried sending different props to the Button workshop, and it adapted perfectly each time. Tomorrow, Aurelius says I'll learn about component families working together!*
+*🔴 ~~The props system is genius!~~ 🟢 **Components communicate through messengers!** Instead of each workshop guessing what to make, they receive clear instructions. 🔴 ~~I tried sending different props to the Button workshop, and it adapted perfectly each time.~~ 🟢 **Aurelius mentioned the Props Messengers Guild in the Eastern Quarter will teach me the full system.** Tomorrow, Aurelius says I'll learn about component families working together!*
+
+💡 **EDIT NOTE:** Made journal entry match the more vague Ch2 content (Issue #1/#2 fix).
 
 ---
 
@@ -196,7 +202,9 @@ Aria clutched the scroll, excited for her next adventure. She had learned to cre
 
 ### 📖 Lesson Opener
 
-With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, but there was something deeper calling to her. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering component communication - the art of passing information between components with precision and purpose.
+With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, 🔴 ~~but there was something deeper calling to her~~ 🟢 **and seen the messengers that enable communication between them**. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering 🔴 ~~component communication~~ 🟢 **this messenger system** - the art of passing information between components with precision and purpose.
+
+💡 **EDIT NOTE:** Acknowledges Aria saw communication system in LP1.1, now learning details (Issue #2 fix).
 
 ### Chapter 1: Guild Master's Prop Patterns
 
@@ -211,8 +219,8 @@ The Props Messenger Guild was a hive of activity.
 						Aria warmly.
 
 "Welcome, apprentice Aria! Master Aurelius told me about
-						your progress with components. Now you'll learn how we
-						enable communication in the kingdom." Hermes gestured to
+						your progress with components. 🔴 ~~Now you'll learn how we~~
+						~~enable communication in the kingdom.~~" 🟢 **You've seen our messengers at work in the Component Kingdom. Now you'll master the full system."** Hermes gestured to
 						the busy messengers. "These are our 
 						**Props** - special messengers who carry
 						instructions from parent components to their children."
@@ -222,7 +230,9 @@ The Props Messenger Guild was a hive of activity.
 						messengers to tell each workshop exactly what to
 						create?"
 
-"Precisely!" Hermes smiled. "Watch how a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked."
+"Precisely!" Hermes smiled. 🔴 ~~"Watch how~~ 🟢 **"But there's much more to learn. Watch how** a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked."
+
+💡 **EDIT NOTE:** Hermes acknowledges Aria's prior exposure, frames as deepening knowledge (Issue #2 fix).
 
 **Story Group 2:**
 
