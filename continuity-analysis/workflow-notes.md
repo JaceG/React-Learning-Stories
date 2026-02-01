@@ -14,6 +14,12 @@
 
 ## Review Process Reminders
 
+### CRITICAL: No Scripts for Review
+- **DO NOT use scripts/automation for content review**
+- **MUST manually read all Story Groups**
+- No shortcuts - each Learning Path requires careful reading
+- Quality over speed
+
 ### Character Appearance Rules
 - **Characters should NOT return across Learning Paths**
 - Previous teachers/characters can be MENTIONED (e.g., "Master Aurelius taught you about components")
