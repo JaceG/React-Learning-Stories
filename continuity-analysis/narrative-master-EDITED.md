@@ -6235,7 +6235,9 @@ The forge displayed various component templates, each glowing with TypeScript's 
 
 **Binary** examined the forge's blueprints. "These type definitions... they're like armor specifications!"
 
-**Debuggora** perched on a type anvil. "With proper typing, errors are caught during forging, not in battle—I mean, production."
+🔴 ~~**Debuggora** perched on a type anvil. "With proper typing, errors are caught during forging, not in battle—I mean, production."~~
+
+💡 **EDIT NOTE (Issue #40):** Removed Debuggora from LP12.2.
 
 Typhos lifted a glowing component template. "Each piece of armor serves a purpose. Choose wisely, for your components will face many challenges."
 
@@ -6321,7 +6323,7 @@ Advanced TypeScript patterns transform React development from a craft into an ar
 - When is complexity justified in type definitions? Think about the balance between type safety, developer experience, and maintainability.
 
 **Aria's Journal - Day 46 (Evening)**
-*Master Typhos took me to the Master's Chamber today—the deepest sanctum of the Component Armory. I learned the most powerful type patterns: Conditional Type Armor that adapts based on props, Mapped Type Chainmail that transforms properties, Utility Types like Partial and Pick, and Type Guard Shields for runtime checking. The real-world challenges pushed me to create Polymorphic Components, Type-Safe Form Libraries, and Design System Types. Binary called it "meta-programming—types that generate other types!" Debuggora noted these catch errors she didn't know were possible to detect. Typhos's final wisdom: "Power without wisdom is chaos." My Type Strength reached 100%—I've mastered the Component Armory!*
+*Master Typhos took me to the Master's Chamber today—the deepest sanctum of the Component Armory. I learned the most powerful type patterns: Conditional Type Armor that adapts based on props, Mapped Type Chainmail that transforms properties, Utility Types like Partial and Pick, and Type Guard Shields for runtime checking. The real-world challenges pushed me to create Polymorphic Components, Type-Safe Form Libraries, and Design System Types. Binary called it "meta-programming—types that generate other types!"* 🔴 ~~Debuggora noted these catch errors she didn't know were possible to detect.~~ *Typhos's final wisdom: "Power without wisdom is chaos." My Type Strength reached 100%—I've mastered the Component Armory!*
 
 **Chapter Ending:**
 
@@ -6331,7 +6333,9 @@ Aria examined her arsenal of type-safe components. "I understand now. Types aren
 
 Binary compiled the final statistics. "100% type coverage achieved. Zero runtime type errors possible. Mission complete!"
 
-Debuggora smiled. "With these patterns, debugging becomes almost unnecessary. The types catch everything!"
+🔴 ~~Debuggora smiled. "With these patterns, debugging becomes almost unnecessary. The types catch everything!"~~
+
+💡 **EDIT NOTE (Issue #40):** Removed Debuggora from LP12.2.
 
 "Your training here is complete," Typhos declared. "But the realm of types holds deeper secrets still. In the Generic Forge, you'll learn to create components that adapt to any data type—true type flexibility without sacrificing safety..."
 
@@ -6355,7 +6359,9 @@ The Generic Forge glowed with an otherworldly light as **Master Typhos** began t
 
 **Binary** analyzed the patterns. "Fascinating! The type parameter acts as a placeholder until the component is used, then TypeScript fills in the exact type needed."
 
-**Debuggora** perched on a type anvil. "No more 'any' types everywhere! These generics catch type mismatches while staying flexible."
+🔴 ~~**Debuggora** perched on a type anvil. "No more 'any' types everywhere! These generics catch type mismatches while staying flexible."~~
+
+💡 **EDIT NOTE (Issue #41):** Removed Debuggora from LP12.3.
 
 "Begin with the basics," Typhos instructed. "Master simple generics before attempting complex constraints. Each pattern builds upon the last."
 
@@ -6392,7 +6398,9 @@ He demonstrated a generic that only accepted certain types. "Constraints are lik
 
 **Binary** analyzed the constraint syntax. "So we can create generics that adapt their behavior based on the input type? That's incredibly sophisticated!"
 
-**Debuggora** watched the type transformations. "With these constraints, we can catch impossible states at compile time. No more runtime surprises!"
+🔴 ~~**Debuggora** watched the type transformations. "With these constraints, we can catch impossible states at compile time. No more runtime surprises!"~~
+
+💡 **EDIT NOTE (Issue #41):** Removed Debuggora from LP12.3.
 
 "Conditional types," Typhos continued, "are the ultimate expression of type flexibility. They allow your generics to make decisions."
 
@@ -6424,7 +6432,9 @@ The forge erupted with complex type patterns, each more intricate than the last.
 
 **Binary** analyzed the type flows. "These compositions... they're creating entire type systems! The inference chains are incredible!"
 
-**Debuggora** traced through the generic transformations. "With these patterns, we can build frameworks that are both incredibly flexible and completely type-safe!"
+🔴 ~~**Debuggora** traced through the generic transformations. "With these patterns, we can build frameworks that are both incredibly flexible and completely type-safe!"~~
+
+💡 **EDIT NOTE (Issue #41):** Removed Debuggora from LP12.3.
 
 "The ultimate test," Typhos declared, "is not just understanding these patterns, but knowing when and how to apply them. Power without wisdom is chaos."
 
@@ -6471,7 +6481,9 @@ The tower's walls displayed glowing type signatures, each protected by vigilant 
 
 **Binary** scanned the defensive patterns. "These guards... they're like sentries that check types at runtime and inform the compiler!"
 
-**Debuggora** perched on a battlement. "No more runtime type errors sneaking past our defenses. These guards catch them all!"
+🔴 ~~**Debuggora** perched on a battlement. "No more runtime type errors sneaking past our defenses. These guards catch them all!"~~
+
+💡 **EDIT NOTE (Issue #42):** Removed Debuggora from LP12.4.
 
 "Begin with the basic guards," Guardia instructed. "Master these, and no type uncertainty will breach your defenses."
 
@@ -6506,7 +6518,9 @@ The walls displayed intricate type hierarchies and nested structures. "Advanced 
 
 **Binary** analyzed the patterns. "These guards can validate entire data structures recursively! No malformed data can slip through."
 
-**Debuggora** traced the validation flows. "With exhaustive checking, we catch every edge case. The compiler becomes our ally!"
+🔴 ~~**Debuggora** traced the validation flows. "With exhaustive checking, we catch every edge case. The compiler becomes our ally!"~~
+
+💡 **EDIT NOTE (Issue #42):** Removed Debuggora from LP12.4.
 
 "Master these patterns," Guardia commanded, "and you'll guard against the most insidious type errors - the ones that hide in complexity."
 
@@ -6536,7 +6550,9 @@ The chamber displayed countless JavaScript codebases, each representing a differ
 
 **Binary** calculated the scope. "Millions of lines of JavaScript... but with the right strategy, we can type them all safely!"
 
-**Debuggora** studied the migration paths. "Each codebase needs its own approach. There's no one-size-fits-all solution."
+🔴 ~~**Debuggora** studied the migration paths. "Each codebase needs its own approach. There's no one-size-fits-all solution."~~
+
+💡 **EDIT NOTE (Issue #42):** Removed Debuggora from LP12.4.
 
 "The true test of a Type Guard," Guardia declared, "is not just protecting new code, but safely transforming the old. Master this, and you become a true guardian of type safety."
 
