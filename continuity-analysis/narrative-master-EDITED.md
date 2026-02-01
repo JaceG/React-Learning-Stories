@@ -810,20 +810,26 @@ Binary chirped excitedly. "Master Hooke makes the most powerful hooks in all of 
 
 "You've already met my most popular creation," Hooke
 						said with pride, holding up a gleaming hook. "The 
-						**useState** hook! But let me show you its
-						full potential..."
+						**useState** hook! 🔴 ~~But let me show you its~~
+						~~full potential~~🟢 **Memnon taught you well. But here at the Forge, you'll learn about the full hook family - each one crafted for a specific purpose**..."
+
+💡 **EDIT NOTE:** Acknowledges Aria learned useState from Memnon, focuses on hook family (Issue #9/#10 fix).
 
 **Story Group 2:**
 
-She led Aria to a workbench where a crystalline apparatus glowed softly. "useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"
+She led Aria to a workbench where a crystalline apparatus glowed softly. 🔴 ~~"useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"~~ 🟢 **"Each hook I forge serves a unique purpose," Hooke explained. "You know useState for memory. Soon you'll meet useEffect for side effects, useRef for persistent references, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."**
+
+💡 **EDIT NOTE:** Changed from re-teaching useState to introducing hook family concept.
 
 **New Characters:**
 
 **Forge Master Hooke**
-Maker of the most powerful hooks in all of React Kingdom, crafting each one at glowing anvils where crystalline tubes carry pure React energy. Sparks fly from the hooks she forges as she teaches their potential. "The useState hook is my most popular creation! It gives functional components memory - something only class components could do before hooks were invented."
+Maker of the most powerful hooks in all of React Kingdom, crafting each one at glowing anvils where crystalline tubes carry pure React energy. Sparks fly from the hooks she forges as she teaches their potential. 🔴 ~~"The useState hook is my most popular creation! It gives functional components memory - something only class components could do before hooks were invented."~~ 🟢 **"I forge each hook for a specific purpose. useState for memory, useEffect for side effects, useRef for persistence, useMemo for optimization. Together, they give functional components abilities that once required complex class components."**
 
 **Master Hooke's Wisdom:**
-The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly.
+🔴 ~~The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly.~~ 🟢 **Hooks are specialized tools, each crafted for a specific purpose. The key is understanding which hook to use when. useState for component memory, useEffect for external world interactions, useRef for values that persist but don't trigger re-renders, useMemo for expensive computations, useCallback for stable function references. Master the forge's full collection, and you'll wield the complete power of functional React components.**
+
+💡 **EDIT NOTE:** Shifted from useState details (covered by Memnon) to hook family overview.
 
 **Reflection Questions:**
 
