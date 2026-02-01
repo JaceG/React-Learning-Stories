@@ -105,6 +105,27 @@
 
 ---
 
+### React Ecosystem (Learning Path 10) & Server Data (Learning Path 11)
+
+**Issue #21: Master Aurelius Returns Across Multiple LPs**
+- **Severity**: CRITICAL (violates core rule multiple times)
+- **Type**: Character Issues
+- **Description**: Master Aurelius (from LP1 Component Basics) actively returns multiple times:
+  - LP10.1 Ch1: "Master Aurelius summoned Aria to the Great Council Chamber" - speaks and gives mission
+  - LP11.1 Ch1: "Master Aurelius stood beside Aria on the observation deck" - actively participates in scene
+- **Location**: StateManagementLibraries (10.1) Ch1, ApiIntegration (11.1) Ch1
+- **Recommendation**: REMOVE all appearances. Master Aurelius can be mentioned ("As Master Aurelius taught...") but should NOT actively participate.
+
+**Note: Debuggora (owl from LP8)** appears to become a permanent traveling companion like Binary. This seems intentional throughout LP9-11.
+
+---
+
+### Advanced Patterns (Learning Path 9)
+
+**Positive Note**: LP9.3 Ch1 has excellent MENTION-only approach: "Master Aurelius warned about refs in my early training" - perfect example of how to reference previous teachers!
+
+---
+
 ### Performance Optimization (Learning Path 7)
 
 **Issue #19: Chronos Returns from LP1**
