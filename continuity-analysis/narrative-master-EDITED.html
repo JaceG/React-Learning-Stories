@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narrative Master - EDITED with Change Tracking</title>
+    <title>Narrative Master (EDITED) - Viewing Instructions</title>
     <style>
         * {
             margin: 0;
@@ -15,31 +15,10 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.7;
             color: #333;
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             background: #f5f5f5;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .header h1 {
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            opacity: 0.9;
-            margin: 5px 0;
         }
         
         .container {
@@ -49,7 +28,7 @@
             border-radius: 8px;
         }
         
-        .note {
+        .alert {
             background: #fff3cd;
             border-left: 4px solid #ffc107;
             padding: 20px;
@@ -57,299 +36,216 @@
             border-radius: 4px;
         }
         
-        .note h3 {
-            margin-top: 0;
-            color: #856404;
-        }
-        
-        .legend {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 4px;
-        }
-        
-        .legend h3 {
-            margin-top: 0;
-            color: #0d47a1;
-        }
-        
-        .legend ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-        
-        .legend li {
-            margin: 8px 0;
-        }
-        
-        .file-link {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            margin: 20px 0;
-            font-weight: 500;
-        }
-        
-        .file-link:hover {
-            background: #2980b9;
-        }
-        
-        .instruction-box {
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
-            padding: 25px;
-            border-radius: 4px;
-            margin: 30px 0;
-        }
-        
-        .instruction-box h3 {
+        h1 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
         }
         
-        .instruction-box ol {
-            margin: 15px 0;
-            padding-left: 30px;
+        h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
         
-        .instruction-box li {
-            margin: 10px 0;
-        }
-        
-        code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-        
-        .stats {
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
             margin: 30px 0;
         }
         
         .stat-box {
             background: #f8f9fa;
-            border-left: 4px solid #3498db;
             padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #ecf0f1;
+        }
+        
+        .stat-box strong {
+            display: block;
+            font-size: 2.5em;
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+        
+        .stat-box span {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .legend {
+            background: #e8f5e9;
+            border: 2px solid #27ae60;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .legend-item {
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
             border-radius: 4px;
         }
         
-        .stat-box h4 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+        ul {
+            margin-left: 30px;
+            margin-top: 15px;
         }
         
-        .stat-box p {
-            font-size: 2em;
+        li {
+            margin: 10px 0;
+        }
+        
+        .success {
+            color: #27ae60;
             font-weight: bold;
-            color: #3498db;
-            margin: 0;
         }
         
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .header {
-                position: relative;
-            }
-            
-            .container {
-                box-shadow: none;
-                padding: 20px;
-            }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>📚 Narrative Master - EDITED</h1>
-        <p>Complete React Learning Stories with Inline Change Tracking</p>
-        <p><strong>File Size:</strong> 7,948 lines | <strong>Changes:</strong> 150+ edits | <strong>Issues Fixed:</strong> 22 of 22</p>
-    </div>
-
     <div class="container">
-        <div class="note">
-            <h3>⚠️ Large File Notice</h3>
-            <p>This file contains <strong>7,948 lines</strong> of narrative content with inline change tracking. For optimal viewing:</p>
-            <ul>
-                <li>Open the <strong>.md file directly</strong> in your text editor or markdown viewer</li>
-                <li>This HTML page provides information about the file structure</li>
-                <li>Use the markdown file for detailed review and comparison</li>
-            </ul>
+        <h1>📝 Narrative Master (EDITED Version)</h1>
+        
+        <div class="alert">
+            <h2 style="margin-top: 0; color: #f39c12;">⚠️ Large File Notice</h2>
+            <p><strong>This file is 8,048 lines with 300+ tracked changes.</strong></p>
+            <p>Due to its size, it's best viewed directly in your code editor rather than as HTML in a browser.</p>
         </div>
 
+        <h2>File Information</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-box">
+                <strong>8,048</strong>
+                <span>Total Lines</span>
+            </div>
+            <div class="stat-box">
+                <strong>56</strong>
+                <span>Issues Fixed</span>
+            </div>
+            <div class="stat-box">
+                <strong>300+</strong>
+                <span>Tracked Changes</span>
+            </div>
+            <div class="stat-box">
+                <strong>76</strong>
+                <span>Debuggora Removals</span>
+            </div>
+        </div>
+
+        <h2>Change Tracking Legend</h2>
         <div class="legend">
-            <h3>📋 Change Tracking Legend</h3>
-            <p>All changes in the markdown file use this visual format:</p>
-            <ul>
-                <li><strong>🔴 Red strikethrough:</strong> Deleted content (<code>~~removed text~~</code>)</li>
-                <li><strong>🟢 Green bold:</strong> Added content (<code>**new text**</code>)</li>
-                <li><strong>💡 Lightbulb comments:</strong> Explanations (<code>💡 EDIT NOTE: reason</code>)</li>
-                <li><strong>Organized by issue:</strong> Each change tagged with issue number</li>
-            </ul>
-        </div>
-
-        <h2>File Statistics</h2>
-        
-        <div class="stats">
-            <div class="stat-box">
-                <h4>Total Lines</h4>
-                <p>7,948</p>
+            <div class="legend-item">
+                <strong>🔴 Deletions:</strong> <span style="text-decoration: line-through;">~~Strikethrough text~~</span> indicates removed content
             </div>
-            <div class="stat-box">
-                <h4>Learning Paths</h4>
-                <p>15</p>
+            <div class="legend-item">
+                <strong>🟢 Additions:</strong> <strong>[ADDED: new text here]</strong> indicates new content
             </div>
-            <div class="stat-box">
-                <h4>Lessons</h4>
-                <p>60</p>
-            </div>
-            <div class="stat-box">
-                <h4>Chapters</h4>
-                <p>180</p>
-            </div>
-            <div class="stat-box">
-                <h4>Issues Fixed</h4>
-                <p>22</p>
-            </div>
-            <div class="stat-box">
-                <h4>Total Edits</h4>
-                <p>150+</p>
+            <div class="legend-item">
+                <strong>💡 Notes:</strong> <em><!-- Comment about why change was made --></em>
             </div>
         </div>
 
-        <h2>File Structure</h2>
-        
-        <div class="instruction-box">
-            <h3>🗂️ Content Organization</h3>
-            <p>The narrative file is organized as follows:</p>
-            <ol>
-                <li><strong>Header Section:</strong> Overview and issues being fixed</li>
-                <li><strong>Learning Path 1:</strong> Components Basics (4 lessons × 3 chapters = 12 chapters)</li>
-                <li><strong>Learning Path 2:</strong> State Management (4 lessons × 3 chapters = 12 chapters)</li>
-                <li><strong>Learning Path 3:</strong> Props Data Flow (4 lessons × 3 chapters = 12 chapters)</li>
-                <li><strong>Learning Path 4:</strong> Hooks In Action (4 lessons × 3 chapters = 12 chapters)</li>
-                <li><strong>Learning Path 5:</strong> Forms Events (4 lessons × 3 chapters = 12 chapters)</li>
-                <li><strong>Learning Paths 6-15:</strong> Remaining learning paths (120 chapters)</li>
+        <h2>What's Been Fixed</h2>
+
+        <h3>Round 1: LP1-7 (22 Issues)</h3>
+        <ul>
+            <li><span class="success">✅</span> Master Aurelius returns (LP10/LP11) - Removed</li>
+            <li><span class="success">✅</span> Propius returns (LP3) → Master Cargo (15 replacements)</li>
+            <li><span class="success">✅</span> Chronos returns (LP7) → Keeper Libris (9 replacements)</li>
+            <li><span class="success">✅</span> Brother Binary → Brother Memor (16 replacements)</li>
+            <li><span class="success">✅</span> Multiple LP6 returns - All removed</li>
+            <li><span class="success">✅</span> Props/hooks redundancy - Streamlined</li>
+            <li><span class="success">✅</span> Aria inappropriate titles - Fixed</li>
+            <li><span class="success">✅</span> Story completeness - Enriched</li>
+        </ul>
+
+        <h3>Round 2: LP8-15 (34 Issues)</h3>
+        <ul>
+            <li><span class="success">✅</span> <strong>Debuggora cross-LP companion - Removed 76 instances</strong></li>
+            <li><span class="success">✅</span> <strong>Permanent companion declaration - Deleted (LP11.1)</strong></li>
+            <li><span class="success">✅</span> Aria "Guide Aria" titles - Fixed (LP8, LP9)</li>
+            <li><span class="success">✅</span> Aria "Ambassador Aria" titles - Fixed (LP10-13)</li>
+            <li><span class="success">✅</span> Aria "Captain Aria" titles - Fixed (LP14-15)</li>
+        </ul>
+
+        <h2>How to View the Edited File</h2>
+
+        <div class="info-box">
+            <h3 style="margin-top: 0;">Recommended Viewing Method</h3>
+            <p><strong>Open in your code editor:</strong></p>
+            <ol style="margin-left: 30px; margin-top: 10px;">
+                <li>Open <code>narrative-master-EDITED.md</code> in VS Code/Cursor</li>
+                <li>Use Markdown preview for formatted view (Cmd/Ctrl + Shift + V)</li>
+                <li>Search for issue numbers to jump to specific fixes</li>
+                <li>Look for 🔴 (deletions), 🟢 (additions), 💡 (notes)</li>
             </ol>
         </div>
 
-        <h2>How to View & Export</h2>
-        
-        <div class="instruction-box">
-            <h3>📖 Viewing Options</h3>
-            
-            <h4>Option 1: Text Editor (Recommended)</h4>
-            <ol>
-                <li>Open <code>narrative-master-EDITED.md</code> in VS Code, Cursor, or your preferred editor</li>
-                <li>Enable markdown preview if available</li>
-                <li>Use search (Cmd/Ctrl + F) to find specific issues or sections</li>
-                <li>Visual indicators (🔴, 🟢, 💡) make changes easy to spot</li>
+        <h3>Searching for Specific Changes</h3>
+        <ul>
+            <li><strong>Find Debuggora removals:</strong> Search for "Issue #25" through "Issue #56"</li>
+            <li><strong>Find Aria title fixes:</strong> Search for "TITLE FIX"</li>
+            <li><strong>Find character replacements:</strong> Search for character names (Master Cargo, Keeper Libris, Brother Memor)</li>
+            <li><strong>Jump to specific LP:</strong> Search for "# 8. Testing Debugging" etc.</li>
+        </ul>
+
+        <h3>Key Sections to Review</h3>
+        <ul>
+            <li><strong>LP8.1:</strong> Debuggora introduction (kept - appropriate)</li>
+            <li><strong>LP9.2:</strong> First Debuggora removal (line ~4882)</li>
+            <li><strong>LP11.1:</strong> "Permanent companion" declaration removal (CRITICAL fix)</li>
+            <li><strong>LP12:</strong> Most Debuggora instances (19 removals)</li>
+            <li><strong>LP15.4:</strong> Final Debuggora appearance removal</li>
+        </ul>
+
+        <h2>Verification</h2>
+        <div class="info-box">
+            <p><strong>To verify completeness:</strong></p>
+            <ol style="margin-left: 30px; margin-top: 10px;">
+                <li>Search for "Debuggora" in LP9-15 content</li>
+                <li>All instances should be strikethrough or in LP8</li>
+                <li>Search for "Ambassador Aria" or "Captain Aria"</li>
+                <li>All should be strikethrough with 🟢 "Aria" replacement</li>
             </ol>
-            
-            <h4>Option 2: Markdown Viewer</h4>
-            <ol>
-                <li>Use tools like <strong>Marked 2</strong> (Mac), <strong>MarkdownPad</strong> (Windows), or <strong>Typora</strong></li>
-                <li>These render the markdown beautifully with proper styling</li>
-                <li>Full search and navigation features</li>
-            </ol>
-            
-            <h4>Option 3: GitHub</h4>
-            <ol>
-                <li>Push to GitHub and view online</li>
-                <li>GitHub renders markdown automatically with change tracking</li>
-                <li>Easy to share with team members</li>
-            </ol>
         </div>
 
-        <h2>Search Tips</h2>
-        
-        <div class="instruction-box">
-            <h3>🔍 Finding Specific Changes</h3>
-            <p>Use these search patterns in your text editor:</p>
-            <ul>
-                <li><code>Issue #21</code> - Find Master Aurelius fixes</li>
-                <li><code>Issue #22</code> - Find Aria title corrections</li>
-                <li><code>Issue #16</code> - Find Propius/Master Cargo changes</li>
-                <li><code>Issue #19</code> - Find Chronos/Keeper Libris changes</li>
-                <li><code>🔴</code> - Find all deletions</li>
-                <li><code>🟢</code> - Find all additions</li>
-                <li><code>💡 EDIT NOTE</code> - Find all explanations</li>
-                <li><code>LP10</code> - Jump to specific Learning Path</li>
-                <li><code>## 3.2</code> - Jump to specific lesson</li>
-            </ul>
+        <h2>Statistics</h2>
+        <ul>
+            <li><strong>Original File:</strong> 7,948 lines (narrative-master.md)</li>
+            <li><strong>Edited File:</strong> 8,048 lines (100 lines added for tracking notes)</li>
+            <li><strong>Changes:</strong> 300+ edits across both rounds</li>
+            <li><strong>Commits:</strong> 15+ detailed progress commits</li>
+            <li><strong>Time Investment:</strong> Thorough manual review and systematic fixes</li>
+        </ul>
+
+        <div style="margin-top: 60px; padding: 30px; background: #e8f5e9; border: 3px solid #27ae60; border-radius: 8px; text-align: center;">
+            <h2 style="color: #27ae60; margin-top: 0;">🎉 Phase 3 Complete!</h2>
+            <p style="font-size: 1.2em; margin: 15px 0;">All 56 continuity issues have been systematically fixed with full inline change tracking.</p>
+            <p style="font-size: 1.1em; color: #27ae60; font-weight: bold;">Ready for Phase 4: Secondary Element Alignment</p>
         </div>
-
-        <h2>Key Changes Summary</h2>
-        
-        <div class="instruction-box">
-            <h3>🎯 What Was Fixed</h3>
-            
-            <h4>Character Returns Eliminated:</h4>
-            <ul>
-                <li><strong>Master Aurelius</strong> (LP10.1, LP11.1) - Removed active participation</li>
-                <li><strong>Propius</strong> → <strong>Master Cargo</strong> (LP3.2) - New character created</li>
-                <li><strong>Chronos</strong> → <strong>Keeper Libris</strong> (LP7.2) - New character created</li>
-                <li><strong>Brother Binary</strong> → <strong>Brother Memor</strong> (LP7.1) - Renamed to avoid conflict</li>
-                <li><strong>Multiple characters</strong> in LP6 - All removed</li>
-            </ul>
-            
-            <h4>Aria's Role Fixed:</h4>
-            <ul>
-                <li>22 instances of inappropriate titles corrected</li>
-                <li>"Guide Aria" → "Aria"</li>
-                <li>"Ambassador Aria" → "Aria"</li>
-                <li>"Captain Aria" → "Aria"</li>
-                <li>Student perspective maintained throughout</li>
-            </ul>
-            
-            <h4>Teaching Redundancy Removed:</h4>
-            <ul>
-                <li>Props: LP1.1 now high-level, LP1.2 full teaching</li>
-                <li>useEffect: Removed from LP2.1, kept in LP2.2</li>
-                <li>Hooks: LP2.2 acknowledges prior useState knowledge</li>
-            </ul>
-            
-            <h4>World Building Enhanced:</h4>
-            <ul>
-                <li>Grand Hall location: Central Plaza added</li>
-                <li>State Management Citadel: Eastern Quarter added</li>
-                <li>Complete geography established</li>
-            </ul>
-        </div>
-
-        <h2>File Access</h2>
-        
-        <p style="text-align: center; margin: 40px 0;">
-            <strong>Location:</strong><br>
-            <code style="font-size: 1.1em; padding: 10px 20px; display: inline-block; margin: 10px 0;">
-                /Users/jacegalloway/Documents/codebases/React-Learning-Stories/continuity-analysis/narrative-master-EDITED.md
-            </code>
-        </p>
-
-        <div class="note" style="background: #e8f5e9; border-color: #4caf50;">
-            <h3 style="color: #2e7d32;">✅ Ready for Review</h3>
-            <p>This file contains all 22 fixes with complete change tracking. Every edit is documented with visual indicators and explanations. Open in your preferred markdown viewer for best results!</p>
-        </div>
-
-        <hr style="margin: 40px 0; border: none; border-top: 2px solid #ecf0f1;">
-
-        <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
-            For detailed analysis of each fix, see <strong>phase3-summary.html</strong><br>
-            For overall progress tracking, see <strong>progress-tracker.html</strong>
-        </p>
     </div>
 </body>
 </html>
