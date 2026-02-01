@@ -96,7 +96,12 @@
 - **Location**: PropForge Ch1  
 - **Recommendation**: Either introduce Flux earlier or change to a character already met.
 
-**POSITIVE NOTE**: Propius returns from LP1 PropsMessengers! Excellent continuity - evolved from Props Messenger to Caravan Master. This is how returning characters should work!
+**Issue #16: Propius Returns Across Learning Paths**
+- **Severity**: Medium
+- **Type**: Character Issues
+- **Description**: Propius (from LP1 PropsMessengers) returns as an active character in LP3 PropsCaravans. Per user requirements, characters should only be MENTIONED across Learning Paths, not return as active participants. Each LP should have its own cast.
+- **Location**: PropsCaravans Ch1-3
+- **Recommendation**: Replace Propius with a new Caravan Master character. Can mention that "Propius from the Props Messenger Guild recommended you" but shouldn't have him actively teaching again.
 
 ---
 
