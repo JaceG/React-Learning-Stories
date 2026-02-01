@@ -745,37 +745,45 @@ The principle of immutability is sacred in the React Kingdom. When you modify st
 
 ---
 
-### Chapter 3: The Side Effect Enchantments
+### Chapter 3: 🔴 ~~The Side Effect Enchantments~~ 🟢 **The State Mastery**
 
 **Bridge:**
-As State Sorcerers advanced in their studies, they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component.
+As State Sorcerers advanced in their studies, 🔴 ~~they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component~~ 🟢 **Memnon revealed the deeper mysteries of state mastery - the patterns that separate novices from true sorcerers**.
+
+💡 **EDIT NOTE:** Removed useEffect from LP2.1 Ch3. All useEffect teaching now in LP2.2 (Issue #7 fix).
 
 **Narrative:**
 
 **Story Group 1:**
 
-"There exists a second magical hook," explained Memnon, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."
+🔴 ~~"There exists a second magical hook," explained Memnon, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."~~
+
+🟢 **"There's one final lesson," Memnon said, his eyes twinkling with wisdom. "State is powerful, but only if wielded correctly. You must understand when to use it, how to structure it, and how to lift it when necessary. These patterns will serve you throughout your React journey."**
 
 **Memnon's Final Wisdom:**
-The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them.
+🔴 ~~The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them.~~
+
+🟢 **State is powerful but should be used wisely. Keep state close to where it's needed. When multiple components need the same state, lift it to their nearest common ancestor. Structure your state to minimize unnecessary re-renders. These principles - co-location, lifting state up, and single source of truth - are the foundation of maintainable React applications. Tomorrow at the Hook Forge, you'll discover the full arsenal of tools that work with state.**
 
 **Reflection Questions:**
 
-- How does Memnon's teaching about "consequences" help you understand the purpose of useEffect?
-- Why do you think the dependency array is so important in controlling when effects run?
+- 🔴 ~~How does Memnon's teaching about "consequences" help you understand the purpose of useEffect?~~
+- 🔴 ~~Why do you think the dependency array is so important in controlling when effects run?~~
+- 🟢 **How does understanding state patterns help you structure your React applications?**
+- 🟢 **Why is it important to keep state close to where it's used instead of always putting it at the top level?**
 
 **Aria's Journal - Day 8 (Evening)**
-*What an incredible day with the State Sorcerers! After learning useState and immutability, Memnon revealed the useEffect hook - the gateway between a component's inner world and everything beyond! I collected enchanted artifacts and watched the effects trigger automatically when state changed. The dependency array is like a watchlist - telling React exactly which state changes should trigger the effect. Binary explained that effects can reach out to APIs, update the document title, or set up subscriptions. The key insight: state gives components memory, but useEffect gives them the power to interact with the outside world!*
+*What an incredible day with the State Sorcerers! 🔴 ~~After learning useState and immutability, Memnon revealed the useEffect hook - the gateway between a component's inner world and everything beyond! I collected enchanted artifacts and watched the effects trigger automatically when state changed. The dependency array is like a watchlist - telling React exactly which state changes should trigger the effect. Binary explained that effects can reach out to APIs, update the document title, or set up subscriptions. The key insight: state gives components memory, but useEffect gives them the power to interact with the outside world!~~ 🟢 **I've mastered useState and immutability! Memnon taught me the sacred patterns: co-locate state near where it's used, lift state up when multiple components need it, and maintain a single source of truth. The spread operator is my ally for immutable updates. Tomorrow I journey to the Hook Forge to discover the full toolkit of React hooks that work alongside useState!***
 
 **Chapter Ending:**
 
 As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. "You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most."
 
-Binary twirled happily. "Tomorrow you'll learn about hooks - special spells that give functional components even more power!"
+Binary twirled happily. "Tomorrow you'll learn about 🔴 ~~hooks~~ 🟢 **the full collection of hooks** - special spells that give functional components even more power!"
 
-"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you'll discover useState and useEffect have many magical siblings. Each one grants unique powers to those wise enough to wield them."
+"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you'll discover 🔴 ~~useState and useEffect~~ 🟢 **useState** has many magical siblings. Each one grants unique powers to those wise enough to wield them."
 
-Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, effects - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!
+Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, 🔴 ~~effects~~ 🟢 **patterns** - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!
 
 ---
 
