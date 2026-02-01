@@ -238,6 +238,12 @@ The Props Messenger Guild was a hive of activity.
 
 "Props can contain various types of information," Hermes explained as Aria experimented with the messengers. "Text strings, numbers, boolean flags, functions, arrays, objects, and even other components! This flexibility allows for rich communication between components."
 
+🟢 **Binary noticed guards stationed at various workshops. "Who are they?"**
+
+🟢 **"Ah, the PropTypes Guardians," Hermes smiled. "They ensure messengers deliver the correct types of props. You'll meet them properly in your final lesson here."**
+
+💡 **EDIT NOTE:** Added foreshadowing of PropTypes Guardians (Issue #3 fix).
+
 **New Characters:**
 
 **Hermes**
