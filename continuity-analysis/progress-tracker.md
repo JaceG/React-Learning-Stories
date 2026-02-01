@@ -29,9 +29,12 @@
 
 **Phase 3.5 Plan**: ✅ COMPLETE - Execution plan created
 - `PHASE-3.5-PLAN.md` created (18 major issues + 4 systematic passes)
+- `REWRITE-SAMPLES.md` created (4 major rewrite options with samples)
+- `PHASE-3.5-EXECUTION-PLAN.md` created (user decisions recorded + execution plan)
 - Categorized: 11 critical, 4 systematic passes, 7 polish
-- Includes inline sample strategy for major rewrites
-- Ready to execute
+- User decisions recorded for all 4 major rewrites
+- Redundancy verification completed
+- Ready to execute Phase 3.5A
 
 ---
 
