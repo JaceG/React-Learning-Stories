@@ -4979,7 +4979,9 @@ As Aria left the floating academy, Binary computed their growth. "We've come so 
 
 ### 📖 Lesson Opener
 
-Master Aurelius summoned Aria to the Great Council Chamber. "Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management." A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.
+🔴 ~~Master Aurelius summoned Aria to the Great Council Chamber.~~ 🟢 **A summons arrived at Aria's quarters, sealed with the React Kingdom's crest.** 🔴 ~~"Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management."~~ 🟢 **The message read: "Ambassador Aria, your mastery of React's internal arts has prepared you for a new mission. We require an ambassador to the Allied Kingdoms - each with their own approach to state management."** A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.
+
+💡 **EDIT NOTE:** Removed Master Aurelius (LP1 character) from active participation. Changed to passive summons/message format.
 
 ### Chapter 1: The Ambassador's Mission
 
@@ -4987,11 +4989,29 @@ Master Aurelius summoned Aria to the Great Council Chamber. "Guide Aria, you've 
 
 **Story Group 1:**
 
-**Master Aurelius** summoned Aria to the Great Council Chamber. "Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management."
+---
+🔴 **DELETED:**
+> ~~**Master Aurelius** summoned Aria to the Great Council Chamber. "Guide Aria, you've mastered React's internal arts. Now, we need you as an ambassador to the Allied Kingdoms - each with their own approach to state management."~~
+---
 
-A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.
+---
+🟢 **ADDED:**
+> **Aria stood in the Great Council Chamber, studying the summons she'd received. The Council's appointed ambassador role was a great honor - a recognition of everything she'd learned from her journey through the React Kingdom.**
+---
 
-"Each kingdom has developed its own state management philosophy," Aurelius explained. "As our ambassador, you'll learn their ways and bring back wisdom to strengthen our own kingdom."
+A magical map unfurled 🔴 ~~, showing~~ 🟢 **before her, revealing** kingdoms beyond React's borders: The Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and the Jotai Archipelago.
+
+---
+🔴 **DELETED:**
+> ~~"Each kingdom has developed its own state management philosophy," Aurelius explained. "As our ambassador, you'll learn their ways and bring back wisdom to strengthen our own kingdom."~~
+---
+
+---
+🟢 **ADDED:**
+> **"Each kingdom has developed its own state management philosophy," the summons continued. "As our ambassador, you'll learn their ways and bring back wisdom to strengthen our own kingdom. Your mentors - from Master Aurelius to Captain Marina - have prepared you well for this journey."**
+---
+
+💡 **EDIT NOTE:** Master Aurelius mentioned but not actively present (appropriate reference to LP1 mentor).
 
 **Binary** upgraded his translation modules. "I'm ready to interpret different state management dialects!"
 
@@ -4999,8 +5019,13 @@ A magical map unfurled, showing kingdoms beyond React's borders: The Redux Empir
 
 **New Characters:**
 
-**Master Aurelius**
-Founder and guide of the React Kingdom. His philosophy: "Understanding multiple approaches makes you a better architect, even if you only use one."
+---
+🔴 **DELETED ENTIRE CHARACTER ENTRY:**
+> ~~**Master Aurelius**~~  
+> ~~Founder and guide of the React Kingdom. His philosophy: "Understanding multiple approaches makes you a better architect, even if you only use one."~~
+
+💡 **WHY:** Master Aurelius is from LP1 and shouldn't be listed as new character in LP10.
+---
 
 **The Ecosystem Lesson:**
 Every state management library solves the same core problems differently. The React ecosystem thrives because of this diversity - each solution pushes others to improve, and developers benefit from choices that match their specific needs.
@@ -5011,14 +5036,16 @@ Every state management library solves the same core problems differently. The Re
 - How does learning multiple approaches improve your architectural decisions?
 
 **Aria's Journal - Day 37 (Morning)**
-*Master Aurelius has appointed me as ambassador to the Allied Kingdoms! Beyond React's borders lie the Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and Jotai Archipelago. Each kingdom has its own philosophy: Redux values predictability and debugging, MobX embraces reactive programming, Zustand champions simplicity, while Recoil and Jotai focus on fine-grained reactivity. Binary upgraded his translation modules to interpret different state dialects. Aurelius's wisdom: "The key isn't finding the 'best' solution, but the right solution for your specific needs." ${exploredKingdoms.length} kingdoms explored!*
+*🔴 ~~Master Aurelius has appointed me~~ 🟢 **I've been appointed by the Council** as ambassador to the Allied Kingdoms! Beyond React's borders lie the Redux Empire, MobX Territory, Zustand Settlements, Recoil Regions, and Jotai Archipelago. Each kingdom has its own philosophy: Redux values predictability and debugging, MobX embraces reactive programming, Zustand champions simplicity, while Recoil and Jotai focus on fine-grained reactivity. Binary upgraded his translation modules to interpret different state dialects. 🔴 ~~Aurelius's wisdom:~~ 🟢 **The summons reminded me:** "The key isn't finding the 'best' solution, but the right solution for your specific needs." ${exploredKingdoms.length} kingdoms explored!*
 
 ---
 
 ### Chapter 2: The Redux Empire
 
 **Bridge:**
-With the map of Allied Kingdoms studied, Aria set out on her first diplomatic visit. "The Redux Empire is the largest and most established," Master Aurelius advised. "Their patterns have influenced many, including our own useReducer. Learn their ways carefully."
+With the map of Allied Kingdoms studied, Aria set out on her first diplomatic visit. 🔴 ~~"The Redux Empire is the largest and most established," Master Aurelius advised. "Their patterns have influenced many, including our own useReducer. Learn their ways carefully."~~ 🟢 **The summons had included detailed notes: "The Redux Empire is the largest and most established. Their patterns have influenced many, including our own useReducer. Learn their ways carefully."**
+
+💡 **EDIT NOTE:** Changed Aurelius's direct advice to information from the summons.
 
 **Narrative:**
 
@@ -5449,11 +5476,23 @@ The morning mist parted to reveal the Cloud Citadel - a massive structure floati
 
 **Story Group 1:**
 
-The morning mist parted to reveal the Cloud Citadel - a massive structure floating above the React Kingdom, connected by ethereal data streams. Master Aurelius stood beside Aria on the observation deck.
+The morning mist parted to reveal the Cloud Citadel - a massive structure floating above the React Kingdom, connected by ethereal data streams. 🔴 ~~Master Aurelius stood beside Aria on the observation deck.~~ 
 
-"Ambassador Aria," he began, using her new title with pride, "you've mastered client-side React. But modern applications need data from beyond our borders. The Cloud Citadel holds the keys to server communication."
+---
+🟢 **ADDED:**
+> **Aria stood on the observation deck, her ambassador credentials granting her access to this elevated realm. Her journey through the React Kingdom - from Master Aurelius's component lessons to Captain Marina's navigation mastery - had prepared her for this next frontier.**
+---
+
+🔴 ~~"Ambassador Aria," he began, using her new title with pride, "you've mastered client-side React. But modern applications need data from beyond our borders. The Cloud Citadel holds the keys to server communication."~~
+
+---
+🟢 **ADDED:**
+> **"Ambassador Aria," a voice called. She'd mastered client-side React through her kingdom journey. Now modern applications demanded knowledge of data from beyond their borders. The Cloud Citadel held the keys to server communication.**
+---
 
 As they approached via sky bridge, **Cloud Keeper Axios** greeted them. "Welcome! Here, we bridge the gap between earth and sky, client and server. Your first lesson: speaking with distant servers."
+
+💡 **EDIT NOTE:** Removed Master Aurelius (LP1 character) from active participation. Aria arrives independently as ambassador.
 
 **Binary's** circuits adapted, growing new communication modules. "I'm detecting multiple data streams, Aria. JSON, XML, GraphQL... each has its own patterns!"
 
