@@ -27,6 +27,12 @@
 - `review-coverage-map.md` created (detailed status)
 - **90+ annotations** from pages 21-103 (LP2-5, LP7)
 
+**Phase 3.5 Plan**: ✅ COMPLETE - Execution plan created
+- `PHASE-3.5-PLAN.md` created (18 major issues + 4 systematic passes)
+- Categorized: 11 critical, 4 systematic passes, 7 polish
+- Includes inline sample strategy for major rewrites
+- Ready to execute
+
 ---
 
 ## Overall Progress - REVISED
