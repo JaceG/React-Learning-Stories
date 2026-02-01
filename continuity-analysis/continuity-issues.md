@@ -105,6 +105,24 @@
 
 ---
 
+### Performance Optimization (Learning Path 7)
+
+**Issue #19: Chronos Returns from LP1**
+- **Severity**: HIGH (violates core rule)
+- **Type**: Character Issues
+- **Description**: Chronos (Master Time Keeper from LP1 LifecycleChronicles) returns in LP7 as "Keeper Chronos" teaching lazy loading at the Lazy Library.
+- **Location**: LazyLibrary (7.2) all chapters
+- **Recommendation**: Replace with new librarian character. Can mention "As Chronos taught about lifecycle timing..."
+
+**Issue #20: Confusing Character Name - Brother Binary**
+- **Severity**: Medium  
+- **Type**: Character Issues
+- **Description**: LP7.1 introduces "Brother Binary" as a monk at Memory Monastery. This is confusing since Binary is Aria's traveling companion throughout all LPs.
+- **Location**: MemoryMonastery (7.1) all chapters
+- **Recommendation**: Rename to avoid confusion - perhaps "Brother Memorious" or "Monk Retention"
+
+---
+
 ### Routing Navigation (Learning Path 6)
 
 **Issue #17: Multiple Characters Return from Previous LPs**
