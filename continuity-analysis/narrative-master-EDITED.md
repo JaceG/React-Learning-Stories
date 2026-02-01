@@ -784,6 +784,14 @@ As State Sorcerers advanced in their studies, 🔴 ~~they discovered that change
 
 🟢 **"There's one final lesson," Memnon said, his eyes twinkling with wisdom. "State is powerful, but only if wielded correctly. You must understand when to use it, how to structure it, and how to lift it when necessary. These patterns will serve you throughout your React journey."**
 
+🟢 **He led Aria to a demonstration chamber where component models floated in the air. "Observe this common mistake," Memnon gestured, and a component diagram appeared showing state scattered across many distant components. "Each component hoards its own state, forcing complex prop chains to share information."**
+
+🟢 **With a wave of his staff, the diagram transformed. State bubbles lifted upward, settling at strategic points where multiple components could access them easily. "This is the art of lifting state up - placing shared state at the lowest common ancestor. It simplifies your architecture and reduces redundant data."**
+
+🟢 **Binary projected calculations showing how the optimized structure required 60% fewer prop passes. "State co-location," he explained, "means keeping state close to where it's used, but lifting it when sharing is needed. It's about finding the right balance!"**
+
+💡 **EDIT NOTE:** Expanded Story Group 1 with visual demonstration and interaction (Issue #8 fix).
+
 **Memnon's Final Wisdom:**
 🔴 ~~The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them.~~
 
