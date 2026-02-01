@@ -1933,7 +1933,9 @@ Binary beeped excitedly. "From water to fire! This journey keeps getting more in
 
 ### 📖 Lesson Opener
 
-The Hooks Academy stood as a modern marvel - a gleaming tower of glass and steel that seemed to defy the traditional stone architecture of React Kingdom. As Aria approached with Binary, holographic runes floated in the air, demonstrating various hook patterns. This was where React's most advanced magic was taught, where functional components gained powers once reserved for classes.
+🔴 ~~The Hooks Academy stood as a modern marvel - a gleaming tower of glass and steel that seemed to defy the traditional stone architecture of React Kingdom.~~ 🟢 **The Advanced Hooks Sanctuary stood as a modern marvel - a gleaming tower of glass and steel where masters refined their hook expertise.** As Aria approached with Binary, holographic runes floated in the air, demonstrating various hook patterns. 🔴 ~~This was where React's most advanced magic was taught, where functional components gained powers once reserved for classes.~~ 🟢 **Having learned useState basics from Memnon, Aria was ready to master advanced patterns that separated professionals from beginners.**
+
+💡 **EDIT NOTE:** Reduced Academy references, reframed to acknowledge prior useState learning with Memnon. Issue #3.5B-Task1.
 
 ### Chapter 1: Advanced State Incantations
 
@@ -1952,7 +1954,9 @@ In a circular classroom filled with hovering spell books, Aria found a distingui
 
 Binary chirped a greeting, projecting a small hologram of their previous adventures.
 
-"Impressive companion!" Hooksworth noted. "Now, I understand you've mastered basic state management with the State Sorcerers. But here at the Academy, we refine those crude spells into elegant hooks."
+"Impressive companion!" Hooksworth noted. "Now, I understand you've learned useState basics with Memnon at the State Sorcerers. 🔴 ~~But here at the Academy, we refine those crude spells into elegant hooks.~~" 🟢 **Today, we'll take that foundation and master the advanced patterns that professionals use - techniques that transform good state management into exceptional architecture.**"
+
+💡 **EDIT NOTE:** Acknowledged Memnon's useState teaching, removed "crude spells" dismissal, reframed as mastery not basics.
 
 He waved his wand, and glowing runes appeared in the
 							air. "Let's begin with an advanced pattern - 
@@ -1983,19 +1987,25 @@ Master useState through advanced patterns that separate novices from experts. La
 
 **Reflection Questions:**
 
-- How does the Academy's modern setting reflect the evolution from classes to hooks?
+- 🔴 ~~How does the Academy's modern setting reflect the evolution from classes to hooks?~~ 🟢 **How does lazy initialization improve performance compared to computing on every render?**
 - Why might Professor Hooksworth call functional updates "crucial for rapid interactions"?
 - What real-world scenarios would benefit from lazy initialization?
 
+💡 **EDIT NOTE:** Replaced Academy-focused question with technical pattern question.
+
 **Aria's Journal - Day 16 (Morning)**
-*The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur. Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! And functional updates ensure I always work with the latest state, avoiding race conditions. These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!*
+*🔴 ~~The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur.~~ 🟢 **Professor Hooksworth took my useState knowledge from Memnon to the next level with advanced patterns I hadn't encountered!** Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! And functional updates ensure I always work with the latest state, avoiding race conditions. 🔴 ~~These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!~~ 🟢 **These patterns separate novice developers from professionals. This is mastery, not just basics!***
+
+💡 **EDIT NOTE:** Acknowledged prior Memnon learning, focused on advancement not replacement, removed excessive Academy praise.
 
 ---
 
 ### Chapter 2: State of Complex Objects
 
 **Bridge:**
-The next day, Aria found herself in the Academy's Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes.
+The next day, Aria found herself in 🔴 ~~the Academy's~~ 🟢 **the** Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes.
+
+💡 **EDIT NOTE:** Removed Academy reference from bridge.
 
 **Narrative:**
 
@@ -2041,7 +2051,9 @@ Master complex state through immutability - the cornerstone of predictable React
 ### Chapter 3: State Architecture Mastery
 
 **Bridge:**
-On her final day with Professor Hooksworth, Aria was led to the Academy's Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams.
+On her final day with Professor Hooksworth, Aria was led to 🔴 ~~the Academy's~~ 🟢 **the** Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams.
+
+💡 **EDIT NOTE:** Removed Academy reference from Ch3 bridge.
 
 **Narrative:**
 
@@ -2085,7 +2097,9 @@ As the Architecture Chamber's diagrams faded, Hooksworth placed a hand on Aria's
 
 "That's the difference between a coder and an architect," Hooksworth smiled. "Now, I believe the Effect Sage awaits you in the Temporal Tower. Prepare yourself - useEffect is a different beast entirely!"
 
-Binary chirped excitedly, already calculating optimal paths to their next lesson. Aria took one last look at the Architecture Chamber before heading toward her next challenge at the Hooks Academy.
+Binary chirped excitedly, already calculating optimal paths to their next lesson. Aria took one last look at the Architecture Chamber before heading toward her next challenge 🔴 ~~at the Hooks Academy~~ 🟢 **- mastering useEffect with the Effect Sage**.
+
+💡 **EDIT NOTE:** Removed Academy reference from chapter ending, redirected to next lesson.
 
 ---
 
