@@ -1140,7 +1140,9 @@ Grand Reducer smiled. "Wise observation. Each portal before you leads to a diffe
 
 **Story Group 2:**
 
-"Each portal represents a modern solution," Grand Reducer explained, gesturing to the shimmering gateways. "Touch them to witness their power. Remember, young apprentice - the best tool depends on your quest's needs, not on following trends."
+"Each portal represents a modern solution," Grand Reducer explained, gesturing to the shimmering gateways. 🟢 **"The blue portal leads to Zustand - simplicity embodied. The violet one to Jotai - atomic precision. The crimson gateway to Recoil - Facebook's innovation. And the silver portal to MobX - reactive magic."** "Touch them to witness their power. Remember, young apprentice - the best tool depends on your quest's needs, not on following trends."
+
+💡 **EDIT NOTE:** Added specific library names to Story Group (Issue #12 fix).
 
 **Reflection Questions:**
 
