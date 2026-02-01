@@ -307,73 +307,79 @@ const htmlFooter = `
 
 // Convert markdown to HTML
 function convertMarkdownToHtml(md) {
-    let html = md;
-    
-    // Convert headers (must be done first, before other conversions)
-    html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
-    html = html.replace(/^## (.*?)$/gm, '<h2>$2</h2>');
-    html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
-    html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
-    
-    // Convert horizontal rules
-    html = html.replace(/^---$/gm, '<hr>');
-    
-    // Convert change tracking elements
-    // Deletions: ~~text~~ -> <span class="deletion">text</span>
-    html = html.replace(/~~(.*?)~~/g, '<span class="deletion">$1</span>');
-    
-    // Additions: **[ADDED: text]** -> <span class="addition">text</span>
-    html = html.replace(/\*\*\[ADDED:\s*(.*?)\]\*\*/g, '<span class="addition">$1</span>');
-    
-    // Edit notes: 💡 **EDIT NOTE:** text -> <div class="edit-note">text</div>
-    html = html.replace(/💡\s*\*\*EDIT NOTE[:\s]*\*\*\s*(.*?)(?=\n\n|\n(?=[A-Z#*])|$)/gs, '<div class="edit-note">$1</div>');
-    
-    // Convert bold (must be after ADDED pattern)
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    
-    // Convert italic
-    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    
-    // Convert bullet lists
-    html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
-    html = html.replace(/(<li>.*?<\/li>\n)+/gs, function(match) {
-        return '<ul>\n' + match + '</ul>\n';
-    });
-    
-    // Convert paragraphs (lines that aren't already HTML)
-    const lines = html.split('\n');
-    const processedLines = [];
-    let inList = false;
-    
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i].trim();
-        
-        // Skip empty lines
-        if (line === '') {
-            processedLines.push('');
-            continue;
-        }
-        
-        // Check if line is already HTML or special formatting
-        if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
-            processedLines.push(line);
-            continue;
-        }
-        
-        // Regular text line - wrap in <p>
-        if (line.length > 0 && !line.startsWith('<')) {
-            processedLines.push('<p>' + line + '</p>');
-        } else {
-            processedLines.push(line);
-        }
-    }
-    
-    html = processedLines.join('\n');
-    
-    // Clean up excessive newlines
-    html = html.replace(/\n{3,}/g, '\n\n');
-    
-    return html;
+	let html = md;
+
+	// Convert headers (must be done first, before other conversions)
+	html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+	html = html.replace(/^## (.*?)$/gm, '<h2>$2</h2>');
+	html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+	html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
+
+	// Convert horizontal rules
+	html = html.replace(/^---$/gm, '<hr>');
+
+	// Convert change tracking elements
+	// Deletions: ~~text~~ -> <span class="deletion">text</span>
+	html = html.replace(/~~(.*?)~~/g, '<span class="deletion">$1</span>');
+
+	// Additions: **[ADDED: text]** -> <span class="addition">text</span>
+	html = html.replace(
+		/\*\*\[ADDED:\s*(.*?)\]\*\*/g,
+		'<span class="addition">$1</span>'
+	);
+
+	// Edit notes: 💡 **EDIT NOTE:** text -> <div class="edit-note">text</div>
+	html = html.replace(
+		/💡\s*\*\*EDIT NOTE[:\s]*\*\*\s*(.*?)(?=\n\n|\n(?=[A-Z#*])|$)/gs,
+		'<div class="edit-note">$1</div>'
+	);
+
+	// Convert bold (must be after ADDED pattern)
+	html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+	// Convert italic
+	html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+	// Convert bullet lists
+	html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+	html = html.replace(/(<li>.*?<\/li>\n)+/gs, function (match) {
+		return '<ul>\n' + match + '</ul>\n';
+	});
+
+	// Convert paragraphs (lines that aren't already HTML)
+	const lines = html.split('\n');
+	const processedLines = [];
+	let inList = false;
+
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i].trim();
+
+		// Skip empty lines
+		if (line === '') {
+			processedLines.push('');
+			continue;
+		}
+
+		// Check if line is already HTML or special formatting
+		if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
+			processedLines.push(line);
+			continue;
+		}
+
+		// Regular text line - wrap in <p>
+		if (line.length > 0 && !line.startsWith('<')) {
+			processedLines.push('<p>' + line + '</p>');
+		} else {
+			processedLines.push(line);
+		}
+	}
+
+	html = processedLines.join('\n');
+
+	// Clean up excessive newlines
+	html = html.replace(/\n{3,}/g, '\n\n');
+
+	return html;
 }
 
 const htmlContent = convertMarkdownToHtml(markdown);
