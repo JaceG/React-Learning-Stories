@@ -3767,7 +3767,9 @@ But your journey doesn't end here. Remember Aria's greatest lesson: React isn't 
 
 ### 📖 Lesson Opener
 
-Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performance journey was complete. But Master Velocity's parting words echoed in her mind: "Speed is only half the battle. Seek 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** at the Memory Monastery - for even the fastest application will fall if it bleeds memory." The floating monastery appeared through the clouds, its ancient walls humming with the whispers of forgotten allocations.
+🔴 ~~Having defeated the Lag Monster at the Speed Sanctum, Aria thought her performance journey was complete. But Master Velocity's parting words echoed in her mind: "Speed is only half the battle. Seek~~ 🟢 **Aria's Forms & Events mastery was complete, but a new challenge beckoned from the Northern Peaks. Word reached her of** 🔴 ~~Brother Binary~~ 🟢 **Brother Memor** 🔴 ~~at~~ 🟢 **- keeper of** the Memory Monastery 🔴 ~~- for even the fastest application will fall if it bleeds memory."~~ 🟢 **where the secrets of memory management could prevent even the most elegant applications from slow, eventual collapse.** The floating monastery appeared through the clouds, its ancient walls humming with the whispers of forgotten allocations.
+
+💡 **EDIT NOTE:** Fixed chronology - removed Speed Sanctum reference (LP7.4 comes AFTER, not before). Issue #3.5B-Task3.
 
 💡 **EDIT NOTE:** Renamed "Brother Binary" to "Brother Memor" to avoid conflict with Aria's companion Binary.
 
@@ -3951,11 +3953,15 @@ Modern JavaScript applications often ship massive bundles containing code that m
 
 **Reflection Questions:**
 
-- Keeper Chronos has revealed the burden that eager loading places on users. Think about your own applications - do you import large libraries that are only used in specific features? Do your users download code for admin panels they'll never see?
+- 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** has revealed the burden that eager loading places on users. Think about your own applications - do you import large libraries that are only used in specific features? Do your users download code for admin panels they'll never see?
 - The journey to performance begins with awareness. What heavy books are your users forced to carry?
 
+💡 **EDIT NOTE:** Fixed remaining Chronos → Libris reference. Issue #3.5B-Task3.
+
 **Aria's Journal - Day 27 (Morning)**
-*I've arrived at the Lazy Library, a mystical repository where all React knowledge is stored. But something's wrong - the entrance is blocked by an enormous bundle of books! Keeper Chronos explained the Bundle Burden: developers pack every possible library into applications, forcing users to carry this weight with every page load. Each 'book' (chart library 180KB, editor 250KB, maps 300KB) adds to download time, parse time, and execution time. On 3G, each 50KB adds ~1 second! Tools like webpack-bundle-analyzer and source-map-explorer reveal the true cost. This is the curse of eager loading!*
+*I've arrived at the Lazy Library, a mystical repository where all React knowledge is stored. But something's wrong - the entrance is blocked by an enormous bundle of books! 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** explained the Bundle Burden: developers pack every possible library into applications, forcing users to carry this weight with every page load. Each 'book' (chart library 180KB, editor 250KB, maps 300KB) adds to download time, parse time, and execution time. On 3G, each 50KB adds ~1 second! Tools like webpack-bundle-analyzer and source-map-explorer reveal the true cost. This is the curse of eager loading!*
+
+💡 **EDIT NOTE:** Fixed Chronos → Libris in journal. Issue #3.5B-Task3.
 
 ---
 
@@ -3993,8 +3999,10 @@ React.lazy() and Suspense enable code splitting at the component level. By break
 
 **Reflection Questions:**
 
-- Keeper Chronos has shown you the power of lazy loading. Consider your own applications - which components are used by all users, and which are accessed by only a few?
+- 🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** has shown you the power of lazy loading. Consider your own applications - which components are used by all users, and which are accessed by only a few?
 - Every lazy-loaded component is a gift to your users - faster loads, less data usage, and better performance. Where will you apply this magic?
+
+💡 **EDIT NOTE:** Fixed remaining Chronos → Libris reference. Issue #3.5B-Task3.
 
 **Aria's Journal - Day 27 (Afternoon)**
 *The Lazy Wing of the library is magical! Books float in mid-air, appearing only when reached for. Keeper Chronos taught me React.lazy() and Suspense - the art of temporal loading. Instead of static imports that load everything upfront, dynamic imports load chunks on demand: const HeavyComponent = lazy(() => import('./Heavy')). Wrap with Suspense for loading states! The magic has two parts: code splitting breaks the bundle into chunks, then dynamic imports load them when needed. I implemented route-based splitting for major features and component-based splitting for modals. Users download only what they use!*
@@ -4048,7 +4056,9 @@ With the secrets of the Lazy Library mastered, applications across the React Kin
 
 ### 📖 Lesson Opener
 
-Keeper Chronos had revealed the secrets of lazy loading, but warned of one final challenge. "Deep beneath the kingdom lies the Virtualization Vault, where infinite data threatens to overwhelm even the most optimized applications. Guardian Zephyr awaits - master his techniques, and no amount of data will slow your creations." Aria descended into the depths, ready to conquer the final performance frontier.
+🔴 ~~Keeper Chronos~~ 🟢 **Keeper Libris** had revealed the secrets of lazy loading, but warned of one final challenge. "Deep beneath the kingdom lies the Virtualization Vault, where infinite data threatens to overwhelm even the most optimized applications. Guardian Zephyr awaits - master his techniques, and no amount of data will slow your creations." Aria descended into the depths, ready to conquer the 🔴 ~~final~~ 🟢 **next** performance frontier.
+
+💡 **EDIT NOTE:** Fixed Chronos → Libris, changed "final" to "next" (Speed Sanctum is final). Issue #3.5B-Task3.
 
 ### Chapter 1: The Infinite Archive
 
@@ -4149,13 +4159,17 @@ Virtualization is not just about lists - it's a philosophy of rendering only wha
 - As you build your applications, remember the Vault's teachings. Not every list needs virtualization, but when you face truly massive data, these techniques transform the impossible into the effortless.
 
 **Aria's Journal - Day 28 (Evening)**
-*I've become the Keeper of the Infinite! Guardian Zephyr's four advanced challenges: 1) Dynamic Heights - VariableSizeList with cached measurements and resetAfterIndex(). 2) Horizontal Scrolling - layout='horizontal' for carousels and timelines. 3) Infinite Loading - react-window-infinite-loader to load data as users scroll near the end. 4) Grid Virtualization - FixedSizeGrid for 2D scrolling (virtualizing rows AND columns). My performance optimization journey is complete! From the Speed Sanctum (profiling, memoization), Memory Monastery (leaks, cleanup), Lazy Library (code splitting), to this Vault. Binary and I are now Performance Masters, ready for any challenge!*
+*I've become the Keeper of the Infinite! Guardian Zephyr's four advanced challenges: 1) Dynamic Heights - VariableSizeList with cached measurements and resetAfterIndex(). 2) Horizontal Scrolling - layout='horizontal' for carousels and timelines. 3) Infinite Loading - react-window-infinite-loader to load data as users scroll near the end. 4) Grid Virtualization - FixedSizeGrid for 2D scrolling (virtualizing rows AND columns). 🔴 ~~My performance optimization journey is complete! From the Speed Sanctum (profiling, memoization), Memory Monastery (leaks, cleanup), Lazy Library (code splitting), to this Vault.~~ 🟢 **My performance journey through three sanctuaries is complete! From the Memory Monastery (leaks, cleanup), through the Lazy Library (code splitting), to this Virtualization Vault (infinite data). One final challenge awaits at the Speed Sanctum!** Binary and I are 🔴 ~~now~~ 🟢 **becoming** Performance Masters, ready for any challenge!*
+
+💡 **EDIT NOTE:** Fixed lesson order - Memory → Lazy → Virtualization → Speed (not Speed first). Issue #3.5B-Task3.
 
 **Chapter Ending:**
 
-With the secrets of the Virtualization Vault mastered, Aria had completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive, she had learned to make React applications not just functional, but blazingly fast.
+With the secrets of the Virtualization Vault mastered, Aria had 🔴 ~~completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive,~~ 🟢 **progressed through three performance sanctuaries. From the Memory Monastery through the Lazy Library to this infinite archive,** she had learned to make React applications not just functional, but blazingly fast.
 
-The React Kingdom celebrated as applications everywhere became smoother, faster, and more responsive. Aria's journey through Act III had transformed her into a true Performance Master, ready for whatever challenges lay ahead...
+🔴 ~~The React Kingdom celebrated as applications everywhere became smoother, faster, and more responsive. Aria's journey through Act III had transformed her into a true Performance Master, ready for whatever challenges lay ahead...~~ 🟢 **But one final challenge remained at the legendary Speed Sanctum, where Master Velocity guarded the ultimate optimization secrets. The journey to mastery was nearly complete...**
+
+💡 **EDIT NOTE:** Fixed lesson sequence, added transition to LP7.4 Speed Sanctum. Issue #3.5B-Task3.
 
 ---
 
