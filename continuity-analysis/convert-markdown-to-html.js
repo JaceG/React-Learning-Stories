@@ -5,56 +5,73 @@ const path = require('path');
 const mdPath = path.join(__dirname, 'narrative-master-EDITED.md');
 const markdown = fs.readFileSync(mdPath, 'utf-8');
 
+// Helper function to create valid HTML IDs
+function createId(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 // Convert markdown to HTML with special handling for diff markers
 function convertToHTML(md) {
   let html = md;
   
-  // Convert headers
+  // Convert headers with proper IDs
   html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
-  html = html.replace(/^## (.*?)$/gm, '<h2 id="$1">$1</h2>');
+  html = html.replace(/^## (.*?)$/gm, (match, title) => {
+    const id = createId(title);
+    return `<h2 id="${id}">${title}</h2>`;
+  });
   html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
   html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
-  
-  // Convert diff markers with special styling
-  // Red strikethrough for deletions
-  html = html.replace(/🔴 ~~(.*?)~~/g, '<span class="deleted">$1</span>');
-  
-  // Green bold for additions
-  html = html.replace(/🟢 \*\*(.*?)\*\*/g, '<span class="added">$1</span>');
-  
-  // Edit notes with special styling
-  html = html.replace(/💡 \*\*EDIT NOTE:\*\* (.*?)$/gm, '<div class="edit-note">💡 <strong>EDIT NOTE:</strong> $1</div>');
-  
-  // Regular bold and italic
-  html = html.replace(/\*\*\*\*(.*?)\*\*\*\*/g, '<strong><em>$1</em></strong>');
-  html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  
-  // Convert lists
-  html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
-  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-  
-  // Convert horizontal rules
-  html = html.replace(/^---$/gm, '<hr>');
-  
-  // Convert paragraphs (lines that aren't already HTML)
-  const lines = html.split('\n');
-  const processedLines = lines.map(line => {
-    // Skip if already HTML or empty
-    if (line.trim() === '' || line.match(/^<[^>]+>/)) {
-      return line;
-    }
-    // If it's regular text, wrap in paragraph
-    if (!line.match(/^#|^<|^-|^\*/)) {
-      return `<p>${line}</p>`;
-    }
-    return line;
-  });
-  
-  html = processedLines.join('\n');
-  
-  return html;
+
+	// Convert diff markers with special styling
+	// Red strikethrough for deletions
+	html = html.replace(/🔴 ~~(.*?)~~/g, '<span class="deleted">$1</span>');
+
+	// Green bold for additions
+	html = html.replace(/🟢 \*\*(.*?)\*\*/g, '<span class="added">$1</span>');
+
+	// Edit notes with special styling
+	html = html.replace(
+		/💡 \*\*EDIT NOTE:\*\* (.*?)$/gm,
+		'<div class="edit-note">💡 <strong>EDIT NOTE:</strong> $1</div>'
+	);
+
+	// Regular bold and italic
+	html = html.replace(
+		/\*\*\*\*(.*?)\*\*\*\*/g,
+		'<strong><em>$1</em></strong>'
+	);
+	html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+	html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+	html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+	// Convert lists
+	html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+	html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+
+	// Convert horizontal rules
+	html = html.replace(/^---$/gm, '<hr>');
+
+	// Convert paragraphs (lines that aren't already HTML)
+	const lines = html.split('\n');
+	const processedLines = lines.map((line) => {
+		// Skip if already HTML or empty
+		if (line.trim() === '' || line.match(/^<[^>]+>/)) {
+			return line;
+		}
+		// If it's regular text, wrap in paragraph
+		if (!line.match(/^#|^<|^-|^\*/)) {
+			return `<p>${line}</p>`;
+		}
+		return line;
+	});
+
+	html = processedLines.join('\n');
+
+	return html;
 }
 
 // Create HTML with styling
@@ -171,9 +188,11 @@ const fullHTML = `<!DOCTYPE html>
       border-radius: 8px;
       padding: 20px;
       margin: 20px 0 40px 0;
+      position: -webkit-sticky;
       position: sticky;
-      top: 20px;
+      top: 10px;
       z-index: 100;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     
     #toc h2 {
@@ -249,21 +268,21 @@ const fullHTML = `<!DOCTYPE html>
   <div id="toc">
     <h2>📚 Table of Contents</h2>
     <ul>
-      <li><a href="#1. Components Basics">1. Components Basics</a></li>
-      <li><a href="#2. State Management">2. State Management</a></li>
-      <li><a href="#3. Props Data Flow">3. Props Data Flow</a></li>
-      <li><a href="#4. Hooks In Action">4. Hooks In Action</a></li>
-      <li><a href="#5. Forms Events">5. Forms & Events</a></li>
-      <li><a href="#6. Routing Navigation">6. Routing Navigation</a></li>
-      <li><a href="#7. Performance Optimization">7. Performance Optimization</a></li>
-      <li><a href="#8. Testing Debugging">8. Testing & Debugging</a></li>
-      <li><a href="#9. Advanced Patterns">9. Advanced Patterns</a></li>
-      <li><a href="#10. React Ecosystem">10. React Ecosystem</a></li>
-      <li><a href="#11. Server Data">11. Server Data</a></li>
-      <li><a href="#12. Typescript React">12. TypeScript React</a></li>
-      <li><a href="#13. Build Deploy">13. Build & Deploy</a></li>
-      <li><a href="#14. React Native">14. React Native</a></li>
-      <li><a href="#15. Accessibility">15. Accessibility</a></li>
+      <li><a href="#1-components-basics">1. Components Basics</a></li>
+      <li><a href="#2-state-management">2. State Management</a></li>
+      <li><a href="#3-props-data-flow">3. Props Data Flow</a></li>
+      <li><a href="#4-hooks-in-action">4. Hooks In Action</a></li>
+      <li><a href="#5-forms-events">5. Forms & Events</a></li>
+      <li><a href="#6-routing-navigation">6. Routing Navigation</a></li>
+      <li><a href="#7-performance-optimization">7. Performance Optimization</a></li>
+      <li><a href="#8-testing-debugging">8. Testing & Debugging</a></li>
+      <li><a href="#9-advanced-patterns">9. Advanced Patterns</a></li>
+      <li><a href="#10-react-ecosystem">10. React Ecosystem</a></li>
+      <li><a href="#11-server-data">11. Server Data</a></li>
+      <li><a href="#12-typescript-react">12. TypeScript React</a></li>
+      <li><a href="#13-build-deploy">13. Build & Deploy</a></li>
+      <li><a href="#14-react-native">14. React Native</a></li>
+      <li><a href="#15-accessibility">15. Accessibility</a></li>
     </ul>
   </div>
 
@@ -274,11 +293,32 @@ const fullHTML = `<!DOCTYPE html>
     document.querySelectorAll('#toc a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Scroll to target with offset for sticky header
+          const targetPosition = target.offsetTop - 80;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Highlight the target briefly
+          target.style.backgroundColor = '#fff9c4';
+          setTimeout(() => {
+            target.style.backgroundColor = '';
+          }, 2000);
+        } else {
+          console.warn('Target not found:', targetId);
         }
       });
+    });
+    
+    // Log all h2 IDs for debugging
+    console.log('Available h2 IDs:');
+    document.querySelectorAll('h2[id]').forEach(h2 => {
+      console.log(' -', h2.id, ':', h2.textContent);
     });
   </script>
 </body>
