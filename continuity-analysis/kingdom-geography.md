@@ -760,30 +760,39 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
-### Guardian Gates
-**First Mentioned**: Routing Navigation → GuardianGates → Ch1
+### Navigation Corps Training Grounds & Guardian Archives (Central Citadel)
+**First Mentioned**: LP6.3 GuardianGates Ch1
 
-**Quarter**: [Not specified - security checkpoints]
+**Quarter/Region**: Part of Central Citadel complex
 
-**Features**:
-- Protected gates requiring clearance
-- Security checkpoints
-- Guardian towers
+**Architecture**:
+- Navigation Corps training grounds where security patterns taught
+- Guardian Archives with ancient memory crystals lining walls (Ch2)
+- Grand Hall of Authority for ultimate guardian patterns (Ch3)
+- Final demonstration chamber with complex portal systems
+- Citadel's highest observation deck overlooking entire React Kingdom
 
-**Lessons Taught**: Protected routes, authentication
+**Atmosphere**:
+- Authority and warmth from Marina
+- Security focus combined with learning energy
+- Teaching satisfaction and pride
+- Fascination at pattern integration
+- Culmination and overview from observation deck
 
----
+**Visual Details**:
+- Complex security diagrams activating
+- Memory crystals glowing
+- Authorization matrix with patterns connecting
+- Smooth animations between holographic interfaces
+- Multi-step wizard, nested modals, transitions demonstrated
+- View overlooking entire kingdom from highest deck
+- Every quarter visible below
 
-### Portal Passages
-**First Mentioned**: Routing Navigation → PortalPassages → Ch1
+**Master**: Captain Marina (continues teaching throughout LP6)
 
-**Quarter**: [Not specified - advanced navigation]
+**Teaches**: LP6.3 - Protected routes (authentication + authorization integration), Guardian Gates system, role-based access control (RBAC), permission validation, AuthContext patterns, intelligent authentication flows (preserving destinations/state/journey), role hierarchies, React portals (escaping DOM hierarchy while keeping React powers), accessible modals (focus trapping, keyboard nav), portal transitions (maintaining context), advanced portal patterns (multi-step wizards, nested portals, split views, contextual portals), route-based modals, unified navigation architecture
 
-**Features**:
-- Network of mystical portals
-- Nested route chambers
-
-**Lessons Taught**: Nested routing, advanced navigation patterns
+**Connection to Teaching**: Guardian Gates = protected routes; training grounds = learning security; memory crystals = preserving auth state; authorization matrix = permission patterns; Hall of Authority = role systems; demonstration chamber = portal patterns; observation deck = complete overview of all learning; portals = DOM escape while maintaining React
 
 ---
 

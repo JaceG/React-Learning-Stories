@@ -189,10 +189,10 @@
 
 **Captain Marina**
 - **Role**: Legendary navigation expert of the Central Citadel
-- **Appears In**: LP6.1 NavigationCompass (Ch1-3)
-- **Location**: Central Citadel - crystalline spires connecting all quarters, Navigation Command Center with floating maps, advanced Navigation Laboratory
-- **Appearance**: [Not extensively described], voice carries warmth and excitement
-- **Teaches**: Routing as extension of React component system, navigation as state transitions, routes as components, browser history triggering effects, route guards with validation, dynamic routes with parameters, query parameters, URL as state container, stateful nested routes, protected routes (auth + validation), advanced navigation patterns synthesizing all React knowledge
+- **Appears In**: LP6.1 NavigationCompass (Ch1-3), LP6.2 WaypointWizardry (Ch1-3), LP6.3 GuardianGates (Ch1-3)
+- **Location**: Central Citadel - crystalline spires, Navigation Command Center with floating maps, Navigation Laboratory, Waypoint Sanctum & Observatory, Navigation Corps training grounds, Guardian Archives, final demonstration chamber, Citadel's highest observation deck
+- **Appearance**: [Not extensively described], voice carries warmth/excitement and authority
+- **Teaches**: LP6.1 - routing fundamentals, LP6.2 - advanced waypoint patterns (loaders/actions/metadata, dynamic params, nested routes, Outlets, breadcrumbs, prefetching, scroll restoration), LP6.3 - Guardian Gates (protected routes, authentication/authorization integration, role-based access, advanced portal patterns, multi-step wizards, accessible modals, route-based modals, predictive prefetching)
 
 *[More mentors to be added as extraction continues]*
 
@@ -430,6 +430,19 @@
 - Nested routes → "component hierarchies applied to navigation", "component composition patterns"
 - Outlets → "slots where child routes render", "like children pattern"
 - Complete system → "one beautiful, unified system", "everything connects"
+
+**LP6.3 GuardianGates**:
+- Protected routes → "Guardian Gates", "intelligent systems that understand context"
+- Authentication → "integrating with state management, form validation, user flows", "not just checking credentials"
+- Route protection → "not hindering but enhancing UX", "intelligent checkpoints"
+- Protected Route component → "checks auth, preserves destinations, restores state"
+- Authentication state → "flows through React context"
+- Advanced patterns → "memory crystals" in Guardian Archives, "seamless experiences"
+- Authorization → "Hierarchical Intelligence Pattern", "not just roles but context-aware systems"
+- Role-based access → "Treasury uses state-managed tokens, Library uses context providers"
+- Portals (React) → "escape normal DOM hierarchy", "render at document body but keep React powers"
+- Portal patterns → "modals, tooltips, overlays", "WHERE elements render not breaking component model"
+- Accessible modals → "focus trapping, keyboard navigation, smooth transitions"
 
 *[More translations to be added as extraction continues]*
 
