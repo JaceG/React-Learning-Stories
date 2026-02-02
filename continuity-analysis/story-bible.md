@@ -44,6 +44,7 @@
 **Binary's Contributions**:
 - **LP1.3 JsxMagic**: Helps explain curly braces ("portals!"), zips around glowing tablets illuminating rules, gives Aria tiny high-five, mentions Time Keepers at Lifecycle Sanctum
 - **LP1.4 LifecycleChronicles**: Bounces excitedly explaining lifecycle as "birthday parties, growth spurts, retirement ceremonies"; uses flower blooming metaphor for mounting; slows to gentle float during unmounting lesson (showing respect); warns about "ghost timers" and memory leaks; spins in happy circle when Aria completes training
+- **LP2.1 StateSorcerers**: Zips around excitedly, explains "State Sorcerers can remember things between renders!"; teaches immutability rule; projects holographic shapes; explains co-location with calculations (60% fewer prop passes); twirls happily at chapter end
 
 ---
 
@@ -70,6 +71,15 @@
 **Mentor**: Chronos  
 **Companion**: Binary (now traveling with Aria)  
 **Concepts**: Lifecycle → "journey from creation to destruction"; Mounting → "birth ritual", "flower blooming"; Updating → "growth and adaptation"; Unmounting → "farewell ceremony"; componentWillUnmount → "cleaning up affairs", "ghost timers"
+
+---
+
+## LP2: State Management
+
+### LP2.1 StateSorcerers
+**Location**: Eastern Quarter - State Sorcerers' Tower (tallest crystal spire)  
+**Mentor**: Memnon  
+**Concepts**: State → "stored memories", "memory orbs", "soul of interactive components"; useState hook → "fundamental spell" with "value and setter"; Immutability → "creating new memories" (not changing existing); Spread operator → "magical copy spell"; State patterns → "co-location", "lifting state up"
 
 ### Mentors & Guides
 
@@ -176,13 +186,21 @@
 ### State Management Era (LP2)
 
 **Memnon**
-- **Role**: Chief of the State Sorcerers
-- **First Appearance**: State Management → StateSorcerers → Chapter 1
-- **Teachings**: useState hook, state as memory, immutability, spread operator, useEffect introduction
-- **Key Traits**: Warm, flowing robes, staff topped with constantly shifting orb of light
-- **Location**: Eastern Quarter - tallest crystal spire with glowing memory orbs
-- **Connection**: Chronos told him about Aria's arrival
-- **Quote**: "Without state, components would be like goldfish, forgetting everything the moment they blink!"
+- **Role**: Chief of the State Sorcerers, guardian of the crystal spires
+- **Appears In**: LP2.1 StateSorcerers (Ch1-3)
+- **Location**: Eastern Quarter - State Sorcerers' Tower (tallest crystal spire)
+- **Appearance**: Flowing robes, staff topped with constantly shifting orb of light, surrounded by floating memory orbs
+- **Personality**: Warm, wise, patient teacher, explains with enthusiasm, uses visual demonstrations
+- **Teaching Style**: Shows glowing orbs, traces spells in the air, demonstrates with component models, progressive complexity (simple values → objects/arrays → patterns), uses metaphors (memory orbs, goldfish)
+- **Teaches**:
+  - useState hook (value + setter)
+  - State as component memory
+  - Immutability principle (create new memories, don't modify existing)
+  - Spread operator (...) for copying objects/arrays
+  - State patterns: co-location, lifting state up, single source of truth
+  - State structuring (when to split vs combine)
+- **Connection**: Chronos told him of Aria's arrival, sends her to Hook Forge next
+- **Note**: Ch3 originally taught useEffect but was edited in Phase 3 (Issue #7) - useEffect now fully in LP2.2
 
 **Forge Master Hooke**
 - **Role**: Hook crafter, creates hooks for functional components

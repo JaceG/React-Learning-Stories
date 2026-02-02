@@ -85,11 +85,14 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
   - **Teaches**: Props, one-way data flow, callbacks, PropTypes, DefaultProps
   - **Connection to Teaching**: Physical one-way roads perfectly demonstrate one-way data flow; messengers with satchels = props carrying instructions; guardians inspecting = type checking
 
-- **State Sorcerers' Tower** (crystal spires)
-  - First Mentioned: State Management → StateSorcerers → Ch1
-  - Glowing orbs (stored memories)
-  - Tallest spire in Eastern Quarter
-  - Master: Memnon (Chief of State Sorcerers)
+- **State Sorcerers' Tower**
+  - **First Mentioned**: LP2.1 StateSorcerers Ch1
+  - **Architecture**: Tallest crystal spire in Eastern Quarter, pulsing with living energy, contains countless glowing orbs, walls pulse with complex patterns, demonstration chamber (Ch3) with floating component models
+  - **Atmosphere**: Crystal spires pulse with stored memories and dynamic energy, orbs float around Memnon's staff, mystical energy from memory magic, golden morning sunlight
+  - **Visual Details**: Memory orbs glowing inside tower representing state, constantly shifting orb atop Memnon's staff, patterns swirling in complex structures, component diagrams appearing in air
+  - **Master**: Memnon (Chief of State Sorcerers)
+  - **Teaches**: useState, state as memory, immutability, spread operator, state patterns (co-location, lifting)
+  - **Connection to Teaching**: Crystal spires = data structures holding state; glowing orbs = state values; pulsing energy = state changes triggering re-renders; memory metaphor = state persistence
 
 - **State Management Citadel**
   - First Mentioned: State Management → StateManagementAdventures → Ch1
