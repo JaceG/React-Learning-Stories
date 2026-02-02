@@ -46,14 +46,14 @@
 **Professor Syntaxis**
 - **Role**: Keeper of the ancient JSX language
 - **Appears In**: LP1.3 JsxMagic (Ch1-3)
-- **Location**: JSX Magic Academy - Grand Library
+- **Location**: Northern Quarter - JSX Magic Academy (Grand Library)
 - **Appearance**: Robes shimmer with HTML tags and JavaScript symbols
 - **Teaches**: JSX syntax, Babel transformation, curly brace expressions, JSX rules
 
 **Chronos**
 - **Role**: Master Time Keeper
 - **Appears In**: LP1.4 LifecycleChronicles (Ch1-3)
-- **Location**: Lifecycle Sanctum
+- **Location**: Northern Quarter - Lifecycle Sanctum
 - **Appearance**: Ancient figure, voice echoes through time
 - **Teaches**: Component lifecycle, mounting/updating/unmounting, cleanup
 - **Note**: ⚠️ Only appears in LP1, does not return
@@ -70,7 +70,7 @@
 **Forge Master Hooke**
 - **Role**: Master hook crafter
 - **Appears In**: LP2.2 MagicalHooks (Ch1-3)
-- **Location**: Hook Forge
+- **Location**: Eastern Quarter - Hook Forge
 - **Appearance**: Sturdy, leather apron, sparks flying from hooks being crafted
 - **Teaches**: Hook family overview (useState, useEffect, useRef, useMemo, useCallback), useEffect dependencies, cleanup functions, specialized hooks
 
@@ -114,14 +114,14 @@
 **River Master Flux**
 - **Role**: Keeper of the data streams
 - **Appears In**: LP3.4 DataRivers (Ch1-3)
-- **Location**: Cascade District - observation platform by terraced waterfalls
+- **Location**: Eastern Quarter - Cascade District (Data Rivers) - observation platform by terraced waterfalls
 - **Appearance**: Flowing blue robes, patterns shift like water across fabric
 - **Teaches**: Unidirectional data flow, props read-only, prop transformation, data distribution (bridges), cascading patterns, when cascades get too deep (3-4 levels), Context as alternative
 
 **Dam Master Gatekeeper**
 - **Role**: Controller of the data flows
 - **Appears In**: LP3.4 DataRivers (Ch2)
-- **Location**: Dam complex upstream in Cascade District - control house
+- **Location**: Eastern Quarter - Cascade District (Data Rivers) - Dam complex upstream in Cascade District - control house
 - **Appearance**: Stocky figure, thick beard glistening with water droplets
 - **Teaches**: Flow control, conditional rendering (dam gates), data filtering, data transformation, strategic data placement (lowest common ancestor)
 
@@ -130,28 +130,28 @@
 **Professor Hooksworth**
 - **Role**: Keeper of the Hook Laws
 - **Appears In**: LP4.1 UseStateSpells (Ch1-3)
-- **Location**: Advanced Hooks Sanctuary - circular classroom, Transmutation Lab, Architecture Chamber
+- **Location**: Eastern Quarter - Advanced Hooks Sanctuary - circular classroom, Transmutation Lab, Architecture Chamber
 - **Appearance**: Distinguished wizard, robes shimmer between different states, beard sparkles with tiny useState calls blinking in/out, spectacles display real-time component renders
 - **Teaches**: Advanced useState patterns (lazy initialization, functional updates), immutability principle, spread operator for complex state, state architecture (grouping related state, no derived/synced state, local state)
 
 **Effect Sage**
 - **Role**: Keeper of the bridge between React's pure realm and the chaotic outside world
 - **Appears In**: LP4.2 UseEffectEnchantments (Ch1-3)
-- **Location**: Temporal Tower - spiraling structure where time flows differently at each level, clock faces on walls
+- **Location**: Eastern Quarter - Temporal Tower - spiraling structure where time flows differently at each level, clock faces on walls
 - **Appearance**: Robed in fabric shifting between states of existence, hourglasses orbit around them (sand flows upward in some, frozen in others), materializes from temporal flux, voice from multiple moments in time, form flickers/solidifies
 - **Teaches**: useEffect (lifecycle bridge, replaces old methods), cleanup functions (prevent memory leaks), dependency arrays (empty/none/specific), stale closures, async operations in effects, race conditions, AbortController
 
 **Master Artificer Compose**
 - **Role**: Creator of custom hooks, teaches hook forging
 - **Appears In**: LP4.3 CustomHookCrafting (Ch1-3)
-- **Location**: Synthesis Workshop - entire floor of Hooks Academy with workbenches, Grand Repository library adjoining forges
+- **Location**: Eastern Quarter - Synthesis Workshop & Grand Repository - entire floor of Hooks Academy with workbenches, Grand Repository library adjoining forges
 - **Appearance**: Woman with apron sparkling with embedded hook patterns, hands dancing between energy streams
 - **Teaches**: Custom hook basics ("use" naming convention, Rules of Hooks), extracting stateful logic (useCounter, useToggle), advanced composition (combining hooks + browser APIs: useLocalStorage, useFetch), hook libraries (documentation, testing, organization, versioning)
 
 **Pattern Weaver Synthesis**
 - **Role**: Master conductor of the Integration Sanctum where all hook knowledge culminates
 - **Appears In**: LP4.4 HookPatternMastery (Ch1-3)
-- **Location**: Integration Sanctum - spherical chamber at apex of Hooks Academy, Performance Sanctuary (Ch3)
+- **Location**: Eastern Quarter - Integration Sanctum (Apex of Advanced Hooks Sanctuary) - spherical chamber at apex of Hooks Academy, Performance Sanctuary (Ch3)
 - **Appearance**: Robes woven from pure React patterns, conducts/weaves energy streams like orchestra conductor
 - **Teaches**: Hook orchestration (Form Symphony pattern - multiple hooks coordinated), useReducer + Context (Grand Symphony Pattern), split contexts for performance, action creators, performance optimization (useMemo, useCallback, React.memo - Performance Trinity), strategic optimization (measure first)
 
