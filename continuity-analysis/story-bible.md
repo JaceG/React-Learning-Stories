@@ -562,18 +562,22 @@
 
 ### Characters
 
-**Brother Binary** (⚠️ NAME CONFLICT)
-- **Role**: Eldest monk
-- **Location**: Memory Monastery
+**Brother Memor** (✅ FIXED in Phase 3.5B)
+- **Role**: Eldest monk, keeper of Memory Monastery
+- **Location**: Memory Monastery (Southern Quarter)
 - **First Appearance**: LP7.1 Chapter 1
-- **Issue**: Name conflicts with Aria's companion Binary
+- **Original Issue**: Was "Brother Binary" - conflicted with Aria's companion
+- **Resolution**: Renamed to Brother Memor
+- **Wisdom**: "Every byte retained is a burden carried. Release what is not needed, and your applications shall soar."
 - **Teaching**: Memory leaks, memory profiling, cleanup
 
-**Keeper Chronos** (⚠️ RETURNS from LP1)
-- **Role**: Ancient librarian (was Master Time Keeper at Lifecycle Sanctum in LP1)
-- **Location**: Lazy Library
-- **First Appearance**: LP1 (returns in LP7.2)
-- **Issue**: Violates "no character returns" rule
+**Keeper Libris** (✅ NEW CHARACTER - Phase 3.5B)
+- **Role**: Ancient librarian, guardian of Lazy Library
+- **Location**: Lazy Library (Southern Quarter)
+- **First Appearance**: LP7.2 Chapter 1
+- **Original Issue**: Was "Keeper Chronos" - character from LP1 inappropriately returned
+- **Resolution**: Replaced with new character Keeper Libris
+- **Wisdom**: "Load only what is needed, when it is needed. Time and bandwidth are precious resources."
 - **Teaching**: Lazy loading, code splitting, React.lazy, Suspense
 
 **Vault Guardian Zephyr**

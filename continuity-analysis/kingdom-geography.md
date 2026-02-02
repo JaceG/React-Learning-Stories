@@ -239,16 +239,17 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
-### Navigation Crossroads
+### Central Citadel (Navigation Command Center)
 **First Mentioned**: Routing Navigation → NavigationCompass → Ch1
 
-**Quarter**: [Not specified - transportation hub]
+**Quarter**: Central (serves as nexus connecting all quarters)
 
 **Features**:
-- Crossroads where kingdom paths converge
-- Navigation Compass (central landmark)
-- Signposts pointing to various districts
-- Waypoint stations throughout kingdom
+- Crystalline spires reaching toward the clouds
+- Architectural marvel connecting all kingdom quarters
+- Navigation Command Center with floating maps
+- Holographic displays showing routes and waypoints
+- Real-time path updates throughout the facility
 
 **Master**: Captain Marina (Navigator)
 
