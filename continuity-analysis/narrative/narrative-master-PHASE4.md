@@ -14714,7 +14714,1083 @@ Brother Memor watched as Aria and Binary began their descent down the mountain p
 
 ---
 
-🚧 **WORK IN PROGRESS - LP7.2-7.4 (3 lessons remaining)**
+## 7.2 LazyLibrary
+
+### 📖 Lesson Opener
+
+The Memory Monastery's healing rituals had transformed Aria into a guardian of application health, but Brother Memor directed her next journey before she departed: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed, not before. Seek Keeper Libris down in the valley, for bundle size is the hidden enemy of performance that even clean memory cannot fix!" Aria and Binary descended from the clouds, following ancient stone pathways to the mystical repository of deferred knowledge where books floated, appearing only when reached for.
+
+### Chapter 1: The Bundle Burden and Analysis
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended bundle analysis with webpack-bundle-analyzer and dependency cost awareness]**
+
+Aria arrived at the Lazy Library, a mystical repository where all React knowledge was stored in towering shelves reaching toward the ceiling. But something was wrong - the main entrance was completely blocked by an enormous bundle of books stacked precariously, too heavy for anyone to move. Visitors waited outside, unable to enter, the weight of knowledge literally blocking access!
+
+**Keeper Libris**, the ancient librarian with silver hair and knowing eyes, appeared from the shadows moving effortlessly through the stacks. "Ah, another victim of the **Bundle Burden**," he sighed, gesturing at the massive pile. "Young developers pack every possible library into their applications, not realizing that users must carry this entire weight with every single page load. One megabyte, two megabytes, five megabytes - they don't consider the cost!"
+
+He gestured to the towering shelves labeled with library names. "Each book represents a library or component. See these labels? Chart.js: 180KB. Rich Text Editor: 250KB. Maps Library: 300KB. Date manipulation: 200KB. Some are essential for every visitor - React itself, your routing, core UI. But many are needed only by a few - admin dashboards, analytics charts, PDF generators. Yet developers import them all upfront, forcing everyone to carry them all! This is the curse of **eager loading**!"
+
+Keeper Libris activated a mystical viewing crystal - actually webpack-bundle-analyzer - that revealed the true composition of an application bundle:
+```javascript
+// EAGER LOADING DISASTER - Everything loaded upfront!
+import React from 'react';  // 130KB
+import Chart from 'chart.js';  // 180KB
+import RichTextEditor from 'slate-react';  // 250KB
+import MapLibrary from 'leaflet';  // 300KB
+import PDFGenerator from '@react-pdf/renderer';  // 400KB
+import Analytics from 'analytics-lib';  // 150KB
+import AdminTools from './admin';  // 200KB
+import AdvancedReports from './reports';  // 300KB
+
+// Total bundle: 1.91MB!
+// Every user downloads ALL this code
+// Even if they never use admin panels, maps, or PDF generation!
+
+function App() {
+  return (
+    <div>
+      <Dashboard />  {/* Only uses React */}
+      {/* Admin tools loaded but unused by 95% of users! */}
+      {/* Maps loaded but only used on one route! */}
+      {/* PDF generator loaded but triggered by one button! */}
+    </div>
+  );
+}
+
+// THE COST:
+// On 3G connection:
+// - 1.91MB @ 400KB/s = ~5 seconds download time
+// - Parse time: ~1-2 seconds
+// - Total Time to Interactive: 6-7 seconds!
+// Users stare at loading spinner for eternity!
+```
+
+Aria examined the bundle visualization with growing alarm, seeing the massive colored blocks representing each library. "The bundle analyzer shows everything users must download! Chart.js takes up 10% of the bundle but only 5% of users see charts. The admin panel is 15% of the bundle but only admins (2% of users) access it. Maps are 16% but only used on one route. Every kilobyte increases download time, parse time, and execution time!"
+
+"Precisely!" Keeper Libris approved gravely. "On a fast connection, users might not notice. But on 3G (the reality for billions of users), each unnecessary 50KB adds a second to load time. Your 1.9MB bundle? Seven seconds before the app even becomes interactive! Users abandon sites that take more than 3 seconds to load. The Bundle Burden kills conversions, frustrates users, and wastes bandwidth!"
+
+Binary projected cost analysis: "Bundle Burden detected! Problem: eager loading imports ALL code upfront. Result: massive initial bundles (1MB+), slow Time to Interactive (5-7s on 3G), users download code they never execute (admin panels for non-admins, maps for users who never map). Solution: code splitting ahead!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended bundle analysis tooling with sourcemap-explorer and real dependency auditing]**
+
+"But awareness is the first step to healing," Keeper Libris continued, showing Aria how to analyze bundles with modern tools.
+
+```javascript
+// ANALYZING YOUR BUNDLE - Three essential tools
+
+// 1. webpack-bundle-analyzer (visual treemap)
+// Install: npm install --save-dev webpack-bundle-analyzer
+// In webpack config:
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: true,
+      generateStatsFile: true
+    })
+  ]
+};
+
+// After build: Opens interactive treemap showing:
+// - Size of each dependency
+// - What's inside each package
+// - Largest contributors to bundle size
+
+// 2. source-map-explorer (analyze source maps)
+// Install: npm install --save-dev source-map-explorer
+// Run: npx source-map-explorer build/static/js/*.js
+// Shows: Exact breakdown of what code contributes to each bundle
+
+// 3. Bundle size in package.json script
+{
+  "scripts": {
+    "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "size": "npm run build && bundlesize"
+  },
+  "bundlesize": [
+    {
+      "path": "./build/static/js/*.js",
+      "maxSize": "500 KB",
+      "compression": "gzip"
+    }
+  ]
+}
+
+// COMMON BUNDLE BLOATERS:
+const bloaters = {
+  momentJs: {
+    size: '280KB',
+    problem: 'Huge date library with all locales',
+    alternative: 'date-fns (tree-shakeable) or day.js (2KB)',
+    savings: '~260KB'
+  },
+  lodash: {
+    size: '70KB',
+    problem: 'Importing entire library',
+    fix: 'Import individual functions: import debounce from "lodash/debounce"',
+    savings: '~50KB'
+  },
+  entireIconLibrary: {
+    size: '500KB+',
+    problem: 'Importing all icons',
+    fix: 'Import only needed icons: import { FaHome } from "react-icons/fa"',
+    savings: '~480KB'
+  }
+};
+```
+
+Aria studied the bundle analysis tools with intense focus. "webpack-bundle-analyzer shows a treemap - visual blocks for each dependency! I can see that moment.js is 280KB (15% of bundle) for just date formatting. source-map-explorer reveals exact code breakdown. bundlesize in CI/CD prevents bundle bloat creeping back in!"
+
+"And watch for common bloaters," Keeper Libris warned. "Moment.js is notorious - 280KB for dates when date-fns does it in 10KB. Lodash imported as whole library instead of individual functions. Entire icon packs when you need three icons. These are the heavy books users carry unnecessarily!"
+
+He showed a before/after transformation:
+```javascript
+// BEFORE - Bloated imports
+import moment from 'moment';  // 280KB!
+import _ from 'lodash';  // 70KB!
+import * as Icons from 'react-icons/fa';  // 500KB!
+
+function Component() {
+  const date = moment().format('YYYY-MM-DD');
+  const debounced = _.debounce(handler, 300);
+  return <Icons.FaHome />;
+}
+
+// AFTER - Optimized imports
+import { format } from 'date-fns';  // 10KB
+import debounce from 'lodash/debounce';  // 2KB
+import { FaHome } from 'react-icons/fa';  // 1KB
+
+function Component() {
+  const date = format(new Date(), 'yyyy-MM-dd');
+  const debounced = debounce(handler, 300);
+  return <FaHome />;
+}
+
+// SAVINGS: 837KB → 13KB = 824KB saved (98% reduction!)
+```
+
+"Perfect optimization!" Keeper Libris praised. "But even with optimized imports, some code is only needed sometimes. That's where lazy loading enters!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on bundle analysis practice with real dependency auditing and optimization strategies]**
+
+"Now audit your own bundles," Keeper Libris said, presenting Aria with a bloated application to analyze and optimize.
+
+```javascript
+// BLOATED APP - Find the waste!
+import React, { useState } from 'react';
+import moment from 'moment';  // ❌ 280KB for dates
+import _ from 'lodash';  // ❌ 70KB for one function
+import * as MaterialIcons from '@material-ui/icons';  // ❌ 2MB!
+import ChartJS from 'chart.js';  // ❌ 180KB on every page
+import ReactPDF from '@react-pdf/renderer';  // ❌ 400KB for rare action
+import FullCalendar from '@fullcalendar/react';  // ❌ 300KB on homepage
+
+function Dashboard() {
+  const [data, setData] = useState([]);
+  
+  // Only 5% of users click "Export PDF"
+  // Yet all users download ReactPDF!
+  const handleExport = () => {
+    ReactPDF.render(/* PDF content */);
+  };
+  
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      {/* Calendar only on /schedule route, but loaded on all routes! */}
+      <MaterialIcons.Home />  {/* 1 icon loaded, 2MB imported! */}
+      <p>{moment().format('YYYY-MM-DD')}</p>  {/* 280KB for date! */}
+      <button onClick={_.debounce(handleSave, 300)}>Save</button>  {/* 70KB for debounce! */}
+    </div>
+  );
+}
+
+// BUNDLE ANALYSIS RESULTS:
+// Total: 3.4MB uncompressed, 1.2MB gzipped
+// Time to Interactive on 3G: ~10 seconds
+// 90% of code unused on initial load!
+
+// OPTIMIZED VERSION - Strategic imports
+import React, { useState } from 'react';
+import { format } from 'date-fns';  // ✅ 10KB
+import debounce from 'lodash/debounce';  // ✅ 2KB
+import { Home } from '@material-ui/icons';  // ✅ 5KB (tree-shaken)
+// ChartJS, ReactPDF, FullCalendar will be lazy-loaded later!
+
+function Dashboard() {
+  const [data, setData] = useState([]);
+  
+  const handleExport = async () => {
+    // Lazy load PDF library only when needed!
+    const ReactPDF = await import('@react-pdf/renderer');
+    ReactPDF.render(/* PDF content */);
+  };
+  
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <Home />  {/* Only this icon imported */}
+      <p>{format(new Date(), 'yyyy-MM-dd')}</p>  {/* 10KB */}
+      <button onClick={debounce(handleSave, 300)}>Save</button>  {/* 2KB */}
+    </div>
+  );
+}
+
+// OPTIMIZED BUNDLE:
+// Initial: 200KB (after optimized imports + will add lazy loading)
+// PDF loads only when "Export" clicked: +400KB (5% of users)
+// Charts load only on /analytics route: +180KB (10% of users)
+// Calendar loads only on /schedule route: +300KB (20% of users)
+// 95% of users: 200KB initial (10x smaller!)
+```
+
+"Excellent audit!" Keeper Libris praised. "You've identified: (1) Moment.js bloat - replaced with date-fns (savings: 270KB), (2) Full Lodash - replaced with individual imports (savings: 68KB), (3) Entire icon library - replaced with tree-shaken imports (savings: 1.995MB!), (4) PDF/Charts/Calendar loaded upfront when rarely used - candidates for lazy loading! The initial bundle dropped from 1.2MB to 200KB - 6x smaller!"
+
+Binary displayed optimization mastery: "Bundle Analysis complete! Tools: webpack-bundle-analyzer (visual treemap), source-map-explorer (source map breakdown), bundlesize (CI/CD gates). Common bloaters: moment.js → date-fns, full lodash → individual imports, entire icon libraries → tree-shaken imports. Result: 3.4MB → 200KB initial bundle = 94% reduction!"
+
+**Bundle Analysis Mastery:**
+Bundle size directly impacts Time to Interactive and user experience. Modern JavaScript applications often ship massive bundles containing code many users never execute. Analyze bundles with webpack-bundle-analyzer (visual treemap showing size of each dependency), source-map-explorer (exact breakdown from source maps), and bundlesize in CI/CD (prevent bloat creeping back). Common bloaters: moment.js (280KB, replace with date-fns 10KB or day.js 2KB), importing entire lodash (70KB, import individual functions: `import debounce from 'lodash/debounce'`), entire icon libraries (500KB-2MB, import only needed icons with tree-shaking). On 3G connections (reality for billions), each 50KB adds ~1 second to load time. 1MB bundle = 6-7 seconds before interactive. Users abandon sites taking >3 seconds. Audit dependencies, replace bloaters, prepare for lazy loading. Awareness is the first step - measure bundle, identify waste, optimize imports, then add lazy loading for remaining heavy code.
+
+**Reflection Questions:**
+
+- How does bundle analysis make invisible dependency costs visible and actionable?
+- What trade-offs exist between developer convenience (importing entire libraries) and user experience (bundle size)?
+- Why should bundle size monitoring be part of CI/CD rather than occasional manual checks?
+
+**Aria's Journal - Day 31 (Morning)**
+*I've arrived at the Lazy Library! The entrance was blocked by enormous bundle of books - the **Bundle Burden**! **Keeper Libris** explained: developers pack every possible library into apps, users must carry entire weight with every page load. Chart.js (180KB), editor (250KB), maps (300KB), admin tools (200KB) - all loaded upfront even if never used! On 3G, each 50KB adds ~1 second. 1.9MB bundle = 7 seconds before interactive! Users abandon sites >3s. I learned bundle analysis: (1) **webpack-bundle-analyzer** - visual treemap shows size of each dependency, identifies largest contributors, (2) **source-map-explorer** - analyzes source maps for exact breakdown, (3) **bundlesize in CI/CD** - prevents bloat creeping back in, gates on bundle size. Common bloaters: moment.js (280KB! replace with date-fns 10KB), full lodash (70KB, import individual functions), entire icon libraries (2MB!, tree-shake to 5KB). I practiced auditing bloated app: found moment.js, lodash, material-icons, PDF/charts loaded upfront when rarely used. Optimized: 3.4MB → 200KB initial (94% reduction!) by replacing bloaters + preparing for lazy loading. Keeper Libris says awareness is first step - measure, identify waste, optimize imports, then lazy load! Binary catalogued complete bundle analysis workflow!*
+
+---
+
+### Chapter 2: React.lazy() and Suspense Magic
+
+**Bridge:**
+Keeper Libris led Aria to a special section of the library where books floated in mid-air, materializing only when someone reached for them. "This is the Lazy Wing," he said with pride, "where we practice the art of temporal loading. You've optimized imports - now learn to defer entire components until they're actually needed!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended React.lazy introduction with dynamic imports and code splitting fundamentals]**
+
+"Watch this," Keeper Libris said, waving his hand toward the floating books. A book materialized just as he grasped for it, appeared in his hands, then vanished when released. "With **React.lazy()** and **Suspense**, we can summon components only when they're needed, not before. Your users download only what they actually use!"
+
+He demonstrated the fundamental pattern:
+```javascript
+// BEFORE - Static import (eager loading)
+import HeavyDashboard from './HeavyDashboard';  // Loaded immediately!
+import AdminPanel from './AdminPanel';  // Loaded immediately!
+import AnalyticsCharts from './AnalyticsCharts';  // Loaded immediately!
+
+// All components bundled together
+// Every user downloads all code
+// Initial bundle: 1.5MB
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/dashboard" element={<HeavyDashboard />} />
+      <Route path="/admin" element={<AdminPanel />} />  {/* 2% of users */}
+      <Route path="/analytics" element={<AnalyticsCharts />} />  {/* 5% of users */}
+    </Routes>
+  );
+}
+
+// AFTER - Dynamic import (lazy loading)
+import { lazy, Suspense } from 'react';
+
+// lazy() wraps dynamic import
+// Components loaded only when rendered!
+const HeavyDashboard = lazy(() => import('./HeavyDashboard'));
+const AdminPanel = lazy(() => import('./AdminPanel'));
+const AnalyticsCharts = lazy(() => import('./AnalyticsCharts'));
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      
+      <Route 
+        path="/dashboard" 
+        element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <HeavyDashboard />
+          </Suspense>
+        } 
+      />
+      
+      <Route 
+        path="/admin" 
+        element={
+          <Suspense fallback={<AdminLoadingScreen />}>
+            <AdminPanel />
+          </Suspense>
+        } 
+      />
+      
+      <Route 
+        path="/analytics" 
+        element={
+          <Suspense fallback={<AnalyticsLoading />}>
+            <AnalyticsCharts />
+          </Suspense>
+        } 
+      />
+    </Routes>
+  );
+}
+
+// HOW IT WORKS:
+// 1. Initial load: Only home page code (200KB)
+// 2. Navigate to /dashboard: Fetch dashboard chunk (300KB)
+// 3. Suspense shows <LoadingSpinner /> while loading
+// 4. Chunk arrives, renders <HeavyDashboard />
+// 5. Navigate to /admin: Fetch admin chunk (400KB) - only if user is admin!
+// 6. 98% of users never download admin code!
+```
+
+"The magic has two parts," Libris explained with enthusiasm. "First, **code splitting** - your bundler (Webpack, Vite) automatically creates separate chunks for each lazy-loaded component. Then, **dynamic imports** - `import()` is a promise that loads the chunk on demand. React.lazy() wraps this promise, Suspense handles the loading state, and users download only what they use!"
+
+Aria studied the pattern with growing understanding, connecting to her React foundation. "React.lazy() takes a function that returns a dynamic import promise. The component doesn't load until it's rendered! Suspense catches the loading promise and shows fallback UI while the chunk downloads. It's like Portal Keeper Sage's async patterns - promise-based loading with fallback states!"
+
+"Precisely!" Keeper Libris beamed. "And see the bundle splitting - Webpack creates:"
+```
+Build output:
+main.bundle.js (200KB) - Home + App shell
+dashboard.chunk.js (300KB) - HeavyDashboard
+admin.chunk.js (400KB) - AdminPanel
+analytics.chunk.js (250KB) - AnalyticsCharts
+
+Initial load: 200KB (10x smaller!)
+Admin users who never visit /admin: Never download that 400KB!
+```
+
+Binary projected analysis: "Code splitting achieved! lazy() + Suspense pattern: (1) lazy(() => import('./Component')) creates split point, (2) Bundler generates separate chunk, (3) Chunk loads on demand when component renders, (4) Suspense shows fallback during load. Result: 1.5MB monolith → 200KB initial + on-demand chunks!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended Suspense patterns with nested Suspense, error boundaries, and loading strategies]**
+
+"But Suspense is more powerful than simple loading spinners," Keeper Libris continued, showing advanced patterns.
+
+```javascript
+// NESTED SUSPENSE - Granular loading states
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      
+      {/* Different parts load independently! */}
+      <Suspense fallback={<SkeletonSidebar />}>
+        <Sidebar />
+      </Suspense>
+      
+      <Suspense fallback={<SkeletonChart />}>
+        <AnalyticsChart />
+      </Suspense>
+      
+      <Suspense fallback={<SkeletonTable />}>
+        <DataTable />
+      </Suspense>
+    </div>
+  );
+}
+
+// ERROR BOUNDARIES WITH LAZY LOADING
+class ErrorBoundary extends Component {
+  state = { hasError: false };
+  
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+  
+  componentDidCatch(error, info) {
+    console.error('Chunk failed to load:', error);
+    // Log to error tracking service
+  }
+  
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div>
+          <h2>Failed to load component</h2>
+          <button onClick={() => window.location.reload()}>
+            Reload page
+          </button>
+        </div>
+      );
+    }
+    
+    return this.props.children;
+  }
+}
+
+// COMBINED PATTERN - Error boundary + Suspense
+function App() {
+  return (
+    <ErrorBoundary>
+      <Suspense fallback={<LoadingScreen />}>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
+  );
+}
+
+// RETRY LOGIC FOR FAILED CHUNKS
+function lazyWithRetry(componentImport, retries = 3) {
+  return lazy(() => {
+    return new Promise((resolve, reject) => {
+      const attemptLoad = (retriesLeft) => {
+        componentImport()
+          .then(resolve)
+          .catch((error) => {
+            if (retriesLeft === 0) {
+              reject(error);
+            } else {
+              console.log(`Retrying... (${retriesLeft} attempts left)`);
+              setTimeout(() => attemptLoad(retriesLeft - 1), 1000);
+            }
+          });
+      };
+      
+      attemptLoad(retries);
+    });
+  });
+}
+
+// Usage - auto-retry on network failures
+const Dashboard = lazyWithRetry(() => import('./Dashboard'));
+```
+
+Aria examined the advanced patterns. "Nested Suspense allows granular loading - sidebar, chart, and table load independently with their own skeleton states! Error boundaries catch chunk loading failures (network errors, 404s). The retry logic attempts to reload failed chunks automatically - perfect for flaky connections!"
+
+"And watch loading state strategies," Libris added:
+
+```javascript
+// SKELETON SCREENS - Better UX than spinners
+function SkeletonCard() {
+  return (
+    <div className="skeleton-card">
+      <div className="skeleton-avatar" />
+      <div className="skeleton-line" />
+      <div className="skeleton-line short" />
+    </div>
+  );
+}
+
+// PROGRESSIVE ENHANCEMENT - Show partial content immediately
+function Dashboard() {
+  return (
+    <div>
+      {/* Static content shows immediately */}
+      <h1>Dashboard</h1>
+      <p>Welcome back!</p>
+      
+      {/* Dynamic content lazy loads */}
+      <Suspense fallback={<SkeletonChart />}>
+        <LiveChart />
+      </Suspense>
+    </div>
+  );
+}
+
+// LAZY LOAD ON INTERACTION - Not on render
+function ModalContainer() {
+  const [showModal, setShowModal] = useState(false);
+  const [Modal, setModal] = useState(null);
+  
+  const handleOpen = async () => {
+    if (!Modal) {
+      // Load modal component only when button clicked!
+      const { default: ModalComponent } = await import('./HeavyModal');
+      setModal(() => ModalComponent);
+    }
+    setShowModal(true);
+  };
+  
+  return (
+    <>
+      <button onClick={handleOpen}>Open Modal</button>
+      {showModal && Modal && <Modal onClose={() => setShowModal(false)} />}
+    </>
+  );
+}
+```
+
+"Multiple strategies!" Keeper Libris explained. "Skeleton screens provide better perceived performance than spinners. Progressive enhancement shows static content immediately while dynamic parts load. Lazy load on interaction defers even further - modal component doesn't load until button clicked!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on lazy loading practice with route-based splitting and component-level optimization]**
+
+"Now practice the art of temporal loading," Keeper Libris said, presenting Aria with an application to optimize with lazy loading.
+
+```javascript
+// ROUTE-BASED SPLITTING - Most common pattern
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Core components - loaded immediately
+import Home from './Home';
+import Header from './Header';
+import Footer from './Footer';
+
+// Feature routes - lazy loaded
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Admin = lazy(() => import('./pages/Admin'));
+const Analytics = lazy(() => import('./pages/Analytics'));
+const Reports = lazy(() => import('./pages/Reports'));
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      
+      <main>
+        <Suspense fallback={<RouteLoadingScreen />}>
+          <Routes>
+            {/* Home page - no lazy loading needed */}
+            <Route path="/" element={<Home />} />
+            
+            {/* All other routes lazy loaded */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/reports" element={<Reports />} />
+          </Routes>
+        </Suspense>
+      </main>
+      
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
+// COMPONENT-LEVEL SPLITTING - Heavy components
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      
+      {/* Chart library is heavy - lazy load it */}
+      <Suspense fallback={<ChartSkeleton />}>
+        <LazyChart />
+      </Suspense>
+      
+      {/* PDF export - lazy load on button click */}
+      <Suspense fallback={null}>
+        <LazyPDFExport />
+      </Suspense>
+    </div>
+  );
+}
+
+const LazyChart = lazy(() => 
+  import('./components/Chart')  // Loads Chart.js library
+);
+
+const LazyPDFExport = lazy(() => 
+  import('./components/PDFExport')  // Loads PDF library
+);
+
+// MODAL SPLITTING - Load on interaction
+function ProductPage({ productId }) {
+  const [showReviews, setShowReviews] = useState(false);
+  
+  return (
+    <div>
+      <ProductDetails productId={productId} />
+      
+      <button onClick={() => setShowReviews(true)}>
+        View Reviews
+      </button>
+      
+      {/* Modal only loads when button clicked */}
+      {showReviews && (
+        <Suspense fallback={<ModalLoading />}>
+          <LazyReviewsModal 
+            productId={productId}
+            onClose={() => setShowReviews(false)}
+          />
+        </Suspense>
+      )}
+    </div>
+  );
+}
+
+const LazyReviewsModal = lazy(() => import('./ReviewsModal'));
+
+// RESULTS:
+// Before: 1.5MB initial bundle
+// After: 250KB initial + lazy chunks
+// 84% reduction in initial load!
+```
+
+"Perfect splitting strategy!" Keeper Libris praised with satisfaction. "Route-based splitting for major features (admin, analytics, reports), component-level splitting for heavy libraries (charts, PDFs), modal splitting for user-triggered content (reviews, confirmations). Initial bundle dropped 84%!"
+
+Aria tested the lazy-loaded application: Home page loads instantly (250KB), navigating to dashboard triggers chunk load with loading skeleton, chart component loads separately with its own skeleton, clicking "Export PDF" lazy loads PDF library only then. "Each split point is strategic - only load code when it's actually needed!"
+
+Binary displayed lazy loading mastery: "React.lazy() + Suspense complete! Patterns: (1) Route-based splitting (major features), (2) Component-level splitting (heavy libraries), (3) Modal splitting (user interactions), (4) Error boundaries (chunk load failures), (5) Retry logic (network resilience). Bundle: 1.5MB monolith → 250KB initial + on-demand chunks = 84% reduction!"
+
+**Lazy Loading Mastery:**
+React.lazy() and Suspense enable component-level code splitting for dramatic bundle size reductions. lazy(() => import('./Component')) creates split point - bundler generates separate chunk that loads on demand. Suspense wraps lazy components providing fallback UI during chunk load (`<Suspense fallback={<Loading />}>`). Common patterns: (1) **Route-based splitting** - most effective, split major routes into separate chunks (admin, analytics, reports), (2) **Component-level splitting** - heavy components with large dependencies (charts, editors, PDF generators), (3) **Modal splitting** - load on interaction not render, defer until actually needed, (4) **Nested Suspense** - granular loading states for independent sections, (5) **Error boundaries** - catch chunk load failures from network issues, (6) **Retry logic** - automatic chunk reload attempts on failure. Use skeleton screens for better perceived performance than spinners. Progressive enhancement shows static content immediately while dynamic parts load. Combine with bundle analysis: analyze → identify heavy components → lazy load → measure improvement. Initial bundle reductions of 80-90% common with strategic splitting.
+
+**Reflection Questions:**
+
+- How does lazy loading with React.lazy() and Suspense balance initial load performance with ongoing user experience?
+- What criteria determine whether a component should be lazy-loaded versus eagerly loaded?
+- How do nested Suspense boundaries and error boundaries create resilient lazy-loading systems?
+
+**Aria's Journal - Day 31 (Afternoon)**
+*The Lazy Wing is magical! Books float in air, appearing only when reached for - perfect metaphor for lazy loading! Keeper Libris taught me **React.lazy()** and **Suspense** - the art of temporal loading! Pattern: `const Component = lazy(() => import('./Component'))` creates split point, bundler generates separate chunk, component loads on demand when rendered, Suspense provides fallback UI during load. I learned multiple patterns: (1) **Route-based splitting** - most effective! Split major routes (admin, analytics) into separate chunks, each route loads only when navigated to, (2) **Component-level splitting** - heavy components with large deps (Chart.js, PDF libs) load separately, (3) **Modal splitting** - load on button click not render, defer until actually needed, (4) **Nested Suspense** - granular loading (sidebar/chart/table each with own skeleton), (5) **Error boundaries** - catch chunk load failures (network errors), retry logic attempts reload automatically. Advanced patterns: skeleton screens (better UX than spinners), progressive enhancement (static content immediate, dynamic loads), lazy load on interaction (modal doesn't load until clicked!). I practiced complete splitting strategy: route-based for features, component-level for libraries, modal for interactions. Result: 1.5MB monolith → 250KB initial + lazy chunks = 84% reduction! Keeper Libris says strategic splitting is key - only load what's needed, when it's needed. Tomorrow: advanced splitting strategies with vendor chunking and preloading!*
+
+---
+
+### Chapter 3: Advanced Splitting Strategies
+
+**Bridge:**
+"Now for the final mastery," Keeper Libris said, leading Aria to the Library's architectural blueprints room where intricate diagrams showed sophisticated loading patterns. "Lazy loading is powerful, but without proper strategy, it becomes chaos. You must master vendor chunking, smart preloading, and intelligent prefetching - the four pillars of optimal bundle architecture!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended vendor chunking with caching strategies and long-term bundle optimization]**
+
+The blueprints room revealed intricate pathways and loading patterns glowing with strategic intelligence. "The secret to optimal performance is in the **splitting strategy**," Keeper Libris explained, gesturing to the complex diagrams. "You've learned basic lazy loading - now learn advanced architectures that optimize caching, minimize re-downloads, and intelligently preload based on user behavior!"
+
+He revealed the first advanced strategy:
+```javascript
+// VENDOR CHUNKING - Separate third-party libraries
+// In Webpack config:
+module.exports = {
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        // Separate vendor libraries from app code
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 10
+        },
+        
+        // Separate React libraries (updated less frequently)
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
+          name: 'react',
+          chunks: 'all',
+          priority: 20
+        },
+        
+        // Separate UI library (Material-UI, Ant Design, etc.)
+        ui: {
+          test: /[\\/]node_modules[\\/](@material-ui|@mui)[\\/]/,
+          name: 'ui',
+          chunks: 'all',
+          priority: 15
+        },
+        
+        // Common code shared across routes
+        common: {
+          minChunks: 2,  // Used in at least 2 places
+          name: 'common',
+          chunks: 'all',
+          priority: 5,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+
+// RESULT - Strategic bundle structure:
+/*
+Build output:
+react.chunk.js (130KB) - React, ReactDOM, React Router
+  └─ Cache: Long-term (rarely changes)
+  
+ui.chunk.js (300KB) - Material-UI components
+  └─ Cache: Medium-term (updates quarterly)
+  
+vendors.chunk.js (200KB) - Other third-party libs
+  └─ Cache: Medium-term
+  
+common.chunk.js (50KB) - Shared app code
+  └─ Cache: Short-term (changes with app updates)
+  
+main.chunk.js (100KB) - App shell
+  └─ Cache: Short-term
+  
+dashboard.chunk.js (150KB) - Dashboard route
+analytics.chunk.js (200KB) - Analytics route
+admin.chunk.js (300KB) - Admin route
+*/
+
+// WHY THIS MATTERS:
+// User visits app for first time: Downloads all chunks (1.43MB total)
+// User returns next week: App code updated, BUT:
+//   ✅ react.chunk.js cached (no download)
+//   ✅ ui.chunk.js cached (no download)
+//   ✅ vendors.chunk.js cached (no download)
+//   ❌ main.chunk.js re-download (100KB)
+//   ❌ dashboard.chunk.js re-download (150KB)
+// Total download on return: 250KB instead of 1.43MB!
+// 82% reduction from smart caching!
+```
+
+Aria studied the vendor chunking strategy with intense focus. "Separate third-party libraries from app code because they change at different rates! React updates rarely (maybe quarterly), app code updates frequently (daily/weekly). With vendor chunking, returning users only re-download changed chunks - not the entire bundle!"
+
+"Exactly!" Keeper Libris approved enthusiastically. "And see the cache groups priorities - higher priority wins when a module matches multiple groups. React gets its own chunk (priority 20) even though it matches vendor pattern (priority 10). Strategic splitting based on update frequency!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended preloading and prefetching with intelligent prediction and resource hints]**
+
+"But we can do even better with intelligent loading," Keeper Libris continued, revealing advanced preloading patterns.
+
+```javascript
+// SMART PRELOADING - Load on hover/focus before click
+function NavigationLink({ to, children }) {
+  const [isPrefetched, setIsPrefetched] = useState(false);
+  
+  const handleMouseEnter = () => {
+    if (!isPrefetched) {
+      // User is hovering - likely to click!
+      // Preload the chunk now (before click)
+      const routeChunk = getChunkForRoute(to);
+      if (routeChunk) {
+        import(/* webpackChunkName: routeChunk */ routeChunk);
+        setIsPrefetched(true);
+      }
+    }
+  };
+  
+  return (
+    <Link 
+      to={to}
+      onMouseEnter={handleMouseEnter}
+      onFocus={handleMouseEnter}  // Keyboard navigation too!
+    >
+      {children}
+    </Link>
+  );
+}
+
+// MAGIC COMMENTS - Webpack directives
+const Dashboard = lazy(() => 
+  import(
+    /* webpackChunkName: "dashboard" */
+    /* webpackPrefetch: true */  // Prefetch during idle time
+    './Dashboard'
+  )
+);
+
+const AdminPanel = lazy(() => 
+  import(
+    /* webpackChunkName: "admin" */
+    /* webpackPreload: true */  // Preload in parallel with parent
+    './AdminPanel'
+  )
+);
+
+// DIFFERENCE:
+// - webpackPrefetch: Loads during browser idle time (low priority)
+//   Good for: Routes user might visit next
+//   
+// - webpackPreload: Loads in parallel with parent (high priority)
+//   Good for: Critical chunks needed immediately after parent
+
+// IDLE TIME PREFETCHING - Use requestIdleCallback
+function usePrefetchOnIdle(chunkImport) {
+  useEffect(() => {
+    if ('requestIdleCallback' in window) {
+      const idleCallback = requestIdleCallback(() => {
+        // Browser is idle - prefetch likely next chunks
+        chunkImport();
+      }, { timeout: 2000 });
+      
+      return () => cancelIdleCallback(idleCallback);
+    }
+  }, [chunkImport]);
+}
+
+// Usage - prefetch likely next routes during idle
+function Dashboard() {
+  // Users often go Dashboard → Analytics
+  usePrefetchOnIdle(() => import('./Analytics'));
+  
+  return <div>{/* Dashboard content */}</div>;
+}
+
+// ANALYTICS-DRIVEN PREFETCHING - Based on user behavior
+const routePredictions = {
+  '/dashboard': [
+    { route: '/analytics', probability: 0.6 },  // 60% of users go here
+    { route: '/reports', probability: 0.3 }
+  ],
+  '/profile': [
+    { route: '/settings', probability: 0.7 }
+  ]
+};
+
+function SmartPrefetch() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    const predictions = routePredictions[location.pathname];
+    
+    if (predictions) {
+      // Prefetch highest probability routes during idle
+      requestIdleCallback(() => {
+        predictions.forEach(({ route, probability }) => {
+          if (probability > 0.5) {  // Only if >50% likely
+            const chunk = getChunkForRoute(route);
+            import(chunk);
+          }
+        });
+      });
+    }
+  }, [location.pathname]);
+  
+  return null;
+}
+```
+
+Aria examined the preloading patterns with growing excitement. "Smart preloading loads chunks on hover before click - by the time users click, the chunk is already loaded! webpackPrefetch loads during idle time (low priority, won't compete with critical resources). webpackPreload loads in parallel (high priority, for immediately needed chunks). requestIdleCallback utilizes browser idle time for prefetching!"
+
+"And analytics-driven prefetching is the ultimate intelligence," Keeper Libris added with pride. "Track where users go from each page, prefetch the most likely next routes! From dashboard, 60% go to analytics - prefetch it! From profile, 70% go to settings - prefetch it! Predictive loading based on real user behavior!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on complete bundle architecture with all strategies integrated]**
+
+"Now architect the ultimate bundle strategy," Keeper Libris said, presenting Aria with the culminating challenge - design production-grade bundle architecture combining all techniques.
+
+Aria integrated everything into a complete system:
+```javascript
+// COMPLETE BUNDLE ARCHITECTURE
+// webpack.config.js
+module.exports = {
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        // VENDOR CHUNKING
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
+          name: 'react',
+          priority: 20
+        },
+        ui: {
+          test: /[\\/]node_modules[\\/](@material-ui|@mui)[\\/]/,
+          name: 'ui',
+          priority: 15
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: 10
+        },
+        common: {
+          minChunks: 2,
+          name: 'common',
+          priority: 5,
+          reuseExistingChunk: true
+        }
+      }
+    },
+    runtimeChunk: 'single'  // Separate webpack runtime
+  }
+};
+
+// App.js - LAZY LOADING + PRELOADING
+import { lazy, Suspense } from 'react';
+
+// Core - loaded immediately
+import Home from './Home';
+import Header from './Header';
+
+// Features - lazy loaded with prefetch hints
+const Dashboard = lazy(() => 
+  import(
+    /* webpackChunkName: "dashboard" */
+    /* webpackPrefetch: true */
+    './Dashboard'
+  )
+);
+
+const Analytics = lazy(() => 
+  import(
+    /* webpackChunkName: "analytics" */
+    /* webpackPrefetch: true */
+    './Analytics'
+  )
+);
+
+const Admin = lazy(() => 
+  import(
+    /* webpackChunkName: "admin" */
+    './Admin'
+  )
+);
+
+function App() {
+  return (
+    <>
+      <Header />
+      <SmartPrefetch />  {/* Analytics-driven prefetching */}
+      
+      <Suspense fallback={<RouteLoading />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          {/* Smart preload on hover */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </Suspense>
+    </>
+  );
+}
+
+// SmartPrefetch component - predictive loading
+function SmartPrefetch() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    // Predictive prefetch based on current route
+    const prefetchMap = {
+      '/': [import(/* webpackPrefetch: true */ './Dashboard')],
+      '/dashboard': [
+        import(/* webpackPrefetch: true */ './Analytics'),
+        import(/* webpackPrefetch: true */ './Reports')
+      ],
+      '/profile': [
+        import(/* webpackPrefetch: true */ './Settings')
+      ]
+    };
+    
+    const prefetches = prefetchMap[location.pathname];
+    if (prefetches) {
+      requestIdleCallback(() => {
+        prefetches.forEach(p => p.catch(() => {}));  // Prefetch during idle
+      });
+    }
+  }, [location.pathname]);
+  
+  return null;
+}
+
+// SmartLink component - hover preload
+function SmartLink({ to, children, ...props }) {
+  const [prefetched, setPrefetched] = useState(false);
+  
+  const handleMouseEnter = () => {
+    if (!prefetched) {
+      // Map routes to chunks
+      const chunkMap = {
+        '/dashboard': () => import('./Dashboard'),
+        '/analytics': () => import('./Analytics'),
+        '/admin': () => import('./Admin')
+      };
+      
+      const prefetch = chunkMap[to];
+      if (prefetch) {
+        prefetch();
+        setPrefetched(true);
+      }
+    }
+  };
+  
+  return (
+    <Link 
+      to={to}
+      onMouseEnter={handleMouseEnter}
+      onFocus={handleMouseEnter}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+}
+
+// FINAL BUNDLE STRUCTURE:
+/*
+runtime.js (5KB) - Webpack runtime
+react.js (130KB) - React libs (cached long-term)
+ui.js (300KB) - Material-UI (cached medium-term)
+vendors.js (150KB) - Other libs (cached medium-term)
+common.js (50KB) - Shared app code
+main.js (80KB) - App shell
+
+dashboard.js (150KB) - Lazy loaded + prefetched
+analytics.js (180KB) - Lazy loaded + prefetched  
+admin.js (250KB) - Lazy loaded on demand
+
+Initial load: 715KB (runtime + react + ui + vendors + common + main)
+Returning users (cached libs): 130KB (common + main only!)
+Dashboard navigation: Instant (prefetched!)
+*/
+```
+
+"Perfect architecture!" Keeper Libris exclaimed with immense pride. "Vendor chunking separates libraries by update frequency (long-term caching), lazy loading defers routes until needed, prefetch hints load likely next routes during idle, hover preloading loads before clicks, analytics-driven predictions based on real behavior. This is the complete Performance Architect blueprint!"
+
+He tested the system comprehensively: Initial load 715KB (down from 1.9MB original!), returning users only download 130KB (cached vendor chunks!), navigating to dashboard is instant (prefetched during idle!), hovering analytics link preloads before click (seamless transition!), admin panel only loads if user actually visits (98% never download it!).
+
+"You've achieved mastery of the Lazy Library!" Keeper Libris declared, handing Aria the Architect's Scroll - a blueprint of optimal bundle splitting strategies. "Initial bundles that once groaned under megabytes now load in milliseconds. You've learned: bundle analysis to identify waste, dependency optimization to replace bloaters, React.lazy() for component splitting, vendor chunking for optimal caching, smart prefetching for predictive loading. Performance Architect status granted!"
+
+Binary displayed complete mastery: "Bundle optimization complete! Techniques: (1) Bundle analysis (webpack-bundle-analyzer, identify bloat), (2) Dependency optimization (replace moment.js, tree-shake), (3) React.lazy() + Suspense (component splitting), (4) Vendor chunking (separate by update frequency), (5) Smart preloading (hover/focus), (6) Prefetch hints (webpackPrefetch/Preload), (7) Analytics-driven predictions (behavior-based). Result: 1.9MB → 715KB initial, 130KB for returning users = 93% reduction with caching!"
+
+**Advanced Splitting Mastery:**
+Optimal bundle architecture combines multiple strategies for maximum performance and caching efficiency. **Vendor Chunking** - separate third-party libraries from app code in splitChunks config, group by update frequency (React rarely changes, app code changes daily), enables long-term caching (returning users only download changed chunks). **Smart Preloading** - load on hover/focus before click for instant navigation, use Link onMouseEnter/onFocus to trigger chunk load, by click time chunk already loaded. **Magic Comments** - webpackPrefetch (low priority, loads during idle for likely next routes), webpackPreload (high priority, loads in parallel for critical chunks). **Idle Time Prefetching** - use requestIdleCallback to prefetch during browser idle, doesn't compete with critical resources. **Analytics-Driven** - track user navigation patterns, prefetch highest probability next routes (dashboard → analytics 60%, prefetch it!). **Complete Architecture** - separate runtime/vendor/app chunks, lazy load routes with prefetch hints, hover preload links, analytics predictions, error boundaries for resilience. Initial bundle reductions of 60-80% common, returning user downloads reduced 90%+ with caching.
+
+**Reflection Questions:**
+
+- How does vendor chunking based on update frequency optimize long-term caching for returning users?
+- What trade-offs exist between aggressive prefetching (faster navigation) and bandwidth usage?
+- How can analytics data inform intelligent prefetching strategies based on actual user behavior?
+
+**Aria's Journal - Day 31 (Evening)**
+*I've mastered the Grand Library Architecture and become a **Performance Architect**! Keeper Libris taught me advanced splitting strategies: (1) **Vendor Chunking** - separate third-party libs from app code in splitChunks config, group by update frequency (React rarely changes, cache long-term; app code changes frequently, cache short-term), returning users only re-download changed chunks!, configure cache groups with priorities (React priority 20, UI 15, vendors 10, common 5), (2) **Smart Preloading** - load on hover/focus BEFORE click for instant navigation, Link onMouseEnter triggers chunk load, by click time chunk already loaded!, (3) **Magic Comments** - `/* webpackPrefetch: true */` loads during idle (low priority, likely next routes), `/* webpackPreload: true */` loads in parallel (high priority, critical chunks), (4) **Idle Time Prefetching** - requestIdleCallback prefetches during browser idle, doesn't compete with critical resources, perfect for likely next routes, (5) **Analytics-Driven Predictions** - track where users navigate from each page, prefetch highest probability routes (dashboard → analytics 60%, prefetch it!), behavior-based intelligence. I built complete architecture: vendor chunking by update frequency, lazy loaded routes with prefetch hints, hover preload on links, analytics predictions, error boundaries. Results: 1.9MB original → 715KB initial (62% reduction!), returning users 130KB (cached vendor chunks = 93% reduction with caching!), dashboard navigation instant (prefetched!). Keeper Libris says this is Performance Architect mastery - bundle analysis + dependency optimization + lazy loading + vendor chunking + smart prefetching = complete bundle optimization! Tomorrow: Virtualization Vault with Guardian Zephyr for infinite data rendering!*
+
+**Chapter Ending:**
+
+With the secrets of the Lazy Library mastered and the Architect's Scroll in hand, applications across the React Kingdom loaded with unprecedented speed - initial bundles shrank from megabytes to kilobytes, returning users enjoyed near-instant loads from cached vendor chunks, and navigation felt seamless through intelligent prefetching.
+
+Keeper Libris stood with Aria at the library's exit, looking out over the valley. "You've learned the complete art of temporal loading," he said with deep satisfaction. "Bundle analysis revealed the waste hidden in dependencies. Dependency optimization replaced bloaters with efficient alternatives. React.lazy() and Suspense enabled component-level splitting. Vendor chunking optimized long-term caching. Smart preloading and analytics-driven prefetching made navigation feel instant. From 1.9MB to 715KB initial, and 130KB for returning users - you've achieved 93% reduction through intelligent architecture!"
+
+"But bundle size is only one dimension of performance," Keeper Libris continued, his expression becoming more serious as he pointed toward a structure visible in the distance. "The Virtualization Vault awaits you down in the valley. Guardian Zephyr guards secrets that even your optimized bundles will need when users face lists of thousands of items. Virtual scrolling - the art of rendering only what's visible - is the next frontier!"
+
+Binary's display showed massive datasets, thousands of rows scrolling. "Next challenge detected: infinite data management. Bundle optimization: COMPLETE ✓. Virtualization techniques: LOADING. Performance Architect Level 3 ahead!"
+
+Aria gazed toward the Virtualization Vault with determination, the Architect's Scroll tucked safely in her pack. "From megabyte bundles to kilobyte chunks, from eager loading to temporal wisdom. Now to master infinite data without infinite rendering. The performance journey continues!"
+
+Keeper Libris watched as Aria and Binary descended the path toward the Vault, knowing she carried not just techniques but the architectural thinking to optimize at scale - splitting strategically, caching intelligently, prefetching predictively. The Lazy Library's wisdom would serve her well in the challenges ahead.
+
+---
+
+🚧 **WORK IN PROGRESS - LP7.3-7.4 (2 lessons remaining)**
 
 ---
 
