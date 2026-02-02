@@ -170,20 +170,35 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ## Standalone Locations (Quarter Unspecified or Special)
 
-### Grand Library
+### JSX Magic Academy (Grand Library)
 **First Mentioned**: Components Basics → JsxMagic → Ch1
 
-**Quarter**: [Not specified - possibly central or academic district]
+**Quarter**: [Not specified - academic district, possibly northern or central]
 
-**Features**:
-- Glowing scrolls
-- JSX Translator Crystal
-- Expression Playground
-- Tablets with JSX rules
+**Architecture**:
+- Grand library filled with glowing scrolls
+- Expression Chamber (Ch2 - where curly brace magic is taught)
+- Hall of Sacred Rules (Ch3 - contains ancient tablets with ethereal light)
+- Stained glass windows casting afternoon shadows
+- Storage for magical syntax scrolls
 
-**Master**: Professor Syntaxis (wise mage)
+**Atmosphere**:
+- Academic, mystical, scholarly energy
+- Glowing scrolls and tablets providing ambient light
+- Professor's robes shimmering with HTML tags and JavaScript symbols
+- Binary sprites zipping around illuminating concepts
 
-**Lessons Taught**: JSX syntax, Babel, JavaScript expressions
+**Unique Features**:
+- **Babel Translator Crystal**: Transforms JSX into JavaScript function calls
+- **Expression Playground**: Practice area for curly brace expressions
+- **Glowing Tablets**: Ancient rules displayed with ethereal light (single root, closed tags, className, camelCase)
+- **Curly Brace Portals**: Visualized as glowing portals between markup and JavaScript realms
+
+**Master**: Professor Syntaxis (wise mage, keeper of ancient JSX language)
+
+**Teaches**: JSX syntax, Babel transformation, embedding expressions (6 types), JSX rules
+
+**Connection to Teaching**: Library with scrolls = documentation/syntax reference; glowing translations = compilation process; portals between realms = JSX blending HTML and JavaScript
 
 ---
 

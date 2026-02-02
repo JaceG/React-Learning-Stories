@@ -33,9 +33,14 @@
 ### Main Characters
 
 **Binary** (Aria's Companion)
-- **First Appearance**: LP1.3 JsxMagic Ch2 (TBD - to be extracted)
-- **Role**: Companion sprite that accompanies Aria
-- **Contributions**: (To be documented as lessons are extracted)
+- **First Appearance**: LP1.3 JsxMagic Ch2
+- **Officially Joins**: LP1.3 JsxMagic Ch3 (Aria invites Binary to travel with her)
+- **Role**: Companion sprite, expression evaluator, React concept explainer
+- **Appearance**: Small sprite with flickering lights, can zip around quickly
+- **Personality**: Chirpy, enthusiastic, helpful, excitable, bouncy
+- **Abilities**: Evaluates JavaScript expressions, illuminates concepts, projects holograms, provides technical analysis
+- **Purpose**: "Every apprentice needs a companion" - guides and explains React concepts throughout journey
+- **Contributions By Lesson**: (To be documented as extraction continues)
 
 ---
 
@@ -50,6 +55,12 @@
 **Location**: Eastern Quarter - Props Messenger Guild  
 **Mentors**: Hermes, Guardian TypeCheck  
 **Concepts**: Props → "special messengers with satchels"; One-way data flow → "one-way road from App to workshops"; Callbacks → "special callback messengers"; PropTypes → "PropTypes Guardians"; DefaultProps → "spare parts ready just in case"
+
+### LP1.3 JsxMagic
+**Location**: JSX Magic Academy (Grand Library)  
+**Mentors**: Professor Syntaxis  
+**Companion**: Binary joins (Ch2 appears, Ch3 officially becomes companion)  
+**Concepts**: JSX → "magical syntax", "ancient language", "component spells"; Babel → "translator sprite"; Curly braces → "portals between markup and JavaScript realm"; JSX Rules → "sacred laws on glowing tablets"
 
 ### Mentors & Guides
 
@@ -92,12 +103,19 @@
 - **Note**: Appears in Ch3 with foreshadowing in Ch1
 
 **Professor Syntaxis**
-- **Role**: Wise mage, teaches JSX syntax
-- **First Appearance**: Components Basics → JsxMagic → Chapter 1
-- **Teachings**: JSX syntax, Babel transformation, embedding JavaScript expressions, JSX rules
-- **Key Traits**: Scholarly, robes shimmer with HTML tags and JavaScript symbols
-- **Location**: Grand Library
-- **Connection**: Heard of Aria's progress from Hermes
+- **Role**: Wise mage, keeper of the ancient JSX language
+- **Appears In**: LP1.3 JsxMagic (Ch1-3)
+- **Location**: JSX Magic Academy - Grand Library, Expression Chamber, Hall of Sacred Rules
+- **Appearance**: Robes shimmer with HTML tags and JavaScript symbols
+- **Personality**: Scholarly, proud, patient teacher, beams when students understand, uses magical metaphors
+- **Teaching Style**: Shows glowing scrolls, demonstrates transformations, builds from syntax → expressions → rules, uses visual aids (glowing tablets for rules)
+- **Teaches**:
+  - JSX syntax (blend of HTML-like tags and JavaScript)
+  - Babel transformation (JSX → JavaScript function calls)
+  - Curly brace expressions (embedding dynamic content)
+  - Six expression types (text, attributes, conditionals, arrays, ternaries, function calls)
+  - JSX Rules: Single root element, closed tags, className (not class), camelCase attributes
+- **Connection**: Heard of Aria's progress from Hermes, sends her to Lifecycle Sanctum next
 
 **Chronos**
 - **Role**: Master Time Keeper, teaches component lifecycle
