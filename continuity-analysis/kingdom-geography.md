@@ -154,10 +154,13 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
   - Master: Brother Memor (renamed from Brother Binary)
 
 - **Lazy Library**
-  - Vast library with floating shelves
-  - Sections appear/disappear as needed (demonstrating lazy loading)
-  - Temporal loading chambers
-  - Master: Keeper Libris (new character, replaced Chronos)
+  - **First Mentioned**: LP7.2 LazyLibrary Ch1
+  - **Architecture**: Mystical repository where all React knowledge stored, main entrance blocked by enormous bundle of books, towering shelves, Lazy Wing (special section where books float in mid-air - Ch2), Library's architectural plans/blueprints room (Ch3), ancient pathways leading to repository
+  - **Atmosphere**: Something wrong (entrance blocked), burden of carrying too much knowledge, ancient librarian wisdom, magical temporal loading, books appearing on demand, strategic planning
+  - **Visual**: Enormous bundle blocking entrance (too heavy to move), ancient librarian from shadows, towering shelves, books floating materializing when reached for, intricate pathways/loading patterns on blueprints, Architect's Scroll
+  - **Master**: Keeper Libris (ancient librarian, guardian, master of temporal loading - NEW, replaced Chronos)
+  - **Teaches**: Bundle Burden (eager loading curse), bundle analysis tools, React.lazy()/Suspense, code splitting, dynamic imports, route/component-based splitting, Four Pillars (route-based/vendor chunking/smart preloading/resource prefetching), Performance Architect title
+  - **Connection**: Library=code repo, Bundle Burden=massive bundles, books=libs/components, blocked entrance=slow load, floating=lazy loading, blueprints=strategy, "load only when needed"
 
 - **Virtualization Vault**
   - Crystalline chamber with infinite vertical tunnels
