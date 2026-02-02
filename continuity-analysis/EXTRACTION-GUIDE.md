@@ -115,33 +115,29 @@ Capture these elements:
 
 #### For Story-Bible.md:
 
-**A. Aria's Journey** (factual reference, not narrative analysis)
-- Location and mentor for lesson
-- Concepts learned (both React terms and fantasy translations)
-- Key moments (which chapters)
-- Direct quotes from Aria
-- What happens at end (next destination, scroll received, etc.)
+**A. Lesson Summary** (What's taught where)
+- Location and mentor
+- React concepts taught → Fantasy translations
+- Which locations visited (by chapter)
+- Where student goes next
 
-**B. Binary's Contributions**
-- Technical observations made
-- Support provided to Aria
-- Personality moments
-- Analysis/data displayed
-- Humor or emotional beats
+**B. Binary's Contributions** (when Binary appears - starts LP1.3)
+- Technical observations/data displayed
+- Support provided
+- Notable moments
 
-**C. Mentor Profiles** (factual reference only)
+**C. Mentor Profiles** (minimal reference facts)
 - Role
 - Which lesson/chapters they appear in
 - World location(s)
 - Physical appearance
-- What they teach (React concepts + fantasy translations)
-- Key quotes (exact dialogue with chapter noted)
+- What they teach (React concepts)
 
-**D. Relationships**
-- How Aria and mentor interact
-- Trust building moments
-- Teaching dynamic evolution
-- Memorable exchanges
+**Notes**: 
+- NO Aria profile (we ARE Aria)
+- NO character quotes (not needed for reference)
+- NO relationship dynamics or emotional analysis
+- Keep it to: who, where, what they look like, what they teach
 
 #### For Kingdom-Geography.md:
 

@@ -30,61 +30,41 @@
 
 ### Main Characters
 
-**Aria**
-- **Role**: Protagonist, apprentice learning React
-- **First Appearance**: Components Basics → ComponentKingdom → Chapter 1
-- **Arc**: Journeys through React Kingdom learning progressively advanced concepts from various masters
-- **Key Traits**: Curious, eager to learn, asks good questions, makes connections between concepts, exclaims insights with excitement
-- **Physical Description**: Young apprentice (specific details TBD from later lessons)
-- **Background**: Studied ancient JavaScript scrolls for months before acceptance to React Kingdom
-- **Relationships**: 
-  - Student to all mentors
-  - Accompanied by Binary sprite (from JsxMagic Ch2 onward)
+**Binary** (Aria's Companion)
+- **First Appearance**: LP1.3 JsxMagic Ch2 (TBD - to be extracted)
+- **Role**: Companion sprite that accompanies Aria
+- **Contributions**: (To be documented as lessons are extracted)
 
 ---
 
-## Aria's Journey (Chronological)
+## Lesson Summary (What's Taught Where)
 
 ### LP1.1 ComponentKingdom (Ch1-3)
 **Location**: Northern Quarter - Component Workshop District  
-**Mentor**: Master Aurelius  
-**Days**: 1-3
+**Mentor**: Master Aurelius
 
-**Concepts Learned**:
-- **Components** (Fantasy: "magical building blocks", "workshops") - React: Reusable pieces of code that return JSX
-- **App Component** (Fantasy: "master builder in tallest tower") - React: Root component that organizes all other components
-- **Component Communication** (Fantasy: "messengers delivering instructions") - React: Props (high-level intro only, details in LP1.2)
-- **Component Composition** (Fantasy: "workshops collaborating") - React: Building complex UIs by combining simpler components
-- **Single Responsibility** (Fantasy: "each citizen excels at their craft") - React: Each component should have one clear purpose
+**React Concepts** → **Fantasy Translation**:
+- Components → "magical building blocks", "workshops"
+- App Component → "master builder in tallest tower"
+- Props (high-level intro) → "messengers delivering instructions" *(full teaching in LP1.2)*
+- Component Composition → "workshops collaborating"
+- Single Responsibility → "each citizen excels at their craft"
 
-**Key Moments**:
-- Ch1: Arrives at kingdom gates, meets Aurelius
-- Ch2: Watches messengers rush between workshops
-- Ch3: Sees components assemble in Grand Assembly Hall, experiments with combinations
-- Ch3 Ending: Receives sealed scroll for Eastern Quarter (Props Messengers Guild)
+**Locations Visited**:
+- Ch1: Kingdom gates entrance, Component Workshop District
+- Ch2: Communication hub (messengers rushing between workshops)
+- Ch3: Grand Assembly Hall (components assembling demonstration)
 
-**Aria Quotes**:
-- "So each workshop receives instructions and uses them to determine exactly what to build and how it should behave?" (Ch2)
-- "It's like... each component is a piece of a larger puzzle!" (Ch3)
-- "I can build anything now!" (Ch3)
+**Next**: Eastern Quarter - Props Messengers Guild
 
 ### Mentors & Guides
 
 **Master Aurelius**
 - **Role**: Grand Architect of the React Kingdom
 - **Appears In**: LP1.1 ComponentKingdom (Ch1, Ch2, Ch3)
-- **Location**: Northern Quarter - Component Workshop District entrance and Grand Assembly Hall
+- **Location**: Northern Quarter - Component Workshop District
 - **Appearance**: Beard sparkling with fragments of code
-- **Teaches**:
-  - **Components** (React: Reusable code pieces returning JSX / Fantasy: "magical building blocks")
-  - **Single Responsibility** (React: Each component has one purpose / Fantasy: "each citizen excels at their craft")
-  - **Component Reusability** (React: Components can be used throughout app / Fantasy: "reused throughout the realm")
-  - **Component Communication** (React: Props / Fantasy: "messengers delivering instructions") - *High-level only, details in LP1.2*
-  - **Component Composition** (React: Building UIs by combining components / Fantasy: "workshops collaborating")
-- **Key Quotes**:
-  - "Everything you see is built from magical building blocks called Components. Unlike the static structures in your homeland, these Components are alive and responsive." (Ch1)
-  - "Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm." (Ch1)
-  - "A kingdom is strongest when each citizen excels at their craft and works in harmony with others." (Ch3)
+- **Teaches**: Components, reusability, composition, single responsibility (Props intro deferred to LP1.2)
 
 **Hermes**
 - **Role**: Head Messenger of Props Messenger Guild
