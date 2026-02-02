@@ -236,9 +236,10 @@
 **Debuggora the Owl**
 - **Role**: Mystical owl companion to Test Master Jasmine
 - **Appears In**: LP8.1 TestingTower (Ch1-3), LP8.2 IntegrationInn (Ch2-3)
-- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder), Integration Inn
+- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder), also Integration Inn
 - **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
 - **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs), mocking wisdom ("if test fails with mock, it's YOUR code not service")
+- **Note**: **IMPORTANT**: Debuggora ONLY appears in LP8 (Testing Debugging learning path). Does NOT appear in LP9-15.
 
 **Innkeeper Cypress**
 - **Role**: Master of component harmony and integration testing
