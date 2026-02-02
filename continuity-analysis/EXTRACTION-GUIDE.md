@@ -16,8 +16,8 @@
 ```
 LP1: Components Basics (4 lessons)
   [✓] 1.1 ComponentKingdom (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 1.2 PropsMessengers (Ch1, Ch2, Ch3)
-  [ ] 1.3 JsxMagic (Ch1, Ch2, Ch3)
+  [✓] 1.2 PropsMessengers (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 1.3 JsxMagic (Ch1, Ch2, Ch3) - COMPLETE
   [ ] 1.4 LifecycleChronicles (Ch1, Ch2, Ch3)
 
 LP2: State Management (4 lessons)
