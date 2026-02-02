@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP5.4 SubmissionPortals ✅ (LP5 COMPLETE!)
+**Last Completed**: LP6.1 NavigationCompass ✅
 
-**Next Lesson**: LP6.1 RoutingFoundations
+**Next Lesson**: LP6.2 WaypointWizardry
 
 **Progress Tracker**:
 ```
