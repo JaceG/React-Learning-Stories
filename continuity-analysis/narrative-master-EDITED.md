@@ -1403,7 +1403,7 @@ The Composition Workshop was unlike anything Aria had seen. Instead of forges an
 
 Master Cargo laughed warmly. "In a way! Watch this." He gestured to a Card component that glowed softly. "This Card doesn't know what content it will hold - it's a *container*. The content comes from whoever uses it."
 
-He demonstrated, placing different elements inside the Card: text, images, even entire smaller components. "The Card receives these as `props.children` - a special prop that holds whatever is nested inside it."
+He demonstrated, placing different elements inside the Card: text, images, even entire smaller components. "The Card receives these as props.children - a special prop that holds whatever is nested inside it."
 
 Binary projected a hologram of nested boxes. "So it's like a box that can hold anything?"
 
@@ -1421,7 +1421,7 @@ After the basic demonstration, Master Cargo led Aria to a row of Layout componen
 
 "This is incredible!" Aria exclaimed. "The Modal doesn't need to know anything about forms or images - it just provides the modal behavior!"
 
-"Exactly! That's the power of `props.children`," Master Cargo said. "The parent component handles *how* content is displayed, while children determine *what* is displayed. It's the separation of concerns at its finest."
+"Exactly! That's the power of props.children," Master Cargo said. "The parent component handles *how* content is displayed, while children determine *what* is displayed. It's the separation of concerns at its finest."
 
 He showed her more examples: Tabs that didn't care what TabPanel content they held, Accordions that could contain any collapsible content, Tooltips that could wrap any trigger element.
 
@@ -1437,7 +1437,7 @@ Aria nodded, her mind racing with possibilities. "So instead of creating a CardW
 Keeper of the Composition District in the Trade Quarter. His workshop is filled with nested component structures that fit together like elegant puzzles. "Children aren't just data - they're entire component trees that let you compose complex interfaces from simple, reusable pieces. Master composition, and you master React's true power!"
 
 **Master Cargo's Composition Wisdom:**
-The `props.children` pattern enables true composition - wrapping content with behavior, structure, or styling without the wrapper knowing what it contains. Use children for layout components (Card, Modal, Panel), wrapper components (ErrorBoundary, ThemeProvider), and any component that should work with arbitrary content. Remember: children can be elements, arrays of elements, text, numbers, or even functions (render props). This pattern creates highly reusable components that don't need props for every variation - they simply wrap whatever you provide. Composition over configuration leads to cleaner, more maintainable code.
+The props.children pattern enables true composition - wrapping content with behavior, structure, or styling without the wrapper knowing what it contains. Use children for layout components (Card, Modal, Panel), wrapper components (ErrorBoundary, ThemeProvider), and any component that should work with arbitrary content. Remember: children can be elements, arrays of elements, text, numbers, or even functions (render props). This pattern creates highly reusable components that don't need props for every variation - they simply wrap whatever you provide. Composition over configuration leads to cleaner, more maintainable code.
 
 **Reflection Questions:**
 
@@ -1446,7 +1446,7 @@ The `props.children` pattern enables true composition - wrapping content with be
 - What makes a Modal component more reusable when it accepts children rather than specific props?
 
 **Aria's Journal - Day 12 (Morning)**
-*The Composition Workshop revealed a completely new way of thinking! Instead of passing data as props, I can pass entire component trees as children. A Card component doesn't need titleProp, imageProp, descriptionProp - it just accepts children and wraps them beautifully! Master Cargo showed me that `props.children` is React's most powerful pattern: Modals that work with any content, Layouts that arrange any children, Tooltips that wrap any trigger. One component becomes infinitely flexible based on what you nest inside. This isn't just code reuse - it's true composition! Now I understand why React emphasizes "components all the way down."*
+*The Composition Workshop revealed a completely new way of thinking! Instead of passing data as props, I can pass entire component trees as children. A Card component doesn't need titleProp, imageProp, descriptionProp - it just accepts children and wraps them beautifully! Master Cargo showed me that props.children is React's most powerful pattern: Modals that work with any content, Layouts that arrange any children, Tooltips that wrap any trigger. One component becomes infinitely flexible based on what you nest inside. This isn't just code reuse - it's true composition! Now I understand why React emphasizes "components all the way down."*
 
 ---
 
@@ -1499,7 +1499,7 @@ Binary displayed a flowchart showing prop transformation chains. "Components can
 "Indeed," Master Cargo nodded. "But remember: with power comes responsibility. Don't spread props blindly - always know what you're forwarding. Invalid props can cause console warnings and confusion."
 
 **Master Cargo's Spreading Wisdom:**
-Prop spreading with rest patterns (`...rest`) enables transparent wrapper components that enhance elements without blocking their native API. Extract props you need, spread the rest forward. Control spread order to allow or prevent overrides: defaults first for user control, user props first to enforce requirements. Combine with destructuring to filter unwanted props before forwarding. This pattern is essential for wrapper components, enhanced native elements, and component composition patterns. Remember: spread is shallow and explicit - document what you forward, filter dangerous props, and validate when necessary. Master spreading to create components that feel native while adding powerful features.
+Prop spreading with rest patterns enables transparent wrapper components that enhance elements without blocking their native API. Extract props you need, spread the rest forward. Control spread order to allow or prevent overrides: defaults first for user control, user props first to enforce requirements. Combine with destructuring to filter unwanted props before forwarding. This pattern is essential for wrapper components, enhanced native elements, and component composition patterns. Remember: spread is shallow and explicit - document what you forward, filter dangerous props, and validate when necessary. Master spreading to create components that feel native while adding powerful features.
 
 **Reflection Questions:**
 
@@ -1565,7 +1565,7 @@ Aria studied the pattern carefully. "So I can mix children with explicit props w
 
 He showed her more patterns: compound components, render prop patterns (though he noted those were more advanced), and slot-based composition. "The key is choosing the right pattern for each situation."
 
-Master Cargo's expression grew serious. "But remember the sacred rules: never mutate props or children. They're read-only. If you need to modify children, use `React.Children` utilities or transform them during render, never in place."
+Master Cargo's expression grew serious. "But remember the sacred rules: never mutate props or children. They're read-only. If you need to modify children, use React.Children utilities or transform them during render, never in place."
 
 Aria nodded solemnly. "Props are contracts, children are content. Both are immutable."
 
@@ -1581,7 +1581,7 @@ Modern React favors default parameters over defaultProps for clearer, more maint
 - What makes prop naming conventions important for component API design?
 
 **Aria's Journal - Day 12 (Evening)**
-*The Pattern Library brought everything together! Modern React uses default parameters (`variant = 'primary'`) instead of defaultProps - it's clearer and works better with TypeScript. The real insight: combine patterns strategically. Use children for flexible content, named props for specific slots, spreading for wrapper functionality, defaults for optional props, and conditionals for graceful degradation. Master Cargo showed me that professional components handle all edge cases: missing props, null values, empty children. Naming matters too: isOpen, onClose, hasError - conventions that make APIs feel natural. I'm not just learning patterns; I'm learning *judgment* about when to use each one!*
+*The Pattern Library brought everything together! Modern React uses default parameters instead of defaultProps - it's clearer and works better with TypeScript. The real insight: combine patterns strategically. Use children for flexible content, named props for specific slots, spreading for wrapper functionality, defaults for optional props, and conditionals for graceful degradation. Master Cargo showed me that professional components handle all edge cases: missing props, null values, empty children. Naming matters too: isOpen, onClose, hasError - conventions that make APIs feel natural. I'm not just learning patterns; I'm learning *judgment* about when to use each one!*
 
 **Chapter Ending:**
 
