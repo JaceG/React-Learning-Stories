@@ -1814,7 +1814,7 @@
 
 <p>"Exactly the problem!" Master Cargo grinned. "Behold - the <em>spread operator with rest patterns</em>!"</p>
 
-<p>He demonstrated a component that extracted only the props it needed, then spread the rest forward: `const Button = ({ variant, children, ...rest }) => <button {...rest}>{children}</button>`</p>
+<p>He demonstrated a component that extracted only the props it needed, then spread the rest forward to a button element.</p>
 
 <p>Binary's processors whirred. "It takes what it needs and passes everything else forward automatically?"</p>
 
@@ -1828,7 +1828,7 @@
 
 <p>After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, "you need to <em>transform</em> props as they flow through."</p>
 
-<p>He demonstrated a Button that accepted a `variant` prop but spread the rest: `<button {...rest} className="btn btn-{variant}">`. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"</p>
+<p>He demonstrated a Button that accepted a variant prop but spread the rest. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"</p>
 
 <p>Aria experimented with the pattern, creating wrapper components that:</p>
 <ul>
@@ -1839,7 +1839,7 @@
 
 <p>"The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So spreading defaults first lets users override your defaults, while spreading user props first enforces certain props."</p>
 
-<p>Aria created a Link component that ensured security props: `<a {...rest} rel="noopener noreferrer">`. "So I can let users pass any props, but these security attributes are always enforced?"</p>
+<p>Aria created a Link component that ensured security props were always set. "So I can let users pass any props, but these security attributes are always enforced?"</p>
 
 <p>"Perfect!" Master Cargo beamed. "You've mastered <em>controlled spreading</em> - giving flexibility while maintaining safety."</p>
 
@@ -1876,9 +1876,9 @@
 
 <p>"Every composer faces the same challenge," he began. "Components must work even when props are missing. Observe two approaches."</p>
 
-<p>He showed her the old way: `Component.defaultProps = { variant: 'primary' }`. "This works, but it's being phased out. The modern approach uses default parameters."</p>
+<p>He showed her the old way using defaultProps on the component. "This works, but it's being phased out. The modern approach uses default parameters."</p>
 
-<p>Aria examined the newer pattern: `function Button({ variant = 'primary', children, ...rest })`. "So defaults live right in the destructuring?"</p>
+<p>Aria examined the newer pattern with defaults in the function parameters. "So defaults live right in the destructuring?"</p>
 
 <p>"Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is undefined, not when it's null."</p>
 

@@ -1467,7 +1467,7 @@ Aria grimaced. "That would be... terrible. And what if new attributes are added?
 
 "Exactly the problem!" Master Cargo grinned. "Behold - the *spread operator with rest patterns*!"
 
-He demonstrated a component that extracted only the props it needed, then spread the rest forward: `const Button = ({ variant, children, ...rest }) => <button {...rest}>{children}</button>`
+He demonstrated a component that extracted only the props it needed, then spread the rest forward to a button element.
 
 Binary's processors whirred. "It takes what it needs and passes everything else forward automatically?"
 
@@ -1481,7 +1481,7 @@ Aria practiced the pattern, creating components that enhanced native elements wi
 
 After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, "you need to *transform* props as they flow through."
 
-He demonstrated a Button that accepted a `variant` prop but spread the rest: `<button {...rest} className="btn btn-{variant}">`. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"
+He demonstrated a Button that accepted a variant prop but spread the rest. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"
 
 Aria experimented with the pattern, creating wrapper components that:
 - Extracted styling props and spread the rest
@@ -1490,7 +1490,7 @@ Aria experimented with the pattern, creating wrapper components that:
 
 "The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So spreading defaults first lets users override your defaults, while spreading user props first enforces certain props."
 
-Aria created a Link component that ensured security props: `<a {...rest} rel="noopener noreferrer">`. "So I can let users pass any props, but these security attributes are always enforced?"
+Aria created a Link component that ensured security props were always set. "So I can let users pass any props, but these security attributes are always enforced?"
 
 "Perfect!" Master Cargo beamed. "You've mastered *controlled spreading* - giving flexibility while maintaining safety."
 
@@ -1525,9 +1525,9 @@ The Pattern Library's walls were covered with carefully documented component pat
 
 "Every composer faces the same challenge," he began. "Components must work even when props are missing. Observe two approaches."
 
-He showed her the old way: `Component.defaultProps = { variant: 'primary' }`. "This works, but it's being phased out. The modern approach uses default parameters."
+He showed her the old way using defaultProps on the component. "This works, but it's being phased out. The modern approach uses default parameters."
 
-Aria examined the newer pattern: `function Button({ variant = 'primary', children, ...rest })`. "So defaults live right in the destructuring?"
+Aria examined the newer pattern with defaults in the function parameters. "So defaults live right in the destructuring?"
 
 "Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is undefined, not when it's null."
 
