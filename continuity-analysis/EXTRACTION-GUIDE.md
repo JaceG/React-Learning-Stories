@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP2.3 GrandContext ✅
+**Last Completed**: LP2.4 StateManagementAdventures ✅ (LP2 COMPLETE!)
 
-**Next Lesson**: LP2.4 StateManagementAdventures
+**Next Lesson**: LP3.1 PropForge
 
 **Progress Tracker**:
 ```

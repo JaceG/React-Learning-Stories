@@ -81,6 +81,13 @@
 - **Appearance**: Tall, flowing robes, hands gracefully trace patterns in air making threads glow
 - **Teaches**: Context API, Provider/Consumer pattern, prop drilling solution, custom Context Providers (bundling state + functions), Context optimization (splitting contexts, memoization)
 
+**Grand Reducer**
+- **Role**: Keeper of predictable state transformations
+- **Appears In**: LP2.4 StateManagementAdventures (Ch1-3)
+- **Location**: Eastern Quarter - State Management Citadel
+- **Appearance**: Elderly, meditating figure, robes bear patterns that shift like flowing data, wise eyes
+- **Teaches**: useReducer hook, reducer pattern, Redux (three principles, history), modern state libraries (Zustand, Jotai, Recoil, MobX), choosing state management tools
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -100,6 +107,7 @@
 - **LP2.1**: Explains state memory, teaches immutability, projects calculations, twirls
 - **LP2.2**: Chirps excitedly about hooks granting abilities, lights flicker nervously about "dangerous" useEffect, lights dance with excitement about Grand Context
 - **LP2.3**: Whistles in awe at thread connections, circuits sparkle with interest, lights dim when learning cost of re-renders, buzzes with excitement at chapter end
+- **LP2.4**: Whirrs thoughtfully about complex state, lights flicker with recognition about Redux, circuits sparkle with curiosity about alternatives, chirps proudly at completion
 
 *[More contributions to be added as extraction continues]*
 
@@ -160,6 +168,13 @@
 - Consumer → "taps into broadcast"
 - Custom Context Provider → "living threads" carrying state + functions
 - Context optimization → "organizing threads into separate channels"
+
+**LP2.4 StateManagementAdventures**:
+- useReducer → "reducer pattern", "channel changes through single pure function"
+- Reducer → "wise sage who knows all the rules"
+- Redux → "Redux Codex", "most influential pattern", "single source of truth"
+- Redux Principles → Three sacred principles (single source of truth, read-only state, pure functions)
+- Modern libraries → "glowing portals" (Zustand blue, Jotai violet, Recoil crimson, MobX silver)
 
 *[More translations to be added as extraction continues]*
 

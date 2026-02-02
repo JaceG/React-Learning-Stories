@@ -95,9 +95,13 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
   - **Connection to Teaching**: Crystal spires = data structures holding state; glowing orbs = state values; pulsing energy = state changes triggering re-renders; memory metaphor = state persistence
 
 - **State Management Citadel**
-  - First Mentioned: State Management → StateManagementAdventures → Ch1
-  - Towering structure where all state management disciplines converge
-  - Master: Grand Reducer
+  - **First Mentioned**: LP2.4 StateManagementAdventures Ch1
+  - **Architecture**: Towering structure in Eastern Quarter where all state management disciplines converge, grand entrance leading to vast meditation chamber, library stretching infinitely upward (Ch2 - Redux Archives), chamber with glowing portals (Ch3 - modern frontiers), crystalline windows filtering afternoon sun
+  - **Atmosphere**: Morning shadows, meditative energy, Grand Reducer meditating, ancient wisdom, patterns shifting like flowing data, portals pulsing with innovation energy
+  - **Visual Details**: Grand Reducer's robes displaying constellations of data flow, massive leather-bound Redux Codex on pedestal, glowing ancient tomes lining walls, glowing portals (blue=Zustand, violet=Jotai, crimson=Recoil, silver=MobX)
+  - **Master**: Grand Reducer (elderly keeper, meditating figure with wise eyes)
+  - **Teaches**: useReducer, reducer pattern, Redux history and principles, modern state management libraries (Zustand, Jotai, Recoil, MobX)
+  - **Connection to Teaching**: Citadel convergence = unified state management; meditation = predictability; library = history/documentation; portals = different approaches
 
 **Lessons Taught**: Props, data flow, type checking, state management, reducers
 
