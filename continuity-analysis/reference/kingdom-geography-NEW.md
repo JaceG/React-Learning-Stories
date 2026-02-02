@@ -1651,3 +1651,194 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 ---
 
+## 6️⃣ COASTAL/MARITIME REGION (Southern Coast)
+
+**Terrain**: Bustling docks, harbors, shipyards, sandy beaches, archipelago of islands offshore  
+**Climate**: Ocean breeze, salt air, maritime energy, seabirds (data sprites), constant ship movement  
+**Theme**: Deployment, shipping code globally, CI/CD automation, app distribution  
+**Access**: Roads from Southern Quarter, ships sailing to Allied Kingdoms and Mobile Frontier, ferries to Platform Archipelago
+
+The Coastal Region sprawls along the kingdom's southern edge where land meets the digital seas. Massive docks bustle with activity - ships of all sizes preparing to carry applications across waters to production environments worldwide. The Deployment Armada Docks dominate the western section, while the Automation Harbor glows with pipeline energy to the east. Offshore, the Platform Archipelago's hundreds of hosting islands are visible on the horizon. The air smells of salt and possibility.
+
+---
+
+### Deployment Armada Docks
+
+**First Mentioned**: LP13.1 BuildSystems Ch1
+
+**Location**: Coastal Region, western section of harbor
+
+**Architecture**:
+- Massive bustling harbor where ships prepare to carry applications
+- Command deck where Admiral Webpack reviews manifests
+- Optimization Shipyard where vessels stripped of unnecessary cargo
+- Vast harbor filled with specialized vessels (modern browsers, legacy support, mobile, edge)
+- Build pipeline visualization: Development Port → Bundling Dock → Optimization Bay → Launch Platform
+- Tree-shaking stations, code-splitting facilities, minification workshops
+
+**Atmosphere**:
+- Bustling maritime activity
+- Ships constantly preparing and departing
+- Optimization focus - every byte matters
+- Fleet readiness energy
+- Pride at efficient builds
+- Ocean breeze carrying salt air
+
+**Visual Details**:
+- Admiral Webpack on command deck reviewing manifests
+- Ships of all sizes preparing at docks
+- Workers applying tree shaking (removing dead code like pruning branches)
+- Bundle size meters showing reductions (67.3% optimization)
+- Module federation visualization (ships sharing cargo mid-voyage)
+- Differential serving - modern ships (sleek) vs legacy ships (loaded with polyfills)
+- Fleet of specialized vessels ready for different destinations
+- Binary calculating optimization metrics
+- Captain's hat (promotion symbol)
+
+**Master**: Admiral Webpack (Commander of Deployment Armada, transforms development code into production-ready vessels)
+
+**Teaches**: Build systems (preparing ships for ocean voyage), build pipeline stages, optimization techniques (tree shaking removes dead code, code splitting loads on demand, minification compresses, gzip shrinks transfer), differential serving (modern ES2020+ vs legacy ES5 with polyfills), module federation (ships share cargo - shared dependencies), bundle analysis, "every byte saved is faster journey to user"
+
+**Connection to Teaching**: Harbor/docks = deployment preparation; ships = application bundles; ocean voyage = deploying to production; cargo = code/dependencies; optimization = lightening ship load; tree shaking = pruning dead branches; modern vs legacy ships = differential serving; module federation = shared cargo; fleet readiness = production ready
+
+---
+
+### Automation Harbor (CI/CD Hub)
+
+**First Mentioned**: LP13.2 CiCdPipeline Ch1
+
+**Location**: Coastal Region, eastern section beyond Optimization Shipyard
+
+**Architecture**:
+- Harbor where code flows through glowing automated channels
+- Pipeline Workshop where automated workflows crafted like precision instruments
+- Continuous Fleet facilities
+- Massive crystalline structures processing code
+- Phantom workers (automated processes) visible throughout
+- Code visualization flowing: Source → Build → Test → Deploy
+
+**Atmosphere**:
+- Humming with automated activity
+- Code arriving, tests running, builds completing, deployments launching - all without human intervention
+- Ships sailing themselves
+- Efficiency and automation focus
+- Never sleeps, never forgets
+- 24/7 operation energy
+
+**Visual Details**:
+- Captain Pipeline commanding automated workflows
+- Code flowing through glowing channels (pipeline visualization)
+- Harbor humming with automated activity
+- Ships sailing themselves (no crew needed)
+- Phantom test runners and deployment workers materializing
+- Four CI/CD tools represented: GitHub Actions, GitLab CI, Jenkins, CircleCI
+- Pipeline gates: lint → unit tests → integration tests → build → staging → E2E → production
+- Blue-Green deployment visualization (zero downtime switching)
+- Canary release (gradual rollout to users)
+- Rolling deployment (sequential updates)
+- Feature Flags (deploy without releasing)
+- DORA metrics displayed: deployment frequency ↑10x, lead time → hours, MTTR < 30min
+
+**Master**: Captain Pipeline (Commander of Automation Harbor, master of CI/CD)
+
+**Teaches**: CI/CD automation (Continuous Integration/Delivery/Deployment), automated workflows eliminate human error, pipeline gates ensuring quality, CI/CD tools comparison, advanced deployment strategies (Blue-Green/Canary/Rolling/Feature Flags), Progressive Delivery, GitOps, Chaos Engineering, DORA metrics for measuring success, "manual deployment like rowing, CI/CD like favorable winds that never stop", "make deployments so safe and routine they become boring"
+
+**Connection to Teaching**: Automation Harbor = CI/CD hub; glowing channels = pipeline flows; phantom workers = automation; ships sailing themselves = continuous deployment; pipeline gates = quality checkpoints; never sleeps = continuous operation; favorable winds = automated deployment; boring = safe and routine
+
+---
+
+### Platform Archipelago (Offshore Islands)
+
+**First Mentioned**: LP13.3 HostingHorizons Ch1
+
+**Location**: Coastal Region, hundreds of islands visible offshore (hosting platforms)
+
+**Geography**: 
+- Hundreds of hosting islands scattered across digital seas
+- Each island represents different hosting platform
+- Visible from mainland docks
+- Accessible via ferries and exploration vessels
+
+**Major Islands**:
+- **Vercel Island**: Fastest path, zero-config, modern architecture
+- **Netlify Shores**: Static sites, JAMstack focus, friendly beaches
+- **AWS Continent**: Massive landmass offshore, infinite scale, complex terrain
+- **Railway Station Island**: Full-stack applications, ease of navigation
+
+**Atmosphere**:
+- Maritime exploration energy
+- Each island has unique culture and approach
+- Diplomatic journey visiting islands
+- Deployment ceremonies on each island
+- Global network perspective
+
+**Visual Details**:
+- Navigator Vercel at helm of exploration vessel
+- Magical map showing islands with different characteristics
+- Each island glowing with platform-specific colors
+- Deployment ceremonies on islands (different rituals per platform)
+- DNS propagation visualized as wave patterns (5-48 hours)
+- Edge network spanning globe (6 regions marked)
+- Performance metrics varying by region
+- Ferries traveling between mainland and islands
+
+**Master**: Navigator Vercel (also called Navigator Hosting - master navigator, expert guide)
+
+**Teaches**: Choosing hosting platforms (match needs with strengths), Platform islands (Vercel zero-config, Netlify static/JAMstack, AWS infinite scale complex, Railway full-stack), deployment ceremonies (each platform's unique process), environment variables (never commit secrets), custom domains, SSL configuration, global network (edge functions near users, CDN distribution, geographic routing), Core Web Vitals optimization, "no 'best' platform - best for YOUR needs"
+
+**Connection to Teaching**: Archipelago = hosting options; islands = platforms; ocean voyage = platform exploration; ferries = deployment methods; each island unique = platform differences; global network = worldwide distribution; edge regions = performance optimization; "proximity matters"
+
+---
+
+### Publishing Port (Coastal Edge)
+
+**First Mentioned**: LP14.4 AppDistribution Ch1
+
+**Location**: Coastal Region, edge of Mobile Frontier territory (where kingdom meets frontier)
+
+**Architecture**:
+- Publishing Port stands where kingdom meets Mobile Frontier
+- Docks where apps prepare for journey to App Store and Google Play
+- App signing and packaging facilities
+- Review Gauntlet towers (imposing gates)
+- Global Launch Control Center (highest tower)
+- Preparation areas for certificates and provisioning
+
+**Atmosphere**:
+- Bustling preparation activity
+- Nerve-wracking review wait
+- Persistence and determination
+- Beta testing coordination
+- Global launch celebration
+- App Store Optimization energy
+
+**Visual Details**:
+- Publisher Prime reviewing apps at docks
+- Ships being signed and packaged
+- Certificates and provisioning profiles being processed
+- Review Gauntlet towers imposing on horizon
+- Binary tracking extensive checklists
+- Rejection patterns (40% crashes/30% guidelines/20% metadata/10% other)
+- Beta testers' feedback flowing in
+- Global metrics dashboard: thousands of downloads across countries
+- Multiple languages, devices, screen sizes represented
+- Phased release strategy visualization
+
+**Master**: Publisher Prime (harbor master, expert in app store requirements)
+
+**Teaches**: App store distribution (Apple App Store/Google Play), certificates and signing (iOS Development/Distribution, Android keystore), provisioning profiles, platform-specific requirements, Review Gauntlet (Apple quality/guidelines, Google security/policy), rejection reasons and resolution, beta testing importance, ASO (App Store Optimization), global launch (millions of devices/languages/screen sizes), phased release strategy, continuous monitoring and updates, "preparation difference between smooth voyage and shipwreck of rejections"
+
+**Connection to Teaching**: Publishing Port = distribution gateway; ships = packaged apps; signing = authentication; Review Gauntlet = store approval; preparation = extensive requirements; global launch = worldwide distribution; "well-prepared submission sails through review"
+
+---
+
+### COASTAL REGION SUMMARY
+
+**Complete Locations**: Deployment Armada Docks, Automation Harbor, Platform Archipelago (offshore), Publishing Port  
+**Theme**: Deployment, global shipping, CI/CD automation, app distribution - taking code to users worldwide  
+**Access**: Roads from Southern Quarter, ships to Allied Kingdoms, ferries to hosting islands, voyage to Mobile Frontier  
+**Climate**: Ocean breeze, salt air, maritime energy, constant activity  
+**Notable**: Gateway to external territories, where kingdom meets digital seas
+
+---
+

@@ -244,21 +244,21 @@
 **Innkeeper Cypress**
 - **Role**: Master of component harmony and integration testing
 - **Appears In**: LP8.2 IntegrationInn (Ch1-3)
-- **Location**: Underground Realms - Integration Inn (warm welcoming place where components come together), Mock Service Chamber with magical mirrors, integration feast hall
+- **Location**: Underground Realms - Integration Inn (warm underground tavern)
 - **Appearance**: Weathered face showing years of experience
 - **Teaches**: Integration testing (components working together), component conflicts (work fine in isolation fail when integrated), 5 component types at Inn (Form/Validation/API Client/State Manager/Error Handler), Harmony Meter, Mock Service Worker (MSW - intercepts network), jest.fn/jest.mock/jest.useFakeTimers, integration test flows (user stories), error handling tests, deployment confidence
 
 **Dungeon Keeper Logsworth**
 - **Role**: Master of production debugging, keeper of error logs
 - **Appears In**: LP8.3 DebugDungeon (Ch1-3)
-- **Location**: Underground Realms - Debug Dungeon below Testing Tower (maze of error logs/stack traces/mysterious behaviors), Stack Trace Labyrinth (Ch2), deepest chamber with Production Bug Boss (Ch3)
+- **Location**: Underground Realms - Debug Dungeon (maze below Testing Tower)
 - **Appearance**: Beard grey from years of debugging, carries staff
 - **Teaches**: Production bugs (shape-shifters behaving differently than development), three dungeon bugs (race-condition 🏃, memory-leak 💧, null-reference 👻), debugging tools (React DevTools, Console, Network Inspector), stack traces (reading them, symptoms vs causes), async bug patterns, source maps, Error Boundaries (placement, fallback UI), production error types (NetworkError/ChunkLoadError/StateError/ThirdPartyError), four recovery strategies (automatic retry, fallback mode, graceful degradation, user notification), global error handlers, ErrorMonitor class
 
 **Guardian Safiya**
 - **Role**: Master of Error Boundaries and graceful failure
 - **Appears In**: LP8.4 ErrorEnchantments (Ch1-3)
-- **Location**: Underground Realms - Error Enchantments sanctuary (errors float in air like glowing orbs), Boundary Workshop with shimmering barriers (Ch2), final chamber with live production monitors (Ch3)
+- **Location**: Underground Realms - Error Enchantments Sanctuary (protected underground chamber)
 - **Appearance**: [Not extensively described], knowing smile
 - **Teaches**: Five error types (Syntax ⚡/Reference ❓/Type 🔀/Runtime 💥/Async ⏱️), error propagation in React, Error Boundaries (React's built-in protection spell, getDerivedStateFromError/componentDidCatch), strategic boundary placement, fallback UI design, production error monitoring, error severity assessment, four recovery strategies, graceful degradation, ErrorMonitor with global handlers/queuing/periodic flush, resilient applications
 
@@ -430,7 +430,7 @@
 **Captain Pipeline**
 - **Role**: Commander of Automation Harbor, master of CI/CD
 - **Appears In**: LP13.2 CiCdPipeline (Ch1-3)
-- **Location**: Automation Harbor (beyond Optimization Shipyard, code flows through glowing channels), Pipeline Workshop, Continuous Fleet
+- **Location**: Coastal Region - Automation Harbor (eastern section, CI/CD hub with glowing channels)
 - **Teaches**: CI/CD automation (Continuous Integration/Delivery/Deployment), automated workflows (Source→Build→Test→Deploy), CI/CD tools (GitHub Actions/GitLab CI/Jenkins/CircleCI), pipeline gates (lint→test→build→deploy), advanced deployment strategies (Blue-Green zero downtime, Canary gradual rollout, Rolling sequential, Feature Flags decouple deploy from release), Progressive Delivery, GitOps, Chaos Engineering, DORA metrics (deployment frequency/lead time/MTTR), "manual deployment like rowing, CI/CD like favorable winds that never stop", "make deployments so safe and routine they become boring"
 
 **Navigator Vercel** (also called Navigator Hosting)
