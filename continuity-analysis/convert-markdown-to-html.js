@@ -29,6 +29,9 @@ function convertToHTML(md) {
 	html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
 	html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
 
+	// Convert inline code FIRST (before bold/italic to avoid conflicts)
+	html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
 	// Convert diff markers with special styling
 	// Red strikethrough for deletions
 	html = html.replace(/🔴 ~~(.*?)~~/g, '<span class="deleted">$1</span>');
@@ -42,7 +45,7 @@ function convertToHTML(md) {
 		'<div class="edit-note">💡 <strong>EDIT NOTE:</strong> $1</div>'
 	);
 
-	// Regular bold and italic
+	// Regular bold and italic (after code conversion)
 	html = html.replace(
 		/\*\*\*\*(.*?)\*\*\*\*/g,
 		'<strong><em>$1</em></strong>'
@@ -136,6 +139,16 @@ const fullHTML = `<!DOCTYPE html>
     p {
       margin: 12px 0;
       text-align: justify;
+    }
+    
+    code {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #c7254e;
     }
     
     ul {

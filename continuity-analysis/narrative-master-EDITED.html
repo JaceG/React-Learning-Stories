@@ -56,6 +56,16 @@
       text-align: justify;
     }
     
+    code {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #c7254e;
+    }
+    
     ul {
       margin: 15px 0;
       padding-left: 30px;
@@ -277,7 +287,7 @@
 </ul>
 <strong>Total Issues Fixed</strong>: 56 (22 from LP1-7, 34 from LP8-15)
 
-<p>See `continuity-issues.md` for complete list.</p>
+<p>See <code>continuity-issues.md</code> for complete list.</p>
 
 <hr>
 
@@ -731,9 +741,9 @@
 
 <span class="added">Syntaxis pointed to the first glowing tablet. "Rule One: Every JSX spell must have a single root element. You cannot return multiple siblings without wrapping them." He demonstrated both a failing spell and a corrected one.</span>
 
-<span class="added">"Rule Two," he continued, touching the second tablet, "All elements must be closed. In HTML, tags like `<img>` or `<br>` can be left open, but JSX demands closure - either with a closing tag or self-closing syntax like `<img />`."</span>
+<span class="added">"Rule Two," he continued, touching the second tablet, "All elements must be closed. In HTML, tags like <code><img></code> or <code><br></code> can be left open, but JSX demands closure - either with a closing tag or self-closing syntax like <code><img /></code>."</span>
 
-<span class="added">Binary lit up the third tablet. "And Rule Three is tricky - use `className` instead of `class` for CSS styling! Since JSX becomes JavaScript, and `class` is a reserved keyword, React Kingdom requires `className`."</span>
+<span class="added">Binary lit up the third tablet. "And Rule Three is tricky - use <code>className</code> instead of <code>class</code> for CSS styling! Since JSX becomes JavaScript, and <code>class</code> is a reserved keyword, React Kingdom requires <code>className</code>."</span>
 
 <span class="added">"These aren't arbitrary restrictions," Syntaxis explained. "Each rule exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'."</span>
 
@@ -1646,7 +1656,7 @@
 
 <p>Master Cargo laughed warmly. "In a way! Watch this." He gestured to a Card component that glowed softly. "This Card doesn't know what content it will hold - it's a <em>container</em>. The content comes from whoever uses it."</p>
 
-<p>He demonstrated, placing different elements inside the Card: text, images, even entire smaller components. "The Card receives these as `props.children` - a special prop that holds whatever is nested inside it."</p>
+<p>He demonstrated, placing different elements inside the Card: text, images, even entire smaller components. "The Card receives these as <code>props.children</code> - a special prop that holds whatever is nested inside it."</p>
 
 <p>Binary projected a hologram of nested boxes. "So it's like a box that can hold anything?"</p>
 
@@ -1664,7 +1674,7 @@
 
 <p>"This is incredible!" Aria exclaimed. "The Modal doesn't need to know anything about forms or images - it just provides the modal behavior!"</p>
 
-<p>"Exactly! That's the power of `props.children`," Master Cargo said. "The parent component handles <em>how</em> content is displayed, while children determine <em>what</em> is displayed. It's the separation of concerns at its finest."</p>
+<p>"Exactly! That's the power of <code>props.children</code>," Master Cargo said. "The parent component handles <em>how</em> content is displayed, while children determine <em>what</em> is displayed. It's the separation of concerns at its finest."</p>
 
 <p>He showed her more examples: Tabs that didn't care what TabPanel content they held, Accordions that could contain any collapsible content, Tooltips that could wrap any trigger element.</p>
 
@@ -1680,7 +1690,7 @@
 <p>Keeper of the Composition District in the Trade Quarter. His workshop is filled with nested component structures that fit together like elegant puzzles. "Children aren't just data - they're entire component trees that let you compose complex interfaces from simple, reusable pieces. Master composition, and you master React's true power!"</p>
 
 <strong>Master Cargo's Composition Wisdom:</strong>
-<p>The `props.children` pattern enables true composition - wrapping content with behavior, structure, or styling without the wrapper knowing what it contains. Use children for layout components (Card, Modal, Panel), wrapper components (ErrorBoundary, ThemeProvider), and any component that should work with arbitrary content. Remember: children can be elements, arrays of elements, text, numbers, or even functions (render props). This pattern creates highly reusable components that don't need props for every variation - they simply wrap whatever you provide. Composition over configuration leads to cleaner, more maintainable code.</p>
+<p>The <code>props.children</code> pattern enables true composition - wrapping content with behavior, structure, or styling without the wrapper knowing what it contains. Use children for layout components (Card, Modal, Panel), wrapper components (ErrorBoundary, ThemeProvider), and any component that should work with arbitrary content. Remember: children can be elements, arrays of elements, text, numbers, or even functions (render props). This pattern creates highly reusable components that don't need props for every variation - they simply wrap whatever you provide. Composition over configuration leads to cleaner, more maintainable code.</p>
 
 <strong>Reflection Questions:</strong>
 
@@ -1689,7 +1699,7 @@
 <li>What makes a Modal component more reusable when it accepts children rather than specific props?</li>
 </ul>
 <strong>Aria's Journal - Day 12 (Morning)</strong>
-<em>The Composition Workshop revealed a completely new way of thinking! Instead of passing data as props, I can pass entire component trees as children. A Card component doesn't need titleProp, imageProp, descriptionProp - it just accepts children and wraps them beautifully! Master Cargo showed me that `props.children` is React's most powerful pattern: Modals that work with any content, Layouts that arrange any children, Tooltips that wrap any trigger. One component becomes infinitely flexible based on what you nest inside. This isn't just code reuse - it's true composition! Now I understand why React emphasizes "components all the way down."</em>
+<em>The Composition Workshop revealed a completely new way of thinking! Instead of passing data as props, I can pass entire component trees as children. A Card component doesn't need titleProp, imageProp, descriptionProp - it just accepts children and wraps them beautifully! Master Cargo showed me that <code>props.children</code> is React's most powerful pattern: Modals that work with any content, Layouts that arrange any children, Tooltips that wrap any trigger. One component becomes infinitely flexible based on what you nest inside. This isn't just code reuse - it's true composition! Now I understand why React emphasizes "components all the way down."</em>
 
 <hr>
 
@@ -1710,11 +1720,11 @@
 
 <p>"Exactly the problem!" Master Cargo grinned. "Behold - the <em>spread operator with rest patterns</em>!"</p>
 
-<p>He demonstrated a component that extracted only the props it needed, then spread the rest forward: `const Button = ({ variant, children, ...rest }) => <button {...rest}>{children}</button>`</p>
+<p>He demonstrated a component that extracted only the props it needed, then spread the rest forward: <code>const Button = ({ variant, children, ...rest }) => <button {...rest}>{children}</button></code></p>
 
 <p>Binary's processors whirred. "It takes what it needs and passes everything else forward automatically?"</p>
 
-<p>"Precisely! The `...rest` syntax captures all remaining props, and `{...rest}` spreads them onto the child element. It's called <em>prop forwarding</em> - the foundation of wrapper components."</p>
+<p>"Precisely! The <code>...rest</code> syntax captures all remaining props, and <code>{...rest}</code> spreads them onto the child element. It's called <em>prop forwarding</em> - the foundation of wrapper components."</p>
 
 <p>Aria practiced the pattern, creating components that enhanced native elements without losing their standard functionality. "This is so clean! The wrapper adds new behavior without blocking access to the original props."</p>
 
@@ -1724,16 +1734,16 @@
 
 <p>After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, "you need to <em>transform</em> props as they flow through."</p>
 
-<p>He demonstrated a Button that accepted a `variant` prop but spread the rest: `<button {...rest} className={`btn btn-${variant}`}>`. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"</p>
+<p>He demonstrated a Button that accepted a <code>variant</code> prop but spread the rest: <code><button {...rest} className={</code>btn btn-${variant}<code>}></code>. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"</p>
 
 <p>Aria experimented with the pattern, creating wrapper components that:</p>
 <ul><li>Extracted styling props and spread the rest</li>
 <li>Captured event handlers, enhanced them, and spread remaining props</li>
 <li>Combined default props with user props using spread order</li>
 </ul>
-<p>"The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So `{...defaults, ...userProps}` lets users override your defaults, while `{...userProps, ...forceThese}` enforces certain props."</p>
+<p>"The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So <code>{...defaults, ...userProps}</code> lets users override your defaults, while <code>{...userProps, ...forceThese}</code> enforces certain props."</p>
 
-<p>Aria created a Link component that ensured security props: `<a {...rest} rel="noopener noreferrer">`. "So I can let users pass any props, but these security attributes are always enforced?"</p>
+<p>Aria created a Link component that ensured security props: <code><a {...rest} rel="noopener noreferrer"></code>. "So I can let users pass any props, but these security attributes are always enforced?"</p>
 
 <p>"Perfect!" Master Cargo beamed. "You've mastered <em>controlled spreading</em> - giving flexibility while maintaining safety."</p>
 
@@ -1742,7 +1752,7 @@
 <p>"Indeed," Master Cargo nodded. "But remember: with power comes responsibility. Don't spread props blindly - always know what you're forwarding. Invalid props can cause console warnings and confusion."</p>
 
 <strong>Master Cargo's Spreading Wisdom:</strong>
-<p>Prop spreading with rest patterns (`...rest`) enables transparent wrapper components that enhance elements without blocking their native API. Extract props you need, spread the rest forward. Control spread order to allow or prevent overrides: defaults first for user control, user props first to enforce requirements. Combine with destructuring to filter unwanted props before forwarding. This pattern is essential for wrapper components, enhanced native elements, and component composition patterns. Remember: spread is shallow and explicit - document what you forward, filter dangerous props, and validate when necessary. Master spreading to create components that feel native while adding powerful features.</p>
+<p>Prop spreading with rest patterns (<code>...rest</code>) enables transparent wrapper components that enhance elements without blocking their native API. Extract props you need, spread the rest forward. Control spread order to allow or prevent overrides: defaults first for user control, user props first to enforce requirements. Combine with destructuring to filter unwanted props before forwarding. This pattern is essential for wrapper components, enhanced native elements, and component composition patterns. Remember: spread is shallow and explicit - document what you forward, filter dangerous props, and validate when necessary. Master spreading to create components that feel native while adding powerful features.</p>
 
 <strong>Reflection Questions:</strong>
 
@@ -1751,7 +1761,7 @@
 <li>What risks come with spreading all props blindly, and how would you mitigate them?</li>
 </ul>
 <strong>Aria's Journal - Day 12 (Afternoon)</strong>
-<em>The Spreading Grounds taught me the secret of wrapper components! The rest pattern (`...rest`) captures all props I don't explicitly extract, and spread (`{...rest}`) forwards them to child elements. This lets me create Button wrappers that add custom logic while preserving all native button props - users can still pass onClick, disabled, aria-label, everything! The genius is in </em>selective spreading<em>: extract what you need, transform what you must, spread the rest. Order matters too: spreading user props last lets them override my defaults, while spreading my props last enforces requirements. This pattern makes wrapper components feel transparent - they enhance without interfering!</em>
+<em>The Spreading Grounds taught me the secret of wrapper components! The rest pattern (<code>...rest</code>) captures all props I don't explicitly extract, and spread (<code>{...rest}</code>) forwards them to child elements. This lets me create Button wrappers that add custom logic while preserving all native button props - users can still pass onClick, disabled, aria-label, everything! The genius is in </em>selective spreading<em>: extract what you need, transform what you must, spread the rest. Order matters too: spreading user props last lets them override my defaults, while spreading my props last enforces requirements. This pattern makes wrapper components feel transparent - they enhance without interfering!</em>
 
 <hr>
 
@@ -1768,11 +1778,11 @@
 
 <p>"Every composer faces the same challenge," he began. "Components must work even when props are missing. Observe two approaches."</p>
 
-<p>He showed her the old way: `Component.defaultProps = { variant: 'primary' }`. "This works, but it's being phased out. The modern approach uses default parameters."</p>
+<p>He showed her the old way: <code>Component.defaultProps = { variant: 'primary' }</code>. "This works, but it's being phased out. The modern approach uses default parameters."</p>
 
-<p>Aria examined the newer pattern: `function Button({ variant = 'primary', children, ...rest })`. "So defaults live right in the destructuring?"</p>
+<p>Aria examined the newer pattern: <code>function Button({ variant = 'primary', children, ...rest })</code>. "So defaults live right in the destructuring?"</p>
 
-<p>"Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is `undefined`, not when it's `null`."</p>
+<p>"Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is <code>undefined</code>, not when it's <code>null</code>."</p>
 
 <p>He demonstrated edge cases, showing how to handle nullable props, optional children, and partial object defaults. "Always think: what happens if this prop is missing, null, or empty? Your component should degrade gracefully."</p>
 
@@ -1788,7 +1798,7 @@
 
 <p>"Watch this," he said, showing a Card component that used children for content but also accepted optional header and footer props: </p>
 
-<p>```javascript</p>
+<p>``<code>javascript</p>
 <p>function Card({ header, footer, children, ...rest }) {</p>
 <p>  return (</p>
 <p>    <div className="card" {...rest}></p>
@@ -1798,7 +1808,7 @@
 <p>    </div></p>
 <p>  );</p>
 <p>}</p>
-<p>```</p>
+</code>`<code>
 
 <p>"See the combination? Children for main content, optional props for special sections, spread for flexibility, conditionals for graceful degradation. This is <em>professional composition</em>."</p>
 
@@ -1808,7 +1818,7 @@
 
 <p>He showed her more patterns: compound components, render prop patterns (though he noted those were more advanced), and slot-based composition. "The key is choosing the right pattern for each situation."</p>
 
-<p>Master Cargo's expression grew serious. "But remember the sacred rules: never mutate props or children. They're read-only. If you need to modify children, use `React.Children` utilities or transform them during render, never in place."</p>
+<p>Master Cargo's expression grew serious. "But remember the sacred rules: never mutate props or children. They're read-only. If you need to modify children, use </code>React.Children<code> utilities or transform them during render, never in place."</p>
 
 <p>Aria nodded solemnly. "Props are contracts, children are content. Both are immutable."</p>
 
@@ -1824,7 +1834,7 @@
 <li>What makes prop naming conventions important for component API design?</li>
 </ul>
 <strong>Aria's Journal - Day 12 (Evening)</strong>
-<em>The Pattern Library brought everything together! Modern React uses default parameters (`variant = 'primary'`) instead of defaultProps - it's clearer and works better with TypeScript. The real insight: combine patterns strategically. Use children for flexible content, named props for specific slots, spreading for wrapper functionality, defaults for optional props, and conditionals for graceful degradation. Master Cargo showed me that professional components handle all edge cases: missing props, null values, empty children. Naming matters too: isOpen, onClose, hasError - conventions that make APIs feel natural. I'm not just learning patterns; I'm learning </em>judgment<em> about when to use each one!</em>
+<em>The Pattern Library brought everything together! Modern React uses default parameters (</code>variant = 'primary'`) instead of defaultProps - it's clearer and works better with TypeScript. The real insight: combine patterns strategically. Use children for flexible content, named props for specific slots, spreading for wrapper functionality, defaults for optional props, and conditionals for graceful degradation. Master Cargo showed me that professional components handle all edge cases: missing props, null values, empty children. Naming matters too: isOpen, onClose, hasError - conventions that make APIs feel natural. I'm not just learning patterns; I'm learning </em>judgment<em> about when to use each one!</em>
 
 <strong>Chapter Ending:</strong>
 
