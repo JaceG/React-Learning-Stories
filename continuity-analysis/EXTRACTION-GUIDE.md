@@ -35,7 +35,7 @@ LP3: Props Data Flow (4 lessons) ✅ COMPLETE
 LP4: Hooks in Action (4 lessons)
   [✓] 4.1 UseStateSpells (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 4.2 UseEffectEnchantments (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 4.3 UseRefMirrors (Ch1, Ch2, Ch3)
+  [✓] 4.3 CustomHookCrafting (Ch1, Ch2, Ch3) - COMPLETE
   [ ] 4.4 HookPatternMastery (Ch1, Ch2, Ch3)
 
 LP5: Forms Events (4 lessons)

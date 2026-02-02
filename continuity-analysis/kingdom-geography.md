@@ -550,6 +550,43 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
+### Synthesis Workshop & Grand Repository
+**First Mentioned**: LP4.3 CustomHookCrafting Ch1
+
+**Quarter/Region**: Entire floor of Hooks Academy (Advanced Hooks Sanctuary)
+
+**Architecture**:
+- Workshop occupies entire floor filled with workbenches
+- Glowing blueprints floating above each station showing hook patterns
+- Advanced section where multiple forges work in harmony (Ch2)
+- Grand Repository library adjoining the forges (Ch3)
+- Crystalline shelves holding thousands of glowing hook patterns
+
+**Atmosphere**:
+- Creative, transcendent
+- Students crafting magical artifacts
+- Multiple forges in coordinated harmony
+- Pride in collective wisdom
+- Shared armory energy
+
+**Visual Details**:
+- Glowing blueprints floating everywhere showing hook patterns being assembled/tested
+- Master's apron sparkles with embedded hook patterns
+- Hands dancing between different energy streams
+- Complex energy patterns being woven together
+- localStorage energy pulled into forge
+- Multiple hooks working in perfect harmony
+- Crystalline shelves with documented patterns
+- Crystal containing workshop's hook patterns
+
+**Master**: Master Artificer Compose (creator, woman with sparkling apron)
+
+**Teaches**: Custom hook basics ("use" naming, Rules of Hooks activation), extracting stateful logic (useCounter, useToggle, reusable functions), advanced composition (combining multiple hooks + browser APIs: useLocalStorage, useFetch, useDebounce, useWindowSize, useInterval), hook libraries (documentation with JSDoc/examples, testing, organization/naming, semantic versioning)
+
+**Connection to Teaching**: Forging = creating hooks; blueprints = hook patterns; combining metals = hook composition; energy streams = multiple hooks working together; armory = shared library; crystalline shelves = documented solutions; battle-proven = tested patterns; collective wisdom = shared knowledge
+
+---
+
 ### Hook Academy
 **First Mentioned**: Hooks In Action → UseStateSpells → Ch1
 

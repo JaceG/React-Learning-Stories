@@ -141,6 +141,13 @@
 - **Appearance**: Robed in fabric shifting between states of existence, hourglasses orbit around them (sand flows upward in some, frozen in others), materializes from temporal flux, voice from multiple moments in time, form flickers/solidifies
 - **Teaches**: useEffect (lifecycle bridge, replaces old methods), cleanup functions (prevent memory leaks), dependency arrays (empty/none/specific), stale closures, async operations in effects, race conditions, AbortController
 
+**Master Artificer Compose**
+- **Role**: Creator of custom hooks, teaches hook forging
+- **Appears In**: LP4.3 CustomHookCrafting (Ch1-3)
+- **Location**: Synthesis Workshop - entire floor of Hooks Academy with workbenches, Grand Repository library adjoining forges
+- **Appearance**: Woman with apron sparkling with embedded hook patterns, hands dancing between energy streams
+- **Teaches**: Custom hook basics ("use" naming convention, Rules of Hooks), extracting stateful logic (useCounter, useToggle), advanced composition (combining hooks + browser APIs: useLocalStorage, useFetch), hook libraries (documentation, testing, organization, versioning)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -167,6 +174,7 @@
 - **LP3.4**: Projects small waterfall hologram, scans dam controls, calculates cascade levels rapidly, beeps excitedly about journey variety
 - **LP4.1**: Chirps greeting and projects hologram of adventures, beeps excitedly with performance metrics, projects comparisons highlighting reference changes, projects analysis of grouped state, chirps excitedly calculating optimal paths
 - **LP4.2**: Beeps nervously at temporal anomalies, scans dependency spheres showing patterns, display shows different activation patterns, beeps concernedly at paradoxes, processors whir anxiously at async chaos, chronometer stabilizes, chirps excitedly descending tower
+- **LP4.3**: Scans workshop projecting amazement at blueprints, projects excitement at energy patterns being woven, scans shelves downloading docs at impressive rate with excited display, projects summary organizing hooks into internal library
 
 *[More contributions to be added as extraction continues]*
 
@@ -291,6 +299,15 @@
 - Async operations → "non-linear time flows", "multiple timelines converging"
 - Race conditions → "competing timelines", "temporal chaos", "messages arriving out of order"
 - AbortController → "temporal guardian", "closes outdated portals", "cancels obsolete requests"
+
+**LP4.3 CustomHookCrafting**:
+- Custom hooks → "forging", "crafting magical artifacts", "transcending from users to creators"
+- "use" naming → "convention that activates Rules of Hooks", "tells React to apply hook rules"
+- Hook composition → "combining multiple metals/energy streams", "forges working in harmony"
+- Extracting logic → "creating personal toolkit", "sharing logic not state" (each component gets own instance)
+- Advanced patterns → "bridges to external world", "combining hooks with browser APIs"
+- Hook libraries → "armory", "weapons against complexity", "Grand Repository", "individual creativity becomes collective wisdom"
+- Documentation/testing → "battle-proven", "transforms personal to shareable assets"
 
 *[More translations to be added as extraction continues]*
 
