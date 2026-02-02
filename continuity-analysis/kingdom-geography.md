@@ -320,24 +320,77 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
-### Trade Quarter / Prop Forge
-**First Mentioned**: Props Data Flow → PropForge → Ch1
+### Prop Forge (Industrial Quarter)
+**First Mentioned**: LP3.1 PropForge Ch1
 
-**Quarter**: [Not specified - commercial district]
+**Quarter**: Industrial Quarter - winding path leading to massive workshop at district's heart
 
-**Features**:
-- Molten data flowing in floor channels
-- Glowing hammer and anvils
-- Transformation chambers
-- Validation Vault
-- Morning market
-- Caravan depot
+**Architecture**:
+- Massive workshop where raw props are refined and transformed
+- Molten data flows in channels carved into floor
+- Transformation chambers glowing with different energies (Ch2)
+- Underground Validation Vault - deep chamber humming with protective energy (Ch3)
+- Glowing runes covering vault surfaces, pulsing with validation magic
+- Central area with anvils and forging stations
+- Morning market (mentioned)
+- Caravan depot (for LP3.2)
+
+**Atmosphere**:
+- Intense heat hitting like a wall upon entry
+- Air shimmers with energy of transformation
+- Rhythmic clanging of hammers on metal echoing through streets
+- Data flames reflecting in smith's eyes
+- Vault humming with protective, solemn energy
+
+**Visual Details**:
+- Master Destructo wielding glowing hammer at center
+- Molten data channels carved into floor
+- Three glowing dots floating in formation (spread operator)
+- Prop crystals pulsing with different data properties
+- Glowing runes checking data types in vault
+- Perfectly forged props bearing seals of quality
+- Small hammer pendant (mastery symbol)
 
 **Masters**: 
-- Master Smith Destructo (Prop Forge)
-- Master Cargo (Caravan Master - NEW, replaced Propius)
+- Master Smith Destructo (Prop Forge - weathered face, singed beard, data flame eyes)
+- Master Cargo (Caravan Master for LP3.2)
 
-**Lessons Taught**: Destructuring, spread operator, prop validation, data flow
+**Teaches**: Destructuring, spread operator (three dots), prop validation (PropTypes/TypeScript), default values, prop immutability, prop forwarding, data flow
+
+**Connection to Teaching**: Forging = prop transformation; molten data = prop flow; anvil = merging point; vault = validation layer; runes = type checking; heat = transformation energy
+
+---
+
+### Composition District (Trade Quarter)
+**First Mentioned**: LP3.2 PropsCaravans Ch1
+
+**Quarter**: Trade Quarter - beyond Prop Forge's industrial smoke
+
+**Architecture**:
+- Composition Workshop - artisans assembling components like puzzle pieces (Ch1)
+- Spreading Grounds - open plaza where props flow like water between stations (Ch2)
+- Pattern Library - grand library filled with glowing scrolls (Ch3)
+- Nested component structures fitting together elegantly
+
+**Atmosphere**:
+- Unlike forges - more assembly than transformation
+- Props hum with energy, flowing like streams between stations
+- Peaceful, artistic compared to forge's intensity
+- Scholarly atmosphere in Pattern Library
+
+**Visual Details**:
+- Master Cargo examining nested structures like puzzles
+- Card components glowing softly as containers
+- Layout components arranging children in patterns
+- Props flowing like water/streams between stations
+- Glowing scrolls labeled with pattern names
+- Component trees with props flowing through them
+
+**Master**: Master Cargo (Keeper of Composition District)
+
+**Teaches**: props.children, component composition (nesting), prop spreading/rest patterns, prop forwarding, default parameters, combining composition patterns, prop naming conventions
+
+**Connection to Teaching**: Puzzle pieces = composition; nested boxes = children; flowing streams = prop spreading; scrolls = documented patterns; assembly = building from pieces
 
 ---
 

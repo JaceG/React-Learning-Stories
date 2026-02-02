@@ -97,6 +97,13 @@
 - **Appearance**: Weathered face, singed beard edges, eyes sparkle with data flame reflections, wields glowing hammer
 - **Teaches**: Destructuring (extracting props), spread operator (merging/transforming), prop validation (PropTypes/TypeScript), default values, prop immutability
 
+**Master Cargo**
+- **Role**: Keeper of the Composition District
+- **Appears In**: LP3.2 PropsCaravans (Ch1-3)
+- **Location**: Trade Quarter - Composition District (beyond Prop Forge)
+- **Appearance**: [Not extensively described - artisan examining nested structures]
+- **Teaches**: props.children pattern, component composition, prop spreading/rest patterns, prop forwarding, default parameters (vs defaultProps), combining patterns, prop naming conventions
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -118,6 +125,7 @@
 - **LP2.3**: Whistles in awe at thread connections, circuits sparkle with interest, lights dim when learning cost of re-renders, buzzes with excitement at chapter end
 - **LP2.4**: Whirrs thoughtfully about complex state, lights flicker with recognition about Redux, circuits sparkle with curiosity about alternatives, chirps proudly at completion
 - **LP3.1**: Beams proudly with light show, processors whir at simple three dots, projects warning symbols for type errors, displays holographic forge miniature
+- **LP3.2**: Projects hologram of nested boxes, processors whir about prop transference, displays flowchart of prop transformation chains, displays beautiful component tree
 
 *[More contributions to be added as extraction continues]*
 
@@ -194,6 +202,15 @@
 - Props → "contracts", "promises between components", "carefully crafted artifacts", "read-only"
 - Prop validation → "Validation Vault", "quality inspector", "glowing runes checking types", "PropTypes/TypeScript"
 - Prop transformation → "forging", "molten data flows", "refined and reshaped"
+
+**LP3.2 PropsCaravans**:
+- props.children → "containment", "nested boxes", "component trees inside components"
+- Composition → "puzzle pieces fitting together", "wrapping content with behavior"
+- Prop spreading → "transference", "props flow like water between stations/streams"
+- Rest patterns → "captures all remaining props", "prop forwarding"
+- Spread order → "later overrides earlier", "controlled spreading for flexibility vs enforcement"
+- Default parameters → "modern approach" (vs old defaultProps), "graceful defaults"
+- Composition patterns → "children for content, named props for slots", "professional composition"
 
 *[More translations to be added as extraction continues]*
 

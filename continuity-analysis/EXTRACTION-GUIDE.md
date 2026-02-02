@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP3.1 PropForge ✅
+**Last Completed**: LP3.2 PropsCaravans ✅
 
-**Next Lesson**: LP3.2 PropsCaravans
+**Next Lesson**: LP3.3 EventEchoes
 
 **Progress Tracker**:
 ```
@@ -28,7 +28,7 @@ LP2: State Management (4 lessons) ✅ COMPLETE
 
 LP3: Props Data Flow (4 lessons)
   [✓] 3.1 PropForge (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 3.2 PropsCaravans (Ch1, Ch2, Ch3)
+  [✓] 3.2 PropsCaravans (Ch1, Ch2, Ch3) - COMPLETE
   [ ] 3.3 EventEchoes (Ch1, Ch2, Ch3)
   [ ] 3.4 DataRivers (Ch1, Ch2, Ch3)
 
