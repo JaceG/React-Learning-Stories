@@ -418,9 +418,33 @@
 - **Appearance**: Eternal sentinel, watches from highest parapet
 - **Teaches**: Type guards (bridge compile-time and runtime, narrow types while informing compiler), four foundation guards (typeof primitives, instanceof objects, in operator properties, custom type predicates complex), advanced guard patterns (exhaustive checking with 'never', nested object guards deep validation, generic type guards reusable, branded types nominal checking), migration mastery (gradual with allowJs, strict boundaries typed wrappers, declaration files for untyped libs, automated codemods for scale), migration strategies (from JavaScript to TypeScript safely, sustainable path, islands of type safety expanding), balancing strictness with productivity, "trust nothing verify everything", "best guard helps others cross safely", "bridge between chaos and order"
 
-*[LP12 complete. LP13-15 to be added as extraction continues]*
+### LP13: Build Deploy
 
-**Note**: Extraction progressing through LP12-15. Total: 58 lessons, 174 chapters.
+**Admiral Webpack**
+- **Role**: Commander of the Deployment Armada, transforms development code into production-ready vessels
+- **Appears In**: LP13.1 BuildSystems (Ch1-3)
+- **Location**: Deployment Armada Docks (bustling with activity), command deck, Optimization Shipyard, vast harbor with specialized vessels
+- **Teaches**: Build systems (preparing ships for ocean voyage), build pipeline (Development Port→Bundling Dock→Optimization Bay→Launch Platform), optimization techniques (tree shaking removes dead code, code splitting loads on demand, minification compresses, gzip shrinks), differential serving (modern ES2020+ vs legacy ES5), module federation (ships share cargo mid-voyage), "every byte saved is faster journey"
+
+**Captain Pipeline**
+- **Role**: Commander of Automation Harbor, master of CI/CD
+- **Appears In**: LP13.2 CiCdPipeline (Ch1-3)
+- **Location**: Automation Harbor (beyond Optimization Shipyard, code flows through glowing channels), Pipeline Workshop, Continuous Fleet
+- **Teaches**: CI/CD automation (Continuous Integration/Delivery/Deployment), automated workflows (Source→Build→Test→Deploy), CI/CD tools (GitHub Actions/GitLab CI/Jenkins/CircleCI), pipeline gates (lint→test→build→deploy), advanced deployment strategies (Blue-Green zero downtime, Canary gradual rollout, Rolling sequential, Feature Flags decouple deploy from release), Progressive Delivery, GitOps, Chaos Engineering, DORA metrics (deployment frequency/lead time/MTTR), "manual deployment like rowing, CI/CD like favorable winds that never stop", "make deployments so safe and routine they become boring"
+
+**Navigator Vercel** (also called Navigator Hosting)
+- **Role**: Master navigator of Platform Archipelago, expert guide through hosting options
+- **Appears In**: LP13.3 HostingHorizons (Ch1-3)
+- **Location**: Platform Archipelago (hundreds of islands - Vercel/Netlify/AWS/Railway), helm of exploration vessel, ceremonial chamber, observation deck overlooking globe
+- **Teaches**: Choosing hosting platforms (match needs with strengths - ease/scalability/cost/features/team expertise), Platform islands (Vercel zero-config fastest, Netlify static/JAMstack, AWS infinite scale complex, Railway full-stack ease), deployment ceremonies (each platform has unique ritual/steps/configurations), environment variables (never commit secrets), custom domains (DNS propagation 5-48 hours), SSL configuration, global network (edge functions near users, CDN distribution cache globally, geographic routing optimal paths), performance optimization (Brotli/HTTP/3/image), Core Web Vitals, "no 'best' platform - best for YOUR needs"
+
+**Commander Deployment**
+- **Role**: Master strategist of Production War Room, oversees all deployment operations
+- **Appears In**: LP13.4 ProductionReadiness (Ch1-3)
+- **Location**: Production War Room (holographic dashboards displaying metrics), monitoring station, strategic command center
+- **Teaches**: Production readiness checks (error boundaries, health endpoints, security headers, environment validation), monitoring arsenal (Sentry errors, Datadog APM, New Relic application, PagerDuty incidents), comprehensive monitoring (full visibility coverage), real-time metrics dashboards (uptime/error rate/performance), battle-tested deployment strategies (Blue-Green 99.9% uptime, Canary 85% risk reduction, Rolling 60% resource efficiency), incident response (Detection→Response→Mitigation→Resolution), automated incident response, rollback procedures, production excellence checklist, "every deployment is mission - prepare for success plan for failure", "battle against downtime won through preparation not luck", "best incident is one that never happens"
+
+*[LP13 complete. LP14-15 to be added as extraction continues]*
 
 ---
 
