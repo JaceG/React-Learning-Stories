@@ -1955,19 +1955,7 @@
 
 <p>After mastering defaults, Master Cargo revealed advanced composition patterns combining everything she'd learned.</p>
 
-<p>"Watch this," he said, showing a Card component that used children for content but also accepted optional header and footer props:</p>
-
-<p>```javascript</p>
-<p>function Card({ header, footer, children, ...rest }) {</p>
-<p>return (</p>
-<div className="card" {...rest}>
-<p>{header && <div className="card-header">{header}</div>}</p>
-<div className="card-body">{children}</div>
-<p>{footer && <div className="card-footer">{footer}</div>}</p>
-</div>
-<p>);</p>
-<p>}</p>
-<p>```</p>
+<p>"Watch this," he said, showing a Card component that used children for content but also accepted optional header and footer props. The Card received header and footer as named props, spread remaining props onto the container, and used conditional rendering to only show header and footer sections when provided.</p>
 
 <p>"See the combination? Children for main content, optional props for special sections, spread for flexibility, conditionals for graceful degradation. This is <em>professional composition</em>."</p>
 

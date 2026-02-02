@@ -1604,19 +1604,7 @@ Aria practiced creating components that worked whether children were provided or
 
 After mastering defaults, Master Cargo revealed advanced composition patterns combining everything she'd learned.
 
-"Watch this," he said, showing a Card component that used children for content but also accepted optional header and footer props: 
-
-```javascript
-function Card({ header, footer, children, ...rest }) {
-  return (
-    <div className="card" {...rest}>
-      {header && <div className="card-header">{header}</div>}
-      <div className="card-body">{children}</div>
-      {footer && <div className="card-footer">{footer}</div>}
-    </div>
-  );
-}
-```
+"Watch this," he said, showing a Card component that used children for content but also accepted optional header and footer props. The Card received header and footer as named props, spread remaining props onto the container, and used conditional rendering to only show header and footer sections when provided.
 
 "See the combination? Children for main content, optional props for special sections, spread for flexibility, conditionals for graceful degradation. This is *professional composition*."
 
