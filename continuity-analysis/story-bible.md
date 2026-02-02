@@ -404,9 +404,23 @@
 - **Appearance**: Eyes see through code to essence, beard sparks with type annotations, hammer glows with strict mode energy
 - **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing (React.FC, React.Component<Props, State>, generic components like List<T>), typed props as contracts, optional props with ?, advanced patterns (union types, intersection types, conditional types, mapped types, template literal types), generics for reusable patterns, typed reducers (actions know own shapes), type system flexible yet bulletproof, "each type is promise, interface is guarantee, code compiles = certainty not hope", "greatest gift isn't catching errors - making entire categories bugs impossible"
 
-*[More LP12 mentors to be added as extraction continues]*
+**Master Forger Typhos** (Component Armory & Generic Forge)
+- **Role**: Legendary component smith, forge master of Generic Forge
+- **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-3)
+- **Location**: Component Armory (heart of TypeScript realm, blue forge-flames), Component Forge, Hook Forge within armory, Master's Chamber, Generic Forge (deep within TypeScript Kingdom, otherworldly light), inner sanctum with white-hot flames
+- **Appearance**: Legendary smith, hammer striking sparks of type definitions
+- **Teaches**: Component typing (transforming naked vulnerable JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, Functional/Class/Generic component typing, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced patterns (Conditional Type Armor, Mapped Type Chainmail, Utility Types, Type Guard Shields), Polymorphic Components, Type-Safe Form Libraries, Design System Types, generics (key to true reusability, adapt without losing type safety), type parameters as placeholders, generic constraints (extends/keyof/conditional/mapped types), generic composition, higher-order generics, builder patterns, type-safe factories, "well-typed component worth thousand runtime checks", "generics are languages within language"
 
-**Note**: LP12-15 extraction in progress.
+**Commander Guardia**
+- **Role**: Eternal sentinel of the Type Guard Tower
+- **Appears In**: LP12.4 TypeGuardTower (Ch1-3)
+- **Location**: Type Guard Tower (rises above TypeScript realm, battlements glowing with type signatures and runtime checks), tower heights with parapet, strategic command center, tower's pinnacle overlooking entire realm
+- **Appearance**: Eternal sentinel, watches from highest parapet
+- **Teaches**: Type guards (bridge compile-time and runtime, narrow types while informing compiler), four foundation guards (typeof primitives, instanceof objects, in operator properties, custom type predicates complex), advanced guard patterns (exhaustive checking with 'never', nested object guards deep validation, generic type guards reusable, branded types nominal checking), migration mastery (gradual with allowJs, strict boundaries typed wrappers, declaration files for untyped libs, automated codemods for scale), migration strategies (from JavaScript to TypeScript safely, sustainable path, islands of type safety expanding), balancing strictness with productivity, "trust nothing verify everything", "best guard helps others cross safely", "bridge between chaos and order"
+
+*[LP12 complete. LP13-15 to be added as extraction continues]*
+
+**Note**: Extraction progressing through LP12-15. Total: 58 lessons, 174 chapters.
 
 ---
 

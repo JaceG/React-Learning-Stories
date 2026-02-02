@@ -78,11 +78,11 @@ LP11: Server Data (4 lessons) ✅ COMPLETE
   [✓] 11.3 CachingCastle (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 11.4 GraphQLGateway (Ch1, Ch2, Ch3) - COMPLETE
 
-LP12: Typescript React (4 lessons)
+LP12: Typescript React (4 lessons) ✅ COMPLETE
   [✓] 12.1 TypeForge (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 12.2 ComponentArmory (Ch1, Ch2, Ch3)
-  [ ] 12.3 GenericForge (Ch1, Ch2, Ch3)
-  [ ] 12.4 TypeGuardTower (Ch1, Ch2, Ch3)
+  [✓] 12.2 ComponentArmory (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 12.3 GenericForge (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 12.4 TypeGuardTower (Ch1, Ch2, Ch3) - COMPLETE
 
 LP13: Build Deploy (4 lessons)
   [ ] 13.1 BuildSystems (Ch1, Ch2, Ch3)
