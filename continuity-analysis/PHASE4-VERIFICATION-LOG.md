@@ -153,6 +153,7 @@ grep -C 10 "Location Name" kingdom-geography.md
 - ✅ Hermes: Added "blue robes that shimmered with data patterns, staff with glowing scroll-tube" (approved)
 - ✅ Forge Master Hooke: Use "he" (masculine name, default to masculine)
 - ✅ Location phrases: "The Hook Forge in the Eastern Quarter" or "Industrial Quarter, part of the Western Quarter"
+- ✅ Aria pronouns: Can use character names instead of pronouns when it adds clarity (e.g., "Aria examined" instead of "She examined" after dialogue, "pleased by Aria's analytical thinking" instead of "her analytical thinking")
 
 ---
 
