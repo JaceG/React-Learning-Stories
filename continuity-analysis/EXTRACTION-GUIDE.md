@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP11.2 RealtimeConnections ✅
+**Last Completed**: LP11.3 CachingCastle ✅
 
-**Next Lesson**: LP11.3 CachingCastle
+**Next Lesson**: LP11.4 GraphQLGateway
 
 **Progress Tracker**:
 ```

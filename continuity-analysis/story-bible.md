@@ -379,6 +379,13 @@
 - **Appearance**: Appears in shimmer of constantly updating data
 - **Teaches**: Real-time connections (WebSockets full-duplex, Server-Sent Events server-to-client, Long Polling compatibility), continuous conversation vs request-response, synchronization complexity (multiple users/concurrent updates/race conditions/consistency), optimistic updates (changes appear instantly while confirming with server), conflict resolution strategies (Last-Write-Wins simple/data loss, Merge complex/preserves both, Manual user decides), event ordering for causality, Omnipresent Network (presence tracking, live cursors, push notifications, cross-device sync), collaborative systems, "real-time is foundation of modern applications"
 
+**Cache Lord Redux**
+- **Role**: Distant cousin of Redux Empire's emperor, guardian of Memory Vaults
+- **Appears In**: LP11.3 CachingCastle (Ch1-3)
+- **Location**: Caching Castle with towering Memory Vaults, vaults organized by freshness (Fresh/Stale/Expired), Invalidation Chamber (Ch2), highest tower for complete system (Ch3)
+- **Appearance**: [Not extensively described]
+- **Teaches**: Caching fundamentals (balance freshness vs performance), three strategies (Cache-First 💾 for speed, Network-First 🌐 for freshness, Stale-While-Revalidate ♻️ best of both), TTL (Time To Live determines state transitions), cache invalidation (hardest problem in computer science - pattern-based clearing, cascade for dependent data, partial updates, cache warming 🔥), multi-layer architecture (L1 Memory 🧠/L2 Redis 💾/L3 CDN 🌐), intelligent TTL calculation, automatic optimization, "fastest request is the one you don't make", "storing easy, knowing when to forget is true challenge"
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -839,6 +846,19 @@
 - Omnipresent Network → "highest observation platform", "ultimate pattern", "users feel connected as one", "distance irrelevant"
 - Real-time features → presence tracking (👥), live cursors (🖱️), push notifications (🔔), cross-device sync (🔄)
 - Network mastery → "shared spaces where users collaborate naturally", "millions of messages perfectly synchronized"
+
+**LP11.3 CachingCastle**:
+- Caching Castle → "towering Memory Vaults", "castle stores frequently used data"
+- Cache Lord Redux → "distant cousin of Redux Empire's emperor"
+- Memory Vaults → "organized by freshness" (Fresh/Stale/Expired)
+- Caching philosophy → "Why fetch what you already have?", "fastest request is one you don't make"
+- Three strategies → Cache-First (💾 speed), Network-First (🌐 freshness), Stale-While-Revalidate (♻️ best of both)
+- TTL → "Time To Live determines state transitions"
+- Invalidation Chamber → "hardest problem - knowing when to let go"
+- Invalidation strategies → pattern-based clearing (🎯), cascade for dependent, partial updates, cache warming (🔥 proactive)
+- Multi-layer architecture → L1 Memory (🧠 speed), L2 Redis (💾 persistence), L3 CDN (🌐 global distribution)
+- Optimized Kingdom → "highest tower", "complete caching system", "intelligent cache layers", "living system adapts and optimizes itself"
+- Cache metrics → "97% hit rate, sub-millisecond latency, 80% server load reduction"
 
 *[More translations to be added as extraction continues]*
 
