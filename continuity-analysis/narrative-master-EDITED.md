@@ -1512,7 +1512,68 @@ Prop spreading with rest patterns enables transparent wrapper components that en
 
 ---
 
-### Chapter 3: The Pattern Library
+### Chapter 3: 🔴 ~~The Trade Routes~~ 🟢 **The Pattern Library**
+
+💡 **EDIT NOTE:** Complete rewrite of LP3.2 Chapter 3. Original focused on prop drilling (redundant with LP2.3 Context). New version teaches advanced prop patterns: default parameters, edge case handling, mixing composition patterns, and naming conventions (Issue #3 fix).
+
+🔴 **[ORIGINAL CHAPTER 3 - DELETED]:**
+
+🔴 ~~**Bridge:**~~
+🔴 ~~On Aria's final day at the Trade Quarter, Propius led her to the Map Room - a circular chamber with walls covered in intricate route diagrams showing every caravan path in React Kingdom.~~
+
+🔴 ~~**Narrative:**~~
+
+🔴 ~~**Story Group 1:**~~
+
+🔴 ~~"This," Propius said with reverence, "is where we plan every delivery route. But I must warn you about a challenge every trader faces."~~
+
+🔴 ~~He pointed to a particularly convoluted path on the map. "See this? The cargo starts at the App Workshop and needs to reach ProductCard, five levels down. But our caravans can only travel parent-to-child, never skipping generations."~~
+
+🔴 ~~Binary computed quickly. "So the cargo must pass through Dashboard, ShopSection, and ProductList, even if they don't need it?"~~
+
+🔴 ~~"Exactly!" Propius nodded grimly. "We call it 'prop drilling' - boring tunnels through components just to pass data. Each intermediate workshop must receive and forward cargo they'll never use."~~
+
+🔴 ~~Aria frowned. "That seems inefficient. What if one workshop forgets to pass it along?"~~
+
+🔴 ~~"Precisely the problem! The entire route breaks. It's like a game of telephone where every player must perfectly repeat the message, even if they don't understand it."~~
+
+🔴 ~~**Story Group 2:**~~
+
+🔴 ~~After exploring the routes, Propius showed Aria the consequences of deep prop drilling. "Watch what happens when we need to change something," he said, adjusting a pin on the map.~~
+
+🔴 ~~Instantly, red warning lights appeared along the entire route. "Every workshop in the chain must be updated! It's maintenance nightmare. Plus, each workshop carries cargo it doesn't need, slowing everything down."~~
+
+🔴 ~~"Is there a better way?" Aria asked, studying the tangled paths.~~
+
+🔴 ~~Propius smiled mysteriously. "Indeed there is. You've already learned about Context from Contextus Magnus - it can teleport data directly to where it's needed. And there are other solutions you'll discover. But first, you must understand these fundamental routes."~~
+
+🔴 ~~"Remember," he added, "prop drilling isn't always bad. For shallow routes of 2-3 levels, it's often the simplest solution. The key is knowing when the route has become too deep and recognizing when to use more advanced patterns."~~
+
+🔴 ~~**Propius's Route Planning Wisdom:**~~
+🔴 ~~Prop drilling - passing data through components that don't use it - becomes problematic beyond 2-3 levels. It creates fragile dependencies, maintenance headaches, and unclear data flow. While acceptable for shallow hierarchies, deep drilling signals the need for alternative patterns. Component composition, Context API, or state management libraries can eliminate unnecessary prop forwarding. Remember: good architecture minimizes the distance data must travel to reach its destination.~~
+
+🔴 ~~**Reflection Questions:**~~
+🔴 ~~- How does the trade route metaphor help you visualize prop drilling?~~
+🔴 ~~- What strategies could you use to identify when prop drilling has gone too deep?~~
+🔴 ~~- In what scenarios might prop drilling be preferable to more complex solutions?~~
+
+🔴 ~~**Aria's Journal - Day 12 (Evening)**~~
+🔴 ~~*Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. Propius showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!*~~
+
+🔴 ~~**Chapter Ending:**~~
+🔴 ~~As the sun set over the Trade Quarter, Aria felt she truly understood the caravan system. Props were more than simple messages - they were the lifeblood of React Kingdom's commerce, flowing through carefully planned routes.~~
+
+🔴 ~~"You've learned well," Propius said proudly. "You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures."~~
+
+🔴 ~~Binary chimed happily. "From simple props to complex routes to the perils of drilling - we've seen it all!"~~
+
+🔴 ~~"Indeed," Aria smiled. "Now I'm curious about these data rivers you mentioned. Where do they flow?"~~
+
+🔴 ~~Propius pointed toward the sound of rushing water in the distance. "Follow that sound tomorrow, and you'll find River Master Flux. He'll teach you about the one-way flow of data through React Kingdom. Safe travels, Aria!"~~
+
+---
+
+🟢 **[NEW CHAPTER 3 - ADDED]:**
 
 **Bridge:**
 On the final day, Master Cargo led Aria to a grand library filled with glowing scrolls. "You've learned children and spreading," he said. "Now see how masters combine these patterns with best practices."
