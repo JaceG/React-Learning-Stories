@@ -395,7 +395,18 @@
 
 *[Extraction complete for LP1-11]*
 
-**Note**: This extraction covers LP1-11 (first 41 lessons). LP12-15 exist in narrative but not yet extracted. See EXTRACTION-GUIDE.md for complete status.
+### LP12: Typescript React
+
+**Master Typus**
+- **Role**: Forge Keeper, guardian of the Type Forge
+- **Appears In**: LP12.1 TypeForge (Ch1-3)
+- **Location**: Deep beneath React Kingdom, accessible through Cloud Citadel's lower passages, Type Forge (place of ancient power where code contracts hammered), Contract Chamber (Ch2), deepest chamber for advanced patterns (Ch3)
+- **Appearance**: Eyes see through code to essence, beard sparks with type annotations, hammer glows with strict mode energy
+- **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing (React.FC, React.Component<Props, State>, generic components like List<T>), typed props as contracts, optional props with ?, advanced patterns (union types, intersection types, conditional types, mapped types, template literal types), generics for reusable patterns, typed reducers (actions know own shapes), type system flexible yet bulletproof, "each type is promise, interface is guarantee, code compiles = certainty not hope", "greatest gift isn't catching errors - making entire categories bugs impossible"
+
+*[More LP12 mentors to be added as extraction continues]*
+
+**Note**: LP12-15 extraction in progress.
 
 ---
 
