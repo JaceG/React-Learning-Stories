@@ -1411,7 +1411,246 @@ Aria left the crystal spire with her mind buzzing with new knowledge. State, imm
 
 ---
 
-🚧 **WORK IN PROGRESS - LP2.2-2.4 remaining**
+## 2.2 MagicalHooks
+
+### 📖 Lesson Opener
+
+After her enlightening day with Memnon and the State Sorcerers, Aria arrived at the legendary Hook Forge - a massive workshop where master crafters created the special tools that gave React components their extraordinary powers. The air hummed with magical energy, and apprentices hurried between glowing workstations.
+
+### Chapter 1: The Hook Forge Masters
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Hook Forge introduction with sensory details and hook crafting process]**
+
+The Hook Forge was unlike anything Aria had seen before. Where the crystal spires had hummed with stored energy, the Forge roared with active creation. Glowing anvils rang with the sound of hooks being shaped, their metallic chimes echoing through the vast workshop. Crystalline tubes carried pure React energy to each workstation, pulsing with blue light that illuminated the faces of concentrated craftspeople.
+
+"Welcome to the Hook Forge!" called out a sturdy figure in a leather apron, sparks flying from the hook she was crafting. Her goggles reflected the glow of molten React energy as she hammered a partially formed hook into its final shape. "I'm **Forge Master Hooke**. Memnon sent word of your arrival."
+
+Binary chirped excitedly, zooming between workstations to observe different hooks being forged. "Master Hooke makes the most powerful hooks in all of React Kingdom! Each one grants unique abilities to functional components! Watch - that apprentice is crafting a useRef hook, and over there, someone's working on useMemo!"
+
+The variety was staggering. Some workstations forged hooks that glowed with steady light (useState), others crafted hooks that pulsed with side effects (useEffect), still others shaped hooks with specialized purposes Aria didn't yet recognize.
+
+"You've already met my most popular creation," Hooke said with pride, holding up a gleaming useState hook fresh from Memnon's teachings. 🔴 ~~"But let me show you its full potential"~~ 🟢 **"Memnon taught you well. But here at the Forge, you'll learn about the full hook family - each one crafted for a specific purpose..."**
+
+💡 **EDIT NOTE:** Acknowledges Aria learned useState from Memnon, focuses on hook family (Issue #9/#10 fix).
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended hook family overview with specialized purposes and functional component history]**
+
+She led Aria to a workbench where hooks of different designs were displayed like specimens. 🔴 ~~"useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"~~ 🟢 **"Each hook I forge serves a unique purpose," Hooke explained, gesturing to the display. "You know useState for memory - that's the foundation. Soon you'll meet useEffect for side effects, useRef for persistent references that don't trigger renders, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."**
+
+Hooke picked up each hook, showing its distinctive design. "Before hooks, functional components were simple display components - no state, no lifecycle, no side effects. Only class components had those powers. But hooks changed everything in 2019. Now functional components can do everything class components could, but with cleaner, more reusable code."
+
+Binary projected a before/after comparison. On one side, a class component with lifecycle methods, state, and bound functions - verbose and complex. On the other, a functional component using hooks - concise, clear, elegant. "See the difference? Hooks made React development so much more pleasant!"
+
+"Each hook follows the 'use' naming convention," Hooke explained. "This signals to React and to developers that special React behavior is happening. When you see 'use' at the start of a function, you know it's a hook with special rules - must be called at the top level, only in functional components or custom hooks."
+
+Aria studied the displayed hooks, beginning to appreciate how each solved a specific problem. "So it's not about memorizing all the hooks," she said slowly, "but understanding which problem each one solves?"
+
+"Precisely!" Hooke beamed. "A master craftsperson knows their tools not by rote memorization, but by understanding when each tool is the right choice. You don't use a hammer when you need a screwdriver, and you don't use useState when you need useRef."
+
+💡 **EDIT NOTE:** Changed from re-teaching useState to introducing hook family concept.
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hook rules explanation and custom hooks introduction]**
+
+"Before we dive into each hook's specifics," Hooke said, her expression turning serious, "you must learn the Rules of Hooks. These are not suggestions - they are inviolable laws that ensure hooks work correctly."
+
+She gestured to a plaque on the wall inscribed with glowing text:
+
+**The Rules of Hooks:**
+1. Only call hooks at the top level (never inside conditions, loops, or nested functions)
+2. Only call hooks from functional components or custom hooks
+
+"Why these rules?" Aria asked, studying the plaque.
+
+"React relies on hook call order to maintain state between renders," Hooke explained. "Imagine you have three useState calls in a component. React associates them with that component in order: first call = first state value, second call = second state value, etc. If you put a hook inside a condition, sometimes it runs, sometimes it doesn't, and the order breaks. React loses track. Chaos ensues."
+
+Binary demonstrated with a visualization showing hooks maintaining consistent order across renders versus hooks with conditional ordering causing state to become mismatched. The chaos was evident - state values swapping between variables, unexpected behavior, bugs everywhere.
+
+"And custom hooks?" Aria asked. "You mentioned we can call hooks from those."
+
+"Ah!" Hooke's eyes lit up. "Custom hooks are your own hook compositions. By convention, they start with 'use' and can call other hooks inside them. They're how we create reusable stateful logic. Tomorrow I'll show you advanced examples, but the concept is simple: extract hook logic into your own functions, following the same rules."
+
+She showed a quick example - a `useLocalStorage` custom hook that combined useState with useEffect to sync state with browser storage. "See? It's just hooks calling other hooks, packaged into a reusable function. Custom hooks are incredibly powerful for sharing logic across components."
+
+**New Characters:**
+
+**Forge Master Hooke**
+Maker of the most powerful hooks in all of React Kingdom, crafting each one at glowing anvils where crystalline tubes carry pure React energy. Sparks fly from the hooks she forges as she teaches their potential. 🔴 ~~"The useState hook is my most popular creation! It gives functional components memory - something only class components could do before hooks were invented."~~ 🟢 **"I forge each hook for a specific purpose. useState for memory, useEffect for side effects, useRef for persistence, useMemo for optimization. Together, they give functional components abilities that once required complex class components."**
+
+**Master Hooke's Wisdom:**
+🔴 ~~The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly.~~ 🟢 **Hooks are specialized tools, each crafted for a specific purpose. The key is understanding which hook to use when. useState for component memory, useEffect for external world interactions, useRef for values that persist but don't trigger re-renders, useMemo for expensive computations, useCallback for stable function references. Master the forge's full collection, and you'll wield the complete power of functional React components.**
+
+💡 **EDIT NOTE:** Shifted from useState details (covered by Memnon) to hook family overview.
+
+**Reflection Questions:**
+
+- How does the Hook Forge metaphor help you understand the purpose of React hooks?
+- Why do you think functional updates (using the previous state) are important when multiple updates might happen quickly?
+
+**Aria's Journal - Day 9 (Morning)**
+*The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. 🔴 ~~useState isn't just for simple values; it can handle complex data structures too. Master Hooke showed me how to use functional updates when the new state depends on the previous state.~~ 🟢 **Master Hooke showed me the full hook family - useState for memory (which Memnon taught me), useEffect for side effects, useRef for persistence, useMemo for optimization, and useCallback for stable functions. Each hook serves a unique purpose! I also learned the Rules of Hooks - always call at top level, never conditionally, to maintain consistent order. Custom hooks let us create reusable stateful logic!** So much more to learn!*
+
+---
+
+### Chapter 2: The Consequence Hook
+
+**Bridge:**
+Master Hooke led Aria deeper into the forge, where the air shimmered with uncontained magical energy. Here, apprentices worked on hooks that could reach beyond the component boundaries, affecting the world outside.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended useEffect introduction with side effects philosophy and boundary-crossing explanation]**
+
+"Now for something more advanced," Master Hooke announced, approaching a workstation surrounded by glowing runes that seemed to pulse with connections to external systems. "The **useEffect** hook - perhaps the most powerful and dangerous tool we craft here."
+
+Binary's lights flickered nervously. "Dangerous? But Aria just started learning!"
+
+"Not dangerous if used wisely," Hooke reassured them, placing a comforting hand on Binary's frame. "useEffect is the hook of **consequences**. It lets components reach out and affect the world beyond their boundaries - fetching data from remote servers, subscribing to external services, synchronizing with browser APIs, or manipulating the DOM directly. These are 'side effects' - operations that go beyond the pure function of rendering UI."
+
+She gestured to the glowing runes, which showed connections radiating outward from a component - one to an API, another to local storage, a third to a WebSocket, a fourth to the document title. "Your component's main job is to return JSX describing what to render. Everything else - data fetching, subscriptions, manual DOM changes - those are side effects that live in useEffect."
+
+Aria studied the connections. "So useEffect is like... giving components arms that can reach out and touch things?"
+
+"Perfect metaphor!" Hooke exclaimed. "Components can't just calculate what to display - they often need to interact with the world. useEffect provides those reaching arms, but with careful control over when they reach out."
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended dependency array explanation with detailed examples and cleanup pattern]**
+
+"Watch this demonstration," Master Hooke said, activating the runes. A component appeared with a simple useEffect that logged to the console. The component rendered, then after rendering, the effect fired. "Key insight: effects run *after* the render is committed to the screen. React renders first, updates the DOM, then runs effects."
+
+She showed the dependency array - an array of values that useEffect watches. "Every time the dependency changes, the effect fires. The key is the dependency array - it controls when your effects activate. Empty array? Effect runs once on mount. No array? Effect runs after every render. Array with values? Effect runs when those values change."
+
+Examples appeared showing each pattern:
+- `useEffect(() => {}, [])` - Runs once on mount (initialization)
+- `useEffect(() => {})` - Runs after every render (usually a mistake)
+- `useEffect(() => {}, [count])` - Runs when count changes (reactive effects)
+
+"And cleanup," Hooke emphasized, showing a return function from useEffect. "When your effect sets up something - a subscription, a timer, an event listener - it must clean up before the component unmounts or before the effect runs again. Return a cleanup function, and React calls it at the right time."
+
+A demonstration showed an effect starting an interval timer, then the cleanup function clearing it. "Without cleanup, timers continue after unmount - ghost timers, as Chronos warned you about! The cleanup function prevents memory leaks and stale effects."
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on useEffect practice with real-world scenarios and common patterns]**
+
+"Practice time," Hooke said, presenting Aria with common useEffect scenarios.
+
+"First: Fetch user data when the component mounts and when the userId prop changes."
+
+Aria wrote the effect with a dependency array containing `[userId]`. The effect would fetch on mount and re-fetch whenever userId changed. "Good!" Hooke approved.
+
+"Second: Subscribe to a WebSocket connection on mount, and clean up on unmount."
+
+Aria wrote the effect with an empty dependency array (once on mount) and a return function that closed the socket. "Excellent - you remembered cleanup!"
+
+"Third: Update the document title to match the page count."
+
+This one was trickier. Aria wrote `useEffect(() => { document.title = `Count: ${count}`; }, [count])`. The effect would run whenever count changed, keeping the title synchronized. "Perfect! You're thinking reactively - the effect depends on count, so count goes in the dependency array."
+
+Hooke showed common mistakes: forgetting dependencies (stale closures), missing cleanup (memory leaks), running too often (missing dependency array), and infinite loops (effect updates state that triggers effect that updates state...). "These pitfalls catch many developers. Understanding them saves hours of debugging."
+
+Binary emphasized the mental model: "Think of useEffect as saying 'Hey React, after you render this component, I need you to do this thing. And if these dependencies change, do it again. And before you do it again or before the component unmounts, run this cleanup function.' It's declarative - you describe what should happen, React handles when."
+
+**Master Hooke's Wisdom:**
+useEffect is the bridge between your component's inner world and the vast ecosystem beyond. It handles "side effects" - operations that affect things outside the component. The effect runs after the render is committed to the screen, ensuring the DOM is ready. Master this hook, and you can synchronize your components with any external system, from APIs to browser APIs to third-party libraries.
+
+**Reflection Questions:**
+
+- How does thinking of useEffect as the "hook of consequences" help you understand when to use it?
+- Why is the cleanup function important for preventing memory leaks and unexpected behavior?
+
+**Aria's Journal - Day 9 (Midday)**
+*useEffect is fascinating but tricky! It's like casting a spell that echoes into the future. The dependency array is the key - it's like telling the spell exactly when to activate. Master Hooke warned about infinite loops if you're not careful with dependencies. Effects run AFTER render, which makes sense - let React update the screen first, then do side effects. I practiced data fetching (with dependency on userId), WebSocket subscriptions (with cleanup!), and document title updates (reactive to count changes). The cleanup pattern is crucial - return a function to clean up timers, subscriptions, listeners. Without cleanup, components leave ghosts behind!*
+
+---
+
+### Chapter 3: The Specialized Tools
+
+**Bridge:**
+As the afternoon sun filtered through the forge's crystalline windows, Master Hooke led Aria to a special vault containing the most specialized hooks - tools designed for specific challenges that React developers face.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended specialized hooks introduction with precision instruments metaphor and use-case explanations]**
+
+"These are our precision instruments," Master Hooke said, opening an ornate chest that glowed with different colored light from each compartment. "Not every component needs them, but when you do, they're invaluable. Meet **useRef**, the memory crystal; **useMemo**, the calculation cache; and **useCallback**, the function preserver."
+
+Aria examined each tool carefully. useRef looked different from other hooks - it glowed with a steady, unchanging light rather than the reactive pulse of useState. useMemo and useCallback both had optimization runes etched into their surfaces. "They look powerful, but when would I need them instead of useState or useEffect?"
+
+"Excellent question!" Master Hooke beamed, clearly pleased by her analytical thinking. "Each solves a specific problem. useRef is for values that persist between renders but don't trigger re-renders when changed. useState triggers renders - sometimes you want that, sometimes you don't. useRef is the latter."
+
+She demonstrated: "Need to store a DOM reference? useRef. Need to track the previous value of a prop? useRef. Need to hold a mutable value that shouldn't cause re-renders? useRef. It's like a secret pocket that React doesn't watch."
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended optimization hooks explanation with performance visualization and premature optimization warnings]**
+
+"useMemo and useCallback are about optimization," Hooke continued, moving to the optimization workstation where performance metrics glowed on displays. "React components re-render frequently - when props change, when state changes, when parent re-renders. Usually that's fine - React is fast! But sometimes you have expensive calculations or functions passed as props that cause unnecessary child re-renders."
+
+She showed a visualization. A component with an expensive calculation running on every render, even when the inputs didn't change. "Watch the wasted computation." The numbers were stark - milliseconds adding up with each render.
+
+"useMemo caches the result of expensive calculations," Hooke explained. `const result = useMemo(() => expensiveCalculation(a, b), [a, b])`. "The calculation only runs when dependencies change. If a and b haven't changed, React returns the cached result. No wasted computation."
+
+"useCallback is similar but for functions," she continued. "When you pass a function as a prop to a child, React sees it as a new function every render even if it does the same thing. This can cause unnecessary child re-renders. useCallback caches the function itself: `const memoizedCallback = useCallback(() => { doSomething(a, b); }, [a, b])`. Same function reference returned unless dependencies change."
+
+Binary projected a performance comparison showing components with and without these optimizations. The difference was dramatic in some cases, negligible in others. "And that's the key point," Binary chirped. "These are optimizations. Don't use them everywhere - they have overhead too! Only optimize when you measure a problem."
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on specialized hooks practice with appropriate usage guidance]**
+
+"Let's practice," Hooke said, presenting scenarios where each specialized hook shined.
+
+"Scenario one: You need a ref to a DOM element to focus it imperatively."
+
+Aria used useRef: `const inputRef = useRef(null)`, then accessed it in useEffect to call `inputRef.current.focus()`. "Perfect - useRef gives you direct DOM access when declarative approaches aren't enough."
+
+"Scenario two: You have a heavy filtering operation on a large list."
+
+Aria wrapped it in useMemo: `const filteredList = useMemo(() => items.filter(item => item.active), [items])`. The filter only re-runs when items changes, not on every render. "Excellent!"
+
+"Scenario three: You pass a callback to a child component that's wrapped in React.memo."
+
+This was subtle. Aria created the callback with useCallback so it maintained the same reference: `const handleClick = useCallback(() => { doSomething(value); }, [value])`. Now the memoized child wouldn't re-render unless value changed. "You're thinking about reference identity - advanced!"
+
+Hooke presented counter-examples: "Don't useMemo a simple calculation - the overhead isn't worth it. Don't useCallback every function - only when reference identity matters. Don't useRef for state that should trigger renders - that's useState's job."
+
+"The wisdom," Hooke concluded, "is knowing when each tool is appropriate. Measure first, optimize second. Write clear code first, performant code second. These hooks are powerful, but clarity often trumps premature optimization."
+
+**Master Hooke's Final Wisdom:**
+These specialized hooks are like precision tools in a master craftsman's workshop. You won't need them for every project, but when you do, they're essential. useRef gives you a way to step outside React's render cycle, useMemo and useCallback help you optimize performance by preventing unnecessary work. Master these, and you'll have the complete toolkit for building efficient React applications. But remember - clarity and simplicity often trump premature optimization!
+
+**Reflection Questions:**
+
+- How does thinking of useRef as a "secret pocket" help you understand when to use it instead of useState?
+- Why is it important to measure performance before applying optimization hooks like useMemo and useCallback?
+
+**Aria's Journal - Day 9 (Afternoon)**
+*The specialized hooks are fascinating! useRef is like having a notebook that React doesn't watch - I can write in it without causing updates. Perfect for DOM refs, previous values, or mutable data that shouldn't trigger renders. useMemo and useCallback are about efficiency - they prevent unnecessary work by remembering results and function references. But Master Hooke warns against overusing them - they have overhead too! The wisdom is: measure first, optimize second. Write clear code, then make it fast if needed. I practiced with DOM focus (useRef), expensive filtering (useMemo), and stable callbacks (useCallback). Each hook has its place, but none should be used everywhere.*
+
+**Chapter Ending:**
+
+As the forge's closing bell rang, Master Hooke handed Aria a small leather pouch. "These are hook samples for practice. Tomorrow, you'll meet the Context Keepers in the Grand Hall. They'll teach you how to share state across your entire component kingdom."
+
+Binary's lights danced with excitement. "The Grand Context! That's where components can share memories without passing them hand-to-hand!"
+
+Aria carefully tucked the pouch into her satchel, her mind buzzing with new knowledge. useState, useEffect, useRef, useMemo, useCallback - each hook a tool with its own purpose. She was beginning to see how they all fit together in the grand tapestry of React development. Tomorrow would bring Context - the magical threads that connected components across vast distances.
+
+---
+
+🚧 **WORK IN PROGRESS - LP2.3-2.4 remaining**
 
 ---
 
