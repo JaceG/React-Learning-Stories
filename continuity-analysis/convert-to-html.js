@@ -309,7 +309,67 @@ const htmlFooter = `
 function convertMarkdownToHtml(md) {
 	let html = md;
 
-	// Convert headers (must be done first, before other conversions)
+	// STEP 1: Join consecutive lines into paragraphs (BEFORE any markdown conversion)
+	// This must be done first so we join lines before they become HTML
+	const lines = html.split('\n');
+	const processedLines = [];
+	let currentParagraph = [];
+
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i].trim();
+
+		// Empty line - end current paragraph
+		if (line === '') {
+			if (currentParagraph.length > 0) {
+				const paragraphText = currentParagraph.join(' ');
+				// Check if it's already HTML or should be wrapped
+				if (
+					paragraphText.startsWith('<') ||
+					paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)
+				) {
+					processedLines.push(paragraphText);
+				} else {
+					processedLines.push('<p>' + paragraphText + '</p>');
+				}
+				currentParagraph = [];
+			}
+			processedLines.push('');
+			continue;
+		}
+
+		// Check if line is already HTML or special formatting
+		if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
+			// Flush current paragraph first
+			if (currentParagraph.length > 0) {
+				const paragraphText = currentParagraph.join(' ');
+				processedLines.push('<p>' + paragraphText + '</p>');
+				currentParagraph = [];
+			}
+			processedLines.push(line);
+			continue;
+		}
+
+		// Regular text line - add to current paragraph
+		currentParagraph.push(line);
+	}
+
+	// Flush any remaining paragraph
+	if (currentParagraph.length > 0) {
+		const paragraphText = currentParagraph.join(' ');
+		if (
+			paragraphText.startsWith('<') ||
+			paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)
+		) {
+			processedLines.push(paragraphText);
+		} else {
+			processedLines.push('<p>' + paragraphText + '</p>');
+		}
+	}
+
+	html = processedLines.join('\n');
+
+	// STEP 2: Now convert markdown syntax to HTML
+	// Convert headers
 	html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
 	html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
 	html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
@@ -345,58 +405,6 @@ function convertMarkdownToHtml(md) {
 	html = html.replace(/(<li>.*?<\/li>\n)+/gs, function (match) {
 		return '<ul>\n' + match + '</ul>\n';
 	});
-
-	// Convert paragraphs (join consecutive lines, split on blank lines)
-	const lines = html.split('\n');
-	const processedLines = [];
-	let currentParagraph = [];
-
-	for (let i = 0; i < lines.length; i++) {
-		const line = lines[i].trim();
-
-		// Empty line - end current paragraph
-		if (line === '') {
-			if (currentParagraph.length > 0) {
-				const paragraphText = currentParagraph.join(' ');
-				// Check if it's already HTML or should be wrapped
-				if (paragraphText.startsWith('<') || paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)) {
-					processedLines.push(paragraphText);
-				} else {
-					processedLines.push('<p>' + paragraphText + '</p>');
-				}
-				currentParagraph = [];
-			}
-			processedLines.push('');
-			continue;
-		}
-
-		// Check if line is already HTML or special formatting
-		if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
-			// Flush current paragraph first
-			if (currentParagraph.length > 0) {
-				const paragraphText = currentParagraph.join(' ');
-				processedLines.push('<p>' + paragraphText + '</p>');
-				currentParagraph = [];
-			}
-			processedLines.push(line);
-			continue;
-		}
-
-		// Regular text line - add to current paragraph
-		currentParagraph.push(line);
-	}
-
-	// Flush any remaining paragraph
-	if (currentParagraph.length > 0) {
-		const paragraphText = currentParagraph.join(' ');
-		if (paragraphText.startsWith('<') || paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)) {
-			processedLines.push(paragraphText);
-		} else {
-			processedLines.push('<p>' + paragraphText + '</p>');
-		}
-	}
-
-	html = processedLines.join('\n');
 
 	// Clean up excessive newlines
 	html = html.replace(/\n{3,}/g, '\n\n');
