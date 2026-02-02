@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            padding: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        /* Headers */
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h1:first-child {
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.7em;
+            margin: 35px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        h3 {
+            color: #2980b9;
+            font-size: 1.4em;
+            margin: 30px 0 12px 0;
+        }
+        
+        h4 {
+            color: #16a085;
+            font-size: 1.2em;
+            margin: 25px 0 10px 0;
+        }
+        
+        /* Paragraphs and text */
+        p {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+        
+        /* Bold and italic */
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* Change tracking styles */
+        .deletion {
+            text-decoration: line-through;
+            color: #e74c3c;
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .addition {
+            background: #e8f5e9;
+            color: #27ae60;
+            font-weight: 600;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .edit-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #856404;
+        }
+        
+        .edit-note::before {
+            content: "💡 ";
+            font-style: normal;
+        }
+        
+        /* Status boxes */
+        .status-box {
+            background: #e8f5e9;
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .issue-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        /* Separators */
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 40px 0;
+        }
+        
+        /* Code blocks */
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        /* Story content specific styles */
+        .story-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .journal-entry {
+            background: #fff8dc;
+            border: 2px solid #daa520;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        
+        .character-box {
+            background: #e8f4f8;
+            border: 2px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        
+        .wisdom-box {
+            background: #f0f8ff;
+            border-left: 5px solid #4169e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .toc a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Emojis */
+        .emoji {
+            font-style: normal;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .deletion {
+                background: none;
+                color: #666;
+            }
+            
+            .addition {
+                background: none;
+                color: #000;
+                font-weight: bold;
+            }
+            
+            .edit-note {
+                background: #f8f8f8;
+                page-break-inside: avoid;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            
+            .story-group, .journal-entry, .character-box {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<h1>Markdown to HTML Converter</h1>
+
+<p>A flexible Node.js script that converts any Markdown file to a beautifully styled HTML document.</p>
+
+<h2>Features</h2>
+
+<p>- 🎨 Beautiful, responsive styling optimized for reading - 📱 Mobile-friendly layout - 🎯 Automatic title extraction from first H1 heading - 🔄 Auto-generates output filename if not specified - 📂 Works with files in any directory - ✨ Supports custom diff markers (🔴/🟢) and edit notes - 🔗 Preserves links, formatting, and structure</p>
+
+<h2>Usage</h2>
+
+<h3>Basic Usage</h3>
+
+<p>```bash</p>
+<h1>Convert default file (narrative-master-EDITED.md)</h1>
+<p>node convert-to-html.js</p>
+
+<h1>Convert any markdown file (auto-generates output name)</h1>
+<p>node convert-to-html.js my-document.md</p>
+
+<h1>Specify both input and output</h1>
+<p>node convert-to-html.js my-document.md my-output.html</p>
+
+<h1>Convert file from another directory</h1>
+<p>node convert-to-html.js ../docs/README.md ```</p>
+
+<h3>Get Help</h3>
+
+<p>```bash node convert-to-html.js --help ```</p>
+
+<h2>Examples</h2>
+
+<p>```bash</p>
+<h1>Convert narrative-master-EDITED.md → narrative-master-EDITED.html</h1>
+<p>node convert-to-html.js</p>
+
+<h1>Convert README.md → README.html</h1>
+<p>node convert-to-html.js README.md</p>
+
+<h1>Convert story.md to custom output name</h1>
+<p>node convert-to-html.js story.md my-beautiful-story.html</p>
+
+<h1>Convert from parent directory</h1>
+<p>node convert-to-html.js ../project-overview.md ```</p>
+
+<h2>Output</h2>
+
+<p>The script generates a self-contained HTML file with: - Embedded CSS styling (no external dependencies) - Responsive design (works on phones, tablets, desktops) - Clean typography optimized for long-form reading - Support for diff markers (🔴 deletions, 🟢 additions) - Highlighted edit notes (💡 EDIT NOTE:) - Proper heading hierarchy (H1-H4) - Styled blockquotes, lists, and emphasis</p>
+
+<h2>Title Extraction</h2>
+
+<p>The document title is determined by: 1. First H1 heading in the markdown (e.g., `# My Title` → "My Title") 2. Input filename if no H1 found (e.g., `my-story.md` → "My Story")</p>
+
+<h2>Styling Features</h2>
+
+<p>The converted HTML includes: - <strong>Max width</strong>: 1000px for comfortable reading - <strong>Line height</strong>: 1.8 for readability - <strong>Font</strong>: System font stack (optimal across all devices) - <strong>Colors</strong>: Professional blue/gray palette - <strong>Spacing</strong>: Generous margins and padding - <strong>Diff markers</strong>: Red for deletions, green for additions - <strong>Edit notes</strong>: Blue highlighted boxes - <strong>Links</strong>: Blue underlined, hover effects</p>
+
+<h2>Requirements</h2>
+
+<p>- Node.js (any recent version) - No external dependencies (uses only built-in `fs` and `path` modules)</p>
+
+<h2>Error Handling</h2>
+
+<p>The script will: - Show an error if the input file doesn't exist - Display usage information with `--help` - Auto-create output file (overwrites if exists) - Provide clear feedback during conversion</p>
+
+<h2>Technical Details</h2>
+
+<p>- Converts markdown headers (# ## ### ####) - Preserves bold (<strong>text</strong>) and italic (<em>text</em>) - Converts links [text](url) - Handles paragraphs with proper spacing - Supports blockquotes (> text) - Converts bullet lists (-, <em>) - Preserves horizontal rules (---) - Special handling for diff markers (🔴 ~~ / 🟢 </em>*) - Highlights edit notes (<div class="edit-note">)</p></div>
+
+<h2>Notes</h2>
+
+<p>- The script does NOT support: - Inline code or code blocks (these are converted to plain text) - Tables - Images (paths are preserved but not rendered) - Nested lists beyond basic level</p>
+
+<p>- For the React Learning Stories project, code snippets have been intentionally removed and converted to descriptive prose for better narrative flow.</p>
+
+    </div>
+</body>
+</html>
