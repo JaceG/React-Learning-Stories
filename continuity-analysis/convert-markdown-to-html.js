@@ -7,27 +7,27 @@ const markdown = fs.readFileSync(mdPath, 'utf-8');
 
 // Helper function to create valid HTML IDs
 function createId(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+	return text
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
 }
 
 // Convert markdown to HTML with special handling for diff markers
 function convertToHTML(md) {
-  let html = md;
-  
-  // Convert headers with proper IDs
-  html = html.replace(/^# (.*?)$/gm, (match, title) => {
-    const id = createId(title);
-    return `<h1 id="${id}">${title}</h1>`;
-  });
-  html = html.replace(/^## (.*?)$/gm, (match, title) => {
-    const id = createId(title);
-    return `<h2 id="${id}">${title}</h2>`;
-  });
-  html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
-  html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
+	let html = md;
+
+	// Convert headers with proper IDs
+	html = html.replace(/^# (.*?)$/gm, (match, title) => {
+		const id = createId(title);
+		return `<h1 id="${id}">${title}</h1>`;
+	});
+	html = html.replace(/^## (.*?)$/gm, (match, title) => {
+		const id = createId(title);
+		return `<h2 id="${id}">${title}</h2>`;
+	});
+	html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+	html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
 
 	// Convert diff markers with special styling
 	// Red strikethrough for deletions
@@ -293,41 +293,8 @@ const fullHTML = `<!DOCTYPE html>
   ${htmlContent}
   
   <script>
-    // Smooth scrolling for TOC links
-    document.querySelectorAll('#toc a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-        
-        if (target) {
-          // Scroll to target with offset for sticky header
-          const targetPosition = target.offsetTop - 80;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          // Highlight the target briefly
-          target.style.backgroundColor = '#fff9c4';
-          setTimeout(() => {
-            target.style.backgroundColor = '';
-          }, 2000);
-        } else {
-          console.warn('Target not found:', targetId);
-        }
-      });
-    });
-    
-    // Log all header IDs for debugging
-    console.log('Available h1 IDs:');
-    document.querySelectorAll('h1[id]').forEach(h1 => {
-      console.log(' -', h1.id, ':', h1.textContent);
-    });
-    console.log('Available h2 IDs:');
-    document.querySelectorAll('h2[id]').forEach(h2 => {
-      console.log(' -', h2.id, ':', h2.textContent);
-    });
+    // No JavaScript needed - browser handles anchor links natively!
+    // The scroll-margin-top CSS property handles the offset automatically
   </script>
 </body>
 </html>`;
