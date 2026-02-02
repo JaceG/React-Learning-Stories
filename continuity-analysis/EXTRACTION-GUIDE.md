@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP3.4 DataRivers ✅ (LP3 COMPLETE!)
+**Last Completed**: LP4.1 UseStateSpells ✅
 
-**Next Lesson**: LP4.1 UseStateSpells
+**Next Lesson**: LP4.2 UseEffectEnchantments
 
 **Progress Tracker**:
 ```

@@ -125,6 +125,15 @@
 - **Appearance**: Stocky figure, thick beard glistening with water droplets
 - **Teaches**: Flow control, conditional rendering (dam gates), data filtering, data transformation, strategic data placement (lowest common ancestor)
 
+### LP4: Hooks In Action
+
+**Professor Hooksworth**
+- **Role**: Keeper of the Hook Laws
+- **Appears In**: LP4.1 UseStateSpells (Ch1-3)
+- **Location**: Advanced Hooks Sanctuary - circular classroom, Transmutation Lab, Architecture Chamber
+- **Appearance**: Distinguished wizard, robes shimmer between different states, beard sparkles with tiny useState calls blinking in/out, spectacles display real-time component renders
+- **Teaches**: Advanced useState patterns (lazy initialization, functional updates), immutability principle, spread operator for complex state, state architecture (grouping related state, no derived/synced state, local state)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -149,6 +158,7 @@
 - **LP3.2**: Projects hologram of nested boxes, processors whir about prop transference, displays flowchart of prop transformation chains, displays beautiful component tree
 - **LP3.3**: Chirps excitedly (bounces off cave walls), projects diagram (props down/events up), transforms chirp into multiple tones, projects callback chains, scans acoustic patterns, eyes widen, displays holographic summary
 - **LP3.4**: Projects small waterfall hologram, scans dam controls, calculates cascade levels rapidly, beeps excitedly about journey variety
+- **LP4.1**: Chirps greeting and projects hologram of adventures, beeps excitedly with performance metrics, projects comparisons highlighting reference changes, projects analysis of grouped state, chirps excitedly calculating optimal paths
 
 *[More contributions to be added as extraction continues]*
 
@@ -253,6 +263,16 @@
 - Cascading → "waterfalls through tiers", "pools at each level", "data drops falling"
 - Deep nesting → "maintenance waterfalls/nightmares", "beyond 3-4 levels"
 - Context → "elevated aqueducts", "teleport water directly to deep pools"
+
+### LP4: Hooks In Action
+
+**LP4.1 UseStateSpells**:
+- useState → "spells", "incantations", "Hook Laws"
+- Lazy initialization → "expensive calculations only during birth, not every render"
+- Functional updates → "guarantee working with current state"
+- Immutability → "Immutability Principle", "new reference not mutation", "cornerstone of predictability"
+- Complex state → "crystalline object morphing", "spread at each level for nested"
+- State architecture → "state soup" (bad pattern), "Group related state", "Don't sync state" (calculate derived), "local state"
 
 *[More translations to be added as extraction continues]*
 
