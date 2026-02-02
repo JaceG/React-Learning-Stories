@@ -363,6 +363,15 @@
 - **Location**: Motion Monastery dojos
 - **Teaches**: Framer Motion (declarative API, variants, AnimatePresence, layout, drag), React Spring (physics-based with mass/tension/friction configs)
 
+### LP11: Server Data
+
+**Cloud Keeper Axios**
+- **Role**: Master of server communication, guardian of the Cloud Citadel
+- **Appears In**: LP11.1 ApiIntegration (Ch1-3)
+- **Location**: Cloud Citadel (massive structure floating above React Kingdom, connected by ethereal data streams), observation deck, Protocol Chambers (REST/GraphQL/WebSockets rooms glow with different hues), highest tower with Data Embassy
+- **Appearance**: [Not extensively described]
+- **Teaches**: Server communication fundamentals (fetch API like diplomatic correspondence), three request states (loading/success/error), REST protocol (GET/POST/PUT/DELETE verbs), headers (authentication tokens, content types), GraphQL basics, WebSockets for real-time, interceptors (request transform, response, error handling), error handling in distributed systems, Data Embassy (production-ready API layer with global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries), "speak the right language, follow protocols, handle delays gracefully"
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -795,6 +804,20 @@
 - Accessibility → "prefers-reduced-motion", "users get different but functional experience"
 - Fluid Kingdom → "highest tower view", "fully animated dashboard - data flowing like rivers, transitions smooth as silk", "every movement has purpose"
 - Animation mastery → "right technique for each situation", "feels inevitable not arbitrary", "language of motion"
+
+### LP11: Server Data
+
+**LP11.1 ApiIntegration**:
+- Cloud Citadel → "massive structure floating above React Kingdom", "connected by ethereal data streams", "mist parting to reveal"
+- Server communication → "bridge gap between earth and sky, client and server", "diplomatic correspondence"
+- Cloud Keeper Axios → "speak with distant servers", "bridging"
+- Three request states → "loading, success, error", "handling properly crucial"
+- Protocol Chambers → "different hues glowing", each represents communication way (REST/GraphQL/WebSockets)
+- REST verbs → "diplomatic actions" (GET read, POST create, PUT update, DELETE remove)
+- Headers → "credentials and metadata", "authentication tokens, content types", "formal dress code of API communication"
+- Interceptors → "request transform, response, error handling", "cross-cutting concerns"
+- Data Embassy → "highest tower", "permanent connection", "production-ready API layer", "robust communication infrastructure"
+- Embassy features → "global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries"
 
 *[More translations to be added as extraction continues]*
 

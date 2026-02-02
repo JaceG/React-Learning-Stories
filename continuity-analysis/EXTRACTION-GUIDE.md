@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP10.4 AnimationLibraries ✅ (LP10 COMPLETE!)
+**Last Completed**: LP11.1 ApiIntegration ✅
 
-**Next Lesson**: LP11.1 ServerState
+**Next Lesson**: LP11.2 RealtimeConnections
 
 **Progress Tracker**:
 ```
