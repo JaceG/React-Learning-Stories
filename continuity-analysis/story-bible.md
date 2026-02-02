@@ -171,6 +171,29 @@
 - **Appearance**: Stained laboratory coat bearing marks of countless experiments, emerges from behind cauldrons
 - **Teaches**: Controlled vs uncontrolled components (useState vs useRef), form state management, custom useForm hooks, multi-input handling, validation with useEffect, memoized validation, submission handling, Academy patterns applied to forms (orchestration, Performance Sanctuary, Temporal Tower patterns)
 
+**Commander Validus**
+- **Role**: Guardian commander of the Validation Fortress
+- **Appears In**: LP5.3 ValidationGuardians (Ch1-3)
+- **Location**: Western Quarter edge - Validation Fortress with shimmering protective runes, training grounds, advanced tactical center, war room
+- **Appearance**: Warrior in gleaming red armor, each piece inscribed with validation runes, booming authoritative voice
+- **Teaches**: Validation gates (required/email/length/number), unified validation systems (useValidation hook), advanced validation (debouncing async checks, caching, cross-field dependencies), validation timing (onChange/onBlur/onSubmit), schema validation, multi-step validation, conditional rules, ultimate defense system
+
+**Portal Keeper Sage**
+- **Role**: Master of the Portal Gateway, teaches submission patterns
+- **Appears In**: LP5.4 SubmissionPortals (Ch1-3)
+- **Location**: Western Quarter heart - Submission Portal Gateway with swirling vortex, advanced transmission arrays, Grand Synthesis Chamber (Ch3 with all masters)
+- **Appearance**: [Not extensively described], voice echoes with warmth
+- **Teaches**: Form submission fundamentals (preventDefault), loading states (idle/validating/submitting/success/error), error recovery, optimistic updates, retry logic (exponential backoff), AbortController for cancellation, submission lifecycle management, Grand Synthesis (unifying all Forms & Events patterns)
+
+### LP6: Routing Navigation
+
+**Captain Marina**
+- **Role**: Legendary navigation expert of the Central Citadel
+- **Appears In**: LP6.1 NavigationCompass (Ch1-3)
+- **Location**: Central Citadel - crystalline spires connecting all quarters, Navigation Command Center with floating maps, advanced Navigation Laboratory
+- **Appearance**: [Not extensively described], voice carries warmth and excitement
+- **Teaches**: Routing as extension of React component system, navigation as state transitions, routes as components, browser history triggering effects, route guards with validation, dynamic routes with parameters, query parameters, URL as state container, stateful nested routes, protected routes (auth + validation), advanced navigation patterns synthesizing all React knowledge
+
 *[More mentors to be added as extraction continues]*
 
 ---
