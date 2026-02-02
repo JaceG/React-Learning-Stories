@@ -2216,5 +2216,99 @@ They descended from the Citadel as stars began to appear overhead. Aria's journe
 
 ---
 
-*End of Phase 4 Narrative Master Document - LP2 COMPLETE*
-*Next: LP3-7 (when ready to continue)*
+# 3. Props Data Flow
+
+## 3.1 PropForge
+
+### 📖 Lesson Opener
+
+🔴 ~~Following Flux's directions, Aria and Binary~~ 🟢 **Aria and Binary** climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Forge stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
+
+💡 **EDIT NOTE:** Removed "Flux's directions" - Flux not introduced until LP3.4. Issue #3.5-001 fix.
+
+### Chapter 1: The Art of Destructuring
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Prop Forge introduction with sensory details and Master Destructo's dramatic entrance]**
+
+The heat hit Aria like a wall as she entered the Prop Forge, the temperature so intense that even Binary's cooling systems whirred to compensate. Molten data flowed in channels carved into the floor, glowing with blue and orange light that painted everything in flickering shadows. The air shimmered with the energy of transformation, and the rhythmic clanging of hammer on anvil created a hypnotic percussion that resonated in Aria's chest.
+
+At the center of it all stood a figure wielding a glowing hammer, striking at an anvil where prop objects took shape under his expert blows. Each strike sent sparks of data flying upward, dissipating like fireflies. The smith's movements were precise, economical, each hammer fall reshaping the glowing prop structure on the anvil.
+
+"Welcome to my domain!" The smith turned, revealing a face weathered by years at the forge. His beard was singed at the edges from working too close to molten data, and his eyes sparkled with the reflection of data flames. Protective goggles hung around his neck, and his leather apron bore countless small burns - badges of his craft. "I am **Master Smith Destructo**, and you must be Aria!"
+
+"How did you know?" Aria asked, wiping sweat from her brow, trying to adjust to the intense heat.
+
+"🔴 ~~River Master Flux~~ 🟢 **Master Cargo** sent word of your coming. Plus," he grinned, revealing a gap-toothed smile, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"
+
+💡 **EDIT NOTE:** Changed Flux (not yet met) to Master Cargo (LP3.2 character Aria knows). Issue #15 fix.
+
+Binary beamed proudly, literally, projecting a small light show that cast rainbow patterns across the forge walls.
+
+"Now then," Destructo continued, setting down his hammer with a resounding clang that echoed through the forge, "you've learned to transport props and control their flow. But here, we master their transformation! The ancient art of destructuring allows us to break props apart and extract exactly what we need - like a jeweler separating precious stones from ore."
+
+He held up a glowing object - a prop containing multiple nested properties. "Behold - a prop object containing multiple values. Watch as I extract its essence with a single incantation!" His hands moved in practiced patterns, and the prop object separated into individual glowing fragments, each labeled with its property name.
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended destructuring demonstration with novice vs master comparison and default values explanation]**
+
+After the forging demonstration, Destructo's expression grew serious. "Forging is only half the craft. The true mastery lies in destructuring - breaking props apart efficiently. Watch carefully, for this separates apprentices from masters."
+
+He showed Aria two identical prop objects on separate anvils. "These contain the same data - a weapon with title, damage, element, and rarity. Observe the difference between a novice and a master."
+
+At the first anvil, he tediously accessed each property one by one: `props.title`, then `props.damage`, then `props.element`, then `props.rarity`. Each access required him to type the full path, and the code grew verbose, repetitive. "This is how beginners work," he explained, his tone not mocking but instructional. "Functional, yes. Elegant, no. Every access repeats 'props.' - wasteful and hard to read."
+
+At the second anvil, he performed a single elegant gesture - destructuring the prop object at the function parameter level. With one line, all four properties separated cleanly into individual variables: `{title, damage, element, rarity}`. "See the difference?"
+
+"Destructuring!" Aria exclaimed, watching the properties flow into their own variables. "You're extracting multiple values at once! No repetition, no verbose dot notation!"
+
+"Exactly! And it gets better," Destructo winked, his eyes glinting in the forge light. "We can even provide default values for properties that might be missing. It's like having a backup plan built into your extraction process - if the smith sends incomplete data, we fill in reasonable defaults."
+
+He demonstrated: `{title, damage, element = 'fire', rarity = 'common'}`. "See? If element or rarity are missing from the props, these defaults activate. The component never breaks from undefined values. It's defensive programming - anticipating failure and handling it gracefully."
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on destructuring practice with complex nested props and parameter destructuring benefits]**
+
+"Now, your turn to forge," Destructo said, gesturing to a practice anvil where incomplete prop objects awaited. "Fix these components - they're using props incorrectly. Apply what you've learned."
+
+Aria examined the first component. It accessed props repeatedly: `props.user.name`, `props.user.email`, `props.user.role` - verbose and hard to scan. She rewrote it using nested destructuring: `{user: {name, email, role}}`. The code instantly became cleaner, the pattern clear.
+
+"Good!" Destructo approved. "Now this one." He showed her a component that might receive props with missing values. Aria added defaults: `{title = 'Untitled', description = 'No description provided', isPublished = false}`. The component became bulletproof against incomplete data.
+
+"Excellent! One more - the master challenge." Destructo presented a component that received both specific props it needed and additional props it should forward. Aria combined destructuring with rest syntax: `{onClick, className, ...restProps}`. She extracted what she needed, captured everything else, then could spread restProps forward.
+
+"Perfect!" Destructo beamed, striking his anvil in approval, sending sparks flying. "You understand that destructuring isn't just syntactic sugar - it's about *intent*. When you destructure in function parameters, you document what your component needs. Anyone reading the code knows immediately: 'This component requires these specific props.' It's self-documenting code!"
+
+Binary projected a before/after comparison showing how destructuring reduced line count and improved readability dramatically. "Twenty lines of props dot notation became five lines of clean variables!"
+
+"Remember," Destructo emphasized, wiping his brow, "destructuring is most powerful at the parameter level. Do it in the function signature, not inside the function body. That way, React DevTools, IDEs, and other developers immediately see your component's API."
+
+**New Characters:**
+
+**Master Smith Destructo**
+The master smith of the Prop Forge where molten data flows in channels carved into the floor. His beard is singed at the edges and his eyes sparkle with the reflection of data flames as he wields his glowing hammer. "The ancient art of destructuring allows us to break props apart and extract exactly what we need. Destructuring extracts properties from props objects with surgical precision!"
+
+**Master Destructo's Forging Wisdom:**
+Destructuring extracts properties from props objects with surgical precision, transforming verbose prop access into clean, readable code. Master this art by destructuring in function parameters, providing default values for optional props, and extracting only what you need. This technique not only reduces repetition but also documents your component's expectations clearly. Remember: a component that destructures its props is a component that knows exactly what it needs.
+
+**Reflection Questions:**
+
+- How does the forging metaphor help you understand prop transformation?
+- Why might destructuring with defaults be like having a "backup plan"?
+- What advantages does parameter destructuring provide over accessing props directly?
+
+**Aria's Journal - Day 14 (Morning)**
+*The Prop Forge is incredible! Master Destructo showed me how destructuring transforms clumsy prop access into elegant extraction. Instead of writing props.this and props.that everywhere, we can extract all needed properties in one line! Even better - we can provide default values, so our components never break from missing props. It's like having a safety net built into the code. Destructuring in function parameters is especially powerful - it immediately shows which props a component expects. This isn't just about writing less code; it's about writing clearer, more intentional code! I practiced with nested destructuring, defaults, and rest patterns. The forge's heat is intense, but the knowledge is worth it!*
+
+---
+
+🚧 **WORK IN PROGRESS - LP3.1 Ch2-3, then LP3.2-3.4, then LP4**
+
+---
+
+*End of Phase 4 Narrative Master Document (In Progress)*
