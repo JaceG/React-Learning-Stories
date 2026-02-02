@@ -6503,7 +6503,715 @@ As they descended from the Integration Sanctum, Aria reflected on the entire Hoo
 
 ---
 
-🚧 **WORK IN PROGRESS - LP5-7 (12 lessons remaining)**
+# 5. Forms Events
+
+## 5.1 EventSymphony
+
+### 📖 Lesson Opener
+
+Word of Aria's mastery at the Advanced Hooks Sanctuary spread quickly through React Kingdom. As she and Binary made their way through the Western Quarter's bustling streets, a messenger in flowing robes intercepted them with an ornate scroll. "From Conductor Eventus of the Event Symphony Hall," the messenger announced. "Your hook orchestration skills are urgently needed."
+
+### Chapter 1: React's Synthetic Event System
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Event Symphony Hall introduction with Conductor Eventus's appearance and synthetic event system explanation]**
+
+The Event Symphony Hall stood as a magnificent structure in the heart of the Western Quarter, its crystalline walls pulsing with the rhythm of countless user interactions - clicks, keypresses, mouse movements, all creating cascading patterns of light that flowed through the building's architecture like visual music. Aria and Binary arrived to find controlled chaos - events firing in complex patterns, handlers coordinating responses, but something seemed... unoptimized, scattered.
+
+**Academy graduate Aria!** A distinguished figure in a conductor's coat rushed forward from the concert stage, his baton crackling with visible event energy that sparked and danced at its tip. **Conductor Eventus** at your service! Master Formeus mentioned you might visit, and word of your hook mastery from the Advanced Hooks Sanctuary has reached even our halls. Welcome to the Symphony Hall - I'm excited to teach you about React's event system and how your hook knowledge applies here!"
+
+Binary's sensors immediately began analyzing the event flows, projecting waveforms and interaction patterns in the air like musical notation. "Detecting event propagation patterns throughout the hall! Performance metrics show optimization opportunities using patterns learned at the Advanced Hooks Sanctuary!"
+
+Aria surveyed the scene with her Sanctuary-trained eyes, seeing patterns she recognized from orchestration lessons but applied to user interactions. "I can see event handling happening - clicks becoming actions, inputs triggering updates. But I'm curious how React's event system works under the hood. At the Sanctuary, we focused on hooks and state management - this is my first deep dive into the event layer that makes components interactive."
+
+Eventus's eyes lit up with excitement, his baton's sparks intensifying. "Excellent! Your Sanctuary training will help you understand these concepts quickly. The patterns Pattern Weaver Synthesis taught you about orchestration apply directly to event handling! Let me show you how React's event system works - it's like a well-conducted symphony where every interaction is orchestrated for consistency and performance."
+
+He led them to a demonstration platform where browser event diagrams floated in the air. "In the chaotic old days before React," Eventus explained, gesturing to a timeline showing ancient browser wars, "different browsers handled events differently. Internet Explorer used attachEvent, others used addEventListener. Event object properties varied wildly. Handling keyboard events, mouse events, and touch events required browser-specific workarounds - a nightmare for developers!"
+
+He showed code covered in browser conditionals:
+```javascript
+// Pre-React nightmare
+if (element.addEventListener) {
+  element.addEventListener('click', handler, false);
+} else if (element.attachEvent) {
+  element.attachEvent('onclick', handler);
+}
+
+// Event properties varied
+const target = event.target || event.srcElement;
+const keyCode = event.keyCode || event.which;
+```
+
+"But React changed everything!" Eventus waved his baton, and the code transformed into clean, simple React event handlers. "React's **SyntheticEvent** system wraps all native browser events, providing consistent behavior everywhere!"
+
+```javascript
+// React - works everywhere!
+<button onClick={handleClick}>Click Me</button>
+
+// SyntheticEvent has normalized properties
+function handleClick(event) {
+  event.preventDefault();  // Works in all browsers
+  event.stopPropagation();  // Same everywhere
+  const target = event.target;  // Consistent property
+  const value = event.currentTarget.value;  // Always available
+}
+```
+
+"See the beauty?" Eventus asked. "One API, all browsers. React handles the chaos behind the scenes!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended synthetic event details with event pooling, property access, and camelCase conventions]**
+
+Conductor Eventus watched as Aria experimented with the event patterns, her Sanctuary training helping her quickly grasp the concepts. She created click handlers, change handlers, submit handlers, all using the consistent SyntheticEvent API without browser conditionals.
+
+"I see you understand the fundamentals!" Eventus praised. "React's synthetic events are like musical notes that have been perfectly tuned for consistency. But let me show you some important details that trip up beginners."
+
+He demonstrated event object characteristics:
+```javascript
+function handleEvent(event) {
+  console.log(event);  // SyntheticEvent wrapper
+  console.log(event.nativeEvent);  // Access native browser event if needed
+  
+  // SyntheticEvent properties are normalized
+  console.log(event.type);  // 'click', 'change', etc.
+  console.log(event.target);  // Element that triggered event
+  console.log(event.currentTarget);  // Element handler is attached to
+  console.log(event.timeStamp);  // When event occurred
+  
+  // Methods work consistently
+  event.preventDefault();  // Prevent default browser action
+  event.stopPropagation();  // Stop event from bubbling
+  event.persist();  // Keep event alive for async access (React 16, deprecated in 17+)
+}
+```
+
+"In React 16 and earlier," Eventus explained, "synthetic events were pooled for performance - the same object was reused for multiple events. If you needed to access event properties asynchronously, you had to call `event.persist()`. But React 17+ removed event pooling - you can access event properties freely in async code now!"
+
+He showed the naming conventions:
+```javascript
+// React uses camelCase for event handlers
+onClick, onChange, onSubmit, onFocus, onBlur
+onMouseEnter, onMouseLeave, onMouseMove
+onKeyDown, onKeyUp, onKeyPress
+onDragStart, onDrop, onScroll
+
+// NOT lowercase like HTML
+// onclick ❌, onchange ❌
+// onClick ✅, onChange ✅
+```
+
+"Exactly like the patterns I learned at the Sanctuary," Aria confirmed, connecting the concepts. "Just like useState provides consistent state management across components, React's event system provides consistent event handling across all browsers. It's abstraction - hiding complexity behind a clean interface!"
+
+Binary added cheerfully, projecting compatibility charts. "Event handling consistency improved! No browser-specific workarounds detected in React's system! Cross-browser compatibility: 100%!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on synthetic event practice with preventDefault/stopPropagation and event object exploration]**
+
+"Now, practice with React's event system," Eventus said, presenting Aria with common event handling scenarios.
+
+The first challenge: prevent form submission's default page reload. Aria wrote:
+```javascript
+function Form() {
+  const handleSubmit = (event) => {
+    event.preventDefault();  // Prevent page reload!
+    console.log('Form submitted without refresh');
+    // Handle form submission...
+  };
+  
+  return <form onSubmit={handleSubmit}>
+    <input />
+    <button>Submit</button>
+  </form>;
+}
+```
+
+"Perfect!" Eventus approved. "preventDefault() is one of the most common operations - stopping forms from refreshing, preventing links from navigating, stopping default drag behaviors."
+
+The second challenge: stop event propagation in nested structures. Aria created:
+```javascript
+function NestedStructure() {
+  const handleParent = () => console.log('Parent clicked');
+  const handleChild = (event) => {
+    event.stopPropagation();  // Prevent parent handler from firing
+    console.log('Child clicked');
+  };
+  
+  return (
+    <div onClick={handleParent}>
+      <button onClick={handleChild}>Click Me</button>
+      {/* Clicking button logs "Child" but NOT "Parent" */}
+    </div>
+  );
+}
+```
+
+"Excellent! stopPropagation() prevents the event from bubbling up, giving you fine control over event flow!"
+
+The third challenge tested event object exploration: extract all useful information from a keyboard event. Aria created a key logger:
+```javascript
+function KeyLogger() {
+  const handleKeyDown = (event) => {
+    console.log({
+      key: event.key,  // 'a', 'Enter', 'Shift'
+      code: event.code,  // 'KeyA', 'Enter', 'ShiftLeft'
+      ctrlKey: event.ctrlKey,  // Boolean
+      shiftKey: event.shiftKey,
+      altKey: event.altKey,
+      metaKey: event.metaKey,  // Cmd on Mac, Win on Windows
+      target: event.target.value  // Current input value
+    });
+    
+    // Detect shortcuts
+    if (event.ctrlKey && event.key === 's') {
+      event.preventDefault();  // Prevent browser save dialog
+      console.log('Save shortcut detected!');
+    }
+  };
+  
+  return <input onKeyDown={handleKeyDown} />;
+}
+```
+
+"Brilliant!" Eventus praised. "You've extracted all the event information React provides - keys, modifiers, target data. This is how you build sophisticated keyboard shortcuts, accessibility features, and rich interactions!"
+
+Binary displayed the synthetic event benefits: "Cross-browser consistency: achieved. Browser abstraction: complete. Property normalization: unified. Developer experience: greatly enhanced!"
+
+**New Characters:**
+
+**Conductor Eventus**
+Master conductor of the Event Symphony Hall in the heart of the Western Quarter, distinguished figure in a conductor's coat with a baton crackling with visible event energy. The crystalline walls pulse with the rhythm of countless user interactions under his guidance. "React's synthetic event system wraps native browser events to provide consistent behavior across all browsers. It's like a well-conducted symphony where every interaction is orchestrated for consistency and performance!"
+
+**The Symphony's First Movement:**
+React's synthetic event system orchestrates all browser events into a harmonious symphony. By wrapping native events in SyntheticEvent objects, React ensures consistent behavior across all browsers and provides automatic cleanup. Event handlers in React follow camelCase conventions (onClick, onChange, onSubmit) and receive normalized SyntheticEvent objects that hide browser differences. Properties like target, type, and timeStamp work identically everywhere. Methods like preventDefault() and stopPropagation() behave consistently. This abstraction allows developers to write event handling code once and trust it will work everywhere - the foundation of any great interactive symphony. In React 17+, event pooling was removed for simpler async event access.
+
+**Reflection Questions:**
+
+- How does React's event abstraction help you understand event handling as a symphony?
+- Why is cross-browser consistency like a universal conductor for all browsers?
+- What event handling chaos have you experienced that React's system could solve?
+
+**Aria's Journal - Day 22 (Morning)**
+*The Event Symphony Hall in the heart of the Western Quarter is magnificent! Conductor Eventus welcomed me warmly after hearing about my hook mastery from the Advanced Hooks Sanctuary. Today I learned about React's synthetic event system - it wraps native browser events to provide consistent behavior everywhere. SyntheticEvent objects normalize browser differences so I can write onClick, onChange, onSubmit without worrying about browser quirks! Binary was fascinated by how React handles the complexity behind the scenes. The synthetic events have methods like preventDefault() (stop default browser actions) and stopPropagation() (stop event bubbling) that work identically across all browsers. Event properties (target, type, currentTarget, timeStamp) are normalized too. The camelCase convention (onClick not onclick) is mandatory in React. Eventus showed me how event pooling was removed in React 17+ for simpler async access. This foundation is crucial before we dive into event propagation and delegation patterns this afternoon! The abstraction is beautiful - hide browser chaos, provide clean consistent API!*
+
+---
+
+### Chapter 2: Event Propagation and Delegation
+
+**Bridge:**
+Conductor Eventus led Aria to the grand amphitheater where the event propagation patterns were visualized as flowing streams of light. "Here's where many developers struggle," he explained. "They don't understand how events travel through the component tree, leading to handler conflicts and missed optimizations."
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended event propagation introduction with capture/bubble phases and phase-based handler placement]**
+
+Aria watched the light patterns flowing through the amphitheater's visualization with recognition from her Sanctuary training. "This reminds me of the Data Rivers River Master Flux taught me about! Events flow like data, but... in two phases? I see streams descending and then ascending."
+
+"Precisely!" Eventus exclaimed, clearly pleased with the connection. "Your foundation in data flow serves you well! Events do flow in two phases - **capture** descending from root to target, then **bubble** ascending from target back to root. Most developers only know about bubbling, but understanding both phases gives you powerful control!"
+
+He activated the visualization fully, and Aria watched a click event's journey:
+```
+Root
+  ↓ Capture Phase (rarely used)
+Parent
+  ↓
+Target Element (event occurs here)
+  ↑ Bubble Phase (default, most common)
+Parent
+  ↑
+Root
+```
+
+"By default, React handlers listen during the bubble phase," Eventus explained, his baton tracing the upward path. "When you write `onClick={handler}`, that handler fires during bubbling - after the event has reached its target and is traveling back up. But you can listen during capture with `onClickCapture={handler}`!"
+
+```javascript
+function EventFlow() {
+  const handleParentClick = () => console.log('Parent (bubble)');
+  const handleParentCapture = () => console.log('Parent (capture)');
+  const handleChildClick = () => console.log('Child (bubble)');
+  
+  return (
+    <div 
+      onClick={handleParentClick}
+      onClickCapture={handleParentCapture}
+    >
+      <button onClick={handleChildClick}>Click Me</button>
+    </div>
+  );
+}
+
+// Click order: Parent (capture) → Child (bubble) → Parent (bubble)
+```
+
+"See the flow?" Eventus demonstrated. "Capture descends, bubble ascends. This gives you precise control over when handlers fire!"
+
+"But we have a performance challenge," Eventus continued, showing Aria a poorly optimized event setup. "Many developers place handlers inefficiently, creating hundreds of handlers where one optimized handler would suffice, causing memory bloat and performance degradation!"
+
+Binary's scanners tracked the event flows, applying Sanctuary optimization knowledge. "Detecting inefficient event attachment patterns! Multiple handlers where one delegated handler would suffice. Classic Performance Sanctuary optimization opportunity!"
+
+"This is fascinating!" Aria exclaimed, studying the patterns. "I can see connections to the optimization patterns Pattern Weaver Synthesis taught me. Could event delegation be like the orchestration patterns I learned?"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended event delegation demonstration with list example and memory/performance benefits]**
+
+"Exactly what I was hoping you'd see!" Eventus exclaimed enthusiastically. "Let me show you **event delegation** - a performance pattern that leverages event bubbling to reduce handler overhead!"
+
+He demonstrated the problem first:
+```javascript
+// INEFFICIENT - Handler for every item (1000 items = 1000 handlers!)
+function TodoList({ todos }) {
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id} onClick={() => handleTodoClick(todo.id)}>
+          {todo.text}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Memory: 1000 event listeners attached
+// Performance: Creating 1000 arrow functions on every render
+```
+
+"Now watch the Academy-optimized approach using delegation:" Eventus showed the transformation:
+
+```javascript
+// EFFICIENT - One handler for all items (1 handler for 1000 items!)
+function TodoList({ todos }) {
+  const handleListClick = (event) => {
+    // Find which todo was clicked
+    const todoId = event.target.closest('[data-id]')?.dataset.id;
+    if (todoId) {
+      handleTodoClick(todoId);
+    }
+  };
+  
+  return (
+    <ul onClick={handleListClick}>
+      {todos.map(todo => (
+        <li key={todo.id} data-id={todo.id}>
+          {todo.text}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Memory: 1 event listener attached
+// Performance: 1 function created
+```
+
+"See the efficiency?" Eventus asked as Binary projected dramatic performance improvements. "Instead of attaching n handlers to n elements, attach one handler to the parent and use event.target to determine which child was clicked! Events bubble up naturally, and the parent can inspect which descendant triggered the event using data attributes or refs!"
+
+Aria studied the pattern carefully. "The parent handler receives all child clicks because events bubble up. Then it uses event.target to figure out which specific child was clicked. One handler manages the entire list!"
+
+"Precisely!" Eventus beamed. "This is delegation - trusting events to bubble and handling them at a higher level. The memory savings are massive (1 handler instead of 1000), performance is better (no function recreation for each item), and React's reconciliation is faster (fewer props changing)!"
+
+He showed more delegation patterns:
+```javascript
+// Keyboard shortcuts - one handler for entire app
+function App() {
+  const handleKeyDown = useCallback((event) => {
+    // Ctrl+S for save
+    if (event.ctrlKey && event.key === 's') {
+      event.preventDefault();
+      handleSave();
+    }
+    // Ctrl+Z for undo
+    if (event.ctrlKey && event.key === 'z') {
+      event.preventDefault();
+      handleUndo();
+    }
+    // etc...
+  }, [handleSave, handleUndo]);
+  
+  return <div onKeyDown={handleKeyDown}>
+    {/* Entire app responds to shortcuts through delegation */}
+  </div>;
+}
+```
+
+"Delegation scales beautifully!" Eventus emphasized. "From lists to keyboard shortcuts to complex UI interactions - one optimized handler can orchestrate many elements!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on delegation practice with table rows, dynamic lists, and delegation patterns]**
+
+"Now master delegation yourself," Eventus said, presenting Aria with real-world scenarios.
+
+The first challenge: a data table where each row needs edit/delete buttons. Instead of 1000 buttons × 2 handlers = 2000 handlers, Aria used delegation:
+
+```javascript
+function DataTable({ rows }) {
+  const handleRowAction = (event) => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    
+    const row = button.closest('[data-row-id]');
+    const rowId = row?.dataset.rowId;
+    const action = button.dataset.action;
+    
+    if (action === 'edit') handleEdit(rowId);
+    if (action === 'delete') handleDelete(rowId);
+  };
+  
+  return (
+    <table onClick={handleRowAction}>
+      {rows.map(row => (
+        <tr key={row.id} data-row-id={row.id}>
+          <td>{row.name}</td>
+          <td>
+            <button data-action="edit">Edit</button>
+            <button data-action="delete">Delete</button>
+          </td>
+        </tr>
+      ))}
+    </table>
+  );
+}
+```
+
+"Excellent!" Eventus approved. "One handler, 2000 elements managed! data-action attributes identify which button was clicked!"
+
+The second challenge: keyboard navigation in a list with up/down arrow keys. Aria implemented:
+```javascript
+function NavigableList({ items }) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  
+  const handleKeyDown = useCallback((event) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setSelectedIndex(i => Math.min(i + 1, items.length - 1));
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      setSelectedIndex(i => Math.max(i - 1, 0));
+    }
+    if (event.key === 'Enter') {
+      handleSelect(items[selectedIndex]);
+    }
+  }, [items, selectedIndex, handleSelect]);
+  
+  return (
+    <ul onKeyDown={handleKeyDown} tabIndex={0}>
+      {items.map((item, idx) => (
+        <li className={idx === selectedIndex ? 'selected' : ''}>
+          {item.name}
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+"Perfect!" Eventus praised. "One keyboard handler manages navigation for the entire list using delegation and state coordination!"
+
+The third challenge tested advanced patterns: a drag-and-drop list. Aria combined delegation with multiple event types:
+```javascript
+function DraggableList({ items, onReorder }) {
+  const [draggedId, setDraggedId] = useState(null);
+  
+  const handleDragEvent = useCallback((event) => {
+    const action = event.type;
+    const itemId = event.target.closest('[data-id]')?.dataset.id;
+    
+    if (action === 'dragstart') setDraggedId(itemId);
+    if (action === 'dragend') setDraggedId(null);
+    if (action === 'drop') {
+      event.preventDefault();
+      onReorder(draggedId, itemId);
+    }
+  }, [draggedId, onReorder]);
+  
+  return (
+    <div 
+      onDragStart={handleDragEvent}
+      onDragEnd={handleDragEvent}
+      onDrop={handleDragEvent}
+      onDragOver={(e) => e.preventDefault()}  // Allow drop
+    >
+      {items.map(item => (
+        <div key={item.id} data-id={item.id} draggable>
+          {item.text}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+"Brilliant orchestration!" Eventus struck a triumphant chord with his baton. "One delegated handler manages dragstart, dragend, and drop for all items. You've combined delegation, event types, state coordination, and useCallback memoization from the Performance Sanctuary!"
+
+Binary displayed efficiency metrics: "Event handlers reduced from O(n) to O(1). Memory usage minimized. Performance optimized. Delegation mastery achieved!"
+
+**The Harmony of Event Flow:**
+Event propagation in React follows the W3C standard: capture phase descends from root to target, then bubble phase ascends back to root. Most handlers listen during bubble phase (onClick), but capture phase handlers (onClickCapture) fire first. Understanding this flow enables powerful patterns like event delegation, where one optimized handler manages many elements. Use stopPropagation() to halt event flow when you don't want bubbling. Use preventDefault() to stop default browser actions (form submission, link navigation). Event delegation reduces handler count from O(n) to O(1), improving memory usage and performance. Strategic placement of handlers in capture vs bubble phase gives fine-grained control over event processing. Master the flow, and you master interaction efficiency.
+
+**Reflection Questions:**
+
+- How does event delegation relate to the orchestration patterns from the Advanced Hooks Sanctuary?
+- Why is understanding both phases of event flow crucial for complex applications?
+- What performance benefits come from delegation beyond just reducing handler count?
+
+**Aria's Journal - Day 22 (Afternoon)**
+*Event propagation is fascinating when viewed through Sanctuary optimization training! Conductor Eventus taught me how events travel in two phases: capture (root → target) and bubble (target → root). Most handlers listen during bubble (onClick), but capture handlers (onClickCapture) fire first - giving precise control! Event delegation reduces handler overhead using the efficiency patterns Pattern Weaver taught me - instead of n handlers for n elements, use one intelligent handler on the parent! Events bubble up naturally, and the parent inspects event.target to determine which child was clicked. I practiced with todo lists (one handler for 1000 items!), keyboard navigation (one handler for entire list), and drag-and-drop (one handler manages all drag events). Memory savings are massive, performance is dramatically better, and the code is cleaner! The pattern combines delegation + data attributes + event bubbling + useCallback for stability. Binary calculated O(n) handlers reduced to O(1) - elegant! Eventus mentioned optimization patterns next - throttling and debouncing for rapid events!*
+
+---
+
+### Chapter 3: Event Optimization Patterns
+
+**Bridge:**
+The finale approached. Conductor Eventus gathered all the musicians for the grand performance, but something was wrong. The symphony stuttered - scroll handlers fired thousands of times per second, search inputs triggered API calls on every keystroke, and memory consumption spiraled out of control. "This is exactly what the Performance Sanctuary teaches us to avoid!" Aria observed.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended optimization problems introduction with throttling and debouncing explanations]**
+
+"This is exactly what I feared," Eventus said, his baton trembling as the symphony became chaotic. "Without optimization, even the most beautiful symphony becomes an overwhelming cacophony. These rapid-fire events are drowning out the music!"
+
+Aria studied the chaotic performance with concern, recognizing patterns from the Performance Sanctuary. "This reminds me of performance issues Pattern Weaver Synthesis taught me about - unnecessary work being repeated constantly. The scroll handler is firing thousands of times, the search is hitting the API on every keystroke! Could the optimization techniques I learned help here?"
+
+"Precisely what I was hoping you'd ask!" Eventus exclaimed, his eyes lighting up. "Your Sanctuary training in optimization is exactly what we need! Let me teach you how to apply those patterns to event handling - **throttling** and **debouncing**, the two essential rhythms of event optimization!"
+
+Binary's processors whirred excitedly, ready to learn new applications. "Sanctuary patterns detected! Ready to learn how Performance Trinity principles apply to event optimization!"
+
+Eventus demonstrated the problems with metrics:
+```javascript
+// PROBLEM: Scroll handler fires 1000+ times per second!
+window.addEventListener('scroll', () => {
+  updateScrollPosition();  // Expensive operation called 1000x/sec
+  checkIfUserScrolledPast50Percent();
+  lazyLoadImages();
+});
+
+// PROBLEM: Search on every keystroke hits API!
+<input onChange={(e) => {
+  fetchSearchResults(e.target.value);  // API call on EVERY character!
+}} />
+// User types "react" = 5 API calls in 500ms
+```
+
+"See the waste?" Eventus asked as Binary projected the devastating performance metrics. "These patterns create thousands of unnecessary operations, bog down the application, and waste computational resources!"
+
+"**Throttling**," Eventus demonstrated, slowing the scroll handler's firing rate, "limits how often a function can execute. It ensures a function runs at most once per time period. Perfect for scroll, resize, and mouse move handlers that fire extremely rapidly!"
+
+```javascript
+// Throttled - runs at most once per 200ms
+function useThrottle(callback, delay) {
+  const timeoutRef = useRef(null);
+  const lastRan = useRef(Date.now());
+  
+  return useCallback((...args) => {
+    const now = Date.now();
+    
+    if (now - lastRan.current >= delay) {
+      callback(...args);
+      lastRan.current = now;
+    }
+  }, [callback, delay]);
+}
+
+// Usage
+const handleScroll = useThrottle(() => {
+  updateScrollPosition();
+}, 200);
+
+<div onScroll={handleScroll} />
+// Fires max 5x per second instead of 1000x per second!
+```
+
+"**Debouncing**," Eventus showed the search pattern, "waits until activity stops before executing. Perfect for search inputs, form validation, and resize handlers where you want to wait for the user to finish!"
+
+```javascript
+// Debounced - waits 300ms after typing stops
+const debouncedSearch = useDebounce(searchTerm, 300);
+
+useEffect(() => {
+  if (debouncedSearch) {
+    fetchSearchResults(debouncedSearch);
+  }
+}, [debouncedSearch]);
+
+// User types "react" = 1 API call after they stop typing!
+```
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended useCallback integration with handler memoization and Performance Sanctuary connections]**
+
+Conductor Eventus watched with satisfaction as Aria applied Sanctuary patterns to the Event Symphony, the performance transforming from chaotic to smooth. "The stuttering is gone! The memory usage is stable! You've learned these optimization concepts from Pattern Weaver Synthesis and you're applying them brilliantly!"
+
+"It's all about strategic optimization," Aria explained, connecting the concepts. "Throttle for continuous events that fire rapidly (scroll, resize, mouse move). Debounce for discrete events where you want to wait for user to finish (typing, dragging). And combine with useCallback from the Performance Trinity to prevent handler recreation!"
+
+She demonstrated the complete pattern:
+```javascript
+function OptimizedSearch() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState([]);
+  
+  // Debounce the search term
+  const debouncedTerm = useDebounce(searchTerm, 300);
+  
+  // Fetch when debounced term changes
+  useEffect(() => {
+    if (!debouncedTerm) return;
+    
+    const controller = new AbortController();
+    
+    fetch(`/api/search?q=${debouncedTerm}`, {
+      signal: controller.signal
+    })
+      .then(res => res.json())
+      .then(setResults)
+      .catch(err => {
+        if (err.name !== 'AbortError') console.error(err);
+      });
+    
+    return () => controller.abort();
+  }, [debouncedTerm]);
+  
+  // Memoized handler prevents input re-render
+  const handleChange = useCallback((e) => {
+    setSearchTerm(e.target.value);
+  }, []);
+  
+  return (
+    <>
+      <input value={searchTerm} onChange={handleChange} />
+      <Results data={results} />
+    </>
+  );
+}
+```
+
+"See the orchestration?" Eventus conducted the code's flow with his baton. "useDebounce from Master Artificer Compose's workshop, useEffect with AbortController from the Effect Sage's teachings, useCallback from the Performance Sanctuary - all working together! User types 'react', debounce waits 300ms, then one API call fires with proper cleanup. Perfection!"
+
+Binary projected the results: "Event processing efficiency increased by 98% using Sanctuary patterns! API calls reduced from 5+ per search to 1. Handler recreation reduced by 100% using useCallback. Memory usage stable. The symphony is perfect!"
+
+"Your Sanctuary training truly shines in event optimization!" Eventus praised. "You've taken Performance Trinity principles and applied them to the event layer beautifully!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on optimization practice with scroll handlers, resize listeners, and strategic optimization decisions]**
+
+"Now optimize events at scale," Eventus said, presenting Aria with applications suffering from event performance problems.
+
+The first challenge: an infinite scroll component that checked scroll position constantly. Aria applied throttling:
+```javascript
+function InfiniteScroll({ onLoadMore }) {
+  const handleScroll = useThrottle(() => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    
+    if (scrollTop + clientHeight >= scrollHeight - 100) {
+      onLoadMore();  // Load more when near bottom
+    }
+  }, 200);  // Check at most 5x per second
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+}
+```
+
+"Perfect!" Eventus approved. "Throttling prevents the check from running 1000 times per second, but still provides responsive loading!"
+
+The second challenge: window resize handler that recalculated layout. Aria applied debouncing:
+```javascript
+function ResponsiveLayout() {
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  
+  const updateDimensions = useMemo(() => 
+    debounce(() => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }, 150),
+    []
+  );
+  
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+      updateDimensions.cancel();  // Cancel pending debounce on unmount
+    };
+  }, [updateDimensions]);
+}
+```
+
+"Excellent! Debouncing waits for resize to finish, preventing hundreds of expensive recalculations!"
+
+The final challenge tested understanding: when to use throttle versus debounce?
+
+Aria created a decision framework:
+```
+Use THROTTLE when:
+- Continuous events (scroll, mousemove, drag)
+- Need regular updates during activity
+- Want "real-time" feel with control
+- Examples: scroll position, drag tracking, animation
+
+Use DEBOUNCE when:
+- Discrete events where you want final value
+- Wait for user to finish activity
+- Only care about end result
+- Examples: search input, form validation, window resize, auto-save
+
+Use NEITHER when:
+- Simple clicks, submits (already discrete)
+- Performance is fine without optimization
+- Immediate response required
+```
+
+"Perfect analysis!" Eventus struck a triumphant chord. "You understand not just the patterns, but when to apply them. That's true mastery!"
+
+Binary displayed the complete optimization stack: "Event optimization: Delegation reduces handlers (memory), useCallback prevents recreation (Performance Trinity), throttle controls frequency (continuous events), debounce waits for completion (discrete events). All patterns from Sanctuary training applied to events!"
+
+**The Grand Performance Mastery:**
+Event optimization transforms chaotic interactions into smooth symphonies using Performance Sanctuary principles. Memoize handlers with useCallback to prevent recreation on every render (Performance Trinity training). Throttle rapidly-firing events (scroll, resize, mousemove) to control frequency - limit to once per time period. Debounce user input (search, validation, autosave) to wait for activity to finish - delay execution until quiet period. Combine with event delegation for ultimate efficiency - one memoized, throttled/debounced handler can manage hundreds of elements. These patterns, learned at the Sanctuary and applied here, unite to create performant, responsive applications. Remember: measure first with React DevTools, then optimize strategically. Not every event needs optimization - clicks and submits are naturally infrequent.
+
+**Reflection Questions:**
+
+- How do Sanctuary optimization techniques mirror a conductor's role in managing tempo and timing?
+- Why is combining multiple optimization patterns more powerful than using them individually?
+- What performance issues in your own applications could benefit from these patterns?
+
+**Aria's Journal - Day 22 (Evening)**
+*What a finale! Eventus taught me how to apply Sanctuary patterns to event optimization. I learned how throttling controls continuous event frequency (scroll/resize/mousemove - limit to once per time period), how debouncing waits for discrete events to finish (typing/validation - delay until quiet period), and how these combine with useCallback (Performance Trinity) to prevent handler recreation. The complete optimization stack: delegation for memory (O(n) → O(1)), useCallback for stability (prevent recreation), throttle for continuous events (control frequency), debounce for discrete events (wait for completion). Binary tracked dramatic improvements as we applied Sanctuary methods to event handling! Decision framework is clear: throttle for continuous "during activity" updates, debounce for "wait until done" operations, neither for simple clicks. The Event Symphony Hall now runs smoothly - 98% efficiency improvement! All patterns from the Advanced Hooks Sanctuary applied to real-world event handling. Tomorrow we visit the Form Alchemy Lab - Master Formeus will show me how events, hooks, and forms unite into complete user interaction systems!*
+
+**Chapter Ending:**
+
+As the final notes of the optimized symphony faded, the entire Event Symphony Hall erupted in applause. Musicians who had struggled with performance issues now played in perfect harmony using delegated, memoized, throttled, and debounced handlers.
+
+Conductor Eventus bowed deeply to Aria. "You've transformed our understanding of event handling by applying Advanced Hooks Sanctuary training. The patterns you've demonstrated - delegation, memoization, throttling, debouncing - will be taught to future generations. The Western Quarter will never forget how you brought Sanctuary wisdom to our symphony!"
+
+🔴 ~~"The next challenge awaits," Aria said, looking toward the distant Validation Fortress. "I hear Commander Validus needs help with defensive strategies that might benefit from Academy patterns."~~ 🟢 **"Your Sanctuary training serves you brilliantly with events," Eventus smiled warmly. "But now you must learn to capture user input itself. The Form Alchemy Lab awaits next door - Master Formeus will teach you how to transform keystrokes and clicks into meaningful application state using everything you've learned!"**
+
+🔴 ~~Binary displayed a map route. "Validation patterns detected. Academy training applicable. Shall we proceed to the fortress?"~~ 🟢 **Aria's eyes lit up with excitement. "Form handling! That's where all these event patterns come together with useState and useRef from the Sanctuary, isn't it?"**
+
+🟢 **"Exactly!" Eventus confirmed, his baton crackling one final time. "Events flow through handlers, forms capture them into state. You're ready for the next step in your Western Quarter journey. Formeus has been eagerly awaiting someone with your Sanctuary training!"**
+
+💡 **EDIT NOTE: Fixed wrong next lesson - LP5.1 should lead to LP5.2 (FormAlchemy), not LP5.3 (ValidationGuardians). Issue #3.5C-Endings.**
+
+---
+
+🚧 **WORK IN PROGRESS - LP5.2-5.4, LP6, LP7 (11 lessons remaining)**
 
 ---
 
