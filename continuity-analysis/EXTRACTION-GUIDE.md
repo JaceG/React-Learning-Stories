@@ -111,52 +111,54 @@ Read the lesson from `narrative-master-EDITED.md`:
 - All story groups, wisdom sections, reflections
 
 ### Step 2: Extract Information
-Capture these elements:
 
-#### For Story-Bible.md:
+**Document Purpose:**
+- **kingdom-geography.md** = Visual map/legend (what does the world look like?)
+- **story-bible.md** = Character & concept encyclopedia (tell me about this person/concept)
 
-**A. Lesson Summary** (What's taught where)
-- Location and mentor
-- React concepts taught → Fantasy translations
-- Which locations visited (by chapter)
-- Where student goes next
+#### For kingdom-geography.md (Map/Visual Reference):
 
-**B. Binary's Contributions** (when Binary appears - starts LP1.3)
-- Technical observations/data displayed
-- Support provided
+**Focus**: Places, architecture, atmosphere, spatial relationships
+
+**Extract**:
+- **Location names** and which quarter
+- **Architecture**: Materials, layout, size, visual details
+- **Atmosphere**: Sounds, lighting, feeling, energy
+- **Unique features**: Landmarks, special elements
+- **Brief mention**: Who teaches here, what's taught (high-level)
+- **Connections**: How it relates to other locations
+
+**Keep it**: Visual, spatial, map-like
+
+#### For story-bible.md (Character/Concept Deep Dive):
+
+**Focus**: People and concept translations
+
+**Extract**:
+
+**A. Mentor Profiles** (Deep character reference)
+- Role and title
+- Physical appearance (detailed)
+- Personality traits
+- Teaching style/philosophy
+- Where they appear (LP#.# chapters)
+- World location (reference to kingdom-geography)
+- What they teach (detailed)
+
+**B. Concept Translation Dictionary**
+- React concept → Fantasy translation
+- Which lesson teaches it
+- Context/metaphor used
+
+**C. Binary** (when appears - LP1.3+)
+- Role and abilities
+- Contributions per lesson
 - Notable moments
 
-**C. Mentor Profiles** (minimal reference facts)
-- Role
-- Which lesson/chapters they appear in
-- World location(s)
-- Physical appearance
-- What they teach (React concepts)
-
-**Notes**: 
+**Notes**:
 - NO Aria profile (we ARE Aria)
-- NO character quotes (not needed for reference)
-- NO relationship dynamics or emotional analysis
-- Keep it to: who, where, what they look like, what they teach
-
-#### For Kingdom-Geography.md:
-
-**A. Location Details**
-- Architectural specifics (materials, layout, size)
-- Atmospheric descriptions (sounds, lighting, feeling)
-- Unique features/landmarks
-- Surrounding area
-- How it connects to other locations
-
-**B. Quarter Information**
-- Which quarter it belongs to
-- Theme/purpose of location
-- Role in the kingdom
-
-**C. Teaching Context**
-- What concepts taught here
-- Why this location fits the teaching
-- Special tools/materials present
+- story-bible goes DEEP on characters
+- kingdom-geography stays VISUAL on places
 
 ### Step 3: Update Documents
 

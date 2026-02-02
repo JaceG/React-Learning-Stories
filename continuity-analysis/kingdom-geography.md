@@ -7,23 +7,26 @@
 
 ## 🗺️ EXTRACTION IN PROGRESS - READ THIS FIRST
 
-**Status**: Currently extracting location details from `narrative-master-EDITED.md` lesson by lesson.
+**Purpose**: Visual Map & Legend - What does the world look like?
+
+**Document Division**:
+- **kingdom-geography.md** = Visual map (THIS FILE - places, architecture, atmosphere)
+- **story-bible.md** = Character encyclopedia (people, personalities, teachings)
 
 **If updating this document:**
-1. Read `EXTRACTION-GUIDE.md` for complete process and rules
+1. Read `EXTRACTION-GUIDE.md` for complete process
 2. Extract one lesson at a time (LP#.# - all 3 chapters)
-3. Find the location section for current lesson
-4. Add **complete architectural details** (materials, layout, size)
+3. Find location section for current lesson
+4. Add **architectural details** (materials, layout, visual features)
 5. Add **atmospheric descriptions** (sounds, lighting, feeling)
-6. Add **unique features** and landmarks
-7. Update **Lessons Taught** section
-8. Also update `story-bible.md` with character details
+6. Add **unique landmarks** and spatial relationships
+7. Briefly note: who teaches here, what's taught (high-level)
+8. Also update `story-bible.md` with character deep dives
 9. Commit with: `git commit -m "Extract LP#.# LessonName - Complete details"`
-10. Update progress in `EXTRACTION-GUIDE.md`
 
-**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist of completed lessons
+**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist
 
-**Rules**: Capture specific details (not vague summaries), use exact descriptions from narrative, note which quarter, explain why location fits the teaching.
+**Focus**: Visual, spatial, map-like reference. For deep character info, see story-bible.md
 
 ---
 

@@ -7,22 +7,24 @@
 
 ## 📖 EXTRACTION IN PROGRESS - READ THIS FIRST
 
-**Status**: Currently extracting from `narrative-master-EDITED.md` lesson by lesson.
+**Purpose**: Character & Concept Encyclopedia - Deep dive on people and React→Fantasy translations
+
+**Document Division**:
+- **kingdom-geography.md** = Visual map (places, architecture, atmosphere)
+- **story-bible.md** = Character encyclopedia (THIS FILE - people, personalities, teachings)
 
 **If updating this document:**
-1. Read `EXTRACTION-GUIDE.md` for complete process and rules
+1. Read `EXTRACTION-GUIDE.md` for complete process
 2. Extract one lesson at a time (LP#.# - all 3 chapters)
-3. Update **Aria's Journey** chronologically
-4. Add/expand mentor profiles in **Mentors & Guides**
-5. Document **Binary's contributions** 
-6. Track **Relationships & Character Dynamics**
-7. Also update `kingdom-geography.md` with location details
-8. Commit with: `git commit -m "Extract LP#.# LessonName - Complete details"`
-9. Update progress in `EXTRACTION-GUIDE.md`
+3. Add/expand **Mentor Profiles** (deep character details)
+4. Add **Concept Translations** (React → Fantasy dictionary)
+5. Document **Binary's contributions** (when appears)
+6. Also update `kingdom-geography.md` with location visuals
+7. Commit with: `git commit -m "Extract LP#.# LessonName - Complete details"`
 
-**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist of completed lessons
+**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist
 
-**Rules**: Use exact quotes, capture specific details, write in present tense, document growth not just facts.
+**Focus**: Deep character profiles, teaching styles, concept translations. For visual/spatial info, see kingdom-geography.md
 
 ---
 
