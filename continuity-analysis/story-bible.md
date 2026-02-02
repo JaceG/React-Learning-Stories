@@ -217,6 +217,13 @@
 - **Appearance**: Floats effortlessly above chaos
 - **Teaches**: Rendering Paradox (browser struggles with thousands of DOM nodes), virtual scrolling/windowing (render only visible + buffer), react-window/react-virtualized libraries (FixedSizeList/VariableSizeList), virtual spacer maintains scrollbar, Four Advanced Challenges (dynamic heights, horizontal scrolling, infinite loading, grid virtualization), Keeper of the Infinite title
 
+**Master Velocity**
+- **Role**: Guardian of the Speed Sanctum, keeper of optimization secrets
+- **Appears In**: LP7.4 SpeedSanctum (Ch1-3)
+- **Location**: Northern Mountains - Speed Sanctum, inner sanctum final chamber
+- **Appearance**: Robes shimmering with optimization symbols, emerges from mist
+- **Teaches**: Lag Monster (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -498,6 +505,18 @@
 - Items → "scrolls materialize only when needed, then vanish when passed"
 - Four Advanced Challenges → "mystical portals glowing with different energies" (dynamic heights, horizontal, infinite loading, grid virtualization)
 - Keeper of the Infinite → "title granted", "mastering every virtualization technique", "no data will overwhelm"
+
+**LP7.4 SpeedSanctum**:
+- Lag Monster → "awakened threat", "feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles"
+- Speed Sanctum → "legendary sanctuary" in Northern Mountains, "ancient optimization techniques"
+- Performance anomalies → "slowing kingdom", "stuttering interfaces/frozen forms", "components flicker erratically"
+- React DevTools Profiler → "vital signs crystals", "lens into performance realm", "first weapon"
+- Memoization → "shield of memory", "selective memory"
+- React.memo → "prevents component re-renders when props haven't changed"
+- useMemo → "caches results of expensive calculations"
+- useCallback → "stabilizer of function references", "ensures function stability"
+- Trinity of Optimization → "React.memo + useMemo + useCallback", "work in harmony to defeat problems"
+- Strategic optimization → "profile first, identify bottlenecks, apply strategically", "measure twice optimize once"
 
 *[More translations to be added as extraction continues]*
 
