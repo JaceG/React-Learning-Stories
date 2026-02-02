@@ -136,6 +136,26 @@ grep -C 10 "Location Name" kingdom-geography.md
 
 ---
 
+## 📜 EXPANSION RULES (Approved by User - Feb 2, 2026)
+
+### Creative Expansion Rules:
+1. **Unspecified Details**: If story-bible says "[Not specified]" or lacks detail, you CAN add descriptive details that fit the character's role
+2. **Add to Bible**: When you create new details, ADD them to story-bible.md for future consistency
+3. **Location Context**: EXPLICITLY add location context in narrative (e.g., "in the Industrial Quarter of the Western Quarter")
+4. **Gender Assignment**:
+   - Default to "he" for names that don't sound feminine
+   - Use "she" for feminine-sounding names OR feminine outfits/appearance
+   - If unclear, STOP and ASK user before proceeding
+5. **Canon Conflicts**: Try not to contradict canon, but bring unclear decisions to user
+6. **Check Files Regularly**: Reference story-bible.md and kingdom-geography.md before EACH lesson
+
+### Examples Applied:
+- ✅ Hermes: Added "blue robes that shimmered with data patterns, staff with glowing scroll-tube" (approved)
+- ✅ Forge Master Hooke: Use "he" (masculine name, default to masculine)
+- ✅ Location phrases: "The Hook Forge in the Eastern Quarter" or "Industrial Quarter, part of the Western Quarter"
+
+---
+
 ## 📋 LESSONS REMAINING TO VERIFY
 
 - [ ] LP3.2 PropsCaravans  

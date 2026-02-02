@@ -33,7 +33,7 @@
 - **Role**: Head Messenger of the Props Messenger Guild
 - **Appears In**: LP1.2 PropsMessengers (Ch1-3)
 - **Location**: Eastern Quarter - Props Messenger Guild
-- **Appearance**: [Not specified in narrative]
+- **Appearance**: Blue robes that shimmer with data patterns, carries a staff topped with a glowing scroll-tube, commands respect
 - **Teaches**: Props, one-way data flow, callbacks, PropTypes, DefaultProps
 
 **Guardian TypeCheck**

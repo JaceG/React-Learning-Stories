@@ -1441,7 +1441,7 @@ The variety was staggering. Some workstations forged hooks that glowed with stea
 
 🟦 **[EXPANDED: Extended hook family overview with specialized purposes and functional component history]**
 
-She led Aria to a workbench where hooks of different designs were displayed like specimens. 🔴 ~~"useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"~~ 🟢 **"Each hook I forge serves a unique purpose," Hooke explained, gesturing to the display. "You know useState for memory - that's the foundation. Soon you'll meet useEffect for side effects, useRef for persistent references that don't trigger renders, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."**
+He led Aria to a workbench where hooks of different designs were displayed like specimens. 🔴 ~~"useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"~~ 🟢 **"Each hook I forge serves a unique purpose," Hooke explained, gesturing to the display. "You know useState for memory - that's the foundation. Soon you'll meet useEffect for side effects, useRef for persistent references that don't trigger renders, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."**
 
 Hooke picked up each hook, showing its distinctive design. "Before hooks, functional components were simple display components - no state, no lifecycle, no side effects. Only class components had those powers. But hooks changed everything in 2019. Now functional components can do everything class components could, but with cleaner, more reusable code."
 
@@ -1459,9 +1459,9 @@ Aria studied the displayed hooks, beginning to appreciate how each solved a spec
 
 🟦 **[EXPANDED: Added hook rules explanation and custom hooks introduction]**
 
-"Before we dive into each hook's specifics," Hooke said, her expression turning serious, "you must learn the Rules of Hooks. These are not suggestions - they are inviolable laws that ensure hooks work correctly."
+"Before we dive into each hook's specifics," Hooke said, his expression turning serious, "you must learn the Rules of Hooks. These are not suggestions - they are inviolable laws that ensure hooks work correctly."
 
-She gestured to a plaque on the wall inscribed with glowing text:
+He gestured to a plaque on the wall inscribed with glowing text:
 
 **The Rules of Hooks:**
 1. Only call hooks at the top level (never inside conditions, loops, or nested functions)
@@ -1477,7 +1477,7 @@ Binary demonstrated with a visualization showing hooks maintaining consistent or
 
 "Ah!" Hooke's eyes lit up. "Custom hooks are your own hook compositions. By convention, they start with 'use' and can call other hooks inside them. They're how we create reusable stateful logic. Tomorrow I'll show you advanced examples, but the concept is simple: extract hook logic into your own functions, following the same rules."
 
-She showed a quick example - a `useLocalStorage` custom hook that combined useState with useEffect to sync state with browser storage. "See? It's just hooks calling other hooks, packaged into a reusable function. Custom hooks are incredibly powerful for sharing logic across components."
+He showed a quick example - a `useLocalStorage` custom hook that combined useState with useEffect to sync state with browser storage. "See? It's just hooks calling other hooks, packaged into a reusable function. Custom hooks are incredibly powerful for sharing logic across components."
 
 **New Characters:**
 
