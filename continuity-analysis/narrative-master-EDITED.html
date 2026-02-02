@@ -27,6 +27,7 @@
       padding-bottom: 10px;
       margin: 40px 0 20px 0;
       font-size: 2.5em;
+      scroll-margin-top: 100px;
     }
     
     h2 {
@@ -207,7 +208,7 @@
     </ul>
   </div>
 
-  <h1>React Learning Stories - Narrative Master Document (EDITED VERSION)</h1>
+  <h1 id="react-learning-stories-narrative-master-document-edited-version">React Learning Stories - Narrative Master Document (EDITED VERSION)</h1>
 
 <em>Original: January 28, 2026</em>  
 <em>Editing Started: February 1, 2026</em>  
@@ -261,17 +262,17 @@
 
 <hr>
 
-<h1>EDITED CONTENT BEGINS BELOW THIS LINE</h1>
+<h1 id="edited-content-begins-below-this-line">EDITED CONTENT BEGINS BELOW THIS LINE</h1>
 
 <hr>
 
-<h1>React Learning Stories - Narrative Master Document</h1>
+<h1 id="react-learning-stories-narrative-master-document">React Learning Stories - Narrative Master Document</h1>
 
 <em>Generated on January 28, 2026</em>
 
 <hr>
 
-<h1>1. Components Basics</h1>
+<h1 id="1-components-basics">1. Components Basics</h1>
 
 <h2 id="1-1-componentkingdom">1.1 ComponentKingdom</h2>
 
@@ -883,7 +884,7 @@
 <hr>
 
 
-<h1>2. State Management</h1>
+<h1 id="2-state-management">2. State Management</h1>
 
 <h2 id="2-1-statesorcerers">2.1 StateSorcerers</h2>
 
@@ -1412,7 +1413,7 @@
 <hr>
 
 
-<h1>3. Props Data Flow</h1>
+<h1 id="3-props-data-flow">3. Props Data Flow</h1>
 
 <h2 id="3-1-propforge">3.1 PropForge</h2>
 
@@ -2164,7 +2165,7 @@
 <hr>
 
 
-<h1>4. Hooks In Action</h1>
+<h1 id="4-hooks-in-action">4. Hooks In Action</h1>
 
 <h2 id="4-1-usestatespells">4.1 UseStateSpells</h2>
 
@@ -2780,7 +2781,7 @@
 <hr>
 
 
-<h1>5. Forms Events</h1>
+<h1 id="5-forms-events">5. Forms Events</h1>
 
 <h2 id="5-1-eventsymphony">5.1 EventSymphony</h2>
 
@@ -3378,7 +3379,7 @@
 <hr>
 
 
-<h1>6. Routing Navigation</h1>
+<h1 id="6-routing-navigation">6. Routing Navigation</h1>
 
 <h2 id="6-1-navigationcompass">6.1 NavigationCompass</h2>
 
@@ -4050,7 +4051,7 @@
 <hr>
 
 
-<h1>7. Performance Optimization</h1>
+<h1 id="7-performance-optimization">7. Performance Optimization</h1>
 
 <h2 id="7-1-memorymonastery">7.1 MemoryMonastery</h2>
 
@@ -4649,7 +4650,7 @@
 <hr>
 
 
-<h1>8. Testing Debugging</h1>
+<h1 id="8-testing-debugging">8. Testing Debugging</h1>
 
 <h2 id="8-1-testingtower">8.1 TestingTower</h2>
 
@@ -5132,7 +5133,7 @@
 <hr>
 
 
-<h1>9. Advanced Patterns</h1>
+<h1 id="9-advanced-patterns">9. Advanced Patterns</h1>
 
 <h2 id="9-1-compoundcomponents">9.1 CompoundComponents</h2>
 
@@ -5559,7 +5560,7 @@
 <hr>
 
 
-<h1>10. React Ecosystem</h1>
+<h1 id="10-react-ecosystem">10. React Ecosystem</h1>
 
 <h2 id="10-1-statemanagementlibraries">10.1 StateManagementLibraries</h2>
 
@@ -6078,7 +6079,7 @@
 <hr>
 
 
-<h1>11. Server Data</h1>
+<h1 id="11-server-data">11. Server Data</h1>
 
 <h2 id="11-1-apiintegration">11.1 ApiIntegration</h2>
 
@@ -6513,7 +6514,7 @@
 <hr>
 
 
-<h1>12. Typescript React</h1>
+<h1 id="12-typescript-react">12. Typescript React</h1>
 
 <h2 id="12-1-typeforge">12.1 TypeForge</h2>
 
@@ -7030,7 +7031,7 @@
 <hr>
 
 
-<h1>13. Build Deploy</h1>
+<h1 id="13-build-deploy">13. Build Deploy</h1>
 
 <h2 id="13-1-buildsystems">13.1 BuildSystems</h2>
 
@@ -7493,7 +7494,7 @@
 <hr>
 
 
-<h1>14. React Native</h1>
+<h1 id="14-react-native">14. React Native</h1>
 
 <h2 id="14-1-mobilefoundations">14.1 MobileFoundations</h2>
 
@@ -7980,7 +7981,7 @@
 <hr>
 
 
-<h1>15. Accessibility</h1>
+<h1 id="15-accessibility">15. Accessibility</h1>
 
 <h2 id="15-1-inclusivefoundations">15.1 InclusiveFoundations</h2>
 
@@ -8529,7 +8530,11 @@
       });
     });
     
-    // Log all h2 IDs for debugging
+    // Log all header IDs for debugging
+    console.log('Available h1 IDs:');
+    document.querySelectorAll('h1[id]').forEach(h1 => {
+      console.log(' -', h1.id, ':', h1.textContent);
+    });
     console.log('Available h2 IDs:');
     document.querySelectorAll('h2[id]').forEach(h2 => {
       console.log(' -', h2.id, ':', h2.textContent);

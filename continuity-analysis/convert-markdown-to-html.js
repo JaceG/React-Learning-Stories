@@ -18,7 +18,10 @@ function convertToHTML(md) {
   let html = md;
   
   // Convert headers with proper IDs
-  html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+  html = html.replace(/^# (.*?)$/gm, (match, title) => {
+    const id = createId(title);
+    return `<h1 id="${id}">${title}</h1>`;
+  });
   html = html.replace(/^## (.*?)$/gm, (match, title) => {
     const id = createId(title);
     return `<h2 id="${id}">${title}</h2>`;
@@ -106,6 +109,7 @@ const fullHTML = `<!DOCTYPE html>
       padding-bottom: 10px;
       margin: 40px 0 20px 0;
       font-size: 2.5em;
+      scroll-margin-top: 100px;
     }
     
     h2 {
@@ -315,7 +319,11 @@ const fullHTML = `<!DOCTYPE html>
       });
     });
     
-    // Log all h2 IDs for debugging
+    // Log all header IDs for debugging
+    console.log('Available h1 IDs:');
+    document.querySelectorAll('h1[id]').forEach(h1 => {
+      console.log(' -', h1.id, ':', h1.textContent);
+    });
     console.log('Available h2 IDs:');
     document.querySelectorAll('h2[id]').forEach(h2 => {
       console.log(' -', h2.id, ':', h2.textContent);
