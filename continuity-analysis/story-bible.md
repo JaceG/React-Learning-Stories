@@ -84,73 +84,39 @@
 ### Mentors & Guides
 
 **Master Aurelius**
-- **Role**: Grand Architect of the React Kingdom
+- **Role**: Grand Architect
 - **Appears In**: LP1.1 ComponentKingdom (Ch1-3)
 - **Location**: Northern Quarter - Component Workshop District
 - **Appearance**: Beard sparkling with fragments of code
-- **Personality**: Patient, welcoming, uses workshop metaphors, builds from simple to complex
-- **Teaching Style**: Visual demonstrations, progressive revelation, confirms student insights enthusiastically ("Precisely!", "Exactly!")
-- **Teaches**: Components, reusability, composition, single responsibility
+- **Teaches**: Components → "magical building blocks"; Composition → "workshops collaborating"; Single responsibility → "each citizen excels at their craft"
 
 **Hermes**
-- **Role**: Head Messenger of the Props Messenger Guild
+- **Role**: Head Messenger
 - **Appears In**: LP1.2 PropsMessengers (Ch1-3)
 - **Location**: Eastern Quarter - Props Messenger Guild
-- **Appearance**: [Details not specified in narrative]
-- **Personality**: Warm, welcoming, knowledgeable about communication systems, patient teacher, beams when students ask good questions
-- **Teaching Style**: Acknowledges prior learning, shows messenger system in action, uses road metaphors, encourages experimentation
-- **Teaches**: 
-  - Props (read-only data from parent to child)
-  - One-way data flow (props flow downward only)
-  - Prop types (strings, numbers, booleans, functions, arrays, objects, components)
-  - Callbacks (functions for child-to-parent communication)
-  - PropTypes and DefaultProps (introduced, detailed by Guardian TypeCheck)
-- **Connection**: Knows Aria's progress from Master Aurelius, sends her to JSX Magic Academy
+- **Appearance**: [Not specified]
+- **Teaches**: Props → "special messengers with satchels"; One-way data flow → "one-way road from App to workshops"; Callbacks → "special callback messengers"; PropTypes/DefaultProps (intro)
 
 **Guardian TypeCheck**
-- **Role**: PropTypes Guardian, sentinel of type checking
+- **Role**: PropTypes Guardian
 - **Appears In**: LP1.2 PropsMessengers (Ch3)
 - **Location**: Eastern Quarter - Props Messenger Guild
-- **Appearance**: Stern-looking, wears robes adorned with type symbols
-- **Personality**: Serious, quality-focused, protective of workshop integrity
-- **Teaching Style**: Direct, explains through inspection demonstrations, emphasizes prevention over cure
-- **Teaches**:
-  - PropTypes (type validation during development)
-  - Development warnings for incorrect prop types
-  - DefaultProps (fallback values for missing props)
-  - "An ounce of type checking is worth a pound of debugging!"
-- **Note**: Appears in Ch3 with foreshadowing in Ch1
+- **Appearance**: Stern-looking, robes adorned with type symbols
+- **Teaches**: PropTypes → "type inspection"; DefaultProps → "spare parts ready just in case"
 
 **Professor Syntaxis**
-- **Role**: Wise mage, keeper of the ancient JSX language
+- **Role**: Keeper of the ancient JSX language
 - **Appears In**: LP1.3 JsxMagic (Ch1-3)
-- **Location**: JSX Magic Academy - Grand Library, Expression Chamber, Hall of Sacred Rules
+- **Location**: JSX Magic Academy (Grand Library)
 - **Appearance**: Robes shimmer with HTML tags and JavaScript symbols
-- **Personality**: Scholarly, proud, patient teacher, beams when students understand, uses magical metaphors
-- **Teaching Style**: Shows glowing scrolls, demonstrates transformations, builds from syntax → expressions → rules, uses visual aids (glowing tablets for rules)
-- **Teaches**:
-  - JSX syntax (blend of HTML-like tags and JavaScript)
-  - Babel transformation (JSX → JavaScript function calls)
-  - Curly brace expressions (embedding dynamic content)
-  - Six expression types (text, attributes, conditionals, arrays, ternaries, function calls)
-  - JSX Rules: Single root element, closed tags, className (not class), camelCase attributes
-- **Connection**: Heard of Aria's progress from Hermes, sends her to Lifecycle Sanctum next
+- **Teaches**: JSX → "magical syntax"; Babel → "translator sprite"; Curly braces → "portals between markup and JavaScript"; JSX Rules → "sacred laws on glowing tablets"
 
 **Chronos**
-- **Role**: Master Time Keeper, guardian of the hourglasses
-- **Appears In**: LP1.4 LifecycleChronicles (Ch1-3)
+- **Role**: Master Time Keeper
+- **Appears In**: LP1.4 LifecycleChronicles (Ch1-3) - ⚠️ ONLY in LP1
 - **Location**: Lifecycle Sanctum
-- **Appearance**: Ancient figure
-- **Personality**: Solemn but wise, mysterious, gentle, patient teacher, voice echoes through time itself
-- **Teaching Style**: Uses visual metaphors (hourglasses, murals, flower blooming), progressive revelation (mounting → updating → unmounting), demonstrates with glowing murals, emphasizes responsibility in cleanup
-- **Teaches**:
-  - Component lifecycle (mounting, updating, unmounting)
-  - Mounting phase: constructor → render → componentDidMount
-  - Updating phase: shouldComponentUpdate → render → componentDidUpdate  
-  - Unmounting phase: componentWillUnmount
-  - Cleanup importance (preventing ghost timers, memory leaks)
-- **Connection**: Heard of Aria's progress from Professor Syntaxis, sends her to State Sorcerers in Eastern Quarter
-- **Note**: ⚠️ Character ONLY appears in LP1 - does not return in other lessons (see kingdom-geography for resolved return violations)
+- **Appearance**: Ancient figure, voice echoes through time
+- **Teaches**: Lifecycle → "journey from creation to destruction"; Mounting → "birth ritual"; Updating → "growth and adaptation"; Unmounting → "farewell ceremony", "ghost timers"
 
 **Guardian TypeCheck**
 - **Role**: PropTypes Guardian, enforces type checking
@@ -186,21 +152,11 @@
 ### State Management Era (LP2)
 
 **Memnon**
-- **Role**: Chief of the State Sorcerers, guardian of the crystal spires
+- **Role**: Chief of the State Sorcerers
 - **Appears In**: LP2.1 StateSorcerers (Ch1-3)
-- **Location**: Eastern Quarter - State Sorcerers' Tower (tallest crystal spire)
-- **Appearance**: Flowing robes, staff topped with constantly shifting orb of light, surrounded by floating memory orbs
-- **Personality**: Warm, wise, patient teacher, explains with enthusiasm, uses visual demonstrations
-- **Teaching Style**: Shows glowing orbs, traces spells in the air, demonstrates with component models, progressive complexity (simple values → objects/arrays → patterns), uses metaphors (memory orbs, goldfish)
-- **Teaches**:
-  - useState hook (value + setter)
-  - State as component memory
-  - Immutability principle (create new memories, don't modify existing)
-  - Spread operator (...) for copying objects/arrays
-  - State patterns: co-location, lifting state up, single source of truth
-  - State structuring (when to split vs combine)
-- **Connection**: Chronos told him of Aria's arrival, sends her to Hook Forge next
-- **Note**: Ch3 originally taught useEffect but was edited in Phase 3 (Issue #7) - useEffect now fully in LP2.2
+- **Location**: Eastern Quarter - State Sorcerers' Tower
+- **Appearance**: Flowing robes, staff topped with constantly shifting orb of light
+- **Teaches**: useState → "fundamental spell with value and setter"; State → "memory orbs"; Immutability → "creating new memories"; Spread operator → "magical copy spell"; State patterns → "co-location", "lifting state up"
 
 **Forge Master Hooke**
 - **Role**: Hook crafter, creates hooks for functional components
