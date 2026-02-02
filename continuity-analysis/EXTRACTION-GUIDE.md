@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP8.4 ErrorEnchantments ✅ (LP8 COMPLETE!)
+**Last Completed**: LP9.1 CompoundComponents ✅
 
-**Next Lesson**: LP9.1 CompoundComponents
+**Next Lesson**: LP9.2 RenderProps
 
 **Progress Tracker**:
 ```

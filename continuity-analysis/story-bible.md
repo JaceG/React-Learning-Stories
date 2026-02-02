@@ -261,6 +261,15 @@
 - **Appearance**: [Not extensively described], knowing smile
 - **Teaches**: Five error types (Syntax ⚡/Reference ❓/Type 🔀/Runtime 💥/Async ⏱️), error propagation in React, Error Boundaries (React's built-in protection spell, getDerivedStateFromError/componentDidCatch), strategic boundary placement, fallback UI design, production error monitoring, error severity assessment, four recovery strategies, graceful degradation, ErrorMonitor with global handlers/queuing/periodic flush, resilient applications
 
+### LP9: Advanced Patterns
+
+**Dean Architectus**
+- **Role**: Master of architectural patterns and component composition
+- **Appears In**: LP9.1 CompoundComponents (Ch1-3)
+- **Location**: Architect's Academy (floating above kingdom - crystalline structure that shifts and reconfigures constantly), entrance, Bonding Chamber (Ch2), academy's main hall transformed into concert stage (Ch3)
+- **Appearance**: Robes decorated with component diagrams
+- **Teaches**: Compound components (families that share implicit understanding), component families communicate without explicit prop drilling, Context for internal state sharing, React.Children.map for flexible ordering, static properties for clean organization, complex behavior with simple interface, combining patterns (Context + static properties + flexible children), accessibility and keyboard navigation in compound systems
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -599,6 +608,18 @@
 - Production monitoring → "final chamber with live production monitors glowing"
 - Four recovery strategies → automatic retry (🔄), fallback mode (🔀), graceful degradation (⚡), user notification (📢)
 - Resilient applications → "crashes are preventable", "well-handled error better than hidden bug"
+
+### LP9: Advanced Patterns
+
+**LP9.1 CompoundComponents**:
+- Architect's Academy → "floating above kingdom", "crystalline structure shifts and reconfigures constantly"
+- Compound components → "families that share implicit understanding", "components that work as one", "like family with implicit understanding"
+- Component communication → "communicating without explicit props", "implicit bond", "hidden connections"
+- Bonding Chamber → "implicit connections become visible as glowing threads of shared state" (Ch2)
+- Context for compounds → "like Grand Context but scoped to component family"
+- Compound patterns → Tabs, Accordions, Selects (families)
+- Component symphony → "main hall transforms into concert stage", "each maintains state while contributing to greater whole", "hundreds of interactions yet API simple"
+- Compound mastery → "hide complexity while providing flexibility", "complex behavior simple interface"
 
 *[More translations to be added as extraction continues]*
 
