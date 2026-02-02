@@ -13751,7 +13751,970 @@ Marina watched as Aria and Binary began their descent toward the mountain path l
 
 ---
 
-🚧 **WORK IN PROGRESS - LP7 (4 lessons remaining)**
+# 7. Performance Optimization
+
+## 7.1 MemoryMonastery
+
+### 📖 Lesson Opener
+
+Aria's navigation mastery was complete, but a new challenge beckoned from the Northern Peaks far above the React Kingdom. Word reached her from Marina of Brother Memor - keeper of the Memory Monastery where the secrets of memory management could prevent even the most elegant applications from slow, eventual collapse. The floating monastery appeared through the clouds as Aria and Binary climbed the mountain paths, its ancient walls humming with the whispers of forgotten allocations and the weight of retained references.
+
+### Chapter 1: The Three Forms of Memory Plague
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended memory leak introduction with event listener leaks and practical examples]**
+
+Aria arrived at the Memory Monastery, an ancient structure floating in the clouds above the React Kingdom. From this height, she could see applications below - some running smoothly, others struggling, slowing to a crawl. **Brother Memor**, the monastery's eldest monk, greeted her at the entrance with grave concern etched on his weathered face. "The Memory Plague has returned, Aria. Applications are holding onto memories they should release, creating **memory leaks** that grow silently until nothing can function. Users complain of slowness, tabs crash, frustration mounts - all because components fail to clean up after themselves."
+
+He led her to the Observatory, where ethereal representations of memory usage floated like ghosts, growing larger with each passing moment. "Before we can heal the plague, you must understand its three primary forms. Each is deadly in its own way, yet all share a common cure - discipline and cleanup!"
+
+Brother Memor demonstrated the first form:
+```javascript
+// EVENT LISTENER LEAK - The Silent Accumulator
+function BadSearchComponent() {
+  const [query, setQuery] = useState('');
+  
+  useEffect(() => {
+    // Add listener on every render!
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        setQuery('');
+      }
+    });
+    
+    // ❌ NO CLEANUP! Listener stays attached forever!
+    // Every re-render adds ANOTHER listener
+    // 100 renders = 100 listeners all doing the same thing!
+  });  // No cleanup function returned!
+  
+  return <input value={query} onChange={(e) => setQuery(e.target.value)} />;
+}
+
+// THE CURE - Always cleanup event listeners!
+function GoodSearchComponent() {
+  const [query, setQuery] = useState('');
+  
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setQuery('');
+      }
+    };
+    
+    window.addEventListener('keydown', handleEscape);
+    
+    // ✅ CLEANUP! Remove listener on unmount
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, []);  // Empty deps - runs once
+  
+  return <input value={query} onChange={(e) => setQuery(e.target.value)} />;
+}
+```
+
+"See the danger?" Brother Memor asked solemnly. "Every time the bad component renders, a new listener attaches. Mount/unmount the component 100 times - you have 100 listeners! All consuming memory, all triggering on every keypress. The memory meter climbs, performance degrades, and users suffer."
+
+Aria examined the visualizations with growing alarm. "The bad component creates listeners but never removes them. It's like opening doors but never closing them - eventually you run out of doors! But the good component returns a cleanup function that removes the listener on unmount. The Effect Sage taught me this pattern!"
+
+"Precisely!" Brother Memor approved. "The cleanup function is your weapon against this plague form!"
+
+Binary chirped analysis: "Event listener leak detected! Pattern: add listener without removal. Result: memory growth, performance degradation. Cure: useEffect cleanup function removes listener on unmount!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended detached DOM nodes explanation with component unmounting and DOM references]**
+
+"The second form is more insidious," Brother Memor continued, showing ghostly DOM nodes floating disconnected in memory. "**Detached DOM Nodes** - removed from the visible DOM tree but still held in memory by lingering references!"
+
+```javascript
+// DETACHED DOM NODE LEAK - The Ghostly Reference
+function BadModal({ isOpen, onClose }) {
+  const modalRef = useRef();
+  
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      // Store DOM node in external object
+      window.cachedModals = window.cachedModals || [];
+      window.cachedModals.push(modalRef.current);
+      
+      // ❌ NO CLEANUP! Even when modal unmounts,
+      // the DOM node is held in window.cachedModals array
+      // The entire modal DOM tree can't be garbage collected!
+    }
+  }, [isOpen]);
+  
+  if (!isOpen) return null;
+  
+  return (
+    <div ref={modalRef} className="modal">
+      {/* Large content with many child nodes */}
+      <ComplexContent />
+    </div>
+  );
+}
+
+// THE CURE - Clear references on unmount
+function GoodModal({ isOpen, onClose }) {
+  const modalRef = useRef();
+  const cacheKeyRef = useRef();
+  
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      cacheKeyRef.current = Date.now();
+      window.cachedModals = window.cachedModals || {};
+      window.cachedModals[cacheKeyRef.current] = modalRef.current;
+      
+      // ✅ CLEANUP! Remove reference on unmount
+      return () => {
+        delete window.cachedModals[cacheKeyRef.current];
+      };
+    }
+  }, [isOpen]);
+  
+  if (!isOpen) return null;
+  
+  return (
+    <div ref={modalRef} className="modal">
+      <ComplexContent />
+    </div>
+  );
+}
+
+// BETTER CURE - Use WeakMap for automatic cleanup!
+const modalCache = new WeakMap();
+
+function BestModal({ isOpen, onClose, id }) {
+  const modalRef = useRef();
+  
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      // WeakMap won't prevent garbage collection!
+      modalCache.set({ id }, modalRef.current);
+      // No cleanup needed - GC handles it automatically!
+    }
+  }, [isOpen, id]);
+  
+  // Modal will be GC'd when no longer referenced
+}
+```
+
+"Detached nodes are ghosts," Brother Memor explained dramatically. "They've left the visible world (removed from DOM), but references in your code keep them alive in memory. A modal with 1000 child nodes unmounts - if you have a lingering reference, all 1000 nodes stay in memory forever!"
+
+Aria studied the patterns with understanding. "The bad modal stores DOM references in a global array but never removes them. The good modal cleans up the reference on unmount. But the best modal uses WeakMap - automatic garbage collection when the component is gone! The Map Master from the State Sanctum taught me about WeakMaps!"
+
+"You connect the knowledge beautifully!" Brother Memor praised. "WeakMap references don't prevent garbage collection - the perfect tool for DOM caches!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added closure capture leaks with practical examples and solutions]**
+
+"The third and most subtle form," Brother Memor said gravely, "is **Closure Captures** - when closures inadvertently hold references to large objects!"
+
+```javascript
+// CLOSURE CAPTURE LEAK - The Hidden Prisoner
+function BadDataTable({ initialData }) {
+  const [data, setData] = useState(initialData);  // 10MB dataset!
+  const [page, setPage] = useState(1);
+  
+  useEffect(() => {
+    // This callback closes over 'data' (the full 10MB!)
+    const timer = setInterval(() => {
+      console.log('Page:', page);
+      // Even though we only use 'page', the closure
+      // captures 'data' because it's in scope!
+      // The 10MB dataset can't be garbage collected!
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [page]);  // 'data' not in deps, but still captured!
+  
+  return <div>{/* Render data */}</div>;
+}
+
+// THE CURE - Careful closure management
+function GoodDataTable({ initialData }) {
+  const [data, setData] = useState(initialData);
+  const [page, setPage] = useState(1);
+  const pageRef = useRef(page);
+  
+  useEffect(() => {
+    pageRef.current = page;
+  }, [page]);
+  
+  useEffect(() => {
+    // Now closure only captures pageRef (tiny!), not data (huge!)
+    const timer = setInterval(() => {
+      console.log('Page:', pageRef.current);
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);  // Empty deps - closure minimal
+  
+  return <div>{/* Render data */}</div>;
+}
+
+// ALTERNATIVE CURE - Separate concerns
+function BestDataTable({ initialData }) {
+  const [data, setData] = useState(initialData);
+  const [page, setPage] = useState(1);
+  
+  // Move timer logic to separate component
+  return (
+    <div>
+      <PageTracker page={page} />
+      {/* Render data */}
+    </div>
+  );
+}
+
+function PageTracker({ page }) {
+  useEffect(() => {
+    // Only captures 'page', not parent's large 'data'!
+    const timer = setInterval(() => {
+      console.log('Page:', page);
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [page]);
+  
+  return null;
+}
+```
+
+"Closures are memory traps," Brother Memor warned. "They capture everything in scope, not just what you use. A timer that logs page numbers might inadvertently hold a 10MB dataset in memory because the closure captured the entire scope!"
+
+Aria recognized the pattern. "The bad version's closure captures the huge `data` state even though it only uses `page`. useRef provides stable reference without re-creating the closure. Or extract to separate component so the closure only captures what it needs. Minimal scope = minimal memory!"
+
+"You understand deeply!" Brother Memor smiled. "These three forms - event listeners, detached nodes, closures - are the primary Memory Plagues. Master their cures and your applications will remain healthy!"
+
+Binary displayed plague summary: "Three Memory Plague forms: (1) Event Listener Leaks - attach without cleanup, (2) Detached DOM Nodes - removed from DOM but referenced in code, (3) Closure Captures - closures hold large objects unnecessarily. Cures: disciplined cleanup, WeakMaps, minimal scope!"
+
+**Memory Leak Fundamentals:**
+Memory leaks occur when applications hold references to objects that are no longer needed, preventing garbage collection. Three primary forms plague React applications: (1) **Event Listener Leaks** - adding listeners (addEventListener) without removal - cure with useEffect cleanup functions that removeEventListener on unmount, (2) **Detached DOM Nodes** - DOM elements removed from tree but still referenced in code (cached in arrays/objects) - cure by clearing references on unmount or using WeakMap for automatic GC, (3) **Closure Captures** - closures inadvertently capturing large objects from scope even when not using them - cure with useRef for stable references, extracting to separate components for minimal scope, or careful dependency arrays. All three share common cure: disciplined cleanup through useEffect return functions. Small leaks multiply across users and time to bring applications to their knees.
+
+**Reflection Questions:**
+
+- How can a small memory leak multiplied by thousands of users and hours of usage impact application performance?
+- What patterns from previous training (Effect Sage's cleanup, Map Master's WeakMaps) help prevent memory leaks?
+- Why is it essential to always return cleanup functions from useEffect?
+
+**Aria's Journal - Day 30 (Morning)**
+*I've arrived at the Memory Monastery floating in clouds above React Kingdom! Applications below suffer from mysterious Memory Plague - they start fast but gradually slow to crawl, eventually crashing. **Brother Memor**, eldest monk, explained three plague forms: (1) **Event Listener Leaks** - addEventListener without removeEventListener, every render adds another listener (100 renders = 100 listeners!), grows until crash, CURE: useEffect cleanup function removes listener on unmount, (2) **Detached DOM Nodes** - removed from visible DOM but still referenced in code (cached in arrays), entire DOM tree can't be GC'd, modal with 1000 child nodes ALL stay in memory, CURE: clear references on unmount OR use WeakMap for automatic GC!, (3) **Closure Captures** - closures capture everything in scope not just what they use, timer logging page number might hold 10MB dataset, CURE: useRef for stable reference OR extract to separate component with minimal scope. All three share cure: disciplined cleanup! I connected Effect Sage's cleanup patterns, Map Master's WeakMaps, Sanctuary performance teachings. Brother Memor says these are silent killers - small leaks multiply across thousands of users and hours until mighty apps collapse! Binary is cataloging all leak patterns!*
+
+---
+
+### Chapter 2: The Sacred Tools of Memory Profiling
+
+**Bridge:**
+Brother Memor led Aria deeper into the monastery to a chamber filled with glowing diagnostic instruments - crystal spheres showing memory snapshots, flowing timelines of allocations, glowing paths of retained references. "To heal the Memory Plague, you must first learn to see it," he said gravely. "These are our sacred tools - the Chrome DevTools Memory Profiler. Without these, leaks remain invisible until it's too late!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Memory Profiler introduction with heap snapshots and comparison techniques]**
+
+Brother Memor activated a mystical viewing portal - actually Chrome DevTools' Memory tab - that revealed the inner workings of memory with unprecedented clarity. "This is how we see what others cannot - the hidden allocations that pile up, the retained objects that refuse to die, the reference paths that prevent garbage collection from doing its work!"
+
+He demonstrated heap snapshot profiling:
+```javascript
+// PROFILING WORKFLOW - Finding Memory Leaks
+
+// Step 1: Take baseline snapshot
+// 1. Open Chrome DevTools → Memory tab
+// 2. Select "Heap snapshot"
+// 3. Click "Take snapshot" → Save as "Baseline"
+
+// Step 2: Perform user action (e.g., open/close modal 10 times)
+function TestComponent() {
+  const [showModal, setShowModal] = useState(false);
+  
+  return (
+    <>
+      <button onClick={() => setShowModal(!showModal)}>
+        Toggle Modal
+      </button>
+      {showModal && <ModalWithPotentialLeak />}
+    </>
+  );
+}
+
+// Step 3: Force garbage collection
+// In DevTools, click the trash icon to manually trigger GC
+
+// Step 4: Take second snapshot
+// Click "Take snapshot" → Save as "After Actions"
+
+// Step 5: Compare snapshots
+// Select "Comparison" view
+// Look for objects that increased but shouldn't have
+// Filter by "Detached", "Listener", "Closure"
+
+// WHAT TO LOOK FOR:
+// - Detached DOM nodes increasing (should be 0)
+// - Event listeners growing (check by filtering "EventListener")
+// - FiberNode count (React components) increasing without reason
+// - Large objects retained in closures
+```
+
+"Three sacred techniques serve us," Brother Memor continued with authority. "**Heap Snapshots** capture memory state at a specific moment - like a photograph of all objects alive in memory. Take two snapshots, compare them, and you'll see what wasn't cleaned up!"
+
+He showed the comparison view:
+```
+Snapshot Comparison View:
+Baseline → After 10 modal opens/closes
+
+❌ BAD - Memory Leak Present:
++ 10 Detached HTMLDivElement (modal roots not cleaned)
++ 10 EventListener (keydown listeners never removed)
++ 10 Closures (intervals holding stale references)
+= 500KB retained unnecessarily
+
+✅ GOOD - Clean Memory:
++ 0 Detached nodes
++ 0 Additional listeners
++ 0 Orphaned closures
+= Memory stable after GC
+```
+
+Aria studied the profiler with intense focus. "Take baseline snapshot, perform action (open/close modal), force GC with trash icon, take second snapshot, compare! If detached nodes or listeners increase, that's a leak! The comparison view makes leaks visible - objects that should be GC'd but weren't!"
+
+"Precisely!" Brother Memor approved. "Heap snapshots are your x-ray vision into memory health!"
+
+Binary projected analysis: "Heap Snapshot workflow: Baseline → Action → GC → Compare. Look for: Detached nodes (should be 0), EventListeners growing, FiberNodes increasing. Comparison reveals what wasn't cleaned!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended allocation timeline and retainers view with memory investigation techniques]**
+
+"But snapshots only show moments in time," Brother Memor continued, activating a flowing timeline that showed memory allocations streaming past like a river. "The **Allocation Timeline** reveals memory growth over time - the pattern of how your application consumes memory!"
+
+```javascript
+// ALLOCATION TIMELINE - Seeing Growth Patterns
+
+// Healthy sawtooth pattern:
+// Memory: 
+// 📈 allocate (20MB)
+// 📉 GC (back to 10MB)
+// 📈 allocate (20MB)
+// 📉 GC (back to 10MB)
+// = Sawtooth pattern, memory bounded
+
+// Unhealthy steady growth:
+// Memory:
+// 📈 allocate (20MB)
+// 📈 allocate (40MB) // GC can't reclaim!
+// 📈 allocate (60MB)
+// 📈 allocate (80MB)
+// = Steady upward trend, definite leak!
+
+// HOW TO USE:
+// 1. DevTools → Memory → "Allocation instrumentation on timeline"
+// 2. Click "Record"
+// 3. Perform user actions repeatedly (click button 50 times)
+// 4. Stop recording
+// 5. Analyze pattern:
+//    - Sawtooth = healthy (allocate then GC)
+//    - Steady growth = leak (GC can't reclaim)
+```
+
+"See the patterns?" Brother Memor asked, gesturing to the timeline. "Healthy applications show sawtooth - memory goes up (allocation), then down (garbage collection), up, down, bounded. But leaking applications show steady upward growth - memory climbs and climbs because garbage collection can't reclaim the leaked objects!"
+
+Aria traced the patterns with her finger. "Sawtooth is healthy - allocate, use, GC, repeat. Steady growth is sick - allocate but GC can't free because something still references it. The timeline reveals the disease visually!"
+
+"And when you find a leak, use the **Retainers view** to see WHY an object can't be garbage collected!"
+
+```javascript
+// RETAINERS VIEW - Following the Reference Chain
+
+// Example: Found leaked Detached HTMLDivElement in snapshot
+// Click on it → "Retainers" panel shows:
+
+// Retainer path (why this can't be GC'd):
+Window
+  ↓ cachedModals (Array)
+    ↓ [0] (HTMLDivElement) ← LEAKED NODE
+      ↓ _reactFiber (React internals)
+        ↓ stateNode (Component instance)
+
+// ANALYSIS:
+// The div can't be GC'd because:
+// 1. Window.cachedModals array holds reference
+// 2. Remove from array → node can be GC'd!
+
+// FIX:
+function FixedModal({ isOpen, onClose }) {
+  const modalRef = useRef();
+  const idRef = useRef(Date.now());
+  
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      window.cachedModals = window.cachedModals || [];
+      window.cachedModals.push({ id: idRef.current, node: modalRef.current });
+      
+      // CLEANUP - Remove from cache!
+      return () => {
+        const index = window.cachedModals.findIndex(c => c.id === idRef.current);
+        if (index >= 0) {
+          window.cachedModals.splice(index, 1);
+        }
+      };
+    }
+  }, [isOpen]);
+  
+  // Now modal CAN be GC'd on unmount!
+}
+```
+
+"Retainers view is the detective tool," Brother Memor explained. "It shows the reference chain - the path from garbage collection root (Window, Document) to your leaked object. Follow the chain, find where the reference is held, add cleanup to break the chain!"
+
+Aria examined a retainer path. "Window → array → object. The chain shows exactly why GC can't collect - Window holds array, array holds object, object can't be freed. Break any link in the chain (remove from array on unmount) and GC succeeds! It's a reference chain investigation!"
+
+"You've mastered the sacred tools!" Brother Memor proclaimed with satisfaction.
+
+Binary displayed profiling mastery: "Three Sacred Tools: (1) Heap Snapshots - compare before/after for leaks, (2) Allocation Timeline - sawtooth healthy, steady growth leak, (3) Retainers View - trace reference chains to find why GC can't collect. Complete memory investigation toolkit!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on profiling practice with real leak detection and fixing workflow]**
+
+"Now put the tools into practice," Brother Memor said, presenting Aria with a leaking component to investigate and fix.
+
+```javascript
+// LEAKED COMPONENT - Find and fix the leaks!
+function LeakyUserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [notifications, setNotifications] = useState([]);
+  
+  useEffect(() => {
+    // Fetch user data
+    fetchUser(userId).then(setUser);
+    
+    // ❌ LEAK 1: Event listener never removed!
+    window.addEventListener('online', () => {
+      console.log('Back online!');
+    });
+    
+    // ❌ LEAK 2: Interval never cleared!
+    setInterval(() => {
+      fetchNotifications(userId).then(setNotifications);
+    }, 5000);
+    
+    // ❌ LEAK 3: DOM node cached without cleanup!
+    const profileNode = document.getElementById(`profile-${userId}`);
+    window.userProfiles = window.userProfiles || {};
+    window.userProfiles[userId] = profileNode;
+  }, [userId]);
+  
+  return <div id={`profile-${userId}`}>{/* User profile */}</div>;
+}
+
+// PROFILING WORKFLOW:
+// 1. Baseline snapshot
+// 2. Mount/unmount component 10 times
+// 3. Force GC
+// 4. Second snapshot
+// 5. Compare: Find 10 EventListeners, 10 intervals, 10 DOM nodes retained!
+
+// FIXED VERSION - All leaks cured!
+function FixedUserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [notifications, setNotifications] = useState([]);
+  const isMountedRef = useRef(true);
+  
+  useEffect(() => {
+    // Fetch user data with mounted check
+    fetchUser(userId).then(data => {
+      if (isMountedRef.current) {
+        setUser(data);
+      }
+    });
+    
+    // ✅ CURE 1: Remove event listener on cleanup!
+    const handleOnline = () => {
+      console.log('Back online!');
+    };
+    window.addEventListener('online', handleOnline);
+    
+    // ✅ CURE 2: Clear interval on cleanup!
+    const notificationInterval = setInterval(() => {
+      fetchNotifications(userId).then(data => {
+        if (isMountedRef.current) {
+          setNotifications(data);
+        }
+      });
+    }, 5000);
+    
+    // ✅ CURE 3: Clear DOM cache on cleanup!
+    const cacheKey = `profile-${userId}`;
+    
+    return () => {
+      // Cleanup all three leaks!
+      window.removeEventListener('online', handleOnline);
+      clearInterval(notificationInterval);
+      delete window.userProfiles?.[userId];
+      isMountedRef.current = false;
+    };
+  }, [userId]);
+  
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+  
+  return <div id={`profile-${userId}`}>{/* User profile */}</div>;
+}
+
+// PROFILING RESULTS:
+// Before fix: 10 leaks per mount/unmount cycle
+// After fix: 0 leaks, memory stable after GC!
+```
+
+"Perfect leak hunting!" Brother Memor praised. "You found all three leaks with profiling, traced them with retainers, and cured them with cleanup! This is the Memory Guardian workflow: Profile → Detect → Trace → Fix → Verify!"
+
+The second challenge tested deeper: find closure capture leaks. Aria investigated:
+```javascript
+// Subtle closure capture leak
+function SubtleLeakComponent({ largeDataset }) {
+  const [filter, setFilter] = useState('');
+  
+  useEffect(() => {
+    // This closure captures 'largeDataset' (10MB!)
+    // even though it only uses 'filter'
+    const timer = setInterval(() => {
+      console.log('Filter:', filter);
+      // largeDataset in scope → captured by closure!
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [filter]);  // Re-creates closure on every filter change!
+  
+  // Every filter change creates new closure holding 10MB
+  // Old closures can't be GC'd if interval wasn't cleared properly
+}
+
+// PROFILING:
+// Allocation timeline shows steady growth as user types
+// Heap snapshot shows multiple large arrays retained
+// Retainers view shows closure holding largeDataset
+
+// FIX - Extract or use ref
+function FixedComponent({ largeDataset }) {
+  const [filter, setFilter] = useState('');
+  
+  // Extract timer to separate component
+  return (
+    <>
+      <FilterTimer filter={filter} />
+      {/* Use largeDataset for rendering */}
+    </>
+  );
+}
+
+function FilterTimer({ filter }) {
+  useEffect(() => {
+    // Only captures 'filter', not parent's large data!
+    const timer = setInterval(() => {
+      console.log('Filter:', filter);
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [filter]);
+  
+  return null;
+}
+```
+
+"Closure leaks are subtle but profiling reveals them!" Aria concluded. "Allocation timeline shows growth, retainers show large objects in closures. Cure: extract to minimize scope or use refs!"
+
+Binary displayed complete profiling mastery: "Memory Guardian Workflow: Profile (heap snapshots + timeline) → Detect (compare, look for growth) → Trace (retainers view) → Fix (cleanup functions) → Verify (re-profile shows stable memory). All leaks eliminated!"
+
+**Memory Profiling Mastery:**
+Chrome DevTools Memory Profiler provides three sacred tools for leak detection. **Heap Snapshots** capture memory state at moments - take baseline, perform actions (open/close modal 10 times), force GC (trash icon), take second snapshot, compare to see what wasn't cleaned (Detached nodes, EventListeners, FiberNodes shouldn't increase). **Allocation Timeline** reveals growth patterns - healthy sawtooth (allocate → GC → allocate → GC, bounded) vs unhealthy steady growth (allocate → allocate → allocate, leak!). **Retainers View** traces reference chains showing why objects can't be GC'd - follow path from Window/Document to leaked object, find where reference is held, add cleanup to break chain. Workflow: Profile → Detect leaks → Trace with retainers → Fix with cleanup → Verify with re-profiling. Filter by "Detached", "EventListener", "Closure", "FiberNode" to find React-specific leaks. Make profiling part of regular development workflow especially before releases.
+
+**Reflection Questions:**
+
+- How do heap snapshot comparisons make invisible memory leaks visible and measurable?
+- What does the allocation timeline's pattern (sawtooth vs steady growth) tell you about application health?
+- Why should memory profiling become part of regular development workflow rather than waiting for user complaints?
+
+**Aria's Journal - Day 30 (Afternoon)**
+*Brother Memor led me to chamber filled with sacred tools - **Chrome DevTools Memory Profiler**! Three techniques: (1) **Heap Snapshots** - capture memory at moment in time, take baseline, perform actions (open/close modal 10x), force GC (trash icon), take second snapshot, COMPARE to see what wasn't cleaned!, look for Detached nodes (should be 0), EventListeners growing, FiberNodes increasing. Comparison makes leaks visible! (2) **Allocation Timeline** - shows growth patterns over time, HEALTHY = sawtooth pattern (allocate → GC → allocate → GC, memory bounded), SICK = steady upward growth (allocate → allocate → allocate, GC can't reclaim!), pattern reveals disease!, (3) **Retainers View** - trace reference chains showing WHY object can't be GC'd, follows path from Window/Document to leaked object (Window → array → object), break any link in chain (remove from array) and GC succeeds! I practiced complete workflow: Profiled leaky component, detected 3 leaks (event listener, interval, DOM cache), traced with retainers, FIXED with cleanup functions (removeEventListener, clearInterval, delete cache), verified with re-profiling - 0 leaks, memory stable! Also found subtle closure capture leak - allocation timeline showed growth, retainers showed large array in closure, fixed by extracting to separate component (minimal scope). Brother Memor says: make profiling part of regular workflow BEFORE releases, not after user complaints! Binary catalogued Memory Guardian Workflow: Profile → Detect → Trace → Fix → Verify!*
+
+---
+
+### Chapter 3: The Four Healing Rituals
+
+**Bridge:**
+"Now comes the most important knowledge," Brother Memor said, leading Aria to the Sanctuary of Solutions where ancient inscriptions glowed on the walls. Each inscription described a different healing technique refined over generations of monastery monks. "Understanding leaks is only half the battle. You must master the Four Healing Rituals to cure the Memory Plague permanently and prevent it from ever returning!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended event cleanup ritual with comprehensive useEffect patterns and async safety]**
+
+The sanctuary walls glowed with ancient inscriptions, each describing a different healing technique. "These rituals have been refined over generations of monks," Brother Memor said with reverence. "Apply them faithfully in every component you write, and your applications will remain healthy for eternity!"
+
+He revealed the first ritual:
+```javascript
+// RITUAL 1: EVENT CLEANUP RITUAL
+// "Always return cleanup from useEffect"
+
+// THE RITUAL - Comprehensive cleanup pattern
+function EventCleanupExample() {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    // Event listeners
+    const handleResize = () => console.log('Resized');
+    window.addEventListener('resize', handleResize);
+    
+    // Timers
+    const timer = setTimeout(() => console.log('Delayed'), 1000);
+    const interval = setInterval(() => console.log('Repeated'), 5000);
+    
+    // Observers
+    const observer = new IntersectionObserver((entries) => {
+      console.log('Visibility changed');
+    });
+    observer.observe(document.body);
+    
+    // WebSocket connections
+    const ws = new WebSocket('wss://api.example.com');
+    ws.onmessage = (msg) => console.log(msg.data);
+    
+    // Async operations with abort
+    const controller = new AbortController();
+    fetch('/api/data', { signal: controller.signal })
+      .then(res => res.json())
+      .then(setData);
+    
+    // ✅ THE RITUAL - Clean up EVERYTHING!
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+      clearInterval(interval);
+      observer.disconnect();
+      ws.close();
+      controller.abort();
+    };
+  }, []);
+  
+  return <div>{/* Component */}</div>;
+}
+
+// ASYNC SAFETY PATTERN - isMountedRef
+function AsyncSafetyExample() {
+  const [data, setData] = useState(null);
+  const isMountedRef = useRef(true);
+  
+  useEffect(() => {
+    async function loadData() {
+      const result = await fetchData();
+      
+      // ✅ Only set state if still mounted!
+      if (isMountedRef.current) {
+        setData(result);
+      }
+    }
+    
+    loadData();
+    
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+  
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+  
+  return <div>{data?.title}</div>;
+}
+```
+
+"The First Ritual is sacred," Brother Memor intoned. "ALWAYS return cleanup functions from useEffect. Event listeners, timers, observers, WebSockets, subscriptions - all must be cleaned on unmount! And for async operations that can't be aborted, use isMountedRef to prevent setting state on unmounted components!"
+
+Aria practiced the ritual diligently. "Every useEffect that creates resources must clean them up. Event listeners → removeEventListener. Timers → clear them. Observers → disconnect. Connections → close. Async → abort or check isMountedRef. The Effect Sage taught me cleanup, now I understand its critical importance for memory!"
+
+"Exactly!" Brother Memor approved. "The cleanup function is your most powerful weapon against memory leaks!"
+
+Binary projected: "Ritual 1 - Event Cleanup: useEffect cleanup function removes ALL resources. Listeners, timers, observers, connections, subscriptions. isMountedRef pattern prevents state updates on unmounted components. Essential pattern!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended WeakMap/WeakSet wisdom with caching patterns and reference discipline]**
+
+Brother Memor revealed the second and third rituals together:
+```javascript
+// RITUAL 2: WEAKMAP WISDOM
+// "Use WeakMap/WeakSet for caches that shouldn't prevent garbage collection"
+
+// THE RITUAL - Weak references for automatic cleanup
+const componentCache = new WeakMap();
+
+function ComponentWithCache({ item }) {
+  useEffect(() => {
+    // Cache component data using WeakMap
+    // When 'item' object is no longer referenced elsewhere,
+    // it CAN be garbage collected (WeakMap won't prevent it!)
+    componentCache.set(item, {
+      timestamp: Date.now(),
+      processedData: expensiveCalculation(item)
+    });
+    
+    // No cleanup needed! Automatic GC!
+  }, [item]);
+  
+  return <div>{item.name}</div>;
+}
+
+// CONTRAST WITH REGULAR MAP - Prevents GC!
+const regularCache = new Map();
+
+function BadCachedComponent({ item }) {
+  useEffect(() => {
+    // ❌ Regular Map prevents GC!
+    // Even if 'item' is no longer used elsewhere,
+    // this Map reference keeps it alive forever!
+    regularCache.set(item.id, item);
+    
+    // Memory leak - cache grows unbounded!
+  }, [item]);
+}
+
+// WEAKSET FOR TRACKING
+const processedItems = new WeakSet();
+
+function TrackingComponent({ item }) {
+  useEffect(() => {
+    if (!processedItems.has(item)) {
+      processedItems.add(item);
+      processItem(item);
+    }
+    
+    // No cleanup needed - automatic GC when item unused!
+  }, [item]);
+}
+
+// RITUAL 3: REFERENCE DISCIPLINE
+// "Disconnect observers, clear refs, manage DOM carefully"
+
+function ObserverExample() {
+  const elementRef = useRef();
+  const observerRef = useRef();
+  
+  useEffect(() => {
+    if (!elementRef.current) return;
+    
+    // Create observer
+    observerRef.current = new IntersectionObserver((entries) => {
+      console.log('Visibility:', entries[0].isIntersecting);
+    });
+    
+    observerRef.current.observe(elementRef.current);
+    
+    // ✅ RITUAL 3 - Disconnect observer!
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;  // Clear ref!
+      }
+    };
+  }, []);
+  
+  return <div ref={elementRef}>Observed element</div>;
+}
+
+// CLEAR REFS ON UNMOUNT
+function RefDisciplineExample() {
+  const canvasRef = useRef();
+  const contextRef = useRef();
+  
+  useEffect(() => {
+    if (!canvasRef.current) return;
+    
+    contextRef.current = canvasRef.current.getContext('2d');
+    // Use canvas context...
+    
+    // ✅ RITUAL 3 - Clear all refs!
+    return () => {
+      contextRef.current = null;
+      canvasRef.current = null;
+    };
+  }, []);
+  
+  return <canvas ref={canvasRef} />;
+}
+```
+
+"Ritual Two: WeakMap Wisdom," Brother Memor explained. "Use WeakMap and WeakSet for caches - they won't prevent garbage collection! Regular Map holds strong references, keeping objects alive forever. WeakMap uses weak references - when the object isn't needed elsewhere, GC can reclaim it automatically!"
+
+"Ritual Three: Reference Discipline," he continued. "Disconnect observers on unmount. Clear refs when done with them. Don't let lingering references prevent garbage collection. Discipline in every cleanup!"
+
+Aria practiced both rituals. "WeakMap for caches means automatic cleanup - no manual cache management! And clearing refs (setting to null) breaks reference chains so GC can work. The Map Master taught me WeakMaps, now I see their power for memory management!"
+
+"You connect all your learning beautifully!" Brother Memor praised.
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added memoization mastery ritual with Context optimization and complete Memory Guardian certification]**
+
+Brother Memor revealed the fourth and final ritual:
+```javascript
+// RITUAL 4: MEMOIZATION MASTERY
+// "Memoize context values to prevent unnecessary recreation"
+
+// THE RITUAL - Stable context values
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  
+  // ❌ BAD - Creates new object every render!
+  // Every consumer re-renders even when user unchanged!
+  const badValue = {
+    user,
+    login: (credentials) => loginAPI(credentials).then(setUser),
+    logout: () => logoutAPI().then(() => setUser(null))
+  };
+  
+  // ✅ GOOD - Memoized value!
+  const goodValue = useMemo(() => ({
+    user,
+    login: (credentials) => loginAPI(credentials).then(setUser),
+    logout: () => logoutAPI().then(() => setUser(null))
+  }), [user]);  // Only recreates when user changes
+  
+  return (
+    <AuthContext.Provider value={goodValue}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+// MEMOIZE CALLBACKS
+function OptimizedComponent({ onAction }) {
+  const [data, setData] = useState([]);
+  
+  // ✅ Memoize expensive calculations
+  const processedData = useMemo(() => {
+    return data.map(item => expensiveTransform(item));
+  }, [data]);
+  
+  // ✅ Memoize callbacks
+  const handleAction = useCallback((item) => {
+    onAction(item);
+  }, [onAction]);
+  
+  return (
+    <div>
+      {processedData.map(item => (
+        <Item key={item.id} data={item} onAction={handleAction} />
+      ))}
+    </div>
+  );
+}
+
+// COMPLETE PATTERN - All four rituals!
+function MemoryGuardianComponent({ userId }) {
+  const [user, setUser] = useState(null);
+  const isMountedRef = useRef(true);
+  const observerRef = useRef();
+  
+  // RITUAL 4 - Memoization
+  const memoizedUser = useMemo(() => user, [user]);
+  
+  useEffect(() => {
+    // RITUAL 1 - Event cleanup
+    const handleOnline = () => console.log('Online');
+    window.addEventListener('online', handleOnline);
+    
+    const interval = setInterval(() => {
+      fetchUserUpdates(userId).then(data => {
+        if (isMountedRef.current) {
+          setUser(data);
+        }
+      });
+    }, 5000);
+    
+    // RITUAL 3 - Reference discipline
+    observerRef.current = new PerformanceObserver((entries) => {
+      console.log('Performance:', entries);
+    });
+    observerRef.current.observe({ entryTypes: ['measure'] });
+    
+    // RITUAL 2 - WeakMap (if caching)
+    const cache = new WeakMap();
+    if (user) {
+      cache.set(user, { processed: true });
+    }
+    
+    // RITUAL 1 - Complete cleanup!
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      clearInterval(interval);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+      isMountedRef.current = false;
+    };
+  }, [userId]);
+  
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+  
+  return <div>{memoizedUser?.name}</div>;
+}
+```
+
+"Ritual Four: Memoization Mastery," Brother Memor declared. "Memoize Context values with useMemo so they don't recreate on every render! Unmemoized context values cause all consumers to re-render unnecessarily, creating memory pressure. useMemo keeps values stable, useCallback keeps functions stable. Memory efficiency through intelligent memoization!"
+
+Aria practiced the complete pattern. "All four rituals united! Event cleanup (useEffect return), WeakMap wisdom (automatic GC for caches), reference discipline (disconnect observers, clear refs), memoization mastery (stable Context values). Every component following these rituals stays memory-healthy!"
+
+Brother Memor handed Aria a sacred scroll - the Memory Guardian seal. "You've mastered the Four Healing Rituals! I hereby grant you the title of **Memory Guardian**. You've learned to identify leaks, profile them with sacred tools, and cure them with disciplined rituals. Go forth and keep the React Kingdom's memory clean!"
+
+Binary projected the complete synthesis: "Four Healing Rituals - (1) Event Cleanup: always return cleanup from useEffect, (2) WeakMap Wisdom: use weak references for caches, (3) Reference Discipline: disconnect observers and clear refs, (4) Memoization Mastery: memoize Context values. Memory Guardian oath: Apply these rituals in EVERY component. Knowledge without practice is worthless!"
+
+**Four Healing Rituals Mastery:**
+Prevent memory leaks through four disciplined practices. **Ritual 1: Event Cleanup** - ALWAYS return cleanup functions from useEffect that remove event listeners (removeEventListener), clear timers (clearTimeout/clearInterval), disconnect observers, close connections, abort async operations with AbortController, use isMountedRef pattern to prevent state updates on unmounted components. **Ritual 2: WeakMap Wisdom** - use WeakMap/WeakSet for caches that shouldn't prevent garbage collection - weak references allow automatic GC when objects unused elsewhere, unlike regular Map/Set which hold strong references forever. **Ritual 3: Reference Discipline** - disconnect observers on unmount, clear refs by setting to null, manage DOM references carefully to break reference chains enabling GC. **Ritual 4: Memoization Mastery** - memoize Context values with useMemo to prevent recreation on every render (unmemoized objects cause all consumers to re-render unnecessarily), use useCallback for stable function references. Apply these rituals consistently in every component for eternal memory health.
+
+**Reflection Questions:**
+
+- How does the Memory Guardian oath - "Apply these rituals in every component" - change your approach to component cleanup?
+- What connections exist between these rituals and patterns from previous training (Effect Sage, Map Master, Performance Sanctuary)?
+- Will you commit to always returning cleanup functions and managing references with discipline?
+
+**Aria's Journal - Day 30 (Evening)**
+*I've mastered the Four Healing Rituals and become a **Memory Guardian**! Brother Memor granted me the sacred seal! The rituals: (1) **Event Cleanup Ritual** - ALWAYS return cleanup from useEffect, remove event listeners (removeEventListener), clear timers (clearTimeout/clearInterval), disconnect observers, close WebSockets, abort fetch with AbortController, isMountedRef pattern prevents state updates on unmounted components (check isMountedRef.current before setState after async), (2) **WeakMap Wisdom** - use WeakMap/WeakSet for caches so objects can be GC'd when unused elsewhere, regular Map holds strong references (prevents GC forever!), WeakMap uses weak references (automatic GC!), perfect for component caches, (3) **Reference Discipline** - disconnect observers on unmount (observer.disconnect()), clear refs by setting to null, breaks reference chains so GC can work, don't let lingering refs prevent garbage collection, (4) **Memoization Mastery** - memoize Context values with useMemo (prevents recreation every render), unmemoized context objects cause ALL consumers to re-render (memory pressure!), useCallback for stable function refs. I practiced complete Memory Guardian pattern combining all four rituals in one component! Brother Memor's wisdom: "Knowledge without practice is worthless - apply these rituals in EVERY component you write!" I connected Effect Sage's cleanup patterns, Map Master's WeakMaps, Performance Sanctuary's memoization. Binary says I've achieved Memory Guardian status! Tomorrow: the Lazy Library with Keeper Libris for bundle optimization!*
+
+**Chapter Ending:**
+
+With the Memory Plague defeated and the Four Healing Rituals mastered, Brother Memor placed the Memory Guardian seal in Aria's hands - a crystalline emblem that pulsed with clean, efficient energy, its facets showing perfect memory sawtooth patterns.
+
+"You've mastered the ancient rituals," Brother Memor said with deep satisfaction and pride. "Event cleanup through disciplined useEffect returns, WeakMap wisdom for automatic garbage collection, reference discipline that breaks memory chains, and memoization mastery that prevents unnecessary pressure. These practices will serve you throughout your entire development career, keeping applications healthy as they grow and scale!"
+
+He led her to the monastery's edge where they could see the React Kingdom spread below, applications now running smoothly with clean memory. "But memory is only one aspect of performance," he continued, gesturing toward distant mountains where another structure was visible. "The Lazy Library awaits you down in the valley - Keeper Libris guards the secrets of code splitting and lazy loading. Fast applications need not just clean memory, but small, efficiently loaded bundles that don't burden users with code they'll never execute!"
+
+Binary computed the transition, processors humming with satisfaction. "Memory optimization: COMPLETE! From runtime efficiency to bundle optimization. The performance journey continues to code splitting!"
+
+Aria gazed down at the Lazy Library, determination in her eyes. "From memory leaks to bundle burdens. From keeping memory clean to loading code smartly. The Memory Guardian oath is taken - now to master the art of temporal loading!"
+
+Brother Memor watched as Aria and Binary began their descent down the mountain path toward the Lazy Library, knowing she carried not just knowledge but the discipline to apply it faithfully in every component she would ever write.
+
+---
+
+🚧 **WORK IN PROGRESS - LP7.2-7.4 (3 lessons remaining)**
 
 ---
 
