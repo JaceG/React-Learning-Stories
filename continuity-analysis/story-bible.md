@@ -235,10 +235,17 @@
 
 **Debuggora the Owl**
 - **Role**: Mystical owl companion to Test Master Jasmine
-- **Appears In**: LP8.1 TestingTower (Ch1-3)
-- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder)
+- **Appears In**: LP8.1 TestingTower (Ch1-3), LP8.2 IntegrationInn (Ch2-3)
+- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder), Integration Inn
 - **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
-- **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs)
+- **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs), mocking wisdom ("if test fails with mock, it's YOUR code not service")
+
+**Innkeeper Cypress**
+- **Role**: Master of component harmony and integration testing
+- **Appears In**: LP8.2 IntegrationInn (Ch1-3)
+- **Location**: Underground Realms - Integration Inn (warm welcoming place where components come together), Mock Service Chamber with magical mirrors, integration feast hall
+- **Appearance**: Weathered face showing years of experience
+- **Teaches**: Integration testing (components working together), component conflicts (work fine in isolation fail when integrated), 5 component types at Inn (Form/Validation/API Client/State Manager/Error Handler), Harmony Meter, Mock Service Worker (MSW - intercepts network), jest.fn/jest.mock/jest.useFakeTimers, integration test flows (user stories), error handling tests, deployment confidence
 
 *[More mentors to be added as extraction continues]*
 
@@ -545,6 +552,17 @@
 - Testing Pyramid → "layers of armor" (chainmail/plate armor/shield), "many unit tests at base"
 - Automated testing → "army", "phantom test runners materialize", "never tire, never miss", "impenetrable defense network"
 - CI/CD → "Continuous Integration Engine" (massive crystalline structure), "runs automatically", "24/7 protection"
+
+**LP8.2 IntegrationInn**:
+- Integration Inn → "warm welcoming place", "where components from different parts come together", "learn to work in harmony"
+- Component conflicts → "work perfectly alone, conflict when together", "miscommunication errors flying like angry sparks"
+- 5 component types → User Form (📝), Validation Service (⚙️), API Client (🌐), State Manager (💾), Error Handler (🛡️)
+- Harmony Meter → "tracks successful connections"
+- Mock Service Chamber → "special room with magical mirrors lining walls", "fake versions under our control"
+- Mocking → "illusion magic", "making components believe they're talking to real services"
+- Mock Service Worker → "intercepts network requests with controlled responses"
+- Integration Feast → "celebration where all work together in harmony", "components dance seamlessly"
+- Grand Integration Test → "tells user's story" (6 steps: input/validate/call/update/render/track)
 
 *[More translations to be added as extraction continues]*
 

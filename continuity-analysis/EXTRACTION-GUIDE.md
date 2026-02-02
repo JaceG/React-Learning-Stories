@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP8.1 TestingTower ✅
+**Last Completed**: LP8.2 IntegrationInn ✅
 
-**Next Lesson**: LP8.2 IntegrationInn
+**Next Lesson**: LP8.3 DebugDungeon
 
 **Progress Tracker**:
 ```
@@ -55,10 +55,10 @@ LP7: Performance Optimization (4 lessons) ✅ COMPLETE
   [✓] 7.3 VirtualizationVault (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 7.4 SpeedSanctum (Ch1, Ch2, Ch3) - COMPLETE
 
-LP8: Testing (3 lessons)
-  [ ] 8.1 TestingTower (Ch1, Ch2, Ch3)
-  [ ] 8.2 IntegrationIsland (Ch1, Ch2, Ch3)
-  [ ] 8.3 E2eCitadel (Ch1, Ch2, Ch3)
+LP8: Testing Debugging (3 lessons)
+  [✓] 8.1 TestingTower (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 8.2 IntegrationInn (Ch1, Ch2, Ch3) - COMPLETE
+  [ ] 8.3 DebugDungeon (Ch1, Ch2, Ch3)
 
 LP9: Advanced Patterns (3 lessons)
   [ ] 9.1 CompoundComponents (Ch1, Ch2, Ch3)
