@@ -5,7 +5,7 @@
 
 ---
 
-## 🗺️ EXTRACTION IN PROGRESS - READ THIS FIRST
+## 🗺️ EXTRACTION COMPLETE!
 
 **Purpose**: Visual Map & Legend - What does the world look like?
 

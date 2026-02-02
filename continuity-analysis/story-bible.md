@@ -14,7 +14,7 @@
 - **kingdom-geography.md** = Visual map (places, architecture, atmosphere)
 - **story-bible.md** = Character encyclopedia (THIS FILE - people, concepts)
 
-**Extraction Status**: Currently extracting lesson by lesson. See `EXTRACTION-GUIDE.md` for progress.
+**Extraction Status**: ✅ COMPLETE! All 15 Learning Paths (58 lessons, 174 chapters) extracted. See `EXTRACTION-GUIDE.md` for full details.
 
 ---
 
