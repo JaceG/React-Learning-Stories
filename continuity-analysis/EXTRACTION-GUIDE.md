@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP11.3 CachingCastle ✅
+**Last Completed**: LP11.4 GraphQLGateway ✅ (LP11 COMPLETE!)
 
-**Next Lesson**: LP11.4 GraphQLGateway
+**Next Lesson**: LP12.1 [Check narrative for LP12-15 lesson names]
 
 **Progress Tracker**:
 ```

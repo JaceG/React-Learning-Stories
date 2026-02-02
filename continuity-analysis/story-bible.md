@@ -386,7 +386,16 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: Caching fundamentals (balance freshness vs performance), three strategies (Cache-First 💾 for speed, Network-First 🌐 for freshness, Stale-While-Revalidate ♻️ best of both), TTL (Time To Live determines state transitions), cache invalidation (hardest problem in computer science - pattern-based clearing, cascade for dependent data, partial updates, cache warming 🔥), multi-layer architecture (L1 Memory 🧠/L2 Redis 💾/L3 CDN 🌐), intelligent TTL calculation, automatic optimization, "fastest request is the one you don't make", "storing easy, knowing when to forget is true challenge"
 
-*[More mentors to be added as extraction continues]*
+**Query Master Apollo**
+- **Role**: Guardian of the GraphQL Gateway
+- **Appears In**: LP11.4 GraphQLGateway (Ch1-3)
+- **Location**: GraphQL Gateway (glowing with single /graphql endpoint), Schema Vault with Schema Scrolls (Ch2), Gateway's control center for Unified Interface (Ch3)
+- **Appearance**: [Not extensively described]
+- **Teaches**: GraphQL revolution (ask for exactly what you need - no over/under-fetching), single endpoint /graphql, flexible query language, three operation types (Query 📖 reading, Mutation ✏️ changing, Subscription 📡 real-time), GraphQL vs REST (conversation vs packages), Schema Scrolls (type system as contract between client/server), GraphQL + TypeScript (end-to-end type safety), fragments (reusable query parts reduce duplication), optimistic updates, cache normalization (update User#1 everywhere it appears), Unified Interface (complete GraphQL client HTTP + WebSocket), when GraphQL vs REST (complex nested→GraphQL, simple CRUD→REST), "GraphQL is complete data management philosophy not just query language"
+
+*[Extraction complete for LP1-11]*
+
+**Note**: This extraction covers LP1-11 (first 41 lessons). LP12-15 exist in narrative but not yet extracted. See EXTRACTION-GUIDE.md for complete status.
 
 ---
 
@@ -860,7 +869,24 @@
 - Optimized Kingdom → "highest tower", "complete caching system", "intelligent cache layers", "living system adapts and optimizes itself"
 - Cache metrics → "97% hit rate, sub-millisecond latency, 80% server load reduction"
 
-*[More translations to be added as extraction continues]*
+**LP11.4 GraphQLGateway**:
+- GraphQL Gateway → "glows with single /graphql endpoint", "one endpoint infinite possibilities", "revolutionary approach"
+- Query Master Apollo → "guardian of Gateway"
+- GraphQL philosophy → "ask for exactly what you need - no more, no less", REST gives what server decides vs GraphQL lets you ask
+- Query language → "like conversation instead of receiving packages"
+- Three operations → Query (📖 reading), Mutation (✏️ changing), Subscription (📡 real-time)
+- Schema Vault → "Schema Scrolls define every field/type/relationship"
+- Schema → "contract between client and server", "detailed treaty between kingdoms", "types everywhere"
+- GraphQL + TypeScript → "natural allies", "end-to-end type safety", "unbreakable contracts"
+- Fragments → "reusable query parts reduce duplication"
+- Cache normalization → "update User#1, updates everywhere it appears", "data consistency across application"
+- Unified Interface → "Gateway's control center", "complete GraphQL client", "serves all data needs through one elegant endpoint"
+- GraphQL vs REST → "complex nested data → GraphQL, simple CRUD → REST"
+- GraphQL mastery → "not just query language but complete data management philosophy"
+
+*[Concept translations complete for LP1-11]*
+
+**Note**: LP12-15 exist in narrative but not yet extracted.
 
 ---
 
