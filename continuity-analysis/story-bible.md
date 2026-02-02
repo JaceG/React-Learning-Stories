@@ -164,6 +164,13 @@
 - **Appearance**: Distinguished figure in conductor's coat, baton crackling with event energy
 - **Teaches**: React's synthetic event system (SyntheticEvent, cross-browser consistency), event propagation (capture/bubble phases), event delegation (one handler for many elements), event optimization (throttling, debouncing), useCallback for memoized handlers, Academy patterns applied to events
 
+**Master Alchemist Formeus**
+- **Role**: Master of form handling, teaches form alchemy
+- **Appears In**: LP5.2 FormAlchemy (Ch1-3)
+- **Location**: Western Quarter - Form Alchemy Lab
+- **Appearance**: Stained laboratory coat bearing marks of countless experiments, emerges from behind cauldrons
+- **Teaches**: Controlled vs uncontrolled components (useState vs useRef), form state management, custom useForm hooks, multi-input handling, validation with useEffect, memoized validation, submission handling, Academy patterns applied to forms (orchestration, Performance Sanctuary, Temporal Tower patterns)
+
 *[More mentors to be added as extraction continues]*
 
 ---
