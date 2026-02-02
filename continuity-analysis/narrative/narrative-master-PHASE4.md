@@ -5126,7 +5126,706 @@ Aria bowed gratefully, feeling the weight of useEffect mastery settling into her
 
 ---
 
-🚧 **WORK IN PROGRESS - LP4.3-4.4, then LP5-7**
+## 4.3 CustomHookCrafting
+
+### 📖 Lesson Opener
+
+The Synthesis Workshop occupied an entire floor of the Advanced Hooks Sanctuary in the Eastern Quarter, filled with workbenches where students crafted their own magical artifacts. Glowing blueprints floated above each station, showing hook patterns being assembled and tested in real-time. This was where React developers transcended from users to creators of hooks, forging their own tools from the primitive hooks they'd mastered.
+
+### Chapter 1: The Hook Forge Basics
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Synthesis Workshop introduction with Master Artificer Compose's appearance and custom hook fundamentals]**
+
+"Welcome, Aria!" A voice called from across the workshop floor. The figure turned, revealing a woman whose apron sparkled with embedded hook patterns - tiny useState calls, useEffect chains, and custom hook compositions woven into the fabric like constellations. Her hands moved gracefully, dancing between different energy streams as she worked on multiple hook patterns simultaneously. "I am **Master Artificer Compose**, and this is where we transcend from hook users to hook creators! Professor Hooksworth and the Effect Sage taught you to wield React's tools - I'll teach you to forge your own!"
+
+Binary scanned the workshop, projecting amazement at the complex hook blueprints floating everywhere. The workshop was alive with creative energy - students at various benches crafted hooks that glowed with different colors based on their purpose: state management hooks in golden light, effect hooks in temporal blue, ref hooks in solid silver.
+
+"You've mastered useState and useEffect," Compose continued, gesturing to her workbench where several hook patterns orbited like a miniature solar system. "But what if you need the same pattern repeatedly? What if you want to share stateful logic between components without props or Context? This is where custom hooks shine - they're the ultimate form of code reuse in React!"
+
+"So we can create our own hooks?" Aria asked, examining a glowing blueprint that showed a custom hook composed of several primitive hooks interconnected like clockwork.
+
+"Exactly! And the secret is beautifully simple yet profoundly powerful," Compose explained, beginning to forge a new hook with practiced movements. "Any function starting with 'use' can contain other hooks. This naming convention tells React to apply the Rules of Hooks - call them at the top level, call them in the same order, only call them from React functions. The 'use' prefix isn't just style - it's a signal to React's linter and to React itself that this function follows hook rules!"
+
+She demonstrated by creating a simple custom hook:
+```javascript
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+  
+  const increment = () => setCount(c => c + 1);
+  const decrement = () => setCount(c => c - 1);
+  const reset = () => setCount(initialValue);
+  
+  return { count, increment, decrement, reset };
+}
+
+// Usage in components
+function Counter() {
+  const { count, increment, decrement, reset } = useCounter(0);
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
+    </>
+  );
+}
+```
+
+"See the pattern?" Compose asked as the hook glowed to life. "We're wrapping useState with logic that makes sense for counting. Multiple components can use useCounter, and each gets its own independent instance of the state. The logic is shared, but the state is not!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended custom hook basics with useToggle example and separation of logic vs state concept]**
+
+"Let me show you another fundamental pattern," Compose said, moving to a different forge where a new blueprint materialized. "The useToggle hook - one of the most useful patterns you'll ever create. Watch how we encapsulate boolean state management!"
+
+```javascript
+function useToggle(initialValue = false) {
+  const [value, setValue] = useState(initialValue);
+  
+  const toggle = () => setValue(v => !v);
+  const setTrue = () => setValue(true);
+  const setFalse = () => setValue(false);
+  
+  return [value, { toggle, setTrue, setFalse }];
+}
+
+// Usage - much cleaner than managing boolean state manually!
+function Modal() {
+  const [isOpen, { toggle, setTrue, setFalse }] = useToggle(false);
+  
+  return (
+    <>
+      <button onClick={toggle}>Toggle Modal</button>
+      {isOpen && <ModalContent onClose={setFalse} />}
+    </>
+  );
+}
+```
+
+"Notice the pattern," Compose explained, the hook's structure glowing with clarity. "We're not creating new primitive hooks - we're composing existing ones with additional logic. useToggle wraps useState but adds methods that make boolean operations intuitive. No more `setState(!state)` scattered everywhere!"
+
+Aria practiced creating both hooks, watching as each component that used them got its own independent state. "This is incredible! Two components using useCounter don't share count - each has its own!"
+
+"Precisely!" Compose beamed, clearly pleased with Aria's understanding. "This is the key principle: **custom hooks share logic, not state**. Every time a component calls your custom hook, React creates a fresh instance of all the hooks inside it. Multiple components using useCounter each get their own useState, their own increment function, their own everything. The hook is a template, not a singleton!"
+
+She demonstrated by creating two counters on screen, both using useCounter but maintaining completely independent counts. "See? They share the *logic* of how counting works, but not the *state* of what the count is. This is fundamentally different from sharing via props or Context!"
+
+Binary projected a comparison showing the difference: shared logic (custom hook - each component gets own instance) versus shared state (Context - all components see same value). "Custom hooks: logic reuse without state coupling!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on basic custom hook practice with extraction patterns and naming conventions]**
+
+"Now, forge your own hooks," Compose said, presenting Aria with real-world repetitive patterns that begged to be extracted into custom hooks.
+
+The first challenge: extract form input handling. Aria saw the repetitive pattern:
+```javascript
+// Before - repetitive state management
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+
+const handleNameChange = (e) => setName(e.target.value);
+const handleEmailChange = (e) => setEmail(e.target.value);
+const handlePasswordChange = (e) => setPassword(e.target.value);
+```
+
+She extracted it:
+```javascript
+function useInput(initialValue = '') {
+  const [value, setValue] = useState(initialValue);
+  const onChange = (e) => setValue(e.target.value);
+  const reset = () => setValue(initialValue);
+  
+  return { value, onChange, reset };
+}
+
+// Usage - much cleaner!
+const name = useInput('');
+const email = useInput('');
+const password = useInput('');
+
+<input {...name} />  // Spreads value and onChange!
+```
+
+"Excellent!" Compose approved. "You've identified a repetitive pattern and extracted it. Now every input is one line instead of three!"
+
+The second challenge: extract async state management (loading/error/data). Aria created:
+```javascript
+function useAsync(asyncFunction) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  
+  const execute = async (...params) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await asyncFunction(...params);
+      setData(result);
+      return result;
+    } catch (err) {
+      setError(err);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  return { loading, error, data, execute };
+}
+```
+
+"Perfect!" Compose praised. "You've encapsulated the entire async operation pattern - loading states, error handling, data storage. Any component needing async operations can use this!"
+
+Compose taught naming conventions: "Always start with 'use' - it's not optional! Use descriptive names: useFormInput, useLocalStorage, useFetch, not useHelper or useUtility. The name should describe what the hook does, not how it works internally. And return values thoughtfully - arrays for simple hooks (like useState), objects for complex hooks with many returns, or both when appropriate!"
+
+Binary displayed best practices: "Custom hook rules: Start with 'use', call hooks at top level, return useful values, document with JSDoc, write tests, make reusable!"
+
+**New Characters:**
+
+**Master Artificer Compose**
+Creator of custom hooks in the Synthesis Workshop of the Advanced Hooks Sanctuary in the Eastern Quarter. Her apron sparkles with embedded hook patterns as she teaches the transcendent art of hook creation, hands dancing between different energy streams. "Any function starting with 'use' can contain other hooks. This naming convention tells React to apply the Rules of Hooks. Custom hooks share logic, not state - each component gets its own instance. We're forging tools, not sharing singletons!"
+
+**Hook Forging Fundamentals:**
+Master custom hooks to become a true React artificer. Start function names with "use" to enable hook composition - this convention activates React's Rules of Hooks and communicates intent to other developers. Extract repetitive stateful logic into reusable functions that return state and methods - patterns like useCounter, useToggle, useInput emerge from real needs. Custom hooks share logic, not state - each component gets its own instance of all internal hooks. Think of them as templates for stateful behavior, not singletons. Return values thoughtfully: arrays for simple hooks (like useState), objects for complex hooks with many return values. Document thoroughly, test comprehensively, and name descriptively.
+
+**Reflection Questions:**
+
+- How does the workshop setting reflect the creative nature of custom hooks?
+- What patterns in your own code are begging to be extracted into custom hooks?
+- Why is "use" more than just a naming convention?
+
+**Aria's Journal - Day 20 (Morning)**
+*The Synthesis Workshop opened my eyes to the true power of React! Master Artificer Compose showed me how to forge my own hooks. The secret: any function starting with "use" can contain other hooks - the "use" prefix tells React to apply the Rules of Hooks. I created useCounter (encapsulating increment/decrement/reset logic) and useToggle (managing boolean states with helper methods like toggle/setTrue/setFalse). The critical insight: custom hooks share **logic**, not **state**. Each component using useCounter gets its own independent state - we're sharing the pattern, not the data! I practiced extracting repetitive patterns: useInput for form inputs (spreads value and onChange!), useAsync for async operations (handles loading/error/data). Custom hooks extract stateful logic into reusable functions - I can share complex patterns between components without copy-pasting! It's like creating my own toolkit of React superpowers. Naming matters: "use" prefix is mandatory, names should be descriptive (useFormInput not useHelper), return arrays for simple hooks or objects for complex ones. The forge metaphor is perfect - we're literally crafting new tools from existing primitive hooks!*
+
+---
+
+### Chapter 2: Advanced Hook Smithing
+
+**Bridge:**
+The next day, Compose led Aria to a more advanced section of the workshop where multiple forges worked in harmony. Here, apprentices weren't just creating simple hooks - they were combining multiple React hooks with browser APIs to forge truly powerful tools that bridged React's pure world with external systems.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended advanced composition introduction with useLocalStorage demonstration and browser API integration]**
+
+"Yesterday you learned the basics - extracting simple patterns," Compose began, her hands dancing between different energy streams that represented various browser APIs and React hooks flowing together. "Today, we forge hooks that bridge React with the outside world. Watch as I combine useState and useEffect with browser APIs to create something far greater than the sum of its parts!"
+
+Binary projected excitement, its sensors detecting the complex energy patterns being woven together - React hooks synchronizing with localStorage, fetch APIs, DOM events, all coordinating in intricate dances.
+
+"First, observe **useLocalStorage**," Compose demonstrated, pulling localStorage energy into her forge where it merged with useState and useEffect patterns. "This hook persists state across browser sessions - your data survives even when components unmount, when pages refresh, even when users close their browsers!"
+
+```javascript
+function useLocalStorage(key, initialValue) {
+  // Initialize from localStorage or use initialValue
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(error);
+      return initialValue;
+    }
+  });
+  
+  // Persist to localStorage whenever value changes
+  const setValue = (value) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  return [storedValue, setValue];
+}
+
+// Usage - state that persists!
+function UserPreferences() {
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [fontSize, setFontSize] = useLocalStorage('fontSize', 16);
+  
+  // These values survive page refreshes!
+  return ...;
+}
+```
+
+"It's like giving components memory that transcends their lifecycle!" Aria exclaimed, watching the hook read from and write to localStorage automatically. "The state is synchronized with browser storage!"
+
+"Precisely!" Compose smiled, the pattern glowing with approval. "We've combined useState for the React state, lazy initialization for reading from storage on mount, and an enhanced setter that writes to both React state and localStorage. Three patterns unified into one powerful hook!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended advanced patterns with useFetch demonstration and lifecycle management complexity]**
+
+"Now for an even more complex composition," Compose said, gesturing to another forge where multiple energy streams converged. "Here we have **useFetch** - a hook that manages the entire lifecycle of data fetching: loading states, error handling, the data itself, and proper cleanup. Watch how multiple hooks orchestrate the async operation!"
+
+```javascript
+function useFetch(url, options = {}) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    const controller = new AbortController();
+    let cancelled = false;
+    
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const json = await response.json();
+        
+        if (!cancelled) {
+          setData(json);
+          setError(null);
+        }
+      } catch (err) {
+        if (!cancelled && err.name !== 'AbortError') {
+          setError(err.message);
+          setData(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+    
+    fetchData();
+    
+    return () => {
+      controller.abort();
+      cancelled = true;
+    };
+  }, [url]);  // Re-fetch when URL changes
+  
+  return { data, loading, error };
+}
+
+// Usage - complex async logic encapsulated!
+function UserProfile({ userId }) {
+  const { data: user, loading, error } = useFetch(`/api/users/${userId}`);
+  
+  if (loading) return <Spinner />;
+  if (error) return <Error message={error} />;
+  return <Profile user={user} />;
+}
+```
+
+"Multiple hooks working in perfect harmony!" Aria observed, seeing useState for the three state pieces, useEffect for the async operation, and AbortController for cleanup. "This encapsulates everything the Effect Sage taught me about async operations!"
+
+"Exactly!" Compose beamed. "useFetch combines useState (for data/loading/error), useEffect (for the fetch operation), AbortController (for race condition protection), and proper error handling. Components using this hook don't need to know about any of that complexity - they just get clean `{data, loading, error}` back!"
+
+She showed more advanced patterns:
+```javascript
+// useDebounce - delays updates until user stops typing
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () => clearTimeout(handler);  // Cancel on value change
+  }, [value, delay]);
+  
+  return debouncedValue;
+}
+
+// useWindowSize - responsive design made simple
+function useWindowSize() {
+  const [size, setSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  return size;
+}
+```
+
+"See the pattern?" Compose asked. "Identify repetitive logic involving multiple hooks, extract it into a custom hook that manages the entire lifecycle. The pattern is: complex coordination → elegant abstraction!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on advanced composition practice with browser API hooks and event listener patterns]**
+
+"Now forge your own advanced hooks," Compose said, presenting Aria with real-world scenarios that required combining React hooks with browser APIs.
+
+The first challenge: create useOnClickOutside for modals/dropdowns. Aria designed:
+```javascript
+function useOnClickOutside(ref, handler) {
+  useEffect(() => {
+    const listener = (event) => {
+      // Do nothing if clicking ref's element or descendants
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+    
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref, handler]);  // Re-run if ref or handler changes
+}
+
+// Usage - close modal when clicking outside
+function Modal({ children, onClose }) {
+  const modalRef = useRef();
+  useOnClickOutside(modalRef, onClose);
+  
+  return <div ref={modalRef}>{children}</div>;
+}
+```
+
+"Excellent!" Compose approved. "You've encapsulated the entire click-outside pattern - event listeners, ref checking, cleanup. Any component needing this behavior just uses the hook!"
+
+The second challenge: create useMediaQuery for responsive design. Aria forged:
+```javascript
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(
+    () => window.matchMedia(query).matches
+  );
+  
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    const handler = (e) => setMatches(e.matches);
+    
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, [query]);
+  
+  return matches;
+}
+
+// Usage - responsive without CSS media queries!
+function Sidebar() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
+  
+  return isMobile ? <MobileSidebar /> : <DesktopSidebar />;
+}
+```
+
+"Perfect!" Compose praised. "You've bridged React with the matchMedia API, creating reactive media queries that update when screen size changes!"
+
+The third challenge tested creativity: create useInterval that works properly with React. Aria remembered the Effect Sage's lessons about stale closures and created:
+```javascript
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+  
+  // Remember latest callback
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+  
+  // Set up the interval
+  useEffect(() => {
+    if (delay === null) return;  // Allow pausing
+    
+    const tick = () => savedCallback.current();
+    const id = setInterval(tick, delay);
+    
+    return () => clearInterval(id);
+  }, [delay]);
+}
+
+// Usage - declarative intervals that respect React lifecycle
+function Timer() {
+  const [count, setCount] = useState(0);
+  useInterval(() => setCount(c => c + 1), 1000);  // Counts every second
+  return <p>{count}</p>;
+}
+```
+
+"Brilliant!" Compose exclaimed. "You've solved the stale closure problem with useRef, made delays controllable, and handled cleanup properly. This is Dan Abramakov's famous useInterval hook - you've independently discovered a pattern used by thousands of developers!"
+
+Binary displayed the composition patterns: "Advanced hooks: Combine useState + useEffect + browser APIs. Encapsulate complexity. Handle cleanup properly. Use refs for stable references. Document edge cases!"
+
+**Advanced Hook Composition:**
+Master hook composition by combining multiple primitives with browser APIs into powerful abstractions. useLocalStorage demonstrates state + side effects + browser storage working together. useFetch shows complete async operation management through coordinated hooks (state + effect + AbortController). The pattern: identify repetitive logic involving multiple hooks and external systems, extract it into a custom hook that manages the entire lifecycle. Popular compositions include useDebounce (state + effect + setTimeout), useMediaQuery (state + effect + matchMedia), useOnClickOutside (effect + ref + event listeners), and useInterval (effect + ref + setInterval). Think of hooks as composable building blocks - combine them to solve any problem elegantly. Document thoroughly, handle cleanup properly, and test edge cases comprehensively.
+
+**Reflection Questions:**
+
+- How does the "forging multiple metals" metaphor illuminate hook composition?
+- What external systems could you bridge with custom hooks?
+- Why is encapsulating complexity in custom hooks so powerful?
+
+**Aria's Journal - Day 20 (Afternoon)**
+*Advanced hook composition is mind-blowing! Compose showed me how to combine multiple hooks with browser APIs to create powerful abstractions. useLocalStorage merges useState with localStorage, creating persistent memory that survives page refreshes and browser restarts! useFetch orchestrates useState (for data/loading/error), useEffect (for the async operation), and AbortController (for cleanup) into a complete data-fetching solution. The key insight: hooks aren't just about React - they're bridges to any external system! I forged my own hooks: useOnClickOutside (click detection + ref + event listeners), useMediaQuery (responsive design + matchMedia API), and useInterval (intervals that respect React lifecycle using refs to avoid stale closures). By composing simpler hooks with browser APIs, we create elegant abstractions that hide complexity. Each advanced hook encapsulates dozens of lines of error-prone code into a simple, tested interface. It's like forging legendary weapons from multiple magical metals - useState (memory), useEffect (timing), useRef (persistence), browser APIs (power)!*
+
+---
+
+### Chapter 3: Hook Libraries - The Grand Repository
+
+**Bridge:**
+On the final day at the Synthesis Workshop, Compose led Aria to a magnificent library adjoining the forges. The Grand Repository was breathtaking - crystalline shelves held thousands of glowing hook patterns, each one a tested solution to common React challenges, organized by category and purpose.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Grand Repository introduction with hook library benefits and organization principles]**
+
+"Welcome to the Grand Repository!" Compose announced with pride, her voice echoing through the vast library. "Every hook forged here is documented, tested, and battle-proven in production applications. This is where individual creativity becomes collective wisdom, where solved problems become reusable tools for the entire community!"
+
+Binary scanned the shelves, downloading documentation at an impressive rate, its display showing excitement at the vast collection. The hooks were organized by category: State Management (golden shelves), Side Effects (blue shelves), Browser APIs (silver shelves), UI Patterns (rainbow shelves), Performance (green shelves).
+
+"A hook library," Compose explained, pulling several glowing patterns from the shelves, "transforms solved problems into reusable tools. Why should every developer reinvent debouncing? Why should everyone struggle with the same async patterns, window size detection, or local storage synchronization? Once a problem is solved well, it should be available to all!"
+
+"It's like a shared armory!" Aria realized, seeing hooks labeled with their purposes: useDebounce, useThrottle, usePrevious, useToggle, useFetch, useLocalStorage, useMediaQuery, useOnClickOutside, useInterval, useTimeout, useAsync, useBoolean. "Each hook is a weapon against complexity, available to all who need it!"
+
+"Precisely! But a hook library is more than just a collection," Compose said seriously, pulling out scrolls that accompanied each hook. "Look at these - comprehensive documentation, usage examples, edge case handling, TypeScript types, unit tests, integration tests. This is what transforms a personal hack into a shareable asset!"
+
+She showed Aria a well-documented hook:
+```typescript
+/**
+ * useDebounce - Delays updating a value until user stops changing it
+ * 
+ * @param value - The value to debounce
+ * @param delay - Delay in milliseconds (default: 500)
+ * @returns The debounced value
+ * 
+ * @example
+ * const debouncedSearch = useDebounce(searchTerm, 300);
+ * useEffect(() => {
+ *   // API call with debounced value
+ *   fetchResults(debouncedSearch);
+ * }, [debouncedSearch]);
+ * 
+ * @see {@link https://link-to-docs} for more examples
+ */
+function useDebounce<T>(value: T, delay: number = 500): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () => clearTimeout(handler);
+  }, [value, delay]);
+  
+  return debouncedValue;
+}
+```
+
+"See the completeness?" Compose asked. "JSDoc comments, TypeScript types, usage examples, links to full documentation. This is library-quality code!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended essential hooks demonstration with testing requirements and versioning importance]**
+
+"Let me show you three hooks so essential, they appear in nearly every React application," Compose said, activating three glowing patterns that demonstrated their power.
+
+"First, **useDebounce**" - she showed a search box where typing rapidly didn't trigger API calls until the user paused. "Search optimization, resize handlers, form validation - anywhere you want to wait until activity stops before reacting. This single hook prevents millions of unnecessary API calls across the React ecosystem!"
+
+"Second, **useWindowSize**" - she demonstrated components responding to screen size changes without CSS media queries. "Responsive logic in JavaScript, conditional rendering based on viewport, dynamic calculations. It bridges React with viewport changes elegantly!"
+
+"Third, **useInterval**" - she showed timers, counters, and polling that properly cleaned up and avoided stale closures. "Declarative intervals that play nice with React's lifecycle. Dan Abramov's famous pattern, used everywhere!"
+
+But Compose's expression grew more serious. "However, these hooks are only library-worthy because they include comprehensive testing." She pulled out test suites:
+
+```javascript
+describe('useDebounce', () => {
+  it('should debounce value updates', async () => {
+    const { result, rerender } = renderHook(
+      ({ value, delay }) => useDebounce(value, delay),
+      { initialProps: { value: 'initial', delay: 500 } }
+    );
+    
+    expect(result.current).toBe('initial');
+    
+    // Update value rapidly
+    rerender({ value: 'test1', delay: 500 });
+    rerender({ value: 'test2', delay: 500 });
+    rerender({ value: 'test3', delay: 500 });
+    
+    // Should still be initial immediately
+    expect(result.current).toBe('initial');
+    
+    // After delay, should show last value
+    await waitFor(() => {
+      expect(result.current).toBe('test3');
+    }, { timeout: 600 });
+  });
+  
+  it('should handle delay changes', () => {
+    // Test delay updates...
+  });
+  
+  it('should cleanup on unmount', () => {
+    // Test cleanup...
+  });
+});
+```
+
+"Tests validate behavior, document usage through examples, and prevent regressions," Compose explained. "Every hook in the repository has comprehensive tests - unit tests for logic, integration tests for React behavior, edge case tests for error conditions!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on library organization practice with documentation standards and versioning strategy]**
+
+"Now, organize hooks into a proper library," Compose said, showing Aria the structure that made hooks discoverable and maintainable.
+
+The first lesson: categorization and naming. Compose showed the file structure:
+```
+hooks/
+├── state/
+│   ├── useToggle.ts
+│   ├── useBoolean.ts
+│   └── usePrevious.ts
+├── effects/
+│   ├── useDebounce.ts
+│   ├── useThrottle.ts
+│   └── useInterval.ts
+├── browser/
+│   ├── useLocalStorage.ts
+│   ├── useMediaQuery.ts
+│   └── useOnClickOutside.ts
+├── async/
+│   ├── useFetch.ts
+│   ├── useAsync.ts
+│   └── useQuery.ts
+└── index.ts  // Central exports
+```
+
+"Organization makes hooks discoverable," Compose explained. "Categories reflect purpose. Consistent naming follows patterns. Central exports make importing clean: `import { useDebounce, useFetch } from '@/hooks'`"
+
+The second lesson: semantic versioning and changelogs. Compose showed version management:
+```markdown
+# Changelog
+
+## [2.1.0] - 2024-01-15
+### Added
+- useIntersectionObserver hook for lazy loading
+- TypeScript types for all hooks
+
+### Changed
+- useDebounce now accepts null delay for instant updates
+
+### Fixed
+- useLocalStorage handles storage events properly
+
+## [2.0.0] - 2023-12-01
+### Breaking Changes
+- useAsync API changed: execute is now manual
+- useFetch removed automatic retry (use useQuery)
+```
+
+"Semantic versioning communicates impact," Compose taught. "MAJOR.MINOR.PATCH: breaking changes increment major, new features increment minor, bug fixes increment patch. Changelogs document what changed and why. Migration guides help users upgrade!"
+
+The final lesson: documentation sites. Compose showed how hooks needed more than code comments:
+```markdown
+# useDebounce
+
+Delays updating a value until user stops changing it.
+
+## Installation
+```bash
+npm install @your-org/hooks
+```
+
+## Usage
+```javascript
+const debouncedValue = useDebounce(value, delay);
+```
+
+## Parameters
+- `value: T` - Value to debounce
+- `delay: number` - Delay in ms (default: 500)
+
+## Returns
+- `T` - Debounced value
+
+## Examples
+### Search with API
+[Live example with code...]
+
+### Form Validation
+[Live example with code...]
+
+## Edge Cases
+- Handles null/undefined values
+- Cleans up on unmount
+- Updates when delay changes
+
+## TypeScript
+Fully typed with generics...
+```
+
+"Complete documentation transforms personal hooks into shareable assets," Compose emphasized. "Installation, usage, parameters, return values, examples, edge cases, TypeScript support. Every question answered!"
+
+Binary displayed library excellence checklist: "Hook library: Categorized organization, consistent naming, comprehensive tests, JSDoc comments, TypeScript types, usage examples, semantic versioning, changelogs, documentation site, migration guides!"
+
+**Repository Wisdom:**
+Transform individual solutions into collective assets through well-organized hook libraries. Essential patterns like useDebounce (delay updates), useWindowSize (responsive queries), and useInterval (declarative timers) solve universal problems. Excellence requires comprehensive documentation (JSDoc comments, TypeScript types, usage examples, edge cases), thorough testing (unit tests for logic, integration tests for React behavior, edge cases for errors), logical organization (categories by purpose, consistent naming, central exports), and proper versioning (semantic versioning for releases, changelogs for history, migration guides for breaking changes). Remember: a hook in the library saves countless hours across your entire organization. The difference between a personal hack and a shareable asset is documentation, testing, and thoughtful API design.
+
+**Reflection Questions:**
+
+- How does the repository transform individual creativity into collective wisdom?
+- What makes a hook "library-worthy" versus a one-off solution?
+- Why is documentation as important as the code itself?
+
+**Aria's Journal - Day 20 (Evening)**
+*The Grand Repository was awe-inspiring! Compose showed me how individual hooks become collective wisdom through proper organization and documentation. The repository contains thousands of battle-tested hooks organized by category: State Management, Side Effects, Browser APIs, UI Patterns, Performance. I explored three essential patterns: useDebounce (delays updates until user stops typing - saves millions of API calls!), useWindowSize (responsive design in JavaScript), and useInterval (declarative setInterval that respects React lifecycle). But the real lesson was about what makes hooks library-worthy: (1) **Comprehensive documentation** - JSDoc comments, TypeScript types, usage examples, parameter descriptions, return value docs, edge case handling. (2) **Thorough testing** - unit tests for logic, integration tests for React behavior, edge case tests for errors. Tests validate behavior and document usage! (3) **Logical organization** - categorization by purpose, consistent naming conventions, central exports for clean imports. (4) **Proper versioning** - semantic versioning (MAJOR.MINOR.PATCH), detailed changelogs, migration guides for breaking changes. A well-maintained hook library accelerates entire teams. Why solve the same problems repeatedly? Once a problem is solved well, document it, test it, share it! The difference between a personal hack and a shareable asset is professionalism: docs + tests + organization + versioning. Tomorrow I learn to orchestrate all this knowledge into true mastery!*
+
+**Chapter Ending:**
+
+As they prepared to leave the Synthesis Workshop, Compose handed Aria a crystal containing the workshop's hook patterns - hundreds of custom hooks, fully documented and tested. "You've learned to create, compose, and share hooks. This knowledge makes you a true React artificer - not just a user of tools, but a creator of tools!"
+
+"Thank you, Master Compose," Aria said, clutching the crystal that pulsed with creative energy. "I never imagined hooks could be so powerful - not just as tools for individual components, but as shared knowledge that elevates entire teams and communities!"
+
+"Remember," Compose smiled warmly, "the best abstractions emerge from real problems. Don't force patterns or create hooks just to have hooks - discover them. When you find yourself writing the same logic three times, that's when you extract a hook. When that hook proves useful across multiple projects, that's when you add it to your library!"
+
+Binary projected a summary of all the hooks they'd learned, already organizing them into categories and adding documentation templates. The workshop had transformed Binary's understanding too - it now saw patterns everywhere, ready to extract and share them.
+
+"Now," Compose continued, gesturing toward a staircase that led upward to the sanctuary's apex, "Pattern Weaver Synthesis awaits in the Integration Sanctum. There you'll learn to combine everything - useState, useEffect, custom hooks, all orchestrating together in complex patterns that solve real-world challenges. That's the final step: from primitive hooks to custom hooks to orchestrated masterpieces!"
+
+Together, Aria and Binary headed toward their final Hooks lesson, ready to learn how all the pieces fit together into systems of extraordinary capability. The Synthesis Workshop had taught them to create tools - the Integration Sanctum would teach them to wield entire toolkits in harmony.
+
+---
+
+🚧 **WORK IN PROGRESS - LP4.4, then LP5-7**
 
 ---
 
