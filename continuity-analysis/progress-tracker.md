@@ -2,9 +2,9 @@
 
 ## Current Status
 
-**Phase**: 3.5 - Manual Notes Fixes ⏳ **95% COMPLETE**
-**Status**: Phase 3.5B & 3.5C complete via parallel subagents, 3.5D polish remaining
-**Last Updated**: February 1, 2026 (Evening Session)
+**Phase**: 3.5 - Manual Notes Fixes ⏳ **97% COMPLETE**
+**Status**: Phases 3.5A, 3.5B, & 3.5C complete, 3.5D polish remaining (7 tasks)
+**Last Updated**: February 2, 2026 (Early Morning Session)
 
 **⚠️ WORKFLOW REVISED**: See `REVISED-WORKFLOW.md` for updated phase structure based on:
 - Manual review findings (90+ annotations, pages 21-103)
@@ -22,10 +22,18 @@
 - Round 2 (LP8-15): 34 issues fixed
 - Total: **56 fixes with inline change tracking**
 
-**Phase 3.5A (Critical Fixes)**: 🟡 PARTIAL - Quick pass completed
+**Phase 3.5A (Critical Fixes)**: ✅ **COMPLETE** - All issues investigated
 - ✅ Issue #3.5-001: Fixed River Master Flux early reference
+- ✅ Issue #3.5-002: Character attribution (already fixed in Phase 3)
 - ✅ Issue #3.5-003: Verified Binary companion (already fixed)
-- 🔲 Issues #3.5-002, 004-010: Deferred (vague notes, likely fixed in Phase 3)
+- ✅ Issue #3.5-004: Fixed Aria teaching role (LP5.3 Ch3)
+- ✅ Issue #3.5-005: Eventus chronology (issue doesn't exist)
+- ✅ Issue #3.5-006: LazyLibrary ordering (addressed in 3.5B)
+- ✅ Issue #3.5-007: Next lesson refs (already correct)
+- ✅ Issue #3.5-008: Missing content LP2.4 (lesson complete)
+- ✅ Issue #3.5-009: Unexplained concepts LP2.4 (not found)
+- ✅ Issue #3.5-010: Content expansion (moved to 3.5D)
+- ✅ Issue #3.5-011: Story Group 2 (moved to 3.5D)
 
 **Phase 3.5B (Major Rewrites)**: ✅ **COMPLETE** - All 4 rewrites done!
 - ✅ Task 1: LP4.1 UseStateSpells (Academy refs reduced, reframed)
