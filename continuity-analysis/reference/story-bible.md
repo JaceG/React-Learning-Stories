@@ -93,7 +93,7 @@
 **Master Smith Destructo**
 - **Role**: Master smith of the Prop Forge
 - **Appears In**: LP3.1 PropForge (Ch1-3)
-- **Location**: Industrial Quarter - Prop Forge
+- **Location**: Western Quarter - Prop Forge
 - **Appearance**: Weathered face, singed beard edges, eyes sparkle with data flame reflections, wields glowing hammer
 - **Teaches**: Destructuring (extracting props), spread operator (merging/transforming), prop validation (PropTypes/TypeScript), default values, prop immutability
 
