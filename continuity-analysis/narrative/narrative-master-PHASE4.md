@@ -757,18 +757,9 @@ Binary increased the difficulty. "Now render a list of components from an array.
 
 "Excellent!" Syntaxis praised, observing her progress. "You're combining multiple concepts - embedding expressions, calling component functions, passing props dynamically. This is real-world React development."
 
-The final challenge appeared: "Create a card that displays user data with conditional styling." Aria combined everything she'd learned:
+The final challenge appeared: "Create a card that displays user data with conditional styling." Aria combined everything she'd learned - she created a Card component with a dynamic className based on whether the user was premium or standard, embedded an Avatar component with the user's photo, displayed the user's name in a heading, showed their bio with a fallback message if none existed, and conditionally rendered a StatusBadge only if the user was online.
 
-```jsx
-<Card className={user.isPremium ? 'premium' : 'standard'}>
-  <Avatar src={user.avatar} />
-  <h2>{user.name}</h2>
-  <p>{user.bio || 'No bio available'}</p>
-  {user.isOnline && <StatusBadge />}
-</Card>
-```
-
-The card rendered with dynamic class names, conditional content, and fallback values. "This is the power of JSX," Syntaxis said proudly. "Markup that breathes with logic, interfaces that adapt to data, components that think."
+The card rendered with dynamic class names, conditional content, and fallback values. "This is the power of JSX," Syntaxis said proudly, watching Aria's creation come to life. "Markup that breathes with logic, interfaces that adapt to data, components that think."
 
 Aria watched her creation pulse with life in the Expression Chamber. Variables flowed through curly brace portals, conditions determined what appeared, functions computed values on the fly. She finally understood why React developers loved JSX - it wasn't just HTML, it was programmable structure.
 
@@ -819,14 +810,7 @@ Syntaxis approached the first tablet, which began to glow brighter at his presen
 
 🟢 **Syntaxis pointed to the first glowing tablet, which displayed code examples that shifted between correct and incorrect versions. "Rule One: Every JSX expression must have a single root element. You cannot return multiple siblings without wrapping them."**
 
-🟢 **He demonstrated. On one side, invalid code appeared:**
-```jsx
-return (
-  <h1>Title</h1>
-  <p>Paragraph</p>
-);
-```
-🟢 **"This fails because React.createElement can only return one element. Multiple siblings have no parent to wrap them." Then he showed the corrected version with a wrapping div, and the newer solution using React.Fragment or the shorthand `<>...</>` syntax.**
+🟢 **He demonstrated. On one side, invalid code appeared - a component trying to return both a heading and a paragraph directly, with no wrapper. "This fails because React.createElement can only return one element. Multiple siblings have no parent to wrap them." Then he showed the corrected version with a wrapping div, and the newer solution using React.Fragment or the shorthand empty angle brackets, which let you group elements without adding extra DOM nodes.**
 
 🟢 **"Rule Two," he continued, moving to the second tablet. "All elements must be closed. In HTML, tags like `<img>` or `<br>` can be left open, but JSX demands closure - either with a closing tag or self-closing syntax `<img />`."**
 
@@ -1014,15 +998,9 @@ Aria watched in fascination as the mural showed components gracefully adapting t
 
 The first challenge appeared: "A Clock component that displays the current time, updating every second."
 
-Aria thought carefully. "ComponentDidMount to start the timer, componentDidUpdate probably not needed, componentWillUnmount to clear the timer." She wrote:
+Aria thought carefully. "ComponentDidMount to start the timer, componentDidUpdate probably not needed, componentWillUnmount to clear the timer." She wrote the componentDidMount method, setting up an interval that would call the tick function every second and storing the timer ID for later cleanup.
 
-```jsx
-componentDidMount() {
-  this.timerID = setInterval(() => this.tick(), 1000);
-}
-```
-
-"Good!" Chronos approved. "The timer starts after mounting, when the component is fully in the DOM."
+"Good!" Chronos approved, examining her work. "The timer starts after mounting, when the component is fully in the DOM."
 
 Second challenge: "A UserProfile that fetches data when the user ID prop changes."
 
@@ -1078,15 +1056,9 @@ He showed Aria the proper pattern. A component that started a timer in component
 
 🟦 **[EXPANDED: Extended cleanup patterns with specific examples and resource management]**
 
-"See how the TimerComponent remembers to clear its interval?" Chronos pointed to a demonstration showing proper cleanup code:
+"See how the TimerComponent remembers to clear its interval?" Chronos pointed to a demonstration showing proper cleanup - in componentWillUnmount, the component called clearInterval on the timer ID it had saved during mounting.
 
-```jsx
-componentWillUnmount() {
-  clearInterval(this.timerID);
-}
-```
-
-"Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine! Every second, it would try to call `this.tick()`, but `this` no longer exists. Errors accumulate, memory leaks grow, performance degrades."
+"Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine! Every second, it would try to call the tick function, but the component no longer exists. Errors accumulate, memory leaks grow, performance degrades."
 
 He showed more examples. An EventListener component that added a window resize listener must remove it: `window.removeEventListener('resize', this.handleResize)`. A WebSocket component that opened a connection must close it: `this.socket.close()`. A component using an external library must destroy its instance: `this.chart.destroy()`.
 
@@ -1204,13 +1176,9 @@ Aria watched in fascination. "So useState creates a persistent memory that survi
 
 "Now, your turn to wield this magic," Memnon said, leading Aria to a practice station where a blank component waited. "Create a simple toggle component - a button that switches between 'ON' and 'OFF' using useState."
 
-Aria thought carefully, then wrote:
+Aria thought carefully, then created her first state variable. She called useState with false as the initial value, receiving back the current state (which she named isOn) and the setter function (setIsOn).
 
-```jsx
-const [isOn, setIsOn] = useState(false);
-```
-
-"Good!" Memnon encouraged. "Now use it in the component."
+"Good!" Memnon encouraged, watching the memory orb materialize at her station. "Now use it in the component."
 
 She created a button that displayed the current state and toggled it on click. The component rendered. She clicked the button. Instantly, the display changed from 'OFF' to 'ON'. The memory orb at her practice station glowed, showing the state update.
 
@@ -1289,14 +1257,7 @@ Binary chimed in, projecting performance metrics. "Mutation: React must check ev
 
 "Now for the ultimate challenge," Memnon said, activating a complex practice scenario. "Manage a shopping cart - nested objects, arrays of items, quantities, prices. Update it immutably."
 
-The cart structure appeared:
-```jsx
-{
-  items: [{id: 1, name: 'Book', price: 20, quantity: 1}],
-  total: 20,
-  discount: 0
-}
-```
+The cart structure appeared before Aria - an object containing an items array (each with id, name, price, and quantity), a total, and a discount. It was more complex than anything she'd handled before.
 
 "Add an item," Memnon instructed.
 
@@ -1759,24 +1720,11 @@ A LoginButton component far down the tree called the login function through Cont
 
 "See how the Provider doesn't just share the user state," Contextia pointed to the glowing threads, "but also the functions to login and logout. Any component connected to this thread can both read the current user AND change it!"
 
-She walked Aria through creating a custom Provider: "First, wrap useState inside a provider component. Second, combine state and setter functions into a value object. Third, return the Context Provider with that value. Fourth, export both the Provider and a custom hook for consuming."
+She walked Aria through creating a custom Provider step by step. "First, wrap useState inside a provider component to manage the user state. Second, create functions like login and logout that modify that state. Third, combine everything - the state and all the functions - into a value object. Fourth, return the Context Provider passing that value, wrapping the children. Finally, export both the Provider and a custom hook for consuming."
 
-The pattern emerged:
+The pattern materialized before them: An AuthProvider component that maintained user state with useState(null), defined login and logout functions, bundled everything into a value object containing user, login, and logout, then returned the AuthContext.Provider wrapping the children with that value.
 
-```jsx
-function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  
-  const login = (credentials) => { /* auth logic */ };
-  const logout = () => setUser(null);
-  
-  const value = { user, login, logout };
-  
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-```
-
-"Now any component can `const { user, login, logout } = useContext(AuthContext)` and have full auth capabilities," Contextia explained. "No props, no drilling, just clean access to shared functionality."
+"Now any component can access the full auth system through useContext," Contextia explained. "No props, no drilling, just clean access to shared functionality."
 
 Aria practiced creating a CartProvider for an e-commerce app. State for items array, functions to add/remove/update items, total calculator. The Provider bundled it all together, making cart management available throughout the component tree. "This is so much cleaner than passing cart props everywhere!"
 
@@ -1788,25 +1736,9 @@ Aria practiced creating a CartProvider for an e-commerce app. State for items ar
 
 "Real applications often need multiple Contexts," Contextia said, showing how threads could be layered. "Theme Context for styling, Auth Context for user state, Language Context for internationalization, Cart Context for shopping data. Each one independent, each one focused."
 
-She demonstrated Context composition - one Provider component that wrapped multiple Context Providers:
+She demonstrated Context composition - creating a master Provider component that wrapped multiple Context Providers in sequence: ThemeProvider on the outside, then AuthProvider, then CartProvider, then LanguageProvider, all wrapping the application's children. It looked like nesting dolls, each layer providing its own specialized Context.
 
-```jsx
-function AppProviders({ children }) {
-  return (
-    <ThemeProvider>
-      <AuthProvider>
-        <CartProvider>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </CartProvider>
-      </AuthProvider>
-    </ThemeProvider>
-  );
-}
-```
-
-"The order matters," Contextia noted. "Inner providers can consume outer Context values. AuthProvider might need Theme, CartProvider might need Auth. Think about dependencies when ordering."
+"The order matters," Contextia noted, adjusting the visualization. "Inner providers can consume outer Context values. AuthProvider might need Theme, CartProvider might need Auth. Think about dependencies when ordering."
 
 Binary demonstrated a component consuming multiple Contexts simultaneously - a checkout button that needed auth state, cart state, and theme. Each Context provided its specialized data, and the component combined them. "Context composition gives you modular state management," Binary explained. "Each Context handles one domain, components pick what they need."
 
@@ -2369,7 +2301,7 @@ Binary projected analysis: "Prop forwarding efficiency: 98%. Transformation prec
 
 The first challenge: merging default props with user props. Aria wrote: `const finalProps = {...defaultProps, ...userProps}`. The user props correctly overrode defaults. "Order matters!" she observed. "If I reversed the order, defaults would override user values - backwards!"
 
-The second challenge: adding props while spreading. A Button component that needed to enhance className: `<button {...props} className={`${props.className || ''} enhanced`.trim()} />`. Wait - Destructo stopped her. "Careful! Since className comes *after* the spread, it overrides props.className. You want to merge them, not replace. Your template literal handles it correctly, but remember the position matters!"
+The second challenge: adding props while spreading. A Button component that needed to enhance className. Aria wrote it to spread all props first, then add an enhanced className that merged the existing className with the word "enhanced". Wait - Destructo stopped her. "Careful! Since className comes *after* the spread, it overrides props.className. You want to merge them, not replace. Your template literal handles it correctly, but remember the position matters!"
 
 The third challenge: excluding dangerous props. A wrapper component receives all props but shouldn't forward `internalState` or `onInternalEvent`. Aria used destructuring with rest: `const {internalState, onInternalEvent, ...safeProps} = props`. Then spread safeProps forward. "Perfect filtering!" Destructo approved.
 
@@ -2467,51 +2399,17 @@ The first challenge: a UserCard component receiving various props. Aria needed t
 - `onSelect`: function, optional
 - `role`: one of specific values ('admin', 'user', 'guest')
 
-She wrote the PropTypes:
-```javascript
-UserCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired,
-  email: PropTypes.string,
-  onSelect: PropTypes.func,
-  role: PropTypes.oneOf(['admin', 'user', 'guest'])
-};
-```
+She carefully wrote out the PropTypes validation, marking name and age as required while leaving the others optional. For the role prop, she specified it could only be one of the three allowed values: 'admin', 'user', or 'guest'.
 
-"Good!" Destructo approved. "Now add default props for the optional ones."
+"Good!" Destructo approved, examining her work. "Now add default props for the optional ones."
 
-```javascript
-UserCard.defaultProps = {
-  email: 'Not provided',
-  onSelect: () => {},
-  role: 'user'
-};
-```
+Aria added defaults for each optional prop - 'Not provided' for missing emails, an empty function for onSelect so the code wouldn't crash if none was provided, and 'user' as the default role. The forge's instruments hummed with approval as the validation took shape.
 
-"Excellent! The component is now bulletproof. Missing email? Falls back to 'Not provided'. Missing onSelect? Uses a no-op function so the code doesn't crash. Missing role? Defaults to 'user'. Try sending wrong types - PropTypes will warn you immediately!"
+"Excellent! The component is now bulletproof," Destructo declared. "Missing email? Falls back to 'Not provided'. Missing onSelect? Uses a no-op function so the code doesn't crash. Missing role? Defaults to 'user'. Try sending wrong types - PropTypes will warn you immediately!"
 
-The second challenge: the same component, but with TypeScript. Aria converted it:
-```typescript
-interface UserCardProps {
-  name: string;
-  age: number;
-  email?: string;
-  onSelect?: (id: string) => void;
-  role?: 'admin' | 'user' | 'guest';
-}
+The second challenge tested her understanding: convert the same component to use TypeScript instead of PropTypes. Aria worked through it methodically, creating an interface that defined all the props with their types. She marked optional props with question marks, specified the role could only be one of three literal values, and defined the onSelect function's signature precisely. Then she applied the interface to the component, setting default values directly in the destructuring - a cleaner approach than PropTypes' separate defaultProps object.
 
-const UserCard: React.FC<UserCardProps> = ({
-  name,
-  age,
-  email = 'Not provided',
-  onSelect = () => {},
-  role = 'user'
-}) => {
-  // Component implementation
-};
-```
-
-"Notice the differences," Destructo pointed out. "TypeScript uses `?` for optional props. Defaults are in the destructuring itself. And most importantly - this validation happens at compile time. Your editor will show errors immediately if you try to pass wrong types. No runtime checks needed!"
+"Notice the differences," Destructo pointed out, reviewing her work. "TypeScript uses question marks for optional props. Defaults are in the destructuring itself. And most importantly - this validation happens at compile time. Your editor will show errors immediately if you try to pass wrong types. No runtime checks needed!"
 
 The third challenge tested understanding: "When should you use PropTypes versus TypeScript?"
 
@@ -2677,15 +2575,7 @@ Aria grimaced, imagining the code. "That would be... terrible. The component sig
 
 "Exactly the problem!" Master Cargo grinned, pulling out a scroll labeled "The Spreading Problem". It showed a component with 40+ props listed explicitly, all just to forward them to a native element. The code was verbose, unmaintainable, and incomplete - new props weren't supported.
 
-"Behold - the *spread operator with rest patterns*!" He demonstrated a component that extracted only the props it needed (`variant`, `loading`, `analytics`), captured everything else with rest syntax (`...restProps`), then spread those remaining props onto the child button element.
-
-```javascript
-const EnhancedButton = ({variant, loading, analytics, ...restProps}) => {
-  // Use variant, loading, analytics for custom behavior
-  // Everything else forwards to button
-  return <button {...restProps} className={getClass(variant)} />;
-};
-```
+"Behold - the *spread operator with rest patterns*!" He demonstrated a component that extracted only the props it needed (variant, loading, and analytics), captured everything else with rest syntax into a restProps variable, then spread those remaining props onto the child button element. The EnhancedButton could use its specific props for custom behavior while forwarding all other props directly to the native button.
 
 Binary's processors whirred in excitement. "It takes what it needs and passes everything else forward automatically? So users can still pass onClick, disabled, aria-label, data attributes, anything?"
 
@@ -2707,18 +2597,9 @@ Aria practiced the pattern, creating components that enhanced native elements wi
 
 After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, moving to a different section of the plaza where transformation stations glowed, "you need to *transform* props as they flow through, not just forward them blindly."
 
-He demonstrated a Button that accepted a `variant` prop (primary, secondary, danger) but spread the rest. "See? We extract variant, use it to build a className, then spread everything else. But notice something crucial - the spread order."
+He demonstrated a Button that accepted a variant prop (primary, secondary, danger) but spread the rest. "See? We extract variant, use it to build a className, then spread everything else. But notice something crucial - the spread order."
 
-```javascript
-// Version 1: User className can override
-<button className={getClass(variant)} {...restProps} />
-
-// Version 2: Our className always wins
-<button {...restProps} className={getClass(variant)} />
-
-// Version 3: Merge both classNames
-<button {...restProps} className={`${restProps.className} ${getClass(variant)}`} />
-```
+He showed her three different versions: In version one, placing className before the spread meant user-provided classNames would override the component's className. In version two, placing className after the spread meant the component's className always won, preventing user overrides. In version three, merging both classNames into a template literal gave users additive control - both classes applied together.
 
 "The order determines who wins when there's a conflict!" Aria observed. "Props spread later override props spread earlier!"
 
@@ -2735,17 +2616,7 @@ Aria experimented with the pattern, creating wrapper components that:
 
 Master Cargo demonstrated a Link component that ensured security props were always set. "Watch this pattern for external links."
 
-```javascript
-const SafeLink = ({href, ...restProps}) => {
-  const isExternal = href.startsWith('http');
-  const securityProps = isExternal 
-    ? {target: '_blank', rel: 'noopener noreferrer'}
-    : {};
-  
-  // Users can pass any props, but security attrs are enforced
-  return <a href={href} {...restProps} {...securityProps} />;
-};
-```
+He showed her a SafeLink component that destructured href and captured everything else. The component checked if the link was external by testing if href started with 'http'. For external links, it created security props - target set to '_blank' and rel set to 'noopener noreferrer'. Then it rendered an anchor tag spreading restProps first, followed by securityProps last. Because securityProps spread last, they couldn't be overridden by user props.
 
 Aria examined it carefully. "So users can pass className, onClick, aria-label, anything - but they can't override rel or target for external links? That's enforced for security?"
 
@@ -2759,7 +2630,7 @@ Binary displayed a flowchart showing prop transformation chains. "Components can
 
 "Now, practice the dark arts," Master Cargo said with a slight smile. "Spreading is powerful, but power requires wisdom."
 
-The first challenge: create a Button wrapper that adds `size` and `variant` props but forwards everything else. Aria wrote it easily now: `const {size, variant, ...rest} = props`, then `<button {...rest} className={getClass(size, variant)} />`. Simple!
+The first challenge: create a Button wrapper that adds size and variant props but forwards everything else. Aria wrote it easily now - she destructured size and variant from props and captured the rest, then rendered a button spreading the rest while using size and variant to generate the className. Simple!
 
 The second challenge was trickier: filter out props that shouldn't forward. "Sometimes," Master Cargo explained, "you receive props for your wrapper's logic that make no sense on the underlying element."
 
@@ -2834,14 +2705,7 @@ Aria examined the newer pattern with defaults right in the function parameters: 
 
 "Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail many developers miss: default parameters only apply when the prop is `undefined`, NOT when it's `null`."
 
-He demonstrated the edge case:
-```javascript
-// This works - size is undefined, default applies
-<Button text="Submit" />  // size = 'medium'
-
-// This does NOT use default - size is explicitly null!
-<Button text="Submit" size={null} />  // size = null, NOT 'medium'!
-```
+He demonstrated the edge case with two Button examples. In the first, when a Button was created with just text and no size prop, the default kicked in - size became 'medium'. But in the second example, when size was explicitly passed as null, the default did NOT apply - size remained null, not 'medium'!
 
 "See the difference? Undefined means 'not provided,' and defaults apply. Null means 'intentionally set to nothing,' and that intention is respected!"
 
