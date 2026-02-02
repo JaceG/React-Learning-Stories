@@ -194,6 +194,15 @@
 - **Appearance**: [Not extensively described], voice carries warmth/excitement and authority
 - **Teaches**: LP6.1 - routing fundamentals, LP6.2 - advanced waypoint patterns (loaders/actions/metadata, dynamic params, nested routes, Outlets, breadcrumbs, prefetching, scroll restoration), LP6.3 - Guardian Gates (protected routes, authentication/authorization integration, role-based access, advanced portal patterns, multi-step wizards, accessible modals, route-based modals, predictive prefetching)
 
+### LP7: Performance Optimization
+
+**Brother Memor**
+- **Role**: Keeper of the Memory Monastery, guardian against Memory Plague
+- **Appears In**: LP7.1 MemoryMonastery (Ch1-3)
+- **Location**: Northern Peaks - Memory Monastery (ancient floating structure in clouds above React Kingdom), Observatory, chamber with glowing diagnostic instruments, Sanctuary of Solutions
+- **Appearance**: Eldest monk (presumably elderly), concerned about memory plague
+- **Teaches**: Memory leaks (Event Listener Leaks, Detached DOM Nodes, Closure Captures), Chrome DevTools Memory Profiler (heap snapshots, allocation timeline, retainers view), Four Healing Rituals (event cleanup in useEffect, WeakMap/WeakSet, reference discipline, memoization mastery), isMountedRef pattern for async safety
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -443,6 +452,17 @@
 - Portals (React) → "escape normal DOM hierarchy", "render at document body but keep React powers"
 - Portal patterns → "modals, tooltips, overlays", "WHERE elements render not breaking component model"
 - Accessible modals → "focus trapping, keyboard navigation, smooth transitions"
+
+### LP7: Performance Optimization
+
+**LP7.1 MemoryMonastery**:
+- Memory leaks → "Memory Plague", "mysterious plague", "holding memories they should release", "silent killers"
+- Memory Monastery → "ancient structure floating in clouds above React Kingdom", "floating monastery"
+- Three leak forms → "Event Listener Leaks" (added never removed), "Detached DOM Nodes" (removed from DOM still referenced), "Closure Captures" (closures hold large objects)
+- Chrome DevTools → "sacred tools", "mystical viewing portal reveals inner workings", "glowing diagnostic instruments"
+- Profiling → "Heap Snapshots" (moment in time), "Allocation Timeline" (growth over time), "Retainers view" (why can't GC)
+- Four Healing Rituals → "refined over generations", "ancient inscriptions"
+- Memory Guardian → "title granted", "mastering ancient rituals", "oath to clean memory"
 
 *[More translations to be added as extraction continues]*
 
