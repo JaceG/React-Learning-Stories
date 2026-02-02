@@ -2583,23 +2583,7 @@ Aria implemented the filtering: `const {data, onSort, onFilter, customLogicProp,
 
 "Excellent!" Master Cargo approved. "Destructuring with rest is like a security filter - you extract what shouldn't pass, and the rest is clean!"
 
-The third challenge revealed spreading's caveat: DOM warnings. Master Cargo showed Aria a component that accidentally spread a non-standard prop onto a DOM element.
-
-```javascript
-// BAD: Spreads custom prop to DOM
-const Card = ({glowEffect, ...rest}) => (
-  <div {...rest} glowEffect={glowEffect}> // Warning: glowEffect is not a valid DOM prop!
-    {children}
-  </div>
-);
-
-// GOOD: Uses custom prop without passing to DOM
-const Card = ({glowEffect, ...rest}) => (
-  <div {...rest} style={{boxShadow: glowEffect ? 'glow' : 'none'}}>
-    {children}
-  </div>
-);
-```
+The third challenge revealed spreading's caveat: DOM warnings. Master Cargo showed Aria a component that accidentally spread a non-standard prop onto a DOM element. The bad version extracted glowEffect but then passed it as a prop to the div element, which React warned about since glowEffect isn't a valid DOM attribute. The good version used glowEffect internally to set the boxShadow style instead of passing it as a prop.
 
 "Be careful with spread!" Master Cargo warned. "React will complain about unknown props on DOM elements. Always filter custom props before spreading to native elements. For custom components, it's usually fine - but DOM elements are strict!"
 
@@ -2692,16 +2676,7 @@ Aria studied the pattern carefully, seeing how it balanced flexibility with stru
 
 He showed her a Tabs component as an example. "Tabs could accept generic children, but then how would it know which tab is active? Instead, professional Tabs components often use explicit TabPanel children or named props, because the Tabs parent needs to control which panel shows and manage the active state."
 
-```javascript
-// Generic children - hard to manage
-<Tabs>{genericChildren}</Tabs>  // How do we mark one as active?
-
-// Named panels - easier control
-<Tabs>
-  <TabPanel label="First">Content 1</TabPanel>
-  <TabPanel label="Second">Content 2</TabPanel>
-</Tabs>
-```
+He demonstrated the difference: generic children passed to Tabs gave no way to mark one as active or identify panels. But using specific TabPanel components with label props, the Tabs parent could identify each panel, track which was active, and control visibility.
 
 Master Cargo showed more patterns: compound components (where child components like Tab, TabPanel, TabList are designed to work together), render prop patterns (where children is a function that receives data), and slot-based composition (where specific named props handle specific regions).
 
@@ -2717,16 +2692,9 @@ Aria nodded solemnly. "Props are contracts, children are content. Both are immut
 
 "Well said!" Master Cargo pulled out a final scroll, this one titled "The Art of Naming and API Design." "One last gift before you leave: prop naming conventions that make your components feel professional and intuitive."
 
-He showed Aria a comparison of poorly named versus well-named props:
-```javascript
-// Poor naming
-<Modal open={true} close={fn} error={true} content="text" />
+He showed Aria a comparison of poorly named versus well-named props. The poor example used vague names: open, close, error, content. The good example was much clearer: isOpen, onClose, hasError, children.
 
-// Good naming
-<Modal isOpen={true} onClose={fn} hasError={true} children="text" />
-```
-
-"See the difference?" Master Cargo explained. "Boolean props often start with 'is', 'has', or 'should' - `isOpen`, `hasError`, `shouldValidate`. This makes their boolean nature immediately obvious."
+"See the difference?" Master Cargo explained. "Boolean props often start with 'is', 'has', or 'should' - isOpen, hasError, shouldValidate. This makes their boolean nature immediately obvious."
 
 "Event handlers start with 'on' - `onClick`, `onSubmit`, `onChange`, `onUserDelete`. This convention is so strong that React expects it for event prop types."
 
@@ -2736,31 +2704,7 @@ Aria practiced creating well-named component APIs, applying the conventions: `is
 
 "Now combine everything," Master Cargo said, presenting a final challenge. "Create a professional Dialog component using all patterns: children for content, optional header/footer props, spreading for flexibility, defaults for optional props, conditional rendering for edge cases, and excellent prop names."
 
-Aria took a deep breath and designed it:
-```javascript
-const Dialog = ({
-  isOpen = false,
-  onClose = () => {},
-  title,
-  actions,
-  children,
-  size = 'medium',
-  ...restProps
-}) => {
-  if (!isOpen) return null;  // Graceful: don't render when closed
-  
-  return (
-    <div className="dialog-overlay" {...restProps}>
-      <div className={`dialog dialog-${size}`}>
-        {title && <header className="dialog-title">{title}</header>}
-        <div className="dialog-content">{children ?? 'No content'}</div>
-        {actions && <footer className="dialog-actions">{actions}</footer>}
-        <button onClick={onClose} className="dialog-close">×</button>
-      </div>
-    </div>
-  );
-};
-```
+Aria took a deep breath and designed it. The Dialog component destructured props with clear names: isOpen (defaulting to false), onClose (with an empty function default), title and actions as optional named slots, children for the main content, size (defaulting to 'medium'), and restProps to capture anything else. It returned null gracefully when not open. When open, it rendered an overlay div spreading restProps, containing the dialog with dynamic size class. The title conditionally rendered in a header if provided, children went into the content area with a fallback message, actions conditionally rendered in a footer, and a close button always appeared with the onClose handler.
 
 Master Cargo examined it with approval. "Excellent! Boolean props have 'is', event handlers have 'on', children are implicit, optional slots use named props, defaults are set, edge cases are handled, and spread provides flexibility. This is professional-grade component design!"
 
