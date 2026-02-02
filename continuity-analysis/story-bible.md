@@ -104,6 +104,13 @@
 - **Appearance**: [Not extensively described - artisan examining nested structures]
 - **Teaches**: props.children pattern, component composition, prop spreading/rest patterns, prop forwarding, default parameters (vs defaultProps), combining patterns, prop naming conventions
 
+**Echo Keeper Callback**
+- **Role**: Guardian of upward communication
+- **Appears In**: LP3.3 EventEchoes (Ch1-3)
+- **Location**: Echo Caves - mountains beyond Prop Forge, winding path
+- **Appearance**: Robes shimmer with sound waves, voice creates visible ripples in air, stands beside pulsing crystalline formations, wields baton sparkling with captured echoes (Ch3)
+- **Teaches**: Callback functions, upward event communication (events vs props), callbacks with parameters, event orchestration, Symphony Pattern, event delegation
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -126,6 +133,7 @@
 - **LP2.4**: Whirrs thoughtfully about complex state, lights flicker with recognition about Redux, circuits sparkle with curiosity about alternatives, chirps proudly at completion
 - **LP3.1**: Beams proudly with light show, processors whir at simple three dots, projects warning symbols for type errors, displays holographic forge miniature
 - **LP3.2**: Projects hologram of nested boxes, processors whir about prop transference, displays flowchart of prop transformation chains, displays beautiful component tree
+- **LP3.3**: Chirps excitedly (bounces off cave walls), projects diagram (props down/events up), transforms chirp into multiple tones, projects callback chains, scans acoustic patterns, eyes widen, displays holographic summary
 
 *[More contributions to be added as extraction continues]*
 
@@ -211,6 +219,15 @@
 - Spread order → "later overrides earlier", "controlled spreading for flexibility vs enforcement"
 - Default parameters → "modern approach" (vs old defaultProps), "graceful defaults"
 - Composition patterns → "children for content, named props for slots", "professional composition"
+
+**LP3.3 EventEchoes**:
+- Callbacks → "magical conch shells", "echoes traveling upward", "sound defying gravity"
+- Events → "echoes", "signals", "clicks/chimes/whispers", "multi-voiced songs"
+- Data flow → "data down like waterfall, events up like sound in canyon"
+- Parent role → "conductor", "orchestrator"
+- Event coordination → "symphony", "harmonious tones", "living instrument"
+- Props vs events → "sheet music" (props down) vs "performed notes" (events up)
+- Symphony Pattern → "coordinated patterns", "harmony through structured flow"
 
 *[More translations to be added as extraction continues]*
 

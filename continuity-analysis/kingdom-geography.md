@@ -394,6 +394,45 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
+### Echo Caves
+**First Mentioned**: LP3.3 EventEchoes Ch1
+
+**Quarter/Region**: Mountains beyond Prop Forge - winding path, cool thin air
+
+**Architecture**:
+- Massive archway carved into mountainside (entrance)
+- First cavern with crystalline formations pulsing with echoes (Ch1)
+- Echo Chamber - vast chamber where sounds multiply and layer (Ch2)
+- Grand Symphony Hall - natural amphitheater at heart of caves (Ch3)
+- Thousands of stalactites forming stone organ (Ch3)
+- Perfect acoustics throughout
+
+**Atmosphere**:
+- Cool, thin mountain air
+- Haunting symphony of echoes bouncing off cavern walls
+- Clicks, chimes, whispers that defy gravity
+- Sounds travel upward through rock
+- Like being inside a living instrument
+- Harmonious, reverberating energy
+
+**Visual Details**:
+- Crystalline formations pulsing with each echo passing through
+- Voice creating visible ripples in air
+- Sounds bouncing in fascinating patterns
+- Glowing signal paths traced in air
+- Resonance crystals capturing sounds
+- Glowing scrolls with callback patterns
+- Stalactites like organ pipes, sparkling with captured echoes
+- Baton sparkling at conductor's podium
+
+**Master**: Echo Keeper Callback (guardian, robes shimmer with sound waves)
+
+**Teaches**: Callback functions, upward communication (events vs props down), callbacks with parameters/rich data, parent as orchestrator, Symphony Pattern, event delegation, event coordination
+
+**Connection to Teaching**: Echoes = callbacks traveling upward; sound defying gravity = events against downward flow; crystalline formations = callback receivers; symphony = orchestrated event coordination; conductor = parent component role
+
+---
+
 ### Hook Academy
 **First Mentioned**: Hooks In Action → UseStateSpells → Ch1
 
