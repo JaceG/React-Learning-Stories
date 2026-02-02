@@ -20,12 +20,11 @@ LP1: Components Basics (4 lessons) ✅ COMPLETE
   [✓] 1.3 JsxMagic (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 1.4 LifecycleChronicles (Ch1, Ch2, Ch3) - COMPLETE
 
-LP2: State Management (4 lessons)
+LP2: State Management (4 lessons) ✅ COMPLETE
   [✓] 2.1 StateSorcerers (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 2.2 MagicalHooks (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 2.3 GrandContext (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 2.3 ContextConclave (Ch1, Ch2, Ch3)
-  [ ] 2.4 StateManagementAdventures (Ch1, Ch2, Ch3)
+  [✓] 2.4 StateManagementAdventures (Ch1, Ch2, Ch3) - COMPLETE
 
 LP3: Props Data Flow (4 lessons)
   [ ] 3.1 PropForge (Ch1, Ch2, Ch3)
