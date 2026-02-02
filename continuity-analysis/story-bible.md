@@ -148,6 +148,13 @@
 - **Appearance**: Woman with apron sparkling with embedded hook patterns, hands dancing between energy streams
 - **Teaches**: Custom hook basics ("use" naming convention, Rules of Hooks), extracting stateful logic (useCounter, useToggle), advanced composition (combining hooks + browser APIs: useLocalStorage, useFetch), hook libraries (documentation, testing, organization, versioning)
 
+**Pattern Weaver Synthesis**
+- **Role**: Master conductor of the Integration Sanctum where all hook knowledge culminates
+- **Appears In**: LP4.4 HookPatternMastery (Ch1-3)
+- **Location**: Integration Sanctum - spherical chamber at apex of Hooks Academy, Performance Sanctuary (Ch3)
+- **Appearance**: Robes woven from pure React patterns, conducts/weaves energy streams like orchestra conductor
+- **Teaches**: Hook orchestration (Form Symphony pattern - multiple hooks coordinated), useReducer + Context (Grand Symphony Pattern), split contexts for performance, action creators, performance optimization (useMemo, useCallback, React.memo - Performance Trinity), strategic optimization (measure first)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -175,6 +182,7 @@
 - **LP4.1**: Chirps greeting and projects hologram of adventures, beeps excitedly with performance metrics, projects comparisons highlighting reference changes, projects analysis of grouped state, chirps excitedly calculating optimal paths
 - **LP4.2**: Beeps nervously at temporal anomalies, scans dependency spheres showing patterns, display shows different activation patterns, beeps concernedly at paradoxes, processors whir anxiously at async chaos, chronometer stabilizes, chirps excitedly descending tower
 - **LP4.3**: Scans workshop projecting amazement at blueprints, projects excitement at energy patterns being woven, scans shelves downloading docs at impressive rate with excited display, projects summary organizing hooks into internal library
+- **LP4.4**: Processors hum detecting complex interplay, whirs with anticipation at Grand Symphony, efficiency processors light up analyzing flows, projects calculations (wasted vs optimized), projects visualization of all learned patterns, display shows "HOOK MASTERY: COMPLETE"
 
 *[More contributions to be added as extraction continues]*
 
@@ -308,6 +316,14 @@
 - Advanced patterns → "bridges to external world", "combining hooks with browser APIs"
 - Hook libraries → "armory", "weapons against complexity", "Grand Repository", "individual creativity becomes collective wisdom"
 - Documentation/testing → "battle-proven", "transforms personal to shareable assets"
+
+**LP4.4 HookPatternMastery**:
+- Hook orchestration → "conducting symphony", "orchestra/instruments", "simple parts → complex systems"
+- Form Symphony → "multiple specialized hooks coordinated", "useFormField + useForm orchestrator"
+- useReducer + Context → "Grand Symphony Pattern", "conductor managing entire orchestra", "actions describe what happened"
+- Split contexts → "separate contexts for state/dispatch", "sheet music to orchestra sections"
+- Performance optimization → "Performance Trinity" (useMemo/useCallback/React.memo), "streamlined energy flows", "wasted cycles vs optimized"
+- Strategic optimization → "measure first with React DevTools", "premature optimization = root of evil"
 
 *[More translations to be added as extraction continues]*
 
