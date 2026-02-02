@@ -1790,28 +1790,7 @@ Instead of one massive Context with all state, create focused Contexts. `<UserCo
 
 **Technique 2: Split Contexts by data and actions**
 
-One Context for state (changes trigger renders), another for dispatch functions (stable, won't trigger renders). The visualization showed how consumers only subscribing to actions never re-rendered unnecessarily.
-
-```jsx
-const StateContext = createContext();
-const DispatchContext = createContext();
-
-function Provider({ children }) {
-  const [state, setState] = useState(initial);
-  const actions = useMemo(() => ({
-    update: () => {},
-    delete: () => {}
-  }), []); // Stable reference
-  
-  return (
-    <StateContext.Provider value={state}>
-      <DispatchContext.Provider value={actions}>
-        {children}
-      </DispatchContext.Provider>
-    </StateContext.Provider>
-  );
-}
-```
+One Context for state (changes trigger renders), another for dispatch functions (stable, won't trigger renders). She demonstrated splitting a single Context into StateContext and DispatchContext. The Provider maintained state with useState, created memoized action functions that stayed stable across renders, then provided each through its own Context. The visualization showed how consumers only subscribing to actions never re-rendered unnecessarily.
 
 **Technique 3: Memoize Context values**
 
@@ -1898,24 +1877,9 @@ Binary whirred thoughtfully, projecting visualizations of these complex scenario
 
 "Your first challenge," Grand Reducer announced, gesturing to a practice arena that materialized in the chamber, "is to manage an adventurer's inventory. Multiple items, different actions, complex rules - all flowing through one reducer function. This is how real applications handle sophisticated state!"
 
-He showed the pattern. A state object containing inventory items, gold, equipped gear, and capacity. Actions that modified this state: `{type: 'ADD_ITEM', payload: item}`, `{type: 'REMOVE_ITEM', payload: itemId}`, `{type: 'EQUIP_ITEM', payload: itemId}`. A reducer function that received current state and an action, then returned new state.
+He showed the pattern. A state object containing inventory items, gold, equipped gear, and capacity. Actions that modified this state: ADD_ITEM with an item payload, REMOVE_ITEM with an itemId, EQUIP_ITEM with an itemId. A reducer function that received current state and an action, then returned new state.
 
-```jsx
-function inventoryReducer(state, action) {
-  switch(action.type) {
-    case 'ADD_ITEM':
-      if (state.items.length >= state.capacity) return state; // Capacity check
-      return {...state, items: [...state.items, action.payload]};
-    case 'REMOVE_ITEM':
-      return {...state, items: state.items.filter(item => item.id !== action.payload)};
-    case 'EQUIP_ITEM':
-      // Complex logic: move from items to equipped, check if valid gear
-      // All in one place, testable, predictable
-    default:
-      return state;
-  }
-}
-```
+The inventoryReducer used a switch statement to handle each action type. For ADD_ITEM, it checked capacity first - if full, return unchanged state; otherwise spread the state and add the new item to the items array. For REMOVE_ITEM, it filtered out the item with matching id. For EQUIP_ITEM, complex logic moved an item from inventory to equipped slots with validation. The default case returned state unchanged for unknown actions.
 
 "See the benefits?" Grand Reducer asked. "All state logic centralized. Pure function - same action always produces same result. Easy to test - pass state and action, verify returned state. Easy to debug - log every action and state change. Easy to extend - add new action types without touching components."
 
@@ -1929,18 +1893,9 @@ Aria implemented her own reducer, watching as complex state updates became organ
 
 "Build a form with complex validation," Grand Reducer challenged. "Username must be unique, password must match confirmation, email must be valid format, all must be checked before enabling submission."
 
-Aria designed the state:
-```jsx
-{
-  fields: {username: '', password: '', passwordConfirm: '', email: ''},
-  errors: {},
-  touched: {},
-  isValidating: false,
-  isValid: false
-}
-```
+Aria designed the state structure: an object containing fields (username, password, passwordConfirm, email - all starting empty), errors (an object to hold validation messages), touched (tracking which fields had been interacted with), isValidating (a boolean flag), and isValid (the overall form validity status).
 
-Actions for: `FIELD_CHANGE`, `FIELD_BLUR`, `START_VALIDATION`, `VALIDATION_SUCCESS`, `VALIDATION_ERROR`, `SUBMIT`.
+She defined actions for: FIELD_CHANGE, FIELD_BLUR, START_VALIDATION, VALIDATION_SUCCESS, VALIDATION_ERROR, and SUBMIT.
 
 The reducer handled complex logic: When a field changes, clear its error, mark as touched, check if other validations need re-running. When validation starts, set isValidating flag. When validation completes, update errors and isValid. All in one predictable function.
 
@@ -2011,21 +1966,9 @@ Binary projected before/after comparisons. Before Redux: State scattered across 
 
 "Redux has evolved," Grand Reducer said, pulling out a newer, sleeker volume. "The Redux Codex spawned **Redux Toolkit** - a modern approach that reduces boilerplate while keeping the benefits."
 
-He showed comparisons. Classic Redux required: separate action types constants, action creator functions, verbose reducers with spread operators, store configuration with middleware. Redux Toolkit provided: `createSlice` (combines actions and reducers), `createAsyncThunk` (handles async easily), Immer integration (write 'mutative' code that stays immutable), automatic dev tools.
+He showed comparisons. Classic Redux required: separate action types constants, action creator functions, verbose reducers with spread operators, store configuration with middleware. Redux Toolkit provided: createSlice (combines actions and reducers), createAsyncThunk (handles async easily), Immer integration (write 'mutative' code that stays immutable), automatic dev tools.
 
-```jsx
-// Redux Toolkit - cleaner!
-const userSlice = createSlice({
-  name: 'user',
-  initialState: { data: null, loading: false },
-  reducers: {
-    userLoaded: (state, action) => {
-      state.data = action.payload; // Looks like mutation, but Immer makes it immutable!
-      state.loading = false;
-    }
-  }
-});
-```
+He demonstrated Redux Toolkit's cleaner approach with a userSlice created using createSlice. It defined the slice name as 'user', set initial state with data null and loading false, and included a reducer called userLoaded that appeared to mutate state directly (setting state.data and state.loading) but Immer automatically converted it to immutable updates behind the scenes.
 
 "See how much cleaner?" Grand Reducer asked. "No action type constants, no manual action creators, no verbose spreads. Redux Toolkit modernizes Redux while keeping its core principles."
 
