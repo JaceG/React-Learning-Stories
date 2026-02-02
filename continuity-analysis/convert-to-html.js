@@ -346,31 +346,53 @@ function convertMarkdownToHtml(md) {
 		return '<ul>\n' + match + '</ul>\n';
 	});
 
-	// Convert paragraphs (lines that aren't already HTML)
+	// Convert paragraphs (join consecutive lines, split on blank lines)
 	const lines = html.split('\n');
 	const processedLines = [];
-	let inList = false;
+	let currentParagraph = [];
 
 	for (let i = 0; i < lines.length; i++) {
 		const line = lines[i].trim();
 
-		// Skip empty lines
+		// Empty line - end current paragraph
 		if (line === '') {
+			if (currentParagraph.length > 0) {
+				const paragraphText = currentParagraph.join(' ');
+				// Check if it's already HTML or should be wrapped
+				if (paragraphText.startsWith('<') || paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)) {
+					processedLines.push(paragraphText);
+				} else {
+					processedLines.push('<p>' + paragraphText + '</p>');
+				}
+				currentParagraph = [];
+			}
 			processedLines.push('');
 			continue;
 		}
 
 		// Check if line is already HTML or special formatting
 		if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
+			// Flush current paragraph first
+			if (currentParagraph.length > 0) {
+				const paragraphText = currentParagraph.join(' ');
+				processedLines.push('<p>' + paragraphText + '</p>');
+				currentParagraph = [];
+			}
 			processedLines.push(line);
 			continue;
 		}
 
-		// Regular text line - wrap in <p>
-		if (line.length > 0 && !line.startsWith('<')) {
-			processedLines.push('<p>' + line + '</p>');
+		// Regular text line - add to current paragraph
+		currentParagraph.push(line);
+	}
+
+	// Flush any remaining paragraph
+	if (currentParagraph.length > 0) {
+		const paragraphText = currentParagraph.join(' ');
+		if (paragraphText.startsWith('<') || paragraphText.match(/^(https?:\/\/|#{1,4}\s)/)) {
+			processedLines.push(paragraphText);
 		} else {
-			processedLines.push(line);
+			processedLines.push('<p>' + paragraphText + '</p>');
 		}
 	}
 
