@@ -101,7 +101,7 @@
 - **Role**: Keeper of the Composition District
 - **Appears In**: LP3.2 PropsCaravans (Ch1-3)
 - **Location**: Trade Quarter - Composition District (beyond Prop Forge)
-- **Appearance**: [Not extensively described - artisan examining nested structures]
+- **Appearance**: Calm, methodical demeanor; observant eyes that see how pieces fit together; wears practical artisan clothing with component symbols stitched in patterns; carries a leather satchel with nested scrolls
 - **Teaches**: props.children pattern, component composition, prop spreading/rest patterns, prop forwarding, default parameters (vs defaultProps), combining patterns, prop naming conventions
 
 **Echo Keeper Callback**
