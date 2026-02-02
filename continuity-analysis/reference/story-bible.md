@@ -77,7 +77,7 @@
 **Contextia**
 - **Role**: Keeper of the Grand Context
 - **Appears In**: LP2.3 GrandContext (Ch1-3)
-- **Location**: Grand Context Hall - Central Plaza between all four quarters
+- **Location**: Central Nexus - Grand Context Hall
 - **Appearance**: Tall, flowing robes, hands gracefully trace patterns in air making threads glow
 - **Teaches**: Context API, Provider/Consumer pattern, prop drilling solution, custom Context Providers (bundling state + functions), Context optimization (splitting contexts, memoization)
 
@@ -190,7 +190,7 @@
 **Captain Marina**
 - **Role**: Legendary navigation expert of the Central Citadel
 - **Appears In**: LP6.1 NavigationCompass (Ch1-3), LP6.2 WaypointWizardry (Ch1-3), LP6.3 GuardianGates (Ch1-3)
-- **Location**: Central Citadel - crystalline spires, Navigation Command Center with floating maps, Navigation Laboratory, Waypoint Sanctum & Observatory, Navigation Corps training grounds, Guardian Archives, final demonstration chamber, Citadel's highest observation deck
+- **Location**: Central Nexus - Central Citadel (Navigation Command Center) and related facilities (Waypoint Sanctum, Navigation Corps Training Grounds)
 - **Appearance**: [Not extensively described], voice carries warmth/excitement and authority
 - **Teaches**: LP6.1 - routing fundamentals, LP6.2 - advanced waypoint patterns (loaders/actions/metadata, dynamic params, nested routes, Outlets, breadcrumbs, prefetching, scroll restoration), LP6.3 - Guardian Gates (protected routes, authentication/authorization integration, role-based access, advanced portal patterns, multi-step wizards, accessible modals, route-based modals, predictive prefetching)
 
@@ -266,28 +266,28 @@
 **Dean Architectus**
 - **Role**: Master of architectural patterns and component composition
 - **Appears In**: LP9.1 CompoundComponents (Ch1-3)
-- **Location**: Architect's Academy (floating above kingdom - crystalline structure that shifts and reconfigures constantly), entrance, Bonding Chamber (Ch2), academy's main hall transformed into concert stage (Ch3)
+- **Location**: Sky Realm - Architect's Academy
 - **Appearance**: Robes decorated with component diagrams
 - **Teaches**: Compound components (families that share implicit understanding), component families communicate without explicit prop drilling, Context for internal state sharing, React.Children.map for flexible ordering, static properties for clean organization, complex behavior with simple interface, combining patterns (Context + static properties + flexible children), accessibility and keyboard navigation in compound systems
 
 **Pattern Master Renderius**
 - **Role**: Expert in delegation patterns and flexible APIs
 - **Appears In**: LP9.2 RenderProps (Ch1-3)
-- **Location**: Architect's Academy - chamber filled with floating paintbrushes and blank canvases, Advanced Delegation Laboratory (Ch2), workshop for practicing delegation patterns
+- **Location**: Sky Realm - Architect's Academy (Render Props Chamber & Advanced Delegation Laboratory)
 - **Appearance**: [Not extensively described]
 - **Teaches**: Render props (share behavior explicitly, delegate rendering to children), separation of concerns (logic vs presentation), render delegation ("logic says what's happening, consumer says how to show"), maximum flexibility patterns, advanced delegation (prop getters, state reducers, control props), balancing flexibility with ease of use, combining render props with compound components, when to use render props vs hooks, flexible APIs
 
 **Forge Master Enhance**
 - **Role**: Keeper of enhancement patterns and component transformation
 - **Appears In**: LP9.3 HigherOrderComponents (Ch1-3)
-- **Location**: Architect's Academy - Enhancement Forge glowing with transformative energy, deeper forges
+- **Location**: Sky Realm - Architect's Academy (Enhancement Forge)
 - **Appearance**: [Not extensively described]
 - **Teaches**: Higher-Order Components (HOCs - component factories take component return enhanced version), HOC patterns (withAuth/withLogging/withData/withTheme), layering enhancements (composition of multiple HOCs), advanced HOC techniques (props proxy for manipulation, inheritance inversion for deep access, display name preservation), HOC limitations (deep nesting obscures hierarchy affects debugging), when HOCs vs hooks (HOCs for props manipulation/conditional rendering/legacy, hooks for state logic/side effects), Pattern Evolution Timeline (Mixins→HOCs→Render Props→Hooks)
 
 **Portal Keeper Escapius**
 - **Role**: Master of dimensional rendering and DOM manipulation
 - **Appears In**: LP9.4 PortalsRefs (Ch1-3)
-- **Location**: Architect's Academy - final chamber defying physics with portals opening to different DOM parts, Reference Scrolls area (Ch2), evaluation chamber with Dean for final assessment (Ch3)
+- **Location**: Sky Realm - Architect's Academy (Portals & Refs Chamber)
 - **Appearance**: [Not extensively described]
 - **Teaches**: React Portals (render children outside parent's DOM hierarchy while maintaining React tree - essential for modals/tooltips/notifications), portal event propagation (events bubble through React tree not DOM tree), refs (direct DOM access - escape hatch when declarative insufficient), useRef for DOM elements, forwardRef to pass refs through, useImperativeHandle for custom ref APIs, focus management (focus trap), integrating non-React libraries, when refs necessary vs declarative approaches, combining portals with refs
 
@@ -353,14 +353,14 @@
 **Animation Abbess Motia**
 - **Role**: Master of motion, guardian of the Motion Monastery
 - **Appears In**: LP10.4 AnimationLibraries (Ch1-3)
-- **Location**: Motion Monastery (floating serenely above clouds - walls shift, decorations dance, everything flows), three dojos (CSS Transitions/React Spring/Framer Motion), highest tower with view of Fluid Kingdom
+- **Location**: Sky Realm - Motion Monastery & Dojos
 - **Appearance**: Gestures leave glowing trails in air
 - **Teaches**: Animation philosophy (communication not decoration, guide attention/provide feedback/create delight without distraction), CSS transitions (simple but limited), React's unmounting challenge (prevents exit animations), animation library solutions (exit animations/gesture integration/performance/orchestration/spring physics), performance tips (transform/opacity GPU accelerated, avoid layout properties), accessibility (prefers-reduced-motion), three dojos (Framer Motion for DX, React Spring for physics, Lottie for designer animations, React Transition Group for simplicity), Fluid Kingdom principles (purpose/performance/accessibility guide every animation)
 
 **Sensei Framer** (Framer Motion Dojo), **Professor Spring** (React Spring School)
 - **Role**: Dojo masters teaching animation techniques
 - **Appears In**: LP10.4 AnimationLibraries (Ch2)
-- **Location**: Motion Monastery dojos
+- **Location**: Sky Realm - Motion Monastery (Framer Motion Dojo), Sky Realm - Motion Monastery (React Spring School)
 - **Teaches**: Framer Motion (declarative API, variants, AnimatePresence, layout, drag), React Spring (physics-based with mass/tension/friction configs)
 
 ### LP11: Server Data
@@ -368,7 +368,7 @@
 **Cloud Keeper Axios**
 - **Role**: Master of server communication, guardian of the Cloud Citadel
 - **Appears In**: LP11.1 ApiIntegration (Ch1-3)
-- **Location**: Cloud Citadel (massive structure floating above React Kingdom, connected by ethereal data streams), observation deck, Protocol Chambers (REST/GraphQL/WebSockets rooms glow with different hues), highest tower with Data Embassy
+- **Location**: Sky Realm - Cloud Citadel & Data Embassy
 - **Appearance**: [Not extensively described]
 - **Teaches**: Server communication fundamentals (fetch API like diplomatic correspondence), three request states (loading/success/error), REST protocol (GET/POST/PUT/DELETE verbs), headers (authentication tokens, content types), GraphQL basics, WebSockets for real-time, interceptors (request transform, response, error handling), error handling in distributed systems, Data Embassy (production-ready API layer with global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries), "speak the right language, follow protocols, handle delays gracefully"
 
