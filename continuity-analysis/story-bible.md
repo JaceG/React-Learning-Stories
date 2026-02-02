@@ -88,6 +88,15 @@
 - **Appearance**: Elderly, meditating figure, robes bear patterns that shift like flowing data, wise eyes
 - **Teaches**: useReducer hook, reducer pattern, Redux (three principles, history), modern state libraries (Zustand, Jotai, Recoil, MobX), choosing state management tools
 
+### LP3: Props Data Flow
+
+**Master Smith Destructo**
+- **Role**: Master smith of the Prop Forge
+- **Appears In**: LP3.1 PropForge (Ch1-3)
+- **Location**: Industrial Quarter - Prop Forge
+- **Appearance**: Weathered face, singed beard edges, eyes sparkle with data flame reflections, wields glowing hammer
+- **Teaches**: Destructuring (extracting props), spread operator (merging/transforming), prop validation (PropTypes/TypeScript), default values, prop immutability
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -108,6 +117,7 @@
 - **LP2.2**: Chirps excitedly about hooks granting abilities, lights flicker nervously about "dangerous" useEffect, lights dance with excitement about Grand Context
 - **LP2.3**: Whistles in awe at thread connections, circuits sparkle with interest, lights dim when learning cost of re-renders, buzzes with excitement at chapter end
 - **LP2.4**: Whirrs thoughtfully about complex state, lights flicker with recognition about Redux, circuits sparkle with curiosity about alternatives, chirps proudly at completion
+- **LP3.1**: Beams proudly with light show, processors whir at simple three dots, projects warning symbols for type errors, displays holographic forge miniature
 
 *[More contributions to be added as extraction continues]*
 
@@ -175,6 +185,15 @@
 - Redux → "Redux Codex", "most influential pattern", "single source of truth"
 - Redux Principles → Three sacred principles (single source of truth, read-only state, pure functions)
 - Modern libraries → "glowing portals" (Zustand blue, Jotai violet, Recoil crimson, MobX silver)
+
+### LP3: Props Data Flow
+
+**LP3.1 PropForge**:
+- Destructuring → "ancient art", "extracting essence with surgical precision", "backup plan" (defaults)
+- Spread operator → "three dots", "spread enchantment", "merge like pouring metals into mold", "later overrides earlier"
+- Props → "contracts", "promises between components", "carefully crafted artifacts", "read-only"
+- Prop validation → "Validation Vault", "quality inspector", "glowing runes checking types", "PropTypes/TypeScript"
+- Prop transformation → "forging", "molten data flows", "refined and reshaped"
 
 *[More translations to be added as extraction continues]*
 
