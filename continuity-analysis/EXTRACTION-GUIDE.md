@@ -44,10 +44,10 @@ LP5: Forms Events (4 lessons) ✅ COMPLETE
   [✓] 5.3 ValidationGuardians (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 5.4 SubmissionPortals (Ch1, Ch2, Ch3) - COMPLETE
 
-LP6: Routing Navigation (3 lessons)
+LP6: Routing Navigation (3 lessons) ✅ COMPLETE
   [✓] 6.1 NavigationCompass (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 6.2 WaypointWizardry (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 6.3 PortalPassages (Ch1, Ch2, Ch3)
+  [✓] 6.3 GuardianGates (Ch1, Ch2, Ch3) - COMPLETE
 
 LP7: Performance Optimization (4 lessons)
   [ ] 7.1 MemoryMonastery (Ch1, Ch2, Ch3)
