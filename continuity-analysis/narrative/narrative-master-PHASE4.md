@@ -1589,9 +1589,9 @@ As the afternoon sun filtered through the forge's crystalline windows, Master Ho
 
 Aria examined each tool carefully. useRef looked different from other hooks - it glowed with a steady, unchanging light rather than the reactive pulse of useState. useMemo and useCallback both had optimization runes etched into their surfaces. "They look powerful, but when would I need them instead of useState or useEffect?"
 
-"Excellent question!" Master Hooke beamed, clearly pleased by her analytical thinking. "Each solves a specific problem. useRef is for values that persist between renders but don't trigger re-renders when changed. useState triggers renders - sometimes you want that, sometimes you don't. useRef is the latter."
+"Excellent question!" Master Hooke beamed, clearly pleased by Aria's analytical thinking. "Each solves a specific problem. useRef is for values that persist between renders but don't trigger re-renders when changed. useState triggers renders - sometimes you want that, sometimes you don't. useRef is the latter."
 
-She demonstrated: "Need to store a DOM reference? useRef. Need to track the previous value of a prop? useRef. Need to hold a mutable value that shouldn't cause re-renders? useRef. It's like a secret pocket that React doesn't watch."
+He demonstrated: "Need to store a DOM reference? useRef. Need to track the previous value of a prop? useRef. Need to hold a mutable value that shouldn't cause re-renders? useRef. It's like a secret pocket that React doesn't watch."
 
 **Story Group 2:**
 
