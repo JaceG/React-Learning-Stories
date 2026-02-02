@@ -248,13 +248,13 @@
 **Memory Monastery** (LP7.1)
 - Location: Floating in clouds above React Kingdom
 - Key features: Observatory with ethereal memory representations, viewing portals
-- Mentor: Brother Binary (⚠️ name conflict with Aria's companion)
+- Mentor: Brother Memor (✅ renamed to avoid conflict with Aria's companion Binary)
 - Teaching: Memory leaks, memory profiling, cleanup
 
 **Lazy Library** (LP7.2)
 - Location: Mystical repository
 - Key features: Towering shelves, books blocked at entrance, floating books in Lazy Wing
-- Mentor: Keeper Chronos (⚠️ returns from LP1)
+- Mentor: Keeper Libris (✅ new character, replacing Chronos from LP1)
 - Teaching: Lazy loading, code splitting, React.lazy, Suspense
 
 **Virtualization Vault** (LP7.3)
