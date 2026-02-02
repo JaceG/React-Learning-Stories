@@ -2,389 +2,394 @@ const fs = require('fs');
 const path = require('path');
 
 // Read the markdown file
-const mdPath = path.join(__dirname, 'narrative-master-EDITED.md');
-const markdown = fs.readFileSync(mdPath, 'utf-8');
+const inputFile = path.join(__dirname, 'narrative-master-EDITED.md');
+const outputFile = path.join(__dirname, 'narrative-master-EDITED.html');
 
-// Helper function to create valid HTML IDs
-function createId(text) {
-	return text
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, '-')
-		.replace(/^-+|-+$/g, '');
-}
+console.log('Reading markdown file...');
+const markdown = fs.readFileSync(inputFile, 'utf8');
 
-// Convert markdown to HTML with special handling for diff markers
-function convertToHTML(md) {
+console.log('Converting to HTML...');
+
+// HTML header with comprehensive styling
+const htmlHeader = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Learning Stories - Narrative Master (EDITED)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            padding: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        /* Headers */
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h1:first-child {
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.7em;
+            margin: 35px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        h3 {
+            color: #2980b9;
+            font-size: 1.4em;
+            margin: 30px 0 12px 0;
+        }
+        
+        h4 {
+            color: #16a085;
+            font-size: 1.2em;
+            margin: 25px 0 10px 0;
+        }
+        
+        /* Paragraphs and text */
+        p {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+        
+        /* Bold and italic */
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        em {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* Change tracking styles */
+        .deletion {
+            text-decoration: line-through;
+            color: #e74c3c;
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .addition {
+            background: #e8f5e9;
+            color: #27ae60;
+            font-weight: 600;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .edit-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #856404;
+        }
+        
+        .edit-note::before {
+            content: "💡 ";
+            font-style: normal;
+        }
+        
+        /* Status boxes */
+        .status-box {
+            background: #e8f5e9;
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .issue-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        /* Separators */
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 40px 0;
+        }
+        
+        /* Code blocks */
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        /* Story content specific styles */
+        .story-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .journal-entry {
+            background: #fff8dc;
+            border: 2px solid #daa520;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        
+        .character-box {
+            background: #e8f4f8;
+            border: 2px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        
+        .wisdom-box {
+            background: #f0f8ff;
+            border-left: 5px solid #4169e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .toc a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Emojis */
+        .emoji {
+            font-style: normal;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .deletion {
+                background: none;
+                color: #666;
+            }
+            
+            .addition {
+                background: none;
+                color: #000;
+                font-weight: bold;
+            }
+            
+            .edit-note {
+                background: #f8f8f8;
+                page-break-inside: avoid;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            
+            .story-group, .journal-entry, .character-box {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+`;
+
+const htmlFooter = `
+    </div>
+</body>
+</html>`;
+
+// Convert markdown to HTML
+function convertMarkdownToHtml(md) {
 	let html = md;
 
-	// Convert headers with proper IDs
-	html = html.replace(/^# (.*?)$/gm, (match, title) => {
-		const id = createId(title);
-		return `<h1 id="${id}">${title}</h1>`;
-	});
-	html = html.replace(/^## (.*?)$/gm, (match, title) => {
-		const id = createId(title);
-		return `<h2 id="${id}">${title}</h2>`;
-	});
+	// Convert headers (must be done first, before other conversions)
+	html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+	html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
 	html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
 	html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
-
-	// Convert inline code FIRST (before bold/italic to avoid conflicts)
-	html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-
-	// Convert diff markers with special styling
-	// Red strikethrough for deletions
-	html = html.replace(/🔴 ~~(.*?)~~/g, '<span class="deleted">$1</span>');
-
-	// Green bold for additions
-	html = html.replace(/🟢 \*\*(.*?)\*\*/g, '<span class="added">$1</span>');
-
-	// Edit notes with special styling
-	html = html.replace(
-		/💡 \*\*EDIT NOTE:\*\* (.*?)$/gm,
-		'<div class="edit-note">💡 <strong>EDIT NOTE:</strong> $1</div>'
-	);
-
-	// Regular bold and italic (after code conversion)
-	html = html.replace(
-		/\*\*\*\*(.*?)\*\*\*\*/g,
-		'<strong><em>$1</em></strong>'
-	);
-	html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
-	html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-	html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-	// Convert lists
-	html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
-	html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
 
 	// Convert horizontal rules
 	html = html.replace(/^---$/gm, '<hr>');
 
-	// Convert paragraphs - group consecutive non-empty lines together
+	// Convert change tracking elements
+	// Deletions: ~~text~~ -> <span class="deletion">text</span>
+	html = html.replace(/~~(.*?)~~/g, '<span class="deletion">$1</span>');
+
+	// Additions: **[ADDED: text]** -> <span class="addition">text</span>
+	html = html.replace(
+		/\*\*\[ADDED:\s*(.*?)\]\*\*/g,
+		'<span class="addition">$1</span>'
+	);
+
+	// Edit notes: 💡 **EDIT NOTE:** text -> <div class="edit-note">text</div>
+	html = html.replace(
+		/💡\s*\*\*EDIT NOTE[:\s]*\*\*\s*(.*?)(?=\n\n|\n(?=[A-Z#*])|$)/gs,
+		'<div class="edit-note">$1</div>'
+	);
+
+	// Convert bold (must be after ADDED pattern)
+	html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+	// Convert italic
+	html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+	// Convert bullet lists
+	html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+	html = html.replace(/(<li>.*?<\/li>\n)+/gs, function (match) {
+		return '<ul>\n' + match + '</ul>\n';
+	});
+
+	// Convert paragraphs (lines that aren't already HTML)
 	const lines = html.split('\n');
-	const paragraphs = [];
-	let currentParagraph = [];
-	
+	const processedLines = [];
+	let inList = false;
+
 	for (let i = 0; i < lines.length; i++) {
-		const line = lines[i];
-		const trimmed = line.trim();
-		
-		// If empty line, close current paragraph
-		if (trimmed === '') {
-			if (currentParagraph.length > 0) {
-				const joined = currentParagraph.join(' ').trim();
-				// Check if it's already a block element
-				if (joined.match(/^<(h\d|div|ul|ol|hr|li|blockquote|strong|em)/)) {
-					paragraphs.push(joined);
-				} else {
-					paragraphs.push(`<p>${joined}</p>`);
-				}
-				currentParagraph = [];
-			}
-			paragraphs.push('');
+		const line = lines[i].trim();
+
+		// Skip empty lines
+		if (line === '') {
+			processedLines.push('');
 			continue;
 		}
-		
-		// If it's a block-level element, close current paragraph and add it
-		if (trimmed.match(/^<(h\d|div|ul|hr|blockquote)/)) {
-			if (currentParagraph.length > 0) {
-				const joined = currentParagraph.join(' ').trim();
-				paragraphs.push(`<p>${joined}</p>`);
-				currentParagraph = [];
-			}
-			paragraphs.push(line);
+
+		// Check if line is already HTML or special formatting
+		if (line.startsWith('<') || line.match(/^(https?:\/\/|#{1,4}\s)/)) {
+			processedLines.push(line);
 			continue;
 		}
-		
-		// Otherwise, add to current paragraph
-		currentParagraph.push(line);
-	}
-	
-	// Don't forget the last paragraph
-	if (currentParagraph.length > 0) {
-		const joined = currentParagraph.join(' ').trim();
-		if (joined.match(/^<(h\d|div|ul|hr|blockquote)/)) {
-			paragraphs.push(joined);
+
+		// Regular text line - wrap in <p>
+		if (line.length > 0 && !line.startsWith('<')) {
+			processedLines.push('<p>' + line + '</p>');
 		} else {
-			paragraphs.push(`<p>${joined}</p>`);
+			processedLines.push(line);
 		}
 	}
-	
-	html = paragraphs.join('\n');
+
+	html = processedLines.join('\n');
+
+	// Clean up excessive newlines
+	html = html.replace(/\n{3,}/g, '\n\n');
 
 	return html;
 }
 
-// Create HTML with styling
-const htmlContent = convertToHTML(markdown);
+const htmlContent = convertMarkdownToHtml(markdown);
+const fullHtml = htmlHeader + htmlContent + htmlFooter;
 
-const fullHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>React Learning Stories - Narrative (Edited)</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    
-    h1 {
-      color: #2c3e50;
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 10px;
-      margin: 40px 0 20px 0;
-      font-size: 2.5em;
-      scroll-margin-top: 100px;
-    }
-    
-    h2 {
-      color: #34495e;
-      border-bottom: 2px solid #95a5a6;
-      padding-bottom: 8px;
-      margin: 35px 0 15px 0;
-      font-size: 2em;
-      scroll-margin-top: 20px;
-    }
-    
-    h3 {
-      color: #555;
-      margin: 25px 0 12px 0;
-      font-size: 1.5em;
-    }
-    
-    h4 {
-      color: #666;
-      margin: 20px 0 10px 0;
-      font-size: 1.2em;
-    }
-    
-    p {
-      margin: 12px 0;
-      text-align: justify;
-    }
-    
-    code {
-      background-color: #f4f4f4;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      padding: 2px 6px;
-      font-family: 'Monaco', 'Courier New', monospace;
-      font-size: 0.9em;
-      color: #c7254e;
-    }
-    
-    ul {
-      margin: 15px 0;
-      padding-left: 30px;
-    }
-    
-    li {
-      margin: 8px 0;
-    }
-    
-    hr {
-      border: none;
-      border-top: 2px solid #ddd;
-      margin: 30px 0;
-    }
-    
-    /* Diff marker styling */
-    .deleted {
-      background-color: #ffebee;
-      color: #c62828;
-      text-decoration: line-through;
-      padding: 2px 4px;
-      border-radius: 3px;
-      font-weight: 500;
-    }
-    
-    .added {
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      font-weight: bold;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-    
-    .edit-note {
-      background-color: #fff3e0;
-      border-left: 4px solid #ff9800;
-      padding: 12px 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-      font-size: 0.95em;
-      color: #e65100;
-    }
-    
-    .edit-note strong {
-      color: #bf360c;
-    }
-    
-    /* Table of contents styling - Compact top bar */
-    #toc {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 15px 20px;
-      margin: 0 0 30px 0;
-      border-radius: 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    
-    #toc h2 {
-      margin: 0 0 10px 0;
-      border: none;
-      color: white;
-      font-size: 1.2em;
-      display: inline-block;
-      margin-right: 20px;
-    }
-    
-    #toc ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    #toc li {
-      margin: 0;
-      display: inline-block;
-    }
-    
-    #toc a {
-      color: white;
-      text-decoration: none;
-      padding: 6px 12px;
-      display: inline-block;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.2);
-      font-size: 0.9em;
-      transition: all 0.2s;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-    
-    #toc a:hover {
-      background: rgba(255,255,255,0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    
-    /* Print styles */
-    @media print {
-      body {
-        background: white;
-        max-width: none;
-      }
-      
-      #toc {
-        background: white;
-        color: black;
-        border: 2px solid #333;
-        page-break-after: always;
-        padding: 20px;
-      }
-      
-      #toc h2 {
-        color: black;
-      }
-      
-      #toc a {
-        color: #333;
-        background: #f0f0f0;
-        border-color: #333;
-      }
-      
-      #toc ul {
-        flex-direction: column;
-      }
-      
-      h1, h2, h3 {
-        page-break-after: avoid;
-      }
-      
-      .edit-note {
-        page-break-inside: avoid;
-      }
-    }
-    
-    /* Mobile styles */
-    @media (max-width: 768px) {
-      body {
-        padding: 15px;
-      }
-      
-      h1 {
-        font-size: 2em;
-      }
-      
-      h2 {
-        font-size: 1.6em;
-      }
-      
-      #toc ul {
-        flex-direction: column;
-      }
-      
-      #toc a {
-        display: block;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="toc">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px;">
-      <h2>📚 Navigation:</h2>
-      <ul>
-        <li><a href="#1-components-basics">1. Components</a></li>
-        <li><a href="#2-state-management">2. State</a></li>
-        <li><a href="#3-props-data-flow">3. Props</a></li>
-        <li><a href="#4-hooks-in-action">4. Hooks</a></li>
-        <li><a href="#5-forms-events">5. Forms</a></li>
-        <li><a href="#6-routing-navigation">6. Routing</a></li>
-        <li><a href="#7-performance-optimization">7. Performance</a></li>
-        <li><a href="#8-testing-debugging">8. Testing</a></li>
-        <li><a href="#9-advanced-patterns">9. Advanced</a></li>
-        <li><a href="#10-react-ecosystem">10. Ecosystem</a></li>
-        <li><a href="#11-server-data">11. Server</a></li>
-        <li><a href="#12-typescript-react">12. TypeScript</a></li>
-        <li><a href="#13-build-deploy">13. Build</a></li>
-        <li><a href="#14-react-native">14. Native</a></li>
-        <li><a href="#15-accessibility">15. A11y</a></li>
-      </ul>
-    </div>
-  </div>
+console.log('Writing HTML file...');
+fs.writeFileSync(outputFile, fullHtml, 'utf8');
 
-  ${htmlContent}
-  
-  <script>
-    // No JavaScript needed - browser handles anchor links natively!
-    // The scroll-margin-top CSS property handles the offset automatically
-  </script>
-</body>
-</html>`;
-
-// Write HTML file
-const htmlPath = path.join(__dirname, 'narrative-master-EDITED.html');
-fs.writeFileSync(htmlPath, fullHTML, 'utf-8');
-
-console.log('✅ HTML file created successfully!');
-console.log(`📁 Location: ${htmlPath}`);
-console.log('📄 You can now open this file in your browser and export as PDF');
+console.log('✅ Conversion complete!');
+console.log(`Input: ${inputFile}`);
+console.log(`Output: ${outputFile}`);
+console.log(`File size: ${(fullHtml.length / 1024).toFixed(2)} KB`);
+console.log(`Lines: ${fullHtml.split('\n').length}`);
