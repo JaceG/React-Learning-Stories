@@ -61,21 +61,57 @@ function convertToHTML(md) {
 	// Convert horizontal rules
 	html = html.replace(/^---$/gm, '<hr>');
 
-	// Convert paragraphs (lines that aren't already HTML)
+	// Convert paragraphs - group consecutive non-empty lines together
 	const lines = html.split('\n');
-	const processedLines = lines.map((line) => {
-		// Skip if already HTML or empty
-		if (line.trim() === '' || line.match(/^<[^>]+>/)) {
-			return line;
+	const paragraphs = [];
+	let currentParagraph = [];
+	
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i];
+		const trimmed = line.trim();
+		
+		// If empty line, close current paragraph
+		if (trimmed === '') {
+			if (currentParagraph.length > 0) {
+				const joined = currentParagraph.join(' ').trim();
+				// Check if it's already a block element
+				if (joined.match(/^<(h\d|div|ul|ol|hr|li|blockquote|strong|em)/)) {
+					paragraphs.push(joined);
+				} else {
+					paragraphs.push(`<p>${joined}</p>`);
+				}
+				currentParagraph = [];
+			}
+			paragraphs.push('');
+			continue;
 		}
-		// If it's regular text, wrap in paragraph
-		if (!line.match(/^#|^<|^-|^\*/)) {
-			return `<p>${line}</p>`;
+		
+		// If it's a block-level element, close current paragraph and add it
+		if (trimmed.match(/^<(h\d|div|ul|hr|blockquote)/)) {
+			if (currentParagraph.length > 0) {
+				const joined = currentParagraph.join(' ').trim();
+				paragraphs.push(`<p>${joined}</p>`);
+				currentParagraph = [];
+			}
+			paragraphs.push(line);
+			continue;
 		}
-		return line;
-	});
-
-	html = processedLines.join('\n');
+		
+		// Otherwise, add to current paragraph
+		currentParagraph.push(line);
+	}
+	
+	// Don't forget the last paragraph
+	if (currentParagraph.length > 0) {
+		const joined = currentParagraph.join(' ').trim();
+		if (joined.match(/^<(h\d|div|ul|hr|blockquote)/)) {
+			paragraphs.push(joined);
+		} else {
+			paragraphs.push(`<p>${joined}</p>`);
+		}
+	}
+	
+	html = paragraphs.join('\n');
 
 	return html;
 }
