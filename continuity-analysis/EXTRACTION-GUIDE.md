@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP11.1 ApiIntegration ✅
+**Last Completed**: LP11.2 RealtimeConnections ✅
 
-**Next Lesson**: LP11.2 RealtimeConnections
+**Next Lesson**: LP11.3 CachingCastle
 
 **Progress Tracker**:
 ```

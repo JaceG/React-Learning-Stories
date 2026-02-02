@@ -372,6 +372,13 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: Server communication fundamentals (fetch API like diplomatic correspondence), three request states (loading/success/error), REST protocol (GET/POST/PUT/DELETE verbs), headers (authentication tokens, content types), GraphQL basics, WebSockets for real-time, interceptors (request transform, response, error handling), error handling in distributed systems, Data Embassy (production-ready API layer with global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries), "speak the right language, follow protocols, handle delays gracefully"
 
+**Stream Sage WebSocket**
+- **Role**: Guardian of the Living Streams, master of real-time connections
+- **Appears In**: LP11.2 RealtimeConnections (Ch1-3)
+- **Location**: Living Streams flowing around them, deeper flowing data areas, highest observation platform over Omnipresent Network
+- **Appearance**: Appears in shimmer of constantly updating data
+- **Teaches**: Real-time connections (WebSockets full-duplex, Server-Sent Events server-to-client, Long Polling compatibility), continuous conversation vs request-response, synchronization complexity (multiple users/concurrent updates/race conditions/consistency), optimistic updates (changes appear instantly while confirming with server), conflict resolution strategies (Last-Write-Wins simple/data loss, Merge complex/preserves both, Manual user decides), event ordering for causality, Omnipresent Network (presence tracking, live cursors, push notifications, cross-device sync), collaborative systems, "real-time is foundation of modern applications"
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -818,6 +825,20 @@
 - Interceptors → "request transform, response, error handling", "cross-cutting concerns"
 - Data Embassy → "highest tower", "permanent connection", "production-ready API layer", "robust communication infrastructure"
 - Embassy features → "global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries"
+
+**LP11.2 RealtimeConnections**:
+- Living Streams → "flowing around them", "data flows like water - always moving, always connected"
+- Stream Sage → "appears in shimmer of constantly updating data"
+- Real-time → "continuous conversation" vs "letters" (traditional APIs)
+- WebSockets → "full-duplex communication", "always-open portal" (🔌)
+- Server-Sent Events → "efficient server-to-client streaming" (📡)
+- Long Polling → "ensures compatibility" (🔄)
+- Synchronization → "great connectivity comes great complexity", "multiple users/concurrent updates/race conditions/consistency"
+- Conflict resolution → Last-Write-Wins (simple/data loss), Merge (complex/preserves), Manual (user decides)
+- Optimistic updates → "changes appear instantly while confirming in background"
+- Omnipresent Network → "highest observation platform", "ultimate pattern", "users feel connected as one", "distance irrelevant"
+- Real-time features → presence tracking (👥), live cursors (🖱️), push notifications (🔔), cross-device sync (🔄)
+- Network mastery → "shared spaces where users collaborate naturally", "millions of messages perfectly synchronized"
 
 *[More translations to be added as extraction continues]*
 
