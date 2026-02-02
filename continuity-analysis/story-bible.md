@@ -202,6 +202,7 @@
 - **LP5.1**: Analyzes event flows projecting waveforms/patterns, adds cheerfully about consistency, scanners track flows applying Academy knowledge, displays performance metrics (handler count reduction), processors whir excitedly, displays metrics showing improvements, displays map route
 - **LP5.2**: Analyzes reactions projecting chemical formulas/React patterns, projects holographic code editor, adds excitedly about pattern efficiency (73% increase), processors hum at maximum capacity, projects statistics (95% validation/98% UX/100% reusability), projects fortress on map
 - **LP5.3**: Sensors analyze fortress defenses suggesting optimization, displays tactical analysis (82% coordination/67% response/99.7% accuracy), projects analysis of struggles, displays updated metrics (94% efficiency/0.3s response/78% cache hit), projects vulnerabilities, displays final metrics (99.8%/96%/100%), circuits spark with anticipation
+- **LP5.4**: Sensors detect massive energy fluctuations, projects analysis (34% retry/67% abandonment), displays improved metrics (89% retry/12% abandonment/3x faster), detects multiple pattern types, displays final analysis (99.7% efficiency/zero conflicts/"Forms & Events mastery"), displays new map marker
 
 *[More contributions to be added as extraction continues]*
 
@@ -370,6 +371,16 @@
 - Async validation → "elite guardians checking distant servers", debouncing prevents "server overload"
 - Validation timing → "stance" (onChange/onBlur/onSubmit), "invisible when right, helpful when needed"
 - Ultimate system → "impenetrable fortress with welcoming gates", "guide not gatekeeper", "multi-stage defense"
+
+**LP5.4 SubmissionPortals**:
+- Form submission → "portal", "gateway between application and outside world", "swirling vortex of energy"
+- preventDefault() → "fundamental secret", "single incantation", "portal control", "transforms chaotic browser behavior"
+- Submission states → "journey phases" (idle, validating, submitting, success, error)
+- Advanced patterns → "transmission arrays", "portal chamber", "making transmissions feel instant"
+- Optimistic updates → "UI feels instant while server processes"
+- Retry logic → "exponential backoff", "resilience"
+- Cancellation → "gives users control over their destiny"
+- Grand Synthesis → "unified whole", "all patterns dancing together", "movements in same composition harmonizing"
 
 *[More translations to be added as extraction continues]*
 
