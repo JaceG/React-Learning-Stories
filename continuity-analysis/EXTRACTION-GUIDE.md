@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP10.2 StylingSolutions ✅
+**Last Completed**: LP10.3 FormLibraries ✅
 
-**Next Lesson**: LP10.3 FormLibraries
+**Next Lesson**: LP10.4 AnimationLibraries
 
 **Progress Tracker**:
 ```
