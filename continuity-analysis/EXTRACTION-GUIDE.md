@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP9.1 CompoundComponents ✅
+**Last Completed**: LP9.2 RenderProps ✅
 
-**Next Lesson**: LP9.2 RenderProps
+**Next Lesson**: LP9.3 HigherOrderHalls
 
 **Progress Tracker**:
 ```
@@ -62,8 +62,8 @@ LP8: Testing Debugging (4 lessons) ✅ COMPLETE
   [✓] 8.4 ErrorEnchantments (Ch1, Ch2, Ch3) - COMPLETE
 
 LP9: Advanced Patterns (3 lessons)
-  [ ] 9.1 CompoundComponents (Ch1, Ch2, Ch3)
-  [ ] 9.2 RenderProps (Ch1, Ch2, Ch3)
+  [✓] 9.1 CompoundComponents (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 9.2 RenderProps (Ch1, Ch2, Ch3) - COMPLETE
   [ ] 9.3 HigherOrderHalls (Ch1, Ch2, Ch3)
 
 LP10: TypeScript (3 lessons)

@@ -270,6 +270,13 @@
 - **Appearance**: Robes decorated with component diagrams
 - **Teaches**: Compound components (families that share implicit understanding), component families communicate without explicit prop drilling, Context for internal state sharing, React.Children.map for flexible ordering, static properties for clean organization, complex behavior with simple interface, combining patterns (Context + static properties + flexible children), accessibility and keyboard navigation in compound systems
 
+**Pattern Master Renderius**
+- **Role**: Expert in delegation patterns and flexible APIs
+- **Appears In**: LP9.2 RenderProps (Ch1-3)
+- **Location**: Architect's Academy - chamber filled with floating paintbrushes and blank canvases, Advanced Delegation Laboratory (Ch2), workshop for practicing delegation patterns
+- **Appearance**: [Not extensively described]
+- **Teaches**: Render props (share behavior explicitly, delegate rendering to children), separation of concerns (logic vs presentation), render delegation ("logic says what's happening, consumer says how to show"), maximum flexibility patterns, advanced delegation (prop getters, state reducers, control props), balancing flexibility with ease of use, combining render props with compound components, when to use render props vs hooks, flexible APIs
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -620,6 +627,19 @@
 - Compound patterns → Tabs, Accordions, Selects (families)
 - Component symphony → "main hall transforms into concert stage", "each maintains state while contributing to greater whole", "hundreds of interactions yet API simple"
 - Compound mastery → "hide complexity while providing flexibility", "complex behavior simple interface"
+
+**LP9.2 RenderProps**:
+- Render props → "share behavior explicitly", "delegate rendering to children", "giving someone paintbrush but guiding hand"
+- Chamber → "filled with floating paintbrushes and blank canvases"
+- Delegation → "logic provider says what's happening, presentation consumer says how to show"
+- Separation → "logic vs presentation", "what happens vs how it looks"
+- Advanced Delegation Laboratory → "advanced patterns balancing flexibility and ease"
+- Prop getters → "reduce boilerplate", "just spread and done"
+- State reducers → "consumers intercept and control state changes", "ultimate power"
+- Control props → "support both controlled and uncontrolled modes"
+- Flexibility vs complexity → "tradeoff balance visualization", "more flexibility = more complexity for consumers"
+- Pattern combination → "default UI with compounds, render prop overrides for customization"
+- Comparison → "Compounds=intuitive high simplicity, Render Props=maximum flexibility lower simplicity, Hooks=modern balance"
 
 *[More translations to be added as extraction continues]*
 
