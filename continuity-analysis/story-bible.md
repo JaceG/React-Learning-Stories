@@ -67,6 +67,13 @@
 - **Appearance**: Flowing robes, staff with constantly shifting orb of light
 - **Teaches**: useState, state as memory, immutability, spread operator, state patterns
 
+**Forge Master Hooke**
+- **Role**: Master hook crafter
+- **Appears In**: LP2.2 MagicalHooks (Ch1-3)
+- **Location**: Hook Forge
+- **Appearance**: Sturdy, leather apron, sparks flying from hooks being crafted
+- **Teaches**: Hook family overview (useState, useEffect, useRef, useMemo, useCallback), useEffect dependencies, cleanup functions, specialized hooks
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -84,6 +91,7 @@
 - **LP1.3**: Explains curly braces, illuminates JSX rules, gives tiny high-five
 - **LP1.4**: Bounces excitedly, uses flower metaphor, warns about ghost timers, spins happily
 - **LP2.1**: Explains state memory, teaches immutability, projects calculations, twirls
+- **LP2.2**: Chirps excitedly about hooks granting abilities, lights flicker nervously about "dangerous" useEffect, lights dance with excitement about Grand Context
 
 *[More contributions to be added as extraction continues]*
 
@@ -127,6 +135,15 @@
 - Immutability → "creating new memories" (not changing existing)
 - Spread operator → "magical copy spell"
 - State patterns → "co-location", "lifting state up"
+
+**LP2.2 MagicalHooks**:
+- Hooks → "magical tools crafted at glowing anvils", "grant abilities to functional components"
+- useEffect → "hook of consequences", "bridge between component's inner world and vast ecosystem"
+- Dependencies → "dependency array controls when effects activate"
+- Cleanup → "preventing memory leaks and ghost effects"
+- useRef → "secret pocket", "memory crystal"
+- useMemo → "calculation cache"
+- useCallback → "function preserver"
 
 *[More translations to be added as extraction continues]*
 

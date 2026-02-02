@@ -243,16 +243,38 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 ---
 
 ### Hook Forge
-**First Mentioned**: State Management → MagicalHooks → Ch1
+**First Mentioned**: LP2.2 MagicalHooks Ch1
 
 **Quarter**: [Not specified - possibly near Eastern Quarter state facilities]
 
-**Features**:
-- Glowing anvils
-- Crystalline tubes carrying React energy
-- Workstations for crafting hooks
+**Architecture**:
+- Massive workshop with glowing anvils ringing with hook-crafting sounds
+- Crystalline tubes carrying pure React energy to each workstation
+- Multiple workstations where apprentices craft different hooks
+- Special vault (Ch3) containing most specialized hooks
+- Ornate chest with precision instruments
+- Crystalline apparatus on workbenches
+- Crystalline windows (afternoon sun filtering through)
 
-**Master**: Forge Master Hooke
+**Atmosphere**:
+- Air hums with magical energy
+- Sparks flying from hooks being crafted
+- Sound of anvils ringing throughout
+- Productive, workshop energy
+- Runes glowing around advanced workstations (useEffect area)
+
+**Visual Details**:
+- Glowing anvils actively crafting hooks
+- React energy flowing through crystalline tubes
+- Sparks and magical energy visible
+- Hooks gleaming as they're completed
+- Runes surrounding dangerous/advanced hook areas
+
+**Master**: Forge Master Hooke (master crafter, sturdy figure in leather apron)
+
+**Teaches**: Hook family (useState, useEffect, useRef, useMemo, useCallback), dependencies, cleanup, optimization hooks
+
+**Connection to Teaching**: Forge/crafting metaphor = hook creation tools; anvils = building hooks; crystalline tubes = React power flowing; specialized vault = advanced hook patterns
 
 **Lessons Taught**: useState, useEffect, useRef, useMemo, useCallback
 

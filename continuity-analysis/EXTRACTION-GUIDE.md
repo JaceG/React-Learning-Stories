@@ -22,7 +22,8 @@ LP1: Components Basics (4 lessons) ✅ COMPLETE
 
 LP2: State Management (4 lessons)
   [✓] 2.1 StateSorcerers (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 2.2 MagicalHooks (Ch1, Ch2, Ch3)
+  [✓] 2.2 MagicalHooks (Ch1, Ch2, Ch3) - COMPLETE
+  [ ] 2.3 GrandContext (Ch1, Ch2, Ch3)
   [ ] 2.3 ContextConclave (Ch1, Ch2, Ch3)
   [ ] 2.4 StateManagementAdventures (Ch1, Ch2, Ch3)
 
