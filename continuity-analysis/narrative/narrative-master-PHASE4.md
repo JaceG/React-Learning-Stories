@@ -12651,7 +12651,1107 @@ Marina led her toward the Portal Passages, the final lesson of the Central Citad
 
 ---
 
-🚧 **WORK IN PROGRESS - LP6.4, LP7 (5 lessons remaining)**
+## 6.4 PortalPassages
+
+### 📖 Lesson Opener
+
+Marina led Aria from the Guardian Gates training grounds to the Portal Passages chamber deep within the Central Citadel complex - a mysterious space where reality seemed to fold upon itself. Floating portals shimmered in the air, each showing different UI elements that existed simultaneously in multiple dimensions. Here, she would learn the most advanced navigation concepts - how React portals create parallel dimensions for UI elements that need to escape the normal DOM hierarchy while maintaining all routing intelligence.
+
+### Chapter 1: Route-Based Modals and Portals
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended portal introduction with React's createPortal and route-driven modal patterns]**
+
+"Today, you'll learn something special that unites navigation with DOM rendering magic," Marina announced, activating holographic portals that floated around the chamber. Each portal showed a different modal, tooltip, or overlay - all rendered outside their parent hierarchies yet maintaining perfect React coordination. "I'll teach you how to create portal-based navigation that escapes DOM constraints, maintains routing state, handles forms across boundaries, and provides seamless transitions - all while preserving React's declarative model and accessibility!"
+
+Marina activated a demonstration showing portals in action. "Portal Passages combine every concept in our kingdom," she explained, gesturing to interconnected patterns. "Components provide structure for modals, state manages portal visibility, effects handle focus management and accessibility, forms can span across portal boundaries, and navigation coordinates everything through URLs. Watch how they unite!"
+
+She demonstrated React's createPortal:
+```javascript
+import { createPortal } from 'react-dom';
+
+// Modal renders outside parent hierarchy!
+function Modal({ isOpen, onClose, children }) {
+  if (!isOpen) return null;
+  
+  // Render to document.body instead of parent
+  return createPortal(
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>,
+    document.body  // Portal target!
+  );
+}
+
+// Usage - modal renders at body level despite component hierarchy
+function ProductPage() {
+  const [showModal, setShowModal] = useState(false);
+  
+  return (
+    <div className="product" style={{ overflow: 'hidden' }}>
+      <button onClick={() => setShowModal(true)}>Delete</button>
+      
+      {/* Renders at document.body, not inside product div! */}
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <h2>Delete Item?</h2>
+        <p>This action cannot be undone.</p>
+        <button onClick={handleDelete}>Delete</button>
+        <button onClick={() => setShowModal(false)}>Cancel</button>
+      </Modal>
+    </div>
+  );
+}
+```
+
+Aria watched with fascination as portals appeared. "This is incredible! The modal renders at document.body level (escapes any overflow:hidden constraints!), but its state, events, and context still flow normally through the React tree. It's like the component exists in two places at once - logically in the React tree, physically in the DOM elsewhere!"
+
+"Exactly!" Marina beamed. "Portals are about WHERE elements render in the DOM, not about breaking React's component model. State updates propagate, Context works, events bubble through React tree (not DOM tree!). All React patterns apply!"
+
+Binary chirped excitedly, projecting analysis: "Portal pattern detected! Logical position: React component tree. Physical position: different DOM location (document.body). React powers preserved: state, events, context all flow normally!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended route-driven modals with URL integration and shareable modal states]**
+
+"But portals become truly powerful when integrated with routing," Marina continued, demonstrating route-based modals. "Watch how we can make modals part of the URL - shareable, bookmarkable, browser-back works!"
+
+```javascript
+import { useSearchParams, useNavigate } from 'react-router-dom';
+
+// Route-driven modal
+function ProductList({ products }) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  // Modal state from URL
+  const modalProductId = searchParams.get('modal');
+  const product = products.find(p => p.id === modalProductId);
+  
+  const openModal = (productId) => {
+    // Add modal param to URL
+    navigate(`?modal=${productId}`);
+  };
+  
+  const closeModal = () => {
+    // Remove modal param
+    navigate('.');  // Or navigate('?') to clear all params
+  };
+  
+  return (
+    <div>
+      {products.map(p => (
+        <div key={p.id}>
+          <h3>{p.name}</h3>
+          <button onClick={() => openModal(p.id)}>View Details</button>
+        </div>
+      ))}
+      
+      {/* Modal opens based on URL param */}
+      {product && (
+        <Modal isOpen={true} onClose={closeModal}>
+          <ProductDetails product={product} />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+// Alternative: Nested route for modal
+const router = createBrowserRouter([
+  {
+    path: '/products',
+    element: <ProductList />,
+    children: [
+      {
+        path: ':productId/details',
+        element: <ProductDetailModal />  // Renders as modal via portal
+      }
+    ]
+  }
+]);
+
+function ProductList() {
+  const navigate = useNavigate();
+  
+  return (
+    <div>
+      {products.map(p => (
+        <Link to={`${p.id}/details`}>View Details</Link>
+      ))}
+      
+      {/* Child route renders here */}
+      <Outlet />
+    </div>
+  );
+}
+
+function ProductDetailModal() {
+  const { productId } = useParams();
+  const navigate = useNavigate();
+  
+  // This component renders as a modal via portal!
+  return createPortal(
+    <Modal isOpen={true} onClose={() => navigate('/products')}>
+      <ProductDetails productId={productId} />
+    </Modal>,
+    document.body
+  );
+}
+```
+
+"See the routing integration?" Marina asked. "Modal state in URL (`?modal=123` or nested route `/products/123/details`) means users can share links to modals, browser back closes modal, refresh preserves modal state. URL is the source of truth!"
+
+Aria connected immediately to her navigation training. "This is perfect URL state management from Waypoint Wizardry! Query parameters for overlay state, nested routes for modal routes, browser back closes modals naturally. Navigation and portals united!"
+
+"And watch accessibility integration:"
+
+```javascript
+function AccessibleModal({ isOpen, onClose, children, title }) {
+  const modalRef = useRef();
+  const previousFocusRef = useRef();
+  
+  // Focus management
+  useEffect(() => {
+    if (isOpen) {
+      // Save current focus
+      previousFocusRef.current = document.activeElement;
+      
+      // Move focus into modal
+      modalRef.current?.focus();
+      
+      // Return focus on close
+      return () => {
+        previousFocusRef.current?.focus();
+      };
+    }
+  }, [isOpen]);
+  
+  // Keyboard handling
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+  
+  // Focus trap
+  const handleTabKey = (e) => {
+    const focusableElements = modalRef.current?.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    if (e.shiftKey && document.activeElement === firstElement) {
+      lastElement.focus();
+      e.preventDefault();
+    } else if (!e.shiftKey && document.activeElement === lastElement) {
+      firstElement.focus();
+      e.preventDefault();
+    }
+  };
+  
+  if (!isOpen) return null;
+  
+  return createPortal(
+    <div 
+      className="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div 
+        ref={modalRef}
+        className="modal-content"
+        tabIndex={-1}
+        onKeyDown={(e) => {
+          if (e.key === 'Tab') handleTabKey(e);
+        }}
+      >
+        <h2 id="modal-title">{title}</h2>
+        {children}
+      </div>
+    </div>,
+    document.body
+  );
+}
+```
+
+"Complete accessibility!" Marina explained. "Focus moves into modal on open, focus trap prevents Tab escaping modal, Escape key closes, focus returns to trigger on close, ARIA attributes for screen readers. Professional portal patterns!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on portal practice with complete route-driven modal systems and form integration]**
+
+"Now build complete route-driven modals," Marina said, presenting Aria with portal challenges.
+
+The first challenge: implement a delete confirmation modal with routing. Aria created:
+```javascript
+function useConfirmModal() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const confirmId = searchParams.get('confirm');
+  
+  const openConfirm = (id, action) => {
+    setSearchParams({ confirm: id, action });
+  };
+  
+  const closeConfirm = () => {
+    setSearchParams({});
+  };
+  
+  return { confirmId, action: searchParams.get('action'), openConfirm, closeConfirm };
+}
+
+function ProductList() {
+  const { confirmId, action, openConfirm, closeConfirm } = useConfirmModal();
+  
+  const handleDelete = async () => {
+    await deleteProduct(confirmId);
+    closeConfirm();
+  };
+  
+  return (
+    <div>
+      {products.map(p => (
+        <div key={p.id}>
+          <h3>{p.name}</h3>
+          <button onClick={() => openConfirm(p.id, 'delete')}>Delete</button>
+        </div>
+      ))}
+      
+      {confirmId && action === 'delete' && (
+        <ConfirmModal
+          isOpen={true}
+          onClose={closeConfirm}
+          onConfirm={handleDelete}
+          title="Delete Item?"
+          message="This action cannot be undone."
+        />
+      )}
+    </div>
+  );
+}
+```
+
+"Perfect!" Marina approved. "URL state (`?confirm=123&action=delete`) drives modal, shareable confirmation links, browser back cancels, clean URL on close!"
+
+The second challenge: implement a form modal that persists data. Aria orchestrated:
+```javascript
+function EditProductModal() {
+  const { productId } = useParams();
+  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState(() => {
+    // Restore from sessionStorage
+    const saved = sessionStorage.getItem(`edit-${productId}`);
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  // Persist on changes
+  useEffect(() => {
+    sessionStorage.setItem(`edit-${productId}`, JSON.stringify(formData));
+  }, [formData, productId]);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await updateProduct(productId, formData);
+    sessionStorage.removeItem(`edit-${productId}`);
+    navigate('/products');  // Close modal via navigation
+  };
+  
+  const handleClose = () => {
+    if (Object.keys(formData).length > 0) {
+      if (confirm('You have unsaved changes. Close anyway?')) {
+        sessionStorage.removeItem(`edit-${productId}`);
+        navigate('/products');
+      }
+    } else {
+      navigate('/products');
+    }
+  };
+  
+  return createPortal(
+    <AccessibleModal isOpen={true} onClose={handleClose} title="Edit Product">
+      <form onSubmit={handleSubmit}>
+        <input 
+          value={formData.name || ''}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+        <button type="submit">Save</button>
+        <button type="button" onClick={handleClose}>Cancel</button>
+      </form>
+    </AccessibleModal>,
+    document.body
+  );
+}
+```
+
+"Brilliant form modal!" Marina praised. "Form data persists in sessionStorage (survives refresh!), confirmation before closing with unsaved changes (Portal Keeper Sage's patterns!), navigation closes modal cleanly, complete integration!"
+
+Binary displayed portal mastery: "createPortal: renders outside parent DOM. Route integration: URL drives modal state. Accessibility: focus management + keyboard handling + ARIA. Form persistence: sessionStorage across navigation. Complete portal system!"
+
+**Route-Based Portal Mastery:**
+React portals allow components to render outside their parent DOM hierarchy while maintaining all React tree relationships - state, events, context flow normally. Use createPortal(children, domNode) to render to document.body or other DOM locations, escaping z-index stacking and overflow constraints. Integrate portals with routing for shareable, bookmarkable modals - use query parameters (?modal=123) or nested routes (/products/123/details) to drive modal state. Browser back closes modals naturally, refresh preserves state, URLs are shareable. Implement accessibility: focus management (save/restore focus on open/close), keyboard handling (Escape to close, Tab trap), ARIA attributes (role="dialog", aria-modal). Persist form data across modal navigation using sessionStorage. Confirm before closing with unsaved changes. Combine patterns: portals for rendering + routing for state + accessibility for inclusion + form persistence for UX = professional modal systems that feel native to web applications.
+
+**Reflection Questions:**
+
+- How does route-driven modal state improve shareability and user experience compared to local state?
+- What accessibility considerations are essential for portal-based modals?
+- How do portals integrate with forms to preserve user work across navigation?
+
+**Aria's Journal - Day 29 (Morning)**
+*Marina brought me to the Portal Passages chamber today! React portals are fascinating - they let UI elements escape the normal DOM hierarchy while keeping all their React powers! **createPortal(children, domNode)** renders components to document.body or any DOM location, bypassing z-index/overflow constraints. Modals, tooltips, overlays render at body level, but their state, events, and context still flow normally through React tree - it's like components exist in two places: logically in React tree, physically elsewhere in DOM! Route-driven modals unite portals with navigation: modal state in URL (`?modal=123` or nested route `/products/123/details`) makes modals shareable, bookmarkable, browser back closes naturally, refresh preserves state. URL is source of truth! Accessibility is crucial: focus management (save current focus on open, move into modal, restore on close), keyboard handling (Escape closes, Tab trap prevents escaping), ARIA attributes (role="dialog", aria-modal, aria-labelledby). Form integration: persist form data in sessionStorage, confirm before closing with unsaved changes, navigation closes modal. I practiced: delete confirmation modal with route state, edit form modal with persistence. Binary says this unites portals + routing + accessibility + forms into professional modal systems!*
+
+---
+
+### Chapter 2: Portal Transitions and Z-Index Management
+
+**Bridge:**
+Marina guided Aria deeper into the Portal Passages chamber where multiple portals floated in layered dimensions. "You've mastered basic portals," Marina said. "Now I'll teach you how to orchestrate multiple portals simultaneously - managing z-index stacking, smooth transitions, and nested modal interactions where modals can open other modals!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended portal stacking with z-index management and nested modal coordination]**
+
+"Portal transitions aren't just about visual effects," Marina explained, gesturing to portals that smoothly faded and slid into view. "They're about maintaining user context and creating meaningful connections between states. And when multiple portals exist simultaneously - modal opening from modal opening from modal - we need intelligent z-index management and focus coordination!"
+
+She demonstrated portal stacking:
+```javascript
+// Portal stack manager with z-index coordination
+function PortalStackProvider({ children }) {
+  const [stack, setStack] = useState([]);
+  
+  const pushPortal = useCallback((id) => {
+    setStack(prev => [...prev, id]);
+  }, []);
+  
+  const popPortal = useCallback((id) => {
+    setStack(prev => prev.filter(portalId => portalId !== id));
+  }, []);
+  
+  const getZIndex = useCallback((id) => {
+    const index = stack.indexOf(id);
+    return index >= 0 ? 1000 + index * 10 : 1000;
+  }, [stack]);
+  
+  const value = { pushPortal, popPortal, getZIndex, stackDepth: stack.length };
+  
+  return (
+    <PortalStackContext.Provider value={value}>
+      {children}
+    </PortalStackContext.Provider>
+  );
+}
+
+// Stackable modal that manages its position
+function StackedModal({ id, isOpen, onClose, children }) {
+  const { pushPortal, popPortal, getZIndex } = usePortalStack();
+  
+  useEffect(() => {
+    if (isOpen) {
+      pushPortal(id);
+      return () => popPortal(id);
+    }
+  }, [isOpen, id, pushPortal, popPortal]);
+  
+  if (!isOpen) return null;
+  
+  const zIndex = getZIndex(id);
+  
+  return createPortal(
+    <div 
+      className="modal-backdrop"
+      style={{ zIndex }}
+      onClick={onClose}
+    >
+      <div 
+        className="modal-content"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+// Usage - nested modals!
+function ParentModal() {
+  const [showChild, setShowChild] = useState(false);
+  
+  return (
+    <StackedModal id="parent" isOpen={true} onClose={handleClose}>
+      <h2>Parent Modal</h2>
+      <button onClick={() => setShowChild(true)}>Open Child</button>
+      
+      <StackedModal id="child" isOpen={showChild} onClose={() => setShowChild(false)}>
+        <h2>Child Modal</h2>
+        <p>This modal appears on top of the parent!</p>
+      </StackedModal>
+    </StackedModal>
+  );
+}
+```
+
+Aria watched with fascination as modals stacked correctly. "The stack manager tracks all open portals, assigns increasing z-index values (1000, 1010, 1020...), and cleanup removes from stack automatically! Nested modals work perfectly - each appears above its parent!"
+
+"Exactly!" Marina approved. "And watch how we add smooth transitions using Framer Motion:"
+
+```javascript
+import { motion, AnimatePresence } from 'framer-motion';
+
+function AnimatedModal({ isOpen, onClose, children }) {
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Animated backdrop */}
+          <motion.div
+            className="modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={onClose}
+          />
+          
+          {/* Animated content */}
+          <motion.div
+            className="modal-content"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {children}
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>,
+    document.body
+  );
+}
+```
+
+"Smooth enter/exit animations!" Marina explained. "Backdrop fades, content scales and slides. AnimatePresence handles exit animations before unmount. Professional polish!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended focus management for nested portals and coordinated keyboard handling]**
+
+"But with nested portals, focus management becomes complex," Marina continued, showing sophisticated patterns. "Each modal needs focus trap, but only the topmost should handle Escape key. Watch how we coordinate!"
+
+```javascript
+function FocusCoordinatedModal({ id, isOpen, onClose, children }) {
+  const { stackDepth, getZIndex } = usePortalStack();
+  const modalRef = useRef();
+  const isTopmost = getZIndex(id) === getZIndex('topmost');  // Simplified check
+  
+  // Focus trap
+  useEffect(() => {
+    if (!isOpen || !modalRef.current) return;
+    
+    const focusableElements = modalRef.current.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    if (focusableElements.length > 0) {
+      focusableElements[0].focus();
+    }
+  }, [isOpen]);
+  
+  // Keyboard handling - only topmost modal handles Escape
+  useEffect(() => {
+    if (!isOpen || !isTopmost) return;
+    
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();  // Prevent parent modals from closing
+        onClose();
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isTopmost, onClose]);
+  
+  if (!isOpen) return null;
+  
+  return createPortal(
+    <div 
+      ref={modalRef}
+      className="modal"
+      style={{ zIndex: getZIndex(id) }}
+      role="dialog"
+      aria-modal="true"
+    >
+      {children}
+    </div>,
+    document.body
+  );
+}
+```
+
+Aria recognized the patterns. "Only the topmost modal handles Escape (prevents closing all modals on one key!), each modal has focus trap, stopPropagation prevents event bubbling to parent modals. Coordinated focus management!"
+
+"And for performance, we can lazy-load portal content:"
+
+```javascript
+function LazyPortalModal({ isOpen, onClose, children }) {
+  const [shouldRender, setShouldRender] = useState(false);
+  
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+    } else {
+      // Delay unmount for exit animation
+      const timeout = setTimeout(() => setShouldRender(false), 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isOpen]);
+  
+  if (!shouldRender) return null;
+  
+  return createPortal(
+    <AnimatedModal isOpen={isOpen} onClose={onClose}>
+      {children}
+    </AnimatedModal>,
+    document.body
+  );
+}
+```
+
+"Lazy render optimization!" Marina explained. "Don't mount portal content until needed, delay unmount for exit animations. Performance optimization from the Sanctuary!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on transition practice with complete portal orchestration and performance optimization]**
+
+"Now orchestrate complete portal systems," Marina said, presenting Aria with complex portal challenges.
+
+The first challenge: implement a drawer that can contain nested modals. Aria created:
+```javascript
+function Drawer({ isOpen, onClose, children }) {
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            className="drawer-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          <motion.div
+            className="drawer"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+          >
+            {children}
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>,
+    document.body
+  );
+}
+
+// Drawer with nested modal
+function UserProfileDrawer() {
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  
+  return (
+    <Drawer isOpen={true} onClose={handleClose}>
+      <h2>User Profile</h2>
+      <button onClick={() => setShowDeleteModal(true)}>Delete Account</button>
+      
+      {/* Modal renders on top of drawer! */}
+      <StackedModal 
+        id="delete-confirm"
+        isOpen={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+      >
+        <h3>Delete Account?</h3>
+        <p>This cannot be undone.</p>
+      </StackedModal>
+    </Drawer>
+  );
+}
+```
+
+"Perfect drawer with nested modal!" Marina approved. "Drawer slides from right, modal appears on top with correct z-index, both can close independently, smooth animations!"
+
+The second challenge: implement a toast notification system with stacking. Aria orchestrated:
+```javascript
+function ToastProvider({ children }) {
+  const [toasts, setToasts] = useState([]);
+  
+  const addToast = useCallback((message, type = 'info') => {
+    const id = Date.now();
+    setToasts(prev => [...prev, { id, message, type }]);
+    
+    // Auto-dismiss after 3 seconds
+    setTimeout(() => {
+      setToasts(prev => prev.filter(t => t.id !== id));
+    }, 3000);
+  }, []);
+  
+  const removeToast = useCallback((id) => {
+    setToasts(prev => prev.filter(t => t.id !== id));
+  }, []);
+  
+  return (
+    <ToastContext.Provider value={{ addToast }}>
+      {children}
+      
+      {createPortal(
+        <div className="toast-container">
+          <AnimatePresence>
+            {toasts.map((toast, index) => (
+              <motion.div
+                key={toast.id}
+                className={`toast toast-${toast.type}`}
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: index * 70, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => removeToast(toast.id)}
+              >
+                {toast.message}
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>,
+        document.body
+      )}
+    </ToastContext.Provider>
+  );
+}
+```
+
+"Brilliant toast system!" Marina exclaimed. "Multiple toasts stack vertically (y: index * 70), smooth enter/exit animations, auto-dismiss with cleanup, click to dismiss manually. Complete notification system!"
+
+Binary displayed portal orchestration mastery: "Z-index stacking: automatic via stack manager. Nested portals: coordinated focus + keyboard. Transitions: AnimatePresence for smooth animations. Performance: lazy rendering + delayed unmount. Toast system: stacked notifications. Complete portal orchestration!"
+
+**Portal Orchestration Mastery:**
+Managing multiple portals requires z-index coordination, focus management, and smooth transitions. Implement portal stack manager that tracks all open portals and assigns increasing z-index values (1000, 1010, 1020...). Use Context to provide stack state globally - pushPortal on mount, popPortal on unmount. Coordinate focus for nested portals - only topmost modal handles Escape key (stopPropagation prevents parent closures), each maintains focus trap. Implement smooth transitions using Framer Motion: AnimatePresence handles exit animations before unmount, initial/animate/exit props define enter/exit states, stagger animations for visual hierarchy. Optimize performance: lazy render portal content (don't mount until needed), delay unmount for exit animations (setTimeout after isOpen becomes false). Stack different portal types: modals, drawers, toasts, tooltips - each with appropriate z-index ranges and animations. Combine patterns for professional portal orchestration where multiple UI layers coordinate seamlessly.
+
+**Reflection Questions:**
+
+- How does portal stack management prevent z-index conflicts in complex applications?
+- What coordination is needed between nested portals for proper focus and keyboard handling?
+- How do smooth transitions improve the perceived quality of portal interactions?
+
+**Aria's Journal - Day 29 (Afternoon)**
+*Portal orchestration is complex but elegant! Marina showed me how to manage multiple portals simultaneously: (1) **Z-index stacking** - stack manager tracks all open portals, assigns increasing z-index (1000, 1010, 1020...), Context provides stack state globally, pushPortal on mount + popPortal on unmount, (2) **Nested portals** - modals can open from modals, each with correct z-index above parent, coordinated focus management (only topmost handles Escape key!), stopPropagation prevents closing all on one keypress, (3) **Smooth transitions** - Framer Motion's AnimatePresence handles exit animations before unmount, initial/animate/exit props for enter/exit states, backdrop fades + content scales/slides, professional polish!, (4) **Performance** - lazy render content (don't mount until isOpen), delay unmount for exit animations (setTimeout after close), avoid unnecessary DOM nodes, (5) **Multiple portal types** - drawers slide from sides with nested modals inside, toasts stack vertically with auto-dismiss + manual close, different z-index ranges for different types. I practiced: drawer with nested delete confirmation modal (drawer slides, modal appears on top!), toast notification system with stacking (multiple toasts, smooth animations, auto-dismiss). Binary says coordinating multiple portals requires careful state management, focus orchestration, and performance awareness - but the result is professional UI that handles complex interactions gracefully!*
+
+---
+
+### Chapter 3: Advanced Portal Patterns and Wizards
+
+**Bridge:**
+Marina led Aria to the final demonstration chamber where the most advanced portal patterns would be taught. Holographic wizards, split views, and contextual portals filled the space. "You've mastered portal basics and orchestration," Marina said. "Now I'll show you how they unite with everything you've learned - wizard flows spanning routes, split views for parallel work, contextual portals that position intelligently!"
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended multi-step wizards with route-based steps and progress preservation]**
+
+"You've learned individual techniques," Marina addressed Aria warmly. "Now I'll show you how they **orchestrate together** into sophisticated systems. Advanced patterns like **multi-step wizards**, **split views**, and **contextual portals** aren't just navigation tricks - they're the culmination of everything React offers united through portals!"
+
+She demonstrated a complete wizard system:
+```javascript
+// Route-based wizard with portal rendering
+function CheckoutWizard() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const step = parseInt(searchParams.get('step') || '1');
+  
+  const [wizardData, setWizardData] = useState(() => {
+    const saved = sessionStorage.getItem('checkoutWizard');
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  // Persist on changes
+  useEffect(() => {
+    sessionStorage.setItem('checkoutWizard', JSON.stringify(wizardData));
+  }, [wizardData]);
+  
+  const nextStep = () => {
+    navigate(`?step=${step + 1}`);
+  };
+  
+  const prevStep = () => {
+    navigate(`?step=${step - 1}`);
+  };
+  
+  const handleComplete = async () => {
+    await submitOrder(wizardData);
+    sessionStorage.removeItem('checkoutWizard');
+    navigate('/order-confirmation');
+  };
+  
+  return createPortal(
+    <motion.div 
+      className="wizard-modal"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <div className="wizard-progress">
+        {[1, 2, 3, 4].map(s => (
+          <div key={s} className={s <= step ? 'active' : ''}>
+            Step {s}
+          </div>
+        ))}
+      </div>
+      
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={step}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.2 }}
+        >
+          {step === 1 && (
+            <ShippingForm 
+              data={wizardData}
+              onChange={setWizardData}
+              onNext={nextStep}
+            />
+          )}
+          {step === 2 && (
+            <PaymentForm
+              data={wizardData}
+              onChange={setWizardData}
+              onNext={nextStep}
+              onBack={prevStep}
+            />
+          )}
+          {step === 3 && (
+            <ReviewStep
+              data={wizardData}
+              onNext={nextStep}
+              onBack={prevStep}
+            />
+          )}
+          {step === 4 && (
+            <ConfirmStep
+              data={wizardData}
+              onComplete={handleComplete}
+              onBack={prevStep}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </motion.div>,
+    document.body
+  );
+}
+```
+
+Aria watched with growing understanding, connecting all her training. "This is amazing! Step number in URL (`?step=2`) for shareability and browser back/forward, wizard data in sessionStorage (persists across refresh!), smooth transitions between steps with AnimatePresence, progress indicator shows position. Every pattern united!"
+
+"Exactly!" Marina beamed. "URL drives step, sessionStorage preserves data, portals render modal, transitions guide users, routes coordinate everything. Complete integration!"
+
+"And watch split views for parallel work:"
+
+```javascript
+function SplitViewPortal() {
+  const [leftContent, setLeftContent] = useState('editor');
+  const [rightContent, setRightContent] = useState('preview');
+  
+  return createPortal(
+    <div className="split-view-modal">
+      <div className="split-pane left">
+        {leftContent === 'editor' && <CodeEditor />}
+        {leftContent === 'files' && <FileTree />}
+      </div>
+      
+      <div className="split-pane-divider" />
+      
+      <div className="split-pane right">
+        {rightContent === 'preview' && <LivePreview />}
+        {rightContent === 'console' && <Console />}
+      </div>
+    </div>,
+    document.body
+  );
+}
+```
+
+"Split views for parallel contexts!" Marina explained. "Edit code while seeing preview, browse files while viewing console. Coordinated state, independent interactions!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended contextual portals with intelligent positioning and accessibility integration]**
+
+"But the most sophisticated portals are contextual - they position intelligently relative to triggers," Marina continued, demonstrating tooltip and popover patterns.
+
+```javascript
+function ContextualPortal({ trigger, children, placement = 'bottom' }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const triggerRef = useRef();
+  const portalRef = useRef();
+  
+  // Calculate position based on trigger
+  useEffect(() => {
+    if (!isOpen || !triggerRef.current) return;
+    
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const portalRect = portalRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
+    
+    let top, left;
+    
+    switch (placement) {
+      case 'bottom':
+        top = triggerRect.bottom + window.scrollY + 8;
+        left = triggerRect.left + window.scrollX + (triggerRect.width / 2) - (portalRect.width / 2);
+        break;
+      case 'top':
+        top = triggerRect.top + window.scrollY - portalRect.height - 8;
+        left = triggerRect.left + window.scrollX + (triggerRect.width / 2) - (portalRect.width / 2);
+        break;
+      case 'right':
+        top = triggerRect.top + window.scrollY + (triggerRect.height / 2) - (portalRect.height / 2);
+        left = triggerRect.right + window.scrollX + 8;
+        break;
+      case 'left':
+        top = triggerRect.top + window.scrollY + (triggerRect.height / 2) - (portalRect.height / 2);
+        left = triggerRect.left + window.scrollX - portalRect.width - 8;
+        break;
+    }
+    
+    setPosition({ top, left });
+  }, [isOpen, placement]);
+  
+  return (
+    <>
+      {React.cloneElement(trigger, {
+        ref: triggerRef,
+        onClick: () => setIsOpen(!isOpen)
+      })}
+      
+      {isOpen && createPortal(
+        <>
+          <div 
+            className="portal-backdrop-transparent"
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            ref={portalRef}
+            className="contextual-portal"
+            style={{
+              position: 'absolute',
+              top: `${position.top}px`,
+              left: `${position.left}px`
+            }}
+          >
+            {children}
+          </div>
+        </>,
+        document.body
+      )}
+    </>
+  );
+}
+
+// Usage
+<ContextualPortal
+  trigger={<button>Show Options</button>}
+  placement="bottom"
+>
+  <div className="options-menu">
+    <button>Edit</button>
+    <button>Delete</button>
+    <button>Share</button>
+  </div>
+</ContextualPortal>
+```
+
+Aria studied the positioning logic. "Calculate trigger position with getBoundingClientRect(), position portal relative to trigger based on placement (bottom/top/left/right), account for scroll position (window.scrollY), center on trigger. Intelligent positioning!"
+
+"And we can enhance with collision detection:"
+
+```javascript
+function SmartContextualPortal({ trigger, children, preferredPlacement = 'bottom' }) {
+  const [placement, setPlacement] = useState(preferredPlacement);
+  
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const portalRect = portalRef.current?.getBoundingClientRect() || { width: 200, height: 100 };
+    
+    // Check if preferred placement fits in viewport
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    let finalPlacement = preferredPlacement;
+    
+    if (preferredPlacement === 'bottom' && triggerRect.bottom + portalRect.height > viewportHeight) {
+      finalPlacement = 'top';  // Flip to top if no room below
+    }
+    
+    if (preferredPlacement === 'right' && triggerRect.right + portalRect.width > viewportWidth) {
+      finalPlacement = 'left';  // Flip to left if no room on right
+    }
+    
+    setPlacement(finalPlacement);
+  }, [isOpen, preferredPlacement]);
+  
+  // Use calculated placement...
+}
+```
+
+"Collision detection!" Marina explained. "Check if portal fits in viewport, flip to opposite side if needed (bottom → top, right → left). Intelligent adaptation to screen constraints!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on complete portal integration with all patterns unified]**
+
+"Now create the ultimate portal system," Marina said, presenting Aria with the culminating challenge - design a complete application with wizards, modals, drawers, tooltips, and notifications all coordinated.
+
+Aria integrated everything:
+```javascript
+function CompletePortalApp() {
+  return (
+    <PortalStackProvider>
+      <ToastProvider>
+        <Router>
+          <AppLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<ProductList />}>
+                {/* Modal as nested route */}
+                <Route path=":id/details" element={<ProductDetailModal />} />
+              </Route>
+              <Route path="/checkout" element={<CheckoutWizard />} />
+            </Routes>
+          </AppLayout>
+        </Router>
+      </ToastProvider>
+    </PortalStackProvider>
+  );
+}
+
+// App layout with drawer
+function AppLayout({ children }) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  
+  return (
+    <div>
+      <nav>
+        <button onClick={() => setDrawerOpen(true)}>Menu</button>
+      </nav>
+      
+      <main>{children}</main>
+      
+      <Drawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <Navigation />
+      </Drawer>
+    </div>
+  );
+}
+
+// Product list with tooltips and modals
+function ProductList() {
+  const { addToast } = useToast();
+  
+  const handleAddToCart = (product) => {
+    addToast(`${product.name} added to cart!`, 'success');
+  };
+  
+  return (
+    <div>
+      {products.map(product => (
+        <div key={product.id}>
+          <Link to={`${product.id}/details`}>{product.name}</Link>
+          
+          <ContextualPortal
+            trigger={<button>Quick View</button>}
+            placement="right"
+          >
+            <QuickViewCard product={product} />
+          </ContextualPortal>
+          
+          <button onClick={() => handleAddToCart(product)}>
+            Add to Cart
+          </button>
+        </div>
+      ))}
+      
+      {/* Nested route renders modal */}
+      <Outlet />
+    </div>
+  );
+}
+```
+
+"Perfect complete integration!" Marina exclaimed with pride. "Portal stack manages z-index globally, toast provider coordinates notifications, route-driven modals for shareability, drawer for navigation, contextual tooltips for quick actions, wizards for complex flows. Every portal pattern working in harmony!"
+
+She tested the system: Click product → modal opens via route (shareable URL!), add to cart → toast notification appears, open menu → drawer slides in, hover quick view → tooltip positions intelligently, start checkout → wizard modal with multi-step flow. All coordinating seamlessly!
+
+"This is the complete picture!" Aria marveled, seeing her entire journey converge. "Portals escape DOM hierarchy, routes drive state, transitions guide users, accessibility ensures inclusion, forms persist across boundaries, performance stays optimal. Every pattern from every quarter united through portals and navigation!"
+
+Marina smiled with deep satisfaction. "You've mastered the Portal Passages - the final frontier of navigation where UI transcends normal hierarchies while maintaining all React intelligence. From basic routing through waypoints and guardians to portal passages, you understand complete navigation architecture!"
+
+Binary displayed ultimate mastery: "Routing: fundamentals + waypoints + guardians + portals = COMPLETE! Components: structure. State: management. Effects: synchronization. Context: distribution. Forms: interaction. Navigation: orchestration. Portals: transcendence. Complete React Navigation Mastery Achieved!"
+
+**Advanced Portal Mastery:**
+Advanced portal patterns combine wizards, split views, and contextual positioning into sophisticated systems. Implement multi-step wizards: step number in URL query params (?step=2) for browser back/forward, wizard data in sessionStorage for persistence, AnimatePresence for smooth step transitions, progress indicators show position, validate before allowing next step. Create split views for parallel work: independent panes with coordinated state, resizable dividers, context-aware content switching. Build contextual portals that position intelligently: calculate trigger position with getBoundingClientRect(), position portal relative to trigger with preferred placement (bottom/top/left/right), implement collision detection to flip when viewport space insufficient, transparent backdrop for outside clicks. Coordinate multiple portal types: modals for focused tasks, drawers for navigation, tooltips for quick info, toasts for notifications, wizards for complex flows - each with appropriate z-index ranges. Combine all patterns: portals escape DOM + routes drive state + transitions guide users + accessibility ensures inclusion + forms persist + performance optimizes = professional portal systems that feel native to web applications.
+
+**Reflection Questions:**
+
+- How do multi-step wizards benefit from URL-driven step state versus local component state?
+- What coordination is needed when combining multiple portal types (modals, drawers, tooltips, toasts) in one application?
+- How does intelligent positioning (collision detection, viewport awareness) improve portal UX?
+
+**Aria's Journal - Day 29 (Evening)**
+*Today I mastered advanced portal patterns - the culmination of all navigation training! (1) **Multi-step wizards** - step in URL (`?step=2`) for browser back/forward + shareability, wizard data in sessionStorage (persists across refresh!), AnimatePresence for smooth step transitions (slide left on next, right on prev), progress indicator shows position, validate before allowing next, complete checkout flow with shipping → payment → review → confirm!, (2) **Split views** - parallel work contexts in one modal, independent panes with coordinated state, edit code while seeing live preview, browse files while viewing console, resizable dividers for user control, (3) **Contextual portals** - position intelligently relative to trigger, calculate trigger position with getBoundingClientRect(), place portal based on preferred placement (bottom/top/left/right), collision detection flips when no viewport space (bottom → top if no room below!), tooltips + popovers + dropdown menus, (4) **Complete integration** - PortalStackProvider manages z-index globally, ToastProvider coordinates notifications, route-driven modals (nested routes for shareability), drawer for navigation, contextual tooltips for quick actions, wizards for complex flows, ALL coordinating seamlessly! I built complete app: product list with route-driven detail modals + contextual quick-view tooltips + add-to-cart toasts, navigation drawer, checkout wizard. Marina says I've mastered the Portal Passages - the final navigation frontier where UI transcends DOM hierarchy while maintaining all React intelligence! From routing fundamentals (LP6.1) → waypoint wizardry (LP6.2) → guardian gates (LP6.3) → portal passages (LP6.4), I understand complete navigation architecture! Binary says: Components (structure) + State (management) + Effects (sync) + Context (distribution) + Forms (interaction) + Navigation (orchestration) + Portals (transcendence) = Complete React Navigation Mastery! Tomorrow: the Northern Peaks for Performance Optimization with Brother Memor!*
+
+**Chapter Ending:**
+
+As the final portal closed behind them, Marina stood with Aria at the Central Citadel's highest observation deck, overlooking the entire React Kingdom spread beneath them in the fading light. Crystal pathways pulsed with navigation energy connecting all quarters, portals shimmered in the air showing possibilities, and the whole kingdom hummed with coordinated intelligence.
+
+"You've completed your navigation training," Marina said warmly, her voice filled with teaching pride. "From basic routes to advanced portals, from URL state management to intelligent authorization, from waypoint metadata to nested modal orchestration. You understand how users move through React applications - not just mechanically, but meaningfully, with context preserved, intent remembered, and experience polished."
+
+Aria gazed at the kingdom spread below, every quarter she'd visited glowing with learned knowledge - the Northern Quarter where Master Aurelius taught components, the Eastern Sanctuary where Professor Hooksworth revealed hooks, the Western Quarter where Masters Formeus and Validus showed forms and validation, the Southern Quarter's Context Hall, and now the Central Citadel's navigation nexus tying everything together. "Components provide structure, state manages data, props enable communication, hooks add power, forms connect users, and navigation orchestrates everything," she reflected. "It's all one interconnected, beautiful system."
+
+"Indeed," Marina smiled, her eyes reflecting the kingdom's lights. "You've learned that routing isn't separate from React - it's the synthesis of all patterns working together to create complete application experiences. Routes are components that render conditionally. Navigation updates state captured in URLs. Effects synchronize with transitions. Context distributes auth. Forms persist across boundaries. And portals transcend DOM hierarchy while maintaining all React intelligence."
+
+She turned to face Aria directly, placing a hand on her shoulder. "But there's one more frontier awaiting you. Word has reached me from the Northern Peaks - Brother Memor at the Memory Monastery requires your skills urgently. Your applications may be functional, beautiful, and well-navigated, but without performance optimization, they'll eventually slow to a crawl as data grows and complexity increases."
+
+Binary's processors hummed with anticipation, display showing mountain peaks wreathed in clouds. "Performance optimization protocols detected! Memory management systems await! Code splitting strategies identified! Speed sanctuaries prepare for training! Brother Memor's teachings will complete Aria's mastery!"
+
+Aria nodded with determination, feeling the weight of her complete journey so far and the excitement of the final challenges ahead. "I'm ready to learn how to make React not just work, but fly. From the Northern Peaks, I'll learn to optimize memory, split code intelligently, virtualize massive lists, and measure performance scientifically. Navigation mastery complete - performance mastery begins!"
+
+Marina watched as Aria and Binary began their descent toward the mountain path leading to the Northern Peaks, knowing her student was ready for the final teachings that would complete her transformation from curious learner to complete React master.
+
+---
+
+🚧 **WORK IN PROGRESS - LP7 (4 lessons remaining)**
 
 ---
 
