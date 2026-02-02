@@ -36,11 +36,14 @@
 - **First Appearance**: LP1.3 JsxMagic Ch2
 - **Officially Joins**: LP1.3 JsxMagic Ch3 (Aria invites Binary to travel with her)
 - **Role**: Companion sprite, expression evaluator, React concept explainer
-- **Appearance**: Small sprite with flickering lights, can zip around quickly
-- **Personality**: Chirpy, enthusiastic, helpful, excitable, bouncy
-- **Abilities**: Evaluates JavaScript expressions, illuminates concepts, projects holograms, provides technical analysis
+- **Appearance**: Small sprite with flickering lights, can zip around quickly, can give tiny high-fives
+- **Personality**: Chirpy, enthusiastic, helpful, excitable, bouncy, silly (makes jokes), can be serious when needed
+- **Abilities**: Evaluates JavaScript expressions, illuminates concepts, zips around, projects holograms, provides technical analysis, spins in happy circles
 - **Purpose**: "Every apprentice needs a companion" - guides and explains React concepts throughout journey
-- **Contributions By Lesson**: (To be documented as extraction continues)
+
+**Binary's Contributions**:
+- **LP1.3 JsxMagic**: Helps explain curly braces ("portals!"), zips around glowing tablets illuminating rules, gives Aria tiny high-five, mentions Time Keepers at Lifecycle Sanctum
+- **LP1.4 LifecycleChronicles**: Bounces excitedly explaining lifecycle as "birthday parties, growth spurts, retirement ceremonies"; uses flower blooming metaphor for mounting; slows to gentle float during unmounting lesson (showing respect); warns about "ghost timers" and memory leaks; spins in happy circle when Aria completes training
 
 ---
 
@@ -61,6 +64,12 @@
 **Mentors**: Professor Syntaxis  
 **Companion**: Binary joins (Ch2 appears, Ch3 officially becomes companion)  
 **Concepts**: JSX → "magical syntax", "ancient language", "component spells"; Babel → "translator sprite"; Curly braces → "portals between markup and JavaScript realm"; JSX Rules → "sacred laws on glowing tablets"
+
+### LP1.4 LifecycleChronicles
+**Location**: Lifecycle Sanctum  
+**Mentor**: Chronos  
+**Companion**: Binary (now traveling with Aria)  
+**Concepts**: Lifecycle → "journey from creation to destruction"; Mounting → "birth ritual", "flower blooming"; Updating → "growth and adaptation"; Unmounting → "farewell ceremony"; componentWillUnmount → "cleaning up affairs", "ghost timers"
 
 ### Mentors & Guides
 
@@ -118,12 +127,20 @@
 - **Connection**: Heard of Aria's progress from Hermes, sends her to Lifecycle Sanctum next
 
 **Chronos**
-- **Role**: Master Time Keeper, teaches component lifecycle
-- **First Appearance**: Components Basics → LifecycleChronicles → Chapter 1
-- **Teachings**: Component lifecycle, mounting, updating, unmounting, cleanup
-- **Key Traits**: Ancient, voice echoes through time, solemn but wise
+- **Role**: Master Time Keeper, guardian of the hourglasses
+- **Appears In**: LP1.4 LifecycleChronicles (Ch1-3)
 - **Location**: Lifecycle Sanctum
-- **Connection**: Heard from Professor Syntaxis
+- **Appearance**: Ancient figure
+- **Personality**: Solemn but wise, mysterious, gentle, patient teacher, voice echoes through time itself
+- **Teaching Style**: Uses visual metaphors (hourglasses, murals, flower blooming), progressive revelation (mounting → updating → unmounting), demonstrates with glowing murals, emphasizes responsibility in cleanup
+- **Teaches**:
+  - Component lifecycle (mounting, updating, unmounting)
+  - Mounting phase: constructor → render → componentDidMount
+  - Updating phase: shouldComponentUpdate → render → componentDidUpdate  
+  - Unmounting phase: componentWillUnmount
+  - Cleanup importance (preventing ghost timers, memory leaks)
+- **Connection**: Heard of Aria's progress from Professor Syntaxis, sends her to State Sorcerers in Eastern Quarter
+- **Note**: ⚠️ Character ONLY appears in LP1 - does not return in other lessons (see kingdom-geography for resolved return violations)
 
 **Guardian TypeCheck**
 - **Role**: PropTypes Guardian, enforces type checking
