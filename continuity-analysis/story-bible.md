@@ -350,6 +350,19 @@
 - **Location**: Form Federation headquarters, demonstration stations
 - **Teaches**: Each library's approach and optimal use cases
 
+**Animation Abbess Motia**
+- **Role**: Master of motion, guardian of the Motion Monastery
+- **Appears In**: LP10.4 AnimationLibraries (Ch1-3)
+- **Location**: Motion Monastery (floating serenely above clouds - walls shift, decorations dance, everything flows), three dojos (CSS Transitions/React Spring/Framer Motion), highest tower with view of Fluid Kingdom
+- **Appearance**: Gestures leave glowing trails in air
+- **Teaches**: Animation philosophy (communication not decoration, guide attention/provide feedback/create delight without distraction), CSS transitions (simple but limited), React's unmounting challenge (prevents exit animations), animation library solutions (exit animations/gesture integration/performance/orchestration/spring physics), performance tips (transform/opacity GPU accelerated, avoid layout properties), accessibility (prefers-reduced-motion), three dojos (Framer Motion for DX, React Spring for physics, Lottie for designer animations, React Transition Group for simplicity), Fluid Kingdom principles (purpose/performance/accessibility guide every animation)
+
+**Sensei Framer** (Framer Motion Dojo), **Professor Spring** (React Spring School)
+- **Role**: Dojo masters teaching animation techniques
+- **Appears In**: LP10.4 AnimationLibraries (Ch2)
+- **Location**: Motion Monastery dojos
+- **Teaches**: Framer Motion (declarative API, variants, AnimatePresence, layout, drag), React Spring (physics-based with mass/tension/friction configs)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -769,6 +782,19 @@
 - Consensus → "once competitive reaching agreement", "no universal best - best for specific needs", "understanding without bias"
 - Decision factors → form complexity/performance/team experience/TypeScript/ecosystem
 - Selection matrix → "performance-critical=RHF, familiarity=Formik, ultimate control=Final Form, type-safe=TanStack, simple=native React"
+
+**LP10.4 AnimationLibraries**:
+- Motion Monastery → "floats serenely above clouds", "moves constantly - walls shift, decorations dance, everything flows"
+- Animation → "communication not decoration", "tells a story", "language", "guide attention/provide feedback/create delight"
+- Abbess gestures → "leave glowing trails in air"
+- React challenge → "unmounts immediately preventing exit animations"
+- Three dojos → "CSS Transitions foundation, React Spring physics-based, Framer Motion declarative"
+- Sensei Framer → "elements dance with declarative ease", "naturally animate in/out"
+- Professor Spring → "no duration just tension and friction", "natural motion", "physics"
+- Performance → "transform/opacity GPU accelerated", "avoid layout properties"
+- Accessibility → "prefers-reduced-motion", "users get different but functional experience"
+- Fluid Kingdom → "highest tower view", "fully animated dashboard - data flowing like rivers, transitions smooth as silk", "every movement has purpose"
+- Animation mastery → "right technique for each situation", "feels inevitable not arbitrary", "language of motion"
 
 *[More translations to be added as extraction continues]*
 

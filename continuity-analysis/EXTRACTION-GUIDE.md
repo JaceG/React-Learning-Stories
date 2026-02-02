@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP10.3 FormLibraries ✅
+**Last Completed**: LP10.4 AnimationLibraries ✅
 
-**Next Lesson**: LP10.4 AnimationLibraries
+**Next Lesson**: LP10.5 DataFetching
 
 **Progress Tracker**:
 ```
