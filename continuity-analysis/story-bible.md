@@ -247,6 +247,20 @@
 - **Appearance**: Weathered face showing years of experience
 - **Teaches**: Integration testing (components working together), component conflicts (work fine in isolation fail when integrated), 5 component types at Inn (Form/Validation/API Client/State Manager/Error Handler), Harmony Meter, Mock Service Worker (MSW - intercepts network), jest.fn/jest.mock/jest.useFakeTimers, integration test flows (user stories), error handling tests, deployment confidence
 
+**Dungeon Keeper Logsworth**
+- **Role**: Master of production debugging, keeper of error logs
+- **Appears In**: LP8.3 DebugDungeon (Ch1-3)
+- **Location**: Underground Realms - Debug Dungeon below Testing Tower (maze of error logs/stack traces/mysterious behaviors), Stack Trace Labyrinth (Ch2), deepest chamber with Production Bug Boss (Ch3)
+- **Appearance**: Beard grey from years of debugging, carries staff
+- **Teaches**: Production bugs (shape-shifters behaving differently than development), three dungeon bugs (race-condition 🏃, memory-leak 💧, null-reference 👻), debugging tools (React DevTools, Console, Network Inspector), stack traces (reading them, symptoms vs causes), async bug patterns, source maps, Error Boundaries (placement, fallback UI), production error types (NetworkError/ChunkLoadError/StateError/ThirdPartyError), four recovery strategies (automatic retry, fallback mode, graceful degradation, user notification), global error handlers, ErrorMonitor class
+
+**Guardian Safiya**
+- **Role**: Master of Error Boundaries and graceful failure
+- **Appears In**: LP8.4 ErrorEnchantments (Ch1-3)
+- **Location**: Underground Realms - Error Enchantments sanctuary (errors float in air like glowing orbs), Boundary Workshop with shimmering barriers (Ch2), final chamber with live production monitors (Ch3)
+- **Appearance**: [Not extensively described], knowing smile
+- **Teaches**: Five error types (Syntax ⚡/Reference ❓/Type 🔀/Runtime 💥/Async ⏱️), error propagation in React, Error Boundaries (React's built-in protection spell, getDerivedStateFromError/componentDidCatch), strategic boundary placement, fallback UI design, production error monitoring, error severity assessment, four recovery strategies, graceful degradation, ErrorMonitor with global handlers/queuing/periodic flush, resilient applications
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -563,6 +577,28 @@
 - Mock Service Worker → "intercepts network requests with controlled responses"
 - Integration Feast → "celebration where all work together in harmony", "components dance seamlessly"
 - Grand Integration Test → "tells user's story" (6 steps: input/validate/call/update/render/track)
+
+**LP8.3 DebugDungeon**:
+- Debug Dungeon → "below Testing Tower", "most elusive bugs hide", "maze of error logs/stack traces/mysterious behaviors"
+- Production bugs → "shape-shifters", "behave differently than development", "unpredictable, varied, silent"
+- Three dungeon bugs → race-condition (🏃 fast/flickering), memory-leak (💧 slow/growing), null-reference (👻 medium/vanishing)
+- Debugging tools → React DevTools/Console/Network Inspector, "stack traces are maps, logs are clues"
+- Stack Trace Labyrinth → "walls covered in glowing error messages", "paths leading deeper", "red herrings" (symptoms not causes)
+- Production Bug Boss → "massive shape-shifting creature", "deepest chamber", shifts between forms
+- Four strategies → Error Boundaries (contain damage), Strategic Logging (track behavior), Real-time Monitoring (observe patterns), User Reports (gather intelligence)
+- ErrorMonitor → "global handlers for uncaught errors and unhandled rejections"
+
+**LP8.4 ErrorEnchantments**:
+- Error Enchantments sanctuary → "mystical place", "errors float in air like glowing orbs containing dangerous power"
+- Errors → "not enemies but teachers", "reveal weakness in defenses", "tell stories"
+- Five error types → Syntax (⚡), Reference (❓), Type (🔀), Runtime (💥), Async (⏱️)
+- Error Boundaries → "React's built-in protection spell", "try-catch for components", "shimmering barriers protecting components"
+- Boundary Workshop → "filled with shimmering barriers" (Ch2)
+- Error propagation → "errors can cascade through trees crashing entire applications", "contained" by boundaries
+- Fallback UI → "gentle message", "display instead of crashing"
+- Production monitoring → "final chamber with live production monitors glowing"
+- Four recovery strategies → automatic retry (🔄), fallback mode (🔀), graceful degradation (⚡), user notification (📢)
+- Resilient applications → "crashes are preventable", "well-handled error better than hidden bug"
 
 *[More translations to be added as extraction continues]*
 
