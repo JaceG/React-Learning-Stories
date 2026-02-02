@@ -9727,7 +9727,809 @@ With Binary at her side projecting her complete Forms & Events mastery, Aria set
 
 ---
 
-🚧 **WORK IN PROGRESS - LP6-7 (8 lessons remaining)**
+# 6. Routing Navigation
+
+## 6.1 NavigationCompass
+
+### 📖 Lesson Opener
+
+The Central Citadel rose before Aria, its crystalline spires reaching toward the clouds like beacons connecting all quarters of React Kingdom. This architectural marvel served as the nexus where navigation pathways from the Northern, Eastern, Western, and Southern quarters converged. Captain Marina awaited at the Navigation Command Center, ready to teach Aria the final fundamental skill that would unite everything she'd learned - routing and navigation through React applications.
+
+### Chapter 1: Routing Fundamentals
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended Central Citadel introduction with Captain Marina's appearance and routing as state management concept]**
+
+**Welcome, young navigator!** Marina's voice carried warmth and excitement as Aria and Binary entered the Navigation Command Center. The room was filled with floating holographic maps showing routes connecting all quarters of React Kingdom, like a living nervous system pulsing with navigation energy. **Captain Marina** stepped forward, her presence radiating both authority and enthusiasm. "I've heard wonderful things about your journey through the React Kingdom - Portal Keeper Sage sent word of your mastery of Forms & Events, and your teachers from the Western Quarter speak highly of your orchestration skills. I'm excited to teach you about routing and navigation - the patterns that unite all your learning into complete applications!"
+
+Aria looked around in wonder, seeing maps that showed not just geographic connections but state flows, component hierarchies, and data patterns. Binary hovered excitedly beside her, scanning the navigation systems. "Captain Marina, your navigation systems are legendary throughout the kingdom! The way you've mapped routes connecting all quarters... it's beautiful! I'm eager to learn from you!"
+
+Marina gestured to the floating maps, her movements confident yet welcoming. "Excellent attitude! But here's the key insight many miss: Navigation builds on everything you've learned - it's not a separate system! It's not just about moving between pages like turning book chapters. It's about maintaining state across routes (Professor Hooksworth's teachings!), managing effects during transitions (Effect Sage's patterns!), handling forms that span multiple views (Formeus's alchemy!), and creating seamless user experiences (all your Western Quarter knowledge!). Your Sanctuary training will help you understand these concepts quickly!"
+
+She activated the central hologram, and Aria's entire journey lit up - the Component Workshop in the Northern Quarter, the Props pathways, the Hook Forge in the East, the Form Alchemy Lab in the West, all connected by navigation routes. "See? Every place you've been, every teacher you've learned from - routing connects them all into one cohesive application experience!"
+
+Binary projected Aria's learning progress with pride: "Foundation knowledge confirmed! Components: ✓ (LP1), State Management: ✓ (LP2), Props & Data Flow: ✓ (LP3), Hooks Training: ✓ (LP4), Forms & Events: ✓ (LP5). Complete React foundation established! Ready for navigation training that unites everything!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended routing as components demonstration with React Router basics and route rendering concept]**
+
+Marina activated the central hologram showing code patterns. "Let me show you something fascinating - how navigation systems integrate everything you've learned. I think you'll find the patterns quite familiar!"
+
+She demonstrated the fundamental routing pattern:
+```javascript
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* Navigation UI */}
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/users">Users</Link>
+      </nav>
+      
+      {/* Route definitions */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/users" element={<UserList />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+
+Aria studied the projections with growing understanding, her eyes widening with recognition. "This is amazing! Routes look like specialized components that conditionally render based on location state! The `<Route>` component is like a conditional: 'if path matches, render this element'. Is navigation just another form of state management?"
+
+"Exactly!" Marina's enthusiasm was contagious, clearly pleased with how quickly Aria made the connection. "The URL is state - location state managed by the browser! The `<Routes>` component is like a switch statement that looks at location state and decides which component to render. And look at `<Link>` - it's like a controlled component for navigation, updating location state when clicked!"
+
+She showed more patterns Aria recognized:
+```javascript
+// Routes are components with props!
+<Route 
+  path="/users/:id"  // Dynamic parameter - like passing props through URL
+  element={<UserProfile />} 
+/>
+
+// Nested routes - component composition!
+<Route path="/dashboard" element={<DashboardLayout />}>
+  <Route path="stats" element={<Stats />} />
+  <Route path="settings" element={<Settings />} />
+</Route>
+
+// Index routes - default child
+<Route index element={<DashboardHome />} />
+```
+
+"See the patterns?" Marina asked. "Route parameters (`:id`) are like props passed through the URL. Nested routes use component composition - parent layouts wrap children. Index routes provide defaults. Everything you know about components applies to routing!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on routing practice with navigation hooks and location state access]**
+
+"Now practice with React Router's hooks," Marina said, showing Aria how to access navigation state within components.
+
+She demonstrated the essential hooks:
+```javascript
+import { useNavigate, useParams, useLocation, useSearchParams } from 'react-router-dom';
+
+function UserProfile() {
+  // Access route parameters (like reading props)
+  const { id } = useParams();  // From /users/:id
+  
+  // Access location state
+  const location = useLocation();  // { pathname, search, hash, state }
+  
+  // Access/update query parameters
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sort = searchParams.get('sort');  // From ?sort=name
+  
+  // Programmatic navigation
+  const navigate = useNavigate();
+  
+  const handleEdit = () => {
+    navigate(`/users/${id}/edit`);
+  };
+  
+  const handleBack = () => {
+    navigate(-1);  // Like browser back button
+  };
+  
+  return (
+    <div>
+      <h1>User {id}</h1>
+      <p>Sort: {sort}</p>
+      <button onClick={handleEdit}>Edit</button>
+      <button onClick={handleBack}>Back</button>
+    </div>
+  );
+}
+```
+
+"See how routing integrates with hooks?" Marina explained. "useParams reads route parameters (like props from URL), useLocation gives you complete location info (current state), useSearchParams manages query strings (like form state for filters), and useNavigate enables programmatic navigation (like event handlers for navigation)!"
+
+Aria practiced, immediately connecting to her Sanctuary training. "This is brilliant! useParams is like reading props. useLocation is like reading state. useSearchParams is like controlled form inputs for URL parameters. useNavigate is like event handlers. Everything I've learned applies!"
+
+She created a practical example:
+```javascript
+function UserList() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  // Read filters from URL
+  const filter = searchParams.get('filter') || '';
+  const sort = searchParams.get('sort') || 'name';
+  
+  // Update filters (updates URL)
+  const handleFilterChange = (e) => {
+    setSearchParams({ filter: e.target.value, sort });
+  };
+  
+  // Navigate to user
+  const handleUserClick = (userId) => {
+    navigate(`/users/${userId}`);
+  };
+  
+  return (
+    <div>
+      <input 
+        value={filter} 
+        onChange={handleFilterChange}
+        placeholder="Filter users..."
+      />
+      {/* Filtered, sorted user list */}
+    </div>
+  );
+}
+```
+
+"Perfect integration!" Marina approved. "URL parameters as form state, programmatic navigation on user actions, all using hook patterns you've mastered!"
+
+Binary displayed the synthesis: "Pattern recognition complete! Navigation = Components (Routes are components!) + State (URL is state!) + Hooks (useParams/useLocation/useNavigate!) + Props (route params!) + Events (Link clicks, navigation handlers!). Aria's learning progress: EXCELLENT!"
+
+**New Characters:**
+
+**Captain Marina**
+Legendary navigation expert of the Central Citadel, teacher of routing and navigation in the Navigation Command Center with floating holographic maps. Her voice carries warmth and excitement as she welcomes newcomers to the world of React routing. "Navigation in React isn't just about changing URLs - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences using all your React knowledge!"
+
+**Routing Fundamentals:**
+React routing is the synthesis of all React patterns you've learned. Routes are components that render conditionally based on location state (the URL). The `<BrowserRouter>` provides navigation context, `<Routes>` acts as a conditional switch, `<Route>` defines path-to-component mappings, and `<Link>` creates controlled navigation. Route parameters (`:id`) pass data through URLs like props. Nested routes use component composition for layouts. React Router hooks integrate routing with React patterns: useParams (read route params like props), useLocation (access current location state), useSearchParams (manage query strings like form state), useNavigate (programmatic navigation like event handlers). The URL becomes another source of truth in your state management - shareable, bookmarkable, history-aware state that persists across page reloads.
+
+**Reflection Questions:**
+
+- How does understanding routing as an extension of React's component system change your approach to navigation?
+- What advantages come from treating the URL as state rather than just addresses?
+- How do navigation hooks integrate with patterns you've learned at the Sanctuary?
+
+**Aria's Journal - Day 26 (Morning)**
+*Today I arrived at the Central Citadel in the Central Nexus to meet Captain Marina! The architecture is breathtaking - crystalline spires connecting all quarters of the kingdom through navigation pathways that pulse with energy. Marina immediately helped me see that routing isn't separate from React - it's the synthesis of everything I've learned! Routes are components that render conditionally based on location state (the URL). The `<BrowserRouter>` provides context (like Contextia taught!), `<Routes>` acts like a switch statement, `<Route>` maps paths to components, and `<Link>` is a controlled navigation component. I immediately recognized the patterns: route parameters (`:id`) are like props passed through URLs, nested routes use composition for layouts, and React Router hooks integrate with everything. useParams reads route params like props, useLocation accesses location state, useSearchParams manages query strings like form inputs, useNavigate enables programmatic navigation like event handlers. The URL becomes another state container - a shareable, bookmarkable source of truth! Marina says this afternoon she'll show me advanced patterns like dynamic routes and state preservation across navigation. Binary is excited to catalog how all React patterns unite in routing!*
+
+---
+
+### Chapter 2: Dynamic Routes and URL State
+
+**Bridge:**
+The Navigation Command Center transformed into an advanced learning space, holographic displays expanding to show complex route patterns. Marina guided Aria to a massive visualization showing how routes could become dynamic, intelligent entities that responded to data and user context.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended dynamic routing introduction with route parameters, nested routes, and layout patterns]**
+
+"Traditional static routing has limitations," Marina explained, manipulating the hologram to show simple versus dynamic patterns. "Static routes work for simple cases - `/about`, `/contact`, fixed destinations. But modern applications need intelligence and flexibility. Let me show you advanced patterns that make routing truly powerful!"
+
+She demonstrated dynamic route parameters:
+```javascript
+// Dynamic user routes - one route handles all users!
+<Route path="/users/:userId" element={<UserProfile />} />
+<Route path="/posts/:postId" element={<PostDetail />} />
+<Route path="/products/:category/:productId" element={<Product />} />
+
+// Component accesses params
+function UserProfile() {
+  const { userId } = useParams();
+  const [user, setUser] = useState(null);
+  
+  useEffect(() => {
+    fetchUser(userId).then(setUser);
+  }, [userId]);  // Re-fetch when userId changes!
+  
+  return <div>User: {user?.name}</div>;
+}
+```
+
+Aria studied the display with growing interest, connecting to her Sanctuary training. "I can see connections to my journey! Dynamic parameters are like props - they make routes reusable and data-driven. The useEffect re-fetching when `userId` changes - that's the Effect Sage's reactive patterns applied to routing!"
+
+"Excellent observations!" Marina praised, clearly pleased with the connections. "Your React foundation helps you see these patterns immediately. Watch how nested routes enable layout composition:"
+
+```javascript
+// Layout Routes - nested composition!
+<Route path="/dashboard" element={<DashboardLayout />}>
+  {/* Children render inside parent's <Outlet /> */}
+  <Route index element={<DashboardHome />} />
+  <Route path="stats" element={<Stats />} />
+  <Route path="settings" element={<Settings />} />
+  <Route path="profile" element={<Profile />} />
+</Route>
+
+// Parent layout component
+function DashboardLayout() {
+  return (
+    <div className="dashboard">
+      <DashboardNav />
+      <main>
+        <Outlet />  {/* Child routes render here! */}
+      </main>
+      <DashboardFooter />
+    </div>
+  );
+}
+```
+
+"See the composition?" Marina asked. "The layout component wraps all children - nav and footer stay constant, only the `<Outlet />` content changes when you navigate between child routes. Just like component composition from Master Cargo!"
+
+Aria's eyes lit up. "And `<Outlet />` is like `props.children` but for routes! The parent doesn't know what specific child will render - it just provides the layout structure. This is the Composition Pattern from the Props Caravans!"
+
+"Precisely!" Marina beamed.
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended URL state management with query parameters, location state, and state synchronization patterns]**
+
+"Now watch advanced state management through URLs," Marina demonstrated, her fingers dancing across the holographic interface. "When users navigate, we don't just change the URL - we intelligently preserve and restore their context through multiple state mechanisms!"
+
+She showed query parameters as state:
+```javascript
+function ProductList() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Read state from URL
+  const filter = searchParams.get('filter') || '';
+  const sort = searchParams.get('sort') || 'name';
+  const page = parseInt(searchParams.get('page') || '1');
+  
+  // Update URL state (updates browser history!)
+  const updateFilters = (newFilter, newSort) => {
+    setSearchParams({
+      filter: newFilter,
+      sort: newSort,
+      page: 1  // Reset to page 1 when filters change
+    });
+  };
+  
+  // URL: /products?filter=electronics&sort=price&page=2
+  // State is in the URL - shareable, bookmarkable!
+  
+  return (
+    <div>
+      <input 
+        value={filter}
+        onChange={(e) => updateFilters(e.target.value, sort)}
+      />
+      <select 
+        value={sort}
+        onChange={(e) => updateFilters(filter, e.target.value)}
+      >
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+      <ProductGrid filter={filter} sort={sort} page={page} />
+    </div>
+  );
+}
+```
+
+"See how URL becomes state?" Marina asked. "Query parameters store filter/sort/page state. Users can bookmark this URL and come back to their exact filtered view. They can share the link with others. Browser back/forward preserves their navigation history. The URL is a state container!"
+
+Aria connected immediately. "This is exactly like controlled form inputs from Formeus! Instead of useState for local state, we use useSearchParams for URL state. State changes update the URL, URL changes update the component. It's two-way binding through the browser!"
+
+"And there's more," Marina continued, showing location state:
+```javascript
+// Navigate with hidden state (not in URL)
+function UserList() {
+  const navigate = useNavigate();
+  
+  const handleUserClick = (user) => {
+    navigate(`/users/${user.id}`, {
+      state: { from: '/users', userName: user.name }  // Hidden state!
+    });
+  };
+}
+
+// Access location state in target route
+function UserProfile() {
+  const location = useLocation();
+  const { from, userName } = location.state || {};
+  
+  return (
+    <div>
+      {from && <Link to={from}>← Back to {userName}</Link>}
+      {/* User profile content */}
+    </div>
+  );
+}
+```
+
+"Location state passes data through navigation without cluttering URLs!" Marina explained. "Perfect for breadcrumb trails, back-button context, or temporary navigation data that shouldn't be bookmarked!"
+
+"And if you add validation patterns from Commander Validus..." Aria suggested, her Western Quarter training coming through.
+
+"We get routes that validate before allowing navigation!" Marina finished with excitement. "Watch:"
+
+```javascript
+function EditForm() {
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const navigate = useNavigate();
+  
+  // Prompt before leaving with unsaved changes
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = '';  // Show browser warning
+      }
+    };
+    
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [hasUnsavedChanges]);
+  
+  const handleCancel = () => {
+    if (hasUnsavedChanges) {
+      if (confirm('You have unsaved changes. Discard them?')) {
+        navigate(-1);
+      }
+    } else {
+      navigate(-1);
+    }
+  };
+}
+```
+
+"No more losing form data when users accidentally click away!" Marina declared triumphantly.
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on URL state practice with complete navigation state management and browser history integration]**
+
+"Now master URL state management," Marina said, presenting Aria with practical challenges.
+
+The first challenge: build a data table with all filter state in URL. Aria orchestrated:
+```javascript
+function DataTable() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  // All state from URL
+  const filters = {
+    search: searchParams.get('search') || '',
+    status: searchParams.get('status') || 'all',
+    sort: searchParams.get('sort') || 'name',
+    direction: searchParams.get('dir') || 'asc',
+    page: parseInt(searchParams.get('page') || '1')
+  };
+  
+  // Update any filter (preserves others)
+  const updateFilter = (key, value) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set(key, value);
+    if (key !== 'page') newParams.set('page', '1');  // Reset page on filter change
+    setSearchParams(newParams);
+  };
+  
+  // Navigate to detail (preserves filter context)
+  const handleRowClick = (item) => {
+    navigate(`/items/${item.id}`, {
+      state: { returnFilters: filters }  // Save filters for back button
+    });
+  };
+  
+  return (
+    <div>
+      <input 
+        value={filters.search}
+        onChange={(e) => updateFilter('search', e.target.value)}
+      />
+      <select 
+        value={filters.status}
+        onChange={(e) => updateFilter('status', e.target.value)}
+      >
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      {/* Table with sortable columns, pagination */}
+    </div>
+  );
+}
+
+// Detail page restores filters on back
+function ItemDetail() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { returnFilters } = location.state || {};
+  
+  const handleBack = () => {
+    if (returnFilters) {
+      const params = new URLSearchParams(returnFilters);
+      navigate(`/items?${params.toString()}`);
+    } else {
+      navigate('/items');
+    }
+  };
+}
+```
+
+"Perfect!" Marina approved. "Complete filter state in URL (shareable, bookmarkable), context preserved through location state for back navigation, browser history works naturally!"
+
+The second challenge: multi-step form with URL-based step tracking. Aria created:
+```javascript
+function MultiStepForm() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const step = parseInt(searchParams.get('step') || '1');
+  
+  const [formData, setFormData] = useState(() => {
+    // Restore from sessionStorage on mount
+    const saved = sessionStorage.getItem('formData');
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  // Persist on changes
+  useEffect(() => {
+    sessionStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
+  
+  const goToStep = (newStep) => {
+    setSearchParams({ step: newStep.toString() });
+  };
+  
+  // URL: /register?step=2
+  // Form data persists in sessionStorage
+  // Step tracked in URL (shareable, bookmarkable, history-aware)
+}
+```
+
+"Brilliant architecture!" Marina praised. "Step number in URL (can deep-link to specific step), form data in sessionStorage (persists across navigation), browser back/forward moves through steps naturally!"
+
+Binary displayed URL state mastery: "Query parameters: form/filter state (shareable). Location state: navigation context (temporary). SessionStorage: form persistence (across navigation). Browser history: time travel through app state. Complete state management through URLs!"
+
+**The Collaborative Discovery:**
+Marina taught Aria that true navigation mastery comes from understanding routes not as isolated paths, but as state transitions in your application. By learning Marina's routing expertise and applying her React foundation, Aria discovered patterns that preserve form state across navigation through sessionStorage, validate before allowing route changes using confirmation dialogs, sync URL parameters with application state for shareability, provide intelligent back/forward navigation using location state, and create truly stateful single-page applications where the URL becomes a first-class state container. "Your React foundation makes these concepts so much clearer," Marina observed with satisfaction. "Routing alone is powerful for changing views, but routing integrated with state management, validation, effects, and forms from everything you've learned? That's the real magic of modern React applications."
+
+**Reflection Questions:**
+
+- How does treating navigation as state transitions change your approach to routing in React applications?
+- What benefits come from preserving component and form state across route changes?
+- How can validation and navigation work together to create better user experiences?
+
+**Aria's Journal - Day 26 (Afternoon)**
+*Marina showed me advanced navigation patterns today that unite routing with state management! Dynamic routes with parameters (`/users/:id`) are like props for URLs - they make routes reusable and data-driven. Query parameters (`?sort=name&filter=active`) work exactly like controlled form state - I can use useSearchParams just like controlled inputs from Formeus! The URL becomes another state container - a shareable, bookmarkable source of truth. Users can share links with their exact filtered view! Browser back/forward preserves navigation history naturally. I also learned about location state - hidden state passed through navigation (not in URL) perfect for breadcrumb context and back-button intelligence. Nested routes use composition through `<Outlet />` - it's like `props.children` but for routing! Parent layouts wrap children, only the Outlet content changes. Marina was impressed when I suggested combining navigation guards with validation patterns from Commander Validus - prompt before leaving unsaved forms! I practiced building: (1) data table with all filter state in URL (shareable filters!), (2) multi-step form with step in URL + data in sessionStorage (deep-linkable + persistent!). Everything from the Sanctuary applies: useEffect watches URL changes, useMemo optimizes derived data from URL params, useCallback stabilizes navigation handlers. Tomorrow Marina teaches even more advanced patterns at the Waypoint Sanctum!*
+
+---
+
+### Chapter 3: Navigation Integration Patterns
+
+**Bridge:**
+Marina led Aria to the advanced Navigation Laboratory, a space where holographic displays showed the most sophisticated routing patterns - techniques that integrated everything she'd studied across her entire React journey into intelligent navigation architectures.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended navigation integration with route guards, protected routes, and authentication patterns]**
+
+"Now for the advanced concepts that truly demonstrate routing mastery," Marina explained, activating a complex holographic display showing authentication flows, route protection, and intelligent redirects. "What you've learned about components, state, hooks, forms, and validation - it all comes together in sophisticated navigation patterns that create truly intelligent, secure React applications!"
+
+Aria watched in fascination as Binary projected her complete learning progress. "This is incredible! Navigation really does tie everything together - state management for auth, validation for route guards, effects for data loading, forms for login, context for sharing auth state. How do we orchestrate all of this into secure navigation?"
+
+The hologram displayed interconnected patterns, each glowing with colors representing different React concepts. Golden threads (state) connected to blue pulses (effects) which merged with red shields (validation) and green pathways (navigation). "Watch," Marina said with building excitement, "as I show you the ultimate synthesis of all React knowledge in navigation form - protected routes that coordinate authentication, validation, and user experience!"
+
+She demonstrated route protection patterns:
+```javascript
+// Context for auth state (Contextia's teachings!)
+const AuthContext = createContext();
+
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Check auth on mount
+    checkAuth().then(user => {
+      setUser(user);
+      setLoading(false);
+    });
+  }, []);
+  
+  return (
+    <AuthContext.Provider value={{ user, setUser, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+// Protected Route component
+function ProtectedRoute({ children, requiredRole }) {
+  const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  
+  if (loading) return <LoadingSpinner />;
+  
+  if (!user) {
+    // Not authenticated - redirect to login with return URL
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  if (requiredRole && user.role !== requiredRole) {
+    // Authenticated but insufficient permissions
+    return <Navigate to="/unauthorized" replace />;
+  }
+  
+  // Authorized - render protected content
+  return children;
+}
+
+// Usage - protected routes!
+<Routes>
+  <Route path="/login" element={<Login />} />
+  
+  <Route path="/dashboard" element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  } />
+  
+  <Route path="/admin" element={
+    <ProtectedRoute requiredRole="admin">
+      <AdminPanel />
+    </ProtectedRoute>
+  } />
+</Routes>
+```
+
+"See the pattern synthesis?" Marina asked. "Context from Contextia shares auth state, useEffect from the Effect Sage checks authentication on mount, conditional rendering protects routes, Navigate component redirects unauthorized users, and location state preserves their intended destination for post-login redirect!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended route loaders/actions with data fetching integration and React Router 6.4+ patterns]**
+
+"Let me show you what I mean with even more advanced patterns," Marina said, her hands moving confidently across the holographic interface showing React Router 6.4+ features. "Modern React Router enables data loading and mutations directly in route definitions - true routing orchestration!"
+
+```javascript
+// Route with loader - data loads before component renders!
+const router = createBrowserRouter([
+  {
+    path: '/users/:userId',
+    element: <UserProfile />,
+    loader: async ({ params }) => {
+      // Loads BEFORE component renders
+      const user = await fetchUser(params.userId);
+      return { user };
+    },
+    errorElement: <ErrorBoundary />
+  },
+  {
+    path: '/users/:userId/edit',
+    element: <EditUser />,
+    loader: async ({ params }) => {
+      const user = await fetchUser(params.userId);
+      return { user };
+    },
+    action: async ({ request, params }) => {
+      // Handles form submission
+      const formData = await request.formData();
+      await updateUser(params.userId, formData);
+      return redirect(`/users/${params.userId}`);
+    }
+  }
+]);
+
+// Component access loader data
+function UserProfile() {
+  const { user } = useLoaderData();  // Data from loader!
+  
+  // No loading state needed - data ready before render!
+  return <div>User: {user.name}</div>;
+}
+
+// Form submission through action
+function EditUser() {
+  const { user } = useLoaderData();
+  const navigation = useNavigation();  // Track submission state
+  
+  return (
+    <Form method="post">  {/* Submits to route's action! */}
+      <input name="name" defaultValue={user.name} />
+      <button disabled={navigation.state === 'submitting'}>
+        {navigation.state === 'submitting' ? 'Saving...' : 'Save'}
+      </button>
+    </Form>
+  );
+}
+```
+
+Aria watched with fascination, connecting patterns. "Loaders are like useEffect but at the route level - data loads before rendering, preventing loading states! Actions are like form submission handlers but integrated into routing - forms submit to routes, routes handle the data, then redirect. This is Portal Keeper Sage's submission patterns integrated into navigation!"
+
+"Exactly!" Marina beamed. "And watch how we can orchestrate even more:"
+
+```javascript
+// Layout route with loader - data for all children!
+{
+  path: '/dashboard',
+  element: <DashboardLayout />,
+  loader: async () => {
+    const [user, stats] = await Promise.all([
+      fetchCurrentUser(),
+      fetchDashboardStats()
+    ]);
+    return { user, stats };
+  },
+  children: [
+    { index: true, element: <DashboardHome /> },
+    { path: 'stats', element: <StatsView /> },
+    { 
+      path: 'settings',
+      element: <Settings />,
+      loader: async () => {
+        // Child loader runs after parent loader
+        const settings = await fetchSettings();
+        return { settings };
+      }
+    }
+  ]
+}
+
+// Parent loader data available to all children
+function DashboardLayout() {
+  const { user, stats } = useLoaderData();  // Parent data
+  
+  return (
+    <div>
+      <DashboardNav user={user} />
+      <Outlet context={{ user, stats }} />  {/* Share with children */}
+    </div>
+  );
+}
+
+// Child accesses both parent and own loader data
+function Settings() {
+  const { user, stats } = useOutletContext();  // From parent
+  const { settings } = useLoaderData();  // Own loader
+  
+  return <SettingsForm user={user} settings={settings} />;
+}
+```
+
+"Complete data orchestration!" Marina explained. "Parent loaders provide shared data, child loaders add specific data, useOutletContext shares from parent to children, all coordinating through routing!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on complete navigation architecture with all patterns integrated and production-grade routing]**
+
+"Now architect a complete navigation system," Marina said, presenting Aria with the ultimate challenge - design production-grade routing that integrated all React patterns.
+
+Aria designed a complete application architecture:
+```javascript
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <GlobalError />,
+    loader: async () => {
+      // Load global auth state
+      const auth = await checkAuth();
+      return { auth };
+    },
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: 'login',
+        element: <Login />,
+        action: async ({ request }) => {
+          const formData = await request.formData();
+          const user = await login(formData);
+          return redirect(formData.get('returnTo') || '/dashboard');
+        }
+      },
+      {
+        path: 'dashboard',
+        element: <ProtectedRoute><DashboardLayout /></ProtectedRoute>,
+        loader: async () => {
+          const stats = await fetchDashboardStats();
+          return { stats };
+        },
+        children: [
+          { index: true, element: <DashboardHome /> },
+          {
+            path: 'users',
+            element: <UserList />,
+            loader: async ({ request }) => {
+              // Read filters from URL
+              const url = new URL(request.url);
+              const filter = url.searchParams.get('filter');
+              const users = await fetchUsers({ filter });
+              return { users, filter };
+            }
+          },
+          {
+            path: 'users/:userId',
+            element: <UserProfile />,
+            loader: async ({ params }) => {
+              const user = await fetchUser(params.userId);
+              return { user };
+            },
+            errorElement: <UserNotFound />,
+            children: [
+              { index: true, element: <UserOverview /> },
+              { path: 'edit', element: <EditUser />,
+                action: async ({ request, params }) => {
+                  const formData = await request.formData();
+                  await updateUser(params.userId, formData);
+                  return redirect(`/dashboard/users/${params.userId}`);
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]);
+
+// App with complete routing
+function App() {
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+}
+```
+
+"Magnificent!" Marina exclaimed. "Complete navigation architecture! Root loader checks global auth (Effect Sage patterns), protected routes guard dashboard (validation from Validus), nested routes compose layouts (Master Cargo's composition), loaders prefetch data (eliminating loading states!), actions handle submissions (Portal Keeper Sage's patterns), error boundaries catch route errors (Testing Tower patterns), URL parameters carry filters (state management), and everything orchestrates through routing!"
+
+She tested the system: Users navigate to `/dashboard/users?filter=active`, the loader fetches filtered users before rendering, the component renders immediately with data, clicking a user navigates to `/dashboard/users/123` with smooth transition, the edit form submits through the action which updates then redirects, protected routes redirect unauthorized access to login with return URL, and browser back/forward works perfectly throughout.
+
+"Every React pattern you've learned, united through navigation!" Marina said with satisfaction.
+
+Binary displayed the complete integration: "Routing synthesis complete! Components (routes are components!), State (URL state + auth context), Effects (loaders/auth checks), Hooks (useParams/useLoaderData/useNavigation), Forms (actions handle submission), Validation (route guards), Performance (loaders eliminate loading states), Error handling (errorElement boundaries). All patterns orchestrated through intelligent navigation!"
+
+**The Ultimate Navigation Wisdom:**
+React navigation isn't a separate system - it's the orchestration of all React patterns working together to create intelligent, secure, performant applications. Every route is a component that renders conditionally. Every navigation is a state change captured in browser history. Every transition can be guarded by validation and authentication. Every journey can be enhanced with effects for data loading and context for shared state. Modern React Router enables true routing orchestration: loaders prefetch data before rendering, actions handle form submissions and mutations, nested routes compose layouts with shared data, protected routes integrate authentication, error boundaries catch route-level errors, and the URL becomes a first-class state container that's shareable, bookmarkable, and history-aware. True mastery comes from understanding not just individual patterns, but how they synthesize into something greater through routing. Use components for structure, state for data, effects for synchronization, context for sharing, forms for interaction, validation for protection, and routing to orchestrate the complete application experience.
+
+**Reflection Questions:**
+
+- How has understanding navigation as the synthesis of all React patterns changed your perspective on building applications?
+- What possibilities open up when you treat routing as stateful, validated, protected, and intelligent rather than just URL changes?
+- How do route loaders and actions eliminate common state management patterns like loading states and form submission handlers?
+
+**Aria's Journal - Day 26 (Evening)**
+*What an incredible day completing navigation training! Marina showed me the ultimate synthesis where all React patterns converge in routing. Protected routes combine Context (auth state from Contextia), validation (route guards from Validus), and conditional rendering (redirect unauthorized users). Route loaders from React Router 6.4+ prefetch data BEFORE rendering - no more loading states! Data loads at route level, components render with data ready. Actions handle form submissions integrated into routes - forms submit to routes, actions process data and redirect. Complete separation of data loading (loaders) from UI (components) from mutations (actions)! I designed a complete production architecture: root loader checks auth globally, protected routes guard dashboard, nested routes compose layouts sharing parent data via Outlet context, loaders read URL params for filtering, actions handle edit submissions, error boundaries catch route errors. Every pattern I've learned from every quarter unites through navigation: Components (routes), State (URL + Context), Effects (loaders + auth checks), Hooks (useParams/useLoaderData/useNavigation), Forms (action submissions), Validation (guards), Performance (loaders eliminate loading), Errors (errorElement). Marina says I've mastered fundamental navigation - tomorrow at the Waypoint Sanctum she'll teach advanced waypoint patterns! Binary says my complete React foundation makes these advanced concepts natural. The Central Citadel truly is the nexus where all knowledge converges!*
+
+**Chapter Ending:**
+
+Marina smiled with the satisfaction of a teacher whose student had grasped the deepest concepts. "When I first heard of Aria's arrival in our kingdom, traveling through each quarter learning from dedicated masters, I knew she would understand what routing truly represents - not just navigation between pages, but the orchestration of all React patterns into cohesive application experiences."
+
+"You've learned our patterns beautifully," Marina continued, addressing Aria directly. "You've connected routing to components, state, effects, hooks, forms, validation - everything. You've shown how a strong React foundation makes advanced navigation concepts not just accessible, but natural extensions of what you already know."
+
+Aria felt the weight of her complete journey settling into place - from the Northern Quarter's component basics through the Eastern Sanctuary's hook mastery to the Western Quarter's form handling, and now the Central Citadel's routing synthesis. Every teacher, every pattern, all connected through navigation.
+
+"Tomorrow we venture to the Waypoint Sanctum for advanced patterns," Marina said warmly. "But tonight, reflect on how far you've come. You've learned React not as scattered concepts, but as a unified system where everything connects!"
+
+Binary projected Aria's complete journey map, every quarter lit up, every teacher's wisdom represented, all pathways connecting through the Central Citadel's routing nexus. The visualization was beautiful - a complete React mastery picture.
+
+---
+
+🚧 **WORK IN PROGRESS - LP6.2-6.4, LP7 (7 lessons remaining)**
 
 ---
 
