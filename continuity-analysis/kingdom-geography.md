@@ -512,6 +512,44 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
+### Temporal Tower
+**First Mentioned**: LP4.2 UseEffectEnchantments Ch1
+
+**Quarter/Region**: [Location not specified - part of Advanced Hooks area]
+
+**Architecture**:
+- Spiraling structure where time flows differently at each level
+- Clock faces of various sizes ticking at different speeds along walls
+- Dependency Observatory - vast room with floating crystal spheres (Ch2)
+- Chamber of Asynchronous Arts at apex where multiple timelines converge (Ch3)
+- Portals opening and closing randomly showing data from different moments
+
+**Atmosphere**:
+- Time flows differently throughout
+- Temporal flux and anomalies everywhere
+- Non-linear time, competing timelines
+- Sense of temporal chaos at apex
+- Both mysterious and dangerous
+
+**Visual Details**:
+- Clock faces ticking at different speeds
+- Sage materializes from temporal flux
+- Fabric shifting between states of existence
+- Hourglasses orbiting (sand flows upward/frozen/normal)
+- Temporal diagrams created in air
+- Crystal spheres spinning/frozen/pulsing with different patterns
+- Portals delivering data chaotically
+- Sage's form flickering between multiple states
+- Chronometer stabilizing at end
+
+**Master**: Effect Sage (Keeper of bridge, voice from multiple moments in time)
+
+**Teaches**: useEffect (lifecycle bridge, replaces old methods), cleanup functions (memory leak prevention), dependency arrays (empty/none/specific), stale closures, exhaustive-deps ESLint rule, async operations (create inside effect), race conditions, AbortController, cancellation patterns
+
+**Connection to Teaching**: Time flows differently = effects run after render; temporal contamination = memory leaks; temporal contract = dependencies; frozen values = stale closures; competing timelines = race conditions; portals = async data; temporal guardian = AbortController
+
+---
+
 ### Hook Academy
 **First Mentioned**: Hooks In Action → UseStateSpells → Ch1
 

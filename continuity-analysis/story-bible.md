@@ -134,6 +134,13 @@
 - **Appearance**: Distinguished wizard, robes shimmer between different states, beard sparkles with tiny useState calls blinking in/out, spectacles display real-time component renders
 - **Teaches**: Advanced useState patterns (lazy initialization, functional updates), immutability principle, spread operator for complex state, state architecture (grouping related state, no derived/synced state, local state)
 
+**Effect Sage**
+- **Role**: Keeper of the bridge between React's pure realm and the chaotic outside world
+- **Appears In**: LP4.2 UseEffectEnchantments (Ch1-3)
+- **Location**: Temporal Tower - spiraling structure where time flows differently at each level, clock faces on walls
+- **Appearance**: Robed in fabric shifting between states of existence, hourglasses orbit around them (sand flows upward in some, frozen in others), materializes from temporal flux, voice from multiple moments in time, form flickers/solidifies
+- **Teaches**: useEffect (lifecycle bridge, replaces old methods), cleanup functions (prevent memory leaks), dependency arrays (empty/none/specific), stale closures, async operations in effects, race conditions, AbortController
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -159,6 +166,7 @@
 - **LP3.3**: Chirps excitedly (bounces off cave walls), projects diagram (props down/events up), transforms chirp into multiple tones, projects callback chains, scans acoustic patterns, eyes widen, displays holographic summary
 - **LP3.4**: Projects small waterfall hologram, scans dam controls, calculates cascade levels rapidly, beeps excitedly about journey variety
 - **LP4.1**: Chirps greeting and projects hologram of adventures, beeps excitedly with performance metrics, projects comparisons highlighting reference changes, projects analysis of grouped state, chirps excitedly calculating optimal paths
+- **LP4.2**: Beeps nervously at temporal anomalies, scans dependency spheres showing patterns, display shows different activation patterns, beeps concernedly at paradoxes, processors whir anxiously at async chaos, chronometer stabilizes, chirps excitedly descending tower
 
 *[More contributions to be added as extraction continues]*
 
@@ -273,6 +281,16 @@
 - Immutability → "Immutability Principle", "new reference not mutation", "cornerstone of predictability"
 - Complex state → "crystalline object morphing", "spread at each level for nested"
 - State architecture → "state soup" (bad pattern), "Group related state", "Don't sync state" (calculate derived), "local state"
+
+**LP4.2 UseEffectEnchantments**:
+- useEffect → "enchantments", "bridge between pure realm and chaotic outside", "portal to outside world", "exists outside normal cycle"
+- Side effects → "messy impure operations", "connecting to external systems", "temporal contamination" (if not cleaned)
+- Cleanup → "protection against temporal contamination", "prevents effects from haunting application"
+- Dependencies → "temporal contract with React", "control when effects activate across time", three patterns (no array/empty/specific)
+- Stale closures → "values frozen in past time", "temporal paradoxes" from missing dependencies
+- Async operations → "non-linear time flows", "multiple timelines converging"
+- Race conditions → "competing timelines", "temporal chaos", "messages arriving out of order"
+- AbortController → "temporal guardian", "closes outdated portals", "cancels obsolete requests"
 
 *[More translations to be added as extraction continues]*
 
