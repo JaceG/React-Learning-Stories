@@ -686,20 +686,77 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 ---
 
 ### Central Citadel (Navigation Command Center)
-**First Mentioned**: Routing Navigation → NavigationCompass → Ch1
+**First Mentioned**: LP6.1 NavigationCompass Ch1
 
-**Quarter**: Central (serves as nexus connecting all quarters)
+**Quarter/Region**: Central nexus connecting all quarters of React Kingdom
 
-**Features**:
-- Crystalline spires reaching toward the clouds
-- Architectural marvel connecting all kingdom quarters
-- Navigation Command Center with floating maps
-- Holographic displays showing routes and waypoints
-- Real-time path updates throughout the facility
+**Architecture**:
+- Architectural marvel with crystalline spires reaching toward clouds
+- Serves as nexus where all quarters connect
+- Navigation Command Center with floating maps and holograms
+- Advanced Navigation Laboratory (LP6.1 Ch3)
+- Massive holographic displays
+- Central hologram activation system
+- Waypoint Sanctum & Observatory (LP6.2) - see separate entry below
 
-**Master**: Captain Marina (Navigator)
+**Atmosphere**:
+- Warmth and excitement from Captain Marina
+- Wonder and fascination
+- Learning space transforming for advanced concepts
+- Satisfaction of complete understanding
+- All patterns connecting and synthesizing
 
-**Lessons Taught**: React Router, navigation, routes, links
+**Visual Details**:
+- Crystalline spires connecting all kingdom quarters through navigation pathways
+- Floating maps showing routes
+- Central hologram displaying navigation systems
+- Interconnected patterns glowing with colors of different quarters
+- Massive holographic display for advanced patterns
+- Complex holographic display with synthesis visualization
+
+**Master**: Captain Marina (legendary navigation expert, voice with warmth/excitement)
+
+**Teaches**: Routing as extension of React component system (routes are components), navigation as state transitions, browser history triggering effects, route guards with validation patterns, dynamic routes with parameters (/users/:id), query parameters (?sort=name), URL as state container/single source of truth, stateful nested routes, protected routes (authentication + validation), advanced navigation synthesizing all React knowledge (components + state + effects + context + validation + forms orchestrated)
+
+**Connection to Teaching**: Crystalline spires = connections between quarters/routes; floating maps = route visualization; Navigation Compass = tracking app journey; holograms = route patterns; nexus = central routing hub; interconnected patterns = all React knowledge unified in navigation; synthesis = routing orchestrates everything
+
+---
+
+### Waypoint Sanctum & Observatory (Central Citadel)
+**First Mentioned**: LP6.2 WaypointWizardry Ch1
+
+**Quarter/Region**: Part of Central Citadel complex
+
+**Architecture**:
+- Vast chamber where glowing orbs of light trace paths through air
+- Crystal dome where light refracts into countless rainbows (Ch1)
+- Waypoint Control Center with complex navigation maps (Ch2)
+- Waypoint Observatory with upper level for advanced systems (Ch3)
+- Floating navigation orbs throughout
+- Holographic displays and sanctum activation systems
+
+**Atmosphere**:
+- Marina's voice resonating through chamber
+- Growing understanding and fascination
+- Teaching satisfaction
+- Wonder at living navigation entities
+- Pride at complete system unification
+
+**Visual Details**:
+- Glowing orbs tracing navigation paths
+- Light refracting into rainbows through dome
+- Complex navigation matrix activating
+- Route waypoints splitting into thousands of tiny lights
+- Navigation graph mapping
+- Holographic maps showing all kingdom quarters connected
+- Routes loading dynamically, breadcrumbs generating automatically, scroll restoring
+- Fortress icon for next lesson
+
+**Master**: Captain Marina (continues from Navigation Command Center)
+
+**Teaches**: Advanced waypoint patterns (intelligent navigation nodes), Waypoint Architecture Pattern (routes as living entities with state/effects/context), route loaders for data, actions for forms, error boundaries, metadata/handles, dynamic parameters (:id for identity), query parameters (?sort for state), navigation state (temporary), nested routes (component hierarchies), Outlets (render slots), breadcrumbs with useMatches(), intelligent prefetching, scroll restoration
+
+**Connection to Teaching**: Glowing orbs = navigation paths; crystal dome/rainbows = route possibilities; waypoints = intelligent route nodes; splitting lights = one pattern serving infinite destinations; living entities = routes with full React lifecycle; nested = component composition in navigation; complete system = all React patterns unified
 
 ---
 
