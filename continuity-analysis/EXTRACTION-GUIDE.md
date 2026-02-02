@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP6.1 NavigationCompass ✅
+**Last Completed**: LP6.2 WaypointWizardry ✅
 
-**Next Lesson**: LP6.2 WaypointWizardry
+**Next Lesson**: LP6.3 GuardianGates
 
 **Progress Tracker**:
 ```
@@ -45,8 +45,8 @@ LP5: Forms Events (4 lessons) ✅ COMPLETE
   [✓] 5.4 SubmissionPortals (Ch1, Ch2, Ch3) - COMPLETE
 
 LP6: Routing Navigation (3 lessons)
-  [ ] 6.1 NavigationCompass (Ch1, Ch2, Ch3)
-  [ ] 6.2 GuardianGates (Ch1, Ch2, Ch3)
+  [✓] 6.1 NavigationCompass (Ch1, Ch2, Ch3) - COMPLETE
+  [✓] 6.2 WaypointWizardry (Ch1, Ch2, Ch3) - COMPLETE
   [ ] 6.3 PortalPassages (Ch1, Ch2, Ch3)
 
 LP7: Performance Optimization (4 lessons)

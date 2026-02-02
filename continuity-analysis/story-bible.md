@@ -419,6 +419,18 @@
 - URL → "state container", "single source of truth that can be shared"
 - Advanced navigation → "synthesis of all React knowledge", "orchestration of all React patterns"
 
+**LP6.2 WaypointWizardry**:
+- Waypoints → "living entities", "breathe with state, pulse with effects", "intelligent navigation nodes"
+- Waypoint Sanctum → "vast chamber where glowing orbs trace paths through air"
+- Route intelligence → "loaders for data fetching", "actions for form handling", "error boundaries", "metadata/handles"
+- Dynamic parameters → "component props of navigation", "make routes adaptable"
+- Route parameters → "for identity" (:id which resource)
+- Query parameters → "for state" (?sort=name how to display)
+- Navigation state → "temporary data that shouldn't be in URL"
+- Nested routes → "component hierarchies applied to navigation", "component composition patterns"
+- Outlets → "slots where child routes render", "like children pattern"
+- Complete system → "one beautiful, unified system", "everything connects"
+
 *[More translations to be added as extraction continues]*
 
 ---
