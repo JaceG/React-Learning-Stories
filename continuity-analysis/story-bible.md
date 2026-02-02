@@ -277,6 +277,20 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: Render props (share behavior explicitly, delegate rendering to children), separation of concerns (logic vs presentation), render delegation ("logic says what's happening, consumer says how to show"), maximum flexibility patterns, advanced delegation (prop getters, state reducers, control props), balancing flexibility with ease of use, combining render props with compound components, when to use render props vs hooks, flexible APIs
 
+**Forge Master Enhance**
+- **Role**: Keeper of enhancement patterns and component transformation
+- **Appears In**: LP9.3 HigherOrderComponents (Ch1-3)
+- **Location**: Architect's Academy - Enhancement Forge glowing with transformative energy, deeper forges
+- **Appearance**: [Not extensively described]
+- **Teaches**: Higher-Order Components (HOCs - component factories take component return enhanced version), HOC patterns (withAuth/withLogging/withData/withTheme), layering enhancements (composition of multiple HOCs), advanced HOC techniques (props proxy for manipulation, inheritance inversion for deep access, display name preservation), HOC limitations (deep nesting obscures hierarchy affects debugging), when HOCs vs hooks (HOCs for props manipulation/conditional rendering/legacy, hooks for state logic/side effects), Pattern Evolution Timeline (Mixins→HOCs→Render Props→Hooks)
+
+**Portal Keeper Escapius**
+- **Role**: Master of dimensional rendering and DOM manipulation
+- **Appears In**: LP9.4 PortalsRefs (Ch1-3)
+- **Location**: Architect's Academy - final chamber defying physics with portals opening to different DOM parts, Reference Scrolls area (Ch2), evaluation chamber with Dean for final assessment (Ch3)
+- **Appearance**: [Not extensively described]
+- **Teaches**: React Portals (render children outside parent's DOM hierarchy while maintaining React tree - essential for modals/tooltips/notifications), portal event propagation (events bubble through React tree not DOM tree), refs (direct DOM access - escape hatch when declarative insufficient), useRef for DOM elements, forwardRef to pass refs through, useImperativeHandle for custom ref APIs, focus management (focus trap), integrating non-React libraries, when refs necessary vs declarative approaches, combining portals with refs
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -640,6 +654,26 @@
 - Flexibility vs complexity → "tradeoff balance visualization", "more flexibility = more complexity for consumers"
 - Pattern combination → "default UI with compounds, render prop overrides for customization"
 - Comparison → "Compounds=intuitive high simplicity, Render Props=maximum flexibility lower simplicity, Hooks=modern balance"
+
+**LP9.3 HigherOrderComponents**:
+- Enhancement Forge → "glows with transformative energy", "forge blazes brighter", "running hot", "deeper forges", "forge cooled"
+- HOCs → "component factories", "take component return enhanced version", "like armor for components", "each layer adds protection and capability"
+- Enhancement patterns → withAuth/withLogging/withData/withTheme wrapping original
+- Layering → "composition of enhancements", "nesting gets deep", "component tree becoming forest", "each layer adds power reduces clarity"
+- Advanced techniques → "props proxy" (safest), "inheritance inversion" (maximum control tight coupling), display name preservation, "surgical tools not blunt instruments"
+- Pattern Evolution Timeline → Mixins (2013) → HOCs (2015) → Render Props (2017) → Hooks (2019)
+- HOC vs hooks → "HOCs excel at props manipulation/conditional rendering, hooks dominate state logic/side effects", "not obsolete but specialized"
+
+**LP9.4 PortalsRefs**:
+- Final chamber → "defies physics", "portals open to different DOM parts"
+- React Portals → "render outside parent hierarchy", "escape container constraints", "maintain React component structure"
+- Portal patterns → "modals/tooltips/notifications must escape containers"
+- DOM escaping → "breaks normal parent-child relationship", "components render anywhere"
+- Reference Scrolls → "direct DOM access", "React's abstraction isn't enough sometimes"
+- Refs → "escape hatch when declarative insufficient", "bridges React virtual to browser reality", "dangerous if carelessly used"
+- Ref patterns → useRef for DOM, forwardRef to pass through, useImperativeHandle for custom APIs
+- Focus management → "focus trap" trapping keyboard navigation
+- Architectural Summit → "combining all patterns purposefully" (portals + compounds + refs + render props + context)
 
 *[More translations to be added as extraction continues]*
 
