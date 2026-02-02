@@ -324,6 +324,19 @@
 - **Location**: Allied Kingdoms - Jotai Archipelago
 - **Teaches**: Jotai atomic patterns ("Like Recoil but with React Suspense at core")
 
+**Moderator Stylus**
+- **Role**: Diplomatic mediator of the Style Symposium
+- **Appears In**: LP10.2 StylingSolutions (Ch1-3)
+- **Location**: Great Style Symposium (location not specified), Styling Workshops with demonstration stations
+- **Appearance**: [Not extensively described]
+- **Teaches**: Styling approaches trade-offs (developer experience/performance/maintainability/team scalability), CSS-in-JS, CSS Modules, Utility-First (Tailwind), Styled Components, traditional CSS, zero-runtime solutions (Vanilla Extract), Emotion, hybrid approaches, context-aware decision making, when each approach shines based on project needs
+
+**CSS-in-JS Champion**, **CSS Modules Defender**, **Utility-First Advocate**, **Styled Components Artist**
+- **Role**: Representatives at Style Symposium (passionate debaters)
+- **Appears In**: LP10.2 StylingSolutions (Ch1, Ch3)
+- **Location**: Great Style Symposium
+- **Teaches**: Each advocates for their approach, eventual harmony through understanding use cases
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -720,6 +733,18 @@
 - Recoil Regions → "atomic state", "each piece is atom, components subscribe to exactly what need", "fine-grained reactivity"
 - Jotai Archipelago → "like Recoil but React Suspense at core"
 - State Alliance → "each approach reflects their values", "diversity strengthens ecosystem", "right solution for specific needs"
+
+**LP10.2 StylingSolutions**:
+- Style Symposium → "representatives from different styling philosophies gathered", "passionate arguing"
+- Four representatives → CSS-in-JS Champion (💅 "styles belong with components"), CSS Modules Defender (📦 "separation of concerns"), Utility-First Advocate (🎨 "composition over custom"), Styled Components Artist (🎭 "stylish by default")
+- Styling debate → "fierce", "heated", "passionate", "argumentative becoming understanding"
+- Trade-offs → "DX vs bundle size", "dynamic capabilities vs runtime cost", "speed vs realism"
+- Styling Workshops → "demonstration stations", "actions speak louder than arguments"
+- Styled Components Atelier → "component-centric styling", "Button IS the style"
+- Tailwind Factory → "composition", "Why write custom CSS? Compose utilities!"
+- CSS Modules Academy → "tradition with safety", "keep CSS separate but scoped"
+- Harmony → "not winner but understanding when each shines", "mutual respect", "stop defending territories start understanding use cases"
+- Decision matrix → "component libraries=CSS-in-JS, rapid prototyping=Tailwind, large teams=CSS Modules, performance-critical=zero-runtime"
 
 *[More translations to be added as extraction continues]*
 
