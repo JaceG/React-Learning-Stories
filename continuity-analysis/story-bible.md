@@ -74,6 +74,13 @@
 - **Appearance**: Sturdy, leather apron, sparks flying from hooks being crafted
 - **Teaches**: Hook family overview (useState, useEffect, useRef, useMemo, useCallback), useEffect dependencies, cleanup functions, specialized hooks
 
+**Contextia**
+- **Role**: Keeper of the Grand Context
+- **Appears In**: LP2.3 GrandContext (Ch1-3)
+- **Location**: Grand Context Hall - Central Plaza between all four quarters
+- **Appearance**: Tall, flowing robes, hands gracefully trace patterns in air making threads glow
+- **Teaches**: Context API, Provider/Consumer pattern, prop drilling solution, custom Context Providers (bundling state + functions), Context optimization (splitting contexts, memoization)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -92,6 +99,7 @@
 - **LP1.4**: Bounces excitedly, uses flower metaphor, warns about ghost timers, spins happily
 - **LP2.1**: Explains state memory, teaches immutability, projects calculations, twirls
 - **LP2.2**: Chirps excitedly about hooks granting abilities, lights flicker nervously about "dangerous" useEffect, lights dance with excitement about Grand Context
+- **LP2.3**: Whistles in awe at thread connections, circuits sparkle with interest, lights dim when learning cost of re-renders, buzzes with excitement at chapter end
 
 *[More contributions to be added as extraction continues]*
 
@@ -144,6 +152,14 @@
 - useRef → "secret pocket", "memory crystal"
 - useMemo → "calculation cache"
 - useCallback → "function preserver"
+
+**LP2.3 GrandContext**:
+- Context → "invisible threads", "magical portals for data", "network throughout component tree"
+- Prop drilling → "passing messages through every component in between"
+- Provider → "broadcasts values through threads"
+- Consumer → "taps into broadcast"
+- Custom Context Provider → "living threads" carrying state + functions
+- Context optimization → "organizing threads into separate channels"
 
 *[More translations to be added as extraction continues]*
 
