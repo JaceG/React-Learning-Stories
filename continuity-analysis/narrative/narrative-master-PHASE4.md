@@ -11567,7 +11567,1091 @@ Marina nodded with approval. "Your complete React foundation makes these advance
 
 ---
 
-🚧 **WORK IN PROGRESS - LP6.3-6.4, LP7 (6 lessons remaining)**
+## 6.3 GuardianGates
+
+### 📖 Lesson Opener
+
+Marina led Aria from the Waypoint Observatory to the Navigation Corps training grounds within the Central Citadel complex, where advanced security patterns were taught. Here, massive guardian statues stood at attention, each representing a different authentication pattern. She would learn how to protect routes with authentication and authorization - securing the most sensitive areas of React applications while maintaining excellent user experience.
+
+### Chapter 1: Protected Route Fundamentals
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended protected route introduction with authentication checks and redirect patterns]**
+
+"Welcome to Guardian Gates training," Marina announced, her voice carrying both authority and warmth as they entered the training grounds. Ancient guardian statues surrounded them, each carved with different security patterns. "Today, I'll teach you how to protect routes using authentication and authorization - but not just simple checks. You'll learn to create intelligent guardian systems that preserve user context, remember intentions, and create seamless security that enhances rather than hinders user experience!"
+
+Marina activated a complex security diagram showing authentication flows. "Protected routes aren't just about checking if someone's logged in," she explained, gesturing to interconnected patterns. "They're about integrating authentication with state management (your Eastern Sanctuary training!), form validation (Western Quarter patterns!), and intelligent user flows that remember where users wanted to go and return them there after authentication!"
+
+Aria studied the patterns with fascination, immediately connecting to her journey. "I can see connections to everything I've learned! Authentication state is like any other application state - it needs management through Context (Contextia taught me!). Route protection uses conditional rendering and validation patterns (Commander Validus!). And user flows with redirects and state preservation connect to the form handling I studied with Portal Keeper Sage!"
+
+"Excellent observations!" Marina praised, clearly delighted with the connections. "Your journey through the React Kingdom gives you the perfect foundation for understanding route security. Components provide structure, state manages authentication, Context distributes auth globally, validation patterns protect access, and forms handle login. Now watch how they unite in protected routes!"
+
+She demonstrated the fundamental protected route pattern:
+```javascript
+import { Navigate, useLocation } from 'react-router-dom';
+
+// Protected Route wrapper component
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();  // Custom hook
+  const location = useLocation();
+  
+  // Show loading while checking auth
+  if (loading) {
+    return <div>Checking authentication...</div>;
+  }
+  
+  // Redirect to login if not authenticated
+  if (!isAuthenticated) {
+    // Save intended destination in location state!
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  // Authenticated - render protected content
+  return children;
+}
+
+// Usage in routes
+<Route path="/dashboard" element={
+  <ProtectedRoute>
+    <Dashboard />
+  </ProtectedRoute>
+} />
+```
+
+"See the intelligence?" Marina asked. "If unauthenticated, redirect to login BUT save their intended destination (`state={{ from: location }}`). After login succeeds, send them back to where they wanted to go! No frustrating 'you're logged in, now where were you going?' moments!"
+
+Binary chirped excitedly, projecting analysis: "Protected route pattern detected! Features: Authentication check, loading state handling, intended destination preservation, seamless user experience post-login!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended authentication context with useAuth hook and login flow integration]**
+
+"Now let's build the authentication system that powers these guards," Marina demonstrated, showing how Context provides auth state globally.
+
+```javascript
+// Authentication Context
+const AuthContext = createContext();
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  // Check auth on mount
+  useEffect(() => {
+    checkAuthStatus()
+      .then(user => {
+        setUser(user);
+        setLoading(false);
+      })
+      .catch(() => {
+        setUser(null);
+        setLoading(false);
+      });
+  }, []);
+  
+  const login = async (credentials) => {
+    const user = await loginAPI(credentials);
+    setUser(user);
+    return user;
+  };
+  
+  const logout = async () => {
+    await logoutAPI();
+    setUser(null);
+  };
+  
+  const value = {
+    user,
+    loading,
+    isAuthenticated: !!user,
+    login,
+    logout
+  };
+  
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+// Custom hook for easy access
+export function useAuth() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider');
+  }
+  return context;
+}
+
+// App setup
+function App() {
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+}
+```
+
+"Perfect Context pattern!" Marina explained. "AuthProvider wraps the app, checks auth on mount (useEffect!), provides user data and auth functions globally. Any component can use useAuth() to access authentication - no prop drilling!"
+
+Aria recognized the patterns immediately. "This is Contextia's teachings applied to authentication! Context provides global state, custom hook encapsulates access, Provider wraps the app. And the useEffect checking auth on mount - that's the Effect Sage's patterns for synchronization!"
+
+"And watch the login flow that uses the saved destination:"
+
+```javascript
+function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Get intended destination from location state
+  const from = location.state?.from?.pathname || '/dashboard';
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+      await login({
+        email: formData.get('email'),
+        password: formData.get('password')
+      });
+      
+      // Redirect to intended destination!
+      navigate(from, { replace: true });
+    } catch (error) {
+      setError('Invalid credentials');
+    }
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input name="email" type="email" required />
+      <input name="password" type="password" required />
+      <button type="submit">Log In</button>
+    </form>
+  );
+}
+```
+
+"Seamless user flow!" Marina exclaimed. "User tries to visit `/dashboard`, gets redirected to `/login` with `from` state, logs in successfully, and navigate sends them to their intended destination (`/dashboard`). They never lose their place!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on protected route practice with role-based access and public/private route configurations]**
+
+"Now practice building complete route protection," Marina said, presenting Aria with authentication challenges.
+
+The first challenge: implement role-based protected routes. Aria created:
+```javascript
+// Role-based protected route
+function ProtectedRoute({ children, requiredRole }) {
+  const { user, loading } = useAuth();
+  const location = useLocation();
+  
+  if (loading) return <LoadingSpinner />;
+  
+  // Not authenticated at all
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  // Authenticated but insufficient role
+  if (requiredRole && user.role !== requiredRole) {
+    return <Navigate to="/unauthorized" replace />;
+  }
+  
+  // Authorized!
+  return children;
+}
+
+// Multiple role support
+function ProtectedRoute({ children, allowedRoles = [] }) {
+  const { user, loading } = useAuth();
+  const location = useLocation();
+  
+  if (loading) return <LoadingSpinner />;
+  
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  if (allowedRoles.length > 0 && !allowedRoles.includes(user.role)) {
+    return <Navigate to="/unauthorized" replace />;
+  }
+  
+  return children;
+}
+
+// Usage
+<Route path="/admin" element={
+  <ProtectedRoute allowedRoles={['admin', 'superadmin']}>
+    <AdminPanel />
+  </ProtectedRoute>
+} />
+```
+
+"Perfect!" Marina approved. "Check authentication first, then authorization (role). Different redirect targets - `/login` for unauthenticated, `/unauthorized` for insufficient permissions. Clear user feedback!"
+
+The second challenge: implement route configuration with mixed public/protected routes. Aria orchestrated:
+```javascript
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      // Public routes
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'login', element: <Login /> },
+      { path: 'register', element: <Register /> },
+      
+      // Protected routes (require authentication)
+      {
+        path: 'dashboard',
+        element: <ProtectedRoute><DashboardLayout /></ProtectedRoute>,
+        children: [
+          { index: true, element: <DashboardHome /> },
+          { path: 'profile', element: <Profile /> },
+          { path: 'settings', element: <Settings /> }
+        ]
+      },
+      
+      // Admin routes (require admin role)
+      {
+        path: 'admin',
+        element: (
+          <ProtectedRoute allowedRoles={['admin']}>
+            <AdminLayout />
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <AdminDashboard /> },
+          { path: 'users', element: <UserManagement /> },
+          { path: 'settings', element: <AdminSettings /> }
+        ]
+      },
+      
+      // Error routes
+      { path: 'unauthorized', element: <Unauthorized /> },
+      { path: '*', element: <NotFound /> }
+    ]
+  }
+]);
+```
+
+"Excellent route architecture!" Marina praised. "Clear separation: public routes (open access), protected routes (auth required), admin routes (role required). Nested protected layouts protect all children automatically. Error routes handle edge cases!"
+
+Binary displayed protected route mastery: "Authentication: check user existence. Authorization: check user permissions/roles. Preserve context: save intended destination. Seamless UX: return users to intended location post-login. Complete route protection achieved!"
+
+**Protected Route Fundamentals:**
+Protected routes secure sensitive areas of React applications through authentication (who are you?) and authorization (what can you do?). Implement using wrapper components that check authentication state before rendering children. If unauthenticated, redirect to login using `<Navigate>` BUT preserve intended destination in location state (`state={{ from: location }}`). After successful login, navigate back to the saved destination for seamless UX. Build authentication system with Context - AuthProvider wraps app, checks auth on mount with useEffect, provides user data and auth functions (login/logout) globally. Custom useAuth hook accesses context easily. Handle loading states while checking authentication (show spinner). Implement role-based authorization by checking user.role after authentication. Different redirect targets: `/login` for unauthenticated, `/unauthorized` for insufficient permissions. Organize routes clearly: public routes (open), protected routes (auth required), admin routes (role required). Nest protected layouts to protect all children automatically. This pattern unites Context (global auth state), validation (permission checks), effects (auth verification), forms (login), and routing (conditional access) into intelligent security.
+
+**Reflection Questions:**
+
+- How does preserving intended destinations in location state improve the authentication user experience?
+- What advantages come from using Context for authentication state versus prop drilling or local state?
+- How do protected routes integrate patterns from Components, State, Context, Effects, and Forms?
+
+**Aria's Journal - Day 28 (Morning)**
+*Marina brought me to the Guardian Gates training grounds at the Navigation Corps! Route protection is fascinating - it's not just about checking if someone's logged in, but creating intelligent systems that preserve user intent and context. Protected routes wrap components, check authentication using useAuth hook, and redirect if needed. The key pattern: save intended destination in location state when redirecting to login (`state={{ from: location }}`), then after successful login, navigate back to that saved destination - seamless UX! I learned AuthContext pattern: AuthProvider wraps app, checks auth on mount (useEffect), provides user data + login/logout functions globally via Context. Custom useAuth hook accesses it anywhere - no prop drilling! I immediately connected: Context from Contextia (global state distribution), useEffect from Effect Sage (mount synchronization), validation patterns from Validus (permission checks), form handling from Portal Keeper Sage (login forms). For authorization, check user.role after authentication - different redirects for unauthenticated (`/login`) vs insufficient permissions (`/unauthorized`). I practiced building role-based routes (allowedRoles array check), mixed public/protected route configurations with nested protected layouts (layout protection protects all children automatically!). Binary says this unites Context + Effects + Forms + Routing into intelligent security!*
+
+---
+
+### Chapter 2: Advanced Authentication Flows
+
+**Bridge:**
+Marina led Aria deeper into the Guardian Archives within the training grounds, where ancient memory crystals lined the walls, glowing with preserved authentication patterns. Here, she would teach the most sophisticated authentication flows - systems that preserved entire user journeys, validated complex credentials, and created seamless experiences across navigation.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended session management with token persistence, refresh tokens, and automatic session restoration]**
+
+"Authentication isn't just about checking credentials once," Marina began, activating a memory crystal that pulsed with golden light showing token flows. "It's about maintaining sessions across page reloads, refreshing expired tokens automatically, and preserving the entire user journey even when things go wrong. Let me show you advanced patterns that integrate with everything you've learned!"
+
+She demonstrated persistent session management:
+```javascript
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  // Check auth on mount - restore from localStorage!
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    
+    if (token) {
+      // Verify token is still valid
+      verifyToken(token)
+        .then(user => {
+          setUser(user);
+          setLoading(false);
+        })
+        .catch(() => {
+          // Token invalid/expired
+          localStorage.removeItem('authToken');
+          setUser(null);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, []);
+  
+  const login = async (credentials) => {
+    const { user, token } = await loginAPI(credentials);
+    
+    // Persist token for session restoration
+    localStorage.setItem('authToken', token);
+    setUser(user);
+    
+    return user;
+  };
+  
+  const logout = async () => {
+    await logoutAPI();
+    localStorage.removeItem('authToken');
+    setUser(null);
+  };
+  
+  // Auto-refresh tokens before expiry
+  useEffect(() => {
+    if (!user) return;
+    
+    const refreshInterval = setInterval(async () => {
+      try {
+        const { token } = await refreshTokenAPI();
+        localStorage.setItem('authToken', token);
+      } catch (error) {
+        // Refresh failed - logout
+        logout();
+      }
+    }, 14 * 60 * 1000);  // Refresh every 14 minutes (for 15min tokens)
+    
+    return () => clearInterval(refreshInterval);
+  }, [user]);
+  
+  return (
+    <AuthContext.Provider value={{ user, loading, isAuthenticated: !!user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+```
+
+Aria studied the flow with growing understanding, connecting to her Sanctuary training. "This is brilliant! Token persistence in localStorage (browser API storage), verification on mount to restore sessions across page reloads, automatic token refresh with useEffect intervals (Effect Sage's timing patterns!), and graceful logout when refresh fails. The user never loses their session unnecessarily!"
+
+"Exactly!" Marina beamed. "Users close the tab, come back hours later (within token validity), and they're still logged in - no re-authentication needed! And the automatic refresh prevents mid-session logouts from token expiry!"
+
+She showed OAuth integration:
+```javascript
+function OAuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const location = useLocation();
+  
+  // Handle OAuth callback
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const code = params.get('code');  // OAuth authorization code
+    
+    if (code) {
+      // Exchange code for token
+      exchangeCodeForToken(code)
+        .then(({ user, token }) => {
+          localStorage.setItem('authToken', token);
+          setUser(user);
+          
+          // Clean up URL
+          window.history.replaceState({}, '', '/dashboard');
+        })
+        .catch(error => {
+          console.error('OAuth failed:', error);
+        });
+    }
+  }, [location.search]);
+  
+  const loginWithOAuth = (provider) => {
+    // Redirect to OAuth provider
+    const redirectUri = `${window.location.origin}/auth/callback`;
+    const authUrl = `https://oauth-provider.com/authorize?client_id=xxx&redirect_uri=${redirectUri}`;
+    window.location.href = authUrl;
+  };
+  
+  return (
+    <AuthContext.Provider value={{ user, loginWithOAuth }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+```
+
+"OAuth flow handled!" Marina explained. "User clicks 'Login with Google', redirects to OAuth provider, authorizes, returns with `code` in URL query params, exchange code for token, clean up URL, user logged in!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended form state preservation across authentication with session storage and navigation state]**
+
+"But what about preserving user work when authentication expires mid-session?" Marina continued, showing a scenario many developers miss. "Users fill out a long form, session expires, they have to login... and lose all their work! Watch how we prevent this tragedy:"
+
+```javascript
+// Form with authentication awareness
+function LongForm() {
+  const { isAuthenticated } = useAuth();
+  const [formData, setFormData] = useState(() => {
+    // Restore from sessionStorage
+    const saved = sessionStorage.getItem('draftForm');
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  // Persist form data on changes
+  useEffect(() => {
+    sessionStorage.setItem('draftForm', JSON.stringify(formData));
+  }, [formData]);
+  
+  // Clear on successful submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!isAuthenticated) {
+      // Save form, redirect to login
+      navigate('/login', {
+        state: {
+          from: location,
+          message: 'Please log in to continue'
+        }
+      });
+      return;
+    }
+    
+    try {
+      await submitForm(formData);
+      sessionStorage.removeItem('draftForm');  // Clear draft
+      navigate('/success');
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Form fields using formData state */}
+    </form>
+  );
+}
+
+// Authentication-aware form hook
+function useAuthenticatedForm(initialData) {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const [formData, setFormData] = useState(() => {
+    const saved = sessionStorage.getItem('authForm');
+    return saved ? JSON.parse(saved) : initialData;
+  });
+  
+  useEffect(() => {
+    sessionStorage.setItem('authForm', JSON.stringify(formData));
+  }, [formData]);
+  
+  const handleAuthenticatedSubmit = async (submitFn) => {
+    if (!isAuthenticated) {
+      navigate('/login', {
+        state: {
+          from: location,
+          returnTo: location.pathname,
+          message: 'Session expired. Please log in to continue.'
+        }
+      });
+      return false;
+    }
+    
+    try {
+      await submitFn(formData);
+      sessionStorage.removeItem('authForm');
+      return true;
+    } catch (error) {
+      if (error.status === 401) {
+        // Auth error - redirect to login
+        navigate('/login', { state: { from: location } });
+      }
+      throw error;
+    }
+  };
+  
+  return { formData, setFormData, handleAuthenticatedSubmit };
+}
+```
+
+Aria watched with fascination. "This is exactly what Portal Keeper Sage taught about form persistence! SessionStorage persists across page reloads, form data saves automatically on changes, and when session expires mid-form, the work is preserved. After re-authentication, users can continue exactly where they left off!"
+
+"Perfect connection!" Marina approved. "And notice the pattern - check authentication before submit, save form state, redirect with context about why (`message`), and after login, form data is still there!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on advanced auth practice with complete session management, multi-factor auth, and remember-me functionality]**
+
+"Now master advanced authentication flows," Marina said, presenting Aria with complex authentication challenges.
+
+The first challenge: implement "remember me" functionality with different token lifetimes. Aria created:
+```javascript
+function useAuth() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Check both storage types
+    const sessionToken = sessionStorage.getItem('authToken');
+    const persistedToken = localStorage.getItem('authToken');
+    const token = sessionToken || persistedToken;
+    
+    if (token) {
+      verifyToken(token).then(setUser).catch(() => {
+        sessionStorage.removeItem('authToken');
+        localStorage.removeItem('authToken');
+      }).finally(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
+  }, []);
+  
+  const login = async (credentials, rememberMe = false) => {
+    const { user, token } = await loginAPI(credentials);
+    
+    if (rememberMe) {
+      // Long-lived token in localStorage (persists across browser closes)
+      localStorage.setItem('authToken', token);
+    } else {
+      // Session token (cleared when browser closes)
+      sessionStorage.setItem('authToken', token);
+    }
+    
+    setUser(user);
+    return user;
+  };
+  
+  return { user, loading, isAuthenticated: !!user, login, logout };
+}
+
+// Login form with remember me
+function Login() {
+  const { login } = useAuth();
+  const [rememberMe, setRememberMe] = useState(false);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    await login({
+      email: formData.get('email'),
+      password: formData.get('password')
+    }, rememberMe);  // Pass remember me flag
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input name="email" type="email" />
+      <input name="password" type="password" />
+      <label>
+        <input 
+          type="checkbox"
+          checked={rememberMe}
+          onChange={(e) => setRememberMe(e.target.checked)}
+        />
+        Remember me
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+  );
+}
+```
+
+"Perfect remember-me implementation!" Marina praised. "Remember me unchecked: sessionStorage (cleared on browser close). Checked: localStorage (persists indefinitely). Users control session persistence!"
+
+The second challenge: implement automatic re-authentication on 401 errors. Aria orchestrated:
+```javascript
+// API client with auto-retry on 401
+function createAPIClient(getToken, refreshAuth) {
+  return {
+    async fetch(url, options = {}) {
+      const token = getToken();
+      
+      const response = await fetch(url, {
+        ...options,
+        headers: {
+          ...options.headers,
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      // Handle 401 - try to refresh
+      if (response.status === 401) {
+        const refreshed = await refreshAuth();
+        
+        if (refreshed) {
+          // Retry with new token
+          const newToken = getToken();
+          const retryResponse = await fetch(url, {
+            ...options,
+            headers: {
+              ...options.headers,
+              'Authorization': `Bearer ${newToken}`
+            }
+          });
+          
+          return retryResponse;
+        }
+      }
+      
+      return response;
+    }
+  };
+}
+
+// In AuthProvider
+const refreshAuth = async () => {
+  try {
+    const { token } = await refreshTokenAPI();
+    localStorage.setItem('authToken', token);
+    return true;
+  } catch {
+    // Refresh failed - logout
+    logout();
+    return false;
+  }
+};
+
+const api = createAPIClient(
+  () => localStorage.getItem('authToken'),
+  refreshAuth
+);
+```
+
+"Brilliant automatic recovery!" Marina exclaimed. "API request returns 401 (unauthorized), automatically attempt token refresh, retry original request with new token. If refresh fails, logout. Users never see authentication errors for temporary token expiry!"
+
+Binary displayed advanced auth mastery: "Session persistence: localStorage + sessionStorage. Token refresh: automatic intervals + 401 retry. Form preservation: sessionStorage across auth. Remember me: different storage strategies. OAuth: code exchange flow. Complete authentication system!"
+
+**Advanced Authentication Mastery:**
+Advanced authentication requires session persistence, automatic token refresh, form preservation across re-auth, and graceful error handling. Persist tokens in localStorage (survives browser close) or sessionStorage (session-only) based on "remember me" preference. On mount, check stored tokens and verify validity to restore sessions. Implement automatic token refresh using useEffect intervals - refresh before expiry (e.g., every 14 minutes for 15-minute tokens) to prevent mid-session logouts. Handle OAuth flows by extracting authorization codes from URL query params, exchanging for tokens, and cleaning URLs. Preserve form state across authentication using sessionStorage - save form data on changes, restore on mount, maintain user work even if session expires mid-form. Implement automatic retry on 401 errors - attempt token refresh, retry original request with new token, logout only if refresh fails. Show clear messaging when redirecting for authentication ("Session expired, please log in"). Combine patterns: token persistence + automatic refresh + form preservation + graceful fallbacks = robust authentication that rarely interrupts users.
+
+**Reflection Questions:**
+
+- How does automatic token refresh improve user experience compared to forced re-authentication?
+- What trade-offs exist between sessionStorage (more secure) and localStorage (better UX) for token persistence?
+- How do form preservation patterns prevent user frustration during authentication errors?
+
+**Aria's Journal - Day 28 (Afternoon)**
+*Advanced authentication flows today! Marina showed me session management beyond basic login: (1) **Token persistence** - save tokens in localStorage (survives browser close) or sessionStorage (session-only), verify on mount to restore sessions across page reloads, (2) **Automatic token refresh** - useEffect interval refreshes tokens before expiry (every 14min for 15min tokens), prevents mid-session logouts from expiry, graceful logout if refresh fails, (3) **Remember me** - user controls persistence, unchecked = sessionStorage (browser close clears), checked = localStorage (persists indefinitely), (4) **OAuth integration** - extract code from URL params, exchange for token, clean URL, seamless social login, (5) **Form preservation** - save form data to sessionStorage on changes, restore on mount, when session expires mid-form user work is preserved!, redirect to login with context, after re-auth form is still populated. I built automatic 401 retry: API request → 401 error → attempt token refresh → retry original request with new token → if refresh fails, logout. Users never see auth errors for temporary token expiry! Connected to Western Quarter: form persistence from Portal Keeper Sage (sessionStorage patterns), validation timing from Commander Validus (check auth before submit), controlled inputs with state persistence. Marina says this creates authentication that rarely interrupts users - automatic recovery, preserved work, seamless flows!*
+
+---
+
+### Chapter 3: Role-Based Authorization and Permissions
+
+**Bridge:**
+Marina led Aria to the Grand Hall of Authority for the final lesson in route protection. Here, massive authorization matrices floated in the air, showing complex permission hierarchies and contextual access rules. She would learn the ultimate guardian patterns - systems that integrated every React concept into intelligent, context-aware authorization.
+
+**Narrative:**
+
+**Story Group 1:**
+
+🟦 **[EXPANDED: Extended role-based authorization with permission systems and hierarchical roles]**
+
+"Welcome to the advanced guardian training," Marina began, her voice resonating through the vast hall. Holographic matrices showed intricate permission flows. "Today, I'll teach you how authentication (who are you?) and authorization (what can you do?) can become truly intelligent when combined with all React patterns you've learned - not just simple role checks, but contextual authorization that considers ownership, time, application state, and user history!"
+
+Marina activated a complex authorization matrix showing role hierarchies. "Let me show you how everything connects. Routes are components (Northern Quarter!), permissions are state (Eastern Sanctuary!), authority flows through Context (Contextia!), validation guards access (Western Quarter!). Watch as we unite them all into intelligent authorization systems!"
+
+She demonstrated permission-based authorization:
+```javascript
+// Permission system
+const PERMISSIONS = {
+  // Content permissions
+  'content.view': 'View content',
+  'content.create': 'Create content',
+  'content.edit': 'Edit content',
+  'content.delete': 'Delete content',
+  'content.publish': 'Publish content',
+  
+  // User permissions
+  'users.view': 'View users',
+  'users.edit': 'Edit users',
+  'users.delete': 'Delete users',
+  
+  // Admin permissions
+  'settings.view': 'View settings',
+  'settings.edit': 'Edit settings'
+};
+
+// Role definitions with permissions
+const ROLES = {
+  viewer: ['content.view'],
+  editor: ['content.view', 'content.create', 'content.edit'],
+  publisher: ['content.view', 'content.create', 'content.edit', 'content.publish'],
+  admin: Object.keys(PERMISSIONS)  // All permissions
+};
+
+// Permission check hook
+function usePermissions() {
+  const { user } = useAuth();
+  
+  const hasPermission = useCallback((permission) => {
+    if (!user) return false;
+    
+    const rolePermissions = ROLES[user.role] || [];
+    return rolePermissions.includes(permission);
+  }, [user]);
+  
+  const hasAnyPermission = useCallback((permissions) => {
+    return permissions.some(p => hasPermission(p));
+  }, [hasPermission]);
+  
+  const hasAllPermissions = useCallback((permissions) => {
+    return permissions.every(p => hasPermission(p));
+  }, [hasPermission]);
+  
+  return { hasPermission, hasAnyPermission, hasAllPermissions };
+}
+
+// Permission-based route protection
+function PermissionRoute({ children, requiredPermission }) {
+  const { hasPermission } = usePermissions();
+  
+  if (!hasPermission(requiredPermission)) {
+    return <Navigate to="/unauthorized" replace />;
+  }
+  
+  return children;
+}
+
+// Usage
+<Route path="/content/new" element={
+  <PermissionRoute requiredPermission="content.create">
+    <CreateContent />
+  </PermissionRoute>
+} />
+```
+
+Aria watched with fascination as the patterns connected. "This is incredible! Instead of checking roles ('is admin?'), we check permissions ('can create content?'). More granular control - editors can edit but not publish, publishers can publish but not delete users. Separation of concerns!"
+
+"Exactly!" Marina beamed. "Role-based is 'you are X, therefore you can do Y'. Permission-based is 'can you do Y?' - more flexible! And watch how we add conditional UI rendering:"
+
+```javascript
+function ContentActions({ content }) {
+  const { hasPermission } = usePermissions();
+  const { user } = useAuth();
+  
+  const canEdit = hasPermission('content.edit') || content.authorId === user.id;
+  const canDelete = hasPermission('content.delete');
+  const canPublish = hasPermission('content.publish');
+  
+  return (
+    <div className="actions">
+      {canEdit && <button>Edit</button>}
+      {canDelete && <button>Delete</button>}
+      {canPublish && !content.published && <button>Publish</button>}
+    </div>
+  );
+}
+```
+
+"Conditional rendering based on permissions!" Marina explained. "UI shows only actions users can perform. Notice ownership check (`content.authorId === user.id`) - authors can edit their own content even without `content.edit` permission. Contextual authorization!"
+
+Binary displayed authorization patterns: "Role-based: roles grant permissions. Permission-based: granular access control. Ownership: authors control own content. Conditional UI: render based on capabilities. Intelligent authorization!"
+
+**Story Group 2:**
+
+🟦 **[EXPANDED: Extended contextual authorization with ownership, time-based access, and application state awareness]**
+
+"But permissions alone aren't enough for truly intelligent authorization," Marina continued, showing more sophisticated patterns. "Real applications need contextual checks - ownership ('is this yours?'), time-based access ('trial expired?'), application state ('workspace active?'), resource state ('content published?'). Watch:"
+
+```javascript
+// Contextual authorization hook
+function useAuthorization() {
+  const { user } = useAuth();
+  const { hasPermission } = usePermissions();
+  
+  // Check ownership
+  const isOwner = useCallback((resource) => {
+    return resource.authorId === user?.id || resource.ownerId === user?.id;
+  }, [user]);
+  
+  // Check contextual permission
+  const canAccessResource = useCallback((action, resource) => {
+    // Not authenticated
+    if (!user) return false;
+    
+    // Check base permission
+    const hasBasePermission = hasPermission(`${resource.type}.${action}`);
+    
+    // Context-specific rules
+    switch (action) {
+      case 'edit':
+        // Can edit if has permission OR is owner
+        return hasBasePermission || isOwner(resource);
+        
+      case 'delete':
+        // Can delete only if has permission AND (is owner OR is admin)
+        return hasBasePermission && (isOwner(resource) || user.role === 'admin');
+        
+      case 'publish':
+        // Can publish if has permission AND content is complete
+        return hasBasePermission && resource.status === 'complete';
+        
+      default:
+        return hasBasePermission;
+    }
+  }, [user, hasPermission, isOwner]);
+  
+  // Time-based access
+  const hasActiveSubscription = useCallback(() => {
+    if (!user?.subscription) return false;
+    
+    const now = new Date();
+    const expiryDate = new Date(user.subscription.expiresAt);
+    
+    return now < expiryDate;
+  }, [user]);
+  
+  return { canAccessResource, isOwner, hasActiveSubscription };
+}
+
+// Usage with contextual checks
+function EditButton({ content }) {
+  const { canAccessResource } = useAuthorization();
+  
+  const canEdit = canAccessResource('edit', {
+    type: 'content',
+    authorId: content.authorId,
+    status: content.status
+  });
+  
+  if (!canEdit) return null;
+  
+  return <button>Edit</button>;
+}
+
+// Subscription-gated feature
+function PremiumFeature({ children }) {
+  const { hasActiveSubscription } = useAuthorization();
+  
+  if (!hasActiveSubscription()) {
+    return (
+      <div className="upgrade-prompt">
+        <p>This feature requires an active subscription.</p>
+        <Link to="/pricing">Upgrade Now</Link>
+      </div>
+    );
+  }
+  
+  return children;
+}
+```
+
+Aria studied the patterns with growing understanding, connecting to all her training. "This is brilliant! Authorization checks multiple contexts: base permissions (can anyone with this role do this?), ownership (is this resource yours?), resource state (is content complete?), time-based (subscription active?), compound rules (delete requires permission AND ownership/admin). Every check considers multiple factors!"
+
+"And we can cache for performance," Marina added:
+
+```javascript
+function useAuthorizationCache() {
+  const cacheRef = useRef(new Map());
+  const { user } = useAuth();
+  
+  // Clear cache when user changes
+  useEffect(() => {
+    cacheRef.current.clear();
+  }, [user?.id]);
+  
+  const checkPermission = useCallback((key, checkFn) => {
+    // Check cache
+    if (cacheRef.current.has(key)) {
+      return cacheRef.current.get(key);
+    }
+    
+    // Compute and cache
+    const result = checkFn();
+    cacheRef.current.set(key, result);
+    
+    return result;
+  }, []);
+  
+  return checkPermission;
+}
+```
+
+"Permission caching!" Marina explained. "Avoid redundant checks, clear cache on user change. Performance optimization from the Sanctuary!"
+
+**Story Group 3:**
+
+🟦 **[EXPANDED: Added hands-on authorization practice with complete permission systems and role hierarchies]**
+
+"Now architect a complete authorization system," Marina said, presenting Aria with the ultimate challenge - design production-grade authorization.
+
+Aria integrated everything into an intelligent system:
+```javascript
+// Complete authorization provider
+function AuthorizationProvider({ children }) {
+  const { user } = useAuth();
+  
+  // Role hierarchy (higher roles inherit lower permissions)
+  const roleHierarchy = useMemo(() => ({
+    viewer: [],
+    contributor: ['viewer'],
+    editor: ['contributor'],
+    moderator: ['editor'],
+    admin: ['moderator'],
+    superadmin: ['admin']
+  }), []);
+  
+  // Get all permissions for role (including inherited)
+  const getRolePermissions = useCallback((role) => {
+    const directPermissions = ROLES[role] || [];
+    const parentRoles = roleHierarchy[role] || [];
+    
+    // Recursively get parent permissions
+    const inheritedPermissions = parentRoles.flatMap(getRolePermissions);
+    
+    return [...new Set([...directPermissions, ...inheritedPermissions])];
+  }, [roleHierarchy]);
+  
+  // Check permission with caching
+  const [permissionCache, setPermissionCache] = useState(new Map());
+  
+  const hasPermission = useCallback((permission) => {
+    if (!user) return false;
+    
+    const cacheKey = `${user.id}-${permission}`;
+    
+    if (permissionCache.has(cacheKey)) {
+      return permissionCache.get(cacheKey);
+    }
+    
+    const userPermissions = getRolePermissions(user.role);
+    const result = userPermissions.includes(permission);
+    
+    setPermissionCache(prev => new Map(prev).set(cacheKey, result));
+    
+    return result;
+  }, [user, getRolePermissions, permissionCache]);
+  
+  // Clear cache when user changes
+  useEffect(() => {
+    setPermissionCache(new Map());
+  }, [user?.id, user?.role]);
+  
+  // Contextual authorization
+  const authorize = useCallback((action, resource, context = {}) => {
+    if (!user) return false;
+    
+    // Check base permission
+    const basePermission = `${resource.type}.${action}`;
+    if (!hasPermission(basePermission)) {
+      // Check ownership as fallback for some actions
+      if (['view', 'edit'].includes(action)) {
+        if (resource.authorId === user.id) return true;
+      }
+      return false;
+    }
+    
+    // Apply contextual rules
+    if (context.requireOwnership && resource.authorId !== user.id && user.role !== 'admin') {
+      return false;
+    }
+    
+    if (context.requireActiveSubscription && !user.subscription?.active) {
+      return false;
+    }
+    
+    if (context.requireResourceState && resource.state !== context.requireResourceState) {
+      return false;
+    }
+    
+    return true;
+  }, [user, hasPermission]);
+  
+  const value = {
+    hasPermission,
+    authorize,
+    user
+  };
+  
+  return (
+    <AuthorizationContext.Provider value={value}>
+      {children}
+    </AuthorizationContext.Provider>
+  );
+}
+
+// Complete route protection with authorization
+function ProtectedRoute({ children, requiredPermission, requireOwnership, resource }) {
+  const { authorize } = useAuthorization();
+  const { user, loading } = useAuth();
+  const location = useLocation();
+  
+  if (loading) return <LoadingSpinner />;
+  
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  
+  if (requiredPermission) {
+    const authorized = authorize('access', {
+      type: requiredPermission.split('.')[0],
+      authorId: resource?.authorId
+    }, { requireOwnership });
+    
+    if (!authorized) {
+      return <Navigate to="/unauthorized" replace />;
+    }
+  }
+  
+  return children;
+}
+```
+
+"Perfect authorization architecture!" Marina exclaimed with satisfaction. "Role hierarchy (admin inherits moderator inherits editor permissions!), permission caching (performance!), contextual authorization (considers ownership, subscription, resource state), complete route protection! Every React pattern working in harmony!"
+
+She tested the system: Viewer navigates to edit page - blocked (no permission). Editor edits their own content - allowed (ownership). Editor edits others' content - allowed (has permission). Contributor edits their own - allowed (ownership fallback). Contributor edits others' - blocked (no permission). Admin deletes anything - allowed (role hierarchy). All working perfectly!
+
+"This is the synthesis of everything!" Aria marveled. "Context distributes authorization, useMemo optimizes role hierarchy, useCallback stabilizes permission checks, useEffect manages cache lifecycle, conditional rendering shows appropriate UI. Every quarter's teachings united in intelligent authorization!"
+
+Binary displayed complete mastery: "Authentication: who are you? Authorization: what can you do? Intelligent Authorization: what should you be able to do considering context, time, ownership, state, history? Complete guardian system achieved through React pattern synthesis!"
+
+**Role-Based Authorization Mastery:**
+Advanced authorization requires granular permissions, role hierarchies, contextual checks, and performance optimization. Implement permission-based rather than role-based checks - instead of "is admin?", ask "can create content?". Define permissions (actions on resource types) and roles (sets of permissions). Create usePermissions hook with hasPermission, hasAnyPermission, hasAllPermissions helpers. Build PermissionRoute wrapper that checks required permissions. Add contextual authorization considering multiple factors: ownership (is this yours?), resource state (is complete?), time-based (subscription active?), compound rules (delete requires permission AND ownership/admin). Implement role hierarchies where higher roles inherit lower permissions (admin inherits moderator inherits editor). Cache permission checks using useRef or useMemo for performance - clear cache on user changes. Apply conditional rendering to show only actions users can perform. Combine patterns: permission checks + ownership fallbacks + resource state validation + time-based access + role inheritance = intelligent, context-aware authorization that adapts to users' actual capabilities in specific contexts.
+
+**Reflection Questions:**
+
+- How does permission-based authorization provide more flexibility than role-based authorization?
+- What contextual factors should influence authorization decisions beyond just permissions?
+- How do role hierarchies simplify permission management as applications grow?
+
+**Aria's Journal - Day 28 (Evening)**
+*The ultimate guardian synthesis! Marina showed me authorization that goes beyond simple role checks to become truly intelligent and contextual! (1) **Permission-based** - instead of roles ("is admin?"), check permissions ("can create content?"), more granular control, (2) **Role hierarchies** - admin inherits moderator inherits editor permissions, simplifies permission management, useCallback stabilizes checks, (3) **Contextual authorization** - checks multiple factors: base permission (has right), ownership (is yours), resource state (content complete), time-based (subscription active), compound rules (delete requires permission AND ownership/admin), (4) **Performance** - cache permission checks with useRef/useMemo, clear cache on user changes, avoid redundant computations, (5) **Conditional UI** - render actions based on capabilities, show only what users can do, ownership fallback for edit/view. I built complete AuthorizationProvider: role hierarchy with recursive inheritance, permission caching for performance, contextual authorize function considering ownership/subscription/state, complete route protection with all checks. Marina says this is the synthesis of all React patterns applied to security: Context (distributes auth/authorization), useCallback (stabilizes checks), useMemo (optimizes hierarchy), useEffect (manages cache lifecycle), conditional rendering (appropriate UI). Authentication asks "who?", authorization asks "what can you do?", but intelligent authorization asks "what SHOULD you be able to do in THIS context, at THIS time, given YOUR history, considering application state?" Tomorrow: Portal Passages for advanced modal patterns! Binary says I've mastered navigation security - from basic route protection to intelligent, context-aware authorization systems!*
+
+**Chapter Ending:**
+
+Marina watched as Binary's final projection lit up the Grand Hall of Authority, showing the complete authentication and authorization system Aria had mastered - from basic protected routes through advanced session management to intelligent contextual authorization. "You've transformed route security from simple checks to intelligent, context-aware systems that consider ownership, time, application state, and user capabilities," she said proudly, her voice filled with teaching satisfaction.
+
+"Every React pattern has its perfect role," Aria reflected, seeing the complete integration. "Context distributes auth and authorization state globally, custom hooks encapsulate permission logic, useCallback stabilizes checks for performance, useMemo optimizes role hierarchies, useEffect manages session lifecycle and cache, conditional rendering shows appropriate UI. Everything from every quarter connects through security!"
+
+"Indeed," Marina smiled warmly. "You've secured your routes beautifully through intelligent patterns that enhance rather than hinder user experience. Protected routes preserve intent, authentication maintains sessions seamlessly, authorization considers context - not just rigid rules."
+
+She gestured toward the Portal Passages chamber visible through the archway. "But there's one final navigation mystery awaiting you - the Portal Passages, where UI elements escape the DOM hierarchy and navigation reaches into parallel dimensions. Modals opened through URLs, overlays that maintain routing state, parallel routes that coordinate... the advanced patterns that make navigation feel truly magical!"
+
+Binary's display shifted to show floating portals with routes flowing through them. "DOM portal patterns detected! React's createPortal awaits! Route-driven modals! Parallel navigation dimensions!"
+
+Aria's eyes lit up with curiosity, always eager for the next challenge. "Routes that open in parallel dimensions while maintaining all routing intelligence? Navigation that transcends normal hierarchies? I'm ready to learn how portals and routing unite!"
+
+Marina led her toward the Portal Passages, the final lesson of the Central Citadel's navigation training awaiting. Four lessons mastered - routing fundamentals, waypoint wizardry, guardian gates - and now the culminating portal patterns that would complete Aria's navigation mastery!
+
+---
+
+🚧 **WORK IN PROGRESS - LP6.4, LP7 (5 lessons remaining)**
 
 ---
 
