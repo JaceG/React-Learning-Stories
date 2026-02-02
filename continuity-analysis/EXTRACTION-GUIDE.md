@@ -115,14 +115,12 @@ Capture these elements:
 
 #### For Story-Bible.md:
 
-**A. Aria's Journey** (chronological narrative)
-- Emotional state at chapter start/end
-- Key realizations and "aha!" moments
-- Skills/knowledge gained
-- Character development moments
-- Relationships formed/deepened
-- Challenges faced
-- Growth demonstrated
+**A. Aria's Journey** (factual reference, not narrative analysis)
+- Location and mentor for lesson
+- Concepts learned (both React terms and fantasy translations)
+- Key moments (which chapters)
+- Direct quotes from Aria
+- What happens at end (next destination, scroll received, etc.)
 
 **B. Binary's Contributions**
 - Technical observations made
@@ -131,14 +129,13 @@ Capture these elements:
 - Analysis/data displayed
 - Humor or emotional beats
 
-**C. Mentor Profiles**
-- Full physical description (clothing, appearance, distinctive features)
-- Personality traits shown
-- Teaching philosophy/approach
-- Key quotes (exact dialogue)
-- How they interact with Aria
-- Teaching methods used
-- Character arc (if any)
+**C. Mentor Profiles** (factual reference only)
+- Role
+- Which lesson/chapters they appear in
+- World location(s)
+- Physical appearance
+- What they teach (React concepts + fantasy translations)
+- Key quotes (exact dialogue with chapter noted)
 
 **D. Relationships**
 - How Aria and mentor interact
