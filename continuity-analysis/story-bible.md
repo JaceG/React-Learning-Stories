@@ -41,41 +41,55 @@
 
 ## Lesson Summary (What's Taught Where)
 
-### LP1.1 ComponentKingdom (Ch1-3)
+### LP1.1 ComponentKingdom
 **Location**: Northern Quarter - Component Workshop District  
-**Mentor**: Master Aurelius
+**Mentor**: Master Aurelius  
+**Concepts**: Components → "magical building blocks"; Composition → "workshops collaborating"; Single Responsibility → "each citizen excels at their craft"
 
-**React Concepts** → **Fantasy Translation**:
-- Components → "magical building blocks", "workshops"
-- App Component → "master builder in tallest tower"
-- Props (high-level intro) → "messengers delivering instructions" *(full teaching in LP1.2)*
-- Component Composition → "workshops collaborating"
-- Single Responsibility → "each citizen excels at their craft"
-
-**Locations Visited**:
-- Ch1: Kingdom gates entrance, Component Workshop District
-- Ch2: Communication hub (messengers rushing between workshops)
-- Ch3: Grand Assembly Hall (components assembling demonstration)
-
-**Next**: Eastern Quarter - Props Messengers Guild
+### LP1.2 PropsMessengers  
+**Location**: Eastern Quarter - Props Messenger Guild  
+**Mentors**: Hermes, Guardian TypeCheck  
+**Concepts**: Props → "special messengers with satchels"; One-way data flow → "one-way road from App to workshops"; Callbacks → "special callback messengers"; PropTypes → "PropTypes Guardians"; DefaultProps → "spare parts ready just in case"
 
 ### Mentors & Guides
 
 **Master Aurelius**
 - **Role**: Grand Architect of the React Kingdom
-- **Appears In**: LP1.1 ComponentKingdom (Ch1, Ch2, Ch3)
+- **Appears In**: LP1.1 ComponentKingdom (Ch1-3)
 - **Location**: Northern Quarter - Component Workshop District
 - **Appearance**: Beard sparkling with fragments of code
-- **Teaches**: Components, reusability, composition, single responsibility (Props intro deferred to LP1.2)
+- **Personality**: Patient, welcoming, uses workshop metaphors, builds from simple to complex
+- **Teaching Style**: Visual demonstrations, progressive revelation, confirms student insights enthusiastically ("Precisely!", "Exactly!")
+- **Teaches**: Components, reusability, composition, single responsibility
 
 **Hermes**
-- **Role**: Head Messenger of Props Messenger Guild
-- **First Appearance**: Components Basics → PropsMessengers → Chapter 1
-- **Teachings**: Props as messengers, one-way data flow, callbacks, PropTypes, DefaultProps
-- **Key Traits**: Warm, knowledgeable about communication systems
+- **Role**: Head Messenger of the Props Messenger Guild
+- **Appears In**: LP1.2 PropsMessengers (Ch1-3)
 - **Location**: Eastern Quarter - Props Messenger Guild
-- **Connection**: Knows about Aria's progress from Master Aurelius
-- **Quote**: "Props can only travel in one direction—from parent to child."
+- **Appearance**: [Details not specified in narrative]
+- **Personality**: Warm, welcoming, knowledgeable about communication systems, patient teacher, beams when students ask good questions
+- **Teaching Style**: Acknowledges prior learning, shows messenger system in action, uses road metaphors, encourages experimentation
+- **Teaches**: 
+  - Props (read-only data from parent to child)
+  - One-way data flow (props flow downward only)
+  - Prop types (strings, numbers, booleans, functions, arrays, objects, components)
+  - Callbacks (functions for child-to-parent communication)
+  - PropTypes and DefaultProps (introduced, detailed by Guardian TypeCheck)
+- **Connection**: Knows Aria's progress from Master Aurelius, sends her to JSX Magic Academy
+
+**Guardian TypeCheck**
+- **Role**: PropTypes Guardian, sentinel of type checking
+- **Appears In**: LP1.2 PropsMessengers (Ch3)
+- **Location**: Eastern Quarter - Props Messenger Guild
+- **Appearance**: Stern-looking, wears robes adorned with type symbols
+- **Personality**: Serious, quality-focused, protective of workshop integrity
+- **Teaching Style**: Direct, explains through inspection demonstrations, emphasizes prevention over cure
+- **Teaches**:
+  - PropTypes (type validation during development)
+  - Development warnings for incorrect prop types
+  - DefaultProps (fallback values for missing props)
+  - "An ounce of type checking is worth a pound of debugging!"
+- **Note**: Appears in Ch3 with foreshadowing in Ch1
 
 **Professor Syntaxis**
 - **Role**: Wise mage, teaches JSX syntax

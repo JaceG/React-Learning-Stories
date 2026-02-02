@@ -76,11 +76,14 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 **First Mentioned**: Components Basics → PropsMessengers → Ch1
 
 **Districts/Locations**:
-- **Props Messenger Guild** (hive of activity)
-  - Messengers rushing with satchels
-  - Grand Thoroughfare (one-way road system from App tower to workshops)
-  - PropTypes Guardians stationed here
-  - Masters: Hermes (Head Messenger), Guardian TypeCheck
+- **Props Messenger Guild**
+  - **Architecture**: Hive of activity with messengers rushing in all directions, organized pathways for prop delivery, inspection stations for PropTypes Guardians
+  - **Grand Thoroughfare**: Magnificent road system connecting App castle to all workshops - notably one-way roads leading downward from App to workshops (no roads back up)
+  - **Atmosphere**: Bustling, organized chaos, messengers carrying satchels filled with props, constant communication flow, quality control stations
+  - **Visual Details**: Messengers with satchels, guardians in robes adorned with type symbols stationed at workshops, road system that visually demonstrates one-way flow
+  - **Masters**: Hermes (Head Messenger) - teaches Ch1-3; Guardian TypeCheck (PropTypes Guardian) - teaches Ch3
+  - **Teaches**: Props, one-way data flow, callbacks, PropTypes, DefaultProps
+  - **Connection to Teaching**: Physical one-way roads perfectly demonstrate one-way data flow; messengers with satchels = props carrying instructions; guardians inspecting = type checking
 
 - **State Sorcerers' Tower** (crystal spires)
   - First Mentioned: State Management → StateSorcerers → Ch1

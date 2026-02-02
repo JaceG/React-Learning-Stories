@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP1.1 ComponentKingdom ✅
+**Last Completed**: LP1.2 PropsMessengers ✅
 
-**Next Lesson**: LP1.2 PropsMessengers
+**Next Lesson**: LP1.3 JsxMagic
 
 **Progress Tracker**:
 ```
