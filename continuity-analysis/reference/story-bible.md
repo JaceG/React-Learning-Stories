@@ -297,7 +297,7 @@
 **Emperor Dispatcher**
 - **Role**: Ruler of the Redux Empire, guardian of predictable state updates
 - **Appears In**: LP10.1 StateManagementLibraries (Ch2-3)
-- **Location**: Allied Kingdoms - Redux Empire (beyond React Kingdom borders), empire with three principles carved in stone
+- **Location**: Allied Kingdoms - Redux Empire
 - **Appearance**: [Not extensively described]
 - **Teaches**: Redux (three principles: single source of truth, state is read-only, changes via pure functions), actions and reducers (every change documented/traceable/predictable), Redux Toolkit (modern less boilerplate), middleware for async, Redux DevTools (time-traveling debugging), when Redux worth ceremony (large teams needing structure), Redux ecosystem
 
@@ -328,27 +328,27 @@
 **Moderator Stylus**
 - **Role**: Diplomatic mediator of the Style Symposium
 - **Appears In**: LP10.2 StylingSolutions (Ch1-3)
-- **Location**: Great Style Symposium (location not specified), Styling Workshops with demonstration stations
+- **Location**: Diplomatic Zone - Great Style Symposium
 - **Appearance**: [Not extensively described]
 - **Teaches**: Styling approaches trade-offs (developer experience/performance/maintainability/team scalability), CSS-in-JS, CSS Modules, Utility-First (Tailwind), Styled Components, traditional CSS, zero-runtime solutions (Vanilla Extract), Emotion, hybrid approaches, context-aware decision making, when each approach shines based on project needs
 
 **CSS-in-JS Champion**, **CSS Modules Defender**, **Utility-First Advocate**, **Styled Components Artist**
 - **Role**: Representatives at Style Symposium (passionate debaters)
 - **Appears In**: LP10.2 StylingSolutions (Ch1, Ch3)
-- **Location**: Great Style Symposium
+- **Location**: Diplomatic Zone - Great Style Symposium (representatives)
 - **Teaches**: Each advocates for their approach, eventual harmony through understanding use cases
 
 **Federal Form Chancellor**
 - **Role**: Wise leader of the Form Federation
 - **Appears In**: LP10.3 FormLibraries (Ch1-3)
-- **Location**: Form Federation headquarters with grand hall displaying holographic forms, Form Workshop with demonstration stations
+- **Location**: Diplomatic Zone - Form Federation Headquarters
 - **Appearance**: [Not extensively described]
 - **Teaches**: Form complexity challenges (multi-step wizards/dynamic arrays/real-time validation/conditional logic), form library trade-offs, React Hook Form (performance through uncontrolled), Formik (simplicity through controlled), Final Form (flexibility through subscriptions), TanStack Form (type-safe), validation strategies (Schema with Yup/Zod, custom validators, async, dependent fields), when native React forms insufficient, decision factors (complexity/performance/team experience/TypeScript/ecosystem), consensus on when to use each library
 
 **React Hook Form Ambassador** (⚡), **Formik Federation Leader** (🎯), **Final Form Chancellor** (🔄), **TanStack Form Innovator** (🚀)
 - **Role**: Form library representatives (once competitive, reach consensus)
 - **Appears In**: LP10.3 FormLibraries (Ch1-3)
-- **Location**: Form Federation headquarters, demonstration stations
+- **Location**: Diplomatic Zone - Form Federation (library representatives)
 - **Teaches**: Each library's approach and optimal use cases
 
 **Animation Abbess Motia**
@@ -376,21 +376,21 @@
 **Stream Sage WebSocket**
 - **Role**: Guardian of the Living Streams, master of real-time connections
 - **Appears In**: LP11.2 RealtimeConnections (Ch1-3)
-- **Location**: Living Streams flowing around them, deeper flowing data areas, highest observation platform over Omnipresent Network
+- **Location**: Diplomatic Zone - Living Streams & Omnipresent Network
 - **Appearance**: Appears in shimmer of constantly updating data
 - **Teaches**: Real-time connections (WebSockets full-duplex, Server-Sent Events server-to-client, Long Polling compatibility), continuous conversation vs request-response, synchronization complexity (multiple users/concurrent updates/race conditions/consistency), optimistic updates (changes appear instantly while confirming with server), conflict resolution strategies (Last-Write-Wins simple/data loss, Merge complex/preserves both, Manual user decides), event ordering for causality, Omnipresent Network (presence tracking, live cursors, push notifications, cross-device sync), collaborative systems, "real-time is foundation of modern applications"
 
 **Cache Lord Redux**
 - **Role**: Distant cousin of Redux Empire's emperor, guardian of Memory Vaults
 - **Appears In**: LP11.3 CachingCastle (Ch1-3)
-- **Location**: Caching Castle with towering Memory Vaults, vaults organized by freshness (Fresh/Stale/Expired), Invalidation Chamber (Ch2), highest tower for complete system (Ch3)
+- **Location**: Diplomatic Zone - Caching Castle & Memory Vaults
 - **Appearance**: [Not extensively described]
 - **Teaches**: Caching fundamentals (balance freshness vs performance), three strategies (Cache-First 💾 for speed, Network-First 🌐 for freshness, Stale-While-Revalidate ♻️ best of both), TTL (Time To Live determines state transitions), cache invalidation (hardest problem in computer science - pattern-based clearing, cascade for dependent data, partial updates, cache warming 🔥), multi-layer architecture (L1 Memory 🧠/L2 Redis 💾/L3 CDN 🌐), intelligent TTL calculation, automatic optimization, "fastest request is the one you don't make", "storing easy, knowing when to forget is true challenge"
 
 **Query Master Apollo**
 - **Role**: Guardian of the GraphQL Gateway
 - **Appears In**: LP11.4 GraphQLGateway (Ch1-3)
-- **Location**: GraphQL Gateway (glowing with single /graphql endpoint), Schema Vault with Schema Scrolls (Ch2), Gateway's control center for Unified Interface (Ch3)
+- **Location**: Diplomatic Zone - GraphQL Gateway & Schema Vault
 - **Appearance**: [Not extensively described]
 - **Teaches**: GraphQL revolution (ask for exactly what you need - no over/under-fetching), single endpoint /graphql, flexible query language, three operation types (Query 📖 reading, Mutation ✏️ changing, Subscription 📡 real-time), GraphQL vs REST (conversation vs packages), Schema Scrolls (type system as contract between client/server), GraphQL + TypeScript (end-to-end type safety), fragments (reusable query parts reduce duplication), optimistic updates, cache normalization (update User#1 everywhere it appears), Unified Interface (complete GraphQL client HTTP + WebSocket), when GraphQL vs REST (complex nested→GraphQL, simple CRUD→REST), "GraphQL is complete data management philosophy not just query language"
 
@@ -450,19 +450,19 @@
 **Frontier Marshal Native**
 - **Role**: Guardian of Mobile Frontier, bridge between web and native worlds
 - **Appears In**: LP14.1 MobileFoundations (Ch1-3)
-- **Location**: Mobile Frontier (beyond Web Kingdom borders), border checkpoint, Component Trading Post, Style Frontier
+- **Location**: Frontier Territories - Mobile Frontier (border checkpoint, Component Trading Post, Style Frontier)
 - **Teaches**: React Native foundations (React principles govern but different rules - no DOM/CSS), component translation (View/Text/ScrollView/FlatList), Platform API (write once adapt where needed), mobile-specific patterns (touch interaction, native rendering 40% more efficient), StyleSheet creation (JavaScript objects not CSS), Flexbox-everywhere, dynamic styling, Animated API 60fps, "React with native accent", "embrace platform differences don't fight them"
 
 **Sanctuary Keeper Bridge**
 - **Role**: Keeper of Device Sanctuary, transforms web knowledge into native capabilities
 - **Appears In**: LP14.2 NativePowers (Ch1-3)
-- **Location**: Device Sanctuary (pulsing with raw potential, six glowing orbs orbiting - camera/location/storage/sensors), deeper sanctuary chambers, Native Module Workshop
+- **Location**: Frontier Territories - Mobile Frontier (Device Sanctuary)
 - **Teaches**: Native device capabilities (camera/location/storage/sensors/notifications/biometrics - six orbiting orbs), permission flow (trust and permission required for each), native bridges (JavaScript to device hardware), expo-camera/expo-location/AsyncStorage/Sensors, React Native Modules (creating custom native bridges), platform-specific code (Platform.select), native performance optimization, "great access comes great responsibility"
 
 **Trail Guide Navigator**
 - **Role**: Master of mobile navigation patterns
 - **Appears In**: LP14.3 NavigationTrails (Ch1-3)
-- **Location**: Navigation Trails system, Trail Map Chamber, Connected Trails network
+- **Location**: Frontier Territories - Mobile Frontier (Navigation Trails)
 - **Teaches**: React Navigation library (mobile nav different from web), Stack/Tab/Drawer navigators (three fundamental patterns), navigation params passing data, deep linking (URLs open specific screens), connected navigation (routes sharing state), gestures (swipe-to-go-back), transitions (platform-appropriate animations), "navigation is about guiding users through your app like trails through forest"
 
 **Publisher Prime**
@@ -476,29 +476,31 @@
 **Empress Inclusiva**
 - **Role**: Ruler of the Inclusive Empire, teaches accessibility as philosophy touching all development
 - **Appears In**: LP15.1 InclusiveFoundations (Ch1-3)
-- **Location**: Inclusive Empire (heart of digital realm - not separate kingdom but philosophy), throne room (ramps alongside stairs, visual+audio, multiple sizes/contrasts, multiple interaction ways)
+- **Location**: Inclusive Empire (philosophy woven throughout all regions) - Throne room showcases accessibility
 - **Teaches**: Accessibility philosophy (building for everyone not just "others"), removing barriers benefits all users, 15% permanent disabilities plus temporary/situational, design for edges creates better center, Guardians of Inclusion (Semantic/Keyboard/Audio/Spectrum/Still), semantic HTML (right element for right purpose - Foundation Hall lesson), landmark elements (header/nav/main/aside/footer), heading hierarchy, ARIA Arsenal (enhancement when HTML lacks - use sparingly), five rules of ARIA (first: don't use if can use HTML), ARIA roles/properties (67 roles, 48 properties), "No ARIA better than bad ARIA", POUR principles (Perceivable/Operable/Understandable/Robust), "true mastery means building for everyone", "accessibility isn't add-on - it's fundamental to quality"
 
 **Guardian Semantic**, **Guardian Keyboard**, **Guardian Audio**, **Guardian Spectrum**, **Guardian Still**
 - **Role**: Five Guardians of Inclusion representing different accessibility aspects
 - **Appears In**: LP15.1 InclusiveFoundations (Guardian Semantic Ch2-3), LP15.2 InteractionPatterns (Guardian Keyboard), LP15.3 VisualAccessibility (Guardian Spectrum/Still)
+- **Location**: Inclusive Empire - Various locations representing different accessibility domains
 - **Teaches**: Each guardian represents different user needs and accessibility domains
 
 **Master Validator**
 - **Role**: Guardian of Testing Tower, champion of accessibility quality assurance
 - **Appears In**: LP15.4 TestingTools (Ch1-3)
-- **Location**: Testing Tower with glowing windows of different tools, Audit Arena, Culture Citadel highest floor
+- **Location**: Inclusive Empire - Testing Tower (accessibility version)
 - **Teaches**: Accessibility testing (layered defense - automated/manual/user), automated tools catch 30-50% (axe DevTools, Lighthouse, pa11y), manual testing (keyboard navigation, screen reader, quick checks), user testing with real disabilities, WCAG 2.1 (78 success criteria - Level A: 30, AA: 20, AAA: 28), audit process (run/filter by severity/generate reports), accessibility culture (Five Pillars: Education/Documentation/Code Reviews/User Involvement/Automation), champion networks, maturity levels, "testing isn't about finding fault - ensuring everyone can experience what you've created", "best test is users with disabilities", "build testing into workflow make checking natural as syntax checking"
 
 **Compliance Commander**
 - **Role**: Reviews standards and regulations in Audit Arena
 - **Appears In**: LP15.4 TestingTools (Ch2)
+- **Location**: Inclusive Empire - Audit Arena
 - **Teaches**: WCAG 2.1/Section 508/ADA standards, Level AA compliance sweet spot, documenting efforts, continuous improvement
 
 **Culture Keeper**
 - **Role**: Guardian of accessibility culture sustainability
 - **Appears In**: LP15.4 TestingTools (Ch3)
-- **Location**: Culture Citadel (highest floor of Testing Tower)
+- **Location**: Inclusive Empire - Culture Citadel
 - **Teaches**: Accessibility culture (makes sustainable), Five Pillars (Education/Documentation/Reviews/Involvement/Automation), champion network building, maturity levels, ROI (73% fewer a11y bugs), embedding into processes, "tools catch issues, standards guide, culture makes sustainable"
 
 *[Extraction COMPLETE for all LP1-15!]*
