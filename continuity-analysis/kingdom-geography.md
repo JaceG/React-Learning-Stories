@@ -626,6 +626,40 @@ The React Kingdom is divided into **Quarters** (directional regions) and contain
 
 ---
 
+### Event Symphony Hall
+**First Mentioned**: LP5.1 EventSymphony Ch1
+
+**Quarter**: Western Quarter - heart of quarter
+
+**Architecture**:
+- Magnificent structure in heart of Western Quarter
+- Crystalline walls pulsing with rhythm of countless user interactions
+- Grand amphitheater where event propagation visualized (Ch2)
+- Musicians and event handling coordinated throughout
+
+**Atmosphere**:
+- Controlled chaos - events firing in patterns
+- Handlers coordinating responses
+- Performance issues needing optimization
+- Symphony energy throughout
+- Applause and celebration when optimized
+
+**Visual Details**:
+- Crystalline walls pulsing with interaction rhythms
+- Conductor's coat and baton crackling with event energy
+- Flowing streams of light showing event propagation patterns
+- Waveforms and interaction patterns projected
+- Performance metrics displayed
+- Map routes showing kingdom connections
+
+**Master**: Conductor Eventus (distinguished conductor with crackling baton)
+
+**Teaches**: React's synthetic event system (SyntheticEvent objects, cross-browser normalization, camelCase conventions), event propagation (capture phase descending, bubble phase ascending), event delegation (one handler for many elements), optimization patterns (throttling, debouncing, useCallback for memoization), Academy patterns applied to events
+
+**Connection to Teaching**: Symphony = event coordination; musical notes = events; conductor = event manager; flowing light = event propagation; phases = capture/bubble; optimization = Academy patterns; performance metrics = efficiency gains
+
+---
+
 ### Hook Academy
 **First Mentioned**: Hooks In Action → UseStateSpells → Ch1
 

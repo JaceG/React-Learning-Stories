@@ -155,6 +155,15 @@
 - **Appearance**: Robes woven from pure React patterns, conducts/weaves energy streams like orchestra conductor
 - **Teaches**: Hook orchestration (Form Symphony pattern - multiple hooks coordinated), useReducer + Context (Grand Symphony Pattern), split contexts for performance, action creators, performance optimization (useMemo, useCallback, React.memo - Performance Trinity), strategic optimization (measure first)
 
+### LP5: Forms Events
+
+**Conductor Eventus**
+- **Role**: Master conductor of the Event Symphony Hall
+- **Appears In**: LP5.1 EventSymphony (Ch1-3)
+- **Location**: Western Quarter - Event Symphony Hall (heart of quarter), grand amphitheater
+- **Appearance**: Distinguished figure in conductor's coat, baton crackling with event energy
+- **Teaches**: React's synthetic event system (SyntheticEvent, cross-browser consistency), event propagation (capture/bubble phases), event delegation (one handler for many elements), event optimization (throttling, debouncing), useCallback for memoized handlers, Academy patterns applied to events
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -183,6 +192,7 @@
 - **LP4.2**: Beeps nervously at temporal anomalies, scans dependency spheres showing patterns, display shows different activation patterns, beeps concernedly at paradoxes, processors whir anxiously at async chaos, chronometer stabilizes, chirps excitedly descending tower
 - **LP4.3**: Scans workshop projecting amazement at blueprints, projects excitement at energy patterns being woven, scans shelves downloading docs at impressive rate with excited display, projects summary organizing hooks into internal library
 - **LP4.4**: Processors hum detecting complex interplay, whirs with anticipation at Grand Symphony, efficiency processors light up analyzing flows, projects calculations (wasted vs optimized), projects visualization of all learned patterns, display shows "HOOK MASTERY: COMPLETE"
+- **LP5.1**: Analyzes event flows projecting waveforms/patterns, adds cheerfully about consistency, scanners track flows applying Academy knowledge, displays performance metrics (handler count reduction), processors whir excitedly, displays metrics showing improvements, displays map route
 
 *[More contributions to be added as extraction continues]*
 
@@ -324,6 +334,16 @@
 - Split contexts → "separate contexts for state/dispatch", "sheet music to orchestra sections"
 - Performance optimization → "Performance Trinity" (useMemo/useCallback/React.memo), "streamlined energy flows", "wasted cycles vs optimized"
 - Strategic optimization → "measure first with React DevTools", "premature optimization = root of evil"
+
+### LP5: Forms Events
+
+**LP5.1 EventSymphony**:
+- Events → "symphony", "musical notes perfectly tuned", "flowing streams of light"
+- Synthetic events → "well-conducted symphony", "orchestrated interactions", "normalized browser differences"
+- Event propagation → "capture descends, bubble ascends", "like data flow but bidirectional"
+- Event delegation → "one optimized handler manages many elements", "Academy efficiency patterns"
+- Event optimization → "Academy patterns applied to events", "throttling/debouncing control flow"
+- useCallback → "memoization prevents handler recreation" (Performance Sanctuary training)
 
 *[More translations to be added as extraction continues]*
 
