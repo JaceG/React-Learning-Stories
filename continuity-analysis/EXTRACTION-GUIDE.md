@@ -26,11 +26,11 @@ LP2: State Management (4 lessons) ✅ COMPLETE
   [✓] 2.3 GrandContext (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 2.4 StateManagementAdventures (Ch1, Ch2, Ch3) - COMPLETE
 
-LP3: Props Data Flow (4 lessons)
+LP3: Props Data Flow (4 lessons) ✅ COMPLETE
   [✓] 3.1 PropForge (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 3.2 PropsCaravans (Ch1, Ch2, Ch3) - COMPLETE
   [✓] 3.3 EventEchoes (Ch1, Ch2, Ch3) - COMPLETE
-  [ ] 3.4 DataRivers (Ch1, Ch2, Ch3)
+  [✓] 3.4 DataRivers (Ch1, Ch2, Ch3) - COMPLETE
 
 LP4: Hooks in Action (4 lessons)
   [ ] 4.1 UseStateSpells (Ch1, Ch2, Ch3)

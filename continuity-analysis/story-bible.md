@@ -111,6 +111,20 @@
 - **Appearance**: Robes shimmer with sound waves, voice creates visible ripples in air, stands beside pulsing crystalline formations, wields baton sparkling with captured echoes (Ch3)
 - **Teaches**: Callback functions, upward event communication (events vs props), callbacks with parameters, event orchestration, Symphony Pattern, event delegation
 
+**River Master Flux**
+- **Role**: Keeper of the data streams
+- **Appears In**: LP3.4 DataRivers (Ch1-3)
+- **Location**: Cascade District - observation platform by terraced waterfalls
+- **Appearance**: Flowing blue robes, patterns shift like water across fabric
+- **Teaches**: Unidirectional data flow, props read-only, prop transformation, data distribution (bridges), cascading patterns, when cascades get too deep (3-4 levels), Context as alternative
+
+**Dam Master Gatekeeper**
+- **Role**: Controller of the data flows
+- **Appears In**: LP3.4 DataRivers (Ch2)
+- **Location**: Dam complex upstream in Cascade District - control house
+- **Appearance**: Stocky figure, thick beard glistening with water droplets
+- **Teaches**: Flow control, conditional rendering (dam gates), data filtering, data transformation, strategic data placement (lowest common ancestor)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -134,6 +148,7 @@
 - **LP3.1**: Beams proudly with light show, processors whir at simple three dots, projects warning symbols for type errors, displays holographic forge miniature
 - **LP3.2**: Projects hologram of nested boxes, processors whir about prop transference, displays flowchart of prop transformation chains, displays beautiful component tree
 - **LP3.3**: Chirps excitedly (bounces off cave walls), projects diagram (props down/events up), transforms chirp into multiple tones, projects callback chains, scans acoustic patterns, eyes widen, displays holographic summary
+- **LP3.4**: Projects small waterfall hologram, scans dam controls, calculates cascade levels rapidly, beeps excitedly about journey variety
 
 *[More contributions to be added as extraction continues]*
 
@@ -228,6 +243,16 @@
 - Event coordination → "symphony", "harmonious tones", "living instrument"
 - Props vs events → "sheet music" (props down) vs "performed notes" (events up)
 - Symphony Pattern → "coordinated patterns", "harmony through structured flow"
+
+**LP3.4 DataRivers**:
+- Unidirectional flow → "ancient law", "water flows downhill only", "rivers cannot reverse"
+- Props → "data rivers glowing blue", "streams of information", "read-only at each level"
+- Parents → "mountain peaks/springs", children → "valleys/streams below"
+- Conditional rendering → "dam gates controlling flow", "filter, transform, redirect"
+- Data distribution → "bridges spanning branches", "water tower on hill serving village"
+- Cascading → "waterfalls through tiers", "pools at each level", "data drops falling"
+- Deep nesting → "maintenance waterfalls/nightmares", "beyond 3-4 levels"
+- Context → "elevated aqueducts", "teleport water directly to deep pools"
 
 *[More translations to be added as extraction continues]*
 
