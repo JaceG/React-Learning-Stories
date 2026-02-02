@@ -100,20 +100,6 @@ Aurelius pointed to the tallest tower. "The master
 						they all share the ability to be reused throughout the
 						realm."
 
-Aria gazed up at App's Tower, its height making her dizzy. "So App coordinates everyone? How does it know what each workshop needs to do?"
-
-"Excellent question," Aurelius smiled. "App sends instructions to each workshop, telling them what to create and how to behave. But come - let me show you the workshops themselves. Words alone cannot capture their magic."
-
-**Story Group 3:**
-
-Aurelius led Aria through the bustling Component Workshop District, passing specialized workshops that hummed with creative energy. "Here," he gestured to a small building, "is the Button workshop. Simple in purpose - it creates clickable buttons. Each one may look different, but they all share the same core purpose."
-
-They moved to another workshop where glowing cards were being assembled. "The Card workshop creates containers for displaying information. Notice how each workshop focuses on doing one thing exceptionally well?"
-
-Aria watched in wonder as a Button component emerged from its workshop - perfect, reusable, ready to be placed anywhere in the kingdom. "So instead of creating everything from scratch each time, we reuse these proven components?"
-
-"Precisely!" Aurelius beamed. "A Button created once can be used a thousand times, in a thousand different contexts. This is the foundation of our kingdom's power - reusability through focused purpose."
-
 **New Characters:**
 
 **Master Aurelius**
@@ -153,19 +139,9 @@ After mastering individual workshops, Aria discovered that components could work
 
 **Story Group 2:**
 
-Aria watched in fascination as messengers rushed between workshops, each carrying sealed scrolls and packages. "So each workshop receives 🔴 ~~these props~~ 🟢 **instructions** and uses them to determine exactly what to build and how it should behave?"
+Aria watched in fascination. "So each workshop receives 🔴 ~~these props~~ 🟢 **instructions** and uses them to determine exactly what to build and how it should behave?"
 
-"Precisely!" Aurelius confirmed. "Watch that messenger heading to the Button workshop - it carries instructions specifying the button's color, text, and behavior when clicked. The Button workshop reads these instructions and creates exactly what was requested."
-
-**Story Group 3:**
-
-Aurelius led Aria to an overlook where they could observe the entire Communication Hub. Below, messengers flowed in organized streams from App's Tower to workshops throughout the district.
-
-"Notice the pattern," Aurelius gestured. "Messages flow downward from parent to child, never upward or sideways. This creates a predictable system where each component knows exactly where its instructions come from."
-
-Aria traced the paths with her finger. "It's like a river system, always flowing downward!" She paused, thoughtful. "But what if a workshop needs to send information back up? What if a Button needs to tell App it was clicked?"
-
-Aurelius's eyes twinkled. "Ah, now you're asking the deeper questions! 🔴 ~~"Props can contain any type of information - text, numbers, functions, or even other components!~~ 🟢 **The Eastern Quarter's Props Messengers Guild will teach you these secrets and many more.** It's how we create harmony in the kingdom."
+"Precisely!" Aurelius confirmed. 🔴 ~~"Props can contain any type of information - text, numbers, functions, or even other components!~~ 🟢 **"The Eastern Quarter's Props Messengers Guild will teach you the details of this communication system.** It's how we create harmony in the kingdom."
 
 **Master Aurelius's Wisdom:**
 🔴 ~~Props are how~~ 🟢 **Components need a way to** talk to each other. They're 🔴 ~~passed~~ 🟢 **instructed** from parent to child, like 🔴 ~~arguments to a function~~ 🟢 **orders flowing down a chain of command**. 🔴 ~~Props allow~~ 🟢 **This communication system allows** components to be flexible and reusable with different data and behaviors. 🔴 ~~Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.~~ 🟢 **The Props Messengers Guild will reveal the secrets of this system.**
@@ -194,40 +170,20 @@ After learning how components communicate through props, Aria was ready for her 
 **Story Group 1:**
 
 "Now comes the true power of our kingdom," Aurelius
-						announced with pride as they entered the Grand Assembly Hall. Demonstrations floated in the air around them - glowing examples of components working together. "Watch how workshops collaborate.
+						announced with pride. "Watch how workshops collaborate.
 						Larger workshops can use the creations of smaller
 						workshops, combining them into more complex structures.
 						This practice, known as 
 						**Component Composition**, allows us to
 						build incredible things."
 
-Aria watched as components began assembling themselves like magical building blocks. A Card component materialized, and within it, a Button component, an Image component, and a Text component all took their positions. "It's like... each component is a piece of a larger puzzle!"
+Aria watched as components began assembling themselves like magical building blocks. "It's like... each component is a piece of a larger puzzle!"
 
-"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components. The Card doesn't try to be a button - it simply provides a home for the Button component to live in."
+"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components."
 
 **Story Group 2:**
 
-Aurelius gestured to a more complex demonstration. "Consider a UserProfile component. Rather than creating one massive workshop that handles everything, we compose it from smaller specialists."
-
-Before Aria's eyes, a UserProfile assembled itself: An Avatar component for the profile picture, a Username component for the name display, a StatusBadge showing online/offline, and a Biography component for the description. Each piece was distinct, focused, and reusable.
-
-"See how each specialist does its job perfectly?" Aurelius asked. "If we need to change how avatars look across the entire kingdom, we only modify the Avatar workshop. Every UserProfile automatically benefits!"
-
-Aria's mind raced with possibilities. "So composition means I can build complex things from simple, proven pieces? And if I need to change something, I only update the specialized component?"
-
-"Precisely! Think of it as an orchestra," Aurelius explained. "Each musician plays their instrument expertly. The conductor - your parent component - arranges them to create a symphony. No violinist tries to be a trumpet!"
-
-**Story Group 3:**
-
-Aurelius led Aria to the practice area of the Grand Assembly Hall. "Now, your turn. Create something using composition."
-
-Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. She created a BlogPost component that composed a Title, an Author component, a PublishedDate, Tags, and a Content area - each one a separate, reusable workshop.
-
-"This is incredible!" she exclaimed, watching her creation come to life. "Each piece has one job, but together they create something much greater. I can build anything now!"
-
-"And more importantly," Aurelius added, "you can maintain and improve it easily. Need to add a 'Share' button to all blog posts? Just compose a ShareButton into your BlogPost component. Need to style all titles consistently? Update the Title workshop once, and every use updates automatically."
-
-Aria felt the power of composition settling into her understanding. "The kingdom is built on cooperation, not isolation. Components working in harmony!"
+Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. "I can build anything now!" she exclaimed.
 
 **Master Aurelius's Wisdom:**
 React encourages building UIs through composition rather than inheritance. Complex interfaces are created by combining simpler components together, creating a hierarchy that's both flexible and maintainable. Master Aurelius's final teaching: "A kingdom is strongest when each citizen excels at their craft and works in harmony with others."
