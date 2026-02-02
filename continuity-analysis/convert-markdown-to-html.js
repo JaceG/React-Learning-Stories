@@ -185,46 +185,55 @@ const fullHTML = `<!DOCTYPE html>
       color: #bf360c;
     }
     
-    /* Table of contents styling */
+    /* Table of contents styling - Compact top bar */
     #toc {
-      background: white;
-      border: 2px solid #3498db;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0 40px 0;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 10px;
-      z-index: 100;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 20px;
+      margin: 0 0 30px 0;
+      border-radius: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     
     #toc h2 {
-      margin-top: 0;
+      margin: 0 0 10px 0;
       border: none;
-      color: #3498db;
+      color: white;
+      font-size: 1.2em;
+      display: inline-block;
+      margin-right: 20px;
     }
     
     #toc ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     
     #toc li {
-      margin: 8px 0;
+      margin: 0;
+      display: inline-block;
     }
     
     #toc a {
-      color: #3498db;
+      color: white;
       text-decoration: none;
-      padding: 5px 10px;
-      display: block;
-      border-radius: 4px;
-      transition: background 0.2s;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.9em;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.3);
     }
     
     #toc a:hover {
-      background: #e3f2fd;
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     
     /* Print styles */
@@ -235,8 +244,25 @@ const fullHTML = `<!DOCTYPE html>
       }
       
       #toc {
-        position: static;
+        background: white;
+        color: black;
+        border: 2px solid #333;
         page-break-after: always;
+        padding: 20px;
+      }
+      
+      #toc h2 {
+        color: black;
+      }
+      
+      #toc a {
+        color: #333;
+        background: #f0f0f0;
+        border-color: #333;
+      }
+      
+      #toc ul {
+        flex-direction: column;
       }
       
       h1, h2, h3 {
@@ -262,32 +288,39 @@ const fullHTML = `<!DOCTYPE html>
         font-size: 1.6em;
       }
       
-      #toc {
-        position: static;
+      #toc ul {
+        flex-direction: column;
+      }
+      
+      #toc a {
+        display: block;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <div id="toc">
-    <h2>📚 Table of Contents</h2>
-    <ul>
-      <li><a href="#1-components-basics">1. Components Basics</a></li>
-      <li><a href="#2-state-management">2. State Management</a></li>
-      <li><a href="#3-props-data-flow">3. Props Data Flow</a></li>
-      <li><a href="#4-hooks-in-action">4. Hooks In Action</a></li>
-      <li><a href="#5-forms-events">5. Forms & Events</a></li>
-      <li><a href="#6-routing-navigation">6. Routing Navigation</a></li>
-      <li><a href="#7-performance-optimization">7. Performance Optimization</a></li>
-      <li><a href="#8-testing-debugging">8. Testing & Debugging</a></li>
-      <li><a href="#9-advanced-patterns">9. Advanced Patterns</a></li>
-      <li><a href="#10-react-ecosystem">10. React Ecosystem</a></li>
-      <li><a href="#11-server-data">11. Server Data</a></li>
-      <li><a href="#12-typescript-react">12. TypeScript React</a></li>
-      <li><a href="#13-build-deploy">13. Build & Deploy</a></li>
-      <li><a href="#14-react-native">14. React Native</a></li>
-      <li><a href="#15-accessibility">15. Accessibility</a></li>
-    </ul>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 15px;">
+      <h2>📚 Navigation:</h2>
+      <ul>
+        <li><a href="#1-components-basics">1. Components</a></li>
+        <li><a href="#2-state-management">2. State</a></li>
+        <li><a href="#3-props-data-flow">3. Props</a></li>
+        <li><a href="#4-hooks-in-action">4. Hooks</a></li>
+        <li><a href="#5-forms-events">5. Forms</a></li>
+        <li><a href="#6-routing-navigation">6. Routing</a></li>
+        <li><a href="#7-performance-optimization">7. Performance</a></li>
+        <li><a href="#8-testing-debugging">8. Testing</a></li>
+        <li><a href="#9-advanced-patterns">9. Advanced</a></li>
+        <li><a href="#10-react-ecosystem">10. Ecosystem</a></li>
+        <li><a href="#11-server-data">11. Server</a></li>
+        <li><a href="#12-typescript-react">12. TypeScript</a></li>
+        <li><a href="#13-build-deploy">13. Build</a></li>
+        <li><a href="#14-react-native">14. Native</a></li>
+        <li><a href="#15-accessibility">15. A11y</a></li>
+      </ul>
+    </div>
   </div>
 
   ${htmlContent}
