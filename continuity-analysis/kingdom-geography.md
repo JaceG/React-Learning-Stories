@@ -1,7 +1,29 @@
 # React Kingdom - World Geography & Map
 
 *Tracking the physical structure, locations, quarters, and travel routes through the React Kingdom*  
-*Last Updated: February 1, 2026 - Now includes all 15 Learning Paths*
+*Last Updated: February 2, 2026 - Now includes all 15 Learning Paths*
+
+---
+
+## 🗺️ EXTRACTION IN PROGRESS - READ THIS FIRST
+
+**Status**: Currently extracting location details from `narrative-master-EDITED.md` lesson by lesson.
+
+**If updating this document:**
+1. Read `EXTRACTION-GUIDE.md` for complete process and rules
+2. Extract one lesson at a time (LP#.# - all 3 chapters)
+3. Find the location section for current lesson
+4. Add **complete architectural details** (materials, layout, size)
+5. Add **atmospheric descriptions** (sounds, lighting, feeling)
+6. Add **unique features** and landmarks
+7. Update **Lessons Taught** section
+8. Also update `story-bible.md` with character details
+9. Commit with: `git commit -m "Extract LP#.# LessonName - Complete details"`
+10. Update progress in `EXTRACTION-GUIDE.md`
+
+**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist of completed lessons
+
+**Rules**: Capture specific details (not vague summaries), use exact descriptions from narrative, note which quarter, explain why location fits the teaching.
 
 ---
 

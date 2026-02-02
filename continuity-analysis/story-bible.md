@@ -1,7 +1,28 @@
 # Story Bible - React Learning Stories
 
 *Living document tracking characters, locations, plot points, and concepts*  
-*Last Updated: February 1, 2026*
+*Last Updated: February 2, 2026*
+
+---
+
+## 📖 EXTRACTION IN PROGRESS - READ THIS FIRST
+
+**Status**: Currently extracting from `narrative-master-EDITED.md` lesson by lesson.
+
+**If updating this document:**
+1. Read `EXTRACTION-GUIDE.md` for complete process and rules
+2. Extract one lesson at a time (LP#.# - all 3 chapters)
+3. Update **Aria's Journey** chronologically
+4. Add/expand mentor profiles in **Mentors & Guides**
+5. Document **Binary's contributions** 
+6. Track **Relationships & Character Dynamics**
+7. Also update `kingdom-geography.md` with location details
+8. Commit with: `git commit -m "Extract LP#.# LessonName - Complete details"`
+9. Update progress in `EXTRACTION-GUIDE.md`
+
+**Current Progress**: See `EXTRACTION-GUIDE.md` for checklist of completed lessons
+
+**Rules**: Use exact quotes, capture specific details, write in present tense, document growth not just facts.
 
 ---
 
