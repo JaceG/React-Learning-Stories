@@ -224,6 +224,22 @@
 - **Appearance**: Robes shimmering with optimization symbols, emerges from mist
 - **Teaches**: Lag Monster (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
 
+### LP8: Testing Debugging
+
+**Test Master Jasmine**
+- **Role**: Guardian of the Testing Tower, master of preventive magic
+- **Appears In**: LP8.1 TestingTower (Ch1-3)
+- **Location**: Underground Realms - Testing Tower with peak chamber, circular chamber with three glowing portals (blue/green/gold), highest chamber with Continuous Integration Engine
+- **Appearance**: [Not extensively described]
+- **Teaches**: Bug types (null-pointer, type-error, logic-error as creatures), systematic testing (preventive vs reactive), three testing levels (unit/integration/E2E - three portals), Testing Pyramid, React Testing Library, Jest, test coverage (80% minimum), automated testing (CI/CD), GitHub Actions pipeline, continuous integration, automated guardians
+
+**Debuggora the Owl**
+- **Role**: Mystical owl companion to Test Master Jasmine
+- **Appears In**: LP8.1 TestingTower (Ch1-3)
+- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder)
+- **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
+- **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs)
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -517,6 +533,18 @@
 - useCallback → "stabilizer of function references", "ensures function stability"
 - Trinity of Optimization → "React.memo + useMemo + useCallback", "work in harmony to defeat problems"
 - Strategic optimization → "profile first, identify bottlenecks, apply strategically", "measure twice optimize once"
+
+### LP8: Testing Debugging
+
+**LP8.1 TestingTower**:
+- Bugs → "manifesting as actual creatures" (null-pointer 🐛, type-error 🦗, logic-error 🕷️), "skittering", "hiding in shadows", "multiply faster than manual catching"
+- Testing Tower → "first line of defense" in Underground Realms, "peak chamber", "highest chamber"
+- Systematic testing → "preventive magic" vs "reactive fixes", "guardian spells"
+- Debuggora → "mystical owl", "sees through code to true behavior", "eyes glowing spotting bugs", "speaks in riddles"
+- Three testing levels → "three glowing portals" (blue=unit, green=integration, gold=E2E)
+- Testing Pyramid → "layers of armor" (chainmail/plate armor/shield), "many unit tests at base"
+- Automated testing → "army", "phantom test runners materialize", "never tire, never miss", "impenetrable defense network"
+- CI/CD → "Continuous Integration Engine" (massive crystalline structure), "runs automatically", "24/7 protection"
 
 *[More translations to be added as extraction continues]*
 

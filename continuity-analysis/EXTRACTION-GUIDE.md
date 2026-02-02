@@ -8,9 +8,9 @@
 
 ## 📍 Current Progress
 
-**Last Completed**: LP7.4 SpeedSanctum ✅ (LP7 COMPLETE!)
+**Last Completed**: LP8.1 TestingTower ✅
 
-**Next Lesson**: LP8.1 TestingTower
+**Next Lesson**: LP8.2 IntegrationInn
 
 **Progress Tracker**:
 ```
