@@ -107,7 +107,7 @@
 **Echo Keeper Callback**
 - **Role**: Guardian of upward communication
 - **Appears In**: LP3.3 EventEchoes (Ch1-3)
-- **Location**: Echo Caves - mountains beyond Prop Forge, winding path
+- **Location**: Western Mountains - Echo Caves (surface)
 - **Appearance**: Robes shimmer with sound waves, voice creates visible ripples in air, stands beside pulsing crystalline formations, wields baton sparkling with captured echoes (Ch3)
 - **Teaches**: Callback functions, upward event communication (events vs props), callbacks with parameters, event orchestration, Symphony Pattern, event delegation
 
@@ -199,7 +199,7 @@
 **Brother Memor**
 - **Role**: Keeper of the Memory Monastery, guardian against Memory Plague
 - **Appears In**: LP7.1 MemoryMonastery (Ch1-3)
-- **Location**: Northern Peaks - Memory Monastery (ancient floating structure in clouds above React Kingdom), Observatory, chamber with glowing diagnostic instruments, Sanctuary of Solutions
+- **Location**: Northern Peaks - Memory Monastery (floating in clouds above peak summit)
 - **Appearance**: Eldest monk (presumably elderly), concerned about memory plague
 - **Teaches**: Memory leaks (Event Listener Leaks, Detached DOM Nodes, Closure Captures), Chrome DevTools Memory Profiler (heap snapshots, allocation timeline, retainers view), Four Healing Rituals (event cleanup in useEffect, WeakMap/WeakSet, reference discipline, memoization mastery), isMountedRef pattern for async safety
 
@@ -220,7 +220,7 @@
 **Master Velocity**
 - **Role**: Guardian of the Speed Sanctum, keeper of optimization secrets
 - **Appears In**: LP7.4 SpeedSanctum (Ch1-3)
-- **Location**: Northern Mountains - Speed Sanctum, inner sanctum final chamber
+- **Location**: Northern Peaks - Speed Sanctum (carved into mountain peak)
 - **Appearance**: Robes shimmering with optimization symbols, emerges from mist
 - **Teaches**: Lag Monster (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
 
@@ -400,21 +400,21 @@
 **Master Typus**
 - **Role**: Forge Keeper, guardian of the Type Forge
 - **Appears In**: LP12.1 TypeForge (Ch1-3)
-- **Location**: Deep beneath React Kingdom, accessible through Cloud Citadel's lower passages, Type Forge (place of ancient power where code contracts hammered), Contract Chamber (Ch2), deepest chamber for advanced patterns (Ch3)
+- **Location**: Western Mountains - TypeScript Realm deep within mountain heart (Type Forge - deepest chamber)
 - **Appearance**: Eyes see through code to essence, beard sparks with type annotations, hammer glows with strict mode energy
 - **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing (React.FC, React.Component<Props, State>, generic components like List<T>), typed props as contracts, optional props with ?, advanced patterns (union types, intersection types, conditional types, mapped types, template literal types), generics for reusable patterns, typed reducers (actions know own shapes), type system flexible yet bulletproof, "each type is promise, interface is guarantee, code compiles = certainty not hope", "greatest gift isn't catching errors - making entire categories bugs impossible"
 
 **Master Forger Typhos** (Component Armory & Generic Forge)
 - **Role**: Legendary component smith, forge master of Generic Forge
 - **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-3)
-- **Location**: Component Armory (heart of TypeScript realm, blue forge-flames), Component Forge, Hook Forge within armory, Master's Chamber, Generic Forge (deep within TypeScript Kingdom, otherworldly light), inner sanctum with white-hot flames
+- **Location**: Western Mountains - TypeScript Realm (Component Armory & Generic Forge)
 - **Appearance**: Legendary smith, hammer striking sparks of type definitions
 - **Teaches**: Component typing (transforming naked vulnerable JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, Functional/Class/Generic component typing, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced patterns (Conditional Type Armor, Mapped Type Chainmail, Utility Types, Type Guard Shields), Polymorphic Components, Type-Safe Form Libraries, Design System Types, generics (key to true reusability, adapt without losing type safety), type parameters as placeholders, generic constraints (extends/keyof/conditional/mapped types), generic composition, higher-order generics, builder patterns, type-safe factories, "well-typed component worth thousand runtime checks", "generics are languages within language"
 
 **Commander Guardia**
 - **Role**: Eternal sentinel of the Type Guard Tower
 - **Appears In**: LP12.4 TypeGuardTower (Ch1-3)
-- **Location**: Type Guard Tower (rises above TypeScript realm, battlements glowing with type signatures and runtime checks), tower heights with parapet, strategic command center, tower's pinnacle overlooking entire realm
+- **Location**: Northern Peaks - Type Guard Tower (rises from mountain depths to pierce peak summit)
 - **Appearance**: Eternal sentinel, watches from highest parapet
 - **Teaches**: Type guards (bridge compile-time and runtime, narrow types while informing compiler), four foundation guards (typeof primitives, instanceof objects, in operator properties, custom type predicates complex), advanced guard patterns (exhaustive checking with 'never', nested object guards deep validation, generic type guards reusable, branded types nominal checking), migration mastery (gradual with allowJs, strict boundaries typed wrappers, declaration files for untyped libs, automated codemods for scale), migration strategies (from JavaScript to TypeScript safely, sustainable path, islands of type safety expanding), balancing strictness with productivity, "trust nothing verify everything", "best guard helps others cross safely", "bridge between chaos and order"
 
@@ -512,29 +512,6 @@
 - **Role**: Companion sprite, expression evaluator, guide
 - **Appearance**: Small sprite, flickering lights, can zip around
 - **Abilities**: Evaluates expressions, illuminates concepts, projects holograms, technical analysis
-
-**Contributions by Lesson**:
-- **LP1.3**: Explains curly braces, illuminates JSX rules, gives tiny high-five
-- **LP1.4**: Bounces excitedly, uses flower metaphor, warns about ghost timers, spins happily
-- **LP2.1**: Explains state memory, teaches immutability, projects calculations, twirls
-- **LP2.2**: Chirps excitedly about hooks granting abilities, lights flicker nervously about "dangerous" useEffect, lights dance with excitement about Grand Context
-- **LP2.3**: Whistles in awe at thread connections, circuits sparkle with interest, lights dim when learning cost of re-renders, buzzes with excitement at chapter end
-- **LP2.4**: Whirrs thoughtfully about complex state, lights flicker with recognition about Redux, circuits sparkle with curiosity about alternatives, chirps proudly at completion
-- **LP3.1**: Beams proudly with light show, processors whir at simple three dots, projects warning symbols for type errors, displays holographic forge miniature
-- **LP3.2**: Projects hologram of nested boxes, processors whir about prop transference, displays flowchart of prop transformation chains, displays beautiful component tree
-- **LP3.3**: Chirps excitedly (bounces off cave walls), projects diagram (props down/events up), transforms chirp into multiple tones, projects callback chains, scans acoustic patterns, eyes widen, displays holographic summary
-- **LP3.4**: Projects small waterfall hologram, scans dam controls, calculates cascade levels rapidly, beeps excitedly about journey variety
-- **LP4.1**: Chirps greeting and projects hologram of adventures, beeps excitedly with performance metrics, projects comparisons highlighting reference changes, projects analysis of grouped state, chirps excitedly calculating optimal paths
-- **LP4.2**: Beeps nervously at temporal anomalies, scans dependency spheres showing patterns, display shows different activation patterns, beeps concernedly at paradoxes, processors whir anxiously at async chaos, chronometer stabilizes, chirps excitedly descending tower
-- **LP4.3**: Scans workshop projecting amazement at blueprints, projects excitement at energy patterns being woven, scans shelves downloading docs at impressive rate with excited display, projects summary organizing hooks into internal library
-- **LP4.4**: Processors hum detecting complex interplay, whirs with anticipation at Grand Symphony, efficiency processors light up analyzing flows, projects calculations (wasted vs optimized), projects visualization of all learned patterns, display shows "HOOK MASTERY: COMPLETE"
-- **LP5.1**: Analyzes event flows projecting waveforms/patterns, adds cheerfully about consistency, scanners track flows applying Academy knowledge, displays performance metrics (handler count reduction), processors whir excitedly, displays metrics showing improvements, displays map route
-- **LP5.2**: Analyzes reactions projecting chemical formulas/React patterns, projects holographic code editor, adds excitedly about pattern efficiency (73% increase), processors hum at maximum capacity, projects statistics (95% validation/98% UX/100% reusability), projects fortress on map
-- **LP5.3**: Sensors analyze fortress defenses suggesting optimization, displays tactical analysis (82% coordination/67% response/99.7% accuracy), projects analysis of struggles, displays updated metrics (94% efficiency/0.3s response/78% cache hit), projects vulnerabilities, displays final metrics (99.8%/96%/100%), circuits spark with anticipation
-- **LP5.4**: Sensors detect massive energy fluctuations, projects analysis (34% retry/67% abandonment), displays improved metrics (89% retry/12% abandonment/3x faster), detects multiple pattern types, displays final analysis (99.7% efficiency/zero conflicts/"Forms & Events mastery"), displays new map marker
-- **LP6.1**: Hovers excitedly, projects Aria's learning progress (all foundations ✓), interfaces with hologram ready to learn, displays synthesis (Navigation = Components + State + Effects + Context + Validation), projects interconnected patterns, displays final message (99.9% understanding/SOLID foundation/EXCELLENT learning)
-
-*[More contributions to be added as extraction continues]*
 
 ---
 
