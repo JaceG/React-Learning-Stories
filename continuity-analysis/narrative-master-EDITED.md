@@ -488,9 +488,9 @@ Aria pulled out her journal, ready to document these sacred laws. "I'm ready to 
 
 🟢 **Syntaxis pointed to the first glowing tablet. "Rule One: Every JSX spell must have a single root element. You cannot return multiple siblings without wrapping them." He demonstrated both a failing spell and a corrected one.**
 
-🟢 **"Rule Two," he continued, touching the second tablet, "All elements must be closed. In HTML, tags like `<img>` or `<br>` can be left open, but JSX demands closure - either with a closing tag or self-closing syntax like `<img />`."**
+🟢 **"Rule Two," he continued, touching the second tablet, "All elements must be closed. In HTML, tags like img or br can be left open, but JSX demands closure - either with a closing tag or self-closing syntax."**
 
-🟢 **Binary lit up the third tablet. "And Rule Three is tricky - use `className` instead of `class` for CSS styling! Since JSX becomes JavaScript, and `class` is a reserved keyword, React Kingdom requires `className`."**
+🟢 **Binary lit up the third tablet. "And Rule Three is tricky - use className instead of class for CSS styling! Since JSX becomes JavaScript, and class is a reserved keyword, React Kingdom requires className."**
 
 🟢 **"These aren't arbitrary restrictions," Syntaxis explained. "Each rule exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'."**
 
@@ -1471,7 +1471,7 @@ He demonstrated a component that extracted only the props it needed, then spread
 
 Binary's processors whirred. "It takes what it needs and passes everything else forward automatically?"
 
-"Precisely! The `...rest` syntax captures all remaining props, and `{...rest}` spreads them onto the child element. It's called *prop forwarding* - the foundation of wrapper components."
+"Precisely! The rest syntax captures all remaining props, and spreads them onto the child element. It's called *prop forwarding* - the foundation of wrapper components."
 
 Aria practiced the pattern, creating components that enhanced native elements without losing their standard functionality. "This is so clean! The wrapper adds new behavior without blocking access to the original props."
 
@@ -1481,14 +1481,14 @@ Aria practiced the pattern, creating components that enhanced native elements wi
 
 After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, "you need to *transform* props as they flow through."
 
-He demonstrated a Button that accepted a `variant` prop but spread the rest: `<button {...rest} className={`btn btn-${variant}`}>`. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"
+He demonstrated a Button that accepted a `variant` prop but spread the rest: `<button {...rest} className="btn btn-{variant}">`. "See? We extract variant, use it to build a className, then spread everything else. The consumer can still pass their own className to merge with ours!"
 
 Aria experimented with the pattern, creating wrapper components that:
 - Extracted styling props and spread the rest
 - Captured event handlers, enhanced them, and spread remaining props
 - Combined default props with user props using spread order
 
-"The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So `{...defaults, ...userProps}` lets users override your defaults, while `{...userProps, ...forceThese}` enforces certain props."
+"The order matters!" Master Cargo emphasized. "Props spread later override props spread earlier. So spreading defaults first lets users override your defaults, while spreading user props first enforces certain props."
 
 Aria created a Link component that ensured security props: `<a {...rest} rel="noopener noreferrer">`. "So I can let users pass any props, but these security attributes are always enforced?"
 
@@ -1508,7 +1508,7 @@ Prop spreading with rest patterns (`...rest`) enables transparent wrapper compon
 - What risks come with spreading all props blindly, and how would you mitigate them?
 
 **Aria's Journal - Day 12 (Afternoon)**
-*The Spreading Grounds taught me the secret of wrapper components! The rest pattern (`...rest`) captures all props I don't explicitly extract, and spread (`{...rest}`) forwards them to child elements. This lets me create Button wrappers that add custom logic while preserving all native button props - users can still pass onClick, disabled, aria-label, everything! The genius is in *selective spreading*: extract what you need, transform what you must, spread the rest. Order matters too: spreading user props last lets them override my defaults, while spreading my props last enforces requirements. This pattern makes wrapper components feel transparent - they enhance without interfering!*
+*The Spreading Grounds taught me the secret of wrapper components! The rest pattern captures all props I don't explicitly extract, and spread forwards them to child elements. This lets me create Button wrappers that add custom logic while preserving all native button props - users can still pass onClick, disabled, aria-label, everything! The genius is in selective spreading: extract what you need, transform what you must, spread the rest. Order matters too: spreading user props last lets them override my defaults, while spreading my props last enforces requirements. This pattern makes wrapper components feel transparent - they enhance without interfering!*
 
 ---
 
@@ -1529,7 +1529,7 @@ He showed her the old way: `Component.defaultProps = { variant: 'primary' }`. "T
 
 Aria examined the newer pattern: `function Button({ variant = 'primary', children, ...rest })`. "So defaults live right in the destructuring?"
 
-"Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is `undefined`, not when it's `null`."
+"Exactly! It's clearer, works with TypeScript better, and keeps everything in one place," Master Cargo explained. "But here's the crucial detail: default parameters only apply when the prop is undefined, not when it's null."
 
 He demonstrated edge cases, showing how to handle nullable props, optional children, and partial object defaults. "Always think: what happens if this prop is missing, null, or empty? Your component should degrade gracefully."
 
