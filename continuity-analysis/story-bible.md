@@ -203,6 +203,13 @@
 - **Appearance**: Eldest monk (presumably elderly), concerned about memory plague
 - **Teaches**: Memory leaks (Event Listener Leaks, Detached DOM Nodes, Closure Captures), Chrome DevTools Memory Profiler (heap snapshots, allocation timeline, retainers view), Four Healing Rituals (event cleanup in useEffect, WeakMap/WeakSet, reference discipline, memoization mastery), isMountedRef pattern for async safety
 
+**Keeper Libris**
+- **Role**: Guardian of the Lazy Library, master of temporal loading
+- **Appears In**: LP7.2 LazyLibrary (Ch1-3)
+- **Location**: Lazy Library - mystical repository where React knowledge stored, Lazy Wing (books float appearing when reached), Library's architectural plans/blueprints room
+- **Appearance**: Ancient librarian appearing from shadows
+- **Teaches**: Bundle Burden (eager loading curse), webpack-bundle-analyzer/source-map-explorer tools, React.lazy() and Suspense, code splitting (breaking bundles into chunks), dynamic imports (on-demand loading), route-based splitting, component-based splitting for modals, Four Pillars of splitting strategy (route-based, vendor chunking, smart preloading, resource prefetching), Performance Architect title
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -463,6 +470,17 @@
 - Profiling → "Heap Snapshots" (moment in time), "Allocation Timeline" (growth over time), "Retainers view" (why can't GC)
 - Four Healing Rituals → "refined over generations", "ancient inscriptions"
 - Memory Guardian → "title granted", "mastering ancient rituals", "oath to clean memory"
+
+**LP7.2 LazyLibrary**:
+- Bundle → "Bundle Burden", "enormous bundle of books too heavy to move", "curse of eager loading"
+- Lazy Library → "mystical repository where React knowledge stored", "towering shelves"
+- Each book → "represents library or component", "users forced to carry all"
+- React.lazy() → "summoning code only when needed", "temporal loading"
+- Lazy Wing → "books float in mid-air, appearing only when reached for"
+- Code splitting → "breaks bundle into smaller chunks"
+- Dynamic imports → "load chunks on demand", "book materializes when grasped"
+- Four Pillars → "route-based splitting, vendor chunking, smart preloading, resource prefetching"
+- Performance Architect → "title granted", "mastering art of strategic code splitting", "Architect's Scroll"
 
 *[More translations to be added as extraction continues]*
 
