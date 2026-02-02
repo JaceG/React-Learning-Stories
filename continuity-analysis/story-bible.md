@@ -291,6 +291,39 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: React Portals (render children outside parent's DOM hierarchy while maintaining React tree - essential for modals/tooltips/notifications), portal event propagation (events bubble through React tree not DOM tree), refs (direct DOM access - escape hatch when declarative insufficient), useRef for DOM elements, forwardRef to pass refs through, useImperativeHandle for custom ref APIs, focus management (focus trap), integrating non-React libraries, when refs necessary vs declarative approaches, combining portals with refs
 
+### LP10: React Ecosystem
+
+**Emperor Dispatcher**
+- **Role**: Ruler of the Redux Empire, guardian of predictable state updates
+- **Appears In**: LP10.1 StateManagementLibraries (Ch2-3)
+- **Location**: Allied Kingdoms - Redux Empire (beyond React Kingdom borders), empire with three principles carved in stone
+- **Appearance**: [Not extensively described]
+- **Teaches**: Redux (three principles: single source of truth, state is read-only, changes via pure functions), actions and reducers (every change documented/traceable/predictable), Redux Toolkit (modern less boilerplate), middleware for async, Redux DevTools (time-traveling debugging), when Redux worth ceremony (large teams needing structure), Redux ecosystem
+
+**Chief Observer** (MobX Territory)
+- **Role**: Leader of MobX Territory, teaches reactive programming
+- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
+- **Location**: Allied Kingdoms - MobX Territory
+- **Teaches**: Observable reactive programming ("make state observable, components react automatically")
+
+**Elder Simplicity** (Zustand Settlements)
+- **Role**: Leader of Zustand Settlements, champion of simplicity
+- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
+- **Location**: Allied Kingdoms - Zustand Settlements
+- **Teaches**: Zustand patterns ("Why complicate? Small store, simple API, powerful results")
+
+**Atom Master** (Recoil Regions)
+- **Role**: Teacher in Recoil Regions, teaches atomic state
+- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
+- **Location**: Allied Kingdoms - Recoil Regions
+- **Teaches**: Recoil atomic state ("Each piece is an atom, components subscribe to exactly what they need")
+
+**Jotai Archipelago Representative**
+- **Role**: Teacher in Jotai Archipelago
+- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
+- **Location**: Allied Kingdoms - Jotai Archipelago
+- **Teaches**: Jotai atomic patterns ("Like Recoil but with React Suspense at core")
+
 *[More mentors to be added as extraction continues]*
 
 ---
@@ -674,6 +707,19 @@
 - Ref patterns → useRef for DOM, forwardRef to pass through, useImperativeHandle for custom APIs
 - Focus management → "focus trap" trapping keyboard navigation
 - Architectural Summit → "combining all patterns purposefully" (portals + compounds + refs + render props + context)
+
+### LP10: React Ecosystem
+
+**LP10.1 StateManagementLibraries**:
+- Ambassador mission → "visit Allied Kingdoms", "appointed ambassador role great honor"
+- Allied Kingdoms → "beyond React's borders", kingdoms on "magical map unfurls"
+- Redux Empire → "largest most established", "three principles carved in stone" (single source/read-only/pure functions), "actions and reducers", "ceremony brings order to chaos"
+- Redux patterns → "every state change documented/traceable/predictable", "time-traveling debugging", "middleware/DevTools/ecosystem"
+- MobX Territory → "reactive programming", "make state observable, components react automatically"
+- Zustand Settlements → "simplicity champion", "small store simple API powerful results"
+- Recoil Regions → "atomic state", "each piece is atom, components subscribe to exactly what need", "fine-grained reactivity"
+- Jotai Archipelago → "like Recoil but React Suspense at core"
+- State Alliance → "each approach reflects their values", "diversity strengthens ecosystem", "right solution for specific needs"
 
 *[More translations to be added as extraction continues]*
 
