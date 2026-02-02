@@ -444,7 +444,63 @@
 - **Location**: Production War Room (holographic dashboards displaying metrics), monitoring station, strategic command center
 - **Teaches**: Production readiness checks (error boundaries, health endpoints, security headers, environment validation), monitoring arsenal (Sentry errors, Datadog APM, New Relic application, PagerDuty incidents), comprehensive monitoring (full visibility coverage), real-time metrics dashboards (uptime/error rate/performance), battle-tested deployment strategies (Blue-Green 99.9% uptime, Canary 85% risk reduction, Rolling 60% resource efficiency), incident response (Detection→Response→Mitigation→Resolution), automated incident response, rollback procedures, production excellence checklist, "every deployment is mission - prepare for success plan for failure", "battle against downtime won through preparation not luck", "best incident is one that never happens"
 
-*[LP13 complete. LP14-15 to be added as extraction continues]*
+### LP14: React Native
+
+**Frontier Marshal Native**
+- **Role**: Guardian of Mobile Frontier, bridge between web and native worlds
+- **Appears In**: LP14.1 MobileFoundations (Ch1-3)
+- **Location**: Mobile Frontier (beyond Web Kingdom borders), border checkpoint, Component Trading Post, Style Frontier
+- **Teaches**: React Native foundations (React principles govern but different rules - no DOM/CSS), component translation (View/Text/ScrollView/FlatList), Platform API (write once adapt where needed), mobile-specific patterns (touch interaction, native rendering 40% more efficient), StyleSheet creation (JavaScript objects not CSS), Flexbox-everywhere, dynamic styling, Animated API 60fps, "React with native accent", "embrace platform differences don't fight them"
+
+**Sanctuary Keeper Bridge**
+- **Role**: Keeper of Device Sanctuary, transforms web knowledge into native capabilities
+- **Appears In**: LP14.2 NativePowers (Ch1-3)
+- **Location**: Device Sanctuary (pulsing with raw potential, six glowing orbs orbiting - camera/location/storage/sensors), deeper sanctuary chambers, Native Module Workshop
+- **Teaches**: Native device capabilities (camera/location/storage/sensors/notifications/biometrics - six orbiting orbs), permission flow (trust and permission required for each), native bridges (JavaScript to device hardware), expo-camera/expo-location/AsyncStorage/Sensors, React Native Modules (creating custom native bridges), platform-specific code (Platform.select), native performance optimization, "great access comes great responsibility"
+
+**Trail Guide Navigator**
+- **Role**: Master of mobile navigation patterns
+- **Appears In**: LP14.3 NavigationTrails (Ch1-3)
+- **Location**: Navigation Trails system, Trail Map Chamber, Connected Trails network
+- **Teaches**: React Navigation library (mobile nav different from web), Stack/Tab/Drawer navigators (three fundamental patterns), navigation params passing data, deep linking (URLs open specific screens), connected navigation (routes sharing state), gestures (swipe-to-go-back), transitions (platform-appropriate animations), "navigation is about guiding users through your app like trails through forest"
+
+**Publisher Prime**
+- **Role**: Harbor master of Publishing Port, expert in app store requirements
+- **Appears In**: LP14.4 AppDistribution (Ch1-3)
+- **Location**: Publishing Port (edge of Mobile Frontier, apps prepare for journey), preparation docks, Review Gauntlet towers, Global Launch Control Center highest tower
+- **Teaches**: App store distribution (Apple App Store/Google Play), certificates and signing (iOS Development/Distribution certificates, Android keystore), provisioning profiles, platform-specific requirements, Review Gauntlet (Apple quality/guidelines, Google security/policy), rejection reasons (40% crashes/30% guidelines/20% metadata/10% other), beta testing (hundreds of active testers), ASO (App Store Optimization - keywords/visibility), global launch (millions of devices/languages/screen sizes), phased release strategy, metrics monitoring (downloads/engagement/crash rate/revenue), continuous updates, "preparation difference between smooth voyage and shipwreck of rejections", "well-prepared submission sails through review"
+
+### LP15: Accessibility
+
+**Empress Inclusiva**
+- **Role**: Ruler of the Inclusive Empire, teaches accessibility as philosophy touching all development
+- **Appears In**: LP15.1 InclusiveFoundations (Ch1-3)
+- **Location**: Inclusive Empire (heart of digital realm - not separate kingdom but philosophy), throne room (ramps alongside stairs, visual+audio, multiple sizes/contrasts, multiple interaction ways)
+- **Teaches**: Accessibility philosophy (building for everyone not just "others"), removing barriers benefits all users, 15% permanent disabilities plus temporary/situational, design for edges creates better center, Guardians of Inclusion (Semantic/Keyboard/Audio/Spectrum/Still), semantic HTML (right element for right purpose - Foundation Hall lesson), landmark elements (header/nav/main/aside/footer), heading hierarchy, ARIA Arsenal (enhancement when HTML lacks - use sparingly), five rules of ARIA (first: don't use if can use HTML), ARIA roles/properties (67 roles, 48 properties), "No ARIA better than bad ARIA", POUR principles (Perceivable/Operable/Understandable/Robust), "true mastery means building for everyone", "accessibility isn't add-on - it's fundamental to quality"
+
+**Guardian Semantic**, **Guardian Keyboard**, **Guardian Audio**, **Guardian Spectrum**, **Guardian Still**
+- **Role**: Five Guardians of Inclusion representing different accessibility aspects
+- **Appears In**: LP15.1 InclusiveFoundations (Guardian Semantic Ch2-3), LP15.2 InteractionPatterns (Guardian Keyboard), LP15.3 VisualAccessibility (Guardian Spectrum/Still)
+- **Teaches**: Each guardian represents different user needs and accessibility domains
+
+**Master Validator**
+- **Role**: Guardian of Testing Tower, champion of accessibility quality assurance
+- **Appears In**: LP15.4 TestingTools (Ch1-3)
+- **Location**: Testing Tower with glowing windows of different tools, Audit Arena, Culture Citadel highest floor
+- **Teaches**: Accessibility testing (layered defense - automated/manual/user), automated tools catch 30-50% (axe DevTools, Lighthouse, pa11y), manual testing (keyboard navigation, screen reader, quick checks), user testing with real disabilities, WCAG 2.1 (78 success criteria - Level A: 30, AA: 20, AAA: 28), audit process (run/filter by severity/generate reports), accessibility culture (Five Pillars: Education/Documentation/Code Reviews/User Involvement/Automation), champion networks, maturity levels, "testing isn't about finding fault - ensuring everyone can experience what you've created", "best test is users with disabilities", "build testing into workflow make checking natural as syntax checking"
+
+**Compliance Commander**
+- **Role**: Reviews standards and regulations in Audit Arena
+- **Appears In**: LP15.4 TestingTools (Ch2)
+- **Teaches**: WCAG 2.1/Section 508/ADA standards, Level AA compliance sweet spot, documenting efforts, continuous improvement
+
+**Culture Keeper**
+- **Role**: Guardian of accessibility culture sustainability
+- **Appears In**: LP15.4 TestingTools (Ch3)
+- **Location**: Culture Citadel (highest floor of Testing Tower)
+- **Teaches**: Accessibility culture (makes sustainable), Five Pillars (Education/Documentation/Reviews/Involvement/Automation), champion network building, maturity levels, ROI (73% fewer a11y bugs), embedding into processes, "tools catch issues, standards guide, culture makes sustainable"
+
+*[Extraction COMPLETE for all LP1-15!]*
 
 ---
 
