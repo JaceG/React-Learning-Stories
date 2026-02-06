@@ -247,7 +247,7 @@ function Dashboard() {
 					content:
 						'Today I learned the most important lesson yet - components are meant to work together! By combining simple, focused components, I can build complex applications. Each component does one thing well, making them easy to understand, test, and reuse. I feel like I truly understand the Component Kingdom now!',
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As the sun set over the Component Workshop District, Master Aurelius handed Aria a sealed scroll. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the Props Messengers Guild. They hold deeper secrets about component communication."',
 					'Aria clutched the scroll, excited for her next adventure. She had learned to create components, make them communicate, and compose them into complex structures. But she sensed there was so much more to discover in the React Kingdom.',
 				]}

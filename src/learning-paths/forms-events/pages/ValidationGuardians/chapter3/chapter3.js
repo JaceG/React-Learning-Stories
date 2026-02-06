@@ -657,7 +657,7 @@ const suggest = (field, value) => {
 						content:
 							"What a journey through the Validation Fortress! Validus taught me how to create the ultimate defense system by combining everything: schema validation (like Context patterns), multi-step management (state machines from Eastern Quarter), conditional logic (props patterns), and performance optimization (hook mastery). He was impressed with how quickly I grasped the concepts! The fortress is now impenetrable yet welcoming to legitimate users. Binary's analysis shows 99.8% efficiency! The guardians will use this system for generations. Tomorrow we head to the final challenge at the Submission Portal Gateway. Portal Keeper Sage awaits...",
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						'As the fortress walls glowed with the light of activated defenses, Commander Validus smiled with pride. "You\'ve learned exceptionally well, Aria! Your understanding of validation patterns will serve you well in your React journey. The Western Quarter\'s data security knowledge is now yours!"',
 						'"Every pattern has its place," Aria reflected. "From simple gates to complex multi-stage defenses, it all builds on the React foundations I\'ve learned."',
 						'"One final challenge remains," Validus said, pointing toward a shimmering portal. "Portal Keeper Sage has requested your presence. The Submission Portals hold the ultimate test of form mastery."',

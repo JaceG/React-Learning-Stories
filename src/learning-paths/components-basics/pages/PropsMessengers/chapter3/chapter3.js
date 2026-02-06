@@ -573,7 +573,7 @@ Button.defaultProps = {
 					content:
 						"The PropTypes Guardians are brilliant! They're like quality control inspectors, catching mistakes before they cause problems. I've learned so much at the Props Messenger Guild - how props flow from parent to child, how they must never be modified, and how PropTypes ensure we receive the right data. Tomorrow I head to the JSX Magic Academy!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As Aria prepared to leave the Props Messenger Guild, Hermes handed her a special badge. "You\'ve earned this - the Messenger\'s Seal. You now understand how components communicate in our kingdom."',
 					'"Thank you, Hermes," Aria said gratefully. "I feel like I truly understand props now - their flow, their immutability, and their types."',
 					'"Your next destination is the JSX Magic Academy," Hermes pointed northward. "There you\'ll learn the ancient art of JSX - the magical syntax that makes React components possible. Safe travels!"',

@@ -265,7 +265,7 @@ function Avatar({ userName }) {
 						title: "Aria's Journal - Day 13 (Evening)",
 						content: "The Great Waterfall was both inspiring and cautionary! I saw how data cascades through nested components, splitting and filtering at each level. But Flux warned about the dangers of deep waterfalls - beyond 3-4 levels, they become hard to maintain. The key patterns: filter data at each tier (pass only what's needed), split streams for different children, and know when to use Context or state management instead of endless cascading. Sometimes the most elegant solution isn't the most beautiful waterfall, but a simple, direct aqueduct!"
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"As they prepared to leave the Cascade District, Flux placed a hand on Aria's shoulder. \"You've learned well. You understand not just how data flows, but when flows become floods.\"",
 						"\"The rivers taught me so much,\" Aria reflected. \"One-way flow, controlled gates, and the perils of deep cascades. But where do I go next?\"",
 						"Flux pointed toward smoke rising from distant chimneys. \"The Prop Forge awaits. Master Smith Destructo will teach you the art of transforming props - breaking them apart and reshaping them for maximum efficiency.\"",

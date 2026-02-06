@@ -604,7 +604,7 @@ const styles = StyleSheet.create({
 					title: `Aria's Journal - Day 37 (Evening)`,
 					content: `The Style Frontier was my final test today! No CSS cascade, no selectors - just JavaScript objects and Flexbox everywhere. At first it felt limiting, but Marshal Native showed me the power: dynamic styles based on state, screen size, platform - computed on the fly! Binary computed style calculations with exponential possibilities. The Animated API runs at smooth 60fps with useNativeDriver. Debuggora noted the predictability: "No cascade means no unexpected inheritance." Marshal Native's final wisdom: "Think in components, not cascades." I've conquered the Mobile Frontier's foundations!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the sun set over the Style Frontier, Marshal Native nodded approvingly. "You've learned the foundations, Captain Aria. Components, trading, styling - the basics of mobile citizenship."`,
 					`Binary processed their progress. "Foundation modules installed: View, Text, ScrollView, FlatList, StyleSheet. Ready for advanced capabilities."`,
 					`"Tomorrow," Marshal Native said, pointing toward distant peaks glowing with native energy, "we explore Native Powers - the device capabilities that make mobile truly magical. Cameras, sensors, gestures - powers the browser never had."`,

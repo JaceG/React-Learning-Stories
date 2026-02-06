@@ -794,7 +794,7 @@ function Toast({ message, duration = 3000 }) {
 					title: `Aria's Journal - Day 42 (Evening)`,
 					content: `The Motion Manor was disorienting at first - walls shifting, floors rippling. Guardian Equilibrium taught me that motion can harm as well as delight. One in three people over 40 experience dizziness from parallax scrolling! I learned to respect prefers-reduced-motion, provide play/pause controls, and avoid vestibular triggers like screen shake and rapid zooming. Animation duration matters too: 200-500ms for micro-interactions. The Guardian's wisdom: "Life shouldn't cause suffering. Provide controls. Honor preferences." The best interfaces work beautifully both with and without motion.`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the Motion Manor finally stilled, Guardian Spectrum and Guardian Equilibrium stood together. "You have mastered the three pillars of visual accessibility," they said in unison.`,
 					`Binary computed the achievements. "Color independence: achieved. Contrast ratios: mastered. Motion control: implemented. Visual accessibility level: excellent."`,
 					`"But visual accessibility is just one facet," Guardian Spectrum added with a knowing smile. "The Semantic Sanctuary awaits, where you will learn that structure is as important as appearance. The screen reader users cannot see your beautiful colors - they need semantic meaning instead."`

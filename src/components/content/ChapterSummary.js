@@ -1,13 +1,13 @@
 /**
  * ChapterSummary - A reusable component for the summary sections at the end of each chapter.
- * 
+ *
  * This component maintains consistent structure and styling for:
  * - Character Intros (optional) - New characters introduced in this chapter (chapter 1 only)
  * - Lesson Insight (orange) - Main takeaway from the chapter
  * - Reflection Section (blue) - Questions to ponder
  * - Journal Entry (optional) - Character journal entries like "Aria's Journal"
- * - Chapter Ending (optional) - Transition narrative to the next chapter
- * 
+ * - Lesson Ending (optional) - Transition narrative to the next lesson
+ *
  * @example
  * <ChapterSummary
  *   characterIntros={[
@@ -25,7 +25,7 @@
  *     title: "Aria's Journal - Day 1",
  *     content: "Finally made it to the React Kingdom!"
  *   }}
- *   chapterEnding={[
+ *   lessonEnding={[
  *     "As the sun set over the Component Workshop District...",
  *     "Aria clutched the scroll, excited for her next adventure."
  *   ]}
@@ -37,7 +37,7 @@ const ChapterSummary = ({
 	lessonInsight,
 	reflectionQuestions,
 	journalEntry,
-	chapterEnding,
+	lessonEnding,
 }) => {
 	return (
 		<div className='chapter-summary'>
@@ -91,10 +91,10 @@ const ChapterSummary = ({
 				</div>
 			)}
 
-			{/* Chapter Ending - Transition to next chapter (optional) */}
-			{chapterEnding && chapterEnding.length > 0 && (
-				<div className='chapter-ending'>
-					{chapterEnding.map((paragraph, index) => (
+			{/* Lesson Ending - Transition to next lesson (optional) */}
+			{lessonEnding && lessonEnding.length > 0 && (
+				<div className='lesson-ending'>
+					{lessonEnding.map((paragraph, index) => (
 						<p key={index}>{paragraph}</p>
 					))}
 				</div>

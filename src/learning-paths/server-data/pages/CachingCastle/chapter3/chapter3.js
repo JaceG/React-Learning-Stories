@@ -420,7 +420,7 @@ function OptimizedKingdom() {
 					title: `Aria's Journal - Day 43 (Evening)`,
 					content: `The complete caching system is incredible! Built a multi-layer architecture: L1 Memory (🧠) for speed, L2 Redis (💾) for persistence, L3 CDN (🌐) for global distribution. Binary displayed amazing metrics: 97% cache hit rate, sub-millisecond latency, 80% server load reduction! Cache Lord's final wisdom: "You've built more than a cache - you've created a living system that adapts and optimizes itself." Next: the GraphQL Gateway!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Standing atop the Caching Castle, Aria surveyed the optimized kingdom. "Every request flows through our intelligent cache layers. The servers can finally rest!"`,
 					`Cache Lord Redux nodded with pride. "You've built more than a cache - you've created a living system that adapts and optimizes itself."`,
 					`Binary displayed the metrics. "97% cache hit rate, sub-millisecond latency, 80% reduction in server load. Maximum efficiency achieved!"`,

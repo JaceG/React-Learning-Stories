@@ -277,7 +277,7 @@ const [fetchState, setFetchState] = useState({
 						title: "Aria's Journal - Day 16 (Evening)",
 						content: 'My final useState lesson was eye-opening! Professor Hooksworth taught me state architecture - how to organize state thoughtfully rather than creating "state soup." Key principles: Group related state that changes together (like loading/error/data), never sync derived state (calculate it during render instead), and keep state as local as possible. The Architecture Chamber\'s visualizations showed how poor state design creates tangled webs while good architecture flows cleanly. When state logic gets complex, useReducer might be better than multiple useState calls. Architecture matters!'
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						'As the Architecture Chamber\'s diagrams faded, Hooksworth placed a hand on Aria\'s shoulder. "You\'ve graduated from useState basics to architectural thinking. This foundation will serve you well."',
 						'"Thank you, Professor," Aria said. "I feel like I understand not just how to use useState, but how to use it wisely."',
 						'"That\'s the difference between a coder and an architect," Hooksworth smiled. "Now, I believe the Effect Sage awaits you in the Temporal Tower. Prepare yourself - useEffect is a different beast entirely!"',

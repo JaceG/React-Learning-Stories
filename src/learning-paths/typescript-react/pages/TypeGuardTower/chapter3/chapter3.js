@@ -678,7 +678,7 @@ export function getUser(id: string): Promise<User> {
 					title: `Aria's Journal - Day 48 (Evening)`,
 					content: `From the tower's pinnacle, I can see the entire TypeScript realm - and beyond it, countless JavaScript kingdoms awaiting transformation. Commander Guardia taught me the four migration strategies: gradual migration (allowJs), strict boundaries (typed wrappers), declaration files (for untyped libraries), and automated codemods (for scale). I completed real-world challenges: Legacy React App migration, untyped dependencies, dynamic JavaScript patterns, and team migration strategies. Tower Legend status achieved! Guardia's final wisdom: "The true test isn't protecting new code - it's safely transforming the old. We don't conquer JavaScript; we guide it to safety, one type at a time."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`From the tower's peak, the entire TypeScript realm spread before them. Commander Guardia placed a hand on Aria's shoulder. "You are now a true Type Guard. The realm's safety is in capable hands."`,
 					`Aria looked out at the mixed landscape of JavaScript and TypeScript. "I understand now. We don't conquer JavaScript - we guide it to safety, one type at a time."`,
 					`Binary projected the final statistics. "TypeScript mastery: Complete. Type safety: Maximum. Developer confidence: Unprecedented!"`,

@@ -92,7 +92,7 @@ React encourages building UIs through composition rather than inheritance. Compl
 - How does component composition help you build more complex interfaces?
 - Why is it beneficial for larger components to delegate responsibilities to smaller, specialized components?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the sun set over the Component Workshop District, Master Aurelius handed Aria a sealed scroll. "Tomorrow, you'll journey to the Eastern Quarter to meet the Props Messengers Guild. They hold deeper secrets about component communication."
 
@@ -200,7 +200,7 @@ Type checking with PropTypes helps catch bugs by verifying that components recei
 - Why is it helpful to detect prop type errors during development rather than at runtime?
 - How might PropTypes and defaultProps work together to create more robust components?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As Aria prepared to leave the Props Messenger Guild, Hermes handed her a special badge. "You've earned this - the Messenger's Seal. You now understand how components communicate in our kingdom."
 
@@ -306,7 +306,7 @@ JSX has specific syntax rules that differ from standard HTML because it's ultima
 - How do the glowing tablets metaphor help you remember the importance of JSX rules?
 - Which of the three main rules (single root, closed tags, camelCase) do you think causes the most confusion for beginners?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buzzing with new knowledge. She had learned the ancient language of JSX, discovered how to embed dynamic expressions, and mastered the sacred rules.
 
@@ -417,7 +417,7 @@ Aria shuddered. "Ghost timers? That sounds terrible!"
 *Aria's Journal - Day 7 (Evening)*
 Today's final lesson was sobering but crucial. Components must be responsible citizens of the React Kingdom! When they leave, they must clean up after themselves - cancel timers, remove listeners, abort requests. Chronos showed me what happens when components don't clean up... it wasn't pretty. Ghost timers everywhere!
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the stars appeared above the Lifecycle Sanctum, Chronos placed a gentle hand on Aria's shoulder. "You've learned well today, young apprentice. You now understand the sacred rhythm of component life - from birth through growth to graceful departure."
 
@@ -535,7 +535,7 @@ The useEffect hook is the gateway between your component's inner world and the v
 - How does Memnon's teaching about "consequences" help you understand the purpose of useEffect?
 - Why do you think the dependency array is so important in controlling when effects run?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. "You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most."
 
@@ -654,7 +654,7 @@ These specialized hooks are like precision tools in a master craftsman's worksho
 - How does thinking of useRef as a "secret pocket" help you understand when to use it instead of useState?
 - Why is it important to measure performance before applying optimization hooks like useMemo and useCallback?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the forge's closing bell rang, Master Hooke handed Aria a small leather pouch. "These are hook samples for practice. Tomorrow, you'll meet the Context Keepers in the Grand Hall. They'll teach you how to share state across your entire component kingdom."
 
@@ -761,7 +761,7 @@ Binary's lights dimmed slightly. "All of them? Even if they don't care about the
 *Aria's Journal - Day 10 (Evening)*
 Context optimization is crucial for large applications! The key insights: split contexts by how often they change, memoize context values to prevent recreation, and use React.memo on consumer components. It's like organizing the thread network into separate channels - each carrying only related data to interested consumers. No more wasteful re-renders!
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the day drew to a close, Contextia handed Aria a crystal containing all the Context patterns they'd studied. "You've learned well, young developer. Context is now yours to wield wisely."
 
@@ -878,7 +878,7 @@ Grand Reducer smiled. "Wise observation. Each portal before you leads to a diffe
 *Aria's Journal - Day 11 (Evening)*
 My mind is expanding! Each modern library solves state differently. Zustand's simplicity reminds me of useState but with global reach. Jotai's atoms compose like building blocks. Recoil brings Facebook's expertise. MobX feels magical with its automatic tracking. The key lesson: choose based on your needs, not trends. Sometimes mixing approaches - useState for UI, Context for themes, specialized libraries for complex state - creates the perfect solution!
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 "You've witnessed the evolution of state management," Grand Reducer proclaimed. "From simple useState to complex Redux, from Context's sharing to modern libraries' innovations. Each tool has its place in React Kingdom."
 
@@ -1028,7 +1028,7 @@ Propius smiled mysteriously. "Indeed there is. You've already learned about Cont
 *Aria's Journal - Day 12 (Evening)*
 Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. Propius showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!
 
-**Chapter Ending:**
+**Lesson Ending:**
 As the sun set over the Trade Quarter, Aria felt she truly understood the caravan system. Props were more than simple messages - they were the lifeblood of React Kingdom's commerce, flowing through carefully planned routes.
 
 "You've learned well," Propius said proudly. "You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures."
@@ -1167,7 +1167,7 @@ Aria's eyes lit up. "So when cascades get too deep..."
 *Aria's Journal - Day 13 (Evening)*
 The Great Waterfall was both inspiring and cautionary! I saw how data cascades through nested components, splitting and filtering at each level. But Flux warned about the dangers of deep waterfalls - beyond 3-4 levels, they become hard to maintain. The key patterns: filter data at each tier (pass only what's needed), split streams for different children, and know when to use Context or state management instead of endless cascading. Sometimes the most elegant solution isn't the most beautiful waterfall, but a simple, direct aqueduct!
 
-**Chapter Ending:**
+**Lesson Ending:**
 As they prepared to leave the Cascade District, Flux placed a hand on Aria's shoulder. "You've learned well. You understand not just how data flows, but when flows become floods."
 
 "The rivers taught me so much," Aria reflected. "One-way flow, controlled gates, and the perils of deep cascades. But where do I go next?"
@@ -1312,7 +1312,7 @@ Aria nodded thoughtfully. "So validation isn't just about catching errors - it's
 *Aria's Journal - Day 14 (Evening)*
 The Validation Vault revealed the final secrets of prop mastery! Props are contracts between components, and validation ensures those contracts are honored. PropTypes provide runtime warnings, while TypeScript catches errors before code even runs. Default values act as safety nets for optional props. Destructo's sacred rules: never mutate props, validate everything, provide defaults, use clear names, and document thoroughly. The forge taught me that prop handling isn't just about passing data - it's about creating reliable, maintainable component relationships. Quality props make quality applications!
 
-**Chapter Ending:**
+**Lesson Ending:**
 As they prepared to leave the Prop Forge, Destructo presented Aria with a small hammer pendant. "This symbolizes your mastery of prop transformation. You've learned to destructure, spread, and validate - the three pillars of prop craftsmanship."
 
 "Thank you, Master Destructo," Aria said, fastening the pendant. "I'll never look at props the same way. They're not just data - they're carefully crafted artifacts that need respect and proper handling."
@@ -1459,7 +1459,7 @@ Binary projected a visualization showing events flowing through component trees,
 *Aria's Journal - Day 15 (Evening)*
 The Symphony Hall revealed the ultimate event pattern! Parent components are conductors, orchestrating complex interactions between their children. Events from one child can trigger cascading updates across siblings, all coordinated through the parent's callbacks. The Symphony Pattern shows how individual components create harmony when properly conducted. Event delegation reduces callback proliferation by handling related events through single handlers. As complexity grows, patterns like Context become assistant conductors. The complete cycle is now clear: props flow down like sheet music, events echo up like performed notes, creating React's beautiful symphony!
 
-**Chapter Ending:**
+**Lesson Ending:**
 As the final echoes faded, Callback lowered her baton with a satisfied smile. "You've completed your journey through Props and Data Flow, Aria. From caravans to rivers, from forges to echoes - you understand the complete cycle."
 
 Aria felt the weight of knowledge settling into place. "Props descend like gifts from parents to children, while events ascend like messages back up. It's a continuous conversation!"
@@ -1599,7 +1599,7 @@ My final useState lesson was eye-opening! Professor Hooksworth taught me state a
 **Lesson Insight:**
 Elevate from useState mechanics to state architecture wisdom. Group related values that change together, preventing synchronization bugs. Calculate derived values during render rather than storing redundant state. Keep state as local as possible - lift only when necessary. When multiple sub-values update together in complex patterns, graduate to useReducer. Remember: good architecture makes components predictable, maintainable, and bug-resistant. Think architecturally, not just functionally.
 
-**Chapter Ending:**
+**Lesson Ending:**
 As the Architecture Chamber's diagrams faded, Hooksworth placed a hand on Aria's shoulder. "You've graduated from useState basics to architectural thinking. This foundation will serve you well."
 
 "Thank you, Professor," Aria said. "I feel like I understand not just how to use useState, but how to use it wisely."
@@ -1720,7 +1720,7 @@ The Chamber of Asynchronous Arts was mind-bending! The Effect Sage showed me how
 **Lesson Insight:**
 Master asynchronous operations by respecting useEffect's constraints. Create async functions inside effects, never make the effect itself async. Defend against race conditions with AbortController or cancellation flags - without them, old requests overwrite new data chaotically. Always check if requests were aborted before updating state, preventing updates to unmounted components. These patterns are essential for data-fetching - they transform temporal chaos into predictable, reliable behavior.
 
-**Chapter Ending:**
+**Lesson Ending:**
 As the portals stabilized and temporal chaos subsided, the Effect Sage's form solidified. "You've mastered the most treacherous aspects of useEffect, Aria. From lifecycle management to dependencies to async operations - you understand the bridge between React's pure world and external chaos."
 
 "It's all about managing time," Aria reflected, watching Binary's chronometer finally stabilize. "Effects exist in their own timeline, and we must respect that separation."
@@ -1821,7 +1821,7 @@ The Grand Repository was awe-inspiring! Compose showed me how individual hooks b
 **Lesson Insight:**
 Transform individual solutions into collective assets through well-organized hook libraries. Essential patterns like useDebounce, useWindowSize, and useInterval solve universal problems. Excellence requires comprehensive documentation (JSDoc, examples, edge cases), thorough testing (unit tests, integration tests, edge cases), logical organization (categories, consistent naming, central exports), and proper versioning (semantic versioning, changelogs, migration guides). Remember: a hook in the library saves countless hours across your entire organization.
 
-**Chapter Ending:**
+**Lesson Ending:**
 As they prepared to leave the Synthesis Workshop, Compose handed Aria a crystal containing the workshop's hook patterns. "You've learned to create, compose, and share hooks. This knowledge makes you a true React artificer."
 
 "Thank you, Master Compose," Aria said, clutching the crystal. "I never imagined hooks could be so powerful - not just as tools, but as shared knowledge."
@@ -1924,7 +1924,7 @@ The Performance Sanctuary completed my hook pattern education! Synthesis reveale
 **Lesson Insight:**
 Master the art of strategic optimization with the Performance Trinity. UseMemo caches expensive calculations, preventing redundant work when inputs haven't changed. UseCallback preserves function identity across renders, crucial for preventing child re-renders and maintaining referential equality. React.memo wraps components in a shallow prop comparison shield. Use these tools when you have measured performance issues, not preemptively. Common scenarios: large lists, expensive calculations, frequently re-rendering trees. Remember: premature optimization is the root of all evil - profile first with React DevTools!
 
-**Chapter Ending:**
+**Lesson Ending:**
 As the demonstration concluded, Synthesis led Aria and Binary to the center of the Integration Sanctum. All the patterns they'd learned - orchestration, state management, and optimization - swirled around them in perfect harmony.
 
 "You've completed your training," Synthesis announced proudly. "You now understand not just individual hooks, but how to weave them into powerful, efficient patterns. You are ready for any React challenge!"
@@ -2074,7 +2074,7 @@ What a day! Formeus guided me through the Grand Transmutation - a complete form 
 
 Complete form systems require orchestrating all Academy patterns. Build reusable hooks that encapsulate validation logic, submission handling, and state management using the hook orchestration patterns you've mastered. Use memoization for expensive validations, callbacks for stable handlers, and effects for reactive updates. Create composable validation rules that can be mixed and matched. Remember: great forms aren't just functional - they guide users, prevent errors, provide clear feedback, and handle edge cases gracefully. This is Academy-level React form mastery.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the final validation rune lit up and the portal stabilized, Formeus placed a hand on Aria's shoulder. "You've applied Academy training faster than anyone in our history. Your hook mastery approach will be taught to future generations."
 
@@ -2204,7 +2204,7 @@ What a finale! Eventus taught me how to apply Academy patterns to event optimiza
 
 Event optimization transforms chaotic interactions into smooth symphonies using Academy-trained patterns. Memoize handlers with useCallback to prevent recreation on every render (Performance Sanctuary training). Throttle rapidly-firing events (scroll, resize) to control frequency. Debounce user input to wait for typing to finish. Combine with event delegation for ultimate efficiency. These patterns, learned at the Academy and applied here, unite to create performant, responsive applications. Remember: optimization isn't premature when it enhances user experience. Conduct your events with Academy wisdom, and your application will sing.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the final notes of the Academy-optimized symphony faded, the entire Event Symphony Hall erupted in applause. Musicians who had struggled with performance issues now played in perfect harmony using optimized patterns.
 
@@ -2336,7 +2336,7 @@ What a journey through the Validation Fortress! Validus taught me how to create 
 
 The ultimate validation defense combines multiple strategies into one coherent system. Use schema validation for consistency and maintainability. Implement multi-step validation for complex forms, breaking the journey into manageable pieces. Apply conditional rules for dynamic requirements. Leverage memoization and caching for performance. Most importantly, treat validation as a guide, not a gatekeeper. The strongest fortress is one that legitimate users can enter easily while keeping threats at bay. Master these patterns, and your forms become both secure and delightful.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the fortress walls glowed with the light of activated defenses, Commander Validus smiled with pride. "You've learned exceptionally well, Aria! Your understanding of validation patterns will serve you well in your React journey. The Western Quarter's data security knowledge is now yours!"
 
@@ -2472,7 +2472,7 @@ The Grand Synthesis complete! Today all my teachers worked together to show me h
 
 True mastery of Forms & Events isn't about individual patterns - it's about understanding how they create a unified whole. Form state management provides the data foundation. Event handling creates the interaction layer. Validation ensures data integrity at every step. Submission patterns handle the journey to the server. When combined, they create a seamless experience where users feel guided, protected, and empowered. Remember: in React, every form is a complete application in miniature. Master the synthesis of these patterns, and you master the essence of interactive web applications.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 As the Grand Synthesis Chamber's energy stabilized, Sage approached Aria with deep respect. "You've done what none of us could achieve alone. You've shown that true mastery comes not from perfecting individual patterns, but from understanding how they dance together."
 
@@ -2601,7 +2601,7 @@ Marina's teaching revealed the deepest truth about React navigation: it's not a 
 - What possibilities open up when you treat routing as stateful, validated, and intelligent rather than just URL changes?
 - As Aria's foundational journey through the React Kingdom reaches completion, what patterns will you take forward in your own development adventure?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 Marina smiled with the satisfaction of a teacher whose student had grasped the deepest concepts. "When I first heard of Aria's arrival in our kingdom, I knew she would be a dedicated learner. Witnessing her journey - from curious apprentice to knowledgeable practitioner - has been truly rewarding."
 
@@ -2961,7 +2961,7 @@ Marina taught Aria that navigation represents the culmination of React knowledge
 - What makes advanced portal patterns the culmination of React learning?
 - How will you apply this integrated understanding to your own React applications?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 Marina placed a hand on Aria's shoulder. "Your journey through the React Kingdom has given you a solid foundation. You understand not just the individual concepts, but how they connect to create powerful applications. You're ready for whatever challenges await in your development career."
 
@@ -3080,7 +3080,7 @@ The Trinity of Optimization - React.memo, useMemo, and useCallback - work in har
 - Aria has learned all three optimization techniques and defeated the Lag Monster. But Master Velocity's final wisdom rings true: "The greatest optimization is often better architecture."
 - In your applications, how might you restructure components to avoid performance problems in the first place? When is optimization necessary, and when is it better to rethink your approach?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 With the Lag Monster defeated, the React Kingdom's performance was restored. Aria had mastered the optimization arts, but her journey was far from over. The Memory Monastery awaited, where even deeper performance secrets lay hidden...
 
@@ -3185,7 +3185,7 @@ Memory management is not about complex algorithms or clever tricks. It's about d
 - Aria has become a Memory Guardian, mastering the ancient rituals of memory management. But Brother Binary's final lesson is most important: "Knowledge without practice is worthless. Apply these rituals in every component you write."
 - Will you take the Memory Guardian oath? Will you commit to always cleaning up your effects, managing your references, and keeping your applications healthy?
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 With the Memory Plague defeated, the React Kingdom's applications ran smoothly once more. Aria had not only learned to identify and fix memory leaks but had become a guardian of memory health. Yet her journey continued, for the Lazy Library awaited, promising secrets of code splitting and lazy loading...
 
@@ -3294,7 +3294,7 @@ True performance optimization requires a comprehensive strategy. Route-based spl
 - Aria has become a Performance Architect, mastering the art of strategic code splitting. But Keeper Chronos's final wisdom resonates: "Performance is not a feature, it's a fundamental requirement. Every millisecond counts."
 - As you build your applications, remember the Lazy Library's teachings. Split wisely, load intelligently, and always measure the impact. Your users will thank you with their engagement.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 With the secrets of the Lazy Library mastered, applications across the React Kingdom loaded with unprecedented speed. Aria had transformed from a student to an architect of performance. But one final challenge remained - the Virtualization Vault, where the secrets of handling infinite data awaited...
 
@@ -3408,7 +3408,7 @@ Virtualization is not just about lists - it's a philosophy of rendering only wha
 - Aria has become the Keeper of the Infinite, mastering every virtualization technique. But Guardian Zephyr's final lesson resonates: "True mastery isn't using these techniques everywhere - it's knowing when they're needed."
 - As you build your applications, remember the Vault's teachings. Not every list needs virtualization, but when you face truly massive data, these techniques transform the impossible into the effortless.
 
-**Chapter Ending:**
+**Lesson Ending:**
 
 With the secrets of the Virtualization Vault mastered, Aria had completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive, she had learned to make React applications not just functional, but blazingly fast.
 

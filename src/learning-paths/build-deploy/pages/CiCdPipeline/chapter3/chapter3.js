@@ -345,7 +345,7 @@ spec:
 					title: `Aria's Journal - Day 34 (Evening)`,
 					content: `I've achieved Fleet Admiral status at the Automation Harbor! Captain Pipeline taught me four advanced deployment strategies: Blue-Green (zero downtime switching), Canary (gradual rollout to users), Rolling (updating instances one by one), and Feature Flags (decoupling deploy from release). I also explored Progressive Delivery, GitOps, and Chaos Engineering! Binary tracked our DORA metrics improving - deployment frequency up 10x, lead time reduced to hours, MTTR under 30 minutes. Captain Pipeline's final wisdom: "The goal is to make deployments so safe and routine that they become boring." Continuous value delivery achieved!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As Aria mastered the final deployment strategy, Captain Pipeline saluted. "Fleet Admiral Aria, you've learned to automate the entire journey from code to production."`,
 					`Binary computed the achievement metrics. "Deployment frequency: excellent. Lead time: optimal. Change fail rate: minimal. You've mastered CI/CD!"`,
 					`"But automated pipelines need a destination," Captain Pipeline said, pointing toward the horizon. "The Hosting Horizons await - where Harbor Master Domain will teach you where your code actually lives and serves users..."`

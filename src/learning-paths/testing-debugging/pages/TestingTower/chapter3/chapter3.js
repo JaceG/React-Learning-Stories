@@ -292,7 +292,7 @@ jobs:
 					title: `Aria's Journal - Day 29 (Evening)`,
 					content: `The tower's highest chamber holds the Continuous Integration Engine - a massive crystalline structure! Phantom test runners materialized, each executing hundreds of tests in seconds. They never tire, never miss a test! I learned to configure GitHub Actions: checkout code, setup Node, run linters, deploy the test army, verify coverage (80% minimum!), E2E patrol, then build. The CI/CD pipeline provides instant feedback, 24/7 protection, and quality metrics. Jasmine's final teaching: "Automated testing transforms good developers into great ones." I now have an army of 324 guardian tests protecting the kingdom day and night!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Standing in the Underground Realms, Aria looked at her assembled allies - Jasmine, Debuggora, and the army of automated tests. "We've built a quality fortress," she said. "But even the best tests can't catch every bug. Some hide deeper, in the production shadows. The Debug Dungeon awaits..."`
 				]}
 			/>

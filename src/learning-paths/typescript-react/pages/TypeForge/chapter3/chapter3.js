@@ -469,7 +469,7 @@ function useForm<T extends Record<string, any>>({
 					title: `Aria's Journal - Day 45 (Evening)`,
 					content: `The Type Forge has transformed how I think about code. Every type is a promise, every interface a contract. I mastered union types, intersection types, conditional types, mapped types, and even template literal types! With generics, I can create reusable patterns. With conditional types, I can make types that adapt. Binary is practically glowing with the mathematical precision, and even Debuggora admits she's never seen code this robust. Master Typus's final wisdom: "The Type Forge's greatest gift isn't catching errors - it's making entire categories of bugs impossible." Ready for the Component Armory!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Aria successfully forged a complete type system. "Every component typed, every function safe, every prop guaranteed."`,
 					`Binary glowed with new type-checking abilities. Debuggora could see potential errors in the very structure of code.`,
 					`Master Typus smiled proudly. "You've learned to forge unbreakable code. Your components are now contracts, your functions are now guarantees."`,

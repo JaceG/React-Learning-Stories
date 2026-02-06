@@ -645,7 +645,7 @@ const experiments = {
 					title: `Aria's Journal - Day 40 (Evening)`,
 					content: `I've done it - my React Native app is live globally! The metrics dashboard shows ${appMetrics.downloads.toLocaleString()} downloads across ${globalReach} countries, with ${localizationLanguages.length} languages supported. Binary streams real-time analytics: active users at ${appMetrics.activeUsers.toLocaleString()}, rating climbing to ${appMetrics.rating.toFixed(1)} stars. I chose the ${updateStrategy} release strategy for future updates - ${updateStrategy === 'phased' ? 'minimizing risk through gradual rollout' : updateStrategy === 'immediate' ? 'getting features to users fast' : 'maintaining full control'}. Publisher Prime's final wisdom: "Launch is just the beginning. Monitor, update, and grow." Publisher Level: ${publisherLevel}. The Mobile Frontier is conquered! 🎉`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the global metrics streamed across the dashboard, Publisher Prime placed a hand on Aria's shoulder. "You've completed the Mobile Frontier," he said proudly. "From React Native foundations to native powers, from navigation trails to worldwide distribution."`,
 					`Binary processed the achievement statistics. "Four lessons completed. Twelve chapters mastered. One unified codebase running on millions of devices across ${globalReach > 0 ? globalReach : 'countless'} countries. Truly remarkable, Aria."`,
 					`Marshal Native appeared at the tower's entrance, a rare smile crossing his weathered face. "Captain Aria, you've proven that React truly is 'learn once, write anywhere.' You've taken web wisdom and applied it to the mobile realm."`,

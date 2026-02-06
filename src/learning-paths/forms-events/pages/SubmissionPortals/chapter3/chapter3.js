@@ -781,7 +781,7 @@ const useUltimateForm = () => {
 						content:
 							"The Grand Synthesis complete! Today all my teachers worked together to show me how all their patterns unite into one seamless system. Form Alchemy provides the foundation of state. Event Symphony orchestrates user interaction. Validation Guardians ensure data integrity. Portal Submission handles the final transmission. But the true magic is how they work together - state changes trigger events, events trigger validation, validation enables submission, and submission completes the cycle. Binary recorded 99.7% efficiency when all patterns unified. The masters declared my Forms & Events training complete! Tomorrow, we journey to the Routing Crossroads for the next challenge of my React mastery!",
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						'As the Grand Synthesis Chamber\'s energy stabilized, Sage approached Aria with deep respect. "You\'ve done what none of us could achieve alone. You\'ve shown that true mastery comes not from perfecting individual patterns, but from understanding how they dance together."',
 						'"Every pattern has its purpose," Aria reflected, "but their true power emerges when unified. This synthesis will serve the Western Quarter for generations."',
 						'Binary displayed a new map marker. "Routing Crossroads detected ahead. The final challenge of your React journey awaits."',

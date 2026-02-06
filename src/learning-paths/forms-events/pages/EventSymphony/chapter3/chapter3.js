@@ -426,7 +426,7 @@ const batchedUpdate = unstable_batchedUpdates(() => {
 					content:
 						"What a finale! Eventus taught me how to apply Academy patterns to event optimization. I learned how memoization (from Performance Sanctuary) prevents handler recreation, how throttling/debouncing (Academy efficiency patterns) control event flow, and how delegation reduces overhead using the optimization techniques Pattern Weaver taught me. Binary tracked the improvements as we applied Academy methods to event handling! The Event Symphony Hall now runs so much smoother. Eventus says the patterns we explored will be valuable for orchestras throughout the kingdom. Tomorrow we visit the Validation Fortress - I'm curious what Guardian Commander Validus will teach me!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As the final notes of the Academy-optimized symphony faded, the entire Event Symphony Hall erupted in applause. Musicians who had struggled with performance issues now played in perfect harmony using optimized patterns.',
 					'Conductor Eventus bowed deeply to Aria. "You\'ve transformed our understanding of event handling by applying Academy optimization training. The Western Quarter will never forget this performance."',
 					'"The next challenge awaits," Aria said, looking toward the distant Validation Fortress. "I hear Commander Validus needs help with defensive strategies that might benefit from Academy patterns."',

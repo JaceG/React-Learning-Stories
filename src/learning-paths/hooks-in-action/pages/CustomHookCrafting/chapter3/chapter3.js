@@ -378,7 +378,7 @@ describe('useCounter', () => {
 						title: "Aria's Journal - Day 18 (Evening)",
 						content: "The Grand Repository was awe-inspiring! Compose showed me how individual hooks become collective wisdom through proper organization. I explored three essential patterns: useDebounce (delays updates until user stops typing - perfect for search!), useWindowSize (responsive design made simple), and useInterval (declarative setInterval that plays nice with React). The key insight: documentation and testing transform personal hooks into shareable assets. Every hook should have clear docs, usage examples, comprehensive tests, and semantic versioning. A well-maintained hook library accelerates entire teams. Why solve the same problems repeatedly?"
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"As they prepared to leave the Synthesis Workshop, Compose handed Aria a crystal containing the workshop's hook patterns. \"You've learned to create, compose, and share hooks. This knowledge makes you a true React artificer.\"",
 						"\"Thank you, Master Compose,\" Aria said, clutching the crystal. \"I never imagined hooks could be so powerful - not just as tools, but as shared knowledge.\"",
 						"\"Remember,\" Compose smiled, \"the best abstractions emerge from real problems. Don't force patterns - discover them. Now, Pattern Weaver Synthesis awaits in the Integration Sanctum. There you'll learn to combine everything into true mastery.\"",

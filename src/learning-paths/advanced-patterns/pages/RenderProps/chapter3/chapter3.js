@@ -476,7 +476,7 @@ Toggle.Display = function ToggleDisplay({ children }) {
 					title: `Aria's Journal - Day 34 (Evening)`,
 					content: `Pattern Master Renderius showed me production-ready render prop implementations! I built a Flexible Modal that supports both render props and children function APIs, an Animation Controller using spring physics, and even combined patterns to support both render prop AND compound component APIs! The comparison chart was enlightening: Compound Components = intuitive APIs (flexibility 40%, simplicity 80%), Render Props = maximum flexibility (flexibility 90%, simplicity 30%), Hooks = modern balance (flexibility 70%, simplicity 70%). Flexibility Level at ${flexibilityLevel}%!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Pattern Master Renderius applauded as Aria demonstrated her mastery. "You've learned when to hold control and when to delegate it. Render props are powerful, but they're not the only pattern for sharing behavior. Forge Master Enhance awaits to teach you about Higher-Order Components..."`
 				]}
 			/>

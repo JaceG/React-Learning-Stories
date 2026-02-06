@@ -618,7 +618,7 @@ this.abortController.abort();
 					content:
 						"Today's final lesson was sobering but crucial. Components must be responsible citizens of the React Kingdom! When they leave, they must clean up after themselves - cancel timers, remove listeners, abort requests. Chronos showed me what happens when components don't clean up... it wasn't pretty. Ghost timers everywhere!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As the stars appeared above the Lifecycle Sanctum, Chronos placed a gentle hand on Aria\'s shoulder. "You\'ve learned well today, young apprentice. You now understand the sacred rhythm of component life - from birth through growth to graceful departure."',
 					'Binary spun in a happy circle. "You did it, Aria! You\'ve completed your training in the fundamental arts of React!"',
 					'"But this is just the beginning," Chronos smiled mysteriously. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the State Sorcerers. They\'ll teach you how to give your components memory and the power to change over time."',

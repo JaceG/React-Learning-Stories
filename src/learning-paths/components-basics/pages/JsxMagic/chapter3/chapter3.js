@@ -402,7 +402,7 @@ const ChapterThree = () => {
 					content:
 						"What a day at the JSX Magic Academy! I feel like I've learned a whole new language. JSX seemed strange at first - mixing HTML with JavaScript - but now I see its elegance. The rules make sense when you understand that everything becomes JavaScript in the end. I can't wait to see what the Lifecycle Sanctum holds tomorrow!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buzzing with new knowledge. She had learned the ancient language of JSX, discovered how to embed dynamic expressions, and mastered the sacred rules.',
 					'"You\'ve done well, young apprentice," Professor Syntaxis said proudly. "You now possess the knowledge to write powerful component spells. But remember - JSX is just the beginning. Tomorrow, you\'ll journey to the Lifecycle Sanctum to learn how components live, update, and eventually fade away."',
 					'Binary gave Aria a tiny high-five. "You\'re going to love the Lifecycle Chronicles! The Time Keepers there are amazing!"',

@@ -355,7 +355,7 @@ const useFormAwareNavigation = () => {
 						content:
 							"What an incredible day! Marina showed me the unified navigation architecture - where all React patterns converge. Stateful nested routes preserve component hierarchies, intelligent protected routes combine authentication with validation, and predictive navigation uses effects and memoization for performance. I can finally see the complete picture: components provide structure, state brings life, props enable communication, hooks add power, forms connect users, and navigation orchestrates everything. This isn't just about routing - it's about creating intelligent, responsive applications. Tomorrow Marina will teach me more advanced patterns at the Portal Passages!",
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"Marina smiled with the satisfaction of a teacher whose student had grasped the deepest concepts. \"When I first heard of Aria's arrival in our kingdom, I knew she would be a dedicated learner. Witnessing her journey - from curious apprentice to knowledgeable practitioner - has been truly rewarding.\"",
 						"\"You've learned our patterns beautifully,\" Marina continued, addressing Aria directly. \"You've connected concepts across domains. You've shown how a strong React foundation makes advanced navigation concepts accessible.\"",
 						"Aria felt the weight of knowledge settling into place. From every quarter of the kingdom, she had learned from dedicated teachers, and now she understood how it all connected."

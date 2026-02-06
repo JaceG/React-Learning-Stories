@@ -591,7 +591,7 @@ const result = await CustomModule.doNativeOperation('input');`}
 					title: `Aria's Journal - Day 38 (Evening)`,
 					content: `I've achieved Grand Master status at the Device Sanctuary! Bridge revealed the six advanced integrations: biometrics (Face ID, Touch ID), payment systems (Apple Pay, Google Pay), maps (MapKit, Google Maps), AR (ARKit, ARCore), ML (Core ML, TensorFlow), and IoT (Bluetooth, device communication). The architecture is elegant: JavaScript → Bridge (serialization) → Native Modules → Platform APIs. Each layer communicates asynchronously. I built a master project combining multiple integrations - the power level is incredible! Bridge's final wisdom: "True mastery comes from understanding both JavaScript and native worlds." Binary's calculation: "100% native power unlocked. Grand Master achieved!"`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As Aria achieved Grand Master status, Bridge smiled proudly. "You've unlocked the full power of native capabilities. Your React Native apps can now rival any native application."`,
 					`Binary processed their achievement. "Six integrations mastered. Bridge architecture understood. Power level: maximum. Aria, we're ready for anything!"`,
 					`"Almost anything," Bridge corrected gently. "There's still the Navigation Trails to master - the ancient paths that guide users through your mobile realm. Without proper navigation, even the most powerful app becomes a maze."`,

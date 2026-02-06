@@ -603,7 +603,7 @@ if (process.env.NODE_ENV === 'development') {
 					title: `Aria's Journal - Day 40 (Evening)`,
 					content: `Achieved Animation Mastery in the Fluid Kingdom! Built real-world projects: page transitions with route-based animations, interactive dashboards with staggered children and shared layout transitions, gesture-rich mobile interfaces with pull-to-refresh, marketing sites with scroll animations and parallax, e-commerce cart animations with AnimatePresence. Monastery Stage: ${monasteryStage}! Learned performance optimization: React.memo for animated components, CSS variables for hover effects, testing animations with Jest/RTL. Fluid Kingdom Wisdom: "Every motion should enhance user experience. The best animations are the ones users don't consciously notice - they just make the experience feel right."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Abbess Motia observed Aria's final project - a fully animated dashboard with smooth transitions, meaningful gestures, and perfect performance. "You understand now. Animation is a language."`,
 					`Aria reflected on her journey through the ecosystem. "State management for complex data, styling for beautiful UIs, forms for user input, animation for engagement. They're all pieces of a larger whole."`,
 					`Binary compiled the final analysis. "Each library in the ecosystem serves React's greater purpose - building exceptional user experiences."`,

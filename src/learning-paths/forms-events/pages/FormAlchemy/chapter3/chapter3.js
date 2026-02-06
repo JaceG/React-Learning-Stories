@@ -553,7 +553,7 @@ try {
 						content:
 							"What a day! Formeus guided me through the Grand Transmutation - a complete form system that uses every Academy pattern I've learned. The validation runes were inspired by the Hook Council chambers, lighting up as each field becomes valid. We used memoization from the Performance Sanctuary to optimize validation checks, callbacks from Academy training for stable handlers, and effects from the Temporal Tower for reactive validation. Formeus was excited to see how Academy patterns applied to form handling! The best part: now I understand how to build reusable form systems. Tomorrow we move to the Event Symphony Hall!",
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						'As the final validation rune lit up and the portal stabilized, Formeus placed a hand on Aria\'s shoulder. "You\'ve applied Academy training faster than anyone in our history. Your hook mastery approach will be taught to future generations."',
 						'"Thank you, Master Formeus," Aria replied. "But I sense there\'s more to learn about user interaction. What about handling complex events?"',
 						'Formeus smiled. "Ah, you\'re ready for Conductor Eventus at the Event Symphony Hall. He\'s been eagerly awaiting someone with your Academy training. The way you handled form events shows you\'re ready for the full symphony of browser interactions."',

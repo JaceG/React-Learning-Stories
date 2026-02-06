@@ -362,7 +362,7 @@ Content-Security-Policy: default-src 'self'
 					title: `Aria's Journal - Day 35 (Evening)`,
 					content: `Tonight I became a Global Admiral! I expanded my edge network across 6 regions: US East (20ms), US West (35ms), EU West (80ms), Asia Pacific (150ms), South America (120ms), and Australia (180ms). I learned three edge strategies: Edge Functions for code near users, CDN Distribution for asset caching, and Geographic Routing for optimal paths. Performance optimizations like Brotli compression, HTTP/3, and image optimization dramatically improved my Core Web Vitals. Navigator Vercel's wisdom: "Performance isn't just about code - it's about proximity. Bring your app closer to your users." Global reach: 100%!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Aria surveyed her global deployment network with pride. "From local development to worldwide distribution - what a journey!"`,
 					`Navigator Vercel nodded approvingly. "You've mastered the hosting horizons. Your applications can now reach users anywhere in the world with optimal performance."`,
 					`"But deployment is only the beginning," Binary calculated. "Production environments face unique challenges - monitoring, error handling, scaling under load..."`,

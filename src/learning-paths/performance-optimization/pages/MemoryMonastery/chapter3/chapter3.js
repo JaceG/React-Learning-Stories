@@ -331,7 +331,7 @@ function MemoryGuardianComponent({ data }) {
 					content:
 						"I've mastered the Four Healing Rituals and become a Memory Guardian! 1) Event Cleanup Ritual - ALWAYS return cleanup functions from useEffect. 2) WeakMap Wisdom - use WeakMap/WeakSet for caches so objects can be garbage collected when no longer needed. 3) Reference Discipline - disconnect observers, clear refs on unmount. 4) Memoization Mastery - memoize context values to prevent recreation. The complete pattern: use isMountedRef to check if component is still mounted before setting state after async operations. Brother Binary's wisdom: 'Knowledge without practice is worthless.' Tomorrow: the Lazy Library!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'With the Memory Plague defeated, the React Kingdom\'s applications ran smoothly once more. Aria had not only learned to identify and fix memory leaks but had become a guardian of memory health. Yet her journey continued, for the Lazy Library awaited, promising secrets of code splitting and lazy loading...'
 				]}
 			/>

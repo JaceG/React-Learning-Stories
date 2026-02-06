@@ -367,7 +367,7 @@ module.exports = {
 					content:
 						"I've mastered the Grand Library Architecture and become a Performance Architect! The four pillars of splitting strategy: 1) Route-Based Splitting - lazy load different routes (admin panels, analytics). 2) Vendor Chunking - separate third-party libraries for better caching (React stays cached even when app code changes). 3) Smart Preloading - load on hover/focus before users click. 4) Resource Prefetching - use requestIdleCallback to fetch likely next routes during idle time. Also learned about webpackPreload and webpackPrefetch magic comments! Initial bundle dropped from 1MB to 400KB. Tomorrow: the Virtualization Vault for handling infinite data!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'With the secrets of the Lazy Library mastered, applications across the React Kingdom loaded with unprecedented speed. Aria had transformed from a student to an architect of performance. But one final challenge remained - the Virtualization Vault, where the secrets of handling infinite data awaited...',
 				]}
 			/>

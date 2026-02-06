@@ -470,7 +470,7 @@ function ThemedComponent() {
 					title: `Aria's Journal - Day 35 (Evening)`,
 					content: `Forge Master Enhance revealed the Pattern Evolution Timeline - from Mixins (2013) to HOCs (2015) to Render Props (2017) to Hooks (2019). I learned when HOCs are still the best choice: third-party library integration, route-level authentication, error boundaries. The comparison grid showed HOCs excel at props manipulation and conditional rendering, while hooks dominate for state logic and side effects. Forge Temperature reached ${forgeTemperature}°! The Forge Master's final wisdom: "HOCs are not obsolete, but specialized. Use them wisely."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`The forge cooled as Aria completed her final enhancement. "You understand now," Forge Master Enhance said proudly. "HOCs are not obsolete, but specialized. Use them wisely, and they'll serve you well."`,
 					`As they left the Enhancement Forge, Aria felt the weight of knowledge. She had mastered not just a pattern, but understood its place in React's grand tapestry. The Architect's Academy held one more lesson - the mysteries of Portals and Refs awaited...`
 				]}

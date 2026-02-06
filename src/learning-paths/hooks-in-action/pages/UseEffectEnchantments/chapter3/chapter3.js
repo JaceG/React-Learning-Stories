@@ -375,7 +375,7 @@ useEffect(() => {
 						title: "Aria's Journal - Day 17 (Evening)",
 						content: "The Chamber of Asynchronous Arts was mind-bending! The Effect Sage showed me how async operations create non-linear time flows in React. Key insights: Never make the effect itself async (React expects cleanup, not Promises!), always create async functions inside effects. Race conditions are the real danger - when multiple requests overlap, the last to finish overwrites all others, regardless of order! AbortController is our salvation, cancelling obsolete requests before they corrupt our timeline. Without proper cleanup, we risk updating unmounted components - temporal contamination at its worst!"
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"As the portals stabilized and temporal chaos subsided, the Effect Sage's form solidified. \"You've mastered the most treacherous aspects of useEffect, Aria. From lifecycle management to dependencies to async operations - you understand the bridge between React's pure world and external chaos.\"",
 						"\"It's all about managing time,\" Aria reflected, watching Binary's chronometer finally stabilize. \"Effects exist in their own timeline, and we must respect that separation.\"",
 						"\"Wise words from a true Effect Mage,\" the Sage smiled. \"Now, I believe Master Artificer Compose awaits in the Synthesis Workshop. There you'll learn to craft your own hooks - the ultimate expression of React mastery.\"",

@@ -367,7 +367,7 @@ function OmnipresentApp() {
 					title: `Aria's Journal - Day 42 (Evening)`,
 					content: `The Omnipresent Network is incredible! Built a complete real-time system with presence tracking (👥), live cursors (🖱️), push notifications (🔔), and cross-device sync (🔄). Users across all devices feel connected as one! Stream Sage's final wisdom: "Real-time is no longer a feature - it's the foundation of modern applications." Binary calculated millions of messages, perfectly synchronized. Next stop: the Caching Castle to learn when NOT to fetch data!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Aria stood before the complete Omnipresent Network, watching as users across the kingdom collaborated in real-time. "It's beautiful - everyone connected, everyone present!"`,
 					`Stream Sage WebSocket smiled proudly. "You've mastered the Living Streams. Real-time is no longer a feature - it's the foundation of modern applications."`,
 					`Binary calculated the network traffic. "Millions of messages, perfectly synchronized. The efficiency is remarkable!"`,

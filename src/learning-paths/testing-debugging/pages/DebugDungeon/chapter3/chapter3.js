@@ -364,7 +364,7 @@ const UserErrorReport = () => {
 					title: `Aria's Journal - Day 30 (Evening)`,
 					content: `The Production Bug Boss - a massive shape-shifter in the deepest chamber! It shifted between memory-leak, race-condition, and state-corruption forms. Four debugging strategies to defeat it: Error Boundaries (contain the damage), Strategic Logging (track behavior), Real-time Monitoring (observe patterns), and User Error Reports (gather intelligence). I implemented comprehensive error monitoring with global handlers for uncaught errors and unhandled rejections, enriching logs with context (timestamp, userAgent, userId, sessionId). The boss dissolved at 0% health! Logsworth's wisdom: "Production debugging isn't finding bugs - it's building systems that make bugs visible and contained."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the Production Bug Boss dissolved into error logs, Logsworth placed a hand on Aria's shoulder. "You've conquered the Debug Dungeon, but debugging is only half of quality. At the Integration Inn, you'll learn how components must work together. Innkeeper Cypress awaits with new challenges..."`
 				]}
 			/>

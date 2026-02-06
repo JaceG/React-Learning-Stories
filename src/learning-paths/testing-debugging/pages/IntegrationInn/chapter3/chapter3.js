@@ -375,7 +375,7 @@ test('registration completes within performance budget', async () => {
 					title: `Aria's Journal - Day 31 (Evening)`,
 					content: `The Integration Feast! Cypress raised his glass: "Tonight, we witness true integration!" Components that once conflicted now danced together seamlessly. I ran the complete flow: User Input → Form Validation → API Call (mocked) → State Update → UI Render → Analytics Track. All 6 steps passed! The Grand Integration Test tells a user's story - navigate to signup, fill form, accept terms, submit, wait for async, verify success, check analytics. I also wrote error handling tests: 409 status returns "username exists", user can fix and retry. Final stats: 245 unit tests, 67 integration tests, 4 mocked services, Inn Harmony at 100%!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the Integration Feast concluded, Cypress placed a hand on Aria's shoulder. "You've mastered the art of bringing components together. But even the best tests can't prevent all errors. At the Error Enchantments sanctuary, you'll learn the final piece - handling failures gracefully when they inevitably occur..."`
 				]}
 			/>

@@ -554,7 +554,7 @@ class ProductionErrorRecovery {
 					title: `Aria's Journal - Day 32 (Evening)`,
 					content: `Production Error Mastery! The final chamber glowed with live monitoring displays. Safiya: "Production errors are different beasts - unpredictable and often silent." Four production error types: NetworkError (45/day, high severity), ChunkLoadError (12/day, critical!), StateError (78/day, medium), ThirdPartyError (156/day, low). Four recovery strategies: Automatic Retry (🔄), Fallback Mode (🔀 cached data), Graceful Degradation (⚡ disable non-critical features), User Notification (📢). I built an ErrorMonitor class with global handlers, error queuing, and periodic flush. Sanctuary Protection reached 80%! My Testing & Debugging training is complete - from unit tests to production errors, I can build truly resilient applications!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the sanctuary's protection reached full strength, Safiya placed a hand on Aria's shoulder. "You've completed your training in Testing & Debugging. From unit tests in the Tower to production errors here, you now possess the knowledge to build truly resilient React applications. Your journey in Act III continues..."`
 				]}
 			/>

@@ -293,7 +293,7 @@ function App() {
 					title: "Aria's Journal - Day 10 (Evening)",
 					content: "Context optimization is crucial for large applications! The key insights: split contexts by how often they change, memoize context values to prevent recreation, and use React.memo on consumer components. It's like organizing the thread network into separate channels - each carrying only related data to interested consumers. No more wasteful re-renders!"
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"As the day drew to a close, Contextia handed Aria a crystal containing all the Context patterns they'd studied. \"You've learned well, young developer. Context is now yours to wield wisely.\"",
 					"Binary buzzed with excitement. \"Tomorrow we explore the final frontier of state management - the grand unification of all these techniques!\"",
 					"Aria carefully stored the crystal in her satchel, her mind racing with possibilities. She had learned to create threads that connected components across vast distances, to make those threads carry living state, and to optimize them for performance. Tomorrow would bring the ultimate challenge - combining everything into a complete state management strategy."

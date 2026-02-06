@@ -454,7 +454,7 @@ function App() {
 					title: `Aria's Journal - Day 33 (Evening)`,
 					content: `The component symphony was magnificent! Dean Architectus showed me how Accordions, Menus, Forms, and Modals all perform together - each maintaining its own state while contributing to the greater whole. Binary calculated hundreds of possible interactions, yet the API remains simple. I've learned to combine Context, static properties, and flexible children handling into production-ready systems with proper accessibility and keyboard navigation. Architecture Level at ${architectureLevel}%! The Dean says I'm ready for Render Props next.`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Dean Architectus smiled proudly as the component symphony concluded. "You've mastered compound components - hiding complexity while providing flexibility. But there's another way to share behavior. Pattern Master Renderius awaits to teach you about Render Props..."`
 				]}
 			/>

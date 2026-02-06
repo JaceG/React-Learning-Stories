@@ -599,7 +599,7 @@ const useSmartNavigation = () => {
 					content:
 						"The nested waypoint realms! Marina showed me how nested routes create intuitive component hierarchies - DashboardLayout wraps all dashboard routes, SettingsLayout wraps settings, and Outlets render children at each level. I built dynamic breadcrumbs using useMatches() that automatically update based on route metadata, and smooth page transitions with AnimatePresence. The workspace pattern (/workspace/:id/project/:projectId/task/:taskId) shows how nested loaders can access parent data. My final project: a complete navigation framework that integrates authentication, transitions, breadcrumbs, and intelligent waypoints. Marina says I've mastered React navigation! Everything truly is connected - one beautiful, unified system.",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"Binary projected a holographic map showing how every quarter of the React Kingdom connected through the Central Citadel's navigation systems.",
 					"The student who had arrived eager to learn now understood how all the concepts connected through navigation."
 			]}

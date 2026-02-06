@@ -382,7 +382,7 @@ function ListWithDelegation({ items, onItemAction }) {
 						title: "Aria's Journal - Day 15 (Evening)",
 						content: "The Symphony Hall revealed the ultimate event pattern! Parent components are conductors, orchestrating complex interactions between their children. Events from one child can trigger cascading updates across siblings, all coordinated through the parent's callbacks. The Symphony Pattern shows how individual components create harmony when properly conducted. Event delegation reduces callback proliferation by handling related events through single handlers. As complexity grows, patterns like Context become assistant conductors. The complete cycle is now clear: props flow down like sheet music, events echo up like performed notes, creating React's beautiful symphony!"
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"As the final echoes faded, Callback lowered her baton with a satisfied smile. \"You've completed your journey through Props and Data Flow, Aria. From caravans to rivers, from forges to echoes - you understand the complete cycle.\"",
 						"Aria felt the weight of knowledge settling into place. \"Props descend like gifts from parents to children, while events ascend like messages back up. It's a continuous conversation!\"",
 						"\"And you've mastered both directions,\" Callback said proudly. \"The Echo Caves have revealed their secrets to you.\"",

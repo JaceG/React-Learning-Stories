@@ -717,7 +717,7 @@ const errors = emailValidator.validate('bad');
 					title: `Aria's Journal - Day 47 (Evening)`,
 					content: `I've completed my training at the Generic Forge and earned the title of Master Forger! Master Typhos revealed the ultimate patterns: higher-order generics that create other generics, builder patterns with perfect type inference, type-safe event emitters, and factory functions. I built a type-safe state store, query builder, validation framework, and event system. Binary computed: "Type safety: Absolute. Code reuse: Maximized. Developer experience: Optimal." Typhos's final wisdom: "Generics aren't just about reuse—they're about creating languages within the language. With great generic power comes great type responsibility."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`The Generic Forge blazed with the light of a thousand type transformations. Master Typhos stood before his students, pride evident in his stance. "You have completed your training. The forge is now yours."`,
 					`Aria held a perfectly typed component, its generics flowing seamlessly. "I understand now. Generics aren't just about reuse—they're about creating languages within the language."`,
 					`Binary calculated the final metrics. "Type safety: Absolute. Code reuse: Maximized. Developer experience: Optimal. Mission accomplished!"`,

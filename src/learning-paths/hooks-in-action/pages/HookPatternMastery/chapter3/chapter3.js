@@ -402,7 +402,7 @@ function PerformantList({ items }) {
 					title: "Aria's Journal - Day 19 (Evening)",
 					content: "The Performance Sanctuary completed my hook pattern education! Synthesis revealed the Trinity of Performance: useMemo (preserves expensive calculations), useCallback (maintains stable function references), and React.memo (shields components from unnecessary re-renders). The key insight: optimization is about being strategic, not obsessive. I watched render counts drop dramatically when using these tools correctly. The spell example was perfect - without memoization, every keystroke recalculated everything! But with proper optimization, only what changed was recalculated. Remember: measure first, optimize second. Not every calculation needs memoization - sometimes the cure is worse than the disease!"
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'As the demonstration concluded, Synthesis led Aria and Binary to the center of the Integration Sanctum. All the patterns they\'d learned - orchestration, state management, and optimization - swirled around them in perfect harmony.',
 					'"You\'ve completed your training," Synthesis announced proudly. "You now understand not just individual hooks, but how to weave them into powerful, efficient patterns. You are ready for any React challenge!"',
 					'Aria looked at the swirling patterns with new understanding. "It\'s all connected - from basic hooks to complex systems, everything builds on everything else."',

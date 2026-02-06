@@ -244,7 +244,7 @@ module.exports = {
 					title: `Aria's Journal - Day 33 (Evening)`,
 					content: `I've earned the rank of Admiral! The fleet harbor is vast - ships for modern browsers (ES2020+), legacy support (ES5), mobile devices, and edge computing. Admiral Webpack taught me about differential serving: modern browsers load sleek modules, while legacy browsers get polyfilled bundles. The Module Federation system blew my mind - ships can share cargo mid-voyage! React can be a singleton across micro-frontends. The Admiral's final wisdom: "One codebase, many destinations - but always serve each audience optimally."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Admiral Webpack saluted as Aria completed her fleet training. "You've mastered build systems, Ambassador. Your applications are ready for any destination."`,
 					`Binary calculated the results. "Build efficiency optimized. Fleet readiness at maximum. Ready for the Automation Harbor!"`,
 					`"The CI/CD Pipeline awaits," the Admiral smiled. "Captain Pipeline will teach you how to automate every voyage..."`

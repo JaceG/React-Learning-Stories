@@ -146,7 +146,7 @@ const ChapterThree = () => {
 					content:
 						"What an incredible day with the State Sorcerers! After learning useState and immutability, Memnon revealed the useEffect hook - the gateway between a component's inner world and everything beyond! I collected enchanted artifacts and watched the effects trigger automatically when state changed. The dependency array is like a watchlist - telling React exactly which state changes should trigger the effect. Binary explained that effects can reach out to APIs, update the document title, or set up subscriptions. The key insight: state gives components memory, but useEffect gives them the power to interact with the outside world!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. \"You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most.\"",
 					'Binary twirled happily. "Tomorrow you\'ll learn about hooks - special spells that give functional components even more power!"',
 					'"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you\'ll discover useState and useEffect have many magical siblings. Each one grants unique powers to those wise enough to wield them."',

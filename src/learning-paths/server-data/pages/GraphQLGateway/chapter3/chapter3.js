@@ -511,7 +511,7 @@ function DataExplorer() {
 					title: `Aria's Journal - Day 44 (Evening)`,
 					content: `The Unified Interface is complete! Built a full GraphQL client with HTTP for queries/mutations and WebSocket for real-time subscriptions. Apollo's decision matrix helped me understand when to use GraphQL vs REST: complex nested data → GraphQL, simple CRUD → REST. Binary computed final statistics: "Complete data layer mastery achieved!" Query Master Apollo's final wisdom: "GraphQL isn't just a query language - it's a complete data management philosophy." The Type Forge awaits next!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Standing atop the Cloud Citadel, Aria surveyed her achievements. She could now bridge any gap between client and server, handle real-time data, cache efficiently, and query elegantly.`,
 					`Query Master Apollo placed a hand on her shoulder. "You've mastered the four pillars of server communication: API integration, real-time connections, intelligent caching, and flexible querying."`,
 					`Binary computed the final statistics. "Complete data layer mastery achieved. Efficiency optimized across all protocols!"`,

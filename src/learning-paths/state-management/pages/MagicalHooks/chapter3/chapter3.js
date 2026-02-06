@@ -248,7 +248,7 @@ function SearchComponent({ onSearch }) {
 					title: "Aria's Journal - Day 9 (Afternoon)",
 					content: "The specialized hooks are fascinating! useRef is like having a notebook that React doesn't watch - I can write in it without causing updates. useMemo and useCallback are about efficiency - they prevent unnecessary work by remembering results and function references. Master Hooke says they're powerful but warns against overusing them."
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"As the forge's closing bell rang, Master Hooke handed Aria a small leather pouch. \"These are hook samples for practice. Tomorrow, you'll meet the Context Keepers in the Grand Hall. They'll teach you how to share state across your entire component kingdom.\"",
 					"Binary's lights danced with excitement. \"The Grand Context! That's where components can share memories without passing them hand-to-hand!\"",
 					"Aria carefully tucked the pouch into her satchel, her mind buzzing with new knowledge. useState, useEffect, useRef, useMemo, useCallback - each hook a tool with its own purpose. She was beginning to see how they all fit together in the grand tapestry of React development."

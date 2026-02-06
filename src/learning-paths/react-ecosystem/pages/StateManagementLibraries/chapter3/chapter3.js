@@ -597,7 +597,7 @@ function TodoApp() {
 					title: `Aria's Journal - Day 37 (Evening)`,
 					content: `Completed my tour of all Allied Kingdoms! In MobX Territory, Chief Observer showed reactive programming - components react automatically to changes. The Zustand Settlements demonstrated simplicity with Elder Simplicity: "Small store, simple API, powerful results." Recoil Regions revealed atomic state, and Jotai Archipelago showed similar patterns with React Suspense integration. Wisdom Level: ${wisdomLevel}. The Alliance Insight: each kingdom's approach reflects their values - Redux values predictability, MobX values reactivity, Zustand values simplicity. Knowing when to use each is true wisdom!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Master Aurelius listened to Aria's report with pride. "You've done well, Ambassador. You've shown that React's strength isn't in having one way, but in supporting many ways."`,
 					`Binary compiled the insights. "Each kingdom's approach reflects their values. Redux values predictability, MobX values reactivity, Zustand values simplicity."`,
 					`"Your next diplomatic mission awaits," Aurelius announced. "The Form Architects have gathered. Managing form state is... complex. We need your diplomatic skills there too..."`

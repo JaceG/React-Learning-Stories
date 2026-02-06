@@ -524,7 +524,7 @@ const projectPhaseGuide = {
 					title: `Aria's Journal - Day 38 (Evening)`,
 					content: `The Form Federation has reached consensus! For Performance-Critical Apps: React Hook Form. For Team Familiarity: Formik. For Ultimate Control: React Final Form. For Modern Type-Safe Apps: TanStack Form. For Simple Forms: Native React. The key is matching requirements to solutions. Decision factors: Learning Curve, Performance, Bundle Size, TypeScript support, and Ecosystem. Federation Progress: ${federationProgress}%! The Chancellor's wisdom: "Choose based on your specific requirements, not trends." Forms seemed simple at first, but handling user input properly requires careful consideration!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`The Federal Form Chancellor smiled warmly. "You've achieved what many cannot - understanding without bias. Each library has its place."`,
 					`Aria reflected on her journey. "Forms seemed simple at first. But handling user input properly requires careful consideration."`,
 					`Binary finalized his analysis. "Optimal form handling improves both user experience and developer productivity!"`,

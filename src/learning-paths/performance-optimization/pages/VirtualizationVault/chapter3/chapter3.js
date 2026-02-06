@@ -352,7 +352,7 @@ function VirtualGrid({ items, columnCount }) {
 					content:
 						"I've become the Keeper of the Infinite! Guardian Zephyr's four advanced challenges: 1) Dynamic Heights - VariableSizeList with cached measurements and resetAfterIndex(). 2) Horizontal Scrolling - layout='horizontal' for carousels and timelines. 3) Infinite Loading - react-window-infinite-loader to load data as users scroll near the end. 4) Grid Virtualization - FixedSizeGrid for 2D scrolling (virtualizing rows AND columns). My performance optimization journey is complete! From the Speed Sanctum (profiling, memoization), Memory Monastery (leaks, cleanup), Lazy Library (code splitting), to this Vault. Binary and I are now Performance Masters, ready for any challenge!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					'With the secrets of the Virtualization Vault mastered, Aria had completed her performance optimization journey. From the Speed Sanctum to the Memory Monastery, from the Lazy Library to this infinite archive, she had learned to make React applications not just functional, but blazingly fast.',
 					'The React Kingdom celebrated as applications everywhere became smoother, faster, and more responsive. Aria\'s journey through Act III had transformed her into a true Performance Master, ready for whatever challenges lay ahead...'
 				]}

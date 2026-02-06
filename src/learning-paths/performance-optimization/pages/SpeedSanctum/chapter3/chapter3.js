@@ -257,7 +257,7 @@ const OptimizedList = memo(({ items, onItemClick }) => {
 					content:
 						"The Trinity of Optimization is complete! Master Velocity taught me useCallback - the stabilizer of function references. Without it, even memoized child components re-render because they receive new function instances as props each time the parent renders. Together, React.memo (component memoization), useMemo (computation memoization), and useCallback (function memoization) defeated the Lag Monster! But Master Velocity's final wisdom resonates: 'Premature optimization is the root of all evil.' Profile first, identify real bottlenecks, then apply strategically. Tomorrow I travel to the Memory Monastery to learn about memory leaks!",
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"With the Lag Monster defeated, the React Kingdom's performance was restored. Aria had mastered the optimization arts, but her journey was far from over. The Memory Monastery awaited, where even deeper performance secrets lay hidden...",
 				]}
 			/>

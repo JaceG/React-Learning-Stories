@@ -570,7 +570,7 @@ const Counter = observer(() => {
 					title: "Aria's Journal - Day 11 (Evening)",
 					content: "My mind is expanding! Each modern library solves state differently. Zustand's simplicity reminds me of useState but with global reach. Jotai's atoms compose like building blocks. Recoil brings Facebook's expertise. MobX feels magical with its automatic tracking. The key lesson: choose based on your needs, not trends. Sometimes mixing approaches - useState for UI, Context for themes, specialized libraries for complex state - creates the perfect solution!"
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					"As the sun set behind the State Management Citadel, Aria stood transformed. She had entered as a student of basic state, but now understood the full spectrum - from component state to global patterns, from classical Redux to modern innovations.",
 					"\"You've completed your training here,\" Grand Reducer said, his form beginning to fade back into the Citadel's architecture. \"But remember - mastery comes from practice. Use these tools wisely, and React Kingdom will flourish under your care.\"",
 					"Binary chirped proudly. \"We did it, Aria! We understand all the state patterns!\"",

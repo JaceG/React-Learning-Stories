@@ -824,7 +824,7 @@ const habitFormation = {
 					title: `Aria's Journal - Day 44 (Evening)`,
 					content: `The Culture Citadel taught me the most important lesson of all: accessibility is a journey, not a destination. Culture Keeper showed me the Five Pillars: Education, Documentation, Code Reviews, User Involvement, and Automation. Binary calculated the ROI: "Teams with accessibility culture ship 73% fewer a11y bugs!" I built my first champion network and progressed through the maturity levels. The truth is clear now - tools catch issues, standards guide us, but culture makes it sustainable. Culture Keeper's final wisdom: "Make it part of everything you do." I've completed my accessibility journey - from foundations to visual design, from interactions to testing and culture. I'm ready to build an inclusive web!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the evening light streamed through the Culture Citadel's windows, Master Validator, Compliance Commander, and Culture Keeper assembled before Aria.`,
 					`"You've journeyed far through the Accessibility Kingdom," Master Validator said proudly. "From inclusive foundations to visual accessibility, from interaction patterns to testing and culture."`,
 					`Binary processed the journey's data. "Four lessons completed. Twelve chapters mastered. Countless users who will benefit from what you've learned!"`,

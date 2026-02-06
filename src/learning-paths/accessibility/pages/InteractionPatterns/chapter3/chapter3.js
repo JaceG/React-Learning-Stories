@@ -919,7 +919,7 @@ function AdaptiveComponent() {
 					title: `Aria's Journal - Day 43 (Evening)`,
 					content: `What a day! All the Guardians assembled to teach me the Interaction Harmony - the art of designing for every input method. Mouse, keyboard, touch, voice, switch - each has its users and considerations. Binary calculated: "Universal design: 5x development time, 10x user reach. ROI: 200%!" I learned the five universal principles: large touch targets (48x48px minimum), clear visual labels, keyboard equivalents, predictable behavior, and error forgiveness. Empress Inclusiva's wisdom resonated deeply: "Accessibility isn't about special features for some. It's about flexible design that adapts to all." The Interaction Harmony achieved!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As Aria mastered the Interaction Harmony, Empress Inclusiva smiled proudly. "You've learned to embrace the diversity of human interaction. Your interfaces will welcome all."`,
 					`Binary computed the achievement. "Keyboard navigation: ✓. Screen reader support: ✓. Universal design: ✓. Accessibility level: Expert!"`,
 					`"But visual accessibility awaits," Guardian Keyboard noted. "Color contrast, focus indicators, motion sensitivity - there are more barriers to remove."`,

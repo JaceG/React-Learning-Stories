@@ -450,7 +450,7 @@ const futureConsiderations = {
 					title: `Aria's Journal - Day 39 (Evening)`,
 					content: `The Style Symposium found harmony! Not by declaring a winner, but by understanding when each approach shines. Decision matrix: For component libraries = CSS-in-JS. For rapid prototyping = Tailwind. For large teams = CSS Modules. For performance-critical = Zero-runtime. Hybrid approaches work too - CSS Modules + Tailwind utilities! Harmony Level: ${harmonyLevel}%. Future trends: CSS-in-JS moving toward zero-runtime, Tailwind growing, CSS Modules stable, and vanilla CSS gaining container queries! Moderator Stylus's wisdom: "Choose based on your project's needs, team's strengths, and performance requirements."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`The Style Symposium ended not with winners and losers, but with mutual respect. Moderator Stylus smiled at the transformation.`,
 					`"You see? When we stop defending our territories and start understanding use cases, we all win. Ambassador Aria, you've brought wisdom to our passionate community."`,
 					`Aria reflected on her journey. "Every styling solution tells a story of problems it was designed to solve. Understanding those stories is the key to making wise choices."`,

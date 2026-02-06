@@ -252,7 +252,7 @@ function useOptimisticUpdate(initialData, updateFn) {
 					title: `Aria's Journal - Day 41 (Evening)`,
 					content: `The Data Embassy is complete! From basic fetch calls to production architecture - what a journey! Request deduplication reduced API calls by 40%, caching improved response times by 60%. I built a LoadingStateManager for coordinated UI states and learned optimistic updates for instant feedback. Cloud Keeper Axios's final wisdom: "The embassy will serve the React Kingdom well." Binary compiled impressive statistics while Debuggora ensured error boundaries protect against cascading failures. Master Aurelius appeared: "The Living Streams await..."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Standing atop the completed Data Embassy, Aria surveyed her achievement. "We've built more than just API calls - we've created a robust communication infrastructure."`,
 					`Cloud Keeper Axios nodded with approval. "The embassy will serve the React Kingdom well. Errors are handled gracefully, performance is optimized, and the user experience remains smooth."`,
 					`Binary compiled the statistics. "Request deduplication reduced API calls by 40%. Caching improved response times by 60%. Impressive efficiency gains!"`,

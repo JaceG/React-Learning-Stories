@@ -1,0 +1,484 @@
+{
+  "journals": [
+    {
+      "day": "3",
+      "startLine": 344,
+      "endLine": 345,
+      "content": "**Aria's Journal - Day 3**\n*Today I learned the most important lesson yet - components are meant to work together! By combining simple, focused components, I can build complex applications. Each component does one thing well, making them easy to understand, test, and reuse. I feel like I truly understand the Component Kingdom now!*\n"
+    }
+  ],
+  "bridges": [
+    {
+      "startLine": 788,
+      "endLine": 789,
+      "content": "**Bridge:**\nAs the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light.\n"
+    },
+    {
+      "startLine": 1540,
+      "endLine": 1541,
+      "content": "**Bridge:**\nAs the afternoon sun filtered through the forge's crystalline windows, Master Hooke led Aria to a special vault containing the most specialized hooks - tools designed for specific challenges that React developers face.\n"
+    },
+    {
+      "startLine": 1996,
+      "endLine": 1997,
+      "content": "**Bridge:**\nAs the afternoon sun filtered through the Citadel's crystalline windows, Grand Reducer led Aria to a chamber filled with glowing portals. Each shimmered with different colors and patterns, pulsing with the energy of innovation.\n"
+    },
+    {
+      "startLine": 2187,
+      "endLine": 2188,
+      "content": "**Bridge:**\nThe next morning, Aria found Destructo working with multiple glowing crystals, each pulsing with different data properties. The forge's heat seemed even more intense as he prepared for advanced techniques.\n"
+    },
+    {
+      "startLine": 2503,
+      "endLine": 2504,
+      "content": "**Bridge:**\nThat afternoon, Master Cargo led Aria to an open plaza where component patterns flowed like water between stations. \"You've learned containment,\" he said. \"Now master *transference* - the art of passing props forward.\"\n"
+    },
+    {
+      "startLine": 3200,
+      "endLine": 3201,
+      "content": "**Bridge:**\nOn the final morning at the Cascade District, Flux led Aria to a breathtaking sight - the Great Data Waterfall, where information cascaded through seven majestic tiers, each pool glowing with transmitted data like luminous stepping stones down a mountain.\n"
+    }
+  ],
+  "storyGroups": [
+    {
+      "number": "1",
+      "startLine": 131,
+      "endLine": 143
+    },
+    {
+      "number": "2",
+      "startLine": 145,
+      "endLine": 157
+    },
+    {
+      "number": "1",
+      "startLine": 450,
+      "endLine": 466
+    },
+    {
+      "number": "3",
+      "startLine": 486,
+      "endLine": 517
+    },
+    {
+      "number": "3",
+      "startLine": 749,
+      "endLine": 786
+    },
+    {
+      "number": "3",
+      "startLine": 825,
+      "endLine": 856
+    },
+    {
+      "number": "1",
+      "startLine": 884,
+      "endLine": 896
+    },
+    {
+      "number": "3",
+      "startLine": 993,
+      "endLine": 1030
+    },
+    {
+      "number": "1",
+      "startLine": 1037,
+      "endLine": 1053
+    },
+    {
+      "number": "3",
+      "startLine": 1073,
+      "endLine": 1100
+    },
+    {
+      "number": "3",
+      "startLine": 1173,
+      "endLine": 1215
+    },
+    {
+      "number": "3",
+      "startLine": 1254,
+      "endLine": 1289
+    },
+    {
+      "number": "3",
+      "startLine": 1332,
+      "endLine": 1361
+    },
+    {
+      "number": "3",
+      "startLine": 1419,
+      "endLine": 1463
+    },
+    {
+      "number": "3",
+      "startLine": 1503,
+      "endLine": 1538
+    },
+    {
+      "number": "3",
+      "startLine": 1571,
+      "endLine": 1602
+    },
+    {
+      "number": "3",
+      "startLine": 1658,
+      "endLine": 1694
+    },
+    {
+      "number": "3",
+      "startLine": 1733,
+      "endLine": 1760
+    },
+    {
+      "number": "3",
+      "startLine": 1805,
+      "endLine": 1834
+    },
+    {
+      "number": "3",
+      "startLine": 1890,
+      "endLine": 1926
+    },
+    {
+      "number": "3",
+      "startLine": 1963,
+      "endLine": 1994
+    },
+    {
+      "number": "3",
+      "startLine": 2037,
+      "endLine": 2065
+    },
+    {
+      "number": "3",
+      "startLine": 2148,
+      "endLine": 2185
+    },
+    {
+      "number": "1",
+      "startLine": 2192,
+      "endLine": 2212
+    },
+    {
+      "number": "3",
+      "startLine": 2238,
+      "endLine": 2274
+    },
+    {
+      "number": "3",
+      "startLine": 2331,
+      "endLine": 2374
+    },
+    {
+      "number": "3",
+      "startLine": 2458,
+      "endLine": 2501
+    },
+    {
+      "number": "3",
+      "startLine": 2569,
+      "endLine": 2613
+    },
+    {
+      "number": "3",
+      "startLine": 2680,
+      "endLine": 2714
+    },
+    {
+      "number": "3",
+      "startLine": 2790,
+      "endLine": 2831
+    },
+    {
+      "number": "3",
+      "startLine": 2876,
+      "endLine": 2914
+    },
+    {
+      "number": "3",
+      "startLine": 2957,
+      "endLine": 2994
+    },
+    {
+      "number": "3",
+      "startLine": 3068,
+      "endLine": 3107
+    },
+    {
+      "number": "3",
+      "startLine": 3162,
+      "endLine": 3198
+    },
+    {
+      "number": "3",
+      "startLine": 3268,
+      "endLine": 3307
+    },
+    {
+      "number": "1",
+      "startLine": 3343,
+      "endLine": 3367
+    },
+    {
+      "number": "3",
+      "startLine": 3391,
+      "endLine": 3440
+    },
+    {
+      "number": "1",
+      "startLine": 3449,
+      "endLine": 3471
+    },
+    {
+      "number": "3",
+      "startLine": 3491,
+      "endLine": 3525
+    },
+    {
+      "number": "3",
+      "startLine": 3578,
+      "endLine": 3612
+    },
+    {
+      "number": "3",
+      "startLine": 3688,
+      "endLine": 3731
+    },
+    {
+      "number": "3",
+      "startLine": 3788,
+      "endLine": 3835
+    },
+    {
+      "number": "3",
+      "startLine": 3886,
+      "endLine": 3916
+    },
+    {
+      "number": "3",
+      "startLine": 3982,
+      "endLine": 4021
+    },
+    {
+      "number": "1",
+      "startLine": 4028,
+      "endLine": 4042
+    },
+    {
+      "number": "3",
+      "startLine": 4062,
+      "endLine": 4096
+    },
+    {
+      "number": "3",
+      "startLine": 4137,
+      "endLine": 4167
+    },
+    {
+      "number": "3",
+      "startLine": 4233,
+      "endLine": 4265
+    },
+    {
+      "number": "3",
+      "startLine": 4306,
+      "endLine": 4338
+    },
+    {
+      "number": "3",
+      "startLine": 4385,
+      "endLine": 4417
+    },
+    {
+      "number": "3",
+      "startLine": 4489,
+      "endLine": 4528
+    },
+    {
+      "number": "3",
+      "startLine": 4577,
+      "endLine": 4613
+    },
+    {
+      "number": "3",
+      "startLine": 4660,
+      "endLine": 4692
+    },
+    {
+      "number": "3",
+      "startLine": 4792,
+      "endLine": 4831
+    },
+    {
+      "number": "3",
+      "startLine": 4935,
+      "endLine": 4970
+    },
+    {
+      "number": "3",
+      "startLine": 5013,
+      "endLine": 5037
+    },
+    {
+      "number": "3",
+      "startLine": 5103,
+      "endLine": 5148
+    },
+    {
+      "number": "3",
+      "startLine": 5197,
+      "endLine": 5233
+    },
+    {
+      "number": "3",
+      "startLine": 5276,
+      "endLine": 5300
+    },
+    {
+      "number": "3",
+      "startLine": 5362,
+      "endLine": 5401
+    },
+    {
+      "number": "3",
+      "startLine": 5473,
+      "endLine": 5501
+    },
+    {
+      "number": "3",
+      "startLine": 5562,
+      "endLine": 5602
+    },
+    {
+      "number": "3",
+      "startLine": 5674,
+      "endLine": 5711
+    },
+    {
+      "number": "3",
+      "startLine": 5762,
+      "endLine": 5792
+    },
+    {
+      "number": "3",
+      "startLine": 5829,
+      "endLine": 5855
+    },
+    {
+      "number": "1",
+      "startLine": 5881,
+      "endLine": 5895
+    },
+    {
+      "number": "3",
+      "startLine": 5915,
+      "endLine": 5945
+    },
+    {
+      "number": "3",
+      "startLine": 5986,
+      "endLine": 6020
+    },
+    {
+      "number": "3",
+      "startLine": 6059,
+      "endLine": 6085
+    },
+    {
+      "number": "1",
+      "startLine": 6117,
+      "endLine": 6133
+    },
+    {
+      "number": "3",
+      "startLine": 6153,
+      "endLine": 6183
+    },
+    {
+      "number": "3",
+      "startLine": 6218,
+      "endLine": 6248
+    },
+    {
+      "number": "1",
+      "startLine": 6255,
+      "endLine": 6273
+    },
+    {
+      "number": "3",
+      "startLine": 6289,
+      "endLine": 6315
+    },
+    {
+      "number": "1",
+      "startLine": 6345,
+      "endLine": 6359
+    },
+    {
+      "number": "3",
+      "startLine": 6379,
+      "endLine": 6409
+    },
+    {
+      "number": "3",
+      "startLine": 6448,
+      "endLine": 6478
+    },
+    {
+      "number": "3",
+      "startLine": 6519,
+      "endLine": 6547
+    },
+    {
+      "number": "3",
+      "startLine": 6613,
+      "endLine": 6643
+    },
+    {
+      "number": "3",
+      "startLine": 6692,
+      "endLine": 6722
+    },
+    {
+      "number": "3",
+      "startLine": 6759,
+      "endLine": 6783
+    },
+    {
+      "number": "3",
+      "startLine": 6845,
+      "endLine": 6871
+    },
+    {
+      "number": "3",
+      "startLine": 6908,
+      "endLine": 6936
+    },
+    {
+      "number": "3",
+      "startLine": 6967,
+      "endLine": 6993
+    },
+    {
+      "number": "3",
+      "startLine": 7055,
+      "endLine": 7083
+    },
+    {
+      "number": "3",
+      "startLine": 7118,
+      "endLine": 7144
+    },
+    {
+      "number": "3",
+      "startLine": 7206,
+      "endLine": 7234
+    },
+    {
+      "number": "3",
+      "startLine": 7265,
+      "endLine": 7289
+    }
+  ]
+}

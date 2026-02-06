@@ -350,7 +350,7 @@ function validateProps(props, schema) {
 						title: "Aria's Journal - Day 14 (Evening)",
 						content: "The Validation Vault revealed the final secrets of prop mastery! Props are contracts between components, and validation ensures those contracts are honored. PropTypes provide runtime warnings, while TypeScript catches errors before code even runs. Default values act as safety nets for optional props. Destructo's sacred rules: never mutate props, validate everything, provide defaults, use clear names, and document thoroughly. The forge taught me that prop handling isn't just about passing data - it's about creating reliable, maintainable component relationships. Quality props make quality applications!"
 					}}
-					chapterEnding={[
+					lessonEnding={[
 						"As they prepared to leave the Prop Forge, Destructo presented Aria with a small hammer pendant. \"This symbolizes your mastery of prop transformation. You've learned to destructure, spread, and validate - the three pillars of prop craftsmanship.\"",
 						"\"Thank you, Master Destructo,\" Aria said, fastening the pendant. \"I'll never look at props the same way. They're not just data - they're carefully crafted artifacts that need respect and proper handling.\"",
 						"Binary displayed a holographic forge in miniature. \"Props forged with care!\"",

@@ -568,7 +568,7 @@ const calculateReadiness = () => {
 					title: `Aria's Journal - Day 36 (Evening)`,
 					content: `The final lesson of the Build & Deploy realm is complete! Commander Deployment taught me the three deployment strategies: Blue-Green (zero downtime with instant rollback), Canary (gradual rollout to minimize risk), and Rolling (sequential updates for efficiency). Binary calculated the odds: 99.9% uptime potential with blue-green! I ran my first incident drill - Detection, Response, Mitigation, Resolution - and performed a successful rollback in 45 seconds. The production excellence checklist now feels like second nature. Commander's final words: "The best incident is one that never happens. But when it does, swift action saves the day." Battle readiness: 100%. I am ready for production.`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As Aria completed the incident drill, Commander Deployment stood at attention and saluted. "You've earned the rank of Admiral, Aria. From build systems to CI/CD pipelines, from hosting to production readiness - you've mastered it all."`,
 					`Binary processed the achievement. "Build & Deploy realm: 100% complete. Four lessons mastered. Production readiness score: Excellent. Aria has grown from apprentice to production commander."`,
 					`Debuggora hooted in approval. "The monitoring systems will always watch over your deployments now. You've learned to see what others miss."`,

@@ -680,7 +680,7 @@ const NavigationPerformanceMonitor = ({ children }) => {
 					title: `Aria's Journal - Day 46 (Evening)`,
 					content: `What a day at the Navigation Outpost! From basic stacks to advanced mastery, Trail Guide Navigator taught me everything. I learned to create animated headers that shrink on scroll, shared element transitions for seamless image galleries, and bottom sheets like map apps use. The navigation hooks - useFocusEffect, useIsFocused, useNavigation, useRoute, useNavigationState - give fine-grained control over screen lifecycle. Performance optimization through lazy loading and native stacks reduced transition times. Deep linking with authentication handling connects marketing campaigns directly to app screens. Trail Guide's final wisdom: "When navigation becomes invisible, you've achieved mastery - users simply flow through your app naturally."`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Trail Guide Navigator watched Aria demonstrate a complex navigation flow with smooth transitions. "You've mastered the trails," he said proudly. "From basic stacks to connected routes, you can guide users anywhere."`,
 					`Binary computed the achievement. "Navigation patterns: mastered. Performance metrics: optimized. Deep link configurations: complete. Trail Mastery level: Navigation Sage."`,
 					`"But the journey isn't over," Trail Guide added, pointing toward the distant Distribution Harbor. "Your app must reach users. The App Distribution awaits - where you'll learn to package, publish, and deliver your creation to the world..."`

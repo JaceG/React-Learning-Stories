@@ -564,7 +564,7 @@ form.setFieldValue('invalid', 'test');  // ❌ Type error!`}
 					title: `Aria's Journal - Day 46 (Evening)`,
 					content: `Master Typhos took me to the Master's Chamber today—the deepest sanctum of the Component Armory. I learned the most powerful type patterns: Conditional Type Armor that adapts based on props, Mapped Type Chainmail that transforms properties, Utility Types like Partial and Pick, and Type Guard Shields for runtime checking. The real-world challenges pushed me to create Polymorphic Components, Type-Safe Form Libraries, and Design System Types. Binary called it "meta-programming—types that generate other types!" Debuggora noted these catch errors she didn't know were possible to detect. Typhos's final wisdom: "Power without wisdom is chaos." My Type Strength reached 100%—I've mastered the Component Armory!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`Master Typhos stood before the completed armory. "You have proven yourself worthy. These type patterns are now yours to wield."`,
 					`Aria examined her arsenal of type-safe components. "I understand now. Types aren't constraints—they're superpowers."`,
 					`Binary compiled the final statistics. "100% type coverage achieved. Zero runtime type errors possible. Mission complete!"`,

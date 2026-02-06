@@ -741,17 +741,17 @@
 .chapter-summary .reflection-section,
 .chapter-summary .character-intro,
 .chapter-summary .journal-entry,
-.chapter-summary .chapter-ending {
+.chapter-summary .lesson-ending {
   margin-top: 0;
   margin-bottom: 25px;
 }
 
-.chapter-summary .chapter-ending {
+.chapter-summary .lesson-ending {
   margin-bottom: 0;
 }
 
 /* Chapter Ending Styles */
-.chapter-ending {
+.lesson-ending {
   background-color: #f0f1ff;
   border-left: 4px solid #667eea;
   padding: 30px;
@@ -763,18 +763,18 @@
   transition: all 0.3s ease;
 }
 
-.chapter-ending p {
+.lesson-ending p {
   margin: 15px 0;
   line-height: 1.7;
   color: #4a5568;
   font-style: italic;
 }
 
-.chapter-ending p:first-child {
+.lesson-ending p:first-child {
   margin-top: 0;
 }
 
-.chapter-ending p:last-child {
+.lesson-ending p:last-child {
   margin-bottom: 0;
 }
 

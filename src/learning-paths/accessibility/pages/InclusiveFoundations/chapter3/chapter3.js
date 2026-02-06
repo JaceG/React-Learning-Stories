@@ -816,7 +816,7 @@ function LoadingButton({ loading, onClick, children }) {
 					title: `Aria's Journal - Day 41 (Evening)`,
 					content: `My first day in the Inclusive Empire is complete! Guardian Semantic introduced me to ARIA - the enhancement toolkit for when semantic HTML isn't enough. Binary computed the complexity: 67 roles, 48 properties, infinite combinations - with a 73% misuse probability! The five rules of ARIA are now burned into my memory, especially "No ARIA is better than bad ARIA." I practiced with live regions, expandable content, and tab interfaces - seeing how ARIA attributes work together for complex patterns. Empress Inclusiva's final wisdom echoed: "True mastery means building for everyone." Tomorrow, I continue learning about keyboard navigation and focus management. The Inclusive Empire has shown me that accessibility isn't an add-on - it's fundamental to quality.`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`As the evening star rose over the Inclusive Empire, Empress Inclusiva gathered her Guardians around Aria.`,
 					`"You've learned the foundations," she said warmly. "The POUR principles, semantic HTML, and the ARIA Arsenal. But accessibility is a journey, not a destination."`,
 					`Binary processed their progress. "Accessibility Score: significantly improved. But Guardian Keyboard awaits - keyboard navigation and focus management will complete the foundation."`,

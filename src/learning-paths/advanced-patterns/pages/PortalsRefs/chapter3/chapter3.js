@@ -724,7 +724,7 @@ function App() {
 					title: `Aria's Journal - Day 36 (Evening)`,
 					content: `Dean Architectus returned for my final evaluation! I demonstrated a complete modal system combining ALL the patterns: Portals for rendering outside the DOM hierarchy, Compound Components for intuitive API design, Refs for focus management and imperative control, Render Props for customization, and Context for state sharing. The Pattern Masters assembled to congratulate me. Bridge Strength at ${bridgeStrength}%, Mastery Level: ${masteryLevel}. Binary computed: "We've come so far from basic components." 🎓 Advanced Patterns Learning Path Complete!`
 				}}
-				chapterEnding={[
+				lessonEnding={[
 					`The Pattern Masters assembled. Dean Architectus spoke: "Aria, you've mastered component composition at its highest level. You understand not just how to use patterns, but when and why. You're ready for the Modern Frontiers!"`,
 					`As Aria left the floating academy, Binary computed their growth. "We've come so far from basic components, Aria."`,
 					`"And yet," Aria smiled, looking toward the horizon, "there's always more to learn. The Allied Kingdoms await - it's time to explore the React Ecosystem!"`
