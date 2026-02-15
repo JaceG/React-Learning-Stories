@@ -471,7 +471,7 @@ When rewriting a lesson with new geography:
 - [ ] Use regional atmosphere to enhance mood
 - [ ] Reference nearby locations when appropriate
 
-**Chapter Endings:**
+**Lesson Ending:**
 - [ ] Look toward next destination
 - [ ] Mention travel method if changing regions
 - [ ] Build anticipation for next location's unique features

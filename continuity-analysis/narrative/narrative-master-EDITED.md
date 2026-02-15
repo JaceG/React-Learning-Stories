@@ -1560,7 +1560,7 @@ Prop spreading with rest patterns enables transparent wrapper components that en
 🔴 ~~**Aria's Journal - Day 12 (Evening)**~~
 🔴 ~~*Today's lesson was eye-opening! Prop drilling - passing data through components that don't need it - is like forcing caravans through unnecessary checkpoints. While it's fine for short routes (2-3 levels), deeper drilling creates fragile, inefficient systems. Propius showed me how Context (which I already know!) can teleport data directly where needed. The Trade Quarter has taught me that props are powerful, but knowing their limitations is equally important. Sometimes the simplest path isn't a straight line!*~~
 
-🔴 ~~**Chapter Ending:**~~
+🔴 ~~**Lesson Ending:**~~
 🔴 ~~As the sun set over the Trade Quarter, Aria felt she truly understood the caravan system. Props were more than simple messages - they were the lifeblood of React Kingdom's commerce, flowing through carefully planned routes.~~
 
 🔴 ~~"You've learned well," Propius said proudly. "You understand not just how to send cargo, but when routes become too complex. This wisdom will serve you well in your future adventures."~~
