@@ -189,10 +189,31 @@
 
 **Captain Marina**
 - **Role**: Legendary navigation expert of the Central Citadel
-- **Appears In**: LP6.1 NavigationCompass (Ch1-3), LP6.2 WaypointWizardry (Ch1-3), LP6.3 GuardianGates (Ch1-3)
-- **Location**: Central Nexus - Central Citadel (Navigation Command Center) and related facilities (Waypoint Sanctum, Navigation Corps Training Grounds)
-- **Appearance**: [Not extensively described], voice carries warmth/excitement and authority
-- **Teaches**: LP6.1 - routing fundamentals, LP6.2 - advanced waypoint patterns (loaders/actions/metadata, dynamic params, nested routes, Outlets, breadcrumbs, prefetching, scroll restoration), LP6.3 - Guardian Gates (protected routes, authentication/authorization integration, role-based access, advanced portal patterns, multi-step wizards, accessible modals, route-based modals, predictive prefetching)
+- **Appears In**: LP6.1 NavigationCompass (Ch1-3)
+- **Location**: Central Nexus - Central Citadel (Navigation Command Center)
+- **Appearance**: Voice carries warmth/excitement and authority
+- **Teaches**: LP6.1 - routing fundamentals (routing as state management, React Router core, dynamic routes, nested routes, URL state, navigation hooks, navigation guards)
+
+**Wayfinder Solara**
+- **Role**: Expert navigator of the Waypoint Sanctum, specialist in intelligent route architecture
+- **Appears In**: LP6.2 WaypointWizardry (Ch1-3)
+- **Location**: Central Nexus - Central Citadel (Waypoint Sanctum - vast chamber with living constellation orbs)
+- **Appearance**: Navigator's cloak shifts with the orbs as if reading them, calm and precise
+- **Teaches**: LP6.2 - advanced waypoint patterns (route metadata/handles, dynamic breadcrumb generation, useMatches, prefetching, predictive loading, scroll restoration, navigation transitions)
+
+**Warden Aldric**
+- **Role**: Guardian commander of the Navigation Corps training grounds, master of route security
+- **Appears In**: LP6.3 GuardianGates (Ch1-3)
+- **Location**: Central Nexus - Central Citadel (Navigation Corps training grounds)
+- **Appearance**: Armor bears emblem of a shield crossed with two keys
+- **Teaches**: LP6.3 - protected routes, authentication/authorization integration, session management, role hierarchies, contextual authorization, permission caching
+
+**Rift Weaver Lyss**
+- **Role**: Master of the Portal Passages chamber, specialist in dimensional rendering
+- **Appears In**: LP6.4 PortalPassages (Ch1-3)
+- **Location**: Central Nexus - Central Citadel (Portal Passages chamber - reality folds upon itself)
+- **Appearance**: Robes trail fragments of light from portals she moves through
+- **Teaches**: LP6.4 - React portals (createPortal), route-driven modals, URL state for overlays, accessibility for portals, form persistence across modal navigation, multi-step wizards, contextual portal positioning
 
 ### LP7: Performance Optimization
 
