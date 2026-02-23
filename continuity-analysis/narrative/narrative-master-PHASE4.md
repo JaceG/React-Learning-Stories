@@ -1,103 +1,3 @@
-# React Learning Stories - Narrative Master Document (PHASE 4 - Story Group Expansion)
-
-*Phase 3 Complete: February 1, 2026*  
-*Phase 4 Started: February 2, 2026*  
-*Purpose: Expand all chapters to 3 Story Groups with LP3-level depth and length*
-
----
-
-## 📝 Change Tracking Legend
-
-**Deletions**: ~~Strikethrough text~~ indicates removed content  
-**Additions**: **[ADDED: new text here]** indicates new content  
-**Modifications**: **[CHANGED FROM: old text | TO: new text]**  
-**Notes**: <!-- Comment about why change was made -->
-**Expansions**: 🟦 **[EXPANDED:]** indicates Story Group expanded to match LP3 length
-
----
-
-## 🎯 Phase 4 Goals
-
-This Phase 4 version expands on the Phase 3 completed narrative with:
-
-### Story Group Expansion Requirements:
-- **3 Story Groups per chapter** (minimum, ideally)
-- **Story Group length**: 10-20 lines each (matching LP3.1-3.3 examples)
-- **Narrative depth**: Proper setup → explanation → conclusion arc
-- **Geographic accuracy**: All locations verified against kingdom-geography.md
-- **Character accuracy**: All details verified against story-bible.md
-
-### LP3 Examples Used as Model:
-- **LP3.1 PropForge**: Perfect Story Group pacing (lines 1265-1422)
-- **LP3.2 PropsCaravans**: Excellent composition teaching (lines 1426-1640)
-- **LP3.3 EventEchoes**: Great callback narrative (referenced by user)
-
-### Target: LP1-7 Complete Expansion
-- LP1: Components Basics (4 lessons × 3 chapters = 12 chapters to expand)
-- LP2: State Management (4 lessons × 3 chapters = 12 chapters to expand)
-- LP3: Props Data Flow (4 lessons × 3 chapters = 12 chapters to expand)
-- LP4: Navigation & Routing (4 lessons × 3 chapters = 12 chapters to expand)
-- LP5: Advanced Hooks (4 lessons × 3 chapters = 12 chapters to expand)
-- LP6: Context & Global State (4 lessons × 3 chapters = 12 chapters to expand)
-- LP7: Performance Optimization (4 lessons × 3 chapters = 12 chapters to expand)
-
-**Total**: 84 chapters requiring expansion
-
----
-
-## 📍 Status
-
-**Phase 4**: 🚧 **IN PROGRESS**  
-**Lessons Completed**: 1 of 28 (LP1.1 complete)  
-**Chapters Completed**: 3 of 84 (LP1.1 Ch1-3)
-**Last Updated**: February 2, 2026
-
----
-
-## 🔧 Phase 3 Issues Already Fixed (Inherited)
-
-Phase 3 completed all continuity fixes. This Phase 4 file builds on that foundation.
-
-### Phase 3 Round 1: LP1-7 Issues (✅ COMPLETE)
-- **Issue #21**: Master Aurelius returns - FIXED
-- **Issue #17**: Multiple characters return in LP6 - FIXED
-- **Issue #16**: Propius returns (LP3.2) → Master Cargo - FIXED
-- **Issue #19**: Chronos returns (LP7.2) → Keeper Libris - FIXED
-- **Issue #20**: Brother Binary conflict → Brother Memor - FIXED
-- **Issues #1-22**: All LP1-7 issues FIXED (22 total)
-
-### Phase 3 Round 2: LP8-15 Issues (✅ COMPLETE)
-- **Issues #23-24**: Aria "Guide Aria" titles - ✅ FIXED
-- **Issues #25-56**: Debuggora cross-LP companion - ✅ REMOVED (76 instances from LP9-15)
-- **Issues #28, #31, #38, #43, #48, #52**: Aria "Ambassador/Captain" titles - ✅ FIXED
-
-**Total Phase 3 Issues Fixed**: 56 (all continuity issues resolved)
-
----
-
-## 🗺️ Phase 4 Methodology
-
-### For Each Chapter:
-1. **Read current narrative** - Understand existing content
-2. **Check geography** - Verify location details in kingdom-geography.md
-3. **Check story-bible** - Verify character details and teachings
-4. **Count Story Groups** - Identify if chapter has < 3 groups
-5. **Expand groups** - Ensure each is 10-20 lines (LP3 model)
-6. **Add 3rd group if needed** - Create conclusion/practice/deeper-dive section
-7. **Preserve Phase 3 edits** - Keep all 🔴🟢 markup from continuity fixes
-8. **Mark expansions** - Use 🟦 to indicate Phase 4 expansions
-
-### Story Group Arc Structure:
-- **Group 1**: Introduction, setup, initial concept presentation
-- **Group 2**: Deeper explanation, examples, dialogue expanding understanding
-- **Group 3**: Practice, conclusion, synthesis, or advanced application
-
----
-
-# EDITED CONTENT BEGINS BELOW THIS LINE
-
----
-
 # React Learning Stories - Narrative Master Document
 
 *Generated on January 28, 2026 | Phase 3 Complete February 1, 2026 | Phase 4 Started February 2, 2026*
@@ -118,8 +18,6 @@ Welcome to the React Kingdom! Aria, a young apprentice, has arrived at the gates
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended opening scene with geographic details and sensory description]**
-
 The morning mist parted as **Aria** approached the gates of the React Kingdom. After months of studying ancient JavaScript scrolls in her distant homeland, she had finally been accepted as an apprentice. The Northern Quarter spread before her - rolling hills dotted with stone workshops, their chimneys releasing wisps of creative energy into the clear sky.
 
 **Master Aurelius**, the Grand Architect, awaited her at the entrance to the Component Workshop District. His beard sparkled with fragments of code that seemed to shift and rearrange themselves as he moved. Behind him, the district hummed with productive energy - the sound of components being crafted, tested, and refined.
@@ -132,8 +30,6 @@ Aria felt a shiver of excitement. The mist swirled around her feet as she took h
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Added App's Tower description, coordination explanation, and architectural overview]**
-
 Aurelius pointed to the tallest tower in the district, its peak visible from anywhere in the Northern Quarter. "The master builder, **App**, lives there and organizes all the craftsmen to work together. From that vantage point, App can see every workshop, every component, every piece of the grand design."
 
 Aria gazed up at App's Tower, its height making her dizzy. The tower seemed to pulse with organizational energy, and she could see faint lines of light connecting it to workshops throughout the district - like an invisible web of coordination. "So App coordinates everyone? How does it know what each workshop needs to do?"
@@ -145,8 +41,6 @@ He began walking toward the workshops, gesturing for Aria to follow. "Every comp
 "But come," Aurelius continued, his eyes twinkling, "let me show you the workshops themselves. Words alone cannot capture their magic. You must see components being born, watch them take shape, feel their responsive nature. Theory without practice is like a blueprint without a building."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Extended workshop tour with detailed examples and reusability demonstration]**
 
 Aurelius led Aria through the bustling Component Workshop District, passing specialized workshops that hummed with different frequencies of creative energy. The air itself seemed charged with purpose. "Here," he gestured to a compact building with a steady, methodical rhythm, "is the Button workshop. Simple in purpose - it creates clickable buttons. Each one may look different, but they all share the same core purpose."
 
@@ -187,13 +81,11 @@ After mastering individual workshops, Aria discovered that components could work
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Communication Hub introduction with sensory details and messenger system explanation]**
-
 The Communication Hub sat at the heart of the Component Workshop District, a bustling plaza where pathways converged from every direction. The sound was unlike anywhere else - not the rhythmic hammering of workshops, but the constant rustle of movement, the soft footfalls of messengers, and the whisper of sealed instructions being delivered.
 
 "For the Component Kingdom to function properly," Aurelius explained, guiding Aria to a central viewing platform, "workshops must communicate with each other. Isolation creates powerful individual components, but harmony creates powerful applications."
 
-He pointed to App's Tower, where messengers were departing in organized waves. "Watch how the master builder App sends special messengers 🔴 ~~carrying bags called **Props** to each workshop. These props contain all the specifications a workshop needs to create its piece~~ 🟢 **to deliver instructions to each workshop. These messengers ensure every component knows exactly what to create**."
+He pointed to App's Tower, where messengers were departing in organized waves. "Watch how the master builder App sends special messengers to deliver instructions to each workshop. These messengers ensure every component knows exactly what to create."
 
 Aria watched the organized chaos below. Messengers in different colored satchels moved with purpose - some heading to the Button workshop, others to Card workshop, still others to workshops she hadn't visited yet. Each messenger carried sealed instructions, and each workshop waited attentively for their deliveries.
 
@@ -201,15 +93,11 @@ Aria watched the organized chaos below. Messengers in different colored satchels
 
 "An apt comparison!" Aurelius nodded approvingly. "But unlike a postal system, this one is instantaneous and reactive. When App needs a Button to display differently, it sends a messenger with new instructions, and the Button updates immediately. No delays, no confusion - just clear communication flowing constantly through the kingdom."
 
-💡 **EDIT NOTE:** Made Props reference more vague/high-level. Full Props teaching moved to LP1.2 (Issue #1).
-
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended messenger observation with specific examples and workshop responses]**
 
 Aria watched in fascination as messengers rushed between workshops, each carrying sealed scrolls and packages of varying sizes and colors. The satchels seemed to glow with the importance of their contents - some pulsed with simple instructions, others shimmered with complex configurations.
 
-"So each workshop receives 🔴 ~~these props~~ 🟢 **instructions** and uses them to determine exactly what to build and how it should behave?" Aria asked, tracking a messenger's path from App's Tower to a nearby workshop.
+"So each workshop receives instructions and uses them to determine exactly what to build and how it should behave?" Aria asked, tracking a messenger's path from App's Tower to a nearby workshop.
 
 "Precisely!" Aurelius confirmed, following her gaze. "Watch that messenger heading to the Button workshop - see how its satchel glows with three distinct colors? It carries instructions specifying the button's color, text, and behavior when clicked. The Button workshop reads these instructions and creates exactly what was requested."
 
@@ -223,8 +111,6 @@ They observed as the messenger entered the Button workshop. Through the window, 
 
 **Story Group 3:**
 
-🟦 **[EXPANDED: Extended overlook scene with river metaphor, flow patterns, and foreshadowing deeper concepts]**
-
 Aurelius led Aria up a spiral staircase to an elevated overlook platform that provided a commanding view of the entire Communication Hub. From this height, the pattern became unmistakable. Below, messengers flowed in organized streams from App's Tower to workshops throughout the district - a constant, orderly cascade of communication.
 
 "Notice the pattern," Aurelius gestured broadly across the scene. "Messages flow downward from parent to child, never upward or sideways. App sends to major components, which send to their sub-components, which send to their children. Layer after layer, always descending. This creates a predictable system where each component knows exactly where its instructions come from."
@@ -235,14 +121,12 @@ She turned to Aurelius, her voice gaining confidence as the question crystallize
 
 Aurelius's eyes twinkled with delight - the question every bright apprentice eventually asked. "Ah, now you're asking the deeper questions! You're seeing beyond the surface to the complexities beneath. Yes, there are ways for components to communicate upward, but they work differently than these downward-flowing instructions."
 
-He placed a hand on her shoulder. "These are advanced patterns - callback systems, event handlers, ways of sending messages back through special channels. But understanding requires more than a day's lesson. 🔴 ~~"Props can contain any type of information - text, numbers, functions, or even other components!~~ 🟢 **The Eastern Quarter's Props Messengers Guild will teach you these secrets and many more.** Hermes, the Head Messenger, is a master of bidirectional communication. It's how we create true harmony in the kingdom - not just orders flowing down, but information flowing back up through proper channels."
+He placed a hand on her shoulder. "These are advanced patterns - callback systems, event handlers, ways of sending messages back through special channels. But understanding requires more than a day's lesson. The Eastern Quarter's Props Messengers Guild will teach you these secrets and many more. Hermes, the Head Messenger, is a master of bidirectional communication. It's how we create true harmony in the kingdom - not just orders flowing down, but information flowing back up through proper channels."
 
 Aria nodded, filing away this tantalizing glimpse of complexity to explore later. Below, the messengers continued their orderly dance, and she understood: this was just the beginning.
 
 **Master Aurelius's Wisdom:**
-🔴 ~~Props are how~~ 🟢 **Components need a way to** talk to each other. They're 🔴 ~~passed~~ 🟢 **instructed** from parent to child, like 🔴 ~~arguments to a function~~ 🟢 **orders flowing down a chain of command**. 🔴 ~~Props allow~~ 🟢 **This communication system allows** components to be flexible and reusable with different data and behaviors. 🔴 ~~Master Aurelius emphasizes that props flow in one direction - from parent to child - maintaining order in the component hierarchy.~~ 🟢 **The Props Messengers Guild will reveal the secrets of this system.**
-
-💡 **EDIT NOTE:** Removed specific Props details, kept concept general. Full teaching in LP1.2.
+Components need a way to talk to each other. They're instructed from parent to child, like orders flowing down a chain of command. This communication system allows components to be flexible and reusable with different data and behaviors. The Props Messengers Guild will reveal the secrets of this system.
 
 **Reflection Questions:**
 
@@ -250,9 +134,7 @@ Aria nodded, filing away this tantalizing glimpse of complexity to explore later
 - Why is it important that props can carry different types of data (strings, numbers, functions)?
 
 **Aria's Journal - Day 2**
-*🔴 ~~The props system is genius!~~ 🟢 **Components communicate through messengers!** Instead of each workshop guessing what to make, they receive clear instructions. 🔴 ~~I tried sending different props to the Button workshop, and it adapted perfectly each time.~~ 🟢 **Aurelius mentioned the Props Messengers Guild in the Eastern Quarter will teach me the full system.** Tomorrow, Aurelius says I'll learn about component families working together!*
-
-💡 **EDIT NOTE:** Made journal entry match the more vague Ch2 content (Issue #1/#2 fix).
+*Components communicate through messengers! Instead of each workshop guessing what to make, they receive clear instructions. Aurelius mentioned the Props Messengers Guild in the Eastern Quarter will teach me the full system. Tomorrow, Aurelius says I'll learn about component families working together!*
 
 ---
 
@@ -264,8 +146,6 @@ After learning how components communicate through props, Aria was ready for her 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Grand Assembly Hall with architecture, floating demonstrations, and nested component visualization]**
 
 The Grand Assembly Hall was the crown jewel of the Component Workshop District - a massive domed structure where the air itself shimmered with possibility. As Aurelius pushed open the ornate doors, Aria gasped. Demonstrations floated throughout the vast space like constellations, each one showing different ways components could work together.
 
@@ -280,8 +160,6 @@ Aria watched in wonder as one demonstration descended to eye level. A Card compo
 Another demonstration floated past - a complex navigation bar that revealed itself to be dozens of smaller components working in concert. "See?" Aurelius gestured. "Nav component contains Menu, which contains MenuItem, which contains Link and Icon. Composition all the way down, each layer adding its own specialized functionality."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended UserProfile example with assembly process, specialist roles, and orchestra metaphor]**
 
 Aurelius gestured to a larger, more intricate demonstration floating near the center of the hall. "Consider a UserProfile component. Rather than creating one massive workshop that handles every aspect - image processing, text formatting, status indicators, biographical layout - we compose it from smaller specialists. Watch the assembly process."
 
@@ -298,8 +176,6 @@ Aria's mind raced with possibilities, connections forming rapidly. "So compositi
 He gestured broadly at the floating demonstrations. "These aren't just technical patterns - they're philosophical principles. Specialization. Separation of concerns. Single responsibility. When you understand composition, you understand the heart of React's philosophy."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Extended practice section with detailed BlogPost composition, iteration, and maintenance scenario]**
 
 Aurelius led Aria to the practice area of the Grand Assembly Hall, where a workstation glowed with creative potential. "Now, your turn. Create something using composition. Don't just observe - build."
 
@@ -344,9 +220,7 @@ Aria clutched the scroll, excited for her next adventure. She had learned to cre
 
 ### 📖 Lesson Opener
 
-With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, 🔴 ~~but there was something deeper calling to her~~ 🟢 **and seen the messengers that enable communication between them**. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering 🔴 ~~component communication~~ 🟢 **this messenger system** - the art of passing information between components with precision and purpose.
-
-💡 **EDIT NOTE:** Acknowledges Aria saw communication system in LP1.1, now learning details (Issue #2 fix).
+With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, and seen the messengers that enable communication between them. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering this messenger system - the art of passing information between components with precision and purpose.
 
 ### Chapter 1: Guild Master's Prop Patterns
 
@@ -354,27 +228,21 @@ With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the se
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Guild introduction with Eastern Quarter geography and organizational structure]**
-
 The journey east from the Component Workshop District revealed a different architectural style. Where the Northern Quarter had been all stone workshops and productive hammering, the Eastern Quarter featured elegant message stations and coordinated pathways. At its heart stood the Props Messenger Guild - a magnificent structure that hummed with purposeful communication.
 
 The Props Messenger Guild was a hive of activity unlike anything Aria had seen. Messengers rushed in all directions through multiple levels, carrying satchels filled with important information. Some satchels glowed blue (data props), others green (function props), still others multi-colored (complex object props). The organization was impeccable - dispatch boards showed active routes, message tubes pneumatically transported urgent communications, and training areas prepared new messengers for their duties.
 
 **Hermes**, the Head Messenger, awaited Aria at the Guild's grand entrance. He wore blue robes that shimmered with data patterns, and carried a staff topped with a glowing scroll-tube. His presence commanded respect - every messenger that passed gave a brief salute.
 
-"Welcome, apprentice Aria! Master Aurelius told me about your progress with components. 🔴 ~~Now you'll learn how we enable communication in the kingdom.~~" 🟢 **You've seen our messengers at work in the Component Kingdom. Now you'll master the full system."** Hermes gestured to the busy messengers flowing around them. "These are our **Props** - special messengers who carry instructions from parent components to their children."
+"Welcome, apprentice Aria! Master Aurelius told me about your progress with components. " You've seen our messengers at work in the Component Kingdom. Now you'll master the full system." Hermes gestured to the busy messengers flowing around them. "These are our **Props** - special messengers who carry instructions from parent components to their children."
 
 "I see!" Aria exclaimed, remembering the Communication Hub overlook. "So the master builder **App** uses these messengers to tell each workshop exactly what to create?"
 
-"Precisely!" Hermes smiled, clearly pleased by her foundational understanding. 🔴 ~~"Watch how~~ 🟢 **"But there's much more to learn. Watch how** a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked. Each instruction travels via our messengers, and each messenger carries its cargo with precision and care."
+"Precisely!" Hermes smiled, clearly pleased by her foundational understanding. "But there's much more to learn. Watch how a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked. Each instruction travels via our messengers, and each messenger carries its cargo with precision and care."
 
 He led her deeper into the Guild, past training stations where novice messengers practiced rapid delivery. "The system you observed from above? That was just the surface. Here, you'll learn the depths - the types of props, the patterns of delivery, the guarantees we provide, and the safeguards we maintain. By the time you leave, you'll be able to design your own messenger routes and ensure perfect communication throughout any component tree."
 
-💡 **EDIT NOTE:** Hermes acknowledges Aria's prior exposure, frames as deepening knowledge (Issue #2 fix).
-
 **Story Group 2:**
-
-🟦 **[EXPANDED: Added detailed prop types demonstration with examples]**
 
 "Props can contain various types of information," Hermes explained, leading Aria to a demonstration area where different messenger types were on display. "Text strings for labels and messages. Numbers for counts and measurements. Boolean flags that act like switches - true or false, on or off."
 
@@ -382,15 +250,11 @@ He gestured to more exotic messengers. "Functions that the child component can c
 
 Aria watched as a Button workshop received different prop types: a string for the label, a boolean for the disabled state, a function for the click handler, and an object containing style information. "Each type of data has its purpose. The flexibility is amazing!"
 
-🟢 **Aria noticed guards stationed at various workshops. "Who are they?" she asked, pointing to the armored figures inspecting messenger satchels.**
+Aria noticed guards stationed at various workshops. "Who are they?" she asked, pointing to the armored figures inspecting messenger satchels.
 
-🟢 **"Ah, the PropTypes Guardians," Hermes smiled. "They ensure messengers deliver the correct types of props. You'll meet them properly in your final lesson here."**
-
-💡 **EDIT NOTE:** Added foreshadowing of PropTypes Guardians (Issue #3 fix).
+"Ah, the PropTypes Guardians," Hermes smiled. "They ensure messengers deliver the correct types of props. You'll meet them properly in your final lesson here."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Extended practice section with multiple prop configurations and reactive demonstration]**
 
 "Now, your turn," Hermes said, gesturing to a practice workstation where messenger satchels of different colors waited. "Create a Card component that accepts different props to customize its appearance and content. Show me you understand the flexibility props provide."
 
@@ -437,8 +301,6 @@ After understanding how messengers deliver props, Aria was ready to learn about 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Grand Thoroughfare with visual flow patterns and immutability explanation]**
-
 The next morning, Hermes led Aria from the Guild headquarters to an observation deck overlooking the Grand Thoroughfare - a magnificent system of illuminated pathways that connected App's Tower to every workshop in the kingdom. From this vantage point, the entire messenger network was visible as glowing trails of light.
 
 "Observe carefully," Hermes said, his voice taking on the tone of someone teaching the most fundamental rule. "Notice how all roads lead downward from App to the workshops? Follow the light trails with your eyes."
@@ -455,8 +317,6 @@ Aria watched messenger after messenger flow downward through the network. The pa
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended predictability demonstration with callback introduction]**
-
 "This one-way flow creates a predictable system," Hermes explained, walking Aria along the observation deck to view different sections of the Thoroughfare. "When something needs to change, the instructions always come from above. Workshops never modify their instructions; they simply follow them."
 
 He stopped at a particularly complex junction where multiple workshop routes converged. "Watch this Button workshop receive props from its parent. The parent says: be blue, display 'Submit', and when clicked do this specific action. The Button reads these instructions and manifests exactly as specified. Perfect obedience, zero modification."
@@ -472,8 +332,6 @@ Aria's eyes widened with understanding. "So it's like... the parent provides a t
 "Perfect analogy!" Hermes exclaimed. "The callback prop flows down like any other prop, but its invocation sends information up. The pattern never violates one-way data flow because the function itself is data flowing downward. Callbacks are the secret to bidirectional communication within a unidirectional system."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on callback demonstration with parent-child coordination]**
 
 "Let me show you this in practice," Hermes said, leading Aria to an interactive demonstration area. A simple interface appeared before them - a parent component containing a child Button component.
 
@@ -511,8 +369,6 @@ Having learned about the one-way flow of props, Aria was ready for the final les
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended PropTypes introduction with historical context and Guardian TypeCheck's dramatic entrance]**
-
 On her third day at the Props Messenger Guild, Hermes led Aria to a secure wing she hadn't visited before. The air here felt different - more careful, more scrutinizing. Guards stood at attention, their robes adorned with type symbols and validation runes.
 
 "As our kingdom grew," Hermes began, his voice taking on a more serious tone, "we encountered a new problem. In the early days, messengers would sometimes deliver the wrong type of props to a workshop. A Button might receive a number where it expected text, or a Card might receive a string where it expected an object. These mismatches caused components to behave unpredictably."
@@ -531,8 +387,6 @@ She moved to an inspection station where props awaited validation. With practice
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended PropTypes demonstration with warnings system and DefaultProps integration]**
-
 "The PropTypes Guardians don't prevent a component from rendering with incorrect props," Guardian TypeCheck explained, leading Aria to a monitoring wall covered in warning displays. "We operate during development, not production. Our job is to alert developers to potential problems before they deploy."
 
 A demonstration appeared on the wall. A Button component expected a label prop of type string. When someone passed a number instead, Guardian TypeCheck's systems immediately raised a bright yellow warning: "PropType Warning: Button received number for label prop, expected string."
@@ -550,8 +404,6 @@ Aria practiced with the system, intentionally sending wrong prop types to watch 
 "Exactly!" Hermes beamed. "And in larger applications with hundreds of components passing thousands of props, these Guardians are invaluable. They catch mistakes that human eyes would miss, enforce consistency across teams, and document expectations right in the code."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added TypeScript introduction, graduation ceremony, and future-looking perspective]**
 
 As their session with Guardian TypeCheck concluded, Hermes led Aria to one final room - a chamber that looked toward the future of type safety in the kingdom.
 
@@ -605,8 +457,6 @@ After her success at the Props Messenger Guild, Aria was directed northward to t
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Academy introduction with Northern Quarter return and Babel demonstration]**
-
 The journey north felt different this time. Aria wasn't a wide-eyed newcomer anymore - she understood components, props, and communication patterns. Yet the JSX Magic Academy, nestled in the Northern Quarter's academic district near the Component Workshop, radiated a different kind of energy. Where workshops buzzed with creation and the Guild hummed with organization, the Academy glowed with pure linguistic magic.
 
 "Welcome, Aria!" called out **Professor Syntaxis**, a wise mage whose robes shimmered with HTML tags and JavaScript symbols that seemed to rearrange themselves as he moved. "I've heard of your progress from Hermes. The Messenger's Seal suits you. You're ready to learn the ancient language that makes React truly magical."
@@ -622,8 +472,6 @@ Babel flew to a nearby demonstration crystal. Syntaxis wrote JSX code on one sid
 "See?" Syntaxis explained. "The elegant JSX becomes verbose function calls. Babel handles this translation automatically, working tirelessly in the background of every React project."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended Babel demonstration with transformation examples and React.createElement explanation]**
 
 "Incredible!" Aria exclaimed, watching Babel transform several more JSX examples. A complex component with nested children became a series of nested React.createElement calls. "So JSX is like a more elegant spell notation that gets translated into the verbose function calls?"
 
@@ -642,8 +490,6 @@ Aria practiced writing simple JSX, watching Babel transform each example. The pa
 "Precisely! Now, let me show you the full power of the JSX Translator Crystal..." Syntaxis gestured toward a larger demonstration area where she could experiment freely.
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on JSX writing practice with immediate feedback]**
 
 Professor Syntaxis led Aria to a practice workstation where a JSX Translator Crystal stood ready. "Your turn. Write some JSX, and watch Babel translate it in real-time."
 
@@ -697,8 +543,6 @@ Having learned the basics of JSX syntax, Aria was eager to discover its true pow
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Expression Chamber introduction with curly brace portal demonstration]**
-
 The Expression Chamber was unlike any room Aria had seen in the Academy. Geometric patterns covered the walls, but they weren't static - they shifted between HTML tags and JavaScript code, illustrating the perpetual dance between markup and logic. At the room's center stood a massive crystal sphere where expressions could be written and immediately evaluated.
 
 "The real magic of JSX," Professor Syntaxis explained, his voice echoing with reverence, "comes from its ability to embed JavaScript expressions directly within the markup. Watch as I demonstrate the **Curly Brace Incantation**!"
@@ -712,8 +556,6 @@ Binary zipped excitedly around the chamber, his lights flickering in rhythm with
 "Precisely!" Syntaxis beamed. "This fusion is what makes JSX extraordinary. You're not limited to static markup. Every piece of your UI can be dynamic, computed, reactive to data and state."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended expression types demonstration with six categories and practical examples]**
 
 "By the scrolls!" Aria gasped as Binary demonstrated the six primary expression types. "We can put any JavaScript expression inside those curly braces - variables, function calls, even conditional logic!"
 
@@ -735,8 +577,6 @@ Aria practiced each pattern, her confidence growing. She created a list using th
 "Exactly! Now, let Binary guide you through the Expression Playground where you can experiment freely..."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Expression Playground with progressive complexity challenges]**
 
 Binary led Aria to the Expression Playground - an interactive space where JSX templates awaited completion. "Let's start simple," Binary said, displaying a challenge: "Display your name dynamically."
 
@@ -780,8 +620,6 @@ As the afternoon sun cast long shadows through the academy's stained glass windo
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Hall of Sacred Rules introduction with historical context and tablet presentation]**
-
 The Hall of Sacred Rules occupied the Academy's oldest wing. Unlike the bright, exploratory chambers they'd visited, this hall felt solemn, important. Tablets lined the walls, each one glowing with ethereal light that pulsed in rhythm with some unseen heartbeat of the kingdom.
 
 "Every magical language has its laws," Syntaxis explained, his voice taking on a more formal tone as they entered. "JSX may seem flexible - and it is, within boundaries - but it demands strict adherence to certain rules. Break them, and your spells will fail. Not gracefully, not with warnings, but with complete failure."
@@ -792,27 +630,23 @@ Aria pulled out her journal, ready to document these sacred laws. The failures B
 
 Syntaxis approached the first tablet, which began to glow brighter at his presence. "These rules exist because JSX is not HTML - it only resembles HTML. Under the hood, every JSX element becomes a JavaScript function call. These rules ensure that transformation works correctly."
 
-🟢 **Story Group 2:**
+Story Group 2:
 
-🟢 **[EXPANDED: Extended JSX rules with detailed demonstrations and React.Fragment introduction]**
+[EXPANDED: Extended JSX rules with detailed demonstrations and React.Fragment introduction]
 
-🟢 **Syntaxis pointed to the first glowing tablet, which displayed code examples that shifted between correct and incorrect versions. "Rule One: Every JSX expression must have a single root element. You cannot return multiple siblings without wrapping them."**
+Syntaxis pointed to the first glowing tablet, which displayed code examples that shifted between correct and incorrect versions. "Rule One: Every JSX expression must have a single root element. You cannot return multiple siblings without wrapping them."
 
-🟢 **He demonstrated. On one side, invalid code appeared - a component trying to return both a heading and a paragraph directly, with no wrapper. "This fails because React.createElement can only return one element. Multiple siblings have no parent to wrap them." Then he showed the corrected version with a wrapping div, and the newer solution using React.Fragment or the shorthand empty angle brackets, which let you group elements without adding extra DOM nodes.**
+He demonstrated. On one side, invalid code appeared - a component trying to return both a heading and a paragraph directly, with no wrapper. "This fails because React.createElement can only return one element. Multiple siblings have no parent to wrap them." Then he showed the corrected version with a wrapping div, and the newer solution using React.Fragment or the shorthand empty angle brackets, which let you group elements without adding extra DOM nodes.
 
-🟢 **"Rule Two," he continued, moving to the second tablet. "All elements must be closed. In HTML, tags like img or br can be left open, but JSX demands closure - either with a closing tag or self-closing syntax with a forward slash before the closing angle bracket."**
+"Rule Two," he continued, moving to the second tablet. "All elements must be closed. In HTML, tags like img or br can be left open, but JSX demands closure - either with a closing tag or self-closing syntax with a forward slash before the closing angle bracket."
 
-🟢 **Binary demonstrated the difference. HTML's img tag with just src="photo.jpg" would fail in JSX. It needed to be written with the self-closing slash. "This is because JSX transforms into function calls," Binary explained. "Every element needs explicit boundaries."**
+Binary demonstrated the difference. HTML's img tag with just src="photo.jpg" would fail in JSX. It needed to be written with the self-closing slash. "This is because JSX transforms into function calls," Binary explained. "Every element needs explicit boundaries."
 
-🟢 **The third tablet glowed as Binary lit it up. "And Rule Three is tricky - use className instead of class for CSS styling! Since JSX becomes JavaScript, and class is a reserved keyword for defining classes, React Kingdom requires className."**
+The third tablet glowed as Binary lit it up. "And Rule Three is tricky - use className instead of class for CSS styling! Since JSX becomes JavaScript, and class is a reserved keyword for defining classes, React Kingdom requires className."
 
-🟢 **Syntaxis showed more examples: htmlFor instead of for on labels, onClick instead of onclick (camelCase for all event handlers), tabIndex instead of tabindex. "These aren't arbitrary restrictions," he emphasized. "Each exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'."**
-
-💡 **EDIT NOTE:** Added Story Group 2 with specific JSX rules (Issue #4 fix).
+Syntaxis showed more examples: htmlFor instead of for on labels, onClick instead of onclick (camelCase for all event handlers), tabIndex instead of tabindex. "These aren't arbitrary restrictions," he emphasized. "Each exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added practice session with common mistakes and correction patterns]**
 
 "Now, your turn to identify and fix violations," Syntaxis said, leading Aria to a practice station where intentionally broken JSX appeared.
 
@@ -851,11 +685,9 @@ As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buz
 
 Binary gave Aria a tiny high-five. "You're going to love the Lifecycle Chronicles! The Time Keepers there are amazing!"
 
-🟢 **Aria smiled at the enthusiastic sprite. "Would you like to come with me, Binary? I could use a guide who knows the kingdom."**
+Aria smiled at the enthusiastic sprite. "Would you like to come with me, Binary? I could use a guide who knows the kingdom."
 
-🟢 **Binary's lights sparkled with joy. "Really? I'd love to! Every apprentice needs a companion, and I'm great at explaining React concepts!" And so, Binary officially joined Aria's journey through the React Kingdom.**
-
-💡 **EDIT NOTE:** Added explicit explanation of Binary becoming Aria's traveling companion (Issues #5 & #6 fix).
+Binary's lights sparkled with joy. "Really? I'd love to! Every apprentice needs a companion, and I'm great at explaining React concepts!" And so, Binary officially joined Aria's journey through the React Kingdom.
 
 ---
 
@@ -871,8 +703,6 @@ With the fundamentals of component creation fresh in her mind, Aria ventured dee
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Lifecycle Sanctum introduction with hourglass visualization and temporal atmosphere]**
-
 The journey to the Lifecycle Sanctum felt different from Aria's previous destinations. Time itself seemed to move strangely here - sometimes flowing quickly, other times moving slowly, as if the Sanctum existed slightly out of phase with normal reality. The building rose from ancient stones, its architecture suggesting centuries of existence.
 
 The Lifecycle Sanctum was unlike anything Aria had seen. Massive hourglasses floated in the air throughout the vast chamber, each representing a different component's journey through time. Some hourglasses flowed quickly, their sands rushing through narrow gaps - components with brief lifespans. Others flowed slowly, steadily, marking the passage of long-lived components that anchored entire applications.
@@ -884,8 +714,6 @@ An ancient figure approached through the floating timepieces - **Chronos**, the 
 Binary appeared beside Aria, bouncing excitedly though with more restraint than usual - even Binary respected the gravity of this place. "I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended three-phase explanation with visual demonstrations and lifecycle metaphors]**
 
 Chronos gestured to three particularly large hourglasses arranged in a triangle formation. Each glowed with a different color - green for birth, blue for change, red for departure. "These represent the three sacred phases every component experiences."
 
@@ -902,8 +730,6 @@ Aria watched as smaller hourglasses throughout the Sanctum demonstrated these ph
 Binary projected a timeline showing all three phases in sequence, with lifecycle methods marked at crucial moments. "It's like the circle of life, but for code!" he chirped. "Birth, growth, adaptation, and eventual graceful departure. Every component follows this pattern."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on lifecycle observation with specific component examples]**
 
 "Now, observe a component's complete journey," Chronos said, activating a demonstration hourglass. A UserProfile component materialized within the glass.
 
@@ -944,8 +770,6 @@ Chronos led Aria deeper into the Lifecycle Sanctum, where glowing murals depicte
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Mounting phase with detailed method sequence and flower bloom metaphor]**
-
 The Mural Chamber was breathtaking. Entire walls glowed with living illustrations showing components moving through their lifecycle phases. The murals weren't static art - they were active demonstrations, components being born and evolving in real-time.
 
 "These murals," Chronos explained, gesturing to the luminous walls, "chronicle the **Mounting** and **Updating** phases - the most crucial moments in a component's existence. Watch how they come to life!"
@@ -962,8 +786,6 @@ Binary bounced excitedly beside Aria, his lights pulsing in rhythm with the mura
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Updating phase with decision tree and adaptation examples]**
-
 The second mural shimmered to life, showing components in motion - a dynamic, flowing illustration of adaptation. "The **Updating** phase," Chronos continued, moving to stand before this new visualization, "occurs whenever change flows through a component. New props arrive, internal state evolves, and the component must decide how to respond."
 
 The mural showed a component at rest, then - change. New props arriving like messengers with updated instructions. The component's updating sequence activated. "First, **shouldComponentUpdate** asks 'Do I need to change?' This is optimization - why re-render if nothing meaningful has changed?"
@@ -979,8 +801,6 @@ Aria watched in fascination as the mural showed components gracefully adapting t
 "Precisely!" Chronos beamed. "That's the beauty of React's lifecycle - efficient transformation without waste. Mounting is expensive - creating from nothing. Updating is economical - transforming what already exists. React prefers updates to replacements whenever possible."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on lifecycle method practice with real scenarios]**
 
 "Now you practice," Chronos said, leading Aria to an interactive workstation where she could write lifecycle methods for different scenarios.
 
@@ -1024,8 +844,6 @@ As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamb
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Farewell Chamber with ghost timer warnings and cleanup importance]**
-
 The Farewell Chamber occupied the Sanctum's western wing, where the setting sun cast long shadows through stained glass windows depicting components in their final moments. The atmosphere here was different from the energetic Mural Chamber - more solemn, reflective, yet no less important.
 
 "Not all components live forever," Chronos said solemnly, his voice carrying the weight of countless components he'd watched depart. "When their purpose is fulfilled or they're no longer needed, they must leave through the **Unmounting** phase. But a component's true character is revealed in how it says farewell."
@@ -1042,8 +860,6 @@ He showed Aria the proper pattern. A component that started a timer in component
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended cleanup patterns with specific examples and resource management]**
-
 "See how the TimerComponent remembers to clear its interval?" Chronos pointed to a demonstration showing proper cleanup - in componentWillUnmount, the component called clearInterval on the timer ID it had saved during mounting.
 
 "Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine! Every second, it would try to call the tick function, but the component no longer exists. Errors accumulate, memory leaks grow, performance degrades."
@@ -1059,8 +875,6 @@ Then he ran it again with proper cleanup. Each component cleared its timer on un
 Aria practiced writing cleanup code for various scenarios: clearing timers, removing listeners, canceling API requests, closing connections, destroying library instances. Each time, she paired the cleanup with the original setup, establishing the sacred pattern of creation and dissolution.
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added memory leak visualization and responsibility philosophy]**
 
 "Let me show you why this matters," Chronos said, activating a visualization crystal. It showed an application running over time, components mounting and unmounting as users navigated.
 
@@ -1106,7 +920,7 @@ The hourglasses continued their eternal flow around her, each one tracking some 
 **All 4 lessons fully expanded with LP3-length Story Groups:**
 
 ✅ LP1.1 ComponentKingdom (3 chapters, 9 Story Groups)
-✅ LP1.2 PropsMessengers (3 chapters, 9 Story Groups)  
+✅ LP1.2 PropsMessengers (3 chapters, 9 Story Groups)
 ✅ LP1.3 JsxMagic (3 chapters, 9 Story Groups)
 ✅ LP1.4 LifecycleChronicles (3 chapters, 9 Story Groups)
 
@@ -1128,8 +942,6 @@ The morning after her training with Chronos, Aria set out eastward as the sun pa
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Eastern Quarter arrival with crystal spire descriptions and State Sorcerer introduction]**
-
 The journey from the Lifecycle Sanctum to the Eastern Quarter revealed a dramatic change in architecture. Where the Northern Quarter had featured stone workshops and the Sanctum had occupied ancient foundations, the Eastern Quarter thrust toward the sky with crystalline towers that seemed to defy gravity.
 
 As Aria entered the Eastern Quarter, she marveled at the crystal spires that seemed to pulse with living energy. Each tower contained countless glowing orbs visible through translucent walls - the stored memories of a thousand components. Some orbs glowed steadily, others flickered rapidly with changing data, still others pulsed in complex patterns as state updates propagated through the system.
@@ -1141,8 +953,6 @@ Binary zipped around excitedly, his lights synchronizing with the pulsing spires
 Memnon gestured for them to enter the tallest spire. Inside, the walls glowed with embedded memory orbs, each one tracking some component's state. "You've learned how components are born, live, and die," Memnon said. "But what makes them truly alive is memory - the ability to remember information between renderings. Without state, components would be like goldfish, forgetting everything the moment they blink!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended useState introduction with detailed mechanism explanation and goldfish metaphor elaboration]**
 
 Memnon gestured to the glowing orbs floating around his staff. "You see these memory orbs? They represent **state** - the magical ability for components to remember information between renderings. Each orb holds a value that persists even when the component re-renders."
 
@@ -1159,8 +969,6 @@ Aria watched in fascination. "So useState creates a persistent memory that survi
 "Exactly!" Memnon beamed. "And the most magical part - React automatically re-renders your component whenever the state changes, keeping your UI in perfect sync with your data. You don't manually update the DOM. You update state, and React handles the rest."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on useState practice with multiple examples and reactive behavior demonstration]**
 
 "Now, your turn to wield this magic," Memnon said, leading Aria to a practice station where a blank component waited. "Create a simple toggle component - a button that switches between 'ON' and 'OFF' using useState."
 
@@ -1209,8 +1017,6 @@ After mastering simple state with numbers, Memnon led Aria deeper into the cryst
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended complex state introduction with immutability philosophy and sacred rule explanation]**
-
 "Now," Memnon announced, his staff glowing brighter as they entered a chamber where orbs contained visibly complex data structures, "you're ready for the deeper mysteries. State can hold more than simple values - it can contain **objects**, **arrays**, even nested structures of incredible complexity!"
 
 Aria gazed at the orbs. One contained a user object with name, email, preferences. Another held an array of todo items, each with its own properties. A third nested objects within objects, creating intricate data hierarchies. "These are much more complex than the numbers and booleans I practiced with!"
@@ -1225,8 +1031,6 @@ He demonstrated with two scenarios. First, mutating an object directly by settin
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended spread operator explanation with detailed examples and pattern demonstrations]**
-
 "Watch closely," Memnon demonstrated, tracing glowing patterns in the air that formed the shape of the spread operator - three dots expanding outward like ripples in water. "The spread operator (...) is your most powerful ally. It creates copies of existing memories while allowing you to change specific parts!"
 
 He showed her the pattern for objects. An orb containing an object with name 'Aria', level 1, and experience 0 transformed. Memnon used the spread operator to copy all properties from oldState and override level with 2. A new orb materialized containing name 'Aria', level 2, and experience 0. "See? Everything copied, but level updated. The original orb remains unchanged - immutability preserved."
@@ -1240,8 +1044,6 @@ Aria practiced the patterns, her hands tracing the spread operator in the air as
 Binary chimed in, projecting performance metrics. "Mutation: React must check every property to see what changed. Immutability: React checks one reference. See the difference? Immutability makes React fast!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added complex nested state practice with real-world scenarios and pattern consolidation]**
 
 "Now for the ultimate challenge," Memnon said, activating a complex practice scenario. "Manage a shopping cart - nested objects, arrays of items, quantities, prices. Update it immutably."
 
@@ -1274,34 +1076,25 @@ The principle of immutability is sacred in the React Kingdom. When you modify st
 
 ---
 
-### Chapter 3: 🔴 ~~The Side Effect Enchantments~~ 🟢 **The State Mastery**
+### Chapter 3: The State Mastery
 
 **Bridge:**
-As State Sorcerers advanced in their studies, 🔴 ~~they discovered that changes in state could trigger side effects—powerful enchantments that interacted with the world outside their component~~ 🟢 **Memnon revealed the deeper mysteries of state mastery - the patterns that separate novices from true sorcerers**.
-
-💡 **EDIT NOTE:** Removed useEffect from LP2.1 Ch3. All useEffect teaching now in LP2.2 (Issue #7 fix).
+As State Sorcerers advanced in their studies, Memnon revealed the deeper mysteries of state mastery - the patterns that separate novices from true sorcerers.
 
 **Narrative:**
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended state patterns introduction with architecture visualization and lifting state demonstration]**
 
-🔴 ~~"There exists a second magical hook," explained Memnon, "called useEffect. This hook allows you to perform side effects when your state changes, like communicating with remote data sources, directly manipulating the DOM, or setting up subscriptions."~~
+"There's one final lesson," Memnon said, his eyes twinkling with wisdom, "before you leave for the Hook Forge. State is powerful, but only if wielded correctly. You must understand when to use it, how to structure it, and how to lift it when necessary. These patterns will serve you throughout your React journey."
 
-🟢 **"There's one final lesson," Memnon said, his eyes twinkling with wisdom, "before you leave for the Hook Forge. State is powerful, but only if wielded correctly. You must understand when to use it, how to structure it, and how to lift it when necessary. These patterns will serve you throughout your React journey."**
+He led Aria to a demonstration chamber where component models floated in the air like architectural blueprints. "Observe this common mistake," Memnon gestured, and a component diagram appeared showing state scattered across many distant components. Red lines crisscrossed between them, indicating complex prop chains trying to share information. "Each component hoards its own state, forcing tortuous prop chains to share information. Sibling components can't communicate. Parent components lose control. Updates become unpredictable."
 
-🟢 **He led Aria to a demonstration chamber where component models floated in the air like architectural blueprints. "Observe this common mistake," Memnon gestured, and a component diagram appeared showing state scattered across many distant components. Red lines crisscrossed between them, indicating complex prop chains trying to share information. "Each component hoards its own state, forcing tortuous prop chains to share information. Sibling components can't communicate. Parent components lose control. Updates become unpredictable."**
+With a wave of his staff, the diagram transformed. State bubbles lifted upward like balloons released, settling at strategic points where multiple components could access them easily. The red lines simplified to clean, downward flows. "This is the art of lifting state up - placing shared state at the lowest common ancestor. It simplifies your architecture and reduces redundant data."
 
-🟢 **With a wave of his staff, the diagram transformed. State bubbles lifted upward like balloons released, settling at strategic points where multiple components could access them easily. The red lines simplified to clean, downward flows. "This is the art of lifting state up - placing shared state at the lowest common ancestor. It simplifies your architecture and reduces redundant data."**
-
-🟢 **Binary projected calculations showing how the optimized structure required 60% fewer prop passes. "State co-location," he explained, "means keeping state close to where it's used, but lifting it when sharing is needed. It's about finding the right balance! Don't lift everything to the top - that's as bad as scattering it everywhere. Lift only what needs to be shared."**
-
-💡 **EDIT NOTE:** Expanded Story Group 1 with visual demonstration and interaction (Issue #8 fix).
+Binary projected calculations showing how the optimized structure required 60% fewer prop passes. "State co-location," he explained, "means keeping state close to where it's used, but lifting it when sharing is needed. It's about finding the right balance! Don't lift everything to the top - that's as bad as scattering it everywhere. Lift only what needs to be shared."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended state co-location patterns with practical examples and anti-patterns]**
 
 Memnon showed Aria three scenarios, each demonstrating different state placement strategies.
 
@@ -1319,8 +1112,6 @@ He demonstrated a classic example: a temperature converter with Celsius and Fahr
 
 **Story Group 3:**
 
-🟦 **[EXPANDED: Added hands-on state architecture practice with decision-making framework]**
-
 "Design the state architecture for a todo application," Memnon challenged, presenting Aria with requirements: a list of todos, filters (all/active/completed), and a search box.
 
 Aria thought carefully, applying the patterns Memnon taught. "The todo list itself... that's shared between the list display and the filters, so it should live in the main TodoApp component. The filter selection also needs to be there since both the filter buttons and the list display use it. But the search box text... that could be local to the SearchBox component unless..." She paused. "Unless the searching happens at the TodoApp level."
@@ -1334,29 +1125,28 @@ Memnon nodded approvingly. "You've learned to think architecturally. State place
 Binary added final wisdom: "And remember - you can always refactor! Start with local state, lift when you discover sharing is needed. Don't prematurely optimize state placement. Let the actual requirements guide you."
 
 **Memnon's Final Wisdom:**
-🔴 ~~The useEffect hook is the gateway between your component's inner world and the vast kingdom beyond. It lets you reach out - to fetch data from distant servers, update the browser's title, or synchronize with external systems. The dependency array is your control mechanism: it determines when your effects activate. Master this, and you master the art of keeping your components in harmony with the ever-changing world around them.~~
 
-🟢 **State is powerful but should be used wisely. Keep state close to where it's needed. When multiple components need the same state, lift it to their nearest common ancestor. Structure your state to minimize unnecessary re-renders. These principles - co-location, lifting state up, and single source of truth - are the foundation of maintainable React applications. Tomorrow at the Hook Forge, you'll discover the full arsenal of tools that work with state.**
+State is powerful but should be used wisely. Keep state close to where it's needed. When multiple components need the same state, lift it to their nearest common ancestor. Structure your state to minimize unnecessary re-renders. These principles - co-location, lifting state up, and single source of truth - are the foundation of maintainable React applications. Tomorrow at the Hook Forge, you'll discover the full arsenal of tools that work with state.
 
 **Reflection Questions:**
 
-- 🔴 ~~How does Memnon's teaching about "consequences" help you understand the purpose of useEffect?~~
-- 🔴 ~~Why do you think the dependency array is so important in controlling when effects run?~~
-- 🟢 **How does understanding state patterns help you structure your React applications?**
-- 🟢 **Why is it important to keep state close to where it's used instead of always putting it at the top level?**
+-
+-
+- How does understanding state patterns help you structure your React applications?
+- Why is it important to keep state close to where it's used instead of always putting it at the top level?
 
 **Aria's Journal - Day 15**
-*What an incredible day with the State Sorcerers! 🔴 ~~After learning useState and immutability, Memnon revealed the useEffect hook - the gateway between a component's inner world and everything beyond! I collected enchanted artifacts and watched the effects trigger automatically when state changed. The dependency array is like a watchlist - telling React exactly which state changes should trigger the effect. Binary explained that effects can reach out to APIs, update the document title, or set up subscriptions. The key insight: state gives components memory, but useEffect gives them the power to interact with the outside world!~~ 🟢 **I've mastered useState and immutability! Memnon taught me the sacred patterns: co-locate state near where it's used, lift state up when multiple components need it, and maintain a single source of truth. The spread operator is my ally for immutable updates. I practiced architecting a todo app's state structure, learning to ask: What components need this? What's their lowest common ancestor? Can this be derived? These questions guide good architecture. Tomorrow I journey to the Hook Forge to discover the full toolkit of React hooks that work alongside useState!***
+*What an incredible day with the State Sorcerers! I've mastered useState and immutability! Memnon taught me the sacred patterns: co-locate state near where it's used, lift state up when multiple components need it, and maintain a single source of truth. The spread operator is my ally for immutable updates. I practiced architecting a todo app's state structure, learning to ask: What components need this? What's their lowest common ancestor? Can this be derived? These questions guide good architecture. Tomorrow I journey to the Hook Forge to discover the full toolkit of React hooks that work alongside useState!*
 
 **Lesson Ending:**
 
 As the stars began to appear over the Eastern Quarter, Memnon placed his hand on Aria's shoulder. "You've done exceptionally well today, young sorcerer. You've grasped the fundamentals of state magic far quicker than most."
 
-Binary twirled happily. "Tomorrow you'll learn about 🔴 ~~hooks~~ 🟢 **the full collection of hooks** - special spells that give functional components even more power!"
+Binary twirled happily. "Tomorrow you'll learn about the full collection of hooks - special spells that give functional components even more power!"
 
-"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you'll discover 🔴 ~~useState and useEffect~~ 🟢 **useState** has many magical siblings. Each one grants unique powers to those wise enough to wield them."
+"Rest well," Memnon advised. "The path ahead leads to the Hook Forge, where you'll discover useState has many magical siblings. Each one grants unique powers to those wise enough to wield them."
 
-Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, 🔴 ~~effects~~ 🟢 **patterns** - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!
+Aria left the crystal spire with her mind buzzing with new knowledge. State, immutability, patterns - the building blocks of dynamic components. She couldn't wait to see what tomorrow would bring!
 
 ---
 
@@ -1372,8 +1162,6 @@ After her enlightening day with Memnon and the State Sorcerers, Aria arrived at 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Hook Forge introduction with sensory details and hook crafting process]**
-
 The Hook Forge was unlike anything Aria had seen before. Where the crystal spires had hummed with stored energy, the Forge roared with active creation. Glowing anvils rang with the sound of hooks being shaped, their metallic chimes echoing through the vast workshop. Crystalline tubes carried pure React energy to each workstation, pulsing with blue light that illuminated the faces of concentrated craftspeople.
 
 "Welcome to the Hook Forge!" called out a sturdy figure in a leather apron, sparks flying from the hook she was crafting. Her goggles reflected the glow of molten React energy as she hammered a partially formed hook into its final shape. "I'm **Forge Master Hooke**. Memnon sent word of your arrival."
@@ -1382,15 +1170,11 @@ Binary chirped excitedly, zooming between workstations to observe different hook
 
 The variety was staggering. Some workstations forged hooks that glowed with steady light (useState), others crafted hooks that pulsed with side effects (useEffect), still others shaped hooks with specialized purposes Aria didn't yet recognize.
 
-"You've already met my most popular creation," Hooke said with pride, holding up a gleaming useState hook fresh from Memnon's teachings. 🔴 ~~"But let me show you its full potential"~~ 🟢 **"Memnon taught you well. But here at the Forge, you'll learn about the full hook family - each one crafted for a specific purpose..."**
-
-💡 **EDIT NOTE:** Acknowledges Aria learned useState from Memnon, focuses on hook family (Issue #9/#10 fix).
+"You've already met my most popular creation," Hooke said with pride, holding up a gleaming useState hook fresh from Memnon's teachings. "Memnon taught you well. But here at the Forge, you'll learn about the full hook family - each one crafted for a specific purpose..."
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended hook family overview with specialized purposes and functional component history]**
-
-She led Aria to a workbench where hooks of different designs were displayed like specimens. 🔴 ~~"useState can hold any type of value - numbers, strings, objects, arrays. Watch how it preserves the value between renders and triggers updates when changed!"~~ 🟢 **"Each hook I forge serves a unique purpose," Hooke explained, gesturing to the display. "You know useState for memory - that's the foundation. Soon you'll meet useEffect for side effects, useRef for persistent references that don't trigger renders, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."**
+She led Aria to a workbench where hooks of different designs were displayed like specimens. "Each hook I forge serves a unique purpose," Hooke explained, gesturing to the display. "You know useState for memory - that's the foundation. Soon you'll meet useEffect for side effects, useRef for persistent references that don't trigger renders, useMemo for expensive calculations, and useCallback for function stability. Together, they form a complete toolkit."
 
 Hooke picked up each hook, showing its distinctive design. "Before hooks, functional components were simple display components - no state, no lifecycle, no side effects. Only class components had those powers. But hooks changed everything in 2019. Now functional components can do everything class components could, but with cleaner, more reusable code."
 
@@ -1402,11 +1186,7 @@ Aria studied the displayed hooks, beginning to appreciate how each solved a spec
 
 "Precisely!" Hooke beamed. "A master craftsperson knows their tools not by rote memorization, but by understanding when each tool is the right choice. You don't use a hammer when you need a screwdriver, and you don't use useState when you need useRef."
 
-💡 **EDIT NOTE:** Changed from re-teaching useState to introducing hook family concept.
-
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hook rules explanation and custom hooks introduction]**
 
 "Before we dive into each hook's specifics," Hooke said, her expression turning serious, "you must learn the Rules of Hooks. These are not suggestions - they are inviolable laws that ensure hooks work correctly."
 
@@ -1431,12 +1211,10 @@ She showed a quick example - a useLocalStorage custom hook that combined useStat
 **New Characters:**
 
 **Forge Master Hooke**
-Maker of the most powerful hooks in all of React Kingdom, crafting each one at glowing anvils where crystalline tubes carry pure React energy. Sparks fly from the hooks she forges as she teaches their potential. 🔴 ~~"The useState hook is my most popular creation! It gives functional components memory - something only class components could do before hooks were invented."~~ 🟢 **"I forge each hook for a specific purpose. useState for memory, useEffect for side effects, useRef for persistence, useMemo for optimization. Together, they give functional components abilities that once required complex class components."**
+Maker of the most powerful hooks in all of React Kingdom, crafting each one at glowing anvils where crystalline tubes carry pure React energy. Sparks fly from the hooks she forges as she teaches their potential. "I forge each hook for a specific purpose. useState for memory, useEffect for side effects, useRef for persistence, useMemo for optimization. Together, they give functional components abilities that once required complex class components."
 
 **Master Hooke's Wisdom:**
-🔴 ~~The useState hook is the foundation of interactive components. It's simple yet powerful - give it an initial value, and it returns the current value and a setter function. Every time you call the setter, React knows to re-render with the new value. Remember: always use functional updates when the new state depends on the previous state! This ensures your updates work correctly even when multiple updates happen quickly.~~ 🟢 **Hooks are specialized tools, each crafted for a specific purpose. The key is understanding which hook to use when. useState for component memory, useEffect for external world interactions, useRef for values that persist but don't trigger re-renders, useMemo for expensive computations, useCallback for stable function references. Master the forge's full collection, and you'll wield the complete power of functional React components.**
-
-💡 **EDIT NOTE:** Shifted from useState details (covered by Memnon) to hook family overview.
+Hooks are specialized tools, each crafted for a specific purpose. The key is understanding which hook to use when. useState for component memory, useEffect for external world interactions, useRef for values that persist but don't trigger re-renders, useMemo for expensive computations, useCallback for stable function references. Master the forge's full collection, and you'll wield the complete power of functional React components.
 
 **Reflection Questions:**
 
@@ -1444,7 +1222,7 @@ Maker of the most powerful hooks in all of React Kingdom, crafting each one at g
 - Why do you think functional updates (using the previous state) are important when multiple updates might happen quickly?
 
 **Aria's Journal - Day 16**
-*The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. 🔴 ~~useState isn't just for simple values; it can handle complex data structures too. Master Hooke showed me how to use functional updates when the new state depends on the previous state.~~ 🟢 **Master Hooke showed me the full hook family - useState for memory (which Memnon taught me), useEffect for side effects, useRef for persistence, useMemo for optimization, and useCallback for stable functions. Each hook serves a unique purpose! I also learned the Rules of Hooks - always call at top level, never conditionally, to maintain consistent order. Custom hooks let us create reusable stateful logic!** So much more to learn!*
+*The Hook Forge is incredible! I'm starting to understand that hooks are like magical tools - each one designed for a specific purpose. Master Hooke showed me the full hook family - useState for memory (which Memnon taught me), useEffect for side effects, useRef for persistence, useMemo for optimization, and useCallback for stable functions. Each hook serves a unique purpose! I also learned the Rules of Hooks - always call at top level, never conditionally, to maintain consistent order. Custom hooks let us create reusable stateful logic! So much more to learn!*
 
 ---
 
@@ -1456,8 +1234,6 @@ Master Hooke led Aria deeper into the forge, where the air shimmered with uncont
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended useEffect introduction with side effects philosophy and boundary-crossing explanation]**
 
 "Now for something more advanced," Master Hooke announced, approaching a workstation surrounded by glowing runes that seemed to pulse with connections to external systems. "The **useEffect** hook - perhaps the most powerful and dangerous tool we craft here."
 
@@ -1473,8 +1249,6 @@ Aria studied the connections. "So useEffect is like... giving components arms th
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended dependency array explanation with detailed examples and cleanup pattern]**
-
 "Watch this demonstration," Master Hooke said, activating the runes. A component appeared with a simple useEffect that logged to the console. The component rendered, then after rendering, the effect fired. "Key insight: effects run *after* the render is committed to the screen. React renders first, updates the DOM, then runs effects."
 
 She showed the dependency array - an array of values that useEffect watches. "Every time the dependency changes, the effect fires. The key is the dependency array - it controls when your effects activate. Empty array? Effect runs once on mount. No array? Effect runs after every render. Array with values? Effect runs when those values change."
@@ -1489,8 +1263,6 @@ Examples appeared showing each pattern:
 A demonstration showed an effect starting an interval timer, then the cleanup function clearing it. "Without cleanup, timers continue after unmount - ghost timers, as Chronos warned you about! The cleanup function prevents memory leaks and stale effects."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on useEffect practice with real-world scenarios and common patterns]**
 
 "Practice time," Hooke said, presenting Aria with common useEffect scenarios.
 
@@ -1532,8 +1304,6 @@ As the afternoon sun filtered through the forge's crystalline windows, Master Ho
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended specialized hooks introduction with precision instruments metaphor and use-case explanations]**
-
 "These are our precision instruments," Master Hooke said, opening an ornate chest that glowed with different colored light from each compartment. "Not every component needs them, but when you do, they're invaluable. Meet **useRef**, the memory crystal; **useMemo**, the calculation cache; and **useCallback**, the function preserver."
 
 Aria examined each tool carefully. useRef looked different from other hooks - it glowed with a steady, unchanging light rather than the reactive pulse of useState. useMemo and useCallback both had optimization runes etched into their surfaces. "They look powerful, but when would I need them instead of useState or useEffect?"
@@ -1543,8 +1313,6 @@ Aria examined each tool carefully. useRef looked different from other hooks - it
 She demonstrated: "Need to store a DOM reference? useRef. Need to track the previous value of a prop? useRef. Need to hold a mutable value that shouldn't cause re-renders? useRef. It's like a secret pocket that React doesn't watch."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended optimization hooks explanation with performance visualization and premature optimization warnings]**
 
 "useMemo and useCallback are about optimization," Hooke continued, moving to the optimization workstation where performance metrics glowed on displays. "React components re-render frequently - when props change, when state changes, when parent re-renders. Usually that's fine - React is fast! But sometimes you have expensive calculations or functions passed as props that cause unnecessary child re-renders."
 
@@ -1557,8 +1325,6 @@ She showed a visualization. A component with an expensive calculation running on
 Binary projected a performance comparison showing components with and without these optimizations. The difference was dramatic in some cases, negligible in others. "And that's the key point," Binary chirped. "These are optimizations. Don't use them everywhere - they have overhead too! Only optimize when you measure a problem."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on specialized hooks practice with appropriate usage guidance]**
 
 "Let's practice," Hooke said, presenting scenarios where each specialized hook shined.
 
@@ -1603,17 +1369,13 @@ Aria carefully tucked the pouch into her satchel, her mind buzzing with new know
 
 ### 📖 Lesson Opener
 
-Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom 🟢 **, in the Central Plaza between all four quarters**. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
-
-💡 **EDIT NOTE:** Added location detail - Central Plaza (Issue #11 fix).
+Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom , in the Central Plaza between all four quarters. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
 
 ### Chapter 1: The Context Keepers' Hall
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Grand Hall introduction with thread constellation visualization and prop drilling problem]**
 
 The journey to the Grand Hall took Aria and Binary through the Central Plaza, where all four quarters of the React Kingdom converged. The architectural styles blended here - stone from the Northern Quarter, crystal from the Eastern Quarter, elements from the Southern and Western quarters yet to be explored.
 
@@ -1629,8 +1391,6 @@ Aria stared upward at the glowing constellation. "It's beautiful, but... why is 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended prop drilling demonstration with painful example and Context solution reveal]**
-
 "You see," Contextia explained, gesturing to a demonstration that materialized in the air, "in the early days of React Kingdom, components had to pass messages through every single component in between - what we call 'prop drilling.' Watch this example."
 
 The demonstration showed an App component at the top that knew the current theme (dark or light mode). Deep below, five levels down, a Button component needed that theme to style itself correctly. The data had to flow: App → Layout → Page → Section → Card → Button. Each intermediate component received theme as a prop and passed it down, even though Layout, Page, Section, and Card didn't care about theme at all. They were just couriers.
@@ -1644,8 +1404,6 @@ Aria watched in fascination as data seemed to teleport along the thread, bypassi
 "Precisely!" Contextia smiled. "Let me show you how it works with a simple example - theme management for an entire application. The Provider broadcasts the theme at the top, and any component anywhere in the tree can consume it. No middlemen, no prop drilling, just clean, direct access."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Context creation and usage practice with theme example]**
 
 "Now, create your own Context," Contextia instructed, leading Aria to a practice station where threads waited to be woven.
 
@@ -1688,8 +1446,6 @@ Contextia led Aria to a more intricate section of the Grand Hall, where the thre
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended living state Context introduction with bidirectional flow explanation]**
-
 "What you've seen so far," Contextia explained, guiding Aria through corridors where threads did more than just glow - they swirled, pulsed, and responded to interactions, "is just the beginning. Context threads can carry more than simple values - they can transport **living state** that components can both read and modify."
 
 Binary's circuits sparkled with interest. "So components don't just receive data - they can send changes back through the same threads? Like a two-way portal?"
@@ -1704,8 +1460,6 @@ A LoginButton component far down the tree called the login function through Cont
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended custom Provider pattern with detailed implementation and architecture benefits]**
-
 "See how the Provider doesn't just share the user state," Contextia pointed to the glowing threads, "but also the functions to login and logout. Any component connected to this thread can both read the current user AND change it!"
 
 She walked Aria through creating a custom Provider step by step. "First, wrap useState inside a provider component to manage the user state. Second, create functions like login and logout that modify that state. Third, combine everything - the state and all the functions - into a value object. Fourth, return the Context Provider passing that value, wrapping the children. Finally, export both the Provider and a custom hook for consuming."
@@ -1719,8 +1473,6 @@ Aria practiced creating a CartProvider for an e-commerce app. State for items ar
 "And notice," Contextia emphasized, "how this creates a clear separation of concerns. The Provider handles all the cart logic - the 'how'. Consumer components just call the provided functions - the 'what'. This makes testing easier, refactoring safer, and reasoning simpler."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added multiple Context management patterns and composition strategies]**
 
 "Real applications often need multiple Contexts," Contextia said, showing how threads could be layered. "Theme Context for styling, Auth Context for user state, Language Context for internationalization, Cart Context for shopping data. Each one independent, each one focused."
 
@@ -1754,8 +1506,6 @@ As Aria mastered the basics of Context, Contextia led her to the highest tower o
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Context optimization introduction with performance problem visualization and cost explanation]**
-
 "Aria," Contextia began, her expression turning serious as they climbed the spiral staircase to the tower, "Context threads are magical, but they carry a hidden cost. Every time a Provider's value changes, **all** connected consumers re-render."
 
 Binary's lights dimmed slightly. "All of them? Even if they don't care about the part that changed?"
@@ -1767,8 +1517,6 @@ The visualization was stark. A single Provider value change caused 50 consumer c
 "Context is not magical free data teleportation," Contextia explained. "It's a subscription system. Components subscribe to a Context, and any change triggers all subscribers. Fine for small apps, problematic for large ones. But we have solutions!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended optimization techniques with detailed patterns and measurable improvements]**
 
 "See how in the unoptimized state, all consumers flash when any value changes?" Contextia explained, highlighting the visualization where every connected component lit up on state changes. "But with optimization, only the consumers that actually use the changed data re-render. Let me show you the techniques."
 
@@ -1791,8 +1539,6 @@ Wrap consumers in React.memo with custom comparison. They only re-render when th
 Performance graphs showed dramatic improvements - from 50 re-renders down to 5 on a typical update. "Each technique addresses a specific performance pattern," Contextia explained. "Use them as needed, but measure first!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on optimization practice with before/after measurements and decision framework]**
 
 "Optimize this poorly performing Context," Contextia challenged, presenting Aria with a large application suffering Context performance issues.
 
@@ -1835,17 +1581,13 @@ Aria carefully stored the crystal in her satchel, her mind racing with possibili
 
 ### 📖 Lesson Opener
 
-The morning sun cast long shadows across React Kingdom as Aria stood before the State Management Citadel - a towering structure 🟢 **in the Eastern Quarter** where all the state management disciplines converged. Here, she would face her final challenge: combining everything she had learned into a unified understanding of state management.
-
-💡 **EDIT NOTE:** Added location detail - Eastern Quarter (Issue #13 fix).
+The morning sun cast long shadows across React Kingdom as Aria stood before the State Management Citadel - a towering structure in the Eastern Quarter where all the state management disciplines converged. Here, she would face her final challenge: combining everything she had learned into a unified understanding of state management.
 
 ### Chapter 1: The Reducer's Challenge
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Reducer introduction with meditation chamber and complex state philosophy]**
 
 The State Management Citadel's grand entrance led to a vast chamber where an elderly figure sat meditating, floating slightly above a cushion as data patterns swirled around him like visible thoughts. His robes bore patterns that shifted like flowing data streams - sometimes simple, sometimes incredibly complex, always organized. His eyes held the wisdom of countless state transformations, having witnessed every pattern, every anti-pattern, every evolution of state management in React Kingdom.
 
@@ -1861,8 +1603,6 @@ Binary whirred thoughtfully, projecting visualizations of these complex scenario
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended useReducer pattern with detailed mechanism and action/reducer architecture]**
-
 "Your first challenge," Grand Reducer announced, gesturing to a practice arena that materialized in the chamber, "is to manage an adventurer's inventory. Multiple items, different actions, complex rules - all flowing through one reducer function. This is how real applications handle sophisticated state!"
 
 He showed the pattern. A state object containing inventory items, gold, equipped gear, and capacity. Actions that modified this state: ADD_ITEM with an item payload, REMOVE_ITEM with an itemId, EQUIP_ITEM with an itemId. A reducer function that received current state and an action, then returned new state.
@@ -1876,8 +1616,6 @@ Aria implemented her own reducer, watching as complex state updates became organ
 "Exactly!" Grand Reducer beamed. "Components dispatch actions describing what happened. The reducer decides how state changes in response. Clean separation of 'what' and 'how'."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on useReducer practice with complex form validation scenario]**
 
 "Build a form with complex validation," Grand Reducer challenged. "Username must be unique, password must match confirmation, email must be valid format, all must be checked before enabling submission."
 
@@ -1920,8 +1658,6 @@ Grand Reducer led Aria through a massive doorway into a library that seemed to s
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Redux introduction with historical context and architectural philosophy]**
-
 "Before we continue," Grand Reducer said, pulling a massive, leather-bound book from a pedestal that glowed with reverence, "you must understand the history of our craft. This is the **Redux Codex** - the most influential state management pattern ever created for JavaScript applications."
 
 Binary's lights flickered with recognition, shifting to a respectful orange glow. "Redux! I've heard stories about its power - a single source of truth for entire applications! Before Redux, large JavaScript applications were chaos. State scattered everywhere, updates unpredictable, bugs impossible to trace."
@@ -1933,8 +1669,6 @@ A visualization materialized showing a Redux-powered application. At the center,
 "Before Redux, large applications struggled with state," Grand Reducer explained. "Where does state live? How do components share it? How do you track what changed? Redux provided answers: centralize state, use actions for changes, use reducers for logic, make everything predictable and traceable."
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended Redux principles with detailed architectural benefits and tradeoff discussion]**
 
 "Redux operates on three sacred principles," Grand Reducer explained, his voice taking on the cadence of ancient teaching. "First, a **single source of truth** - all state lives in one store. No scattered state across components. One object representing your entire application state at any moment."
 
@@ -1949,8 +1683,6 @@ Binary projected before/after comparisons. Before Redux: State scattered across 
 "But," Grand Reducer cautioned, "Redux adds complexity. Action types, action creators, reducers, store configuration, middleware for async. For small applications, this is overkill. For large applications with complex state shared across many components, it's invaluable. The tradeoff is: boilerplate for predictability."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added Redux Toolkit introduction and modernization discussion]**
 
 "Redux has evolved," Grand Reducer said, pulling out a newer, sleeker volume. "The Redux Codex spawned **Redux Toolkit** - a modern approach that reduces boilerplate while keeping the benefits."
 
@@ -1988,8 +1720,6 @@ As the afternoon sun filtered through the Citadel's crystalline windows, Grand R
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended modern state management introduction with innovation context and philosophy]**
-
 "The Redux Archives taught you the classical approach," Grand Reducer said, his robes shifting to display constellations of data flow patterns - not just Redux, but many others evolving in parallel. "But React Kingdom evolves constantly. New pioneers have charted territories that solve state management differently, each learning from Redux's strengths while addressing its weaknesses."
 
 Binary's circuits sparkled with curiosity, projecting questions. "Different from Redux? But that seemed so complete! Single source of truth, predictable changes, time-travel debugging... what could be better?"
@@ -2002,11 +1732,7 @@ He gestured to the shimmering portals, each glowing with its unique color signat
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended modern library survey with detailed characteristics and use-case guidance]**
-
-"Each portal represents a modern solution," Grand Reducer explained, gesturing to the shimmering gateways. 🟢 **"The blue portal leads to Zustand - simplicity embodied. The violet one to Jotai - atomic precision. The crimson gateway to Recoil - Facebook's innovation. And the silver portal to MobX - reactive magic."**
-
-💡 **EDIT NOTE:** Added specific library names to Story Group (Issue #12 fix).
+"Each portal represents a modern solution," Grand Reducer explained, gesturing to the shimmering gateways. "The blue portal leads to Zustand - simplicity embodied. The violet one to Jotai - atomic precision. The crimson gateway to Recoil - Facebook's innovation. And the silver portal to MobX - reactive magic."
 
 He walked Aria through each portal briefly:
 
@@ -2023,8 +1749,6 @@ Binary added comparisons showing lines of code for implementing the same feature
 "The key lesson," Grand Reducer emphasized, "is that there's no single best solution. Each optimizes for different priorities. Consider your team's experience, app size, performance needs, and debugging requirements when choosing."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added decision framework and hybrid approach discussion]**
 
 "But what if we don't choose just one?" Aria asked, a realization forming. "What if we mix approaches based on needs?"
 
@@ -2085,17 +1809,13 @@ They descended from the Citadel as stars began to appear overhead. Aria's journe
 
 ### 📖 Lesson Opener
 
-🔴 ~~Following Flux's directions, Aria and Binary~~ 🟢 **Aria and Binary** climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Forge stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
-
-💡 **EDIT NOTE:** Removed "Flux's directions" - Flux not introduced until LP3.4. Issue #3.5-001 fix.
+Aria and Binary climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Forge stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
 
 ### Chapter 1: The Art of Destructuring
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Prop Forge introduction with sensory details and Master Destructo's dramatic entrance]**
 
 The heat hit Aria like a wall as she entered the Prop Forge, the temperature so intense that even Binary's cooling systems whirred to compensate. Molten data flowed in channels carved into the floor, glowing with blue and orange light that painted everything in flickering shadows. The air shimmered with the energy of transformation, and the rhythmic clanging of hammer on anvil created a hypnotic percussion that resonated in Aria's chest.
 
@@ -2105,9 +1825,7 @@ At the center of it all stood a figure wielding a glowing hammer, striking at an
 
 "How did you know?" Aria asked, wiping sweat from her brow, trying to adjust to the intense heat.
 
-"🔴 ~~River Master Flux~~ 🟢 **Grand Reducer** sent word of your coming. Plus," he grinned, revealing a gap-toothed smile, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"
-
-💡 **EDIT NOTE:** Changed Flux (not yet met) to Grand Reducer (LP2.4 character Aria met previously). Issue #15 fix.
+"Grand Reducer sent word of your coming. Plus," he grinned, revealing a gap-toothed smile, "Binary's unique design is hard to miss. Not many companion constructs can project holograms like that!"
 
 Binary beamed proudly, literally, projecting a small light show that cast rainbow patterns across the forge walls.
 
@@ -2116,8 +1834,6 @@ Binary beamed proudly, literally, projecting a small light show that cast rainbo
 He held up a glowing object - a prop containing multiple nested properties. "Behold - a prop object containing multiple values. Watch as I extract its essence with a single incantation!" His hands moved in practiced patterns, and the prop object separated into individual glowing fragments, each labeled with its property name.
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended destructuring demonstration with novice vs master comparison and default values explanation]**
 
 After the forging demonstration, Destructo's expression grew serious. "Forging is only half the craft. The true mastery lies in destructuring - breaking props apart efficiently. Watch carefully, for this separates apprentices from masters."
 
@@ -2134,8 +1850,6 @@ At the second anvil, he performed a single elegant gesture - destructuring the p
 He demonstrated destructuring with default values: extracting title and damage normally, but setting element to default to 'fire' and rarity to default to 'common' if those properties are missing. "See? If element or rarity are missing from the props, these defaults activate. The component never breaks from undefined values. It's defensive programming - anticipating failure and handling it gracefully."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on destructuring practice with complex nested props and parameter destructuring benefits]**
 
 "Now, your turn to forge," Destructo said, gesturing to a practice anvil where incomplete prop objects awaited. "Fix these components - they're using props incorrectly. Apply what you've learned."
 
@@ -2179,8 +1893,6 @@ The next morning, Aria found Destructo working with multiple glowing crystals, e
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended spread operator introduction with visual demonstration and merging mechanics explanation]**
-
 "Ah, right on time!" Destructo called out, not even turning from his work. His hammer was still, resting on the anvil, but his attention was focused on three glowing dots hovering in the air before him - they pulsed with a rhythmic light, like a heartbeat made visible.
 
 "Today, we move beyond simple destructuring to the art of combination and transformation!" He turned to face them, gesturing at the floating dots. "These three dots are the **Spread Operator** - one of the most powerful enchantments in our forge. They can merge objects, copy properties, and transform data as it flows!"
@@ -2201,13 +1913,11 @@ Aria leaned in, fascinated. "So you can combine multiple prop sources? And contr
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended transformation and prop forwarding demonstration with practical patterns]**
-
 After the merging demonstration, Destructo led them to a series of transformation chambers along the forge's back wall, each glowing with different energies. These chambers were where props underwent mid-journey transformations - refined and adapted as they flowed through component hierarchies.
 
 "Now for the real magic - transformation!" Destructo announced, his voice taking on a reverent tone. "Sometimes, a parent component sends raw materials, but the child needs refined props. The spread operator lets us transform on the fly, without mutating the original data."
 
-He demonstrated with a weapon prop object on display: an object with name 'Sword of Props', damage 50, element 'fire', and durability 100. 
+He demonstrated with a weapon prop object on display: an object with name 'Sword of Props', damage 50, element 'fire', and durability 100.
 
 "Watch - I spread all the original properties, then override just the ones I want to change." His hands moved in practiced patterns: spreading all weapon properties, then overriding damage to 75 and adding a new enchanted property set to true. The result was a new object with all original properties intact, but damage boosted to 75 and a new enchanted property added. "It's like keeping a sword's blade and handle while swapping the pommel! Non-destructive enhancement!"
 
@@ -2215,7 +1925,7 @@ Aria practiced the technique at a nearby chamber, spreading props and selectivel
 
 "This is incredible! I can forward most props unchanged while customizing specific ones! It's like... prop inheritance with selective overrides!"
 
-"Exactly!" Destructo beamed, wiping forge dust from his hands. "And here's a smith's secret for advanced practitioners." He demonstrated a complex pattern: extracting specific props with destructuring, then spreading the rest. 
+"Exactly!" Destructo beamed, wiping forge dust from his hands. "And here's a smith's secret for advanced practitioners." He demonstrated a complex pattern: extracting specific props with destructuring, then spreading the rest.
 
 First, destructure allProps to extract onClick and style specifically, while capturing all remaining properties in restProps using the rest operator. Then, pass the ChildComponent an enhanced onClick handler, merged styles, and spread all the restProps.
 
@@ -2224,8 +1934,6 @@ First, destructure allProps to extract onClick and style specifically, while cap
 Binary projected analysis: "Prop forwarding efficiency: 98%. Transformation precision: surgical. Code readability: significantly improved!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on spread practice with common patterns and shallow spread caveat]**
 
 "Now, practice time," Destructo said, leading Aria to a workshop station filled with common prop transformation challenges. "These scenarios come up constantly in real React development. Master them here, and you'll recognize them everywhere."
 
@@ -2268,8 +1976,6 @@ On the final day at the Prop Forge, Destructo led Aria and Binary deep undergrou
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended validation vault introduction with type error dangers and validation systems comparison]**
-
 "Welcome to the Validation Vault," Destructo said solemnly, his voice echoing in the underground chamber. The walls here were different - not scorched by forge fires, but covered in intricate runes that pulsed with soft blue light. Each rune represented a validation rule, a contract, a promise about data integrity.
 
 "This is where we ensure prop quality. Every prop that passes through here is tested, validated, and guaranteed to be exactly what it claims." He gestured to the runes, which flickered and changed as invisible data flowed through validation checks. Some runes glowed green (validation passed), others pulsed red (errors detected), still others showed amber warning states.
@@ -2294,8 +2000,6 @@ He showed an example: a component expecting an age prop defined as a required nu
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended validation implementation with PropTypes and TypeScript comparison, immutability emphasis]**
-
 After the validation demonstration, Destructo gathered several perfectly forged props from display cases, each bearing the seal of quality - a glowing checkmark indicating they'd passed all validation runes. "These represent the pinnacle of our craft," he said proudly, holding up props that radiated integrity.
 
 He set them on a demonstration table and began the sacred teaching. "Remember the sacred rules, Aria. These aren't suggestions - they're commandments that ensure prop system reliability."
@@ -2317,8 +2021,6 @@ Aria nodded thoughtfully, absorbing each rule. "So validation isn't just about c
 He grew more serious, looking directly at Aria. "Future developers - including yourself six months from now - will thank you for clear prop interfaces and good validation. It's the difference between a forge that produces masterworks and one that creates brittle failures. Well-validated props serve as living documentation. One glance at a component's PropTypes or TypeScript interface tells you everything about how to use it!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on validation practice with PropTypes, TypeScript examples, and validation strategy decisions]**
 
 "Now, forge your own validation," Destructo said, leading Aria to a practice station where incomplete components waited for proper validation.
 
@@ -2381,19 +2083,14 @@ Binary displayed a holographic forge in miniature, complete with tiny hammers st
 
 ### 📖 Lesson Opener
 
-🔴 ~~After mastering the complexities of state management, Aria found herself at the bustling Trade Quarter of React Kingdom. Here, colorful caravans lined the streets, loaded with precious cargo destined for workshops throughout the realm. The air buzzed with the energy of commerce and data exchange.~~ 
 
-🟢 **After learning prop transformation at the Forge, Aria and Binary ventured deeper into the Trade Quarter, in the Western Quarter beyond the industrial smoke of Master Destructo's workshop. Here lay the Composition District - a place where components weren't just built, but artfully assembled from smaller pieces. Master Cargo taught the advanced patterns that made React's component model truly powerful.**
-
-💡 **EDIT NOTE:** Complete lesson rewrite. Original content was redundant with LP3.1 PropForge (basic props/cargo transport). New focus: children props, prop spreading/rest patterns, and composition best practices - advanced patterns NOT covered in LP3.1.
+After learning prop transformation at the Forge, Aria and Binary ventured deeper into the Trade Quarter, in the Western Quarter beyond the industrial smoke of Master Destructo's workshop. Here lay the Composition District - a place where components weren't just built, but artfully assembled from smaller pieces. Master Cargo taught the advanced patterns that made React's component model truly powerful.
 
 ### Chapter 1: The Composition Workshop
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Composition Workshop introduction with Master Cargo's appearance and children concept visualization]**
 
 The Composition Workshop was unlike anything Aria had seen in her journey through React Kingdom. Instead of forges and hammers, she saw artisans carefully assembling components like puzzle pieces, each fitting perfectly within another. The walls displayed nested structures that glowed with soft light - boxes within boxes, each layer adding functionality without the inner layers needing to know.
 
@@ -2421,8 +2118,6 @@ Aria watched in wonder as the same Card wrapper created radically different resu
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended layout component demonstration with Modal example and separation of concerns emphasis]**
-
 After the basic demonstration, Master Cargo led Aria to a row of Layout components - structures that arranged their children in specific patterns. These were the workhorses of composition, he explained, components that provide structure without dictating content.
 
 "These are the foundation of every React application," he said, showing Aria a Modal component displayed on a glowing pedestal. The Modal shimmered, waiting for content. "Watch how it works - the same Modal, completely different uses."
@@ -2444,8 +2139,6 @@ Aria nodded, her mind racing with possibilities. "So instead of creating a CardW
 "Now you truly understand!" Master Cargo's eyes sparkled with approval. "One component, infinite possibilities. That's the composer's way. DRY - Don't Repeat Yourself - at its finest!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on composition practice with error boundaries and context providers as advanced examples]**
 
 "Now, create your own composition," Master Cargo said, leading Aria to a practice station where component pieces awaited assembly.
 
@@ -2495,8 +2188,6 @@ That afternoon, Master Cargo led Aria to an open plaza where component patterns 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Spreading Grounds introduction with prop forwarding problem visualization and rest pattern solution]**
-
 The Spreading Grounds hummed with energy as props flowed between components like streams through channels carved in the plaza floor. Master Cargo gestured to a complex setup where a Button wrapper needed to pass dozens of attributes to an underlying native button element.
 
 "Imagine," he began, his voice taking on a teaching cadence, "a component that wraps a native button to add custom styling, loading states, or analytics. But it needs to support all native button props: onClick, disabled, type, aria-label, autoFocus, form, name, value, and dozens more HTML attributes. Would you list every single one explicitly?"
@@ -2522,8 +2213,6 @@ Aria practiced the pattern, creating components that enhanced native elements wi
 "Now you're thinking in patterns!" Master Cargo said proudly. "This is how professional component libraries maintain full API compatibility while adding custom features. Material-UI, Chakra UI, Ant Design - they all use this pattern extensively!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended transformation patterns with spread order demonstrations and security enforcement examples]**
 
 After mastering basic spreading, Master Cargo showed Aria more sophisticated patterns. "Sometimes," he explained, moving to a different section of the plaza where transformation stations glowed, "you need to *transform* props as they flow through, not just forward them blindly."
 
@@ -2555,8 +2244,6 @@ Aria examined it carefully. "So users can pass className, onClick, aria-label, a
 Binary displayed a flowchart showing prop transformation chains. "Components can enhance, filter, and forward props in complex pipelines! Each wrapper adds one layer of enhancement!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on spreading practice with filtering patterns and spread caveats]**
 
 "Now, practice the dark arts," Master Cargo said with a slight smile. "Spreading is powerful, but power requires wisdom."
 
@@ -2598,16 +2285,12 @@ Prop spreading with rest patterns enables transparent wrapper components that en
 
 ### Chapter 3: The Pattern Library
 
-💡 **EDIT NOTE:** Complete rewrite of LP3.2 Chapter 3. Original focused on prop drilling (redundant with LP2.3 Context). New version teaches advanced prop patterns: default parameters, edge case handling, mixing composition patterns, and naming conventions.
-
 **Bridge:**
 On the final day, Master Cargo led Aria to a grand library filled with glowing scrolls. "You've learned children and spreading," he said. "Now see how masters combine these patterns with best practices."
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended default parameters introduction with edge case handling and children fallbacks]**
 
 The Pattern Library's walls were covered floor-to-ceiling with carefully documented component patterns, each scroll glowing with accumulated wisdom. Master Cargo pulled down a scroll labeled "Default Props & Graceful Defaults," its edges worn from frequent consultation.
 
@@ -2639,8 +2322,6 @@ Aria practiced creating components that worked whether children were provided or
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended advanced composition patterns with compound components and mixed strategies]**
-
 After mastering defaults, Master Cargo revealed advanced composition patterns combining everything Aria had learned.
 
 "Watch this," he said, showing a Card component that demonstrated professional-level composition. The Card used children for main content but also accepted optional header and footer props as named slots. It spread remaining props onto the container div for flexibility, and used conditional rendering to only show header and footer sections when provided.
@@ -2666,8 +2347,6 @@ Master Cargo's expression grew serious. "But remember the sacred rules: never mu
 Aria nodded solemnly. "Props are contracts, children are content. Both are immutable."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on pattern combination practice with prop naming conventions and API design principles]**
 
 "Well said!" Master Cargo pulled out a final scroll, this one titled "The Art of Naming and API Design." "One last gift before you leave: prop naming conventions that make your components feel professional and intuitive."
 
@@ -2731,8 +2410,6 @@ Leaving the Trade Quarter behind, Aria and Binary followed a winding path into t
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Echo Caves introduction with Echo Keeper Callback's appearance and callback concept visualization]**
-
 The entrance to the Echo Caves revealed itself as a massive archway carved into the mountainside, ancient runes glowing faintly around its edges. Strange sounds emanated from within - clicks, chimes, and whispers that seemed to defy gravity, traveling upward through the rock itself instead of echoing downward as one might expect.
 
 Inside the first cavern, Aria's eyes adjusted to see crystalline formations that pulsed with each sound that passed through them, creating cascading waves of light. The cave was alive with acoustics, every footstep creating layers of reverberating sound.
@@ -2755,8 +2432,6 @@ Aria's understanding crystallized. "So it's not breaking the one-way data flow -
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended callback mechanics demonstration with parent-child communication patterns and one-way flow preservation]**
-
 "Let me show you how this works in practice," Callback said, leading Aria to a demonstration chamber where glowing diagrams floated in the air, showing component trees with props and callbacks flowing through them.
 
 "Imagine a Button component," Callback began, gesturing to a diagram. "The parent TodoList tells the Button what text to display via props: a Button component with label prop set to 'Delete'. Props flow downward - parent to child. But when someone clicks that Button, how does the TodoList know? The Button can't reach up and modify the parent's state directly - that would violate React's principles!"
@@ -2776,8 +2451,6 @@ Binary projected a diagram showing props flowing down like a waterfall and event
 "Your companion understands the elegance," Callback noted approvingly. "Data flows down like a waterfall, but events echo up like sound in a canyon. Two different forces, two different directions, working in harmony to create React's complete data flow model. Parents control state, children report events. Clean, predictable, maintainable."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on callback practice with button clicks, form inputs, and custom event handlers]**
 
 "Now, practice creating the echoes yourself," Callback said, leading Aria to a workstation where component challenges awaited.
 
@@ -2825,8 +2498,6 @@ Deeper in the Echo Caves, the passages opened into a vast chamber where sounds s
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Echo Chamber introduction with rich callback parameters and data-carrying echoes]**
-
 "Welcome to the Echo Chamber!" Callback announced, her voice creating harmonious layers as it bounced off the chamber's perfectly acoustic walls. The space was enormous, with stalactites and stalagmites forming natural resonators that amplified and shaped every sound.
 
 Aria watched as Binary sent out a chirp that transformed into multiple tones as it traveled through the chamber, each reflection carrying different information - frequency, direction, intensity. "How does it carry so much data in a single sound?" she asked, fascinated.
@@ -2845,8 +2516,6 @@ Callback demonstrated with a glowing example showing three levels of callback so
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended event orchestration patterns with multiple children coordination and callback naming conventions]**
-
 "Magnificent!" Aria exclaimed, watching event logs fill with detailed information as she experimented with the patterns. "The child isn't just saying 'something happened' - it's sending complete reports with full context!"
 
 "Now you understand!" Callback's eyes sparkled with enthusiasm. "This is how complex applications communicate. Forms send entire data objects with all field values bundled together. Lists report which item was selected along with the item's complete data. Interactive components share their complete state changes, not just 'I changed' but 'I changed from X to Y at timestamp Z!'"
@@ -2862,8 +2531,6 @@ Binary projected examples of callback chains, showing how events could ripple up
 "But be cautious," Callback warned, her tone becoming more serious. "Too many echo layers create confusion and maintenance nightmares. If callbacks must travel through many components, each one just forwarding them up, consider other patterns like Context or state management libraries. The echo should reach its intended listener directly when possible!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on complex callback practice with event objects, multiple parameters, and callback optimization]**
 
 "Now practice orchestrating complex echoes," Callback said, presenting Aria with real-world challenges.
 
@@ -2908,8 +2575,6 @@ At the heart of the Echo Caves lay the Grand Symphony Hall, a natural amphitheat
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Symphony Hall introduction with multi-component coordination patterns and conductor metaphor]**
-
 "Welcome to your final lesson!" Callback announced, raising a baton that sparkled with captured echoes, its tip glowing with accumulated acoustic energy. "You've learned how individual components communicate through callbacks, but real applications require orchestration! Multiple components working together, coordinated through a single conductor!"
 
 Binary's eyes widened as it scanned the massive cavern, detecting complex acoustic patterns bouncing between formations - not random echoes but organized symphonies where each sound had a place and purpose in the greater composition.
@@ -2926,8 +2591,6 @@ The sound wasn't chaotic - it was structured, purposeful, beautiful. Each compon
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Symphony Pattern demonstration with component coordination examples and event delegation patterns]**
-
 Callback demonstrated a complex example in the air using glowing diagrams that animated the data flow. The TodoAppSymphony parent component held all state - the list of todos, the current filter, the search term, and the selected todo ID. It created three orchestrated callback handlers. When handleAddTodo was called, it created a new todo object with a timestamp ID, added it to the todos array, automatically selected the new todo by setting its ID, and cleared the search term. When handleToggleTodo was called, it mapped through todos to flip the done status of the matching item and selected that todo. When handleSearch was called, it updated the search term and cleared any selection. Each child component received specific props and callbacks - the SearchBar received the search term and search handler, the AddTodoForm received the add handler, the FilterButtons received the filter and its change handler, and the TodoList received filtered todos, selection state, and both toggle and select handlers. The TodoDetail component received the selected todo object. One callback from a child could trigger cascading updates across multiple sibling components, all orchestrated by the parent conductor.
 
 "Beautiful!" Aria exclaimed as the symphony visualization grew, showing how one event in the AddTodoForm triggered updates across SearchBar, TodoList, and TodoDetail components. "Each component plays its part, but they're all synchronized through the parent! The parent receives one callback and orchestrates multiple consequences!"
@@ -2943,8 +2606,6 @@ Binary projected a visualization showing events flowing through component trees,
 "It's like a living system," Aria marveled, watching the cascade of coordinated updates flow through the component tree. "Each part aware of its role, all coordinated through careful event management centered in one orchestrating parent!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on symphony practice with coordination patterns and recognizing when to scale patterns]**
 
 "You've grasped the essence!" Callback smiled warmly. "Now practice conducting your own symphony!"
 
@@ -3005,17 +2666,13 @@ Aria consulted her mental map of React Kingdom, eyes bright with anticipation. "
 
 ### 📖 Lesson Opener
 
-Following 🔴 ~~Propius's~~ 🟢 **Echo Keeper Callback's** directions, Aria and Binary made their way to the Cascade District in the Eastern Quarter, where the sound of rushing water grew louder with each step. Here, crystal-clear rivers flowed through the kingdom, carrying not water, but streams of pure data between the component settlements.
-
-💡 **EDIT NOTE:** Updated opener reference from Propius → Cargo → now correctly Echo Keeper Callback, the last master Aria spoke with.
+Following Echo Keeper Callback's directions, Aria and Binary made their way to the Cascade District in the Eastern Quarter, where the sound of rushing water grew louder with each step. Here, crystal-clear rivers flowed through the kingdom, carrying not water, but streams of pure data between the component settlements.
 
 ### Chapter 1: The River's Law
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Cascade District introduction with River Master Flux's appearance and unidirectional flow visualization]**
 
 The Cascade District was breathtaking. Data rivers cascaded down terraced waterfalls carved into the landscape, each stream glowing with the soft blue light of pure information flowing from higher to lower components. The water wasn't water at all - it was visible data, crystalline and luminous, carrying props and state through the component kingdom.
 
@@ -3037,8 +2694,6 @@ Binary projected a small waterfall hologram, analyzing the pattern. "Unidirectio
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended river law explanation with synchronization demonstration and predictability emphasis]**
-
 As they walked along the crystalline riverbank, the flowing data creating patterns of light beneath the surface, Flux explained the wisdom behind the law. "Imagine if water could flow in any direction - chaos! Rivers would collide, pools would overflow unexpectedly, and no one could predict where the water would go. Components would fight over data ownership, updates would cascade in unpredictable loops, and debugging would become impossible!"
 
 She led them to a control platform where a demonstration basin awaited. "Watch this." She touched a control crystal at the river's source - the topmost component in the visualization. The data immediately changed color, and Aria watched in fascination as the new color propagated downstream through every level, every branch, every component automatically.
@@ -3054,8 +2709,6 @@ She demonstrated the callback pattern: "See these echoes traveling upward?" Glow
 Binary projected side-by-side comparisons: two-way binding (chaotic, with data flowing in multiple directions) versus unidirectional flow (clean, orderly, traceable). "The difference is stunning! Unidirectional flow creates clear causality!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on unidirectional flow practice with read-only prop violations and proper patterns]**
 
 "Now, let me show you what happens when the law is broken," Flux said, leading Aria to a demonstration chamber where historical violations were preserved as cautionary examples.
 
@@ -3101,8 +2754,6 @@ Flux led Aria upstream to where the data rivers converged at a massive dam compl
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended dam complex introduction with Dam Master Gatekeeper's appearance and conditional rendering concepts]**
-
 "Ah, visitors!" A stocky figure emerged from the control house nestled into the dam structure, water droplets glistening in his thick beard like captured data streams. His hands were calloused from years of operating the flow gates, and his eyes held the keen awareness of someone who understood every current in the system.
 
 "I'm **Dam Master Gatekeeper**, controller of the flows," he announced in a voice that boomed like rushing water. "River Master Flux, bringing another student to learn the art of flow control?"
@@ -3129,8 +2780,6 @@ Finally, he demonstrated redirection - using conditional logic to route data dow
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended bridge patterns demonstration with data distribution and lifting state strategies]**
-
 After experimenting with the gate controls, Aria gaining hands-on experience opening and closing various data streams, Gatekeeper led them to an observation deck overlooking a network of bridges spanning the various river branches. The bridges were elegant structures, each one allowing data to flow from a high point to multiple lower destinations.
 
 "Now for the second crucial lesson - data distribution!" Gatekeeper announced, sweeping his arm across the view. "Flow control isn't just about filtering - it's about efficient distribution!"
@@ -3148,8 +2797,6 @@ Flux demonstrated with a visualization showing two component structures. The pro
 "This prevents prop drilling!" Gatekeeper added. "No need to pass data through components that don't use it. The bridge is at the right height, and streams flow directly to their destinations!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on flow control practice with filtering patterns, transformation patterns, and optimal placement strategies]**
 
 "Now, design your own flow systems," Gatekeeper said, leading Aria to a practice station where component trees awaited optimization.
 
@@ -3197,8 +2844,6 @@ On the final morning at the Cascade District, Flux led Aria to a breathtaking si
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Great Waterfall introduction with deep cascade visualization and complexity warning]**
-
 "Behold the most complex flow pattern in React Kingdom," Flux said, her voice filled with both awe and caution. "This waterfall demonstrates how data cascades through deeply nested components - beautiful, powerful, and potentially dangerous."
 
 Aria watched in fascination as data drops fell from the topmost pool down through tier after tier, each level receiving from above and passing to below. The pools glowed in sequence as data flowed through them, creating a mesmerizing display of information cascading through seven distinct levels. "It's beautiful, but it seems... complicated. Every drop has to pass through every pool to reach the bottom."
@@ -3221,8 +2866,6 @@ She showed examples of cascade problems:
 "See the danger?" Flux asked. "Beautiful cascades can become unmaintainable floods!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended cascade pattern breakdown with four specific cascade types and Context comparison]**
 
 After observing the cascade patterns, Flux grew more instructional, moving to a demonstration platform where she could illustrate the four fundamental cascade patterns that appear in React applications.
 
@@ -3259,8 +2902,6 @@ Flux then pointed to a series of elevated aqueducts in the distance that bypasse
 Aria's eyes lit up with recognition. "So when cascades get too deep, Context creates a direct channel! The intermediate components don't need to know about or forward the data!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on cascade evaluation practice with decision frameworks and refactoring strategies]**
 
 "Exactly! You already know the solution," Flux said, clearly pleased. "But let me teach you the art of *recognizing* when a beautiful cascade has become an unmaintainable waterfall. That's the real skill!"
 
@@ -3325,9 +2966,7 @@ As they walked away from the Cascade District, Aria felt the pieces clicking int
 
 ### 📖 Lesson Opener
 
-🔴 ~~The Hooks Academy stood as a modern marvel - a gleaming tower of glass and steel that seemed to defy the traditional stone architecture of React Kingdom.~~ 🟢 **The Advanced Hooks Sanctuary stood as a modern marvel - a gleaming tower of glass and steel where masters refined their hook expertise in the Eastern Quarter.** As Aria approached with Binary, holographic runes floated in the air, demonstrating various hook patterns. 🔴 ~~This was where React's most advanced magic was taught, where functional components gained powers once reserved for classes.~~ 🟢 **Having learned useState basics from Memnon at the State Sorcerers' Tower, Aria was ready to master advanced patterns that separated professionals from beginners.**
-
-💡 **EDIT NOTE:** Reduced Academy references, reframed to acknowledge prior useState learning with Memnon. Issue #3.5B-Task1.
+The Advanced Hooks Sanctuary stood as a modern marvel - a gleaming tower of glass and steel where masters refined their hook expertise in the Eastern Quarter. As Aria approached with Binary, holographic runes floated in the air, demonstrating various hook patterns. Having learned useState basics from Memnon at the State Sorcerers' Tower, Aria was ready to master advanced patterns that separated professionals from beginners.
 
 ### Chapter 1: Advanced State Incantations
 
@@ -3335,17 +2974,13 @@ As they walked away from the Cascade District, Aria felt the pieces clicking int
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Advanced Hooks Sanctuary introduction with Professor Hooksworth's appearance and lazy initialization concept]**
-
 In a circular classroom filled with hovering spell books that opened and closed themselves as students consulted them, Aria found a distinguished wizard whose robes seemed to shimmer between different states - sometimes solid, sometimes translucent, constantly transitioning as if demonstrating React's re-render cycles. His beard sparkled with tiny useState calls that blinked in and out of existence like fireflies, and his spectacles displayed real-time component renders scrolling across the lenses.
 
 "Ah, you must be Aria!" the wizard exclaimed, adjusting his spectacles so the render displays settled. "I am **Professor Hooksworth**, keeper of the Hook Laws. Word of your achievements has reached even these halls - Memnon speaks highly of your grasp of state fundamentals!"
 
 Binary chirped a greeting, projecting a small hologram recap of their previous adventures through the State Sorcerers' Tower, the Prop Forge, and the data streams.
 
-"Impressive companion!" Hooksworth noted, studying Binary's projections with interest. "And an impressive journey! Now, I understand you've learned useState basics with Memnon at the State Sorcerers. 🔴 ~~But here at the Academy, we refine those crude spells into elegant hooks.~~" 🟢 **Today, we'll take that foundation and master the advanced patterns that professionals use - techniques that transform good state management into exceptional architecture. Memnon taught you useState's core - I'll teach you its mastery!**"
-
-💡 **EDIT NOTE:** Acknowledged Memnon's useState teaching, removed "crude spells" dismissal, reframed as mastery not basics.
+"Impressive companion!" Hooksworth noted, studying Binary's projections with interest. "And an impressive journey! Now, I understand you've learned useState basics with Memnon at the State Sorcerers. " Today, we'll take that foundation and master the advanced patterns that professionals use - techniques that transform good state management into exceptional architecture. Memnon taught you useState's core - I'll teach you its mastery!"
 
 He waved his wand, and glowing runes appeared in the air showing useState code examples. "Let's begin with an advanced pattern - **Lazy Initial State**. You see, Aria, Memnon taught you how to set initial state with values or expressions. But sometimes our initial state requires expensive calculations - reading from localStorage, parsing complex data, running computations. Watch what happens with normal initialization."
 
@@ -3360,8 +2995,6 @@ Hooksworth demonstrated the difference between wasteful and efficient initializa
 "See the arrow function?" Hooksworth highlighted it with his wand. "That's the key - useState receives a function, calls it once during initialization, and never again. The expensive computation runs once, the initial state is set, and subsequent renders skip the calculation entirely!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended lazy initialization demonstration with real-world examples and performance emphasis]**
 
 "This incantation," Hooksworth explained, waving his wand to make the arrow function glow with emphasis, "ensures expensive calculations only occur during the component's birth, not with every re-render. It's the difference between a novice and a master! Let me show you where this matters in real applications."
 
@@ -3382,8 +3015,6 @@ He showed the decision tree: simple primitive values like zero, empty strings, o
 "Remember," Hooksworth emphasized, "every pattern has its place. Lazy initialization is powerful when needed, unnecessary when not. Measure, then optimize!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added functional updates introduction with race condition demonstrations and current state guarantees]**
 
 "Now, let me show you another crucial pattern - one that Memnon may have touched on but that becomes critical in real applications," Hooksworth said, his tone becoming more serious. "This is where many apprentices stumble, creating subtle bugs that haunt production applications!"
 
@@ -3417,31 +3048,23 @@ Master useState through advanced patterns that separate novices from experts. La
 
 **Reflection Questions:**
 
-- 🔴 ~~How does the Academy's modern setting reflect the evolution from classes to hooks?~~ 🟢 **How does lazy initialization improve performance compared to computing on every render?**
+- How does lazy initialization improve performance compared to computing on every render?
 - Why might Professor Hooksworth call functional updates "crucial for rapid interactions"?
 - What real-world scenarios would benefit from lazy initialization?
 
-💡 **EDIT NOTE:** Replaced Academy-focused question with technical pattern question.
-
 **Aria's Journal - Day 37**
-*🔴 ~~The Hooks Academy is incredible! Professor Hooksworth introduced me to advanced useState patterns that make my previous spells look amateur.~~ 🟢 **Professor Hooksworth took my useState knowledge from Memnon to the next level with advanced patterns I hadn't encountered!** Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! Reading from localStorage, transforming data, computing from props - all these expensive operations should use lazy init. But simple values don't need it - premature optimization! The bigger revelation: functional updates. When computing new state from old state, I MUST use the function form where setState receives a function that takes the previous state and returns the new state. This guarantees I always work with current state, preventing race conditions and lost updates. 🔴 ~~These aren't just improvements; they're essential patterns for professional React development. The Academy truly teaches mastery!~~ 🟢 **These patterns separate novice developers from professionals - Memnon gave me the foundation, Hooksworth gave me mastery! I practiced with rapid-click scenarios where direct updates lost clicks but functional updates stayed correct. This isn't theory - it's critical for production apps!***
-
-💡 **EDIT NOTE:** Acknowledged prior Memnon learning, focused on advancement not replacement, removed excessive Academy praise.
+*Professor Hooksworth took my useState knowledge from Memnon to the next level with advanced patterns I hadn't encountered! Lazy initialization with arrow functions prevents expensive calculations from running on every render - such an elegant optimization! Reading from localStorage, transforming data, computing from props - all these expensive operations should use lazy init. But simple values don't need it - premature optimization! The bigger revelation: functional updates. When computing new state from old state, I MUST use the function form where setState receives a function that takes the previous state and returns the new state. This guarantees I always work with current state, preventing race conditions and lost updates. These patterns separate novice developers from professionals - Memnon gave me the foundation, Hooksworth gave me mastery! I practiced with rapid-click scenarios where direct updates lost clicks but functional updates stayed correct. This isn't theory - it's critical for production apps!*
 
 ---
 
 ### Chapter 2: State of Complex Objects
 
 **Bridge:**
-The next day, Aria found herself in 🔴 ~~the Academy's~~ 🟢 **the** Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes.
-
-💡 **EDIT NOTE:** Removed Academy reference from bridge.
+The next day, Aria found herself in the Transmutation Lab, where complex data structures floated as three-dimensional holograms. Professor Hooksworth was already there, manipulating what looked like a crystalline object that morphed between different shapes.
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended immutability introduction with mutation problems visualization and reference change requirements]**
 
 "Ah, Aria! Perfect timing," Hooksworth greeted, his robes shifting from solid to translucent as he worked with the floating crystal. "Today we tackle a challenge that trips up even experienced mages - managing complex state structures without breaking React's rendering magic."
 
@@ -3465,8 +3088,6 @@ Binary projected a comparison showing reference equality checks comparing whethe
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended spread operator mechanics with nested object handling and array immutability patterns]**
-
 "The spread operator is your ally here," Hooksworth continued, demonstrating with glowing gestures that made the code appear in mid-air. "It creates a new object while preserving unchanged properties - the perfect balance between efficiency and immutability!"
 
 He showed the pattern in detail with multiple examples. For simple object updates, spread the user object and override just the age property. For multiple property updates, spread the user and override both age and city. For nested objects, spread at each level - spread the user, then spread the address within it, changing only the city. For deep nesting three levels down, spread the user, spread the profile within it, spread the settings within that, and finally change the theme to 'dark'. Each level of nesting required its own spread operation.
@@ -3482,8 +3103,6 @@ He showed alternatives for complex state. Instead of deeply nested objects, flat
 "See the pattern?" Hooksworth asked. "Methods that return new arrays (map, filter, concat) are your friends. Methods that mutate (push, splice, sort on original) are enemies unless you clone first!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on immutability practice with common pitfalls and debugging strategies]**
 
 "Now, practice the art of immutable updates," Hooksworth said, presenting Aria with challenges that reflected real-world scenarios.
 
@@ -3518,15 +3137,11 @@ Master complex state through immutability - the cornerstone of predictable React
 ### Chapter 3: State Architecture Mastery
 
 **Bridge:**
-On her final day with Professor Hooksworth, Aria was led to 🔴 ~~the Academy's~~ 🟢 **the** Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams, some flows clean and direct, others tangled in knots.
-
-💡 **EDIT NOTE:** Removed Academy reference from Ch3 bridge.
+On her final day with Professor Hooksworth, Aria was led to the Architecture Chamber - a vast room where component structures materialized as living blueprints. State flows were visible as glowing streams connecting different parts of the hovering diagrams, some flows clean and direct, others tangled in knots.
 
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Architecture Chamber introduction with state soup visualization and grouping principles]**
 
 "Welcome to your final useState lesson," Hooksworth announced, his robes settling into a stable pattern as he gestured at the complex diagrams floating throughout the chamber. "You've mastered individual spells - lazy initialization, functional updates, immutability. But true expertise lies in **architecting your state wisely** - organizing it so your components remain maintainable as they grow!"
 
@@ -3548,8 +3163,6 @@ He showed the synchronization bug in action with a glowing timeline. In the prob
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended derived state anti-pattern with calculation-during-render examples and synchronization bugs]**
-
 "Second principle," Hooksworth continued, vanishing the redundant state with a gesture that made the diagram suddenly clean and simple, "**Don't store derived state**. If you can calculate something from existing state, calculate it during render. Storing derived values is asking for bugs!"
 
 He demonstrated the anti-pattern with a glowing example showing three separate state values - firstName, lastName, and fullName. The fullName was stored as its own state, requiring manual synchronization. When firstName updated, the code had to remember to also update fullName by concatenating the new firstName with the existing lastName. The danger was obvious - if a developer forgot to update fullName in any of the update functions, the states would fall out of sync, creating conflicting sources of truth.
@@ -3569,8 +3182,6 @@ He showed more examples with the glowing diagrams. One showed items and filter a
 "Excellent question!" Hooksworth's eyes twinkled behind his spectacles. "That's when you apply useMemo - which Forge Master Hooke already introduced you to at the Hook Forge. You've seen how it caches expensive calculations. But don't reach for it prematurely! Most calculations are fast. Measure first, then optimize with useMemo if needed. The default is calculate-during-render!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on state architecture practice with locality principles and useReducer signaling]**
 
 "Now, let me teach you the third principle - state locality," Hooksworth said, manipulating a diagram that showed state positioned at various levels of a component tree.
 
@@ -3614,9 +3225,7 @@ As the Architecture Chamber's diagrams faded, their glowing streams dimming, Hoo
 
 "Now, I believe the Effect Sage awaits you in the Temporal Tower. Prepare yourself - useEffect is a different beast entirely!" Hooksworth's expression grew more serious. "useState manages internal state. useEffect connects you to the outside world - side effects, async operations, the chaotic realm beyond React's pure functions!"
 
-Binary chirped excitedly, already calculating optimal paths to their next lesson. Aria took one last look at the Architecture Chamber, its floating blueprints showing the elegant patterns she'd learned, before heading toward her next challenge 🔴 ~~at the Hooks Academy~~ 🟢 **- mastering useEffect with the Effect Sage in the mysterious Temporal Tower**.
-
-💡 **EDIT NOTE:** Removed Academy reference from chapter ending, redirected to next lesson.
+Binary chirped excitedly, already calculating optimal paths to their next lesson. Aria took one last look at the Architecture Chamber, its floating blueprints showing the elegant patterns she'd learned, before heading toward her next challenge - mastering useEffect with the Effect Sage in the mysterious Temporal Tower.
 
 ---
 
@@ -3631,8 +3240,6 @@ The Temporal Tower loomed before Aria in the Eastern Quarter - a spiraling struc
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Temporal Tower introduction with Effect Sage's appearance and useEffect's unique nature]**
 
 A figure materialized from the temporal flux at the tower's entrance, their form flickering between solid and translucent as if existing in multiple moments simultaneously. They were robed in fabric that shifted between states of existence - sometimes opaque, sometimes see-through, constantly transitioning like the boundary between React's pure render functions and the messy outside world. Hourglasses orbited around them like planets, sand flowing upward in some (defying gravity), frozen mid-fall in others, creating an unsettling display of temporal mastery.
 
@@ -3653,8 +3260,6 @@ The diagrams showed the separation: render functions ran in a pure timeline (sam
 The scroll morphed, the three separate methods collapsing into a single useEffect call. "One hook to rule them all - mount, update, and unmount behavior unified. But unification brings complexity - the same mechanism that fetches data also tears down subscriptions. Understanding the patterns is everything. Let me show you the fundamentals!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended lifecycle patterns demonstration with mount/update/unmount examples and cleanup emphasis]**
 
 "The magic of useEffect," the Sage continued, conjuring live code examples that executed in real-time, "lies in its dependency array - the second argument that controls when your effects run. There are three fundamental patterns, each creating a different relationship with time."
 
@@ -3679,8 +3284,6 @@ The Sage demonstrated how timers created in effects must be cancelled in cleanup
 "Precisely!" The Sage's form solidified with approval. "You understand the danger of unmanaged side effects. Cleanup is mandatory for: timers/intervals, subscriptions, event listeners, WebSocket connections, AbortControllers for fetch requests. Anything that persists beyond render needs cleanup when the component unmounts or before the effect re-runs!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on lifecycle practice with multiple effect patterns and cleanup strategies]**
 
 "Now, practice managing the lifecycle yourself," the Sage said, presenting Aria with real-world scenarios.
 
@@ -3730,8 +3333,6 @@ The next level of the Temporal Tower contained the Dependency Observatory - a va
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Dependency Observatory introduction with three fundamental patterns and contract metaphor]**
-
 "Welcome to the Dependency Observatory," the Sage announced, gesturing to the swirling orbs that filled the chamber from floor to ceiling. "Here we study the most delicate aspect of useEffect - the dependency array, which controls when effects activate across the timeline. Master this, and you master useEffect. Misunderstand it, and you create bugs that haunt production for months."
 
 Binary scanned the spheres, its display showing different activation patterns for each one - some triggered constantly, others never, some in perfect sync with specific value changes.
@@ -3753,8 +3354,6 @@ They demonstrated an infinite loop scenario. When an effect updates state but ha
 "Strategy 3 with specific dependencies is the most common and most important," the Sage explained, showing a sphere that pulsed precisely when certain values changed. "This is where you synchronize your component with external systems based on prop or state changes. When userId changes, fetch that user's data. When searchTerm changes, query the API. Dependencies make effects reactive!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended stale closure problems with exhaustive-deps rule and missing dependency bugs]**
 
 "But beware the temporal paradoxes!" the Sage warned, their form flickering with urgency as they showed Aria a sphere frozen in time, capturing old values even as new ones flowed past. "Missing dependencies create **stale closures** - values frozen in past time. Watch this common mistake:"
 
@@ -3779,8 +3378,6 @@ The Sage showed how ESLint detects when effects use values that aren't listed in
 "But sometimes," the Sage continued, "developers fight the linter instead of listening to it. Common bad practices include disabling the exhaustive-deps rule, which silences the guardian and creates bugs. Better approaches fix the dependencies by including all values the effect uses. If a value shouldn't trigger re-runs, use useRef to maintain a stable reference or redesign the effect to avoid the dependency."
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on dependency practice with function dependencies and object/array pitfalls]**
 
 "Now practice the art of dependency management," the Sage said, presenting Aria with scenarios that revealed subtle dependency bugs.
 
@@ -3836,8 +3433,6 @@ At the tower's apex, Aria found the Chamber of Asynchronous Arts - a place where
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended async chamber introduction with async function pattern and Promise constraints]**
-
 "Welcome to the most dangerous chamber in the Temporal Tower," the Sage intoned, their gestures creating ripples through time that made the very air shimmer. "Here, we handle asynchronous operations - where time becomes non-linear, promises arrive out of order, and race conditions threaten the fabric of reality itself."
 
 Binary's processors whirred anxiously as it detected temporal anomalies everywhere - futures that hadn't happened yet already influencing the present, multiple timelines competing for dominance, causality loops threatening to trap the unwary.
@@ -3858,8 +3453,6 @@ They showed alternative patterns for different scenarios. Pattern 1 used a named
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended race condition demonstration with AbortController and cancellation patterns]**
-
 The Sage's form flickered between multiple states, showing different timelines competing. "But beware the greatest temporal threat - **race conditions**! When multiple async requests overlap, they create competing timelines. The last to arrive isn't always the last requested! Watch this disaster:"
 
 They showed a search box where a user typed "react" quickly: r... re... rea... reac... react. Five requests fired, one for each keystroke. But the network was unpredictable - requests arrived out of order. The user typed 'r', then 'e', then 'a', then 'c', then 't', sending five separate requests. But they arrived in random order due to network timing - 'e', then 'r', then 'c', then 't', then finally 'a'. The final displayed results showed matches for 'a', even though the user's actual search term was 't'!
@@ -3879,8 +3472,6 @@ The proper pattern appeared in the glowing sphere. The effect created an AbortCo
 "The flag prevents updates to unmounted components or stale requests from updating state. Always check before setState in async operations!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on async practice with loading states, error handling, and race condition protection]**
 
 "Now master async operations yourself," the Sage said, presenting Aria with real-world async challenges.
 
@@ -3936,8 +3527,6 @@ The Synthesis Workshop occupied an entire floor of the Advanced Hooks Sanctuary 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Synthesis Workshop introduction with Master Artificer Compose's appearance and custom hook fundamentals]**
-
 "Welcome, Aria!" A voice called from across the workshop floor. The figure turned, revealing a woman whose apron sparkled with embedded hook patterns - tiny useState calls, useEffect chains, and custom hook compositions woven into the fabric like constellations. Her hands moved gracefully, dancing between different energy streams as she worked on multiple hook patterns simultaneously. "I am **Master Artificer Compose**, and this is where we transcend from hook users to hook creators! Professor Hooksworth and the Effect Sage taught you to wield React's tools - I'll teach you to forge your own!"
 
 Binary scanned the workshop, projecting amazement at the complex hook blueprints floating everywhere. The workshop was alive with creative energy - students at various benches crafted hooks that glowed with different colors based on their purpose: state management hooks in golden light, effect hooks in temporal blue, ref hooks in solid silver.
@@ -3956,8 +3545,6 @@ She showed how a Counter component would use it - destructuring the count value 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended custom hook basics with useToggle example and separation of logic vs state concept]**
-
 "Let me show you another fundamental pattern," Compose said, moving to a different forge where a new blueprint materialized in golden light. "The useToggle hook - one of the most useful patterns you'll ever create. Watch how we encapsulate boolean state management!"
 
 She crafted the hook with practiced movements. The useToggle function accepted an initial boolean value and used useState to manage it internally. It created three helper functions: toggle (which flipped the value using functional updates), setTrue (which explicitly set it to true), and setFalse (which explicitly set it to false). The hook returned an array with the current value and an object containing all three functions - a pattern similar to useState but with more convenient methods.
@@ -3975,8 +3562,6 @@ She demonstrated by creating two counters on screen, both using useCounter but m
 Binary projected a comparison showing the difference: shared logic (custom hook - each component gets own instance) versus shared state (Context - all components see same value). "Custom hooks: logic reuse without state coupling!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on basic custom hook practice with extraction patterns and naming conventions]**
 
 "Now, forge your own hooks," Compose said, presenting Aria with real-world repetitive patterns that begged to be extracted into custom hooks.
 
@@ -4022,8 +3607,6 @@ The next day, Compose led Aria to a more advanced section of the workshop where 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended advanced composition introduction with useLocalStorage demonstration and browser API integration]**
-
 "Yesterday you learned the basics - extracting simple patterns," Compose began, her hands dancing between different energy streams that represented various browser APIs and React hooks flowing together. "Today, we forge hooks that bridge React with the outside world. Watch as I combine useState and useEffect with browser APIs to create something far greater than the sum of its parts!"
 
 Binary projected excitement, its sensors detecting the complex energy patterns being woven together - React hooks synchronizing with localStorage, fetch APIs, DOM events, all coordinating in intricate dances.
@@ -4037,8 +3620,6 @@ Compose showed how useLocalStorage combines useState with lazy initialization to
 "Precisely!" Compose smiled, the pattern glowing with approval. "We've combined useState for the React state, lazy initialization for reading from storage on mount, and an enhanced setter that writes to both React state and localStorage. Three patterns unified into one powerful hook!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended advanced patterns with useFetch demonstration and lifecycle management complexity]**
 
 "Now for an even more complex composition," Compose said, gesturing to another forge where multiple energy streams converged. "Here we have **useFetch** - a hook that manages the entire lifecycle of data fetching: loading states, error handling, the data itself, and proper cleanup. Watch how multiple hooks orchestrate the async operation!"
 
@@ -4055,8 +3636,6 @@ The useWindowSize hook made responsive design simple by managing size state with
 "See the pattern?" Compose asked, the glowing hooks demonstrating their internal coordination. "Identify repetitive logic involving multiple hooks, extract it into a custom hook that manages the entire lifecycle. The pattern is: complex coordination → elegant abstraction!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on advanced composition practice with browser API hooks and event listener patterns]**
 
 "Now forge your own advanced hooks," Compose said, presenting Aria with real-world scenarios that required combining React hooks with browser APIs.
 
@@ -4097,8 +3676,6 @@ On the final day at the Synthesis Workshop, Compose led Aria to a magnificent li
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Grand Repository introduction with hook library benefits and organization principles]**
-
 "Welcome to the Grand Repository!" Compose announced with pride, her voice echoing through the vast library. "Every hook forged here is documented, tested, and battle-proven in production applications. This is where individual creativity becomes collective wisdom, where solved problems become reusable tools for the entire community!"
 
 Binary scanned the shelves, downloading documentation at an impressive rate, its display showing excitement at the vast collection. The hooks were organized by category: State Management (golden shelves), Side Effects (blue shelves), Browser APIs (silver shelves), UI Patterns (rainbow shelves), Performance (green shelves).
@@ -4115,8 +3692,6 @@ She showed Aria a well-documented hook with comprehensive JSDoc comments describ
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended essential hooks demonstration with testing requirements and versioning importance]**
-
 "Let me show you three hooks so essential, they appear in nearly every React application," Compose said, activating three glowing patterns that demonstrated their power.
 
 "First, **useDebounce**" - she showed a search box where typing rapidly didn't trigger API calls until the user paused. "Search optimization, resize handlers, form validation - anywhere you want to wait until activity stops before reacting. This single hook prevents millions of unnecessary API calls across the React ecosystem!"
@@ -4130,8 +3705,6 @@ But Compose's expression grew more serious. "However, these hooks are only libra
 "Tests validate behavior, document usage through examples, and prevent regressions," Compose explained. "Every hook in the repository has comprehensive tests - unit tests for logic, integration tests for React behavior, edge case tests for error conditions!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on library organization practice with documentation standards and versioning strategy]**
 
 "Now, organize hooks into a proper library," Compose said, showing Aria the structure that made hooks discoverable and maintainable.
 
@@ -4189,8 +3762,6 @@ At the apex of the Advanced Hooks Sanctuary in the Eastern Quarter stood the Int
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Integration Sanctum introduction with Pattern Weaver Synthesis's appearance and orchestration concept]**
-
 "Aria, Binary, welcome!" A voice echoed through the spherical chamber. The figure turned, revealing robes that seemed woven from pure React patterns - useState golden threads, useEffect temporal blue, useRef silver strands, all interlacing in mesmerizing designs that shifted as the wearer moved. "I am **Pattern Weaver Synthesis**, and this is where all your hook knowledge culminates into true mastery!"
 
 Binary's processors hummed with excitement, detecting the complex interplay of all the hooks they'd learned flowing together in the energy streams that pulsed through the chamber. The streams weren't isolated - they intertwined, synchronized, creating patterns far more complex than any individual hook.
@@ -4209,8 +3780,6 @@ They demonstrated the Form Symphony pattern. useFormField hooks manage individua
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended orchestration patterns with data pipeline example and separation of concerns emphasis]**
-
 "Beautiful!" Aria exclaimed, watching the hooks work together seamlessly. "Each hook has a single, clear responsibility, but together they solve the complete problem!"
 
 "Now you understand orchestration!" Synthesis beamed. "The pattern is universal: build small, focused hooks that do one thing well, then compose them with orchestrator hooks that coordinate the whole. Let me show you another pattern - the Data Pipeline."
@@ -4226,8 +3795,6 @@ Aria studied the pattern with growing appreciation. "Each hook is testable in is
 Binary projected more examples: authentication flows (useAuth orchestrating useLogin + useSession + usePermissions), shopping carts (useCart orchestrating useItems + useTotal + useCheckout), wizard forms (useWizard orchestrating useStep + useValidation + useProgress).
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on orchestration practice with state machine patterns and hook coordination strategies]**
 
 "Now, orchestrate your own systems," Synthesis said, presenting Aria with a complex UI challenge.
 
@@ -4266,8 +3833,6 @@ Pattern Weaver Synthesis led Aria deeper into the Integration Sanctum, where the
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended advanced state orchestration introduction with useReducer + Context pattern and Redux comparison]**
-
 "You've mastered individual hook orchestration," Synthesis began, gesturing to a particularly complex crystal formation that pulsed with coordinated state updates flowing through dozens of components. "Now witness how we manage state across entire applications when simple useState patterns become insufficient. This is the **Grand Symphony Pattern** - useReducer combined with Context!"
 
 Binary's processors whirred with anticipation, detecting the familiar patterns of useReducer (from Reducer's teaching) combined with Context (from Contextia's lessons) in ways it had never seen before, creating something greater than either pattern alone.
@@ -4284,8 +3849,6 @@ Synthesis demonstrated the problem first. When an application grows, multiple re
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Grand Symphony implementation with split context optimization and action creator patterns]**
-
 Synthesis wove the Grand Symphony Pattern in the air, the implementation glowing with coordinated energy. The pattern begins by defining the initial state shape and action types. A reducer function acts as the conductor's rulebook, processing actions into predictable state changes. Separate contexts optimize performance - StateContext for reading state (triggers re-renders), DispatchContext for dispatching actions (no re-renders). A provider component wraps the application, making state and dispatch available throughout the tree. Custom hooks like useAuthState and useAuthDispatch provide clean consumption APIs. Components that only dispatch actions don't re-render when state changes, while components that read state re-render appropriately. This eliminates prop drilling while maintaining performance!
 
 "See the power?" Synthesis asked, the pattern demonstrating components throughout a tree accessing state and dispatch without prop drilling. "UseReducer acts as the conductor, processing actions into state changes with perfect predictability. Context distributes this state and dispatch throughout the component tree like sheet music to orchestra sections!"
@@ -4299,8 +3862,6 @@ She showed action creators for cleaner code. Action creators encapsulate action 
 "Action creators encapsulate action structure, prevent typos, provide TypeScript types, and make refactoring easier!" Synthesis explained.
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Grand Symphony practice with scaling decisions and pattern selection guidance]**
 
 "Now orchestrate your own application state," Synthesis said, presenting Aria with scenarios requiring the Grand Symphony pattern.
 
@@ -4339,8 +3900,6 @@ The final chamber of the Integration Sanctum was different - calmer, more refine
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Performance Sanctuary introduction with Performance Trinity concept and strategic optimization philosophy]**
-
 "Welcome to the Performance Sanctuary," Synthesis said, their voice taking on a more serious, focused tone. "Here, we address the final challenge of hook mastery - **optimization**. All the patterns you've learned mean nothing if they consume too much computational power or trigger unnecessary renders that bog down your application."
 
 Binary's efficiency processors lit up immediately, analyzing the streamlined energy flows. It projected calculations showing wasted cycles versus optimized patterns - the difference was stark, with optimized flows using a fraction of the computational energy.
@@ -4361,8 +3920,6 @@ They showed the anti-pattern. Over-optimization wraps trivial calculations like 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Performance Trinity demonstration with use cases and memoization decisions]**
-
 "Let me show you when each tool shines," Synthesis said, demonstrating the Performance Trinity with real-world scenarios.
 
 "**useMemo** - for expensive calculations," Synthesis showed a component that filtered and sorted a massive dataset. Without useMemo, the component filtered items by name and sorted them on every single render, even when items, filterText, and sortBy hadn't changed - pure wasted work. With useMemo wrapping the calculation and listing items, filterText, and sortBy as dependencies, the expensive filtering and sorting only ran when those values actually changed.
@@ -4378,8 +3935,6 @@ They showed the anti-pattern. Over-optimization wraps trivial calculations like 
 "The Performance Trinity working together!" Synthesis explained, the three patterns glowing in harmony. "React.memo shields the component, useMemo stabilizes the data prop, and if options was a function, useCallback would stabilize that too. The expensive chart only renders when data or options actually change, not on every parent render!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on optimization practice with React DevTools profiling and strategic optimization decisions]**
 
 "Now, optimize strategically," Synthesis said, presenting Aria with a slow application that needed analysis and selective optimization.
 
@@ -4441,8 +3996,6 @@ Word of Aria's mastery at the Advanced Hooks Sanctuary spread quickly through Re
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Event Symphony Hall introduction with Conductor Eventus's appearance and synthetic event system explanation]**
-
 The Event Symphony Hall stood as a magnificent structure in the heart of the Western Quarter, its crystalline walls pulsing with the rhythm of countless user interactions - clicks, keypresses, mouse movements, all creating cascading patterns of light that flowed through the building's architecture like visual music. Aria and Binary arrived to find controlled chaos - events firing in complex patterns, handlers coordinating responses, but something seemed... unoptimized, scattered.
 
 **Academy graduate Aria!** A distinguished figure in a conductor's coat rushed forward from the concert stage, his baton crackling with visible event energy that sparked and danced at its tip. **Conductor Eventus** at your service! Master Formeus mentioned you might visit, and word of your hook mastery from the Advanced Hooks Sanctuary has reached even our halls. Welcome to the Symphony Hall - I'm excited to teach you about React's event system and how your hook knowledge applies here!"
@@ -4465,8 +4018,6 @@ The new code was beautifully simple - a button with onClick={handleClick}, and a
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended synthetic event details with event pooling, property access, and camelCase conventions]**
-
 Conductor Eventus watched as Aria experimented with the event patterns, her Sanctuary training helping her quickly grasp the concepts. She created click handlers, change handlers, submit handlers, all using the consistent SyntheticEvent API without browser conditionals.
 
 "I see you understand the fundamentals!" Eventus praised. "React's synthetic events are like musical notes that have been perfectly tuned for consistency. But let me show you some important details that trip up beginners."
@@ -4482,8 +4033,6 @@ He showed the naming conventions - React uses camelCase for all event handlers l
 Binary added cheerfully, projecting compatibility charts. "Event handling consistency improved! No browser-specific workarounds detected in React's system! Cross-browser compatibility: 100%!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on synthetic event practice with preventDefault/stopPropagation and event object exploration]**
 
 "Now, practice with React's event system," Eventus said, presenting Aria with common event handling scenarios.
 
@@ -4529,8 +4078,6 @@ Conductor Eventus led Aria to the grand amphitheater where the event propagation
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended event propagation introduction with capture/bubble phases and phase-based handler placement]**
-
 Aria watched the light patterns flowing through the amphitheater's visualization with recognition from her Sanctuary training. "This reminds me of the Data Rivers River Master Flux taught me about! Events flow like data, but... in two phases? I see streams descending and then ascending."
 
 "Precisely!" Eventus exclaimed, clearly pleased with the connection. "Your foundation in data flow serves you well! Events do flow in two phases - **capture** descending from root to target, then **bubble** ascending from target back to root. Most developers only know about bubbling, but understanding both phases gives you powerful control!"
@@ -4551,8 +4098,6 @@ Binary's scanners tracked the event flows, applying Sanctuary optimization knowl
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended event delegation demonstration with list example and memory/performance benefits]**
-
 "Exactly what I was hoping you'd see!" Eventus exclaimed enthusiastically. "Let me show you **event delegation** - a performance pattern that leverages event bubbling to reduce handler overhead!"
 
 He demonstrated the problem first - an inefficient approach where each todo item had its own click handler attached directly. With a thousand todos, this meant a thousand event listeners consuming memory, and a thousand arrow functions being created on every render, causing performance degradation.
@@ -4570,8 +4115,6 @@ He showed more delegation patterns - keyboard shortcuts handled through a single
 "Delegation scales beautifully!" Eventus emphasized. "From lists to keyboard shortcuts to complex UI interactions - one optimized handler can orchestrate many elements!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on delegation practice with table rows, dynamic lists, and delegation patterns]**
 
 "Now master delegation yourself," Eventus said, presenting Aria with real-world scenarios.
 
@@ -4614,8 +4157,6 @@ The finale approached. Conductor Eventus gathered all the musicians for the gran
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended optimization problems introduction with throttling and debouncing explanations]**
-
 "This is exactly what I feared," Eventus said, his baton trembling as the symphony became chaotic. "Without optimization, even the most beautiful symphony becomes an overwhelming cacophony. These rapid-fire events are drowning out the music!"
 
 Aria studied the chaotic performance with concern, recognizing patterns from the Performance Sanctuary. "This reminds me of performance issues Pattern Weaver Synthesis taught me about - unnecessary work being repeated constantly. The scroll handler is firing thousands of times, the search is hitting the API on every keystroke! Could the optimization techniques I learned help here?"
@@ -4638,8 +4179,6 @@ He demonstrated debouncing - instead of executing immediately on each keystroke,
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended useCallback integration with handler memoization and Performance Sanctuary connections]**
-
 Conductor Eventus watched with satisfaction as Aria applied Sanctuary patterns to the Event Symphony, the performance transforming from chaotic to smooth. "The stuttering is gone! The memory usage is stable! You've learned these optimization concepts from Pattern Weaver Synthesis and you're applying them brilliantly!"
 
 "It's all about strategic optimization," Aria explained, connecting the concepts. "Throttle for continuous events that fire rapidly (scroll, resize, mouse move). Debounce for discrete events where you want to wait for user to finish (typing, dragging). And combine with useCallback from the Performance Trinity to prevent handler recreation!"
@@ -4653,8 +4192,6 @@ Binary projected the results: "Event processing efficiency increased by 98% usin
 "Your Sanctuary training truly shines in event optimization!" Eventus praised. "You've taken Performance Trinity principles and applied them to the event layer beautifully!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on optimization practice with scroll handlers, resize listeners, and strategic optimization decisions]**
 
 "Now optimize events at scale," Eventus said, presenting Aria with applications suffering from event performance problems.
 
@@ -4692,13 +4229,11 @@ As the final notes of the optimized symphony faded, the entire Event Symphony Ha
 
 Conductor Eventus bowed deeply to Aria. "You've transformed our understanding of event handling by applying Advanced Hooks Sanctuary training. The patterns you've demonstrated - delegation, memoization, throttling, debouncing - will be taught to future generations. The Western Quarter will never forget how you brought Sanctuary wisdom to our symphony!"
 
-🔴 ~~"The next challenge awaits," Aria said, looking toward the distant Validation Fortress. "I hear Commander Validus needs help with defensive strategies that might benefit from Academy patterns."~~ 🟢 **"Your Sanctuary training serves you brilliantly with events," Eventus smiled warmly. "But now you must learn to capture user input itself. The Form Alchemy Lab awaits next door - Master Formeus will teach you how to transform keystrokes and clicks into meaningful application state using everything you've learned!"**
+"Your Sanctuary training serves you brilliantly with events," Eventus smiled warmly. "But now you must learn to capture user input itself. The Form Alchemy Lab awaits next door - Master Formeus will teach you how to transform keystrokes and clicks into meaningful application state using everything you've learned!"
 
-🔴 ~~Binary displayed a map route. "Validation patterns detected. Academy training applicable. Shall we proceed to the fortress?"~~ 🟢 **Aria's eyes lit up with excitement. "Form handling! That's where all these event patterns come together with useState and useRef from the Sanctuary, isn't it?"**
+Aria's eyes lit up with excitement. "Form handling! That's where all these event patterns come together with useState and useRef from the Sanctuary, isn't it?"
 
-🟢 **"Exactly!" Eventus confirmed, his baton crackling one final time. "Events flow through handlers, forms capture them into state. You're ready for the next step in your Western Quarter journey. Formeus has been eagerly awaiting someone with your Sanctuary training!"**
-
-💡 **EDIT NOTE: Fixed wrong next lesson - LP5.1 should lead to LP5.2 (FormAlchemy), not LP5.3 (ValidationGuardians). Issue #3.5C-Endings.**
+"Exactly!" Eventus confirmed, his baton crackling one final time. "Events flow through handlers, forms capture them into state. You're ready for the next step in your Western Quarter journey. Formeus has been eagerly awaiting someone with your Sanctuary training!"
 
 ---
 
@@ -4713,8 +4248,6 @@ The Western Quarter hummed with a different energy than the Eastern Quarter's Sa
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Form Alchemy Lab introduction with Master Formeus's appearance and controlled vs uncontrolled explanation]**
 
 **Welcome, young scholar!** A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron that bubbled with form state energy. The coat bore the marks of countless experiments - validation failures, submission errors, edge case discoveries - each stain a badge of wisdom earned. **Master Alchemist Formeus** at your service! I've heard of your accomplishments at the Advanced Hooks Sanctuary - Pattern Weaver Synthesis sent word of your hook orchestration mastery. Quite impressive! I'm excited to teach you how your hook knowledge applies to the practical art of form handling - transforming user keystrokes and clicks into meaningful application state!"
 
@@ -4748,8 +4281,6 @@ He showed an uncontrolled input where the DOM owns the state. A ref provides a r
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended controlled vs uncontrolled comparison with use cases and modern preferences]**
-
 Formeus approached the transmutation circle, where visualizations showed both approaches side-by-side with their characteristics glowing like chemical properties.
 
 "Controlled components," he explained, highlighting the first cauldron with its constant pulsing energy, "give you **power and predictability**. Because React always knows the current value, you can perform instant validation as the user types, checking each keystroke and setting error messages immediately. You can also enforce formatting - for example, taking raw phone number input and automatically formatting it into the pattern (555) 555-5555 before storing it in state. The onChange handler transforms the input in real-time, and the formatted value flows back to the input through the value prop. You could even enforce character limits, tracking how many characters remain as the user types.
@@ -4773,8 +4304,6 @@ He demonstrated a SimpleForm component that created refs for name and email inpu
 "Use uncontrolled only when: simple forms where you don't need instant feedback, file inputs (they're always uncontrolled), or integrating with non-React libraries that expect DOM control. 95% of modern React forms are controlled!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on controlled component practice with various input types and controlled patterns]**
 
 "Now, practice form alchemy," Formeus said, presenting Aria with various input types that needed controlling.
 
@@ -4820,8 +4349,6 @@ Formeus led Aria deeper into the laboratory, where a massive transmutation circl
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended complex form management introduction with useForm custom hook pattern and multi-input orchestration]**
-
 "This is where your hook mastery truly shines," Formeus announced, gesturing to the transmutation circle where component energies swirled. "Managing multiple form inputs is like conducting a symphony of transmutations - exactly like Pattern Weaver Synthesis taught you! Each input type has its own nature, its own requirements, but they must all work in harmony."
 
 Aria studied the floating components, her mind already connecting Sanctuary patterns. "At the Sanctuary, I learned to create custom hooks that orchestrate complex state using the Orchestra pattern. Could we apply those same principles here? Build small focused hooks for individual concerns, then orchestrate them?"
@@ -4840,8 +4367,6 @@ Formeus watched with growing excitement as the pattern assembled. "Incredible! Y
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended multi-input handling with dynamic form objects and validation coordination]**
-
 "This orchestration approach is exactly what I hoped you'd understand!" Formeus praised, his enthusiasm making the cauldrons bubble more vigorously. "You've demonstrated the Orchestra pattern from the Sanctuary applied to forms. Let me show you how to scale this to complex forms with many fields!"
 
 He showed an advanced pattern where form state was unified in a single object - one state object for all values, one for all errors, one for all touched states. Generic handlers work for any field using computed property names, checking input type to read checked for checkboxes or value for other inputs. The hook provides methods to validate individual fields or all touched fields at once, and includes a reset function to clear everything back to initial values.
@@ -4857,8 +4382,6 @@ He demonstrated validation coordination - a complex form using the unified state
 "Brilliant coordination!" Formeus praised. "Validation runs on blur (good UX), cross-field validation (confirmPassword checks password), and final validation on submit. All orchestrated through the useFormState hook!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Sanctuary pattern integration with memoized validation and effect-based reactive validation]**
 
 "The key," Formeus explained, moving to the Custom Hooks alcove, "is thinking of forms as systems, like Pattern Weaver taught you. Each piece - values, errors, touched states, validation logic, submission handling - they're all part of the same orchestrated pattern. And we can optimize using the Performance Sanctuary teachings!"
 
@@ -4900,8 +4423,6 @@ In the final chamber of the Form Alchemy Lab, Formeus stood before an elaborate 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Grand Transmutation introduction with complete form system requirements and Sanctuary pattern application]**
-
 "This is the Grand Transmutation," Formeus announced solemnly, his voice echoing in the chamber. "Where all form alchemy converges - multi-step forms, complex validation, async submission, error recovery, optimistic updates. Most alchemists take years to master this, but with your Sanctuary training in hook patterns..."
 
 Aria studied the complex setup with focused interest, recognizing Sanctuary patterns in the glowing connections. "This looks incredibly advanced! I can see patterns from my training - orchestration like Pattern Weaver taught, optimization like the Performance Sanctuary, timing like the Temporal Tower. But I'm not sure how they all fit together in one form system."
@@ -4918,8 +4439,6 @@ He began assembling the components - a wizard form hook that manages step naviga
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Grand Transmutation demonstration with validation runes visualization and all Sanctuary patterns unified]**
-
 As they worked together building the complete system, Formeus guided Aria through each architectural decision, and she supplied the Sanctuary patterns that made each piece work optimally.
 
 "Excellent! You're quickly grasping how Sanctuary patterns create production-grade form systems!" Formeus praised, watching validation runes light up as fields passed validation, inspired by the Integration Sanctum's energy flows. "Your hook training gives you a strong foundation for understanding how forms become elegant systems rather than scattered state!"
@@ -4935,8 +4454,6 @@ He showed how validation runes created satisfying user feedback - as Aria filled
 Binary projected the complete integration map showing how every Sanctuary lesson contributed to the Grand Transmutation: "Integration complete! All Sanctuary patterns unified in form system!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Grand Transmutation practice with complete form system and all patterns integrated]**
 
 "Now, refine the Grand Transmutation to its final form," Formeus said, presenting the ultimate challenge - a production-ready form system that handled every edge case.
 
@@ -4964,15 +4481,13 @@ Complete form systems require orchestrating all Sanctuary patterns into unified 
 
 As the final validation rune lit up with golden light and the portal stabilized, showing the form data successfully transmitted, Formeus placed a hand on Aria's shoulder. "You've applied Sanctuary training faster than anyone in our history. Your hook orchestration approach to form management will be taught to future generations of alchemists!"
 
-"Thank you, Master Formeus," Aria replied, her voice filled with gratitude. 🔴 ~~"But I sense there's more to learn about user interaction. What about handling complex events?"~~ 🟢 **"I've learned to capture user input with controlled components and transform it with hooks, but how do I protect it? How do I ensure users can't submit invalid or dangerous data?"**
+"Thank you, Master Formeus," Aria replied, her voice filled with gratitude. "I've learned to capture user input with controlled components and transform it with hooks, but how do I protect it? How do I ensure users can't submit invalid or dangerous data?"
 
-🔴 ~~Formeus smiled. "Ah, you're ready for Conductor Eventus at the Event Symphony Hall. He's been eagerly awaiting someone with your Academy training. The way you handled form events shows you're ready for the full symphony of browser interactions."~~ 🟢 **Formeus's eyes lit up with enthusiasm. "An excellent question! You're ready for Commander Validus at the Validation Fortress just down the street. Forms capture data, but validation protects it. The Commander will teach you to build defensive systems that catch errors before they cause problems. Your Sanctuary orchestration patterns will serve you well there!"**
+Formeus's eyes lit up with enthusiasm. "An excellent question! You're ready for Commander Validus at the Validation Fortress just down the street. Forms capture data, but validation protects it. The Commander will teach you to build defensive systems that catch errors before they cause problems. Your Sanctuary orchestration patterns will serve you well there!"
 
-🔴 ~~Binary displayed a map highlighting their next destination. "Event patterns detected in neighboring district. Shall we proceed to the Symphony Hall?"~~ 🟢 **Binary projected a fortress on the map glowing with defensive runes. "Validation patterns ahead! Defensive strategies, error handling, user feedback loops. Next logical step after form capture and alchemy!"**
+Binary projected a fortress on the map glowing with defensive runes. "Validation patterns ahead! Defensive strategies, error handling, user feedback loops. Next logical step after form capture and alchemy!"
 
-🟢 **Aria smiled with anticipation. "From creation through hooks to protection through validation - I'm ready!"**
-
-💡 **EDIT NOTE: Fixed wrong next lesson - LP5.2 should lead to LP5.3 (ValidationGuardians), not back to LP5.1 (EventSymphony). Issue #3.5C-Endings.**
+Aria smiled with anticipation. "From creation through hooks to protection through validation - I'm ready!"
 
 ---
 
@@ -4987,8 +4502,6 @@ The Validation Fortress stood imposingly at the Western Quarter's edge, its wall
 **Narrative:**
 
 **Story Group 1:**
-
-🟦 **[EXPANDED: Extended Validation Fortress introduction with Commander Validus's appearance and validation gate types]**
 
 "**Aria!**" Commander Validus's voice boomed across the training grounds, echoing off stone walls. A warrior in gleaming red armor strode forward, each piece inscribed with validation runes that glowed with protective magic. His presence radiated authority and discipline - the fortress commander who had defended React Kingdom from invalid data for decades. "Word from Master Formeus speaks of your progress with form alchemy and hook orchestration at the Sanctuary. Welcome to the Validation Fortress - I'm eager to teach you about defensive data patterns that protect what your forms capture!"
 
@@ -5008,8 +4521,6 @@ He showed the Required Gate that verifies presence - checking if a value exists 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended unified validation system with useValidation hook and coordinated defense demonstration]**
-
 Commander Validus watched as his recruits observed Aria demonstrating a unified validation system, their understanding growing. "Remarkable! You've shown them how individual gates become a cohesive defensive system when orchestrated through a central hook!"
 
 "It's the same orchestration principle I learned from Pattern Weaver Synthesis," Aria explained, creating the pattern in a demonstration.
@@ -5025,8 +4536,6 @@ Binary displayed tactical analysis showing the improvement: "Defense coordinatio
 Aria nodded with understanding. "It's the same principle I used in form alchemy with Master Formeus - small focused pieces (individual validators) orchestrated by a conductor hook (useValidation). Each validator does one thing, the hook coordinates them all. Reusable, testable, maintainable!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on validation orchestration practice with cross-field validation and custom validator chains]**
 
 "Now, build your own defensive systems," Validus commanded, presenting Aria with security challenges that required sophisticated validation.
 
@@ -5078,8 +4587,6 @@ Commander Validus led Aria deeper into the fortress, past the basic training gro
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended advanced validation introduction with async validation problems and debouncing solution]**
-
 "The real threats," Validus explained, his armor glinting in the tactical center's torchlight, "aren't simple invalid entries that basic gates catch. They're sophisticated attacks that require coordinated defenses: passwords that must match confirmations, email addresses that must be unique in databases, usernames that must pass server-side availability checks, complex business rules spanning multiple fields. Watch our elite guard's struggles."
 
 Aria observed guardians attempting to validate these complex scenarios. One checked password confirmations but the validation ran even when the password field was empty - poor user experience. Another checked email availability by hitting the server on every keystroke - causing massive server load. A third tried to validate dependent fields but created circular validation loops where checking field A triggered validation of field B, which triggered A again infinitely.
@@ -5100,8 +4607,6 @@ He showed usage with an email input that checks uniqueness on the server - the i
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended cross-field validation with dependency handling and caching patterns]**
-
 Commander Validus watched with satisfaction as Aria grasped the patterns, applying Sanctuary teachings to fortress defense. "Excellent! You're understanding how to apply Sanctuary orchestration to validation scenarios without overwhelming our servers!"
 
 "The key," Validus explained, moving to a demonstration of cross-field validation, "is combining patterns from different teachers. Debouncing from Conductor Eventus prevents server overload, caching from the Performance Sanctuary prevents redundant checks, and proper useEffect dependencies from the Effect Sage prevent circular validation loops!"
@@ -5119,8 +4624,6 @@ Binary displayed updated metrics with pride: "Validation efficiency: 94% using S
 "The key is recognizing which Sanctuary pattern solves which problem," Validus continued. "Server overload? Debouncing from Event Symphony. Expensive calculations? Memoization from Performance Sanctuary. Async operations with cleanup? Patterns from Effect Sage. Circular dependencies? Proper useEffect deps from Temporal Tower. Everything connects in validation work!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on validation timing practice with onChange/onBlur/onSubmit strategies and UX considerations]**
 
 "Now master validation timing - the art of when to show errors," Validus said, presenting scenarios that tested understanding of user experience.
 
@@ -5163,8 +4666,6 @@ The fortress's war room displayed maps of validation strategies from across Reac
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended ultimate validation system introduction with schema validation and multi-step coordination]**
-
 "This is our greatest challenge," Validus announced, his voice grave as he gestured to the war room's displays showing sophisticated attack patterns. "Multi-stage threats that evolve and adapt. Traditional scattered defenses crumble against such coordinated attacks. We need a defense system as sophisticated as the threats it faces."
 
 Aria observed the elite guards' struggles displayed on tactical screens. Binary projected analysis of the vulnerabilities: "Multiple validation strategies operating independently. No unified command structure. Defense coordination: minimal. Success rate against complex attacks: 61%."
@@ -5181,8 +4682,6 @@ Aria leaned forward eagerly, recognizing the orchestration pattern from Synthesi
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended validation engine implementation with multi-step coordination and conditional logic]**
-
 "Exactly!" Commander Validus beamed, clearly impressed. "Now let me show you the validation engine that processes this schema - it's like a conductor interpreting the score!"
 
 He demonstrated a validation engine that processes the schema - memoizing validation results so they only recompute when values or touched state change, skipping untouched fields to prevent premature errors, checking conditions to skip fields not required in current state, running sync validators in sequence and stopping at first error, handling cross-field validation by passing all form values to validators, coordinating async validation separately with different timing, and merging sync and async errors into a unified result. The engine orchestrates all validation types through systematic processing.
@@ -5198,8 +4697,6 @@ He demonstrated with a multi-step form - a MultiStepValidation component that ma
 Binary displayed final metrics showing the complete system: "Defense system efficiency: 99.8%! User success rate: 96% (users successfully complete forms)! Invalid data blocked: 100%! Server load: minimal! Sanctuary training successfully applied to validation fortress design!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on ultimate validation practice with complete defensive system and all patterns integrated]**
 
 "Now, architect the ultimate validation defense," Validus commanded, presenting Aria with the war room's grand challenge - a complex multi-step registration form with every validation challenge combined.
 
@@ -5249,8 +4746,6 @@ At the heart of the Western Quarter stood the Submission Portal Gateway, a magni
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Portal Gateway introduction with Portal Keeper Sage's appearance and preventDefault fundamentals]**
-
 **Aria!** Sage's voice echoed with warmth through the portal chamber. **Portal Keeper Sage** at your service! I've heard of your progress across the Western Quarter - Conductor Eventus speaks of your event optimization mastery, Master Formeus praises your form alchemy skills, and Commander Validus commends your defensive validation architecture. Welcome to the Portal Gateway - here I'll teach you the final piece of the Forms & Events puzzle: submission!
 
 Binary's sensors detected massive energy fluctuations pulsing through the swirling portal. "Portal instability detected! Multiple failed submissions logged. Synchronization errors causing data loss. Page reload events corrupting application state!"
@@ -5269,8 +4764,6 @@ He showed the difference - without preventDefault, form submission triggers the 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended submission state management with loading/error/success states and lifecycle tracking]**
-
 Sage watched as Aria effortlessly controlled the portal in a practice submission. "Incredible! You've grasped immediately that the secret isn't in complex magic, but in understanding and preventing the browser's default behavior to maintain React's control!"
 
 "Exactly," Aria confirmed, her Event Symphony training making this intuitive. "Every form submission starts with e.preventDefault() - Conductor Eventus taught me this when preventing default link navigation and other browser actions. This simple incantation gives us complete control over the portal, allowing us to validate before submitting, transform data as needed, handle errors gracefully, show loading states, and provide success feedback - all while keeping React state intact!"
@@ -5284,8 +4777,6 @@ He demonstrated a submission hook that manages the complete lifecycle - tracking
 "See the state management?" Sage asked. "The submission has a clear lifecycle: idle → submitting → success/error. Users see loading states during submission, success messages when complete, error messages if something fails. All state preserved throughout!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on submission practice with validation integration and user feedback patterns]**
 
 "Now practice portal control," Sage said, presenting Aria with submission challenges.
 
@@ -5331,8 +4822,6 @@ Sage guided Aria deeper into the portal chamber, where advanced transmission arr
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended advanced submission introduction with error recovery, retry logic, and optimistic updates]**
-
 Aria examined the complex portal mechanisms, seeing patterns from her journey everywhere. "I can see patterns I've learned - async operations from the Effect Sage's Temporal Tower, state management for tracking submission phases, error boundaries for recovery from the Testing Tower patterns. But I'm not sure how they all work together for reliable submission that handles failures gracefully."
 
 "Excellent observations!" Sage praised, clearly pleased with her systematic thinking. "Your Sanctuary training helps you recognize the underlying patterns immediately! Our current system frustrates users with long waits, unclear feedback, and no recovery from failures. Failed transmissions often leave them stranded with lost data and no guidance!"
@@ -5353,8 +4842,6 @@ Next, he showed **optimistic UI** - a hook that applies updates immediately befo
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended cancellation patterns with AbortController and user control emphasis]**
-
 Sage watched with satisfaction as Aria grasped the advanced patterns, the portal stabilizing under sophisticated control. "Excellent! You're understanding how these patterns work together to create reliable, user-friendly submissions!"
 
 "Every pattern serves the user," Sage explained, his tone emphasizing this key principle. "Retry logic ensures reliability without user intervention - temporary errors self-correct. Optimistic updates make the UI feel instant - users see results immediately. But there's one more critical pattern: **user cancellation** - giving users control over their destiny!"
@@ -5370,8 +4857,6 @@ Usage in a LongUploadForm shows the pattern - the form calls submission.submit o
 Binary's displays lit up with improved metrics: "Retry success rate: 89%! User abandonment during submission: down to 12%! Perceived performance: 3x faster with optimistic updates! User control: provided through cancellation!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on advanced submission practice with complete lifecycle management and all patterns integrated]**
 
 "Now architect complete submission systems," Sage said, presenting Aria with real-world submission challenges that required all advanced patterns.
 
@@ -5406,8 +4891,6 @@ The Grand Synthesis Chamber pulsed with the combined energy of every form and ev
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Grand Synthesis introduction with Sage guiding Aria through unified form system demonstration]**
-
 Aria stepped into the chamber, sensing something different about this lesson. The diagrams floating around Sage didn't show isolated patterns — they showed flows connecting each one to the next.
 
 "This," Sage said, pointing to the layered visualization, "is what your journey through the Western Quarter has been building toward. Form Alchemy taught you state management. Event Symphony showed you interaction optimization. Validation Guardians gave you defensive protection. And here, we've handled reliable transmission. You've learned each one individually — now you see how they were always meant to work together."
@@ -5424,8 +4907,6 @@ Sage built up the visualization layer by layer. First came form state — useSta
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Grand Synthesis demonstration with complete integration and pattern coordination]**
-
 Sage guided Aria through the complete integration, each pattern flowing seamlessly into the next.
 
 Form state management used controlled components and unified form state across all fields — username, email, password, confirmPassword, and acceptTerms. Event handling optimized interaction with debouncing for email uniqueness checks and memoized change handlers. Validation defended the data through schema validation with required checks, length constraints, email format, cross-field password confirmation, and async email uniqueness checking that debounced server requests. Portal Submission handled reliable transmission with preventDefault, validation integration ensuring all fields passed before submitting, retry logic with maximum attempts, optimistic updates showing success immediately, and cancellation support.
@@ -5441,8 +4922,6 @@ Sage smiled at that. "That's exactly what it is. And you've now learned every wo
 Binary's analysis appeared: "System efficiency: 99.7%! All patterns unified and coordinated. Zero conflicts detected. User success rate: 97%! Aria has achieved true Forms & Events mastery!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Grand Synthesis practice with complete form system and future scaling guidance]**
 
 "Now, architect your own Grand Synthesis," Sage said, presenting Aria with one final challenge — design a production-grade form system from scratch that incorporated all the patterns she'd learned.
 
@@ -5510,8 +4989,6 @@ The Central Citadel rose before Aria, its crystalline spires reaching toward the
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Central Citadel introduction with Captain Marina's appearance and routing as state management concept]**
-
 **Welcome, young navigator!** Marina's voice carried warmth and excitement as Aria and Binary entered the Navigation Command Center. The room was filled with floating holographic maps showing routes connecting all quarters of React Kingdom, like a living nervous system pulsing with navigation energy. **Captain Marina** stepped forward, her presence radiating both authority and enthusiasm. "I've heard wonderful things about your journey through the React Kingdom - Portal Keeper Sage sent word of your mastery of Forms & Events, and your teachers from the Western Quarter speak highly of your orchestration skills. I'm excited to teach you about routing and navigation - the patterns that unite all your learning into complete applications!"
 
 Aria looked around in wonder, seeing maps that showed not just geographic connections but state flows, component hierarchies, and data patterns. Binary hovered excitedly beside her, scanning the navigation systems. "Captain Marina, your navigation systems are legendary throughout the kingdom! The way you've mapped routes connecting all quarters... it's beautiful! I'm eager to learn from you!"
@@ -5523,8 +5000,6 @@ She activated the central hologram, and Aria's entire journey lit up - the Compo
 Binary projected Aria's learning progress with pride: "Foundation knowledge confirmed! Components: ✓ (LP1), State Management: ✓ (LP2), Props & Data Flow: ✓ (LP3), Hooks Training: ✓ (LP4), Forms & Events: ✓ (LP5). Complete React foundation established! Ready for navigation training that unites everything!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended routing as components demonstration with React Router basics and route rendering concept]**
 
 Marina activated the central hologram showing code patterns. "Let me show you something fascinating - how navigation systems integrate everything you've learned. I think you'll find the patterns quite familiar!"
 
@@ -5539,8 +5014,6 @@ She showed more patterns Aria recognized, explaining how routes can include dyna
 "See the patterns?" Marina asked. "Route parameters are like props passed through the URL. Nested routes use component composition - parent layouts wrap children. Index routes provide defaults. Everything you know about components applies to routing!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on routing practice with navigation hooks and location state access]**
 
 "Now practice with React Router's hooks," Marina said, showing Aria how to access navigation state within components.
 
@@ -5584,8 +5057,6 @@ The Navigation Command Center transformed into an advanced learning space, holog
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended dynamic routing introduction with route parameters, nested routes, and layout patterns]**
-
 "Traditional static routing has limitations," Marina explained, manipulating the hologram to show simple versus dynamic patterns. "Static routes work for simple cases - /about, /contact, fixed destinations. But modern applications need intelligence and flexibility. Let me show you advanced patterns that make routing truly powerful!"
 
 She demonstrated dynamic route parameters, showing how routes could include variable segments like userId, postId, or combinations like category and productId, making routes reusable for many different resources. She explained how components access these parameters through useParams and can react to parameter changes using useEffect to fetch new data when the route parameter updates, creating reactive data loading triggered by navigation.
@@ -5603,8 +5074,6 @@ Aria's eyes lit up. "And Outlet is like props.children but for routes! The paren
 "Precisely!" Marina beamed.
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended URL state management with query parameters, location state, and state synchronization patterns]**
 
 "Now watch advanced state management through URLs," Marina demonstrated, her fingers dancing across the holographic interface. "When users navigate, we don't just change the URL - we intelligently preserve and restore their context through multiple state mechanisms!"
 
@@ -5627,8 +5096,6 @@ She demonstrated how forms could track unsaved changes and prevent navigation wh
 "No more losing form data when users accidentally click away!" Marina declared triumphantly.
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on URL state practice with complete navigation state management and browser history integration]**
 
 "Now master URL state management," Marina said, presenting Aria with practical challenges.
 
@@ -5665,8 +5132,6 @@ Marina led Aria to the advanced Navigation Laboratory, a space where holographic
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended navigation integration with route guards, protected routes, and authentication patterns]**
-
 "Now for the advanced concepts that truly demonstrate routing mastery," Marina explained, activating a complex holographic display showing authentication flows, route protection, and intelligent redirects. "What you've learned about components, state, hooks, forms, and validation - it all comes together in sophisticated navigation patterns that create truly intelligent, secure React applications!"
 
 Aria watched in fascination as Binary projected her complete learning progress. "This is incredible! Navigation really does tie everything together - state management for auth, validation for route guards, effects for data loading, forms for login, context for sharing auth state. How do we orchestrate all of this into secure navigation?"
@@ -5678,8 +5143,6 @@ She demonstrated route protection patterns, showing how to create a Context that
 "See the pattern synthesis?" Marina asked. "Context from Contextia shares auth state, useEffect from the Effect Sage checks authentication on mount, conditional rendering protects routes, Navigate component redirects unauthorized users, and location state preserves their intended destination for post-login redirect!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended route loaders/actions with data fetching integration and React Router 6.4+ patterns]**
 
 "Let me show you what I mean with even more advanced patterns," Marina said, her hands moving confidently across the holographic interface showing React Router 6.4+ features. "Modern React Router enables data loading and mutations directly in route definitions - true routing orchestration!"
 
@@ -5694,8 +5157,6 @@ She demonstrated layout routes with loaders that fetch data shared across all ch
 "Complete data orchestration!" Marina explained. "Parent loaders provide shared data, child loaders add specific data, useOutletContext shares from parent to children, all coordinating through routing!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on complete navigation architecture with all patterns integrated and production-grade routing]**
 
 "Now architect a complete navigation system," Marina said, presenting Aria with the ultimate challenge - design production-grade routing that integrated all React patterns.
 
@@ -5747,8 +5208,6 @@ Binary projected Aria's complete journey map, every quarter lit up, every teache
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Waypoint Sanctum introduction with route metadata/handles concept and dynamic breadcrumb generation]**
-
 "Welcome to advanced waypoint training," Solara began, her voice resonating through the crystal chamber as floating navigation orbs pulsed with information. "Yesterday you learned routing fundamentals - today, I'll teach you how waypoints become more than destinations. They become intelligent navigation nodes that carry metadata, generate breadcrumbs automatically, and coordinate with your application's information architecture!"
 
 Solara activated a complex navigation matrix showing routes overlaid with metadata layers. "In your journey through every quarter, you've learned that React patterns coordinate to create systems. Routes are no different - they breathe with metadata, pulse with dynamic information, communicate through handles, and transform user experience through intelligent waypoint design!"
@@ -5762,8 +5221,6 @@ She demonstrated route metadata, showing how to attach handle objects to route d
 Binary chirped excitedly, projecting analysis: "Route metadata system detected! Self-describing waypoints enable automatic breadcrumb generation, dynamic page titles, icon associations - complete navigation intelligence!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended breadcrumb implementation with useMatches hook and automatic generation from route hierarchy]**
 
 "Now watch how we generate breadcrumbs automatically from this metadata!" Solara demonstrated, her hands weaving through holographic code.
 
@@ -5780,8 +5237,6 @@ She showed how a custom hook could use useMatches to find the deepest route with
 "Automatic page title updates!" Solara explained. "Navigating to /users/123 sets title to 'John Doe - Profile | MyApp'. SEO-friendly, user-friendly, zero manual updates!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on metadata practice with complete navigation UI generation from route configuration]**
 
 "Now architect your own metadata system," Solara said, presenting Aria with challenges that required intelligent waypoint metadata.
 
@@ -5826,8 +5281,6 @@ Solara guided Aria deeper into the Waypoint Sanctum's control center, where floa
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended prefetching introduction with link hover prefetching and React Router's built-in prefetch capability]**
-
 "Navigation performance isn't just about code splitting and lazy loading," Solara explained, manipulating holographic pathways that lit up before being selected. "True performance comes from **predictive loading** - fetching data for routes users are likely to visit before they actually navigate, making transitions feel instant!"
 
 She demonstrated React Router's prefetch capabilities, showing how Link components could include a prefetch intent attribute that triggers route loader execution when users hover or focus on the link, loading data before the click actually happens. She explained how this makes navigation feel instant because by the time users click, the data is already cached and ready.
@@ -5841,8 +5294,6 @@ She showed more prefetch strategies, including viewport visibility detection usi
 "See the strategies?" Solara asked. "Hover intent (prefetch on hover), viewport visibility (prefetch when scrolling into view), predictive next steps (prefetch likely destinations). Each makes navigation feel instant by loading before clicks!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended prefetch orchestration with cache management and stale-while-revalidate patterns]**
 
 "But prefetching needs intelligence," Solara continued, showing more sophisticated patterns. "We don't want to waste bandwidth prefetching everything - only likely destinations. And we need cache management so data doesn't go stale!"
 
@@ -5859,8 +5310,6 @@ She demonstrated analytics-driven prefetching that predicted likely next routes 
 "Predictive prefetch based on user behavior patterns!" Solara explained. "Analyze which routes users visit after current page, prefetch likely destinations. On product pages, prefetch cart. From cart, prefetch checkout. Make the most common user flows feel instant!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on prefetch practice with complete predictive loading strategies and performance optimization]**
 
 "Now master predictive loading," Solara said, presenting Aria with performance challenges.
 
@@ -5901,8 +5350,6 @@ Solara led Aria to the Waypoint Observatory's highest level, where the most poli
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended scroll restoration introduction with browser scroll behavior and React Router's automatic scroll management]**
-
 "Professional navigation isn't just about routing correctness," Solara explained, showing animations of jarring scrolls versus smooth, expected behavior. "It's about meeting user expectations for scroll position. When users click 'Back', they expect to return to where they were - not jump to the top of the page! When users click a link, they expect to start at the top of the new page - not maintain scroll position from the previous page!"
 
 She demonstrated React Router's scroll restoration, explaining how the router could be configured to automatically handle scroll behavior, scrolling to the top when navigating forward, restoring previous scroll position when navigating back, and scrolling to specific elements when using hash navigation. She showed how to implement custom scroll control by watching location changes and manually scrolling to the top or restoring saved scroll positions passed through location state, allowing components to save their current scroll position before navigating away.
@@ -5917,8 +5364,6 @@ She demonstrated using Framer Motion with AnimatePresence to create smooth anima
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended navigation state persistence with scroll memory across sessions and focus management for accessibility]**
-
 "But scroll restoration is just the beginning," Solara continued, demonstrating advanced patterns. "We also need to handle complex scenarios - scroll position in nested routes, restoring scroll in list-detail patterns, managing focus for accessibility!"
 
 She showed advanced scroll management, demonstrating how to create a custom hook that maintained a map of scroll positions keyed by route or component identifier, saving scroll position in a cleanup function when components unmount, and restoring those positions when components remount. She also showed how to handle nested scroll containers within dashboard layouts, scrolling them to the top when routes change while keeping them independent from the main page scroll.
@@ -5932,8 +5377,6 @@ Aria recognized the patterns. "This is useRef from Professor Hooksworth - persis
 "Focus moves to main content on navigation!" Solara explained. "Screen reader users hear the new page immediately, skip-link works, keyboard navigation is logical. Accessibility through thoughtful focus management!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on navigation polish practice with complete UX refinement through scroll, transitions, and loading states]**
 
 "Now perfect the navigation experience," Solara said, presenting Aria with the ultimate challenge - create production-grade navigation UX.
 
@@ -5991,8 +5434,6 @@ The Navigation Corps training grounds were unlike any chamber Aria had visited i
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended protected route introduction with authentication checks and redirect patterns]**
-
 "Welcome to Guardian Gates training," Aldric announced, his voice carrying both authority and warmth as they entered the training grounds. Ancient guardian statues surrounded them, each carved with different security patterns. "Today, I'll teach you how to protect routes using authentication and authorization - but not just simple checks. You'll learn to create intelligent guardian systems that preserve user context, remember intentions, and create seamless security that enhances rather than hinders user experience!"
 
 Aldric activated a complex security diagram showing authentication flows. "Protected routes aren't just about checking if someone's logged in," he explained, gesturing to interconnected patterns. "They're about integrating authentication with state management (your Eastern Sanctuary training!), form validation (Western Quarter patterns!), and intelligent user flows that remember where users wanted to go and return them there after authentication!"
@@ -6009,8 +5450,6 @@ Binary chirped excitedly, projecting analysis: "Protected route pattern detected
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended authentication context with useAuth hook and login flow integration]**
-
 "Now let's build the authentication system that powers these guards," Aldric demonstrated, showing how Context provides auth state globally.
 
 She demonstrated how to build an authentication system using Context, creating an AuthContext that provides authentication state globally throughout the application. The AuthProvider component manages user state and loading state, checking authentication status when it mounts using useEffect, and providing login and logout functions that update the user state. The provider wraps the entire application, making authentication state available to all components through a custom useAuth hook that safely accesses the context and throws an error if used outside the provider.
@@ -6026,8 +5465,6 @@ She demonstrated how a Login component retrieves the intended destination from l
 "Seamless user flow!" Aldric exclaimed. "User tries to visit /dashboard, gets redirected to /login with from state, logs in successfully, and navigate sends them to their intended destination (/dashboard). They never lose their place!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on protected route practice with role-based access and public/private route configurations]**
 
 "Now practice building complete route protection," Aldric said, presenting Aria with authentication challenges.
 
@@ -6072,8 +5509,6 @@ Aldric led Aria deeper into the Guardian Archives within the training grounds, w
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended session management with token persistence, refresh tokens, and automatic session restoration]**
-
 "Authentication isn't just about checking credentials once," Aldric began, activating a memory crystal that pulsed with golden light showing token flows. "It's about maintaining sessions across page reloads, refreshing expired tokens automatically, and preserving the entire user journey even when things go wrong. Let me show you advanced patterns that integrate with everything you've learned!"
 
 She demonstrated persistent session management, showing how to restore authentication sessions across page reloads by checking localStorage for saved tokens when the AuthProvider mounts, verifying those tokens are still valid, and removing invalid tokens while marking loading complete. He showed how login persisted tokens to localStorage for session restoration, and how automatic token refresh could be implemented using setInterval to refresh tokens before they expire, preventing mid-session logouts while gracefully handling refresh failures by logging users out.
@@ -6088,8 +5523,6 @@ She showed OAuth integration, demonstrating how to handle OAuth callback flows b
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended form state preservation across authentication with session storage and navigation state]**
-
 "But what about preserving user work when authentication expires mid-session?" Aldric continued, showing a scenario many developers miss. "Users fill out a long form, session expires, they have to login... and lose all their work! Watch how we prevent this tragedy:"
 
 She demonstrated how forms could preserve their data across authentication interruptions by storing form state in sessionStorage, restoring it when the component mounts, and automatically saving changes as users type. When users try to submit without being authenticated, the form saves its current state and redirects to login with context about where they came from, ensuring they can return to complete their work after authentication. He also showed a reusable hook pattern that encapsulated this authentication-aware form behavior, checking authentication before submission and handling authentication errors gracefully by redirecting to login while preserving the user's intended destination.
@@ -6099,8 +5532,6 @@ Aria watched with fascination. "This is exactly what Portal Keeper Sage taught a
 "Perfect connection!" Aldric approved. "And notice the pattern - check authentication before submit, save form state, redirect with context about why (message property), and after login, form data is still there!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on advanced auth practice with complete session management, multi-factor auth, and remember-me functionality]**
 
 "Now master advanced authentication flows," Aldric said, presenting Aria with complex authentication challenges.
 
@@ -6137,8 +5568,6 @@ Aldric led Aria to the Grand Hall of Authority for the final lesson in route pro
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended role-based authorization with permission systems and hierarchical roles]**
-
 "Welcome to the advanced guardian training," Aldric began, his voice resonating through the vast hall. Holographic matrices showed intricate permission flows. "Today, I'll teach you how authentication (who are you?) and authorization (what can you do?) can become truly intelligent when combined with all React patterns you've learned - not just simple role checks, but contextual authorization that considers ownership, time, application state, and user history!"
 
 Aldric activated a complex authorization matrix showing role hierarchies. "Let me show you how everything connects. Routes are components (Northern Quarter!), permissions are state (Eastern Sanctuary!), authority flows through Context (Contextia!), validation guards access (Western Quarter!). Watch as we unite them all into intelligent authorization systems!"
@@ -6157,8 +5586,6 @@ Binary displayed authorization patterns: "Role-based: roles grant permissions. P
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended contextual authorization with ownership, time-based access, and application state awareness]**
-
 "But permissions alone aren't enough for truly intelligent authorization," Aldric continued, showing more sophisticated patterns. "Real applications need contextual checks - ownership ('is this yours?'), time-based access ('trial expired?'), application state ('workspace active?'), resource state ('content published?'). Watch:"
 
 She demonstrated a contextual authorization hook that combined multiple authorization factors. The hook included ownership checking to verify if users own the resources they're trying to access, contextual permission checking that applied different rules for different actions like allowing edits for owners or requiring admin role for deletions, and time-based access checks that validated subscription expiration dates. He showed how components could use this hook to make complex authorization decisions that considered base permissions, resource ownership, resource state, and temporal factors.
@@ -6170,8 +5597,6 @@ Aria studied the patterns with growing understanding, connecting to all her trai
 "Permission caching!" Aldric explained. "Avoid redundant checks, clear cache on user change. Performance optimization from the Sanctuary!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on authorization practice with complete permission systems and role hierarchies]**
 
 "Now architect a complete authorization system," Aldric said, presenting Aria with the ultimate challenge - design production-grade authorization.
 
@@ -6227,8 +5652,6 @@ The Portal Passages chamber was the strangest space in the entire Central Citade
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended portal introduction with React's createPortal and route-driven modal patterns]**
-
 "Today, you'll learn something special that unites navigation with DOM rendering magic," Lyss announced, activating holographic portals that floated around the chamber. Each portal showed a different modal, tooltip, or overlay - all rendered outside their parent hierarchies yet maintaining perfect React coordination. "I'll teach you how to create portal-based navigation that escapes DOM constraints, maintains routing state, handles forms across boundaries, and provides seamless transitions - all while preserving React's declarative model and accessibility!"
 
 Lyss activated a demonstration showing portals in action. "Portal Passages combine every concept in our kingdom," she explained, gesturing to interconnected patterns. "Components provide structure for modals, state manages portal visibility, effects handle focus management and accessibility, forms can span across portal boundaries, and navigation coordinates everything through URLs. Watch how they unite!"
@@ -6242,8 +5665,6 @@ Aria watched with fascination as portals appeared. "This is incredible! The moda
 Binary chirped excitedly, projecting analysis: "Portal pattern detected! Logical position: React component tree. Physical position: different DOM location (document.body). React powers preserved: state, events, context all flow normally!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended route-driven modals with URL integration and shareable modal states]**
 
 "But portals become truly powerful when integrated with routing," Lyss continued, demonstrating route-based modals. "Watch how we can make modals part of the URL - shareable, bookmarkable, browser-back works!"
 
@@ -6260,8 +5681,6 @@ She demonstrated creating an AccessibleModal that implemented comprehensive focu
 "Complete accessibility!" Lyss explained. "Focus moves into modal on open, focus trap prevents Tab escaping modal, Escape key closes, focus returns to trigger on close, ARIA attributes for screen readers. Professional portal patterns!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on portal practice with complete route-driven modal systems and form integration]**
 
 "Now build complete route-driven modals," Lyss said, presenting Aria with portal challenges.
 
@@ -6306,8 +5725,6 @@ Lyss guided Aria deeper into the Portal Passages chamber where multiple portals 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended portal stacking with z-index management and nested modal coordination]**
-
 "Portal transitions aren't just about visual effects," Lyss explained, gesturing to portals that smoothly faded and slid into view. "They're about maintaining user context and creating meaningful connections between states. And when multiple portals exist simultaneously - modal opening from modal opening from modal - we need intelligent z-index management and focus coordination!"
 
 She demonstrated portal stacking, showing how to create a PortalStackProvider that manages a stack of open portal IDs, providing functions to push portals onto the stack when they open and pop them off when they close. The provider calculates appropriate z-index values based on each portal's position in the stack, ensuring nested portals appear above their parents with automatically coordinated layering. She showed how StackedModal components register themselves with the stack when mounting and automatically unregister on unmount, receiving their calculated z-index for proper visual stacking even when modals open from within other modals.
@@ -6322,8 +5739,6 @@ She demonstrated adding animations to portals using Framer Motion's AnimatePrese
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended focus management for nested portals and coordinated keyboard handling]**
-
 "But with nested portals, focus management becomes complex," Lyss continued, showing sophisticated patterns. "Each modal needs focus trap, but only the topmost should handle Escape key. Watch how we coordinate!"
 
 She demonstrated a FocusCoordinatedModal that determined if it was the topmost modal in the stack, implemented focus traps that moved focus to the first focusable element when opening, and only handled Escape key events if it was the topmost modal using stopPropagation to prevent parent modals from also closing. This coordinated approach ensured each modal maintained its own focus trap while only the topmost responded to Escape key presses, creating proper keyboard navigation for nested modal scenarios.
@@ -6337,8 +5752,6 @@ She demonstrated lazy portal rendering where modals don't mount their content un
 "Lazy render optimization!" Lyss explained. "Don't mount portal content until needed, delay unmount for exit animations. Performance optimization from the Sanctuary!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on transition practice with complete portal orchestration and performance optimization]**
 
 "Now orchestrate complete portal systems," Lyss said, presenting Aria with complex portal challenges.
 
@@ -6375,8 +5788,6 @@ Lyss led Aria to the final demonstration chamber where the most advanced portal 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended multi-step wizards with route-based steps and progress preservation]**
-
 "You've learned individual techniques," Lyss addressed Aria warmly. "Now I'll show you how they **orchestrate together** into sophisticated systems. Advanced patterns like **multi-step wizards**, **split views**, and **contextual portals** aren't just navigation tricks - they're the culmination of everything React offers united through portals!"
 
 She demonstrated a complete wizard system, showing how a checkout wizard could read the current step from URL query parameters, persist form data in sessionStorage that survives page refreshes, and navigate between steps by updating the URL. The wizard rendered through a portal with a progress indicator showing the current position, and used AnimatePresence to create smooth slide animations between steps, with each step component receiving the shared wizard data and callbacks to navigate forward or backward through the flow.
@@ -6393,8 +5804,6 @@ She demonstrated split view portals that render two independent content panes si
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended contextual portals with intelligent positioning and accessibility integration]**
-
 "But the most sophisticated portals are contextual - they position intelligently relative to triggers," Lyss continued, demonstrating tooltip and popover patterns.
 
 She demonstrated contextual portals that calculate their position dynamically based on the trigger element's location. The component uses getBoundingClientRect to measure the trigger's position and dimensions, then calculates appropriate placement coordinates based on the desired positioning (bottom, top, left, or right), accounting for scroll position and centering the portal relative to its trigger. The portal renders with absolute positioning using the calculated coordinates, creating tooltips and popovers that appear exactly where expected relative to the trigger element.
@@ -6408,8 +5817,6 @@ She demonstrated smart contextual portals that detect viewport boundaries and au
 "Collision detection!" Lyss explained. "Check if portal fits in viewport, flip to opposite side if needed (bottom → top, right → left). Intelligent adaptation to screen constraints!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on complete portal integration with all patterns unified]**
 
 "Now create the ultimate portal system," Lyss said, presenting Aria with the culminating challenge - design a complete application with wizards, modals, drawers, tooltips, and notifications all coordinated.
 
@@ -6471,8 +5878,6 @@ Aria's navigation mastery was complete, but a new challenge beckoned from the No
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended memory leak introduction with event listener leaks and practical examples]**
-
 Aria arrived at the Memory Monastery, an ancient structure floating in the clouds above the React Kingdom. From this height, she could see applications below - some running smoothly, others struggling, slowing to a crawl. **Brother Memor**, the monastery's eldest monk, greeted her at the entrance with grave concern etched on his weathered face. "The Memory Plague has returned, Aria. Applications are holding onto memories they should release, creating **memory leaks** that grow silently until nothing can function. Users complain of slowness, tabs crash, frustration mounts - all because components fail to clean up after themselves."
 
 He led her to the Observatory, where ethereal representations of memory usage floated like ghosts, growing larger with each passing moment. "Before we can heal the plague, you must understand its three primary forms. Each is deadly in its own way, yet all share a common cure - discipline and cleanup!"
@@ -6489,8 +5894,6 @@ Binary chirped analysis: "Event listener leak detected! Pattern: add listener wi
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended detached DOM nodes explanation with component unmounting and DOM references]**
-
 "The second form is more insidious," Brother Memor continued, showing ghostly DOM nodes floating disconnected in memory. "**Detached DOM Nodes** - removed from the visible DOM tree but still held in memory by lingering references!"
 
 He demonstrated a BadModal that caches DOM node references in a global array without cleanup, causing detached nodes to remain in memory even after the modal unmounts since the array still references them. He contrasted this with a GoodModal that properly deletes cached references in the cleanup function, and a BestModal using WeakMap which doesn't prevent garbage collection at all, allowing automatic cleanup when components unmount without requiring explicit cleanup code.
@@ -6502,8 +5905,6 @@ Aria studied the patterns with understanding. "The bad modal stores DOM referenc
 "You connect the knowledge beautifully!" Brother Memor praised. "WeakMap references don't prevent garbage collection - the perfect tool for DOM caches!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added closure capture leaks with practical examples and solutions]**
 
 "The third and most subtle form," Brother Memor said gravely, "is **Closure Captures** - when closures inadvertently hold references to large objects!"
 
@@ -6548,8 +5949,6 @@ Brother Memor led Aria deeper into the monastery to a chamber filled with glowin
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended Memory Profiler introduction with heap snapshots and comparison techniques]**
-
 Brother Memor activated a mystical viewing portal - actually Chrome DevTools' Memory tab - that revealed the inner workings of memory with unprecedented clarity. "This is how we see what others cannot - the hidden allocations that pile up, the retained objects that refuse to die, the reference paths that prevent garbage collection from doing its work!"
 
 He demonstrated heap snapshot profiling, explaining the workflow of taking a baseline snapshot in Chrome DevTools Memory tab, performing user actions like toggling modals ten times, forcing garbage collection with the trash icon, taking a second snapshot, and comparing the two snapshots to see what objects increased when they shouldn't have. He explained what to look for when comparing snapshots: detached DOM nodes that should be zero, event listeners that grow with each action, FiberNode counts that increase without reason, and large objects retained in closures, with filtering options to focus on specific types of memory issues.
@@ -6565,8 +5964,6 @@ Aria studied the profiler with intense focus. "Take baseline snapshot, perform a
 Binary projected analysis: "Heap Snapshot workflow: Baseline → Action → GC → Compare. Look for: Detached nodes (should be 0), EventListeners growing, FiberNodes increasing. Comparison reveals what wasn't cleaned!"
 
 **Story Group 2:**
-
-🟦 **[EXPANDED: Extended allocation timeline and retainers view with memory investigation techniques]**
 
 "But snapshots only show moments in time," Brother Memor continued, activating a flowing timeline that showed memory allocations streaming past like a river. "The **Allocation Timeline** reveals memory growth over time - the pattern of how your application consumes memory!"
 
@@ -6589,8 +5986,6 @@ Aria examined a retainer path. "Window → array → object. The chain shows exa
 Binary displayed profiling mastery: "Three Sacred Tools: (1) Heap Snapshots - compare before/after for leaks, (2) Allocation Timeline - sawtooth healthy, steady growth leak, (3) Retainers View - trace reference chains to find why GC can't collect. Complete memory investigation toolkit!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on profiling practice with real leak detection and fixing workflow]**
 
 "Now put the tools into practice," Brother Memor said, presenting Aria with a leaking component to investigate and fix.
 
@@ -6627,8 +6022,6 @@ Chrome DevTools Memory Profiler provides three sacred tools for leak detection. 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended event cleanup ritual with comprehensive useEffect patterns and async safety]**
-
 The sanctuary walls glowed with ancient inscriptions, each describing a different healing technique. "These rituals have been refined over generations of monks," Brother Memor said with reverence. "Apply them faithfully in every component you write, and your applications will remain healthy for eternity!"
 
 He revealed the first ritual, demonstrating comprehensive event cleanup patterns in an EventCleanupExample component that shows how to properly clean up every type of resource in useEffect - removing event listeners from windows, clearing timeouts and intervals, disconnecting observers, closing WebSocket connections, and aborting fetch requests with AbortController. He also demonstrated the async safety pattern using isMountedRef to track whether components are still mounted, checking this ref before setting state after async operations complete to prevent attempting state updates on unmounted components which causes warnings and potential issues.
@@ -6643,8 +6036,6 @@ Binary projected: "Ritual 1 - Event Cleanup: useEffect cleanup function removes 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended WeakMap/WeakSet wisdom with caching patterns and reference discipline]**
-
 Brother Memor revealed the second and third rituals together, explaining WeakMap Wisdom where caches use WeakMap instead of regular Map so cached objects can be garbage collected when no longer needed elsewhere. He contrasted WeakMap's weak references that allow automatic garbage collection with regular Map's strong references that prevent garbage collection indefinitely, causing unbounded cache growth. He also demonstrated WeakSet for tracking processed items without preventing their garbage collection. For the third ritual of Reference Discipline, he showed how to properly disconnect observers in cleanup functions and clear ref values by setting them to null, breaking reference chains that would otherwise prevent garbage collection of DOM elements and observer instances.
 
 "Ritual Two: WeakMap Wisdom," Brother Memor explained. "Use WeakMap and WeakSet for caches - they won't prevent garbage collection! Regular Map holds strong references, keeping objects alive forever. WeakMap uses weak references - when the object isn't needed elsewhere, GC can reclaim it automatically!"
@@ -6656,8 +6047,6 @@ Aria practiced both rituals. "WeakMap for caches means automatic cleanup - no ma
 "You connect all your learning beautifully!" Brother Memor praised.
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added memoization mastery ritual with Context optimization and complete Memory Guardian certification]**
 
 Brother Memor revealed the fourth and final ritual, demonstrating memoization mastery where Context values must be wrapped in useMemo to prevent recreation on every render. He contrasted bad AuthProvider implementations that create new context objects every render causing all consumers to re-render unnecessarily, with good implementations that memoize the context value so it only changes when dependencies actually update. He showed how to memoize expensive calculations using useMemo and stabilize callbacks with useCallback. Finally, he demonstrated a complete Memory Guardian component that integrated all four rituals together - event cleanup with proper useEffect returns, WeakMap caching, observer disconnection with cleared refs, memoized values, isMountedRef for async safety, and comprehensive cleanup functions - exemplifying how all rituals work together for perfect memory management.
 
@@ -6709,8 +6098,6 @@ The Memory Monastery's healing rituals had transformed Aria into a guardian of a
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended bundle analysis with webpack-bundle-analyzer and dependency cost awareness]**
-
 Aria arrived at the Lazy Library, a mystical repository where all React knowledge was stored in towering shelves reaching toward the ceiling. But something was wrong - the main entrance was completely blocked by an enormous bundle of books stacked precariously, too heavy for anyone to move. Visitors waited outside, unable to enter, the weight of knowledge literally blocking access!
 
 **Keeper Libris**, the ancient librarian with silver hair and knowing eyes, appeared from the shadows moving effortlessly through the stacks. "Ah, another victim of the **Bundle Burden**," he sighed, gesturing at the massive pile. "Young developers pack every possible library into their applications, not realizing that users must carry this entire weight with every single page load. One megabyte, two megabytes, five megabytes - they don't consider the cost!"
@@ -6727,8 +6114,6 @@ Binary projected cost analysis: "Bundle Burden detected! Problem: eager loading 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended bundle analysis tooling with sourcemap-explorer and real dependency auditing]**
-
 "But awareness is the first step to healing," Keeper Libris continued, showing Aria how to analyze bundles with modern tools.
 
 He demonstrated three essential tools for bundle analysis: webpack-bundle-analyzer which creates visual treemaps showing the size of each dependency and what's inside each package, source-map-explorer which provides exact breakdowns of what code contributes to each bundle by analyzing source maps, and bundlesize configuration in package.json scripts that gates bundle size in CI/CD to prevent bloat from creeping back in. He identified common bundle bloaters like moment.js at 280KB that could be replaced with date-fns or day.js for massive savings, lodash imported as the entire library instead of individual functions, and entire icon libraries imported when only a few icons are needed, showing how these could be replaced with tree-shakeable alternatives to dramatically reduce bundle size.
@@ -6742,8 +6127,6 @@ He showed a before/after transformation, demonstrating how replacing moment.js w
 "Perfect optimization!" Keeper Libris praised. "But even with optimized imports, some code is only needed sometimes. That's where lazy loading enters!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on bundle analysis practice with real dependency auditing and optimization strategies]**
 
 "Now audit your own bundles," Keeper Libris said, presenting Aria with a bloated application to analyze and optimize.
 
@@ -6784,8 +6167,6 @@ Keeper Libris led Aria to a special section of the library where books floated i
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended React.lazy introduction with dynamic imports and code splitting fundamentals]**
-
 "Watch this," Keeper Libris said, waving his hand toward the floating books. A book materialized just as he grasped for it, appeared in his hands, then vanished when released. "With **React.lazy()** and **Suspense**, we can summon components only when they're needed, not before. Your users download only what they actually use!"
 
 He demonstrated the fundamental pattern, contrasting static imports where components load immediately and bundle together creating a large initial 1.5MB bundle that every user must download, with dynamic imports using React.lazy that wrap import statements in functions, creating split points where the bundler generates separate chunks. He showed how Suspense components wrap lazy-loaded components providing fallback UI during chunk loading, ensuring users see loading indicators while code downloads, and how this transforms the application from a monolithic 1.5MB bundle to a 200KB initial bundle with on-demand chunks for routes like admin panels that only 2% of users visit, dramatically reducing initial load time.
@@ -6800,8 +6181,6 @@ Binary projected analysis: "Code splitting achieved! lazy() + Suspense pattern: 
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended Suspense patterns with nested Suspense, error boundaries, and loading strategies]**
-
 "But Suspense is more powerful than simple loading spinners," Keeper Libris continued, showing advanced patterns.
 
 He demonstrated nested Suspense boundaries that provide granular loading states for different dashboard sections, allowing sidebar, charts, and tables to load independently with their own skeleton fallbacks. He showed ErrorBoundary class components that catch chunk loading failures and provide recovery UI with reload buttons, and how combining ErrorBoundaries with Suspense creates resilient lazy loading. He also demonstrated a lazyWithRetry function that wraps dynamic imports with automatic retry logic, attempting to reload failed chunks multiple times with delays before finally failing, making the application more resilient to temporary network issues during chunk loading.
@@ -6813,8 +6192,6 @@ Aria examined the advanced patterns. "Nested Suspense allows granular loading - 
 "Multiple strategies!" Keeper Libris explained. "Skeleton screens provide better perceived performance than spinners. Progressive enhancement shows static content immediately while dynamic parts load. Lazy load on interaction defers even further - modal component doesn't load until button clicked!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on lazy loading practice with route-based splitting and component-level optimization]**
 
 "Now practice the art of temporal loading," Keeper Libris said, presenting Aria with an application to optimize with lazy loading.
 
@@ -6849,8 +6226,6 @@ React.lazy() and Suspense enable component-level code splitting for dramatic bun
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended vendor chunking with caching strategies and long-term bundle optimization]**
-
 The blueprints room revealed intricate pathways and loading patterns glowing with strategic intelligence. "The secret to optimal performance is in the **splitting strategy**," Keeper Libris explained, gesturing to the complex diagrams. "You've learned basic lazy loading - now learn advanced architectures that optimize caching, minimize re-downloads, and intelligently preload based on user behavior!"
 
 He revealed the first advanced strategy, explaining vendor chunking through Webpack configuration that separates third-party libraries from application code. He showed how to configure cache groups with different priorities to separate React libraries for long-term caching, UI libraries for medium-term caching, other vendors, and common application code reused across routes. The configuration creates a strategic bundle structure where React, UI libraries, and vendors are cached long-term since they rarely change, while application code is cached short-term since it updates frequently. He illustrated how this benefits returning users who only need to re-download the changed application code chunks while browser-cached vendor libraries remain untouched, reducing repeat visits from 1.43MB to just 250KB downloads, an 82% reduction through intelligent caching.
@@ -6861,8 +6236,6 @@ Aria studied the vendor chunking strategy with intense focus. "Separate third-pa
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended preloading and prefetching with intelligent prediction and resource hints]**
-
 "But we can do even better with intelligent loading," Keeper Libris continued, revealing advanced preloading patterns.
 
 He demonstrated smart preloading where NavigationLink components prefetch chunks on hover or focus before users click, Webpack magic comments differentiating between webpackPrefetch for low-priority idle-time loading of likely next routes and webpackPreload for high-priority parallel loading of critical chunks, custom hooks using requestIdleCallback to prefetch during browser idle time, and analytics-driven prefetching that maps routes to their most likely next destinations based on probability data, automatically prefetching high-probability routes (above 50%) during idle time to make common user flows feel instant.
@@ -6872,8 +6245,6 @@ Aria examined the preloading patterns with growing excitement. "Smart preloading
 "And analytics-driven prefetching is the ultimate intelligence," Keeper Libris added with pride. "Track where users go from each page, prefetch the most likely next routes! From dashboard, 60% go to analytics - prefetch it! From profile, 70% go to settings - prefetch it! Predictive loading based on real user behavior!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on complete bundle architecture with all strategies integrated]**
 
 "Now architect the ultimate bundle strategy," Keeper Libris said, presenting Aria with the culminating challenge - design production-grade bundle architecture combining all techniques.
 
@@ -6927,8 +6298,6 @@ Keeper Libris had revealed the secrets of lazy loading and bundle optimization, 
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended infinite rendering problem with DOM node limits and performance metrics]**
-
 Deep beneath the React Kingdom lay the **Virtualization Vault**, an endless archive containing millions of scrolls stacked to infinity. Aria descended into its depths with Binary, only to find the entrance blocked by a crowd of exhausted messengers collapsed under the weight of thousands of scrolls they were trying to carry simultaneously.
 
 **Guardian Zephyr** appeared, floating effortlessly above the chaos with minimal effort. "They try to carry every scroll at once," he explained, gesturing to the overwhelmed messengers. "The human eye can only read a few at a time, yet they burden themselves with rendering thousands of DOM nodes. This is the **Rendering Paradox** - creating elements the user cannot even see!"
@@ -6945,8 +6314,6 @@ Binary projected catastrophic analysis: "Rendering Paradox detected! Problem: Cr
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended virtual scrolling concept with viewport calculation and windowing fundamentals]**
-
 "But there is hope," Guardian Zephyr said, activating a mystical demonstration. "Watch as I transform this catastrophe into efficiency through the magic of virtualization!"
 
 He demonstrated the virtual scrolling solution using react-window's FixedSizeList component, showing how it only renders a small window of visible items plus a buffer, calculating which items are in the viewport based on scroll position, creating a spacer element to maintain proper scroll height, and swapping which items are rendered as users scroll. The result transformed 10,000 items from a 5-second render with 500MB memory usage into a 50ms render with only 6MB memory, achieving 60fps smooth scrolling by rendering only 12 DOM nodes instead of 10,000.
@@ -6960,8 +6327,6 @@ He showed the calculations, explaining the mathematical elegance of dividing scr
 "The math is elegant!" Aria exclaimed. "Divide scroll position by item height to get start index, calculate how many fit in viewport, add buffer above and below for smooth transitions. Only render that small window!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on virtualization practice with react-window implementation]**
 
 "Now practice the art of virtualization," Guardian Zephyr said, presenting Aria with massive datasets to optimize.
 
@@ -7004,8 +6369,6 @@ Guardian Zephyr led Aria deeper into the Vault's mystical chambers where advance
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended dynamic height handling with measurement caching and VariableSizeList mastery]**
-
 "Basic virtualization assumes uniform item heights," Guardian Zephyr began, showing a social media feed where posts varied wildly in size. "But real applications have dynamic content - short tweets and long essays, tiny product cards and detailed listings, simple rows and complex components. How do we virtualize when we don't know heights in advance?"
 
 He demonstrated the challenge and solution, showing how social feeds with varying post sizes from 100px short text to 1000px with images require VariableSizeList instead of FixedSizeList. The solution cached row heights in a ref, measured actual heights using getBoundingClientRect after rendering, updated the cache when measurements differed, and called resetAfterIndex to notify the list to recalculate item positions. He explained providing good initial height estimates, caching measurements for performance, and only measuring visible items plus buffer, with the list re-layouting efficiently when heights change.
@@ -7020,8 +6383,6 @@ He demonstrated optimized variable height virtualization with intelligent size e
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended grid virtualization and horizontal scrolling with 2D windowing]**
-
 "But lists aren't the only infinite data structure," Guardian Zephyr continued, showing a massive spreadsheet and image gallery. "Sometimes you need horizontal virtualization, or even 2D virtualization for grids. Watch:"
 
 He demonstrated horizontal virtualization using FixedSizeList with layout horizontal for sideways-scrolling timelines, grid virtualization with FixedSizeGrid for image galleries that render images in a 2D grid calculating row count from total images divided by columns, and massive data tables that virtualize both axes handling one million rows by 100 columns totaling 100 million cells but only rendering the visible few dozen cells in the 2D viewport, with performance metrics showing smooth 60fps scrolling for what would otherwise cause browser crashes.
@@ -7031,8 +6392,6 @@ Aria examined the grid patterns with excitement. "Horizontal virtualization uses
 "Precisely!" Guardian Zephyr beamed. "Grid virtualization is the ultimate - spreadsheets, image galleries, data tables. Two-dimensional infinity conquered with finite rendering!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added complete virtualization mastery with performance optimization and real-world patterns]**
 
 "Now master the complete virtualization system," Guardian Zephyr said, presenting Aria with the ultimate challenge - build a production-grade virtualized application using all techniques.
 
@@ -7086,8 +6445,6 @@ With mastery of memory management, bundle optimization, and infinite data render
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended React DevTools Profiler introduction with flamegraph analysis and performance metrics]**
-
 Aria stood at the Speed Sanctum's entrance high in the Northern Mountains, where the air was thin and performance metrics floated like snowflakes. Applications throughout React Kingdom were slowing from mysterious performance drags - interfaces that stuttered during interactions, forms that froze during typing, lists that lagged during scrolling. Citizens complained of the invisible enemy that made everything sluggish!
 
 **Master Velocity** emerged from the sanctuary's inner chamber, his robes shimmering with optimization symbols and performance patterns. "Welcome, Aria! Your reputation as Memory Guardian, Performance Architect, and Keeper of Infinite precedes you. But the kingdom faces a final threat - the **Performance Plague** that feeds on inefficiency invisible to the naked eye. Unnecessary re-renders, expensive calculations repeated wastefully, component hierarchies triggering cascades. Before we can optimize, we must learn to **see** the invisible!"
@@ -7106,8 +6463,6 @@ Binary projected profiling workflow: "Performance measurement protocol: (1) Reco
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended performance metrics with User Timing API and real-world profiling scenarios]**
-
 "But the Profiler isn't the only measurement tool," Master Velocity continued, showing additional techniques for performance visibility.
 
 He demonstrated the Performance API for custom measurements using mark and measure to track specific operations with precise timing, console.time for quick render timing, the Profiler component for programmatic performance logging that can send slow renders to analytics services when they exceed thresholds, and real-world profiling scenarios where identifying that memoized components still re-render due to parent components creating new array references, with the solution being to memoize the filtered array in the parent using useMemo so the child component receives stable references and can properly skip re-renders.
@@ -7119,8 +6474,6 @@ She found an unexpected issue: "The Profiler revealed that a memoized component 
 "Perfect discovery!" Master Velocity praised. "This is why we profile - the issue wasn't in the slow component itself, but in how the parent passed props! Measurement reveals the truth!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on profiling practice with complete performance investigation workflow]**
 
 "Now hunt performance issues in a real application," Master Velocity said, presenting Aria with a stuttering dashboard to investigate and optimize.
 
@@ -7163,8 +6516,6 @@ Master Velocity led Aria deeper into the sanctum where three glowing crystals pu
 
 **Story Group 1:**
 
-🟦 **[EXPANDED: Extended React.memo for component memoization with proper comparison and when to use]**
-
 Master Velocity pulled out the first glowing scroll showing component memoization patterns. "These are React's optimization spells that prevent wasted work! **React.memo** creates a shield around components, preventing re-renders when props haven't changed. But understanding when and how to use it requires wisdom!"
 
 He demonstrated the pattern, showing how a ParentComponent that updates count state causes child UserProfile components to re-render even when their name prop hasn't changed, illustrating the default React behavior where parent re-renders trigger child re-renders. He showed the solution using React.memo to wrap the UserProfile component, preventing re-renders when props remain unchanged, with optional custom comparison functions for deep equality checks. He explained when to use React.memo - for expensive components that re-render often with stable props - and warned about the common pitfall where inline object literals break memoization by creating new references every render, requiring careful prop stability to make memo effective.
@@ -7175,8 +6526,6 @@ Aria studied the memo patterns carefully. "React.memo wraps components to preven
 
 **Story Group 2:**
 
-🟦 **[EXPANDED: Extended useMemo and useCallback with dependency optimization and practical examples]**
-
 Master Velocity revealed the second and third scrolls of the Trinity. "React.memo prevents unnecessary component renders. But what about expensive calculations inside components? And what about function props breaking child memoization? Watch how useMemo and useCallback complete the Trinity!"
 
 He demonstrated how expensive calculations run on every render even when their inputs haven't changed, showing a list that filters, sorts, and maps 10,000 items taking 180ms on every single render. The solution used useMemo to wrap the calculation, only recomputing when dependencies actually change. He also showed how function props break child memoization because functions recreated every render have new references, demonstrating useCallback to memoize functions and keep references stable so memoized child components can properly skip re-renders. Finally, he showed the Trinity working together - useMemo for expensive calculations, useCallback for stable function references, and React.memo for component memoization - all coordinating to prevent unnecessary work and re-renders.
@@ -7186,8 +6535,6 @@ Aria practiced with the Trinity, optimizing a complex dashboard. "useMemo memoiz
 She discovered the dependency discipline: "Dependencies must be complete - list everything used inside! But also minimal - don't include things that never change. The linter helps catch missing dependencies. And I must ensure dependency values are stable (not recreated every render) or it defeats the purpose!"
 
 **Story Group 3:**
-
-🟦 **[EXPANDED: Added hands-on Trinity practice with complete optimization patterns and performance verification]**
 
 "Now wield the Trinity against the Performance Plague," Master Velocity said, presenting Aria with a laggy application to optimize completely.
 
@@ -7230,46 +6577,3 @@ Aria looked back at the Speed Sanctum one last time, then gazed toward the under
 Master Velocity watched as Aria and Binary began their descent toward the underground passages, knowing she carried not just techniques but wisdom - measure before optimizing, profile to find truth, optimize strategically not universally, verify improvements scientifically. The four sanctuaries had transformed her from a curious learner into a complete master of React performance optimization!
 
 ---
-
-🎉 **PHASE 4 COMPLETE! All LP1-7 expansions finished!** 🎉
-
----
-
-*End of Phase 4 Narrative Master Document*
-
-**Summary:**
-- LP1-7: All 28 lessons expanded to 3 Story Groups per chapter
-- Total: 84 chapters × 3 Story Groups each = 252 Story Groups
-- All match LP3 depth/length standard (15-20+ lines each)
-- All character locations/facts verified against story-bible.md and kingdom-geography.md
-- All diffs preserved, new expansions marked with 🟦 tags
-- Complete narrative continuity maintained throughout
-
-**Next Steps (Future Phases):**
-- LP8: Testing & Debugging (4 lessons)
-- LP9: Advanced Patterns (4 lessons)
-- LP10: Real-World Applications (4 lessons)
-- LP11-12: Additional Learning Paths
-med her from a curious learner into a complete master of React performance optimization!
-
----
-
-🎉 **PHASE 4 COMPLETE! All LP1-7 expansions finished!** 🎉
-
----
-
-*End of Phase 4 Narrative Master Document*
-
-**Summary:**
-- LP1-7: All 28 lessons expanded to 3 Story Groups per chapter
-- Total: 84 chapters × 3 Story Groups each = 252 Story Groups
-- All match LP3 depth/length standard (15-20+ lines each)
-- All character locations/facts verified against story-bible.md and kingdom-geography.md
-- All diffs preserved, new expansions marked with 🟦 tags
-- Complete narrative continuity maintained throughout
-
-**Next Steps (Future Phases):**
-- LP8: Testing & Debugging (4 lessons)
-- LP9: Advanced Patterns (4 lessons)
-- LP10: Real-World Applications (4 lessons)
-- LP11-12: Additional Learning Paths
