@@ -1,0 +1,53 @@
+{
+  "title": "The Farewell Ceremony",
+  "bridge": "As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.",
+  "storySections": [
+    [
+      "The Farewell Chamber occupied the Sanctum's western wing, where the setting sun cast long shadows through stained glass windows depicting components in their final moments. The atmosphere here was different from the energetic Mural Chamber - more solemn, reflective, yet no less important.",
+      "\"Not all components live forever,\" Chronos said solemnly, his voice carrying the weight of countless components he'd watched depart. \"When their purpose is fulfilled or they're no longer needed, they must leave through the <strong>Unmounting</strong> phase. But a component's true character is revealed in how it says farewell.\"",
+      "Binary's usual bouncing slowed to a gentle float, his lights dimming respectfully. \"This is the important part, Aria. Components that don't clean up after themselves leave behind ghost timers, phantom listeners, and memory leaks that haunt the kingdom! I've seen applications slow to a crawl from components that never cleaned up.\"",
+      "Aria shuddered at the imagery. \"Ghost timers? That sounds terrible!\"",
+      "\"Indeed,\" Chronos nodded gravely, gesturing to a memorial wall showing cautionary tales. One component had left a setInterval running - it ticked eternally in the void, consuming resources, calling functions on a component that no longer existed. Another had forgotten to remove event listeners - they accumulated like barnacles, each component mounting adding more, none removing theirs at unmount.",
+      "\"That's why we have <strong>componentWillUnmount</strong>,\" Chronos explained, touching a glowing plaque. \"A component's last chance to clean up its affairs, cancel subscriptions, clear timers, remove event listeners, abort pending requests, and close connections before departing. This method is your opportunity to leave no trace, to depart as gracefully as you arrived.\"",
+      "He showed Aria the proper pattern. A component that started a timer in componentDidMount <strong>must</strong> clear it in componentWillUnmount. A component that added event listeners <strong>must</strong> remove them. A component that subscribed to external data sources <strong>must</strong> unsubscribe. The pairing was sacred - what you establish in life, you must dissolve in death."
+    ],
+    [
+      "\"See how the TimerComponent remembers to clear its interval?\" Chronos pointed to a demonstration showing proper cleanup - in componentWillUnmount, the component called clearInterval on the timer ID it had saved during mounting.",
+      "\"Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine! Every second, it would try to call the tick function, but the component no longer exists. Errors accumulate, memory leaks grow, performance degrades.\"",
+      "He showed more examples. An EventListener component that added a window resize listener must remove it by calling window.removeEventListener with 'resize' and the handler function. A WebSocket component that opened a connection must close it by calling the close method on the socket. A component using an external library must destroy its instance by calling the destroy method on the chart object.",
+      "Binary demonstrated what happened without cleanup. He simulated mounting and unmounting a Timer component 100 times, but without componentWillUnmount calling clearInterval. \"Watch,\" Binary said grimly. 100 ghost timers accumulated, all ticking simultaneously, none needed, all consuming resources. The system slowed visibly.",
+      "Then he ran it again with proper cleanup. Each component cleared its timer on unmount. No ghosts remained. The system stayed clean and performant.",
+      "\"The pattern is consistent,\" Chronos emphasized. \"If componentDidMount establishes something, componentWillUnmount must tear it down. If componentDidUpdate creates something, componentWillUnmount must clean it up. Leave nothing behind.\"",
+      "Aria practiced writing cleanup code for various scenarios: clearing timers, removing listeners, canceling API requests, closing connections, destroying library instances. Each time, she paired the cleanup with the original setup, establishing the sacred pattern of creation and dissolution."
+    ],
+    [
+      "\"Let me show you why this matters,\" Chronos said, activating a visualization crystal. It showed an application running over time, components mounting and unmounting as users navigated.",
+      "In the first simulation, components didn't clean up properly. The visualization showed memory usage climbing steadily. Ghost timers accumulated (50... 100... 200...), event listeners piled up, subscriptions leaked. After an hour of use, the application was sluggish, stuttering, consuming massive resources. \"This is the fate of applications that forget the Farewell Ceremony,\" Chronos warned.",
+      "He reset the simulation, this time with every component properly implementing componentWillUnmount. Memory usage remained stable. Timers came and went cleanly. Event listeners added and removed in perfect balance. The application ran smoothly indefinitely. \"This is the reward of responsible citizenship in the React Kingdom.\"",
+      "Aria understood now. Lifecycle methods weren't just about managing component behavior - they were about being a good neighbor in the shared environment of the application. Your component would come and go, but the application continued. Leaving ghosts behind was like littering - selfish, harmful, unprofessional.",
+      "\"A component is not just code,\" Chronos said, his voice carrying deep wisdom. \"It is a temporary guest in a larger world. It must respect that world, contribute to it during its life, and leave it clean upon departure. The componentWillUnmount method is your final act of respect, your opportunity to say 'I was here, but now I leave, and I leave nothing unresolved behind me.'\"",
+      "Binary gave Aria a solemn nod. \"Some developers forget cleanup because they don't see immediate consequences. But technical debt accumulates. Memory leaks grow. Performance degrades. The ghosts pile up until the application becomes unlivable. Don't be that developer.\"",
+      "Aria closed her journal with new determination. She would never forget the Farewell Ceremony. Her components would clean up properly, every time, no exceptions."
+    ]
+  ],
+  "lessonInsight": {
+    "title": "Chronos's Wisdom:",
+    "content": "The unmounting phase gives components a chance to clean up before they're removed from the DOM. The componentWillUnmount method is called just before a component is destroyed, making it the perfect place to remove event listeners, clear timers, and cancel subscriptions. Proper cleanup prevents memory leaks and ensures your app runs smoothly even as components come and go. As Chronos warns: \"A component that doesn't clean up after itself is like a guest who never leaves the party!\""
+  },
+  "reflectionQuestions": [
+    "How does the \"ghost timer\" metaphor help you remember the importance of cleanup?",
+    "What types of resources might a component need to clean up in a real application?"
+  ],
+  "journalEntry": {
+    "title": "Aria's Journal - Day 12",
+    "day": 12,
+    "content": "Today's final lesson was sobering but crucial. Components must be responsible citizens of the React Kingdom! When they leave, they must clean up after themselves - cancel timers, remove listeners, abort requests, close connections. Chronos showed me what happens when components don't clean up... it wasn't pretty. Ghost timers accumulating, memory leaking, performance degrading. The visualization was stark - an application slowly dying from accumulated ghosts versus one running smoothly with proper cleanup. I understand now that componentWillUnmount isn't optional or an afterthought - it's a sacred responsibility. What you create in life, you must clean up in death. Leave no ghosts behind. I'll never forget this lesson."
+  },
+  "lessonEnding": [
+    "As the stars appeared above the Lifecycle Sanctum, Chronos placed a gentle hand on Aria's shoulder. \"You've learned well today, young apprentice. You now understand the sacred rhythm of component life - from birth through growth to graceful departure. These patterns will guide every component you create.\"",
+    "Binary spun in a happy circle, his lights brightening after the solemn Farewell Chamber. \"You did it, Aria! You've completed your training in the fundamental arts of React! Components, props, JSX, and lifecycles - you know them all now!\"",
+    "\"But this is just the beginning,\" Chronos smiled mysteriously, gesturing toward the eastern horizon where the State Sorcerers' towers glowed in the distance. \"Tomorrow, you'll journey to the Eastern Quarter to meet the State Sorcerers. They'll teach you how to give your components memory and the power to change over time. Today you learned how components live - tomorrow you'll learn how they remember and evolve.\"",
+    "Aria clutched her journal tightly, excitement building despite the day's gravity. She had mastered components, props, JSX, and lifecycles. She understood the temporal rhythms, the phases of existence, the responsibilities of citizenship in the React Kingdom. She was ready for the next chapter of her journey - ready to learn how components could remember and respond, how state transformed static code into living, dynamic interfaces.",
+    "The hourglasses continued their eternal flow around her, each one tracking some component's journey through time. Aria was no longer just an observer - she was a participant, a creator, someone who understood the sacred patterns. Tomorrow would bring new magic, but tonight, she rested in the knowledge that she had mastered the foundations."
+  ]
+}

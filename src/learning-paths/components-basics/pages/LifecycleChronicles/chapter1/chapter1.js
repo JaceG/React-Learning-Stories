@@ -3,8 +3,11 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterOne = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'LifecycleChronicles', 1);
+
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
 	const [componentAge, setComponentAge] = useState(0);
 	const [isComponentRetired, setIsComponentRetired] = useState(false);
@@ -62,22 +65,14 @@ const ChapterOne = () => {
 		]);
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
-			<ChapterIntro chapterNumber={1} title='The Component Life Stages' />
+			<ChapterIntro chapterNumber={1} title={narrative.title} />
 
 			<StorySection
-				paragraphs={[
-					<>
-						The Lifecycle Sanctum was unlike anything Aria had seen.
-						Massive hourglasses floated in the air, each
-						representing a different component's journey through
-						time. An ancient figure approached -{' '}
-						<strong>Chronos</strong>, the Master Time Keeper.
-					</>,
-					`"Welcome, young Aria," Chronos said, his voice echoing through time itself. "Professor Syntaxis speaks highly of your progress. Today, you'll learn the most fundamental truth of our kingdom: every component has a lifecycle - a journey from creation to destruction."`,
-					`Binary appeared beside Aria, bouncing excitedly. "I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!"`,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<div className='lifecycle-diagram'>
@@ -118,9 +113,7 @@ const ChapterOne = () => {
 			</div>
 
 			<StorySection
-				paragraphs={[
-					`Chronos gestured to the floating hourglasses. "These lifecycle methods are the heartbeat of every component. They allow components to prepare when born, adapt when they change, and gracefully depart when their time ends."`,
-				]}
+				paragraphs={narrative.storySections[1]}
 			/>
 
 			<div className='interactive-section'>
@@ -202,27 +195,16 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Chronos`,
-						description: `Master Time Keeper of the Lifecycle Sanctum, guardian of the hourglasses that track every component's journey through time. His voice echoes through time itself as he teaches the fundamental truth of React. "Every component has a lifecycle - a journey from creation to destruction. Time is the canvas upon which components paint their purpose."`,
-					},
-				]}
-				lessonInsight={{
-					title: "Chronos's Wisdom:",
-					content:
-						'Every React component goes through a series of lifecycle stages: mounting (birth), updating (growth), and unmounting (retirement). React provides special methods that run at each stage, allowing you to execute code at precise moments in a component\'s life. Understanding this lifecycle is crucial for controlling when certain operations (like data fetching or cleanup) should occur. As Chronos teaches: "Time is the canvas upon which components paint their purpose."',
-				}}
-				reflectionQuestions={[
-					"How does Chronos's hourglass metaphor help you visualize the flow of a component's life?",
-					'Which lifecycle stage (mounting, updating, or unmounting) do you think is most critical for component behavior?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 7",
-					content:
-						'The Lifecycle Sanctum is awe-inspiring! Chronos showed me how every component follows the same pattern: Mounting (birth), Updating (growth), and Unmounting (farewell). It\'s like watching the entire circle of life, but for React components. Binary keeps making jokes about component "birthdays" - he\'s so silly!',
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

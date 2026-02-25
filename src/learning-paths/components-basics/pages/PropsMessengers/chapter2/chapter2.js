@@ -4,8 +4,10 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterTwo = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'PropsMessengers', 2);
 	const [messageBoard, setMessageBoard] = useState('');
 	const [propBags, setPropBags] = useState([
 		{ id: 1, type: 'color', content: 'red', assigned: false },
@@ -110,31 +112,17 @@ const ChapterTwo = () => {
 		setMessageBoard('');
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={2}
-				title='The One-Way Road'
-				bridge='After understanding how messengers deliver props, Aria was ready to learn about the sacred rule that governed all communication in the React Kingdom.'
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
-			<StorySection
-				paragraphs={[
-					`Hermes led Aria to the Grand Thoroughfare - a magnificent road system that connected the App castle to all workshops. "Observe carefully," he said. "Notice how all roads lead downward from App to the workshops?"`,
-					`"Yes," Aria replied, studying the paths. "But I don't see any roads going back up!"`,
-					<>
-						"Exactly!" Hermes smiled. "This is the most important
-						rule in our kingdom:{' '}
-						<strong>
-							Props can only travel in one direction—from parent
-							to child
-						</strong>
-						. No craftsman can modify the contents of the Props bag
-						they receive; they can only read the instructions and
-						create their piece accordingly."
-					</>,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[0]} />
 
 			<div className='kingdom-roads'>
 				<div className='app-castle'>App</div>
@@ -150,13 +138,7 @@ const ChapterTwo = () => {
 				</div>
 			</div>
 
-			<StorySection
-				paragraphs={[
-					`"This one-way flow creates a predictable system," Hermes explained. "When something needs to change, the instructions always come from above. Workshops never modify their instructions; they simply follow them."`,
-					`Aria pondered this. "But what if a Button workshop needs to tell App that it was clicked?"`,
-					`"Ah, excellent question!" Hermes beamed. "For that, App sends special callback messengers - functions that the workshop can invoke to send messages back up. The workshop doesn't change the prop; it simply calls the function App provided."`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[1]} />
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -249,21 +231,14 @@ function Button(props) {
 				/>
 			</div>
 
+			<StorySection paragraphs={narrative.storySections[2]} />
+
 			<ChapterSummary
-				lessonInsight={{
-					title: "Hermes's Wisdom:",
-					content:
-						'Props in React always flow in a single direction: from parent to child. This one-way data flow makes your application easier to understand and debug, because changes always come from above and components never modify the props they receive. If a child needs to communicate back, it does so by calling a callback function provided by its parent. Hermes emphasizes: "Predictability through unidirectional flow!"',
-				}}
-				reflectionQuestions={[
-					'How does the one-way road metaphor help you understand how data flows in React?',
-					'Why do you think callbacks are used for child-to-parent communication instead of letting children change props directly?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 4 (Evening)",
-					content:
-						"The one-way road rule makes so much sense now! It's like a chain of command - orders flow down, reports flow up through official channels (callbacks). This keeps everything organized and predictable. No workshop can accidentally change instructions meant for another!",
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

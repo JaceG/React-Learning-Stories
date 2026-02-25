@@ -4,8 +4,10 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterOne = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'PropsMessengers', 1);
 	const [selectedComponent, setSelectedComponent] = useState(null);
 	const [activeProp, setActiveProp] = useState(null);
 	const [currentPropValues, setCurrentPropValues] = useState({
@@ -31,36 +33,13 @@ const ChapterOne = () => {
 		});
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
-			<ChapterIntro chapterNumber={1} title='The Royal Messengers' />
+			<ChapterIntro chapterNumber={1} title={narrative.title} />
 
-			<StorySection
-				paragraphs={[
-					<>
-						The Props Messenger Guild was a hive of activity.
-						Messengers rushed in all directions, carrying satchels
-						filled with important information.{' '}
-						<strong>Hermes</strong>, the Head Messenger, greeted
-						Aria warmly.
-					</>,
-					<>
-						"Welcome, apprentice Aria! Master Aurelius told me about
-						your progress with components. Now you'll learn how we
-						enable communication in the kingdom." Hermes gestured to
-						the busy messengers. "These are our{' '}
-						<strong>Props</strong> - special messengers who carry
-						instructions from parent components to their children."
-					</>,
-					<>
-						"I see!" Aria exclaimed, remembering her lessons. "So
-						the master builder <strong>App</strong> uses these
-						messengers to tell each workshop exactly what to
-						create?"
-					</>,
-					`"Precisely!" Hermes smiled. "Watch how a Button workshop might receive props telling it what color to be, what text to display, and what action to perform when clicked."`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[0]} />
 
 			<div className='props-kingdom-illustration'>
 				<div className='app-castle'>
@@ -203,11 +182,7 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<StorySection
-				paragraphs={[
-					`"Props can contain various types of information," Hermes explained as Aria experimented with the messengers. "Text strings, numbers, boolean flags, functions, arrays, objects, and even other components! This flexibility allows for rich communication between components."`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[1]} />
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -344,27 +319,14 @@ function Button(props) {
 }`}
 			/>
 
+			<StorySection paragraphs={narrative.storySections[2]} />
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Hermes`,
-						description: `Head Messenger of the Props Messenger Guild, orchestrating the flow of information throughout the React Kingdom. His messengers rush in all directions carrying satchels filled with props - the special messengers who carry instructions from parent components to their children. "Props can contain various types of information: text strings, numbers, boolean flags, functions, arrays, objects, and even other components!"`,
-					},
-				]}
-				lessonInsight={{
-					title: "Hermes's Wisdom:",
-					content:
-						'Props are the primary way for parent components to pass data to child components in React. They are read-only and flow downward through the component tree, allowing parent components to control and configure their children. Hermes teaches that props are like sealed letters - children can read them but never modify them.',
-				}}
-				reflectionQuestions={[
-					'How does the messenger metaphor help you understand how props work in React?',
-					'How might you use different prop types to create more dynamic and reusable components?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 4",
-					content:
-						"The Props Messenger Guild is amazing! I now understand how components communicate - parent components send props to their children like messengers delivering instructions. Hermes showed me how changing a prop instantly updates the component. It's like magic, but it's just React's data flow!",
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

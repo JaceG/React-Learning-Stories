@@ -76,9 +76,9 @@
       "id": "advanced-patterns",
       "lessons": [
         { "id": "CompoundComponents", "folder": "CompoundComponents" },
-        { "id": "RenderProps", "folder": "RenderProps" },
-        { "id": "HigherOrderComponents", "folder": "HigherOrderComponents" },
-        { "id": "PortalsRefs", "folder": "PortalsRefs" }
+        { "id": "PatternEvolution", "folder": "PatternEvolution" },
+        { "id": "AdvancedComposition", "folder": "AdvancedComposition" },
+        { "id": "RefsAndDOM", "folder": "RefsAndDOM" }
       ]
     },
     {
@@ -105,25 +105,25 @@
         { "id": "TypeForge", "folder": "TypeForge" },
         { "id": "ComponentArmory", "folder": "ComponentArmory" },
         { "id": "GenericForge", "folder": "GenericForge" },
-        { "id": "TypeGuardTower", "folder": "TypeGuardTower" }
+        { "id": "TypeSafeArchitecture", "folder": "TypeSafeArchitecture" }
       ]
     },
     {
       "id": "build-deploy",
       "lessons": [
         { "id": "BuildSystems", "folder": "BuildSystems" },
-        { "id": "CiCdPipeline", "folder": "CiCdPipeline" },
-        { "id": "HostingHorizons", "folder": "HostingHorizons" },
+        { "id": "CICDPipelines", "folder": "CICDPipelines" },
+        { "id": "HostingAndDeployment", "folder": "HostingAndDeployment" },
         { "id": "ProductionReadiness", "folder": "ProductionReadiness" }
       ]
     },
     {
-      "id": "react-native",
+      "id": "full-stack-react",
       "lessons": [
-        { "id": "MobileFoundations", "folder": "MobileFoundations" },
-        { "id": "NativePowers", "folder": "NativePowers" },
-        { "id": "NavigationTrails", "folder": "NavigationTrails" },
-        { "id": "AppDistribution", "folder": "AppDistribution" }
+        { "id": "FrameworkFoundations", "folder": "FrameworkFoundations" },
+        { "id": "ServerComponents", "folder": "ServerComponents" },
+        { "id": "RenderingStrategies", "folder": "RenderingStrategies" },
+        { "id": "FullStackPatterns", "folder": "FullStackPatterns" }
       ]
     },
     {

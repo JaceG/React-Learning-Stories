@@ -4,8 +4,10 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterThree = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'PropsMessengers', 3);
 	const [propTypeComponent, setPropTypeComponent] = useState('button');
 	const [propTypeErrors, setPropTypeErrors] = useState([]);
 	const [showPropTypeErrors, setShowPropTypeErrors] = useState(false);
@@ -156,28 +158,17 @@ const ChapterThree = () => {
 		return () => {};
 	}
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
-				title='The PropTypes Guardians'
-				bridge='Having learned about the one-way flow of props, Aria was ready for the final lesson at the Props Messenger Guild. Hermes had one more important concept to share.'
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
-			<StorySection
-				paragraphs={[
-					`"As our kingdom grew," Hermes began, "we encountered a new problem. Sometimes messengers would deliver the wrong type of props to a workshop. A Button might receive a number where it expected text, or a Card might receive a string where it expected an object."`,
-					`Aria winced. "That must have caused chaos!"`,
-					<>
-						"Indeed it did," Hermes nodded. "Until we established
-						the <strong>PropTypes Guardians</strong> - specialized
-						sentinels that inspect the props at each workshop to
-						ensure they are of the correct type. If an improper prop
-						is detected, the Guardians raise a warning."
-					</>,
-					`A stern-looking guardian appeared, wearing robes adorned with type symbols. "I am Guardian TypeCheck," she announced. "I ensure that workshops receive exactly what they expect. Watch and learn!"`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[0]} />
 
 			<div className='proptype-guardians-illustration'>
 				<div className='component-selector'>
@@ -457,17 +448,7 @@ Card.defaultProps = {
 				</div>
 			</div>
 
-			<StorySection
-				paragraphs={[
-					`"The PropTypes Guardians don't prevent a component from rendering with incorrect props," Guardian TypeCheck explained, "but they provide valuable warnings during development, making it easier to track down bugs."`,
-					<>
-						"And notice," Hermes added, "how some workshops
-						establish <strong>DefaultProps</strong> as fallback
-						values if a messenger fails to deliver a particular
-						prop. It's like having spare parts ready just in case!"
-					</>,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[1]} />
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -552,32 +533,14 @@ Button.defaultProps = {
 };`}
 			/>
 
+			<StorySection paragraphs={narrative.storySections[2]} />
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Guardian TypeCheck`,
-						description: `A stern sentinel of the Props Messenger Guild, wearing robes adorned with type symbols. Guardian TypeCheck inspects every prop that enters a component workshop, ensuring it matches the expected type. She raises development warnings when props don't match their defined PropTypes, helping developers catch bugs before they become problems. "I ensure that workshops receive exactly what they expect," she declares. "An ounce of type checking is worth a pound of debugging!"`,
-					},
-				]}
-				lessonInsight={{
-					title: "Guardian TypeCheck's Wisdom:",
-					content:
-						'Type checking with PropTypes helps catch bugs by verifying that components receive the right types of props. This is especially useful in larger applications where components may be reused in different contexts. Default props provide fallback values to ensure components can render even if certain props are omitted. Guardian TypeCheck reminds us: "An ounce of type checking is worth a pound of debugging!"',
-				}}
-				reflectionQuestions={[
-					'Why is it helpful to detect prop type errors during development rather than at runtime?',
-					'How might PropTypes and defaultProps work together to create more robust components?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 5",
-					content:
-						"The PropTypes Guardians are brilliant! They're like quality control inspectors, catching mistakes before they cause problems. I've learned so much at the Props Messenger Guild - how props flow from parent to child, how they must never be modified, and how PropTypes ensure we receive the right data. Tomorrow I head to the JSX Magic Academy!",
-				}}
-				lessonEnding={[
-					'As Aria prepared to leave the Props Messenger Guild, Hermes handed her a special badge. "You\'ve earned this - the Messenger\'s Seal. You now understand how components communicate in our kingdom."',
-					'"Thank you, Hermes," Aria said gratefully. "I feel like I truly understand props now - their flow, their immutability, and their types."',
-					'"Your next destination is the JSX Magic Academy," Hermes pointed northward. "There you\'ll learn the ancient art of JSX - the magical syntax that makes React components possible. Safe travels!"',
-				]}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

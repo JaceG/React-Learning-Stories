@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout';
+import useNarrative from '../../../../hooks/useNarrative';
 import '../../../CourseStyles.css';
 import './LifecycleChronicles.css';
-// import ChapterOne from './chapter1/chapter1';
-// import ChapterTwo from './chapter2/chapter2';
-// import ChapterThree from './chapter3/chapter3';
 
 function LifecycleChronicles() {
+	const { narrative: lessonData } = useNarrative('components-basics', 'LifecycleChronicles');
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
 	const [componentAge, setComponentAge] = useState(0);
 	const [isComponentRetired, setIsComponentRetired] = useState(false);
@@ -206,7 +205,7 @@ function LifecycleChronicles() {
 			<LessonHeader
 				title='The Lifecycle Chronicles'
 				subtitle='A story about the journey of a React component'
-				opener='With the fundamentals of component creation fresh in her mind, Aria ventured deeper into the Component Kingdom. The workshops had shown her how to build components, but now she needed to understand their journey through time - from birth to retirement. The ancient Lifecycle Observatory beckoned, promising to reveal the secrets of component existence.'
+				opener={lessonData?.opener || ''}
 				totalChapters={3}
 			/>
 

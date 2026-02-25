@@ -4,8 +4,11 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterTwo = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'JsxMagic', 2);
+
 	const [expressionType, setExpressionType] = useState('text');
 	const [visitorName, setVisitorName] = useState('Traveler');
 	const [userRole, setUserRole] = useState('guest');
@@ -61,30 +64,18 @@ const ChapterTwo = () => {
 		});
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={2}
-				title='Embedding Magic Spells'
-				bridge='Having learned the basics of JSX syntax, Aria was eager to discover its true power. Professor Syntaxis led her deeper into the academy to the Expression Chamber.'
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
 			<StorySection
-				paragraphs={[
-					<>
-						"The real magic of JSX," Professor Syntaxis explained,
-						"comes from its ability to embed JavaScript expressions
-						directly within the markup. Watch as I demonstrate the{' '}
-						<strong>Curly Brace Incantation</strong>!"
-					</>,
-					`The professor waved his wand, and curly braces began to glow around various parts of a component spell. "These braces act as portals between the markup realm and the JavaScript realm. Anything inside them is evaluated as pure JavaScript!"`,
-					<>
-						Aria watched in fascination as a small sprite named{' '}
-						<strong>Binary</strong> appeared. "I help evaluate
-						expressions!" Binary chirped. "When I see curly braces,
-						I know it's time to run JavaScript calculations!"
-					</>,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<CodeExample
@@ -117,10 +108,7 @@ return (
 			/>
 
 			<StorySection
-				paragraphs={[
-					`"By the scrolls!" Aria gasped. "We can put any JavaScript expression inside those curly braces - variables, function calls, even conditional logic!"`,
-					`"Indeed," Syntaxis nodded. "This fusion of markup and logic is what makes React components so powerful. Now, let Binary guide you through the Expression Playground..."`,
-				]}
+				paragraphs={narrative.storySections[1]}
 			/>
 
 			<div className='interactive-section'>
@@ -851,27 +839,16 @@ function getCurrentGreeting() {
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Binary`,
-						description: `A helpful sprite who evaluates expressions and assists with JSX magic. Binary's lights flicker with excitement when processing JavaScript calculations, guiding learners through the portal between markup and logic. "I help evaluate expressions! When I see curly braces, I know it's time to run JavaScript calculations!"`,
-					},
-				]}
-				lessonInsight={{
-					title: "Binary's Wisdom:",
-					content:
-						'You can embed any valid JavaScript expression inside JSX using curly braces. This allows you to display dynamic content, compute values, and call functions directly within your UI code. Mastering expressions in JSX is key to building interactive and data-driven React components. Binary reminds us: "If it\'s valid JavaScript, it can go in curly braces!"',
-				}}
-				reflectionQuestions={[
-					"How does Binary's role as an expression evaluator help you understand what happens inside curly braces?",
-					'Which type of expression (text, conditional, array mapping, etc.) do you think would be most useful in real applications?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 6 (Afternoon)",
-					content:
-						'Binary the sprite is adorable! He showed me six different ways to use expressions in JSX. I never realized how flexible this system is - we can embed text, attributes, conditions, arrays, ternaries, and even function calls. The curly braces are like magical portals that let JavaScript flow into our markup!',
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

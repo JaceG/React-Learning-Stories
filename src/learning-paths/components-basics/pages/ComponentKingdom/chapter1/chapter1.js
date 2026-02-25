@@ -4,39 +4,23 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterOne = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'ComponentKingdom', 1);
 	const [highlightedCard, setHighlightedCard] = useState(null);
 
 	const handleWorkshopHover = (index) => {
 		setHighlightedCard(index);
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
-			<ChapterIntro chapterNumber={1} title='The Village of Components' />
+			<ChapterIntro chapterNumber={1} title={narrative.title} />
 
-			<StorySection
-				paragraphs={[
-					<>
-						The morning mist parted as <strong>Aria</strong>{' '}
-						approached the gates of the React Kingdom. After months
-						of studying ancient JavaScript scrolls, she had finally
-						been accepted as an apprentice.{' '}
-						<strong>Master Aurelius</strong>, the Grand Architect,
-						awaited her at the entrance to the Northern Quarter's
-						Component Workshop District.
-					</>,
-					<>
-						"Welcome, young apprentice," Aurelius said, his beard
-						sparkling with fragments of code. "In our kingdom,
-						everything you see is built from magical building blocks
-						called <strong>Components</strong>. Unlike the static
-						structures in your homeland, these Components are alive
-						and responsive.
-					</>,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[0]} />
 
 			<div className='story-section'>
 				<div className='kingdom-illustration'>
@@ -69,18 +53,7 @@ const ChapterOne = () => {
 				</div>
 			</div>
 
-			<StorySection
-				paragraphs={[
-					<>
-						Aurelius pointed to the tallest tower. "The master
-						builder, <strong>App</strong>, lives there and organizes
-						all the craftsmen to work together. Every component in
-						our kingdom has its own special purpose and design, but
-						they all share the ability to be reused throughout the
-						realm."
-					</>,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[1]} />
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -628,27 +601,14 @@ function Form(props) {
 }`}
 			/>
 
+			<StorySection paragraphs={narrative.storySections[2]} />
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Master Aurelius`,
-						description: `The Grand Architect of the React Kingdom and mentor to all component apprentices. His beard sparkles with fragments of code, and his wisdom guides newcomers through the magical building blocks of React. "Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm."`,
-					},
-				]}
-				lessonInsight={{
-					title: "Master Aurelius's Wisdom:",
-					content:
-						'In React, everything you see is a Component – a reusable piece of code that returns JSX elements describing what should appear on the screen. Components can be as simple as a button or as complex as an entire page. Master Aurelius teaches that each component should have a single, clear purpose.',
-				}}
-				reflectionQuestions={[
-					'How does thinking of components as specialized workshops help you understand their purpose in React?',
-					'Why is it useful to have many small, focused components rather than a few large ones?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 1",
-					content:
-						"Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. He mentioned something about workshops that create living components. Can't wait to explore!",
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

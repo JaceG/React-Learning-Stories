@@ -4,8 +4,10 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterThree = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'ComponentKingdom', 3);
 	const [activeComponent, setActiveComponent] = useState(null);
 	const [compositePreview, setCompositePreview] = useState([]);
 
@@ -23,29 +25,17 @@ const ChapterThree = () => {
 		}
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
-				title='Building Complex Structures'
-				bridge='After learning how components communicate through props, Aria was ready for her final lesson in the Component Kingdom. Master Aurelius led her to the Grand Assembly Hall.'
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
-			<StorySection
-				paragraphs={[
-					<>
-						"Now comes the true power of our kingdom," Aurelius
-						announced with pride. "Watch how workshops collaborate.
-						Larger workshops can use the creations of smaller
-						workshops, combining them into more complex structures.
-						This practice, known as{' '}
-						<strong>Component Composition</strong>, allows us to
-						build incredible things."
-					</>,
-					`Aria watched as components began assembling themselves like magical building blocks. "It's like... each component is a piece of a larger puzzle!"`,
-					`"Exactly!" Aurelius beamed. "And the beauty is that each puzzle piece focuses on doing one thing well, delegating other responsibilities to specialized components."`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[0]} />
 
 			<div className='story-section'>
 				<div className='composition-illustration'>
@@ -184,11 +174,7 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
-			<StorySection
-				paragraphs={[
-					`Aria experimented with different combinations, marveling at how simple components could be assembled into increasingly sophisticated interfaces. "I can build anything now!" she exclaimed.`,
-				]}
-			/>
+			<StorySection paragraphs={narrative.storySections[1]} />
 
 			<div className='interactive-section'>
 				<h3 className='section-title'>
@@ -232,25 +218,14 @@ function Dashboard() {
 // Aria's insight: "Each component has a single responsibility!"`}
 			/>
 
+			<StorySection paragraphs={narrative.storySections[2]} />
+
 			<ChapterSummary
-				lessonInsight={{
-					title: "Master Aurelius's Wisdom:",
-					content:
-						'React encourages building UIs through composition rather than inheritance. Complex interfaces are created by combining simpler components together, creating a hierarchy that\'s both flexible and maintainable. Master Aurelius\'s final teaching: "A kingdom is strongest when each citizen excels at their craft and works in harmony with others."',
-				}}
-				reflectionQuestions={[
-					'How does component composition help you build more complex interfaces?',
-					'Why is it beneficial for larger components to delegate responsibilities to smaller, specialized components?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 3",
-					content:
-						'Today I learned the most important lesson yet - components are meant to work together! By combining simple, focused components, I can build complex applications. Each component does one thing well, making them easy to understand, test, and reuse. I feel like I truly understand the Component Kingdom now!',
-				}}
-				lessonEnding={[
-					'As the sun set over the Component Workshop District, Master Aurelius handed Aria a sealed scroll. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the Props Messengers Guild. They hold deeper secrets about component communication."',
-					'Aria clutched the scroll, excited for her next adventure. She had learned to create components, make them communicate, and compose them into complex structures. But she sensed there was so much more to discover in the React Kingdom.',
-				]}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

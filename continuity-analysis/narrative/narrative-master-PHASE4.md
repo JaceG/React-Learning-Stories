@@ -630,9 +630,7 @@ Aria pulled out her journal, ready to document these sacred laws. The failures B
 
 Syntaxis approached the first tablet, which began to glow brighter at his presence. "These rules exist because JSX is not HTML - it only resembles HTML. Under the hood, every JSX element becomes a JavaScript function call. These rules ensure that transformation works correctly."
 
-Story Group 2:
-
-[EXPANDED: Extended JSX rules with detailed demonstrations and React.Fragment introduction]
+**Story Group 2:**
 
 Syntaxis pointed to the first glowing tablet, which displayed code examples that shifted between correct and incorrect versions. "Rule One: Every JSX expression must have a single root element. You cannot return multiple siblings without wrapping them."
 

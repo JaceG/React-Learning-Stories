@@ -26,11 +26,11 @@ function TypeScriptReactOverview() {
 			icon: '🔧',
 		},
 		{
-			id: 'type-guard-tower',
-			title: 'Type Guard Tower',
+			id: 'type-safe-architecture',
+			title: 'Type-Safe Architecture',
 			description:
-				'Bridge runtime and compile-time with type guards and migration strategies.',
-			icon: '🏰',
+				'Build robust type-safe architectures with advanced patterns and migration strategies.',
+			icon: '🏛️',
 		},
 	];
 

@@ -98,15 +98,15 @@ import ErrorEnchantmentsChapterThree from '../../../learning-paths/testing-debug
 import CompoundComponentsChapterOne from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter1/chapter1';
 import CompoundComponentsChapterTwo from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter2/chapter2';
 import CompoundComponentsChapterThree from '../../../learning-paths/advanced-patterns/pages/CompoundComponents/chapter3/chapter3';
-import RenderPropsChapterOne from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter1/chapter1';
-import RenderPropsChapterTwo from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter2/chapter2';
-import RenderPropsChapterThree from '../../../learning-paths/advanced-patterns/pages/RenderProps/chapter3/chapter3';
-import HigherOrderComponentsChapterOne from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter1/chapter1';
-import HigherOrderComponentsChapterTwo from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter2/chapter2';
-import HigherOrderComponentsChapterThree from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents/chapter3/chapter3';
-import PortalsRefsChapterOne from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter1/chapter1';
-import PortalsRefsChapterTwo from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter2/chapter2';
-import PortalsRefsChapterThree from '../../../learning-paths/advanced-patterns/pages/PortalsRefs/chapter3/chapter3';
+import PatternEvolutionChapterOne from '../../../learning-paths/advanced-patterns/pages/PatternEvolution/chapter1/chapter1';
+import PatternEvolutionChapterTwo from '../../../learning-paths/advanced-patterns/pages/PatternEvolution/chapter2/chapter2';
+import PatternEvolutionChapterThree from '../../../learning-paths/advanced-patterns/pages/PatternEvolution/chapter3/chapter3';
+import AdvancedCompositionChapterOne from '../../../learning-paths/advanced-patterns/pages/AdvancedComposition/chapter1/chapter1';
+import AdvancedCompositionChapterTwo from '../../../learning-paths/advanced-patterns/pages/AdvancedComposition/chapter2/chapter2';
+import AdvancedCompositionChapterThree from '../../../learning-paths/advanced-patterns/pages/AdvancedComposition/chapter3/chapter3';
+import RefsAndDOMChapterOne from '../../../learning-paths/advanced-patterns/pages/RefsAndDOM/chapter1/chapter1';
+import RefsAndDOMChapterTwo from '../../../learning-paths/advanced-patterns/pages/RefsAndDOM/chapter2/chapter2';
+import RefsAndDOMChapterThree from '../../../learning-paths/advanced-patterns/pages/RefsAndDOM/chapter3/chapter3';
 import StateManagementLibrariesChapterOne from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter1/chapter1';
 import StateManagementLibrariesChapterTwo from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter2/chapter2';
 import StateManagementLibrariesChapterThree from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries/chapter3/chapter3';
@@ -140,33 +140,33 @@ import ComponentArmoryChapterThree from '../../../learning-paths/typescript-reac
 import GenericForgeChapterOne from '../../../learning-paths/typescript-react/pages/GenericForge/chapter1/chapter1';
 import GenericForgeChapterTwo from '../../../learning-paths/typescript-react/pages/GenericForge/chapter2/chapter2';
 import GenericForgeChapterThree from '../../../learning-paths/typescript-react/pages/GenericForge/chapter3/chapter3';
-import TypeGuardTowerChapterOne from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter1/chapter1';
-import TypeGuardTowerChapterTwo from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter2/chapter2';
-import TypeGuardTowerChapterThree from '../../../learning-paths/typescript-react/pages/TypeGuardTower/chapter3/chapter3';
+import TypeSafeArchitectureChapterOne from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter1/chapter1';
+import TypeSafeArchitectureChapterTwo from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter2/chapter2';
+import TypeSafeArchitectureChapterThree from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter3/chapter3';
 import BuildSystemsChapterOne from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter1/chapter1';
 import BuildSystemsChapterTwo from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter2/chapter2';
 import BuildSystemsChapterThree from '../../../learning-paths/build-deploy/pages/BuildSystems/chapter3/chapter3';
-import CiCdPipelineChapterOne from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter1/chapter1';
-import CiCdPipelineChapterTwo from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter2/chapter2';
-import CiCdPipelineChapterThree from '../../../learning-paths/build-deploy/pages/CiCdPipeline/chapter3/chapter3';
-import HostingHorizonsChapterOne from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter1/chapter1';
-import HostingHorizonsChapterTwo from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter2/chapter2';
-import HostingHorizonsChapterThree from '../../../learning-paths/build-deploy/pages/HostingHorizons/chapter3/chapter3';
+import CICDPipelinesChapterOne from '../../../learning-paths/build-deploy/pages/CICDPipelines/chapter1/chapter1';
+import CICDPipelinesChapterTwo from '../../../learning-paths/build-deploy/pages/CICDPipelines/chapter2/chapter2';
+import CICDPipelinesChapterThree from '../../../learning-paths/build-deploy/pages/CICDPipelines/chapter3/chapter3';
+import HostingAndDeploymentChapterOne from '../../../learning-paths/build-deploy/pages/HostingAndDeployment/chapter1/chapter1';
+import HostingAndDeploymentChapterTwo from '../../../learning-paths/build-deploy/pages/HostingAndDeployment/chapter2/chapter2';
+import HostingAndDeploymentChapterThree from '../../../learning-paths/build-deploy/pages/HostingAndDeployment/chapter3/chapter3';
 import ProductionReadinessChapterOne from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter1/chapter1';
 import ProductionReadinessChapterTwo from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter2/chapter2';
 import ProductionReadinessChapterThree from '../../../learning-paths/build-deploy/pages/ProductionReadiness/chapter3/chapter3';
-import MobileFoundationsChapterOne from '../../../learning-paths/react-native/pages/MobileFoundations/chapter1/chapter1';
-import MobileFoundationsChapterTwo from '../../../learning-paths/react-native/pages/MobileFoundations/chapter2/chapter2';
-import MobileFoundationsChapterThree from '../../../learning-paths/react-native/pages/MobileFoundations/chapter3/chapter3';
-import NavigationTrailsChapterOne from '../../../learning-paths/react-native/pages/NavigationTrails/chapter1/chapter1';
-import NavigationTrailsChapterTwo from '../../../learning-paths/react-native/pages/NavigationTrails/chapter2/chapter2';
-import NavigationTrailsChapterThree from '../../../learning-paths/react-native/pages/NavigationTrails/chapter3/chapter3';
-import NativePowersChapterOne from '../../../learning-paths/react-native/pages/NativePowers/chapter1/chapter1';
-import NativePowersChapterTwo from '../../../learning-paths/react-native/pages/NativePowers/chapter2/chapter2';
-import NativePowersChapterThree from '../../../learning-paths/react-native/pages/NativePowers/chapter3/chapter3';
-import AppDistributionChapterOne from '../../../learning-paths/react-native/pages/AppDistribution/chapter1/chapter1';
-import AppDistributionChapterTwo from '../../../learning-paths/react-native/pages/AppDistribution/chapter2/chapter2';
-import AppDistributionChapterThree from '../../../learning-paths/react-native/pages/AppDistribution/chapter3/chapter3';
+import FrameworkFoundationsChapterOne from '../../../learning-paths/full-stack-react/pages/FrameworkFoundations/chapter1/chapter1';
+import FrameworkFoundationsChapterTwo from '../../../learning-paths/full-stack-react/pages/FrameworkFoundations/chapter2/chapter2';
+import FrameworkFoundationsChapterThree from '../../../learning-paths/full-stack-react/pages/FrameworkFoundations/chapter3/chapter3';
+import RenderingStrategiesChapterOne from '../../../learning-paths/full-stack-react/pages/RenderingStrategies/chapter1/chapter1';
+import RenderingStrategiesChapterTwo from '../../../learning-paths/full-stack-react/pages/RenderingStrategies/chapter2/chapter2';
+import RenderingStrategiesChapterThree from '../../../learning-paths/full-stack-react/pages/RenderingStrategies/chapter3/chapter3';
+import ServerComponentsChapterOne from '../../../learning-paths/full-stack-react/pages/ServerComponents/chapter1/chapter1';
+import ServerComponentsChapterTwo from '../../../learning-paths/full-stack-react/pages/ServerComponents/chapter2/chapter2';
+import ServerComponentsChapterThree from '../../../learning-paths/full-stack-react/pages/ServerComponents/chapter3/chapter3';
+import FullStackPatternsChapterOne from '../../../learning-paths/full-stack-react/pages/FullStackPatterns/chapter1/chapter1';
+import FullStackPatternsChapterTwo from '../../../learning-paths/full-stack-react/pages/FullStackPatterns/chapter2/chapter2';
+import FullStackPatternsChapterThree from '../../../learning-paths/full-stack-react/pages/FullStackPatterns/chapter3/chapter3';
 import InclusiveFoundationsChapterOne from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter1/chapter1';
 import InclusiveFoundationsChapterTwo from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter2/chapter2';
 import InclusiveFoundationsChapterThree from '../../../learning-paths/accessibility/pages/InclusiveFoundations/chapter3/chapter3';
@@ -396,23 +396,23 @@ const courseListMap = {
 			chapter2: <CompoundComponentsChapterTwo />,
 			chapter3: <CompoundComponentsChapterThree />,
 		},
-		'render-props': {
-			'/': <RenderPropsChapterOne />,
-			chapter1: <RenderPropsChapterOne />,
-			chapter2: <RenderPropsChapterTwo />,
-			chapter3: <RenderPropsChapterThree />,
+		'pattern-evolution': {
+			'/': <PatternEvolutionChapterOne />,
+			chapter1: <PatternEvolutionChapterOne />,
+			chapter2: <PatternEvolutionChapterTwo />,
+			chapter3: <PatternEvolutionChapterThree />,
 		},
-		'higher-order-components': {
-			'/': <HigherOrderComponentsChapterOne />,
-			chapter1: <HigherOrderComponentsChapterOne />,
-			chapter2: <HigherOrderComponentsChapterTwo />,
-			chapter3: <HigherOrderComponentsChapterThree />,
+		'advanced-composition': {
+			'/': <AdvancedCompositionChapterOne />,
+			chapter1: <AdvancedCompositionChapterOne />,
+			chapter2: <AdvancedCompositionChapterTwo />,
+			chapter3: <AdvancedCompositionChapterThree />,
 		},
-		'portals-refs': {
-			'/': <PortalsRefsChapterOne />,
-			chapter1: <PortalsRefsChapterOne />,
-			chapter2: <PortalsRefsChapterTwo />,
-			chapter3: <PortalsRefsChapterThree />,
+		'refs-and-dom': {
+			'/': <RefsAndDOMChapterOne />,
+			chapter1: <RefsAndDOMChapterOne />,
+			chapter2: <RefsAndDOMChapterTwo />,
+			chapter3: <RefsAndDOMChapterThree />,
 		},
 	},
 	'react-ecosystem': {
@@ -486,11 +486,11 @@ const courseListMap = {
 			chapter2: <GenericForgeChapterTwo />,
 			chapter3: <GenericForgeChapterThree />,
 		},
-		'type-guard-tower': {
-			'/': <TypeGuardTowerChapterOne />,
-			chapter1: <TypeGuardTowerChapterOne />,
-			chapter2: <TypeGuardTowerChapterTwo />,
-			chapter3: <TypeGuardTowerChapterThree />,
+		'type-safe-architecture': {
+			'/': <TypeSafeArchitectureChapterOne />,
+			chapter1: <TypeSafeArchitectureChapterOne />,
+			chapter2: <TypeSafeArchitectureChapterTwo />,
+			chapter3: <TypeSafeArchitectureChapterThree />,
 		},
 	},
 	'build-deploy': {
@@ -500,17 +500,17 @@ const courseListMap = {
 			chapter2: <BuildSystemsChapterTwo />,
 			chapter3: <BuildSystemsChapterThree />,
 		},
-		'ci-cd-pipeline': {
-			'/': <CiCdPipelineChapterOne />,
-			chapter1: <CiCdPipelineChapterOne />,
-			chapter2: <CiCdPipelineChapterTwo />,
-			chapter3: <CiCdPipelineChapterThree />,
+		'cicd-pipelines': {
+			'/': <CICDPipelinesChapterOne />,
+			chapter1: <CICDPipelinesChapterOne />,
+			chapter2: <CICDPipelinesChapterTwo />,
+			chapter3: <CICDPipelinesChapterThree />,
 		},
-		'hosting-horizons': {
-			'/': <HostingHorizonsChapterOne />,
-			chapter1: <HostingHorizonsChapterOne />,
-			chapter2: <HostingHorizonsChapterTwo />,
-			chapter3: <HostingHorizonsChapterThree />,
+		'hosting-and-deployment': {
+			'/': <HostingAndDeploymentChapterOne />,
+			chapter1: <HostingAndDeploymentChapterOne />,
+			chapter2: <HostingAndDeploymentChapterTwo />,
+			chapter3: <HostingAndDeploymentChapterThree />,
 		},
 		'production-readiness': {
 			'/': <ProductionReadinessChapterOne />,
@@ -519,30 +519,30 @@ const courseListMap = {
 			chapter3: <ProductionReadinessChapterThree />,
 		},
 	},
-	'react-native': {
-		'mobile-foundations': {
-			'/': <MobileFoundationsChapterOne />,
-			chapter1: <MobileFoundationsChapterOne />,
-			chapter2: <MobileFoundationsChapterTwo />,
-			chapter3: <MobileFoundationsChapterThree />,
+	'full-stack-react': {
+		'framework-foundations': {
+			'/': <FrameworkFoundationsChapterOne />,
+			chapter1: <FrameworkFoundationsChapterOne />,
+			chapter2: <FrameworkFoundationsChapterTwo />,
+			chapter3: <FrameworkFoundationsChapterThree />,
 		},
-		'navigation-trails': {
-			'/': <NavigationTrailsChapterOne />,
-			chapter1: <NavigationTrailsChapterOne />,
-			chapter2: <NavigationTrailsChapterTwo />,
-			chapter3: <NavigationTrailsChapterThree />,
+		'rendering-strategies': {
+			'/': <RenderingStrategiesChapterOne />,
+			chapter1: <RenderingStrategiesChapterOne />,
+			chapter2: <RenderingStrategiesChapterTwo />,
+			chapter3: <RenderingStrategiesChapterThree />,
 		},
-		'native-powers': {
-			'/': <NativePowersChapterOne />,
-			chapter1: <NativePowersChapterOne />,
-			chapter2: <NativePowersChapterTwo />,
-			chapter3: <NativePowersChapterThree />,
+		'server-components': {
+			'/': <ServerComponentsChapterOne />,
+			chapter1: <ServerComponentsChapterOne />,
+			chapter2: <ServerComponentsChapterTwo />,
+			chapter3: <ServerComponentsChapterThree />,
 		},
-		'app-distribution': {
-			'/': <AppDistributionChapterOne />,
-			chapter1: <AppDistributionChapterOne />,
-			chapter2: <AppDistributionChapterTwo />,
-			chapter3: <AppDistributionChapterThree />,
+		'full-stack-patterns': {
+			'/': <FullStackPatternsChapterOne />,
+			chapter1: <FullStackPatternsChapterOne />,
+			chapter2: <FullStackPatternsChapterTwo />,
+			chapter3: <FullStackPatternsChapterThree />,
 		},
 	},
 	'accessibility': {

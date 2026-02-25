@@ -12,17 +12,17 @@ function BuildDeployOverview() {
 			icon: '⚓',
 		},
 		{
-			id: 'ci-cd-pipeline',
-			title: 'CI/CD Pipeline',
+			id: 'cicd-pipelines',
+			title: 'CI/CD Pipelines',
 			description:
 				'Navigate the Automation Harbor where code flows through automated gates to production.',
 			icon: '🚢',
 		},
 		{
-			id: 'hosting-horizons',
-			title: 'Hosting Horizons',
+			id: 'hosting-and-deployment',
+			title: 'Hosting & Deployment',
 			description:
-				'Explore the Platform Archipelago and choose the perfect destination for your applications.',
+				'Explore hosting platforms and deployment strategies for your React applications.',
 			icon: '🏝️',
 		},
 		{

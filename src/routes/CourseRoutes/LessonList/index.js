@@ -32,9 +32,9 @@ import DebugDungeon from '../../../learning-paths/testing-debugging/pages/DebugD
 import IntegrationInn from '../../../learning-paths/testing-debugging/pages/IntegrationInn';
 import ErrorEnchantments from '../../../learning-paths/testing-debugging/pages/ErrorEnchantments';
 import CompoundComponents from '../../../learning-paths/advanced-patterns/pages/CompoundComponents';
-import RenderProps from '../../../learning-paths/advanced-patterns/pages/RenderProps';
-import HigherOrderComponents from '../../../learning-paths/advanced-patterns/pages/HigherOrderComponents';
-import PortalsRefs from '../../../learning-paths/advanced-patterns/pages/PortalsRefs';
+import PatternEvolution from '../../../learning-paths/advanced-patterns/pages/PatternEvolution';
+import AdvancedComposition from '../../../learning-paths/advanced-patterns/pages/AdvancedComposition';
+import RefsAndDOM from '../../../learning-paths/advanced-patterns/pages/RefsAndDOM';
 import StateManagementLibraries from '../../../learning-paths/react-ecosystem/pages/StateManagementLibraries';
 import StylingSolutions from '../../../learning-paths/react-ecosystem/pages/StylingSolutions';
 import FormLibraries from '../../../learning-paths/react-ecosystem/pages/FormLibraries';
@@ -46,15 +46,15 @@ import GraphQLGateway from '../../../learning-paths/server-data/pages/GraphQLGat
 import TypeForge from '../../../learning-paths/typescript-react/pages/TypeForge';
 import ComponentArmory from '../../../learning-paths/typescript-react/pages/ComponentArmory';
 import GenericForge from '../../../learning-paths/typescript-react/pages/GenericForge';
-import TypeGuardTower from '../../../learning-paths/typescript-react/pages/TypeGuardTower';
+import TypeSafeArchitecture from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture';
 import BuildSystems from '../../../learning-paths/build-deploy/pages/BuildSystems';
-import CiCdPipeline from '../../../learning-paths/build-deploy/pages/CiCdPipeline';
-import HostingHorizons from '../../../learning-paths/build-deploy/pages/HostingHorizons';
+import CICDPipelines from '../../../learning-paths/build-deploy/pages/CICDPipelines';
+import HostingAndDeployment from '../../../learning-paths/build-deploy/pages/HostingAndDeployment';
 import ProductionReadiness from '../../../learning-paths/build-deploy/pages/ProductionReadiness';
-import MobileFoundations from '../../../learning-paths/react-native/pages/MobileFoundations';
-import NavigationTrails from '../../../learning-paths/react-native/pages/NavigationTrails';
-import NativePowers from '../../../learning-paths/react-native/pages/NativePowers';
-import AppDistribution from '../../../learning-paths/react-native/pages/AppDistribution';
+import FrameworkFoundations from '../../../learning-paths/full-stack-react/pages/FrameworkFoundations';
+import RenderingStrategies from '../../../learning-paths/full-stack-react/pages/RenderingStrategies';
+import ServerComponents from '../../../learning-paths/full-stack-react/pages/ServerComponents';
+import FullStackPatterns from '../../../learning-paths/full-stack-react/pages/FullStackPatterns';
 import InclusiveFoundations from '../../../learning-paths/accessibility/pages/InclusiveFoundations';
 import InteractionPatterns from '../../../learning-paths/accessibility/pages/InteractionPatterns';
 import VisualAccessibility from '../../../learning-paths/accessibility/pages/VisualAccessibility';
@@ -111,9 +111,9 @@ const courseListMap = {
 	},
 	'advanced-patterns': {
 		'compound-components': <CompoundComponents />,
-		'render-props': <RenderProps />,
-		'higher-order-components': <HigherOrderComponents />,
-		'portals-refs': <PortalsRefs />,
+		'pattern-evolution': <PatternEvolution />,
+		'advanced-composition': <AdvancedComposition />,
+		'refs-and-dom': <RefsAndDOM />,
 	},
 	'react-ecosystem': {
 		'state-management-libraries': <StateManagementLibraries />,
@@ -131,19 +131,19 @@ const courseListMap = {
 		'type-forge': <TypeForge />,
 		'component-armory': <ComponentArmory />,
 		'generic-forge': <GenericForge />,
-		'type-guard-tower': <TypeGuardTower />,
+		'type-safe-architecture': <TypeSafeArchitecture />,
 	},
 	'build-deploy': {
 		'build-systems': <BuildSystems />,
-		'ci-cd-pipeline': <CiCdPipeline />,
-		'hosting-horizons': <HostingHorizons />,
+		'cicd-pipelines': <CICDPipelines />,
+		'hosting-and-deployment': <HostingAndDeployment />,
 		'production-readiness': <ProductionReadiness />,
 	},
-	'react-native': {
-		'mobile-foundations': <MobileFoundations />,
-		'navigation-trails': <NavigationTrails />,
-		'native-powers': <NativePowers />,
-		'app-distribution': <AppDistribution />,
+	'full-stack-react': {
+		'framework-foundations': <FrameworkFoundations />,
+		'rendering-strategies': <RenderingStrategies />,
+		'server-components': <ServerComponents />,
+		'full-stack-patterns': <FullStackPatterns />,
 	},
 	'accessibility': {
 		'inclusive-foundations': <InclusiveFoundations />,

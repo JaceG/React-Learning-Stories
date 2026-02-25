@@ -1,0 +1,47 @@
+{
+  "title": "Welcome!",
+  "bridge": null,
+  "storySections": [
+    [
+      "The morning mist parted as <strong>Aria</strong> approached the gates of the React Kingdom. After months of studying ancient JavaScript scrolls in her distant homeland, she had finally been accepted as an apprentice. The Northern Quarter spread before her - rolling hills dotted with stone workshops, their chimneys releasing wisps of creative energy into the clear sky.",
+      "<strong>Master Aurelius</strong>, the Grand Architect, awaited her at the entrance to the Component Workshop District. His beard sparkled with fragments of code that seemed to shift and rearrange themselves as he moved. Behind him, the district hummed with productive energy - the sound of components being crafted, tested, and refined.",
+      "\"Welcome, young apprentice,\" Aurelius said warmly, his voice carrying the weight of decades teaching newcomers. \"You stand at the threshold of something extraordinary. In our kingdom, everything you see is built from magical building blocks called <strong>Components</strong>. Unlike the static structures in your homeland, these Components are alive and responsive.\"",
+      "He gestured toward the workshops. \"Each one breathes with purpose. They react to change, adapt to new information, and transform to meet the needs of those who use them. This is not the web you knew - this is React.\"",
+      "Aria felt a shiver of excitement. The mist swirled around her feet as she took her first steps into the district. \"I've read about components in the scrolls, but seeing them... feeling them come to life... it's different than I imagined.\""
+    ],
+    [
+      "Aurelius pointed to the tallest tower in the district, its peak visible from anywhere in the Northern Quarter. \"The master builder, <strong>App</strong>, lives there and organizes all the craftsmen to work together. From that vantage point, App can see every workshop, every component, every piece of the grand design.\"",
+      "Aria gazed up at App's Tower, its height making her dizzy. The tower seemed to pulse with organizational energy, and she could see faint lines of light connecting it to workshops throughout the district - like an invisible web of coordination. \"So App coordinates everyone? How does it know what each workshop needs to do?\"",
+      "\"Excellent question!\" Aurelius beamed, clearly pleased by her insight. \"App doesn't micromanage - it's far too wise for that. Instead, it sends instructions to each workshop, telling them what to create and how to behave. Each workshop has autonomy within its purpose, but App ensures they all work in harmony.\"",
+      "He began walking toward the workshops, gesturing for Aria to follow. \"Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm. A Button created for one interface can be used in a thousand others. A Card designed today might display user profiles tomorrow and product listings next week.\"",
+      "\"But come,\" Aurelius continued, his eyes twinkling, \"let me show you the workshops themselves. Words alone cannot capture their magic. You must see components being born, watch them take shape, feel their responsive nature. Theory without practice is like a blueprint without a building.\""
+    ],
+    [
+      "Aurelius led Aria through the bustling Component Workshop District, passing specialized workshops that hummed with different frequencies of creative energy. The air itself seemed charged with purpose. \"Here,\" he gestured to a compact building with a steady, methodical rhythm, \"is the Button workshop. Simple in purpose - it creates clickable buttons. Each one may look different, but they all share the same core purpose.\"",
+      "Through the workshop window, Aria could see a Button component being crafted. It started as raw potential, then took shape with properties being applied: color, size, text, behavior. Within moments, it emerged complete - a perfect, clickable button ready for deployment.",
+      "They moved to another workshop where glowing cards were being assembled with meticulous care. \"The Card workshop creates containers for displaying information. Notice how each workshop focuses on doing one thing exceptionally well? The Button workshop doesn't try to be a Card. The Card workshop doesn't try to be a Button. Each excels at its singular purpose.\"",
+      "Aria watched in wonder as components emerged from their workshops - perfect, reusable, ready to be placed anywhere in the kingdom. A Button created one moment could be red with rounded corners; the next might be blue and square. Same workshop, same core component, but infinite variations based on the instructions received.",
+      "\"So instead of creating everything from scratch each time, we reuse these proven components?\" Aria asked, the concept crystallizing in her mind. \"We don't rebuild a button for every interface - we use the Button workshop and just tell it what we need?\"",
+      "\"Precisely!\" Aurelius beamed with pride at her understanding. \"A Button created once can be used a thousand times, in a thousand different contexts. Need ten buttons? Call the workshop ten times with different instructions. Need to change how all buttons look? Update the workshop once, and every button everywhere updates automatically. This is the foundation of our kingdom's power - reusability through focused purpose. It's not just efficiency; it's elegance.\""
+    ]
+  ],
+  "characterIntros": [
+    {
+      "name": "Master Aurelius",
+      "description": "The Grand Architect of the React Kingdom and mentor to all component apprentices. His beard sparkles with fragments of code, and his wisdom guides newcomers through the magical building blocks of React. \"Every component in our kingdom has its own special purpose and design, but they all share the ability to be reused throughout the realm.\""
+    }
+  ],
+  "lessonInsight": {
+    "title": "Master Aurelius's Wisdom:",
+    "content": "In React, everything you see is a Component – a reusable piece of code that returns JSX elements describing what should appear on the screen. Components can be as simple as a button or as complex as an entire page. Master Aurelius teaches that each component should have a single, clear purpose."
+  },
+  "reflectionQuestions": [
+    "How does thinking of components as specialized workshops help you understand their purpose in React?",
+    "Why is it useful to have many small, focused components rather than a few large ones?"
+  ],
+  "journalEntry": {
+    "title": "Aria's Journal - Day 1",
+    "day": 1,
+    "content": "Finally made it to the React Kingdom! Master Aurelius seems wise but mysterious. He mentioned something about workshops that create living components. Can't wait to explore!"
+  }
+}

@@ -122,12 +122,12 @@ function CourseIndex() {
 			level: 'Intermediate',
 		},
 		{
-			id: 'react-native',
-			title: 'React Native Fundamentals',
+			id: 'full-stack-react',
+			title: 'Full-Stack React',
 			description:
-				'Build native mobile applications for iOS and Android using React Native.',
+				'Master full-stack React development with server components, rendering strategies, and modern frameworks.',
 			lessons: 4,
-			icon: '📱', // Mobile phone icon
+			icon: '🔗', // Link icon for full-stack connectivity
 			level: 'Advanced',
 		},
 		{

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout';
+import useNarrative from '../../../../hooks/useNarrative';
 import '../../../CourseStyles.css';
 import './PropsMessengers.css';
-// import ChapterOne from './chapter1/chapter1';
-// import ChapterTwo from './chapter2/chapter2';
-// import ChapterThree from './chapter3/chapter3';
 
 function PropsMessengers() {
+	const { narrative: lessonData } = useNarrative('components-basics', 'PropsMessengers');
 	const [messageBoard, setMessageBoard] = useState('');
 	const [selectedComponent, setSelectedComponent] = useState(null);
 	const [activeProp, setActiveProp] = useState(null);
@@ -314,7 +313,7 @@ function PropsMessengers() {
 			<LessonHeader
 				title='The Props Messengers'
 				subtitle='A story about how information travels in React'
-				opener='With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, but there was something deeper calling to her. The Props Messengers Guild in the Eastern Quarter held the secrets to mastering component communication - the art of passing information between components with precision and purpose.'
+				opener={lessonData?.opener || ''}
 				totalChapters={3}
 			/>
 

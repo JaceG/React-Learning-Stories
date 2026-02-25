@@ -4,8 +4,11 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterThree = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'LifecycleChronicles', 3);
+
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
 	const [componentAge, setComponentAge] = useState(0);
 	const [isComponentRetired, setIsComponentRetired] = useState(false);
@@ -161,33 +164,18 @@ const ChapterThree = () => {
 				: null
 		: null;
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
-				title='The Farewell Ceremony'
-				bridge='As twilight fell over the Lifecycle Sanctum, Chronos led Aria to a quieter chamber where components came to complete their final ritual - the graceful art of saying goodbye.'
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
 			<StorySection
-				paragraphs={[
-					<>
-						"Not all components live forever," Chronos said
-						solemnly. "When their purpose is fulfilled or they're no
-						longer needed, they must depart through the{' '}
-						<strong>Unmounting</strong> phase. But a component's
-						true character is revealed in how it says farewell."
-					</>,
-					`Binary's usual bouncing slowed to a gentle float. "This is the important part, Aria. Components that don't clean up after themselves leave behind ghost timers, phantom listeners, and memory leaks that haunt the kingdom!"`,
-					`Aria shuddered. "Ghost timers? That sounds terrible!"`,
-					<>
-						"Indeed," Chronos nodded gravely. "That's why we have{' '}
-						<strong>componentWillUnmount</strong> - a component's
-						last chance to clean up its affairs, cancel
-						subscriptions, clear timers, and remove event listeners
-						before departing."
-					</>,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<CodeExample
@@ -224,9 +212,7 @@ return <div>Timer: {this.state.seconds} seconds</div>;
 			/>
 
 			<StorySection
-				paragraphs={[
-					`"See how the TimerComponent remembers to clear its interval?" Chronos pointed to the code. "Without this cleanup, the timer would continue ticking forever, even after the component is gone - a ghost in the machine!"`,
-				]}
+				paragraphs={narrative.storySections[1]}
 			/>
 
 			<div className='interactive-section'>
@@ -603,27 +589,16 @@ this.abortController.abort();
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				lessonInsight={{
-					title: "Chronos's Wisdom:",
-					content:
-						'The unmounting phase gives components a chance to clean up before they\'re removed from the DOM. The componentWillUnmount method is called just before a component is destroyed, making it the perfect place to remove event listeners, clear timers, and cancel subscriptions. Proper cleanup prevents memory leaks and ensures your app runs smoothly even as components come and go. As Chronos warns: "A component that doesn\'t clean up after itself is like a guest who never leaves the party!"',
-				}}
-				reflectionQuestions={[
-					'How does the "ghost timer" metaphor help you remember the importance of cleanup?',
-					'What types of resources might a component need to clean up in a real application?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 7 (Evening)",
-					content:
-						"Today's final lesson was sobering but crucial. Components must be responsible citizens of the React Kingdom! When they leave, they must clean up after themselves - cancel timers, remove listeners, abort requests. Chronos showed me what happens when components don't clean up... it wasn't pretty. Ghost timers everywhere!",
-				}}
-				lessonEnding={[
-					'As the stars appeared above the Lifecycle Sanctum, Chronos placed a gentle hand on Aria\'s shoulder. "You\'ve learned well today, young apprentice. You now understand the sacred rhythm of component life - from birth through growth to graceful departure."',
-					'Binary spun in a happy circle. "You did it, Aria! You\'ve completed your training in the fundamental arts of React!"',
-					'"But this is just the beginning," Chronos smiled mysteriously. "Tomorrow, you\'ll journey to the Eastern Quarter to meet the State Sorcerers. They\'ll teach you how to give your components memory and the power to change over time."',
-					'Aria clutched her journal tightly, excited for the adventures ahead. She had mastered components, props, JSX, and lifecycles. She was ready for the next chapter of her journey!',
-				]}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

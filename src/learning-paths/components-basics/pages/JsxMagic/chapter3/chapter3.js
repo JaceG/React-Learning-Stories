@@ -3,8 +3,11 @@ import ChapterIntro from '../../../../../components/content/ChapterIntro';
 import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterThree = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'JsxMagic', 3);
+
 	const [jsxChallenges, setJsxChallenges] = useState([
 		{
 			id: 1,
@@ -149,20 +152,18 @@ const ChapterThree = () => {
 		}
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={3}
-				title='The Rules of the Scrolls'
-				bridge="As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light."
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
 			<StorySection
-				paragraphs={[
-					`"Every magical language has its laws," Syntaxis explained, gesturing to the tablets. "JSX may seem flexible, but it demands strict adherence to certain rules. Break them, and your spells will fail."`,
-					`Binary zipped around the tablets, illuminating each rule as he passed. "I've seen many apprentices struggle with these!" the sprite warned. "But once you understand why each rule exists, they become second nature."`,
-					`Aria pulled out her journal, ready to document these sacred laws. "I'm ready to learn, Professor. Show me what pitfalls to avoid."`,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<div className='interactive-section'>
@@ -277,6 +278,10 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[1]}
+			/>
+
 			<div className='interactive-section'>
 				<h3 className='section-title'>
 					Interactive Exercise: The Debugging Trials
@@ -387,26 +392,16 @@ const ChapterThree = () => {
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				lessonInsight={{
-					title: "Professor Syntaxis's Wisdom:",
-					content:
-						"JSX has specific syntax rules that differ from standard HTML because it's ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: \"Rules aren't limitations - they're guardrails for success!\"",
-				}}
-				reflectionQuestions={[
-					'How do the glowing tablets metaphor help you remember the importance of JSX rules?',
-					'Which of the three main rules (single root, closed tags, camelCase) do you think causes the most confusion for beginners?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 6 (Evening)",
-					content:
-						"What a day at the JSX Magic Academy! I feel like I've learned a whole new language. JSX seemed strange at first - mixing HTML with JavaScript - but now I see its elegance. The rules make sense when you understand that everything becomes JavaScript in the end. I can't wait to see what the Lifecycle Sanctum holds tomorrow!",
-				}}
-				lessonEnding={[
-					'As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buzzing with new knowledge. She had learned the ancient language of JSX, discovered how to embed dynamic expressions, and mastered the sacred rules.',
-					'"You\'ve done well, young apprentice," Professor Syntaxis said proudly. "You now possess the knowledge to write powerful component spells. But remember - JSX is just the beginning. Tomorrow, you\'ll journey to the Lifecycle Sanctum to learn how components live, update, and eventually fade away."',
-					'Binary gave Aria a tiny high-five. "You\'re going to love the Lifecycle Chronicles! The Time Keepers there are amazing!"',
-				]}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

@@ -47,7 +47,7 @@ function Sidebar({ activePath, onPathChange }) {
 		{ id: 'server-data', title: 'Server & Data' },
 		{ id: 'typescript-react', title: 'TypeScript with React' },
 		{ id: 'build-deploy', title: 'Build & Deploy' },
-		{ id: 'react-native', title: 'React Native' },
+		{ id: 'full-stack-react', title: 'Full-Stack React' },
 		{ id: 'accessibility', title: 'Accessibility (a11y)' },
 	];
 
@@ -105,9 +105,9 @@ function Sidebar({ activePath, onPathChange }) {
 		],
 		'advanced-patterns': [
 			{ id: 'compound-components', title: 'Compound Components' },
-			{ id: 'render-props', title: 'Render Props' },
-			{ id: 'higher-order-components', title: 'Higher-Order Components' },
-			{ id: 'portals-refs', title: 'Portals & Refs' },
+			{ id: 'pattern-evolution', title: 'Pattern Evolution' },
+			{ id: 'advanced-composition', title: 'Advanced Composition' },
+			{ id: 'refs-and-dom', title: 'Refs & DOM' },
 		],
 		'react-ecosystem': [
 			{ id: 'state-management-libraries', title: 'State Management Libraries' },
@@ -125,19 +125,19 @@ function Sidebar({ activePath, onPathChange }) {
 			{ id: 'type-forge', title: 'Type Forge' },
 			{ id: 'component-armory', title: 'Component Armory' },
 			{ id: 'generic-forge', title: 'Generic Forge' },
-			{ id: 'type-guard-tower', title: 'Type Guard Tower' },
+			{ id: 'type-safe-architecture', title: 'Type-Safe Architecture' },
 		],
 		'build-deploy': [
 			{ id: 'build-systems', title: 'Build Systems' },
-			{ id: 'ci-cd-pipeline', title: 'CI/CD Pipeline' },
-			{ id: 'hosting-horizons', title: 'Hosting Horizons' },
+			{ id: 'cicd-pipelines', title: 'CI/CD Pipelines' },
+			{ id: 'hosting-and-deployment', title: 'Hosting & Deployment' },
 			{ id: 'production-readiness', title: 'Production Readiness' },
 		],
-		'react-native': [
-			{ id: 'mobile-foundations', title: 'Mobile Foundations' },
-			{ id: 'navigation-trails', title: 'Navigation Trails' },
-			{ id: 'native-powers', title: 'Native Powers' },
-			{ id: 'app-distribution', title: 'App Distribution' },
+		'full-stack-react': [
+			{ id: 'framework-foundations', title: 'Framework Foundations' },
+			{ id: 'rendering-strategies', title: 'Rendering Strategies' },
+			{ id: 'server-components', title: 'Server Components' },
+			{ id: 'full-stack-patterns', title: 'Full-Stack Patterns' },
 		],
 		'accessibility': [
 			{ id: 'inclusive-foundations', title: 'Inclusive Foundations' },

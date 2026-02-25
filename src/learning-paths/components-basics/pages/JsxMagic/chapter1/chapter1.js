@@ -4,8 +4,11 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterOne = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'JsxMagic', 1);
+
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
   <h1>Hello, Adventurer!</h1>
   <p>Welcome to the Component Kingdom.</p>
@@ -51,35 +54,14 @@ const ChapterOne = () => {
 		setShowJsxOutput(false);
 	};
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
-			<ChapterIntro chapterNumber={1} title='The Magic Language' />
+			<ChapterIntro chapterNumber={1} title={narrative.title} />
 
 			<StorySection
-				paragraphs={[
-					<>
-						"Welcome, Aria!" called out{' '}
-						<strong>Professor Syntaxis</strong>, a wise mage whose
-						robes shimmered with HTML tags and JavaScript symbols.
-						"I've heard of your progress from Hermes. You're ready
-						to learn the ancient language that makes React truly
-						magical."
-					</>,
-					<>
-						Professor Syntaxis led Aria to a grand library filled
-						with glowing scrolls. "This is <strong>JSX</strong> - a
-						magical syntax that allows us to write component spells
-						using a blend of HTML-like tags and JavaScript
-						expressions."
-					</>,
-					`"But how can browsers understand this magical language?" Aria asked, examining a scroll that seemed to contain both HTML and JavaScript.`,
-					<>
-						"Ah, that's where our translator sprite,{' '}
-						<strong>Babel</strong>, comes in," Syntaxis explained.
-						"Babel transforms JSX into regular JavaScript function
-						calls that browsers can understand. Watch!"
-					</>,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<CodeExample
@@ -104,10 +86,7 @@ function Greeting() {
 			/>
 
 			<StorySection
-				paragraphs={[
-					`"Incredible!" Aria exclaimed. "So JSX is like a more elegant spell notation that gets translated into the verbose function calls?"`,
-					`"Exactly!" Syntaxis beamed. "This makes our component spells much more readable and intuitive. Now, let me show you how to use the JSX Translator Crystal..."`,
-				]}
+				paragraphs={narrative.storySections[1]}
 			/>
 
 			<div className='interactive-section'>
@@ -223,27 +202,16 @@ function Greeting() {
 				</div>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				characterIntros={[
-					{
-						name: `Professor Syntaxis`,
-						description: `A wise mage whose robes shimmer with HTML tags and JavaScript symbols, keeper of the ancient JSX language. He guards the grand library of glowing scrolls and teaches the magical syntax that makes React truly powerful. "JSX bridges the gap between markup and logic, allowing us to write component spells using a blend of HTML-like tags and JavaScript expressions."`,
-					},
-				]}
-				lessonInsight={{
-					title: "Professor Syntaxis's Wisdom:",
-					content:
-						'JSX is a syntax extension for JavaScript that looks similar to HTML but allows you to write React elements in a more intuitive way. It\'s not understood directly by browsers and must be transpiled to standard JavaScript before running. JSX makes your component code more readable by representing the UI structure in a familiar HTML-like format. As Professor Syntaxis says: "JSX bridges the gap between markup and logic!"',
-				}}
-				reflectionQuestions={[
-					"How does the translator crystal metaphor help you understand Babel's role in React development?",
-					'Why might combining HTML-like syntax with JavaScript be more powerful than keeping them separate?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 6",
-					content:
-						"The JSX Magic Academy is amazing! Professor Syntaxis showed me how JSX combines the familiarity of HTML with the power of JavaScript. It's like writing in a language that feels natural but has hidden depths. The Babel sprite is fascinating - it works tirelessly behind the scenes to translate our elegant JSX into function calls.",
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

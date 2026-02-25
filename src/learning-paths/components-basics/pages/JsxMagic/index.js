@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout';
+import useNarrative from '../../../../hooks/useNarrative';
 import '../../../CourseStyles.css';
 import './JsxMagic.css';
-// import ChapterOne from './chapter1/chapter1';
-// import ChapterTwo from './chapter2/chapter2';
-// import ChapterThree from './chapter3/chapter3';
 
 function JsxMagic() {
+	const { narrative: lessonData } = useNarrative('components-basics', 'JsxMagic');
 	const [jsxExample, setJsxExample] = useState(`<div className="greeting">
   <h1>Hello, Adventurer!</h1>
   <p>Welcome to the Component Kingdom.</p>
@@ -233,7 +232,7 @@ function JsxMagic() {
 			<LessonHeader
 				title='The JSX Magic Scrolls'
 				subtitle='A story about the magical syntax that powers React'
-				opener='After her success at the Props Messenger Guild, Aria was directed northward to the JSX Magic Academy. "You&apos;ll find Professor Syntaxis there," Hermes had said with a knowing smile. "He&apos;ll teach you the ancient language that makes all our component spells possible."'
+				opener={lessonData?.opener || ''}
 				totalChapters={3}
 			/>
 

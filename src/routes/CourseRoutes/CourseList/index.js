@@ -12,7 +12,7 @@ import ReactEcosystemOverview from '../../../learning-paths/react-ecosystem/Reac
 import ServerDataOverview from '../../../learning-paths/server-data/ServerDataOverview';
 import TypeScriptReactOverview from '../../../learning-paths/typescript-react/TypeScriptReactOverview';
 import BuildDeployOverview from '../../../learning-paths/build-deploy/BuildDeployOverview';
-import ReactNativeOverview from '../../../learning-paths/react-native/ReactNativeOverview';
+import FullStackReactOverview from '../../../learning-paths/full-stack-react/FullStackReactOverview';
 import AccessibilityOverview from '../../../learning-paths/accessibility/AccessibilityOverview';
 
 const courseListMap = {
@@ -29,7 +29,7 @@ const courseListMap = {
 	'server-data': <ServerDataOverview />,
 	'typescript-react': <TypeScriptReactOverview />,
 	'build-deploy': <BuildDeployOverview />,
-	'react-native': <ReactNativeOverview />,
+	'full-stack-react': <FullStackReactOverview />,
 	'accessibility': <AccessibilityOverview />,
 };
 const CourseList = () => {

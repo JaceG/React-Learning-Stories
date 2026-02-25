@@ -1,0 +1,49 @@
+{
+  "title": "The Component Life Stages",
+  "bridge": null,
+  "storySections": [
+    [
+      "The journey to the Lifecycle Sanctum felt different from Aria's previous destinations. Time itself seemed to move strangely here - sometimes flowing quickly, other times moving slowly, as if the Sanctum existed slightly out of phase with normal reality. The building rose from ancient stones, its architecture suggesting centuries of existence.",
+      "The Lifecycle Sanctum was unlike anything Aria had seen. Massive hourglasses floated in the air throughout the vast chamber, each representing a different component's journey through time. Some hourglasses flowed quickly, their sands rushing through narrow gaps - components with brief lifespans. Others flowed slowly, steadily, marking the passage of long-lived components that anchored entire applications.",
+      "An ancient figure approached through the floating timepieces - <strong>Chronos</strong>, the Master Time Keeper. His robes seemed woven from strands of time itself, shifting between moments past and future. His beard was long and silver, and his eyes held the wisdom of watching countless components be born, live, and fade away.",
+      "\"Welcome, young Aria,\" Chronos said, his voice echoing through time itself, seeming to arrive from multiple moments simultaneously. \"Professor Syntaxis speaks highly of your progress. Today, you'll learn the most fundamental truth of our kingdom: every component has a lifecycle - a journey from creation to destruction. Time is not something that happens to components; it is the canvas upon which they paint their purpose.\"",
+      "Binary appeared beside Aria, bouncing excitedly though with more restraint than usual - even Binary respected the gravity of this place. \"I love this place! Watch - when a component is born, mounted into the DOM, updated with new data, or unmounted from existence, special methods are called. It's like having birthday parties, growth spurts, and retirement ceremonies!\""
+    ],
+    [
+      "Chronos gestured to three particularly large hourglasses arranged in a triangle formation. Each glowed with a different color - green for birth, blue for change, red for departure. \"These represent the three sacred phases every component experiences.\"",
+      "The green hourglass pulsed. \"<strong>Mounting</strong> - when a component is born and enters the DOM. This is initialization, setup, the moment of beginning. Constructor awakens, render paints the initial form, componentDidMount takes that crucial first breath.\"",
+      "The blue hourglass flowed constantly. \"<strong>Updating</strong> - when a component responds to change. New props arrive, state evolves, the component must adapt. ShouldComponentUpdate asks 'do I need to change?', render repaints the form, componentDidUpdate handles the aftermath.\"",
+      "The red hourglass pulsed solemnly. \"<strong>Unmounting</strong> - when a component's purpose is fulfilled and it must depart. ComponentWillUnmount provides that final moment to clean up, to say goodbye properly, to leave no ghosts behind.\"",
+      "Aria watched as smaller hourglasses throughout the Sanctum demonstrated these phases. A component being created, its sand beginning to flow. Another receiving new props, its flow changing speed. A third completing its purpose, its sand running out gracefully.",
+      "\"These lifecycle methods are the heartbeat of every component,\" Chronos continued, touching one of the floating hourglasses. \"They allow components to prepare when born, adapt when they change, and gracefully depart when their time ends. Master these rhythms, and you master component existence itself.\"",
+      "Binary projected a timeline showing all three phases in sequence, with lifecycle methods marked at crucial moments. \"It's like the circle of life, but for code!\" he chirped. \"Birth, growth, adaptation, and eventual graceful departure. Every component follows this pattern.\""
+    ],
+    [
+      "\"Now, observe a component's complete journey,\" Chronos said, activating a demonstration hourglass. A UserProfile component materialized within the glass.",
+      "The first phase began. \"<strong>Constructor</strong> - awakening.\" The component stirred, initializing its state, binding methods, preparing for existence. \"<strong>Render</strong> - taking form.\" The component painted itself, creating its virtual representation. \"<strong>ComponentDidMount</strong> - living.\" The component connected to external resources, fetched data, established its presence in the DOM.",
+      "The component settled into existence, its hourglass flowing steadily. Then new props arrived - a different user ID. The component responded immediately. \"<strong>ShouldComponentUpdate</strong> - deciding.\" Should it re-render or ignore this change? The component chose to update. \"<strong>Render</strong> - adapting.\" It repainted itself with new data. \"<strong>ComponentDidUpdate</strong> - responding.\" It fetched new data for the changed user, updated external resources.",
+      "Finally, the component's purpose ended - the user navigated away. The red phase began. \"<strong>ComponentWillUnmount</strong> - departing.\" The component canceled its data subscriptions, cleared its timers, removed its event listeners, cleaned up its connections. The hourglass emptied completely, and the component faded gracefully from existence, leaving nothing behind.",
+      "\"This is the pattern every class component follows,\" Chronos explained. \"Birth with initialization, life with adaptation, death with grace. These methods give you control over every moment of a component's existence.\"",
+      "Aria felt the weight of understanding settling over her. Components weren't just code - they were temporal beings with complete lifecycles, and React provided the tools to participate in every phase."
+    ]
+  ],
+  "characterIntros": [
+    {
+      "name": "Chronos",
+      "description": "Master Time Keeper of the Lifecycle Sanctum, guardian of the hourglasses that track every component's journey through time. His voice echoes through time itself as he teaches the fundamental truth of React. \"Every component has a lifecycle - a journey from creation to destruction. Time is the canvas upon which components paint their purpose.\""
+    }
+  ],
+  "lessonInsight": {
+    "title": "Chronos's Wisdom:",
+    "content": "Every React component goes through a series of lifecycle stages: mounting (birth), updating (growth), and unmounting (retirement). React provides special methods that run at each stage, allowing you to execute code at precise moments in a component's life. Understanding this lifecycle is crucial for controlling when certain operations (like data fetching or cleanup) should occur. As Chronos teaches: \"Time is the canvas upon which components paint their purpose.\""
+  },
+  "reflectionQuestions": [
+    "How does Chronos's hourglass metaphor help you visualize the flow of a component's life?",
+    "Which lifecycle stage (mounting, updating, or unmounting) do you think is most critical for component behavior?"
+  ],
+  "journalEntry": {
+    "title": "Aria's Journal - Day 10",
+    "day": 10,
+    "content": "The Lifecycle Sanctum is awe-inspiring! Chronos showed me how every component follows the same pattern: Mounting (birth), Updating (growth), and Unmounting (farewell). It's like watching the entire circle of life, but for React components. The three colored hourglasses - green for birth, blue for change, red for departure - make the phases so clear. I watched a complete lifecycle from constructor through componentDidMount, saw it update with shouldComponentUpdate and componentDidUpdate, and witnessed the graceful cleanup in componentWillUnmount. Binary keeps making jokes about component \"birthdays\" - he's so silly, but he's not wrong! Each mounting is a birth, each update a growth spurt. Tomorrow we dive deeper into the Mounting and Updating phases. Time to master the temporal rhythms!"
+  }
+}

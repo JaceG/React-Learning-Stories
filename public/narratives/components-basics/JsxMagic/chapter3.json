@@ -1,0 +1,52 @@
+{
+  "title": "The Rules of the Scrolls",
+  "bridge": "As the afternoon sun cast long shadows through the academy's stained glass windows, Professor Syntaxis led Aria to the Hall of Sacred Rules, where ancient tablets glowed with ethereal light.",
+  "storySections": [
+    [
+      "The Hall of Sacred Rules occupied the Academy's oldest wing. Unlike the bright, exploratory chambers they'd visited, this hall felt solemn, important. Tablets lined the walls, each one glowing with ethereal light that pulsed in rhythm with some unseen heartbeat of the kingdom.",
+      "\"Every magical language has its laws,\" Syntaxis explained, his voice taking on a more formal tone as they entered. \"JSX may seem flexible - and it is, within boundaries - but it demands strict adherence to certain rules. Break them, and your spells will fail. Not gracefully, not with warnings, but with complete failure.\"",
+      "Binary zipped around the tablets, his lights dimming respectfully as he illuminated each rule. \"I've seen many apprentices struggle with these!\" the sprite warned, his usual cheerfulness tempered by the hall's gravity. \"But once you understand why each rule exists, they become second nature. These aren't arbitrary restrictions - they're necessary consequences of how JSX transforms into JavaScript.\"",
+      "Aria pulled out her journal, ready to document these sacred laws. The failures Binary mentioned sounded serious. \"I'm ready to learn, Professor. Show me what pitfalls to avoid.\"",
+      "Syntaxis approached the first tablet, which began to glow brighter at his presence. \"These rules exist because JSX is not HTML - it only resembles HTML. Under the hood, every JSX element becomes a JavaScript function call. These rules ensure that transformation works correctly.\""
+    ],
+    [
+      "Syntaxis pointed to the first glowing tablet, which displayed code examples that shifted between correct and incorrect versions. \"Rule One: Every JSX expression must have a single root element. You cannot return multiple siblings without wrapping them.\"",
+      "He demonstrated. On one side, invalid code appeared - a component trying to return both a heading and a paragraph directly, with no wrapper. \"This fails because React.createElement can only return one element. Multiple siblings have no parent to wrap them.\" Then he showed the corrected version with a wrapping div, and the newer solution using React.Fragment or the shorthand empty angle brackets, which let you group elements without adding extra DOM nodes.",
+      "\"Rule Two,\" he continued, moving to the second tablet. \"All elements must be closed. In HTML, tags like img or br can be left open, but JSX demands closure - either with a closing tag or self-closing syntax with a forward slash before the closing angle bracket.\"",
+      "Binary demonstrated the difference. HTML's img tag with just src=\"photo.jpg\" would fail in JSX. It needed to be written with the self-closing slash. \"This is because JSX transforms into function calls,\" Binary explained. \"Every element needs explicit boundaries.\"",
+      "The third tablet glowed as Binary lit it up. \"And Rule Three is tricky - use className instead of class for CSS styling! Since JSX becomes JavaScript, and class is a reserved keyword for defining classes, React Kingdom requires className.\"",
+      "Syntaxis showed more examples: htmlFor instead of for on labels, onClick instead of onclick (camelCase for all event handlers), tabIndex instead of tabindex. \"These aren't arbitrary restrictions,\" he emphasized. \"Each exists because JSX transforms into JavaScript function calls. Understanding the 'why' helps you remember the 'what'.\""
+    ],
+    [
+      "\"Now, your turn to identify and fix violations,\" Syntaxis said, leading Aria to a practice station where intentionally broken JSX appeared.",
+      "The first example showed multiple root elements. Aria immediately recognized it: \"Single root violation!\" She wrapped the elements in a Fragment, choosing the shorthand empty angle bracket syntax for its brevity.",
+      "The second showed unclosed tags. \"All must be closed,\" she muttered, adding self-closing slashes to img and br tags.",
+      "The third used the class attribute set to \"button\" for styling. \"className!\" Aria corrected, remembering that class is a JavaScript keyword.",
+      "Syntaxis presented harder challenges: nested elements with multiple violations, event handlers with incorrect casing, attributes mixing HTML and JSX conventions. Aria worked through each, Binary providing hints when she hesitated.",
+      "\"Excellent!\" Syntaxis praised. \"You've internalized the rules. But remember - these aren't memorization exercises. When you understand that JSX transforms into React.createElement calls, the rules become obvious. Single root? Because createElement returns one thing. Closed tags? Because function calls need boundaries. className? Because JavaScript reserves 'class'.\"",
+      "Binary projected a final visualization showing JSX code transforming through Babel into createElement calls, highlighting how each rule ensured the transformation worked correctly. \"See? Rules aren't limitations - they're guardrails that keep the transformation valid!\"",
+      "Aria closed her journal, the rules now making perfect sense. \"It's elegant, really. JSX looks like HTML for our convenience, but honors JavaScript's requirements under the hood.\"",
+      "\"You've mastered JSX,\" Syntaxis declared. \"You understand its syntax, its expression power, and its rules. You're ready for the next stage of your journey.\""
+    ]
+  ],
+  "lessonInsight": {
+    "title": "Professor Syntaxis's Wisdom:",
+    "content": "JSX has specific syntax rules that differ from standard HTML because it's ultimately converted to JavaScript. Understanding these rules—like requiring a single root element, using camelCase for attributes, and properly closing all tags—is essential for writing valid React components. These constraints ensure that your JSX can be correctly transformed into the function calls that React uses to create elements. As Binary says: \"Rules aren't limitations - they're guardrails for success!\""
+  },
+  "reflectionQuestions": [
+    "How do the glowing tablets metaphor help you remember the importance of JSX rules?",
+    "Which of the three main rules (single root, closed tags, camelCase) do you think causes the most confusion for beginners?"
+  ],
+  "journalEntry": {
+    "title": "Aria's Journal - Day 9",
+    "day": 9,
+    "content": "What a day at the JSX Magic Academy! I feel like I've learned a whole new language. JSX seemed strange at first - mixing HTML with JavaScript - but now I see its elegance. The rules make sense when you understand that everything becomes JavaScript in the end. Single root elements because React.createElement returns one thing. Closed tags because function boundaries need definition. className because class is a JavaScript keyword. These aren't arbitrary - they're necessary! I practiced fixing violations and can now see JSX errors before they happen. I can't wait to see what the Lifecycle Sanctum holds tomorrow!"
+  },
+  "lessonEnding": [
+    "As the sun set over the JSX Magic Academy, Aria closed her journal, her mind buzzing with new knowledge. She had learned the ancient language of JSX, discovered how to embed dynamic expressions, and mastered the sacred rules.",
+    "\"You've done well, young apprentice,\" Professor Syntaxis said proudly. \"You now possess the knowledge to write powerful component spells. But remember - JSX is just the beginning. Tomorrow, you'll journey to the Lifecycle Sanctum to learn how components live, update, and eventually fade away.\"",
+    "Binary gave Aria a tiny high-five. \"You're going to love the Lifecycle Chronicles! The Time Keepers there are amazing!\"",
+    "Aria smiled at the enthusiastic sprite. \"Would you like to come with me, Binary? I could use a guide who knows the kingdom.\"",
+    "Binary's lights sparkled with joy. \"Really? I'd love to! Every apprentice needs a companion, and I'm great at explaining React concepts!\" And so, Binary officially joined Aria's journey through the React Kingdom."
+  ]
+}

@@ -4,8 +4,11 @@ import ChapterSummary from '../../../../../components/content/ChapterSummary';
 import InstructionBox from '../../../../../components/content/InstructionBox';
 import CodeExample from '../../../../../components/content/CodeExample';
 import StorySection from '../../../../../components/content/StorySection';
+import useNarrative from '../../../../../hooks/useNarrative';
 
 const ChapterTwo = () => {
+	const { narrative, loading } = useNarrative('components-basics', 'LifecycleChronicles', 2);
+
 	const [isComponentBorn, setIsComponentBorn] = useState(false);
 	const [componentAge, setComponentAge] = useState(0);
 	const [isComponentRetired, setIsComponentRetired] = useState(false);
@@ -128,35 +131,18 @@ const ChapterTwo = () => {
 		},
 	];
 
+	if (loading || !narrative) return <div className="chapter loading">Loading...</div>;
+
 	return (
 		<div className='chapter'>
 			<ChapterIntro
 				chapterNumber={2}
-				title='The Mount and Update Chronicles'
-				bridge="Chronos led Aria deeper into the Lifecycle Sanctum, where glowing murals depicted the two most active phases of a component's life - the moments of birth and change."
+				title={narrative.title}
+				bridge={narrative.bridge}
 			/>
 
 			<StorySection
-				paragraphs={[
-					<>
-						"These murals," Chronos explained, gesturing to the
-						luminous walls, "chronicle the <strong>Mounting</strong>{' '}
-						and <strong>Updating</strong> phases - the most crucial
-						moments in a component's existence. Watch how they come
-						to life!"
-					</>,
-					<>
-						The first mural began to glow, showing a component's
-						birth ritual. "The Mounting phase," Chronos intoned,
-						"follows a sacred sequence. First, the{' '}
-						<strong>constructor</strong> awakens, preparing the
-						component's initial state. Then <strong>render</strong>{' '}
-						paints its form into existence. Finally,{' '}
-						<strong>componentDidMount</strong> brings it fully to
-						life, ready to interact with the world."
-					</>,
-					`Binary bounced excitedly. "It's like watching a flower bloom! First the seed (constructor), then the bud (render), then the full bloom (componentDidMount)!"`,
-				]}
+				paragraphs={narrative.storySections[0]}
 			/>
 
 			<CodeExample
@@ -188,20 +174,7 @@ this.setState({ isLoading: false });
 			/>
 
 			<StorySection
-				paragraphs={[
-					<>
-						The second mural shimmered to life, showing components
-						in motion. "The <strong>Updating</strong> phase,"
-						Chronos continued, "occurs whenever change flows through
-						a component. First,{' '}
-						<strong>shouldComponentUpdate</strong> asks 'Do I need
-						to change?' If yes, <strong>render</strong> repaints the
-						component, and <strong>componentDidUpdate</strong>{' '}
-						handles any ripple effects."
-					</>,
-					`Aria watched in fascination as the mural showed components gracefully adapting to new data. "So components can evolve without being destroyed and recreated?"`,
-					`"Precisely!" Chronos beamed. "That's the beauty of React's lifecycle - efficient transformation without waste."`,
-				]}
+				paragraphs={narrative.storySections[1]}
 			/>
 
 			<CodeExample
@@ -628,21 +601,16 @@ this.fetchUserData(this.props.userId);
 				</table>
 			</div>
 
+			<StorySection
+				paragraphs={narrative.storySections[2]}
+			/>
+
 			<ChapterSummary
-				lessonInsight={{
-					title: "Chronos's Wisdom:",
-					content:
-						"The mounting and updating phases are where most of a component's work happens. Mounting methods like constructor and componentDidMount are perfect for initialization and setup, while updating methods like componentDidUpdate let you respond to changes. By understanding when each method is called, you can ensure that your code runs at the optimal time in a component's lifecycle.",
-				}}
-				reflectionQuestions={[
-					'How do mounting and updating methods differ in their purpose?',
-					'When would you use componentDidMount vs. componentDidUpdate?',
-				]}
-				journalEntry={{
-					title: "Aria's Journal - Day 7 (Afternoon)",
-					content:
-						"I'm starting to see the pattern! Mounting is like a component being born with a purpose (constructor), showing itself (render), and then taking its first actions (componentDidMount). Updating is like growing and adapting - the component can decide if it needs to change and then react to those changes. It's beautiful how organized it all is!",
-				}}
+				characterIntros={narrative.characterIntros}
+				lessonInsight={narrative.lessonInsight}
+				reflectionQuestions={narrative.reflectionQuestions}
+				journalEntry={narrative.journalEntry}
+				lessonEnding={narrative.lessonEnding}
 			/>
 		</div>
 	);

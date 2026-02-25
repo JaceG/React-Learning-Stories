@@ -12,25 +12,25 @@ function AdvancedPatternsOverview() {
 			icon: '🧩',
 		},
 		{
-			id: 'render-props',
-			title: 'Render Props',
+			id: 'pattern-evolution',
+			title: 'Pattern Evolution',
 			description:
-				'Learn how to share component logic using the powerful render prop pattern.',
-			icon: '🎁',
+				'Trace the evolution of React patterns from render props to hooks and modern composition.',
+			icon: '🔄',
 		},
 		{
-			id: 'higher-order-components',
-			title: 'Higher-Order Components',
+			id: 'advanced-composition',
+			title: 'Advanced Composition',
 			description:
-				'Enhance components with reusable logic using the HOC pattern.',
+				'Master advanced component composition techniques for flexible, reusable architectures.',
 			icon: '🏗️',
 		},
 		{
-			id: 'portals-refs',
-			title: 'Portals & Refs',
+			id: 'refs-and-dom',
+			title: 'Refs & DOM',
 			description:
-				'Break out of the DOM hierarchy with portals and directly access DOM elements with refs.',
-			icon: '🌀',
+				'Directly access and manipulate DOM elements with refs, forwarding, and imperative APIs.',
+			icon: '🎯',
 		},
 	];
 
