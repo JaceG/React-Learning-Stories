@@ -1,7 +1,7 @@
 # Story Bible - React Learning Stories
 
 *Character & Concept Encyclopedia - Deep dive on people and React→Fantasy translations*  
-*Last Updated: February 2, 2026*
+*Last Updated: February 3, 2026*
 
 ---
 
@@ -14,7 +14,7 @@
 - **kingdom-geography.md** = Visual map (places, architecture, atmosphere)
 - **story-bible.md** = Character encyclopedia (THIS FILE - people, concepts)
 
-**Extraction Status**: ✅ COMPLETE! All 15 Learning Paths (58 lessons, 174 chapters) extracted. See `EXTRACTION-GUIDE.md` for full details.
+**Extraction Status**: ✅ COMPLETE! All 15 Learning Paths (60 lessons, 180 chapters) extracted. See `EXTRACTION-GUIDE.md` for full details.
 
 ---
 
@@ -256,11 +256,11 @@
 
 **Debuggora the Owl**
 - **Role**: Mystical owl companion to Test Master Jasmine
-- **Appears In**: LP8.1 TestingTower (Ch1-3), LP8.2 IntegrationInn (Ch2-3)
-- **Location**: Underground Realms - Testing Tower (perches on Aria's shoulder), also Integration Inn
+- **Appears In**: LP8.1 TestingTower (Ch1-3) ONLY
+- **Location**: Underground Realms - Testing Tower (Jasmine's companion)
 - **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
-- **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs), mocking wisdom ("if test fails with mock, it's YOUR code not service")
-- **Note**: **IMPORTANT**: Debuggora ONLY appears in LP8 (Testing Debugging learning path). Does NOT appear in LP9-15.
+- **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs)
+- **Note**: **IMPORTANT**: Debuggora stays with Jasmine at the Testing Tower. Does NOT accompany Aria. Does NOT appear in LP8.2-8.4 or LP9-15.
 
 **Innkeeper Cypress**
 - **Role**: Master of component harmony and integration testing
@@ -293,25 +293,25 @@
 - **Teaches**: Compound components (families that share implicit understanding), component families communicate without explicit prop drilling, Context for internal state sharing, React.Children.map for flexible ordering, static properties for clean organization, complex behavior with simple interface, combining patterns (Context + static properties + flexible children), accessibility and keyboard navigation in compound systems
 
 **Pattern Master Renderius**
-- **Role**: Expert in delegation patterns and flexible APIs
-- **Appears In**: LP9.2 RenderProps (Ch1-3)
-- **Location**: Sky Realm - Architect's Academy (Render Props Chamber & Advanced Delegation Laboratory)
-- **Appearance**: [Not extensively described]
-- **Teaches**: Render props (share behavior explicitly, delegate rendering to children), separation of concerns (logic vs presentation), render delegation ("logic says what's happening, consumer says how to show"), maximum flexibility patterns, advanced delegation (prop getters, state reducers, control props), balancing flexibility with ease of use, combining render props with compound components, when to use render props vs hooks, flexible APIs
+- **Role**: Historian and teacher of pattern evolution, guides through React's composition history
+- **Appears In**: LP9.2 PatternEvolution (Ch1-3)
+- **Location**: Sky Realm - Architect's Academy (Pattern Evolution Gallery)
+- **Appearance**: Stands before a glowing timeline tracing React composition patterns from 2013 to present
+- **Teaches**: Render props (share behavior, delegate rendering), higher-order components (component factories, enhancement layers, withAuth/withLogging), pattern evolution timeline (Mixins→HOCs→Render Props→Hooks), when each pattern is appropriate today, real-world pattern layering (TanStack Table, Radix UI), pattern selection framework (hooks for logic, compounds for UI families, render props for render delegation, HOCs for cross-cutting)
 
-**Forge Master Enhance**
-- **Role**: Keeper of enhancement patterns and component transformation
-- **Appears In**: LP9.3 HigherOrderComponents (Ch1-3)
-- **Location**: Sky Realm - Architect's Academy (Enhancement Forge)
-- **Appearance**: [Not extensively described]
-- **Teaches**: Higher-Order Components (HOCs - component factories take component return enhanced version), HOC patterns (withAuth/withLogging/withData/withTheme), layering enhancements (composition of multiple HOCs), advanced HOC techniques (props proxy for manipulation, inheritance inversion for deep access, display name preservation), HOC limitations (deep nesting obscures hierarchy affects debugging), when HOCs vs hooks (HOCs for props manipulation/conditional rendering/legacy, hooks for state logic/side effects), Pattern Evolution Timeline (Mixins→HOCs→Render Props→Hooks)
+**Design Weaver Sable**
+- **Role**: Master of advanced composition, specialist in headless and polymorphic patterns
+- **Appears In**: LP9.3 AdvancedComposition (Ch1-3)
+- **Location**: Sky Realm - Architect's Academy (Composition Studio - translucent component shells float in the air)
+- **Appearance**: Moves among floating component shells, draping each in different visual designs with a wave of her hand
+- **Teaches**: Headless components (behavior + accessibility + state without visual styling, data attributes for state communication, Radix UI/Headless UI/React Aria architecture), polymorphic components ("as" prop controls rendered element, design system primitives like Box/Text/Button), slot-based architecture (named content regions, structural contracts with content flexibility), combining all patterns into complete design system components (headless + polymorphic + slots + compounds)
 
-**Portal Keeper Escapius**
-- **Role**: Master of dimensional rendering and DOM manipulation
-- **Appears In**: LP9.4 PortalsRefs (Ch1-3)
-- **Location**: Sky Realm - Architect's Academy (Portals & Refs Chamber)
-- **Appearance**: [Not extensively described]
-- **Teaches**: React Portals (render children outside parent's DOM hierarchy while maintaining React tree - essential for modals/tooltips/notifications), portal event propagation (events bubble through React tree not DOM tree), refs (direct DOM access - escape hatch when declarative insufficient), useRef for DOM elements, forwardRef to pass refs through, useImperativeHandle for custom ref APIs, focus management (focus trap), integrating non-React libraries, when refs necessary vs declarative approaches, combining portals with refs
+**Ref Keeper Escapius**
+- **Role**: Guardian of the boundary between React's virtual world and the browser's physical DOM
+- **Appears In**: LP9.4 RefsAndDOM (Ch1-3)
+- **Location**: Sky Realm - Architect's Academy (Final Chamber - crystalline threads connect React's component tree to the underlying browser DOM)
+- **Appearance**: One hand in the virtual world of components and one in the physical world of browser elements
+- **Teaches**: useRef (mutable container persisting across renders without re-renders), DOM access (focus management, dimension measurement, ResizeObserver), non-DOM refs (previous values, timer IDs, AbortControllers), forwardRef (passing refs through component boundaries), useImperativeHandle (custom ref APIs exposing limited interface), focus management (focus trapping in dialogs, focus restoration), integrating non-React libraries (Chart.js, maps, rich text editors via ref→init→cleanup→state pattern), when refs necessary vs declarative approaches
 
 ### LP10: React Ecosystem
 
@@ -415,7 +415,7 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: GraphQL revolution (ask for exactly what you need - no over/under-fetching), single endpoint /graphql, flexible query language, three operation types (Query 📖 reading, Mutation ✏️ changing, Subscription 📡 real-time), GraphQL vs REST (conversation vs packages), Schema Scrolls (type system as contract between client/server), GraphQL + TypeScript (end-to-end type safety), fragments (reusable query parts reduce duplication), optimistic updates, cache normalization (update User#1 everywhere it appears), Unified Interface (complete GraphQL client HTTP + WebSocket), when GraphQL vs REST (complex nested→GraphQL, simple CRUD→REST), "GraphQL is complete data management philosophy not just query language"
 
-*[Extraction complete for LP1-11]*
+*[Characters complete for LP1-15]*
 
 ### LP12: Typescript React
 
@@ -428,25 +428,33 @@
 
 **Master Forger Typhos** (Component Armory & Generic Forge)
 - **Role**: Legendary component smith, forge master of Generic Forge
-- **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-3)
+- **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-2)
 - **Location**: Western Mountains - TypeScript Realm (Component Armory & Generic Forge)
 - **Appearance**: Legendary smith, hammer striking sparks of type definitions
-- **Teaches**: Component typing (transforming naked vulnerable JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, Functional/Class/Generic component typing, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced patterns (Conditional Type Armor, Mapped Type Chainmail, Utility Types, Type Guard Shields), Polymorphic Components, Type-Safe Form Libraries, Design System Types, generics (key to true reusability, adapt without losing type safety), type parameters as placeholders, generic constraints (extends/keyof/conditional/mapped types), generic composition, higher-order generics, builder patterns, type-safe factories, "well-typed component worth thousand runtime checks", "generics are languages within language"
+- **Teaches**: Component typing (transforming JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced generics (type parameters, constraints, extends/keyof), conditional types, mapped types, utility types, type-safe design patterns (event emitters, builder pattern, exhaustive checking), generic composition, type-safe factories
 
 **Commander Guardia**
-- **Role**: Eternal sentinel of the Type Guard Tower
-- **Appears In**: LP12.4 TypeGuardTower (Ch1-3)
-- **Location**: Northern Peaks - Type Guard Tower (rises from mountain depths to pierce peak summit)
-- **Appearance**: Eternal sentinel, watches from highest parapet
-- **Teaches**: Type guards (bridge compile-time and runtime, narrow types while informing compiler), four foundation guards (typeof primitives, instanceof objects, in operator properties, custom type predicates complex), advanced guard patterns (exhaustive checking with 'never', nested object guards deep validation, generic type guards reusable, branded types nominal checking), migration mastery (gradual with allowJs, strict boundaries typed wrappers, declaration files for untyped libs, automated codemods for scale), migration strategies (from JavaScript to TypeScript safely, sustainable path, islands of type safety expanding), balancing strictness with productivity, "trust nothing verify everything", "best guard helps others cross safely", "bridge between chaos and order"
+- **Role**: Sentinel of the type boundary between typed and untyped realms
+- **Appears In**: LP12.3 GenericForge (Ch3 - The Type Guard Tower)
+- **Location**: Western Mountains - TypeScript Realm (boundary between typed and untyped realms)
+- **Appearance**: Stands at the threshold inspecting every piece of data that attempts to cross
+- **Teaches**: Type guards (typeof, instanceof, in operator, custom type predicates with "is"), type assertions (asserts keyword), Zod for runtime validation (define schema → z.infer → parse at boundaries), "parse don't validate" philosophy, guard pipeline (Zod at boundaries, guards within, assertions at strict points, exhaustive never for unions)
+
+**Architect Typewright**
+- **Role**: System-level type architect, designer of type systems that span entire applications
+- **Appears In**: LP12.4 TypeSafeArchitecture (Ch1-3)
+- **Location**: Western Mountains - TypeScript Realm (Architecture Spire - highest peak, walls inscribed with type definitions spanning entire systems)
+- **Appearance**: Meticulous designer, blueprints covering walls from floor to ceiling mapping types across hundreds of modules
+- **Teaches**: Branded types (phantom properties for nominal checking - UserId vs OrderId), Zod + branded type integration, end-to-end type safety (shared type packages across client/server, tRPC, generated types from DB schema), module augmentation (declare module to extend library types), declaration files (.d.ts), type-level testing (Expect<T extends true>), TypeScript project architecture (types/ directory, barrel exports, path aliases, co-location)
 
 ### LP13: Build Deploy
 
-**Admiral Webpack**
-- **Role**: Commander of the Deployment Armada, transforms development code into production-ready vessels
+**Forge Admiral Vex**
+- **Role**: Pragmatic engineer of the Build Central Hub, transforms source code into production-ready bundles
 - **Appears In**: LP13.1 BuildSystems (Ch1-3)
-- **Location**: Coastal Region - Deployment Armada Docks (western section of harbor, command deck, Optimization Shipyard)
-- **Teaches**: Build systems (preparing ships for ocean voyage), build pipeline (Development Port→Bundling Dock→Optimization Bay→Launch Platform), optimization techniques (tree shaking removes dead code, code splitting loads on demand, minification compresses, gzip shrinks), differential serving (modern ES2020+ vs legacy ES5), module federation (ships share cargo mid-voyage), "every byte saved is faster journey"
+- **Location**: Coastal Region - Build Central Hub (raw source code enters one end, optimized production bundles emerge from the other)
+- **Teaches**: Build tools as machines with understandable parts (not magic), Webpack (pioneer, bundles everything upfront, powerful but slow), Vite (native ES modules in dev, esbuild pre-bundling, Rollup for production), production pipeline (tree shaking, code splitting, minification), HMR (hot module replacement), build configuration and plugins, build optimization strategies, "every byte saved is faster journey"
+- **Note**: Build-tool-agnostic name (not tied to any specific bundler)
 
 **Captain Pipeline**
 - **Role**: Commander of Automation Harbor, master of CI/CD
@@ -466,31 +474,35 @@
 - **Location**: Coastal Region - Production War Room (holographic dashboards, monitoring station, strategic command center)
 - **Teaches**: Production readiness checks (error boundaries, health endpoints, security headers, environment validation), monitoring arsenal (Sentry errors, Datadog APM, New Relic application, PagerDuty incidents), comprehensive monitoring (full visibility coverage), real-time metrics dashboards (uptime/error rate/performance), battle-tested deployment strategies (Blue-Green 99.9% uptime, Canary 85% risk reduction, Rolling 60% resource efficiency), incident response (Detection→Response→Mitigation→Resolution), automated incident response, rollback procedures, production excellence checklist, "every deployment is mission - prepare for success plan for failure", "battle against downtime won through preparation not luck", "best incident is one that never happens"
 
-### LP14: React Native
+### LP14: Full-Stack React
 
-**Frontier Marshal Native**
-- **Role**: Guardian of Mobile Frontier, bridge between web and native worlds
-- **Appears In**: LP14.1 MobileFoundations (Ch1-3)
-- **Location**: Frontier Territories - Mobile Frontier (border checkpoint, Component Trading Post, Style Frontier)
-- **Teaches**: React Native foundations (React principles govern but different rules - no DOM/CSS), component translation (View/Text/ScrollView/FlatList), Platform API (write once adapt where needed), mobile-specific patterns (touch interaction, native rendering 40% more efficient), StyleSheet creation (JavaScript objects not CSS), Flexbox-everywhere, dynamic styling, Animated API 60fps, "React with native accent", "embrace platform differences don't fight them"
+**Architect Nexus**
+- **Role**: Framework architect who thinks in systems rather than components
+- **Appears In**: LP14.1 FrameworkFoundations (Ch1-3)
+- **Location**: Server Spires - towering crystalline structures where React runs on both client and server
+- **Appearance**: Builder who thinks in architectures, designed the Server Spires
+- **Teaches**: Why frameworks exist (bare React needs manual routing, data loading, SEO, code splitting), Next.js App Router (file-system routing, page.tsx conventions, dynamic routes with [id]), nested layouts (layout.tsx wraps children, persists across navigation), metadata exports for SEO, error/loading/not-found conventions, client vs server component boundary ("use client" directive), when to use each component type
 
-**Sanctuary Keeper Bridge**
-- **Role**: Keeper of Device Sanctuary, transforms web knowledge into native capabilities
-- **Appears In**: LP14.2 NativePowers (Ch1-3)
-- **Location**: Frontier Territories - Mobile Frontier (Device Sanctuary)
-- **Teaches**: Native device capabilities (camera/location/storage/sensors/notifications/biometrics - six orbiting orbs), permission flow (trust and permission required for each), native bridges (JavaScript to device hardware), expo-camera/expo-location/AsyncStorage/Sensors, React Native Modules (creating custom native bridges), platform-specific code (Platform.select), native performance optimization, "great access comes great responsibility"
+**Server Sage Datum**
+- **Role**: Master of server-side React execution and data flow
+- **Appears In**: LP14.2 ServerComponents (Ch1-3)
+- **Location**: Server Spires - Server Component Chamber (components execute in the server realm)
+- **Appearance**: [Not extensively described]
+- **Teaches**: React Server Components (async components that fetch data directly), server-only patterns (database queries, file system access in components), caching and revalidation (time-based, on-demand with revalidatePath/revalidateTag), Streaming SSR with Suspense boundaries, progressive loading (instant shell → streaming content), Server Actions (form mutations without API routes)
 
-**Trail Guide Navigator**
-- **Role**: Master of mobile navigation patterns
-- **Appears In**: LP14.3 NavigationTrails (Ch1-3)
-- **Location**: Frontier Territories - Mobile Frontier (Navigation Trails)
-- **Teaches**: React Navigation library (mobile nav different from web), Stack/Tab/Drawer navigators (three fundamental patterns), navigation params passing data, deep linking (URLs open specific screens), connected navigation (routes sharing state), gestures (swipe-to-go-back), transitions (platform-appropriate animations), "navigation is about guiding users through your app like trails through forest"
+**Render Sage Tempus**
+- **Role**: Master of rendering strategies and time-based optimization
+- **Appears In**: LP14.3 RenderingStrategies (Ch1-3)
+- **Location**: Server Spires - Rendering Strategy Chamber
+- **Appearance**: [Not extensively described]
+- **Teaches**: Static rendering (build-time HTML generation), server rendering (request-time generation), ISR (Incremental Static Regeneration - static with timed revalidation), hybrid strategies (mixing static/dynamic per route), strategy selection framework (static for marketing, SSR for personalized, ISR for catalog, client for interactive)
 
-**Publisher Prime**
-- **Role**: Harbor master of Publishing Port, expert in app store requirements
-- **Appears In**: LP14.4 AppDistribution (Ch1-3)
-- **Location**: Publishing Port (edge of Mobile Frontier, apps prepare for journey), preparation docks, Review Gauntlet towers, Global Launch Control Center highest tower
-- **Teaches**: App store distribution (Apple App Store/Google Play), certificates and signing (iOS Development/Distribution certificates, Android keystore), provisioning profiles, platform-specific requirements, Review Gauntlet (Apple quality/guidelines, Google security/policy), rejection reasons (40% crashes/30% guidelines/20% metadata/10% other), beta testing (hundreds of active testers), ASO (App Store Optimization - keywords/visibility), global launch (millions of devices/languages/screen sizes), phased release strategy, metrics monitoring (downloads/engagement/crash rate/revenue), continuous updates, "preparation difference between smooth voyage and shipwreck of rejections", "well-prepared submission sails through review"
+**Integration Master Unitas**
+- **Role**: Master of unified full-stack architecture
+- **Appears In**: LP14.4 FullStackPatterns (Ch1-3)
+- **Location**: Server Spires - Integration Chamber (where client and server patterns converge)
+- **Appearance**: [Not extensively described]
+- **Teaches**: Server Actions (progressive enhancement, form actions, useFormStatus/useActionState), API Routes / Route Handlers (GET/POST/PUT/DELETE, streaming responses, webhooks), complete full-stack architecture (when Server Actions vs Route Handlers, data flow patterns, middleware, authentication integration, deployment considerations)
 
 ### LP15: Accessibility
 
@@ -500,11 +512,18 @@
 - **Location**: Inclusive Empire (philosophy woven throughout all regions) - Throne room showcases accessibility
 - **Teaches**: Accessibility philosophy (building for everyone not just "others"), removing barriers benefits all users, 15% permanent disabilities plus temporary/situational, design for edges creates better center, Guardians of Inclusion (Semantic/Keyboard/Audio/Spectrum/Still), semantic HTML (right element for right purpose - Foundation Hall lesson), landmark elements (header/nav/main/aside/footer), heading hierarchy, ARIA Arsenal (enhancement when HTML lacks - use sparingly), five rules of ARIA (first: don't use if can use HTML), ARIA roles/properties (67 roles, 48 properties), "No ARIA better than bad ARIA", POUR principles (Perceivable/Operable/Understandable/Robust), "true mastery means building for everyone", "accessibility isn't add-on - it's fundamental to quality"
 
-**Guardian Semantic**, **Guardian Keyboard**, **Guardian Audio**, **Guardian Spectrum**, **Guardian Still**
-- **Role**: Five Guardians of Inclusion representing different accessibility aspects
-- **Appears In**: LP15.1 InclusiveFoundations (Guardian Semantic Ch2-3), LP15.2 InteractionPatterns (Guardian Keyboard), LP15.3 VisualAccessibility (Guardian Spectrum/Still)
-- **Location**: Inclusive Empire - Various locations representing different accessibility domains
-- **Teaches**: Each guardian represents different user needs and accessibility domains
+**Guardian Keynav**
+- **Role**: Sentinel of interaction paths, ensures every path through the interface is navigable without a mouse
+- **Appears In**: LP15.2 InteractionPatterns (Ch1-3)
+- **Location**: Inclusive Empire - Interaction Chambers (maze of visible and invisible paths)
+- **Appearance**: Carries no weapon — her power is in the Tab key, arrow keys, Enter, Escape, and Space
+- **Teaches**: Keyboard navigation (Tab order, tabIndex, skip navigation), widget patterns (WAI-ARIA Authoring Practices, roving tabIndex), focus management (programmatic focus on route changes, focus trapping in dialogs, focus restoration on close), screen reader patterns (navigation modes, visually hidden text, aria-hidden, testing with VoiceOver/NVDA)
+
+**Guardian Spectrum**
+- **Role**: Calibrator of the visual experience, ensures content is perceivable regardless of visual ability
+- **Appears In**: LP15.3 VisualAccessibility (Ch1-3)
+- **Location**: Inclusive Empire - Visual Chambers (colors shift, contrasts change, text sizes grow and shrink)
+- **Teaches**: Color and contrast (WCAG contrast ratios, not relying on color alone), motion and animation (prefers-reduced-motion, reduced motion alternatives), responsive and adaptive design (fluid typography, relative units, design for all devices and preferences)
 
 **Master Validator**
 - **Role**: Guardian of Testing Tower, champion of accessibility quality assurance
@@ -531,7 +550,7 @@
 ## Binary (Companion)
 
 **Binary**
-- **First Appearance**: LP1.3 JsxMagic Ch2
+- **First Appearance**: LP1.3 JsxMagic Ch1 (present at JSX Academy)
 - **Officially Joins**: LP1.3 JsxMagic Ch3 (invited by Aria)
 - **Role**: Companion sprite, expression evaluator, guide
 - **Appearance**: Small sprite, flickering lights, can zip around
@@ -852,38 +871,36 @@
 - Component symphony → "main hall transforms into concert stage", "each maintains state while contributing to greater whole", "hundreds of interactions yet API simple"
 - Compound mastery → "hide complexity while providing flexibility", "complex behavior simple interface"
 
-**LP9.2 RenderProps**:
+**LP9.2 PatternEvolution**:
+- Pattern Evolution Gallery → "glowing timeline tracing React composition patterns from 2013 to present"
 - Render props → "share behavior explicitly", "delegate rendering to children", "giving someone paintbrush but guiding hand"
-- Chamber → "filled with floating paintbrushes and blank canvases"
-- Delegation → "logic provider says what's happening, presentation consumer says how to show"
-- Separation → "logic vs presentation", "what happens vs how it looks"
-- Advanced Delegation Laboratory → "advanced patterns balancing flexibility and ease"
-- Prop getters → "reduce boilerplate", "just spread and done"
-- State reducers → "consumers intercept and control state changes", "ultimate power"
-- Control props → "support both controlled and uncontrolled modes"
-- Flexibility vs complexity → "tradeoff balance visualization", "more flexibility = more complexity for consumers"
-- Pattern combination → "default UI with compounds, render prop overrides for customization"
-- Comparison → "Compounds=intuitive high simplicity, Render Props=maximum flexibility lower simplicity, Hooks=modern balance"
-
-**LP9.3 HigherOrderComponents**:
-- Enhancement Forge → "glows with transformative energy", "forge blazes brighter", "running hot", "deeper forges", "forge cooled"
-- HOCs → "component factories", "take component return enhanced version", "like armor for components", "each layer adds protection and capability"
-- Enhancement patterns → withAuth/withLogging/withData/withTheme wrapping original
-- Layering → "composition of enhancements", "nesting gets deep", "component tree becoming forest", "each layer adds power reduces clarity"
-- Advanced techniques → "props proxy" (safest), "inheritance inversion" (maximum control tight coupling), display name preservation, "surgical tools not blunt instruments"
+- HOCs → "component factories", "take component return enhanced version", "like armor for components"
 - Pattern Evolution Timeline → Mixins (2013) → HOCs (2015) → Render Props (2017) → Hooks (2019)
-- HOC vs hooks → "HOCs excel at props manipulation/conditional rendering, hooks dominate state logic/side effects", "not obsolete but specialized"
+- Historical context → "every mature codebase contains these patterns", "history written into code you maintain"
+- Pattern selection framework → hooks for logic sharing, compounds for UI families, render props for render delegation, HOCs for cross-cutting concerns
+- Real-world layering → "TanStack Table uses hooks internally, headless API for flexibility, compound wrappers for convenience"
+- Mastery → "patterns are tools not competing philosophies", "selecting right one for each situation"
 
-**LP9.4 PortalsRefs**:
-- Final chamber → "defies physics", "portals open to different DOM parts"
-- React Portals → "render outside parent hierarchy", "escape container constraints", "maintain React component structure"
-- Portal patterns → "modals/tooltips/notifications must escape containers"
-- DOM escaping → "breaks normal parent-child relationship", "components render anywhere"
-- Reference Scrolls → "direct DOM access", "React's abstraction isn't enough sometimes"
-- Refs → "escape hatch when declarative insufficient", "bridges React virtual to browser reality", "dangerous if carelessly used"
-- Ref patterns → useRef for DOM, forwardRef to pass through, useImperativeHandle for custom APIs
-- Focus management → "focus trap" trapping keyboard navigation
-- Architectural Summit → "combining all patterns purposefully" (portals + compounds + refs + render props + context)
+**LP9.3 AdvancedComposition**:
+- Composition Studio → "translucent component shells floating in the air, rich with behavior but without visual styling"
+- Headless components → "behavior + accessibility + state without visual styling", "same behavioral shell dressed as Material Design, then minimalist, then command palette"
+- Data attributes → "data-state, data-highlighted, data-disabled communicate state to DOM for CSS"
+- Polymorphic components → "'as' prop controls rendered element", "Button that can be anchor, Box that can be any element"
+- Design system primitives → Box (any element), Text (heading/paragraph/span), Button (button/anchor/Link)
+- Slot-based architecture → "named content regions", "structural contracts with content flexibility"
+- Complete design system → "headless + polymorphic + slots + compounds + data attributes", "one behavioral implementation, infinite designs"
+- Libraries → Radix UI, Headless UI, React Aria, Downshift, Chakra UI, Mantine
+
+**LP9.4 RefsAndDOM**:
+- Final chamber → "crystalline threads connect React's component tree to the underlying browser DOM"
+- Boundary → "one hand in virtual world of components, one in physical world of browser elements"
+- useRef → "mutable container persisting across renders without causing re-renders", "escape hatch"
+- DOM access → "focus management, dimension measurement, ResizeObserver"
+- Non-DOM refs → "previous values, timer IDs, AbortControllers — values that persist but don't trigger renders"
+- forwardRef → "passing refs through component boundaries"
+- useImperativeHandle → "custom ref APIs exposing limited interface"
+- Focus management → "focus trapping in dialogs, Tab cycles, focus restoration on close"
+- Non-React integration → "Chart.js, maps, rich text editors via ref → init in useEffect → cleanup → state-driven updates"
 
 ### LP10: React Ecosystem
 
@@ -990,21 +1007,152 @@
 - GraphQL vs REST → "complex nested data → GraphQL, simple CRUD → REST"
 - GraphQL mastery → "not just query language but complete data management philosophy"
 
-*[Concept translations complete for LP1-11]*
+### LP12: TypeScript React
 
-**Note**: LP12-15 exist in narrative but not yet extracted.
+**LP12.1 TypeForge**:
+- Type Forge → "deepest chamber in TypeScript Realm", "mountain heart", "hammer glows with strict mode energy"
+- TypeScript → "making impossibilities impossible", "implicit explicit, uncertain certain"
+- Types → "promises", "contracts", "each type is promise, interface is guarantee"
+- Type inference → "compiler sees what you mean", "implicit becomes explicit"
+- Interfaces → "contracts between components", "guarantees"
+- Union types → "multiple possibilities, one variable"
+- Generics → "key to true reusability", "adapt without losing type safety"
+
+**LP12.2 ComponentArmory**:
+- Component Armory → "transforming naked vulnerable JavaScript components into armored TypeScript fortresses"
+- Props interfaces → "armor for components", "type-safe contracts"
+- Typed hooks → "useState/useReducer/Context with types", "hook typing"
+- Migration → "gradual with allowJs", "islands of type safety expanding"
+- Strict mode → "maximum safety", "no compromises"
+
+**LP12.3 GenericForge**:
+- Generic Forge → "hottest chamber", "intense blue fire", "advanced type patterns"
+- Advanced generics → "type parameters as placeholders", "constraints with extends/keyof"
+- Conditional types → "types that adapt based on inputs"
+- Mapped types → "types that generate from other types"
+- Type-safe design patterns → "event emitters, builder pattern, exhaustive checking"
+- Type Guard Tower → "boundary between typed and untyped realms"
+- Type guards → "bridge compile-time and runtime", "trust nothing verify everything"
+- Zod → "parse don't validate", "runtime validation generating types"
+
+**LP12.4 TypeSafeArchitecture**:
+- Architecture Spire → "highest peak", "type definitions spanning entire systems"
+- Branded types → "phantom properties", "UserId never confused with OrderId"
+- End-to-end safety → "shared type packages across client/server", "tRPC", "generated types"
+- Module augmentation → "extend library types without forking"
+- Declaration files → ".d.ts", "ambient types", "untyped library contracts"
+- Type-level testing → "Expect<T extends true> catches regressions"
+
+### LP13: Build Deploy
+
+**LP13.1 BuildSystems**:
+- Build Central Hub → "raw source code enters one end, optimized production bundles emerge from the other"
+- Build tools → "machines with understandable parts, not magic"
+- Webpack → "pioneer, bundles everything upfront, powerful but slow"
+- Vite → "native ES modules in dev, esbuild pre-bundling, Rollup for production"
+- Production pipeline → "tree shaking, code splitting, minification"
+- HMR → "update changed modules without full reload"
+
+**LP13.2 CICDPipelines**:
+- Automation Harbor → "code flows through glowing channels"
+- CI/CD → "manual deployment like rowing, CI/CD like favorable winds that never stop"
+- Pipeline → "Source → Build → Test → Deploy", "automated workflows"
+- Deployment strategies → Blue-Green (zero downtime), Canary (gradual rollout), Rolling (sequential)
+- "Make deployments so safe and routine they become boring"
+
+**LP13.3 HostingAndDeployment**:
+- Platform Archipelago → "offshore hosting islands", "each platform has unique strengths"
+- Hosting platforms → Vercel (zero-config), Netlify (static/JAMstack), AWS (infinite scale), Railway (full-stack ease)
+- Edge functions → "near users", CDN → "global distribution"
+- "No best platform — best for YOUR needs"
+
+**LP13.4 ProductionReadiness**:
+- Production War Room → "holographic dashboards, monitoring station"
+- Monitoring → Sentry (errors), Datadog (APM), New Relic (application)
+- Deployment strategies → "battle-tested", "every deployment is mission"
+- Incident response → Detection → Response → Mitigation → Resolution
+- "Best incident is one that never happens"
+
+### LP14: Full-Stack React
+
+**LP14.1 FrameworkFoundations**:
+- Server Spires → "towering crystalline structures where React runs on both client and server"
+- Frameworks → "bare React needs manual routing, data loading, SEO, code splitting — frameworks solve all"
+- Next.js App Router → "file-system routing", "page.tsx = route", "convention over configuration"
+- Nested layouts → "layout.tsx wraps children, persists across navigation"
+- Client vs server boundary → "'use client' directive", "which code runs where, and why"
+
+**LP14.2 ServerComponents**:
+- Server Component Chamber → "components execute in the server realm"
+- React Server Components → "async components that fetch data directly"
+- Streaming SSR → "instant shell → streaming content", "progressive loading"
+- Server Actions → "form mutations without API routes"
+- Caching → "time-based, on-demand with revalidatePath/revalidateTag"
+
+**LP14.3 RenderingStrategies**:
+- Rendering Strategy Chamber → "time and rendering intertwined"
+- Static rendering → "build-time HTML generation"
+- Server rendering → "request-time generation"
+- ISR → "Incremental Static Regeneration, static with timed revalidation"
+- Hybrid strategies → "mixing static/dynamic per route"
+- Strategy selection → "static for marketing, SSR for personalized, ISR for catalog, client for interactive"
+
+**LP14.4 FullStackPatterns**:
+- Integration Chamber → "where client and server patterns converge"
+- Server Actions → "progressive enhancement", "form actions"
+- Route Handlers → "GET/POST/PUT/DELETE", "streaming responses", "webhooks"
+- Full-stack architecture → "when Server Actions vs Route Handlers", "complete data flow"
+
+### LP15: Accessibility
+
+**LP15.1 InclusiveFoundations**:
+- Inclusive Empire → "philosophy woven throughout all regions"
+- Accessibility → "building for everyone not just others", "15% permanent disabilities plus temporary/situational"
+- POUR principles → Perceivable, Operable, Understandable, Robust
+- Semantic HTML → "right element for right purpose"
+- ARIA → "enhancement when HTML lacks", "No ARIA better than bad ARIA"
+
+**LP15.2 InteractionPatterns**:
+- Keyboard navigation → "Tab cycles through interactive elements"
+- Focus management → "focus trapping in dialogs, focus restoration"
+- Screen reader patterns → "ARIA live regions, announcements"
+
+**LP15.3 VisualAccessibility**:
+- Color & contrast → "WCAG contrast ratios"
+- Motion & animation → "prefers-reduced-motion"
+- Responsive & adaptive → "design for all devices and preferences"
+
+**LP15.4 TestingTools**:
+- Testing Tower (accessibility) → "layered defense"
+- Automated tools → "catch 30-50%", axe DevTools, Lighthouse, pa11y
+- Manual testing → "keyboard navigation, screen reader, quick checks"
+- Accessibility culture → "Five Pillars: Education, Documentation, Code Reviews, User Involvement, Automation"
+- "Best test is users with disabilities"
+
+*[Concept translations complete for LP1-15]*
 
 ---
 
 ## Quick Reference Index
 
 **By Learning Path**:
-- LP1: Components Basics (4 lessons) ✅ COMPLETE
-- LP2: State Management (4 lessons) - IN PROGRESS (1/4 done)
-- LP3-15: To be extracted
+- LP1: Components Basics (4 lessons) ✅
+- LP2: State Management (4 lessons) ✅
+- LP3: Props Data Flow (4 lessons) ✅
+- LP4: Hooks In Action (4 lessons) ✅
+- LP5: Forms Events (4 lessons) ✅
+- LP6: Routing Navigation (4 lessons) ✅
+- LP7: Performance Optimization (4 lessons) ✅
+- LP8: Testing Debugging (4 lessons) ✅
+- LP9: Advanced Patterns (4 lessons) ✅
+- LP10: React Ecosystem (4 lessons) ✅
+- LP11: Server Data (4 lessons) ✅
+- LP12: TypeScript React (4 lessons) ✅
+- LP13: Build Deploy (4 lessons) ✅
+- LP14: Full-Stack React (4 lessons) ✅
+- LP15: Accessibility (4 lessons) ✅
 
-**Total Mentors Documented**: 6/50+ (12% complete)  
-**Total Lessons Documented**: 5/51 (10% complete)
+**Total**: 15 Learning Paths, 60 Lessons, 180 Chapters, 180 Days
 
 ---
 

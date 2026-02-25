@@ -1,0 +1,79 @@
+---
+description: Rules for writing LP narrative content into narrative-master-PHASE5.md
+globs: continuity-analysis/narrative/*.md
+alwaysApply: false
+---
+
+# Narrative Writing Rules
+
+When writing Learning Path narratives into narrative-master-PHASE5.md, follow these rules strictly to avoid timeouts and token waste.
+
+## Write One Lesson at a Time
+
+**NEVER write more than one lesson in a single Write or StrReplace call.**
+
+A lesson = 1 Lesson Opener + 3 Chapters + 1 Lesson Ending.
+
+### Workflow Per Lesson:
+1. Write the Lesson Opener + Chapter 1 (including New Characters + Wisdom + Reflection + Journal)
+2. StrReplace to append Chapter 2 (Bridge + Narrative + Mastery + Reflection + Journal)
+3. StrReplace to append Chapter 3 (Bridge + Narrative + Mastery + Reflection + Journal) + Lesson Ending
+4. Save and verify before moving to next lesson
+
+## Chapter Structure (always use this exact format):
+
+```
+### Chapter N: [Title]
+
+**Bridge:** (Ch2 and Ch3 only — one paragraph connecting from previous)
+
+**Narrative:**
+
+**Story Group 1:**
+[~250 words of narrative]
+
+**Story Group 2:**
+[~250 words of narrative]
+
+**Story Group 3:**
+[~250 words of narrative]
+
+**[Topic] Mastery:**
+[~200 word technical summary]
+
+**New Characters:** (Ch1 only, for new masters)
+**[Name]**
+[2-3 sentence description + quote]
+
+**[Name]'s Wisdom:**
+[~150 word practical advice block]
+
+**Reflection Questions:**
+- Question 1?
+- Question 2?
+- Question 3?
+
+**Aria's Journal - Day [N]**
+*[~200 word journal entry]*
+
+---
+```
+
+## Content Length Targets:
+- Story group: ~250 words (2-3 paragraphs)
+- Mastery: ~200 words
+- Wisdom: ~150 words
+- Journal: ~200 words
+- Lesson Opener: ~100 words
+- Lesson Ending: ~150 words
+
+## Character Restrictions:
+- **Debuggora the Owl** stays with Test Master Jasmine at the Testing Tower (LP8.1). She does NOT appear in any other lesson — not LP8.2, not LP8.3, not LP8.4, not LP9-15. She is Jasmine's companion only.
+- No LP1-7 masters return in active teaching roles. They can only be mentioned in passing. Aria and Binary are the only constants across all LPs.
+- Each new master appears in exactly 1 lesson (3 chapters) and does not return.
+
+## Do NOT:
+- Write multiple lessons in one tool call
+- Write more than one chapter per StrReplace append
+- Try to write all chapters of a lesson at once in one tool call
+- Include Debuggora in any lesson after LP8.1

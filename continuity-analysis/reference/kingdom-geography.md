@@ -1,7 +1,7 @@
 # React Kingdom - World Geography & Map
 
 *Complete geographic reference: terrain, climate, regions, and travel routes*  
-*Last Updated: February 2, 2026 - Comprehensive Geographic Reorganization*
+*Last Updated: February 3, 2026 - Updated for Full-Stack React (LP14), Forge Admiral Vex (LP13), removed Mobile Frontier*
 
 ---
 
@@ -26,7 +26,7 @@ The React Kingdom spans diverse terrain: from the bustling Four Quarters at its 
 - **Mountain Ranges** (North & West) - Peaks, caverns, and floating sanctuaries
 - **Underground Realms** (Beneath) - Carved chambers for testing and quality
 - **Coastal Region** (South) - Harbors, docks, and maritime deployment
-- **Beyond Borders** - Allied Kingdoms, Frontier Territories, Diplomatic Zones
+- **Beyond Borders** - Allied Kingdoms, Server Spires, Diplomatic Zones
 
 ---
 
@@ -1656,7 +1656,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 **Terrain**: Bustling docks, harbors, shipyards, sandy beaches, archipelago of islands offshore  
 **Climate**: Ocean breeze, salt air, maritime energy, seabirds (data sprites), constant ship movement  
 **Theme**: Deployment, shipping code globally, CI/CD automation, app distribution  
-**Access**: Roads from Southern Quarter, ships sailing to Allied Kingdoms and Mobile Frontier, ferries to Platform Archipelago
+**Access**: Roads from Southern Quarter, ships sailing to Allied Kingdoms, ferries to Platform Archipelago, ascent to Server Spires
 
 The Coastal Region sprawls along the kingdom's southern edge where land meets the digital seas. Massive docks bustle with activity - ships of all sizes preparing to carry applications across waters to production environments worldwide. The Deployment Armada Docks dominate the western section, while the Automation Harbor glows with pipeline energy to the east. Offshore, the Platform Archipelago's hundreds of hosting islands are visible on the horizon. The air smells of salt and possibility.
 
@@ -1670,7 +1670,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 **Architecture**:
 - Massive bustling harbor where ships prepare to carry applications
-- Command deck where Admiral Webpack reviews manifests
+- Command deck where Forge Admiral Vex reviews manifests
 - Optimization Shipyard where vessels stripped of unnecessary cargo
 - Vast harbor filled with specialized vessels (modern browsers, legacy support, mobile, edge)
 - Build pipeline visualization: Development Port → Bundling Dock → Optimization Bay → Launch Platform
@@ -1685,7 +1685,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Ocean breeze carrying salt air
 
 **Visual Details**:
-- Admiral Webpack on command deck reviewing manifests
+- Forge Admiral Vex on command deck reviewing manifests
 - Ships of all sizes preparing at docks
 - Workers applying tree shaking (removing dead code like pruning branches)
 - Bundle size meters showing reductions (67.3% optimization)
@@ -1695,9 +1695,9 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Binary calculating optimization metrics
 - Captain's hat (promotion symbol)
 
-**Master**: Admiral Webpack (Commander of Deployment Armada, transforms development code into production-ready vessels)
+**Master**: Forge Admiral Vex (pragmatic engineer, transforms source code into production-ready bundles)
 
-**Teaches**: Build systems (preparing ships for ocean voyage), build pipeline stages, optimization techniques (tree shaking removes dead code, code splitting loads on demand, minification compresses, gzip shrinks transfer), differential serving (modern ES2020+ vs legacy ES5 with polyfills), module federation (ships share cargo - shared dependencies), bundle analysis, "every byte saved is faster journey to user"
+**Teaches**: Build tools as machines with understandable parts, Webpack (pioneer bundler), Vite (native ES modules, esbuild, Rollup), production pipeline (tree shaking, code splitting, minification), HMR (hot module replacement), build configuration and plugins, build optimization strategies, "every byte saved is faster journey to user"
 
 **Connection to Teaching**: Harbor/docks = deployment preparation; ships = application bundles; ocean voyage = deploying to production; cargo = code/dependencies; optimization = lightening ship load; tree shaking = pruning dead branches; modern vs legacy ships = differential serving; module federation = shared cargo; fleet readiness = production ready
 
@@ -1790,46 +1790,6 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ---
 
-### Publishing Port (Coastal Edge)
-
-**First Mentioned**: LP14.4 AppDistribution Ch1
-
-**Location**: Coastal Region, edge of Mobile Frontier territory (where kingdom meets frontier)
-
-**Architecture**:
-- Publishing Port stands where kingdom meets Mobile Frontier
-- Docks where apps prepare for journey to App Store and Google Play
-- App signing and packaging facilities
-- Review Gauntlet towers (imposing gates)
-- Global Launch Control Center (highest tower)
-- Preparation areas for certificates and provisioning
-
-**Atmosphere**:
-- Bustling preparation activity
-- Nerve-wracking review wait
-- Persistence and determination
-- Beta testing coordination
-- Global launch celebration
-- App Store Optimization energy
-
-**Visual Details**:
-- Publisher Prime reviewing apps at docks
-- Ships being signed and packaged
-- Certificates and provisioning profiles being processed
-- Review Gauntlet towers imposing on horizon
-- Binary tracking extensive checklists
-- Rejection patterns (40% crashes/30% guidelines/20% metadata/10% other)
-- Beta testers' feedback flowing in
-- Global metrics dashboard: thousands of downloads across countries
-- Multiple languages, devices, screen sizes represented
-- Phased release strategy visualization
-
-**Master**: Publisher Prime (harbor master, expert in app store requirements)
-
-**Teaches**: App store distribution (Apple App Store/Google Play), certificates and signing (iOS Development/Distribution, Android keystore), provisioning profiles, platform-specific requirements, Review Gauntlet (Apple quality/guidelines, Google security/policy), rejection reasons and resolution, beta testing importance, ASO (App Store Optimization), global launch (millions of devices/languages/screen sizes), phased release strategy, continuous monitoring and updates, "preparation difference between smooth voyage and shipwreck of rejections"
-
-**Connection to Teaching**: Publishing Port = distribution gateway; ships = packaged apps; signing = authentication; Review Gauntlet = store approval; preparation = extensive requirements; global launch = worldwide distribution; "well-prepared submission sails through review"
-
 ---
 
 ### Production War Room (Coastal Command Center)
@@ -1872,9 +1832,9 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ### COASTAL REGION SUMMARY
 
-**Complete Locations**: Deployment Armada Docks, Automation Harbor, Platform Archipelago (offshore), Publishing Port, Production War Room  
-**Theme**: Deployment, global shipping, CI/CD automation, app distribution, production monitoring  
-**Access**: Roads from Southern Quarter, ships to Allied Kingdoms, ferries to hosting islands, voyage to Mobile Frontier  
+**Complete Locations**: Deployment Armada Docks, Automation Harbor, Platform Archipelago (offshore), Production War Room
+**Theme**: Deployment, global shipping, CI/CD automation, production monitoring
+**Access**: Roads from Southern Quarter, ships to Allied Kingdoms, ferries to hosting islands, ascent to Server Spires  
 **Climate**: Ocean breeze, salt air, maritime energy, constant activity  
 **Notable**: Gateway to external territories, where kingdom meets digital seas, command center for all production operations
 
@@ -1945,61 +1905,59 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 
 ---
 
-## 8️⃣ FRONTIER TERRITORIES (Expansion Lands)
+## 8️⃣ SERVER SPIRES (Full-Stack Territory)
 
-**Terrain**: Distant lands beyond web borders, requires long voyage  
-**Climate**: Varied, frontier atmosphere  
-**Theme**: React Native - taking React beyond the browser  
-**Access**: Long voyage from Coastal Region Publishing Port
+**Terrain**: Towering crystalline structures where React runs on both client and server  
+**Climate**: Dual-natured — warm client-side glow and cool server-side precision  
+**Theme**: Full-Stack React - React beyond the browser, running on servers  
+**Access**: Ascent from the Coastal Region, visible from the kingdom's highest points
 
 ---
 
-### Mobile Frontier
+### Server Spires
 
-**First Mentioned**: LP14.1 MobileFoundations Ch1
+**First Mentioned**: LP14.1 FrameworkFoundations Ch1
 
-**Location**: Beyond Web Kingdom borders, distant frontier (long voyage from Coastal Region)
+**Location**: Rising above the Coastal Region, towering crystalline structures where React code executes in both client and server realms simultaneously
 
-**Geography**: 
-- Border checkpoint where Frontier Marshal Native greets visitors
-- Component Trading Post for translating web to native
-- Style Frontier for mobile styling
-- Device Sanctuary (pulsing with raw potential)
-- Navigation Trails throughout frontier
-- Publishing Port connects frontier back to kingdom
+**Geography**:
+- Central Hub where Architect Nexus introduces framework foundations
+- Server Component Chamber where components execute in the server realm
+- Rendering Strategy Chamber where time and rendering intertwine
+- Integration Chamber where client and server patterns converge
+- Architecture Spire summit overlooking both realms
 
 **Architecture**:
-- Frontier outpost with border checkpoint
-- Trading Post for component exchange (View/Text/ScrollView/FlatList)
-- Style Frontier workshops
-- Device Sanctuary with six glowing orbs orbiting (device capabilities)
-- Trail systems for mobile navigation
-- Publishing facilities for app distribution
+- Crystalline towers that shift between client and server illumination
+- File-system corridors (each directory is a route, each file has a convention)
+- Layout chambers that persist across navigation
+- Streaming channels where content flows progressively to users
+- Server Action conduits connecting forms directly to server logic
+- Route Handler terminals for API endpoints
 
 **Atmosphere**:
-- Frontier territory feel - familiar React but different rules
-- No DOM, no CSS as known
-- Native performance and capabilities
-- Weathered Marshal guiding newcomers
-- Exploration and adaptation energy
+- Dual-natured energy — code executing in two worlds simultaneously
+- Convention over configuration — structure provides power
+- Progressive loading — content appears in waves, not all at once
+- Architecture-first thinking — systems rather than components
 
 **Visual Details**:
-- Frontier Marshal Native at border checkpoint, weathered from experience
-- Component Trading Post with web↔native translations
-- Six glowing orbs (camera/location/storage/sensors/notifications/biometrics)
-- Platform.select visualizations for platform-specific code
-- Trail Map Chamber showing mobile navigation
-- Apps departing for global launch from Publishing Port
+- Architect Nexus at the entrance, blueprints mapping file-system routes
+- Server Sage Datum in the server realm, async components fetching data directly
+- Render Sage Tempus calibrating rendering strategies (static, server, ISR, hybrid)
+- Integration Master Unitas at the convergence point, client and server unified
+- Streaming visualizations — content flowing progressively through Suspense boundaries
+- "use client" boundaries glowing where realms transition
 
 **Masters**:
-- Frontier Marshal Native (border guardian, bridge between web and native worlds)
-- Sanctuary Keeper Bridge (Device Sanctuary, transforms web knowledge into native)
-- Trail Guide Navigator (Navigation Trails, mobile navigation patterns)
-- Publisher Prime (Publishing Port, connects frontier to global distribution)
+- Architect Nexus (framework architect, file-system routing, client-server boundary)
+- Server Sage Datum (server-side React, async components, caching, streaming SSR)
+- Render Sage Tempus (rendering strategies — static, SSR, ISR, hybrid selection)
+- Integration Master Unitas (Server Actions, Route Handlers, full-stack architecture)
 
-**Teaches**: React Native foundations (React principles with different rules), component translation (View/Text/ScrollView/FlatList), Platform API, StyleSheet (JavaScript objects not CSS), Flexbox-everywhere, native device capabilities, React Navigation (Stack/Tab/Drawer), deep linking, app store distribution, "React with native accent", "embrace platform differences don't fight them"
+**Teaches**: Why frameworks exist (routing, data loading, SEO, code splitting), Next.js App Router (file-system routing, layouts, metadata), React Server Components (async data fetching, server-only patterns), caching and revalidation, Streaming SSR with Suspense, rendering strategies (static/SSR/ISR/hybrid), Server Actions (form mutations), Route Handlers (API endpoints), complete full-stack architecture
 
-**Connection to Teaching**: Frontier = expansion beyond web; border checkpoint = transition point; Trading Post = component translation; Device Sanctuary = native capabilities; glowing orbs = device features; Trail systems = mobile navigation; "familiar yet different"
+**Connection to Teaching**: Spires = elevated architecture thinking; dual illumination = client/server boundary; file-system corridors = convention-based routing; streaming channels = progressive loading; convergence point = unified full-stack patterns; "React is no longer just a client-side library"
 
 ---
 
@@ -2110,7 +2068,7 @@ How do you journey between these diverse regions? The React Kingdom features mul
 ### Maritime Routes (Ships & Ferries)
 - **Coastal Docks → Allied Kingdoms**: Ambassadorial ships sailing across digital seas (diplomatic voyages)
 - **Coastal Docks → Platform Archipelago**: Ferries to hosting islands offshore (quick trips)
-- **Coastal Region → Mobile Frontier**: Long voyage to distant frontier territory
+- **Coastal Region → Server Spires**: Ascent from coastal docks to crystalline towers above
 - **Between Hosting Islands**: Small ferries and boats between Platform Archipelago islands
 
 **Journey Description**: "The ambassadorial ship departed from the Deployment Docks at dawn, sails filling with favorable winds. As the React Kingdom's coastline faded behind them, new lands appeared on the horizon - the Redux Empire's orderly harbors, MobX Territory's reactive shores..."
@@ -2164,12 +2122,11 @@ How do you journey between these diverse regions? The React Kingdom features mul
 
 ### By Terrain Type:
 - **Ground Level**: Four Quarters, Central Nexus
-- **Elevated**: Sky Realm (floating), Memory Monastery (clouds above peak)
+- **Elevated**: Sky Realm (floating), Memory Monastery (clouds above peak), Server Spires (above Coastal Region)
 - **Mountains**: Northern Peaks (performance), Western Mountains (callbacks & TypeScript)
 - **Underground**: Testing Realms (beneath kingdom), TypeScript Realm (within mountains)
 - **Coastal**: Harbors, docks, maritime facilities
 - **Offshore**: Allied Kingdoms, Platform Archipelago
-- **Distant**: Mobile Frontier
 
 ### By Theme:
 - **Fundamentals**: Northern Quarter, Eastern Quarter  
@@ -2177,11 +2134,12 @@ How do you journey between these diverse regions? The React Kingdom features mul
 - **Navigation**: Central Nexus
 - **Performance**: Southern Quarter, Northern Peaks
 - **Quality**: Underground Realms
-- **Type Safety**: Western Mountains (TypeScript Realm), Type Guard Tower
+- **Type Safety**: Western Mountains (TypeScript Realm)
 - **Advanced Patterns**: Sky Realm (Architect's Academy)
 - **Production**: Coastal Region
+- **Full-Stack**: Server Spires
 - **Ecosystem**: Allied Kingdoms, Diplomatic Zones
-- **Extensions**: Frontier Territories, Inclusive Empire
+- **Accessibility**: Inclusive Empire
 
 ---
 
