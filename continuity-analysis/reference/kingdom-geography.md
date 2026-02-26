@@ -51,7 +51,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 **Architecture**:
 - Multiple specialized workshops throughout district (Button, Card, Form workshops)
 - App's Tower - tallest tower in district, visible from across kingdom
-- Grand Assembly Hall - large demonstration space for component composition
+- Composition Pavilion - large demonstration space for component composition
 - Communication Hub - bustling area where messengers rush between workshops
 - Morning mist parts at gates revealing district
 
@@ -502,7 +502,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 **Theme**: Where users interact - forms, events, validation, user experience  
 **Borders**: Central Nexus (east), path to Western Mountains (west), Southern Quarter (south)
 
-#### Event Symphony Hall
+#### Event Orchestrium
 
 **First Mentioned**: LP5.1 EventSymphony Ch1
 
@@ -542,7 +542,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 **First Mentioned**: LP5.2 FormFundamentals Ch1
 
-**Location Within Quarter**: Western Quarter, adjacent to Event Symphony Hall (forms and events work together)
+**Location Within Quarter**: Western Quarter, adjacent to Event Orchestrium (forms and events work together)
 
 **Architecture**:
 - Laboratory filled with bubbling cauldrons of form state
@@ -658,7 +658,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 **First Mentioned**: LP3.2 PropsCaravans Ch1
 
-**Location Within Quarter**: Western Quarter, Trade Quarter beyond Prop Forge's reach
+**Location Within Quarter**: Western Quarter, Trade Quarter beyond the Prop Workbench
 
 **Architecture**:
 - Composition Workshop - artisans assembling components like puzzle pieces
@@ -668,9 +668,9 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 - Assembly areas for component composition
 
 **Atmosphere**:
-- Unlike forges - more assembly than transformation
+- Unlike the Prop Workbench - more assembly than transformation
 - Props hum with energy, flowing like streams between stations
-- Peaceful, artistic compared to forge's intensity
+- Peaceful, artistic compared to the workbench's intensity
 - Scholarly atmosphere in Pattern Library
 - Satisfaction of pieces fitting perfectly together
 
@@ -918,7 +918,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 **Architecture**:
 - Navigation Corps training grounds where security patterns taught
 - Guardian Archives with ancient memory crystals lining walls
-- Grand Hall of Authority for ultimate guardian patterns
+- Authority Tribunal for ultimate guardian patterns
 - Final demonstration chamber with complex portal systems
 - Citadel's highest observation deck overlooking entire React Kingdom
 
@@ -1020,7 +1020,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 - Academy's main hall that transforms into concert stage
 - Golden scroll delivery system
 - Multiple chambers for different pattern teachings
-- Enhancement Forge glowing with transformative energy
+- Enhancement Gallery glowing with transformative energy
 - Render Props Chamber with floating paintbrushes and canvases
 - Advanced Delegation Laboratory
 - Portals & Refs Chamber (final chamber defying physics)
@@ -1041,20 +1041,19 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 - Implicit connections as glowing threads visible in Bonding Chamber
 - Main hall transforming into concert stage
 - Component symphony performing (Accordions/Menus/Forms/Modals)
-- Enhancement Forge blazing with blue transformative energy
+- Enhancement Gallery shimmering with blue transformative energy
 - Floating paintbrushes and blank canvases in Render Props Chamber
 - Portals opening to different DOM locations in final chamber
 - Reference Scrolls for refs education
 
 **Masters**:
 - Dean Architectus (Compound Components)
-- Pattern Master Renderius (Render Props)  
-- Forge Master Enhance (HOCs)
-- Portal Keeper Escapius (Portals/Refs)
+- Pattern Master Renderius (Render Props, HOCs)
+- Ref Anchor Escapius (Portals/Refs)
 
 **Teaches**: Compound components (families with implicit understanding), render props (explicit behavior delegation), Higher-Order Components (component factories), React Portals (render outside hierarchy), refs (direct DOM access), combining all patterns purposefully
 
-**Connection to Teaching**: Floating academy = elevated architectural knowledge; crystalline shifting = adaptive patterns; golden scroll = mastery invitation; Bonding Chamber = implicit connections; concert stage = symphony of patterns; Enhancement Forge = transformation power; paintbrushes/canvases = delegation; defying physics = escaping DOM hierarchy
+**Connection to Teaching**: Floating academy = elevated architectural knowledge; crystalline shifting = adaptive patterns; golden scroll = mastery invitation; Bonding Chamber = implicit connections; concert stage = symphony of patterns; Enhancement Gallery = transformation power; paintbrushes/canvases = delegation; defying physics = escaping DOM hierarchy
 
 ---
 
@@ -1265,7 +1264,7 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 **Theme**: Callbacks/events (surface), TypeScript type safety (deep within mountain heart)  
 **Access**: Winding path from Western Quarter, underground tunnels throughout mountain interior, passages to Northern Peaks TypeScript connections
 
-The Western Mountains rise beyond the Western Quarter, their peaks visible from the Prop Forge. Cool thin air carries sounds that echo mysteriously. But the true secrets lie beneath - the entire mountain range is honeycombed with the Great Scriptorium, vast library halls carved into living rock where type contracts are inscribed on crystalline tablets. Blue ink-light glows through mountain cracks at night.
+The Western Mountains rise beyond the Western Quarter, their peaks visible from the Prop Workbench. Cool thin air carries sounds that echo mysteriously. But the true secrets lie beneath - the entire mountain range is honeycombed with the Great Scriptorium, vast library halls carved into living rock where type contracts are inscribed on crystalline tablets. Blue ink-light glows through mountain cracks at night.
 
 ---
 
@@ -1273,13 +1272,13 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 **First Mentioned**: LP3.3 EventEchoes Ch1
 
-**Location**: Carved into Western Mountains surface, winding path from Western Quarter (beyond Prop Forge)
+**Location**: Carved into Western Mountains surface, winding path from Western Quarter (beyond the Prop Workbench)
 
 **Architecture**:
 - Massive archway carved into mountainside (entrance)
 - First cavern with crystalline formations pulsing with echoes
 - Echo Chamber - vast chamber where sounds multiply and layer
-- Grand Symphony Hall - natural amphitheater at heart of caves
+- Echo Amphitheater - natural amphitheater at heart of caves
 - Thousands of stalactites forming stone organ
 - Perfect natural acoustics throughout
 - Natural caves (distinct from the carved library halls of the Great Scriptorium below)
@@ -1294,7 +1293,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 **Visual Details**:
 - Crystalline formations pulsing with each echo passing through
-- Echo Keeper Callback's voice creating visible ripples in air
+- Echo Warden Callback's voice creating visible ripples in air
 - Sounds bouncing in fascinating patterns
 - Glowing signal paths traced in air
 - Resonance crystals capturing sounds
@@ -1302,7 +1301,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 - Stalactites like organ pipes, sparkling with captured echoes
 - Conductor's baton sparkling at podium
 
-**Master**: Echo Keeper Callback (guardian, robes shimmer with sound waves)
+**Master**: Echo Warden Callback (guardian, robes shimmer with sound waves)
 
 **Teaches**: Callback functions, upward communication (events vs props down), callbacks with parameters/rich data, parent as orchestrator, Symphony Pattern, event delegation, event coordination
 
@@ -2030,7 +2029,7 @@ How do you journey between these diverse regions? The React Kingdom features mul
 
 ### Mountain Passes (Stone Paths & Tunnels)
 - **Southern Quarter → Northern Peaks**: Ascending path, trees → rocks → snow, air thinning
-- **Western Quarter → Western Mountains (Echo Caves)**: Winding path from Prop Forge, cool thin air
+- **Western Quarter → Western Mountains (Echo Caves)**: Winding path from the Prop Workbench, cool thin air
 - **Western Mountains Surface → Great Scriptorium Interior**: Descending into mountain heart via hidden entrances
 - **Great Scriptorium Network**: Lamplit corridors connecting Type Scriptorium ↔ Component Archives ↔ Pattern Alcove
 - **Northern Peaks ↔ Western Mountains (Underground)**: Scriptorium connection tunnels between ranges

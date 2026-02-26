@@ -15,7 +15,7 @@ const lessonSequences = {
   'props-data-flow': [
     { id: 'props-caravans', title: 'The Props Caravans' },
     { id: 'data-rivers', title: 'The Data Rivers' },
-    { id: 'prop-forge', title: 'The Prop Forge' },
+    { id: 'prop-workbench', title: 'The Prop Workbench' },
     { id: 'event-echoes', title: 'The Event Echoes' }
   ],
   'hooks-in-action': [
@@ -67,9 +67,9 @@ const lessonSequences = {
     { id: 'graphql-gateway', title: 'GraphQL Gateway' }
   ],
   'typescript-react': [
-    { id: 'type-forge', title: 'Type Forge' },
-    { id: 'component-armory', title: 'Component Armory' },
-    { id: 'generic-forge', title: 'Generic Forge' },
+    { id: 'type-scriptorium', title: 'Type Scriptorium' },
+    { id: 'component-archives', title: 'Component Archives' },
+    { id: 'pattern-alcove', title: 'Pattern Alcove' },
     { id: 'type-safe-architecture', title: 'Type-Safe Architecture' }
   ],
   'build-deploy': [

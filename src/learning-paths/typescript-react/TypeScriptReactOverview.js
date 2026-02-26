@@ -5,24 +5,24 @@ import '../CourseStyles.css';
 function TypeScriptReactOverview() {
 	const lessons = [
 		{
-			id: 'type-forge',
-			title: 'Type Forge',
+			id: 'type-scriptorium',
+			title: 'Type Scriptorium',
 			description:
-				'Enter the ancient Type Forge where code contracts are hammered into unbreakable forms.',
-			icon: '⚒️',
+				'Enter the Great Scriptorium where code contracts are inscribed on crystalline tablets.',
+			icon: '📜',
 		},
 		{
-			id: 'component-armory',
-			title: 'Component Armory',
+			id: 'component-archives',
+			title: 'Component Archives',
 			description:
-				'Master typing every React pattern in the Component Armory with Armorer Genericus.',
-			icon: '🛡️',
+				'Catalogue typed component manuscripts in the Archives with Archivist Lexicon.',
+			icon: '📚',
 		},
 		{
-			id: 'generic-forge',
-			title: 'Generic Forge',
+			id: 'pattern-alcove',
+			title: 'Pattern Alcove',
 			description:
-				'Learn to create flexible types using generics, the master forging technique.',
+				'Learn to create flexible types using generics in the illuminated Pattern Alcove.',
 			icon: '🔧',
 		},
 		{
@@ -42,10 +42,10 @@ function TypeScriptReactOverview() {
 				</Link>
 				<h1 className='course-title'>TypeScript with React</h1>
 				<p className='course-description'>
-					Deep beneath the React Kingdom lies the Type Forge, where
-					Master Typus teaches the ancient art of forging unbreakable
-					code contracts. Learn to transform your React applications
-					with TypeScript's powerful type system, making
+					Deep beneath the React Kingdom lies the Great Scriptorium,
+					where Scribe Runis teaches the ancient art of inscribing
+					unbreakable code contracts. Learn to transform your React
+					applications with TypeScript's powerful type system, making
 					impossibilities impossible and turning hope into guarantees.
 				</p>
 			</div>
@@ -53,7 +53,8 @@ function TypeScriptReactOverview() {
 			<div className='course-prerequisites'>
 				<h3>Prerequisites</h3>
 				<p>
-					Before entering the Type Forge, you should have completed:
+					Before entering the Great Scriptorium, you should have
+					completed:
 				</p>
 				<ul>
 					<li>
@@ -64,7 +65,7 @@ function TypeScriptReactOverview() {
 					<li>Basic programming concepts</li>
 				</ul>
 				<p className='prerequisite-note'>
-					💡 Master Typus will teach TypeScript from the ground up,
+					💡 Scribe Runis will teach TypeScript from the ground up,
 					but React knowledge is essential
 				</p>
 			</div>

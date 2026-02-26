@@ -33,7 +33,7 @@ The React Kingdom now has a rich, immersive geography with distinct regions, ter
 #### **WESTERN QUARTER** - User Interaction
 - **Terrain**: Urban district, plazas, halls, accessible from Western Mountains
 - **Climate**: Bustling, energetic, interactive
-- **Locations**: Event Symphony Hall, Form Alchemy Lab, Validation Fortress, Submission Portal Gateway, Composition District (Trade Quarter)
+- **Locations**: Event Orchestrium, Form Alchemy Lab, Validation Fortress, Submission Portal Gateway, Composition District (Trade Quarter)
 - **Theme**: Where users interact, forms submit, events coordinate
 - **Travel To/From**: Main streets, mountain path to Echo Caves, portal to mountains
 
@@ -98,7 +98,7 @@ The React Kingdom now has a rich, immersive geography with distinct regions, ter
     - Underground passages connecting all three
 - **Theme**: Callbacks, sound/events, type forging deep in mountain heart
 - **Travel To/From**:
-  - Winding path from Western Quarter (Prop Forge)
+  - Winding path from Western Quarter (Prop Workbench)
   - Underground tunnels between TypeScript locations
   - Passages down to Testing Underground Realms
   - Northern tunnel to Type Guard Tower (Northern Peaks)
@@ -322,7 +322,7 @@ ancient power..."
 ### **Quarter to Quarter** (Ground Level)
 - Use main roads, streets, district transitions
 - Can be quick: "Aria traveled west..."
-- Or detailed: "The road from the Eastern Quarter wound through the Central Nexus, past the Grand Context Hall where threads of data glowed in the afternoon sun, before turning west toward the Event Symphony Hall..."
+- Or detailed: "The road from the Eastern Quarter wound through the Central Nexus, past the Grand Context Hall where threads of data glowed in the afternoon sun, before turning west toward the Event Orchestrium..."
 
 ### **Quarter to Mountains** (Elevation Change)
 - Start: main roads departing quarter
@@ -557,7 +557,7 @@ When rewriting a lesson with new geography:
 - Integration Sanctum ← MOVE HERE
 
 **WESTERN QUARTER:**
-- Event Symphony Hall ✓
+- Event Orchestrium ✓
 - Form Alchemy Lab ✓
 - Validation Fortress ✓
 - Submission Portal Gateway ✓

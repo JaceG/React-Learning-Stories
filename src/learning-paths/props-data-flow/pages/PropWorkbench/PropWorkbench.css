@@ -1,6 +1,6 @@
-/* Prop Forge specific styles - inherits from CourseStyles.css */
+/* Prop Workbench specific styles - inherits from CourseStyles.css */
 
-/* Forge workshop specific styles */
+/* Workshop specific styles */
 .forge-workshop {
   background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
   border-radius: 12px;
@@ -168,7 +168,7 @@
 
 /* Code example styles are inherited from CourseStyles.css */
 
-/* Custom button styles for this lesson - keeping red theme for Prop Forge */
+/* Custom button styles for this lesson - keeping red theme for Prop Workbench */
 .forge-button,
 .action-button {
   background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);

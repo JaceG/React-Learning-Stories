@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
-import './ComponentArmory.css';
+import './ComponentArchives.css';
 
-function ComponentArmory() {
+function ComponentArchives() {
 	const [forgedComponents, setForgedComponents] = useState([]);
 	const [selectedArmor, setSelectedArmor] = useState(null);
 	const [armoryLevel, setArmoryLevel] = useState('apprentice');
@@ -50,10 +50,10 @@ function ComponentArmory() {
 
 			<LessonFooter
 				courseId='typescript-react'
-				lessonId='component-armory'
+				lessonId='component-archives'
 			/>
 		</div>
 	);
 }
 
-export default ComponentArmory;
+export default ComponentArchives;

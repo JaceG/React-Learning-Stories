@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LessonHeader, LessonFooter } from '../../../../components/layout/';
 import '../../../CourseStyles.css';
-import './TypeForge.css';
+import './TypeScriptorium.css';
 
-function TypeForge() {
+function TypeScriptorium() {
 	const [typeSystem, setTypeSystem] = useState('inference');
 	const [forgeMode, setForgeMode] = useState('basic');
 	const [contractResults, setContractResults] = useState([]);
@@ -80,11 +80,11 @@ function TypeForge() {
 
 			<LessonFooter
 				courseId={`typescript-react`}
-				lessonId={`type-forge`}
+				lessonId={`type-scriptorium`}
 				totalChapters={3}
 			/>
 		</div>
 	);
 }
 
-export default TypeForge;
+export default TypeScriptorium;

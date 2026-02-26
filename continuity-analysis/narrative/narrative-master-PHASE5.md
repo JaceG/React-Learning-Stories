@@ -926,13 +926,13 @@ Render props separate logic from presentation — a component manages state and 
 ### Chapter 2: Higher-Order Components
 
 **Bridge:**
-"Render props delegate rendering outward," Renderius said, gesturing to a forge deeper in the gallery where components entered one end and emerged enhanced from the other. "Higher-order components work in the opposite direction — they wrap a component to enhance it with additional behavior. Think of them as armor layers added to a naked component."
+"Render props delegate rendering outward," Renderius said, gesturing to a gallery deeper in the academy where components entered one end and emerged enhanced from the other. "Higher-order components work in the opposite direction — they wrap a component to enhance it with additional behavior. Think of them as armor layers added to a naked component."
 
 **Narrative:**
 
 **Story Group 1:**
 
-The **Enhancement Forge** glowed with transformative energy. Components entered as simple functional units and emerged wrapped in additional capabilities. Renderius demonstrated the fundamental pattern: a higher-order component (HOC) was a function that accepted a component and returned a new component with enhanced behavior.
+The **Enhancement Gallery** glowed with transformative energy. Components entered as simple functional units and emerged wrapped in additional capabilities. Renderius demonstrated the fundamental pattern: a higher-order component (HOC) was a function that accepted a component and returned a new component with enhanced behavior.
 
 He showed withAuth — a HOC that wrapped any component with authentication checking. The wrapped component only rendered if the user was authenticated; otherwise, it redirected to the login page. The original component never knew about authentication logic. "Apply withAuth to any page component, and it becomes protected," Renderius said. "The enhancement is transparent to the wrapped component."
 
@@ -1206,7 +1206,7 @@ Modern design system architecture combines four composition patterns. Headless c
 - What does "the simple case is simple, the complex case is possible" mean for component API design?
 
 **Aria's Journal - Day 105**
-*Slot-based architecture — named content regions! A Card with header, body, footer slots instead of a title string prop. Slots preserve structural contracts while removing content limits. I built a NavigationBar with logo, links, search, userMenu slots that stayed responsive regardless of what filled each slot. Then Sable brought EVERYTHING together: I built a complete Dialog combining headless (useDialog hook), compound API (Dialog.Trigger/Overlay/Content/Title/Close), slots (header/body/footer in Content), polymorphic (Content as="aside" for side panels), ARIA (role dialog, aria-modal), and data attributes for CSS. This is what Radix UI looks like inside! Sable's lesson: modern design system architecture = headless + polymorphic + slots + compounds + data attributes. One behavioral implementation, infinite designs. Advanced Composition complete! Tomorrow: Ref Keeper Escapius for refs and DOM mastery.*
+*Slot-based architecture — named content regions! A Card with header, body, footer slots instead of a title string prop. Slots preserve structural contracts while removing content limits. I built a NavigationBar with logo, links, search, userMenu slots that stayed responsive regardless of what filled each slot. Then Sable brought EVERYTHING together: I built a complete Dialog combining headless (useDialog hook), compound API (Dialog.Trigger/Overlay/Content/Title/Close), slots (header/body/footer in Content), polymorphic (Content as="aside" for side panels), ARIA (role dialog, aria-modal), and data attributes for CSS. This is what Radix UI looks like inside! Sable's lesson: modern design system architecture = headless + polymorphic + slots + compounds + data attributes. One behavioral implementation, infinite designs. Advanced Composition complete! Tomorrow: Ref Anchor Escapius for refs and DOM mastery.*
 
 **Lesson Ending:**
 
@@ -1220,7 +1220,7 @@ Aria understood the power of what she had built. A traditional Dialog component 
 
 Binary displayed the architecture as a stack: useDialog hook at the base, Dialog compound family above it, named slots within Content, and data-state attributes at the surface. "Layered composition: behavior, structure, content, style. Each independent. All coordinated."
 
-Sable gestured toward the Academy's final chamber, where crystalline reference points connected to the underlying DOM reality beneath the component abstraction. "**Ref Keeper Escapius** guards the boundary between React's virtual world and the browser's physical DOM. Sometimes the abstraction is not enough — you must reach through and touch the real elements directly. Go carefully. That boundary exists for good reason, and crossing it demands discipline."
+Sable gestured toward the Academy's final chamber, where crystalline reference points connected to the underlying DOM reality beneath the component abstraction. "**Ref Anchor Escapius** guards the boundary between React's virtual world and the browser's physical DOM. Sometimes the abstraction is not enough — you must reach through and touch the real elements directly. Go carefully. That boundary exists for good reason, and crossing it demands discipline."
 
 ---
 
@@ -1228,7 +1228,7 @@ Sable gestured toward the Academy's final chamber, where crystalline reference p
 
 ### 📖 Lesson Opener
 
-The Academy's final chamber defied physics — crystalline threads connected React's component tree to the underlying browser DOM, shimmering with each render cycle. **Ref Keeper Escapius** stood at the boundary, one hand in the virtual world of components and one in the physical world of browser elements. "React's declarative model is powerful," he said, "but sometimes you must reach through the abstraction and touch the real DOM directly. Focus management, measuring element dimensions, integrating non-React libraries, imperative animations — all require the escape hatch that refs provide. Use them wisely. The boundary exists for good reason."
+The Academy's final chamber defied physics — crystalline threads connected React's component tree to the underlying browser DOM, shimmering with each render cycle. **Ref Anchor Escapius** stood at the boundary, one hand in the virtual world of components and one in the physical world of browser elements. "React's declarative model is powerful," he said, "but sometimes you must reach through the abstraction and touch the real DOM directly. Focus management, measuring element dimensions, integrating non-React libraries, imperative animations — all require the escape hatch that refs provide. Use them wisely. The boundary exists for good reason."
 
 ### Chapter 1: The Escape Hatch
 
@@ -1236,7 +1236,7 @@ The Academy's final chamber defied physics — crystalline threads connected Rea
 
 **Story Group 1:**
 
-Crystalline threads pulsed between two realms — React's virtual component tree floating above and the browser's physical DOM spread below. **Ref Keeper Escapius** stood where the threads converged, demonstrating why the escape hatch existed. "React manages the DOM for you," he said. "You describe what you want, React figures out how to make it happen. This works beautifully for rendering — but some operations cannot be described declaratively."
+Crystalline threads pulsed between two realms — React's virtual component tree floating above and the browser's physical DOM spread below. **Ref Anchor Escapius** stood where the threads converged, demonstrating why the escape hatch existed. "React manages the DOM for you," he said. "You describe what you want, React figures out how to make it happen. This works beautifully for rendering — but some operations cannot be described declaratively."
 
 He listed the cases: **Focus management** — calling element.focus() to move keyboard focus to a specific input after a dialog opens. **Measuring dimensions** — reading element.getBoundingClientRect() to position a tooltip relative to its trigger. **Scroll control** — calling element.scrollIntoView() to scroll a specific element into the viewport. **Canvas and media** — calling canvas.getContext() or video.play() for imperative browser APIs. **Third-party library integration** — passing a DOM element to a library like Chart.js or a map widget that manages its own rendering.
 
@@ -1266,7 +1266,7 @@ Binary displayed ref fundamentals: "Refs and DOM Access complete! useRef: mutabl
 
 **New Characters:**
 
-**Ref Keeper Escapius**
+**Ref Anchor Escapius**
 Guardian of the boundary between React's virtual world and the browser's physical DOM. He stands with one hand in each realm, teaching when and how to reach through React's declarative abstraction for imperative DOM operations. "The boundary exists for good reason. Cross it only when declarative is not enough — and always return."
 
 **Escapius's Refs and DOM Wisdom:**
@@ -1279,7 +1279,7 @@ useRef creates a mutable container that persists across renders without triggeri
 - Why is cleanup in useEffect critical when using refs with observers and event listeners?
 
 **Aria's Journal - Day 106**
-*The escape hatch! Ref Keeper Escapius showed me where React's virtual world meets the browser's physical DOM. useRef creates a mutable container that persists across renders without causing re-renders. For DOM access: attach ref to element, after mount ref.current is the real node. I practiced focus management (input.focus()), dimension measurement (getBoundingClientRect()), and ResizeObserver. Non-DOM refs too: previous values (usePrevious hook), timer IDs, AbortControllers — values that persist but don't trigger renders. "Refs for infrastructure, state for UI." I built a Tooltip that measured its trigger position, an auto-resizing textarea reading scrollHeight, and a useFetch with AbortController ref for cancellation. Pattern: create → attach → use in useEffect → clean up. Escapius warned: always ask first if it can be done declaratively. Refs are for the gaps. Tomorrow: forwardRef and useImperativeHandle!*
+*The escape hatch! Ref Anchor Escapius showed me where React's virtual world meets the browser's physical DOM. useRef creates a mutable container that persists across renders without causing re-renders. For DOM access: attach ref to element, after mount ref.current is the real node. I practiced focus management (input.focus()), dimension measurement (getBoundingClientRect()), and ResizeObserver. Non-DOM refs too: previous values (usePrevious hook), timer IDs, AbortControllers — values that persist but don't trigger renders. "Refs for infrastructure, state for UI." I built a Tooltip that measured its trigger position, an auto-resizing textarea reading scrollHeight, and a useFetch with AbortController ref for cancellation. Pattern: create → attach → use in useEffect → clean up. Escapius warned: always ask first if it can be done declaratively. Refs are for the gaps. Tomorrow: forwardRef and useImperativeHandle!*
 
 ---
 
@@ -1385,7 +1385,7 @@ Focus management requires refs for imperative DOM operations: move focus into di
 
 **Lesson Ending:**
 
-Ref Keeper Escapius watched as Aria stepped away from the boundary chamber, the crystalline reference points dimming behind her as React's virtual world and the browser's physical DOM settled back into their separate domains. The boundary was invisible again — present, important, but no longer mysterious.
+Ref Anchor Escapius watched as Aria stepped away from the boundary chamber, the crystalline reference points dimming behind her as React's virtual world and the browser's physical DOM settled back into their separate domains. The boundary was invisible again — present, important, but no longer mysterious.
 
 "You began this path learning how components work as families," Escapius said, his voice echoing through the chamber. "Dean Architectus showed you compound components — implicit communication, shared context, composable APIs. Pattern Master Renderius traced the evolution of patterns from mixins through hooks, giving you the historical depth to understand why modern React looks the way it does. Design Artisan Sable taught you to separate behavior from presentation so completely that a single component can serve infinite designs. And I showed you the escape hatch — how to reach through the abstraction when the declarative world is not enough."
 
@@ -5132,7 +5132,7 @@ Aria stood at the gates of the Harmony Halls and looked out across the kingdom s
 
 The State Sorcerers' sanctum glowed in the Northern Quarter, where Memnon and Master Hooke had taught her the magic that made interfaces come alive — state that triggered re-renders, effects that synchronized with the world outside React, and custom hooks that captured patterns for reuse across an entire codebase. Contextia's realm threaded through everything, providing the shortcuts that saved deeply nested components from drowning in prop chains.
 
-The Western Quarter stretched from the Props Workshop where Master Destructo had shaped data through destructuring, through Master Cargo's trade routes of composition, to Echo Keeper Callback's caves where events echoed upward through the component tree. The Forms and Events district — Conductor Eventus, Alchemist Formeus, Commander Validus, Portal Keeper Sage — had taught her that the most complex user-facing patterns in web development demanded respect, not fear.
+The Western Quarter stretched from the Props Workshop where Master Destructo had shaped data through destructuring, through Master Cargo's trade routes of composition, to Echo Warden Callback's caves where events echoed upward through the component tree. The Forms and Events district — Conductor Eventus, Alchemist Formeus, Commander Validus, Portal Keeper Sage — had taught her that the most complex user-facing patterns in web development demanded respect, not fear.
 
 The Advanced Hooks Sanctuary rose above the Quarter, where Professor Hooksworth, the Effect Sage, Master Artificer Compose, and Pattern Weaver Synthesis had transformed her from a hook user into a hook architect — someone who did not just consume abstractions but created them.
 

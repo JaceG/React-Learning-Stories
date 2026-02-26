@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom';
 import LessonHeader from '../../../../components/layout/LessonHeader';
 import LessonFooter from '../../../../components/layout/LessonFooter';
 import '../../../CourseStyles.css';
-import './GenericForge.css';
+import './PatternAlcove.css';
 
-function GenericForge() {
+function PatternAlcove() {
 	const [forgedGenerics, setForgedGenerics] = useState([]);
 	const [selectedGeneric, setSelectedGeneric] = useState(null);
 	const [forgeLevel, setForgeLevel] = useState('apprentice');
@@ -51,11 +51,11 @@ function GenericForge() {
 
 			<LessonFooter
 				courseId={`typescript-react`}
-				lessonId={`generic-forge`}
+				lessonId={`pattern-alcove`}
 				totalChapters={3}
 			/>
 		</div>
 	);
 }
 
-export default GenericForge;
+export default PatternAlcove;

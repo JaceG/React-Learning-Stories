@@ -9,7 +9,7 @@ import GrandContext from '../../../learning-paths/state-management/pages/GrandCo
 import StateManagementAdventures from '../../../learning-paths/state-management/pages/StateManagementAdventures';
 import PropsCaravans from '../../../learning-paths/props-data-flow/pages/PropsCaravans';
 import DataRivers from '../../../learning-paths/props-data-flow/pages/DataRivers';
-import PropForge from '../../../learning-paths/props-data-flow/pages/PropForge';
+import PropWorkbench from '../../../learning-paths/props-data-flow/pages/PropWorkbench';
 import EventEchoes from '../../../learning-paths/props-data-flow/pages/EventEchoes';
 import UseStateSpells from '../../../learning-paths/hooks-in-action/pages/UseStateSpells';
 import UseEffectEnchantments from '../../../learning-paths/hooks-in-action/pages/UseEffectEnchantments';
@@ -43,9 +43,9 @@ import ApiIntegration from '../../../learning-paths/server-data/pages/ApiIntegra
 import RealtimeConnections from '../../../learning-paths/server-data/pages/RealtimeConnections';
 import CachingCastle from '../../../learning-paths/server-data/pages/CachingCastle';
 import GraphQLGateway from '../../../learning-paths/server-data/pages/GraphQLGateway';
-import TypeForge from '../../../learning-paths/typescript-react/pages/TypeForge';
-import ComponentArmory from '../../../learning-paths/typescript-react/pages/ComponentArmory';
-import GenericForge from '../../../learning-paths/typescript-react/pages/GenericForge';
+import TypeScriptorium from '../../../learning-paths/typescript-react/pages/TypeScriptorium';
+import ComponentArchives from '../../../learning-paths/typescript-react/pages/ComponentArchives';
+import PatternAlcove from '../../../learning-paths/typescript-react/pages/PatternAlcove';
 import TypeSafeArchitecture from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture';
 import BuildSystems from '../../../learning-paths/build-deploy/pages/BuildSystems';
 import CICDPipelines from '../../../learning-paths/build-deploy/pages/CICDPipelines';
@@ -76,7 +76,7 @@ const courseListMap = {
 	'props-data-flow': {
 		'props-caravans': <PropsCaravans />,
 		'data-rivers': <DataRivers />,
-		'prop-forge': <PropForge />,
+		'prop-workbench': <PropWorkbench />,
 		'event-echoes': <EventEchoes />,
 	},
 	'hooks-in-action': {
@@ -128,9 +128,9 @@ const courseListMap = {
 		'graphql-gateway': <GraphQLGateway />,
 	},
 	'typescript-react': {
-		'type-forge': <TypeForge />,
-		'component-armory': <ComponentArmory />,
-		'generic-forge': <GenericForge />,
+		'type-scriptorium': <TypeScriptorium />,
+		'component-archives': <ComponentArchives />,
+		'pattern-alcove': <PatternAlcove />,
 		'type-safe-architecture': <TypeSafeArchitecture />,
 	},
 	'build-deploy': {

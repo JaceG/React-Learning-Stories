@@ -17,9 +17,9 @@ function PropsDataFlowOverview() {
       icon: '🌊'
     },
     {
-      id: 'prop-forge',
-      title: 'The Prop Forge',
-      description: 'Discover the ancient arts of destructuring and transforming props at the legendary forge',
+      id: 'prop-workbench',
+      title: 'The Prop Workbench',
+      description: 'Discover the ancient arts of destructuring and transforming props at the master craftsman\'s workbench',
       icon: '🔨'
     },
     {

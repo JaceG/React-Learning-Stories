@@ -29,9 +29,9 @@ import PropsCaravansChapterThree from '../../../learning-paths/props-data-flow/p
 import DataRiversChapterOne from '../../../learning-paths/props-data-flow/pages/DataRivers/chapter1/chapter1';
 import DataRiversChapterTwo from '../../../learning-paths/props-data-flow/pages/DataRivers/chapter2/chapter2';
 import DataRiversChapterThree from '../../../learning-paths/props-data-flow/pages/DataRivers/chapter3/chapter3';
-import PropForgeChapterOne from '../../../learning-paths/props-data-flow/pages/PropForge/chapter1/chapter1';
-import PropForgeChapterTwo from '../../../learning-paths/props-data-flow/pages/PropForge/chapter2/chapter2';
-import PropForgeChapterThree from '../../../learning-paths/props-data-flow/pages/PropForge/chapter3/chapter3';
+import PropWorkbenchChapterOne from '../../../learning-paths/props-data-flow/pages/PropWorkbench/chapter1/chapter1';
+import PropWorkbenchChapterTwo from '../../../learning-paths/props-data-flow/pages/PropWorkbench/chapter2/chapter2';
+import PropWorkbenchChapterThree from '../../../learning-paths/props-data-flow/pages/PropWorkbench/chapter3/chapter3';
 import EventEchoesChapterOne from '../../../learning-paths/props-data-flow/pages/EventEchoes/chapter1/chapter1';
 import EventEchoesChapterTwo from '../../../learning-paths/props-data-flow/pages/EventEchoes/chapter2/chapter2';
 import EventEchoesChapterThree from '../../../learning-paths/props-data-flow/pages/EventEchoes/chapter3/chapter3';
@@ -131,15 +131,15 @@ import CachingCastleChapterThree from '../../../learning-paths/server-data/pages
 import GraphQLGatewayChapterOne from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter1/chapter1';
 import GraphQLGatewayChapterTwo from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter2/chapter2';
 import GraphQLGatewayChapterThree from '../../../learning-paths/server-data/pages/GraphQLGateway/chapter3/chapter3';
-import TypeForgeChapterOne from '../../../learning-paths/typescript-react/pages/TypeForge/chapter1/chapter1';
-import TypeForgeChapterTwo from '../../../learning-paths/typescript-react/pages/TypeForge/chapter2/chapter2';
-import TypeForgeChapterThree from '../../../learning-paths/typescript-react/pages/TypeForge/chapter3/chapter3';
-import ComponentArmoryChapterOne from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter1/chapter1';
-import ComponentArmoryChapterTwo from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter2/chapter2';
-import ComponentArmoryChapterThree from '../../../learning-paths/typescript-react/pages/ComponentArmory/chapter3/chapter3';
-import GenericForgeChapterOne from '../../../learning-paths/typescript-react/pages/GenericForge/chapter1/chapter1';
-import GenericForgeChapterTwo from '../../../learning-paths/typescript-react/pages/GenericForge/chapter2/chapter2';
-import GenericForgeChapterThree from '../../../learning-paths/typescript-react/pages/GenericForge/chapter3/chapter3';
+import TypeScriptoriumChapterOne from '../../../learning-paths/typescript-react/pages/TypeScriptorium/chapter1/chapter1';
+import TypeScriptoriumChapterTwo from '../../../learning-paths/typescript-react/pages/TypeScriptorium/chapter2/chapter2';
+import TypeScriptoriumChapterThree from '../../../learning-paths/typescript-react/pages/TypeScriptorium/chapter3/chapter3';
+import ComponentArchivesChapterOne from '../../../learning-paths/typescript-react/pages/ComponentArchives/chapter1/chapter1';
+import ComponentArchivesChapterTwo from '../../../learning-paths/typescript-react/pages/ComponentArchives/chapter2/chapter2';
+import ComponentArchivesChapterThree from '../../../learning-paths/typescript-react/pages/ComponentArchives/chapter3/chapter3';
+import PatternAlcoveChapterOne from '../../../learning-paths/typescript-react/pages/PatternAlcove/chapter1/chapter1';
+import PatternAlcoveChapterTwo from '../../../learning-paths/typescript-react/pages/PatternAlcove/chapter2/chapter2';
+import PatternAlcoveChapterThree from '../../../learning-paths/typescript-react/pages/PatternAlcove/chapter3/chapter3';
 import TypeSafeArchitectureChapterOne from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter1/chapter1';
 import TypeSafeArchitectureChapterTwo from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter2/chapter2';
 import TypeSafeArchitectureChapterThree from '../../../learning-paths/typescript-react/pages/TypeSafeArchitecture/chapter3/chapter3';
@@ -246,11 +246,11 @@ const courseListMap = {
 			chapter2: <DataRiversChapterTwo />,
 			chapter3: <DataRiversChapterThree />,
 		},
-		'prop-forge': {
-			'/': <PropForgeChapterOne />,
-			chapter1: <PropForgeChapterOne />,
-			chapter2: <PropForgeChapterTwo />,
-			chapter3: <PropForgeChapterThree />,
+		'prop-workbench': {
+			'/': <PropWorkbenchChapterOne />,
+			chapter1: <PropWorkbenchChapterOne />,
+			chapter2: <PropWorkbenchChapterTwo />,
+			chapter3: <PropWorkbenchChapterThree />,
 		},
 		'event-echoes': {
 			'/': <EventEchoesChapterOne />,
@@ -468,23 +468,23 @@ const courseListMap = {
 		},
 	},
 	'typescript-react': {
-		'type-forge': {
-			'/': <TypeForgeChapterOne />,
-			chapter1: <TypeForgeChapterOne />,
-			chapter2: <TypeForgeChapterTwo />,
-			chapter3: <TypeForgeChapterThree />,
+		'type-scriptorium': {
+			'/': <TypeScriptoriumChapterOne />,
+			chapter1: <TypeScriptoriumChapterOne />,
+			chapter2: <TypeScriptoriumChapterTwo />,
+			chapter3: <TypeScriptoriumChapterThree />,
 		},
-		'component-armory': {
-			'/': <ComponentArmoryChapterOne />,
-			chapter1: <ComponentArmoryChapterOne />,
-			chapter2: <ComponentArmoryChapterTwo />,
-			chapter3: <ComponentArmoryChapterThree />,
+		'component-archives': {
+			'/': <ComponentArchivesChapterOne />,
+			chapter1: <ComponentArchivesChapterOne />,
+			chapter2: <ComponentArchivesChapterTwo />,
+			chapter3: <ComponentArchivesChapterThree />,
 		},
-		'generic-forge': {
-			'/': <GenericForgeChapterOne />,
-			chapter1: <GenericForgeChapterOne />,
-			chapter2: <GenericForgeChapterTwo />,
-			chapter3: <GenericForgeChapterThree />,
+		'pattern-alcove': {
+			'/': <PatternAlcoveChapterOne />,
+			chapter1: <PatternAlcoveChapterOne />,
+			chapter2: <PatternAlcoveChapterTwo />,
+			chapter3: <PatternAlcoveChapterThree />,
 		},
 		'type-safe-architecture': {
 			'/': <TypeSafeArchitectureChapterOne />,

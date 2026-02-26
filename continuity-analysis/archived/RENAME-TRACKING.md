@@ -1,18 +1,22 @@
 # Worldbuilding Deduplication — Rename Tracking
 
-*Phase 1 complete. Use this document for Phase 2: propagating renames into narrative files.*
+*Phase 1 & Phase 3 complete. All renames propagated into narrative and reference files.*
 
 ---
 
 ## Status
 
-- **Phase 1**: COMPLETE — `story-bible.md` and `kingdom-geography.md` updated
+- **Phase 1**: COMPLETE — `story-bible.md` and `kingdom-geography.md` updated (LP8-15 renames)
 - **Phase 2**: COMPLETE — `narrative-master-PHASE5.md` updated (LP8-15 renames propagated)
 - **Phase 2 Note**: `narrative-master-PHASE4.md` (LP1-7) renames for LP6 (Rift Walker Lyss) and LP7 (Velocity Crucible) were completed in earlier sessions
+- **Phase 3**: COMPLETE — LP1-5 worldbuilding deduplication (8 renames + metaphor pass + phantom character removal)
+  - Reference files (`story-bible.md`, `kingdom-geography.md`) updated
+  - `narrative-master-PHASE4.md` updated (LP1, LP3, LP5, LP6 renames + LP3.1 forge→workbench metaphor pass)
+  - `narrative-master-PHASE5.md` updated (LP9 Enhancement Forge + Ref Keeper renames, LP15 finale cross-ref)
 
 ---
 
-## Location Renames (14 total)
+## Location Renames (20 total)
 
 Search the old name in narrative files and replace with the new name. Some locations may appear dozens of times.
 
@@ -32,6 +36,12 @@ Search the old name in narrative files and replace with the new name. Some locat
 | Server Component Chamber | Server Atrium | LP14.2 | Open flowing space |
 | Rendering Strategy Chamber | Rendering Observatory | LP14.3 | Viewing/selecting strategies |
 | Integration Chamber | Convergence Hall | LP14.4 | Where client and server unite |
+| Prop Forge | Prop Workbench | LP3.1 | Craftsman's workbench, not a forge (forge reserved for Hook Forge LP2.2) |
+| Enhancement Forge | Enhancement Gallery | LP9.2 | Components exhibited and enhanced, not smelted |
+| Grand Assembly Hall | Composition Pavilion | LP1.4 | Open exhibition space for component composition |
+| Grand Symphony Hall | Echo Amphitheater | LP3.3 | Natural amphitheater in Echo Caves |
+| Event Symphony Hall | Event Orchestrium | LP5.1 | Conductor Eventus's orchestration space |
+| Grand Hall of Authority | Authority Tribunal | LP6.3 | Place of judgment/authorization for Warden Aldric |
 
 ---
 
@@ -54,6 +64,35 @@ Search the old name in narrative files and replace with the new name. Characters
 | Rift Weaver Lyss | Rift Walker Lyss | LP6.4 | Walks between portal dimensions |
 | Design Weaver Sable | Design Artisan Sable | LP9.3 | Crafts designs |
 | Federal Form Chancellor | Form Chancellor | LP10.3 | Dropped "Federal" prefix |
+| Echo Keeper Callback | Echo Warden Callback | LP3.3 | "Warden" fits — guards echo caves and event propagation |
+| Ref Keeper Escapius | Ref Anchor Escapius | LP9.4 | Refs "anchor" to the DOM; unique title in kingdom |
+| Master Smith Destructo | Master Craftsman Destructo | LP3.1 | Craftsman at a workbench, not a smith at a forge |
+
+---
+
+## Characters REMOVED
+
+| Old Name | LP | Notes |
+|---|---|---|
+| Forge Master Enhance | LP9.2 | Phantom character — never appeared in narrative. Renderius teaches HOCs. Removed from `kingdom-geography.md` masters list; Renderius now covers "(Render Props, HOCs)" |
+
+---
+
+## LP3.1 Metaphor Shift (Phase 3)
+
+The Prop Forge changed metaphor from **forge/smithing** to **workbench/crafting**:
+
+| Forge Concept | Workbench Concept |
+|---|---|
+| Forge walls | Workshop walls |
+| Forge heat | Workshop energy |
+| The forge (location) | The workbench / the workshop |
+| Forging, to forge | Crafting, to craft |
+| Smith, smiths | Craftsman, craftsmen |
+| Forge-fire light | Ember light |
+| Forged props | Crafted props |
+
+Note: Hammers, anvils, sparks, and industrial crafting language were kept — Destructo is still a hands-on builder.
 
 ---
 
@@ -103,3 +142,4 @@ When propagating into `narrative-master-PHASE4.md` (LP1-7) and `narrative-master
 ---
 
 *Created: February 3, 2026*
+*Phase 3 (LP1-5 Deduplication): February 26, 2026*

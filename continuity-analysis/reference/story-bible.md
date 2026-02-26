@@ -90,21 +90,21 @@
 
 ### LP3: Props Data Flow
 
-**Master Smith Destructo**
-- **Role**: Master smith of the Prop Forge
+**Master Craftsman Destructo**
+- **Role**: Master craftsman of the Prop Workbench
 - **Appears In**: LP3.1 PropForge (Ch1-3)
-- **Location**: Industrial Quarter - Prop Forge
+- **Location**: Industrial Quarter - Prop Workbench
 - **Appearance**: Weathered face, singed beard edges, eyes sparkle with data flame reflections, wields glowing hammer
 - **Teaches**: Destructuring (extracting props), spread operator (merging/transforming), prop validation (PropTypes/TypeScript), default values, prop immutability
 
 **Master Cargo**
 - **Role**: Keeper of the Composition District
 - **Appears In**: LP3.2 PropsCaravans (Ch1-3)
-- **Location**: Trade Quarter - Composition District (beyond Prop Forge)
+- **Location**: Trade Quarter - Composition District (beyond the Prop Workbench)
 - **Appearance**: Calm, methodical demeanor; observant eyes that see how pieces fit together; wears practical artisan clothing with component symbols stitched in patterns; carries a leather satchel with nested scrolls
 - **Teaches**: props.children pattern, component composition, prop spreading/rest patterns, prop forwarding, default parameters (vs defaultProps), combining patterns, prop naming conventions
 
-**Echo Keeper Callback**
+**Echo Warden Callback**
 - **Role**: Guardian of upward communication
 - **Appears In**: LP3.3 EventEchoes (Ch1-3)
 - **Location**: Western Mountains - Echo Caves (surface)
@@ -158,9 +158,9 @@
 ### LP5: Forms Events
 
 **Conductor Eventus**
-- **Role**: Master conductor of the Event Symphony Hall
+- **Role**: Master conductor of the Event Orchestrium
 - **Appears In**: LP5.1 EventSymphony (Ch1-3)
-- **Location**: Western Quarter - Event Symphony Hall (heart of quarter), grand amphitheater
+- **Location**: Western Quarter - Event Orchestrium (heart of quarter), grand amphitheater
 - **Appearance**: Distinguished figure in conductor's coat, baton crackling with event energy
 - **Teaches**: React's synthetic event system (SyntheticEvent, cross-browser consistency), event propagation (capture/bubble phases), event delegation (one handler for many elements), event optimization (throttling, debouncing), useCallback for memoized handlers, Academy patterns applied to events
 
@@ -306,7 +306,7 @@
 - **Appearance**: Moves among floating component shells, draping each in different visual designs with a wave of her hand
 - **Teaches**: Headless components (behavior + accessibility + state without visual styling, data attributes for state communication, Radix UI/Headless UI/React Aria architecture), polymorphic components ("as" prop controls rendered element, design system primitives like Box/Text/Button), slot-based architecture (named content regions, structural contracts with content flexibility), combining all patterns into complete design system components (headless + polymorphic + slots + compounds)
 
-**Ref Keeper Escapius**
+**Ref Anchor Escapius**
 - **Role**: Guardian of the boundary between React's virtual world and the browser's physical DOM
 - **Appears In**: LP9.4 RefsAndDOM (Ch1-3)
 - **Location**: Sky Realm - Architect's Academy (Final Chamber - crystalline threads connect React's component tree to the underlying browser DOM)
