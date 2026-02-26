@@ -3201,7 +3201,7 @@ He showed a complex component with 10+ useState calls and 20+ functions updating
 
 Binary displayed decision trees: "useState when: Simple values, independent pieces, direct updates. useReducer when: Complex state objects, interdependent updates, many actions. Architecture matters: Group related state, derive don't duplicate, keep local when possible!"
 
-**State Architecture Mastery:**
+**Hooksworth's State Architecture Wisdom:**
 Elevate from useState mechanics to state architecture wisdom. Group related values that change together into single state objects, preventing synchronization bugs and enabling atomic updates. Calculate derived values during render rather than storing redundant state - single source of truth prevents disagreements. Keep state as local as possible - lift only when siblings need to share or parents need to coordinate. When state structure becomes complex with many interdependent pieces, recognize the signal to graduate to useReducer. Remember: good architecture makes components predictable, maintainable, and bug-resistant. Think architecturally from day one, not just functionally.
 
 **Reflection Questions:**
@@ -3408,7 +3408,7 @@ const filter = useMemo(() => ({
 
 Binary displayed best practices: "Dependencies: Trust exhaustive-deps rule. Define functions inside effects. Depend on primitives not objects. Use useCallback/useMemo for stable references. Never lie to React about dependencies!"
 
-**Dependency Array Mastery:**
+**Effect Sage's Dependency Array Wisdom:**
 Master the dependency array as your temporal contract with React. Empty arrays create mount-only effects (initialization), no array means every-render execution (usually wrong), and specific dependencies provide surgical precision (synchronization). Include ALL values from component scope that your effect uses - missing dependencies create stale closures frozen in time, while unnecessary dependencies cause effects to run too often. Trust the exhaustive-deps ESLint rule as your guardian against temporal paradoxes - it prevents bugs by enforcing honesty about what your effect observes. Remember: dependencies aren't just about performance, they're about correctness. Functions and objects need special handling - define functions inside effects or use useCallback, depend on primitives not object references.
 
 **Reflection Questions:**
@@ -3487,7 +3487,7 @@ The third challenge tested understanding: prevent multiple simultaneous submissi
 
 Binary displayed the async mastery checklist: "Async effects: Define async functions inside effect body. Always handle errors. Use AbortController for fetch. Use flags for non-abortable operations. Check cancellation before setState. Never make effect function itself async. Cleanup prevents race conditions!"
 
-**Async Effect Mastery:**
+**Effect Sage's Async Effect Wisdom:**
 Master asynchronous operations by respecting useEffect's constraints. Create async functions inside effects, never make the effect itself async - React expects synchronous functions that optionally return cleanup, not Promises. Defend against race conditions with AbortController for fetch or cancellation flags for other async operations - without them, old requests overwrite new data chaotically. Always check cancellation status before updating state, preventing updates to unmounted components and stale requests from corrupting your timeline. Handle loading states and errors comprehensively. These patterns are essential for data-fetching components - they transform temporal chaos into predictable, reliable behavior. Remember: async is where most effect bugs originate, so master these patterns thoroughly.
 
 **Reflection Questions:**
@@ -3582,7 +3582,7 @@ Binary displayed best practices: "Custom hook rules: Start with 'use', call hook
 **Master Artificer Compose**
 Creator of custom hooks in the Synthesis Workshop of the Advanced Hooks Sanctuary in the Eastern Quarter. Her apron sparkles with embedded hook patterns as she teaches the transcendent art of hook creation, hands dancing between different energy streams. "Any function starting with 'use' can contain other hooks. This naming convention tells React to apply the Rules of Hooks. Custom hooks share logic, not state - each component gets its own instance. We're forging tools, not sharing singletons!"
 
-**Hook Forging Fundamentals:**
+**Compose's Hook Forging Wisdom:**
 Master custom hooks to become a true React artificer. Start function names with "use" to enable hook composition - this convention activates React's Rules of Hooks and communicates intent to other developers. Extract repetitive stateful logic into reusable functions that return state and methods - patterns like useCounter, useToggle, useInput emerge from real needs. Custom hooks share logic, not state - each component gets its own instance of all internal hooks. Think of them as templates for stateful behavior, not singletons. Return values thoughtfully: arrays for simple hooks (like useState), objects for complex hooks with many return values. Document thoroughly, test comprehensively, and name descriptively.
 
 **Reflection Questions:**
@@ -3651,7 +3651,7 @@ The third challenge tested creativity: create useInterval that works properly wi
 
 Binary displayed the composition patterns: "Advanced hooks: Combine useState + useEffect + browser APIs. Encapsulate complexity. Handle cleanup properly. Use refs for stable references. Document edge cases!"
 
-**Advanced Hook Composition:**
+**Compose's Advanced Composition Wisdom:**
 Master hook composition by combining multiple primitives with browser APIs into powerful abstractions. useLocalStorage demonstrates state + side effects + browser storage working together. useFetch shows complete async operation management through coordinated hooks (state + effect + AbortController). The pattern: identify repetitive logic involving multiple hooks and external systems, extract it into a custom hook that manages the entire lifecycle. Popular compositions include useDebounce (state + effect + setTimeout), useMediaQuery (state + effect + matchMedia), useOnClickOutside (effect + ref + event listeners), and useInterval (effect + ref + setInterval). Think of hooks as composable building blocks - combine them to solve any problem elegantly. Document thoroughly, handle cleanup properly, and test edge cases comprehensively.
 
 **Reflection Questions:**
@@ -3720,7 +3720,7 @@ The final lesson: documentation sites. Compose showed how hooks needed more than
 
 Binary displayed library excellence checklist: "Hook library: Categorized organization, consistent naming, comprehensive tests, JSDoc comments, TypeScript types, usage examples, semantic versioning, changelogs, documentation site, migration guides!"
 
-**Repository Wisdom:**
+**Compose's Repository Wisdom:**
 Transform individual solutions into collective assets through well-organized hook libraries. Essential patterns like useDebounce (delay updates), useWindowSize (responsive queries), and useInterval (declarative timers) solve universal problems. Excellence requires comprehensive documentation (JSDoc comments, TypeScript types, usage examples, edge cases), thorough testing (unit tests for logic, integration tests for React behavior, edge cases for errors), logical organization (categories by purpose, consistent naming, central exports), and proper versioning (semantic versioning for releases, changelogs for history, migration guides for breaking changes). Remember: a hook in the library saves countless hours across your entire organization. The difference between a personal hack and a shareable asset is documentation, testing, and thoughtful API design.
 
 **Reflection Questions:**
@@ -3808,7 +3808,7 @@ The final lesson revealed state machine patterns: "When state has many possible 
 
 Binary displayed orchestration wisdom: "Build small focused hooks. Compose with orchestrators. Test in isolation, integrate as systems. Separation of concerns enables reusability. Orchestration transforms individual tools into complete solutions!"
 
-**Orchestration Mastery:**
+**Synthesis's Orchestration Wisdom:**
 Master hook patterns by thinking like a conductor. The Orchestra pattern combines multiple specialized hooks into coordinated systems - each hook handles one concern, orchestrator coordinates them all. Build small, focused hooks (useFormField for field state, useFilter for filtering, useSort for sorting), then compose them with orchestrator hooks (useForm for form coordination, useDataTable for table coordination). This separation enables reusability (small hooks used across projects), testability (test each concern in isolation), and maintainability (changes localized to single hooks). Popular patterns include Form Management (fields + validation + submission), Data Pipeline (filter → sort → paginate), and State Machines (orchestrating complex state transitions). Remember: complex behavior emerges from simple, well-orchestrated parts. Don't build monolithic hooks - build orchestras!
 
 **Reflection Questions:**
@@ -3875,7 +3875,7 @@ The third challenge: implement the pattern with TypeScript for type safety. Aria
 
 Binary displayed the mastery checklist: "Grand Symphony: useReducer for predictable updates, Context for distribution, split contexts for performance, action creators for clean code, TypeScript for safety, custom hooks for consumption. Scales to complex apps!"
 
-**Symphony Pattern Mastery:**
+**Synthesis's Symphony Pattern Wisdom:**
 Master complex state orchestration with useReducer + Context - the Grand Symphony Pattern. This pattern excels when state has multiple sub-values updating together, complex update logic requiring coordination, or when many components need access without prop drilling. UseReducer provides predictable updates through actions (describe "what happened"), while reducers determine "how state changes" - like Redux but built into React. Context eliminates prop drilling by distributing state and dispatch throughout the tree. Split contexts optimize performance - StateContext for reading (triggers re-renders), DispatchContext for writing (no re-renders). Action creators encapsulate action structure, preventing typos and enabling TypeScript types. This pattern scales to medium-large apps without external dependencies. Remember: actions are past-tense descriptions (LOGIN_SUCCESS not DO_LOGIN), reducers are pure functions, and split contexts prevent unnecessary renders.
 
 **Reflection Questions:**
@@ -3952,7 +3952,7 @@ Binary displayed strategic optimization wisdom: "Profile first with React DevToo
 
 Synthesis's final teaching: "The best optimization is often architectural - restructuring to avoid the problem rather than memoizing around it. Before reaching for useMemo, ask: could I restructure this component to avoid the expensive calculation? Could I move state lower to reduce render scope? Sometimes prevention beats optimization!"
 
-**Performance Pattern Mastery:**
+**Synthesis's Performance Pattern Wisdom:**
 Master the art of strategic optimization with the Performance Trinity - useMemo caches expensive calculations (filtering/sorting large datasets, complex derivations), useCallback preserves function identity across renders (crucial for preventing child re-renders when combined with React.memo), and React.memo wraps components in shallow prop comparison shields (expensive components that shouldn't re-render unless props change). Use these tools strategically when you have measured performance issues, not preemptively everywhere. Common scenarios: large lists, expensive calculations, frequently re-rendering trees, memoized hooks in custom hooks. Profile first with React DevTools Profiler - identify slow components, find why they're rendering, then optimize surgically. Remember: premature optimization is the root of all evil. Memoization has overhead - the cure can be worse than the disease for trivial calculations. Best optimization is often architectural: restructure to avoid problems rather than memoizing around them.
 
 **Reflection Questions:**
@@ -4053,7 +4053,7 @@ Binary displayed the synthetic event benefits: "Cross-browser consistency: achie
 **Conductor Eventus**
 Master conductor of the Event Symphony Hall in the heart of the Western Quarter, distinguished figure in a conductor's coat with a baton crackling with visible event energy. The crystalline walls pulse with the rhythm of countless user interactions under his guidance. "React's synthetic event system wraps native browser events to provide consistent behavior across all browsers. It's like a well-conducted symphony where every interaction is orchestrated for consistency and performance!"
 
-**The Symphony's First Movement:**
+**Eventus's Synthetic Event Wisdom:**
 React's synthetic event system orchestrates all browser events into a harmonious symphony. By wrapping native events in SyntheticEvent objects, React ensures consistent behavior across all browsers and provides automatic cleanup. Event handlers in React follow camelCase conventions (onClick, onChange, onSubmit) and receive normalized SyntheticEvent objects that hide browser differences. Properties like target, type, and timeStamp work identically everywhere. Methods like preventDefault() and stopPropagation() behave consistently. This abstraction allows developers to write event handling code once and trust it will work everywhere - the foundation of any great interactive symphony. In React 17+, event pooling was removed for simpler async event access.
 
 **Reflection Questions:**
@@ -4132,7 +4132,7 @@ The third challenge tested advanced patterns: a drag-and-drop list. Aria combine
 
 Binary displayed efficiency metrics: "Event handlers reduced from O(n) to O(1). Memory usage minimized. Performance optimized. Delegation mastery achieved!"
 
-**The Harmony of Event Flow:**
+**Eventus's Event Flow Wisdom:**
 Event propagation in React follows the W3C standard: capture phase descends from root to target, then bubble phase ascends back to root. Most handlers listen during bubble phase (onClick), but capture phase handlers (onClickCapture) fire first. Understanding this flow enables powerful patterns like event delegation, where one optimized handler manages many elements. Use stopPropagation() to halt event flow when you don't want bubbling. Use preventDefault() to stop default browser actions (form submission, link navigation). Event delegation reduces handler count from O(n) to O(1), improving memory usage and performance. Strategic placement of handlers in capture vs bubble phase gives fine-grained control over event processing. Master the flow, and you master interaction efficiency.
 
 **Reflection Questions:**
@@ -4209,7 +4209,7 @@ Aria created a decision framework: Use throttle for continuous events like scrol
 
 Binary displayed the complete optimization stack: "Event optimization: Delegation reduces handlers (memory), useCallback prevents recreation (Performance Trinity), throttle controls frequency (continuous events), debounce waits for completion (discrete events). All patterns from Sanctuary training applied to events!"
 
-**The Grand Performance Mastery:**
+**Eventus's Grand Performance Wisdom:**
 Event optimization transforms chaotic interactions into smooth symphonies using Performance Sanctuary principles. Memoize handlers with useCallback to prevent recreation on every render (Performance Trinity training). Throttle rapidly-firing events (scroll, resize, mousemove) to control frequency - limit to once per time period. Debounce user input (search, validation, autosave) to wait for activity to finish - delay execution until quiet period. Combine with event delegation for ultimate efficiency - one memoized, throttled/debounced handler can manage hundreds of elements. These patterns, learned at the Sanctuary and applied here, unite to create performant, responsive applications. Remember: measure first with React DevTools, then optimize strategically. Not every event needs optimization - clicks and submits are naturally infrequent.
 
 **Reflection Questions:**
@@ -4324,7 +4324,7 @@ Binary displayed mastery metrics: "Controlled component understanding: complete.
 **Master Alchemist Formeus**
 Master of form handling in the Western Quarter's Form Alchemy Laboratory filled with bubbling cauldrons and glowing vials. His stained laboratory coat bears the marks of countless experiments as he teaches how hook knowledge from the Advanced Hooks Sanctuary applies to capturing user input. "Form Alchemy is about applying the hooks you've mastered to real user interactions. Controlled components use useState to maintain a single source of truth - React maintains constant awareness of the input's value, enabling validation, formatting, and state sharing!"
 
-**The Master Alchemist's Wisdom:**
+**Formeus's Form Control Wisdom:**
 Form control applies your hook mastery to user interaction. Controlled components maintain React as the single source of truth using useState patterns you learned at the Sanctuary, enabling instant validation, format enforcement, and state sharing across components. Uncontrolled components delegate to the DOM using useRef for persistent references - simpler but less powerful. Most modern React applications favor controlled components for their predictability, power, and integration with Sanctuary patterns. Different input types have different control props: text/textarea use value, checkboxes/radio use checked, select uses value. Remember: with great control comes great capability - choose controlled for most forms, uncontrolled only for simple cases or file inputs.
 
 **Reflection Questions:**
@@ -4398,7 +4398,7 @@ Aria practiced the complete pattern, creating forms that combined:
 
 Binary projected statistics with pride: "Form validation efficiency: 95%. User experience score: 98%. Code reusability: 100%. Advanced Hooks Sanctuary training patterns successfully applied to practical form handling!"
 
-**The Transmutation Circle's Secret:**
+**Formeus's Advanced Form Wisdom:**
 Complex form management becomes elegant through Sanctuary-trained hook patterns. Unify related concerns - values, errors, touched states - into cohesive abstractions using the orchestration patterns you mastered at the Integration Sanctum. Use useCallback for stable handler references (Performance Trinity), useEffect for reactive validation (Temporal Tower), and useMemo for expensive validation computations (Performance Sanctuary). Group related state (Professor Hooksworth's architecture principles), validate at appropriate times (onBlur for UX, onSubmit for final check), and handle cross-field validation with full form state access. Remember: forms are systems, not collections of inputs. Build reusable patterns that encapsulate common behaviors, reducing boilerplate and increasing consistency across your application. Sanctuary orchestration transforms form chaos into elegant alchemy!
 
 **Reflection Questions:**
@@ -4463,7 +4463,7 @@ The validation runes Aria had incorporated lit up in sequence as she filled out 
 
 "This is Academy-level form mastery," Formeus said with genuine admiration. "You've taken form handling from scattered setState calls to orchestrated systems. The patterns you've demonstrated will be studied by future alchemists!"
 
-**The Grand Transmutation Mastery:**
+**Formeus's Grand Transmutation Wisdom:**
 Complete form systems require orchestrating all Sanctuary patterns into unified solutions. Build reusable hooks that encapsulate validation logic, submission handling, and state management using the hook orchestration patterns from the Integration Sanctum. Use memoization for expensive validations (Performance Sanctuary), callbacks for stable handlers (Performance Trinity), effects for reactive updates (Temporal Tower), and reducers for complex state (graduated from useState). Create composable validation rules that can be mixed and matched. Integrate async validation with debouncing (Event optimization) and AbortController cleanup (Effect Sage). Handle multi-step forms with state machines. Add visual feedback with state-driven UI (validation runes, progress indicators). Remember: great forms aren't just functional - they guide users, prevent errors, provide clear feedback, and handle edge cases gracefully. This is Sanctuary-level React form mastery applied to practical user interaction!
 
 **Reflection Questions:**
@@ -4562,7 +4562,7 @@ Binary displayed the complete defensive posture: "Validation gates: unified. Cro
 **Commander Validus**
 Guardian commander of the Validation Fortress at the Western Quarter's edge, warrior in gleaming red armor with each piece inscribed with validation runes. His voice booms with authority as he teaches defensive data patterns. "Individual validation gates working alone are vulnerable. But when orchestrated through custom hooks using Sanctuary patterns, they become an elite guard unit with perfect coordination. Validation gates are your fortress's first line of defense - validate early, validate often, and coordinate your defenses through systematic orchestration!"
 
-**The Guardian's First Law:**
+**Validus's Validation Wisdom:**
 Validation gates are your fortress's first line of defense against invalid data. Each gate serves a specific purpose - format validation (email patterns), constraint checking (length, range), presence verification (required fields), and type validation (number, boolean). By combining gates through a unified validation system using custom hooks and Sanctuary orchestration patterns, you create impenetrable defenses. Validators run in chains (first error stops execution), coordinate through touched state (prevent premature errors), and integrate with form state (cross-field validation). Remember: validate early (instant feedback), validate often (on change, on blur, on submit), and coordinate your defenses through orchestration. A fortress with scattered guards is weaker than one with organized defenders working in harmony through systematic hook patterns.
 
 **Reflection Questions:**
@@ -4641,7 +4641,7 @@ He showed advanced timing patterns - a smart validation hook that always validat
 
 Binary displayed timing wisdom: "Validation timing strategies: onChange for real-time guidance, onBlur for balanced UX, onSubmit for final checks. Mix strategies based on field importance and user journey. Always validate, but control when errors appear!"
 
-**The Elite Guardian's Wisdom:**
+**Validus's Advanced Validation Wisdom:**
 Advanced validation requires orchestrating multiple Sanctuary techniques into cohesive defense systems. Use debouncing from Event Symphony for async checks to prevent server overload - wait for typing to finish before querying databases. Implement caching from Performance Sanctuary to avoid redundant validations - check cache before running expensive operations. Handle cross-field dependencies carefully using proper useMemo dependencies from Effect Sage to prevent circular validation loops - pass all form values to validators needing context. Choose validation timing (onChange for guidance, onBlur for balance, onSubmit for final check) based on user experience needs. Combine validators into chains that run sequentially using custom hooks, first error stops execution. Remember: the best validation is invisible to users when they're doing things right, but immediately helpful when they need guidance. Master these patterns through Sanctuary orchestration, and your forms become impenetrable fortresses with welcoming gates that guide rather than block.
 
 **Reflection Questions:**
@@ -4706,7 +4706,7 @@ He tested it with the complex registration form, and the system handled everythi
 
 Binary displayed the complete integration map: "Ultimate validation system: schema validation (consistency), sync validation (instant feedback), async validation (server checks), debouncing (performance), caching (efficiency), cross-field (dependencies), conditional (dynamic requirements), multi-step (complex forms), memoization (optimization), cleanup (Effect patterns). All Sanctuary lessons unified!"
 
-**The Ultimate Guardian's Mastery:**
+**Validus's Ultimate Guardian Wisdom:**
 The ultimate validation defense combines multiple Sanctuary-trained strategies into one coherent system. Use schema validation for consistency and maintainability - declare all rules in one place, let the engine process them. Implement multi-step validation for complex forms, breaking the journey into manageable pieces with step-specific schemas. Apply conditional rules for dynamic requirements where field visibility/validation depends on other values. Leverage memoization from Performance Sanctuary for expensive sync validation and caching for async validation. Use debouncing from Event Symphony to prevent server overload. Handle cross-field dependencies with proper useEffect deps to prevent circular validation. Choose timing strategically: onChange for guidance, onBlur for balance, onSubmit for final checks. Most importantly, treat validation as a guide that helps users succeed, not a gatekeeper that blocks them. The strongest fortress is one that legitimate users can enter easily while keeping threats at bay through orchestrated, systematic defense. Master these patterns through Sanctuary orchestration, and your forms become both secure and delightful.
 
 **Reflection Questions:**
@@ -4797,7 +4797,7 @@ Binary displayed the complete submission flow: "Form → Validation → preventD
 **Portal Keeper Sage**
 Master of the Submission Portal Gateway at the heart of the Western Quarter, where a massive swirling portal marks the gateway between React's client-side world and the server realm. Sage's voice echoes with warmth as he teaches the final piece of the Forms & Events puzzle. "The fundamental secret of portal control is understanding and preventing the browser's default behavior with preventDefault(). This single method transforms chaotic browser behavior into controlled data transmission where React maintains complete authority over the submission lifecycle!"
 
-**The Portal Keeper's First Law:**
+**Sage's Submission Wisdom:**
 Form submission is the gateway between your React application and the outside world. The fundamental pattern is preventDefault() - this single method transforms chaotic browser behavior (page reloads, state destruction) into controlled data transmission where React maintains authority. By preventing the default submission, you maintain complete control over validation (check before submitting), error handling (graceful recovery), loading states (user feedback), and success handling (post-submission actions). Manage the submission lifecycle through clear states: idle → submitting → success/error. Prevent double-submission by disabling during submission. Integrate with validation patterns to ensure only valid data transmits. Remember: every portal begins with prevention, proceeds through validation, and completes with clear user feedback. Master this flow, and you master the bridge from client to server.
 
 **Reflection Questions:**
@@ -4866,7 +4866,7 @@ He tested it with a file upload form, and the system handled everything: validat
 
 Binary displayed the complete submission mastery checklist: "preventDefault (foundation), lifecycle states (idle/validating/submitting/success/error/cancelled), validation integration, loading states, error messages, success feedback, retry logic, exponential backoff, optimistic updates, cancellation support, progress tracking, rollback on failure. Portal mastery achieved!"
 
-**The Portal Master's Advanced Wisdom:**
+**Sage's Advanced Submission Wisdom:**
 Advanced form submission is about managing the entire lifecycle of data transmission with resilience and user-centric design. Implement comprehensive loading states to show progress through each phase (idle → validating → submitting → success/error). Use optimistic updates to make the UI feel instant while the server processes - apply changes immediately, rollback only if submission fails. Add retry logic with exponential backoff for resilience against temporary network issues - most errors resolve within 3 attempts. Provide cancellation options with AbortController for user control over long operations. Track progress for uploads and long submissions. Handle errors gracefully with clear messages and recovery options. Integrate validation to prevent invalid submissions. Remember: treat every submission as a critical user journey. Guide users through success with feedback and help them recover from failure with retry and clear error messages. Master these patterns from Sanctuary training, and your forms become reliable portals between client and server realms that users trust and enjoy using.
 
 **Reflection Questions:**
@@ -4943,7 +4943,7 @@ Sage outlined the decision framework: use custom patterns for small to medium fo
 
 Binary displayed the scaling guidance: "Custom hooks: excellent for most forms. Form libraries: for complex scale. Understanding: priceless regardless of implementation!"
 
-**The Grand Synthesis Master's Ultimate Wisdom:**
+**Sage's Complete Submission Wisdom:**
 True mastery of Forms & Events isn't about individual patterns in isolation - it's about understanding how they create a unified, seamless whole. Form state management provides the data foundation (controlled components, custom hooks). Event handling creates the optimized interaction layer (delegation, debouncing, throttling, memoization). Validation ensures data integrity at every step (schema validation, async checks, cross-field coordination). Submission patterns handle the reliable journey to the server (retry logic, optimistic updates, cancellation, progress tracking). When combined through Sanctuary orchestration principles, they create forms that guide users, protect data, provide instant feedback, handle failures gracefully, and feel professional. Remember: in React, every form is a complete application in miniature, requiring state management, event handling, validation, and submission - all the skills you've mastered. Whether you implement these patterns with custom hooks or use form libraries that encapsulate them, understanding the patterns makes you a form architect who can build anything.
 
 **Reflection Questions:**
@@ -5032,7 +5032,7 @@ Binary displayed the synthesis: "Pattern recognition complete! Navigation = Comp
 **Captain Marina**
 Legendary navigation expert of the Central Citadel, teacher of routing and navigation in the Navigation Command Center with floating holographic maps. Her voice carries warmth and excitement as she welcomes newcomers to the world of React routing. "Navigation in React isn't just about changing URLs - it's about maintaining state across routes, managing effects during transitions, handling forms that span multiple views, and creating seamless user experiences using all your React knowledge!"
 
-**Routing Fundamentals:**
+**Marina's Routing Wisdom:**
 React routing is the synthesis of all React patterns you've learned. Routes are components that render conditionally based on location state (the URL). The BrowserRouter component provides navigation context, Routes acts as a conditional switch, Route defines path-to-component mappings, and Link creates controlled navigation. Route parameters (like :id in paths) pass data through URLs like props. Nested routes use component composition for layouts. React Router hooks integrate routing with React patterns: useParams (read route params like props), useLocation (access current location state), useSearchParams (manage query strings like form state), useNavigate (programmatic navigation like event handlers). The URL becomes another source of truth in your state management - shareable, bookmarkable, history-aware state that persists across page reloads.
 
 **Reflection Questions:**
@@ -5248,17 +5248,13 @@ The second challenge: implement route-based analytics tracking. Aria orchestrate
 
 Binary displayed metadata mastery: "Route handles: navigation metadata attached to routes. useMatches: access matched route hierarchy. Automatic generation: breadcrumbs, titles, navigation, analytics from metadata. Self-describing routes: intelligent waypoints!"
 
-**Route Metadata Mastery:**
+**Solara's Route Metadata Wisdom:**
 Route metadata through handles transforms routes from simple path-to-component mappings into self-describing, intelligent navigation nodes. Attach metadata to route definitions using the handle property - information like breadcrumb labels, page titles, navigation icons, analytics configuration, permissions requirements, or any route-specific data. Access matched routes and their metadata using the useMatches hook, which returns the complete route hierarchy from root to current page with their data from loaders. Generate UI automatically from metadata: breadcrumbs from handle.crumb functions (with access to loader data for dynamic names!), page titles from handle.title, sidebar navigation from handle.sidebar, analytics from handle.analytics. This pattern enables declarative routing where adding a new route with metadata automatically updates all derived UIs - breadcrumbs, navigation menus, page titles, tracking, all without manual coordination. Metadata makes routes self-describing and enables automatic UI generation at scale.
 
 **New Characters:**
 
 **Wayfinder Solara**
 Expert navigator of the Waypoint Sanctum in the Central Citadel, specializing in advanced routing intelligence. Her navigator's cloak shifts with the living constellation orbs that fill her chamber, reading the patterns they form. "Routes don't just connect places - they carry memory, intent, and context. A well-designed waypoint knows where it is, where it came from, and where it's going. My job is to teach you how to build routes that think."
-
-**Wayfinder Solara's Wisdom:**
-Advanced navigation is about giving routes intelligence beyond simple path-to-component mapping. Routes can carry their own metadata through handles, making them self-describing and enabling automatic generation of breadcrumbs, page titles, and analytics. Loader-based prefetching and predictive navigation create instant-feeling user experiences. Scroll restoration respects user context and meeting unspoken expectations. Navigation transitions guide attention smoothly between views. Every advanced waypoint pattern serves the same goal: a user who never thinks about how they're moving through your application because it feels perfectly natural.
-
 **Reflection Questions:**
 
 - How does treating routes as self-describing entities through metadata change your approach to navigation UI?
@@ -5325,7 +5321,7 @@ The final challenge tested mastery: implement bandwidth-aware prefetch that resp
 
 Binary displayed prefetch mastery: "Strategies: hover intent (immediate prefetch), viewport visibility (intersection observer), predictive next steps (analytics-driven), cache management (stale-while-revalidate), bandwidth awareness (respect constraints). Result: instant navigation through intelligent prediction!"
 
-**Predictive Loading Mastery:**
+**Solara's Predictive Loading Wisdom:**
 Prefetching transforms navigation performance by loading data before users click, making transitions feel instant. React Router v6.4+ provides built-in prefetch through Link with prefetch="intent" - hovering or focusing a link runs the target route's loader and caches results. Extend with custom strategies: viewport visibility (prefetch when links scroll into view using IntersectionObserver), predictive next steps (prefetch likely destinations based on current page), analytics-driven predictions (prefetch common navigation paths from user behavior data). Implement cache management for prefetched data using timestamps and stale-while-revalidate patterns - reuse fresh cache, cleanup stale entries, prevent redundant fetches. Respect user constraints with bandwidth-aware prefetch using Network Information API - disable on slow/metered connections (save-data mode, 2G), enable on good connections. Stagger prefetches by priority to avoid bandwidth spikes. Intelligent prefetching makes navigation feel instant by predicting user intent and loading before clicks.
 
 **Reflection Questions:**
@@ -5388,7 +5384,7 @@ She tested it: navigating shows loading bar, transitions smoothly, scrolls appro
 
 Binary displayed the complete navigation mastery: "Routing fundamentals: ✓, Metadata & breadcrumbs: ✓, Prefetching & performance: ✓, Scroll restoration: ✓, Transitions: ✓, Accessibility: ✓, Loading states: ✓. Complete navigation mastery achieved! Every detail polished!"
 
-**Navigation Polish Mastery:**
+**Solara's Navigation Polish Wisdom:**
 Professional navigation requires attention to scroll behavior, transitions, loading states, and accessibility. React Router provides automatic scroll restoration - navigate forward scrolls to top, navigate back restores previous position, hash navigation scrolls to element. Customize with useEffect watching location changes and manual window.scrollTo calls. Save scroll positions in refs or location state for list-detail patterns where users return to exact positions. Handle nested scroll containers separately from page scroll. Implement smooth page transitions with Framer Motion or CSS transitions - fade, slide, direction-aware animations guide users through navigation. Show loading states during navigation using useNavigation hook - loading bars, skeletons, or spinner indicators provide feedback during data loading. Manage focus for accessibility - move focus to main content on route changes so screen readers announce new pages, provide skip links, make main content focusable with tabIndex={-1}. Combine with prefetching for instant navigation, metadata for breadcrumbs, and smart defaults for professional-grade UX. Polish transforms functional routing into delightful user experiences.
 
 **Reflection Questions:**
@@ -5543,7 +5539,7 @@ The second challenge: implement automatic re-authentication on 401 errors. Aria 
 
 Binary displayed advanced auth mastery: "Session persistence: localStorage + sessionStorage. Token refresh: automatic intervals + 401 retry. Form preservation: sessionStorage across auth. Remember me: different storage strategies. OAuth: code exchange flow. Complete authentication system!"
 
-**Advanced Authentication Mastery:**
+**Aldric's Advanced Authentication Wisdom:**
 Advanced authentication requires session persistence, automatic token refresh, form preservation across re-auth, and graceful error handling. Persist tokens in localStorage (survives browser close) or sessionStorage (session-only) based on "remember me" preference. On mount, check stored tokens and verify validity to restore sessions. Implement automatic token refresh using useEffect intervals - refresh before expiry (e.g., every 14 minutes for 15-minute tokens) to prevent mid-session logouts. Handle OAuth flows by extracting authorization codes from URL query params, exchanging for tokens, and cleaning URLs. Preserve form state across authentication using sessionStorage - save form data on changes, restore on mount, maintain user work even if session expires mid-form. Implement automatic retry on 401 errors - attempt token refresh, retry original request with new token, logout only if refresh fails. Show clear messaging when redirecting for authentication ("Session expired, please log in"). Combine patterns: token persistence + automatic refresh + form preservation + graceful fallbacks = robust authentication that rarely interrupts users.
 
 **Reflection Questions:**
@@ -5608,7 +5604,7 @@ She tested the system: Viewer navigates to edit page - blocked (no permission). 
 
 Binary displayed complete mastery: "Authentication: who are you? Authorization: what can you do? Intelligent Authorization: what should you be able to do considering context, time, ownership, state, history? Complete guardian system achieved through React pattern synthesis!"
 
-**Role-Based Authorization Mastery:**
+**Aldric's Role-Based Authorization Wisdom:**
 Advanced authorization requires granular permissions, role hierarchies, contextual checks, and performance optimization. Implement permission-based rather than role-based checks - instead of "is admin?", ask "can create content?". Define permissions (actions on resource types) and roles (sets of permissions). Create usePermissions hook with hasPermission, hasAnyPermission, hasAllPermissions helpers. Build PermissionRoute wrapper that checks required permissions. Add contextual authorization considering multiple factors: ownership (is this yours?), resource state (is complete?), time-based (subscription active?), compound rules (delete requires permission AND ownership/admin). Implement role hierarchies where higher roles inherit lower permissions (admin inherits moderator inherits editor). Cache permission checks using useRef or useMemo for performance - clear cache on user changes. Apply conditional rendering to show only actions users can perform. Combine patterns: permission checks + ownership fallbacks + resource state validation + time-based access + role inheritance = intelligent, context-aware authorization that adapts to users' actual capabilities in specific contexts.
 
 **Reflection Questions:**
@@ -5692,17 +5688,13 @@ The second challenge: implement a form modal that persists data. Aria orchestrat
 
 Binary displayed portal mastery: "createPortal: renders outside parent DOM. Route integration: URL drives modal state. Accessibility: focus management + keyboard handling + ARIA. Form persistence: sessionStorage across navigation. Complete portal system!"
 
-**Route-Based Portal Mastery:**
+**Lyss's Route-Based Portal Wisdom:**
 React portals allow components to render outside their parent DOM hierarchy while maintaining all React tree relationships - state, events, context flow normally. Use createPortal(children, domNode) to render to document.body or other DOM locations, escaping z-index stacking and overflow constraints. Integrate portals with routing for shareable, bookmarkable modals - use query parameters (?modal=123) or nested routes (/products/123/details) to drive modal state. Browser back closes modals naturally, refresh preserves state, URLs are shareable. Implement accessibility: focus management (save/restore focus on open/close), keyboard handling (Escape to close, Tab trap), ARIA attributes (role="dialog", aria-modal). Persist form data across modal navigation using sessionStorage. Confirm before closing with unsaved changes. Combine patterns: portals for rendering + routing for state + accessibility for inclusion + form persistence for UX = professional modal systems that feel native to web applications.
 
 **New Characters:**
 
 **Rift Weaver Lyss**
 Master of the Portal Passages chamber in the Central Citadel, specialist in dimensional rendering and portal architecture. Her robes trail fragments of light from the portals she moves through, and she speaks about component boundaries the way a cartographer speaks about borders on a map. "A portal is not an escape from React — it is React reaching further than the DOM expected. The component still belongs to the tree. It just renders somewhere else. That distinction is everything."
-
-**Rift Weaver Lyss's Wisdom:**
-React portals solve a specific, real problem: UI elements like modals, tooltips, and notifications need to escape overflow and z-index constraints imposed by their parent DOM hierarchy. createPortal renders children to a different DOM node while keeping them fully connected to the React tree — state, events, context, and lifecycle all function normally. The key insight is that the DOM position and the React position are separate concerns. When you integrate portals with routing (URL-driven modal state), accessibility (focus traps, ARIA, keyboard handling), and form patterns (sessionStorage persistence), you build overlay systems that feel like natural parts of the browser rather than bolted-on afterthoughts.
-
 **Reflection Questions:**
 
 - How does route-driven modal state improve shareability and user experience compared to local state?
@@ -5763,7 +5755,7 @@ The second challenge: implement a toast notification system with stacking. Aria 
 
 Binary displayed portal orchestration mastery: "Z-index stacking: automatic via stack manager. Nested portals: coordinated focus + keyboard. Transitions: AnimatePresence for smooth animations. Performance: lazy rendering + delayed unmount. Toast system: stacked notifications. Complete portal orchestration!"
 
-**Portal Orchestration Mastery:**
+**Lyss's Portal Orchestration Wisdom:**
 Managing multiple portals requires z-index coordination, focus management, and smooth transitions. Implement portal stack manager that tracks all open portals and assigns increasing z-index values (1000, 1010, 1020...). Use Context to provide stack state globally - pushPortal on mount, popPortal on unmount. Coordinate focus for nested portals - only topmost modal handles Escape key (stopPropagation prevents parent closures), each maintains focus trap. Implement smooth transitions using Framer Motion: AnimatePresence handles exit animations before unmount, initial/animate/exit props define enter/exit states, stagger animations for visual hierarchy. Optimize performance: lazy render portal content (don't mount until needed), delay unmount for exit animations (setTimeout after isOpen becomes false). Stack different portal types: modals, drawers, toasts, tooltips - each with appropriate z-index ranges and animations. Combine patterns for professional portal orchestration where multiple UI layers coordinate seamlessly.
 
 **Reflection Questions:**
@@ -5830,7 +5822,7 @@ Lyss smiled with deep satisfaction. "You've mastered the Portal Passages - the f
 
 Binary displayed ultimate mastery: "Routing: fundamentals + waypoints + guardians + portals = COMPLETE! Components: structure. State: management. Effects: synchronization. Context: distribution. Forms: interaction. Navigation: orchestration. Portals: transcendence. Complete React Navigation Mastery Achieved!"
 
-**Advanced Portal Mastery:**
+**Lyss's Advanced Portal Wisdom:**
 Advanced portal patterns combine wizards, split views, and contextual positioning into sophisticated systems. Implement multi-step wizards: step number in URL query params (?step=2) for browser back/forward, wizard data in sessionStorage for persistence, AnimatePresence for smooth step transitions, progress indicators show position, validate before allowing next step. Create split views for parallel work: independent panes with coordinated state, resizable dividers, context-aware content switching. Build contextual portals that position intelligently: calculate trigger position with getBoundingClientRect(), position portal relative to trigger with preferred placement (bottom/top/left/right), implement collision detection to flip when viewport space insufficient, transparent backdrop for outside clicks. Coordinate multiple portal types: modals for focused tasks, drawers for navigation, tooltips for quick info, toasts for notifications, wizards for complex flows - each with appropriate z-index ranges. Combine all patterns: portals escape DOM + routes drive state + transitions guide users + accessibility ensures inclusion + forms persist + performance optimizes = professional portal systems that feel native to web applications.
 
 **Reflection Questions:**
@@ -5997,7 +5989,7 @@ The second challenge tested deeper: find closure capture leaks. Aria investigate
 
 Binary displayed complete profiling mastery: "Memory Guardian Workflow: Profile (heap snapshots + timeline) → Detect (compare, look for growth) → Trace (retainers view) → Fix (cleanup functions) → Verify (re-profile shows stable memory). All leaks eliminated!"
 
-**Memory Profiling Mastery:**
+**Memor's Memory Profiling Wisdom:**
 Chrome DevTools Memory Profiler provides three sacred tools for leak detection. **Heap Snapshots** capture memory state at moments - take baseline, perform actions (open/close modal 10 times), force GC (trash icon), take second snapshot, compare to see what wasn't cleaned (Detached nodes, EventListeners, FiberNodes shouldn't increase). **Allocation Timeline** reveals growth patterns - healthy sawtooth (allocate → GC → allocate → GC, bounded) vs unhealthy steady growth (allocate → allocate → allocate, leak!). **Retainers View** traces reference chains showing why objects can't be GC'd - follow path from Window/Document to leaked object, find where reference is held, add cleanup to break chain. Workflow: Profile → Detect leaks → Trace with retainers → Fix with cleanup → Verify with re-profiling. Filter by "Detached", "EventListener", "Closure", "FiberNode" to find React-specific leaks. Make profiling part of regular development workflow especially before releases.
 
 **Reflection Questions:**
@@ -6056,7 +6048,7 @@ Brother Memor handed Aria a sacred scroll - the Memory Guardian seal. "You've ma
 
 Binary projected the complete synthesis: "Four Healing Rituals - (1) Event Cleanup: always return cleanup from useEffect, (2) WeakMap Wisdom: use weak references for caches, (3) Reference Discipline: disconnect observers and clear refs, (4) Memoization Mastery: memoize Context values. Memory Guardian oath: Apply these rituals in EVERY component. Knowledge without practice is worthless!"
 
-**Four Healing Rituals Mastery:**
+**Memor's Four Healing Rituals Wisdom:**
 Prevent memory leaks through four disciplined practices. **Ritual 1: Event Cleanup** - ALWAYS return cleanup functions from useEffect that remove event listeners (removeEventListener), clear timers (clearTimeout/clearInterval), disconnect observers, close connections, abort async operations with AbortController, use isMountedRef pattern to prevent state updates on unmounted components. **Ritual 2: WeakMap Wisdom** - use WeakMap/WeakSet for caches that shouldn't prevent garbage collection - weak references allow automatic GC when objects unused elsewhere, unlike regular Map/Set which hold strong references forever. **Ritual 3: Reference Discipline** - disconnect observers on unmount, clear refs by setting to null, manage DOM references carefully to break reference chains enabling GC. **Ritual 4: Memoization Mastery** - memoize Context values with useMemo to prevent recreation on every render (unmemoized objects cause all consumers to re-render unnecessarily), use useCallback for stable function references. Apply these rituals consistently in every component for eternal memory health.
 
 **Reflection Questions:**
@@ -6134,17 +6126,13 @@ He showed a bloated dashboard application that eagerly imported numerous heavy l
 
 Binary displayed optimization mastery: "Bundle Analysis complete! Tools: webpack-bundle-analyzer (visual treemap), source-map-explorer (source map breakdown), bundlesize (CI/CD gates). Common bloaters: moment.js → date-fns, full lodash → individual imports, entire icon libraries → tree-shaken imports. Result: 3.4MB → 200KB initial bundle = 94% reduction!"
 
-**Bundle Analysis Mastery:**
+**Libris's Bundle Analysis Wisdom:**
 Bundle size directly impacts Time to Interactive and user experience. Modern JavaScript applications often ship massive bundles containing code many users never execute. Analyze bundles with webpack-bundle-analyzer (visual treemap showing size of each dependency), source-map-explorer (exact breakdown from source maps), and bundlesize in CI/CD (prevent bloat creeping back). Common bloaters: moment.js (280KB, replace with date-fns 10KB or day.js 2KB), importing entire lodash (70KB, import individual functions like debounce from lodash/debounce), entire icon libraries (500KB-2MB, import only needed icons with tree-shaking). On 3G connections (reality for billions), each 50KB adds ~1 second to load time. 1MB bundle = 6-7 seconds before interactive. Users abandon sites taking >3 seconds. Audit dependencies, replace bloaters, prepare for lazy loading. Awareness is the first step - measure bundle, identify waste, optimize imports, then add lazy loading for remaining heavy code.
 
 **New Characters:**
 
 **Keeper Libris**
 Ancient librarian of the Lazy Library — a mystical repository in the valley beneath the Northern Peaks where every React pattern ever documented is stored. His silver hair and knowing eyes have witnessed countless developers collapse under bundles of their own making. "Knowledge is free. Shipping all of it at once is the mistake. A library that gives you every book the moment you walk through the door is not a library — it is a burden."
-
-**Keeper Libris's Wisdom:**
-Every kilobyte in your bundle is a cost your users pay before they see a single pixel. Eager loading — importing everything upfront — is the Bundle Burden: code for features most users will never reach, shipped to everyone on every load. Lazy loading inverts this: summon code only when needed, only for users who need it. React.lazy and Suspense provide the mechanism; route-based splitting and component-based splitting define the strategy. Combine with bundle analysis tools to see what you're shipping and why. Replace heavyweight dependencies with lighter alternatives where possible, tree-shake icon libraries, and use dynamic imports for heavy features like PDF generation or data visualization. The goal is a fast first impression — and a system that grows in the background.
-
 **Reflection Questions:**
 
 - How does bundle analysis make invisible dependency costs visible and actionable?
@@ -6201,7 +6189,7 @@ Aria tested the lazy-loaded application: Home page loads instantly (250KB), navi
 
 Binary displayed lazy loading mastery: "React.lazy() + Suspense complete! Patterns: (1) Route-based splitting (major features), (2) Component-level splitting (heavy libraries), (3) Modal splitting (user interactions), (4) Error boundaries (chunk load failures), (5) Retry logic (network resilience). Bundle: 1.5MB monolith → 250KB initial + on-demand chunks = 84% reduction!"
 
-**Lazy Loading Mastery:**
+**Libris's Lazy Loading Wisdom:**
 React.lazy() and Suspense enable component-level code splitting for dramatic bundle size reductions. Using lazy with a function that returns a dynamic import creates split point - bundler generates separate chunk that loads on demand. Suspense wraps lazy components providing fallback UI during chunk load with a fallback prop showing a Loading component. Common patterns: (1) **Route-based splitting** - most effective, split major routes into separate chunks (admin, analytics, reports), (2) **Component-level splitting** - heavy components with large dependencies (charts, editors, PDF generators), (3) **Modal splitting** - load on interaction not render, defer until actually needed, (4) **Nested Suspense** - granular loading states for independent sections, (5) **Error boundaries** - catch chunk load failures from network issues, (6) **Retry logic** - automatic chunk reload attempts on failure. Use skeleton screens for better perceived performance than spinners. Progressive enhancement shows static content immediately while dynamic parts load. Combine with bundle analysis: analyze → identify heavy components → lazy load → measure improvement. Initial bundle reductions of 80-90% common with strategic splitting.
 
 **Reflection Questions:**
@@ -6256,7 +6244,7 @@ He tested the system comprehensively: Initial load 715KB (down from 1.9MB origin
 
 Binary displayed complete mastery: "Bundle optimization complete! Techniques: (1) Bundle analysis (webpack-bundle-analyzer, identify bloat), (2) Dependency optimization (replace moment.js, tree-shake), (3) React.lazy() + Suspense (component splitting), (4) Vendor chunking (separate by update frequency), (5) Smart preloading (hover/focus), (6) Prefetch hints (webpackPrefetch/Preload), (7) Analytics-driven predictions (behavior-based). Result: 1.9MB → 715KB initial, 130KB for returning users = 93% reduction with caching!"
 
-**Advanced Splitting Mastery:**
+**Libris's Advanced Splitting Wisdom:**
 Optimal bundle architecture combines multiple strategies for maximum performance and caching efficiency. **Vendor Chunking** - separate third-party libraries from app code in splitChunks config, group by update frequency (React rarely changes, app code changes daily), enables long-term caching (returning users only download changed chunks). **Smart Preloading** - load on hover/focus before click for instant navigation, use Link onMouseEnter/onFocus to trigger chunk load, by click time chunk already loaded. **Magic Comments** - webpackPrefetch (low priority, loads during idle for likely next routes), webpackPreload (high priority, loads in parallel for critical chunks). **Idle Time Prefetching** - use requestIdleCallback to prefetch during browser idle, doesn't compete with critical resources. **Analytics-Driven** - track user navigation patterns, prefetch highest probability next routes (dashboard → analytics 60%, prefetch it!). **Complete Architecture** - separate runtime/vendor/app chunks, lazy load routes with prefetch hints, hover preload links, analytics predictions, error boundaries for resilience. Initial bundle reductions of 60-80% common, returning user downloads reduced 90%+ with caching.
 
 **Reflection Questions:**
@@ -6403,7 +6391,7 @@ He tested the complete system: 100,000-item list loaded instantly and scrolled s
 
 Binary displayed complete virtualization mastery: "Virtualization complete! Techniques: (1) Virtual scrolling (visible + buffer only), (2) FixedSizeList (uniform heights), (3) VariableSizeList (dynamic heights + caching), (4) FixedSizeGrid (2D virtualization), (5) InfiniteLoader (pagination), (6) AutoSizer (responsive), (7) scrollToItem (navigation). Results: 100K items, 60fps, <10MB, browser-crash-proof!"
 
-**Advanced Virtualization Mastery:**
+**Zephyr's Advanced Virtualization Wisdom:**
 Complete virtualization requires multiple techniques for different scenarios. VariableSizeList for dynamic heights - estimate initial sizes based on content, measure with getBoundingClientRect(), cache measurements in refs, call resetAfterIndex() when sizes change, use intelligent estimation (text length, image count) to reduce jumpiness. FixedSizeGrid for 2D virtualization - virtualizes both rows and columns, Cell component receives rowIndex and columnIndex, perfect for spreadsheets (1M rows × 100 columns), image galleries (100K images), massive data tables. Horizontal virtualization with layout="horizontal" for carousels and timelines. Production patterns: AutoSizer makes lists responsive to container dimensions, scrollToItem enables programmatic navigation to specific indices, InfiniteLoader integrates pagination loading more data as scroll approaches end, combine VariableSizeList + InfiniteLoader + AutoSizer for complete solution. Transforms impossible (100K items crashing browser) into effortless (60fps smooth scrolling, <10MB memory). The philosophy: render only necessity, perceive infinity with finite resources.
 
 **Reflection Questions:**
@@ -6444,7 +6432,7 @@ Aria assembled a complete virtualization architecture: the decision framework (m
 
 Binary displayed the architecture: "Virtualization Architecture: Decision (measure first, >100 complex items, continuous scroll needed). Accessibility: role='listbox', aria-setsize, aria-posinset, keyboard scroll-into-view. Testing: mock virtualization for unit, test renderers in isolation, E2E for real scroll."
 
-**Virtualization Architecture Mastery:**
+**Zephyr's Virtualization Architecture Wisdom:**
 Virtualization architecture encompasses when to virtualize (decision framework: list size, item complexity, continuous scroll need — measure before adding complexity), accessibility (role="listbox"/role="option", aria-setsize/aria-posinset for screen reader position announcements, keyboard navigation that scrolls focused items into view), and testing strategies (mock virtualization libraries for unit tests rendering all items, test itemRenderer functions in isolation, use E2E tests with Playwright/Cypress for real scroll behavior). Alternatives like pagination may be simpler and more appropriate when continuous scrolling isn't required.
 
 **Reflection Questions:**
@@ -6522,17 +6510,13 @@ Aria tested the optimized dashboard: Typing was now instant (20ms vs 300ms), the
 
 Binary displayed profiling mastery: "Performance measurement complete! Tools: (1) React DevTools Profiler (flamegraph analysis, component details, why did this render?), (2) Performance API (mark/measure custom operations), (3) console.time (quick timing), (4) Profiler component (programmatic logging). Workflow: Profile → Identify bottlenecks → Optimize strategically → Re-profile to verify. Always measure before optimizing!"
 
-**Performance Profiling Mastery:**
+**Velocity's Performance Profiling Wisdom:**
 Optimization requires measurement first. React DevTools Profiler reveals render patterns - flamegraph shows component hierarchy with render durations (gray = didn't render, yellow/red = slow), click bars to see details (why it rendered, how long, how many times), ranked chart sorts by total time revealing slowest components. Profile workflow: record during interaction → analyze flamegraph for slow components → check "Why did this render?" for unnecessary re-renders → identify bottlenecks → optimize → re-profile to verify. Performance API (mark/measure) tracks custom operations, console.time for quick timing, Profiler component for programmatic logging to analytics. Real optimization: profile typing delay (300ms), find unmemoized filter/sort running every render, memoize with useMemo, verify 93% improvement (20ms). Common issues: expensive calculations without memoization, new objects/arrays breaking memoization, cascading re-renders from unstable props. Always measure twice, optimize once. You cannot optimize what you cannot measure.
 
 **New Characters:**
 
 **Master Velocity**
 Guardian of the Speed Sanctum, carved into the highest peak of the Northern Mountains. His robes shimmer with optimization symbols, each one earned by profiling a real bottleneck and eliminating it. "Speed is not an accident. It is precision. Every unnecessary render is an attack on your users' time. I will teach you to see what you cannot see — and to remove what should not be there."
-
-**Master Velocity's Wisdom:**
-The Performance Plague hides in plain sight: components that re-render when nothing they depend on changed, calculations that repeat on every render, function instances recreated constantly breaking memoization downstream. None of these are visible in the code itself — they require profiling to reveal. The React DevTools Profiler makes the invisible visible: flamegraphs show which components render, ranked charts reveal which are slowest, and the "Why did this render?" panel exposes the root cause. Only after measurement does optimization make sense. The Trinity of Optimization — React.memo, useMemo, useCallback — are precision instruments, not defaults. Profile first, identify the bottleneck, apply the right tool, verify the result. Anything else is guessing.
-
 **Reflection Questions:**
 
 - How does the React DevTools Profiler make invisible performance issues visible and measurable?
@@ -6583,7 +6567,7 @@ He verified the optimizations: Profiler showed components skipping re-renders wh
 
 Binary displayed Trinity mastery: "Trinity of Optimization complete! (1) React.memo - prevents component re-renders when props unchanged, (2) useMemo - memoizes expensive calculations, only recalculates when dependencies change, (3) useCallback - memoizes functions, keeps references stable for child memo. Together: 95% performance improvement (500ms → 5-30ms). Remember: Profile first, optimize strategically, verify improvement!"
 
-**Trinity of Optimization Mastery:**
+**Velocity's Trinity of Optimization Wisdom:**
 React provides three memoization tools working in harmony. **React.memo** wraps components preventing re-renders when props unchanged - shallow compares props by reference, custom comparison for deep checks, use for expensive components that re-render often with stable props. **useMemo** memoizes expensive calculations - only recalculates when dependencies change, use for operations taking >5ms (filtering/sorting large data, complex computations), returns cached value when deps unchanged. **useCallback** memoizes functions - keeps same reference across renders preventing child memo from breaking, use when passing functions to memoized children or as dependencies. The Trinity works together: React.memo prevents renders + useMemo prevents recalculations + useCallback prevents breaking memo. Common pitfall: new objects/arrays break memoization (creating user object inline creates new object every render). Dependencies must be complete (list everything used) but minimal (don't include unchanging values). Don't memoize everything - profile first, optimize bottlenecks, verify improvement. Typical results: 90-95% faster interactions (500ms → 20ms).
 
 **Reflection Questions:**
@@ -6626,7 +6610,7 @@ Aria assembled her complete performance mastery: the Memory Monastery's cleanup 
 
 Binary displayed the complete performance system: "Performance System: Profile → Identify → Optimize → Verify → Budget. Architecture: colocate state, split components, define render boundaries. Budgets: LCP < 2.5s, INP < 200ms, CLS < 0.1. Web-vitals for field measurement. Lighthouse CI for build gates. When NOT to optimize: <5ms components, <100-item lists, always-together routes."
 
-**Complete Performance System Mastery:**
+**Velocity's Complete Performance System Wisdom:**
 A production performance system combines profiling (React DevTools Profiler, Performance API), field measurement (web-vitals library collecting LCP, INP, CLS from real users), performance budgets (Lighthouse CI failing builds when metrics degrade), architecture-level decisions (state colocation minimizing re-render scope, component splitting enabling granular memoization, render boundaries separating frequent updates from expensive renders), and a workflow (Profile → Identify → Optimize → Verify → Budget). The React Compiler will automate memoization, but understanding reference stability and dependency tracking remains essential. Knowing when NOT to optimize is as important as knowing how — optimization adds complexity that must be justified by measurement.
 
 **Reflection Questions:**

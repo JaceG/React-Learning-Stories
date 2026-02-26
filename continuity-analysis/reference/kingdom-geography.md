@@ -1,7 +1,7 @@
 # React Kingdom - World Geography & Map
 
 *Complete geographic reference: terrain, climate, regions, and travel routes*  
-*Last Updated: February 3, 2026 - Updated for Full-Stack React (LP14), Forge Admiral Vex (LP13), removed Mobile Frontier*
+*Last Updated: February 3, 2026 - Updated for Full-Stack React (LP14), Shipwright Vex (LP13), removed Mobile Frontier. Worldbuilding deduplication: Scriptorium theme for LP12, unique location names across all LPs.*
 
 ---
 
@@ -779,7 +779,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 ### SOUTHERN QUARTER SUMMARY
 
 **Complete Locations**: Lazy Library, Virtualization Vault  
-**Notable**: Performance-focused territory, connections to Northern Peaks (Speed Sanctum, Memory Monastery accessed from here), roads to Coastal Region
+**Notable**: Performance-focused territory, connections to Northern Peaks (Velocity Crucible, Memory Monastery accessed from here), roads to Coastal Region
 
 ---
 
@@ -845,7 +845,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 - Advanced Navigation Laboratory
 - Massive holographic displays showing route systems
 - Central hologram activation system
-- Sky bridges extending upward to Sky Realm (Cloud Citadel access)
+- Sky bridges extending upward to Sky Realm (Cloud Bastion access)
 
 **Atmosphere**:
 - Warmth and excitement from Captain Marina
@@ -961,11 +961,11 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 **Theme**: Server concepts, client-server bridge, advanced architecture, elevated knowledge  
 **Access**: Sky bridges from Central Citadel, ascending platforms from quarters
 
-The Sky Realm floats impossibly above the React Kingdom, tethered to reality only by cascading streams of data and crystalline sky bridges. Three major structures dominate: the Cloud Citadel (massive, connected by ethereal data streams), the Architect's Academy (constantly shifting crystalline structure), and the Motion Monastery (serene, everything in motion). The air is thin and crisp, clouds pass between structures, and the entire kingdom is visible far below.
+The Sky Realm floats impossibly above the React Kingdom, tethered to reality only by cascading streams of data and crystalline sky bridges. Three major structures dominate: the Cloud Bastion (massive, connected by ethereal data streams), the Architect's Academy (constantly shifting crystalline structure), and the Motion Monastery (serene, everything in motion). The air is thin and crisp, clouds pass between structures, and the entire kingdom is visible far below.
 
 ---
 
-### Cloud Citadel & Data Embassy
+### Cloud Bastion & Data Embassy
 
 **First Mentioned**: LP11.1 ApiIntegration Ch1
 
@@ -977,7 +977,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 - Observation deck where arrivals emerge from sky bridge
 - Protocol Chambers with rooms glowing different hues (REST blue, GraphQL purple, WebSockets gold)
 - Highest tower containing Data Embassy (production-ready API infrastructure)
-- Lower passages descending through structure's foundation into clouds and stone (route to Type Forge)
+- Lower passages descending through structure's foundation into clouds and stone (route to Type Scriptorium)
 
 **Atmosphere**:
 - Morning mist parting to reveal structure
@@ -989,7 +989,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 **Visual Details**:
 - Mist parting revealing massive floating structure
-- Ethereal data streams cascading from Citadel to kingdom below (like waterfalls of light)
+- Ethereal data streams cascading from Bastion to kingdom below (like waterfalls of light)
 - Sky bridge extending from Central Citadel's highest spire
 - Cloud Keeper Axios greeting arrivals
 - Protocol Chambers glowing with different colored lights
@@ -999,11 +999,11 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 - Request flows, error handling, optimistic updates visualized as data flows
 - Statistics: 40% reduction in calls, 60% improved response times
 
-**Master**: Cloud Keeper Axios (master of server communication, guardian of Cloud Citadel)
+**Master**: Cloud Keeper Axios (master of server communication, guardian of Cloud Bastion)
 
 **Teaches**: Server communication (fetch API as diplomatic correspondence), three request states (loading/success/error), REST protocol (GET/POST/PUT/DELETE verbs as diplomatic actions), headers as credentials/metadata, GraphQL basics, WebSockets for real-time, interceptors (request transform/response/error), error handling in distributed systems, Data Embassy (production API layer with global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries)
 
-**Connection to Teaching**: Floating above = elevated server realm; ethereal streams = data connections; mist parting = revealing server world; sky bridge = access pathway; observation deck = overview; Protocol Chambers = different communication methods; glowing hues = protocol types; highest tower = complete system; Data Embassy = production infrastructure; lower passages = connection to deep type safety realm; "diplomatic correspondence" = API communication
+**Connection to Teaching**: Floating above = elevated server realm; ethereal streams = data connections; mist parting = revealing server world; sky bridge = access pathway; observation deck = overview; Protocol Chambers = different communication methods; glowing hues = protocol types; highest tower = complete system; Data Embassy = production infrastructure; lower passages = connection to Great Scriptorium; "diplomatic correspondence" = API communication
 
 ---
 
@@ -1011,7 +1011,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 **First Mentioned**: LP9.1 CompoundComponents Ch1
 
-**Location**: Sky Realm, floating above kingdom near Cloud Citadel
+**Location**: Sky Realm, floating above kingdom near Cloud Bastion
 
 **Architecture**:
 - Crystalline structure that shifts and reconfigures constantly
@@ -1103,10 +1103,10 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 ### SKY REALM SUMMARY
 
-**Complete Locations**: Cloud Citadel & Data Embassy, Architect's Academy, Motion Monastery & Dojos  
+**Complete Locations**: Cloud Bastion & Data Embassy, Architect's Academy, Motion Monastery & Dojos  
 **Theme**: Elevated knowledge - server concepts, advanced architecture, motion mastery  
 **Access**: Sky bridges from Central Citadel, view of entire kingdom below  
-**Notable**: Lower passages from Cloud Citadel descend to Western Mountains TypeScript Realm
+**Notable**: Lower passages from Cloud Bastion descend to Western Mountains Great Scriptorium
 
 ---
 
@@ -1121,9 +1121,9 @@ The kingdom is bordered by two major mountain ranges with dramatically different
 **Terrain**: Snow-capped peaks, steep rocky slopes, floating sanctuaries in clouds above summits  
 **Climate**: Cold, thin air, pristine, challenging ascents, clouds at peak level  
 **Theme**: Performance optimization, memory management, speed mastery  
-**Access**: Ascending paths from Southern Quarter, sky bridges to floating structures, underground connections to Western Mountains TypeScript Realm
+**Access**: Ascending paths from Southern Quarter, sky bridges to floating structures, underground connections to Western Mountains Great Scriptorium
 
-The Northern Peaks are the ultimate test of performance mastery. Steep paths wind upward from the Southern Quarter, the air growing thinner and colder with each step. At the summit, floating platforms rise into the clouds, carrying students to the Memory Monastery suspended impossibly above. Deep within the peaks, tunnels connect to the Western Mountains' TypeScript Realm, and the Type Guard Tower rises from these depths to pierce the mountain peak.
+The Northern Peaks are the ultimate test of performance mastery. Steep paths wind upward from the Southern Quarter, the air growing thinner and colder with each step. At the summit, floating platforms rise into the clouds, carrying students to the Memory Monastery suspended impossibly above. Deep within the peaks, tunnels connect to the Western Mountains' Great Scriptorium, and the Type Guard Gatehouse rises from these depths to guard the mountain pass.
 
 ---
 
@@ -1169,14 +1169,14 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 
 ---
 
-#### Speed Sanctum (Northern Mountains)
+#### Velocity Crucible (Northern Mountains)
 
 **First Mentioned**: LP7.4 SpeedSanctum Ch1
 
 **Location**: Carved into Northern Peak (mountain path ascending from Southern Quarter)
 
 **Architecture**:
-- Legendary sanctuary carved into mountain peak
+- Legendary crucible carved into mountain peak
 - Mountain path ascending from Southern Quarter
 - Inner sanctum with final chamber deep within mountain
 - Ancient optimization crystals lining walls
@@ -1197,7 +1197,7 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 - Robes shimmering with optimization symbols
 - Valley below with flickering components (performance issues)
 - Vital signs crystals (glow red when Lag Monster strong)
-- Ancient optimization crystals on sanctum walls
+- Ancient optimization crystals on crucible walls
 - Interconnected crystals showing cascading component flickers
 - Lag Monster defeated visualization
 - Performance restored - kingdom running smoothly below
@@ -1206,66 +1206,66 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 
 **Teaches**: Lag Monster (threat feeding on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (reveals which components render, how long, why - measure before optimize), memoization art (React.memo for components, useMemo for expensive calculations), useCallback (stabilizes function references preventing child re-renders), Trinity of Optimization (React.memo + useMemo + useCallback working in harmony), strategic optimization (profile first, identify real bottlenecks, apply strategically not prematurely), "measure twice optimize once"
 
-**Connection to Teaching**: Northern Mountains = elevated challenge; Lag Monster = performance problems; sanctuary carved in peak = optimization knowledge at height; mist = mystery; flickering components = re-render issues; vital crystals = profiling metrics; shield of memory = memoization; interconnected crystals = component dependency tree; Trinity = three optimization tools; defeated monster = performance restored; "you cannot optimize what you cannot measure"
+**Connection to Teaching**: Northern Mountains = elevated challenge; Lag Monster = performance problems; crucible carved in peak = optimization knowledge forged under pressure; mist = mystery; flickering components = re-render issues; vital crystals = profiling metrics; shield of memory = memoization; interconnected crystals = component dependency tree; Trinity = three optimization tools; defeated monster = performance restored; "you cannot optimize what you cannot measure"
 
 ---
 
-#### Type Guard Tower (Rising from Northern Peak Depths)
+#### Type Guard Gatehouse (Rising from Northern Peak Depths)
 
 **First Mentioned**: LP12.4 TypeGuardTower Ch1
 
-**Location**: Rises from underground TypeScript Realm through Northern Peak, tower top visible at summit
+**Location**: Rises from underground Great Scriptorium through Northern Peak, gatehouse visible at summit pass
 
 **Architecture**:
-- Tower rising from TypeScript Realm depths through mountain to pierce summit
-- Battlements glowing with type signatures and runtime checks at peak
-- Commander's post atop highest parapet
-- Strategic command center within tower
-- Tower's pinnacle provides panoramic view of entire TypeScript realm below and kingdom beyond
-- Underground foundation connects to Western Mountains TypeScript Realm via tunnels
+- Gatehouse rising from Scriptorium depths through mountain to guard the summit pass
+- Battlements glowing with type signatures and runtime checks
+- Sentinel's post atop the gatehouse parapet
+- Strategic checkpoint within the gatehouse
+- Gatehouse vantage provides panoramic view of entire Scriptorium below and kingdom beyond
+- Underground foundation connects to Western Mountains Great Scriptorium via tunnels
 
 **Atmosphere**:
 - Eternal vigilance
-- Watching from highest point for type mismatches
+- Watching from the pass for type mismatches
 - Strategic defensive energy
 - Bridge between compile-time and runtime
 - Final TypeScript evaluation
 - Mastery achievement
 
 **Visual Details**:
-- Tower battlements glowing with type signatures
-- Commander Guardia watching from highest parapet
+- Gatehouse battlements glowing with type signatures
+- Sentinel Guardia watching from the parapet
 - Walls displaying glowing type signatures
 - Four foundation guards visible (typeof, instanceof, in, custom predicates)
 - Advanced guard patterns demonstrated
-- View spanning entire realm from pinnacle
+- View spanning entire realm from the pass
 - Underground connections to Western Mountains visible from base
 - Migration paths shown leading up from JavaScript kingdoms
 
-**Master**: Commander Guardia (eternal sentinel, watches from parapet)
+**Master**: Sentinel Guardia (eternal sentinel, watches from parapet)
 
 **Teaches**: Type guards (bridge compile-time and runtime, narrow types while informing compiler), four foundation guards (typeof/instanceof/in/custom), advanced guard patterns (exhaustive with 'never', nested object guards, generic type guards, branded types), migration mastery (gradual with allowJs, strict boundaries, declaration files, automated codemods), "trust nothing verify everything", "bridge between chaos and order"
 
-**Connection to Teaching**: Rising through mountain = type safety from depths to peak; battlements = defensive typing; eternal watch = compile-time + runtime checking; highest point = complete type overview; underground connections = TypeScript realm network; migration paths = JavaScript to TypeScript journey; "bridge between chaos and order"
+**Connection to Teaching**: Rising through mountain = type safety from depths to peak; battlements = defensive typing; eternal watch = compile-time + runtime checking; summit pass = checkpoint for type boundaries; underground connections = Scriptorium network; migration paths = JavaScript to TypeScript journey; "bridge between chaos and order"
 
 ---
 
 ### NORTHERN PEAKS SUMMARY
 
-**Locations**: Memory Monastery (floating above), Speed Sanctum (carved into peak), Type Guard Tower (rises from depths through peak)  
+**Locations**: Memory Monastery (floating above), Velocity Crucible (carved into peak), Type Guard Gatehouse (rises from depths through peak)  
 **Theme**: Performance challenges, optimization mastery, type safety summit  
 **Access**: Ascending from Southern Quarter, floating platforms to Memory Monastery, underground tunnels to Western Mountains
 
 ---
 
-### WESTERN MOUNTAINS (Testing & Type Mountains)
+### WESTERN MOUNTAINS (Callbacks & Type Mountains)
 
-**Terrain**: Rugged mountains with deep caverns, echoing caves, underground forges blazing with blue light  
-**Climate**: Cool thin air on surface, mountain winds, echoes in caves, forge-heat in depths  
+**Terrain**: Rugged mountains with deep caverns, echoing caves, vast underground library halls glowing with blue ink-light  
+**Climate**: Cool thin air on surface, mountain winds, echoes in caves, scholarly warmth in depths  
 **Theme**: Callbacks/events (surface), TypeScript type safety (deep within mountain heart)  
 **Access**: Winding path from Western Quarter, underground tunnels throughout mountain interior, passages to Northern Peaks TypeScript connections
 
-The Western Mountains rise beyond the Western Quarter, their peaks visible from the Prop Forge. Cool thin air carries sounds that echo mysteriously. But the true secrets lie beneath - the entire mountain range is honeycombed with the TypeScript Realm, ancient forges carved into living rock where type contracts are hammered into unbreakable forms. Blue forge-flames glow through mountain cracks at night.
+The Western Mountains rise beyond the Western Quarter, their peaks visible from the Prop Forge. Cool thin air carries sounds that echo mysteriously. But the true secrets lie beneath - the entire mountain range is honeycombed with the Great Scriptorium, vast library halls carved into living rock where type contracts are inscribed on crystalline tablets. Blue ink-light glows through mountain cracks at night.
 
 ---
 
@@ -1282,7 +1282,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 - Grand Symphony Hall - natural amphitheater at heart of caves
 - Thousands of stalactites forming stone organ
 - Perfect natural acoustics throughout
-- Natural caves (not forged like TypeScript Realm below)
+- Natural caves (distinct from the carved library halls of the Great Scriptorium below)
 
 **Atmosphere**:
 - Cool, thin mountain air
@@ -1310,155 +1310,155 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 ---
 
-#### TypeScript Realm (Deep Within Western Mountains Heart)
+#### The Great Scriptorium (Deep Within Western Mountains Heart)
 
 **First Mentioned**: LP12.1 TypeForge Ch1 (mentions "deep beneath React Kingdom")
 
-**Location**: Carved deep within Western Mountains interior - vast network of forges and chambers
+**Location**: Carved deep within Western Mountains interior - vast underground library complex
 
-**Geography**: The TypeScript Realm is not a single location but an entire underground realm carved into the Western Mountains' living rock. Accessible via Cloud Citadel's lower passages (descending through clouds into stone) or through Testing Underground's lateral passages. Three major forges connected by underground passages, all blazing with blue forge-light visible through mountain cracks at night.
+**Geography**: The Great Scriptorium is not a single location but an entire underground library realm carved into the Western Mountains' living rock. Accessible via Cloud Bastion's lower passages (descending through clouds into stone) or through Testing Underground's lateral passages. Three major halls connected by lamplit corridors lined with shelves, all suffused with blue ink-light visible through mountain cracks at night. Where the Hook Forge (LP2.2) crafts tools at anvils, the Scriptorium inscribes contracts on tablets — different arts entirely.
 
-**Climate**: Forge-heat underground, blue flames creating warmth, ancient carved stone, centuries-old passages
+**Climate**: Scholarly warmth underground, blue ink-light creating soft illumination, ancient carved stone, centuries-old corridors
 
 **Access Methods**:
-1. Cloud Citadel's lower passages (spiral down through clouds and stone - primary route for students from Sky Realm)
+1. Cloud Bastion's lower passages (spiral down through clouds and stone - primary route for students from Sky Realm)
 2. Western Mountains surface caves (hidden entrances near Echo Caves)
 3. Underground passages from Testing Realms (lateral connections)
-4. Northern tunnel to Type Guard Tower (rises through Northern Peak)
+4. Northern tunnel to Type Guard Gatehouse (rises through Northern Peak)
 
 ---
 
-#### Type Forge (TypeScript Realm - Deepest)
+#### Type Scriptorium (The Great Scriptorium - Deepest Hall)
 
 **First Mentioned**: LP12.1 TypeForge Ch1
 
-**Location**: Western Mountains - deepest chamber of TypeScript Realm (accessible via Cloud Citadel lower passages)
+**Location**: Western Mountains - deepest hall of the Great Scriptorium (accessible via Cloud Bastion lower passages)
 
 **Architecture**:
-- Place of ancient power where code contracts hammered into unbreakable forms
-- Vast cavern with molten type annotations flowing through channels carved in floor
-- Ancient forges blazing with blue flame
-- Contract Chamber where component promises forged
-- Deepest chamber for advanced pattern forging (Type Synthesis chamber)
-- Passages connecting to Component Armory and Generic Forge
-- Blue forge-light visible through mountain cracks from outside
+- Place of ancient power where code contracts are inscribed into unbreakable crystalline tablets
+- Vast hall with luminous type annotations flowing through ink-channels carved in the floor
+- Ancient writing desks and lecterns arranged in concentric rings
+- Contract Hall where component promises are drafted and sealed
+- Deepest alcove for advanced type synthesis (Type Synthesis alcove)
+- Lamplit corridors connecting to Component Archives and Pattern Alcove
+- Blue ink-light visible through mountain cracks from outside
 
 **Atmosphere**:
-- Ancient power
+- Ancient scholarly power
 - Eyes that see through code to essence
-- Forge-heat and strict mode energy
-- Fundamental type safety being created
-- Guarantees being hammered into existence
+- Ink-light and strict mode precision
+- Fundamental type safety being inscribed
+- Guarantees being written into existence
 
 **Visual Details**:
-- Master Typus with beard sparking with type annotations
-- Hammer glowing with strict mode energy
-- Molten type annotations flowing like lava through floor channels
-- Blue flames blazing (TypeScript's distinctive color)
-- Type contracts being hammered on anvils
-- Ancient stone carved with type wisdom
-- Passages leading to other TypeScript forges
+- Scribe Runis with beard sparking with type annotations
+- Quill glowing with strict mode energy
+- Luminous type annotations flowing like ink through floor channels
+- Blue ink-light suffusing everything (TypeScript's distinctive color)
+- Type contracts being inscribed on crystalline tablets
+- Ancient stone walls lined with shelved scrolls of type wisdom
+- Lamplit corridors leading to other Scriptorium halls
 
-**Master**: Master Typus (Forge Keeper, eyes see through code, beard sparks with types, hammer glows)
+**Master**: Scribe Runis (Head Scribe, eyes see through code, beard sparks with types, quill glows)
 
 **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing, typed props as contracts, optional props, advanced patterns (union/intersection/conditional/mapped/template literal types), generics, typed reducers, "each type is promise, interface is guarantee"
 
-**Connection to Teaching**: Deep in mountain = foundational importance; ancient forge = TypeScript's mature power; blue flames = TypeScript brand; molten types = flowing type system; hammering contracts = creating guarantees; mountain depths = going beneath surface code; passages = TypeScript ecosystem connections
+**Connection to Teaching**: Deep in mountain = foundational importance; ancient scriptorium = TypeScript's mature power; blue ink-light = TypeScript brand; flowing annotations = type system; inscribing contracts = creating guarantees; mountain depths = going beneath surface code; corridors = TypeScript ecosystem connections
 
 ---
 
-#### Component Armory (TypeScript Realm)
+#### Component Archives (The Great Scriptorium)
 
 **First Mentioned**: LP12.2 ComponentArmory Ch1
 
-**Location**: Western Mountains - TypeScript Realm, connected to Type Forge via underground passages
+**Location**: Western Mountains - the Great Scriptorium, connected to Type Scriptorium via lamplit corridors
 
 **Architecture**:
-- Stands at heart of TypeScript realm
-- Blue forge-flames visible from miles away (through mountain cracks)
-- Great Component Forge with blue flames casting dancing shadows
-- Hook Forge chamber with ethereal chains of logic suspended in blue flame
-- Master's Chamber deep within - walls lined with glowing type definitions
-- Underground passages connecting to Type Forge and Generic Forge
+- Stands at heart of the Great Scriptorium
+- Blue ink-light visible from miles away (through mountain cracks)
+- Great Component Catalog with illuminated manuscripts casting dancing shadows
+- Hook Registry alcove with ethereal chains of logic suspended in blue light
+- Archivist's Study deep within - walls lined with glowing type definitions
+- Lamplit corridors connecting to Type Scriptorium and Pattern Alcove
 
 **Atmosphere**:
 - Transformative energy
 - Layering and composition focus
-- Forges running hot with type creation
+- Scribes cataloging component blueprints with meticulous precision
 - Warning about over-complexity
 - Achievement and mastery
-- Blue flame-light creating dancing shadows
+- Blue ink-light creating dancing shadows
 
 **Visual Details**:
-- Blue forge-flames (TypeScript's color) casting shadows
-- Component templates glowing with TypeScript's protective aura
-- Type definitions like armor specifications
-- Forge Master Typhos with hammer striking sparks of type definitions
-- Ethereal chains of logic (hooks) suspended in blue flame
-- Master's Chamber with glowing type definitions on walls
-- Complex type signatures visible
-- Hook templates with type parameters
+- Blue ink-light (TypeScript's color) casting shadows across shelves
+- Component blueprints glowing with TypeScript's protective aura
+- Type definitions like detailed specifications on catalog cards
+- Archivist Lexicon reviewing manuscripts, quill noting type definitions
+- Ethereal chains of logic (hooks) suspended in blue light
+- Archivist's Study with glowing type definitions on walls
+- Complex type signatures visible on open scrolls
+- Hook templates with type parameters filed in crystalline drawers
 
-**Master**: Master Forger Typhos (legendary component smith, hammer with type sparks)
+**Master**: Archivist Lexicon (legendary component cataloger, quill with type annotations)
 
 **Teaches**: Component typing (transforming naked JavaScript into armored TypeScript), Props interfaces, Children types, Event handler typing, Ref forwarding types, Functional/Class/Generic component typing, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced patterns (Conditional Type Armor, Mapped Type Chainmail, Utility Types, Type Guard Shields), Polymorphic Components, "well-typed component worth thousand runtime checks"
 
-**Connection to Teaching**: Armory = defensive typing; blue flames = TypeScript power; armor = type safety protection; forging = creating typed components; ethereal chains = typed hooks; Master's Chamber = advanced patterns; "armor specifications" = type definitions
+**Connection to Teaching**: Archives = cataloged type knowledge; blue ink-light = TypeScript power; armor metaphor = type safety protection; cataloging = creating typed components; ethereal chains = typed hooks; Archivist's Study = advanced patterns; "specifications" = type definitions
 
 ---
 
-#### Generic Forge (TypeScript Realm)
+#### Pattern Alcove (The Great Scriptorium)
 
 **First Mentioned**: LP12.3 GenericForge Ch1
 
-**Location**: Western Mountains - deep within TypeScript Realm, connected to other forges
+**Location**: Western Mountains - deep within the Great Scriptorium, connected to other halls by lamplit corridors
 
 **Architecture**:
 - Glows with otherworldly light (different from blue - more prismatic)
-- Ancient anvil for striking type parameters
-- Foundations area for basic generic patterns
-- Constraints chamber with blazing hotter flames
-- Inner sanctum with white-hot flames for master patterns
-- Underground passages to Type Forge and Component Armory
+- Ancient lectern for composing template scrolls
+- Foundations area with basic generic pattern manuscripts
+- Constraints study with intensifying prismatic light
+- Inner alcove with brilliant white light for master patterns
+- Lamplit corridors to Type Scriptorium and Component Archives
 
 **Atmosphere**:
 - Otherworldly, almost magical
 - True reusability power
-- Forge intensity increasing with complexity
-- Ancient master crafting for centuries
+- Light intensity increasing with complexity
+- Ancient scholar inscribing for centuries
 - Celebration at mastery achievement
 
 **Visual Details**:
 - Otherworldly prismatic light (generics adapt like prisms)
-- Master Typhos striking anvil with glowing type parameter
-- Type parameters acting as placeholders, then filling in
-- Forge flames blazing hotter for constraints (discipline)
-- White-hot flames in inner sanctum (highest complexity)
-- Complex type patterns erupting from forge
-- Inference chains visible as flowing light
-- Generic compositions creating entire type systems
+- Archivist Lexicon at lectern, inscribing glowing type parameters
+- Type parameters acting as placeholders on template scrolls, then filling in
+- Prismatic light intensifying for constraints (discipline)
+- Brilliant white light in inner alcove (highest complexity)
+- Complex type patterns blooming from inscribed scrolls
+- Inference chains visible as flowing light between manuscripts
+- Generic compositions creating entire type systems across connected volumes
 
-**Master**: Master Typhos (legendary forge master, spent centuries perfecting type-safe reusability)
+**Master**: Archivist Lexicon (legendary scholar, spent centuries perfecting type-safe reusability)
 
-**Teaches**: Generics (key to true reusability, adapt without losing type safety), type parameters as variables/placeholders, generic functions/interfaces/components, multiple type parameters, generic constraints (extends/keyof/conditional/mapped types), conditional types (make decisions), generic composition, higher-order generics, builder patterns, type-safe factories, "generic well-forged serves thousand purposes while maintaining perfect type integrity"
+**Teaches**: Generics (key to true reusability, adapt without losing type safety), type parameters as variables/placeholders, generic functions/interfaces/components, multiple type parameters, generic constraints (extends/keyof/conditional/mapped types), conditional types (make decisions), generic composition, higher-order generics, builder patterns, type-safe factories, "a generic well-inscribed serves a thousand purposes while maintaining perfect type integrity"
 
-**Connection to Teaching**: Otherworldly light = generics' flexible nature; prism = adapting to any type; type parameters = variables; anvil striking = creating generics; blazing hotter = complexity increasing; white-hot = master level; underground network = TypeScript ecosystem; centuries of work = mature type system
+**Connection to Teaching**: Otherworldly light = generics' flexible nature; prism = adapting to any type; type parameters = variables; inscribing at lectern = creating generics; intensifying light = complexity increasing; brilliant white = master level; corridor network = TypeScript ecosystem; centuries of work = mature type system
 
 ---
 
 ### WESTERN MOUNTAINS SUMMARY
 
-**Locations**: Echo Caves (surface), TypeScript Realm deep within (Type Forge, Component Armory, Generic Forge)  
-**Theme**: Surface = callbacks/events, Depths = type safety forging  
-**Access**: Winding path from Western Quarter, underground passages throughout interior, connections to Northern Peaks, passages to Testing Underground  
-**Notable**: Blue forge-flames visible through cracks at night, hollow mountain filled with TypeScript forges
+**Locations**: Echo Caves (surface), Great Scriptorium deep within (Type Scriptorium, Component Archives, Pattern Alcove)  
+**Theme**: Surface = callbacks/events, Depths = type safety inscribed in scholarly halls  
+**Access**: Winding path from Western Quarter, lamplit corridors throughout interior, connections to Northern Peaks, passages to Testing Underground  
+**Notable**: Blue ink-light visible through cracks at night, hollow mountain filled with Scriptorium halls
 
 ---
 
 ### MOUNTAIN RANGES SUMMARY
 
-**Northern Peaks**: Performance optimization (Memory Monastery floating above, Speed Sanctum carved into peak, Type Guard Tower rising through peak)  
-**Western Mountains**: Callbacks on surface (Echo Caves), TypeScript Realm carved deep within heart  
+**Northern Peaks**: Performance optimization (Memory Monastery floating above, Velocity Crucible carved into peak, Type Guard Gatehouse rising through peak)  
+**Western Mountains**: Callbacks on surface (Echo Caves), Great Scriptorium carved deep within heart  
 **Shared**: Challenging terrain, thin air, spectacular views, underground tunnel network connecting both ranges  
 **Theme**: Mountains = challenges, heights = mastery, depths = foundational power
 
@@ -1469,20 +1469,20 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 **Terrain**: Carved chambers, natural caverns, glowing crystals, dungeon passages, underground rivers  
 **Climate**: Cool, humid underground air, mysterious, illuminated by magical light sources  
 **Theme**: Testing, debugging, quality assurance, error handling - the foundation of reliability  
-**Access**: Descending stairs from quarters (especially Central Nexus), underground passages between locations, lateral connections to Western Mountains TypeScript Realm
+**Access**: Descending stairs from quarters (especially Central Nexus), underground passages between locations, lateral connections to Western Mountains Great Scriptorium
 
-The Underground Realms spread beneath the React Kingdom like a vast root system. Unlike the carved TypeScript forges of the Western Mountains, these are more organic - natural caverns expanded and adapted for testing purposes. Glowing crystals embedded in walls provide eerie light. The Testing Tower rises through the cavern ceiling to break the surface far above, its peak visible in the kingdom's streets. Cool underground air carries the echo of phantom test runners and the soft hum of continuous integration.
+The Underground Realms spread beneath the React Kingdom like a vast root system. Unlike the carved library halls of the Western Mountains' Great Scriptorium, these are more organic - natural caverns expanded and adapted for testing purposes. Glowing crystals embedded in walls provide eerie light. The Testing Gauntlet rises through the cavern ceiling to break the surface far above, its peak visible in the kingdom's streets. Cool underground air carries the echo of phantom test runners and the soft hum of continuous integration.
 
 ---
 
-### Testing Tower (Underground Realms)
+### Testing Gauntlet (Underground Realms)
 
 **First Mentioned**: LP8.1 TestingTower Ch1
 
 **Location**: Underground Realms, rises from underground to pierce cavern ceiling and break surface
 
 **Architecture**:
-- Tower rises from underground caverns, peak breaks surface (visible in kingdom)
+- Gauntlet rises from underground caverns, its peak breaks surface (visible in kingdom)
 - Peak chamber where Test Master Jasmine awaits (above ground level)
 - Circular chamber with three glowing portals (blue/green/gold) - underground level
 - Highest chamber containing massive Continuous Integration Engine (crystalline structure) - near peak
@@ -1498,7 +1498,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 - Pride and accomplishment at mastery
 
 **Visual Details**:
-- Tower rising through cavern, peak piercing ceiling far above
+- Gauntlet rising through cavern, peak piercing ceiling far above
 - Bugs as creatures: null-pointer (🐛), type-error (🦗), logic-error (🕷️) skittering across floors
 - Debuggora the owl with glowing eyes spotting bugs
 - Three glowing portals (blue=unit tests, green=integration, gold=E2E)
@@ -1515,7 +1515,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **Teaches**: Bug types (null-pointer/type-error/logic-error as creatures), systematic testing (preventive magic vs reactive), three testing levels (unit/integration/E2E - three portals), Testing Pyramid (many unit/fewer integration/selective E2E - layers of armor), React Testing Library, Jest, test coverage (80% minimum), automated testing (CI/CD), Continuous Integration Engine, GitHub Actions pipeline, automated guardians never tire, "test written today saves ten bugs tomorrow"
 
-**Connection to Teaching**: Underground = quality foundation; tower rising through cavern = tests supporting everything above; bugs as creatures = errors becoming visible; Debuggora owl = keen bug-spotting vision; three portals = three testing levels (colors match types); Testing Pyramid = layered defense; phantom test runners = automated CI; crystalline Engine = CI/CD system; guardian tests = test suite; glowing crystals = illuminating code quality
+**Connection to Teaching**: Underground = quality foundation; gauntlet rising through cavern = tests supporting everything above; bugs as creatures = errors becoming visible; Debuggora owl = keen bug-spotting vision; three portals = three testing levels (colors match types); Testing Pyramid = layered defense; phantom test runners = automated CI; crystalline Engine = CI/CD system; guardian tests = test suite; glowing crystals = illuminating code quality
 
 **Note**: Debuggora is Test Master Jasmine's companion and ONLY appears in LP8 (not LP9-15).
 
@@ -1525,7 +1525,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **First Mentioned**: LP8.2 IntegrationInn Ch1
 
-**Location**: Underground Realms, near Testing Tower (connected by passages)
+**Location**: Underground Realms, near Testing Gauntlet (connected by passages)
 
 **Architecture**:
 - Warm, welcoming underground tavern where components come together
@@ -1565,7 +1565,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **First Mentioned**: LP8.3 DebugDungeon Ch1
 
-**Location**: Underground Realms, below Testing Tower (deeper level)
+**Location**: Underground Realms, below Testing Gauntlet (deeper level)
 
 **Architecture**:
 - Maze of error logs, stack traces, and mysterious behaviors
@@ -1593,7 +1593,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **Masters**:
 - Dungeon Keeper Logsworth (beard grey from debugging, carries staff)
-- Debuggora the Owl (continues from Testing Tower, eyes glow brighter in darkness, translates cryptic errors)
+- Debuggora the Owl (continues from Testing Gauntlet, eyes glow brighter in darkness, translates cryptic errors)
 
 **Teaches**: Production bugs (shape-shifters behave differently than development), three dungeon bug types, debugging tools (React DevTools/Console/Network Inspector), stack trace reading (finding origin, red herrings, symptoms vs causes), async bug patterns, source maps (readable code debugging), Error Boundaries (contain damage), strategic logging, real-time monitoring, user error reports, global error handlers, ErrorMonitor class, "production debugging is archaeology - reconstructing from artifacts", "stack traces are maps, logs are clues"
 
@@ -1601,14 +1601,14 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 ---
 
-### Error Enchantments Sanctuary (Underground Realms)
+### Error Enchantments Grotto (Underground Realms)
 
 **First Mentioned**: LP8.4 ErrorEnchantments Ch1
 
-**Location**: Underground Realms, protected sanctuary chamber
+**Location**: Underground Realms, protected grotto chamber
 
 **Architecture**:
-- Mystical sanctuary unlike anything seen before
+- Mystical grotto unlike anything seen before
 - Errors float in air like glowing orbs containing dangerous power
 - Boundary Workshop filled with shimmering barriers protecting components
 - Final chamber glowing with monitors showing live production data
@@ -1620,7 +1620,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 - Protection magic energy
 - Nervous energy from dangerous error orbs floating
 - Theory meets reality in final chamber
-- Sanctuary reaching full protection strength
+- Grotto reaching full protection strength
 
 **Visual Details**:
 - Errors floating as glowing orbs in air (suspended by magic)
@@ -1637,15 +1637,15 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **Teaches**: Five error types (Syntax/Reference/Type/Runtime/Async as orbs), error propagation in React (cascade through trees, render/lifecycle errors bubble vs event handlers don't), Error Boundaries (React's built-in protection spell, class components with getDerivedStateFromError/componentDidCatch), strategic boundary placement (around feature boundaries not every component), fallback UI design, production error monitoring, error severity assessment, four recovery strategies (automatic retry/fallback mode/graceful degradation/user notification), ErrorMonitor with global handlers, "errors inevitable but crashes preventable", "well-handled error better than hidden bug"
 
-**Connection to Teaching**: Underground sanctuary = protected foundation; floating orbs = errors as visible entities; dangerous power = potential crashes; shimmering barriers = Error Boundaries; wildfire spread = uncaught error propagation; gentle message = fallback UI; glowing monitors = live production tracking; Protection Level = resilience metric; "errors aren't enemies - they're teachers"
+**Connection to Teaching**: Underground grotto = protected foundation; floating orbs = errors as visible entities; dangerous power = potential crashes; shimmering barriers = Error Boundaries; wildfire spread = uncaught error propagation; gentle message = fallback UI; glowing monitors = live production tracking; Protection Level = resilience metric; "errors aren't enemies - they're teachers"
 
 ---
 
 ### UNDERGROUND REALMS SUMMARY
 
-**Complete Locations**: Testing Tower (rises through), Integration Inn (tavern), Debug Dungeon (maze below tower), Error Enchantments Sanctuary (protected chamber)  
+**Complete Locations**: Testing Gauntlet (rises through), Integration Inn (tavern), Debug Dungeon (maze below gauntlet), Error Enchantments Grotto (protected chamber)  
 **Theme**: Quality assurance, testing, debugging, error handling - foundation of reliability  
-**Access**: Descending stairs from quarters/Central Nexus, underground passages between all locations, lateral connections to Western Mountains TypeScript Realm  
+**Access**: Descending stairs from quarters/Central Nexus, underground passages between all locations, lateral connections to Western Mountains Great Scriptorium  
 **Atmosphere**: Cool, mysterious, illuminated by glowing crystals and magical light, organic cavern system  
 **Note**: Debuggora (owl companion) ONLY appears in LP8 Underground Realms, not in other learning paths
 
@@ -1670,7 +1670,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 **Architecture**:
 - Massive bustling harbor where ships prepare to carry applications
-- Command deck where Forge Admiral Vex reviews manifests
+- Command deck where Shipwright Vex reviews manifests
 - Optimization Shipyard where vessels stripped of unnecessary cargo
 - Vast harbor filled with specialized vessels (modern browsers, legacy support, mobile, edge)
 - Build pipeline visualization: Development Port → Bundling Dock → Optimization Bay → Launch Platform
@@ -1685,7 +1685,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Ocean breeze carrying salt air
 
 **Visual Details**:
-- Forge Admiral Vex on command deck reviewing manifests
+- Shipwright Vex on command deck reviewing manifests
 - Ships of all sizes preparing at docks
 - Workers applying tree shaking (removing dead code like pruning branches)
 - Bundle size meters showing reductions (67.3% optimization)
@@ -1695,7 +1695,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Binary calculating optimization metrics
 - Captain's hat (promotion symbol)
 
-**Master**: Forge Admiral Vex (pragmatic engineer, transforms source code into production-ready bundles)
+**Master**: Shipwright Vex (pragmatic engineer, transforms source code into production-ready bundles)
 
 **Teaches**: Build tools as machines with understandable parts, Webpack (pioneer bundler), Vite (native ES modules, esbuild, Rollup), production pipeline (tree shaking, code splitting, minification), HMR (hot module replacement), build configuration and plugins, build optimization strategies, "every byte saved is faster journey to user"
 
@@ -1812,7 +1812,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Swift response capability
 
 **Visual Details**:
-- Commander Deployment before wall of monitors
+- Warden Garrison before wall of monitors
 - Holographic dashboards showing metrics across kingdom
 - Current uptime: 99.5%, error rate: 0.3%, performance score displayed
 - Binary scanning monitoring dashboards
@@ -1822,7 +1822,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 - Monitoring coverage increasing from 60% to full visibility
 - Alert systems (Sentry/Datadog/New Relic/PagerDuty) integrated
 
-**Master**: Commander Deployment (master strategist, oversees all deployment operations)
+**Master**: Warden Garrison (master strategist, oversees all deployment operations)
 
 **Teaches**: Production readiness checks (error boundaries, health endpoints, security headers, environment validation), monitoring arsenal (Sentry errors, Datadog APM, New Relic application, PagerDuty incidents), comprehensive monitoring for full visibility, battle-tested deployment strategies (Blue-Green 99.9% uptime, Canary 85% risk reduction, Rolling 60% resource efficiency), incident response (Detection→Response→Mitigation→Resolution), automated incident response, rollback procedures (45 seconds), production excellence checklist, "every deployment is mission - prepare for success plan for failure", "battle against downtime won through preparation"
 
@@ -1922,9 +1922,9 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 
 **Geography**:
 - Central Hub where Architect Nexus introduces framework foundations
-- Server Component Chamber where components execute in the server realm
-- Rendering Strategy Chamber where time and rendering intertwine
-- Integration Chamber where client and server patterns converge
+- Server Atrium where components execute in the server realm
+- Rendering Observatory where time and rendering intertwine
+- Convergence Hall where client and server patterns converge
 - Architecture Spire summit overlooking both realms
 
 **Architecture**:
@@ -1943,17 +1943,17 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 
 **Visual Details**:
 - Architect Nexus at the entrance, blueprints mapping file-system routes
-- Server Sage Datum in the server realm, async components fetching data directly
-- Render Sage Tempus calibrating rendering strategies (static, server, ISR, hybrid)
-- Integration Master Unitas at the convergence point, client and server unified
+- Data Steward Datum in the server realm, async components fetching data directly
+- Chronographer Tempus calibrating rendering strategies (static, server, ISR, hybrid)
+- Bridge Warden Unitas at the convergence point, client and server unified
 - Streaming visualizations — content flowing progressively through Suspense boundaries
 - "use client" boundaries glowing where realms transition
 
 **Masters**:
 - Architect Nexus (framework architect, file-system routing, client-server boundary)
-- Server Sage Datum (server-side React, async components, caching, streaming SSR)
-- Render Sage Tempus (rendering strategies — static, SSR, ISR, hybrid selection)
-- Integration Master Unitas (Server Actions, Route Handlers, full-stack architecture)
+- Data Steward Datum (server-side React, async components, caching, streaming SSR)
+- Chronographer Tempus (rendering strategies — static, SSR, ISR, hybrid selection)
+- Bridge Warden Unitas (Server Actions, Route Handlers, full-stack architecture)
 
 **Teaches**: Why frameworks exist (routing, data loading, SEO, code splitting), Next.js App Router (file-system routing, layouts, metadata), React Server Components (async data fetching, server-only patterns), caching and revalidation, Streaming SSR with Suspense, rendering strategies (static/SSR/ISR/hybrid), Server Actions (form mutations), Route Handlers (API endpoints), complete full-stack architecture
 
@@ -2000,7 +2000,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 - Holographic forms of increasing complexity
 - Form Workshop with demonstration stations for each library
 
-**Masters**: Federal Form Chancellor, Four Library Representatives (React Hook Form ⚡, Formik 🎯, Final Form 🔄, TanStack Form 🚀)
+**Masters**: Form Chancellor, Four Library Representatives (React Hook Form ⚡, Formik 🎯, Final Form 🔄, TanStack Form 🚀)
 
 **Theme**: Form library approaches → consensus on best tool for specific needs
 
@@ -2009,7 +2009,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 ### Data Service Facilities
 
 **Living Streams & Omnipresent Network**: LP11.2 RealtimeConnections - real-time data flowing, Stream Sage WebSocket  
-**Caching Castle & Memory Vaults**: LP11.3 CachingCastle - data storage and optimization, Cache Lord Redux  
+**Cache Vaults & Memory Vaults**: LP11.3 CachingCastle - data storage and optimization, Cache Lord Redux  
 **GraphQL Gateway & Schema Vault**: LP11.4 GraphQLGateway - unified query interface, Query Master Apollo
 
 **Theme**: Data services accessible from kingdom but not tied to specific quarter
@@ -2022,7 +2022,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 **Theme**: Accessibility touching all aspects of React development  
 **Manifests**: Features in all quarters - ramps alongside stairs, visual+audio displays, multiple interaction methods
 
-**Key Figures**: Empress Inclusiva, Five Guardians of Inclusion, Master Validator, Compliance Commander, Culture Keeper
+**Key Figures**: Empress Inclusiva, Five Guardians of Inclusion, Inspector Verificus, Compliance Auditor, Culture Keeper
 
 **Teaching**: Accessibility isn't separate concern but philosophy integrated everywhere - "building for everyone"
 
@@ -2033,33 +2033,33 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 How do you journey between these diverse regions? The React Kingdom features multiple travel methods suited to different types of journeys.
 
 ### Sky Bridges (Crystalline, Data-Powered)
-- **Central Citadel → Cloud Citadel**: Primary sky bridge extending upward through clouds, translucent pathway with data streams flowing beneath
-- **Cloud Citadel → Architect's Academy**: Ethereal connections between floating structures
-- **Cloud Citadel → Motion Monastery**: Sky bridge where motion trails are visible
-- **Access**: From Central Citadel's highest spire, climbing through clouds
+- **Central Citadel → Cloud Bastion**: Primary sky bridge extending upward through clouds, translucent pathway with data streams flowing beneath
+- **Cloud Bastion → Architect's Academy**: Ethereal connections between floating structures
+- **Cloud Bastion → Motion Monastery**: Sky bridge where motion trails are visible
+- **Access**: From Central Citadel's highest spire, climbing through clouds to Cloud Bastion
 
-**Journey Description**: "A crystalline sky bridge extended from the Central Citadel's highest spire, arcing upward through wisps of cloud. Aria stepped onto the translucent pathway, data streams flowing beneath her feet like rivers of light. As she climbed higher, the kingdom spread below..."
+**Journey Description**: "A crystalline sky bridge extended from the Central Citadel's highest spire, arcing upward toward the Cloud Bastion. Aria stepped onto the translucent pathway, data streams flowing beneath her feet like rivers of light. As she climbed higher, the kingdom spread below..."
 
 ---
 
 ### Mountain Passes (Stone Paths & Tunnels)
 - **Southern Quarter → Northern Peaks**: Ascending path, trees → rocks → snow, air thinning
 - **Western Quarter → Western Mountains (Echo Caves)**: Winding path from Prop Forge, cool thin air
-- **Western Mountains Surface → TypeScript Realm Interior**: Descending into mountain heart via hidden entrances
-- **TypeScript Realm Network**: Underground passages connecting Type Forge ↔ Component Armory ↔ Generic Forge
-- **Northern Peaks ↔ Western Mountains (Underground)**: TypeScript connection tunnels between ranges
-- **Type Guard Tower Route**: Rises from Western Mountains TypeScript Realm through Northern Peak
+- **Western Mountains Surface → Great Scriptorium Interior**: Descending into mountain heart via hidden entrances
+- **Great Scriptorium Network**: Lamplit corridors connecting Type Scriptorium ↔ Component Archives ↔ Pattern Alcove
+- **Northern Peaks ↔ Western Mountains (Underground)**: Scriptorium connection tunnels between ranges
+- **Type Guard Gatehouse Route**: Rises from Western Mountains Great Scriptorium through Northern Peak
 
 **Journey Description**: "The path from the Southern Quarter wound steadily upward, leaving workshops behind. Trees gave way to rocky slopes, the air growing thinner and colder with each step. By the time Aria reached the snow line, she could see the kingdom spread below like a map..."
 
 ---
 
 ### Underground Passages (Carved & Natural)
-- **Cloud Citadel Lower Passages → Western Mountains Type Forge**: Spiral down through clouds into stone, ancient route descending for hours
+- **Cloud Bastion Lower Passages → Western Mountains Type Scriptorium**: Spiral down through clouds into stone, ancient route descending for hours
 - **Central Nexus/Quarters → Testing Underground**: Descending stone stairs, glowing crystals provide light
-- **Testing Tower → Integration Inn → Debug Dungeon → Error Sanctuary**: Connected underground passage network
-- **Testing Underground ↔ Western Mountains TypeScript Realm**: Lateral connections through deep caverns
-- **TypeScript Realm → Type Guard Tower**: Tower rises through Northern Peak from Western Mountains base
+- **Testing Gauntlet → Integration Inn → Debug Dungeon → Error Enchantments Grotto**: Connected underground passage network
+- **Testing Underground ↔ Western Mountains Great Scriptorium**: Lateral connections through deep caverns
+- **Great Scriptorium → Type Guard Gatehouse**: Gatehouse rises through Northern Peak from Western Mountains base
 
 **Journey Description**: "The entrance to the Underground Realms was unassuming - a stone staircase spiraling down from the Central Nexus's edge. Aria descended, the kingdom's sounds fading as cool underground air rose to meet her. Glowing crystals embedded in walls provided light, revealing passages worn smooth by countless students..."
 
@@ -2124,7 +2124,7 @@ How do you journey between these diverse regions? The React Kingdom features mul
 - **Ground Level**: Four Quarters, Central Nexus
 - **Elevated**: Sky Realm (floating), Memory Monastery (clouds above peak), Server Spires (above Coastal Region)
 - **Mountains**: Northern Peaks (performance), Western Mountains (callbacks & TypeScript)
-- **Underground**: Testing Realms (beneath kingdom), TypeScript Realm (within mountains)
+- **Underground**: Testing Realms (beneath kingdom), Great Scriptorium (within mountains)
 - **Coastal**: Harbors, docks, maritime facilities
 - **Offshore**: Allied Kingdoms, Platform Archipelago
 
@@ -2134,7 +2134,7 @@ How do you journey between these diverse regions? The React Kingdom features mul
 - **Navigation**: Central Nexus
 - **Performance**: Southern Quarter, Northern Peaks
 - **Quality**: Underground Realms
-- **Type Safety**: Western Mountains (TypeScript Realm)
+- **Type Safety**: Western Mountains (Great Scriptorium)
 - **Advanced Patterns**: Sky Realm (Architect's Academy)
 - **Production**: Coastal Region
 - **Full-Stack**: Server Spires

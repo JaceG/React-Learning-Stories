@@ -16,8 +16,8 @@ A lesson = 1 Lesson Opener + 3 Chapters + 1 Lesson Ending.
 
 ### Workflow Per Lesson:
 1. Write the Lesson Opener + Chapter 1 (including New Characters + Wisdom + Reflection + Journal)
-2. StrReplace to append Chapter 2 (Bridge + Narrative + Mastery + Reflection + Journal)
-3. StrReplace to append Chapter 3 (Bridge + Narrative + Mastery + Reflection + Journal) + Lesson Ending
+2. StrReplace to append Chapter 2 (Bridge + Narrative + Wisdom + Reflection + Journal)
+3. StrReplace to append Chapter 3 (Bridge + Narrative + Wisdom + Reflection + Journal) + Lesson Ending
 4. Save and verify before moving to next lesson
 
 ## Chapter Structure (always use this exact format):
@@ -38,15 +38,12 @@ A lesson = 1 Lesson Opener + 3 Chapters + 1 Lesson Ending.
 **Story Group 3:**
 [~250 words of narrative]
 
-**[Topic] Mastery:**
-[~200 word technical summary]
+**[Name]'s [Topic] Wisdom:**
+[~200 word technical summary — always uses master's name + topic descriptor]
 
 **New Characters:** (Ch1 only, for new masters)
 **[Name]**
 [2-3 sentence description + quote]
-
-**[Name]'s Wisdom:**
-[~150 word practical advice block]
 
 **Reflection Questions:**
 - Question 1?
@@ -61,11 +58,29 @@ A lesson = 1 Lesson Opener + 3 Chapters + 1 Lesson Ending.
 
 ## Content Length Targets:
 - Story group: ~250 words (2-3 paragraphs)
-- Mastery: ~200 words
-- Wisdom: ~150 words
+- [Name]'s [Topic] Wisdom: ~200 words (replaces both old "Mastery" and "Wisdom" sections)
 - Journal: ~200 words
 - Lesson Opener: ~100 words
-- Lesson Ending: ~150 words
+- Lesson Ending: ~350 words (300-400 range, 5-7 paragraphs)
+- LP-boundary ending (lesson X.4): slightly longer, summarizes entire LP
+- Series finale (LP15.4): 500-700+ words, references previous characters and realms
+
+## Lesson Ending Quality Checklist:
+- [ ] Master reflects on what Aria learned (1-2 paragraphs)
+- [ ] Aria reflects on her growth or the lesson's significance (1-2 paragraphs)
+- [ ] Binary summarizes key concepts in a display/projection (1 paragraph)
+- [ ] Foreshadowing: names the next master and hints at their teaching (1 paragraph)
+- [ ] Warm, narrative tone — no code examples
+- [ ] 300-400 words (aim for 350)
+
+## Wisdom Section Format (STANDARDIZED):
+- All chapters use **[Name]'s [Topic] Wisdom:** format
+- The [Name] is the lesson's master (short name, e.g., "Jasmine" not "Test Master Jasmine")
+- The [Topic] describes what the section covers (e.g., "Testing Pyramid", "Advanced Validation")
+- Ch1: Wisdom section appears after New Characters intro
+- Ch2/Ch3: Wisdom section appears after Story Group 3
+- There is NO separate "[Topic] Mastery" section — it has been merged into Wisdom
+- There is NO plain "[Name]'s Wisdom:" without a topic — always include a topic descriptor
 
 ## Character Restrictions:
 - **Debuggora the Owl** stays with Test Master Jasmine at the Testing Tower (LP8.1). She does NOT appear in any other lesson — not LP8.2, not LP8.3, not LP8.4, not LP9-15. She is Jasmine's companion only.

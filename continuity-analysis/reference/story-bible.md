@@ -1,7 +1,7 @@
 # Story Bible - React Learning Stories
 
 *Character & Concept Encyclopedia - Deep dive on people and React→Fantasy translations*  
-*Last Updated: February 3, 2026*
+*Last Updated: February 3, 2026 - Worldbuilding deduplication: Scriptorium theme for LP12, unique character/location names across all LPs*
 
 ---
 
@@ -208,7 +208,7 @@
 - **Appearance**: Armor bears emblem of a shield crossed with two keys
 - **Teaches**: LP6.3 - protected routes, authentication/authorization integration, session management, role hierarchies, contextual authorization, permission caching
 
-**Rift Weaver Lyss**
+**Rift Walker Lyss**
 - **Role**: Master of the Portal Passages chamber, specialist in dimensional rendering
 - **Appears In**: LP6.4 PortalPassages (Ch1-3)
 - **Location**: Central Nexus - Central Citadel (Portal Passages chamber - reality folds upon itself)
@@ -239,28 +239,28 @@
 - **Teaches**: Rendering Paradox (browser struggles with thousands of DOM nodes), virtual scrolling/windowing (render only visible + buffer), react-window/react-virtualized libraries (FixedSizeList/VariableSizeList), virtual spacer maintains scrollbar, Four Advanced Challenges (dynamic heights, horizontal scrolling, infinite loading, grid virtualization), Keeper of the Infinite title
 
 **Master Velocity**
-- **Role**: Guardian of the Speed Sanctum, keeper of optimization secrets
+- **Role**: Guardian of the Velocity Crucible, keeper of optimization secrets
 - **Appears In**: LP7.4 SpeedSanctum (Ch1-3)
-- **Location**: Northern Peaks - Speed Sanctum (carved into mountain peak)
+- **Location**: Northern Peaks - Velocity Crucible (carved into mountain peak)
 - **Appearance**: Robes shimmering with optimization symbols, emerges from mist
 - **Teaches**: Lag Monster (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
 
 ### LP8: Testing Debugging
 
 **Test Master Jasmine**
-- **Role**: Guardian of the Testing Tower, master of preventive magic
+- **Role**: Guardian of the Testing Gauntlet, master of preventive magic
 - **Appears In**: LP8.1 TestingTower (Ch1-3)
-- **Location**: Underground Realms - Testing Tower with peak chamber, circular chamber with three glowing portals (blue/green/gold), highest chamber with Continuous Integration Engine
+- **Location**: Underground Realms - Testing Gauntlet with peak chamber, circular chamber with three glowing portals (blue/green/gold), highest chamber with Continuous Integration Engine
 - **Appearance**: [Not extensively described]
 - **Teaches**: Bug types (null-pointer, type-error, logic-error as creatures), systematic testing (preventive vs reactive), three testing levels (unit/integration/E2E - three portals), Testing Pyramid, React Testing Library, Jest, test coverage (80% minimum), automated testing (CI/CD), GitHub Actions pipeline, continuous integration, automated guardians
 
 **Debuggora the Owl**
 - **Role**: Mystical owl companion to Test Master Jasmine
 - **Appears In**: LP8.1 TestingTower (Ch1-3) ONLY
-- **Location**: Underground Realms - Testing Tower (Jasmine's companion)
+- **Location**: Underground Realms - Testing Gauntlet (Jasmine's companion)
 - **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
 - **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs)
-- **Note**: **IMPORTANT**: Debuggora stays with Jasmine at the Testing Tower. Does NOT accompany Aria. Does NOT appear in LP8.2-8.4 or LP9-15.
+- **Note**: **IMPORTANT**: Debuggora stays with Jasmine at the Testing Gauntlet. Does NOT accompany Aria. Does NOT appear in LP8.2-8.4 or LP9-15.
 
 **Innkeeper Cypress**
 - **Role**: Master of component harmony and integration testing
@@ -272,14 +272,14 @@
 **Dungeon Keeper Logsworth**
 - **Role**: Master of production debugging, keeper of error logs
 - **Appears In**: LP8.3 DebugDungeon (Ch1-3)
-- **Location**: Underground Realms - Debug Dungeon (maze below Testing Tower)
+- **Location**: Underground Realms - Debug Dungeon (maze below Testing Gauntlet)
 - **Appearance**: Beard grey from years of debugging, carries staff
 - **Teaches**: Production bugs (shape-shifters behaving differently than development), three dungeon bugs (race-condition 🏃, memory-leak 💧, null-reference 👻), debugging tools (React DevTools, Console, Network Inspector), stack traces (reading them, symptoms vs causes), async bug patterns, source maps, Error Boundaries (placement, fallback UI), production error types (NetworkError/ChunkLoadError/StateError/ThirdPartyError), four recovery strategies (automatic retry, fallback mode, graceful degradation, user notification), global error handlers, ErrorMonitor class
 
 **Guardian Safiya**
 - **Role**: Master of Error Boundaries and graceful failure
 - **Appears In**: LP8.4 ErrorEnchantments (Ch1-3)
-- **Location**: Underground Realms - Error Enchantments Sanctuary (protected underground chamber)
+- **Location**: Underground Realms - Error Enchantments Grotto (protected underground chamber)
 - **Appearance**: [Not extensively described], knowing smile
 - **Teaches**: Five error types (Syntax ⚡/Reference ❓/Type 🔀/Runtime 💥/Async ⏱️), error propagation in React, Error Boundaries (React's built-in protection spell, getDerivedStateFromError/componentDidCatch), strategic boundary placement, fallback UI design, production error monitoring, error severity assessment, four recovery strategies, graceful degradation, ErrorMonitor with global handlers/queuing/periodic flush, resilient applications
 
@@ -299,7 +299,7 @@
 - **Appearance**: Stands before a glowing timeline tracing React composition patterns from 2013 to present
 - **Teaches**: Render props (share behavior, delegate rendering), higher-order components (component factories, enhancement layers, withAuth/withLogging), pattern evolution timeline (Mixins→HOCs→Render Props→Hooks), when each pattern is appropriate today, real-world pattern layering (TanStack Table, Radix UI), pattern selection framework (hooks for logic, compounds for UI families, render props for render delegation, HOCs for cross-cutting)
 
-**Design Weaver Sable**
+**Design Artisan Sable**
 - **Role**: Master of advanced composition, specialist in headless and polymorphic patterns
 - **Appears In**: LP9.3 AdvancedComposition (Ch1-3)
 - **Location**: Sky Realm - Architect's Academy (Composition Studio - translucent component shells float in the air)
@@ -359,7 +359,7 @@
 - **Location**: Diplomatic Zone - Great Style Symposium (representatives)
 - **Teaches**: Each advocates for their approach, eventual harmony through understanding use cases
 
-**Federal Form Chancellor**
+**Form Chancellor**
 - **Role**: Wise leader of the Form Federation
 - **Appears In**: LP10.3 FormLibraries (Ch1-3)
 - **Location**: Diplomatic Zone - Form Federation Headquarters
@@ -388,9 +388,9 @@
 ### LP11: Server Data
 
 **Cloud Keeper Axios**
-- **Role**: Master of server communication, guardian of the Cloud Citadel
+- **Role**: Master of server communication, guardian of the Cloud Bastion
 - **Appears In**: LP11.1 ApiIntegration (Ch1-3)
-- **Location**: Sky Realm - Cloud Citadel & Data Embassy
+- **Location**: Sky Realm - Cloud Bastion & Data Embassy
 - **Appearance**: [Not extensively described]
 - **Teaches**: Server communication fundamentals (fetch API like diplomatic correspondence), three request states (loading/success/error), REST protocol (GET/POST/PUT/DELETE verbs), headers (authentication tokens, content types), GraphQL basics, WebSockets for real-time, interceptors (request transform, response, error handling), error handling in distributed systems, Data Embassy (production-ready API layer with global error handling, coordinated loading states, optimistic updates, request deduplication, automatic retries), "speak the right language, follow protocols, handle delays gracefully"
 
@@ -404,7 +404,7 @@
 **Cache Lord Redux**
 - **Role**: Distant cousin of Redux Empire's emperor, guardian of Memory Vaults
 - **Appears In**: LP11.3 CachingCastle (Ch1-3)
-- **Location**: Diplomatic Zone - Caching Castle & Memory Vaults
+- **Location**: Diplomatic Zone - Cache Vaults & Memory Vaults
 - **Appearance**: [Not extensively described]
 - **Teaches**: Caching fundamentals (balance freshness vs performance), three strategies (Cache-First 💾 for speed, Network-First 🌐 for freshness, Stale-While-Revalidate ♻️ best of both), TTL (Time To Live determines state transitions), cache invalidation (hardest problem in computer science - pattern-based clearing, cascade for dependent data, partial updates, cache warming 🔥), multi-layer architecture (L1 Memory 🧠/L2 Redis 💾/L3 CDN 🌐), intelligent TTL calculation, automatic optimization, "fastest request is the one you don't make", "storing easy, knowing when to forget is true challenge"
 
@@ -415,41 +415,39 @@
 - **Appearance**: [Not extensively described]
 - **Teaches**: GraphQL revolution (ask for exactly what you need - no over/under-fetching), single endpoint /graphql, flexible query language, three operation types (Query 📖 reading, Mutation ✏️ changing, Subscription 📡 real-time), GraphQL vs REST (conversation vs packages), Schema Scrolls (type system as contract between client/server), GraphQL + TypeScript (end-to-end type safety), fragments (reusable query parts reduce duplication), optimistic updates, cache normalization (update User#1 everywhere it appears), Unified Interface (complete GraphQL client HTTP + WebSocket), when GraphQL vs REST (complex nested→GraphQL, simple CRUD→REST), "GraphQL is complete data management philosophy not just query language"
 
-*[Characters complete for LP1-15]*
-
 ### LP12: Typescript React
 
-**Master Typus**
-- **Role**: Forge Keeper, guardian of the Type Forge
+**Scribe Runis**
+- **Role**: Head Scribe, guardian of the Type Scriptorium
 - **Appears In**: LP12.1 TypeForge (Ch1-3)
-- **Location**: Western Mountains - TypeScript Realm deep within mountain heart (Type Forge - deepest chamber)
-- **Appearance**: Eyes see through code to essence, beard sparks with type annotations, hammer glows with strict mode energy
+- **Location**: Western Mountains - The Great Scriptorium deep within mountain heart (Type Scriptorium - deepest hall)
+- **Appearance**: Eyes see through code to essence, beard sparks with type annotations, quill glows with strict mode energy
 - **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing (React.FC, React.Component<Props, State>, generic components like List<T>), typed props as contracts, optional props with ?, advanced patterns (union types, intersection types, conditional types, mapped types, template literal types), generics for reusable patterns, typed reducers (actions know own shapes), type system flexible yet bulletproof, "each type is promise, interface is guarantee, code compiles = certainty not hope", "greatest gift isn't catching errors - making entire categories bugs impossible"
 
-**Master Forger Typhos** (Component Armory & Generic Forge)
-- **Role**: Legendary component smith, forge master of Generic Forge
+**Archivist Lexicon** (Component Archives & Pattern Alcove)
+- **Role**: Legendary component cataloger, master scholar of the Pattern Alcove
 - **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-2)
-- **Location**: Western Mountains - TypeScript Realm (Component Armory & Generic Forge)
-- **Appearance**: Legendary smith, hammer striking sparks of type definitions
+- **Location**: Western Mountains - The Great Scriptorium (Component Archives & Pattern Alcove)
+- **Appearance**: Scholarly figure, quill noting type definitions on illuminated manuscripts
 - **Teaches**: Component typing (transforming JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced generics (type parameters, constraints, extends/keyof), conditional types, mapped types, utility types, type-safe design patterns (event emitters, builder pattern, exhaustive checking), generic composition, type-safe factories
 
-**Commander Guardia**
+**Sentinel Guardia**
 - **Role**: Sentinel of the type boundary between typed and untyped realms
-- **Appears In**: LP12.3 GenericForge (Ch3 - The Type Guard Tower)
-- **Location**: Western Mountains - TypeScript Realm (boundary between typed and untyped realms)
+- **Appears In**: LP12.3 GenericForge (Ch3 - The Type Guard Gatehouse)
+- **Location**: Western Mountains - The Great Scriptorium (boundary between typed and untyped realms)
 - **Appearance**: Stands at the threshold inspecting every piece of data that attempts to cross
 - **Teaches**: Type guards (typeof, instanceof, in operator, custom type predicates with "is"), type assertions (asserts keyword), Zod for runtime validation (define schema → z.infer → parse at boundaries), "parse don't validate" philosophy, guard pipeline (Zod at boundaries, guards within, assertions at strict points, exhaustive never for unions)
 
 **Architect Typewright**
 - **Role**: System-level type architect, designer of type systems that span entire applications
 - **Appears In**: LP12.4 TypeSafeArchitecture (Ch1-3)
-- **Location**: Western Mountains - TypeScript Realm (Architecture Spire - highest peak, walls inscribed with type definitions spanning entire systems)
+- **Location**: Western Mountains - The Great Scriptorium (Architecture Spire - highest peak, walls inscribed with type definitions spanning entire systems)
 - **Appearance**: Meticulous designer, blueprints covering walls from floor to ceiling mapping types across hundreds of modules
 - **Teaches**: Branded types (phantom properties for nominal checking - UserId vs OrderId), Zod + branded type integration, end-to-end type safety (shared type packages across client/server, tRPC, generated types from DB schema), module augmentation (declare module to extend library types), declaration files (.d.ts), type-level testing (Expect<T extends true>), TypeScript project architecture (types/ directory, barrel exports, path aliases, co-location)
 
 ### LP13: Build Deploy
 
-**Forge Admiral Vex**
+**Shipwright Vex**
 - **Role**: Pragmatic engineer of the Build Central Hub, transforms source code into production-ready bundles
 - **Appears In**: LP13.1 BuildSystems (Ch1-3)
 - **Location**: Coastal Region - Build Central Hub (raw source code enters one end, optimized production bundles emerge from the other)
@@ -468,7 +466,7 @@
 - **Location**: Coastal Region - Platform Archipelago (helm of exploration vessel, visiting offshore hosting islands)
 - **Teaches**: Choosing hosting platforms (match needs with strengths - ease/scalability/cost/features/team expertise), Platform islands (Vercel zero-config fastest, Netlify static/JAMstack, AWS infinite scale complex, Railway full-stack ease), deployment ceremonies (each platform has unique ritual/steps/configurations), environment variables (never commit secrets), custom domains (DNS propagation 5-48 hours), SSL configuration, global network (edge functions near users, CDN distribution cache globally, geographic routing optimal paths), performance optimization (Brotli/HTTP/3/image), Core Web Vitals, "no 'best' platform - best for YOUR needs"
 
-**Commander Deployment**
+**Warden Garrison**
 - **Role**: Master strategist of Production War Room, oversees all deployment operations
 - **Appears In**: LP13.4 ProductionReadiness (Ch1-3)
 - **Location**: Coastal Region - Production War Room (holographic dashboards, monitoring station, strategic command center)
@@ -483,24 +481,24 @@
 - **Appearance**: Builder who thinks in architectures, designed the Server Spires
 - **Teaches**: Why frameworks exist (bare React needs manual routing, data loading, SEO, code splitting), Next.js App Router (file-system routing, page.tsx conventions, dynamic routes with [id]), nested layouts (layout.tsx wraps children, persists across navigation), metadata exports for SEO, error/loading/not-found conventions, client vs server component boundary ("use client" directive), when to use each component type
 
-**Server Sage Datum**
+**Data Steward Datum**
 - **Role**: Master of server-side React execution and data flow
 - **Appears In**: LP14.2 ServerComponents (Ch1-3)
-- **Location**: Server Spires - Server Component Chamber (components execute in the server realm)
+- **Location**: Server Spires - Server Atrium (components execute in the server realm)
 - **Appearance**: [Not extensively described]
 - **Teaches**: React Server Components (async components that fetch data directly), server-only patterns (database queries, file system access in components), caching and revalidation (time-based, on-demand with revalidatePath/revalidateTag), Streaming SSR with Suspense boundaries, progressive loading (instant shell → streaming content), Server Actions (form mutations without API routes)
 
-**Render Sage Tempus**
+**Chronographer Tempus**
 - **Role**: Master of rendering strategies and time-based optimization
 - **Appears In**: LP14.3 RenderingStrategies (Ch1-3)
-- **Location**: Server Spires - Rendering Strategy Chamber
+- **Location**: Server Spires - Rendering Observatory
 - **Appearance**: [Not extensively described]
 - **Teaches**: Static rendering (build-time HTML generation), server rendering (request-time generation), ISR (Incremental Static Regeneration - static with timed revalidation), hybrid strategies (mixing static/dynamic per route), strategy selection framework (static for marketing, SSR for personalized, ISR for catalog, client for interactive)
 
-**Integration Master Unitas**
+**Bridge Warden Unitas**
 - **Role**: Master of unified full-stack architecture
 - **Appears In**: LP14.4 FullStackPatterns (Ch1-3)
-- **Location**: Server Spires - Integration Chamber (where client and server patterns converge)
+- **Location**: Server Spires - Convergence Hall (where client and server patterns converge)
 - **Appearance**: [Not extensively described]
 - **Teaches**: Server Actions (progressive enhancement, form actions, useFormStatus/useActionState), API Routes / Route Handlers (GET/POST/PUT/DELETE, streaming responses, webhooks), complete full-stack architecture (when Server Actions vs Route Handlers, data flow patterns, middleware, authentication integration, deployment considerations)
 
@@ -525,13 +523,13 @@
 - **Location**: Inclusive Empire - Visual Chambers (colors shift, contrasts change, text sizes grow and shrink)
 - **Teaches**: Color and contrast (WCAG contrast ratios, not relying on color alone), motion and animation (prefers-reduced-motion, reduced motion alternatives), responsive and adaptive design (fluid typography, relative units, design for all devices and preferences)
 
-**Master Validator**
-- **Role**: Guardian of Testing Tower, champion of accessibility quality assurance
+**Inspector Verificus**
+- **Role**: Guardian of the Testing Gauntlet, champion of accessibility quality assurance
 - **Appears In**: LP15.4 TestingTools (Ch1-3)
-- **Location**: Inclusive Empire - Testing Tower (accessibility version)
+- **Location**: Inclusive Empire - Testing Gauntlet (accessibility version)
 - **Teaches**: Accessibility testing (layered defense - automated/manual/user), automated tools catch 30-50% (axe DevTools, Lighthouse, pa11y), manual testing (keyboard navigation, screen reader, quick checks), user testing with real disabilities, WCAG 2.1 (78 success criteria - Level A: 30, AA: 20, AAA: 28), audit process (run/filter by severity/generate reports), accessibility culture (Five Pillars: Education/Documentation/Code Reviews/User Involvement/Automation), champion networks, maturity levels, "testing isn't about finding fault - ensuring everyone can experience what you've created", "best test is users with disabilities", "build testing into workflow make checking natural as syntax checking"
 
-**Compliance Commander**
+**Compliance Auditor**
 - **Role**: Reviews standards and regulations in Audit Arena
 - **Appears In**: LP15.4 TestingTools (Ch2)
 - **Location**: Inclusive Empire - Audit Arena
@@ -540,10 +538,8 @@
 **Culture Keeper**
 - **Role**: Guardian of accessibility culture sustainability
 - **Appears In**: LP15.4 TestingTools (Ch3)
-- **Location**: Inclusive Empire - Culture Citadel
+- **Location**: Inclusive Empire - Culture Forum
 - **Teaches**: Accessibility culture (makes sustainable), Five Pillars (Education/Documentation/Reviews/Involvement/Automation), champion network building, maturity levels, ROI (73% fewer a11y bugs), embedding into processes, "tools catch issues, standards guide, culture makes sustainable"
-
-*[Extraction COMPLETE for all LP1-15!]*
 
 ---
 
@@ -804,7 +800,7 @@
 
 **LP7.4 SpeedSanctum**:
 - Lag Monster → "awakened threat", "feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles"
-- Speed Sanctum → "legendary sanctuary" in Northern Mountains, "ancient optimization techniques"
+- Velocity Crucible → "legendary crucible" in Northern Mountains, "ancient optimization techniques"
 - Performance anomalies → "slowing kingdom", "stuttering interfaces/frozen forms", "components flicker erratically"
 - React DevTools Profiler → "vital signs crystals", "lens into performance realm", "first weapon"
 - Memoization → "shield of memory", "selective memory"
@@ -818,7 +814,7 @@
 
 **LP8.1 TestingTower**:
 - Bugs → "manifesting as actual creatures" (null-pointer 🐛, type-error 🦗, logic-error 🕷️), "skittering", "hiding in shadows", "multiply faster than manual catching"
-- Testing Tower → "first line of defense" in Underground Realms, "peak chamber", "highest chamber"
+- Testing Gauntlet → "first line of defense" in Underground Realms, "peak chamber", "highest chamber"
 - Systematic testing → "preventive magic" vs "reactive fixes", "guardian spells"
 - Debuggora → "mystical owl", "sees through code to true behavior", "eyes glowing spotting bugs", "speaks in riddles"
 - Three testing levels → "three glowing portals" (blue=unit, green=integration, gold=E2E)
@@ -838,7 +834,7 @@
 - Grand Integration Test → "tells user's story" (6 steps: input/validate/call/update/render/track)
 
 **LP8.3 DebugDungeon**:
-- Debug Dungeon → "below Testing Tower", "most elusive bugs hide", "maze of error logs/stack traces/mysterious behaviors"
+- Debug Dungeon → "below Testing Gauntlet", "most elusive bugs hide", "maze of error logs/stack traces/mysterious behaviors"
 - Production bugs → "shape-shifters", "behave differently than development", "unpredictable, varied, silent"
 - Three dungeon bugs → race-condition (🏃 fast/flickering), memory-leak (💧 slow/growing), null-reference (👻 medium/vanishing)
 - Debugging tools → React DevTools/Console/Network Inspector, "stack traces are maps, logs are clues"
@@ -848,7 +844,7 @@
 - ErrorMonitor → "global handlers for uncaught errors and unhandled rejections"
 
 **LP8.4 ErrorEnchantments**:
-- Error Enchantments sanctuary → "mystical place", "errors float in air like glowing orbs containing dangerous power"
+- Error Enchantments Grotto → "mystical place", "errors float in air like glowing orbs containing dangerous power"
 - Errors → "not enemies but teachers", "reveal weakness in defenses", "tell stories"
 - Five error types → Syntax (⚡), Reference (❓), Type (🔀), Runtime (💥), Async (⏱️)
 - Error Boundaries → "React's built-in protection spell", "try-catch for components", "shimmering barriers protecting components"
@@ -954,7 +950,7 @@
 ### LP11: Server Data
 
 **LP11.1 ApiIntegration**:
-- Cloud Citadel → "massive structure floating above React Kingdom", "connected by ethereal data streams", "mist parting to reveal"
+- Cloud Bastion → "massive structure floating above React Kingdom", "connected by ethereal data streams", "mist parting to reveal"
 - Server communication → "bridge gap between earth and sky, client and server", "diplomatic correspondence"
 - Cloud Keeper Axios → "speak with distant servers", "bridging"
 - Three request states → "loading, success, error", "handling properly crucial"
@@ -980,7 +976,7 @@
 - Network mastery → "shared spaces where users collaborate naturally", "millions of messages perfectly synchronized"
 
 **LP11.3 CachingCastle**:
-- Caching Castle → "towering Memory Vaults", "castle stores frequently used data"
+- Cache Vaults → "towering Memory Vaults", "vaults store frequently used data"
 - Cache Lord Redux → "distant cousin of Redux Empire's emperor"
 - Memory Vaults → "organized by freshness" (Fresh/Stale/Expired)
 - Caching philosophy → "Why fetch what you already have?", "fastest request is one you don't make"
@@ -1010,7 +1006,7 @@
 ### LP12: TypeScript React
 
 **LP12.1 TypeForge**:
-- Type Forge → "deepest chamber in TypeScript Realm", "mountain heart", "hammer glows with strict mode energy"
+- Type Scriptorium → "deepest hall in the Great Scriptorium", "mountain heart", "quill glows with strict mode energy"
 - TypeScript → "making impossibilities impossible", "implicit explicit, uncertain certain"
 - Types → "promises", "contracts", "each type is promise, interface is guarantee"
 - Type inference → "compiler sees what you mean", "implicit becomes explicit"
@@ -1019,19 +1015,19 @@
 - Generics → "key to true reusability", "adapt without losing type safety"
 
 **LP12.2 ComponentArmory**:
-- Component Armory → "transforming naked vulnerable JavaScript components into armored TypeScript fortresses"
+- Component Archives → "cataloging JavaScript components with TypeScript type annotations"
 - Props interfaces → "armor for components", "type-safe contracts"
 - Typed hooks → "useState/useReducer/Context with types", "hook typing"
 - Migration → "gradual with allowJs", "islands of type safety expanding"
 - Strict mode → "maximum safety", "no compromises"
 
 **LP12.3 GenericForge**:
-- Generic Forge → "hottest chamber", "intense blue fire", "advanced type patterns"
+- Pattern Alcove → "prismatic light", "flexible template scrolls", "advanced type patterns"
 - Advanced generics → "type parameters as placeholders", "constraints with extends/keyof"
 - Conditional types → "types that adapt based on inputs"
 - Mapped types → "types that generate from other types"
 - Type-safe design patterns → "event emitters, builder pattern, exhaustive checking"
-- Type Guard Tower → "boundary between typed and untyped realms"
+- Type Guard Gatehouse → "boundary between typed and untyped realms"
 - Type guards → "bridge compile-time and runtime", "trust nothing verify everything"
 - Zod → "parse don't validate", "runtime validation generating types"
 
@@ -1083,14 +1079,14 @@
 - Client vs server boundary → "'use client' directive", "which code runs where, and why"
 
 **LP14.2 ServerComponents**:
-- Server Component Chamber → "components execute in the server realm"
+- Server Atrium → "components execute in the server realm"
 - React Server Components → "async components that fetch data directly"
 - Streaming SSR → "instant shell → streaming content", "progressive loading"
 - Server Actions → "form mutations without API routes"
 - Caching → "time-based, on-demand with revalidatePath/revalidateTag"
 
 **LP14.3 RenderingStrategies**:
-- Rendering Strategy Chamber → "time and rendering intertwined"
+- Rendering Observatory → "time and rendering intertwined"
 - Static rendering → "build-time HTML generation"
 - Server rendering → "request-time generation"
 - ISR → "Incremental Static Regeneration, static with timed revalidation"
@@ -1098,7 +1094,7 @@
 - Strategy selection → "static for marketing, SSR for personalized, ISR for catalog, client for interactive"
 
 **LP14.4 FullStackPatterns**:
-- Integration Chamber → "where client and server patterns converge"
+- Convergence Hall → "where client and server patterns converge"
 - Server Actions → "progressive enhancement", "form actions"
 - Route Handlers → "GET/POST/PUT/DELETE", "streaming responses", "webhooks"
 - Full-stack architecture → "when Server Actions vs Route Handlers", "complete data flow"
@@ -1123,7 +1119,7 @@
 - Responsive & adaptive → "design for all devices and preferences"
 
 **LP15.4 TestingTools**:
-- Testing Tower (accessibility) → "layered defense"
+- Testing Gauntlet (accessibility) → "layered defense"
 - Automated tools → "catch 30-50%", axe DevTools, Lighthouse, pa11y
 - Manual testing → "keyboard navigation, screen reader, quick checks"
 - Accessibility culture → "Five Pillars: Education, Documentation, Code Reviews, User Involvement, Automation"
