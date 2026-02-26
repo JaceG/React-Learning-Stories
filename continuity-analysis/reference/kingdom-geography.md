@@ -1856,52 +1856,38 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 **Redux Empire**:
 - Largest and most established Allied Kingdom
 - Three principles carved in stone at empire entrance
-- Emperor Dispatcher rules with predictable state updates
-- Influenced React's useReducer
 - Architecture: Ordered, ceremonious, every action documented
 - Values: Predictability, debugging (time-travel DevTools), ceremony brings order
 
 **MobX Territory**:
-- Chief Observer leads
 - Reactive programming approach
 - State made observable, components react automatically
 - Architecture: Flowing, reactive, automatic
-- Values: Reactivity, automatic updates
 
 **Zustand Settlements**:
-- Elder Simplicity champions
 - Simple, small stores with powerful APIs
 - Architecture: Minimal, efficient, straightforward
 - Values: Simplicity, "why complicate?"
 
-**Recoil Regions**:
-- Atom Master teaches
-- Atomic state approach - each piece is atom
-- Components subscribe to exact needs
-- Architecture: Granular, precise, atomic
-- Values: Fine-grained reactivity, precision
-
 **Jotai Archipelago**:
-- Scattered islands with atomic approach
-- Like Recoil but React Suspense at core
-- Architecture: Island-based, Suspense-integrated
-- Values: Atomic simplicity with modern patterns
+- Atomic state approach — scattered islands, each an atom of state
+- React Suspense integration at core
+- Architecture: Island-based, granular, precise
 
 **Visual Elements**:
 - Magical map unfurling showing kingdoms beyond borders
-- Emperor Dispatcher ruling from throne of predictable updates
-- Time-traveling DevTools demonstrations in Redux
-- Observable state flowing in MobX
+- Three principles carved in stone at Redux Empire entrance
+- Time-traveling DevTools demonstrations
+- Observable state flowing like water in MobX
 - Simple stores glowing in Zustand
-- Atomic particles representing state in Recoil/Jotai
-- Ambassadorial ship sailing between kingdoms
-- Diplomatic visits and learning
+- Atomic particles representing state in Jotai
+- Ambassadorial journey between kingdoms
 
-**Masters**: Emperor Dispatcher (Redux), Chief Observer (MobX), Elder Simplicity (Zustand), Atom Master (Recoil), Jotai Representative
+**Master**: Emperor Dispatcher — guides Aria through all Allied Kingdoms as ambassador
 
-**Teaches**: Each kingdom teaches its state management philosophy, trade-offs between approaches, when to use each library
+**Teaches**: State management classification (local vs shared vs server vs URL), Redux and its modern toolkit, alternative approaches (Zustand, Jotai, MobX), decision framework for choosing tools
 
-**Connection to Teaching**: Allied Kingdoms = external libraries; beyond borders = outside core React; ocean voyage = exploration; each unique = different philosophies; alliance = ecosystem diversity; ambassadorial role = learning from all; "each approach reflects values"
+**Connection to Teaching**: Allied Kingdoms = external libraries; beyond borders = outside core React; ocean voyage = exploration; each unique = different philosophies; alliance = ecosystem diversity; ambassadorial role = learning from all
 
 ---
 
@@ -1983,9 +1969,9 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 - Styling Workshops with demonstration stations
 - Styled Components Atelier, Tailwind Factory, CSS Modules Academy
 
-**Masters**: Moderator Stylus, Four Representatives (CSS-in-JS Champion 💅, CSS Modules Defender 📦, Utility-First Advocate 🎨, Styled Components Artist 🎭)
+**Master**: Moderator Stylus — demonstrates all styling approaches and teaches the decision framework
 
-**Theme**: Styling approaches debate → harmony through understanding use cases
+**Theme**: Styling approaches, trade-offs, and matching tools to project needs
 
 ---
 
@@ -2000,9 +1986,9 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 - Holographic forms of increasing complexity
 - Form Workshop with demonstration stations for each library
 
-**Masters**: Form Chancellor, Four Library Representatives (React Hook Form ⚡, Formik 🎯, Final Form 🔄, TanStack Form 🚀)
+**Master**: Form Chancellor — demonstrates all form approaches and teaches the complexity-to-tool decision framework
 
-**Theme**: Form library approaches → consensus on best tool for specific needs
+**Theme**: Form library approaches and matching architecture to complexity
 
 ---
 

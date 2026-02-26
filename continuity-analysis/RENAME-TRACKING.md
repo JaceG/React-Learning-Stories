@@ -7,7 +7,8 @@
 ## Status
 
 - **Phase 1**: COMPLETE — `story-bible.md` and `kingdom-geography.md` updated
-- **Phase 2**: PENDING — `narrative-master-PHASE4.md` and `narrative-master-PHASE5.md` still use old names
+- **Phase 2**: COMPLETE — `narrative-master-PHASE5.md` updated (LP8-15 renames propagated)
+- **Phase 2 Note**: `narrative-master-PHASE4.md` (LP1-7) renames for LP6 (Rift Walker Lyss) and LP7 (Velocity Crucible) were completed in earlier sessions
 
 ---
 

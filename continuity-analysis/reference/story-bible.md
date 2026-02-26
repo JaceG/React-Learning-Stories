@@ -316,74 +316,32 @@
 ### LP10: React Ecosystem
 
 **Emperor Dispatcher**
-- **Role**: Ruler of the Redux Empire, guardian of predictable state updates
-- **Appears In**: LP10.1 StateManagementLibraries (Ch2-3)
-- **Location**: Allied Kingdoms - Redux Empire
-- **Appearance**: [Not extensively described]
-- **Teaches**: Redux (three principles: single source of truth, state is read-only, changes via pure functions), actions and reducers (every change documented/traceable/predictable), Redux Toolkit (modern less boilerplate), middleware for async, Redux DevTools (time-traveling debugging), when Redux worth ceremony (large teams needing structure), Redux ecosystem
-
-**Chief Observer** (MobX Territory)
-- **Role**: Leader of MobX Territory, teaches reactive programming
-- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
-- **Location**: Allied Kingdoms - MobX Territory
-- **Teaches**: Observable reactive programming ("make state observable, components react automatically")
-
-**Elder Simplicity** (Zustand Settlements)
-- **Role**: Leader of Zustand Settlements, champion of simplicity
-- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
-- **Location**: Allied Kingdoms - Zustand Settlements
-- **Teaches**: Zustand patterns ("Why complicate? Small store, simple API, powerful results")
-
-**Atom Master** (Recoil Regions)
-- **Role**: Teacher in Recoil Regions, teaches atomic state
-- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
-- **Location**: Allied Kingdoms - Recoil Regions
-- **Teaches**: Recoil atomic state ("Each piece is an atom, components subscribe to exactly what they need")
-
-**Jotai Archipelago Representative**
-- **Role**: Teacher in Jotai Archipelago
-- **Appears In**: LP10.1 StateManagementLibraries (Ch3)
-- **Location**: Allied Kingdoms - Jotai Archipelago
-- **Teaches**: Jotai atomic patterns ("Like Recoil but with React Suspense at core")
+- **Role**: Ambassador of the Allied Kingdoms, master of state management philosophy
+- **Appears In**: LP10.1 StateManagementLibraries (Ch1-3)
+- **Location**: Allied Kingdoms - State Alliance Summit
+- **Appearance**: Robes bearing crests of every state library — Redux's triple gears, Zustand's bear, Jotai's atom rings
+- **Teaches**: State management classification (local vs shared vs server vs URL), Redux (three principles, Redux Toolkit, middleware, DevTools), modern alternatives (Zustand for simplicity, Jotai for atomic state, MobX for reactive), decision framework (classify state first, then choose tool), when Context suffices vs when a library earns its place
 
 **Moderator Stylus**
-- **Role**: Diplomatic mediator of the Style Symposium
+- **Role**: Diplomatic mediator and styling strategist
 - **Appears In**: LP10.2 StylingSolutions (Ch1-3)
 - **Location**: Diplomatic Zone - Great Style Symposium
-- **Appearance**: [Not extensively described]
-- **Teaches**: Styling approaches trade-offs (developer experience/performance/maintainability/team scalability), CSS-in-JS, CSS Modules, Utility-First (Tailwind), Styled Components, traditional CSS, zero-runtime solutions (Vanilla Extract), Emotion, hybrid approaches, context-aware decision making, when each approach shines based on project needs
-
-**CSS-in-JS Champion**, **CSS Modules Defender**, **Utility-First Advocate**, **Styled Components Artist**
-- **Role**: Representatives at Style Symposium (passionate debaters)
-- **Appears In**: LP10.2 StylingSolutions (Ch1, Ch3)
-- **Location**: Diplomatic Zone - Great Style Symposium (representatives)
-- **Teaches**: Each advocates for their approach, eventual harmony through understanding use cases
+- **Appearance**: Robes that shift between styling approaches — one sleeve Tailwind utility classes, the other CSS Modules scoping
+- **Teaches**: Styling approaches and trade-offs (developer experience vs performance vs maintainability vs team scalability), CSS Modules (scoped/traditional), Tailwind/utility-first (composition over custom), CSS-in-JS and Styled Components (colocation), zero-runtime solutions (Vanilla Extract), hybrid approaches, design tokens, decision framework matching styling tools to project needs
 
 **Form Chancellor**
-- **Role**: Wise leader of the Form Federation
+- **Role**: Wise arbiter of the Form Federation
 - **Appears In**: LP10.3 FormLibraries (Ch1-3)
 - **Location**: Diplomatic Zone - Form Federation Headquarters
-- **Appearance**: [Not extensively described]
-- **Teaches**: Form complexity challenges (multi-step wizards/dynamic arrays/real-time validation/conditional logic), form library trade-offs, React Hook Form (performance through uncontrolled), Formik (simplicity through controlled), Final Form (flexibility through subscriptions), TanStack Form (type-safe), validation strategies (Schema with Yup/Zod, custom validators, async, dependent fields), when native React forms insufficient, decision factors (complexity/performance/team experience/TypeScript/ecosystem), consensus on when to use each library
-
-**React Hook Form Ambassador** (⚡), **Formik Federation Leader** (🎯), **Final Form Chancellor** (🔄), **TanStack Form Innovator** (🚀)
-- **Role**: Form library representatives (once competitive, reach consensus)
-- **Appears In**: LP10.3 FormLibraries (Ch1-3)
-- **Location**: Diplomatic Zone - Form Federation (library representatives)
-- **Teaches**: Each library's approach and optimal use cases
+- **Appearance**: Grand hall displays holographic forms of increasing complexity — from simple login to multi-step wizards
+- **Teaches**: Form complexity spectrum (when native React forms suffice vs when libraries earn their place), React Hook Form (performance through uncontrolled), Formik (simplicity through controlled), TanStack Form (type-safe), validation strategies (Yup/Zod schema, custom validators, async, dependent fields), decision factors (complexity/performance/team experience/TypeScript/ecosystem)
 
 **Animation Abbess Motia**
-- **Role**: Master of motion, guardian of the Motion Monastery
+- **Role**: Master of motion, guardian of purposeful animation
 - **Appears In**: LP10.4 AnimationLibraries (Ch1-3)
-- **Location**: Sky Realm - Motion Monastery & Dojos
-- **Appearance**: Gestures leave glowing trails in air
-- **Teaches**: Animation philosophy (communication not decoration, guide attention/provide feedback/create delight without distraction), CSS transitions (simple but limited), React's unmounting challenge (prevents exit animations), animation library solutions (exit animations/gesture integration/performance/orchestration/spring physics), performance tips (transform/opacity GPU accelerated, avoid layout properties), accessibility (prefers-reduced-motion), three dojos (Framer Motion for DX, React Spring for physics, Lottie for designer animations, React Transition Group for simplicity), Fluid Kingdom principles (purpose/performance/accessibility guide every animation)
-
-**Sensei Framer** (Framer Motion Dojo), **Professor Spring** (React Spring School)
-- **Role**: Dojo masters teaching animation techniques
-- **Appears In**: LP10.4 AnimationLibraries (Ch2)
-- **Location**: Sky Realm - Motion Monastery (Framer Motion Dojo), Sky Realm - Motion Monastery (React Spring School)
-- **Teaches**: Framer Motion (declarative API, variants, AnimatePresence, layout, drag), React Spring (physics-based with mass/tension/friction configs)
+- **Location**: Sky Realm - Motion Monastery
+- **Appearance**: Gestures leave glowing trails in air, every movement purposeful
+- **Teaches**: Animation philosophy (communication not decoration, purpose/restraint/accessibility), CSS transitions (foundation, simple state changes), Framer Motion (declarative API, variants, AnimatePresence, layout animations, drag), React Spring (physics-based with spring configs), accessibility (prefers-reduced-motion), performance (GPU-accelerated properties), when each approach fits
 
 ### LP11: Server Data
 
@@ -912,40 +870,33 @@
 - State Alliance → "each approach reflects their values", "diversity strengthens ecosystem", "right solution for specific needs"
 
 **LP10.2 StylingSolutions**:
-- Style Symposium → "representatives from different styling philosophies gathered", "passionate arguing"
-- Four representatives → CSS-in-JS Champion (💅 "styles belong with components"), CSS Modules Defender (📦 "separation of concerns"), Utility-First Advocate (🎨 "composition over custom"), Styled Components Artist (🎭 "stylish by default")
-- Styling debate → "fierce", "heated", "passionate", "argumentative becoming understanding"
+- Style Symposium → "different styling philosophies", "banners of every CSS philosophy"
+- Stylus demonstrates → Tailwind (utility-first, composition), CSS Modules (scoped, zero runtime), CSS-in-JS (dynamic, colocated), Vanilla Extract (type-safe, zero runtime)
 - Trade-offs → "DX vs bundle size", "dynamic capabilities vs runtime cost", "speed vs realism"
-- Styling Workshops → "demonstration stations", "actions speak louder than arguments"
-- Styled Components Atelier → "component-centric styling", "Button IS the style"
-- Tailwind Factory → "composition", "Why write custom CSS? Compose utilities!"
-- CSS Modules Academy → "tradition with safety", "keep CSS separate but scoped"
-- Harmony → "not winner but understanding when each shines", "mutual respect", "stop defending territories start understanding use cases"
-- Decision matrix → "component libraries=CSS-in-JS, rapid prototyping=Tailwind, large teams=CSS Modules, performance-critical=zero-runtime"
+- Styling Workshops → "demonstration stations", "same component four ways"
+- Design system → tokens, themes, variants, Storybook documentation
+- Harmony → "not winner but understanding when each shines", "consistency > any individual advantage"
+- Decision matrix → "Tailwind for speed, CSS Modules for performance, CSS-in-JS for dynamic theming, zero-runtime for type safety"
 
 **LP10.3 FormLibraries**:
 - Form Federation → "headquarters", "grand hall with holographic forms of increasing complexity"
-- Complex forms → "multi-step wizards/dynamic field arrays/real-time validation/conditional logic make head spin"
-- Four library representatives → React Hook Form Ambassador (⚡ "performance through uncontrolled"), Formik Federation Leader (🎯 "simplicity through controlled"), Final Form Chancellor (🔄 "flexibility through subscriptions"), TanStack Form Innovator (🚀 "type-safe forms")
-- Philosophy spectrum → "controlled vs uncontrolled components"
-- Form Workshop → "complex forms float in air transforming as libraries handle them", "demonstration stations"
+- Complex forms → "multi-step wizards/dynamic field arrays/real-time validation/conditional logic"
+- Chancellor demonstrates → React Hook Form (⚡ performance via uncontrolled), TanStack Form (🚀 type-safe), Formik (🎯 existing codebases)
+- Form Workshop → "complex forms float in air", "demonstration stations"
 - Form complexity → "deceptively complex", validation/errors/async/dependencies/dynamic/performance
-- Consensus → "once competitive reaching agreement", "no universal best - best for specific needs", "understanding without bias"
 - Decision factors → form complexity/performance/team experience/TypeScript/ecosystem
-- Selection matrix → "performance-critical=RHF, familiarity=Formik, ultimate control=Final Form, type-safe=TanStack, simple=native React"
+- Selection matrix → "RHF + Zod for most, TanStack for max TypeScript, Formik for existing, native React for simple"
 
 **LP10.4 AnimationLibraries**:
 - Motion Monastery → "floats serenely above clouds", "moves constantly - walls shift, decorations dance, everything flows"
 - Animation → "communication not decoration", "tells a story", "language", "guide attention/provide feedback/create delight"
-- Abbess gestures → "leave glowing trails in air"
+- Motia gestures → "leave glowing trails in air", "every movement purposeful"
 - React challenge → "unmounts immediately preventing exit animations"
-- Three dojos → "CSS Transitions foundation, React Spring physics-based, Framer Motion declarative"
-- Sensei Framer → "elements dance with declarative ease", "naturally animate in/out"
-- Professor Spring → "no duration just tension and friction", "natural motion", "physics"
+- Motia demonstrates → Framer Motion (declarative, layout, AnimatePresence), React Spring (physics-based, mass/tension/friction), CSS transitions (simple states)
 - Performance → "transform/opacity GPU accelerated", "avoid layout properties"
 - Accessibility → "prefers-reduced-motion", "users get different but functional experience"
-- Fluid Kingdom → "highest tower view", "fully animated dashboard - data flowing like rivers, transitions smooth as silk", "every movement has purpose"
-- Animation mastery → "right technique for each situation", "feels inevitable not arbitrary", "language of motion"
+- Fluid Kingdom → "highest tower view", "fully animated dashboard", "every movement has purpose"
+- Animation mastery → "right technique for each situation", "purpose, restraint, accessibility"
 
 ### LP11: Server Data
 
