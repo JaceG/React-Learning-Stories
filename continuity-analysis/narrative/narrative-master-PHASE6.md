@@ -9,7 +9,7 @@
 
 ## 1.1 ComponentKingdom
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Welcome to the React Kingdom! Aria, a young apprentice, has arrived at the gates of the Component Workshop District. Here she will learn the fundamental art of building components - the magical building blocks that make up every React application.
 
@@ -219,7 +219,7 @@ Aria clutched the scroll, excited for her next adventure. She had learned to cre
 
 ## 1.2 PropsMessengers
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 With the wisdom of the Component Kingdom fresh in her mind, Aria clutched the sealed scroll Master Aurelius had given her. She had learned to create components and compose them into complex structures, and seen the messengers that enable communication between them. The Props Messenger Guild in the Eastern Quarter held the secrets to mastering this messenger system - the art of passing information between components with precision and purpose.
 
@@ -448,7 +448,7 @@ The path to the JSX Magic Academy led north, back through familiar territory but
 
 ## 1.3 JsxMagic
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 After her success at the Props Messenger Guild, Aria was directed northward to the JSX Magic Academy. "You'll find Professor Syntaxis there," Hermes had said with a knowing smile. "He'll teach you the ancient language that makes all our component spells possible."
 
@@ -692,7 +692,7 @@ Binary's lights sparkled with joy. "Really? I'd love to! Every apprentice needs 
 
 ## 1.4 LifecycleChronicles
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 With the fundamentals of component creation fresh in her mind, Aria ventured deeper into the Component Kingdom. The workshops had shown her how to build components, but now she needed to understand their journey through time - from birth to retirement. The ancient Lifecycle Sanctum beckoned, promising to reveal the secrets of component existence.
 
@@ -931,7 +931,7 @@ The hourglasses continued their eternal flow around her, each one tracking some 
 
 ## 2.1 StateSorcerers
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The morning after her training with Chronos, Aria set out eastward as the sun painted the React Kingdom in golden hues. The Eastern Quarter was known for its towering crystal spires, each one pulsing with stored memories and dynamic energy. This was where the State Sorcerers practiced their ancient craft - giving components the ability to remember and respond.
 
@@ -1148,7 +1148,7 @@ Aria left the crystal spire with her mind buzzing with new knowledge. State, imm
 
 ## 2.2 MagicalHooks
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 After her enlightening day with Memnon and the State Sorcerers, Aria arrived at the legendary Hook Forge - a massive workshop where master crafters created the special tools that gave React components their extraordinary powers. The air hummed with magical energy, and apprentices hurried between glowing workstations.
 
@@ -1363,7 +1363,7 @@ Aria carefully tucked the pouch into her satchel, her mind buzzing with new know
 
 ## 2.3 GrandContext
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom, in the Central Plaza between all four quarters. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
 
@@ -1575,7 +1575,7 @@ Aria carefully stored the crystal in her satchel, her mind racing with possibili
 
 ## 2.4 StateManagementAdventures
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The morning sun cast long shadows across React Kingdom as Aria stood before the State Management Citadel - a towering structure in the Eastern Quarter where all the state management disciplines converged. Here, she would face her final challenge: combining everything she had learned into a unified understanding of state management.
 
@@ -1803,7 +1803,7 @@ They descended from the Citadel as stars began to appear overhead. Aria's journe
 
 ## 3.1 PropWorkbench
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Aria and Binary climbed the winding path to the Industrial Quarter, where the rhythmic clanging of hammers on metal echoed through the streets. The Prop Workbench stood at the district's heart - a massive workshop where raw props were refined, reshaped, and transformed into precisely what components needed.
 
@@ -2077,7 +2077,7 @@ Binary displayed a holographic workbench in miniature, complete with tiny hammer
 
 ## 3.2 PropsCaravans
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 After learning prop transformation at the Workbench, Aria and Binary ventured deeper into the Trade Quarter, in the Western Quarter beyond the industrial smoke of Master Destructo's workshop. Here lay the Composition District - a place where components weren't just built, but artfully assembled from smaller pieces. Master Cargo taught the advanced patterns that made React's component model truly powerful.
 
@@ -2395,7 +2395,7 @@ As they walked toward the Echo Caves, Aria reflected on her journey. From basic 
 
 ## 3.3 EventEchoes
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Leaving the Trade Quarter behind, Aria and Binary followed a winding path into the Western Mountains. The air grew cool and thin, and soon they heard it - a haunting symphony of echoes bouncing off cavern walls. The Echo Caves lay ahead, where the final secret of data flow awaited.
 
@@ -2659,7 +2659,7 @@ Aria consulted her mental map of React Kingdom, eyes bright with anticipation. "
 
 ## 3.4 DataRivers
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Following Echo Warden Callback's directions, Aria and Binary made their way to the Cascade District in the Eastern Quarter, where the sound of rushing water grew louder with each step. Here, crystal-clear rivers flowed through the kingdom, carrying not water, but streams of pure data between the component settlements.
 
@@ -2959,7 +2959,7 @@ As they walked away from the Cascade District, Aria felt the pieces clicking int
 
 ## 4.1 UseStateSpells
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Advanced Hooks Sanctuary stood as a modern marvel - a gleaming tower of glass and steel where masters refined their hook expertise in the Eastern Quarter. As Aria approached with Binary, holographic runes floated in the air, demonstrating various hook patterns. Having learned useState basics from Memnon at the State Sorcerers' Tower, Aria was ready to master advanced patterns that separated professionals from beginners.
 
@@ -3226,7 +3226,7 @@ Binary chirped excitedly, already calculating optimal paths to their next lesson
 
 ## 4.2 UseEffectEnchantments
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Temporal Tower loomed before Aria in the Eastern Quarter - a spiraling structure where time seemed to flow differently at each level. Clock faces of various sizes ticked at different speeds along its walls, some racing forward, others crawling backward. This was where React's most mysterious hook was mastered: useEffect, the bridge between React's pure world and the chaotic realm of side effects.
 
@@ -3507,7 +3507,7 @@ Aria bowed gratefully, feeling the weight of useEffect mastery settling into her
 
 ## 4.3 CustomHookCrafting
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Synthesis Workshop occupied an entire floor of the Advanced Hooks Sanctuary in the Eastern Quarter, filled with workbenches where students crafted their own magical artifacts. Glowing blueprints floated above each station, showing hook patterns being assembled and tested in real-time. This was where React developers transcended from users to creators of hooks, forging their own tools from the primitive hooks they'd mastered.
 
@@ -3742,7 +3742,7 @@ Together, Aria and Binary headed toward their final Hooks lesson, ready to learn
 
 ## 4.4 HookPatternMastery
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 At the apex of the Advanced Hooks Sanctuary in the Eastern Quarter stood the Integration Sanctum - a spherical chamber where all hook knowledge converged. Energy streams from every workshop and tower throughout the sanctuary flowed here, creating intricate patterns in the air that represented the synthesis of all React's primitive hooks. This was where students learned to weave individual hooks into masterful patterns that could handle any challenge.
 
@@ -3976,7 +3976,7 @@ As they descended from the Integration Sanctum, Aria reflected on the entire Hoo
 
 ## 5.1 EventSymphony
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Word of Aria's mastery at the Advanced Hooks Sanctuary spread quickly through React Kingdom. As she and Binary made their way through the Western Quarter's bustling streets, a messenger in flowing robes intercepted them with an ornate scroll. "From Conductor Eventus of the Event Orchestrium," the messenger announced. "Your hook orchestration skills are urgently needed."
 
@@ -3988,7 +3988,7 @@ Word of Aria's mastery at the Advanced Hooks Sanctuary spread quickly through Re
 
 The Event Orchestrium stood as a magnificent structure in the heart of the Western Quarter, its crystalline walls pulsing with the rhythm of countless user interactions - clicks, keypresses, mouse movements, all creating cascading patterns of light that flowed through the building's architecture like visual music. Aria and Binary arrived to find controlled chaos - events firing in complex patterns, handlers coordinating responses, but something seemed... unoptimized, scattered.
 
-**Academy graduate Aria!** A distinguished figure in a conductor's coat rushed forward from the concert stage, his baton crackling with visible event energy that sparked and danced at its tip. **Conductor Eventus** at your service! Master Formeus mentioned you might visit, and word of your hook mastery from the Advanced Hooks Sanctuary has reached even our halls. Welcome to the Orchestrium - I'm excited to teach you about React's event system and how your hook knowledge applies here!"
+"Academy graduate Aria!" A distinguished figure in a conductor's coat rushed forward from the concert stage, his baton crackling with visible event energy that sparked and danced at its tip. "**Conductor Eventus** at your service! Master Formeus mentioned you might visit, and word of your hook mastery from the Advanced Hooks Sanctuary has reached even our halls. Welcome to the Orchestrium - I'm excited to teach you about React's event system and how your hook knowledge applies here!"
 
 Binary's sensors immediately began analyzing the event flows, projecting waveforms and interaction patterns in the air like musical notation. "Detecting event propagation patterns throughout the hall! Performance metrics show optimization opportunities using patterns learned at the Advanced Hooks Sanctuary!"
 
@@ -4227,7 +4227,7 @@ Aria's eyes lit up with excitement. "Form handling! That's where all these event
 
 ## 5.2 FormAlchemy
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Western Quarter hummed with a different energy than the Eastern Quarter's Sanctuary. Here, the abstract mastery of hooks and patterns transformed into tangible user interfaces. Aria paused at the entrance to the Form Alchemy Lab adjacent to the Event Orchestrium, Binary adjusting his sensors for the new environment. After her triumphs at the Advanced Hooks Sanctuary, she was ready to apply her knowledge to the practical art of capturing user input and transforming it into application state.
 
@@ -4237,7 +4237,7 @@ The Western Quarter hummed with a different energy than the Eastern Quarter's Sa
 
 **Story Group 1:**
 
-**Welcome, young scholar!** A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron that bubbled with form state energy. The coat bore the marks of countless experiments - validation failures, submission errors, edge case discoveries - each stain a badge of wisdom earned. **Master Alchemist Formeus** at your service! I've heard of your accomplishments at the Advanced Hooks Sanctuary - Pattern Weaver Synthesis sent word of your hook orchestration mastery. Quite impressive! I'm excited to teach you how your hook knowledge applies to the practical art of form handling - transforming user keystrokes and clicks into meaningful application state!"
+"Welcome, young scholar!" A figure in a stained laboratory coat emerged from behind a particularly vigorous cauldron that bubbled with form state energy. The coat bore the marks of countless experiments - validation failures, submission errors, edge case discoveries - each stain a badge of wisdom earned. "**Master Alchemist Formeus** at your service! I've heard of your accomplishments at the Advanced Hooks Sanctuary - Pattern Weaver Synthesis sent word of your hook orchestration mastery. Quite impressive! I'm excited to teach you how your hook knowledge applies to the practical art of form handling - transforming user keystrokes and clicks into meaningful application state!"
 
 Binary's sensors immediately began analyzing the various reactions occurring throughout the lab, projecting chemical formulas and React patterns in the air. The lab was sectioned into three areas, each with different energies: the Controlled Components section (glowing with constant state synchronization), the Uncontrolled Components section (pulsing with DOM independence), and the Custom Hooks alcove (radiating with composition patterns).
 
@@ -4271,9 +4271,9 @@ He showed an uncontrolled input where the DOM owns the state. A ref provides a r
 
 Formeus approached the transmutation circle, where visualizations showed both approaches side-by-side with their characteristics glowing like chemical properties.
 
-"Controlled components," he explained, highlighting the first cauldron with its constant pulsing energy, "give you **power and predictability**. Because React always knows the current value, you can perform instant validation as the user types, checking each keystroke and setting error messages immediately. You can also enforce formatting - for example, taking raw phone number input and automatically formatting it into the pattern (555) 555-5555 before storing it in state. The onChange handler transforms the input in real-time, and the formatted value flows back to the input through the value prop. You could even enforce character limits, tracking how many characters remain as the user types.
+"Controlled components," he explained, highlighting the first cauldron with its constant pulsing energy, "give you **power and predictability**. Because React always knows the current value, you can perform instant validation as the user types, checking each keystroke and setting error messages immediately. You can also enforce formatting - for example, taking raw phone number input and automatically formatting it into the pattern (555) 555-5555 before storing it in state. The onChange handler transforms the input in real-time, and the formatted value flows back to the input through the value prop. You could even enforce character limits, tracking how many characters remain as the user types."
 
-You could also share state with other components - passing the textarea value to a Preview component that updates live as the user types, showing them exactly what their content will look like.
+"You could also share state with other components," he continued, "passing the textarea value to a Preview component that updates live as the user types, showing them exactly what their content will look like."
 
 "See the capabilities?" Formeus asked, the first cauldron pulsing with each example. "Instant feedback, format enforcement, state sharing, validation while typing. Controlled components are **reactive** - they respond to every change!"
 
@@ -4481,7 +4481,7 @@ Aria smiled with anticipation. "From creation through hooks to protection throug
 
 ## 5.3 ValidationGuardians
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Validation Fortress stood imposingly at the Western Quarter's edge, its walls shimmering with protective runes that pulsed like vigilant sentries. Aria and Binary approached the massive gates where guards in crimson armor stood watch. "Aria," one announced, "Commander Validus has been expecting you. Your systematic approach to form alchemy and hook orchestration has reached even our fortified walls."
 
@@ -4724,7 +4724,7 @@ Binary's circuits sparked with anticipation, projecting portal energy signatures
 
 ## 5.4 SubmissionPortals
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 At the heart of the Western Quarter stood the Submission Portal Gateway, a magnificent structure where all form data converged before traveling to distant servers. Aria and Binary approached the swirling vortex of energy that marked the gateway between React's client-side world and the server realm. Portal Keeper Sage awaited - ready to teach the final synthesis of the Forms & Events journey.
 
@@ -4734,7 +4734,7 @@ At the heart of the Western Quarter stood the Submission Portal Gateway, a magni
 
 **Story Group 1:**
 
-**Aria!** Sage's voice echoed with warmth through the portal chamber. **Portal Keeper Sage** at your service! I've heard of your progress across the Western Quarter - Conductor Eventus speaks of your event optimization mastery, Master Formeus praises your form alchemy skills, and Commander Validus commends your defensive validation architecture. Welcome to the Portal Gateway - here I'll teach you the final piece of the Forms & Events puzzle: submission!
+"Aria!" Sage's voice echoed with warmth through the portal chamber. "**Portal Keeper Sage** at your service! I've heard of your progress across the Western Quarter - Conductor Eventus speaks of your event optimization mastery, Master Formeus praises your form alchemy skills, and Commander Validus commends your defensive validation architecture. Welcome to the Portal Gateway - here I'll teach you the final piece of the Forms & Events puzzle: submission!"
 
 Binary's sensors detected massive energy fluctuations pulsing through the swirling portal. "Portal instability detected! Multiple failed submissions logged. Synchronization errors causing data loss. Page reload events corrupting application state!"
 
@@ -4967,7 +4967,7 @@ With Binary chirping at her side, Aria set off from the Western Quarter, ready t
 
 ## 6.1 NavigationCompass
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Central Citadel rose before Aria, its crystalline spires reaching toward the clouds like beacons connecting all quarters of React Kingdom. This architectural marvel served as the nexus where navigation pathways from the Northern, Eastern, Western, and Southern quarters converged. Captain Marina awaited at the Navigation Command Center, ready to teach Aria the final fundamental skill that would unite everything she'd learned - routing and navigation through React applications.
 
@@ -4977,7 +4977,7 @@ The Central Citadel rose before Aria, its crystalline spires reaching toward the
 
 **Story Group 1:**
 
-**Welcome, young navigator!** Marina's voice carried warmth and excitement as Aria and Binary entered the Navigation Command Center. The room was filled with floating holographic maps showing routes connecting all quarters of React Kingdom, like a living nervous system pulsing with navigation energy. **Captain Marina** stepped forward, her presence radiating both authority and enthusiasm. "I've heard wonderful things about your journey through the React Kingdom - Portal Keeper Sage sent word of your mastery of Forms & Events, and your teachers from the Western Quarter speak highly of your orchestration skills. I'm excited to teach you about routing and navigation - the patterns that unite all your learning into complete applications!"
+"Welcome, young navigator!" Marina's voice carried warmth and excitement as Aria and Binary entered the Navigation Command Center. The room was filled with floating holographic maps showing routes connecting all quarters of React Kingdom, like a living nervous system pulsing with navigation energy. **Captain Marina** stepped forward, her presence radiating both authority and enthusiasm. "I've heard wonderful things about your journey through the React Kingdom - Portal Keeper Sage sent word of your mastery of Forms & Events, and your teachers from the Western Quarter speak highly of your orchestration skills. I'm excited to teach you about routing and navigation - the patterns that unite all your learning into complete applications!"
 
 Aria looked around in wonder, seeing maps that showed not just geographic connections but state flows, component hierarchies, and data patterns. Binary hovered excitedly beside her, scanning the navigation systems. "Captain Marina, your navigation systems are legendary throughout the kingdom! The way you've mapped routes connecting all quarters... it's beautiful! I'm eager to learn from you!"
 
@@ -5186,7 +5186,7 @@ Binary projected Aria's complete journey map, every quarter lit up, every teache
 
 ## 6.2 WaypointWizardry
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 **Wayfinder Solara** was waiting at the entrance to the Waypoint Sanctum when Aria arrived - a vast chamber where glowing orbs traced paths through the air like living constellations. The crystal dome refracted light into countless rainbows, casting the room in an ethereal glow. Solara's navigator's cloak shifted with the orbs as if reading them, her posture calm and precise. "Captain Marina sent me word you've mastered routing fundamentals," she said. "Good. What I'll show you here goes further - routes that think for themselves, predict where users are going, and adapt to their behavior."
 
@@ -5408,7 +5408,7 @@ Solara nodded with approval. "Your complete React foundation makes these advance
 
 ## 6.3 GuardianGates
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Navigation Corps training grounds were unlike any chamber Aria had visited in the Central Citadel - massive guardian statues stood at attention along the walls, each carved with different security patterns, watching the space with silent authority. **Warden Aldric** stepped forward to meet her, his armor bearing the emblem of a shield crossed with two keys. "Wayfinder Solara tells me you've mastered intelligent navigation," he said. "Now we defend it. Routes are doors - and every door needs a guardian. I'll teach you how to protect your routes with authentication and authorization, building security that enhances user experience rather than hindering it."
 
@@ -5626,7 +5626,7 @@ Aldric led Aria toward the Portal Passages, the final lesson of the Central Cita
 
 ## 6.4 PortalPassages
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Portal Passages chamber was the strangest space in the entire Central Citadel - reality seemed to fold upon itself here, floating portals shimmering in the air, each showing UI elements that existed simultaneously in multiple dimensions. **Rift Walker Lyss** materialized from one of the shimmering doorways, her robes trailing fragments of light from the portals she'd just stepped through. "Warden Aldric's work keeps the doors locked for the right people," she said with a quiet smile. "Mine teaches you how to build doors that exist in two places at once. React portals - where components escape the DOM hierarchy without losing their React identity. Welcome to the final piece of your navigation training."
 
@@ -5849,7 +5849,7 @@ Lyss watched as Aria and Binary began their descent toward the mountain path lea
 
 ## 7.1 MemoryMonastery
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Aria's navigation mastery was complete, but a new challenge beckoned from the Northern Peaks far above the React Kingdom. Word reached her of Brother Memor - keeper of the Memory Monastery where the secrets of memory management could prevent even the most elegant applications from slow, eventual collapse. The floating monastery appeared through the clouds as Aria and Binary climbed the mountain paths, its ancient walls humming with the whispers of forgotten allocations and the weight of retained references.
 
@@ -6066,7 +6066,7 @@ Brother Memor watched as Aria and Binary began their descent down the mountain p
 
 ## 7.2 LazyLibrary
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Memory Monastery's healing rituals had transformed Aria into a guardian of application health, but Brother Memor directed her next journey before she departed: "The Lazy Library holds secrets of temporal loading - how to summon code only when needed, not before. Seek Keeper Libris down in the valley, for bundle size is the hidden enemy of performance that even clean memory cannot fix!" Aria and Binary descended from the clouds, following ancient stone pathways to the mystical repository of deferred knowledge where books floated, appearing only when reached for.
 
@@ -6262,7 +6262,7 @@ Keeper Libris watched as Aria and Binary descended the path toward the Vault, kn
 
 ## 7.3 VirtualizationVault
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Keeper Libris had revealed the secrets of lazy loading and bundle optimization, but warned of one final challenge as Aria prepared to leave. "Deep in the valley lies the Virtualization Vault, where infinite data threatens to overwhelm even the most optimized applications. Guardian Zephyr awaits - master his techniques, and no amount of data will slow your creations!" Aria descended into the vault's depths with Binary, ready to conquer the next performance frontier where millions of items awaited rendering.
 
@@ -6445,7 +6445,7 @@ Aria gazed up at the distant mountain peaks where the Velocity Crucible was visi
 
 ## 7.4 SpeedSanctum
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 With mastery of memory management, bundle optimization, and infinite data rendering complete, Aria received word from Guardian Zephyr before departing: "One final sanctuary awaits in the Northern Mountains. Applications throughout the React Kingdom slow from invisible performance drags - unnecessary re-renders, expensive calculations repeated wastefully, inefficient patterns multiplied. Only the Velocity Crucible's techniques can reveal and defeat these hidden enemies!" Aria and Binary ascended the mountain path toward the legendary sanctuary where Master Velocity guarded the ultimate optimization secrets.
 
@@ -6626,7 +6626,7 @@ Aria looked back at the Velocity Crucible one last time, then gazed toward the u
 
 ## 8.1 TestingTower
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Fresh from defeating the Performance Plague in the Velocity Crucible, Aria descended from the Northern Peaks toward the Underground Realms. Strange reports had reached her of bugs manifesting as actual creatures in the caverns below - skittering through untested code, multiplying faster than anyone could catch them by hand. The Testing Gauntlet rose from the underground depths, its peak breaking through the surface far above. Test Master Jasmine awaited in the peak chamber, alongside a mystical owl named Debuggora whose glowing eyes could see through code to its true behavior.
 
@@ -6806,7 +6806,7 @@ She pointed toward a warm glow emanating from deeper in the underground passages
 
 ## 8.2 IntegrationInn
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The warm glow Aria had seen from the Testing Gauntlet turned out to be firelight spilling from the entrance of the Integration Inn - an underground tavern where components from across the kingdom gathered to work together. Strange sounds came from within: the clash of conflicting state, the hiss of mismatched props, the frustrated sputtering of components that worked perfectly alone but could not cooperate. Innkeeper Cypress, a weathered veteran of component collaboration, greeted Aria at the door with a knowing smile. "Welcome to where the real problems begin."
 
@@ -6979,7 +6979,7 @@ Aria thanked Cypress and descended into the flickering darkness, Binary illumina
 
 ## 8.3 DebugDungeon
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Below the Integration Inn, the passages narrowed and the air grew colder. Strange echoes bounced off stone walls - the whispers of stack traces, the drip of memory leaks, the flicker of intermittent failures. The Debug Dungeon was a maze of error logs and mysterious behaviors, home to bugs too cunning for tests to catch. Dungeon Keeper Logsworth waited in the depths, his grey beard testament to decades spent tracking the most elusive production bugs. "Tests prevent most bugs," he said as Aria arrived. "I deal with the ones that escape."
 
@@ -7148,7 +7148,7 @@ Aria stepped into the golden light, carrying Logsworth's methodical discipline w
 
 ## 8.4 ErrorEnchantments
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The golden light led Aria into the Error Enchantments Grotto - a protected underground chamber where errors floated in the air like glowing orbs, each containing a different kind of dangerous power. Unlike the dungeon's hostile bugs, these orbs were contained, studied, understood. Guardian Safiya stood at the chamber's center with a knowing smile. "Errors are not enemies," she said. "They are teachers. Every error tells a story - about a weakness in your defenses, an assumption that proved false, a boundary that was never guarded. Learn to listen, and your applications will be unbreakable."
 
@@ -7319,7 +7319,7 @@ Aria began the ascent from the Underground Realms, leaving the subterranean pass
 
 ## 9.1 CompoundComponents
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Above the React Kingdom, the Architect's Academy floated in the Sky Realm - a crystalline structure that shifted and reconfigured itself constantly, demonstrating the very patterns taught within. Aria ascended through sky bridges connecting cloud platforms, Binary buzzing with anticipation. Dean Architectus awaited in the Academy's main hall, his robes decorated with component diagrams that rearranged themselves as he moved. "You have mastered the fundamentals," he said. "Now learn to compose components that work as families - sharing understanding without being told, cooperating without explicit instructions."
 
@@ -7488,7 +7488,7 @@ Architectus gestured toward a chamber deeper in the Academy where floating paint
 
 ## 9.2 PatternEvolution
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Deeper in the Architect's Academy, Aria entered a chamber filled with floating paintbrushes and blank canvases - the Pattern Evolution gallery. **Pattern Master Renderius** stood before a glowing timeline that traced the history of React composition patterns from 2013 to the present. "Before hooks, before compound components, the React community invented brilliant solutions to share logic between components," he said. "Render props and higher-order components. You will encounter them in every mature codebase. Understanding them is not optional - it is how you read the history written into the code you maintain."
 
@@ -7671,7 +7671,7 @@ Renderius pointed toward a studio deeper in the Academy where translucent compon
 
 ## 9.3 AdvancedComposition
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Academy's composition studio was unlike any chamber Aria had visited. Translucent component shells floated in the air - rich with behavior, accessibility, and state management but entirely without visual styling. **Design Artisan Sable** moved among them, draping each shell in different visual designs with a wave of her hand. The same behavioral shell became a sleek tech product in one moment, a playful children's interface in the next. "The future of component architecture is separation at the deepest level," she said. "Behavior and accessibility in one layer. Visual design in another. Neither depends on the other. Both are complete."
 
@@ -7844,7 +7844,7 @@ Sable gestured toward the Academy's final chamber, where crystalline reference p
 
 ## 9.4 RefsAndDOM
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Academy's final chamber defied physics - crystalline threads connected React's component tree to the underlying browser DOM, shimmering with each render cycle. **Ref Anchor Escapius** stood at the boundary, one hand in the virtual world of components and one in the physical world of browser elements. "React's declarative model is powerful," he said, "but sometimes you must reach through the abstraction and touch the real DOM directly. Focus management, measuring element dimensions, integrating non-React libraries, imperative animations - all require the escape hatch that refs provide. Use them wisely. The boundary exists for good reason."
 
@@ -8021,7 +8021,7 @@ The Architect's Academy glowed above the kingdom as Aria and Binary descended th
 
 ## 10.1 StateManagementLibraries
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Aria descended from the Sky Realm to find herself at the edge of the React Kingdom's borders, where a magical map unfurled to reveal the Allied Kingdoms beyond. She had been appointed an ambassador - a great honor - tasked with visiting the state management kingdoms that extended React's capabilities. Each kingdom had its own philosophy, its own strengths, its own passionate advocates. Her mission: understand them all without bias, then choose wisely based on the needs of each situation.
 
@@ -8194,7 +8194,7 @@ Binary projected the State Alliance map one final time: four territories, four t
 
 ## 10.2 StylingSolutions
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Great Style Symposium was already in full swing when Aria arrived - banners of every CSS philosophy flying from the rafters, demonstration stations humming with live examples. **Moderator Stylus** stood at the center of it all, diplomatic yet firm, ready to guide Aria through the landscape. "The styling debate generates more heat than any other topic in React," Stylus said. "Your job is not to pick a winner - it is to understand when each approach shines."
 
@@ -8359,7 +8359,7 @@ Binary displayed the decision framework: "Styling architecture: tokens → seman
 
 ## 10.3 FormLibraries
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Form Federation headquarters occupied a grand hall where holographic forms of increasing complexity floated in the air - simple login forms, multi-step wizards, dynamic field arrays, real-time validated surveys. **Form Chancellor** presided over the hall, having spent years studying every form library the ecosystem had produced. "No universal best - only the best for specific needs," he said as Aria entered. The complexity of professional form management revealed itself around her - validation, error states, async submission, dependent fields, dynamic arrays, and performance optimization across hundreds of fields.
 
@@ -8522,7 +8522,7 @@ The Sky Realm floated above the Diplomatic Zone, and from below Aria could see t
 
 ## 10.4 AnimationLibraries
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The **Motion Monastery** floated serenely above the clouds, yet nothing about it was still - walls shifted, decorations danced, stairs reconfigured as you walked, and every surface flowed with purposeful movement. **Animation Abbess Motia** gestured as she spoke, her hands leaving glowing trails in the air. "Animation is not decoration," she said firmly. "It is communication. It tells the user what happened, where to look, and how elements relate. Motion without purpose is noise. Motion with purpose is language."
 
@@ -8689,7 +8689,7 @@ The Cloud Bastion loomed ahead, connected to the kingdom by ethereal data stream
 
 ## 11.1 ApiIntegration
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The **Cloud Bastion** was a massive structure floating above the React Kingdom, connected to the surface by ethereal data streams that flowed in both directions. Mist parted as Aria and Binary ascended, revealing crystalline spires where requests and responses traveled as visible light pulses. **Cloud Keeper Axios** waited at the entrance, guardian of the bridge between client and server. "Everything you have built so far lives in the browser," he said. "Now learn to speak with the world beyond - to send requests, receive responses, and build communication infrastructure that is robust, efficient, and resilient."
 
@@ -8852,7 +8852,7 @@ Axios pointed toward the Living Streams beyond the Citadel, where data flowed co
 
 ## 11.2 RealtimeConnections
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Beyond the Cloud Bastion, Aria reached the **Living Streams** - channels of data flowing continuously, pulsing with real-time updates. **Stream Sage WebSocket** appeared in a shimmer of constantly updating data. "Request-response is a letter sent and answered," she said. "Real-time is a conversation - both sides speak and listen simultaneously, continuously. Chat messages, live dashboards, collaborative editing, presence indicators - these require a connection that stays open."
 
@@ -9013,7 +9013,7 @@ The path from the Living Streams led upward to a fortress of crystalline vaults,
 
 ## 11.3 CachingCastle
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The **Cache Vaults** rose from the Diplomatic Zone like a fortress of memory - its walls lined with vaults of stored data, each glowing with different levels of freshness. **Cache Lord Redux**, a distant cousin of the Redux Empire's emperor, greeted Aria with a knowing look. "Storing data is easy," he said. "Knowing when to forget is the true challenge. Caching is the art of balancing speed with freshness - serving data instantly while ensuring it is not dangerously stale."
 
@@ -9166,7 +9166,7 @@ The GraphQL Gateway shimmered at the edge of the Cloud Bastion, its entrance a s
 
 ## 11.4 GraphQLGateway
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The **GraphQL Gateway** shimmered at the edge of the Diplomatic Zone - a single portal that could serve any data request, unlike the multiple REST endpoints Aria had used. **Query Master Apollo** stood at its center, projecting holographic query structures that assembled and disassembled as he spoke. "REST says: here are the endpoints, take what I give you. GraphQL says: tell me exactly what you need, and I will give you precisely that. Nothing more, nothing less."
 
@@ -9323,7 +9323,7 @@ Aria descended from the Cloud Bastion toward the Western Mountains, where a fain
 
 ## 12.1 TypeScriptorium
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 Deep within the Western Mountains, the **Great Scriptorium** glowed with soft ink-light visible through cracks in ancient stone. Aria descended through tunnels lined with illuminated manuscripts, the air thick with the scent of old parchment. At the deepest hall, **Scribe Runis** stood before an immense writing desk, his robes inscribed with type annotations that shifted as he moved, his quill glowing with strict mode energy. "You have built with JavaScript's freedom," he said. "Now learn to build with TypeScript's certainty. Each type is a promise. Each interface is a guarantee. When your code compiles, it is not hope - it is proof."
 
@@ -9483,7 +9483,7 @@ Runis pointed toward a connected hall where soft ink-light cast dancing shadows 
 
 ## 12.2 ComponentArchives
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The **Component Archives** was a vast cataloging hall where every manuscript represented a typed component pattern - prop interfaces bound in leather, generic hooks inscribed on scrolls, type-safe context mapped in illuminated codices. **Archivist Lexicon** worked at a great lectern, transcribing type contracts in permanent ink. "Runis taught you the alphabet," he said. "I will teach you to compose it into treatises - typed component patterns for every React scenario you will face in production."
 
@@ -9625,7 +9625,7 @@ The **Pattern Alcove** glowed deeper in the mountain, its entrance carved with a
 
 ## 12.3 PatternAlcove
 
-### 📖 Lesson Opener
+**Lesson Opener:**
 
 The Pattern Alcove pulsed with concentrated ink-light - the most intensely illuminated chamber in the Great Scriptorium. Lexicon continued here as teacher, his focus shifting from practical patterns to the deep type system logic that powered TypeScript's most sophisticated libraries. "Generics that compose, types that transform, mapped types that generate - these are the patterns behind TanStack Query, React Hook Form, Radix UI, and every sophisticated TypeScript library you have used," he said.
 
@@ -9645,7 +9645,7 @@ The Pattern Alcove's ink-light cast shifting patterns of type relationships on t
 
 **Mapped types** transformed every property of an existing type: type Readonly<T> = { readonly [P in keyof T]: T[P] } created a readonly version of any type. Type Nullable<T> = { [P in keyof T]: T[P] | null } made every property nullable. These enabled systematic type transformations.
 
-**Template literal types** combined string literals: type EventName = `on${Capitalize<string>}` matched "onClick", "onChange", "onSubmit." These powered type-safe event systems and API route typing.
+**Template literal types** combined string literals: a type like EventName could be defined as a template literal matching any string beginning with "on" followed by a capitalized word, capturing patterns like "onClick", "onChange", and "onSubmit." These powered type-safe event systems and API route typing.
 
 **Story Group 3:**
 
@@ -9653,7 +9653,7 @@ Aria combined these patterns: a type-safe API client where route paths were temp
 
 Binary displayed advanced generics: "Advanced Generics complete! Composition: generics flowing through abstraction layers. Conditional: type-level if/else based on input. Mapped: transform all properties systematically. Template literals: string-level type computation. Combined: type-safe API clients, route typing, form generation!"
 
-**Guardia's Advanced Generics Wisdom:**
+**Lexicon's Advanced Generics Wisdom:**
 Generic composition flows type parameters through abstraction layers - a usePaginatedQuery<T> wrapping useQuery<PaginatedResponse<T>> maintains type safety at every level. Conditional types provide type-level branching: T extends string ? TextMessage : BinaryMessage adapts the output type based on input. Mapped types transform every property of an existing type systematically - creating readonly, nullable, or optional versions. Template literal types combine string literals for type-safe event names, API routes, and configuration keys. Combined, these patterns power sophisticated libraries: type-safe API clients infer response types from route paths, form libraries infer field types from schemas, and component libraries infer prop types from generic parameters.
 
 **Reflection Questions:**
@@ -9690,7 +9690,7 @@ Aria built a type-safe form builder: defineForm<T>() accepted a schema type, .fi
 
 Binary displayed design patterns: "Type-Safe Design Patterns complete! Event emitter: EventMap → typed on/emit. Builder: progressive generic narrowing via method chains. Exhaustive checking: never type catches unhandled union cases. Form builder: schema-driven, generic, auto-updating. Pattern: types drive the API, changes propagate automatically!"
 
-**Guardia's Type-Safe Design Pattern Wisdom:**
+**Lexicon's Type-Safe Design Pattern Wisdom:**
 Type-safe event systems use mapped types and template literals: EventMap interfaces define event-payload relationships, on() accepts only valid events with correctly typed callbacks, emit() requires valid events with correct payloads. Builder patterns use progressive generic narrowing - each method returns a more specific generic, and the final result type reflects all accumulated choices. Exhaustive checking with the never type in default switch cases catches unhandled union members at compile time - adding a new variant to a union immediately surfaces every switch that needs updating. Schema-driven patterns like form builders use generics flowing from a single schema type through every API method, ensuring changes to the schema automatically propagate correct types throughout.
 
 **Reflection Questions:**
@@ -9982,7 +9982,7 @@ She showed how to write a **custom plugin**: a transform hook that intercepted f
 
 **Story Group 3:**
 
-Vex covered **multi-environment configuration**: using the mode parameter to load different .env files, conditional plugin loading (analytics plugins only in production, mock service workers only in development), and **build targets** (specifying which browsers to support, which determined which JavaScript features needed polyfilling). She demonstrated the `build.rollupOptions` for advanced control: manual chunk splitting (grouping vendor libraries into a separate chunk), external dependencies (excluding libraries provided by a CDN), and output file naming patterns for cache management.
+Vex covered **multi-environment configuration**: using the mode parameter to load different .env files, conditional plugin loading (analytics plugins only in production, mock service workers only in development), and **build targets** (specifying which browsers to support, which determined which JavaScript features needed polyfilling). She demonstrated the build.rollupOptions for advanced control: manual chunk splitting (grouping vendor libraries into a separate chunk), external dependencies (excluding libraries provided by a CDN), and output file naming patterns for cache management.
 
 Aria configured a complete project: path aliases for clean imports, environment variables segregated by deployment stage, plugins for SVG components and PWA support, conditional analytics in production, and manual chunk splitting to keep the vendor bundle stable across deployments.
 
@@ -10082,7 +10082,7 @@ Binary displayed the pipeline concept: "Push → Lint → Type Check → Test �
 
 Pipeline showed the foundation: **GitHub Actions** - a CI system built into GitHub. A workflow file (.github/workflows/ci.yml) defined when the pipeline ran (on: push and pull_request), what environment it used (runs-on: ubuntu-latest), and what steps it executed. The simplest pipeline: checkout the code (actions/checkout), install dependencies (npm ci - deterministic installs from lock file), and run tests (npm test).
 
-She explained the **YAML structure**: workflows contained jobs, jobs contained steps, steps either used pre-built actions (actions/checkout, actions/setup-node) or ran shell commands. Jobs ran in parallel by default; the `needs` keyword created dependencies between them. "A workflow is a recipe. Each step is an instruction. GitHub provides the kitchen."
+She explained the **YAML structure**: workflows contained jobs, jobs contained steps, steps either used pre-built actions (actions/checkout, actions/setup-node) or ran shell commands. Jobs ran in parallel by default; the needs keyword created dependencies between them. "A workflow is a recipe. Each step is an instruction. GitHub provides the kitchen."
 
 **Story Group 2:**
 
@@ -10121,7 +10121,7 @@ GitHub Actions provides CI through YAML workflow files. Workflows trigger on pus
 
 **Story Group 1:**
 
-Pipeline revealed **multi-stage pipelines**. A basic CI/CD pipeline had three stages: **Build** (compile, bundle, create artifacts), **Test** (unit tests, integration tests, end-to-end tests against the built artifacts), and **Deploy** (push to the target environment). She showed how GitHub Actions represented this with dependent jobs: the test job declared `needs: build`, and the deploy job declared `needs: test`. "Each stage produces artifacts consumed by the next. Build creates the bundle. Test verifies it. Deploy ships it."
+Pipeline revealed **multi-stage pipelines**. A basic CI/CD pipeline had three stages: **Build** (compile, bundle, create artifacts), **Test** (unit tests, integration tests, end-to-end tests against the built artifacts), and **Deploy** (push to the target environment). She showed how GitHub Actions represented this with dependent jobs: the test job declared needs: build, and the deploy job declared needs: test. "Each stage produces artifacts consumed by the next. Build creates the bundle. Test verifies it. Deploy ships it."
 
 She introduced **environments** in GitHub Actions: named deployment targets (staging, production) with their own secrets, protection rules, and deployment history. The staging environment deployed automatically on merge to main. The production environment required manual approval - a designated reviewer clicked "Approve" before the deploy job executed.
 
@@ -10427,7 +10427,7 @@ Monitoring collects predefined metrics and alerts on thresholds. Observability e
 
 **Story Group 1:**
 
-Warden Garrison introduced **source maps** - files that mapped minified production code back to original source code. When Sentry captured an error, the stack trace showed the original file names, line numbers, and function names rather than minified gibberish like `a.b(c)` at `bundle.js:1:45923`. "Source maps are uploaded during the build process and stored securely - never served to users (that would expose your source code), but available to error tracking tools."
+Warden Garrison introduced **source maps** - files that mapped minified production code back to original source code. When Sentry captured an error, the stack trace showed the original file names, line numbers, and function names rather than minified gibberish like a.b(c) at bundle.js:1:45923. "Source maps are uploaded during the build process and stored securely - never served to users (that would expose your source code), but available to error tracking tools."
 
 She demonstrated the debugging workflow: an alert fired (Sentry error spike), the engineer opened the Sentry dashboard, reviewed the error with its original stack trace (thanks to source maps), examined the breadcrumbs (sequence of user actions and network requests leading to the error), watched the session replay (video-like reconstruction of the user's screen), and identified the root cause - all without accessing the user's machine.
 
@@ -10698,13 +10698,13 @@ Binary displayed the paradigm: "Client fetching: render → useEffect → fetch 
 
 **Story Group 1:**
 
-Datum demonstrated an **async Server Component**: `async function ProductPage({ params }) { const product = await db.product.findUnique({ where: { id: params.id } }); return <ProductDetails product={product} />; }`. The component awaited data from the database and rendered. No useState for data, no useEffect for fetching, no loading state management. "The server has direct access to the database. Why send a request from the browser to an API that queries the database, when the component can query the database directly?"
+Datum demonstrated an **async Server Component**: an asynchronous ProductPage function that received route parameters, awaited a database query to find a product by ID, and returned a ProductDetails component with that product data. The component awaited data from the database and rendered. No useState for data, no useEffect for fetching, no loading state management. "The server has direct access to the database. Why send a request from the browser to an API that queries the database, when the component can query the database directly?"
 
 She showed the data fetching hierarchy: **database queries** (direct access via Prisma, Drizzle, or raw SQL), **internal API calls** (calling your own services), and **external API calls** (third-party services). All used await directly in the component body. "Each data source is just a function call. The component awaits it, uses the result, renders JSX."
 
 **Story Group 2:**
 
-"Multiple data sources create a problem," Datum said. She showed a dashboard page that needed user data, recent orders, and analytics - three independent data sources. Fetching sequentially (await user, then await orders, then await analytics) created a waterfall - each request waited for the previous one to complete. The solution: **Promise.all** - fetching all three in parallel. `const [user, orders, analytics] = await Promise.all([getUser(), getOrders(), getAnalytics()])`.
+"Multiple data sources create a problem," Datum said. She showed a dashboard page that needed user data, recent orders, and analytics - three independent data sources. Fetching sequentially (await user, then await orders, then await analytics) created a waterfall - each request waited for the previous one to complete. The solution: **Promise.all** - fetching all three in parallel, destructuring the results into user, orders, and analytics variables from a single awaited Promise.all that called getUser, getOrders, and getAnalytics concurrently.
 
 She demonstrated **component-level fetching**: instead of fetching all data in the parent and passing it down, each child component fetched its own data. UserProfile awaited getUser(). OrderList awaited getOrders(). AnalyticsDashboard awaited getAnalytics(). "React deduplicates identical requests automatically - if two components request the same data, only one fetch executes. This is composition applied to data fetching."
 
@@ -10741,17 +10741,17 @@ Server Components are async functions that await data (database queries, API cal
 
 Datum explained Next.js's caching layers. The **Request Memoization** layer deduplicated identical fetch calls within a single request (calling getUser(id) in three components resulted in one database query). The **Data Cache** stored fetch results across requests - a product page visited by 1,000 users made one database query, not 1,000. The **Full Route Cache** stored the entire rendered HTML of static pages, serving them instantly without any rendering at all.
 
-"Caching is automatic for fetch() calls in Server Components," Datum said. She showed the control: `fetch(url, { cache: 'force-cache' })` cached indefinitely (default for static data), `fetch(url, { cache: 'no-store' })` fetched fresh on every request (for dynamic data like user-specific content), and `fetch(url, { next: { revalidate: 3600 } })` cached but refreshed after one hour.
+"Caching is automatic for fetch() calls in Server Components," Datum said. She showed the control: calling fetch with a force-cache option cached indefinitely (default for static data), calling fetch with a no-store option fetched fresh on every request (for dynamic data like user-specific content), and calling fetch with a revalidate interval of 3600 seconds cached but refreshed after one hour.
 
 **Story Group 2:**
 
 "Caching is useless without revalidation," Datum said. She introduced two strategies. **Time-based revalidation**: cache data for a fixed duration (revalidate: 60 means serve cached data for 60 seconds, then fetch fresh on the next request). The stale data was still served while the fresh data was fetched in the background - users never waited, but the data was at most 60 seconds old.
 
-**On-demand revalidation**: explicitly invalidating cached data when something changed. After a user updated their profile, calling `revalidatePath('/profile')` told Next.js to re-render the profile page on the next request. After a product price changed, calling `revalidateTag('products')` invalidated all cached data tagged with 'products'. "Time-based for content that changes gradually. On-demand for content that changes in response to user actions."
+**On-demand revalidation**: explicitly invalidating cached data when something changed. After a user updated their profile, calling revalidatePath for the profile route told Next.js to re-render the profile page on the next request. After a product price changed, calling revalidateTag for 'products' invalidated all cached data tagged with 'products'. "Time-based for content that changes gradually. On-demand for content that changes in response to user actions."
 
 **Story Group 3:**
 
-Datum showed **cache tags**: labeling fetch calls with tags (`fetch(url, { next: { tags: ['products', 'featured'] } })`), then invalidating all data with a specific tag using `revalidateTag('products')`. "Tags create relationships between data and pages. Updating a product invalidates every page that displays products - the product list, the featured section, the search results - without knowing all those pages in advance."
+Datum showed **cache tags**: labeling fetch calls with tag arrays (such as 'products' and 'featured') passed through the next configuration option, then invalidating all data with a specific tag by calling revalidateTag. "Tags create relationships between data and pages. Updating a product invalidates every page that displays products - the product list, the featured section, the search results - without knowing all those pages in advance."
 
 Aria built a caching strategy: product listings cached for 5 minutes with time-based revalidation (products don't change every second), user profiles fetched fresh on every request (user-specific, can't be shared), and a product update action that called revalidateTag('products') to instantly refresh all product pages after an admin edit.
 
@@ -10782,7 +10782,7 @@ Next.js caching operates at three levels: Request Memoization (deduplicates iden
 
 Datum demonstrated **Streaming SSR**: instead of rendering the entire page and sending it all at once, the server sent the HTML shell (layout, navigation, headers) immediately, then streamed in each data-dependent section as its data resolved. The user saw the page structure in 50ms, the user data filled in at 50ms, orders appeared at 200ms, and analytics loaded at 2000ms. "The total time is the same - 2 seconds. But the perceived time is 50ms because the user sees content immediately."
 
-She showed the mechanism: **React Suspense**. Wrapping a Server Component in `<Suspense fallback={<Loading />}>` told React to stream the fallback immediately, then replace it with the real content when the async component resolved. "Suspense is the streaming boundary. Each Suspense wrapper is an independent streaming unit."
+She showed the mechanism: **React Suspense**. Wrapping a Server Component in a Suspense boundary with a loading fallback told React to stream the fallback immediately, then replace it with the real content when the async component resolved. "Suspense is the streaming boundary. Each Suspense wrapper is an independent streaming unit."
 
 **Story Group 2:**
 
@@ -10853,13 +10853,13 @@ Binary displayed the rendering spectrum: "Build time (static) → Revalidation i
 
 Tempus demonstrated **Static Site Generation (SSG)**: pages rendered at build time and stored as HTML files. When a user requested a statically generated page, the server simply returned the pre-built HTML file - no rendering, no data fetching, no computation. "A static page loads in milliseconds because there's nothing to compute. The CDN serves a file. That's it."
 
-In Next.js, a page was static by default if it didn't use dynamic data. A page that rendered hardcoded content, or fetched data with the default cache behavior, was automatically static. She showed `generateStaticParams` - a function that told Next.js which dynamic route parameters to pre-render at build time: for a blog with 500 posts, generateStaticParams returned all 500 slugs, and Next.js rendered 500 static HTML pages during the build.
+In Next.js, a page was static by default if it didn't use dynamic data. A page that rendered hardcoded content, or fetched data with the default cache behavior, was automatically static. She showed generateStaticParams - a function that told Next.js which dynamic route parameters to pre-render at build time: for a blog with 500 posts, generateStaticParams returned all 500 slugs, and Next.js rendered 500 static HTML pages during the build.
 
 **Story Group 2:**
 
 "Static pages are fast but frozen," Tempus said, moving to the opposite chamber. **Server-Side Rendering (SSR)** rendered pages on every request - the server fetched fresh data, rendered the component tree, and sent the resulting HTML. Every user got the latest content. "SSR is essential for pages with user-specific content (dashboards, profiles), rapidly changing data (live scores, stock prices), or content that depends on the request (search results based on query parameters)."
 
-In Next.js, a page became dynamic (SSR) when it used `cookies()`, `headers()`, `searchParams`, or fetched data with `{ cache: 'no-store' }`. "The framework detects dynamic behavior and switches the rendering strategy automatically. You don't declare 'this page is SSR' - you use dynamic features and the framework responds."
+In Next.js, a page became dynamic (SSR) when it used cookies(), headers(), searchParams, or fetched data with no-store caching. "The framework detects dynamic behavior and switches the rendering strategy automatically. You don't declare 'this page is SSR' - you use dynamic features and the framework responds."
 
 **Story Group 3:**
 
@@ -10892,9 +10892,9 @@ Static Site Generation (SSG) renders pages at build time as HTML files served fr
 
 **Story Group 1:**
 
-Tempus introduced **ISR (Incremental Static Regeneration)**: a page was statically generated at build time, served from CDN like a static page, but revalidated at a configurable interval. Setting `revalidate: 60` on a page meant: serve the static version, but every 60 seconds regenerate the page in the background with fresh data. The next visitor after regeneration got the updated page. "ISR gives you CDN speed with content that's at most 60 seconds old. For a product catalog, a news feed, or a blog - that's more than fresh enough."
+Tempus introduced **ISR (Incremental Static Regeneration)**: a page was statically generated at build time, served from CDN like a static page, but revalidated at a configurable interval. Setting revalidate: 60 on a page meant: serve the static version, but every 60 seconds regenerate the page in the background with fresh data. The next visitor after regeneration got the updated page. "ISR gives you CDN speed with content that's at most 60 seconds old. For a product catalog, a news feed, or a blog - that's more than fresh enough."
 
-She demonstrated **on-demand ISR**: instead of time-based revalidation, pages regenerated when explicitly triggered. An admin published a blog post → the CMS webhook called your API route → the API route called `revalidatePath('/blog/' + slug)` → the specific blog post page regenerated immediately. "Time-based ISR is 'eventually fresh.' On-demand ISR is 'fresh the moment content changes.'"
+She demonstrated **on-demand ISR**: instead of time-based revalidation, pages regenerated when explicitly triggered. An admin published a blog post → the CMS webhook called your API route → the API route called revalidatePath with the specific blog post path → the specific blog post page regenerated immediately. "Time-based ISR is 'eventually fresh.' On-demand ISR is 'fresh the moment content changes.'"
 
 **Story Group 2:**
 
@@ -10904,7 +10904,7 @@ She showed the **hybrid approach without PPR**: using static pages for the main 
 
 **Story Group 3:**
 
-Tempus covered **dynamic route handling**: `dynamicParams` controlling whether routes not pre-rendered at build time (a new blog post published after the build) should be generated on demand (true - render on first request and cache) or return 404 (false - only pre-rendered routes exist). She demonstrated `generateStaticParams` returning only the 100 most popular product pages, with `dynamicParams: true` allowing the remaining 10,000 products to be generated and cached on first visit.
+Tempus covered **dynamic route handling**: dynamicParams controlling whether routes not pre-rendered at build time (a new blog post published after the build) should be generated on demand (true - render on first request and cache) or return 404 (false - only pre-rendered routes exist). She demonstrated generateStaticParams returning only the 100 most popular product pages, with dynamicParams set to true allowing the remaining 10,000 products to be generated and cached on first visit.
 
 Aria built a hybrid e-commerce site: product listing pages with ISR (revalidate: 300 - fresh every 5 minutes), individual product pages with on-demand revalidation (regenerated when admin updates price), the homepage statically generated with a client-side personalized recommendations widget, and search results pages as full SSR (depend on query parameters).
 
@@ -11004,21 +11004,21 @@ Binary displayed the full circle: "Server → Client: Server Components (data do
 
 **Story Group 1:**
 
-Unitas demonstrated a **Server Action**: a function declared with 'use server' that ran on the server when called from a client component. A form's action prop pointed directly to the Server Action: `<form action={createPost}>`. When the user submitted the form, React serialized the form data, sent it to the server, the Server Action executed (validating data, writing to the database), and the page revalidated automatically.
+Unitas demonstrated a **Server Action**: a function declared with 'use server' that ran on the server when called from a client component. A form's action prop pointed directly to the Server Action. When the user submitted the form, React serialized the form data, sent it to the server, the Server Action executed (validating data, writing to the database), and the page revalidated automatically.
 
 "No API route. No fetch. No response parsing. The function definition lives in your codebase alongside the component that calls it. The 'use server' directive tells the framework to create the server endpoint automatically."
 
 **Story Group 2:**
 
-"Server Actions work with React's form hooks," Unitas said. She demonstrated **useActionState** (formerly useFormState): a hook that tracked the action's return value across submissions, enabling server-side validation messages displayed in the client. The action returned `{ errors: { title: 'Title is required' } }`, and the component rendered those errors next to the form fields.
+"Server Actions work with React's form hooks," Unitas said. She demonstrated **useActionState** (formerly useFormState): a hook that tracked the action's return value across submissions, enabling server-side validation messages displayed in the client. The action returned an errors object containing field-specific messages like "Title is required," and the component rendered those errors next to the form fields.
 
 She showed **useFormStatus**: a hook used inside a form to check whether a submission was pending, enabling a disabled submit button with a loading spinner during server processing. "The form stays interactive. The user sees feedback. The server processes the mutation. No loading state management - React handles it."
 
 **Story Group 3:**
 
-Unitas demonstrated **optimistic updates with Server Actions**: using `useOptimistic` to immediately show the expected result in the UI before the server confirmed the mutation. Adding a comment optimistically appended it to the list instantly, while the Server Action processed in the background. If the action failed, the optimistic update was rolled back. "Users experience instant feedback. The server validates and persists in the background. If something goes wrong, the UI reverts."
+Unitas demonstrated **optimistic updates with Server Actions**: using useOptimistic to immediately show the expected result in the UI before the server confirmed the mutation. Adding a comment optimistically appended it to the list instantly, while the Server Action processed in the background. If the action failed, the optimistic update was rolled back. "Users experience instant feedback. The server validates and persists in the background. If something goes wrong, the UI reverts."
 
-She showed **revalidation after mutations**: Server Actions calling `revalidatePath('/posts')` or `revalidateTag('posts')` after modifying data, ensuring all affected pages displayed the updated content on the next request. "Mutations and revalidation are a pair. Change the data, invalidate the cache. The next visit sees the fresh version."
+She showed **revalidation after mutations**: Server Actions calling revalidatePath or revalidateTag for the posts route and tag after modifying data, ensuring all affected pages displayed the updated content on the next request. "Mutations and revalidation are a pair. Change the data, invalidate the cache. The next visit sees the fresh version."
 
 Aria built a complete form system: a "Create Post" form using a Server Action with Zod validation, useActionState for error display, useFormStatus for a loading submit button, optimistic comment adding with useOptimistic, and revalidatePath to refresh the post listing after creation.
 
@@ -11047,7 +11047,7 @@ Server Actions ('use server' functions) handle client-to-server mutations withou
 
 **Story Group 1:**
 
-Unitas demonstrated **Route Handlers**: files named route.ts inside the app/ directory that defined HTTP endpoint functions. A file at app/api/products/route.ts exported functions named after HTTP methods: `export async function GET(request: Request)` handled GET requests to /api/products, `export async function POST(request: Request)` handled POST requests. "Route Handlers are API routes. They receive a standard Web Request and return a standard Web Response. They're for external consumers - webhooks, mobile apps, third-party integrations - not for your own React components."
+Unitas demonstrated **Route Handlers**: files named route.ts inside the app/ directory that defined HTTP endpoint functions. A file at app/api/products/route.ts exported async functions named after HTTP methods: a GET function that accepted a Request object handled GET requests to /api/products, and a corresponding POST function handled POST requests. "Route Handlers are API routes. They receive a standard Web Request and return a standard Web Response. They're for external consumers - webhooks, mobile apps, third-party integrations - not for your own React components."
 
 She showed the distinction: Server Actions for your own UI (type-safe, integrated with React forms, automatic revalidation). Route Handlers for external consumers (standard HTTP, JSON responses, CORS headers, authentication tokens). "If the caller is your React component, use a Server Action. If the caller is anything else, use a Route Handler."
 
@@ -11165,15 +11165,15 @@ Inclusiva introduced the **POUR principles**. **Perceivable**: information must 
 
 **Story Group 2:**
 
-"Semantic HTML is the foundation of accessibility," Inclusiva said. She demonstrated the difference between `<div onClick={...}>Click me</div>` (inaccessible - no keyboard support, no screen reader role, no focus indication) and `<button onClick={...}>Click me</button>` (accessible by default - keyboard operable, announced as "button" to screen readers, focusable, has click and keypress handlers built in).
+"Semantic HTML is the foundation of accessibility," Inclusiva said. She demonstrated the difference between a div styled to look like a button (inaccessible - no keyboard support, no screen reader role, no focus indication) and a real button element (accessible by default - keyboard operable, announced as "button" to screen readers, focusable, has click and keypress handlers built in).
 
-She showed semantic elements: `<nav>` for navigation (screen readers can jump to it), `<main>` for primary content, `<header>` and `<footer>` for page structure, `<article>` for self-contained content, `<section>` with headings for content groups, and `<h1>` through `<h6>` creating a heading hierarchy that screen reader users navigate like a table of contents. "A screen reader user pressing 'H' jumps between headings. If your headings are divs with large font sizes, that navigation doesn't work."
+She showed semantic elements: nav for navigation (screen readers can jump to it), main for primary content, header and footer for page structure, article for self-contained content, section with headings for content groups, and h1 through h6 creating a heading hierarchy that screen reader users navigate like a table of contents. "A screen reader user pressing 'H' jumps between headings. If your headings are divs with large font sizes, that navigation doesn't work."
 
 **Story Group 3:**
 
 Inclusiva covered **common accessibility failures**: images without alt text (screen readers announce the filename - "IMG_4592.jpg" - useless), form inputs without labels (screen readers can't tell the user what information to enter), clickable divs instead of buttons (keyboard users can't activate them), insufficient color contrast (text disappears for users with low vision), and auto-playing media (disorienting for screen reader users).
 
-Aria rebuilt a sample page using semantic HTML: replaced div-based navigation with `<nav>` containing a `<ul>` of links, replaced div buttons with `<button>` elements, added alt text to every image (descriptive for informational images, empty alt="" for decorative images), connected form inputs to `<label>` elements via htmlFor, and structured content with proper heading hierarchy.
+Aria rebuilt a sample page using semantic HTML: replaced div-based navigation with a nav element containing an unordered list of links, replaced div buttons with real button elements, added alt text to every image (descriptive for informational images, empty for decorative images), connected form inputs to label elements via htmlFor, and structured content with proper heading hierarchy.
 
 Binary displayed POUR mastery: "POUR: Perceivable (alt text, contrast, captions). Operable (keyboard, timing, navigation). Understandable (readable, predictable, error help). Robust (semantic HTML, valid ARIA). Foundation: semantic HTML over div-soup."
 
@@ -11200,15 +11200,15 @@ WCAG's POUR principles organize all accessibility requirements. Perceivable: tex
 
 **Story Group 1:**
 
-Inclusiva introduced the **first rule of ARIA**: don't use ARIA if a native HTML element already provides the behavior. "If you need a button, use `<button>`. If you need a checkbox, use `<input type='checkbox'>`. ARIA exists for patterns that HTML doesn't cover natively - tabs, comboboxes, tree views, dialogs. Using ARIA on a div to make it behave like a button is always worse than using a real button."
+Inclusiva introduced the **first rule of ARIA**: don't use ARIA if a native HTML element already provides the behavior. "If you need a button, use a button element. If you need a checkbox, use an input checkbox. ARIA exists for patterns that HTML doesn't cover natively - tabs, comboboxes, tree views, dialogs. Using ARIA on a div to make it behave like a button is always worse than using a real button."
 
 She explained the three categories of ARIA attributes: **roles** (what the element is - role="tabpanel", role="dialog", role="alert"), **properties** (characteristics - aria-label, aria-describedby, aria-required), and **states** (current condition - aria-expanded="true", aria-selected="false", aria-hidden="true"). "Roles define the widget. Properties describe it. States reflect its current condition."
 
 **Story Group 2:**
 
-"Landmark roles organize the page," Inclusiva said. She showed how semantic elements mapped to landmarks: `<nav>` → navigation, `<main>` → main, `<header>` → banner, `<footer>` → contentinfo, `<aside>` → complementary. Screen reader users could jump between landmarks with a single keypress, navigating the page's structure without reading every word.
+"Landmark roles organize the page," Inclusiva said. She showed how semantic elements mapped to landmarks: nav became navigation, main stayed main, header became banner, footer became contentinfo, aside became complementary. Screen reader users could jump between landmarks with a single keypress, navigating the page's structure without reading every word.
 
-She demonstrated ARIA attributes for dynamic content: **aria-live** regions (announcing content changes to screen readers - "polite" waited for the user to finish, "assertive" interrupted immediately), **aria-expanded** for collapsible sections (screen readers announced "collapsed" or "expanded"), **aria-describedby** linking elements to their descriptions (an input linked to its error message), and **aria-label** providing accessible names for elements without visible text (icon-only buttons: `<button aria-label="Close">✕</button>`).
+She demonstrated ARIA attributes for dynamic content: **aria-live** regions (announcing content changes to screen readers - "polite" waited for the user to finish, "assertive" interrupted immediately), **aria-expanded** for collapsible sections (screen readers announced "collapsed" or "expanded"), **aria-describedby** linking elements to their descriptions (an input linked to its error message), and **aria-label** providing accessible names for elements without visible text (an icon-only close button, for example, needed aria-label to announce its purpose to screen readers).
 
 **Story Group 3:**
 
@@ -11241,9 +11241,9 @@ ARIA extends HTML for complex widgets that lack native elements. Three categorie
 
 **Story Group 1:**
 
-Inclusiva demonstrated **form labeling**: every input needed an accessible name. The preferred method: `<label htmlFor="email">Email</label><input id="email" />` - clicking the label focused the input, and screen readers announced the label when the input received focus. For inputs where a visible label wasn't desired (search fields), aria-label provided an invisible accessible name: `<input aria-label="Search products" />`.
+Inclusiva demonstrated **form labeling**: every input needed an accessible name. The preferred method was pairing a label element with htmlFor pointing to the input's id - clicking the label focused the input, and screen readers announced the label when the input received focus. For inputs where a visible label wasn't desired (search fields), aria-label provided an invisible accessible name.
 
-She showed **group labeling**: related inputs wrapped in `<fieldset>` with `<legend>` - a group of radio buttons for "Shipping Method" used fieldset/legend so screen readers announced "Shipping Method" before each radio option rather than just "Standard" or "Express" without context. "Without fieldset/legend, a screen reader user tabbing through radio buttons hears option names without knowing what they're choosing between."
+She showed **group labeling**: related inputs wrapped in fieldset with legend - a group of radio buttons for "Shipping Method" used fieldset/legend so screen readers announced "Shipping Method" before each radio option rather than just "Standard" or "Express" without context. "Without fieldset/legend, a screen reader user tabbing through radio buttons hears option names without knowing what they're choosing between."
 
 **Story Group 2:**
 
@@ -11275,7 +11275,7 @@ Sovereign of the Harmony Halls, she views accessibility as a fundamental quality
 - What makes fieldset/legend essential for radio button and checkbox groups?
 
 **Aria's Journal - Day 171**
-*Accessible forms! Labels: <label htmlFor="email"> + <input id="email"> - click label focuses input, screen readers announce it. Groups: fieldset + legend for related inputs (radio buttons need context). Errors: aria-describedby links input to error message, aria-invalid marks fields, aria-live announces errors on appear. Timing: validate on blur (immediate feedback) + submit (all errors), NEVER per-keystroke (unusable for screen readers). Built registration form: labels, fieldset, blur validation, error summary with aria-live, loading submit, React Aria combobox. Inclusiva's wisdom: the curb cut effect - accessibility improvements help everyone. Tomorrow: Guardian Keynav and interaction patterns - keyboard navigation and focus management!*
+*Accessible forms! Labels: using label elements with htmlFor linking to input IDs - clicking the label focuses the input, and screen readers announce it. Groups: fieldset and legend for related inputs (radio buttons need context). Errors: aria-describedby links input to error message, aria-invalid marks fields, aria-live announces errors on appear. Timing: validate on blur (immediate feedback) plus on submit (all errors), NEVER per-keystroke (unusable for screen readers). Built registration form: labels, fieldset, blur validation, error summary with aria-live, loading submit, React Aria combobox. Inclusiva's wisdom: the curb cut effect - accessibility improvements help everyone. Tomorrow: Guardian Keynav and interaction patterns - keyboard navigation and focus management!*
 
 **Lesson Ending:**
 
@@ -11361,7 +11361,7 @@ She showed the implementation in React: using a ref to store the trigger element
 
 "Route changes are the most overlooked focus problem," Keynav said. In a client-side React application, navigating from /products to /product/123 updated the DOM but didn't move focus. A sighted user saw the new page. A screen reader user heard nothing - focus remained on the navigation link they clicked, and the new content was below, unannounced.
 
-She demonstrated the solution: on route change, move focus to the new page's `<h1>` heading (or a visually hidden element at the top of the main content). "The heading announces the new page to screen readers, and the user is positioned to Tab through the new content." In Next.js, this was handled automatically by the framework. In React Router, a custom hook listened for route changes and managed focus.
+She demonstrated the solution: on route change, move focus to the new page's main heading (or a visually hidden element at the top of the main content). "The heading announces the new page to screen readers, and the user is positioned to Tab through the new content." In Next.js, this was handled automatically by the framework. In React Router, a custom hook listened for route changes and managed focus.
 
 **Story Group 3:**
 
@@ -11477,7 +11477,7 @@ She showed common failures: light gray text on white backgrounds (popular in mod
 
 **Story Group 3:**
 
-Spectrum demonstrated **contrast in practice for React applications**: using CSS custom properties for a color system with built-in contrast compliance (--color-text-primary with contrast ratio verified against --color-bg-primary), implementing **dark mode** with maintained contrast ratios (dark mode is not just "invert colors" - each combination must be verified), and **high contrast mode** support (Windows High Contrast mode overrides your colors - use semantic CSS like `background-color: Canvas; color: CanvasText` for automatic adaptation).
+Spectrum demonstrated **contrast in practice for React applications**: using CSS custom properties for a color system with built-in contrast compliance (--color-text-primary with contrast ratio verified against --color-bg-primary), implementing **dark mode** with maintained contrast ratios (dark mode is not just "invert colors" - each combination must be verified), and **high contrast mode** support (Windows High Contrast mode overrides your colors - use semantic CSS system colors like Canvas and CanvasText for automatic adaptation).
 
 Aria audited a sample application: replaced color-only error indicators with icon + text + color, verified all text met 4.5:1 contrast ratios using DevTools, added an overlay to text-over-image sections, implemented a dark mode with verified contrast ratios, and tested with color vision deficiency simulations.
 
@@ -11506,15 +11506,15 @@ Information must never be conveyed through color alone - supplement with icons, 
 
 **Story Group 1:**
 
-Spectrum introduced **prefers-reduced-motion**: a media query that detected when a user had requested reduced motion in their operating system settings. `@media (prefers-reduced-motion: reduce)` allowed CSS to disable or simplify animations for these users. "This isn't optional. WCAG requires that animations can be paused, stopped, or hidden. prefers-reduced-motion is the simplest way to comply."
+Spectrum introduced **prefers-reduced-motion**: a media query that detected when a user had requested reduced motion in their operating system settings. A CSS media query checking for prefers-reduced-motion: reduce allowed styles to disable or simplify animations for these users. "This isn't optional. WCAG requires that animations can be paused, stopped, or hidden. prefers-reduced-motion is the simplest way to comply."
 
-She demonstrated the pattern in CSS: `@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }` as a global reset, or more nuanced per-component adjustments - replacing a parallax scroll with a static layout, replacing a sliding page transition with a simple fade, and replacing an animated loading spinner with a static progress indicator.
+She demonstrated the pattern in CSS: a prefers-reduced-motion media query that applied a global reset by setting all animation and transition durations to near-zero, or more nuanced per-component adjustments - replacing a parallax scroll with a static layout, replacing a sliding page transition with a simple fade, and replacing an animated loading spinner with a static progress indicator.
 
 **Story Group 2:**
 
-"In React, motion preferences should affect component behavior," Spectrum said. She demonstrated a **useReducedMotion** hook: `const prefersReduced = useMediaQuery('(prefers-reduced-motion: reduce)')`. Components used this hook to choose between animated and non-animated variants. A carousel that auto-advanced every 5 seconds stopped auto-advancing when reduced motion was preferred. A page transition component used a crossfade instead of a slide. An animated chart used instant values instead of animated number counting.
+"In React, motion preferences should affect component behavior," Spectrum said. She demonstrated a **useReducedMotion** hook that called useMediaQuery with the prefers-reduced-motion: reduce query to detect the user's motion preference. Components used this hook to choose between animated and non-animated variants. A carousel that auto-advanced every 5 seconds stopped auto-advancing when reduced motion was preferred. A page transition component used a crossfade instead of a slide. An animated chart used instant values instead of animated number counting.
 
-She showed **Framer Motion** (now just Motion) integration: Motion's `<AnimatePresence>` and `<motion.div>` components that could be configured to respect prefers-reduced-motion automatically, reducing or removing animations based on the user's preference. "The animation library should handle the preference. If it doesn't, wrap it yourself."
+She showed **Framer Motion** (now just Motion) integration: Motion's AnimatePresence and motion.div components that could be configured to respect prefers-reduced-motion automatically, reducing or removing animations based on the user's preference. "The animation library should handle the preference. If it doesn't, wrap it yourself."
 
 **Story Group 3:**
 
@@ -11618,7 +11618,7 @@ Binary displayed the testing pyramid: "Automated: 30% of issues caught (fast, co
 
 **Story Group 1:**
 
-Verificus introduced **axe-core** - the most widely used accessibility testing engine, available as a browser extension (axe DevTools), a testing library (@axe-core/react for development overlay, jest-axe for unit tests), and a CI integration. She demonstrated running axe in a Jest test: `const results = await axe(container); expect(results).toHaveNoViolations()` - this scanned the rendered component for accessibility violations and failed the test with specific violation details (which element, which rule, how to fix).
+Verificus introduced **axe-core** - the most widely used accessibility testing engine, available as a browser extension (axe DevTools), a testing library (@axe-core/react for development overlay, jest-axe for unit tests), and a CI integration. She demonstrated running axe in a Jest test: passing the rendered container to axe, then asserting the results had no violations - this scanned the rendered component for accessibility violations and failed the test with specific violation details (which element, which rule, how to fix).
 
 "axe-core checks 57+ accessibility rules covering WCAG A and AA. It's not perfect - it can only check what it can compute (structural issues, attribute presence, contrast ratios). It can't check if your alt text is meaningful or if your Tab order makes sense."
 
