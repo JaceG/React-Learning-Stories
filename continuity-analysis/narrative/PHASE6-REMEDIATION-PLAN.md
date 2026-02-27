@@ -92,7 +92,7 @@ The remediation is organized into 6 phases, from most mechanical/safe to most ju
 
 The narrative uses both "Props Messengers Guild" (lines 125, 130, 138, 214, 224) and "Props Messenger Guild" (lines 232, 234, 281, and most other occurrences).
 
-**Decision needed:** Pick one canonical name. "Props Messenger Guild" (singular) is more common in the narrative.
+**Decision: Singular.** "Props Messenger Guild" is canonical.
 
 **Action:** Search for "Props Messengers Guild" → replace all with "Props Messenger Guild"
 
@@ -106,12 +106,12 @@ Line 697 says "Lifecycle Observatory" but every other reference says "Lifecycle 
 
 Several section headers don't match the names used in the narrative body:
 
-| Section Header | Narrative Uses | Action |
-|----------------|---------------|--------|
-| `## 7.4 SpeedSanctum` | "Velocity Crucible" throughout | Rename header to `## 7.4 VelocityCrucible` |
-| `## 8.1 TestingTower` | "Testing Gauntlet" throughout | Rename header to `## 8.1 TestingGauntlet` |
+| Section Header | Narrative Uses |
+|----------------|---------------|
+| `## 7.4 SpeedSanctum` | "Velocity Crucible" throughout |
+| `## 8.1 TestingTower` | "Testing Gauntlet" throughout |
 
-*Note: If these slugs are used by code/tooling, check dependencies before renaming.*
+**Decision: Leave headers as-is for now.** These slugs are embedded in the codebase (directory names, component names, route paths, CSS files, imports). Renaming the codebase to match the narrative is a separate future task. The narrative body continues to use the in-world location names; the header slug is just a technical identifier.
 
 ### 2.4 Em Dash Standardization
 
@@ -120,15 +120,17 @@ The document mixes:
 - Spaced hyphen: ` - ` (common in LP1-LP7)
 - Double hyphen: `--` (rare)
 
-**Decision needed:** Pick one convention. Recommend `—` (em dash, no spaces) for narrative prose, ` - ` for Markdown list items.
+**Decision: Spaced hyphens.** Use ` - ` throughout for narrative prose. Consistent with LP1-LP7 style.
 
-**Action:** Global pass to standardize. This is a large number of changes so should be done carefully.
+**Action:** Global pass to convert em dashes (`—`) to spaced hyphens (` - `). This primarily affects LP8-LP15 which were written with em dashes in Phase 5.
 
 ### 2.5 LP8.1 Opener: "Lag Monster" vs. "Performance Plague"
 
 Line 6640 says "defeating the Lag Monster in the Velocity Crucible." The LP7.4 narrative uses both "Lag Monster" and "Performance Plague" / "Performance anomalies." The story-bible uses "Lag Monster."
 
-**Decision needed:** Which term does the narrative actually use in LP7.4? Check and align the LP8.1 opener to match.
+**Decision: "Performance Plague."** LP7.4 uses "Performance Plague" throughout (lines 6470, 6476, 6529, 6555, 6561). The LP8.1 opener incorrectly says "Lag Monster."
+
+**Action:** Change line 6640 from "defeating the Lag Monster" → "defeating the Performance Plague"
 
 ---
 
@@ -159,9 +161,9 @@ Around line 4285, Formeus begins a long speech with an opening quotation mark th
 
 LP1-LP9 use `### 📖 Lesson Opener` (H3 with emoji). LP10-LP15 use `**Lesson Opener:**` (bold label).
 
-**Decision needed:** Pick one format.
+**Decision: Bold label format.** Use `**Lesson Opener:**` throughout.
 
-**Action:** Standardize all to the chosen format. If `### 📖 Lesson Opener` is the standard (used in the majority of the doc), update LP10-LP15 to match.
+**Action:** Convert LP1-LP9's `### 📖 Lesson Opener` headings to `**Lesson Opener:**` bold labels to match LP10-LP15.
 
 ### 3.4 Wisdom Section Misattribution (LP12.3)
 
@@ -201,7 +203,9 @@ This passage has three problems in close proximity:
 2. The DataTable challenge describes buttons as "edit" and "delete" in one paragraph, then "complete" and "delete" in the next
 3. The two paragraphs appear to be duplicate drafts of the same challenge
 
-**Action:** Merge into one clean paragraph. Pick one button pair ("edit" and "delete" matches the challenge description better). Remove the duplicate.
+**Decision: "edit" and "delete."** Matches the challenge description.
+
+**Action:** Merge into one clean paragraph using "edit" and "delete." Remove the duplicate paragraph that says "complete" and "delete."
 
 ### 4.3 LP5.2 Line ~5844: "Southern Quarter's Context Hall"
 
@@ -219,7 +223,9 @@ The lesson ending claims Aria built a "collaborative editor with multiple cursor
 
 Chapter 1 uses Vitest as the test runner, but the Lesson Ending switches to Jest.
 
-**Action:** Pick one (Vitest is more modern and aligns with the Vite-focused LP13.1). Standardize throughout LP13.2.
+**Decision: Vitest.** LP13.1 focuses on Vite as the modern build tool, so Vitest (Vite's native test runner) is more consistent and avoids confusing the reader who just learned about Vite. Jest is the older standard and would feel like a step backward in context.
+
+**Action:** Change any Jest references in LP13.2 to Vitest.
 
 ### 4.6 "LP" Meta-References in Narrative
 
@@ -243,10 +249,11 @@ Around line 5164, there's a reference to "Testing Gauntlet patterns" while Aria 
 
 LP1.4 teaches class lifecycle methods deeply (3 chapters). LP2.2 introduces hooks as the modern replacement. There is no bridging language telling the reader that class lifecycle methods are the "traditional approach" being superseded.
 
-**Action options (pick one):**
-- **Option A:** Add 2-3 sentences to LP1.4's Lesson Ending where Chronos hints that "newer patterns have emerged" or "the functional approach simplifies these rituals"
-- **Option B:** Add framing to LP2.2's opener where the Effect Sage explicitly says "Chronos taught you the classical lifecycle methods — I will show you how one hook replaces them all"
-- **Option C:** Both — gentle foreshadowing in LP1.4 and explicit bridge in LP2.2
+**Decision: Both (Option C).** Gentle foreshadowing in LP1.4 and explicit bridge in LP2.2.
+
+**Action:**
+- In LP1.4's Lesson Ending, add 2-3 sentences where Chronos hints that "newer, simpler patterns have emerged that unify these separate rituals" - foreshadowing without undermining what was just taught
+- In LP2.2's opener or Ch2, add framing where the narrative explicitly connects useEffect to the class lifecycle methods Chronos taught - "where Chronos had taught separate methods for each phase of a component's life, this single hook unified them all"
 
 ### 5.2 LP3 Overlap Acknowledgment
 
@@ -339,7 +346,7 @@ Read through the corrected narrative and update `kingdom-geography.md`:
 - **Location descriptions:** Match atmosphere, architecture, and visual details to what the narrative actually describes — the geography doc was written before many narrative sections were fleshed out
 - **Master assignments:** Verify each location's "Master" field matches the narrative
 - **LP7 Performance locations:** The narrative places performance work in the Northern Peaks/Mountains. Verify the geography doc matches (it may have a stale "Southern Quarter" reference for some performance locations)
-- **LP15 location name:** The narrative uses "Harmony Halls" — the geography doc should match, not use "Inclusive Empire" (or vice versa — pick one and align both)
+- **LP15 location name:** The narrative uses "Harmony Halls" — this is canonical. Update the geography doc from "Inclusive Empire" to "Harmony Halls"
 - **Connection/border descriptions:** Check that the geographic connections between regions make sense with how Aria actually travels between them in the narrative
 
 ### 7.4 Cross-Document Consistency Check
