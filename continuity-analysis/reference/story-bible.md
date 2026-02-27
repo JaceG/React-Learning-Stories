@@ -243,7 +243,7 @@
 - **Appears In**: LP7.4 SpeedSanctum (Ch1-3)
 - **Location**: Northern Peaks - Velocity Crucible (carved into mountain peak)
 - **Appearance**: Robes shimmering with optimization symbols, emerges from mist
-- **Teaches**: Lag Monster (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
+- **Teaches**: Performance Plague (feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (which components render, how long, why), memoization (React.memo for components, useMemo for calculations), useCallback (stabilizes function references), Trinity of Optimization (React.memo + useMemo + useCallback), strategic optimization (profile first, identify bottlenecks)
 
 ### LP8: Testing Debugging
 
@@ -260,7 +260,7 @@
 - **Location**: Underground Realms - Testing Gauntlet (Jasmine's companion)
 - **Appearance**: Wise owl, eyes glowing when spotting bugs, keen vision
 - **Teaches**: Bug identification (can see code's true behavior), speaks in riddles with valuable insights, bug spotting in untested code (glowing potential bugs)
-- **Note**: **IMPORTANT**: Debuggora stays with Jasmine at the Testing Gauntlet. Does NOT accompany Aria. Does NOT appear in LP8.2-8.4 or LP9-15.
+- **Note**: **IMPORTANT**: Debuggora stays with Jasmine at the Testing Gauntlet. Does NOT accompany Aria. Does not appear in later lessons.
 
 **Innkeeper Cypress**
 - **Role**: Master of component harmony and integration testing
@@ -406,28 +406,28 @@
 ### LP13: Build Deploy
 
 **Shipwright Vex**
-- **Role**: Pragmatic engineer of the Build Central Hub, transforms source code into production-ready bundles
+- **Role**: Pragmatic engineer of the Central Hub, transforms source code into production-ready bundles
 - **Appears In**: LP13.1 BuildSystems (Ch1-3)
-- **Location**: Coastal Region - Build Central Hub (raw source code enters one end, optimized production bundles emerge from the other)
+- **Location**: Build and Deploy Territories - Central Hub (raw source code enters one end, optimized production bundles emerge from the other)
 - **Teaches**: Build tools as machines with understandable parts (not magic), Webpack (pioneer, bundles everything upfront, powerful but slow), Vite (native ES modules in dev, esbuild pre-bundling, Rollup for production), production pipeline (tree shaking, code splitting, minification), HMR (hot module replacement), build configuration and plugins, build optimization strategies, "every byte saved is faster journey"
 - **Note**: Build-tool-agnostic name (not tied to any specific bundler)
 
 **Captain Pipeline**
-- **Role**: Commander of Automation Harbor, master of CI/CD
+- **Role**: Commander of the Pipeline Sector, master of CI/CD
 - **Appears In**: LP13.2 CICDPipelines (Ch1-3)
-- **Location**: Automation Harbor (beyond Optimization Shipyard, code flows through glowing channels), Pipeline Workshop, Continuous Fleet
+- **Location**: Build and Deploy Territories - Pipeline Sector (conveyor belts carry code through automated stages)
 - **Teaches**: CI/CD automation (Continuous Integration/Delivery/Deployment), automated workflows (Source→Build→Test→Deploy), CI/CD tools (GitHub Actions/GitLab CI/Jenkins/CircleCI), pipeline gates (lint→test→build→deploy), advanced deployment strategies (Blue-Green zero downtime, Canary gradual rollout, Rolling sequential, Feature Flags decouple deploy from release), Progressive Delivery, GitOps, Chaos Engineering, DORA metrics (deployment frequency/lead time/MTTR), "manual deployment like rowing, CI/CD like favorable winds that never stop", "make deployments so safe and routine they become boring"
 
-**Navigator Vercel** (also called Navigator Hosting)
-- **Role**: Master navigator of Platform Archipelago, expert guide through hosting options
+**Navigator Vercel**
+- **Role**: Navigator of the Hosting Sector, expert guide through hosting options
 - **Appears In**: LP13.3 HostingAndDeployment (Ch1-3)
-- **Location**: Coastal Region - Platform Archipelago (helm of exploration vessel, visiting offshore hosting islands)
+- **Location**: Build and Deploy Territories - Hosting Sector
 - **Teaches**: Choosing hosting platforms (match needs with strengths - ease/scalability/cost/features/team expertise), Platform islands (Vercel zero-config fastest, Netlify static/JAMstack, AWS infinite scale complex, Railway full-stack ease), deployment ceremonies (each platform has unique ritual/steps/configurations), environment variables (never commit secrets), custom domains (DNS propagation 5-48 hours), SSL configuration, global network (edge functions near users, CDN distribution cache globally, geographic routing optimal paths), performance optimization (Brotli/HTTP/3/image), Core Web Vitals, "no 'best' platform - best for YOUR needs"
 
 **Warden Garrison**
-- **Role**: Master strategist of Production War Room, oversees all deployment operations
+- **Role**: Commander of the Operations Center, oversees all deployment operations
 - **Appears In**: LP13.4 ProductionReadiness (Ch1-3)
-- **Location**: Coastal Region - Production War Room (holographic dashboards, monitoring station, strategic command center)
+- **Location**: Build and Deploy Territories - Operations Center (dashboards, alert feeds, incident timelines)
 - **Teaches**: Production readiness checks (error boundaries, health endpoints, security headers, environment validation), monitoring arsenal (Sentry errors, Datadog APM, New Relic application, PagerDuty incidents), comprehensive monitoring (full visibility coverage), real-time metrics dashboards (uptime/error rate/performance), battle-tested deployment strategies (Blue-Green 99.9% uptime, Canary 85% risk reduction, Rolling 60% resource efficiency), incident response (Detection→Response→Mitigation→Resolution), automated incident response, rollback procedures, production excellence checklist, "every deployment is mission - prepare for success plan for failure", "battle against downtime won through preparation not luck", "best incident is one that never happens"
 
 ### LP14: Full-Stack React
@@ -745,7 +745,7 @@
 - Keeper of the Infinite → "title granted", "mastering every virtualization technique", "no data will overwhelm"
 
 **LP7.4 SpeedSanctum**:
-- Lag Monster → "awakened threat", "feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles"
+- Performance Plague → "awakened threat", "feeds on inefficiency/unnecessary re-renders/memory leaks/bloated bundles"
 - Velocity Crucible → "legendary crucible" in Northern Mountains, "ancient optimization techniques"
 - Performance anomalies → "slowing kingdom", "stuttering interfaces/frozen forms", "components flicker erratically"
 - React DevTools Profiler → "vital signs crystals", "lens into performance realm", "first weapon"
@@ -981,7 +981,7 @@
 ### LP13: Build Deploy
 
 **LP13.1 BuildSystems**:
-- Build Central Hub → "raw source code enters one end, optimized production bundles emerge from the other"
+- Central Hub → "raw source code enters one end, optimized production bundles emerge from the other"
 - Build tools → "machines with understandable parts, not magic"
 - Webpack → "pioneer, bundles everything upfront, powerful but slow"
 - Vite → "native ES modules in dev, esbuild pre-bundling, Rollup for production"
@@ -989,20 +989,20 @@
 - HMR → "update changed modules without full reload"
 
 **LP13.2 CICDPipelines**:
-- Automation Harbor → "code flows through glowing channels"
+- Pipeline Sector → "code flows through automated stages"
 - CI/CD → "manual deployment like rowing, CI/CD like favorable winds that never stop"
 - Pipeline → "Source → Build → Test → Deploy", "automated workflows"
 - Deployment strategies → Blue-Green (zero downtime), Canary (gradual rollout), Rolling (sequential)
 - "Make deployments so safe and routine they become boring"
 
 **LP13.3 HostingAndDeployment**:
-- Platform Archipelago → "offshore hosting islands", "each platform has unique strengths"
+- Hosting Sector → "towers and networks, CDN nodes, server clusters", "each platform has unique strengths"
 - Hosting platforms → Vercel (zero-config), Netlify (static/JAMstack), AWS (infinite scale), Railway (full-stack ease)
 - Edge functions → "near users", CDN → "global distribution"
 - "No best platform — best for YOUR needs"
 
 **LP13.4 ProductionReadiness**:
-- Production War Room → "holographic dashboards, monitoring station"
+- Operations Center → "dashboards, alert feeds, incident timelines"
 - Monitoring → Sentry (errors), Datadog (APM), New Relic (application)
 - Deployment strategies → "battle-tested", "every deployment is mission"
 - Incident response → Detection → Response → Mitigation → Resolution
@@ -1041,7 +1041,7 @@
 ### LP15: Accessibility
 
 **LP15.1 InclusiveFoundations**:
-- Inclusive Empire → "philosophy woven throughout all regions"
+- Harmony Halls → "philosophy woven throughout all regions"
 - Accessibility → "building for everyone not just others", "15% permanent disabilities plus temporary/situational"
 - POUR principles → Perceivable, Operable, Understandable, Robust
 - Semantic HTML → "right element for right purpose"
@@ -1058,7 +1058,7 @@
 - Responsive & adaptive → "design for all devices and preferences"
 
 **LP15.4 TestingTools**:
-- Testing Gauntlet (accessibility) → "layered defense"
+- Verification Workshop → "layered defense"
 - Automated tools → "catch 30-50%", axe DevTools, Lighthouse, pa11y
 - Manual testing → "keyboard navigation, screen reader, quick checks"
 - Accessibility culture → "Five Pillars: Education, Documentation, Code Reviews, User Involvement, Automation"
