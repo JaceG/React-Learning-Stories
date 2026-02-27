@@ -25,6 +25,7 @@ The remediation is organized into 6 phases, from most mechanical/safe to most ju
 | 4 | Content coherence & factual fixes | Medium | ~15 paragraph-level edits |
 | 5 | Narrative & learning progression | Medium-High | ~10 section-level rewrites |
 | 6 | Global polish pass | Low | Broad but shallow |
+| 7 | Reference document updates (story-bible + kingdom-geography) | Medium | Full rewrite of both docs to match narrative |
 
 ---
 
@@ -308,26 +309,59 @@ Long breathless sentence chain. Consider splitting: "...compose them into comple
 
 ---
 
-## Post-Remediation: Reference Document Updates
+## Phase 7: Reference Document Updates
 
-After all narrative fixes are complete, update:
-- `story-bible.md` — align character details, location names, lesson slugs with narrative
-- `kingdom-geography.md` — align region names, location descriptions, "First Mentioned" fields with narrative
+*After all narrative fixes are complete (Phases 1-6), update the story-bible and kingdom-geography to match the corrected narrative. The narrative is the source of truth.*
 
-These are separate tasks from the narrative remediation.
+### 7.1 Story Bible: Character Updates
+
+Read through the corrected narrative and update `story-bible.md` for each character:
+
+- **Pronouns:** Match every character's pronouns to whatever the narrative uses (e.g., if Forge Master Hooke is "she/her" in the narrative, the bible entry must match)
+- **Locations:** Match each character's location field to the narrative's actual location names (e.g., if the narrative calls it "Velocity Crucible" not "Speed Sanctum," the bible should say Velocity Crucible)
+- **Lesson slugs:** Match LP/lesson identifiers to whatever the narrative section headers actually say (e.g., if narrative says `## 3.1 PropWorkbench`, bible should say "LP3.1 PropWorkbench" not "LP3.1 PropForge")
+- **Appearance/description:** Check that character descriptions match what the narrative actually says about them — beard color, robe patterns, weapons, companions, etc.
+- **Teaches:** Verify that the "Teaches" bullet for each character matches what they actually teach in the narrative (the narrative may have evolved from the original outline)
+
+### 7.2 Story Bible: Concept Translations Update
+
+The concept translations section (React → Fantasy) may have drifted from the narrative. For each LP:
+- Read the narrative's metaphors and verify the bible's translation entries match
+- Add any new metaphors the narrative introduced that the bible doesn't have
+- Remove any translations the bible lists that the narrative doesn't actually use
+
+### 7.3 Kingdom Geography: Region & Location Updates
+
+Read through the corrected narrative and update `kingdom-geography.md`:
+
+- **Region names:** The narrative introduces locations not in the geography doc (Industrial Quarter, Trade Quarter, Composition District). Decide whether to add these as sub-regions or clarify which named quarter they belong to.
+- **"First Mentioned" fields:** Update to match where locations are actually first named in the narrative (e.g., Props Messenger Guild may be mentioned by name in LP1.1, not LP1.2)
+- **Location descriptions:** Match atmosphere, architecture, and visual details to what the narrative actually describes — the geography doc was written before many narrative sections were fleshed out
+- **Master assignments:** Verify each location's "Master" field matches the narrative
+- **LP7 Performance locations:** The narrative places performance work in the Northern Peaks/Mountains. Verify the geography doc matches (it may have a stale "Southern Quarter" reference for some performance locations)
+- **LP15 location name:** The narrative uses "Harmony Halls" — the geography doc should match, not use "Inclusive Empire" (or vice versa — pick one and align both)
+- **Connection/border descriptions:** Check that the geographic connections between regions make sense with how Aria actually travels between them in the narrative
+
+### 7.4 Cross-Document Consistency Check
+
+After both reference docs are updated:
+- Search for any remaining mismatches between all three documents (narrative, bible, geography)
+- Verify lesson slug names are identical across all files
+- Verify character names and locations are identical across all files
+- Verify LP numbering and chapter counts are identical across all files
 
 ---
 
 ## Execution Order
 
 ```
-Phase 1 (mechanical) → commit & push
-Phase 2 (naming) → commit & push  
-Phase 3 (formatting) → commit & push
-Phase 4 (content) → commit & push
-Phase 5 (narrative) → commit & push
-Phase 6 (polish) → commit & push
-Reference doc updates → separate branch/task
+Phase 1 (mechanical fixes to narrative) → commit & push
+Phase 2 (naming consistency in narrative) → commit & push
+Phase 3 (formatting in narrative) → commit & push
+Phase 4 (content coherence in narrative) → commit & push
+Phase 5 (narrative & learning progression) → commit & push
+Phase 6 (polish pass on narrative) → commit & push
+Phase 7 (story-bible + kingdom-geography updates) → commit & push
 ```
 
-Each phase should be a separate commit for easy review and rollback.
+Each phase should be a separate commit for easy review and rollback. Phase 7 depends on Phases 1-6 being complete — the narrative must be finalized before the reference docs are updated to match it.
