@@ -92,7 +92,7 @@
 
 **Master Craftsman Destructo**
 - **Role**: Master craftsman of the Prop Workbench
-- **Appears In**: LP3.1 PropForge (Ch1-3)
+- **Appears In**: LP3.1 PropWorkbench (Ch1-3)
 - **Location**: Industrial Quarter - Prop Workbench
 - **Appearance**: Weathered face, singed beard edges, eyes sparkle with data flame reflections, wields glowing hammer
 - **Teaches**: Destructuring (extracting props), spread operator (merging/transforming), prop validation (PropTypes/TypeScript), default values, prop immutability
@@ -377,21 +377,21 @@
 
 **Scribe Runis**
 - **Role**: Head Scribe, guardian of the Type Scriptorium
-- **Appears In**: LP12.1 TypeForge (Ch1-3)
+- **Appears In**: LP12.1 TypeScriptorium (Ch1-3)
 - **Location**: Western Mountains - The Great Scriptorium deep within mountain heart (Type Scriptorium - deepest hall)
 - **Appearance**: Eyes see through code to essence, beard sparks with type annotations, quill glows with strict mode energy
 - **Teaches**: TypeScript philosophy (making impossibilities impossible, implicit explicit, uncertain certain), basic type annotations, type inference, interfaces, union types, compile-time error catching vs runtime, component typing (React.FC, React.Component<Props, State>, generic components like List<T>), typed props as contracts, optional props with ?, advanced patterns (union types, intersection types, conditional types, mapped types, template literal types), generics for reusable patterns, typed reducers (actions know own shapes), type system flexible yet bulletproof, "each type is promise, interface is guarantee, code compiles = certainty not hope", "greatest gift isn't catching errors - making entire categories bugs impossible"
 
 **Archivist Lexicon** (Component Archives & Pattern Alcove)
 - **Role**: Legendary component cataloger, master scholar of the Pattern Alcove
-- **Appears In**: LP12.2 ComponentArmory (Ch1-3), LP12.3 GenericForge (Ch1-2)
+- **Appears In**: LP12.2 ComponentArchives (Ch1-3), LP12.3 PatternAlcove (Ch1-2)
 - **Location**: Western Mountains - The Great Scriptorium (Component Archives & Pattern Alcove)
 - **Appearance**: Scholarly figure, quill noting type definitions on illuminated manuscripts
 - **Teaches**: Component typing (transforming JavaScript components into armored TypeScript fortresses), Props interfaces, Children types, Event handlers typing, Ref forwarding types, hook typing (useState/useReducer/Context with types), custom hooks with generics, advanced generics (type parameters, constraints, extends/keyof), conditional types, mapped types, utility types, type-safe design patterns (event emitters, builder pattern, exhaustive checking), generic composition, type-safe factories
 
 **Sentinel Guardia**
 - **Role**: Sentinel of the type boundary between typed and untyped realms
-- **Appears In**: LP12.3 GenericForge (Ch3 - The Type Guard Gatehouse)
+- **Appears In**: LP12.3 PatternAlcove (Ch3 - The Type Guard Gatehouse)
 - **Location**: Western Mountains - The Great Scriptorium (boundary between typed and untyped realms)
 - **Appearance**: Stands at the threshold inspecting every piece of data that attempts to cross
 - **Teaches**: Type guards (typeof, instanceof, in operator, custom type predicates with "is"), type assertions (asserts keyword), Zod for runtime validation (define schema → z.infer → parse at boundaries), "parse don't validate" philosophy, guard pipeline (Zod at boundaries, guards within, assertions at strict points, exhaustive never for unions)
@@ -414,13 +414,13 @@
 
 **Captain Pipeline**
 - **Role**: Commander of Automation Harbor, master of CI/CD
-- **Appears In**: LP13.2 CiCdPipeline (Ch1-3)
+- **Appears In**: LP13.2 CICDPipelines (Ch1-3)
 - **Location**: Automation Harbor (beyond Optimization Shipyard, code flows through glowing channels), Pipeline Workshop, Continuous Fleet
 - **Teaches**: CI/CD automation (Continuous Integration/Delivery/Deployment), automated workflows (Source→Build→Test→Deploy), CI/CD tools (GitHub Actions/GitLab CI/Jenkins/CircleCI), pipeline gates (lint→test→build→deploy), advanced deployment strategies (Blue-Green zero downtime, Canary gradual rollout, Rolling sequential, Feature Flags decouple deploy from release), Progressive Delivery, GitOps, Chaos Engineering, DORA metrics (deployment frequency/lead time/MTTR), "manual deployment like rowing, CI/CD like favorable winds that never stop", "make deployments so safe and routine they become boring"
 
 **Navigator Vercel** (also called Navigator Hosting)
 - **Role**: Master navigator of Platform Archipelago, expert guide through hosting options
-- **Appears In**: LP13.3 HostingHorizons (Ch1-3)
+- **Appears In**: LP13.3 HostingAndDeployment (Ch1-3)
 - **Location**: Coastal Region - Platform Archipelago (helm of exploration vessel, visiting offshore hosting islands)
 - **Teaches**: Choosing hosting platforms (match needs with strengths - ease/scalability/cost/features/team expertise), Platform islands (Vercel zero-config fastest, Netlify static/JAMstack, AWS infinite scale complex, Railway full-stack ease), deployment ceremonies (each platform has unique ritual/steps/configurations), environment variables (never commit secrets), custom domains (DNS propagation 5-48 hours), SSL configuration, global network (edge functions near users, CDN distribution cache globally, geographic routing optimal paths), performance optimization (Brotli/HTTP/3/image), Core Web Vitals, "no 'best' platform - best for YOUR needs"
 
@@ -463,41 +463,29 @@
 ### LP15: Accessibility
 
 **Empress Inclusiva**
-- **Role**: Ruler of the Inclusive Empire, teaches accessibility as philosophy touching all development
+- **Role**: Sovereign of the Harmony Halls, teaches accessibility as philosophy touching all development
 - **Appears In**: LP15.1 InclusiveFoundations (Ch1-3)
-- **Location**: Inclusive Empire (philosophy woven throughout all regions) - Throne room showcases accessibility
+- **Location**: Harmony Halls
 - **Teaches**: Accessibility philosophy (building for everyone not just "others"), removing barriers benefits all users, 15% permanent disabilities plus temporary/situational, design for edges creates better center, Guardians of Inclusion (Semantic/Keyboard/Audio/Spectrum/Still), semantic HTML (right element for right purpose - Foundation Hall lesson), landmark elements (header/nav/main/aside/footer), heading hierarchy, ARIA Arsenal (enhancement when HTML lacks - use sparingly), five rules of ARIA (first: don't use if can use HTML), ARIA roles/properties (67 roles, 48 properties), "No ARIA better than bad ARIA", POUR principles (Perceivable/Operable/Understandable/Robust), "true mastery means building for everyone", "accessibility isn't add-on - it's fundamental to quality"
 
 **Guardian Keynav**
 - **Role**: Sentinel of interaction paths, ensures every path through the interface is navigable without a mouse
 - **Appears In**: LP15.2 InteractionPatterns (Ch1-3)
-- **Location**: Inclusive Empire - Interaction Chambers (maze of visible and invisible paths)
+- **Location**: Harmony Halls - Interaction Chambers (maze of visible and invisible paths)
 - **Appearance**: Carries no weapon — her power is in the Tab key, arrow keys, Enter, Escape, and Space
 - **Teaches**: Keyboard navigation (Tab order, tabIndex, skip navigation), widget patterns (WAI-ARIA Authoring Practices, roving tabIndex), focus management (programmatic focus on route changes, focus trapping in dialogs, focus restoration on close), screen reader patterns (navigation modes, visually hidden text, aria-hidden, testing with VoiceOver/NVDA)
 
 **Guardian Spectrum**
 - **Role**: Calibrator of the visual experience, ensures content is perceivable regardless of visual ability
 - **Appears In**: LP15.3 VisualAccessibility (Ch1-3)
-- **Location**: Inclusive Empire - Visual Chambers (colors shift, contrasts change, text sizes grow and shrink)
+- **Location**: Harmony Halls - Visual Chambers (colors shift, contrasts change, text sizes grow and shrink)
 - **Teaches**: Color and contrast (WCAG contrast ratios, not relying on color alone), motion and animation (prefers-reduced-motion, reduced motion alternatives), responsive and adaptive design (fluid typography, relative units, design for all devices and preferences)
 
 **Inspector Verificus**
-- **Role**: Guardian of the Testing Gauntlet, champion of accessibility quality assurance
+- **Role**: Guardian of the Verification Workshop, champion of accessibility quality assurance
 - **Appears In**: LP15.4 TestingTools (Ch1-3)
-- **Location**: Inclusive Empire - Testing Gauntlet (accessibility version)
+- **Location**: Harmony Halls - Verification Workshop
 - **Teaches**: Accessibility testing (layered defense - automated/manual/user), automated tools catch 30-50% (axe DevTools, Lighthouse, pa11y), manual testing (keyboard navigation, screen reader, quick checks), user testing with real disabilities, WCAG 2.1 (78 success criteria - Level A: 30, AA: 20, AAA: 28), audit process (run/filter by severity/generate reports), accessibility culture (Five Pillars: Education/Documentation/Code Reviews/User Involvement/Automation), champion networks, maturity levels, "testing isn't about finding fault - ensuring everyone can experience what you've created", "best test is users with disabilities", "build testing into workflow make checking natural as syntax checking"
-
-**Compliance Auditor**
-- **Role**: Reviews standards and regulations in Audit Arena
-- **Appears In**: LP15.4 TestingTools (Ch2)
-- **Location**: Inclusive Empire - Audit Arena
-- **Teaches**: WCAG 2.1/Section 508/ADA standards, Level AA compliance sweet spot, documenting efforts, continuous improvement
-
-**Culture Keeper**
-- **Role**: Guardian of accessibility culture sustainability
-- **Appears In**: LP15.4 TestingTools (Ch3)
-- **Location**: Inclusive Empire - Culture Forum
-- **Teaches**: Accessibility culture (makes sustainable), Five Pillars (Education/Documentation/Reviews/Involvement/Automation), champion network building, maturity levels, ROI (73% fewer a11y bugs), embedding into processes, "tools catch issues, standards guide, culture makes sustainable"
 
 ---
 
@@ -577,7 +565,7 @@
 
 ### LP3: Props Data Flow
 
-**LP3.1 PropForge**:
+**LP3.1 PropWorkbench**:
 - Destructuring → "ancient art", "extracting essence with surgical precision", "backup plan" (defaults)
 - Spread operator → "three dots", "spread enchantment", "merge like pouring metals into mold", "later overrides earlier"
 - Props → "contracts", "promises between components", "carefully crafted artifacts", "read-only"
@@ -956,7 +944,7 @@
 
 ### LP12: TypeScript React
 
-**LP12.1 TypeForge**:
+**LP12.1 TypeScriptorium**:
 - Type Scriptorium → "deepest hall in the Great Scriptorium", "mountain heart", "quill glows with strict mode energy"
 - TypeScript → "making impossibilities impossible", "implicit explicit, uncertain certain"
 - Types → "promises", "contracts", "each type is promise, interface is guarantee"
@@ -965,14 +953,14 @@
 - Union types → "multiple possibilities, one variable"
 - Generics → "key to true reusability", "adapt without losing type safety"
 
-**LP12.2 ComponentArmory**:
+**LP12.2 ComponentArchives**:
 - Component Archives → "cataloging JavaScript components with TypeScript type annotations"
 - Props interfaces → "armor for components", "type-safe contracts"
 - Typed hooks → "useState/useReducer/Context with types", "hook typing"
 - Migration → "gradual with allowJs", "islands of type safety expanding"
 - Strict mode → "maximum safety", "no compromises"
 
-**LP12.3 GenericForge**:
+**LP12.3 PatternAlcove**:
 - Pattern Alcove → "prismatic light", "flexible template scrolls", "advanced type patterns"
 - Advanced generics → "type parameters as placeholders", "constraints with extends/keyof"
 - Conditional types → "types that adapt based on inputs"

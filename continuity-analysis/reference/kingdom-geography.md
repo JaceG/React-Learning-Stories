@@ -1,7 +1,7 @@
 # React Kingdom - World Geography & Map
 
 *Complete geographic reference: terrain, climate, regions, and travel routes*  
-*Last Updated: February 3, 2026 - Updated for Full-Stack React (LP14), Shipwright Vex (LP13), removed Mobile Frontier. Worldbuilding deduplication: Scriptorium theme for LP12, unique location names across all LPs.*
+*Last Updated: February 27, 2026 - Updated for Full-Stack React, Shipwright Vex, removed Mobile Frontier. Worldbuilding deduplication: Scriptorium theme for TypeScript, unique location names across all lessons. Synced with Phase 6 narrative.*
 
 ---
 
@@ -44,7 +44,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 **Borders**: Central Nexus (south), Eastern Quarter (southeast), paths to Northern Peaks (north)
 
 #### Component Workshop District
-**First Mentioned**: LP1.1 ComponentKingdom Ch1
+**First Mentioned**: ComponentKingdom Ch1
 
 **Location Within Quarter**: Heart of Northern Quarter, main entry point through Gates of the React Kingdom
 
@@ -76,7 +76,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 
 #### JSX Magic Academy (Grand Library)
 
-**First Mentioned**: LP1.3 JsxMagic Ch1
+**First Mentioned**: JsxMagic Ch1
 
 **Location Within Quarter**: Northern Quarter academic district, near Component Workshop (foundational knowledge location)
 
@@ -110,7 +110,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 
 #### Lifecycle Sanctum
 
-**First Mentioned**: LP1.4 LifecycleChronicles Ch1
+**First Mentioned**: LifecycleChronicles Ch1
 
 **Location Within Quarter**: Northern Quarter, ancient structure with observatory (time and component lifecycle = foundational)
 
@@ -142,7 +142,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 
 **Connection to Teaching**: Hourglasses = time/lifecycle tracking; glowing murals = lifecycle phases; flower blooming = mounting; farewell ceremony = unmounting cleanup; stars = eternal cycle
 
-**Note**: ⚠️ Chronos ONLY appears in LP1. Later appearances fixed (LP7 uses Keeper Libris instead).
+**Note**: ⚠️ Chronos ONLY appears in the Lifecycle Sanctum. Later Performance lessons use Keeper Libris instead.
 
 ---
 
@@ -156,7 +156,7 @@ The kingdom's main territory, divided into four directional quarters, each with 
 The Eastern Quarter is defined by water - not ordinary water, but flowing data visualized as crystal-clear rivers with soft blue glow. Terraced waterfalls cascade through the quarter, representing unidirectional data flow. The air hums with energy from state transformations and hook magic.
 
 #### Props Messenger Guild
-**First Mentioned**: LP1.2 PropsMessengers Ch1
+**First Mentioned**: ComponentKingdom Ch1 (Aurelius references it by name); Aria visits in PropsMessengers Ch1
 
 **Location Within Quarter**: Eastern Quarter headquarters, where messengers receive assignments
 
@@ -189,7 +189,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 ---
 
 #### State Sorcerers' Tower
-**First Mentioned**: LP2.1 StateSorcerers Ch1
+**First Mentioned**: StateSorcerers Ch1
 
 **Location Within Quarter**: Eastern Quarter, near data river sources (state is the source of data)
 
@@ -226,7 +226,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Hook Forge
 
-**First Mentioned**: LP2.2 MagicalHooks Ch1
+**First Mentioned**: MagicalHooks Ch1
 
 **Location Within Quarter**: Eastern Quarter, near State Sorcerers' Tower (hooks are modern state management)
 
@@ -264,7 +264,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### State Management Citadel
 
-**First Mentioned**: LP2.4 StateManagement Ch1
+**First Mentioned**: StateManagementAdventures Ch1
 
 **Location Within Quarter**: Eastern Quarter, massive fortress (state management requires structure and organization)
 
@@ -300,7 +300,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Advanced Hooks Sanctuary
 
-**First Mentioned**: LP4.1 UseStateSpells Ch1
+**First Mentioned**: UseStateSpells Ch1
 
 **Location Within Quarter**: Eastern Quarter, modern architectural marvel (advanced state patterns)
 
@@ -337,7 +337,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Temporal Tower
 
-**First Mentioned**: LP4.2 UseEffectEnchantments Ch1
+**First Mentioned**: UseEffectEnchantments Ch1
 
 **Location Within Quarter**: Eastern Quarter, part of Advanced Hooks area (effects manage state over time)
 
@@ -376,7 +376,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Synthesis Workshop & Grand Repository
 
-**First Mentioned**: LP4.3 CustomHookCrafting Ch1
+**First Mentioned**: CustomHookCrafting Ch1
 
 **Location Within Quarter**: Eastern Quarter, entire floor of Advanced Hooks Sanctuary
 
@@ -414,7 +414,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Integration Sanctum (Apex of Advanced Hooks Sanctuary)
 
-**First Mentioned**: LP4.4 HookPatternMastery Ch1
+**First Mentioned**: HookPatternMastery Ch1
 
 **Location Within Quarter**: Eastern Quarter, apex of Advanced Hooks Sanctuary (culmination of all hook knowledge)
 
@@ -454,7 +454,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Cascade District (Data Rivers)
 
-**First Mentioned**: LP3.4 DataRivers Ch1
+**First Mentioned**: DataRivers Ch1
 
 **Location Within Quarter**: Eastern Quarter, district where data rivers flow through terraces
 
@@ -504,7 +504,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Event Orchestrium
 
-**First Mentioned**: LP5.1 EventSymphony Ch1
+**First Mentioned**: EventSymphony Ch1
 
 **Location Within Quarter**: Heart of Western Quarter (events are core of interaction)
 
@@ -540,7 +540,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Form Alchemy Laboratory
 
-**First Mentioned**: LP5.2 FormFundamentals Ch1
+**First Mentioned**: FormAlchemy Ch1
 
 **Location Within Quarter**: Western Quarter, adjacent to Event Orchestrium (forms and events work together)
 
@@ -576,7 +576,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Validation Fortress
 
-**First Mentioned**: LP5.3 ValidationGates Ch1
+**First Mentioned**: ValidationGuardians Ch1
 
 **Location Within Quarter**: Western Quarter edge, fortress protecting the quarter (validation protects data integrity)
 
@@ -615,7 +615,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Submission Portal Gateway
 
-**First Mentioned**: LP5.4 SubmissionPortals Ch1
+**First Mentioned**: SubmissionPortals Ch1
 
 **Location Within Quarter**: Western Quarter heart, central gateway (submission is culmination of form journey)
 
@@ -656,7 +656,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Composition District (Trade Quarter)
 
-**First Mentioned**: LP3.2 PropsCaravans Ch1
+**First Mentioned**: PropsCaravans Ch1
 
 **Location Within Quarter**: Western Quarter, Trade Quarter beyond the Prop Workbench
 
@@ -700,7 +700,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Lazy Library
 
-**First Mentioned**: LP7.2 LazyLibrary Ch1
+**First Mentioned**: LazyLibrary Ch1
 
 **Location Within Quarter**: Southern Quarter (performance optimization territory)
 
@@ -739,7 +739,7 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 #### Virtualization Vault
 
-**First Mentioned**: LP7.3 VirtualizationVault Ch1
+**First Mentioned**: VirtualizationVault Ch1
 
 **Location Within Quarter**: Southern Quarter, deep beneath the surface (infinite data goes underground)
 
@@ -796,7 +796,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 
 ### Grand Context Hall
 
-**First Mentioned**: LP2.3 GrandContext Ch1
+**First Mentioned**: GrandContext Ch1
 
 **Location**: Central Plaza between all four quarters - exact center of React Kingdom
 
@@ -834,7 +834,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 
 ### Central Citadel (Navigation Command Center)
 
-**First Mentioned**: LP6.1 NavigationCompass Ch1
+**First Mentioned**: NavigationCompass Ch1
 
 **Location**: Central Nexus, adjacent to Grand Context Hall (navigation is central to modern React)
 
@@ -873,7 +873,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 
 ### Waypoint Sanctum & Observatory
 
-**First Mentioned**: LP6.2 WaypointWizardry Ch1
+**First Mentioned**: WaypointWizardry Ch1
 
 **Location**: Part of Central Citadel complex within Central Nexus
 
@@ -911,7 +911,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 
 ### Navigation Corps Training Grounds & Guardian Archives
 
-**First Mentioned**: LP6.3 GuardianGates Ch1
+**First Mentioned**: GuardianGates Ch1
 
 **Location**: Part of Central Citadel complex within Central Nexus
 
@@ -938,7 +938,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 - View overlooking entire kingdom from highest deck
 - Every quarter visible below from observation deck
 
-**Master**: Captain Marina (completes LP6 teaching)
+**Master**: Warden Aldric (guardian of route security, armor with shield-and-keys emblem)
 
 **Teaches**: Protected routes (authentication + authorization integration), Guardian Gates system, role-based access control (RBAC), permission validation, AuthContext patterns, intelligent authentication flows (preserving destinations/state/journey), role hierarchies, React portals (escaping DOM hierarchy while keeping React powers), accessible modals (focus trapping, keyboard nav), portal transitions (maintaining context), advanced portal patterns (multi-step wizards, nested portals, split views, contextual portals), route-based modals, unified navigation architecture
 
@@ -967,7 +967,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 ### Cloud Bastion & Data Embassy
 
-**First Mentioned**: LP11.1 ApiIntegration Ch1
+**First Mentioned**: ApiIntegration Ch1
 
 **Location**: Sky Realm, floating above React Kingdom, tethered by ethereal data streams
 
@@ -1009,7 +1009,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 ### Architect's Academy
 
-**First Mentioned**: LP9.1 CompoundComponents Ch1
+**First Mentioned**: CompoundComponents Ch1
 
 **Location**: Sky Realm, floating above kingdom near Cloud Bastion
 
@@ -1059,7 +1059,7 @@ The Sky Realm floats impossibly above the React Kingdom, tethered to reality onl
 
 ### Motion Monastery & Dojos
 
-**First Mentioned**: LP10.4 AnimationLibraries Ch1
+**First Mentioned**: AnimationLibraries Ch1
 
 **Location**: Sky Realm, floating serenely above clouds near other sky structures
 
@@ -1128,7 +1128,7 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 
 #### Memory Monastery (Northern Peaks)
 
-**First Mentioned**: LP7.1 MemoryMonastery Ch1
+**First Mentioned**: MemoryMonastery Ch1
 
 **Location**: Floating in clouds above Northern Peak summit (accessed via floating platforms from summit)
 
@@ -1170,7 +1170,7 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 
 #### Velocity Crucible (Northern Mountains)
 
-**First Mentioned**: LP7.4 SpeedSanctum Ch1
+**First Mentioned**: SpeedSanctum Ch1
 
 **Location**: Carved into Northern Peak (mountain path ascending from Southern Quarter)
 
@@ -1195,23 +1195,23 @@ The Northern Peaks are the ultimate test of performance mastery. Steep paths win
 - Master Velocity emerging from mountain mist
 - Robes shimmering with optimization symbols
 - Valley below with flickering components (performance issues)
-- Vital signs crystals (glow red when Lag Monster strong)
+- Vital signs crystals (glow red when Performance Plague strong)
 - Ancient optimization crystals on crucible walls
 - Interconnected crystals showing cascading component flickers
-- Lag Monster defeated visualization
+- Performance Plague defeated visualization
 - Performance restored - kingdom running smoothly below
 
 **Master**: Master Velocity (guardian, keeper of optimization secrets, robes with optimization symbols)
 
-**Teaches**: Lag Monster (threat feeding on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (reveals which components render, how long, why - measure before optimize), memoization art (React.memo for components, useMemo for expensive calculations), useCallback (stabilizes function references preventing child re-renders), Trinity of Optimization (React.memo + useMemo + useCallback working in harmony), strategic optimization (profile first, identify real bottlenecks, apply strategically not prematurely), "measure twice optimize once"
+**Teaches**: Performance Plague (threat feeding on inefficiency/unnecessary re-renders/memory leaks/bloated bundles), React DevTools Profiler (reveals which components render, how long, why - measure before optimize), memoization art (React.memo for components, useMemo for expensive calculations), useCallback (stabilizes function references preventing child re-renders), Trinity of Optimization (React.memo + useMemo + useCallback working in harmony), strategic optimization (profile first, identify real bottlenecks, apply strategically not prematurely), "measure twice optimize once"
 
-**Connection to Teaching**: Northern Mountains = elevated challenge; Lag Monster = performance problems; crucible carved in peak = optimization knowledge forged under pressure; mist = mystery; flickering components = re-render issues; vital crystals = profiling metrics; shield of memory = memoization; interconnected crystals = component dependency tree; Trinity = three optimization tools; defeated monster = performance restored; "you cannot optimize what you cannot measure"
+**Connection to Teaching**: Northern Mountains = elevated challenge; Performance Plague = performance problems; crucible carved in peak = optimization knowledge forged under pressure; mist = mystery; flickering components = re-render issues; vital crystals = profiling metrics; shield of memory = memoization; interconnected crystals = component dependency tree; Trinity = three optimization tools; defeated plague = performance restored; "you cannot optimize what you cannot measure"
 
 ---
 
 #### Type Guard Gatehouse (Rising from Northern Peak Depths)
 
-**First Mentioned**: LP12.4 TypeGuardTower Ch1
+**First Mentioned**: TypeSafeArchitecture Ch1
 
 **Location**: Rises from underground Great Scriptorium through Northern Peak, gatehouse visible at summit pass
 
@@ -1270,7 +1270,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 #### Echo Caves (Western Mountains Surface)
 
-**First Mentioned**: LP3.3 EventEchoes Ch1
+**First Mentioned**: EventEchoes Ch1
 
 **Location**: Carved into Western Mountains surface, winding path from Western Quarter (beyond the Prop Workbench)
 
@@ -1311,11 +1311,11 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 #### The Great Scriptorium (Deep Within Western Mountains Heart)
 
-**First Mentioned**: LP12.1 TypeForge Ch1 (mentions "deep beneath React Kingdom")
+**First Mentioned**: TypeScriptorium Ch1 (mentions "deep beneath React Kingdom")
 
 **Location**: Carved deep within Western Mountains interior - vast underground library complex
 
-**Geography**: The Great Scriptorium is not a single location but an entire underground library realm carved into the Western Mountains' living rock. Accessible via Cloud Bastion's lower passages (descending through clouds into stone) or through Testing Underground's lateral passages. Three major halls connected by lamplit corridors lined with shelves, all suffused with blue ink-light visible through mountain cracks at night. Where the Hook Forge (LP2.2) crafts tools at anvils, the Scriptorium inscribes contracts on tablets — different arts entirely.
+**Geography**: The Great Scriptorium is not a single location but an entire underground library realm carved into the Western Mountains' living rock. Accessible via Cloud Bastion's lower passages (descending through clouds into stone) or through Testing Underground's lateral passages. Three major halls connected by lamplit corridors lined with shelves, all suffused with blue ink-light visible through mountain cracks at night. Where the Hook Forge crafts tools at anvils, the Scriptorium inscribes contracts on tablets - different arts entirely.
 
 **Climate**: Scholarly warmth underground, blue ink-light creating soft illumination, ancient carved stone, centuries-old corridors
 
@@ -1329,7 +1329,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 #### Type Scriptorium (The Great Scriptorium - Deepest Hall)
 
-**First Mentioned**: LP12.1 TypeForge Ch1
+**First Mentioned**: TypeScriptorium Ch1
 
 **Location**: Western Mountains - deepest hall of the Great Scriptorium (accessible via Cloud Bastion lower passages)
 
@@ -1368,7 +1368,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 #### Component Archives (The Great Scriptorium)
 
-**First Mentioned**: LP12.2 ComponentArmory Ch1
+**First Mentioned**: ComponentArchives Ch1
 
 **Location**: Western Mountains - the Great Scriptorium, connected to Type Scriptorium via lamplit corridors
 
@@ -1408,7 +1408,7 @@ The Western Mountains rise beyond the Western Quarter, their peaks visible from 
 
 #### Pattern Alcove (The Great Scriptorium)
 
-**First Mentioned**: LP12.3 GenericForge Ch1
+**First Mentioned**: PatternAlcove Ch1
 
 **Location**: Western Mountains - deep within the Great Scriptorium, connected to other halls by lamplit corridors
 
@@ -1476,7 +1476,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 ### Testing Gauntlet (Underground Realms)
 
-**First Mentioned**: LP8.1 TestingTower Ch1
+**First Mentioned**: TestingTower Ch1
 
 **Location**: Underground Realms, rises from underground to pierce cavern ceiling and break surface
 
@@ -1516,13 +1516,13 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 **Connection to Teaching**: Underground = quality foundation; gauntlet rising through cavern = tests supporting everything above; bugs as creatures = errors becoming visible; Debuggora owl = keen bug-spotting vision; three portals = three testing levels (colors match types); Testing Pyramid = layered defense; phantom test runners = automated CI; crystalline Engine = CI/CD system; guardian tests = test suite; glowing crystals = illuminating code quality
 
-**Note**: Debuggora is Test Master Jasmine's companion and ONLY appears in LP8 (not LP9-15).
+**Note**: Debuggora is Test Master Jasmine's companion and ONLY appears in the Underground Realms testing lessons.
 
 ---
 
 ### Integration Inn (Underground Realms)
 
-**First Mentioned**: LP8.2 IntegrationInn Ch1
+**First Mentioned**: IntegrationInn Ch1
 
 **Location**: Underground Realms, near Testing Gauntlet (connected by passages)
 
@@ -1562,7 +1562,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 ### Debug Dungeon (Underground Realms)
 
-**First Mentioned**: LP8.3 DebugDungeon Ch1
+**First Mentioned**: DebugDungeon Ch1
 
 **Location**: Underground Realms, below Testing Gauntlet (deeper level)
 
@@ -1602,7 +1602,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 
 ### Error Enchantments Grotto (Underground Realms)
 
-**First Mentioned**: LP8.4 ErrorEnchantments Ch1
+**First Mentioned**: ErrorEnchantments Ch1
 
 **Location**: Underground Realms, protected grotto chamber
 
@@ -1646,7 +1646,7 @@ The Underground Realms spread beneath the React Kingdom like a vast root system.
 **Theme**: Quality assurance, testing, debugging, error handling - foundation of reliability  
 **Access**: Descending stairs from quarters/Central Nexus, underground passages between all locations, lateral connections to Western Mountains Great Scriptorium  
 **Atmosphere**: Cool, mysterious, illuminated by glowing crystals and magical light, organic cavern system  
-**Note**: Debuggora (owl companion) ONLY appears in LP8 Underground Realms, not in other learning paths
+**Note**: Debuggora (owl companion) ONLY appears in the Underground Realms testing lessons, not in other regions
 
 ---
 
@@ -1663,7 +1663,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ### Deployment Armada Docks
 
-**First Mentioned**: LP13.1 BuildSystems Ch1
+**First Mentioned**: BuildSystems Ch1
 
 **Location**: Coastal Region, western section of harbor
 
@@ -1704,7 +1704,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ### Automation Harbor (CI/CD Hub)
 
-**First Mentioned**: LP13.2 CiCdPipeline Ch1
+**First Mentioned**: CICDPipelines Ch1
 
 **Location**: Coastal Region, eastern section beyond Optimization Shipyard
 
@@ -1748,7 +1748,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ### Platform Archipelago (Offshore Islands)
 
-**First Mentioned**: LP13.3 HostingHorizons Ch1
+**First Mentioned**: HostingAndDeployment Ch1
 
 **Location**: Coastal Region, hundreds of islands visible offshore (hosting platforms)
 
@@ -1793,7 +1793,7 @@ The Coastal Region sprawls along the kingdom's southern edge where land meets th
 
 ### Production War Room (Coastal Command Center)
 
-**First Mentioned**: LP13.4 ProductionReadiness Ch1
+**First Mentioned**: ProductionReadiness Ch1
 
 **Location**: Coastal Region, command center overlooking entire harbor operations
 
@@ -1869,7 +1869,7 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 - Values: Simplicity, "why complicate?"
 
 **Jotai Archipelago**:
-- Atomic state approach — scattered islands, each an atom of state
+- Atomic state approach - scattered islands, each an atom of state
 - React Suspense integration at core
 - Architecture: Island-based, granular, precise
 
@@ -1882,7 +1882,7 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 - Atomic particles representing state in Jotai
 - Ambassadorial journey between kingdoms
 
-**Master**: Emperor Dispatcher — guides Aria through all Allied Kingdoms as ambassador
+**Master**: Emperor Dispatcher - guides Aria through all Allied Kingdoms as ambassador
 
 **Teaches**: State management classification (local vs shared vs server vs URL), Redux and its modern toolkit, alternative approaches (Zustand, Jotai, MobX), decision framework for choosing tools
 
@@ -1893,7 +1893,7 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 ## 8️⃣ SERVER SPIRES (Full-Stack Territory)
 
 **Terrain**: Towering crystalline structures where React runs on both client and server  
-**Climate**: Dual-natured — warm client-side glow and cool server-side precision  
+**Climate**: Dual-natured - warm client-side glow and cool server-side precision  
 **Theme**: Full-Stack React - React beyond the browser, running on servers  
 **Access**: Ascent from the Coastal Region, visible from the kingdom's highest points
 
@@ -1901,7 +1901,7 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 
 ### Server Spires
 
-**First Mentioned**: LP14.1 FrameworkFoundations Ch1
+**First Mentioned**: FrameworkFoundations Ch1
 
 **Location**: Rising above the Coastal Region, towering crystalline structures where React code executes in both client and server realms simultaneously
 
@@ -1921,23 +1921,23 @@ The Allied Kingdoms lie beyond the React Kingdom's borders, across the digital s
 - Route Handler terminals for API endpoints
 
 **Atmosphere**:
-- Dual-natured energy — code executing in two worlds simultaneously
-- Convention over configuration — structure provides power
-- Progressive loading — content appears in waves, not all at once
-- Architecture-first thinking — systems rather than components
+- Dual-natured energy - code executing in two worlds simultaneously
+- Convention over configuration - structure provides power
+- Progressive loading - content appears in waves, not all at once
+- Architecture-first thinking - systems rather than components
 
 **Visual Details**:
 - Architect Nexus at the entrance, blueprints mapping file-system routes
 - Data Steward Datum in the server realm, async components fetching data directly
 - Chronographer Tempus calibrating rendering strategies (static, server, ISR, hybrid)
 - Bridge Warden Unitas at the convergence point, client and server unified
-- Streaming visualizations — content flowing progressively through Suspense boundaries
+- Streaming visualizations - content flowing progressively through Suspense boundaries
 - "use client" boundaries glowing where realms transition
 
 **Masters**:
 - Architect Nexus (framework architect, file-system routing, client-server boundary)
 - Data Steward Datum (server-side React, async components, caching, streaming SSR)
-- Chronographer Tempus (rendering strategies — static, SSR, ISR, hybrid selection)
+- Chronographer Tempus (rendering strategies - static, SSR, ISR, hybrid selection)
 - Bridge Warden Unitas (Server Actions, Route Handlers, full-stack architecture)
 
 **Teaches**: Why frameworks exist (routing, data loading, SEO, code splitting), Next.js App Router (file-system routing, layouts, metadata), React Server Components (async data fetching, server-only patterns), caching and revalidation, Streaming SSR with Suspense, rendering strategies (static/SSR/ISR/hybrid), Server Actions (form mutations), Route Handlers (API endpoints), complete full-stack architecture
@@ -1959,7 +1959,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 
 ### Great Style Symposium & Styling Workshops
 
-**First Mentioned**: LP10.2 StylingSolutions Ch1
+**First Mentioned**: StylingSolutions Ch1
 
 **Location**: Diplomatic Zone, neutral gathering space
 
@@ -1968,7 +1968,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 - Styling Workshops with demonstration stations
 - Styled Components Atelier, Tailwind Factory, CSS Modules Academy
 
-**Master**: Moderator Stylus — demonstrates all styling approaches and teaches the decision framework
+**Master**: Moderator Stylus - demonstrates all styling approaches and teaches the decision framework
 
 **Theme**: Styling approaches, trade-offs, and matching tools to project needs
 
@@ -1976,7 +1976,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 
 ### Form Federation Headquarters & Workshop
 
-**First Mentioned**: LP10.3 FormLibraries Ch1
+**First Mentioned**: FormLibraries Ch1
 
 **Location**: Diplomatic Zone, federation gathering space
 
@@ -1985,7 +1985,7 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 - Holographic forms of increasing complexity
 - Form Workshop with demonstration stations for each library
 
-**Master**: Form Chancellor — demonstrates all form approaches and teaches the complexity-to-tool decision framework
+**Master**: Form Chancellor - demonstrates all form approaches and teaches the complexity-to-tool decision framework
 
 **Theme**: Form library approaches and matching architecture to complexity
 
@@ -1993,9 +1993,9 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 
 ### Data Service Facilities
 
-**Living Streams & Omnipresent Network**: LP11.2 RealtimeConnections - real-time data flowing, Stream Sage WebSocket  
-**Cache Vaults & Memory Vaults**: LP11.3 CachingCastle - data storage and optimization, Cache Lord Redux  
-**GraphQL Gateway & Schema Vault**: LP11.4 GraphQLGateway - unified query interface, Query Master Apollo
+**Living Streams & Omnipresent Network**: RealtimeConnections - real-time data flowing, Stream Sage WebSocket  
+**Cache Vaults & Memory Vaults**: CachingCastle - data storage and optimization, Cache Lord Redux  
+**GraphQL Gateway & Schema Vault**: GraphQLGateway - unified query interface, Query Master Apollo
 
 **Theme**: Data services accessible from kingdom but not tied to specific quarter
 
