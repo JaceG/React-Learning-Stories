@@ -9,6 +9,8 @@
 
 *Rule: Characters referenced as prior learning ("as Chronos taught me") are fine. Characters physically reappearing in scenes where they don't belong is not.*
 
+*Rule: NO CODE SYNTAX in the narrative. The narrative is pure story prose — code examples exist in separate modules. React vocabulary (useState, props.children, useEffect, React.memo, className, onClick, etc.) is fine as terminology — these are the names of things in the story world. What should NOT appear is actual code: variable declarations, function bodies, JSX markup, import statements, type annotations, arrow functions, assignment operators, code comments, etc.*
+
 ---
 
 ## Overview
@@ -62,7 +64,7 @@ The remediation is organized into 6 phases, from most mechanical/safe to most ju
 |------|-------|-----|
 | 311 | `<strong>...</strong>` | → `**...**` (Markdown bold) |
 | 4121 | Bare `</tr>` tag on its own line | Delete line entirely |
-| 3403-3406 | Raw JS code block (`// Solution 2...const filter = useMemo(...)`) | Replace with prose: "She used `useMemo` to create a stable filter object with `category` and `minPrice` as dependencies." |
+| 3403-3406 | Raw JS code block (comment + variable declaration + function call) | Replace with prose: "She memoized the filter object so the effect only re-ran when its primitive inputs actually changed." |
 
 ### 1.5 Empty / Incomplete Content
 
@@ -166,23 +168,17 @@ LP12.3 GenericForge Chapters 1 and 2 are taught by Archivist Lexicon, but the Wi
 
 **Action:** Rename the Ch1 and Ch2 Wisdom headers to use Lexicon's name.
 
-### 3.5 Inline Code Formatting (Global)
+### 3.5 Code Syntax Audit (Global)
 
-Many code/tech tokens appear as plain text throughout. GPT-5.2 recommends backticks for readability.
+React terminology (useState, props.children, useEffect, className, etc.) is fine as vocabulary — these are the names of things in the story. But actual code syntax should not appear anywhere in the narrative. No backticks needed — these are just words.
 
-**Action:** Global pass to wrap the following in backticks where they appear in wisdom blocks, reflection questions, and journal entries:
-- Hook names: `useState`, `useEffect`, `useRef`, `useMemo`, `useCallback`, `useReducer`, `useContext`
-- APIs: `React.memo`, `React.lazy`, `createPortal`, `createContext`, `React.Children`
-- JSX attributes: `className`, `htmlFor`, `onClick`, `onChange`, `tabIndex`
-- Patterns: `props.children`, `event.target`, `event.preventDefault()`
+**Action:** Scan for and convert any actual code syntax (variable declarations, arrow functions, JSX tags, assignment operators, code comments, type annotations) into prose descriptions. The raw code block at lines 3403-3406 (Phase 1) is the worst offender, but do a global check for any others that slipped through.
 
-*Note: Within narrative prose/dialogue, plain text is acceptable for readability. Backticks are most valuable in wisdom blocks and journal entries where a learner would reference them.*
+### 3.6 Journal Entry with Literal JSX Tags (LP15, Line 11287)
 
-### 3.6 Journal Entry with Literal HTML (LP15, Line 11287)
+Aria's journal entry contains JSX markup tags: `Labels: <label htmlFor="email"> + <input id="email">`
 
-Aria's journal entry contains raw HTML/JSX: `Labels: <label htmlFor="email"> + <input id="email">`
-
-**Action:** Wrap in backticks: `` Labels: `<label htmlFor="email">` + `<input id="email">` ``
+**Action:** Convert to prose. E.g.: "Labels: using label elements with htmlFor linking to input IDs — clicking the label focuses the input, and screen readers announce it."
 
 ---
 
@@ -272,15 +268,17 @@ LP5 mentions the "Advanced Hooks Sanctuary" or "Sanctuary training" excessively.
 
 ### 5.4 Code-Heavy Sections: Prose-ify
 
-Several passages read more like implementation walkthroughs than narrative prose. The user has specified: only prose, minimal code references for necessary syntax.
+Several passages read more like implementation walkthroughs than narrative prose. The narrative should describe concepts, patterns, and outcomes in story language — not walk through implementations step by step. React vocabulary words are fine; implementation details belong in the separate code modules.
 
 **Priority sections to slim down:**
 
 | Location | Issue | Action |
 |----------|-------|--------|
-| LP5.1 Ch2 SG3 (~line 4126) | Keyboard navigation challenge reads like an implementation spec (specific handler names, dependency lists) | Compress to concept-level: what pattern is, why it matters, what behavior it produces |
-| LP6.4 Ch1 (~line 5674) | Modal/accessibility paragraphs list full ARIA attributes and focus-trapping mechanics | Reduce to "must-haves" with 1-2 essential syntax references |
-| LP12 (~lines 9404-9666) | TypeScript sections include explicit type signatures and type-level examples | Keep at "why/what it prevents" level, reduce concrete syntax |
+| LP5.1 Ch2 SG3 (~line 4126) | Keyboard navigation challenge reads like an implementation spec (specific handler names, dependency arrays, element attributes listed out) | Rewrite as concept-level: what pattern Aria learned, why it matters, what behavior it produces for the user |
+| LP5.1 Ch2 SG3 (~line 4130) | Drag-and-drop challenge similarly implementation-heavy (event type checking, data attribute traversal) | Same treatment — describe the pattern and outcome, not the step-by-step implementation |
+| LP6.4 Ch1 (~line 5674) | Modal/accessibility paragraphs enumerate full ARIA attribute lists and focus-trapping mechanics as if specifying an implementation | Reduce to the key principles (trap focus, restore focus, Escape closes, announce to screen readers) without listing every attribute |
+| LP12 (~lines 9404-9666) | TypeScript sections describe explicit type signatures, generic parameters, conditional/mapped types at a documentation level | Keep at the "why" and "what it prevents" level — what these type patterns accomplish in the story, not their syntax |
+| LP5.2 Ch1 SG2 (~lines 4285-4302) | Controlled components section walks through specific handler implementations, event property access patterns | Describe what controlled components achieve and how they feel to use, not the implementation mechanics |
 
 ---
 
