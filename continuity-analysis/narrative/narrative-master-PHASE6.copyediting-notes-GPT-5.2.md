@@ -12,6 +12,9 @@
 - **Dialogue formatting**: Standardize how spoken dialogue is marked. In several places, dialogue is embedded as narration without quotation marks, or bold is used as a proxy for speech.
   - Recommendation: Use quotation marks for all spoken lines; reserve bold for emphasis, not for identifying speech.
 
+- **Keep it prose-first (minimize “code simulation”)**: The narrative sometimes drifts into near-code, including inline comment markers and multi-line code fragments.
+  - Recommendation: Describe concepts in prose, naming APIs only when necessary (e.g., “memoize the object with `useMemo`”), but avoid variable names, fake implementation details, and multi-step pseudo-code.
+
 - **Dashes**: The document mixes hyphen-minus with spaces (` - `) and true em dashes (`—`) for parenthetical breaks.
   - Recommendation: Pick one convention (prefer em dash `—` for narrative breaks) and apply consistently.
 
@@ -23,6 +26,44 @@
 - **Heading level consistency**: Some lessons use `### 📖 Lesson Opener` while others use `**Lesson Opener:**` (bold label). Consider standardizing openers/bridges across all LPs to keep the “master doc” uniform.
 
 - **Lists inside narrative**: When the narrative describes code-like lists/steps (e.g., “6 steps: input/validate/call…”), consider formatting as Markdown lists or inline code to reduce run-on density.
+
+---
+
+## Continuity & story-consistency notes (characters, places, learning arc)
+
+### Character continuity
+
+- **Debuggora scope wording**: In LP8.1, the “New Characters” block says Debuggora “appears only in LP8 … and does not return in later learning paths” (around **L6682**).
+  - **Story-bible alignment**: The story bible is stricter (“ONLY LP8.1; does NOT appear in LP8.2–8.4”). Consider tightening the narrative’s wording to match: “appears only in LP8.1.”
+
+- **Chronos “only appears” vs later mentions**: Chronos is referenced later as prior learning (e.g., **L11756** recap; also “as Chronos warned you” at **L1262**).
+  - This is probably fine (it’s not a reappearance), but if you want a hard rule (“Chronos is LP1-only”), consider wording that makes it explicit these are *references*, not *returns*.
+
+### Place / geography continuity
+
+- **Lesson-name consistency across documents**: Some lesson identifiers/names differ between the narrative and the reference docs (e.g., narrative `## 12.1 TypeScriptorium` vs story bible “LP12.1 TypeForge” / “Type Scriptorium” theme).
+  - Recommendation: Choose one canonical naming scheme for LP/Lesson slugs and use it consistently in `narrative-master-PHASE6.md`, `story-bible.md`, and `kingdom-geography.md` (especially if these slugs are used for indexing/search).
+
+- **Props Messenger Guild naming inconsistency**: The narrative alternates between **“Props Messengers Guild”** (plural; e.g., **L125**, **L214**, **L224**) and **“Props Messenger Guild”** (singular; e.g., **L232**, **L234**, **L281**).
+  - Recommendation: Pick one canonical name (the reference docs use singular “Props Messenger Guild”) and standardize all instances.
+
+- **Props Messenger Guild “first mention” mismatch (cross-doc)**: The geography reference marks “Props Messenger Guild” as first mentioned in LP1.2, but the narrative explicitly names it during LP1.1 (e.g., **L125** and **L214**).
+  - Options:
+    - **Narrative fix**: In LP1.1, refer generically to “a messenger guild in the Eastern Quarter” without naming it, and name it formally when Aria arrives in LP1.2.
+    - **Reference fix**: Update the geography “First Mentioned” field to LP1.1 if you want early foreshadowing to count.
+
+- **“Southern Quarter’s Context Hall” appears incorrect**: At **L5844**, the recap lists “the Southern Quarter’s Context Hall.” In the story bible and geography, Context is centered in the **Central Nexus / Grand Context Hall**, not a Southern Quarter.
+  - Fix: Change “Southern Quarter’s Context Hall” → “Central Nexus’s Context Hall” (or “Grand Context Hall in the Central Nexus”) to avoid confusing readers about where Context lives.
+
+- **“Communication Hub” potential naming collision (cross-doc)**: In the narrative, the Communication Hub is clearly in the **Component Workshop District** (LP1.1 Ch2). In the geography reference, the Props Messenger Guild section includes “Communication Hub in the center (Day 2 location).”
+  - Recommendation: To reduce world-map ambiguity, consider renaming one (e.g., **Component Communication Hub** vs **Guild Dispatch Hall**) or adjust the reference text so “Day 2 location” points to the Northern Quarter hub.
+
+- **Performance geography consistency (cross-doc)**: The narrative’s LP7 strongly frames performance work as **Northern Peaks / Memory Monastery / Velocity Crucible**, while the geography reference contains a **“Southern Quarter — Performance & Optimization”** section that places Lazy Library / Virtualization Vault there.
+  - Recommendation: Decide which is canonical (Northern Peaks vs Southern Quarter) and align the geography reference (and any narrative mentions) accordingly. For the narrative specifically, avoid introducing a new quarter (Southern) late unless it’s set up earlier.
+
+### Learning-arc “does this make sense as you read?”
+
+- **Recap lines should reflect established locations**: The recap at **L5844** is a “reader orientation” moment; location mistakes here are disproportionately confusing. After fixing the Context Hall line, consider lightly standardizing the naming (“Advanced Hooks Sanctuary,” “Central Nexus,” “Central Citadel”) so it matches earlier phrasing and reinforces the mental map.
 
 ---
 
@@ -41,6 +82,10 @@
 - **L4121**: Stray HTML closing tag appears as a standalone line.
   - Current: `</tr>`
   - Fix: Delete this line (or, if this was meant to be a code sample, wrap the entire snippet in a fenced code block so tags don’t leak into narrative).
+
+- **L3403–L3406**: A literal code comment + multi-line code fragment appears in the middle of prose.
+  - Current: `// Solution 2...` followed by `const filter = useMemo(() => ({ ...`
+  - Fix: Remove the comment + code fragment entirely and replace with prose (e.g., “Memoize the filter object with `useMemo` so the effect only re-runs when its primitive inputs change.”). This also aligns with your “no long code examples” constraint.
 
 - **L4120–L4123**: Internal wording inconsistency within the same “first challenge” paragraph.
   - Current: Starts with “edit/delete buttons” then later says buttons are “complete/delete”.
@@ -69,6 +114,20 @@
 - **L11287**: Journal entry includes literal HTML/JSX snippets without code formatting.
   - Current: `Labels: <label htmlFor="email"> + <input id="email"> ...`
   - Fix: Wrap each snippet in backticks: `Labels: \`<label htmlFor="email">\` + \`<input id="email">\` ...`
+
+### “Too code-heavy for narrative” (recommended trims)
+
+- **L4126**: The keyboard-navigation challenge reads like an implementation walkthrough (specific handler names, dependency lists, element types).
+  - Recommendation: Compress to concept-level prose (what pattern is, why it matters, what behavior it produces) and keep only the minimum necessary API mentions (e.g., `useCallback`, roving focus, preventing default).
+
+- **LP12 (around L9404–L9666 and nearby)**: The TypeScript path includes several explicit type signatures and type-level examples (generic parameters, conditional/mapped/template-literal types) that read like direct documentation rather than story.
+  - Recommendation: Keep the narrative at the “why/what it prevents” level and reduce concrete syntax to only the *most* essential tokens (e.g., mention “generic types” and “schemas infer types” without embedding full `type X = ...` examples).
+
+- **L5389–L5398**: Navigation polish section becomes a dense checklist with several concrete APIs and pseudo-implementation (“useEffect watching location changes,” `tabIndex={-1}`, etc.).
+  - Recommendation: Keep it as a short “principles + outcomes” paragraph; reserve exact APIs for a separate technical appendix (if you ever add one), not the narrative master.
+
+- **L5674 / L5693**: Modal/accessibility paragraphs are very implementation-forward (querying focusables, Tab trapping mechanics, full ARIA attribute lists, `createPortal(children, domNode)`).
+  - Recommendation: Reduce to “must-haves” (trap focus, restore focus, Escape closes, announce dialog, keep DOM placement separate from React tree) with only the one or two most essential syntax references.
 
 ### Consistency (structure)
 
