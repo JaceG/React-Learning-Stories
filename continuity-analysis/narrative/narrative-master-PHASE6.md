@@ -908,6 +908,8 @@ Binary spun in a happy circle, his lights brightening after the solemn Farewell 
 
 "But this is just the beginning," Chronos smiled mysteriously, gesturing toward the eastern horizon where the State Sorcerers' towers glowed in the distance. "Tomorrow, you'll journey to the Eastern Quarter to meet the State Sorcerers. They'll teach you how to give your components memory and the power to change over time. Today you learned how components live - tomorrow you'll learn how they remember and evolve."
 
+He paused, his ancient eyes reflecting the starlight. "I should also tell you - the lifecycle methods I've taught you are the classical way, the traditions passed down through generations of class components. But React Kingdom has been evolving. Newer, simpler patterns have emerged that unify these separate rituals into more elegant forms. You'll discover them soon enough. What matters is that you understand the *principles* - mounting, updating, unmounting, cleanup. The principles endure, even as the tools that express them change."
+
 Aria clutched her journal tightly, excitement building despite the day's gravity. She had mastered components, props, JSX, and lifecycles. She understood the temporal rhythms, the phases of existence, the responsibilities of citizenship in the React Kingdom. She was ready for the next chapter of her journey - ready to learn how components could remember and respond, how state transformed static code into living, dynamic interfaces.
 
 The hourglasses continued their eternal flow around her, each one tracking some component's journey through time. Aria was no longer just an observer - she was a participant, a creator, someone who understood the sacred patterns. Tomorrow would bring new magic, but tonight, she rested in the knowledge that she had mastered the foundations.
@@ -1235,7 +1237,7 @@ Master Hooke led Aria deeper into the forge, where the air shimmered with uncont
 
 Binary's lights flickered nervously. "Dangerous? But Aria just started learning!"
 
-"Not dangerous if used wisely," Hooke reassured them, placing a comforting hand on Binary's frame. "useEffect is the hook of **consequences**. It lets components reach out and affect the world beyond their boundaries - fetching data from remote servers, subscribing to external services, synchronizing with browser APIs, or manipulating the DOM directly. These are 'side effects' - operations that go beyond the pure function of rendering UI."
+"Not dangerous if used wisely," Hooke reassured them, placing a comforting hand on Binary's frame. "useEffect is the hook of **consequences**. It lets components reach out and affect the world beyond their boundaries - fetching data from remote servers, subscribing to external services, synchronizing with browser APIs, or manipulating the DOM directly. These are 'side effects' - operations that go beyond the pure function of rendering UI. Remember Chronos at the Lifecycle Sanctum? Where he taught you separate methods for mounting, updating, and unmounting? This single hook unifies all of that into one elegant pattern."
 
 She gestured to the glowing runes, which showed connections radiating outward from a component - one to an API, another to local storage, a third to a WebSocket, a fourth to the document title. "Your component's main job is to return JSX describing what to render. Everything else - data fetching, subscriptions, manual DOM changes - those are side effects that live in useEffect."
 
@@ -2419,7 +2421,7 @@ She struck a crystal chime mounted on the wall, and Aria watched in amazement as
 
 "This is the secret of callbacks," Callback explained, her voice weaving through the cave like music. "Parents pass down special functions as props - like giving children magical conch shells. When children need to send messages upward, they simply call these functions, creating echoes that reach their parents' ears no matter how far away. The props flow down, but the callbacks flow up!"
 
-Aria's understanding crystallized. "So it's not breaking the one-way data flow - it's completing the cycle? Props go down, events come back up through callbacks?"
+Aria's understanding crystallized. "Hermes showed me this pattern at the Props Messenger Guild! Callback props flowing down, invoked to send information back up. But hearing it as echoes in a cave makes the bidirectional nature so much clearer. Props go down, events come back up through callbacks - it completes the cycle!"
 
 "Precisely!" Callback beamed. "React's unidirectional data flow isn't one-way communication - it's a structured conversation with clear rules about which channel carries which message!"
 
@@ -2680,6 +2682,8 @@ Flux smiled knowingly, her robes rippling with the reflection of nearby data str
 She gestured to the streams, and Aria saw it clearly: every drop of data flowed downward, from the mountain peaks where parent components generated state, down through the valleys where child components consumed it. Not a single drop flowed upward. The river knew only one direction.
 
 "They flow in one direction only," Flux explained, her voice taking on a teaching cadence, "from the mountain peaks of parent components down to the valleys of their children. This is the Law of Unidirectional Flow - React's most sacred principle."
+
+Aria nodded with recognition. "Hermes taught me this same law on the Grand Thoroughfare - the one-way road where props only travel from parent to child. But seeing it as rivers makes the pattern even more vivid - you can feel the weight of the flow, the impossibility of reversal."
 
 Binary projected a small waterfall hologram, analyzing the pattern. "Unidirectional flow! That's why props are read-only! If children could modify props, they'd be forcing water uphill - impossible without breaking the natural order!"
 
@@ -4149,7 +4153,7 @@ Aria studied the chaotic performance with concern, recognizing patterns from the
 
 "Precisely what I was hoping you'd ask!" Eventus exclaimed, his eyes lighting up. "Your Sanctuary training in optimization is exactly what we need! Let me teach you how to apply those patterns to event handling - **throttling** and **debouncing**, the two essential rhythms of event optimization!"
 
-Binary's processors whirred excitedly, ready to learn new applications. "Sanctuary patterns detected! Ready to learn how Performance Trinity principles apply to event optimization!"
+Binary's processors whirred excitedly, ready to learn new applications of familiar patterns.
 
 Eventus demonstrated the problems with metrics - a scroll handler firing over a thousand times per second, calling expensive operations like updating scroll position, checking scroll percentage, and lazy loading images on every single scroll event. Similarly, a search input making API calls on every keystroke, so typing "react" triggers five separate API calls in half a second.
 
@@ -4415,7 +4419,7 @@ Aria studied the complex setup with focused interest, recognizing Sanctuary patt
 
 "Precisely the challenge!" Formeus beamed, clearly excited to guide a Sanctuary graduate. "The Grand Transmutation requires combining everything you've learned at the Sanctuary with form-specific patterns I'll teach you. Watch as we build a complete multi-step registration form with all the bells and whistles!"
 
-Binary's processors hummed at maximum capacity, ready to assist with integrating Sanctuary patterns. "Advanced Hooks Sanctuary patterns detected in form context! Ready to apply orchestration, performance optimization, and temporal management to form systems!"
+Binary's processors hummed at maximum capacity, ready to assist. "Complex form systems ahead! Ready to see how everything we've learned comes together!"
 
 "We'll create a form management system together," Formeus explained, gesturing to the setup, "that combines everything: multi-step wizard navigation (state architecture from Hooksworth), memoized validation for performance (Performance Sanctuary), proper submission handling with effects (Temporal Tower), field-level error display with proper timing (UX patterns), cross-field validation dependencies (orchestration from Synthesis), and even validation runes that light up as fields become valid - visual feedback using state-driven rendering!"
 
