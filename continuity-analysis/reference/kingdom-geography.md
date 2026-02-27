@@ -495,12 +495,13 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 
 ---
 
-### WESTERN QUARTER - User Interaction
+### WESTERN QUARTER - User Interaction & Prop Crafting
 
-**Terrain**: Urban district, grand plazas and halls, accessible architecture  
+**Terrain**: Urban district, grand plazas and halls, accessible architecture, industrial workshops uphill, trade markets beyond  
 **Climate**: Bustling, energetic, interactive, sounds of events and activities  
-**Theme**: Where users interact - forms, events, validation, user experience  
-**Borders**: Central Nexus (east), path to Western Mountains (west), Southern Quarter (south)
+**Theme**: Where users interact - forms, events, validation, prop transformation, component composition  
+**Borders**: Central Nexus (east), path to Western Mountains (west), Southern Quarter (south)  
+**Sub-regions**: Industrial Quarter (Prop Workbench), Trade Quarter (Composition District)
 
 #### Event Orchestrium
 
@@ -651,6 +652,41 @@ The Eastern Quarter is defined by water - not ordinary water, but flowing data v
 **Teaches**: Form submission (preventDefault() fundamental secret), submission states (idle/validating/submitting/success/error), advanced patterns (optimistic updates, retry logic with exponential backoff, cancellation giving users control), Grand Synthesis (all Forms & Events patterns unified), transmission optimization
 
 **Connection to Teaching**: Portal = submission gateway; vortex = data transmission; instability = poor handling; transmission arrays = advanced patterns; energy fluctuations = submission states; stabilization = good patterns; Grand Synthesis = everything unified; multiple masters = different domains harmonizing
+
+---
+
+#### Prop Workbench (Industrial Quarter)
+
+**First Mentioned**: PropWorkbench Ch1
+
+**Location Within Quarter**: Western Quarter, Industrial Quarter - reached by a winding path uphill from the main quarter
+
+**Architecture**:
+- Massive workshop where raw props are refined, reshaped, and transformed
+- Molten data flowing in channels carved into the floor, glowing blue and orange
+- Multiple anvils for prop crafting and transformation
+- Underground validation chamber with protective runes (reached by stone staircase)
+- Practice stations for destructuring, spreading, and validation exercises
+
+**Atmosphere**:
+- Intense heat from molten data channels
+- Rhythmic clanging of hammers on anvils
+- Industrial energy - transformation and precision
+- Cool, rune-lit protective energy in underground validation chamber
+
+**Visual Details**:
+- Master Destructo wielding glowing hammer, beard singed at edges
+- Sparks of data flying upward from each anvil strike
+- Prop objects taking shape under expert blows
+- Blue and orange light from molten data channels
+- Protective goggles and burn-marked leather aprons
+- Underground runes pulsing with validation magic
+
+**Master**: Master Craftsman Destructo (weathered craftsman, singed beard, sparkling eyes, glowing hammer)
+
+**Teaches**: Prop destructuring (extracting properties with surgical precision), default values for optional props, nested destructuring, rest syntax, prop spreading (...props forwarding), PropTypes runtime validation, TypeScript prop interfaces, validation patterns
+
+**Connection to Teaching**: Workshop = prop transformation; hammer and anvil = shaping data; molten channels = flowing props; destructuring = breaking apart; spreading = forwarding; underground validation = defensive typing; Industrial Quarter = working-class craft
 
 ---
 
@@ -827,7 +863,7 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 - Holographic maps showing all kingdom quarters connected
 - Routes loading dynamically, breadcrumbs generating automatically, scroll restoring
 
-**Master**: Captain Marina (continues teaching)
+**Master**: Wayfinder Solara (foremost expert on intelligent navigation, navigator's cloak shifts with orbs)
 
 **Teaches**: Advanced waypoint patterns (intelligent navigation nodes), Waypoint Architecture Pattern (routes as living entities with state/effects/context), route loaders for data fetching, actions for forms, error boundaries, metadata/handles, dynamic parameters (:id for identity), query parameters (?sort for state), navigation state (temporary), nested routes (component hierarchies), Outlets (render slots), breadcrumbs with useMatches(), intelligent prefetching, scroll restoration
 
@@ -864,18 +900,21 @@ The Central Nexus is the literal and metaphorical heart of the React Kingdom. Al
 - View overlooking entire kingdom from highest deck
 - Every quarter visible below from observation deck
 
-**Master**: Warden Aldric (guardian of route security, armor with shield-and-keys emblem)
+**Masters**:
+- Warden Aldric (guardian of route security, armor with shield-and-keys emblem) - teaches GuardianGates
+- Rift Walker Lyss (portal master, robes trailing fragments of light) - teaches PortalPassages
 
 **Teaches**: Protected routes (authentication + authorization integration), Guardian Gates system, role-based access control (RBAC), permission validation, AuthContext patterns, intelligent authentication flows (preserving destinations/state/journey), role hierarchies, React portals (escaping DOM hierarchy while keeping React powers), accessible modals (focus trapping, keyboard nav), portal transitions (maintaining context), advanced portal patterns (multi-step wizards, nested portals, split views, contextual portals), route-based modals, unified navigation architecture
 
-**Connection to Teaching**: Guardian Gates = protected routes; training grounds = learning security; memory crystals = preserving auth state; authorization matrix = permission patterns; Hall of Authority = role systems; demonstration chamber = portal patterns; observation deck = complete overview of all learning; portals = DOM escape while maintaining React; highest point in Nexus = overview of entire journey
+**Connection to Teaching**: Guardian Gates = protected routes; training grounds = learning security; memory crystals = preserving auth state; authorization matrix = permission patterns; Hall of Authority = role systems; Portal Passages = portal patterns; observation deck = complete overview of all learning; portals = DOM escape while maintaining React; highest point in Nexus = overview of entire journey
 
 ---
 
 ### CENTRAL NEXUS SUMMARY
 
-**Complete Locations**: Grand Context Hall, Central Citadel (Navigation Command Center), Waypoint Sanctum & Observatory, Navigation Corps Training Grounds & Guardian Archives  
+**Complete Locations**: Grand Context Hall, Central Citadel (Navigation Command Center), Waypoint Sanctum & Observatory, Navigation Corps Training Grounds & Guardian Archives (includes Portal Passages)  
 **Purpose**: Where all quarters meet, navigation hub, routing education, context management, kingdom overview  
+**Masters**: Contextia, Captain Marina, Wayfinder Solara, Warden Aldric, Rift Walker Lyss  
 **Travel**: Spoke pattern - all roads from quarters lead here, sky bridges ascend to Sky Realm
 
 ---
@@ -2005,15 +2044,32 @@ These zones aren't tied to specific quarters but serve as gathering spaces where
 
 ---
 
-## 🔟 INCLUSIVE EMPIRE (Philosophy, Not Geography)
+## 🔟 HARMONY HALLS (Final Realm)
 
-**Nature**: Not a physical location but principles woven throughout all regions  
-**Theme**: Accessibility touching all aspects of React development  
-**Manifests**: Features in all quarters - ramps alongside stairs, visual+audio displays, multiple interaction methods
+**First Mentioned**: InclusiveFoundations Ch1
 
-**Key Figures**: Empress Inclusiva, Five Guardians of Inclusion, Inspector Verificus, Compliance Auditor, Culture Keeper
+**Terrain**: Architecture that is audible, tactile, and structured for multiple ways of experiencing  
+**Climate**: Warm, inclusive light; doorways announce themselves; paths have textured surfaces  
+**Theme**: Accessibility as a fundamental quality of software, not an afterthought  
+**Access**: Visible on the horizon from the Server Spires; the final realm Aria enters
 
-**Teaching**: Accessibility isn't separate concern but philosophy integrated everywhere - "building for everyone"
+The Harmony Halls are the final realm of the React Kingdom. Unlike every realm before, the architecture is not just visual - it is audible, tactile, and structured so that someone experiencing it sequentially can navigate as effectively as someone scanning it visually. Doorways announce themselves. Paths have textured surfaces. Content is organized for multiple modes of interaction.
+
+**Key Chambers**:
+- **Foundations Hall** - where Empress Inclusiva teaches POUR principles and semantic HTML
+- **Interaction Chambers** - where Guardian Keynav teaches keyboard navigation and focus management
+- **Visual Chambers** - where Guardian Spectrum teaches color, contrast, motion, and responsive design
+- **Verification Workshop** - where Inspector Verificus teaches automated and manual accessibility testing
+
+**Masters**:
+- Empress Inclusiva (sovereign of the Harmony Halls, accessibility as fundamental quality)
+- Guardian Keynav (sentinel of keyboard paths, Tab/arrow/Enter/Escape/Space)
+- Guardian Spectrum (calibrator of visual perception, color and contrast)
+- Inspector Verificus (methodical tester, automated and manual verification)
+
+**Teaches**: POUR principles (Perceivable/Operable/Understandable/Robust), semantic HTML foundations, ARIA roles and landmarks, accessible forms (labels, fieldsets, error connections), keyboard navigation and focus management, screen reader patterns, color and contrast (WCAG AA ratios), motion accessibility (prefers-reduced-motion), responsive design as accessibility, automated testing (axe, Lighthouse), manual testing (keyboard-only, screen readers), accessibility culture and team practices
+
+**Connection to Teaching**: Harmony Halls = accessibility permeates everything; multiple modes of architecture = multiple modes of interaction; final realm = accessibility completes the journey; "accessibility isn't charity - it's quality"
 
 ---
 
