@@ -1762,8 +1762,6 @@ He showed real-world examples:
 
 Aria felt the weight of complete understanding. "useState for local. Context for app-wide simple values. Reducers for complex state logic. Redux for large coordinated state. Modern libraries for middle ground. Server state libraries like React Query for API data. Each has its place."
 
-"You've completed your training," Grand Reducer said, his form beginning to fade back into the Citadel's architecture. "But remember - mastery comes from practice. Use these tools wisely, measure their impact, and React Kingdom will flourish under your care."
-
 **Reflection Questions:**
 
 - How does understanding multiple state management approaches make you a more versatile React developer?
@@ -4810,7 +4808,7 @@ Sage guided Aria deeper into the portal chamber, where advanced transmission arr
 
 **Story Group 1:**
 
-Aria examined the complex portal mechanisms, seeing patterns from her journey everywhere. "I can see patterns I've learned - async operations from the Effect Sage's Temporal Tower, state management for tracking submission phases, error boundaries for recovery from the Testing Gauntlet patterns. But I'm not sure how they all work together for reliable submission that handles failures gracefully."
+Aria examined the complex portal mechanisms, seeing patterns from her journey everywhere. "I can see patterns I've learned - async operations from the Effect Sage's Temporal Tower, state management for tracking submission phases, error handling for recovery from the Validation Fortress patterns. But I'm not sure how they all work together for reliable submission that handles failures gracefully."
 
 "Excellent observations!" Sage praised, clearly pleased with her systematic thinking. "Your Sanctuary training helps you recognize the underlying patterns immediately! Our current system frustrates users with long waits, unclear feedback, and no recovery from failures. Failed transmissions often leave them stranded with lost data and no guidance!"
 
@@ -4985,7 +4983,7 @@ Marina gestured to the floating maps, her movements confident yet welcoming. "Ex
 
 She activated the central hologram, and Aria's entire journey lit up - the Component Workshop in the Northern Quarter, the Props pathways, the Hook Forge in the East, the Form Alchemy Lab in the West, all connected by navigation routes. "See? Every place you've been, every teacher you've learned from - routing connects them all into one cohesive application experience!"
 
-Binary projected Aria's learning progress with pride: "Foundation knowledge confirmed! Components: ✓ (LP1), State Management: ✓ (LP2), Props & Data Flow: ✓ (LP3), Hooks Training: ✓ (LP4), Forms & Events: ✓ (LP5). Complete React foundation established! Ready for navigation training that unites everything!"
+Binary projected Aria's learning progress with pride: "Foundation knowledge confirmed! Components from the Northern Quarter, State Management from the Eastern Quarter, Props and Data Flow from the Industrial and Trade districts, Hooks from the Advanced Sanctuary, Forms and Events from the Western Quarter. Complete React foundation established! Ready for navigation training that unites everything!"
 
 **Story Group 2:**
 
@@ -5150,7 +5148,7 @@ She demonstrated layout routes with loaders that fetch data shared across all ch
 
 Aria designed a complete application architecture with a root layout that included a global auth loader and error boundary. She created nested routes for login with an action handler, protected dashboard routes with their own loader for statistics, and deeply nested user routes with loaders that read URL filters and fetch user data. Each route had appropriate error boundaries, index routes for defaults, and actions for form submissions. The entire structure showed how loaders could be composed hierarchically, with parent loaders providing shared data and child loaders adding specific data, all wrapped in an AuthProvider that coordinated authentication across the application.
 
-"Magnificent!" Marina exclaimed. "Complete navigation architecture! Root loader checks global auth (Effect Sage patterns), protected routes guard dashboard (validation from Validus), nested routes compose layouts (Master Cargo's composition), loaders prefetch data (eliminating loading states!), actions handle submissions (Portal Keeper Sage's patterns), error boundaries catch route errors (Testing Gauntlet patterns), URL parameters carry filters (state management), and everything orchestrates through routing!"
+"Magnificent!" Marina exclaimed. "Complete navigation architecture! Root loader checks global auth (Effect Sage patterns), protected routes guard dashboard (validation from Validus), nested routes compose layouts (Master Cargo's composition), loaders prefetch data (eliminating loading states!), actions handle submissions (Portal Keeper Sage's patterns), error boundaries catch route errors (Error Enchantments patterns), URL parameters carry filters (state management), and everything orchestrates through routing!"
 
 She tested the system: Users navigate to /dashboard/users?filter=active, the loader fetches filtered users before rendering, the component renders immediately with data, clicking a user navigates to /dashboard/users/123 with smooth transition, the edit form submits through the action which updates then redirects, protected routes redirect unauthorized access to login with return URL, and browser back/forward works perfectly throughout.
 
@@ -5831,7 +5829,7 @@ As the final portal closed behind them, Lyss stood with Aria at the Central Cita
 
 "You've completed your navigation training," Lyss said warmly, her voice filled with teaching pride. "From basic routes to advanced portals, from URL state management to intelligent authorization, from waypoint metadata to nested modal orchestration. You understand how users move through React applications - not just mechanically, but meaningfully, with context preserved, intent remembered, and experience polished."
 
-Aria gazed at the kingdom spread below, every quarter she'd visited glowing with learned knowledge - the Northern Quarter where Master Aurelius taught components, the Eastern Sanctuary where Professor Hooksworth revealed hooks, the Western Quarter where Masters Formeus and Validus showed forms and validation, the Southern Quarter's Context Hall, and now the Central Citadel's navigation nexus tying everything together. "Components provide structure, state manages data, props enable communication, hooks add power, forms connect users, and navigation orchestrates everything," she reflected. "It's all one interconnected, beautiful system."
+Aria gazed at the kingdom spread below, every quarter she'd visited glowing with learned knowledge - the Northern Quarter where Master Aurelius taught components, the Eastern Sanctuary where Professor Hooksworth revealed hooks, the Western Quarter where Masters Formeus and Validus showed forms and validation, the Grand Context Hall in the Central Nexus, and now the Central Citadel's navigation nexus tying everything together. "Components provide structure, state manages data, props enable communication, hooks add power, forms connect users, and navigation orchestrates everything," she reflected. "It's all one interconnected, beautiful system."
 
 "Indeed," Lyss smiled, her eyes reflecting the kingdom's lights. "You've learned that routing isn't separate from React - it's the synthesis of all patterns working together to create complete application experiences. Routes are components that render conditionally. Navigation updates state captured in URLs. Effects synchronize with transitions. Context distributes auth. Forms persist across boundaries. And portals transcend DOM hierarchy while maintaining all React intelligence."
 
@@ -6670,7 +6668,7 @@ Binary displayed testing fundamentals: "Unit Testing complete! Philosophy: preve
 Guardian of the Testing Gauntlet in the Underground Realms, Jasmine brings systematic discipline to a kingdom plagued by bugs that breed in untested code. Her robes shimmer with glowing test assertions, and her companion Debuggora the Owl sees through code to its true behavior. "Testing is not about finding bugs - it is about making them impossible."
 
 **Debuggora the Owl**
-A mystical owl perched at Jasmine's shoulder, Debuggora's glowing eyes can perceive the true runtime behavior of any code, spotting bugs hiding in shadows that developers overlook. She speaks in riddles but her insights are invaluable. Debuggora appears only in LP8 - the Testing and Debugging path - and does not return in later learning paths.
+A mystical owl perched at Jasmine's shoulder, Debuggora's glowing eyes can perceive the true runtime behavior of any code, spotting bugs hiding in shadows that developers overlook. She speaks in riddles but her insights are invaluable. Debuggora appears only at the Testing Gauntlet and does not return in later lessons.
 
 **Jasmine's Unit Testing Wisdom:**
 Unit testing is preventive magic - guardian spells cast before bugs can manifest. Jest provides the test runner, assertion library, and mocking capabilities. React Testing Library provides DOM testing utilities built on the philosophy of testing components the way users interact with them. Core workflow: render a component with render(), query elements using accessible queries (getByRole, getByLabelText, getByText - prefer these over getByTestId), simulate user interactions with userEvent (click, type, select), and assert on visible output. Tests describe behavior, not implementation - they survive refactoring because changing internal state management or component structure does not break tests that verify user-facing behavior. The greatest misconception is that testing slows you down; the opposite is true, because every change to untested code carries the risk of invisible breakage. When your tests mirror real usage, they become living documentation, catch regressions instantly, and give you confidence to refactor fearlessly.
@@ -7773,7 +7771,7 @@ Polymorphic components accept an "as" prop that controls which HTML element or c
 - What challenges does polymorphism create for TypeScript type safety, and why is this worth solving?
 
 **Aria's Journal - Day 104**
-*Polymorphic components - the "as" prop that lets consumers choose the rendered element! A Button that becomes an anchor for navigation, a Link for routing, a button for actions - consistent styling, correct semantics. This eliminates the awful pattern of button-styled-as-link that breaks accessibility. I built polymorphic primitives: Button (with smart defaults - adds rel for external anchors), Stack (flexbox layout as nav/ul/form/div - same spacing, correct semantics), and learned about Box/Text patterns from Chakra UI and Mantine. The key insight: design system controls visuals, consumer controls semantics. Both complete, neither compromised. Sable mentioned TypeScript generics for proper prop inference - when "as" is "a", href becomes valid automatically. I'll learn that fully in LP12. Tomorrow: slot-based composition and design system architecture!*
+*Polymorphic components - the "as" prop that lets consumers choose the rendered element! A Button that becomes an anchor for navigation, a Link for routing, a button for actions - consistent styling, correct semantics. This eliminates the awful pattern of button-styled-as-link that breaks accessibility. I built polymorphic primitives: Button (with smart defaults - adds rel for external anchors), Stack (flexbox layout as nav/ul/form/div - same spacing, correct semantics), and learned about Box/Text patterns from Chakra UI and Mantine. The key insight: design system controls visuals, consumer controls semantics. Both complete, neither compromised. Sable mentioned TypeScript generics for proper prop inference - when "as" is "a", href becomes valid automatically. I'll learn that fully at the Great Scriptorium. Tomorrow: slot-based composition and design system architecture!*
 
 ---
 
@@ -8107,7 +8105,7 @@ Aria gathered her impressions into a decision framework. She had visited four ap
 
 "The question is never 'which is best,' " she reflected. "It is 'which fits this specific situation?' " For a component's local UI state - useState, always. For global state shared by a few components - Zustand, minimal setup. For complex enterprise applications with large teams - Redux Toolkit, enforced patterns. For applications with many independent reactive atoms - Jotai, fine-grained updates.
 
-She also recognized that applications could mix approaches: useState for local state, Zustand for global UI state like theme and sidebar, and a server-state library like TanStack Query for API data (coming in LP11). "State management is not one decision. It is multiple decisions about different kinds of state in your application."
+She also recognized that applications could mix approaches: useState for local state, Zustand for global UI state like theme and sidebar, and a server-state library like TanStack Query for API data (coming at the Cloud Bastion). "State management is not one decision. It is multiple decisions about different kinds of state in your application."
 
 Binary displayed state management mastery: "State Management Libraries complete! useState/useReducer: local state (always first choice). Zustand: global state, minimal ceremony, modern default. Redux Toolkit: large teams, complex state, enforced patterns, time-travel. Jotai: atomic state, fine-grained reactivity, Suspense integration. Decision: match tool to specific state need. Mix approaches: local + global + server state = different tools for different jobs!"
 
@@ -8150,7 +8148,7 @@ The summit moved to practical application - how to architect state in a real-wor
 
 **Global UI state** (Zustand) for shopping cart contents, theme preference, notification queue - client-side state shared across many components that persisted during the session.
 
-**Server state** (TanStack Query, covered in LP11) for product catalog, user profile, order history - data from APIs that needed caching, pagination, and background revalidation.
+**Server state** (TanStack Query, covered at the Cloud Bastion) for product catalog, user profile, order history - data from APIs that needed caching, pagination, and background revalidation.
 
 **URL state** (React Router) for current page, search filters, sort order - state that should be shareable via URL and survive page refreshes.
 
@@ -8176,7 +8174,7 @@ State management architecture classifies state into four types, each with an app
 - What problems arise when a single tool (like Redux) is used for all four types of state?
 
 **Aria's Journal - Day 111**
-*The State Alliance summit brought it all together! The key insight: four types of state, four tools. Local (useState) for ephemeral component state. Global UI (Zustand) for shared client state like cart and theme. Server (TanStack Query - coming in LP11) for API data with caching. URL (React Router) for bookmarkable, shareable state. Most "state management" problems are actually DATA FETCHING problems! Using Redux for API responses conflates server and client state. I practiced classifying state for an e-commerce app: cart items → Zustand, product listings → TanStack Query, current page → URL, button spinner → local useState. Classification determines which tool manages each piece. The alliance concluded with mutual respect - diversity is strength. State management path complete! Tomorrow: the Style Symposium with Moderator Stylus!*
+*The State Alliance summit brought it all together! The key insight: four types of state, four tools. Local (useState) for ephemeral component state. Global UI (Zustand) for shared client state like cart and theme. Server (TanStack Query - coming at the Cloud Bastion) for API data with caching. URL (React Router) for bookmarkable, shareable state. Most "state management" problems are actually DATA FETCHING problems! Using Redux for API responses conflates server and client state. I practiced classifying state for an e-commerce app: cart items → Zustand, product listings → TanStack Query, current page → URL, button spinner → local useState. Classification determines which tool manages each piece. The alliance concluded with mutual respect - diversity is strength. State management path complete! Tomorrow: the Style Symposium with Moderator Stylus!*
 
 **Lesson Ending:**
 
@@ -8486,9 +8484,7 @@ The Chancellor showed how form architecture scaled. A small application needed m
 
 Aria designed form architecture for three scales. A personal project: native React, no library, simple validation. A startup product: React Hook Form + Zod, shared Input/Select/Textarea components wrapping register, schema files per feature, and MSW-mocked form testing. An enterprise application: React Hook Form + Zod with a form component library, shared validation schemas with company-wide rules, form analytics, multi-step wizard framework, and comprehensive integration testing.
 
-"Perfect scaling," the Chancellor approved. "Each decision matched the need. The personal project avoided unnecessary dependencies. The startup balanced speed with quality. The enterprise invested in systematic patterns that would serve hundreds of developers."
-
-"Perfect scaling," the Chancellor approved. Form architecture was not about the library. It was about matching complexity to need.
+"Perfect scaling," the Chancellor approved. "Each decision matched the need. The personal project avoided unnecessary dependencies. The startup balanced speed with quality. The enterprise invested in systematic patterns that would serve hundreds of developers." Form architecture was not about the library. It was about matching complexity to need.
 
 Binary displayed form architecture: "Form Architecture Decisions complete! No library: 1-5 fields, simple validation. RHF + Zod: most apps, 5+ fields, schema validation, performance. TanStack Form: max TypeScript safety. Formik: existing codebases. Scale: small (native) → medium (RHF + shared components) → large (RHF + form library + schemas + analytics + testing). Match complexity to need!"
 
@@ -8810,7 +8806,7 @@ Aria built an error classification system in her API layer: an interceptor that 
 
 TanStack Query provided built-in retry logic - configurable per query or globally. Axios showed how to customize retry behavior: network errors retried 3 times with exponential backoff, 401 errors never retried (redirect to login instead), 404 errors never retried (resource genuinely not found), and 5xx errors retried once (server might recover). A shouldRetry function made this classification automatic.
 
-She implemented **error boundaries for data** - wrapping query-dependent sections with Error Boundaries that caught rendering errors from failed queries. TanStack Query's useErrorBoundary option threw fetch errors to the nearest boundary, enabling the same Error Boundary patterns she learned in LP8 for data failures.
+She implemented **error boundaries for data** - wrapping query-dependent sections with Error Boundaries that caught rendering errors from failed queries. TanStack Query's useErrorBoundary option threw fetch errors to the nearest boundary, enabling the same Error Boundary patterns she learned at the Testing Gauntlet for data failures.
 
 "Combine Error Boundaries with query error handling for defense in depth," Axios said. "TanStack Query handles retries and error states per query. Error Boundaries catch uncaught errors that propagate past component logic. Global error handlers catch everything else."
 
@@ -9001,7 +8997,7 @@ Stream Sage WebSocket faded back into the Living Streams as Aria departed, her f
 
 "Real-time is a paradigm shift," WebSocket's voice echoed from the streams. "Everything you learned with Axios - requests, responses, caching - follows a pattern: the client asks, the server answers. Real-time inverts that relationship. The server speaks when it has something to say. The client listens continuously. The connection persists, and data flows in both directions without waiting for permission."
 
-Aria thought about the collaborative editor she had built - multiple cursors moving in real-time, text appearing as remote users typed, conflict resolution merging simultaneous edits into a coherent document. It was fundamentally different from fetching a list of items. The data was alive, constantly changing, arriving without being requested. And the architecture had to account for every degraded state: what happens when the connection drops, when the server restarts, when one client falls behind the stream.
+Aria thought about the collaborative task board she had built - tasks appearing in real-time as teammates added them, presence indicators showing who was online, optimistic updates making every action feel instant, conflict resolution ensuring consistency when multiple users modified the same data. It was fundamentally different from fetching a list of items. The data was alive, constantly changing, arriving without being requested. And the architecture had to account for every degraded state: what happens when the connection drops, when the server restarts, when one client falls behind the stream.
 
 "The integration with TanStack Query was the key insight," Aria reflected aloud. "WebSocket messages feeding into the same cache that HTTP requests populate. Components consume a single source of truth regardless of how the data arrived - by request or by push. The user does not know or care whether the latest price came from an HTTP fetch or a WebSocket message."
 
@@ -9449,7 +9445,7 @@ He showed the **satisfies operator** - TypeScript 4.9+. const config = { ... } s
 
 Aria built advanced typed components: a Table<T> generic component with typed columns, sorting, and selection. A Form<T> generic that generated typed form fields from a schema. A polymorphic Button<C extends React.ElementType> where the "as" prop's type determined which additional props were valid - when as="a", href was required; when as="button", type was available.
 
-"This is the polymorphic component pattern from LP9, now with full type safety," Runis said. "TypeScript infers the correct prop types based on the 'as' value. The consumer gets autocompletion for the right props. Wrong props cause compile-time errors."
+"This is the polymorphic component pattern from the Architect's Academy, now with full type safety," Runis said. "TypeScript infers the correct prop types based on the 'as' value. The consumer gets autocompletion for the right props. Wrong props cause compile-time errors."
 
 Binary displayed advanced patterns: "Advanced TypeScript complete! Generics: type parameters for reusable components (List<T>, Table<T>). Constraints: T extends { id: number } limits acceptable types. Utility types: Partial, Required, Pick, Omit, Record. satisfies: validate without widening. Discriminated unions: variant-based prop requirements. Polymorphic types: as prop determines valid additional props!"
 
@@ -9544,7 +9540,7 @@ Lexicon demonstrated **typed custom hooks** with sophisticated return types. A u
 
 **Typed context** ensured shared values were always correctly typed. Lexicon showed the pattern: create a context with createContext<ContextType | undefined>(undefined), provide a custom hook (useThemeContext) that consumed the context and threw a descriptive error if used outside its Provider, guaranteeing consumers always received the correct type.
 
-For complex contexts with many values and actions, he split context into separate providers - a ThemeStateContext for values and a ThemeDispatchContext for actions - following the same patterns from LP5 but now fully typed. Each context had its own interface, and each custom hook provided typed access with proper null checks.
+For complex contexts with many values and actions, he split context into separate providers - a ThemeStateContext for values and a ThemeDispatchContext for actions - following the same patterns from the Western Quarter but now fully typed. Each context had its own interface, and each custom hook provided typed access with proper null checks.
 
 **Story Group 3:**
 
@@ -10204,7 +10200,7 @@ Captain Pipeline surveyed the automated pipeline with satisfaction - every conve
 
 "The pipeline is a contract with your future self," Pipeline said. "When you commit code at midnight before a deadline, the pipeline catches the typo you missed. When a new team member pushes their first PR, the pipeline verifies it meets the same standards as everyone else's. When you refactor a module and accidentally break an import, the pipeline catches it before a single user is affected. The investment is upfront - writing the workflow, configuring the checks, tuning the caches. The return is continuous and compounding."
 
-Aria thought about the GitHub Actions workflows she had built: a CI workflow that ran on every pull request - installing dependencies with cached node_modules, running ESLint for code quality, running TypeScript for type safety, running Jest for unit tests, running Playwright for E2E tests, and checking the production build. A CD workflow that deployed to staging automatically on merge to main, ran smoke tests against the staging environment, and promoted to production on manual approval. The workflows were YAML files in her repository - version-controlled, reviewable, and auditable just like the application code they protected.
+Aria thought about the GitHub Actions workflows she had built: a CI workflow that ran on every pull request - installing dependencies with cached node_modules, running ESLint for code quality, running TypeScript for type safety, running Vitest for unit tests, running Playwright for E2E tests, and checking the production build. A CD workflow that deployed to staging automatically on merge to main, ran smoke tests against the staging environment, and promoted to production on manual approval. The workflows were YAML files in her repository - version-controlled, reviewable, and auditable just like the application code they protected.
 
 "Branch protection rules are the guardrail," Pipeline continued. "Require CI to pass before merge. Require code review. Require up-to-date branches. These rules turn the pipeline from advisory into mandatory - nobody ships code that fails tests, regardless of urgency or seniority."
 
