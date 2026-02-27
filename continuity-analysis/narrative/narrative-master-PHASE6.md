@@ -235,7 +235,7 @@ The Props Messenger Guild was a hive of activity unlike anything Aria had seen. 
 
 **Hermes**, the Head Messenger, awaited Aria at the Guild's grand entrance. He wore blue robes that shimmered with data patterns, and carried a staff topped with a glowing scroll-tube. His presence commanded respect - every messenger that passed gave a brief salute.
 
-"Welcome, apprentice Aria! Master Aurelius told me about your progress with components. " You've seen our messengers at work in the Component Kingdom. Now you'll master the full system." Hermes gestured to the busy messengers flowing around them. "These are our **Props** - special messengers who carry instructions from parent components to their children."
+"Welcome, apprentice Aria! Master Aurelius told me about your progress with components. You've seen our messengers at work in the Component Kingdom. Now you'll master the full system." Hermes gestured to the busy messengers flowing around them. "These are our **Props** - special messengers who carry instructions from parent components to their children."
 
 "I see!" Aria exclaimed, remembering the Communication Hub overlook. "So the master builder **App** uses these messengers to tell each workshop exactly what to create?"
 
@@ -308,7 +308,7 @@ The next morning, Hermes led Aria from the Guild headquarters to an observation 
 
 Aria studied the intricate web of pathways. From App's Tower at the highest point, roads descended in organized levels - first to major components, then to their children, then to their children's children. The flow was unmistakable, like water finding its way downhill through an elaborate series of channels. "Yes, I see it. But..." She scanned the thoroughfare more carefully, searching. "I don't see any roads going back up!"
 
-"Exactly!" Hermes smiled with satisfaction, as if she'd passed an important test. "This is the most important rule in our kingdom: <strong>Props can only travel in one direction—from parent to child</strong>. Always downward, never upward, never sideways. The architectural principle is absolute."
+"Exactly!" Hermes smiled with satisfaction, as if she'd passed an important test. "This is the most important rule in our kingdom: **Props can only travel in one direction - from parent to child**. Always downward, never upward, never sideways. The architectural principle is absolute."
 
 He gestured to a messenger attempting to travel upward on one of the paths. The road itself gently redirected him downward - the system was literally built to enforce one-way flow. "No craftsman can modify the contents of the Props bag they receive; they can only read the instructions and create their piece accordingly. To change props would be to violate the fundamental contract of our communication system. It would create chaos - workshops modifying instructions meant for others, data flowing in unpredictable directions, the entire system becoming unreliable."
 
@@ -811,7 +811,7 @@ Aria thought carefully. "ComponentDidMount to start the timer, componentDidUpdat
 
 Second challenge: "A UserProfile that fetches data when the user ID prop changes."
 
-Aria considered. "ComponentDidMount to fetch initial data, component DidUpdate to check if the ID changed and fetch new data." She wrote both methods, using componentDidUpdate with prevProps as a parameter to compare the previous userId with the current userId from this.props.
+Aria considered. "ComponentDidMount to fetch initial data, componentDidUpdate to check if the ID changed and fetch new data." She wrote both methods, using componentDidUpdate with prevProps as a parameter to compare the previous userId with the current userId from this.props.
 
 "Excellent understanding!" Chronos praised. "You're thinking about when each operation should occur. Initial fetch at mount, subsequent fetches at update when relevant props change."
 
@@ -1084,7 +1084,6 @@ As State Sorcerers advanced in their studies, Memnon revealed the deeper mysteri
 
 **Story Group 1:**
 
-
 "There's one final lesson," Memnon said, his eyes twinkling with wisdom, "before you leave for the Hook Forge. State is powerful, but only if wielded correctly. You must understand when to use it, how to structure it, and how to lift it when necessary. These patterns will serve you throughout your React journey."
 
 He led Aria to a demonstration chamber where component models floated in the air like architectural blueprints. "Observe this common mistake," Memnon gestured, and a component diagram appeared showing state scattered across many distant components. Red lines crisscrossed between them, indicating complex prop chains trying to share information. "Each component hoards its own state, forcing tortuous prop chains to share information. Sibling components can't communicate. Parent components lose control. Updates become unpredictable."
@@ -1117,7 +1116,7 @@ Aria thought carefully, applying the patterns Memnon taught. "The todo list itse
 
 "Excellent reasoning!" Memnon encouraged. "Walk through your decision process."
 
-"If SearchBox just controls an input, the search text can be local. But if TodoApp needs it to filter the displayed todos, it should be lifted. So it depends on the architecture."She decided to lift the search text to TodoApp so the filtering logic could live in one place. "Three pieces of state in TodoApp: todos array, current filter, and search text. All shared between children, so all lifted to the common ancestor."
+"If SearchBox just controls an input, the search text can be local. But if TodoApp needs it to filter the displayed todos, it should be lifted. So it depends on the architecture." She decided to lift the search text to TodoApp so the filtering logic could live in one place. "Three pieces of state in TodoApp: todos array, current filter, and search text. All shared between children, so all lifted to the common ancestor."
 
 Memnon nodded approvingly. "You've learned to think architecturally. State placement isn't just about making things work - it's about creating maintainable, understandable structures. Ask yourself: What components need this state? What's their lowest common ancestor? Can this state be derived from other state? These questions guide good architecture."
 
@@ -1129,8 +1128,6 @@ State is powerful but should be used wisely. Keep state close to where it's need
 
 **Reflection Questions:**
 
--
--
 - How does understanding state patterns help you structure your React applications?
 - Why is it important to keep state close to where it's used instead of always putting it at the top level?
 
@@ -1368,7 +1365,7 @@ Aria carefully tucked the pouch into her satchel, her mind buzzing with new know
 
 ### 📖 Lesson Opener
 
-Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom , in the Central Plaza between all four quarters. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
+Following Master Hooke's directions, Aria and Binary made their way to the Grand Hall - a magnificent structure at the heart of React Kingdom, in the Central Plaza between all four quarters. Here, the Context Keepers maintained the invisible threads that connected components across vast distances, allowing them to share memories without passing props through every level.
 
 ### Chapter 1: The Context Keepers' Hall
 
@@ -2082,7 +2079,6 @@ Binary displayed a holographic workbench in miniature, complete with tiny hammer
 
 ### 📖 Lesson Opener
 
-
 After learning prop transformation at the Workbench, Aria and Binary ventured deeper into the Trade Quarter, in the Western Quarter beyond the industrial smoke of Master Destructo's workshop. Here lay the Composition District - a place where components weren't just built, but artfully assembled from smaller pieces. Master Cargo taught the advanced patterns that made React's component model truly powerful.
 
 ### Chapter 1: The Composition Workshop
@@ -2415,7 +2411,7 @@ Inside the first cavern, Aria's eyes adjusted to see crystalline formations that
 
 At the center of this natural symphony stood a figure draped in robes that shimmered with visible sound waves, the fabric rippling and flowing with each vibration in the air. The woman's presence seemed to harmonize with the cave itself, as if she were part of its acoustic structure.
 
-"Welcome, Aria," the figure said, her voice creating visible ripples in the air that emanated outward like gentle waves on a pond. "I am **Echo Warden Callback**, guardian of upward communication. Master Cargo sent word of your arrival - she says you've mastered both prop transformation and the art of composition."
+"Welcome, Aria," the figure said, her voice creating visible ripples in the air that emanated outward like gentle waves on a pond. "I am **Echo Warden Callback**, guardian of upward communication. Master Cargo sent word of your arrival - he says you've mastered both prop transformation and the art of composition."
 
 Binary chirped excitedly at the strange acoustics, and the sound bounced off the cave walls in fascinating patterns - not scattering randomly, but traveling in organized paths that seemed to flow upward toward specific crystalline receivers.
 
@@ -2507,7 +2503,7 @@ She handed Aria a resonance crystal that pulsed with captured sounds. When Aria 
 
 "So callbacks can carry parameters - actual data being passed upward?" Aria asked, examining the crystal's encoding patterns.
 
-"Exactly! Just as an echo can carry the nuance, timber, and pitch of the original sound, callbacks can transport rich data structures upward through their parameters. Watch and learn!"
+"Exactly! Just as an echo can carry the nuance, timbre, and pitch of the original sound, callbacks can transport rich data structures upward through their parameters. Watch and learn!"
 
 Callback demonstrated with a glowing example showing three levels of callback sophistication. The simplest form was a Button that received a callback with no parameters - just a signal that something happened. The next level showed a TodoItem that passed multiple parameters - an ID and a timestamp - allowing the parent to know exactly which item completed and when. The most sophisticated example was a Form that passed an entire data object containing all form fields bundled together, creating a complete submission package that traveled upward in a single callback.
 
@@ -2979,7 +2975,7 @@ In a circular classroom filled with hovering spell books that opened and closed 
 
 Binary chirped a greeting, projecting a small hologram recap of their previous adventures through the State Sorcerers' Tower, the Prop Workbench, and the data streams.
 
-"Impressive companion!" Hooksworth noted, studying Binary's projections with interest. "And an impressive journey! Now, I understand you've learned useState basics with Memnon at the State Sorcerers. " Today, we'll take that foundation and master the advanced patterns that professionals use - techniques that transform good state management into exceptional architecture. Memnon taught you useState's core - I'll teach you its mastery!"
+"Impressive companion!" Hooksworth noted, studying Binary's projections with interest. "And an impressive journey! Now, I understand you've learned useState basics with Memnon at the State Sorcerers. Today, we'll take that foundation and master the advanced patterns that professionals use - techniques that transform good state management into exceptional architecture. Memnon taught you useState's core - I'll teach you its mastery!"
 
 He waved his wand, and glowing runes appeared in the air showing useState code examples. "Let's begin with an advanced pattern - **Lazy Initial State**. You see, Aria, Memnon taught you how to set initial state with values or expressions. But sometimes our initial state requires expensive calculations - reading from localStorage, parsing complex data, running computations. Watch what happens with normal initialization."
 
@@ -3398,12 +3394,7 @@ The second challenge revealed object and array pitfalls. Aria created a filter o
 
 "Exactly!" the Sage's form brightened. The sphere showed multiple solutions. Solution 1 was to depend on the primitive values directly - category and minPrice - instead of the object. Primitives are compared by value, so the effect only runs when those actual values change. The effect could then construct the filter object internally from those primitives.
 
-"And Solution 2," Aria interjected, recalling her time at the Hook Forge, "is to stabilize the object with useMemo - Forge Master Hooke showed me this pattern!"
-
-// Solution 2: useMemo to stabilize object (from Forge Master Hooke's training)
-const filter = useMemo(() => ({
-  category, minPrice
-}), [category, minPrice]);
+"And Solution 2," Aria interjected, recalling her time at the Hook Forge, "is to stabilize the object with useMemo - Forge Master Hooke showed me this pattern! Memoize the filter object so it only gets recreated when category or minPrice actually change!"
 
 "Precisely," the Sage confirmed with an approving nod. The effect called fetchFiltered with the filter object, depending on filter. Since filter was now memoized, it only changed when category or minPrice actually changed, making the effect run only when necessary. "Your time at the Hook Forge serves you well here."
 
@@ -3648,7 +3639,7 @@ The second challenge: create useMediaQuery for responsive design. Aria forged a 
 
 The third challenge tested creativity: create useInterval that works properly with React. Aria remembered the Effect Sage's lessons about stale closures and used useRef to store the latest callback reference, solving the stale closure problem while allowing the interval to be paused by passing null as the delay.
 
-"Brilliant!" Compose exclaimed. "You've solved the stale closure problem with useRef, made delays controllable, and handled cleanup properly. This is Dan Abramakov's famous useInterval hook - you've independently discovered a pattern used by thousands of developers!"
+"Brilliant!" Compose exclaimed. "You've solved the stale closure problem with useRef, made delays controllable, and handled cleanup properly. This is Dan Abramov's famous useInterval hook - you've independently discovered a pattern used by thousands of developers!"
 
 Binary displayed the composition patterns: "Advanced hooks: Combine useState + useEffect + browser APIs. Encapsulate complexity. Handle cleanup properly. Use refs for stable references. Document edge cases!"
 
@@ -4117,9 +4108,7 @@ He showed more delegation patterns - keyboard shortcuts handled through a single
 
 "Now master delegation yourself," Eventus said, presenting Aria with real-world scenarios.
 
-The first challenge: a data table where each row needs edit/delete buttons. Instead of 1000 buttons × 2 handlers = 2000 handlers, Aria used delegation. She created a DataTable component with a single handleRowAction function that used event.target.closest to find the clicked button, then traversed up to find the row with data-row-id, extracted both the rowId and the action from data attributes, and called the appropriate handler (handleEdit or handleDelete) based on the action. She attached this single handler to the table element with onClick, then rendered rows mapped from the data, each row containing the todo text and two buttons with data-action attributes set to "edit" and "delete".
-        </tr>
-She rendered a table with rows mapped from todos, each row containing the todo text and two buttons with data-action attributes set to "complete" and "delete". The single handleAction handler on the table managed all button clicks efficiently.
+The first challenge: a data table where each row needs edit/delete buttons. Instead of 1000 buttons × 2 handlers = 2000 handlers, Aria used delegation. She created a DataTable component with a single handleRowAction function that used event.target.closest to find the clicked button, then traversed up to find the row with data-row-id, extracted both the rowId and the action from data attributes, and called the appropriate handler (handleEdit or handleDelete) based on the action. She attached this single handler to the table element with onClick, then rendered rows mapped from the data, each row containing the todo text and two buttons with data-action attributes set to "edit" and "delete". The single delegated handler on the table managed all button clicks efficiently.
 
 "Excellent!" Eventus approved, his baton glowing with satisfaction. "One handler, 2000 elements managed! data-action attributes identify which button was clicked!"
 
@@ -5696,6 +5685,7 @@ React portals allow components to render outside their parent DOM hierarchy whil
 
 **Rift Walker Lyss**
 Master of the Portal Passages chamber in the Central Citadel, specialist in dimensional rendering and portal architecture. Her robes trail fragments of light from the portals she moves through, and she speaks about component boundaries the way a cartographer speaks about borders on a map. "A portal is not an escape from React — it is React reaching further than the DOM expected. The component still belongs to the tree. It just renders somewhere else. That distinction is everything."
+
 **Reflection Questions:**
 
 - How does route-driven modal state improve shareability and user experience compared to local state?
@@ -6512,6 +6502,7 @@ Optimization requires measurement first. React DevTools Profiler reveals render 
 
 **Master Velocity**
 Guardian of the Velocity Crucible, carved into the highest peak of the Northern Mountains. His robes shimmer with optimization symbols, each one earned by profiling a real bottleneck and eliminating it. "Speed is not an accident. It is precision. Every unnecessary render is an attack on your users' time. I will teach you to see what you cannot see — and to remove what should not be there."
+
 **Reflection Questions:**
 
 - How does the React DevTools Profiler make invisible performance issues visible and measurable?
@@ -7694,7 +7685,7 @@ The Academy's composition studio was unlike any chamber Aria had visited. Transl
 
 She draped the shell in a Material Design skin, and it became a polished Google-style dropdown. She stripped it and draped it in a minimalist skin — same behavior, completely different appearance. A third skin made it look like a command palette. "The headless component never changed," Sable said. "It does not know what it looks like. It only knows how to behave."
 
-She demonstrated the pattern using Radix UI primitives. A Radix Select provided all the keyboard navigation, ARIA roles, focus management, and state handling through compound component parts. The consumer styled each part with whatever CSS approach they preferred — Tailwind, CSS Modules, styled-components. "Radix provides the 'what.' You provide the 'how it looks.' "
+She demonstrated the pattern using Radix UI primitives. A Radix Select provided all the keyboard navigation, ARIA roles, focus management, and state handling through compound component parts. The consumer styled each part with whatever CSS approach they preferred — Tailwind, CSS Modules, styled-components. "Radix provides the 'what.' You provide the 'how it looks.'"
 
 **Story Group 2:**
 
@@ -9006,7 +8997,7 @@ Complete real-time architecture integrates WebSocket messages with TanStack Quer
 
 **Lesson Ending:**
 
-Stream Sage WebSocket faded back into the Living Streams as Aria departed, his form dissolving into the continuous flow of data that was both his home and his nature. The real-time currents swirled around Aria's feet as she walked, messages from a thousand connected clients flowing past like luminous fish in a digital river.
+Stream Sage WebSocket faded back into the Living Streams as Aria departed, her form dissolving into the continuous flow of data that was both her home and her nature. The real-time currents swirled around Aria's feet as she walked, messages from a thousand connected clients flowing past like luminous fish in a digital river.
 
 "Real-time is a paradigm shift," WebSocket's voice echoed from the streams. "Everything you learned with Axios — requests, responses, caching — follows a pattern: the client asks, the server answers. Real-time inverts that relationship. The server speaks when it has something to say. The client listens continuously. The connection persists, and data flows in both directions without waiting for permission."
 
@@ -10521,7 +10512,7 @@ Warden Garrison walked Aria to the edge of the Build and Deploy Territories. The
 
 Aria thought about the complete Build and Deploy journey. Vex had shown her the build system — how source code becomes the bundles users download, and how to optimize that process for speed and size. Pipeline had automated it all — CI ensuring quality on every commit, CD deploying verified code without manual intervention. Vercel had shown her where code lives — hosting platforms, CDNs, edge networks, and deployment strategies that minimize risk. And Garrison had completed the picture — monitoring, alerting, incident response, and the operational maturity that separates applications that launch from applications that last.
 
-"You can build, ship, deploy, and maintain," Garrison said with finality. "But everything you have built so far runs in the browser. Client-side React. The **Server Spires** hold the next frontier." He pointed toward gleaming towers on the horizon, their architecture unlike anything Aria had seen — towers that existed simultaneously on both sides of a shimmering boundary between client and server.
+"You can build, ship, deploy, and maintain," Garrison said with finality. "But everything you have built so far runs in the browser. Client-side React. The **Server Spires** hold the next frontier." She pointed toward gleaming towers on the horizon, their architecture unlike anything Aria had seen — towers that existed simultaneously on both sides of a shimmering boundary between client and server.
 
 Binary projected the path ahead: "Full-stack React: server components, server actions, streaming, static and dynamic rendering. **Architect Nexus** awaits at the Server Spires — where the client and the server become one unified system."
 
